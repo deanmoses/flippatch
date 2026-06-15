@@ -1,0 +1,26 @@
+attribution: flipcommons-catalog
+description: >
+  Manufacturer-home locations, step 1 of 3. A location's parent must already exist
+  in an earlier patch or the seed (a parent created in the same patch is not
+  resolvable), so new cities are built up by depth across 0032-0034. This step
+  creates the subdivisions whose parent is already in the catalog: Doubs and
+  Nouvelle-Aquitaine (France) and Piacenza (Italy). More may be added before ship.
+claims:
+  - location.france/bfc/doubs:
+      create: true
+      name: Doubs
+      slug: doubs
+      parent: france/bfc
+      location_type: department
+  - location.france/naq:
+      create: true
+      name: Nouvelle-Aquitaine
+      slug: naq
+      parent: france
+      location_type: region
+  - location.italy/pc:
+      create: true
+      name: Piacenza
+      slug: pc
+      parent: italy
+      location_type: province

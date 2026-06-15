@@ -1,0 +1,70 @@
+attribution: flipcommons-catalog
+description: >-
+  Operating status and HQ city for the early-Japanese makers.
+sources:
+  - name: "Mynavi Tenshoku"
+    source_type: web
+    description: >-
+      Mynavi's job-listing and company-profile site, carrying current company overviews for Japanese businesses.
+    links:
+      - {
+          url: "https://tenshoku.mynavi.jp/",
+          label: "Mynavi Tenshoku",
+          link_type: homepage,
+        }
+  - name: "Weblio"
+    source_type: web
+    description: >-
+      Weblio, a Japanese online dictionary and encyclopedia aggregator, carrying company and product reference entries.
+    links:
+      - { url: "https://www.weblio.jp/", label: "Weblio", link_type: homepage }
+  - name: "Denfaminicogamer"
+    source_type: web
+    description: >-
+      Japanese video-game journalism site with industry histories and developer interviews.
+    links:
+      - {
+          url: "https://news.denfaminicogamer.jp/",
+          label: "Denfaminicogamer",
+          link_type: homepage,
+        }
+  - name: "AMpress"
+    source_type: web
+    description: >-
+      Amusement Press, Japanese amusement-industry trade news.
+    links:
+      - {
+          url: "https://www.ampress.co.jp/",
+          label: "AMpress",
+          link_type: homepage,
+        }
+claims:
+  - corporate-entity.tomato-land:
+      expect: { manufacturer: tomato-land }
+      operating_status: ongoing
+      location: [japan/osaka/higashi-osaka]
+      cite: https://tenshoku.mynavi.jp/company/208368/
+      note: "Mynavi's company profile lists トマトランド株式会社 (Tomato Land Co., Ltd.) as a current business — established July 1995, based in Higashi-Osaka — with 遊技機開発 (gaming-machine development) among its activities."
+  - corporate-entity.banpresto:
+      expect: { manufacturer: banpresto }
+      operating_status: ended
+      location: [japan/tokyo/shinagawa]
+      cite: https://en.wikipedia.org/wiki/Banpresto
+      note: 'Wikipedia says Banpresto was "headquartered in Shinagawa, Tokyo" and that its video-game and amusement business was absorbed into Bandai Namco in 2008; the brand was later folded into Bandai Spirits in 2019.'
+  - corporate-entity.sunwise:
+      expect: { manufacturer: sunwise }
+      operating_status: ended
+      location: [japan/tokyo/mitaka]
+      cite: https://www.weblio.jp/content/%E3%82%B5%E3%83%B3%E3%83%AF%E3%82%A4%E3%82%BA
+      note: 'Weblio says サンワイズ (Sunwise) "1998年3月6日に倒産した" (went bankrupt on 6 March 1998); it was based in Mitaka, Tokyo.'
+  - corporate-entity.kato:
+      expect: { manufacturer: kato }
+      location: [japan/tokyo/setagaya]
+      cite: https://news.denfaminicogamer.jp/projectbook/180914
+      note: 'Denfaminicogamer says カトウ製作所 was "1964年に東京都世田谷区で設立された遊戯機械メーカー" (a game-machine maker established in Setagaya-ku, Tokyo in 1964), renamed カトウ株式会社 in 2008. Current operating status left unknown — affiliated firms now run its arcades.'
+  - corporate-entity.towa:
+      expect: { manufacturer: towa }
+      operating_status: ended
+      location: [japan/tokyo/nakano]
+      cite: https://www.ampress.co.jp/backnumber/bn1999.07.15.htm
+      note: 'AMpress (1999) reports "５月２１日に破産宣告を受けた㈱トーワジャパン（東京都中野区本町...負債総額２００億円）" — Towa Japan, of Nakano-ku, Tokyo, received a bankruptcy declaration on 21 May 1999.'

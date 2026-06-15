@@ -1,0 +1,193 @@
+attribution: flipcommons-ai-desc-model
+description: >
+  Narrative descriptions for early-Japanese models.
+claims:
+  # --- Nihon Tenbo ---
+  - model.home-run-nihon-tenbo:
+      expect: { year: 1967 }
+      cite: https://earlyarcadesjapan.blogspot.com/2023/01/home-run-by-japan-outlook-entertainment.html
+      description: |
+        Home Run (ホームランゲーム) is a baseball-themed [[technology-generation:electromechanical]] flipper game by [[manufacturer:nihon-tenbo]], dating to around 1967. Its playfield layout closely resembles Sankyo's later [[model:the-world-series]].
+  - model.soccer-ace:
+      expect: { year: 1969 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Soccer Ace (サッカーエース) is a 1969 soccer-themed flipper game by [[manufacturer:nihon-tenbo]].
+  - model.beat-spark:
+      expect: { year: 1970 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Beat & Spark (ビート＆スパーク) is a 1970 soccer-themed ("Socker") flipper game by [[manufacturer:nihon-tenbo]], built with the Tokyo Corporation.
+  - model.jumbokick:
+      expect: { year: 1970 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Jumbo Kick (ジャンボキック) is a 1970 flipper game by [[manufacturer:nihon-tenbo]], built with the Tokyo Corporation.
+  # --- Kato ---
+  - model.soccer-8:
+      expect: { year: 1967 }
+      cite: https://earlyarcadesjapan.blogspot.com/2024/02/blog-post.html
+      description: |
+        Soccer 8 (サッカー8) is a soccer-themed [[technology-generation:electromechanical]] game by [[manufacturer:kato]], dating to around 1967.
+  # --- Showa Yuen ---
+  - model.rocket-v:
+      expect: { year: 1970 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Rocket V (ロケットV) is a 1970 space-themed flipper game by [[manufacturer:showa-yuen]].
+  # --- Children's Amusement Park Facilities ---
+  - model.space-patrol-childrens:
+      expect: { year: 1968 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Space Patrol (宇宙パトロール) is a space-themed [[technology-generation:electromechanical]] game by [[manufacturer:childrens-amusement-park-facilities]], dating to around 1968.
+  # --- Banpresto ---
+  - model.muden-kun:
+      expect: { year: 1999 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Muden Kun (むでんくん) is a 1999 prize-dispenser flipper game by [[manufacturer:banpresto]].
+  - model.kinnikuman-ii-power-mucho:
+      expect: { year: 2002 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ) is a 2002 prize-dispenser flipper game by [[manufacturer:banpresto]], based on the licensed Kinnikuman ("Muscle Man") franchise.
+  # --- Tomato Land ---
+  - model.target-machine-base-ball:
+      expect: { year: 2007 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Target Machine Base Ball (ターゲットマシン ベースボール) is a 2007 candy-vending, baseball-themed flipper game by [[manufacturer:tomato-land]].
+  - model.target-machine-type-1:
+      expect: { year: 2007 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Target Machine Type 1 (ターゲットマシン タイプ１, "Tropical Q") is a candy-vending flipper game by [[manufacturer:tomato-land]], dating to around 2007.
+  - model.target-machine-pirates:
+      expect: { year: 2010 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Target Machine Pirates (ターゲットマシン パイレーツ) is a pirate-themed candy-vending flipper game by [[manufacturer:tomato-land]], dating to around 2010.
+  # --- Towa ---
+  - model.slap-shot-towa:
+      expect: { year: 1996 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Slap Shot (スラップショット) is a hockey-themed flipper game by [[manufacturer:towa]], made in 1996, with a 1997 version.
+  # --- Sunwise ---
+  - model.american-battle-dome:
+      expect: { year: 1995 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        American Battle Dome (アメリカンバトルゲーム) is a 1995 head-to-head flipper game by [[manufacturer:sunwise]], adapting Tsukuda Original's [[franchise:battle-dome]] toy.
+  # --- Sankyo (primary entity) ---
+  - model.apollo-moon:
+      expect: { year: 1972 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Apollo Moon (アポロムーン) is a 1972 space-themed flipper game by [[manufacturer:sankyo-seiki]] (Sankyo).
+  - model.the-world-series:
+      expect: { year: 1972 }
+      cite: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
+      description: |
+        The World Series (ワールドシリーズ) is a baseball-themed flipper game by [[manufacturer:sankyo-seiki]] (Sankyo) dating to 1972; its playfield uses balls to run a baseball diamond. A 1976 re-release was sold as [[model:new-world-series]].
+  - model.big-race-sankyo:
+      expect: { year: 1969 }
+      cite: https://earlyarcadesjapan.blogspot.com/2024/06/big-race-by-sankyo.html
+      description: |
+        Big Race (ビックレース) is a car-racing [[technology-generation:electromechanical]] flipper game by [[manufacturer:sankyo-seiki]] (Sankyo). It appeared in the 1969 machine directory and may be older.
+  - model.japan-series:
+      expect: { year: 1969 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Japan Series (日本シリーズ) is a baseball-themed flipper game by [[manufacturer:sankyo-seiki]] (Sankyo), dating to around 1969.
+  - model.advantage:
+      expect: { year: 1976 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Advantage (アドバンテージ) is a 1976 tennis-themed flipper game by [[manufacturer:sankyo-seiki]] (Sankyo).
+  - model.american-football:
+      expect: { year: 1976 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        American Football (アメリカンフットボール) is a 1976 American-football-themed flipper game by [[manufacturer:sankyo-seiki]] (Sankyo).
+  - model.new-world-series:
+      expect: { year: 1976 }
+      cite: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
+      description: |
+        New World Series (ニューワールドシリーズ) is the 1976 re-release of Sankyo's [[model:the-world-series]], by [[manufacturer:sankyo-seiki]]; Sankyo's advertisements called it New World Series.
+  # --- Sankyo (amusement-park entity) ---
+  - model.new-big-race:
+      expect: { year: 1972 }
+      cite: https://earlyarcadesjapan.blogspot.com/2025/09/new-big-race-by-sankyo.html
+      description: |
+        New Big Race (ニュービッグレース) is a car-racing flipper game by [[manufacturer:sankyo-yuen-setsubi-kabushikigaisha]] (Sankyo), dated to 1972 from its listing in the 1973 machine directory printed in late 1972.
+  # --- Komaya ---
+  - model.crazy-15-mark-ii:
+      expect: { year: 1965 }
+      cite: https://earlyarcadesjapan.blogspot.com/2022/03/15-crazy-15-by-komaya.html
+      description: |
+        Crazy 15 [Mark II] (クレイジー15ゲーム) is a 1965 variant of [[manufacturer:komaya-seisakusho]]'s [[model:crazy-15-15]] flipper game.
+  - model.crazy-15-mark-iii:
+      expect: { year: 1969 }
+      cite: https://earlyarcadesjapan.blogspot.com/2022/04/1970-15-2nd-version-crazy-15-by-komaya.html
+      description: |
+        Crazy 15 [Mark III] (クレイジー15ゲーム) is a 1969 variant of [[manufacturer:komaya-seisakusho]]'s [[model:crazy-15-15]] flipper game.
+  - model.saturn-komaya:
+      expect: { year: 1969 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Saturn (サターン号) is a space-themed flipper game by [[manufacturer:komaya-seisakusho]], dating to around 1969.
+  - model.ware-sea-rover:
+      expect: { year: 1969 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Ware Sea Rover (海賊ゲーム, "pirate game") is a pirate-themed flipper game by [[manufacturer:komaya-seisakusho]], dating to around 1969.
+  - model.ronin:
+      expect: { year: 1970 }
+      cite: https://earlyarcadesjapan.blogspot.com/2023/05/1970-ronin.html
+      description: |
+        Ronin (浪人) is a 1970 samurai-themed flipper game by [[manufacturer:komaya-seisakusho]].
+  - model.pocket-ball:
+      expect: { year: 1974 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Pocket Ball (ポケットボール) is a 1974 flipper game by [[manufacturer:komaya-seisakusho]].
+  - model.indy-game:
+      expect: { year: 1967 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Indy Game (インディゲーム) is a car-racing [[technology-generation:electromechanical]] flipper game by [[manufacturer:komaya-seisakusho]], dating to around 1967.
+  - model.lets-go-moon:
+      expect: { year: 1968 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Let's Go Moon! is a space-themed flipper game by [[manufacturer:komaya-seisakusho]], dating to around 1968.
+  # --- Universal (Japan) ---
+  - model.orienteering:
+      expect: { year: 1976 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Orienteering (オリエンテーリング) is a 1976 two-player flipper game by [[manufacturer:universal]].
+  - model.asteroid-killer:
+      expect: { year: 1979 }
+      cite: https://earlyarcadesjapan.blogspot.com/2026/05/1979-asteroid-killer-by-universal.html
+      description: |
+        Asteroid Killer is a 1979 flipper game with a video-game element by [[manufacturer:universal]].
+  # --- Nihon Gorakuki ---
+  - model.ultra-attack:
+      expect: { year: 1972 }
+      cite: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
+      description: |
+        Ultra Attack (ウルトラアタック) is an [[franchise:ultraman]]-based kaiju flipper game by [[manufacturer:nihon-goraku-ki-kabushikigaisha]] (Nihon Gorakuki), dating to around 1972 and co-credited with [[manufacturer:nihon-tenbo]].
+  - model.ultra-spark:
+      expect: { year: 1972 }
+      cite: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
+      description: |
+        Ultra Spark (ウルトラスパーク) is an [[franchise:ultraman]]-based kaiju flipper game by [[manufacturer:nihon-goraku-ki-kabushikigaisha]] (Nihon Gorakuki), the companion to [[model:ultra-attack]], dating to around 1972 and co-credited with [[manufacturer:nihon-tenbo]].
+  # --- Nihon Jidou Hanbaiki ---
+  - model.rodeo-game-mate:
+      expect: { year: 1969 }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Rodeo (ロデオ) is a rodeo-themed flipper game by [[manufacturer:nihon-jidou-hanbaiki-kabushikigaisha]] (Game Mate), dating to around 1969.

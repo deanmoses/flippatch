@@ -1,0 +1,13 @@
+attribution: flip-museum
+description: >
+  Mark as unreleased the prototypes that come from The Flip museum's curated list
+  of prototypes. Source: The Flip museum mfgtimeline curation (the UNRELEASED set).
+claims:
+  - model.mazatron:
+      expect: { year: 1990 }
+      note: "On The Flip museum's list of unreleased prototypes"
+      production_status: unreleased
+  - model.king-kong:
+      expect: { year: 1990 }
+      note: "On The Flip museum's list of unreleased prototypes"
+      production_status: unreleased

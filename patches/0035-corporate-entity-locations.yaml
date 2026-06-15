@@ -1,0 +1,33 @@
+attribution: flipcommons-catalog
+description: >
+  Assign manufacturer home cities to their corporate entities (the cities are
+  created in 0032-0034, or already in the catalog in the case of San Antonio).
+  Structured catalog data that the AI descriptions reference. More may be added
+  before ship.
+sources:
+  - name: Hexa Pinball
+    source_type: web
+    description: Manufacturer site of HEXA Pinball, a French pinball manufacturer in Martillac.
+    links:
+      - { url: "https://www.hexa-pinball.com/", label: Hexa Pinball, link_type: homepage }
+claims:
+  - corporate-entity.deeproot:
+      expect: { name: deeproot }
+      note: 'Kineticist says "deeproot Pinball, founded in 2017 in San Antonio, Texas by Attorney and Entrepreneur Robert J. Mueller".'
+      cite: https://www.kineticist.com/manufacturers/deeproot
+      location: [usa/tx/san-antonio]
+  - corporate-entity.rebellion-pinball:
+      expect: { name: Rebellion Pinball }
+      note: 'Kineticist lists Rebellion Pinball''s location as "Besançon, France".'
+      cite: https://www.kineticist.com/manufacturers/rebellion-pinball
+      location: [france/bfc/doubs/besancon]
+  - corporate-entity.hexa-pinball:
+      expect: { name: HEXA Pinball }
+      note: 'Hexa Pinball''s contact page gives its address as "9 chemin de la vieille ferme - 33650 Martillac".'
+      cite: https://www.hexa-pinball.com/contact
+      location: [france/naq/gironde/martillac]
+  - corporate-entity.pedretti-gaming:
+      expect: { name: Pedretti Gaming }
+      note: 'Kineticist places Pedretti Gaming "based in Gariga di Podenzano, Piacenza".'
+      cite: https://www.kineticist.com/manufacturers/pedretti-gaming
+      location: [italy/pc/podenzano]

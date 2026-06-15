@@ -1,0 +1,18 @@
+attribution: ipdb
+description: >
+  IPDB asserts no brand-level manufacturer for these six corporate entities;
+  our early parse fabricated a link to Stern Electronics. Remove IPDB's
+  fabricated manufacturer claims.
+claims:
+  - corporate-entity.western-electric-piano-company:
+      retract: [manufacturer]
+  - corporate-entity.western-manufacturing-company:
+      retract: [manufacturer]
+  - corporate-entity.northwestern-mail-box-company:
+      retract: [manufacturer]
+  - corporate-entity.southwestern-novelty-company:
+      retract: [manufacturer]
+  - corporate-entity.western-equipment-supply-company:
+      retract: [manufacturer]
+  - corporate-entity.western-products-incorporated:
+      retract: [manufacturer]

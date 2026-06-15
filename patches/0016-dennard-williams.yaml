@@ -1,0 +1,15 @@
+attribution: flipcommons-catalog
+description: >
+  Split Dennard-Williams & Dennard out of the Williams brand. This Henderson,
+  Texas firm (one catalogued machine, the 1933 Double Shuffle Twins) was
+  mis-grouped under the Chicago-based Williams brand by an ingest name-match on
+  the surname Williams. Give it its own manufacturer; this also removes the
+  spurious Henderson, TX location from the Williams brand.
+claims:
+  - manufacturer.dennard-williams-dennard:
+      name: Dennard-Williams & Dennard
+      create: true
+  - corporate-entity.dennard-williams-dennard:
+      expect: { ipdb_manufacturer_id: 101, manufacturer: williams }
+      note: 'Dennard-Williams & Dennard was a Henderson, Texas firm whose only catalogued product is the 1933 Double Shuffle Twins; the ingest mis-grouped it under the Chicago Williams brand by matching on the surname Williams. Re-attributed to its own manufacturer.'
+      manufacturer: dennard-williams-dennard

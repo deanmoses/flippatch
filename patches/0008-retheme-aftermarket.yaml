@@ -1,0 +1,237 @@
+attribution: flipcommons-catalog
+description: >
+  Mark aftermarket re-themes (an existing machine re-skinned by a non-manufacturer)
+  with production_status `aftermarket` and the `unofficial-retheme` tag. Also tags the
+  one official manufacturer re-theme. Supersedes the `one-off` status set on four of
+  these rows in patch 0005.
+claims:
+  # --- unofficial / aftermarket re-themes ---
+  - model.big-dick:
+      expect: { ipdb_id: 4539 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1963 'Big Deal'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:4539
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.last-supper:
+      expect: { ipdb_id: 4562 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1968 'Cabaret'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:4562
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.verspiel-dein-wasser-nicht:
+      expect: { ipdb_id: 4689 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1978 'Strikes and Spares'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:4689
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.slamdunk:
+      expect: { ipdb_id: 4965 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1980 'Space Invaders'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:4965
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.alabama-crimson-tide:
+      expect: { ipdb_id: 4998 }
+      note: "IPDB says \"This is a re-themed game. It used to be Gottlieb's 1976 'Target Alpha'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:4998
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.go-girl:
+      expect: { ipdb_id: 5005 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1989 'Earthshaker'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5005
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.gas-attack:
+      expect: { ipdb_id: 5111 }
+      note: "IPDB says \"This is a re-themed game. It used to be Capcom's 1996 'Breakshot'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5111
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.night-club-3:
+      expect: { ipdb_id: 5116 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1968 'Dogies'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5116
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.iron-maiden-2:
+      expect: { ipdb_id: 5190 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1979 'Gorgar'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5190
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.big-healey:
+      expect: { ipdb_id: 5213 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1975 'Pat Hand'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5213
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.the-hellacopters:
+      expect: { ipdb_id: 5464 }
+      note: "IPDB says \"This is a re-themed game. It used to be Gottlieb's 1973 'King Pin'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5464
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.metallica-retheme:
+      expect: { ipdb_id: 5478 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1989 'Earthshaker'.\"; the re-themer is unknown, so this is not attributed to Williams, who made the donor game."
+      cite: ipdb:5478
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+      retract: [corporate_entity]
+  - model.boston-red-sox:
+      expect: { ipdb_id: 5534 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1970 'Straight Flush'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5534
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.mini-cooper-s:
+      expect: { ipdb_id: 5538 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1976 'Grand Prix'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5538
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.funtime-frankie:
+      expect: { ipdb_id: 5540 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1967 'The Wiggler'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5540
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.iron-maiden-ii:
+      expect: { ipdb_id: 5557 }
+      note: "IPDB says \"This is a re-themed game. The playfield used to be Williams' 1987 'F-14 Tomcat'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5557
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.muscle-car-cafe:
+      expect: { ipdb_id: 5560 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1980 'Nitro Ground Shaker'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5560
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.asterix:
+      expect: { ipdb_id: 5584 }
+      note: "IPDB says \"This is a re-themed game. It used to be Gottlieb's 1977 'Jungle Queen'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5584
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.fraggle-rock:
+      expect: { ipdb_id: 5594 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1994 'The Flintstones'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5594
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.chingy:
+      expect: { ipdb_id: 5595 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally Midway's 1986 'Black Belt'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5595
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.grosse-pointe:
+      expect: { ipdb_id: 5596 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1988 'Swords of Fury'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5596
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.the-french-connection:
+      expect: { ipdb_id: 5627 }
+      note: "IPDB says \"This is a re-themed game. It used to be Game Plan's 1980 'Super Nova'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5627
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.naruto:
+      expect: { ipdb_id: 5698 }
+      note: "IPDB says \"This is a re-themed game. It used to be Gottlieb's 1981 'Force II'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5698
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.udo-lindenberg:
+      expect: { ipdb_id: 5715 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1979 'Harlem Globetrotters On Tour'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:5715
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.energie-iv:
+      expect: { ipdb_id: 6004 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1971 'Mariner'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6004
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.pittsburgh-penguins:
+      expect: { ipdb_id: 6017 }
+      note: "IPDB says \"This is a re-themed game. It used to be Interflip's 1977 'Dragon'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6017
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.sunset-riders:
+      expect: { ipdb_id: 6304 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1977 'Eight Ball'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6304
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.aloha-5:
+      expect: { ipdb_id: 6314 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1948 'Rainbow'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6314
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.grand-theft-auto-vice-city:
+      expect: { ipdb_id: 6426 }
+      note: "IPDB says \"This is a re-themed game. It used to be Premier's 1986 'Hollywood Heat'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6426
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.sea-nymph-2:
+      expect: { ipdb_id: 6505 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1950 'Georgia'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6505
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.lucky-luke:
+      expect: { ipdb_id: 6605 }
+      note: "IPDB says \"This is a re-themed game. It used to be Gottlieb's 1975 'Fast Draw'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6605
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.budapest:
+      expect: { ipdb_id: 6622 }
+      note: "IPDB says \"This is a re-themed game. It used to be Stern's 1977 'Rawhide'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6622
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.wonder-woman-2:
+      expect: { ipdb_id: 6634 }
+      note: "IPDB says \"This is a re-themed game. It use to be Stern's 1978 'Lectronamo'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6634
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.trumps-secret-service:
+      expect: { ipdb_id: 6666 }
+      note: "IPDB says \"This is a re-themed game. It used to be Data East's 1988 'Secret Service' and retains the same sounds and music.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6666
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.queen:
+      expect: { ipdb_id: 6816 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1981 'Flash Gordon'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6816
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.actros-magic-tour-2013:
+      expect: { ipdb_id: 6884 }
+      note: "IPDB says \"So far, we have seen two examples of this re-themed game. It used to be Gottlieb's 1981 'Volcano' and Gottlieb's 1981 'Mars God of War'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6884
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  - model.school-girl-reaper:
+      expect: { ipdb_id: 6900 }
+      note: "IPDB says \"This is a re-themed game. It used to be Bally's 1976 'Flip Flop'.\", identifying this as an aftermarket re-theme of an existing machine."
+      cite: ipdb:6900
+      production_status: aftermarket
+      tag: [unofficial-retheme]
+  # --- official manufacturer re-theme (stays produced; tag only) ---
+  - model.shrek:
+      expect: { ipdb_id: 5301 }
+      note: "IPDB says \"Stern reportedly used the existing Family Guy pinball game design, but re-themed it with all new artwork and software.\", an official re-theme by the manufacturer."
+      cite: ipdb:5301
+      tag: [manufacturer-retheme]

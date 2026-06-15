@@ -1,0 +1,9 @@
+attribution: flipcommons-catalog
+description: >
+  Retire orphaned Sankyo Yuen Setsubi brand, consolidated into Sankyo (sankyo-seiki) in 0067.
+claims:
+  - manufacturer.sankyo-yuen-setsubi-kabushikigaisha:
+      expect: { name: Sankyo Yuen Setsubi Kabushikigaisha }
+      delete: true
+      note: "Redundant IPDB-derived brand. The eremeka primary source models Sankyo as a single maker; IPDB's separate manufacturer 655 (三共遊園設備) is not reflected in the primary source. Its corporate entity (IPDB 655) was repointed to the Sankyo brand (sankyo-seiki)."
+      cite: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html

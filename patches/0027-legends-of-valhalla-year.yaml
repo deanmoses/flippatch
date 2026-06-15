@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: >
+  Correct an OPDB date error. "Legends of Valhalla (Deluxe Limited Edition)" is
+  dated 2012, but its sibling variants (Classic, Deluxe) are OPDB-dated 2021 and
+  American Pinball was founded in 2015 (first machine Houdini, 2017), so 2012 is
+  impossible. We supersede OPDB's 2012 with the line's correct year, 2021.
+claims:
+  - model.legends-of-valhalla-deluxe-limited-edition:
+      expect: { opdb_id: "GWyyq-MwNK5-AObnw", year: 2012 }
+      note: 'OPDB dates this variant 2012, but it shares one OPDB machine record (GWyyq-MwNK5) with the sibling variants "Legends of Valhalla (Classic)" and "Legends of Valhalla (Deluxe)", both OPDB-dated 2021, and maker American Pinball was founded 2015 (first machine 2017); 2012 predates the company, so it is an alias-level OPDB date error. Corrected to the line''s year, 2021.'
+      year: 2021

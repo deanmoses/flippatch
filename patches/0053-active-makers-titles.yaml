@@ -1,0 +1,18 @@
+attribution: flipcommons-catalog
+description: >
+  Titles for the new active makers' games, created before their models (0054) —
+  a model's title FK must resolve to an already-committed title, since the patch
+  system can't create an FK target within the same patch.
+claims:
+  - title.alice-goes-to-wonderland:
+      create: true
+      name: Alice Goes to Wonderland
+  - title.teenage-mutant-ninja-turtles-battle-in-the-sewer:
+      create: true
+      name: "Teenage Mutant Ninja Turtles: Battle in the Sewer"
+  - title.pinball-eternal:
+      create: true
+      name: Pinball Eternal
+  - title.little-shop-of-horrors:
+      create: true
+      name: Little Shop of Horrors

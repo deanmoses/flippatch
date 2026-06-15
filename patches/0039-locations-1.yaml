@@ -1,0 +1,17 @@
+attribution: flipcommons-catalog
+description: >
+  A location's parent must already exist in an earlier patch or the seed.
+  The new regions are created here and its cities in the next patch.
+claims:
+  - location.japan/osaka:
+      create: true
+      name: Osaka
+      slug: osaka
+      parent: japan
+      location_type: prefecture
+  - location.italy/bg:
+      create: true
+      name: Bergamo
+      slug: bg
+      parent: italy
+      location_type: province

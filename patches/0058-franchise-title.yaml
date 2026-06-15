@@ -1,0 +1,29 @@
+attribution: flipcommons-catalog
+description: >
+  Link licensed-property titles to their franchises.
+claims:
+  - title.teenage-mutant-ninja-turtles-battle-in-the-sewer:
+      expect: { name: "Teenage Mutant Ninja Turtles: Battle in the Sewer" }
+      franchise: teenage-mutant-ninja-turtles
+      note: 'Retro News: "A Teenage Mutant Ninja Turtles (TMNT) home pinball machine is now available to pre-order from [...] Wonderland Amusements."'
+      cite: https://www.retronews.com/tmnt-pinball/
+  - title.little-shop-of-horrors:
+      expect: { name: Little Shop of Horrors }
+      franchise: little-shop-of-horrors
+      note: 'This Week in Pinball: "I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year."'
+      cite: https://twip.kineticist.com/p/brought-to-you-by-secrets
+  - title.ultra-attack:
+      expect: { name: "Ultra Attack (ウルトラアタック)" }
+      franchise: ultraman
+      note: 'Early Arcades Japan says the game "references characters and images from 帰ってきたウルトラマン / Return of Ultraman, like Ultraman Jack, and the MAT logo (Monster Attack Team)."'
+      cite: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
+  - title.ultra-spark:
+      expect: { name: "Ultra Spark (ウルトラスパーク)" }
+      franchise: ultraman
+      note: 'Early Arcades Japan says the game "references characters and images from 帰ってきたウルトラマン / Return of Ultraman, like Ultraman Jack, and the MAT logo (Monster Attack Team)."'
+      cite: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
+  - title.american-battle-dome:
+      expect: { name: "American Battle Dome (アメリカンバトルゲーム)" }
+      franchise: battle-dome
+      note: 'Japanese Wikipedia: American Battle Dome (アメリカンバトルドーム) originates as a Tsukuda Original flipper-ball toy (1994, rights from Anjar Co.); Sunwise made the 1995 arcade flipper machine. The pinball title is a licensed adaptation of the Battle Dome property.'
+      cite: 'https://ja.wikipedia.org/wiki/バトルドーム'

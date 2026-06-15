@@ -1,0 +1,68 @@
+attribution: flipcommons-catalog
+description: >
+  Models for the new active makers, one per game. Each model's title (0053) and
+  corporate entity (0051) already exist. Production status reflects each game's
+  real state: Alice Goes to Wonderland is shipping (produced); the rest are
+  announced (a pre-order, an intended launch, a trademark filing). Corporate
+  inception years stay off the entities; these model years carry the makers'
+  timeline. The Wonderland and Pawlowski home machines carry the home-use tag; the
+  already-catalogued Ramp's Road Trip is tagged widebody. Where each game's cited
+  source supports it, models also carry cabinet, technology generation, display
+  type and a free-play reward type. game_format is deliberately left unset (the
+  catalog treats null as "assumed pinball" rather than asserting pinball per row).
+claims:
+  - model.alice-goes-to-wonderland:
+      create: true
+      name: Alice Goes to Wonderland
+      title: alice-goes-to-wonderland
+      corporate_entity: wonderland-amusements
+      year: 2026
+      production_status: produced
+      cabinet: floor
+      technology_generation: solid-state
+      display_type: lcd
+      tag: [home-use]
+      reward_type: [free-play]
+      note: 'nicole.express''s 2026 owner review, "Pinball in my House, 2026: Alice Goes to Wonderland" (March 2026): "two large cardboard boxes were delivered to the apartment" (shipped 2026); "The score is displayed on a small LCD screen"; "There are a series of controls on the front, in lieu of a coin slot"; "All the electronics are self-contained." A free-standing, roughly 80%-scale machine with a backbox.'
+      cite: https://nicole.express/2026/nicole-in-blunderland.html
+  - model.teenage-mutant-ninja-turtles-battle-in-the-sewer:
+      create: true
+      name: "Teenage Mutant Ninja Turtles: Battle in the Sewer"
+      title: teenage-mutant-ninja-turtles-battle-in-the-sewer
+      corporate_entity: wonderland-amusements
+      year: 2026
+      production_status: announced
+      cabinet: floor
+      technology_generation: solid-state
+      display_type: lcd
+      tag: [home-use]
+      reward_type: [free-play]
+      abbreviation: ["TMNT:BITS", "TMNT-BITS", "TMNTBITS"]
+      note: 'Wonderland Amusements'' pre-sale page (2026): "PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Real mechanical flippers, slingshots, bumpers, ramps, and multi-ball [...] Scale: Approx 80 % of commercial pinball size [...] MDF wood cabinet and back box, chrome metal trim, steel legs with leveling feet [...] Integrated LCD display system [...] Wi-Fi-enabled for high-score tracking and software updates [...] It is not equipped with coin operation." Revealed for pre-order in 2026 following the Alice Kickstarter; not yet shipped.'
+      cite: https://wonderlandamusements.com/products/tmntbattleinthesewer
+  - model.pinball-eternal:
+      create: true
+      name: Pinball Eternal
+      title: pinball-eternal
+      corporate_entity: pawlowski-pinball
+      year: 2025
+      production_status: announced
+      technology_generation: solid-state
+      tag: [home-use]
+      note: 'Pawlowski Pinball''s site: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences [...] Owning all software and parts, it allows ultimate flexibility in pricing and creativity [...] the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025."'
+      cite: https://pawlowskipinball.com/
+  - model.little-shop-of-horrors:
+      create: true
+      name: Little Shop of Horrors
+      title: little-shop-of-horrors
+      corporate_entity: ramps-pinball
+      production_status: announced
+      note: 'This Week in Pinball: "I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year." Trademark-stage; no release date announced, so the year is left unset.'
+      cite: https://twip.kineticist.com/p/brought-to-you-by-secrets
+  # Edit (not create): Ramp's debut is already in the catalog from OPDB; tag it widebody.
+  - model.road-trip:
+      expect: { opdb_id: GQKXy-MNENE }
+      cabinet: floor
+      tag: [widebody]
+      note: 'Flipper-News describes Ramp''s as the company "die vor wenigen Monaten in Florida mit dem Widebody Road Trip debütierte" (which debuted a few months ago in Florida with the widebody Road Trip) — a widebody being a full-size floor cabinet.'
+      cite: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob

@@ -1,0 +1,58 @@
+attribution: flipcommons-catalog
+description: Populate corporate-entity locations for some important manufacturers.
+claims:
+  # --- Gottlieb: Chicago -> Northlake (Columbia/Mylstar) -> Bensenville (Premier) ---
+  - corporate-entity.d-gottlieb-company:
+      expect: { ipdb_manufacturer_id: 93 }
+      note: 'Wikipedia says D. Gottlieb & Company "was an American arcade game corporation based in Chicago, Illinois." Its "main office and plant was at 1140-50 N. Kostner Avenue until the early 1970s."'
+      cite: https://en.wikipedia.org/wiki/Gottlieb
+      location: [usa/il/chicago]
+  - corporate-entity.d-gottlieb-company-a-columbia-pictures-industries-company:
+      expect: { ipdb_manufacturer_id: 94 }
+      note: 'Wikipedia says Gottlieb opened "a new modern plant and office [...] at 165 W. Lake Street in Northlake, IL" in the early 1970s, before Columbia bought the company in 1976.'
+      cite: https://en.wikipedia.org/wiki/Gottlieb
+      location: [usa/il/northlake]
+  - corporate-entity.mylstar-electronics-incorporated:
+      expect: { ipdb_manufacturer_id: 224 }
+      note: 'Wikipedia says Gottlieb -- "renamed Mylstar Electronics" in 1983 -- ran its "plant and office [...] at 165 W. Lake Street in Northlake, IL."'
+      cite: https://en.wikipedia.org/wiki/Gottlieb
+      location: [usa/il/northlake]
+  - corporate-entity.premier-technology:
+      expect: { ipdb_manufacturer_id: 257 }
+      note: 'The Canadian Trademarks Database lists the applicant "PREMIER TECHNOLOGY, A PARTNERSHIP," at "759 INDUSTRIAL DRIVE, BENSENVILLE, ILLINOIS 60106-1304, UNITED STATES OF AMERICA."'
+      cite: https://ised-isde.canada.ca/cipo/trademark-search/719389
+      location: [usa/il/bensenville]
+
+  # --- Bally ---
+  - corporate-entity.bally-manufacturing-corporation:
+      expect: { ipdb_manufacturer_id: 47 }
+      note: 'Wikipedia says of Bally that "The Chicago-based company quickly became a leading pinball maker."'
+      cite: https://en.wikipedia.org/wiki/Bally_Manufacturing
+      location: [usa/il/chicago]
+  - corporate-entity.bally-midway-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 48 }
+      note: 'Wikipedia says Midway "moved its headquarters from Franklin Park, Illinois, to Williams''s then-headquarters in Chicago" in 1988.'
+      cite: https://en.wikipedia.org/wiki/Midway_Games
+      location: [usa/il/franklin-park]
+
+  # --- Williams ---
+  - corporate-entity.williams-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 352 }
+      note: 'Wikipedia says Harry Williams "founded the Williams Manufacturing Company in 1943 at 161 West Huron Street in Chicago, Illinois."'
+      cite: https://en.wikipedia.org/wiki/WMS_Industries
+      location: [usa/il/chicago]
+  - corporate-entity.williams-electronic-manufacturing-corporation:
+      expect: { ipdb_manufacturer_id: 350 }
+      note: 'Wikipedia says the 1959 buyout "renamed the company the Williams Electronic Manufacturing Corporation" -- the Williams operation "founded [...] in 1943 at 161 West Huron Street in Chicago, Illinois."'
+      cite: https://en.wikipedia.org/wiki/WMS_Industries
+      location: [usa/il/chicago]
+  - corporate-entity.williams-electronics-incorporated:
+      expect: { ipdb_manufacturer_id: 351 }
+      note: 'Wikipedia says "In 1974, the company was reincorporated as Williams Electronics, Inc." -- the Williams operation "founded [...] in 1943 at 161 West Huron Street in Chicago, Illinois."'
+      cite: https://en.wikipedia.org/wiki/WMS_Industries
+      location: [usa/il/chicago]
+  - corporate-entity.williams-electronics-games-incorporated-a-subsidiary-of-wms-industries-incorporated:
+      expect: { ipdb_manufacturer_id: 349 }
+      note: 'Wikipedia says that in 1988 Midway "moved its headquarters from Franklin Park, Illinois, to Williams''s then-headquarters in Chicago" -- placing Williams in Chicago during the WMS era.'
+      cite: https://en.wikipedia.org/wiki/Midway_Games
+      location: [usa/il/chicago]

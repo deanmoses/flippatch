@@ -1,0 +1,9 @@
+attribution: flipcommons-catalog
+description: Refine Bally Wulff location from country-level Germany to its Berlin headquarters.
+claims:
+  - corporate-entity.bally-wulff:
+      expect: { ipdb_manufacturer_id: 49 }
+      note: 'German Wikipedia describes Bally Wulff as having its "Firmen- und Produktionssitz in Berlin"; the company "wurde [...] im Jahr 1950 von Günter Wulff [...] in Berlin [...] gegründet."'
+      cite: https://de.wikipedia.org/wiki/Bally_Wulff
+      location: [germany/be/berlin] # assert the more-specific member
+      remove: { location: [germany] } # supersede the coarse member (exists=false)

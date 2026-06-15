@@ -1,0 +1,24 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: >
+  Narrative descriptions some early-Japanese manufacturers.
+claims:
+  - manufacturer.komaya-seisakusho:
+      expect: { name: Komaya Seisakusho }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Komaya (こまや; Komaya Co., Ltd.) was a Japanese manufacturer of [[technology-generation:electromechanical]] amusement games based in [[location:japan/hyogo/kobe]]. Active from the mid-1960s into the late 1970s, it is best remembered for its long-running Crazy 15 series — [[model:crazy-15-15]] and [[model:crazy-15-mark-ii]] (1965), [[model:crazy-15-mark-iii]] (1969) and [[model:new-crazy-15]] (1977) — alongside other tables such as [[model:indy-game]] (c.1967), [[model:lets-go-moon]] (c.1968), [[model:saturn-komaya]] and the pirate-themed [[model:ware-sea-rover]] (both c.1969), [[model:ronin]] (1970) and [[model:pocket-ball]] (1974).
+  - manufacturer.nihon-jidou-hanbaiki-kabushikigaisha:
+      expect: { name: Nihon Jidou Hanbaiki Kabushikigaisha }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Nihon Jidō Hanbaiki (日本自動販売機; Japan Automatic Vending Machine Company, Ltd.), which traded its amusement games under the name Game Mate, was a [[location:japan/tokyo/tokyo]]-based Japanese maker of [[technology-generation:electromechanical]] games. It produced the rodeo-themed [[model:rodeo-game-mate]] (1969) and the sugoroku-based [[model:dai-uchuu-ryokou]] (1970).
+  - manufacturer.sankyo-seiki:
+      expect: { name: Sankyo Seiki }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Sankyo (三共) was a [[location:japan/tokyo/tokyo]]-based Japanese manufacturer of [[technology-generation:electromechanical]] amusement games, active from the late 1960s through the 1970s. It made a run of baseball-themed tables — [[model:japan-series]] (1969), [[model:the-world-series]] (1972) and [[model:new-world-series]] (1976) — alongside racing, sports and novelty games including [[model:big-race-sankyo]] (1969) and its sequel [[model:new-big-race]] (1972), [[model:apollo-moon]] (1972), [[model:fishing-tengu]] (1973), [[model:attack-ball]] and [[model:circus-16]] (both 1975), and [[model:advantage]] and [[model:american-football]] (both 1976).
+  - manufacturer.universal:
+      expect: { name: Universal }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Universal (ユニバーサル; Universal Company, Ltd.) was a [[location:japan/tochigi/oyama]]-based Japanese maker of amusement games. It built the [[technology-generation:electromechanical]] [[model:orienteering]] (1976) before moving to [[technology-generation:solid-state]] play with [[model:hard-rock]] (1977), [[model:hercules-2]] (1978), and [[model:asteroid-killer]] and [[model:harem-cat]] (both 1979).

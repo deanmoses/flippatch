@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: >
+  Manufacturer-home locations, step 3 of 3. Creates Martillac (HEXA Pinball's
+  home), whose parent Gironde was created in 0033.
+claims:
+  - location.france/naq/gironde/martillac:
+      create: true
+      name: Martillac
+      slug: martillac
+      parent: france/naq/gironde
+      location_type: city

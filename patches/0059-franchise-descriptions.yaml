@@ -1,0 +1,16 @@
+attribution: flipcommons-ai-desc-franchise
+description: >
+  Narrative descriptions for franchises.
+claims:
+  - franchise.battle-dome:
+      expect: { name: Battle Dome }
+      note: "Adds a narrative description for the Battle Dome franchise, tracing the property from its US rights holder Anjar Co. through Tsukuda Original's home toy to Sunwise's 1995 coin-op adaptation. Supported by the cited wikipedia page."
+      cite: "https://en.wikipedia.org/wiki/Battle_Dome_(toy)"
+      description: |
+        Battle Dome (バトルドーム) is a head-to-head, flipper-driven ball game whose rights originate with the US firm Anjar Co. and which became a hit in Japan through toy maker Tsukuda Original, which released the home version *American Battle Dome* (アメリカンバトルドーム) in 1994. Up to four players surround a domed table and work spring-loaded flippers to fire balls into one another's goals; balls are released at intervals by a wind-up mechanism, and the player left holding the fewest balls wins. The property crossed into amusement machines in 1995 when [[manufacturer:sunwise]] adapted it into the coin-op flipper game [[model:american-battle-dome]]. Tsukuda Original extended the toy line with Super American Battle Dome (1996), a *Doraemon*-licensed edition, and a 1995 Super Famicom video-game version; after the company's absorption into Bandai the property passed to Palbox and then Megahouse, which reissued it as Action Battle Dome (2010) and again as a 30th-anniversary edition in 2024.
+  - franchise.ultraman:
+      expect: { name: Ultraman }
+      note: "Adds a narrative description for the Ultraman franchise, the Tsuburaya Productions superhero property that Nihon Gorakuki and Nihon Tenbo's c.1972 Ultra Attack / Ultra Spark machine adapts. Supported by the cited Wikipedia page."
+      cite: "https://en.wikipedia.org/wiki/Ultraman"
+      description: |
+        Ultraman (ウルトラマン) is Tsuburaya Productions' tokusatsu superhero franchise, launched in 1966, whose giant silver-and-red heroes defend Earth from kaiju and alien invaders across a long-running television series. Its 1971 series *Return of Ultraman* introduced the hero Ultraman Jack and the defense unit MAT (Monster Attack Team), which [[manufacturer:nihon-goraku-ki-kabushikigaisha]] (Nihon Gorakuki) and [[manufacturer:nihon-tenbo]] drew on for a c.1972 [[technology-generation:electromechanical]] machine, issued in two versions as [[model:ultra-attack]] and [[model:ultra-spark]].

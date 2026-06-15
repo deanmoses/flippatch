@@ -1,0 +1,20 @@
+attribution: flipcommons-catalog
+description: >
+  Franchise vocabulary for licensed-property titles.
+sources:
+  - name: Wikipedia
+    source_type: web
+    links:
+      - { url: "https://ja.wikipedia.org/", label: "Wikipedia (日本語)", link_type: homepage }
+claims:
+  - franchise.little-shop-of-horrors:
+      create: true
+      name: Little Shop of Horrors
+  - franchise.ultraman:
+      create: true
+      name: Ultraman
+  - franchise.battle-dome:
+      create: true
+      note: "Battle Dome (バトルドーム) is a flipper-ball game property originally from Anjar Co. (US), brought to Japan by Tsukuda Original (ツクダオリジナル) as the American Battle Dome toy line (1994). Sunwise's 1995 arcade flipper machine is a licensed adaptation."
+      cite: "https://ja.wikipedia.org/wiki/バトルドーム"
+      name: Battle Dome

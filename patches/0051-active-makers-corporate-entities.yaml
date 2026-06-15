@@ -1,0 +1,34 @@
+attribution: flipcommons-catalog
+description: >
+  One corporate entity per brand created in 0050, each marked operating_status
+  ongoing (all are currently-active makers). Corporate inception years are left
+  unset: a maker's pinball span is derived from its models, not its paperwork.
+  The TiltBob former company name is added as a corporate_entity_alias on the
+  existing Ramp's entity.
+claims:
+  - corporate-entity.wonderland-amusements:
+      create: true
+      manufacturer: wonderland-amusements
+      name: Wonderland Amusements
+      operating_status: ongoing
+      note: 'Wonderland Amusements is shipping its first machine and taking pre-orders for a second. Retro News: "A Teenage Mutant Ninja Turtles (TMNT) home pinball machine is now available to pre-order from [...] Wonderland Amusements [...]. Following the successful Kickstarter release of their first machine, Alice Goes to Wonderland [...]."'
+      cite: https://www.retronews.com/tmnt-pinball/
+  - corporate-entity.pawlowski-pinball:
+      create: true
+      manufacturer: pawlowski-pinball
+      name: Pawlowski Pinball
+      operating_status: ongoing
+      note: 'Pawlowski Pinball is an active maker bringing its first game to market. Its site: "the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025. There are other games in active development as well [...]."'
+      cite: https://pawlowskipinball.com/
+  - corporate-entity.euro-pinball-corp:
+      create: true
+      manufacturer: euro-pinball-corp
+      name: Euro Pinball Corp
+      operating_status: ongoing
+      note: 'Euro Pinball Corp. S.R.L. is the active manufacturing joint venture of Pinball Brothers and Pedretti Gaming, formed for 2023 to "provide a superior platform for large scale manufacturing of pinball machines."'
+      cite: https://www.pinball-magazine.com/?p=5081
+  - corporate-entity.ramps-pinball:
+      expect: { name: "Ramp's Pinball" }
+      corporate_entity_alias: ["TiltBob Pinball", "TiltBob"]
+      note: 'The company now trading as Ramp''s Pinball Manufacturing, LLC was first announced as TiltBob Pinball. Flipper-News: "Laut USPTO ist es niemand anderes als Ramp''s Pinball Manufacturing (TiltBob Pinball), das von Bob Neis in Florida gegründete Unternehmen [...]."'
+      cite: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob

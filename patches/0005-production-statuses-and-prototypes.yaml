@@ -1,0 +1,719 @@
+attribution: flipcommons-catalog
+description: >
+  Set the production_status field to 'unreleased' or 'one-off' for a population of
+  models that never reached commercial production, and tag a subset of the
+  'unreleased' models as having prototype machines.
+claims:
+  # --- prototype: a physical pre-production unit exists; unreleased ---
+  - model.ace-high-extended-play-prototype:
+      expect: { year: 1957 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.classy-bowler-extended-play-prototype:
+      expect: { year: 1956 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.dancing-dolls-extended-play-prototype:
+      expect: { corporate_entity: d-gottlieb-company }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.flag-ship-extended-play-prototype:
+      expect: { year: 1957 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.majestic-extended-play-prototype:
+      expect: { year: 1957 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.royal-flush-extended-play-prototype:
+      expect: { year: 1957 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.silver-extended-play-prototype:
+      expect: { year: 1957 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.world-champ-extended-play-prototype:
+      expect: { year: 1957 }
+      note: "The name includes \"Extended Play Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.jalopy-prototype:
+      expect: { corporate_entity: williams-manufacturing-company }
+      note: "The name includes \"Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.solar-city-prototype:
+      expect: { corporate_entity: d-gottlieb-company }
+      note: "The name includes \"Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.texas-ranger-prototype:
+      expect: { corporate_entity: d-gottlieb-company }
+      note: "The name includes \"Prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.kiss-fiberglass-prototype:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "The name includes \"fiberglass prototype\", which indicates that this is a prototype that never reached commercial production."
+      production_status: unreleased
+      tag: [prototype]
+  - model.ace-high-4:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This game never made it to production. It was selected, made into a whitewood, played and approved\"."
+      cite: ipdb:5235
+      production_status: unreleased
+      tag: [prototype]
+  - model.atari-arcade-classics:
+      expect: { corporate_entity: zizzle-arcade-pinball }
+      note: "IPDB says \"This game was not produced. All description in this listing was planned. John Popadiuk told us:Only 1 real prototype\"."
+      cite: ipdb:6628
+      production_status: unreleased
+      tag: [prototype]
+  - model.bigfoot:
+      expect: { year: 1978 }
+      note: "IPDB says \"Jim said only two Bigfoot games were made by Bally although extra backglasses were also made\"."
+      cite: ipdb:4345
+      production_status: unreleased
+      tag: [prototype]
+  - model.bush-league:
+      expect: { year: 1951 }
+      note: "IPDB says \"It had been believed that this game was never produced, but at least one unit was built as indicated by these pictures\"."
+      cite: ipdb:3759
+      production_status: unreleased
+      tag: [prototype]
+  - model.critical-mass:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"Prototype pinball machine only. Never went into production and never received a game number\"."
+      cite: ipdb:5139
+      production_status: unreleased
+      tag: [prototype]
+  - model.godzilla-king-of-the-monsters:
+      expect: { corporate_entity: spooky-pinball-llc }
+      note: "IPDB says \"This game was presented at the Pinball Expo 2011 in Chicago but did not go into production because the theme license instead went to Stern Pinball\"."
+      cite: ipdb:6888
+      production_status: unreleased
+      tag: [prototype]
+  - model.goin-nuts:
+      expect: { year: 1983 }
+      note: "IPDB says \"'Goin' Nuts' was never placed into production\"; IPDB records 10 units."
+      cite: ipdb:1021
+      production_status: unreleased
+      tag: [prototype]
+  - model.hot-shotz:
+      expect: { year: 1985 }
+      note: "IPDB says \"This game did not do well at test locations and therefore did not go into production\"."
+      cite: ipdb:3161
+      production_status: unreleased
+      tag: [prototype]
+  - model.jolly-roger-2:
+      expect: { corporate_entity: creative-products }
+      note: "IPDB says \"Never went into production. Only a prototype was made\"."
+      cite: ipdb:5862
+      production_status: unreleased
+      tag: [prototype]
+  - model.knockout-4:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"but did not go into production because T.K.O. was not well received [...] a single Knockout full prototype machine located in England\"."
+      cite: ipdb:6366
+      production_status: unreleased
+      tag: [prototype]
+  - model.krull:
+      expect: { year: 1983 }
+      note: "IPDB says \"'Krull' never went into production. Designer John Trudeau said that Ed Krynski made a prototype with a transparent playfield but it was deemed too expensive to produce\"."
+      cite: ipdb:1397
+      production_status: unreleased
+      tag: [prototype]
+  - model.lazer-lord:
+      expect: { corporate_entity: stern-electronics-incorporated }
+      note: "IPDB says \"a widebody multiball whitewood which apparently was fully functional at one time [...] This 1982 widebody never went into production\"."
+      cite: ipdb:1421
+      production_status: unreleased
+      tag: [prototype]
+  - model.lazer-lord-2:
+      expect: { corporate_entity: stern-electronics-incorporated }
+      note: "IPDB says \"This 1984 'Lazer Lord' was a prototype narrow-body machine and never went into production\"."
+      cite: ipdb:6588
+      production_status: unreleased
+      tag: [prototype]
+  - model.lost:
+      note: "IPDB says \"This game was presented at the Pinball Expo 2011 in Chicago but did not go into production\"."
+      cite: ipdb:6887
+      production_status: unreleased
+      tag: [prototype]
+  - model.lucky-dice:
+      expect: { year: 1975 }
+      note: "IPDB says \"Three of these games were built, all in different colors, and were tested in approximately May of 1975. [...] This game did not go into production\"."
+      cite: ipdb:6883
+      production_status: unreleased
+      tag: [prototype]
+  - model.miss-cue-t:
+      expect: { year: 1948 }
+      note: "IPDB says \"It had been thought this game was never produced, but at least two units were built as attested by these pictures\"."
+      cite: ipdb:3753
+      production_status: unreleased
+      tag: [prototype]
+  - model.one-on-one-basketball:
+      expect: { year: 1996 }
+      note: "IPDB says \"This game was never placed into production [...] Five prototypes were made\"."
+      cite: ipdb:6626
+      production_status: unreleased
+      tag: [prototype]
+  - model.rat-race:
+      expect: { year: 1983 }
+      note: "IPDB says \"'Rat Race' never went into production [...] The game name is painted on the cabinet above the coin door\"."
+      cite: ipdb:3718
+      production_status: unreleased
+      tag: [prototype]
+  - model.red-line-fever:
+      expect: { corporate_entity: capcom-coin-op-incorporated }
+      note: "IPDB says \"This game was not produced. It never made it past the whitewood stage of development when Capcom terminated all of its remaining employees on December 9, 1996\"."
+      cite: ipdb:4696
+      production_status: unreleased
+      tag: [prototype]
+  - model.simon:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This pin game was never produced. [...] The whitewood was scrapped\"."
+      cite: ipdb:6595
+      production_status: unreleased
+      tag: [prototype]
+  - model.star-ship:
+      expect: { year: 1976 }
+      note: "IPDB says \"As I remember, only 1 engineering sample playfield and cabinet of Star Ship were made\"."
+      cite: ipdb:3498
+      production_status: unreleased
+      tag: [prototype]
+  - model.thunderball:
+      expect: { year: 1982 }
+      note: "IPDB says \"'Thunderball' never went into production [...] one game with this variation has been seen by an IPDB Editor\"."
+      cite: ipdb:2554
+      production_status: unreleased
+      tag: [prototype]
+  - model.wreckn-ball:
+      note: "IPDB says \"This prototype was not officially made by Williams and did not go into production\"."
+      cite: ipdb:6167
+      production_status: unreleased
+      tag: [prototype]
+  - model.mini-viper:
+      expect: { year: 1996 }
+      note: "IPDB says \"However, this prototype game, brought to an AMOA show, was not well received for its smaller size, and never went into production\"."
+      cite: ipdb:4905
+      production_status: unreleased
+      tag: [prototype]
+  - model.western:
+      expect: { year: 1969 }
+      note: "IPDB says \"We previously indicated this game was never produced but Federico Croci, a collector in Italy [...] told us he owns one of these games which had a \"Sample only\" schematic inside of it\"."
+      cite: ipdb:3574
+      production_status: unreleased
+      tag: [prototype]
+  - model.high-ace:
+      expect: { corporate_entity: williams-electronics-incorporated }
+      note: "IPDB says \"'High Ace' never went into production in the USA by Williams although they assigned it a model number and had authorized 30 units to be made\"."
+      cite: ipdb:1168
+      production_status: unreleased
+      tag: [prototype]
+  - model.houdini-master-mystery:
+      expect: { corporate_entity: american-pinball-inc }
+      note: "IPDB says \"This game was not produced and was replaced by American Pinball Inc.'s 2017 'Houdini Master of Mystery' with a playfield from a different designer, and different backbox and artwork\"."
+      cite: ipdb:6469
+      production_status: unreleased
+      tag: [prototype]
+  - model.monza:
+      expect: { year: 1980 }
+      note: "IPDB says \"Game existed only as a prototype, but no longer exists\"."
+      cite: ipdb:1625
+      production_status: unreleased
+      tag: [prototype]
+  - model.loch-ness-monster:
+      expect: { year: 1985 }
+      note: "IPDB says \"Game Plan closed as this model was being prepared for production. Reportedly, only the prototype exists\"."
+      cite: ipdb:1465
+      production_status: unreleased
+      tag: [prototype]
+  - model.neutron-star:
+      expect: { year: 1981 }
+      note: "IPDB says \"This narrow-bodied game did not proceed beyond the prototype stage, pictured here\"."
+      cite: ipdb:1664
+      production_status: unreleased
+      tag: [prototype]
+  - model.mysterian:
+      expect: { year: 1982 }
+      note: "IPDB says \"Coin mechanisms were installed on the coin door, suggesting this machine was installed at a test location before production was abandoned by Bally\"."
+      cite: ipdb:4351
+      production_status: unreleased
+      tag: [prototype]
+  - model.skateball-2:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"Skateball Whitewood had a motorized appearing/disappearing target and the motor caught fire in life test. [...] I scrapped the whitewood\"."
+      cite: ipdb:3237
+      production_status: unreleased
+      tag: [prototype]
+  - model.big-top-6:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5347
+      production_status: unreleased
+      tag: [prototype]
+  - model.combination-rotation:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5331
+      production_status: unreleased
+      tag: [prototype]
+  - model.domino-5:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5334
+      production_status: unreleased
+      tag: [prototype]
+  - model.gold-rush-5:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5329
+      production_status: unreleased
+      tag: [prototype]
+  - model.hannibal:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5336
+      production_status: unreleased
+      tag: [prototype]
+  - model.hill-climb:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5333
+      production_status: unreleased
+      tag: [prototype]
+  - model.krull-ii:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5338
+      production_status: unreleased
+      tag: [prototype]
+  - model.magic-4:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5328
+      production_status: unreleased
+      tag: [prototype]
+  - model.moon-mine:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5337
+      production_status: unreleased
+      tag: [prototype]
+  - model.pinball-squared:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5341
+      production_status: unreleased
+      tag: [prototype]
+  - model.pipeline-2:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5327
+      production_status: unreleased
+      tag: [prototype]
+  - model.qby:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5335
+      production_status: unreleased
+      tag: [prototype]
+  - model.rat-race-2:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5339
+      production_status: unreleased
+      tag: [prototype]
+  - model.sevens:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5345
+      production_status: unreleased
+      tag: [prototype]
+  - model.snooker-2:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5343
+      production_status: unreleased
+      tag: [prototype]
+  - model.sub-chase:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5342
+      production_status: unreleased
+      tag: [prototype]
+  - model.the-chutes:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5346
+      production_status: unreleased
+      tag: [prototype]
+  - model.the-games-i:
+      expect: { corporate_entity: mylstar-electronics-incorporated }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5340
+      production_status: unreleased
+      tag: [prototype]
+  - model.tidal-wave:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5326
+      production_status: unreleased
+      tag: [prototype]
+  - model.titan-2:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5330
+      production_status: unreleased
+      tag: [prototype]
+  - model.tyrannosaurus:
+      expect: { corporate_entity: premier-technology }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5344
+      production_status: unreleased
+      tag: [prototype]
+  - model.untitled:
+      expect: { corporate_entity: d-gottlieb-company-a-columbia-pictures-industries-company }
+      note: "IPDB says \"This fully functional whitewood game was one of many prototypes designed and built by John Trudeau that, for one reason or another, did not get placed into production\"."
+      cite: ipdb:5332
+      production_status: unreleased
+      tag: [prototype]
+  - model.brooks-dunn:
+      expect: { year: 1996 }
+      note: "IPDB says \"Two prototype machines supposedly exist, although some claim the design never proceeded past the whitewood stage\"."
+      cite: ipdb:4008
+      production_status: unreleased
+      tag: [prototype]
+  - model.mad:
+      expect: { corporate_entity: data-east-pinball-incorporated }
+      note: "IPDB says \"Never produced past a whitewood, never programmed, only translites and the \"Rudy\" head exist\"."
+      cite: ipdb:3440
+      production_status: unreleased
+      tag: [prototype]
+  - model.playboy-2:
+      expect: { year: 1999 }
+      note: "IPDB says \"Game was in the early whitewood stage when Williams halted pinball production\"."
+      cite: ipdb:4490
+      production_status: unreleased
+      tag: [prototype]
+  - model.slam-n-jam:
+      expect: { corporate_entity: alvin-g-and-company }
+      note: "IPDB says \"there were two working whitewood machines and a third unpopulated (but wired) whitewood playfield [...] No production games were made\"."
+      cite: ipdb:4343
+      production_status: unreleased
+      tag: [prototype]
+  - model.starfighter:
+      expect: { corporate_entity: williams-electronics-incorporated }
+      note: "IPDB says \"I did build a whitewood for this one, but it was scrapped\"."
+      cite: ipdb:3729
+      production_status: unreleased
+      tag: [prototype]
+  - model.zingy-bingy:
+      expect: { corporate_entity: capcom-coin-op-incorporated }
+      note: "IPDB says \"It never made it past this whitewood stage of development when Capcom, who had been laying off employees over several months, terminated all of its remaining employees on December 9, 1996\"."
+      cite: ipdb:6635
+      production_status: unreleased
+      tag: [prototype]
+  - model.boomerang-3:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"Only one solid state Boomerang was made\"."
+      cite: ipdb:6338
+      production_status: unreleased
+      tag: [prototype]
+  - model.combat-3:
+      expect: { corporate_entity: zaccaria }
+      note: "IPDB says \"This solid state 'Combat' prototype with a Signetics microprocessor was presented at the 1977 ENADA show in Rome, Italy\"."
+      cite: ipdb:6682
+      production_status: unreleased
+      tag: [prototype]
+  - model.flicker-5:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"Engineer Jeff Frederiksen of Dave Nutting Associates designed this engineering prototype for Bally, converting an EM version of Bally's 1975 'Flicker' having serial number #1074\"."
+      cite: ipdb:5103
+      production_status: unreleased
+      tag: [prototype]
+  - model.formula-1-2:
+      expect: { year: 1988 }
+      note: "IPDB says \"Only 3 prototypes were made\"."
+      cite: ipdb:4941
+      production_status: unreleased
+      tag: [prototype]
+  - model.aztec-2:
+      expect: { year: 1976 }
+      note: "IPDB says \"This is an electronic prototype of the EM game of the same name, which is why only 10 were manufactured\"."
+      cite: ipdb:4828
+      production_status: unreleased
+      tag: [prototype]
+  - model.grand-prix-3:
+      expect: { year: 1977 }
+      note: "IPDB says \"Reportedly, four or five of the EM game Williams' 1976 'Grand Prix' were made as SS prototypes\"."
+      cite: ipdb:5647
+      production_status: unreleased
+      tag: [prototype]
+  - model.bow-and-arrow-2:
+      expect: { year: 1974 }
+      note: "IPDB says \"We had previously indicated a quantity of 22 electro-mechanical games were modified as a test of Solid State design. [...] his father remembered building 17 units\"."
+      cite: ipdb:4770
+      production_status: unreleased
+      tag: [prototype]
+  - model.ramp-warrior:
+      expect: { year: 1988 }
+      note: "IPDB says \"'Ramp Warrior' was a prototype that preceded the Williams/Bally merge and was later released after the merge as Midway's 1988 'Truck Stop' with modifications\"."
+      cite: ipdb:3521
+      production_status: unreleased
+      tag: [prototype]
+  # --- unreleased: never produced, survives only as art/drawing/concept ---
+  - model.aces:
+      expect: { corporate_entity: midway-manufacturing-company-a-subsidiary-of-wms-industries-incorporated }
+      note: "IPDB says \"This game was never produced\"."
+      cite: ipdb:6831
+      production_status: unreleased
+  - model.commodore-2:
+      expect: { corporate_entity: williams-manufacturing-company }
+      note: "IPDB says \"This game was never produced\"."
+      cite: ipdb:6287
+      production_status: unreleased
+  - model.crystal-palace:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6513
+      production_status: unreleased
+  - model.hi-jack:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6458
+      production_status: unreleased
+  - model.kill-shot:
+      expect: { corporate_entity: data-east-pinball-incorporated }
+      note: "IPDB says \"This game did not go into production and we do not know if any prototypes survived\"."
+      cite: ipdb:5878
+      production_status: unreleased
+  - model.king-pin-7:
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6516
+      production_status: unreleased
+  - model.pipeline:
+      expect: { corporate_entity: atari-incorporated }
+      note: "IPDB says \"This surfing-themed game was never produced\"."
+      cite: ipdb:5275
+      production_status: unreleased
+  - model.riverboat-gambler-2:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6511
+      production_status: unreleased
+  - model.palisades-park:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6512
+      production_status: unreleased
+  - model.silver-palace:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6514
+      production_status: unreleased
+  - model.son-of-fireball:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6515
+      production_status: unreleased
+  - model.spirit-of-76-3:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"This art was for a game that was never produced, as far as we know\"."
+      cite: ipdb:6510
+      production_status: unreleased
+  - model.sse:
+      expect: { corporate_entity: williams-manufacturing-company }
+      note: "IPDB says \"This game was never produced\"."
+      cite: ipdb:6285
+      production_status: unreleased
+  - model.sea-wolf-2:
+      expect: { corporate_entity: williams-manufacturing-company }
+      note: "IPDB says \"It was never produced\"."
+      cite: ipdb:6283
+      production_status: unreleased
+  - model.ten-little-indians:
+      expect: { year: 1950 }
+      note: "IPDB says \"He recalls it was never produced, instead becoming Gottlieb's 1951 'Happy-Go-Lucky'\"."
+      cite: ipdb:3757
+      production_status: unreleased
+  - model.the-crocodile-hunter-outback-adventure:
+      expect: { corporate_entity: the-pinball-factory }
+      note: "IPDB says \"The game images presented in the flyer and the other art shown here are computer-generated, as this game never went into production\"."
+      cite: ipdb:5793
+      production_status: unreleased
+  - model.the-muppets-haunted-house-adventure:
+      expect: { corporate_entity: bromley-inc }
+      note: "IPDB says \"This game never went into production\"."
+      cite: ipdb:6584
+      production_status: unreleased
+  - model.very-hot-pants:
+      expect: { corporate_entity: bally-manufacturing-corporation }
+      note: "IPDB says \"It states this game was never produced but that the artwork was modified for use on Williams' 1971 'Swinger'\"."
+      cite: ipdb:5407
+      production_status: unreleased
+  - model.walk-n-the-ball:
+      expect: { year: 1985 }
+      note: "IPDB says \"This game was never produced\"."
+      cite: ipdb:6053
+      production_status: unreleased
+  - model.wonder-woman:
+      expect: { corporate_entity: atari-incorporated }
+      note: "IPDB says \"Shown here are images of the rough concept drawings for an Atari Wonder Woman pinball game that was never produced\"."
+      cite: ipdb:6472
+      production_status: unreleased
+  - model.worlds-fair-2:
+      expect: { corporate_entity: data-east-pinball-incorporated }
+      note: "IPDB says \"This game did not go into production and we do not know if any prototypes survived\"."
+      cite: ipdb:5877
+      production_status: unreleased
+  - model.jai-alai-2:
+      expect: { corporate_entity: williams-electronics-incorporated }
+      note: "IPDB says \"This game did not go into production and was deleted from their Log after Jun-21-1978 with none made\"."
+      cite: ipdb:3779
+      production_status: unreleased
+  - model.wwe-raw-vs-smackdown:
+      expect: { corporate_entity: zizzle-arcade-pinball }
+      note: "IPDB says \"This game was not produced. All description in this listing was planned\"."
+      cite: ipdb:6627
+      production_status: unreleased
+  - model.kings-of-the-road:
+      expect: { corporate_entity: game-plan-incorporated }
+      note: "IPDB says \"Designer John Trudeau told us that it was about 1981 when he did the playfield layout and artwork for this game, and also it was when Game Plan decided to cease pinball production, thus his game was not made [...] No whitewood was made\"."
+      cite: ipdb:5723
+      production_status: unreleased
+  - model.time-trap:
+      note: "IPDB says \"This was pinball artwork that never became a game\"."
+      cite: ipdb:6457
+      production_status: unreleased
+  - model.spelling-bee-3:
+      expect: { corporate_entity: williams-electronic-manufacturing-corporation }
+      note: "IPDB says \"At some later time, in what looks like Kordek's handwriting, it is noted as \"Cancelled. Never Made\"\"."
+      cite: ipdb:6299
+      production_status: unreleased
+  # --- museum-list prototypes with specific IPDB text (prototype tag from 0001) ---
+  - model.the-pinball-circus:
+      expect: { year: 1994 }
+      note: "IPDB says \"We know that two complete prototype machines were made\"."
+      cite: ipdb:4354
+      production_status: unreleased
+  - model.big-bang-bar:
+      expect: { year: 1996 }
+      note: "IPDB says \"Capcom's 'Big Bang Bar' exists only as prototype machines. It was to be produced for release in February 1997, but the Capcom Pinball division ceased operations before the machine was put into production\"."
+      cite: ipdb:4001
+      production_status: unreleased
+  - model.kingpin:
+      expect: { year: 1996 }
+      note: "IPDB says \"Kingpin was the last game made by Capcom and only a few were made before Capcom closed their doors\"."
+      cite: ipdb:4000
+      production_status: unreleased
+  # --- one-off: deliberate single units (re-themes), never mass-production ---
+  - model.aloha-5:
+      expect: { year: 2015 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1948 'Rainbow'\"; IPDB records 1 unit."
+      cite: ipdb:6314
+      production_status: one-off
+  - model.sea-nymph-2:
+      expect: { year: 2017 }
+      note: "IPDB says \"This is a re-themed game. It used to be Williams' 1950 'Georgia'\"; IPDB records 1 unit."
+      cite: ipdb:6505
+      production_status: one-off
+  - model.wild-horse-saloon:
+      expect: { year: 1991 }
+      note: "IPDB says \"This one-of-a-kind game was custom made by Data East Pinball in 1991 for Germany as a test piece and then shipped back to the USA\"."
+      cite: ipdb:4918
+      production_status: one-off
+  - model.the-brain:
+      expect: { year: 2006 }
+      note: "IPDB says \"Stern participated in its creation and, according to someone at Stern, only one was made\"."
+      cite: ipdb:5233
+      production_status: one-off
+  - model.night-club-3:
+      note: "IPDB says \"It was reportedly made in Belgium for fun by some employees of Bally Continental [...] Reportedly only one game was made, circa 1975\"."
+      cite: ipdb:5116
+      production_status: one-off
+  - model.slamdunk:
+      expect: { year: 1988 }
+      note: "IPDB says \"It was created for use in the 1988 Paramount Pictures R-rated movie \"The Accused\" in a pivotal scene where Jodie Foster as Sarah Tobias is attacked on this pinball table\"."
+      cite: ipdb:4965
+      production_status: one-off
+  - model.richie-rich:
+      expect: { year: 1994 }
+      note: "IPDB says \"Made as a movie prop, same playfield layout as Tommy, playfield art painted directly onto board\"."
+      cite: ipdb:4344
+      production_status: one-off
+  - model.astrologic:
+      expect: { year: 1978 }
+      note: "IPDB says \"This was a custom-made game for the Hollywood movie \"Tilt\"\"."
+      cite: ipdb:5710
+      production_status: one-off
+  - model.cosmic-venus:
+      expect: { year: 1978 }
+      note: "IPDB says \"This was a custom-made game for the Hollywood movie \"Tilt\"\"."
+      cite: ipdb:5711
+      production_status: one-off
+  - model.first-toon-to-the-moon:
+      expect: { year: 1994 }
+      note: "IPDB says \"Although the seller indicated the game was one-of-a-kind, later information, also unconfirmed by us, indicated three games were made\"."
+      cite: ipdb:6903
+      production_status: one-off
+  - model.bing:
+      expect: { year: 1938 }
+      note: "IPDB says \"Speculation is that this is a one-of-a-kind game made as a gift to Bing Crosby\"."
+      cite: ipdb:4832
+      production_status: one-off
+  - model.aaron-spelling:
+      expect: { year: 1992 }
+      note: "IPDB says \"Data East was commissioned by his second wife to build this game, as her gift to him\"."
+      cite: ipdb:4339
+      production_status: one-off
+  - model.kabuki:
+      expect: { corporate_entity: data-east-pinball-incorporated }
+      note: "IPDB says \"This is one of only two Kabuki pinball machines in existence. [...] Kabuki was never intended to be a production game\"."
+      cite: ipdb:4537
+      production_status: one-off
+  - model.1776:
+      expect: { year: 1948 }
+      note: "IPDB says \"This game was modified from a Chicago Coin 1941 'Show Boat' for use in the 1948 motion picture titled \"The Time of Your Life\"\"."
+      cite: ipdb:4909
+      production_status: one-off
+  # --- FLAGGED: a sample/limited run may count as produced. Uncomment to include. ---
+  # - model.still-crazy:
+  #     expect: { year: 1984 }
+  #     note: "IPDB says \"it turns out that we built 12 prototype test units, some of which were sent to various distributors. We also did release a sample run of 100, but [...] we pulled back the sample run release before any were actually built\"."
+  #     cite: ipdb:3730
+  #     production_status: unreleased
+  # - model.triple-x:
+  #     expect: { year: 1973 }
+  #     note: "IPDB says \"We are aware of only the example pictured here, likely a prototype\"."
+  #     cite: ipdb:6497
+  #     production_status: unreleased
+  # - model.tramway:
+  #     expect: { year: 1974 }
+  #     note: "IPDB says \"'Tramway' never went into production in the USA by Williams although they assigned it a model number and had authorized 98 units to be made\"."
+  #     cite: ipdb:2627
+  #     production_status: unreleased
+  # - model.bank-a-ball-6:
+  #     expect: { corporate_entity: retro-pinball-llc }
+  #     note: "IPDB says \"It did not go into production and this prototype was the only one made\"."
+  #     cite: ipdb:6435
+  #     production_status: unreleased
+  # - model.bride-of-pinbot-25th-anniversary:
+  #     expect: { corporate_entity: dutch-pinball }
+  #     note: "IPDB says \"Reportedly, one prototype game was made (non-working at the 2017 Show). This game did not go into production\"."
+  #     cite: ipdb:6832
+  #     production_status: unreleased
+  # - model.fan-dance:
+  #     expect: { year: 1934 }
+  #     note: "IPDB says \"This suggests that the game never went into production\"."
+  #     cite: ipdb:6125
+  #     production_status: unreleased

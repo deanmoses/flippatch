@@ -1,0 +1,12 @@
+attribution: ipdb
+description: >
+  IPDB asserts no brand-level manufacturer for these two corporate entities (they
+  are IPDB manufacturers 215 and 532 in their own right); our early parse
+  fabricated a link to the Midway and United brands by name-match. Remove IPDB's
+  fabricated manufacturer claims so the catalog re-attributions from 0025 stand
+  as the sole active claim.
+claims:
+  - corporate-entity.midway-pattern-company:
+      retract: [manufacturer]
+  - corporate-entity.united-manufacturing-company-diversey:
+      retract: [manufacturer]

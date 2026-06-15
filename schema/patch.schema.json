@@ -1,0 +1,237 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "patch.schema.json",
+  "title": "Flipcommons data patch",
+  "description": "A small, source-attributed set of catalog claims and/or citation-source roots. Filename is NNNN-slug.yaml; the stem is the patch id. Authoritative validation happens in flipcommons' ingest_patches; this schema gives editors and CI an early structural check.",
+  "type": "object",
+  "required": ["attribution"],
+  "additionalProperties": false,
+  "anyOf": [
+    {
+      "description": "A patch must carry a non-empty 'claims' or 'sources'.",
+      "required": ["claims"],
+      "properties": { "claims": { "minItems": 1 } }
+    },
+    {
+      "required": ["sources"],
+      "properties": { "sources": { "minItems": 1 } }
+    }
+  ],
+  "definitions": {
+    "note": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Reason for the change; becomes a ChangeSet note. Shared by a flat entry and each `changesets:` item."
+    },
+    "cite": {
+      "type": "string",
+      "maxLength": 2000,
+      "anyOf": [
+        { "pattern": "^(ipdb|opdb):.{1,200}$" },
+        { "pattern": "^https?://.+$" }
+      ],
+      "description": "External evidence, either as scheme:identifier (ipdb:4443, opdb:GRhX5) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form. Attaches a citation to this entry's authored field claims (not create-owned slug/status)."
+    },
+    "cites": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[0-9]+$",
+        "description": "A numeric handle, quoted as a string ('1'). Ephemeral authoring label wiring a [[cite:N]] marker to its source; minted to a durable citation at apply time."
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string",
+            "maxLength": 2000,
+            "anyOf": [
+              { "pattern": "^(ipdb|opdb):.{1,200}$" },
+              { "pattern": "^https?://.+$" }
+            ]
+          },
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url"],
+            "properties": {
+              "url": {
+                "type": "string",
+                "maxLength": 2000,
+                "pattern": "^https?://.+$"
+              },
+              "archive": {
+                "type": "string",
+                "maxLength": 2000,
+                "pattern": "^https?://.+$"
+              }
+            }
+          }
+        ]
+      },
+      "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-spec in the same grammar as 'cite:' — scheme:identifier, an http(s):// URL, or a { url, archive } map of URLs. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
+    },
+    "retract": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Scalar/FK field names whose claim from this patch's source should be removed. Not valid with create."
+    },
+    "remove": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "description": "Relationship members to remove: a mapping of relationship namespace to a list of member values — FK public_ids (e.g. {location: [germany]}) or bare strings for aliases/abbreviations (e.g. {manufacturer_alias: [Stern Inc]})."
+    }
+  },
+  "properties": {
+    "attribution": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Source slug; must already exist in flipcommons. A patch attributes to the source the fact came from (e.g. flip-museum, flipcommons-catalog, ipdb, opdb) and supersedes or retracts that source's own claim."
+    },
+    "description": {
+      "type": "string",
+      "description": "Freeform rationale (the why). Copied to the IngestRun note."
+    },
+    "claims": {
+      "type": "array",
+      "description": "Ordered list of operations; each entry is a single-key mapping (entity ref -> fields). An entry may group several changesets on one record under a single header via `changesets:` (the ref and `expect:` declared once).",
+      "items": {
+        "type": "object",
+        "minProperties": 1,
+        "maxProperties": 1,
+        "additionalProperties": false,
+        "patternProperties": {
+          "^[a-z][a-z0-9-]*\\.[a-z0-9][a-z0-9/-]*$": {
+            "type": "object",
+            "minProperties": 1,
+            "description": "Fields to assert on this entity. Reserved keys (directives, not claim fields): create, delete, expect, retract, remove, note, cite, cites, changesets.",
+            "allOf": [
+              {
+                "not": {
+                  "allOf": [
+                    { "required": ["create"] },
+                    {
+                      "anyOf": [
+                        { "required": ["delete"] },
+                        { "required": ["expect"] },
+                        { "required": ["retract"] },
+                        { "required": ["remove"] }
+                      ]
+                    }
+                  ]
+                },
+                "description": "create is exclusive with delete and the edit-only guards (expect/retract/remove)."
+              },
+              {
+                "not": {
+                  "allOf": [
+                    { "required": ["delete"] },
+                    {
+                      "anyOf": [
+                        { "required": ["retract"] },
+                        { "required": ["remove"] },
+                        { "required": ["changesets"] }
+                      ]
+                    }
+                  ]
+                },
+                "description": "delete is footprint-exclusive — no retract/remove/changesets companions."
+              }
+            ],
+            "properties": {
+              "create": {
+                "type": "boolean",
+                "description": "Opt-in to create the entity when its public_id does not resolve."
+              },
+              "delete": {
+                "type": "boolean",
+                "description": "Soft-delete the entity (status -> deleted) through the delete planner. Not valid with create."
+              },
+              "expect": {
+                "type": "object",
+                "description": "Drift guard: resolved scalar/FK values the target must already have. On a grouped header it guards every changeset below."
+              },
+              "retract": { "$ref": "#/definitions/retract" },
+              "remove": { "$ref": "#/definitions/remove" },
+              "note": { "$ref": "#/definitions/note" },
+              "cite": { "$ref": "#/definitions/cite" },
+              "cites": { "$ref": "#/definitions/cites" },
+              "changesets": {
+                "type": "array",
+                "minItems": 1,
+                "description": "Companion changesets on the same record. Each item is edit-shaped (note/cite/cites/retract/remove + authored fields) and becomes its own ChangeSet, inheriting the header's ref and `expect:`. Lifecycle (create/delete) and the drift guard (expect) live on the header, not here.",
+                "items": {
+                  "type": "object",
+                  "minProperties": 1,
+                  "not": {
+                    "anyOf": [
+                      { "required": ["create"] },
+                      { "required": ["delete"] },
+                      { "required": ["expect"] },
+                      { "required": ["changesets"] }
+                    ]
+                  },
+                  "properties": {
+                    "retract": { "$ref": "#/definitions/retract" },
+                    "remove": { "$ref": "#/definitions/remove" },
+                    "note": { "$ref": "#/definitions/note" },
+                    "cite": { "$ref": "#/definitions/cite" },
+                    "cites": { "$ref": "#/definitions/cites" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Citation-source roots to upsert (the `sources:` block) — books, magazines or websites that later `cite:` entries hang under. Each is flat (no nested children); create child sources via `cite:` on a claim. Field values are validated authoritatively against the model in ingest_patches.",
+      "items": {
+        "type": "object",
+        "required": ["name", "source_type"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "source_type": {
+            "type": "string",
+            "enum": ["book", "magazine", "web"]
+          },
+          "author": { "type": "string" },
+          "publisher": { "type": "string" },
+          "year": { "type": "integer", "minimum": 1800, "maximum": 2100 },
+          "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+          "day": { "type": "integer", "minimum": 1, "maximum": 31 },
+          "date_note": { "type": "string" },
+          "isbn": { "type": "string" },
+          "description": { "type": "string" },
+          "identifier_key": {
+            "type": "string",
+            "enum": ["", "ipdb", "opdb"],
+            "description": "Marks a scheme root whose children carry structured identifiers (ipdb/opdb). Root web sources only."
+          },
+          "links": {
+            "type": "array",
+            "description": "URLs where a reader can inspect the source. A root needs a 'homepage' link for domain-based URL recognition.",
+            "items": {
+              "type": "object",
+              "required": ["url", "link_type"],
+              "additionalProperties": false,
+              "properties": {
+                "url": { "type": "string", "minLength": 1 },
+                "link_type": {
+                  "type": "string",
+                  "enum": ["homepage", "catalog", "publisher", "reference", "archive"]
+                },
+                "label": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

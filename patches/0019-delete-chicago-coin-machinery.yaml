@@ -1,0 +1,10 @@
+attribution: flipcommons-catalog
+description: >
+  Delete the duplicate Chicago Coin corporate entity (IPDB mfr 676). Its sole
+  game was reattributed to the canonical entity (IPDB mfr 81) in patch 0018, so
+  it now has no referrers.
+claims:
+  - corporate-entity.chicago-coin-machinery-company:
+      expect: { ipdb_manufacturer_id: 676 }
+      note: 'Duplicate of Chicago Coin (IPDB mfr 81): an IPDB name-variant ("Chicago Coin Machinery Company") carrying one early game (Charm, 1932), reattributed to the canonical entity in patch 0018. No corporate-history source records it as a distinct company.'
+      delete: true

@@ -1,0 +1,76 @@
+attribution: flipcommons-catalog
+description: >
+  Corporate entities for the new early-Japanese manufacturers, with aliases.
+claims:
+  - corporate-entity.nihon-tenbo-goraku-sha:
+      create: true
+      note: 'Corporate entity of Nihon Tenbo, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Nihon Tenbo Entertainment Company
+      manufacturer: nihon-tenbo
+      location: [japan]
+      corporate_entity_alias: [日本展望娯楽社, Japan Outlook Entertainment Company]
+  - corporate-entity.kato:
+      create: true
+      note: 'Corporate entity of Kato, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Kato
+      manufacturer: kato
+      corporate_entity_alias: [カトウ, カトウ製作所, Kato Seisakusho]
+  - corporate-entity.showa-yuen:
+      create: true
+      note: 'Corporate entity of Showa Yuen, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Showa Yuen
+      manufacturer: showa-yuen
+      location: [japan]
+      corporate_entity_alias: [昭和遊園]
+  - corporate-entity.childrens-amusement-park-facilities:
+      create: true
+      note: 'Corporate entity of Children''s Amusement Park Facilities, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Children's Amusement Park Facilities
+      manufacturer: childrens-amusement-park-facilities
+      location: [japan]
+      corporate_entity_alias: [児童遊園設備, Jidō Yūen Setsubi]
+  - corporate-entity.banpresto:
+      create: true
+      note: 'Corporate entity of Banpresto, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Banpresto Co., Ltd.'
+      manufacturer: banpresto
+  - corporate-entity.tomato-land:
+      create: true
+      note: 'Corporate entity of Tomato Land, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Tomato Land Co., Ltd.'
+      manufacturer: tomato-land
+  - corporate-entity.towa:
+      create: true
+      note: 'Corporate entity of Towa, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Towa
+      manufacturer: towa
+      corporate_entity_alias: [トーワ, トーワジャパン, Towa Japan]
+  - corporate-entity.sunwise:
+      create: true
+      note: 'Corporate entity of Sunwise, per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Sunwise
+      manufacturer: sunwise
+      corporate_entity_alias: [サンワイズ]
+  - corporate-entity.sankyo-precision-equipment-company-ltd:
+      expect: { name: 'Sankyo Precision Equipment Company, Ltd.' }
+      corporate_entity_alias: [三共精機]
+  - corporate-entity.sankyo-amusement-park-equipment-company-ltd-ofjapan:
+      expect: { name: 'Sankyo Amusement Park Equipment Company, Ltd., ofJapan' }
+      corporate_entity_alias: [三共遊園設備]
+  - corporate-entity.komaya-co-ltd:
+      expect: { name: 'Komaya Co., Ltd.' }
+      corporate_entity_alias: [こまや製作所]
+  - corporate-entity.japan-amusement-machine-company-ltd:
+      expect: { name: 'Japan Amusement Machine Company, Ltd.' }
+      corporate_entity_alias: [日本娯楽機]
+  - corporate-entity.japan-automatic-vending-machine-company-ltd:
+      expect: { name: 'Japan Automatic Vending Machine Company, Ltd.' }
+      corporate_entity_alias: [日本自動販売機]

@@ -1,0 +1,29 @@
+attribution: flipcommons-catalog
+description: >
+  Create the Illinois suburb Locations that historic Chicago-area pinball
+  manufacturers operated in.
+claims:
+  - location.usa/il/franklin-park:
+      create: true
+      name: Franklin Park
+      slug: franklin-park
+      parent: usa/il
+      location_type: city
+      note: 'Wikipedia says Midway "moved its headquarters from Franklin Park, Illinois, to Williams''s then-headquarters in Chicago."'
+      cite: https://en.wikipedia.org/wiki/Midway_Games
+  - location.usa/il/northlake:
+      create: true
+      name: Northlake
+      slug: northlake
+      parent: usa/il
+      location_type: city
+      note: 'Wikipedia says Gottlieb opened "a new modern plant and office [...] at 165 W. Lake Street in Northlake, IL."'
+      cite: https://en.wikipedia.org/wiki/Gottlieb
+  - location.usa/il/bensenville:
+      create: true
+      name: Bensenville
+      slug: bensenville
+      parent: usa/il
+      location_type: city
+      note: 'Created to host Premier Technology, listed in the Canadian Trademarks Database at "759 INDUSTRIAL DRIVE, BENSENVILLE, ILLINOIS 60106-1304."'
+      cite: https://ised-isde.canada.ca/cipo/trademark-search/719389

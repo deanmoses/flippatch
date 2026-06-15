@@ -1,0 +1,29 @@
+attribution: flipcommons-catalog
+description: >
+  Create three currently-active pinball brands that Wikipedia's list of pinball
+  manufacturers carries but Flipcommons lacked: Wonderland Amusements, Pawlowski
+  Pinball and Euro Pinball Corp. TiltBob Pinball — the former name of the
+  already-catalogued Ramp's Pinball — is not a new brand; it is folded in as a
+  manufacturer_alias on Ramp's rather than a duplicate. Corporate entities,
+  locations, titles and models follow in 0051-0054; descriptions in 0055-0056.
+claims:
+  - manufacturer.wonderland-amusements:
+      create: true
+      name: Wonderland Amusements
+      note: 'The Toy Book reported "the official launch of Wonderland Amusements. The new company, which debuted at this year''s Pinball Expo in Chicago, says it''s on a mission to bring the joy of real mechanical pinball machines to home arcades with a new line of compact, affordable tables."'
+      cite: https://toybook.com/wonderland-amusements-prototype-reveal/
+  - manufacturer.pawlowski-pinball:
+      create: true
+      name: Pawlowski Pinball
+      note: 'Pawlowski Pinball''s site: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences."'
+      cite: https://pawlowskipinball.com/
+  - manufacturer.euro-pinball-corp:
+      create: true
+      name: Euro Pinball Corp
+      note: 'Pinball Brothers'' press release: "The move also sees us joining forces with our long-time partner Pedretti Gaming. Together we have shipped close to 800 games and have decided to take the partnership to the next level by forming Euro Pinball Corp."'
+      cite: https://www.pinball-magazine.com/?p=5081
+  - manufacturer.ramps-pinball:
+      expect: { name: "Ramp's Pinball" }
+      manufacturer_alias: ["TiltBob Pinball", "TiltBob"]
+      note: 'Ramp''s Pinball was first announced in 2023 as TiltBob Pinball. Flipper-News: "Laut USPTO ist es niemand anderes als Ramp''s Pinball Manufacturing (TiltBob Pinball), das von Bob Neis in Florida gegründete Unternehmen [...]."'
+      cite: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob

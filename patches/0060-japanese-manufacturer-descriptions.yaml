@@ -1,0 +1,44 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: >
+  Narrative descriptions for Japanese manufacturers.
+claims:
+  - manufacturer.nihon-tenbo:
+      expect: { name: Nihon Tenbo }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Nihon Tenbo (日本展望娯楽社, "Japan Outlook Entertainment Company," abbreviated Nitten) was a Japanese manufacturer of [[technology-generation:electromechanical]] pinball machines. From the late 1960s into the early 1970s it built sports-themed tables — [[model:home-run-nihon-tenbo]] (c.1967), [[model:soccer-ace]] (1969), and [[model:beat-spark]] and [[model:jumbokick]] (both 1970) — and worked with [[manufacturer:nihon-goraku-ki-kabushikigaisha]] on the [[franchise:ultraman]]-based [[model:ultra-attack]] and [[model:ultra-spark]].
+  - manufacturer.kato:
+      expect: { name: Kato }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Kato (カトウ) was a Japanese manufacturer of [[technology-generation:electromechanical]] games, remembered for the soccer game [[model:soccer-8]] (c.1967).
+  - manufacturer.showa-yuen:
+      expect: { name: Showa Yuen }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Showa Yuen (昭和遊園) was a Japanese amusement-game manufacturer, behind the space-themed pinball machine [[model:rocket-v]] (1970).
+  - manufacturer.childrens-amusement-park-facilities:
+      expect: { name: "Children's Amusement Park Facilities" }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Children's Amusement Park Facilities (児童遊園設備) was a Japanese manufacturer of [[technology-generation:electromechanical]] games, behind the space-themed [[model:space-patrol-childrens]] (c.1968).
+  - manufacturer.banpresto:
+      expect: { name: Banpresto }
+      cite: https://en.wikipedia.org/wiki/Banpresto
+      description: |
+        Banpresto (バンプレスト) is a Japanese amusement and toy manufacturer. Founded in 1977, it became a Bandai subsidiary in 1989, and its video-game and amusement business was absorbed into [[manufacturer:bandai-namco]] in 2008. From its [[location:japan/tokyo/shinagawa]] base it made two prize-redemption machines: [[model:muden-kun]] (1999) and the licensed [[model:kinnikuman-ii-power-mucho]] (2002).
+  - manufacturer.tomato-land:
+      expect: { name: Tomato Land }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Tomato Land (トマトランド) is a diversified manufacturer based in [[location:japan/osaka/higashi-osaka]]. Its amusement division produced the candy-vending "Target Machine" redemption games — [[model:target-machine-base-ball]] (2007), [[model:target-machine-type-1]] (c.2007) and the pirate-themed [[model:target-machine-pirates]] (c.2010).
+  - manufacturer.towa:
+      expect: { name: Towa }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Towa (トーワ) was a Japanese manufacturer of the head-to-head pinball-like hockey game [[model:slap-shot-towa]] (c.1996, with a 1997 version).
+  - manufacturer.sunwise:
+      expect: { name: Sunwise }
+      cite: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+      description: |
+        Sunwise (サンワイズ) was a Japanese amusement-game manufacturer based in [[location:japan/tokyo/mitaka]]. It made [[model:american-battle-dome]] (1995), adapting Tsukuda Original's [[franchise:battle-dome]] toy.

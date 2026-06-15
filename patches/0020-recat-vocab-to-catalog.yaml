@@ -1,0 +1,72 @@
+attribution: flipcommons-catalog
+description: >
+  Re-attribute the vocabulary entries that patches 0004, 0007 and 0009
+  wrongly attributed to flip-museum. Those patches should have used
+  flipcommons-catalog (only 0001 and 0006, sourced from the museum's own
+  data, belong to flip-museum). This patch re-asserts the vocab fields
+  (name, slug, display_order) — plus the production-status definitions,
+  which are curated catalog text, not AI prose — under flipcommons-catalog.
+  Entity descriptions for tags and game formats move to the AI sources in
+  0021/0022. The flip-museum claims are retracted in 0023.
+claims:
+  # ── production statuses (created by 0004; one-off tightened, aftermarket
+  #    added by 0007). Definitions are catalog vocab text → flipcommons-catalog.
+  - production-status.produced:
+      name: Produced
+      slug: produced
+      display_order: 1
+      description: >
+        Games that have been commercially produced, even if in limited
+        quantity.
+  - production-status.announced:
+      name: Announced
+      slug: announced
+      display_order: 2
+      description: >
+        Games that have been announced by the manufacturer but not yet in
+        production.
+  - production-status.unreleased:
+      name: Unreleased
+      slug: unreleased
+      display_order: 3
+      description: >
+        Games that were intended for commercial production but never reached it;
+        the project was cancelled, shelved or abandoned.
+  - production-status.one-off:
+      name: One-off
+      slug: one-off
+      display_order: 4
+      description: >
+        One-of-a-kind or few-of-a-kind machines built by a manufacturer but never
+        intended for commercial production - e.g. gifts, movie props and test pieces.
+  - production-status.aftermarket:
+      name: Aftermarket
+      slug: aftermarket
+      display_order: 5
+      description: >
+        Machines modified by someone other than the original manufacturer
+        (fan re-themes, operators, modders); not an official commercial release.
+  # ── re-theme tags (created by 0007). Vocab only; descriptions → 0022.
+  - tag.unofficial-retheme:
+      name: Unofficial re-theme
+      slug: unofficial-retheme
+  - tag.manufacturer-retheme:
+      name: Manufacturer re-theme
+      slug: manufacturer-retheme
+  # ── non-pinball game formats (created by 0009). Vocab only; descriptions → 0021.
+  - game-format.slot-machine:
+      name: Slot Machine
+      slug: slot-machine
+      display_order: 5
+  - game-format.video-game:
+      name: Video Game
+      slug: video-game
+      display_order: 6
+  - game-format.gun-game:
+      name: Gun Game
+      slug: gun-game
+      display_order: 7
+  - game-format.miscellaneous:
+      name: Miscellaneous Non-Pinball Game
+      slug: miscellaneous
+      display_order: 8

@@ -1,0 +1,319 @@
+attribution: flipcommons-catalog
+description: >
+  Early-Japanese models.
+claims:
+  - model.home-run-nihon-tenbo:
+      create: true
+      note: 'The eremeka catalog dates this baseball game to approximately 1967 (marked ~) by Nihon Tenbo.'
+      cite: https://earlyarcadesjapan.blogspot.com/2023/01/home-run-by-japan-outlook-entertainment.html
+      name: 'Home Run (ホームランゲーム)'
+      year: 1967
+      title: home-run-nihon-tenbo
+      corporate_entity: nihon-tenbo-goraku-sha
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [baseball]
+      abbreviation: [ホームランゲーム]
+  - model.soccer-ace:
+      create: true
+      note: 'The eremeka catalog lists "1969 Socker Ace (Soccer Ace) by Nihon Tenbo".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Soccer Ace (サッカーエース)'
+      year: 1969
+      title: soccer-ace
+      corporate_entity: nihon-tenbo-goraku-sha
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [soccer]
+      abbreviation: [サッカーエース]
+  - model.beat-spark:
+      expect: { ipdb_id: 6771 }
+      note: 'The eremeka catalog lists "1970 Beat & Spark [Socker] by Tokyo Corporation & Nihon Tenbo"; flipcommons held it with no maker (IPDB: "Unknown Manufacturer").'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      corporate_entity: nihon-tenbo-goraku-sha
+      year: 1970
+      game_format: pinball
+      theme: [soccer]
+  - model.jumbokick:
+      expect: { ipdb_id: 6772 }
+      note: 'The eremeka catalog lists "1970 Jumbo Kick by Tokyo Corporation & Nihon Tenbo"; flipcommons held it with no maker (IPDB: "Unknown Manufacturer").'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      corporate_entity: nihon-tenbo-goraku-sha
+      year: 1970
+      game_format: pinball
+      theme: [martial-arts]
+  - model.soccer-8:
+      create: true
+      note: 'The eremeka catalog dates this soccer game to approximately 1967 (marked ~) by Kato.'
+      cite: https://earlyarcadesjapan.blogspot.com/2024/02/blog-post.html
+      name: 'Soccer 8 (サッカー8)'
+      year: 1967
+      title: soccer-8
+      corporate_entity: kato
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [soccer]
+      abbreviation: [サッカー8]
+  - model.rocket-v:
+      create: true
+      note: 'The eremeka catalog lists "1970 Rocket V by Showa Yuen".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Rocket V (ロケットV)'
+      year: 1970
+      title: rocket-v
+      corporate_entity: showa-yuen
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [space, science-fiction]
+      abbreviation: [ロケットV]
+  - model.space-patrol-childrens:
+      create: true
+      note: 'The eremeka catalog dates this to approximately 1968 (marked ~) by Children''s Amusement Park Facilities.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Space Patrol (宇宙パトロール)'
+      year: 1968
+      title: space-patrol-childrens
+      corporate_entity: childrens-amusement-park-facilities
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [space, science-fiction]
+      abbreviation: [宇宙パトロール]
+  - model.muden-kun:
+      create: true
+      note: 'The eremeka catalog lists "1999 Muden Kun [shooting game] by Banpresto", a prize-dispenser flipper game.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Muden Kun (むでんくん)'
+      year: 1999
+      title: muden-kun
+      corporate_entity: banpresto
+      game_format: miscellaneous
+      abbreviation: [むでんくん]
+  - model.kinnikuman-ii-power-mucho:
+      create: true
+      note: 'The eremeka catalog lists "2002 Kinnikuman II Power Mucho by Banpresto", a licensed Kinnikuman prize-dispenser flipper game.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ)'
+      year: 2002
+      title: kinnikuman-ii-power-mucho
+      corporate_entity: banpresto
+      game_format: miscellaneous
+      theme: [licensed]
+      abbreviation: [キン肉マン2世 パワームーチョ]
+  - model.target-machine-base-ball:
+      create: true
+      note: 'The eremeka catalog lists "2007 Target Machine Base Ball by Tomato Land", a candy-vending flipper game.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Target Machine Base Ball (ターゲットマシン ベースボール)'
+      year: 2007
+      title: target-machine-base-ball
+      corporate_entity: tomato-land
+      game_format: miscellaneous
+      theme: [baseball]
+      abbreviation: [ターゲットマシン ベースボール]
+  - model.target-machine-type-1:
+      create: true
+      note: 'The eremeka catalog dates this Target Machine (Tropical Q) to approximately 2007 (marked ~) by Tomato Land.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Target Machine Type 1 (ターゲットマシン タイプ１)'
+      year: 2007
+      title: target-machine-type-1
+      corporate_entity: tomato-land
+      game_format: miscellaneous
+      abbreviation: [ターゲットマシン タイプ１]
+  - model.target-machine-pirates:
+      create: true
+      note: 'The eremeka catalog dates this pirate-themed Target Machine to approximately 2010 (marked ~) by Tomato Land.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Target Machine Pirates (ターゲットマシン パイレーツ)'
+      year: 2010
+      title: target-machine-pirates
+      corporate_entity: tomato-land
+      game_format: miscellaneous
+      theme: [pirates, boats]
+      abbreviation: [ターゲットマシン パイレーツ]
+  - model.slap-shot-towa:
+      create: true
+      note: 'The eremeka catalog lists "1996 Slap Shot by Towa", a hockey flipper game (also shown in a 1997 version).'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Slap Shot (スラップショット)'
+      year: 1996
+      title: slap-shot-towa
+      corporate_entity: towa
+      game_format: miscellaneous
+      theme: [hockey]
+      abbreviation: [スラップショット]
+  - model.american-battle-dome:
+      create: true
+      note: 'The eremeka catalog lists "1995 American Battle Dome by Sunwise & Tsukuda Original".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'American Battle Dome (アメリカンバトルゲーム)'
+      year: 1995
+      title: american-battle-dome
+      corporate_entity: sunwise
+      game_format: miscellaneous
+      abbreviation: [アメリカンバトルゲーム]
+  - model.ultra-spark:
+      create: true
+      note: 'The eremeka catalog dates this kaiju/mecha game to approximately 1972 (marked ~), co-credited to Nihon Gorakuki and Nihon Tenbo.'
+      cite: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
+      name: 'Ultra Spark (ウルトラスパーク)'
+      year: 1972
+      title: ultra-spark
+      corporate_entity: japan-amusement-machine-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [monsters, robots, licensed]
+      abbreviation: [ウルトラスパーク]
+  - model.rodeo-game-mate:
+      create: true
+      note: 'The eremeka catalog dates this to approximately 1969 (marked ~) by Nihon Jidou Hanbaiki (Game Mate).'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Rodeo (ロデオ)'
+      year: 1969
+      title: rodeo-game-mate
+      corporate_entity: japan-automatic-vending-machine-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [rodeo]
+      abbreviation: [ロデオ]
+  - model.crazy-15-mark-ii:
+      create: true
+      note: 'The eremeka catalog lists "1965 Crazy 15 game [mark II] by Komaya".'
+      cite: https://earlyarcadesjapan.blogspot.com/2022/03/15-crazy-15-by-komaya.html
+      name: 'Crazy 15 [Mark II] (クレイジー15ゲーム)'
+      year: 1965
+      title: crazy-15-mark-ii
+      corporate_entity: komaya-co-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      abbreviation: [クレイジー15ゲーム]
+  - model.crazy-15-mark-iii:
+      create: true
+      note: 'The eremeka catalog lists "1969 Crazy 15 game mark III by Komaya".'
+      cite: https://earlyarcadesjapan.blogspot.com/2022/04/1970-15-2nd-version-crazy-15-by-komaya.html
+      name: 'Crazy 15 [Mark III] (クレイジー15ゲーム)'
+      year: 1969
+      title: crazy-15-mark-iii
+      corporate_entity: komaya-co-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      abbreviation: [クレイジー15ゲーム]
+  - model.pocket-ball:
+      create: true
+      note: 'The eremeka catalog lists "1974 Pocket Ball by Komaya".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Pocket Ball (ポケットボール)'
+      year: 1974
+      title: pocket-ball
+      corporate_entity: komaya-co-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [tennis]
+      abbreviation: [ポケットボール]
+  - model.ronin:
+      create: true
+      note: 'The eremeka catalog lists "1970 Ronin by Komaya".'
+      cite: https://earlyarcadesjapan.blogspot.com/2023/05/1970-ronin.html
+      name: 'Ronin (浪人)'
+      year: 1970
+      title: ronin
+      corporate_entity: komaya-co-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [japanese-culture, martial-arts]
+      abbreviation: [浪人]
+  - model.saturn-komaya:
+      create: true
+      note: 'The eremeka catalog dates this space-themed game to approximately 1969 (marked ~) by Komaya.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Saturn (サターン号)'
+      year: 1969
+      title: saturn-komaya
+      corporate_entity: komaya-co-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [space, science-fiction]
+      abbreviation: [サターン号]
+  - model.ware-sea-rover:
+      create: true
+      note: 'The eremeka catalog dates this pirate game to approximately 1969 (marked ~) by Komaya.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Ware Sea Rover (海賊ゲーム)'
+      year: 1969
+      title: ware-sea-rover
+      corporate_entity: komaya-co-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [pirates, boats]
+      abbreviation: [海賊ゲーム]
+  - model.advantage:
+      create: true
+      note: 'The eremeka catalog lists "1976 Advantage by Sankyo", a tennis game.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Advantage (アドバンテージ)'
+      year: 1976
+      title: advantage
+      corporate_entity: sankyo-precision-equipment-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [tennis]
+      abbreviation: [アドバンテージ]
+  - model.american-football:
+      create: true
+      note: 'The eremeka catalog lists "1976 American Football by Sankyo".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'American Football (アメリカンフットボール)'
+      year: 1976
+      title: american-football
+      corporate_entity: sankyo-precision-equipment-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [american-football, america]
+      abbreviation: [アメリカンフットボール]
+  - model.big-race-sankyo:
+      create: true
+      note: 'The eremeka catalog dates this to approximately 1969 (marked ~) by Sankyo; Early Arcades Japan notes it "appeared in the 1969 machine directory, but could be from an earlier year."'
+      cite: https://earlyarcadesjapan.blogspot.com/2024/06/big-race-by-sankyo.html
+      name: 'Big Race (ビックレース)'
+      year: 1969
+      title: big-race-sankyo
+      corporate_entity: sankyo-precision-equipment-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [cars]
+      abbreviation: [ビックレース]
+  - model.japan-series:
+      create: true
+      note: 'The eremeka catalog dates this baseball game to approximately 1969 (marked ~) by Sankyo.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Japan Series (日本シリーズ)'
+      year: 1969
+      title: japan-series
+      corporate_entity: sankyo-precision-equipment-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [baseball]
+      abbreviation: [日本シリーズ]
+  - model.new-world-series:
+      create: true
+      note: 'Early Arcades Japan says "The 1976 re-release is referred to as New World Series in Sankyo''s advertisements."'
+      cite: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
+      name: 'New World Series (ニューワールドシリーズ)'
+      year: 1976
+      title: new-world-series
+      corporate_entity: sankyo-precision-equipment-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      theme: [baseball]
+      abbreviation: [ニューワールドシリーズ]
+  - model.orienteering:
+      create: true
+      note: 'The eremeka catalog lists "1976 Orienteering by Universal".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Orienteering (オリエンテーリング)'
+      year: 1976
+      title: orienteering
+      corporate_entity: universal-company-ltd
+      game_format: pinball
+      technology_generation: electromechanical
+      abbreviation: [オリエンテーリング]

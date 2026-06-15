@@ -1,0 +1,62 @@
+attribution: flipcommons-catalog
+description: >
+  New early-Japanese manufacturers, with aliases.
+claims:
+  - manufacturer.nihon-tenbo:
+      create: true
+      note: 'The eremeka catalog credits 日本展望娯楽社 ("Nihon Tenbo / Japan Outlook Entertainment Company", abbreviated Nitten) with early Japanese flipper games c.1967-1972.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Nihon Tenbo
+      manufacturer_alias: [Nitten]
+  - manufacturer.kato:
+      create: true
+      note: 'The eremeka catalog credits カトウ (Kato) with the EM soccer game Soccer 8 c.1967.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Kato
+  - manufacturer.showa-yuen:
+      create: true
+      note: 'The eremeka catalog credits 昭和遊園 (Showa Yuen) with the space-themed flipper game Rocket V in 1970.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Showa Yuen
+  - manufacturer.childrens-amusement-park-facilities:
+      create: true
+      note: 'The eremeka catalog credits 児童遊園設備 ("Children''s Amusement Park Facilities") with the space-patrol EM game c.1968.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Children's Amusement Park Facilities
+  - manufacturer.banpresto:
+      create: true
+      note: 'In the eremeka catalog, Banpresto appears for two prize-dispenser flipper games (1999 and 2002).'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Banpresto
+      manufacturer_alias: [バンプレスト]
+  - manufacturer.tomato-land:
+      create: true
+      note: 'In the eremeka catalog, Tomato Land appears for candy-vending "Target Machine" flipper games (2007-2010).'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Tomato Land
+      manufacturer_alias: [トマトランド]
+  - manufacturer.towa:
+      create: true
+      note: 'The eremeka catalog credits トーワ (Towa) with the hockey flipper game Slap Shot c.1996.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Towa
+  - manufacturer.sunwise:
+      create: true
+      note: 'In the eremeka catalog, Sunwise appears for American Battle Dome (1995), co-developed with Tsukuda Original.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: Sunwise
+  - manufacturer.sankyo-seiki:
+      expect: { name: Sankyo Seiki }
+      manufacturer_alias: [三共]
+  - manufacturer.sankyo-yuen-setsubi-kabushikigaisha:
+      expect: { name: Sankyo Yuen Setsubi Kabushikigaisha }
+      manufacturer_alias: [三共]
+  - manufacturer.komaya-seisakusho:
+      expect: { name: Komaya Seisakusho }
+      manufacturer_alias: [こまや]
+  - manufacturer.universal:
+      expect: { name: Universal }
+      manufacturer_alias: [ユニバーサル]
+  - manufacturer.nihon-jidou-hanbaiki-kabushikigaisha:
+      expect: { name: Nihon Jidou Hanbaiki Kabushikigaisha }
+      manufacturer_alias: [Game Mate]

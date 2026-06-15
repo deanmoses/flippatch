@@ -1,0 +1,8 @@
+attribution: ipdb
+description: >
+  IPDB asserts no Williams-brand link for Dennard-Williams & Dennard (a separate
+  Henderson, Texas firm); our early parse fabricated one by name-matching on
+  "Williams". Remove IPDB's fabricated manufacturer claim.
+claims:
+  - corporate-entity.dennard-williams-dennard:
+      retract: [manufacturer]

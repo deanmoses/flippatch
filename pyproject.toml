@@ -1,0 +1,144 @@
+[project]
+name = "flippatch"
+version = "0.1.0"
+description = "Pinball catalog data patches — source-attributed YAML claim corrections, schema, and transport tooling"
+requires-python = ">=3.12"
+dependencies = [
+    "pyyaml",
+    "jsonschema",
+    "boto3",
+    "python-dotenv",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["scripts", "patches/authoring"]
+testpaths = ["tests"]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+    "pytest>=9.0.2",
+    "mypy>=1.18.2",
+    "ruff>=0.14.6",
+    "boto3-stubs[s3]>=1.42.72",
+    "types-PyYAML",
+    "types-jsonschema",
+]
+
+[tool.ruff]
+target-version = "py314"
+# force-exclude so the excludes below apply even when pre-commit passes file
+# paths explicitly (otherwise ruff lints/formats excluded paths on commit).
+force-exclude = true
+exclude = [
+    ".git",
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    # Frozen per-patch generators under patches/authoring/NNNN-*/ are one-shot
+    # audit artifacts that reproduce already-shipped patches — already formatted
+    # to house style, but not lint-gated. The shared, maintained patchkit.py is
+    # NOT excluded.
+    "patches/authoring/[0-9][0-9][0-9][0-9]-*",
+]
+
+[tool.ruff.lint]
+# Full rule set, mirroring sister repo pinexplore (stricter than flipcommons,
+# which selects only ANN401): the ANN family enforces complete annotations.
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "C4",     # flake8-comprehensions
+    "S",      # flake8-bandit (security)
+    "T20",    # flake8-print
+    "DTZ",    # flake8-datetimez (naive datetime bugs)
+    "SIM",    # flake8-simplify
+    "PT",     # flake8-pytest-style
+    "LOG",    # flake8-logging
+    "G",      # flake8-logging-format
+    "PGH",    # pygrep-hooks (blanket noqa/type-ignore)
+    "ISC",    # flake8-implicit-str-concat
+    "ANN",    # flake8-annotations — require full annotations (stricter than flipcommons)
+    "RET",    # flake8-return
+    "PTH",    # flake8-use-pathlib
+    "PERF",   # perflint
+    "FURB",   # refurb (modernization)
+    "TC",     # flake8-type-checking
+    "RUF",    # ruff-specific rules
+]
+ignore = [
+    "E501",   # Line too long — handled by formatter
+    "S101",   # Use of assert — okay in tests (also per-file-ignored below)
+    "S311",   # Use of random — not cryptographic in this app
+    "PT019",  # Underscore-prefix fixtures are the pytest idiom for side-effect-only fixtures
+    "ISC001", # Conflicts with the formatter
+    # Ambiguous-unicode rules — this repo deliberately authors editorial text
+    # (smart quotes, en-dashes) in comments, lint messages, and patch data.
+    "RUF001", # ambiguous char in string
+    "RUF002", # ambiguous char in docstring
+    "RUF003", # ambiguous char in comment
+]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*.py" = ["S101", "S106", "S603", "S607", "S506", "ANN", "PT011"]  # asserts, test creds, subprocess, project strict-loader, untyped tests, broad raises
+"tests/conftest.py" = ["S101", "ANN"]
+"scripts/**/*.py" = ["T201"]  # CLI scripts legitimately print
+"patches/authoring/**/*.py" = ["T201"]  # patch generators legitimately print
+
+[tool.ruff.lint.isort]
+section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "lf"
+
+[tool.mypy]
+python_version = "3.14"
+strict = true
+# Resolve the script subpackages (scripts/<group>/*.py, patches/authoring/*.py)
+# the same way pytest's `pythonpath` does, so `mypy .` sees the same module
+# names tests import (e.g. `patch_validation.validate_patches`).
+mypy_path = ["scripts", "patches/authoring"]
+explicit_package_bases = true
+# Beyond `strict` — flipcommons stops at strict=true; these are the aggressive
+# flags strict deliberately leaves off (mirrors pinexplore).
+warn_unreachable = true
+extra_checks = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+enable_error_code = [
+    "redundant-expr",
+    "possibly-undefined",
+    "truthy-bool",
+    "truthy-iterable",
+    "ignore-without-code",
+    "unused-awaitable",
+    "explicit-override",
+    "mutable-override",
+    "unimported-reveal",
+    "deprecated",
+]
+exclude = [
+    "\\.venv/",
+    # Frozen per-patch generators (see the ruff lint.exclude note above).
+    "patches/authoring/[0-9]{4}-",
+]
+
+[[tool.mypy.overrides]]
+# Tests favor readability over exhaustive annotation. `tests/` is a package
+# (tests/__init__.py) so `tests.*` matches under both `mypy .` and a per-file
+# IDE check — unlike `exclude`, which mypy ignores for explicitly-passed paths.
+module = ["tests.*"]
+disallow_untyped_defs = false
+disallow_incomplete_defs = false
+disallow_untyped_decorators = false
+disallow_untyped_calls = false
+check_untyped_defs = false

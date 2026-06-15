@@ -1,0 +1,43 @@
+attribution: flipcommons-catalog
+description: >
+  Additional details about some early-Japanese EM models.
+claims:
+  - model.dai-uchuu-ryokou:
+      expect: { ipdb_id: 5572 }
+      changesets:
+        - note: 'IPDB says "Bulb scoring, no score reels. [...] Wedge head backbox.", notes "we saw no coin slots on the front door of the cabinet. A single coin drop appeared to be on the lockdown bar.", and says the game "is based on a sugoroku game, a Japanese variety of Parcheesi."'
+          cite: ipdb:5572
+          display_type: backglass-lights
+          cabinet: floor
+          game_format: miscellaneous
+        - note: 'Early Arcades Japan dates this "1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)".'
+          cite: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          year: 1970
+  - model.fishing-tengu:
+      expect: { ipdb_id: 6872 }
+      changesets:
+        - note: 'IPDB says "It may have mechanical backbox animation. We notice a red knob on the front of the cabinet, below the regular ball shooter knob."'
+          cite: ipdb:6872
+          cabinet: floor
+        - note: 'Early Arcades Japan dates this "1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)".'
+          cite: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          year: 1973
+  - model.attack-ball:
+      expect: { ipdb_id: 6874 }
+      changesets:
+        - note: 'IPDB says "It dispenses prizes into a receptacle at the bottom of the cabinet front. The backbox appears to display several race car toys [...] The unusual lower cabinet appears to be padded or upholstered."'
+          cite: ipdb:6874
+          cabinet: floor
+          game_format: miscellaneous
+        - note: 'Early Arcades Japan dates this "1975 Attack Ball - アタック ボール by 三共 (Sankyo)".'
+          cite: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          year: 1975
+  - model.circus-16:
+      expect: { ipdb_id: 6871 }
+      changesets:
+        - note: 'IPDB says "Wedge head." and "It may have mechanical backbox animation in the form of balls rolling down an angled viewing window [...]".'
+          cite: ipdb:6871
+          cabinet: floor
+        - note: 'Early Arcades Japan dates this "1975 サーカス (Circus) by 三共 (Sankyo)".'
+          cite: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          year: 1975

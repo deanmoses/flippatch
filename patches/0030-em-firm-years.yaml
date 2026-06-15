@@ -1,0 +1,42 @@
+attribution: flipcommons-catalog
+description: >
+  Populate corporate-entity active years for four early Chicago-era makers 0029 left unset (no
+  English Wikipedia article): Genco, Exhibit Supply, J. H. Keeney and Stoner. Genco/Exhibit
+  cite Wikipedia's List of pinball manufacturers; Keeney and Stoner cite two new roots created
+  below (American Jukebox History, Aurora Historical Society).
+sources:
+  - name: American Jukebox History
+    source_type: web
+    description: Reference site on American coin-operated music and amusement makers, including company factory histories (e.g. J. H. Keeney & Co.).
+    links:
+      - { url: "https://www.jukeboxhistory.info/", label: American Jukebox History, link_type: homepage }
+  - name: Aurora Historical Society
+    source_type: web
+    description: Local-history museum for Aurora, Illinois; publishes histories of Aurora manufacturers including Stoner Manufacturing Corporation.
+    links:
+      - { url: "https://aurorahistory.org/", label: Aurora Historical Society, link_type: homepage }
+claims:
+  - corporate-entity.exhibit-supply-company:
+      expect: { ipdb_manufacturer_id: 117 }
+      note: 'Wikipedia''s "List of pinball manufacturers" lists "Exhibit Supply Company (1901-1979; pinball manufacturing 1932-1957)."'
+      cite: https://en.wikipedia.org/wiki/List_of_pinball_manufacturers
+      year_start: 1901
+      year_end: 1979
+  - corporate-entity.genco-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 130 }
+      note: 'Wikipedia''s "List of pinball manufacturers" lists "Genco (1931-1958)."'
+      cite: https://en.wikipedia.org/wiki/List_of_pinball_manufacturers
+      year_start: 1931
+      year_end: 1958
+  - corporate-entity.j-h-keeney-and-company-incorporated:
+      expect: { ipdb_manufacturer_id: 162 }
+      note: 'American Jukebox History says "The firm of Keeney and Sons was terminated in November, 1933, and in January, 1934, Jack Keeney organized his own company [...] as J.H. Keeney and Company," and that "The last pin game by J.H. Keeney & Co. was the Keeney''s 1964 ''Arrowhead'' which was first and only listed on August 29, 1964."'
+      cite: https://www.jukeboxhistory.info/keeney/history.html
+      year_start: 1934
+      year_end: 1964
+  - corporate-entity.stoner-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 304 }
+      note: 'Aurora Historical Society says "The family-operated Stoner Manufacturing Corporation began in 1931 as a maker of pinball machines, producing nearly 100 different models throughout the decade," that "In 1941, they retooled and produced munitions for the war effort during World War II," and that "After the war, Stoner became a leading producer of coin-operated vending machines [...]."'
+      cite: https://aurorahistory.org/made-in-aurora-davy-jones-pinball-machine/
+      year_start: 1931
+      year_end: 1941

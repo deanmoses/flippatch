@@ -1,0 +1,26 @@
+attribution: flipcommons-catalog
+description: >
+  Assign each new active maker's headquarters city (the HQ, not a contract
+  factory) to its corporate entity. Cities created in 0040; Bergamo province in
+  0039. Structured catalog data the AI descriptions reference.
+claims:
+  - corporate-entity.wonderland-amusements:
+      expect: { name: Wonderland Amusements }
+      note: 'B2B Hint records Wonderland Amusements LLC''s legal address as "134 HADDON AVE, WEST BERLIN, NJ, 08091" — the West Berlin, NJ home of CEO Jerry Cummings'' ThinkUp.'
+      cite: https://b2bhint.com/en/company/us-ca/wonderland-amusements-llc--B20250303120
+      location: [usa/nj/west-berlin]
+  - corporate-entity.pawlowski-pinball:
+      expect: { name: Pawlowski Pinball }
+      note: 'BizProfiles: "PAWLOWSKI PINBALL LLC [...] is located at 186 BLUE FLAX PT, LONGWOOD, FL, 32750, US."'
+      cite: https://bisprofiles.com/fl/pawlowski-pinball-l21000070173
+      location: [usa/fl/longwood]
+  - corporate-entity.ramps-pinball:
+      expect: { name: "Ramp's Pinball" }
+      note: 'Ramp''s Pinball''s contact page gives its location as "Made In Odessa, FL USA."'
+      cite: https://www.rampspinball.com/contact
+      location: [usa/fl/odessa]
+  - corporate-entity.euro-pinball-corp:
+      expect: { name: Euro Pinball Corp }
+      note: 'Euro Pinball Corp''s contact page gives its address as "Euro Pinball Corp. S.R.L., Via Martin Luther King, 3, 24060 Bagnatica (BG) ITALY."'
+      cite: https://www.europinball.net/contact
+      location: [italy/bg/bagnatica]

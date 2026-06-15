@@ -1,0 +1,41 @@
+attribution: flipcommons-catalog
+description: >
+  Split six unrelated 1930s-40s firms out of the Stern Electronics brand. Our
+  early IPDB parse fabricated a link to Stern and that error propagated into
+  the flipcommons-catalog seed.
+claims:
+  - manufacturer.western-electric-piano:
+      name: Western Electric Piano
+      create: true
+  - corporate-entity.western-electric-piano-company:
+      manufacturer: western-electric-piano
+
+  - manufacturer.western-manufacturing:
+      name: Western Manufacturing
+      create: true
+  - corporate-entity.western-manufacturing-company:
+      manufacturer: western-manufacturing
+
+  - manufacturer.northwestern-mail-box:
+      name: Northwestern Mail Box
+      create: true
+  - corporate-entity.northwestern-mail-box-company:
+      manufacturer: northwestern-mail-box
+
+  - manufacturer.southwestern-novelty:
+      name: Southwestern Novelty
+      create: true
+  - corporate-entity.southwestern-novelty-company:
+      manufacturer: southwestern-novelty
+
+  - manufacturer.western-equipment-supply:
+      name: Western Equipment & Supply
+      create: true
+  - corporate-entity.western-equipment-supply-company:
+      manufacturer: western-equipment-supply
+
+  - manufacturer.western-products:
+      name: Western Products
+      create: true
+  - corporate-entity.western-products-incorporated:
+      manufacturer: western-products

@@ -1,0 +1,169 @@
+attribution: flipcommons-catalog
+description: >
+  Assign game_format = pitch-and-bat, shuffle or bagatelle.
+claims:
+  - model.base-ball:
+      expect: { ipdb_id: 6813 }
+      note: 'IPDB says "Hit a ball that come from pitcher by the bat, and the ball into the hole of Hit or Homerun."'
+      cite: ipdb:6813
+      game_format: pitch-and-bat
+  - model.bat-a-score:
+      expect: { ipdb_id: 2910 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:2910
+      game_format: pitch-and-bat
+  - model.batting-practice-2:
+      expect: { ipdb_id: 5574 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:5574
+      game_format: pitch-and-bat
+  - model.batting-practice-3:
+      expect: { ipdb_id: 6036 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:6036
+      game_format: pitch-and-bat
+  - model.berlin-or-bust:
+      expect: { ipdb_id: 5681 }
+      note: 'IPDB says "The depiction of Adolf Hitler on the playfield dates this bagatelle to World War II."'
+      cite: ipdb:5681
+      game_format: bagatelle
+  - model.black-beauty-game:
+      expect: { ipdb_id: 5997 }
+      note: 'IPDB says "This bagatelle is a pin table with hinged legs for folding."'
+      cite: ipdb:5997
+      game_format: bagatelle
+  - model.bonus-baseball:
+      expect: { ipdb_id: 350 }
+      note: 'IPDB says "''Bonus Baseball'' is the last bat game from this manufacturer."'
+      cite: ipdb:350
+      game_format: pitch-and-bat
+  - model.bowlette:
+      expect: { ipdb_id: 3661 }
+      note: 'IPDB says "''Bowlette'' is a miniature shuffle alley."'
+      cite: ipdb:3661
+      game_format: shuffle
+  - model.corinthian-21t:
+      expect: { ipdb_id: 4944 }
+      note: 'IPDB says "The nameplate reads: This board is the tournament model and recognized by the Corinthian Bagatelle Association, Guaranteed Finland Base."'
+      cite: ipdb:4944
+      game_format: bagatelle
+  - model.corinthian-twinity:
+      expect: { ipdb_id: 5375 }
+      note: 'IPDB says "This bagatelle has a shooter lane on both left and right sides of playfield, each with a spring-loaded plunger."'
+      cite: ipdb:5375
+      game_format: bagatelle
+  - model.de-luxe-world-series:
+      expect: { ipdb_id: 661 }
+      note: 'IPDB says "The backglass on this bat game displays the name ''De Luxe World Series''."'
+      cite: ipdb:661
+      game_format: pitch-and-bat
+  - model.deluxe-super-slugger:
+      expect: { ipdb_id: 2442 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:2442
+      game_format: pitch-and-bat
+  - model.dingbat:
+      expect: { ipdb_id: 5966 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:5966
+      game_format: pitch-and-bat
+  - model.gold-star-3:
+      expect: { ipdb_id: 1040 }
+      note: 'IPDB says "Gold Star bagatelles of circa 1933 were made in three versions, and numbered here: #1 - Chrome Triangular sides and bottom apron showing date - Round Metal Top - (24" x 14") w/label."'
+      cite: ipdb:1040
+      game_format: bagatelle
+  - model.gold-star-6:
+      expect: { ipdb_id: 4898 }
+      note: 'IPDB says "Gold Star bagatelles of copyright 1934 were made in two Round Metal Top versions and are numbered here: 1) Brown spotted Triangular sides and bottom apron showing date 1934 (24" x 14") w/label 2) Green Triangular sides and bottom apron [...]"'
+      cite: ipdb:4898
+      game_format: bagatelle
+  - model.home-run-9:
+      expect: { ipdb_id: 4767 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:4767
+      game_format: pitch-and-bat
+  - model.hy-ball:
+      expect: { ipdb_id: 4758 }
+      note: 'IPDB says "Lindstrom''s first bagatelle game."'
+      cite: ipdb:4758
+      game_format: bagatelle
+  - model.indian-chief:
+      expect: { ipdb_id: 5521 }
+      note: 'IPDB says "Reportedly, this is the rarest model of all Lindstrom bagatelle games."'
+      cite: ipdb:5521
+      game_format: bagatelle
+  - model.league-leader-2:
+      expect: { ipdb_id: 3209 }
+      note: 'IPDB says "The two Pitch and Bat buttons are not on the lockdown bar like most baseball games, but are placed on the sides of the cabinet where flipper buttons are located on pinball machines."'
+      cite: ipdb:3209
+      game_format: pitch-and-bat
+  - model.pennant-fever:
+      expect: { ipdb_id: 3335 }
+      note: 'IPDB says "The first ''pitch & bat'' baseball game by Williams to use solid state electronics."'
+      cite: ipdb:3335
+      game_format: pitch-and-bat
+  - model.pickwick:
+      expect: { ipdb_id: 5431 }
+      note: 'IPDB says "Vertical playfield bagatelle."'
+      cite: ipdb:5431
+      game_format: bagatelle
+  - model.pickwick-improved:
+      expect: { ipdb_id: 5432 }
+      note: 'IPDB says "Vertical playfield bagatelle."'
+      cite: ipdb:5432
+      game_format: bagatelle
+  - model.pitchem-batem:
+      expect: { ipdb_id: 4700 }
+      note: 'IPDB says "The bat is angled to give the ball elevation, making this a game that is played vertically instead of horizontally like other pitch & bats."'
+      cite: ipdb:4700
+      game_format: pitch-and-bat
+  - model.poker-ball:
+      expect: { ipdb_id: 4894 }
+      note: 'IPDB says "This bagatelle also includes rules to use it as a Fortune Telling Game."'
+      cite: ipdb:4894
+      game_format: bagatelle
+  - model.shuffle-king-shuffle-board:
+      expect: { ipdb_id: 3245 }
+      note: 'IPDB says "Chicago Coin documentation refers to this Model 120 as "Shuffle Board" and also shows production began Oct-6-1948, the same day that they started making Chicago Coin''s 1948 ''Shuffle-King Score Board'', a scoreboard device for their [...]"'
+      cite: ipdb:3245
+      game_format: shuffle
+  - model.skill-ball-junior:
+      expect: { ipdb_id: 6049 }
+      note: 'IPDB says "The company name of ''Southwest Game Company'' is stamped on the back of each example of this bagatelle for which we have the pictures."'
+      cite: ipdb:6049
+      game_format: bagatelle
+  - model.star-slugger:
+      expect: { ipdb_id: 3502 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:3502
+      game_format: pitch-and-bat
+  - model.star-super-slugger:
+      expect: { ipdb_id: 4737 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:4737
+      game_format: pitch-and-bat
+  - model.super-home-run:
+      expect: { ipdb_id: 4897 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:4897
+      game_format: pitch-and-bat
+  - model.texas-leaguer:
+      expect: { ipdb_id: 5507 }
+      note: 'IPDB says "Player bats the ball airborne into the bleachers for scoring."'
+      cite: ipdb:5507
+      game_format: pitch-and-bat
+  - model.unknown-8:
+      expect: { ipdb_id: 5357 }
+      note: 'IPDB says "French-Chinese bagatelle circa middle to late 1860''s."'
+      cite: ipdb:5357
+      game_format: bagatelle
+  - model.unknown-three-bell:
+      expect: { ipdb_id: 4820 }
+      note: 'IPDB says "Singer game called Parlor Bagatelle made in May 1898."'
+      cite: ipdb:4820
+      game_format: bagatelle
+  - model.whoopee-game-2:
+      expect: { ipdb_id: 5797 }
+      note: 'IPDB says "The Automatic Age ad shown here suggests this bagatelle came in two sizes."'
+      cite: ipdb:5797
+      game_format: bagatelle

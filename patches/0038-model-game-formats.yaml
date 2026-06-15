@@ -1,0 +1,12 @@
+attribution: flipcommons-catalog
+description: >
+  game_format corrections for video-display machines that sit in a pinball-style
+  cabinet but are not flipper pinball, and so default-read as pinball. Pinball-42
+  is a digital/video-monitor multigame cabinet (like Bifuca's Pinball Tronic),
+  classified miscellaneous. More may be added before ship.
+claims:
+  - model.pinball-42:
+      expect: { year: 2014 }
+      note: 'Museum of the Game says "Cabinet that is a digital pinball machine. Has five different games that can be chosen."'
+      cite: https://www.arcade-museum.com/Pinball/pinball-42
+      game_format: miscellaneous

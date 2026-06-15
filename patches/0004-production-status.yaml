@@ -1,0 +1,36 @@
+attribution: flip-museum
+description: >
+  Create the four ProductionStatus vocabulary values — produced, announced,
+  unreleased and one-off — that distinguish commercially-produced machines from
+  announced, cancelled and one-off builds. This is the museum-curated catalog
+  vocabulary; the model-level production_status claims that reference these
+  slugs land in patch 0005.
+claims:
+  - production-status.produced:
+      create: true
+      name: Produced
+      display_order: 1
+      description: >
+        Games that have been commercially produced, even if in limited
+        quantity.
+  - production-status.announced:
+      create: true
+      name: Announced
+      display_order: 2
+      description: >
+        Games that have been announced by the manufacturer but not yet in
+        production.
+  - production-status.unreleased:
+      create: true
+      name: Unreleased
+      display_order: 3
+      description: >
+        Games that were intended for commercial production but never reached it;
+        the project was cancelled, shelved or abandoned.
+  - production-status.one-off:
+      create: true
+      name: One-off
+      display_order: 4
+      description: >
+        One-of-a-kind or few-of-a-kind machines never intended for commercial
+        production, whether built by an individual or a manufacturer.

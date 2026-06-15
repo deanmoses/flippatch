@@ -1,0 +1,16 @@
+attribution: flipcommons-catalog
+description: >
+  IPDB mfr 676 ("Chicago Coin Machinery Company") is a duplicate of Chicago Coin
+  (IPDB mfr 81). Reattribute its sole game to the canonical entity and give that
+  entity the Chicago location it was missing.
+claims:
+  - model.charm-2:
+      expect: { ipdb_id: 6184 }
+      note: 'IPDB attributes Charm to "Chicago Coin Machinery Company, of Chicago, Illinois (1932)" but with short name "Chicago Coin" -- a name-variant of Chicago Coin Machine Manufacturing Company (IPDB mfr 81). No corporate-history source records a separate "Chicago Coin Machinery Company", so this game is reattributed to the canonical entity.'
+      cite: ipdb:6184
+      corporate_entity: chicago-coin-machine-manufacturing-company
+  - corporate-entity.chicago-coin-machine-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 81 }
+      note: 'Wikipedia says "Chicago Coin was one of the early major manufacturers of pinball tables founded in Chicago, Illinois."'
+      cite: https://en.wikipedia.org/wiki/Chicago_Coin
+      location: [usa/il/chicago]

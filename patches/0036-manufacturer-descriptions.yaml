@@ -1,0 +1,171 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: >
+  Narrative descriptions for pinball manufacturers, each grounded in the catalog
+  itself plus a single cited source. Catalog-derived facts (model names, years,
+  who made what, location, credited people) are uncited; external facts carry the
+  cite. Scope: the manufacturers researched for patch 0031 that lacked a description.
+claims:
+  - manufacturer.heighway-pinball:
+      expect: { name: Heighway Pinball }
+      cite: https://en.wikipedia.org/wiki/Heighway_Pinball
+      description: |
+        Heighway Pinball was a Welsh manufacturer founded in 2012 by Andrew Heighway in [[location:uk/wal/merthyr-tydfil]]. Its calling card was a thin, low cabinet whose playfield could be removed and swapped, so an owner could keep several games in one machine at a lower price. The company's first table was *[[title:full-throttle]]* (2015), a motorcycle racer, and its best-known game was the licensed *[[title:alien]]* (2016). Heighway closed its factory and went into liquidation in 2018; the rights to *Alien* were acquired by [[manufacturer:pinball-brothers]] — founded by some of Heighway's own investors — who carried the game forward.
+  - manufacturer.bifuca:
+      expect: { name: Bifuca }
+      cite: https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+      description: |
+        Bifuca (Futbolines Bifuca, S.L.) was a small Spanish company in [[location:spain/mur/murcia/murcia]]. Its entry in the pinball record, *[[title:pinball-tronic]]* (2010), was not really a pinball machine at all: it was a "virtual pinball" — a pinball-shaped cabinet with two LCD screens in place of a physical playfield, which is why the catalog files it under [[game-format:miscellaneous]] rather than pinball. A *[[title:pinball-tronic-gold]]* edition followed the same idea.
+  - manufacturer.barrels-of-fun:
+      expect: { name: Barrels of Fun }
+      cite: https://arcadeheroes.com/2025/04/14/barrels-of-fun-unveils-dune-pinball/
+      description: |
+        Barrels of Fun is a recent newcomer to pinball. Its debut was *[[title:jim-hensons-labyrinth]]* (2023); it followed with *[[title:dune]]* (2025) — billed at its reveal as the studio's second game — and *[[title:winchester-mystery-house]]* (2025), moving briskly from one licensed property to the next.
+  - manufacturer.american-girl:
+      expect: { name: American Girl }
+      cite: https://www.kineticist.com/manufacturers/american-girl
+      description: |
+        American Girl is the doll company — founded as the Pleasant Company by Pleasant Rowland in 1986 and acquired by Mattel in 1998 — not a pinball manufacturer. It earns its place here for *[[title:the-flip-side]]* (2019), a fully working, scaled-down toy pinball machine built for its 18-inch dolls: a novelty rather than a production pinball machine.
+  - manufacturer.bandai-namco:
+      expect: { name: Bandai Namco }
+      cite: https://arcadeheroes.com/2019/01/25/jaepo-2019-pinball-in-japan-bandai-namco-unveils-pac-man-panic/
+      description: |
+        Bandai Namco is the Japanese games conglomerate, not a pinball company. In the catalog it appears for *[[title:super-panic-ball]]* (2019), a head-to-head "versus pinball" arcade novelty shown at JAEPO 2019 — players facing off in multiball battles — rather than a traditional flipper machine.
+  - manufacturer.deeproot:
+      expect: { name: deeproot }
+      cite: https://www.kineticist.com/manufacturers/deeproot
+      description: |
+        deeproot Pinball was a [[location:usa/tx/san-antonio]], Texas startup founded in 2017 by attorney and entrepreneur Robert J. Mueller. It set out to reinvent the modern machine, assembling veteran designers — among them [[person:john-popadiuk]] — and promising novel features such as a touchscreen "PinBar." Its ambitions outran its delivery: the planned lineup, including *[[title:retro-atomic-zombie-adventureland]]*, never reached buyers, and in August 2021 the U.S. Securities and Exchange Commission filed an enforcement action alleging misappropriation of investor funds.
+  - manufacturer.eric-priepke:
+      expect: { name: Eric Priepke }
+      cite: https://www.kineticist.com/manufacturers/eric-priepke
+      description: |
+        Eric Priepke is an independent pinball developer and software designer, best known in the community for *[[title:cactus-canyon]]* Continued — a fan-made rework of [[manufacturer:bally]]'s Cactus Canyon credited to him in the pinball databases — and for high-quality game code, display and firmware work rather than for building machines of his own.
+  - manufacturer.for-amusement-only-games:
+      expect: { name: For Amusement Only Games }
+      cite: https://www.pinballnews.com/site/2025/07/01/steelbound-announced/
+      description: |
+        For Amusement Only Games is the label of designer Nick Baldridge, a prolific developer of games for [[manufacturer:multimorphic]]'s P3 platform. Its run of titles includes *[[title:quest-for-glory]]* (2021), *[[title:silver-falls]]* (2021), *[[title:drained]]* (2022) and *[[title:flipper-foxtrot-rhythm-explosion]]* (2022), with *Steelbound* announced in 2025 as Baldridge's sixth P3 project.
+  - manufacturer.headsup-pinball:
+      expect: { name: Headsup Pinball }
+      cite: https://pinside.com/pinball/machine/wizard-headsup-pinball
+      description: |
+        Headsup Pinball is a manufacturer in [[location:usa/tx/colleyville]]. Its debut title, *[[title:wizard-2]]* (2022), is an engaging return to [[technology-generation:electromechanical]] play — a brand-new machine built in the style that [[technology-generation:solid-state]] electronics had displaced decades earlier.
+  - manufacturer.hexa-pinball:
+      expect: { name: HEXA Pinball }
+      cite: https://www.kineticist.com/manufacturers/hexa-pinball
+      description: |
+        HEXA Pinball is a manufacturer in [[location:france/naq/gironde/martillac]], France, founded in 2023, pitching premium, made-in-France machines that pair traditional craftsmanship with modern hardware.
+  - manufacturer.ian-harrower-games:
+      expect: { name: Ian Harrower Games }
+      cite: https://www.kineticist.com/manufacturers/ian-harrower-games
+      description: |
+        Ian Harrower Games is the label of indie developer Ian Harrower, who makes commercial and open-source pinball for [[manufacturer:multimorphic]]'s P3 platform.
+  - manufacturer.kieswetter-kg:
+      expect: { name: Kieswetter KG }
+      cite: https://www.arcade-museum.com/Pinball/pinball-42
+      description: |
+        Kieswetter KG is a German amusement firm in [[location:germany/by/doerfles-esbach]]. In the pinball space it made *[[title:pinball-42]]* (2014), not a flipper game but a video-monitor cabinet running several games on a screen.
+  - manufacturer.marsaplay:
+      expect: { name: MarsaPlay }
+      cite: https://en.wikipedia.org/wiki/List_of_pinball_manufacturers
+      description: |
+        MarsaPlay was a Spanish manufacturer in [[location:spain/and/almeria/viator]]. Its best-known game was *[[title:new-canasta]]* (2010), designed by [[person:antonio-cruz]].
+  - manufacturer.megaverse-project:
+      expect: { name: Megaverse Project }
+      cite: https://www.kineticist.com/manufacturers/megaverse-project
+      description: |
+        Megaverse Project's 2022 debut game was *[[title:escape-from-the-megaverse]]*, an NFT-themed game shown at launch events and tied to collectible "POAP" tokens.
+  - manufacturer.mocean:
+      expect: { name: Mocean }
+      cite: https://www.kineticist.com/manufacturers/mocean
+      description: |
+        Mocean's 2023 debut game, *[[title:dungeon-door-defender]]*, runs on [[manufacturer:multimorphic]]'s P3 platform rather than standing as a machine of its own.
+  - manufacturer.novomatic-ag:
+      expect: { name: Novomatic AG }
+      cite: https://en.wikipedia.org/wiki/Novomatic
+      description: |
+        Novomatic is a large Austrian gambling and gaming-technology company based in [[location:austria/gumpoldskirchen]], not a pinball manufacturer. Its catalog entries — *[[title:pinball-roulette-gold-panther]]* (2010) and the related Panther Roulette games (2010-2014) — are roulette games rather than flipper pinball.
+  - manufacturer.pedretti-gaming:
+      expect: { name: Pedretti Gaming }
+      cite: https://www.kineticist.com/manufacturers/pedretti-gaming
+      description: |
+        Pedretti Gaming is the pinball division of the Italian Pedretti Group, in Gariga di [[location:italy/pc/podenzano]] near Piacenza, bringing decades of coin-op experience to modern pinball. It works largely in officially licensed remakes and "2.0" upgrade kits of classics, beginning with a remake of *[[title:funhouse]]* (2024).
+  - manufacturer.pinball-adventures:
+      expect: { name: Pinball Adventures }
+      cite: https://www.kineticist.com/manufacturers/pinball-adventures
+      description: |
+        Pinball Adventures is a boutique Canadian manufacturer of creative, collectible machines. Its debut title was *[[title:punny-factory]]* (2023).
+  - manufacturer.pinball-brothers:
+      expect: { name: Pinball Brothers }
+      cite: https://www.kineticist.com/manufacturers/pinball-brothers
+      description: |
+        Pinball Brothers is a European manufacturer founded in 2018 by investors and former [[manufacturer:heighway-pinball]] staff. It first drew attention by reworking Heighway's *[[title:alien]]* design (2021), then expanded into licensed and original titles including *[[title:queen]]* (2022), *[[title:abba]]* (2024) and *[[title:predator-2]]* (2025).
+  - manufacturer.pinnovating:
+      expect: { name: Pinnovating }
+      cite: https://www.kineticist.com/manufacturers/pinnovating
+      description: |
+        Pinnovating is a boutique homebrew studio led by developer Dennis van der Pas, known for custom pinball conversions and [[system:multimorphic-p-roc]] software work. It's known for *[[model:demolition-man-on-steroids]]* (2013), a heavily modified conversion of an existing machine rather than an original build.
+  - manufacturer.ramps-pinball:
+      expect: { name: Ramp's Pinball }
+      cite: https://www.rampspinball.com/machines/road-trip
+      description: |
+        Ramp's Pinball is an in-development manufacturer whose debut machine, *[[title:road-trip]]*, is announced as coming in late 2026.
+  - manufacturer.rebellion-pinball:
+      expect: { name: Rebellion Pinball }
+      cite: https://www.kineticist.com/manufacturers/rebellion-pinball
+      description: |
+        Rebellion Pinball is a homebrew project from [[location:france/bfc/doubs/besancon]], France — four friends who designed, built and programmed their machine from scratch. That machine, *[[title:space-singularity]]* (2024), is the brand's debut.
+  - manufacturer.retro-pinball:
+      expect: { name: Retro Pinball }
+      cite: https://arcadeheroes.com/2011/07/07/retro-pinballgottliebs-king-of-diamonds-pinball-shipping-at-the-end-of-july/
+      description: |
+        Retro Pinball was an American manufacturer in [[location:usa/pa/york]] that set out to reproduce classic electro-mechanical games. Its one notable release, a remake of Gottlieb's *[[title:king-of-diamonds]]* (2010), shipped only a small run.
+  - manufacturer.sirmo-games-sa:
+      expect: { name: SIRMO Games S.A. }
+      cite: https://bingo.cdyn.com/machines/sirmo/magic_screen
+      description: |
+        SIRMO Games S.A. is a Belgian manufacturer in [[location:belgium/verviers]]. It is still an active company, but its output is bingo and AWP gambling machines — six-card "bingo" cabinets such as the long list catalogued here — rather than flipper pinball.
+  - manufacturer.skit-b-pinball:
+      expect: { name: Skit-B Pinball }
+      cite: https://www.kineticist.com/manufacturers/skit-b-pinball
+      description: |
+        Skit-B Pinball was a short-lived American boutique — the name reportedly standing for "Some Kids In The Basement." Its only documented release was the *[[title:predator]]* prototype (2013), listed as a one-off that was never produced.
+  - manufacturer.suncoast-pinball:
+      expect: { name: Suncoast Pinball }
+      cite: https://www.kineticist.com/manufacturers/suncoast-pinball
+      description: |
+        Suncoast Pinball was a boutique manufacturer in [[location:usa/fl/largo]], known for *[[title:cosmic-carnival]]* (2019) — a limited, collectible game blending classic carnival toys with modern electronics and art by [[person:donny-gillies]].
+  - manufacturer.the-pinball-company:
+      expect: { name: The Pinball Company }
+      cite: https://arcadeheroes.com/2017/01/30/jetsons-pinball-announced-pinball-company-spooky-pinball/
+      description: |
+        The Pinball Company is a game distributor and retailer in [[location:usa/mo/columbia]], not a manufacturer. It appears in the catalog for *[[title:the-jetsons]]* (2017), which was actually built by [[manufacturer:spooky]] and sold through the company's store.
+  - manufacturer.turner-pinball:
+      expect: { name: Turner Pinball }
+      cite: https://www.kineticist.com/manufacturers/turner-pinball
+      description: |
+        Turner Pinball is a manufacturer active since 2022. Its titles are *[[title:ninja-eclipse]]* (2024) and *[[title:merlins-arcade]]* (2025), a small but ongoing line of original games.
+  - manufacturer.valley-dynamo:
+      expect: { name: Valley Dynamo }
+      cite: https://en.wikipedia.org/wiki/Valley-Dynamo
+      description: |
+        Valley-Dynamo, of [[location:usa/tx/richland-hills]], is one of North America's dominant manufacturers of coin-operated pool, air-hockey and foosball tables — not a pinball OEM. It reaches the pinball catalog only through novelty pitch-and-bat games such as *[[title:all-star-baseball-3]]* (2017) and *[[title:zombie-league-all-stars]]* (2017).
+  - manufacturer.vector-pinball:
+      expect: { name: Vector Pinball }
+      cite: https://vectorpinball.com/about
+      description: |
+        Vector Pinball is an Australian manufacturer making custom and licensed machines, shipping worldwide. Its titles include *[[title:eight-ball-fury]]* (2024) and *[[title:peter-brock-holden]]* (2025).
+  - manufacturer.weche:
+      expect: { name: WeChe }
+      description: |
+        WeChe (Wee Chin Electric Machinery) is a Taiwanese firm in [[location:taiwan/kaohsiung]]. It appears in the catalog for a handful of amusement machines — *[[title:space-war]]* (2017), *[[title:bubbles-pop]]* (2019) and *[[title:football-6]]* (2019).
+  - manufacturer.whizbang-pinball:
+      expect: { name: Whizbang Pinball }
+      cite: https://www.kineticist.com/manufacturers/whizbang-pinball
+      description: |
+        WhizBang Pinball was a boutique design studio in [[location:usa/il/lake-villa]], founded in 2009 by designers [[person:greg-freres]] and [[person:dennis-nordman]], blending retro electro-mechanical styling with modern solid-state reliability. Best known for the art-forward "Whoa Nellie!", it was a small, designer-led shop rather than a high-volume manufacturer.
+  - manufacturer.zidware:
+      expect: { name: Zidware }
+      cite: https://en.wikipedia.org/wiki/John_Popadiuk
+      description: |
+        Zidware was the one-man venture of designer [[person:john-popadiuk]], who took pre-orders for an ambitious trio of boutique machines — *Magic Girl*, *Alice in Wonderland* and *Retourne*. Announcing in 2015 that he was out of funding, Popadiuk never delivered the games, and the project became one of pinball's cautionary tales.

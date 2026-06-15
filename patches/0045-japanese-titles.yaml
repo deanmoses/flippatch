@@ -1,0 +1,160 @@
+attribution: flipcommons-catalog
+description: >
+  Titles for the early-Japanese models, created before the models that reference them.
+claims:
+  - title.home-run-nihon-tenbo:
+      create: true
+      note: 'Title for Home Run (ホームランゲーム), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Home Run (ホームランゲーム)'
+      abbreviation: [ホームランゲーム]
+  - title.soccer-ace:
+      create: true
+      note: 'Title for Soccer Ace (サッカーエース), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Soccer Ace (サッカーエース)'
+      abbreviation: [サッカーエース]
+  - title.soccer-8:
+      create: true
+      note: 'Title for Soccer 8 (サッカー8), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Soccer 8 (サッカー8)'
+      abbreviation: [サッカー8]
+  - title.rocket-v:
+      create: true
+      note: 'Title for Rocket V (ロケットV), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Rocket V (ロケットV)'
+      abbreviation: [ロケットV]
+  - title.space-patrol-childrens:
+      create: true
+      note: 'Title for Space Patrol (宇宙パトロール), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Space Patrol (宇宙パトロール)'
+      abbreviation: [宇宙パトロール]
+  - title.muden-kun:
+      create: true
+      note: 'Title for Muden Kun (むでんくん), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Muden Kun (むでんくん)'
+      abbreviation: [むでんくん]
+  - title.kinnikuman-ii-power-mucho:
+      create: true
+      note: 'Title for Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ)'
+      abbreviation: [キン肉マン2世 パワームーチョ]
+  - title.target-machine-base-ball:
+      create: true
+      note: 'Title for Target Machine Base Ball (ターゲットマシン ベースボール), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Target Machine Base Ball (ターゲットマシン ベースボール)'
+      abbreviation: [ターゲットマシン ベースボール]
+  - title.target-machine-type-1:
+      create: true
+      note: 'Title for Target Machine Type 1 (ターゲットマシン タイプ１), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Target Machine Type 1 (ターゲットマシン タイプ１)'
+      abbreviation: [ターゲットマシン タイプ１]
+  - title.target-machine-pirates:
+      create: true
+      note: 'Title for Target Machine Pirates (ターゲットマシン パイレーツ), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Target Machine Pirates (ターゲットマシン パイレーツ)'
+      abbreviation: [ターゲットマシン パイレーツ]
+  - title.slap-shot-towa:
+      create: true
+      note: 'Title for Slap Shot (スラップショット), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Slap Shot (スラップショット)'
+      abbreviation: [スラップショット]
+  - title.american-battle-dome:
+      create: true
+      note: 'Title for American Battle Dome (アメリカンバトルゲーム), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'American Battle Dome (アメリカンバトルゲーム)'
+      abbreviation: [アメリカンバトルゲーム]
+  - title.ultra-spark:
+      create: true
+      note: 'Title for Ultra Spark (ウルトラスパーク), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Ultra Spark (ウルトラスパーク)'
+      abbreviation: [ウルトラスパーク]
+  - title.rodeo-game-mate:
+      create: true
+      note: 'Title for Rodeo (ロデオ), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Rodeo (ロデオ)'
+      abbreviation: [ロデオ]
+  - title.crazy-15-mark-ii:
+      create: true
+      note: 'Title for Crazy 15 [Mark II] (クレイジー15ゲーム), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Crazy 15 [Mark II] (クレイジー15ゲーム)'
+      abbreviation: [クレイジー15ゲーム]
+  - title.crazy-15-mark-iii:
+      create: true
+      note: 'Title for Crazy 15 [Mark III] (クレイジー15ゲーム), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Crazy 15 [Mark III] (クレイジー15ゲーム)'
+      abbreviation: [クレイジー15ゲーム]
+  - title.pocket-ball:
+      create: true
+      note: 'Title for Pocket Ball (ポケットボール), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Pocket Ball (ポケットボール)'
+      abbreviation: [ポケットボール]
+  - title.ronin:
+      create: true
+      note: 'Title for Ronin (浪人), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Ronin (浪人)'
+      abbreviation: [浪人]
+  - title.saturn-komaya:
+      create: true
+      note: 'Title for Saturn (サターン号), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Saturn (サターン号)'
+      abbreviation: [サターン号]
+  - title.ware-sea-rover:
+      create: true
+      note: 'Title for Ware Sea Rover (海賊ゲーム), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Ware Sea Rover (海賊ゲーム)'
+      abbreviation: [海賊ゲーム]
+  - title.advantage:
+      create: true
+      note: 'Title for Advantage (アドバンテージ), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Advantage (アドバンテージ)'
+      abbreviation: [アドバンテージ]
+  - title.american-football:
+      create: true
+      note: 'Title for American Football (アメリカンフットボール), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'American Football (アメリカンフットボール)'
+      abbreviation: [アメリカンフットボール]
+  - title.big-race-sankyo:
+      create: true
+      note: 'Title for Big Race (ビックレース), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Big Race (ビックレース)'
+      abbreviation: [ビックレース]
+  - title.japan-series:
+      create: true
+      note: 'Title for Japan Series (日本シリーズ), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Japan Series (日本シリーズ)'
+      abbreviation: [日本シリーズ]
+  - title.new-world-series:
+      create: true
+      note: 'Title for New World Series (ニューワールドシリーズ), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'New World Series (ニューワールドシリーズ)'
+      abbreviation: [ニューワールドシリーズ]
+  - title.orienteering:
+      create: true
+      note: 'Title for Orienteering (オリエンテーリング), per the eremeka catalog.'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      name: 'Orienteering (オリエンテーリング)'
+      abbreviation: [オリエンテーリング]

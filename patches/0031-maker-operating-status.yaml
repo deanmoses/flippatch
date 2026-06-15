@@ -1,0 +1,258 @@
+attribution: flipcommons-catalog
+description: >
+  operating_status for corporate entities with a non-variant model released since 2010 that
+  are not on Wikipedia's current-manufacturers list. ongoing = a 2023-or-newer source shows
+  current production; ended = defunct, a one-off, or not a pinball OEM, each cited. Plus model
+  fixes: Pinball Tronic game_format (video-screen 'virtual pinball' -> miscellaneous), Road
+  Trip production_status, and two aftermarket conversions. Deferred to the ended baseline
+  (ambiguous): megaverse-project, mocean, headsup-pinball, quetzal-pinball, team-pinball,
+  riot-pinball-llc, eric-priepke, pinnovating, wee-chin-electric-machinery-inc.
+sources:
+  - name: Arcade Heroes
+    source_type: web
+    description: >
+      Arcade and amusement industry news site covering coin-op releases and trade shows.
+    links:
+      - { url: 'https://arcadeheroes.com/', label: Arcade Heroes, link_type: homepage }
+  - name: This Week in Pinball
+    source_type: web
+    description: >
+      Weekly pinball news archive now hosted by Kineticist.
+    links:
+      - { url: 'https://twip.kineticist.com/', label: This Week in Pinball, link_type: homepage }
+  - name: Ramp's Pinball
+    source_type: web
+    description: >
+      Manufacturer site of Ramp's Pinball, whose debut machine is Road Trip.
+    links:
+      - { url: 'https://www.rampspinball.com/', label: Ramp's Pinball, link_type: homepage }
+  - name: Vector Pinball
+    source_type: web
+    description: >
+      Manufacturer site of Vector Pinball, an Australian pinball maker.
+    links:
+      - { url: 'https://vectorpinball.com/', label: Vector Pinball, link_type: homepage }
+  - name: VPForums
+    source_type: web
+    description: >
+      Long-running virtual-pinball community forum.
+    links:
+      - { url: 'https://www.vpforums.org/', label: VPForums, link_type: homepage }
+  - name: Bingo Pinballs
+    source_type: web
+    description: >
+      Reference site documenting bingo-style coin-op amusement machines and their makers.
+    links:
+      - { url: 'https://bingo.cdyn.com/', label: Bingo Pinballs, link_type: homepage }
+  - name: Recreativas.org
+    source_type: web
+    description: >
+      Spanish-language database of arcade and amusement machines.
+    links:
+      - { url: 'https://www.recreativas.org/', label: Recreativas.org, link_type: homepage }
+claims:
+  - corporate-entity.american-pinball-inc:
+      expect: { ipdb_manufacturer_id: 705 }
+      note: 'Arcade Heroes says "It''s been a spell since we had some news from American Pinball, but that changes today as they have begun shipping the Signature Edition (SE) of their most recent pinball design, Galactic Tank Force."'
+      cite: https://arcadeheroes.com/2024/02/19/galactic-tank-force-signature-edition-package-now-available-from-american-pinball/
+      operating_status: ongoing
+  - corporate-entity.barrels-of-fun:
+      expect: { name: Barrels of Fun }
+      note: 'Arcade Heroes says "It turns out that Stern & Jersey Jack Pinball aren''t the only companies with a new pinball machine to reveal this week - relative newcomer, Barrels of Fun, just dropped a trailer and info on their second game, DUNE."'
+      cite: https://arcadeheroes.com/2025/04/14/barrels-of-fun-unveils-dune-pinball/
+      operating_status: ongoing
+  - corporate-entity.chicago-gaming-company:
+      expect: { ipdb_manufacturer_id: 432 }
+      note: 'Arcade Heroes says "Medieval Madness Gets A Merlin Model For another revival of a classic, this time back on the pinball side of things and as a remade product soon to hit the market again, Chicago Gaming Company recently unveiled a new model to their existing remake of Williams'' Medieval Madness, making it the second [...]"'
+      cite: https://arcadeheroes.com/2025/04/14/newsbytes-king-kong-harry-potter-galaxian-3/
+      operating_status: ongoing
+  - corporate-entity.hexa-pinball:
+      expect: { name: HEXA Pinball }
+      note: 'Kineticist says "HEXA Pinball has revealed its second title: The 3 Musketeers, based on the famous Alexandre Dumas novel."'
+      cite: https://www.kineticist.com/news/hexa-3-musketeers-pinball
+      operating_status: ongoing
+  - corporate-entity.homepin-ltd:
+      expect: { ipdb_manufacturer_id: 745 }
+      note: 'Kineticist says "First Impressions of Blues Brothers Pinball by Homepin I managed to secure the first production game of Homepin''s new game, The Blues Brothers, and had it air freighted over the other day."'
+      cite: https://www.kineticist.com/news/first-impressions-blues-brothers-pinball
+      operating_status: ongoing
+  - corporate-entity.jersey-jack-pinball-inc-lakewood-nj:
+      expect: { ipdb_manufacturer_id: 634 }
+      note: 'Kineticist says "After much hype and speculation, it''s finally Harry Potter pinball release day."'
+      cite: https://www.kineticist.com/news/jersey-jack-launches-harry-potter-pinball
+      operating_status: ongoing
+  - corporate-entity.multimorphic-inc:
+      expect: { ipdb_manufacturer_id: 716 }
+      note: 'Multimorphic says "Shipments of our latest P3 game kit, Portal, are well underway, and we''re enjoying all of the wonderful feedback from early customers and recent show attendees."'
+      cite: https://www.multimorphic.com/news/portal-production-update-october-2025/
+      operating_status: ongoing
+  - corporate-entity.pedretti-gaming:
+      expect: { name: Pedretti Gaming }
+      note: 'Pinball News says "Following our report on their teaser video, Pedretti Pinball today released details of the first title in their planned series of Williams/Bally remakes, Funhouse Remake."'
+      cite: https://www.pinballnews.com/site/2024/05/14/funhouse-remake-revealed/
+      operating_status: ongoing
+  - corporate-entity.pinball-adventures:
+      expect: { name: Pinball Adventures }
+      note: 'Kineticist says "Pinball Adventures is a boutique Canadian pinball manufacturer specializing in creative, collectible pinball machines; their debut title, Punny Factory, was released to the public in 2023 and is offered in Standard and Wood Engraved editions through their online shop."'
+      cite: https://www.kineticist.com/manufacturers/pinball-adventures
+      operating_status: ongoing
+  - corporate-entity.pinball-brothers:
+      expect: { name: Pinball Brothers }
+      note: 'Arcade Heroes says "ABBA is the third title from Pinball Brothers, who are now operating out of Sweden."'
+      cite: https://arcadeheroes.com/2024/04/09/pinball-brothers-launches-game-3-abba/
+      operating_status: ongoing
+  - corporate-entity.spooky-pinball-llc:
+      expect: { ipdb_manufacturer_id: 671 }
+      note: 'Kineticist says "This go-around, Spooky sticks with familiar territory, again dipping into the well of classic cult horror films with Evil Dead."'
+      cite: https://www.kineticist.com/news/spooky-pinball-reveals-new-evil-dead-pinball-machine
+      operating_status: ongoing
+  - corporate-entity.stern-pinball-incorporated:
+      expect: { ipdb_manufacturer_id: 303 }
+      note: 'Stern Pinball says "Stern Pinball Invites Players to Embark on an Epic Journey Into the Forgotten Realms of DUNGEONS & DRAGONS Stern Pinball celebrates 50 years of the legendary franchise through DUNGEONS & DRAGONS: The Tyrant''s Eye, available now CHICAGO, IL - January 3, 2025 - Today, Stern Pinball, Inc., the largest [...]"'
+      cite: https://sternpinball.com/2025/01/03/stern-pinball-invites-players-to-embark-on-an-epic-journey-into-the-forgotten-realms-of-dungeons-dragons/
+      operating_status: ongoing
+  - corporate-entity.turner-pinball:
+      expect: { name: Turner Pinball }
+      note: 'Kineticist says "Texas-based Turner Pinball''s second title, Merlin''s Arcade, swaps ninjas for wizards."'
+      cite: https://www.kineticist.com/news/new-pinball-machines-2025
+      operating_status: ongoing
+  - corporate-entity.vector-pinball:
+      expect: { name: Vector Pinball }
+      note: 'Vector Pinball says "Now in 2026 we are doing more exporting and offering some international licenced titles!"'
+      cite: https://vectorpinball.com/about
+      operating_status: ongoing
+  - corporate-entity.ramps-pinball:
+      expect: { name: Ramp's Pinball }
+      note: 'Ramp''s Pinball says "Expected Late 2026 [...] Coming soon."'
+      cite: https://www.rampspinball.com/machines/road-trip
+      operating_status: ongoing
+  - corporate-entity.for-amusement-only-games:
+      expect: { name: For Amusement Only Games }
+      note: 'Pinball News says "Steelbound is Nick Baldridge''s sixth P3 project, following on from Quest for Glory, Ranger in the Ruins, Silver Falls, Flipper Foxtrot Rhythm Explosion and Drained (incorporating Drained: Bite Sized)."'
+      cite: https://www.pinballnews.com/site/2025/07/01/steelbound-announced/
+      operating_status: ongoing
+  - corporate-entity.ian-harrower-games:
+      expect: { name: Ian Harrower Games }
+      note: 'Kineticist says "The commerical and open source pinball projects from indie game developer Ian Harrower."'
+      cite: https://www.kineticist.com/manufacturers/ian-harrower-games
+      operating_status: ongoing
+  - corporate-entity.dutch-pinball:
+      expect: { ipdb_manufacturer_id: 687 }
+      note: 'Pinball News says "DPX is a joint venture between Melvin and Dutch Pinball, using Melvin''s designs and intellectual property with the game built by Dutch Pinball at their factory in Herkenbosch in the Netherlands. DPX launched their first title, Alice''s Adventures In Wonderland, in October 2024, and are still building the game which has a limited run of 500 units."'
+      cite: https://www.pinballnews.com/site/2026/02/09/melvin-splits-with-dutch-pinball/
+      operating_status: ongoing
+  - corporate-entity.rebellion-pinball:
+      expect: { name: Rebellion Pinball }
+      note: 'Kineticist says "Rebellion Pinball Updated April 2026 Primary 2022-Present 1 Pinball Games [...] Space Singularity is a pinball creation project. Made from scratch by 4 friends."'
+      cite: https://www.kineticist.com/manufacturers/rebellion-pinball
+      operating_status: ongoing
+  - corporate-entity.deeproot:
+      expect: { name: deeproot }
+      note: 'Pinball News says "It could be ''Game Over'' for Deeproot Pinball after the company''s founder and "Principal & Architect of all things deeproot Pinball", Robert Mueller, was charged by the Securities and Exchange Commission (SEC) with fraud in relation to the two investment schemes which funded the company."'
+      cite: https://www.pinballnews.com/site/2021/08/21/game-over-for-deeproot-pinball/
+      operating_status: ended
+  - corporate-entity.haggis-pinball:
+      expect: { ipdb_manufacturer_id: 740 }
+      note: 'Pinball News says "Australian pinball manufacturer, Haggis Pinball, has ceased trading and appointed liquidators as the business failed to secure financing to continue its operations."'
+      cite: https://www.pinballnews.com/site/2024/07/18/haggis-pinball-in-liquidation/
+      operating_status: ended
+  - corporate-entity.heighway-pinball-ltd:
+      expect: { ipdb_manufacturer_id: 685 }
+      note: 'Wikipedia says "By April 2018, Heighway Pinball had closed the doors on its factory, laid off its employees, and was liquidated soon afterward."'
+      cite: https://en.wikipedia.org/wiki/Heighway_Pinball
+      operating_status: ended
+  - corporate-entity.marsaplay:
+      expect: { ipdb_manufacturer_id: 563 }
+      note: 'Wikipedia says "MarsaPlay (2010-2013)"'
+      cite: https://en.wikipedia.org/wiki/List_of_pinball_manufacturers
+      operating_status: ended
+  - corporate-entity.whizbang-pinball:
+      expect: { ipdb_manufacturer_id: 619 }
+      note: 'Wikipedia says "WhizBang Pinball (2011-2017)"'
+      cite: https://en.wikipedia.org/wiki/List_of_pinball_manufacturers
+      operating_status: ended
+  - corporate-entity.zidware:
+      expect: { name: Zidware }
+      note: 'Wikipedia says "In May 2015, Popadiuk announced that he was out of funding."'
+      cite: https://en.wikipedia.org/wiki/John_Popadiuk
+      operating_status: ended
+  - corporate-entity.skit-b-pinball:
+      expect: { name: Skit-B Pinball }
+      note: 'VPForums says "It seems Kevin Kulek may have never had any sort of license for Predator."'
+      cite: https://www.vpforums.org/index.php?showtopic=30926
+      operating_status: ended
+  - corporate-entity.bandai-namco:
+      expect: { name: Bandai Namco }
+      note: 'Arcade Heroes says "These games pit players face-to-face and come down to multiball battles."'
+      cite: https://arcadeheroes.com/2019/01/25/jaepo-2019-pinball-in-japan-bandai-namco-unveils-pac-man-panic/
+      operating_status: ended
+  - corporate-entity.kieswetter-kg:
+      expect: { ipdb_manufacturer_id: 662 }
+      note: 'Museum of the Game says "Pinball - 42 was produced by Pinball Company, The aka Kieswetter KG in 2014."'
+      cite: https://www.arcade-museum.com/Pinball/pinball-42
+      operating_status: ended
+  - corporate-entity.the-pinball-company:
+      expect: { ipdb_manufacturer_id: 739 }
+      note: 'Arcade Heroes says "The Pinball Company is a game distributor who covers more than just pinball machines."'
+      cite: https://arcadeheroes.com/2017/01/30/jetsons-pinball-announced-pinball-company-spooky-pinball/
+      operating_status: ended
+  - corporate-entity.valley-dynamo:
+      expect: { ipdb_manufacturer_id: 734 }
+      note: 'Wikipedia says "It has been the dominant manufacturer of coin-operated pool tables in North America for over 6 decades, and produces the US-ubiquitous Valley brand and decreasingly common Dynamo brand (once a competitor)."'
+      cite: https://en.wikipedia.org/wiki/Valley-Dynamo
+      operating_status: ended
+  - corporate-entity.novomatic-ag:
+      expect: { ipdb_manufacturer_id: 679 }
+      note: 'Wikipedia says "Novomatic is an international gambling company based in Austria, founded by Johann Graf in 1980."'
+      cite: https://en.wikipedia.org/wiki/Novomatic
+      operating_status: ended
+  - corporate-entity.american-girl:
+      expect: { name: American Girl }
+      note: 'Kineticist says "The Flip Side, released by American Girl in 2019, is a fully functional, scaled-down pinball machine designed for 18-inch dolls, particularly aligning with the 1970s era of the Julie Albright character."'
+      cite: https://www.kineticist.com/games/pinball/the-flip-side-2019
+      operating_status: ended
+  - corporate-entity.sirmo-games-sa:
+      expect: { ipdb_manufacturer_id: 275 }
+      note: 'Bingo Pinballs says "Sirmo continues to manufacture the machines that look like a six card game, but due to the LCD display, they also have numerous special games included."'
+      cite: https://bingo.cdyn.com/machines/sirmo/magic_screen
+      operating_status: ended
+  - corporate-entity.bifuca:
+      expect: { ipdb_manufacturer_id: 580 }
+      note: 'Recreativas.org says "Pinball Tronic es una máquina recreativa de tipo pinball virtual fabricada por la empresa Bifuca."'
+      cite: https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+      operating_status: ended
+  - corporate-entity.suncoast-pinball:
+      expect: { ipdb_manufacturer_id: 786 }
+      note: 'This Week in Pinball says "It is with a heavy heart that Suncoast Pinball announces we will be shutting down pinball operations. Due to unexpected delays, higher than expected costs and other factors, continuing is not financially viable for us."'
+      cite: https://twip.kineticist.com/p/this-week-in-pinball-september-30th-2019
+      operating_status: ended
+  - corporate-entity.day-one-pinball-manufacturing-incorporated:
+      expect: { ipdb_manufacturer_id: 694 }
+      note: 'Pinball News says "Day One Pinball will build a total of thirty ScoreGasm Master games; ten prototypes and twenty production units."'
+      cite: https://www.pinballnews.com/news/scoregasmmaster.html
+      operating_status: ended
+  - corporate-entity.retro-pinball-llc:
+      expect: { ipdb_manufacturer_id: 610 }
+      note: 'IPDB says "Production ended in 2012 after 5 sample production games and 50 regular production games were built."'
+      cite: ipdb:5239
+      operating_status: ended
+  - model.pinball-tronic:
+      expect: { year: 2010 }
+      note: 'Recreativas.org says "Pinball Tronic es una máquina recreativa de tipo pinball virtual fabricada por la empresa Bifuca."'
+      cite: https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+      game_format: miscellaneous
+  - model.road-trip:
+      expect: { year: 2025 }
+      note: 'Ramp''s Pinball says "Expected Late 2026 [...] Coming soon."'
+      cite: https://www.rampspinball.com/machines/road-trip
+      production_status: announced
+  - model.cactus-canyon-continued:
+      expect: { year: 2012 }
+      note: 'OPDB says "Cactus Canyon Continued (Eric Priepke, 2012) [...] Converted game"'
+      cite: opdb:2155
+      production_status: aftermarket
+  - model.demolition-man-on-steroids:
+      expect: { year: 2013 }
+      note: 'OPDB says "Demolition Man on Steroids (Pinnovating, 2013) [...] Converted game"'
+      cite: opdb:2153
+      production_status: aftermarket

@@ -1,0 +1,123 @@
+attribution: flipcommons-catalog
+description: Populate corporate-entity active years for some important manufacturers.
+claims:
+  # --- Gottlieb: founded 1927 -> Columbia (1977) -> Mylstar (1983) -> Premier (1984) -> closed (1996) ---
+  - corporate-entity.d-gottlieb-company:
+      expect: { ipdb_manufacturer_id: 93 }
+      note: 'Gottlieb Development says "D. Gottlieb & Co. was established by David Gottlieb in 1927 as an arcade game corporation," and that "In 1977, Columbia Pictures Industries acquired D. Gottlieb & Co. from the Gottlieb family."'
+      cite: https://gottliebpin.com/history.html
+      year_start: 1927
+      year_end: 1977
+  - corporate-entity.d-gottlieb-company-a-columbia-pictures-industries-company:
+      expect: { ipdb_manufacturer_id: 94 }
+      note: 'Gottlieb Development says "In 1977, Columbia Pictures Industries acquired D. Gottlieb & Co. from the Gottlieb family," and that "In 1983, after the Coca Cola Company had acquired Columbia, the pinball assets of D. Gottlieb & Co. were transferred to a new Coca Cola subsidiary, Mylstar Electronics."'
+      cite: https://gottliebpin.com/history.html
+      year_start: 1977
+      year_end: 1983
+  - corporate-entity.mylstar-electronics-incorporated:
+      expect: { ipdb_manufacturer_id: 224 }
+      note: 'Gottlieb Development says the Gottlieb pinball assets "were transferred to a new Coca Cola subsidiary, Mylstar Electronics" in 1983, and that "A newly formed company, Premier Technology, purchased Mylstar''s pinball assets in October 1984."'
+      cite: https://gottliebpin.com/history.html
+      year_start: 1983
+      year_end: 1984
+  - corporate-entity.premier-technology:
+      expect: { ipdb_manufacturer_id: 257 }
+      note: 'Gottlieb Development says "A newly formed company, Premier Technology, purchased Mylstar''s pinball assets in October 1984," and that "Premier Technology continued in operation until the summer of 1996, when adverse financial circumstances forced the company to close its doors."'
+      cite: https://gottliebpin.com/history.html
+      year_start: 1984
+      year_end: 1996
+
+  # --- Williams: founded 1943 -> Electronic Mfg (1959) -> Electronics name (1967) -> left pinball (1999) ---
+  - corporate-entity.williams-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 352 }
+      note: 'Wikipedia says "Williams founded the Williams Manufacturing Company in 1943 at 161 West Huron Street in Chicago, Illinois," and that in 1959 a buyout by Consolidated Sun Ray "renamed the company the Williams Electronic Manufacturing Corporation."'
+      cite: https://en.wikipedia.org/wiki/WMS_Industries
+      year_start: 1943
+      year_end: 1959
+  - corporate-entity.williams-electronic-manufacturing-corporation:
+      expect: { ipdb_manufacturer_id: 350 }
+      note: 'Wikipedia says the Williams Electronic Manufacturing Corporation, formed in the 1959 buyout, ran the amusement business "which was renamed Williams Electronics in 1967."'
+      cite: https://en.wikipedia.org/wiki/WMS_Industries
+      year_start: 1959
+      year_end: 1967
+  - corporate-entity.williams-electronics-incorporated:
+      expect: { ipdb_manufacturer_id: 351 }
+      note: 'The Museum of the Game lists "Williams Electronics, Inc. (1967-1985)" -- the span the Williams Electronics name was active in its machine database, used here as the entity active range rather than the legal incorporation date (Williams Electronics, Inc. was formally incorporated in 1974).'
+      cite: https://www.arcade-museum.com/company/williams-electronics-inc-1967-1985
+      year_start: 1967
+      year_end: 1985
+  - corporate-entity.williams-electronics-games-incorporated-a-subsidiary-of-wms-industries-incorporated:
+      expect: { ipdb_manufacturer_id: 349 }
+      note: 'The Museum of the Game lists "Williams Electronic Games, Inc. (WMS, 1985-2000)".'
+      cite: https://www.arcade-museum.com/company/williams-electronic-games-inc-wms-1985-2000
+      year_start: 1985
+      year_end: 2000
+
+  # --- Midway: founded 1958 -> Bally Midway (1982) -> back to Midway / WMS (1988) -> Midway Games (1996) ---
+  - corporate-entity.midway-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 213 }
+      note: 'Wikipedia says "Midway Mfg. Co. began in 1958 as an independent manufacturer of amusement equipment founded by Henry Ross and Marcine Wolverton," and that "Also in 1982, Midway became Bally Midway Mfg. Co. after Bally merged its pinball division with Midway."'
+      cite: https://en.wikipedia.org/wiki/Midway_Games
+      year_start: 1958
+      year_end: 1982
+  - corporate-entity.midway-manufacturing-company-a-subsidiary-of-wms-industries-incorporated:
+      expect: { ipdb_manufacturer_id: 214 }
+      note: 'Wikipedia says "Bally Midway was purchased in 1988 by [...] Williams Electronics Games [...] and its name was changed back to Midway Manufacturing," and that "in 1996, WMS made a public offering of Midway stock and the company changed its name to Midway Games Inc."'
+      cite: https://en.wikipedia.org/wiki/Midway_Games
+      year_start: 1988
+      year_end: 1996
+
+  # --- Bally: Manufacturing Corporation (1932-1994); Bally Midway (1982-1988); Bally Wulff (1972-1991) ---
+  - corporate-entity.bally-manufacturing-corporation:
+      expect: { ipdb_manufacturer_id: 47 }
+      note: 'Wikipedia says "The Bally Manufacturing Corporation was founded by Raymond Moloney on January 10, 1932 [...]," and that "In 1994, the company changed its name to Bally Entertainment, to reflect its focus on the casino business and the fact that it no longer had any manufacturing operations."'
+      cite: https://en.wikipedia.org/wiki/Bally_Manufacturing
+      year_start: 1932
+      year_end: 1994
+  - corporate-entity.bally-midway-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 48 }
+      note: 'Wikipedia says "Also in 1982, Midway became Bally Midway Mfg. Co. after Bally merged its pinball division with Midway," and that "Bally Midway was purchased in 1988 by [...] Williams Electronics Games [...] and its name was changed back to Midway Manufacturing."'
+      cite: https://en.wikipedia.org/wiki/Midway_Games
+      year_start: 1982
+      year_end: 1988
+  - corporate-entity.bally-wulff:
+      expect: { ipdb_manufacturer_id: 49 }
+      note: 'German Wikipedia records that the firm, founded in 1950 as Guenter Wulff Apparatebau in Berlin, was taken over by the American maker Bally in 1972 (operating thereafter as Bally Wulff), and that Bally divested it again in 1991 (the company continues independently as Bally Wulff).'
+      cite: https://de.wikipedia.org/wiki/Bally_Wulff
+      year_start: 1972
+      year_end: 1991
+
+  # --- Chicago Coin: founded 1932 -> assets to Stern Electronics (1976) ---
+  - corporate-entity.chicago-coin-machine-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 81 }
+      note: 'Wikipedia says "The company was founded in 1932 by Samuel H. Gensburg and Samuel Wolberg," and that "In December 1976, Gary Stern and Sam Stern purchased the assets of the Chicago Coin Machine Division [...] to found Stern Electronics, Inc."'
+      cite: https://en.wikipedia.org/wiki/Chicago_Coin
+      year_start: 1932
+      year_end: 1976
+
+  # --- Stern: Electronics (1976-1985, from Chicago Coin); Pinball (1999-present, from Sega) ---
+  - corporate-entity.stern-electronics-incorporated:
+      expect: { ipdb_manufacturer_id: 302 }
+      note: 'Wikipedia says "Stern Electronics was formed when Sam and Gary Stern bought the assets of Chicago Coin in December 1976," and that "Stern Electronics closed on February 1, 1985."'
+      cite: https://en.wikipedia.org/wiki/Stern_Pinball
+      year_start: 1976
+      year_end: 1985
+  - corporate-entity.stern-pinball-incorporated:
+      expect: { ipdb_manufacturer_id: 303 }
+      note: 'Wikipedia says that by 1999 Sega "left the pinball industry by spinning off their pinball division and selling it to Gary Stern, and Stern Pinball was born"; the company remains active today.'
+      cite: https://en.wikipedia.org/wiki/Stern_Pinball
+      year_start: 1999
+
+  # --- Data East -> Sega: Data East Pinball (1987-1994) -> Sega Pinball (1994-1999) ---
+  - corporate-entity.data-east-pinball-incorporated:
+      expect: { ipdb_manufacturer_id: 98 }
+      note: 'Wikipedia says "Data East Pinball was formed as a subsidiary of Data East USA, and manufactured pinball machines from 1987 through to 1994," when the division was bought by Sega.'
+      cite: https://en.wikipedia.org/wiki/Data_East
+      year_start: 1987
+      year_end: 1994
+  - corporate-entity.sega-pinball-incorporated:
+      expect: { ipdb_manufacturer_id: 280 }
+      note: 'Wikipedia says "Sega re-entered the market when it took over Data East''s pinball division in 1994," producing "under the name Sega Pinball Inc. for 5 years before leaving the market again in 1999."'
+      cite: https://en.wikipedia.org/wiki/Sega_Pinball
+      year_start: 1994
+      year_end: 1999

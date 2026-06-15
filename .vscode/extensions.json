@@ -1,0 +1,13 @@
+{
+  // Extensions that make the editor match this repo's quality gates.
+  // settings.json disables Pylance in favor of the mypy extension and wires up
+  // ruff/prettier/markdownlint — these are the extensions that setup assumes.
+  "recommendations": [
+    "charliermarsh.ruff",
+    "ms-python.python",
+    "ms-python.mypy-type-checker",
+    "esbenp.prettier-vscode",
+    "redhat.vscode-yaml",
+    "DavidAnson.vscode-markdownlint"
+  ]
+}

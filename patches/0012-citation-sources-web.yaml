@@ -1,0 +1,26 @@
+attribution: flipcommons-catalog
+description: >-
+  Create website citation-source roots Wikipedia (en + de), Museum of the Game,
+  Gottlieb Development and the Canadian Trademarks Database.
+sources:
+  - name: Wikipedia
+    source_type: web
+    description: Free collaborative encyclopedia. General reference for company histories, corporate successions, and founding/closing dates.
+    links:
+      - { url: "https://en.wikipedia.org/", label: Wikipedia, link_type: homepage }
+      - { url: "https://de.wikipedia.org/", label: "Wikipedia (Deutsch)", link_type: homepage }
+  - name: "Museum of the Game (Arcade Museum)"
+    source_type: web
+    description: The International Arcade Museum's database of coin-operated machines and the companies that made them.
+    links:
+      - { url: "https://www.arcade-museum.com/", label: Museum of the Game, link_type: homepage }
+  - name: Gottlieb Development LLC
+    source_type: web
+    description: Holder of the Gottlieb pinball brand; publishes an official Gottlieb company history.
+    links:
+      - { url: "https://gottliebpin.com/", label: Gottlieb Development, link_type: homepage }
+  - name: Canadian Trademarks Database
+    source_type: web
+    description: Canadian Intellectual Property Office (CIPO) trademark registry.
+    links:
+      - { url: "https://ised-isde.canada.ca/cipo/trademark-search/", label: Canadian Trademarks Database, link_type: homepage }

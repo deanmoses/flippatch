@@ -1,0 +1,116 @@
+attribution: flipcommons-catalog
+description: >-
+  Seed website roots used by the Japanese-maker and active-maker patches so later
+  patches can cite them.
+sources:
+  - name: "Eremeka — a foreigners' guide to eremeka arcades"
+    source_type: web
+    description: >-
+      Curated catalog of Japanese electromechanical arcade games.
+    links:
+      - {
+          url: "https://thetastates.com/",
+          label: "thetastates.com (Eremeka)",
+          link_type: homepage,
+        }
+  - name: Early Arcades Japan
+    source_type: web
+    description: >-
+      Research blog with per-game histories of
+      early Japanese electromechanical and flipper-pinball machines, including
+      dating evidence from period machine directories and advertisements.
+    links:
+      - {
+          url: "https://earlyarcadesjapan.blogspot.com/",
+          label: Early Arcades Japan,
+          link_type: homepage,
+        }
+  - name: Wonderland Amusements
+    source_type: web
+    description: >-
+      Manufacturer site of Wonderland Amusements, a US maker of compact,
+      affordable home pinball machines (Alice Goes to Wonderland).
+    links:
+      - {
+          url: "https://wonderlandamusements.com/",
+          label: Wonderland Amusements,
+          link_type: homepage,
+        }
+  - name: The Toy Book
+    source_type: web
+    description: >-
+      Toy-industry trade publication.
+    links:
+      - {
+          url: "https://toybook.com/",
+          label: The Toy Book,
+          link_type: homepage,
+        }
+  - name: Pawlowski Pinball
+    source_type: web
+    description: >-
+      Manufacturer site of Pawlowski Pinball, a Longwood, Florida maker.
+    links:
+      - {
+          url: "https://pawlowskipinball.com/",
+          label: Pawlowski Pinball,
+          link_type: homepage,
+        }
+  - name: Euro Pinball Corp
+    source_type: web
+    description: >-
+      Site of Euro Pinball Corp. S.R.L., the Bagnatica (Bergamo) manufacturing
+      joint venture of Pinball Brothers and Pedretti Gaming.
+    links:
+      - {
+          url: "https://www.europinball.net/",
+          label: Euro Pinball Corp,
+          link_type: homepage,
+        }
+  - name: Flipper-News
+    source_type: web
+    description: >-
+      German pinball news site.
+    links:
+      - {
+          url: "https://flipper-news.de/",
+          label: Flipper-News,
+          link_type: homepage,
+        }
+  - name: Retro News
+    source_type: web
+    description: >-
+      Retro-gaming news site.
+    links:
+      - {
+          url: "https://www.retronews.com/",
+          label: Retro News,
+          link_type: homepage,
+        }
+  - name: BizProfiles
+    source_type: web
+    description: >-
+      US business-registration directory mirroring state corporate filings.
+    links:
+      - {
+          url: "https://bisprofiles.com/",
+          label: BizProfiles,
+          link_type: homepage,
+        }
+  - name: B2B Hint
+    source_type: web
+    description: >-
+      Company-registration aggregator.
+    links:
+      - { url: "https://b2bhint.com/", label: B2B Hint, link_type: homepage }
+  - name: nicole.express
+    source_type: web
+    description: >-
+      Personal tech/pinball blog.
+    links:
+      - {
+          url: "https://nicole.express/",
+          label: nicole.express,
+          link_type: homepage,
+        }
+claims: []

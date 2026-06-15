@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  Manufacturer-home locations, step 2 of 3. Creates records whose parent was
+  created in 0032: Besançon (in Doubs), Gironde (in Nouvelle-Aquitaine) and
+  Podenzano (in Piacenza).
+claims:
+  - location.france/bfc/doubs/besancon:
+      create: true
+      name: Besançon
+      slug: besancon
+      parent: france/bfc/doubs
+      location_type: city
+  - location.france/naq/gironde:
+      create: true
+      name: Gironde
+      slug: gironde
+      parent: france/naq
+      location_type: department
+  - location.italy/pc/podenzano:
+      create: true
+      name: Podenzano
+      slug: podenzano
+      parent: italy/pc
+      location_type: city

@@ -1,0 +1,37 @@
+attribution: flip-museum
+description: >
+  Create additional game formats for non-pinball: slot-machine, video-game, gun-game and an
+  miscellaneous catch-all.
+claims:
+  - game-format.slot-machine:
+      create: true
+      name: Slot Machine
+      display_order: 5
+      description: |
+        Pinball and the slot machine grew up as siblings in the coin-operated trade, and for decades the line between them was blurry. Before [[gameplay-feature:flippers]] arrived in 1947 to reward skill, many a "pin game" was really a gambling device that paid out in coins, and the makers moved freely between the two businesses. The machines gathered here are the slot side of that family - the upright consoles and "flasher type" payout games that catalogs like IPDB swept up alongside pinball because they came off the same factory floors.
+
+        [[manufacturer:keeney]], [[manufacturer:games-incorporated]] and [[manufacturer:bally]] built these one-coin gambles by the thousands through the 1930s, '40s and '50s, while [[manufacturer:mills-novelty-company]] - the house that perfected the spinning-reel bandit - turned out "flasher" games like *[[title:flasher-bell-fruit]]* that lit a winning combination instead of spinning a reel. They are not pinball, but they are pinball's shadow: the chance-driven amusements the industry spent decades trying to live down before skill, flippers and respectability finally won out.
+  - game-format.video-game:
+      create: true
+      name: Video Game
+      display_order: 6
+      description: |
+        In the late 1970s the video game nearly buried pinball - and then, with a certain irony, set about imitating it. The machines in this list are video games that wandered into the pinball catalog: some because they simulate a playfield on a screen, some because they wear a pinball theme, some simply because a cataloguer wasn't sure where else to file them.
+
+        The standout is [[manufacturer:atari]]'s *[[title:video-pinball]]* (1978), which rendered flippers, bumpers and a bouncing ball entirely in light - no glass, no steel, no tilt. [[manufacturer:williams]] and [[manufacturer:midway]], both pillars of real pinball, also turn up here with screen-based games, a reminder that the same companies often had a foot in each world. These machines have no physical ball to nudge, but their presence marks the moment the silver ball met the cathode ray.
+  - game-format.gun-game:
+      create: true
+      name: Gun Game
+      display_order: 7
+      description: |
+        Long before the light-gun arcade cabinet, the coin-operated gun game stood shoulder to shoulder with pinball on the arcade floor - and was very often built by the same hands. The shooting games gathered here came from [[manufacturer:williams]] and [[manufacturer:bally]], pinball powerhouses that also armed players with mechanical rifles and pop-up targets.
+
+        They range from wartime-era novelties like [[manufacturer:bally]]'s *[[title:torpedo-6]]* (1942) to safari-themed shooting galleries such as [[manufacturer:williams]]'s *[[title:safari-3]]* (1954), where the goal was marksmanship rather than a well-timed flip. Catalogs list them beside pinball because they shared a factory, a route operator and a coin slot - but there is no playfield here, only a target downrange.
+  - game-format.miscellaneous:
+      create: true
+      name: Miscellaneous Non-Pinball Game
+      display_order: 8
+      description: |
+        Every catalog has its miscellany, and this is pinball's. These are machines that source databases explicitly flag as *not* pinball, yet that resist a tidier label - countertop dispensers and bar-top novelties, puck-and-pool hybrids, coin-operated wall games, horse-race consoles and assorted skill amusements that drifted into the pinball record over the decades.
+
+        The best-known resident is [[manufacturer:williams]]'s *[[title:hyperball]]* (1981), a flipperless oddity that fired ball after ball at a wall of targets at machine-gun pace - unmistakably a coin-op amusement, unmistakably not pinball. Like the rest of this list, it earns its place by being adjacent to pinball without ever quite being it: same makers, same arcades, same era, different game entirely.

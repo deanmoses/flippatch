@@ -1,0 +1,16 @@
+attribution: flipcommons-ai-desc-tag
+description: >
+  Re-attribute the re-theme tag descriptions that patch 0007 wrongly
+  attributed to flip-museum. Descriptions belong to the per-entity AI source
+  so they can be toggled via constance without affecting the tag vocabulary
+  itself (which moves to flipcommons-catalog in 0020). Text is identical to
+  0007; only the source changes. The flip-museum description claims are
+  retracted in 0023.
+claims:
+  - tag.unofficial-retheme:
+      description: >
+        Existing machines re-skinned with new art/theme by someone other than the
+        original manufacturer (fan, operator, hobbyist). Not a commercial release.
+  - tag.manufacturer-retheme:
+      description: >
+        Official re-themes, where a manufacturer re-skinned one of its own designs.

@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  Split two unrelated early firms out of the Midway and United brands. Each is a
+  distinct manufacturer in IPDB (Midway Pattern Company = IPDB 215, United
+  Manufacturing Company (Diversey) = IPDB 532) with a single 1930s machine, but
+  the ingest name-matched each onto a major Chicago brand — dragging Midway's
+  start back to a lone 1932 "Rolletto" (real Midway Mfg. began 1958) and United's
+  to a lone 1933 "Bank A Ball" (real United Mfg. began 1942). Give each its own
+  manufacturer; see also 0016/0017 for the Dennard-Williams analogue.
+claims:
+  - manufacturer.midway-pattern-company:
+      name: Midway Pattern Company
+      create: true
+  - corporate-entity.midway-pattern-company:
+      expect: { ipdb_manufacturer_id: 215, manufacturer: midway }
+      note: 'Midway Pattern Company is a distinct firm (IPDB manufacturer 215) whose only catalogued product is the 1932 Rolletto; the ingest mis-grouped it under the Midway Manufacturing brand (IPDB 323), dragging that brand''s start to 1932 though Midway Mfg. was founded 1958. Re-attributed to its own manufacturer.'
+      manufacturer: midway-pattern-company
+  - manufacturer.united-manufacturing-company-diversey:
+      name: United Manufacturing Company (Diversey)
+      create: true
+  - corporate-entity.united-manufacturing-company-diversey:
+      expect: { ipdb_manufacturer_id: 532, manufacturer: united }
+      note: 'United Manufacturing Company (Diversey) is a distinct firm (IPDB manufacturer 532) whose only catalogued product is the 1933 Bank A Ball; the ingest mis-grouped it under the United Manufacturing brand (IPDB 323), dragging that brand''s start to 1933 though the United Mfg. of pinball fame was founded 1942. Re-attributed to its own manufacturer.'
+      manufacturer: united-manufacturing-company-diversey

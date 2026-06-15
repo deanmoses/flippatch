@@ -1,0 +1,51 @@
+attribution: flipcommons-catalog
+description: >
+  Assert production years on seven early-Japanese models flipcommons carried with a null or
+  placeholder (1900) year, from the eremeka catalog research (thetastates.com /
+  earlyarcadesjapan.blogspot.com, seeded in 0041). Sankyo: Apollo Moon, The World Series (was
+  1900), New Big Race; Universal: Asteroid Killer (was 1980); Komaya: Indy Game, Let's Go
+  Moon!; Nihon Gorakuki: Ultra Attack. Approximate eremeka dates are asserted with the
+  uncertainty noted. Guarded on ipdb_id.
+claims:
+  - model.apollo-moon:
+      expect: { ipdb_id: 6812 }
+      note: 'The eremeka catalog lists "1972 Apollo Moon by Sankyo".'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      year: 1972
+      game_format: pinball
+  - model.asteroid-killer:
+      expect: { ipdb_id: 3810 }
+      note: 'The eremeka catalog and Early Arcades Japan date this "1979 Asteroid Killer by Universal" (flipcommons previously had 1980).'
+      cite: https://earlyarcadesjapan.blogspot.com/2026/05/1979-asteroid-killer-by-universal.html
+      year: 1979
+      game_format: pinball
+  - model.indy-game:
+      expect: { ipdb_id: 6774 }
+      note: 'The eremeka catalog dates this to approximately 1967 (marked ~, "~1967 Indy Game by Komaya").'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      year: 1967
+      game_format: pinball
+  - model.lets-go-moon:
+      expect: { ipdb_id: 6773 }
+      note: 'The eremeka catalog dates this to approximately 1968 (marked ~, "~1968 Let''s Go Moon! by Komaya").'
+      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      year: 1968
+      game_format: pinball
+  - model.new-big-race:
+      expect: { ipdb_id: 6070 }
+      note: 'Early Arcades Japan says "New Big Race appears in the 1973 game directory, which was printed in late 1972 [...] The 1972 print date of the machine directory is the only date we have, and the one we will use for the time being."'
+      cite: https://earlyarcadesjapan.blogspot.com/2025/09/new-big-race-by-sankyo.html
+      year: 1972
+      game_format: pinball
+  - model.the-world-series:
+      expect: { ipdb_id: 6069 }
+      note: 'Early Arcades Japan says "The earliest mention I can find of The World Series is in 1972 [...] The World Series appears in the 1973 machine directory." (A 1976 re-release was sold as New World Series.)'
+      cite: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
+      year: 1972
+      game_format: pinball
+  - model.ultra-attack:
+      expect: { ipdb_id: 6068 }
+      note: 'The eremeka catalog dates this to approximately 1972 (marked ~), co-credited to Nihon Gorakuki and Nihon Tenbo.'
+      cite: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
+      year: 1972
+      game_format: pinball

@@ -1,0 +1,36 @@
+attribution: flipcommons-ai-desc-model
+description: >
+  Narrative descriptions for four early-Japanese EM models.
+claims:
+  - model.dai-uchuu-ryokou:
+      expect: { ipdb_id: 5572 }
+      note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (sugoroku gameplay, bulb scoring)."
+      description: |
+        Dai Uchuu Ryokou (大宇宙旅行) is an [[technology-generation:electromechanical]] amusement game produced around 1970 by [[manufacturer:nihon-jidou-hanbaiki-kabushikigaisha]] (Japan Automatic Vending Machine Company) of Tokyo.[[cite:1]] Its play derives from sugoroku, a Japanese variety of Parcheesi: the player advances a spaceship across the playfield toward a goal to win a replay, with some rollovers advancing the ship and others sending it backward.[[cite:2]] The game uses bulb scoring ([[display-type:backglass-lights]]) rather than [[display-type:score-reels]], and its title translates roughly as "Big Space Journey".[[cite:2]]
+      cites:
+        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+        "2": ipdb:5572
+  - model.fishing-tengu:
+      expect: { ipdb_id: 6872 }
+      note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (folklore theme, documentation)."
+      description: |
+        Fishing Tengu (つり天狗) is a single-player [[technology-generation:electromechanical]] game made in 1973 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]] Its theme draws on the tengu, a mythical creature of Japanese folklore.[[cite:2]] An image of the machine appears in the March 1976 issue of the trade magazine The Amusement Sangyo (アミューズメント産業).[[cite:2]]
+      cites:
+        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+        "2": ipdb:6872
+  - model.attack-ball:
+      expect: { ipdb_id: 6874 }
+      note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (prize dispensing, cabinet)."
+      description: |
+        Attack Ball (アタック ボール) is a single-player [[technology-generation:electromechanical]] game made in 1975 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]] It is a prize-dispensing machine, releasing prizes into a receptacle at the bottom of the cabinet front, and has an unusually padded or upholstered lower cabinet.[[cite:2]]
+      cites:
+        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+        "2": ipdb:6874
+  - model.circus-16:
+      expect: { ipdb_id: 6871 }
+      note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (cabinet, documentation)."
+      description: |
+        Circus (サーカス) is a single-player [[technology-generation:electromechanical]] game made in 1975 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]] The machine has a wedge-head cabinet, and an image of it appears in the March 1976 issue of the trade magazine The Amusement Sangyo (アミューズメント産業).[[cite:2]]
+      cites:
+        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+        "2": ipdb:6871

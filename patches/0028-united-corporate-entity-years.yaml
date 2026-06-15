@@ -1,0 +1,15 @@
+attribution: flipcommons-catalog
+description: >
+  Populate active years for United Manufacturing Company (IPDB 323): founded 1942
+  by Harry Williams and Lyndon Durant, ceased as an independent maker in 1964 when
+  Seeburg acquired both it and Williams and consolidated them under the Williams
+  name. Sourced from Wikipedia's WMS Industries article (United has no article of
+  its own). Companion to 0025, which split the unrelated 1933 "(Diversey)" firm
+  out of this brand.
+claims:
+  - corporate-entity.united-manufacturing-company:
+      expect: { ipdb_manufacturer_id: 323 }
+      note: 'Wikipedia''s WMS Industries article says Harry Williams "went into business with Lyndon Durant in 1942 under the name United Manufacturing," and that "In 1964, the company was acquired by the Seeburg Corporation, which also purchased United Manufacturing. The two amusement companies were consolidated under the Williams name [...]."'
+      cite: https://en.wikipedia.org/wiki/WMS_Industries
+      year_start: 1942
+      year_end: 1964

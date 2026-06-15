@@ -1,0 +1,35 @@
+attribution: flipcommons-ai-desc-model
+description: >
+  Narrative descriptions for pinball models, each grounded in the catalog itself
+  plus a single cited source. Catalog-derived facts (names, years, manufacturer) are
+  uncited; external facts carry the cite. Scope: the models touched by patch 0031.
+claims:
+  - model.cactus-canyon-continued:
+      expect: { year: 2012 }
+      cite: opdb:2155
+      description: |
+        Cactus Canyon Continued is an aftermarket conversion of [[manufacturer:bally]]'s 1998 *[[title:cactus-canyon]]*, made by [[manufacturer:eric-priepke]].
+  - model.pinball-tronic:
+      expect: { year: 2010 }
+      cite: https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+      description: |
+        Pinball Tronic is a virtual pinball machine by [[manufacturer:bifuca]]: a pinball-style cabinet that replaces the physical playfield with two LCD screens.
+  - model.demolition-man-on-steroids:
+      expect: { year: 2013 }
+      cite: opdb:2153
+      description: |
+        Demolition Man on Steroids is a heavily modified conversion of [[manufacturer:williams]]' *[[title:demolition-man]]* (1994), built by the homebrew studio [[manufacturer:pinnovating]].
+  - model.pinball-tronic-gold:
+      expect: { year: 2010 }
+      description: |
+        Pinball Tronic Gold is the premium edition of [[manufacturer:bifuca]]'s *[[model:pinball-tronic]]* — the same video-screen "virtual pinball," with the playfield rendered on LCD screens rather than built in glass and wood.
+  - model.road-trip:
+      expect: { year: 2025 }
+      cite: https://www.rampspinball.com/machines/road-trip
+      description: |
+        Road Trip is the debut machine from [[manufacturer:ramps-pinball]], an in-development game designed by Bob Nies announced as coming in late 2026.
+  - model.pinball-42:
+      expect: { year: 2014 }
+      cite: https://www.arcade-museum.com/Pinball/pinball-42
+      description: |
+        Pinball-42 is a video-display virtual pinball machine by [[manufacturer:kieswetter-kg]] that replaces the physical playfield with a screen, offering five different games to choose from.

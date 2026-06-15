@@ -1,0 +1,26 @@
+attribution: flipcommons-ai-desc-model
+description: >
+  Narrative descriptions for the new active makers' models, each grounded in the
+  catalog plus a single cited source. Catalog-derived facts (name, year,
+  manufacturer) are uncited; external facts carry the cite.
+claims:
+  - model.alice-goes-to-wonderland:
+      expect: { year: 2026 }
+      cite: https://wonderlandamusements.com/products/alice-goes-to-wonderland-pinball
+      description: |
+        Alice Goes to Wonderland is the debut machine from [[manufacturer:wonderland-amusements]]: a compact, roughly 80%-scale mechanical home pinball, themed on Lewis Carroll's Wonderland, with real flippers, bumpers and spinners. Funded on Kickstarter and sold for around $1,099, it is the first of the company's line of affordable home tables.
+  - model.teenage-mutant-ninja-turtles-battle-in-the-sewer:
+      expect: { year: 2026 }
+      cite: https://wonderlandamusements.com/products/tmntbattleinthesewer
+      description: |
+        Teenage Mutant Ninja Turtles: Battle in the Sewer is [[manufacturer:wonderland-amusements]]' second machine, a licensed TMNT home pinball offered for pre-order after the success of *[[title:alice-goes-to-wonderland]]*. Like its sibling it is a compact, real-mechanical table — flippers, slingshots, bumpers, ramps and multiball — with original art by TMNT comic artist Mateus Santolouco.
+  - model.pinball-eternal:
+      expect: { year: 2025 }
+      cite: https://pawlowskipinball.com/
+      description: |
+        Pinball Eternal is the first game from [[manufacturer:pawlowski-pinball]], a heavily animated metal / death-metal table that founder Adam Pawlowski bills as the most affordable and most metal pinball machine ever made, intended to launch at the Free Play Florida expo.
+  - model.little-shop-of-horrors:
+      expect: { name: Little Shop of Horrors }
+      cite: https://twip.kineticist.com/p/brought-to-you-by-secrets
+      description: |
+        Little Shop of Horrors is an announced licensed game from [[manufacturer:ramps-pinball]] (the maker formerly known as TiltBob Pinball), known so far only from a USPTO trademark filing — no release has been dated.

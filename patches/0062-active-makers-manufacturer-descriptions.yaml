@@ -1,0 +1,28 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: >
+  Narrative descriptions for the new active makers, each grounded in the catalog
+  plus a single cited source. Catalog-derived facts (model names, years, who made
+  what, location) are uncited; external facts carry the cite. Ramp's Pinball's
+  prior one-line description is superseded to record its TiltBob origin and second
+  game.
+claims:
+  - manufacturer.wonderland-amusements:
+      expect: { name: Wonderland Amusements }
+      cite: https://www.pinballnews.com/site/2025/03/11/alice-kickstarter-goes-live/
+      description: |
+        Wonderland Amusements is a US maker based in [[location:usa/nj/west-berlin]], New Jersey, founded in 2024 by a team of home-arcade veterans and headed by CEO and creative director Jerry Cummings, whose company ThinkUp designed the cabinets for the popular Arcade1Up line. It debuted at the 2024 Pinball Expo in Chicago with a mission to bring real mechanical pinball to the home at a fraction of the usual price: compact tables roughly 80% of full size, manufactured overseas and sold for around $1,000. Its debut *[[title:alice-goes-to-wonderland]]* (2026) was funded on Kickstarter.
+  - manufacturer.pawlowski-pinball:
+      expect: { name: Pawlowski Pinball }
+      cite: https://pawlowskipinball.com/about
+      description: |
+        Pawlowski Pinball is a one-man maker in [[location:usa/fl/longwood]], Florida, founded by software engineer Adam Pawlowski, who came to pinball in 2019 and set out to build the least expensive machine on the market by owning all of his own software and parts. Alongside its games the company offers Pinball Designer, a platform that lets customers design and build their own machines. Its first game is *[[title:pinball-eternal]]*, a heavily animated metal / death-metal table billed as the most affordable and most metal pinball machine ever made.
+  - manufacturer.euro-pinball-corp:
+      expect: { name: Euro Pinball Corp }
+      cite: https://www.pinball-magazine.com/?p=5081
+      description: |
+        Euro Pinball Corp is not a brand of its own but the manufacturing joint venture that [[manufacturer:pinball-brothers]] and [[manufacturer:pedretti-gaming]] formed for 2023 after shipping close to 800 games together. Pinball Brothers, of [[location:sweden/orebro]], Sweden, designs the games; Pedretti, of Italy, builds them; the venture pools their production at a single facility in [[location:italy/bg/bagnatica]] so multiple titles can run in parallel. The machines it assembles — *[[title:alien]]*, *[[title:queen]]*, *[[title:abba]]* and the *[[title:funhouse]]* remake — are sold under the two parents' brands rather than its own.
+  - manufacturer.ramps-pinball:
+      expect: { name: "Ramp's Pinball" }
+      cite: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
+      description: |
+        Ramp's Pinball Manufacturing is a Florida maker in [[location:usa/fl/odessa]], run by homebrew designer Bob Nies, whose one-off *Elf* machine won a 2022 favorite-homebrew award. First announced in 2023 as TiltBob Pinball, it rebranded to Ramp's Pinball Manufacturing. Its debut *[[title:road-trip]]* is a four-flipper widebody on an original theme, announced for late 2026, and a licensed *[[title:little-shop-of-horrors]]* surfaced as a trademark filing.

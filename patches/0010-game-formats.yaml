@@ -1,0 +1,680 @@
+attribution: flipcommons-catalog
+description: >
+  Assign game_format to some non-pinball machines: slot-machine, video-game, gun-game,
+  shuffle, bagatelle, miscellaneous.
+claims:
+  - model.5th-inning:
+      expect: { ipdb_id: 6132 }
+      note: 'IPDB says "A puck is slid across the playfield to land in the inclined scoring area."'
+      cite: ipdb:6132
+      game_format: shuffle
+  - model.all-the-way:
+      expect: { ipdb_id: 6278 }
+      note: 'IPDB says "It is a rebound shuffleboard."'
+      cite: ipdb:6278
+      game_format: shuffle
+  - model.ballista:
+      expect: { ipdb_id: 6499 }
+      note: 'IPDB says "It is a video game where a pinball playfield is displayed on the video screen to the player who sits inside a large sphere intended to represent a pinball."'
+      cite: ipdb:6499
+      game_format: video-game
+  - model.balls-a-poppin-2:
+      expect: { ipdb_id: 6993 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6993
+      game_format: miscellaneous
+  - model.bally-alley:
+      expect: { ipdb_id: 6508 }
+      note: 'IPDB says "It is a wall game with wireless radio remote control."'
+      cite: ipdb:6508
+      game_format: miscellaneous
+  - model.bally-baseball:
+      expect: { ipdb_id: 6524 }
+      note: 'IPDB says "This is a puck game."'
+      cite: ipdb:6524
+      game_format: shuffle
+  - model.bally-derby-3:
+      expect: { ipdb_id: 6040 }
+      note: 'IPDB says "It is a gun game with a pop-up array of 20 holes and mechanical animation of five horses."'
+      cite: ipdb:6040
+      game_format: gun-game
+  - model.bally-lane:
+      expect: { ipdb_id: 6509 }
+      note: 'IPDB says "It is a wall game with wireless radio remote control."'
+      cite: ipdb:6509
+      game_format: miscellaneous
+  - model.ballys-club-house:
+      expect: { ipdb_id: 3025 }
+      note: 'IPDB says "This game appears on pinball lists as the two-word name "Club House" but actually it is Not A Pinball and is an upright 7-coin console slot machine."'
+      cite: ipdb:3025
+      game_format: slot-machine
+  - model.barracuda:
+      expect: { ipdb_id: 7013 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7013
+      game_format: slot-machine
+  - model.baseball-16:
+      expect: { ipdb_id: 6378 }
+      note: 'IPDB says "It is a shuffle alley with a backbox that may be mistaken for a bat game at first glance."'
+      cite: ipdb:6378
+      game_format: shuffle
+  - model.basketball-champ:
+      expect: { ipdb_id: 193 }
+      note: 'IPDB says "This game is Not A Pinball."'
+      cite: ipdb:193
+      game_format: miscellaneous
+  - model.big-3:
+      expect: { ipdb_id: 6976 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6976
+      game_format: slot-machine
+  - model.big-league-6:
+      expect: { ipdb_id: 6391 }
+      note: 'IPDB says "A handwritten list that Steve Kordek compiled segregated this game from pinball machines on that list and put it with other 1950 games that are Not A Pinball."'
+      cite: ipdb:6391
+      game_format: miscellaneous
+  - model.big-round-up-2:
+      expect: { ipdb_id: 5081 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:5081
+      game_format: slot-machine
+  - model.big-tent:
+      expect: { ipdb_id: 6957 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6957
+      game_format: slot-machine
+  - model.big-top-mini-pinball:
+      expect: { ipdb_id: 3952 }
+      note: 'IPDB says "This is a gumball dispenser, not a pinball machine."'
+      cite: ipdb:3952
+      game_format: miscellaneous
+  - model.black-dragon:
+      expect: { ipdb_id: 3643 }
+      note: 'IPDB says "This game is not a pinball but may be identified as one in pinball resources."'
+      cite: ipdb:3643
+      game_format: miscellaneous
+  - model.blue-spot:
+      expect: { ipdb_id: 7014 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7014
+      game_format: slot-machine
+  - model.bowl-a-line-3:
+      expect: { ipdb_id: 6394 }
+      note: 'IPDB says "In Billboard, this game was identified as a shuffle alley."'
+      cite: ipdb:6394
+      game_format: shuffle
+  - model.bowl-a-ray:
+      expect: { ipdb_id: 6390 }
+      note: 'IPDB says "We are marking this game as Not A Pinball."'
+      cite: ipdb:6390
+      game_format: miscellaneous
+  - model.bowling-alley-2:
+      expect: { ipdb_id: 3662 }
+      note: 'IPDB says "It is a shuffle bowler, also called a puck bowler, but may be listed as a pinball in other resources."'
+      cite: ipdb:3662
+      game_format: shuffle
+  - model.bowling-league-2:
+      expect: { ipdb_id: 6389 }
+      note: 'IPDB says "It is a puck bowler."'
+      cite: ipdb:6389
+      game_format: shuffle
+  - model.bulls-eye-drop-ball-rebound-model:
+      expect: { ipdb_id: 6782 }
+      note: 'IPDB says "It is a rebound shuffleboard game and is included here for clarification purposes."'
+      cite: ipdb:6782
+      game_format: shuffle
+  - model.bulls-eye-drop-ball-upright-model:
+      expect: { ipdb_id: 5976 }
+      note: 'IPDB says "This game is not a pinball but is included here for clarification purposes."'
+      cite: ipdb:5976
+      game_format: miscellaneous
+  - model.bumper-shuffle:
+      expect: { ipdb_id: 6714 }
+      note: 'IPDB says "This is not a pinball."'
+      cite: ipdb:6714
+      game_format: miscellaneous
+  - model.cherry-parade:
+      expect: { ipdb_id: 7015 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7015
+      game_format: slot-machine
+  - model.circus-14:
+      expect: { ipdb_id: 6651 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6651
+      game_format: slot-machine
+  - model.circus-romance:
+      expect: { ipdb_id: 5444 }
+      note: 'IPDB says "This is not a pinball but is included here for clarification purposes because it is sometimes referenced in Billboard pinball ads without mentioning that it is an arcade game."'
+      cite: ipdb:5444
+      game_format: miscellaneous
+  - model.console-baseball:
+      expect: { ipdb_id: 6393 }
+      note: 'IPDB says "A handwritten list that Steve Kordek compiled segregated this game from pinball machines on that list and put it with other 1950 games that are Not A Pinball."'
+      cite: ipdb:6393
+      game_format: miscellaneous
+  - model.crazy-gang:
+      expect: { ipdb_id: 7016 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7016
+      game_format: slot-machine
+  - model.deluxe-red-arrow:
+      expect: { ipdb_id: 6961 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6961
+      game_format: slot-machine
+  - model.domino-bowler:
+      expect: { ipdb_id: 702 }
+      note: 'IPDB says "It is a puck bowler (shuffle alley)."'
+      cite: ipdb:702
+      game_format: shuffle
+  - model.double-shot:
+      expect: { ipdb_id: 6979 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6979
+      game_format: slot-machine
+  - model.flash-back:
+      expect: { ipdb_id: 6973 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6973
+      game_format: slot-machine
+  - model.flasher-bell-fruit:
+      expect: { ipdb_id: 3101 }
+      note: 'IPDB says "It operates like a slot machine."'
+      cite: ipdb:3101
+      game_format: slot-machine
+  - model.flasher-race-horse:
+      expect: { ipdb_id: 6746 }
+      note: 'IPDB says "It operates like a slot machine."'
+      cite: ipdb:6746
+      game_format: slot-machine
+  - model.flip-skill:
+      expect: { ipdb_id: 5697 }
+      note: 'IPDB says "This is not a pinball but is included here for clarification purposes only."'
+      cite: ipdb:5697
+      game_format: miscellaneous
+  - model.flipper-3:
+      expect: { ipdb_id: 5977 }
+      note: 'IPDB says "This game is not a pinball but is shown here for clarification."'
+      cite: ipdb:5977
+      game_format: miscellaneous
+  - model.futurity-2:
+      expect: { ipdb_id: 976 }
+      note: 'IPDB says "This game is not a pinball and is listed here for clarification purposes."'
+      cite: ipdb:976
+      game_format: miscellaneous
+  - model.glider:
+      expect: { ipdb_id: 1014 }
+      note: 'IPDB says "It is a puck bowler that uses targets instead of bowling pins."'
+      cite: ipdb:1014
+      game_format: shuffle
+  - model.goalee:
+      expect: { ipdb_id: 5879 }
+      note: 'IPDB says "This game is not a pinball game."'
+      cite: ipdb:5879
+      game_format: miscellaneous
+  - model.gold-mine-3:
+      expect: { ipdb_id: 4935 }
+      note: 'IPDB says "Bowling machine, not a pinball."'
+      cite: ipdb:4935
+      game_format: shuffle
+  - model.gold-nugget:
+      expect: { ipdb_id: 4387 }
+      note: 'IPDB says "It is a console slot machine."'
+      cite: ipdb:4387
+      game_format: slot-machine
+  - model.gold-rush-7:
+      expect: { ipdb_id: 7017 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7017
+      game_format: slot-machine
+  - model.gun-smoke-3:
+      expect: { ipdb_id: 6619 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6619
+      game_format: slot-machine
+  - model.hi-fly:
+      expect: { ipdb_id: 5615 }
+      note: 'IPDB says "Because ''Hi Fly'' does not use pinballs, we classify it as Not A Pinball and maintain this listing to clarify and expand the Billboard article."'
+      cite: ipdb:5615
+      game_format: miscellaneous
+  - model.hit-parade-3:
+      expect: { ipdb_id: 3150 }
+      note: 'IPDB says "This game is not a pinball but appears on some pinball lists."'
+      cite: ipdb:3150
+      game_format: miscellaneous
+  - model.home-run-hitter:
+      expect: { ipdb_id: 4761 }
+      note: 'IPDB says "This is not a pinball nor is it a bat game."'
+      cite: ipdb:4761
+      game_format: miscellaneous
+  - model.hyperball:
+      expect: { ipdb_id: 3169 }
+      note: 'IPDB says "An earlier game, Williams'' 1981 ''Hyperball'', had an alpha-numeric display but is Not A Pinball."'
+      cite: ipdb:25
+      game_format: miscellaneous
+  - model.ice-cold-beer:
+      expect: { ipdb_id: 6802 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6802
+      game_format: miscellaneous
+  - model.ice-cold-beer-2:
+      expect: { ipdb_id: 6804 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6804
+      game_format: miscellaneous
+  - model.jamboree-2:
+      expect: { ipdb_id: 6958 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6958
+      game_format: slot-machine
+  - model.joker-ball:
+      expect: { ipdb_id: 5561 }
+      note: 'IPDB says "This is not a pinball machine but is included here for clarification purposes."'
+      cite: ipdb:5561
+      game_format: miscellaneous
+  - model.jokers-wild-2:
+      expect: { ipdb_id: 3181 }
+      note: 'IPDB says "This is not a pinball machine but is included here for clarification purposes."'
+      cite: ipdb:3181
+      game_format: miscellaneous
+  - model.jumbo-60:
+      expect: { ipdb_id: 6983 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6983
+      game_format: slot-machine
+  - model.jumbo-button-console-model:
+      expect: { ipdb_id: 6982 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6982
+      game_format: slot-machine
+  - model.jumbo-handle-console-model:
+      expect: { ipdb_id: 6964 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6964
+      game_format: slot-machine
+  - model.jungle-drums:
+      expect: { ipdb_id: 1335 }
+      note: 'IPDB says "It is really a Gun Game."'
+      cite: ipdb:1335
+      game_format: gun-game
+  - model.lincoln-fields:
+      expect: { ipdb_id: 6940 }
+      note: 'IPDB says "It is a console slot machine."'
+      cite: ipdb:6940
+      game_format: slot-machine
+  - model.little-buckaroo:
+      expect: { ipdb_id: 6987 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6987
+      game_format: slot-machine
+  - model.lolly-dolly:
+      expect: { ipdb_id: 7018 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7018
+      game_format: slot-machine
+  - model.lucky-draw-2:
+      expect: { ipdb_id: 7019 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7019
+      game_format: slot-machine
+  - model.magic-baseball:
+      expect: { ipdb_id: 6129 }
+      note: 'IPDB says "It is an arcade game shown with a date of October 1966 on a list of "Equipment Introduced During 1966" (per The Billboard, Jan-7-1967, page 58)."'
+      cite: ipdb:6129
+      game_format: miscellaneous
+  - model.martians:
+      expect: { ipdb_id: 5004 }
+      note: 'IPDB says "We have reclassified this listing as Not A Pinball until such time that we delete this listing from the database."'
+      cite: ipdb:5004
+      game_format: miscellaneous
+  - model.match-race:
+      expect: { ipdb_id: 3715 }
+      note: 'IPDB says "One bagatelle for each player."'
+      cite: ipdb:3715
+      game_format: bagatelle
+  - model.mazooma-bell:
+      expect: { ipdb_id: 7020 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7020
+      game_format: slot-machine
+  - model.mini-basketball:
+      expect: { ipdb_id: 5125 }
+      note: 'IPDB says "This is actually a dispenser, not a pinball machine."'
+      cite: ipdb:5125
+      game_format: miscellaneous
+  - model.monte-carlo-7:
+      expect: { ipdb_id: 6889 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6889
+      game_format: miscellaneous
+  - model.mountain-climber:
+      expect: { ipdb_id: 7021 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7021
+      game_format: slot-machine
+  - model.orange-county-choppers:
+      expect: { ipdb_id: 5097 }
+      note: 'IPDB says "It is a video game and is included here for clarification purposes only."'
+      cite: ipdb:5097
+      game_format: video-game
+  - model.peppy:
+      expect: { ipdb_id: 3356 }
+      note: 'IPDB says "This machine is not a pinball."'
+      cite: ipdb:3356
+      game_format: miscellaneous
+  - model.phantom-haus:
+      expect: { ipdb_id: 6840 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6840
+      game_format: miscellaneous
+  - model.pin-boy-bowling:
+      expect: { ipdb_id: 5392 }
+      note: 'IPDB says "We are not sure how this game shoots the balls, or even if there is really just one ball recycled ten times."'
+      cite: ipdb:5392
+      game_format: miscellaneous
+  - model.pony-derby:
+      expect: { ipdb_id: 7022 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7022
+      game_format: slot-machine
+  - model.profit-sharer:
+      expect: { ipdb_id: 6256 }
+      note: 'IPDB says "The "Profit Sharer" is Not A Pinball but is a "Jack Pot Attachment" for the front of the pinball cabinet to convert non-payout pinball machines to payout."'
+      cite: ipdb:6256
+      game_format: miscellaneous
+  - model.profit-sharer-2:
+      expect: { ipdb_id: 6257 }
+      note: 'IPDB says "The "Profit Sharer" is Not A Pinball but is a "Jack Pot Attachment" for the front of the pinball cabinet allowing operators and jobbers to convert their non-payout pinball machines to payout."'
+      cite: ipdb:6257
+      game_format: miscellaneous
+  - model.rainbow-belle:
+      expect: { ipdb_id: 6977 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6977
+      game_format: slot-machine
+  - model.red-arrow-4:
+      expect: { ipdb_id: 6960 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6960
+      game_format: slot-machine
+  - model.red-arrow-payout-model:
+      expect: { ipdb_id: 7023 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7023
+      game_format: slot-machine
+  - model.road-champion:
+      expect: { ipdb_id: 4395 }
+      note: 'IPDB says "It is actually a video game in an upright cabinet."'
+      cite: ipdb:4395
+      game_format: video-game
+  - model.rondo-auto-flipper:
+      expect: { ipdb_id: 6698 }
+      note: 'IPDB says "This game is Not A Pinball but is a car race game converted from pinball machines as pictured in the undated flyer so we list it for clarification purposes."'
+      cite: ipdb:6698
+      game_format: miscellaneous
+  - model.rotation-3:
+      expect: { ipdb_id: 6392 }
+      note: 'IPDB says "A handwritten list that Steve Kordek compiled segregated this game from pinball machines on that list and put it with other 1950 games that are Not A Pinball."'
+      cite: ipdb:6392
+      game_format: miscellaneous
+  - model.saddle-turf:
+      expect: { ipdb_id: 5302 }
+      note: 'IPDB says "This is not a pinball machine."'
+      cite: ipdb:5302
+      game_format: miscellaneous
+  - model.safari-3:
+      expect: { ipdb_id: 3534 }
+      note: 'IPDB says "It is really a Gun Game."'
+      cite: ipdb:3534
+      game_format: gun-game
+  - model.safari-de-luxe:
+      expect: { ipdb_id: 6248 }
+      note: 'IPDB says "It is really a Gun Game."'
+      cite: ipdb:6248
+      game_format: gun-game
+  - model.scoreboard-shuffleboard:
+      expect: { ipdb_id: 6387 }
+      note: 'IPDB says "This is not a pinball but is a scoring device to connect to existing coinless, non-electric shuffleboards."'
+      cite: ipdb:6387
+      game_format: shuffle
+  - model.shawnee:
+      expect: { ipdb_id: 6938 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6938
+      game_format: slot-machine
+  - model.shuffle-bowl:
+      expect: { ipdb_id: 3246 }
+      note: 'IPDB says "It was a game sold to operators to mount at one end of a non-coin, non-electric regulation 22-foot shuffleboard to convert it into a coin-operated puck bowler."'
+      cite: ipdb:3246
+      game_format: shuffle
+  - model.shuffle-king-re-bound:
+      expect: { ipdb_id: 3576 }
+      note: 'IPDB says "It is a shuffle board."'
+      cite: ipdb:3576
+      game_format: shuffle
+  - model.shuffle-king-score-board:
+      expect: { ipdb_id: 3571 }
+      note: 'IPDB says "This is not a pinball but is a scoring device to connect to existing coinless, non-electric shuffleboards."'
+      cite: ipdb:3571
+      game_format: shuffle
+  - model.shuffle-pool:
+      expect: { ipdb_id: 6819 }
+      note: 'IPDB says "This is a shuffle alley."'
+      cite: ipdb:6819
+      game_format: shuffle
+  - model.shuffle-pool-rotation:
+      expect: { ipdb_id: 6820 }
+      note: 'IPDB says "It is a shuffle alley."'
+      cite: ipdb:6820
+      game_format: shuffle
+  - model.shuffle-skill:
+      expect: { ipdb_id: 5655 }
+      note: 'IPDB says "It is a 1-player puck bowler (shuffle alley) with a backglass in the style used in pinball machines."'
+      cite: ipdb:5655
+      game_format: shuffle
+  - model.sixty-two-baseball:
+      expect: { ipdb_id: 3239 }
+      note: 'IPDB says "We have re-designated this listing as Not A Pinball until we can delete it."'
+      cite: ipdb:3239
+      game_format: miscellaneous
+  - model.skeet-shoot:
+      expect: { ipdb_id: 6992 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6992
+      game_format: slot-machine
+  - model.skill-derby-non-replay-model:
+      expect: { ipdb_id: 6433 }
+      note: 'IPDB says "Although Bally also referred to this game as "an upright pin-game", a disc is used instead of a ball and therefore we classify it as Not A Pinball."'
+      cite: ipdb:6433
+      game_format: miscellaneous
+  - model.skill-derby-replay-model:
+      expect: { ipdb_id: 2180 }
+      note: 'IPDB says "Although Bally also referred to this game as "an upright pin-game", a disc is used instead of a ball and therefore we classify it as Not A Pinball."'
+      cite: ipdb:2180
+      game_format: miscellaneous
+  - model.skill-parade:
+      expect: { ipdb_id: 2181 }
+      note: 'IPDB says "This game is not a pinball but is listed here for informational purposes."'
+      cite: ipdb:2181
+      game_format: miscellaneous
+  - model.skill-roll-2:
+      expect: { ipdb_id: 3232 }
+      note: 'IPDB says "This game is not a pinball but we have included it here for informational purposes."'
+      cite: ipdb:3232
+      game_format: miscellaneous
+  - model.skillshot:
+      expect: { ipdb_id: 5722 }
+      note: 'IPDB says "This game is not a pinball but is listed here for informational purposes."'
+      cite: ipdb:5722
+      game_format: miscellaneous
+  - model.speedway-5:
+      expect: { ipdb_id: 6991 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6991
+      game_format: miscellaneous
+  - model.spongebob-squarepants-soccer-shot-pinball:
+      expect: { ipdb_id: 5509 }
+      note: 'IPDB says "This game is not a pinball but is shown here for informational purposes."'
+      cite: ipdb:5509
+      game_format: miscellaneous
+  - model.spot-pool-3:
+      expect: { ipdb_id: 3456 }
+      note: 'IPDB says "This not a pinball."'
+      cite: ipdb:3456
+      game_format: miscellaneous
+  - model.super-big-tent:
+      expect: { ipdb_id: 6963 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6963
+      game_format: slot-machine
+  - model.super-blue-spot:
+      expect: { ipdb_id: 7024 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7024
+      game_format: slot-machine
+  - model.super-circus-3:
+      expect: { ipdb_id: 6995 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6995
+      game_format: slot-machine
+  - model.super-jumbo-2:
+      expect: { ipdb_id: 6965 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6965
+      game_format: slot-machine
+  - model.super-pinball-91:
+      expect: { ipdb_id: 6491 }
+      note: 'IPDB says "This is a video game with a pinball theme."'
+      cite: ipdb:6491
+      game_format: video-game
+  - model.super-wild-cat:
+      expect: { ipdb_id: 6968 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6968
+      game_format: slot-machine
+  - model.sweet-shawnee:
+      expect: { ipdb_id: 6939 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6939
+      game_format: slot-machine
+  - model.ten-strike-2:
+      expect: { ipdb_id: 2520 }
+      note: 'IPDB says "This game is not a pinball game."'
+      cite: ipdb:2520
+      game_format: miscellaneous
+  - model.the-death-dealing-adventures-of-maxx-badazz-champion-kickboxer:
+      expect: { ipdb_id: 4350 }
+      note: 'IPDB says "This is not a pinball, just a backglass."'
+      cite: ipdb:4350
+      game_format: miscellaneous
+  - model.the-hunter-2:
+      expect: { ipdb_id: 6978 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6978
+      game_format: slot-machine
+  - model.the-ritz:
+      expect: { ipdb_id: 1964 }
+      note: 'IPDB says "Although steel balls are used, this game is decidedly not a pinball."'
+      cite: ipdb:1964
+      game_format: miscellaneous
+  - model.tim-buc-too:
+      expect: { ipdb_id: 6970 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6970
+      game_format: slot-machine
+  - model.torpedo-7:
+      expect: { ipdb_id: 6623 }
+      note: 'IPDB says "It is a pellet gun game."'
+      cite: ipdb:6623
+      game_format: gun-game
+  - model.touchdown-5:
+      expect: { ipdb_id: 6975 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6975
+      game_format: slot-machine
+  - model.trail-blazer:
+      expect: { ipdb_id: 6971 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6971
+      game_format: slot-machine
+  - model.treble-chance:
+      expect: { ipdb_id: 7025 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7025
+      game_format: slot-machine
+  - model.triple-up:
+      expect: { ipdb_id: 7026 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:7026
+      game_format: slot-machine
+  - model.tv-flipper:
+      expect: { ipdb_id: 6547 }
+      note: 'IPDB says "It is a video game with a name suggestive of pinball playing."'
+      cite: ipdb:6547
+      game_format: video-game
+  - model.twin-red-arrow:
+      expect: { ipdb_id: 6962 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6962
+      game_format: slot-machine
+  - model.twin-super-wild-cat:
+      expect: { ipdb_id: 6969 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6969
+      game_format: slot-machine
+  - model.twin-tim-buc-too:
+      expect: { ipdb_id: 6974 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6974
+      game_format: slot-machine
+  - model.twin-trail-blazer:
+      expect: { ipdb_id: 6972 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6972
+      game_format: slot-machine
+  - model.twin-wild-cat:
+      expect: { ipdb_id: 6967 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6967
+      game_format: slot-machine
+  - model.video-pinball:
+      expect: { ipdb_id: 6292 }
+      note: 'IPDB says "It is a video game of a pinball playfield with pinball rules and scoring."'
+      cite: ipdb:6292
+      game_format: video-game
+  - model.video-pinball-2:
+      expect: { ipdb_id: 6432 }
+      note: 'IPDB says "It is a video game of a pinball playfield with pinball rules and scoring."'
+      cite: ipdb:6432
+      game_format: video-game
+  - model.wheels-ii:
+      expect: { ipdb_id: 3559 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:3559
+      game_format: miscellaneous
+  - model.whiffle-zip:
+      expect: { ipdb_id: 3558 }
+      note: 'IPDB says "We classify this table game as Not a Pinball."'
+      cite: ipdb:3558
+      game_format: miscellaneous
+  - model.wild-cat:
+      expect: { ipdb_id: 6966 }
+      note: 'IPDB says "Also called a "flasher type" slot machine."'
+      cite: ipdb:6966
+      game_format: slot-machine
+  - model.world-cup-2:
+      expect: { ipdb_id: 3520 }
+      note: 'IPDB says "This game is not a pinball but appears on some pinball lists."'
+      cite: ipdb:3520
+      game_format: miscellaneous
+  - model.world-series-3:
+      expect: { ipdb_id: 6130 }
+      note: 'IPDB says "It is a rebound shuffleboard game."'
+      cite: ipdb:6130
+      game_format: shuffle
+  - model.zekes-peak:
+      expect: { ipdb_id: 6803 }
+      note: 'IPDB says "This is Not A Pinball."'
+      cite: ipdb:6803
+      game_format: miscellaneous

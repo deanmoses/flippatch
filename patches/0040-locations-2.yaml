@@ -1,0 +1,65 @@
+attribution: flipcommons-catalog
+description: >
+  Cities whose prefecture parent now exists (Osaka from 0039; Tokyo from the seed): Higashi-Osaka (home of Tomato
+  Land), Mitaka (Sunwise), Shinagawa (Banpresto), and the Tokyo wards of two
+  early-Japanese makers later sourced in 0049 — Setagaya (Kato) and Nakano (Towa).
+  EM-era makers with no recoverable HQ stay at country level
+  (japan), as the existing Nihon Gorakuki record already does. Also the home cities of the new active makers added in
+  0050-0055: West Berlin NJ (Wonderland Amusements), Longwood FL (Pawlowski
+  Pinball), Odessa FL (Ramp's Pinball) and Bagnatica BG (Euro Pinball Corp, under
+  the Bergamo province created in 0039).
+claims:
+  - location.japan/osaka/higashi-osaka:
+      create: true
+      name: Higashi-Osaka
+      slug: higashi-osaka
+      parent: japan/osaka
+      location_type: city
+  - location.japan/tokyo/mitaka:
+      create: true
+      name: Mitaka
+      slug: mitaka
+      parent: japan/tokyo
+      location_type: city
+  - location.japan/tokyo/shinagawa:
+      create: true
+      name: Shinagawa
+      slug: shinagawa
+      parent: japan/tokyo
+      location_type: city
+  - location.japan/tokyo/setagaya:
+      create: true
+      name: Setagaya
+      slug: setagaya
+      parent: japan/tokyo
+      location_type: city
+  - location.japan/tokyo/nakano:
+      create: true
+      name: Nakano
+      slug: nakano
+      parent: japan/tokyo
+      location_type: city
+  - location.usa/nj/west-berlin:
+      create: true
+      name: West Berlin
+      slug: west-berlin
+      parent: usa/nj
+      location_type: city
+  - location.usa/fl/longwood:
+      create: true
+      name: Longwood
+      slug: longwood
+      parent: usa/fl
+      location_type: city
+  - location.usa/fl/odessa:
+      create: true
+      name: Odessa
+      slug: odessa
+      parent: usa/fl
+      location_type: city
+  - location.italy/bg/bagnatica:
+      create: true
+      name: Bagnatica
+      slug: bagnatica
+      parent: italy/bg
+      location_type: city

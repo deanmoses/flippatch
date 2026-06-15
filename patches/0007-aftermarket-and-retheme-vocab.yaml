@@ -1,0 +1,31 @@
+attribution: flip-museum
+description: >
+  This adds the vocabulary for aftermarket and re-themes. Add a new `aftermarket`
+  production status and two re-theme tags, unofficial-retheme and manufacturer-retheme.
+  Tighten the `one-off` description so it no longer covers fan re-themes (now
+  `aftermarket`); `one-off` is now reserved for manufacturer-built single units
+  (gifts, movie props, test pieces).
+claims:
+  - production-status.aftermarket:
+      create: true
+      name: Aftermarket
+      display_order: 5
+      description: >
+        Machines modified by someone other than the original manufacturer
+        (fan re-themes, operators, modders); not an official commercial release.
+  - production-status.one-off:
+      expect: { name: One-off }
+      description: >
+        One-of-a-kind or few-of-a-kind machines built by a manufacturer but never
+        intended for commercial production - e.g. gifts, movie props and test pieces.
+  - tag.unofficial-retheme:
+      create: true
+      name: Unofficial re-theme
+      description: >
+        Existing machines re-skinned with new art/theme by someone other than the
+        original manufacturer (fan, operator, hobbyist). Not a commercial release.
+  - tag.manufacturer-retheme:
+      create: true
+      name: Manufacturer re-theme
+      description: >
+        Official re-themes, where a manufacturer re-skinned one of its own designs.

@@ -1,0 +1,33 @@
+attribution: flip-museum
+description: >
+  Retract the flip-museum claims that patches 0004, 0007 and 0009 wrongly
+  wrote for the production-status, re-theme tag and game-format vocabularies.
+  The correct claims are re-asserted under flipcommons-catalog (vocab, 0020)
+  and the per-entity AI sources (descriptions, 0021/0022), all at the catalog
+  tier (priority 300). Until flip-museum (priority 10000) is retracted here it
+  outranks them, so this patch must run after 0020-0022. Retracting `status`
+  returns these patch-created entities to seed parity (no status claim;
+  lifecycle defaults to active).
+claims:
+  - production-status.produced:
+      retract: [name, slug, display_order, description, status]
+  - production-status.announced:
+      retract: [name, slug, display_order, description, status]
+  - production-status.unreleased:
+      retract: [name, slug, display_order, description, status]
+  - production-status.one-off:
+      retract: [name, slug, display_order, description, status]
+  - production-status.aftermarket:
+      retract: [name, slug, display_order, description, status]
+  - tag.unofficial-retheme:
+      retract: [name, slug, description, status]
+  - tag.manufacturer-retheme:
+      retract: [name, slug, description, status]
+  - game-format.slot-machine:
+      retract: [name, slug, display_order, description, status]
+  - game-format.video-game:
+      retract: [name, slug, display_order, description, status]
+  - game-format.gun-game:
+      retract: [name, slug, display_order, description, status]
+  - game-format.miscellaneous:
+      retract: [name, slug, display_order, description, status]
