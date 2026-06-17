@@ -1,15 +1,11 @@
 """patchkit - shared helpers for authoring Flipcommons data patches.
 
-Pure Python (NO Django import) so it imports anywhere and is unit-testable. The
-one Django-dependent step - reading live catalog values for `expect:` guards -
-stays a one-liner in each generator (see docs/DataPatchAuthoring.md in
-flipcommons and the worked example beside this file).
+Pure Python (NO Django import) so it imports anywhere and is unit-testable.
 
-Why this exists: four prior patch-authoring sessions each re-derived YAML
-escaping, the expect-guard chooser, the missing-ref assert and the review-doc
-scaffolding - each slightly differently, some subtly wrong. This centralizes the
-parts that kept getting reinvented so a new session writes classification data,
-not scaffolding.
+Why this exists: prior patch-authoring sessions each re-derived YAML escaping,
+the missing-ref assert and the review-doc scaffolding - each slightly
+differently, some subtly wrong. This centralizes the parts that kept getting
+reinvented so a new session writes classification data, not scaffolding.
 
 See DataPatches.md for the patch file format this emits.
 """
@@ -155,51 +151,15 @@ def clean_ipdb_quote(text: str, limit: int = 240) -> str:
 
 
 # --------------------------------------------------------------------------- #
-# guards / resolution                                                         #
+# resolution                                                                  #
 # --------------------------------------------------------------------------- #
 
 # An entity reference the patch targets (a slug / public-id / 'type:id' form).
 type Ref = str
 # A catalog field/column name, including resolved-row aliases ('corporate_entity__slug').
 type FieldName = str
-# A canonical expect: key ('corporate_entity', never the '__slug' alias).
-type GuardKey = str
 # A catalog field value: year int, slug str, ipdb_id int.
 type FieldValue = object
-# A single-key expect: mapping (canonical key -> field value).
-type Guard = dict[GuardKey, FieldValue]
-
-# Maps each canonical GuardKey to the FieldNames to probe for its value, in order.
-_GUARD_ALIASES: dict[GuardKey, tuple[FieldName, ...]] = {
-    "corporate_entity": (
-        "corporate_entity",
-        "corporate_entity__slug",
-        "corporate_entity_slug",
-    ),
-}
-
-
-def guard(
-    row: Mapping[FieldName, FieldValue],
-    prefer: Sequence[GuardKey] = ("ipdb_id", "year", "corporate_entity"),
-) -> Guard:
-    """Pick the most specific available `expect:` guard from a live-catalog row.
-
-    `row` is a plain dict of resolved values (e.g. from
-    `.values('year', 'corporate_entity__slug', 'ipdb_id')`). Returns {} when none
-    are present - author should then guard on something else or accept the risk.
-
-    Default order follows DataPatches.md: when the patch is keyed on the IPDB
-    record, `ipdb_id` is the most specific guard (present even when year and
-    corporate_entity are null); else `year`; else `corporate_entity`. Pass a
-    different `prefer` (e.g. `("year", "corporate_entity")`) when not IPDB-keyed.
-    """
-    for key in prefer:
-        for cand in _GUARD_ALIASES.get(key, (key,)):
-            v = row.get(cand)
-            if v is not None and v != "":
-                return {key: v}
-    return {}
 
 
 def check_resolved(requested: Iterable[Ref], found: Iterable[Ref]) -> None:
@@ -296,7 +256,6 @@ def entry(
     ref: Ref,
     *,
     create: bool = False,
-    expect: Mapping[GuardKey, FieldValue] | None = None,
     note: str | None = None,
     cite: str | None = None,
     fields: Mapping[FieldName, FieldValue] | None = None,
@@ -312,8 +271,7 @@ def entry(
     """Emit one YAML `claims:` entry block, correctly indented and escaped.
 
     ref:    '<entity_type>.<public_id>'  e.g. 'model.mazatron', 'game-format.slot-machine'.
-    create: emit `create: true` (new entity; omit expect).
-    expect: dict -> flow map `expect: { k: v }` (drift guard).
+    create: emit `create: true` (new entity).
     note:   free text -> single-quoted scalar (use source_note() to build it).
     cite:   'scheme:id' e.g. 'ipdb:4443'.
     fields: scalar/FK claims; value used as-is for scalars, target public_id for FKs.
@@ -336,10 +294,6 @@ def entry(
     commented: prefix every line with '# ' (FLAGGED rows kept in-file for a human call).
     comment: trailing `# ...` on the ref line.
     """
-    if create and expect:
-        raise ValueError(
-            f"{ref}: create + expect are contradictory (create is for a new entity)"
-        )
     if create and retract:
         raise ValueError(
             f"{ref}: create + retract are invalid (nothing to retract on a new entity)"
@@ -355,9 +309,6 @@ def entry(
     lines = [head]
     if create:
         lines.append(f"{sub}create: true")
-    if expect:
-        inner = ", ".join(f"{k}: {_scalar(v)}" for k, v in expect.items())
-        lines.append(f"{sub}expect: {{ {inner} }}")
     if note is not None:
         lines.append(f"{sub}note: {yamlq(clean_text(note))}")
     if cite:
@@ -456,7 +407,6 @@ if __name__ == "__main__":
     print(
         entry(
             "model.mazatron",
-            expect={"ipdb_id": 4443},
             note=source_note("IPDB", 'exists only as a "prototype" machine'),
             cite="ipdb:4443",
             fields={"production_status": "unreleased"},
@@ -466,7 +416,6 @@ if __name__ == "__main__":
     print(
         entry(
             "model.mazatron",
-            expect={"ipdb_id": 4443},
             description="A 1990 solid-state prototype by Mac Pinball.[[cite:1]] "
             "Only two units are known to survive.[[cite:2]]",
             cites={

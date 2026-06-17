@@ -119,9 +119,8 @@ def test_retract_only_is_valid(schema_validator):
 @pytest.mark.parametrize(
     "body",
     [
-        # create is exclusive with delete and the edit-only guards.
+        # create is exclusive with delete and the edit-only directives.
         {"create": True, "delete": True},
-        {"create": True, "expect": {"year": 1990}, "name": "Foo"},
         {"create": True, "remove": {"location": ["germany"]}, "name": "Foo"},
         # delete is footprint-exclusive — no retract/remove companions.
         {"delete": True, "retract": ["year"]},
@@ -136,11 +135,13 @@ def test_illegal_directive_combinations_rejected(schema_validator, body):
 @pytest.mark.parametrize(
     "body",
     [
-        # delete keeps its drift guard and provenance.
+        # delete carries provenance, plus a still-permitted (ignored) expect.
         {"delete": True, "expect": {"year": 1990}},
         {"delete": True, "note": "dup", "cite": "ipdb:4443"},
-        # create carries fields and provenance, just not the edit-only guards.
+        # create carries fields and provenance, just not the edit-only directives.
         {"create": True, "name": "Foo", "note": "new", "cite": "ipdb:4443"},
+        # the obsolete expect is still permitted anywhere, including on a create.
+        {"create": True, "name": "Foo", "expect": {"year": 1990}},
     ],
 )
 def test_legal_directive_combinations_accepted(schema_validator, body):
@@ -432,14 +433,13 @@ def test_delete_with_changesets_rejected(schema_validator):
     [
         {"create": True},
         {"delete": True},
-        {"expect": {"year": 1990}},
         {"changesets": [{"note": "nested"}]},
     ],
 )
 def test_grouped_item_header_only_key_rejected(schema_validator, item):
     data = {
         "attribution": "flipcommons-catalog",
-        "claims": [{"model.foo": {"expect": {"year": 1990}, "changesets": [item]}}],
+        "claims": [{"model.foo": {"changesets": [item]}}],
     }
     assert _has_error(schema_validator, data)
 

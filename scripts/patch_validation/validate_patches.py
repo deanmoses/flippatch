@@ -8,9 +8,9 @@ Checks each ``patches/NNNN-slug.yaml`` for:
 - JSON-shaped values only (no YAML implicit dates/bools beyond JSON)
 - structural conformance to ``schema/patch.schema.json``
 
-Authoritative validation (entity resolution, the ``expect`` drift guard,
-field classification) happens in flipcommons' ``ingest_patches``; this is a
-fast structural gate so a typo is caught before publishing.
+Authoritative validation (entity resolution, field classification) happens in
+flipcommons' ``ingest_patches``; this is a fast structural gate so a typo is
+caught before publishing.
 """
 
 from __future__ import annotations

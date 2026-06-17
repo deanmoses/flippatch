@@ -96,7 +96,7 @@
     },
     "claims": {
       "type": "array",
-      "description": "Ordered list of operations; each entry is a single-key mapping (entity ref -> fields). An entry may group several changesets on one record under a single header via `changesets:` (the ref and `expect:` declared once).",
+      "description": "Ordered list of operations; each entry is a single-key mapping (entity ref -> fields). An entry may group several changesets on one record under a single header via `changesets:` (the ref declared once).",
       "items": {
         "type": "object",
         "minProperties": 1,
@@ -115,14 +115,13 @@
                     {
                       "anyOf": [
                         { "required": ["delete"] },
-                        { "required": ["expect"] },
                         { "required": ["retract"] },
                         { "required": ["remove"] }
                       ]
                     }
                   ]
                 },
-                "description": "create is exclusive with delete and the edit-only guards (expect/retract/remove)."
+                "description": "create is exclusive with delete and the edit-only directives (retract/remove)."
               },
               {
                 "not": {
@@ -151,7 +150,7 @@
               },
               "expect": {
                 "type": "object",
-                "description": "Drift guard: resolved scalar/FK values the target must already have. On a grouped header it guards every changeset below."
+                "description": "Legacy drift guard, now accepted-but-ignored: still permitted so older patches that carry it validate, but it no longer guards anything. Omit it in new patches."
               },
               "retract": { "$ref": "#/definitions/retract" },
               "remove": { "$ref": "#/definitions/remove" },
@@ -161,7 +160,7 @@
               "changesets": {
                 "type": "array",
                 "minItems": 1,
-                "description": "Companion changesets on the same record. Each item is edit-shaped (note/cite/cites/retract/remove + authored fields) and becomes its own ChangeSet, inheriting the header's ref and `expect:`. Lifecycle (create/delete) and the drift guard (expect) live on the header, not here.",
+                "description": "Companion changesets on the same record. Each item is edit-shaped (note/cite/cites/retract/remove + authored fields) and becomes its own ChangeSet, inheriting the header's ref. Lifecycle (create/delete) lives on the header, not here.",
                 "items": {
                   "type": "object",
                   "minProperties": 1,
@@ -169,7 +168,6 @@
                     "anyOf": [
                       { "required": ["create"] },
                       { "required": ["delete"] },
-                      { "required": ["expect"] },
                       { "required": ["changesets"] }
                     ]
                   },

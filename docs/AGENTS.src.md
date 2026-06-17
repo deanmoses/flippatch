@@ -86,7 +86,7 @@ The thin local reference is [docs/Patches.md](Patches.md); the authoritative for
 Real patch authoring spans four repos, checked out as siblings (`../pindata`, `../flipcommons`, `../pinexplore`):
 
 - **flippatch** (here) — where patches and their `patches/authoring/` generators live, and where you run `make validate` and `make push`.
-- **flipcommons** (`../flipcommons`) — the live catalog (Django + the SQLite dev DB at `backend/db.sqlite3`), the `ingest_patches` apply engine, the live `expect:` guard values you must read against, and the **canonical patch documentation**.
+- **flipcommons** (`../flipcommons`) — the live catalog (Django + the SQLite dev DB at `backend/db.sqlite3`), the `ingest_patches` apply engine, and the **canonical patch documentation**.
 - **pinexplore** (`../pinexplore`) — where you research the verbatim source text behind a `note:`/`cite:`. Two evidence stores: the **web scrape cache** (a searchable, durable cache of fetched web pages — now the primary evidence source, since most new catalog data comes from the web rather than IPDB/OPDB) and the **DuckDB analysis DB** (IPDB/OPDB/Fandom dumps, cross-source checks). See `../pinexplore/docs/WebCache.md` for the cache and `../pinexplore/CLAUDE.md` for the rest.
 - **pindata** (`../pindata`) — the immutable baseline seed catalog (markdown entity files) the patch claims target. This is basically retired, we're switching to database dumps to bootstrap new databases.
 
@@ -95,34 +95,33 @@ Real patch authoring spans four repos, checked out as siblings (`../pindata`, `.
 The authoritative, current patch docs live in flipcommons. Flippatch's local docs are thin pointers. Read, in `../flipcommons/docs/`:
 
 - **Data.md** — the index for working with catalog data (seed vs patches, explore vs correct); start here to orient.
-- **DataPatches.md** — the patch file format and the full apply model: every operation (assert/create/retract/remove/delete), reserved keys (`expect:`/`note:`/`cite:`), citation `sources:`, the ledger, and limitations. The source of truth for what a patch _is_.
-- **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, `expect:` guards, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
+- **DataPatches.md** — the patch file format and the full apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations. The source of truth for what a patch _is_.
+- **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
 - **DataPatchKit.md** — when and how to generate large curated patches with the shared `patchkit` helper (which lives here at `patches/authoring/patchkit.py`).
 - **DataPatchReviewing.md** — the patch review checklist.
 - **DomainModel.md** — the catalog entity hierarchy the claims target.
 
 For the concepts a patch rests on, read these two when a claim or citation question gets subtle:
 
-- **Provenance.md** — claims, source-priority resolution, and superseding: the model behind `attribution:`, `expect:`, and `retract:`. Explains _who asserted_ a value and how a new claim supersedes an old one.
+- **Provenance.md** — claims, source-priority resolution, and superseding: the model behind `attribution:` and `retract:`. Explains _who asserted_ a value and how a new claim supersedes an old one.
 - **Citations.md** — the evidence system behind `cite:` and the `sources:` block: why a URL cite needs its website root seeded first (domain match keys off the root's `homepage` link), and why citation sources carry no provenance. Note this is distinct from pinexplore's web scrape cache — Citations.md is the in-app evidence model; the cache is the authoring-side research tool.
 
 ### The authoring loop
 
 1. **Read** the canonical docs above for the operation you need.
-2. **Research the evidence** in pinexplore — the source text for the `note:` quote and the `cite:`. Usually the web scrape cache (per `WebCache.md`): `web_fetch.py <url> --query "..."` fetches a page once into the cache, then `web_cache.search()` / `web_cache.quote()` find pages and pull the verbatim quote; the `cite:` is the page URL (its website root must be seeded in an earlier patch). For IPDB/OPDB-keyed claims, the DuckDB analysis DB instead, citing `scheme:identifier`. Web-sourced claims usually have no `ipdb_id`, so `expect:` guards fall back to `year`/`corporate_entity`.
-3. **Author** the patch: hand-write native YAML for a handful of targeted corrections, or generate with `patchkit` for a classified population (`patches/authoring/<patch>/gen.py`) — copy the shape of an existing `patches/authoring/` dir.
-4. **Read live `expect:` values** from the flipcommons DB so guards match the serving catalog; generators do this in `gen.py`.
-5. **Validate against flipcommons** behind a SQLite snapshot — apply from an isolated dir, inspect the result, roll back. The snapshot/rollback loop and the misleading-dry-run trap for vocab+assignment pairs are in DataPatchAuthoring.md.
-6. **`make validate`** here (the [structural gate](#validation)). Stop there and hand off: **both the commit and `make push` are the user's call — never do either yourself.** Tell the user the patch is validated and ready; they decide when to commit, then run `make push` to ship to R2 and `make pull-patches && make ingest-patches` on a target DB.
+2. **Research the evidence** in pinexplore — the source text for the `note:` quote and the `cite:`. Usually the web scrape cache (per `WebCache.md`): `web_fetch.py <url> --query "..."` fetches a page once into the cache, then `web_cache.search()` / `web_cache.quote()` find pages and pull the verbatim quote; the `cite:` is the page URL (its website root must be seeded in an earlier patch). For IPDB/OPDB-keyed claims, the DuckDB analysis DB instead, citing `scheme:identifier`.
+3. **Author** the patch: hand-write native YAML for a handful of targeted corrections, or generate with `patchkit` for a classified population (`patches/authoring/<patch>/gen.py`) — copy the shape of an existing `patches/authoring/` dir. Generators read the live flipcommons DB to resolve refs (e.g. slug from `ipdb_id`) in `gen.py`.
+4. **Validate against flipcommons** behind a SQLite snapshot — apply from an isolated dir, inspect the result, roll back. The snapshot/rollback loop and the misleading-dry-run trap for vocab+assignment pairs are in DataPatchAuthoring.md.
+5. **`make validate`** here (the [structural gate](#validation)). Stop there and hand off: **both the commit and `make push` are the user's call — never do either yourself.** Tell the user the patch is validated and ready; they decide when to commit, then run `make push` to ship to R2 and `make pull-patches && make ingest-patches` on a target DB.
 
 ## Validation
 
 `make validate` runs two fast gates over the patches:
 
 - **Structural** (`scripts/patch_validation/validate_patches.py`): filename format, unique numeric prefixes, strict JSON-shaped YAML (duplicate keys error; YAML 1.1 coercion off), and conformance to `schema/patch.schema.json`.
-- **Editorial** (`scripts/patch_validation/lint_patches.py`): citation hygiene, public-note discipline, drift-guard (`expect:`) coverage, and the description rules.
+- **Editorial** (`scripts/patch_validation/lint_patches.py`): citation hygiene, public-note discipline, and the description rules.
 
-Neither checks apply-time semantics (entity resolution, the `expect:` drift guard, field classification, attribution existence); those live in flipcommons' `ingest_patches`. Preview them locally with the flipcommons SQLite snapshot loop (see DataPatchAuthoring.md).
+Neither checks apply-time semantics (entity resolution, field classification, attribution existence); those live in flipcommons' `ingest_patches`. Preview them locally with the flipcommons SQLite snapshot loop (see DataPatchAuthoring.md).
 
 To run one validator on its own while iterating:
 

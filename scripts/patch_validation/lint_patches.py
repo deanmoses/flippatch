@@ -4,7 +4,7 @@
 Distinct from ``validate_patches.py`` (the structural gate that mirrors
 flipcommons' apply-time loader and JSON schema): this enforces the *authoring*
 conventions in flipcommons' ``docs/DataPatchAuthoring.md`` that the schema does
-not — public-note discipline, citation hygiene, and drift-guard coverage. Run by
+not — public-note discipline and citation hygiene. Run by
 ``make validate``.
 
 A "unit" below is one provenance carrier: the entry header itself, plus each
@@ -18,8 +18,6 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   ``description:``).
 - ``note-typography`` — Notes must not contain smart typography — straight quotes
   only, ``…`` as ``[...]`` (DataPatchAuthoring "Note every entry").
-- ``expect-guard`` — Every non-``create`` entry must carry an ``expect:`` drift
-  guard ("Guard every entry").
 - ``alias-duplicates`` — Alias / abbreviation lists carry no duplicate members
   (aliases case-fold; abbreviations are verbatim) — flipcommons rejects these at
   apply.
@@ -257,9 +255,6 @@ def lint_patch(filename: str, data: object) -> list[str]:
                 if not is_mapping(body):
                     continue
                 ref_type = ref.split(".", 1)[0]
-                # expect-guard: guard every non-create entry with expect:
-                if body.get("create") is not True and "expect" not in body:
-                    errors.append(f"{ref}: entry has no expect: drift guard")
                 for label, unit in _units(body):
                     errors.extend(_check_unit(ref, ref_type, attribution, label, unit))
     return [f"{filename}: {e}" for e in errors]

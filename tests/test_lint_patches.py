@@ -69,24 +69,6 @@ def test_straight_typography_clean():
     assert not has(e, "smart typography")
 
 
-# --- 3: expect drift guard --------------------------------------------------
-
-
-def test_edit_without_expect_flagged():
-    e = errs([{"manufacturer.x": {"note": "n", "cite": "ipdb:1", "year": 1970}}])
-    assert has(e, "no expect: drift guard")
-
-
-def test_create_needs_no_expect():
-    e = errs([{"manufacturer.x": {"create": True, "name": "X"}}])
-    assert not has(e, "expect")
-
-
-def test_delete_needs_expect():
-    e = errs([{"manufacturer.x": {"delete": True, "note": "dupe"}}])
-    assert has(e, "no expect: drift guard")
-
-
 # --- 4 + 5: aliases / abbreviations -----------------------------------------
 
 

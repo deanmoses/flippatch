@@ -10,8 +10,8 @@ The baseline seed catalog these patches target lives in a separate repo, [pindat
 
 This file is a thin local pointer. The authoritative, current patch documentation lives in **flipcommons** and cross-links itself — **do not author a patch from flippatch's docs alone.** In `../flipcommons/docs/`:
 
-- **DataPatches.md** — the full patch file format and apply model: every operation (assert/create/retract/remove/delete), reserved keys (`expect:`/`note:`/`cite:`), citation `sources:`, the ledger, and limitations.
-- **DataPatchAuthoring.md** — authoring a _good_ patch: attribution, `expect:` guards, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
+- **DataPatches.md** — the full patch file format and apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations.
+- **DataPatchAuthoring.md** — authoring a _good_ patch: attribution, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
 - **DataPatchKit.md** — generating large curated patches with the shared `patchkit` helper (which lives here at [`patches/authoring/patchkit.py`](../patches/authoring/patchkit.py)).
 - **DataPatchReviewing.md** — the patch review checklist.
 - **DomainModel.md** — the catalog entity hierarchy claims target.
@@ -36,9 +36,9 @@ uv run python3 scripts/patch_validation/validate_patches.py
 uv run python3 scripts/patch_validation/lint_patches.py
 ```
 
-`scripts/patch_validation/validate_patches.py` is a fast **structural** gate so a typo is caught before publishing: filename format, unique numeric prefixes, strict JSON-shaped YAML, and conformance to `schema/patch.schema.json`. Strict parsing mirrors the downstream loader — duplicate mapping keys error, and values must be JSON-shaped (YAML 1.1 coercion is off, so a bare `1996-01-01` stays a string and `no` stays `"no"`). `scripts/patch_validation/lint_patches.py` adds editorial authoring checks (citation hygiene, public-note discipline, drift-guard coverage, description rules).
+`scripts/patch_validation/validate_patches.py` is a fast **structural** gate so a typo is caught before publishing: filename format, unique numeric prefixes, strict JSON-shaped YAML, and conformance to `schema/patch.schema.json`. Strict parsing mirrors the downstream loader — duplicate mapping keys error, and values must be JSON-shaped (YAML 1.1 coercion is off, so a bare `1996-01-01` stays a string and `no` stays `"no"`). `scripts/patch_validation/lint_patches.py` adds editorial authoring checks (citation hygiene, public-note discipline, description rules).
 
-Authoritative validation — entity resolution, the `expect:` drift guard, field classification, attribution existence — happens downstream when the patch is applied. Preview that locally with the flipcommons SQLite snapshot loop (see DataPatchAuthoring.md), not with flippatch's structural gate alone.
+Authoritative validation — entity resolution, field classification, attribution existence — happens downstream when the patch is applied. Preview that locally with the flipcommons SQLite snapshot loop (see DataPatchAuthoring.md), not with flippatch's structural gate alone.
 
 ## What flippatch does _not_ do
 

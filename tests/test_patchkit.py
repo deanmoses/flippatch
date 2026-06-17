@@ -21,7 +21,6 @@ from patchkit import (
     clean_ipdb_quote,
     clean_text,
     entry,
-    guard,
     sentence_with,
     sentences,
     source_note,
@@ -128,30 +127,8 @@ def test_clean_ipdb_quote_marks_truncation() -> None:
 
 
 # --------------------------------------------------------------------------- #
-# guards / resolution                                                          #
+# resolution                                                                   #
 # --------------------------------------------------------------------------- #
-
-
-@pytest.mark.parametrize(
-    ("row", "expected"),
-    [
-        ({"year": None, "ipdb_id": 42}, {"ipdb_id": 42}),  # ipdb_id most specific
-        ({"year": 1990, "ipdb_id": None}, {"year": 1990}),  # falls back to year
-        (
-            {"corporate_entity__slug": "bally", "year": None, "ipdb_id": None},
-            {"corporate_entity": "bally"},
-        ),
-        ({"year": None, "ipdb_id": None}, {}),  # nothing available
-        ({"year": "", "ipdb_id": None}, {}),  # empty string is treated as absent
-    ],
-)
-def test_guard(row: dict[str, object], expected: dict[str, object]) -> None:
-    assert guard(row) == expected
-
-
-def test_guard_respects_prefer_order() -> None:
-    row = {"year": 1990, "ipdb_id": 42}
-    assert guard(row, prefer=("year", "ipdb_id")) == {"year": 1990}
 
 
 def test_check_resolved() -> None:
@@ -168,14 +145,12 @@ def test_check_resolved() -> None:
 def test_entry_assert_block() -> None:
     e = entry(
         "model.mazatron",
-        expect={"ipdb_id": 4443},
         note=source_note("IPDB", 'exists only as a "prototype" machine'),
         cite="ipdb:4443",
         fields={"production_status": "unreleased"},
         tags=["prototype"],
     )
     assert "- model.mazatron:" in e
-    assert "expect: { ipdb_id: 4443 }" in e
     assert """note: 'IPDB says "exists only as a "prototype" machine"\'""" in e
     assert "cite: ipdb:4443" in e
     assert "production_status: unreleased" in e
@@ -228,16 +203,10 @@ def test_entry_commented_prefixes_every_line() -> None:
     assert all(line.startswith("  #") for line in e.splitlines())
 
 
-@pytest.mark.parametrize(
-    "kwargs",
-    [
-        {"create": True, "expect": {"year": 1}},  # create + expect contradictory
-        {"create": True, "retract": ["x"]},  # create + retract invalid
-    ],
-)
-def test_entry_contradictory_kwargs_raise(kwargs: dict[str, object]) -> None:
+def test_entry_create_with_retract_raises() -> None:
+    # create + retract is invalid — nothing to retract on a new entity.
     with pytest.raises(ValueError):
-        entry("model.x", **kwargs)  # type: ignore[arg-type]
+        entry("model.x", create=True, retract=["x"])
 
 
 # --------------------------------------------------------------------------- #
@@ -304,7 +273,6 @@ def test_check_cites_error_sorts_handles_numerically() -> None:
 def test_entry_emits_cites_block() -> None:
     e = entry(
         "model.mazatron",
-        expect={"ipdb_id": 4443},
         description="A 1990 solid-state prototype by Mac Pinball.[[cite:1]] "
         "Only two units are known to survive.[[cite:2]]",
         cites={
@@ -386,7 +354,6 @@ def test_source_root_emits_header_and_escaped_links() -> None:
 def test_write_patch_orders_blocks_and_parses(tmp_path: Path) -> None:
     e = entry(
         "model.mazatron",
-        expect={"ipdb_id": 4443},
         fields={"production_status": "unreleased"},
     )
     sr = source_root(
