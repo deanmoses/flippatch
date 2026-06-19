@@ -378,6 +378,43 @@ def test_delete_and_remove_directives_valid(schema_validator):
     assert not _has_error(schema_validator, data)
 
 
+def test_remove_credit_dict_member_valid(schema_validator):
+    # Multi-key relationships (credit = person + role) remove via a one-key
+    # 'person: role' mapping, alongside bare-string members for FK/alias namespaces.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [
+            {
+                "model.medieval-madness": {
+                    "remove": {"credit": [{"john-youssi": "art"}]}
+                }
+            },
+            {
+                "series.world-cup-soccer": {
+                    "remove": {"credit": [{"pat-lawlor": "design"}]}
+                }
+            },
+        ],
+    }
+    assert not _has_error(schema_validator, data)
+
+
+@pytest.mark.parametrize(
+    "member",
+    [
+        {"john-youssi": "art", "brian-eddy": "design"},  # >1 key
+        {},  # 0 keys
+        {"john-youssi": ["art"]},  # non-string value
+    ],
+)
+def test_remove_malformed_credit_member_rejected(schema_validator, member):
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.foo": {"remove": {"credit": [member]}}}],
+    }
+    assert _has_error(schema_validator, data)
+
+
 # --- Schema: grouped changesets: form ---------------------------------------
 
 

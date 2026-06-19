@@ -79,9 +79,19 @@
       "type": "object",
       "additionalProperties": {
         "type": "array",
-        "items": { "type": "string" }
+        "items": {
+          "oneOf": [
+            { "type": "string" },
+            {
+              "type": "object",
+              "minProperties": 1,
+              "maxProperties": 1,
+              "additionalProperties": { "type": "string" }
+            }
+          ]
+        }
       },
-      "description": "Relationship members to remove: a mapping of relationship namespace to a list of member values — FK public_ids (e.g. {location: [germany]}) or bare strings for aliases/abbreviations (e.g. {manufacturer_alias: [Stern Inc]})."
+      "description": "Relationship members to remove: a mapping of relationship namespace to a list of member values — FK public_ids (e.g. {location: [germany]}), bare strings for aliases/abbreviations (e.g. {manufacturer_alias: [Stern Inc]}), or one-key 'key: value' mappings for multi-key relationships (e.g. {credit: [{john-youssi: art}]} — person public_id -> role public_id)."
     }
   },
   "properties": {
