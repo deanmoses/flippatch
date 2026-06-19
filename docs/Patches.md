@@ -25,7 +25,7 @@ Patches live at the top level in `patches/`, named `NNNN-slug.yaml`:
 - The four-digit `NNNN` prefix **orders application** and must be unique.
 - The filename stem (e.g. `0001-prototype-tags`) is the **patch id**.
 
-They ride the `make push` → R2 path, shipped **verbatim** (not exported to JSON) under the `flippatch/patches/` prefix, with a `flippatch/manifest.json` for download integrity and the file list. Downstream databases fetch them with `make pull-patches` (defined in the consuming repo) and apply with `ingest_patches`.
+They ride the `make push` → R2 path, shipped **verbatim** (not exported to JSON) under the `flippatch/patches/` prefix, with a `flippatch/manifest.json` for download integrity and the file list. Downstream databases fetch them with `make pull-patches` (defined in the consuming repo) and apply with `ingest_patches`. `make push` is a deliberate, user-commanded publish step — like `git commit`/`git push`, it never runs automatically and is never part of the authoring loop, which stays on a local flipcommons dev DB.
 
 ## What flippatch validates
 
