@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >
+  Fix the name of the Sankyo amusement-park-equipment corporate entity.
+claims:
+  - corporate-entity.sankyo-amusement-park-equipment-company-ltd-ofjapan:
+      note: 'The seed renders this maker as "Sankyo Amusement Park Equipment Company, Ltd., ofJapan" -- a spaceless "of Japan" geographic suffix carried only by IPDB. Dropping the suffix and normalizing to "Sankyo Amusement Park Equipment Company, Ltd." (三共遊園設備), the legal-name form used by the other early Japanese corporate entities.'
+      name: "Sankyo Amusement Park Equipment Company, Ltd."

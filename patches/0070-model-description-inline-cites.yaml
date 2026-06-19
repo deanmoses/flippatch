@@ -1,0 +1,29 @@
+attribution: flipcommons-ai-desc-model
+description: >
+  Re-assert model descriptions with inline [[cite:N]] footnotes.
+claims:
+  - model.cactus-canyon-continued:
+      description: |
+        Cactus Canyon Continued is an aftermarket conversion of [[manufacturer:bally]]'s 1998 *[[title:cactus-canyon]]*, made by [[manufacturer:eric-priepke]].[[cite:1]]
+      cites:
+        "1": opdb:2155
+  - model.pinball-tronic:
+      description: |
+        Pinball Tronic is a virtual pinball machine by [[manufacturer:bifuca]]: a pinball-style cabinet that replaces the physical playfield with two LCD screens.[[cite:1]]
+      cites:
+        "1": https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+  - model.demolition-man-on-steroids:
+      description: |
+        Demolition Man on Steroids is a heavily modified conversion of [[manufacturer:williams]]' *[[title:demolition-man]]* (1994), built by the homebrew studio [[manufacturer:pinnovating]].[[cite:1]]
+      cites:
+        "1": opdb:2153
+  - model.road-trip:
+      description: |
+        Road Trip is the debut machine from [[manufacturer:ramps-pinball]], an in-development game designed by [[person:bob-nies]] announced as coming in late 2026.[[cite:1]]
+      cites:
+        "1": https://www.rampspinball.com/machines/road-trip
+  - model.pinball-42:
+      description: |
+        Pinball-42 is a video-display virtual pinball machine by [[manufacturer:kieswetter-kg]] that replaces the physical playfield with a screen, offering five different games to choose from.[[cite:1]]
+      cites:
+        "1": https://www.arcade-museum.com/Pinball/pinball-42

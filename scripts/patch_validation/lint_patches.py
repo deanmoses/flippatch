@@ -31,9 +31,14 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
 - ``note-required`` — A unit needs a ``note:`` when it cites, deletes,
   retracts/removes, or asserts a substantive (non-alias) field — except a
   description-only unit and create-scaffolding.
-- ``description-citation`` — A ``description:`` unit needs a citation (``cite:``,
-  ``cites:``, or an inline ``[[cite:…]]`` marker) **or** a ``note:`` stating it
-  rests on catalogued data — the "are you sure you don't need a cite?" guard.
+- ``description-needs-inline-cite`` — A ``description:`` unit must carry at least
+  one inline ``[[cite:N]]`` footnote; a ``note:`` no longer excuses its absence.
+- ``description-no-entry-cite`` — A ``description:`` unit may not carry an
+  entry-level ``cite:`` covering the whole field opaquely — footnote each fact
+  inline instead.
+
+Each rule is enforced from the patch number at which it was introduced
+(``RULE_SINCE``); patches below that are grandfathered for it.
 """
 
 from __future__ import annotations
@@ -53,12 +58,43 @@ if TYPE_CHECKING:
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 PATCHES_DIR = REPO_ROOT / "patches"
 
-# Patches 0001-0038 were applied to production before this lint existed, and an
-# applied patch is immutable (the ledger rejects any content change), so their
-# bodies can no longer be edited — they're grandfathered. Only 0039+ — the
-# still-editable frontier — are linted. This floor only ever moves forward.
-EDITABLE_FLOOR = 39
+# Each rule is enforced only from the patch number at which it was introduced;
+# patches numbered below that are grandfathered for that rule. This is FIXED
+# history, not a moving "editable floor": a patch authored at/after a rule's
+# introduction complies by construction, so it keeps passing once it becomes
+# immutable — the number never moves as production advances. A rule added once
+# more patches are already immutable simply gets a higher number.
+#
+# Each rule carries its own literal number. They coincide at 39 today — the
+# original ruleset shipped after patches 0001-0038 were already immutable, and
+# the inline-citation rule rides the same line because 0039+ were retrofitted to
+# comply — but this is NOT one shared constant: an existing rule's number must
+# never change, and a new rule's is independent. Do not factor these into a
+# constant; that re-invites bumping them together, the very bug this removes.
+RULE_SINCE: dict[str, int] = {
+    "note-patch-number": 39,
+    "note-typography": 39,
+    "cite-scheme-form": 39,
+    "note-required": 39,
+    "description-attribution": 39,
+    "description-needs-inline-cite": 39,
+    "description-no-entry-cite": 39,
+    "alias-duplicates": 39,
+    "alias-length": 39,
+}
 _PREFIX_RE = re.compile(r"^(\d{4})-")
+
+
+def _patch_number(filename: str) -> int:
+    """The patch's numeric prefix; un-numbered input lints under every rule."""
+    match = _PREFIX_RE.match(filename)
+    return int(match.group(1)) if match else 10**9
+
+
+def _active(rule: str, patch_num: int) -> bool:
+    """Whether ``rule`` is enforced on a patch of this number."""
+    return patch_num >= RULE_SINCE[rule]
+
 
 # Reserved keys are directives/provenance, not claim fields.
 RESERVED = {
@@ -147,10 +183,18 @@ def _cite_strings(unit: PatchUnit) -> Iterator[str]:
 
 
 def _check_unit(
-    ref: str, ref_type: str, attribution: str, label: str, unit: PatchUnit
+    ref: str,
+    ref_type: str,
+    attribution: str,
+    label: str,
+    unit: PatchUnit,
+    patch_num: int,
 ) -> list[str]:
     where = f"{ref}{label}"
     errors: list[str] = []
+
+    def on(rule: str) -> bool:
+        return _active(rule, patch_num)
 
     authored = {k for k in unit if k not in RESERVED}
     nonalias_field = authored - ALIAS_KEYS - {"description"}
@@ -167,25 +211,27 @@ def _check_unit(
     # note-patch-number + note-typography: note content
     note = unit.get("note")
     if isinstance(note, str):
-        errors.extend(
-            f"{where}: note references patch number {token!r} — notes are "
-            f"public; move cross-patch bookkeeping to the description:"
-            for token in dict.fromkeys(PATCH_NUM_RE.findall(note))
-        )
+        if on("note-patch-number"):
+            errors.extend(
+                f"{where}: note references patch number {token!r} — notes are "
+                f"public; move cross-patch bookkeeping to the description:"
+                for token in dict.fromkeys(PATCH_NUM_RE.findall(note))
+            )
         smart = sorted(set(SMART_RE.findall(note)))
-        if smart:
+        if smart and on("note-typography"):
             errors.append(
                 f"{where}: note contains smart typography {smart} — use straight "
                 f"quotes and write an ellipsis as [...]"
             )
 
     # cite-scheme-form
-    errors.extend(
-        f"{where}: cite {cite!r} is an IPDB/OPDB URL — use the "
-        f"scheme:identifier form (ipdb:<id> / opdb:<id>)"
-        for cite in _cite_strings(unit)
-        if SCHEME_DOMAIN_RE.search(cite)
-    )
+    if on("cite-scheme-form"):
+        errors.extend(
+            f"{where}: cite {cite!r} is an IPDB/OPDB URL — use the "
+            f"scheme:identifier form (ipdb:<id> / opdb:<id>)"
+            for cite in _cite_strings(unit)
+            if SCHEME_DOMAIN_RE.search(cite)
+        )
 
     # note-required: note presence
     needs_note = (
@@ -194,22 +240,30 @@ def _check_unit(
         or has_retract_remove
         or (bool(nonalias_field) and not is_create)
     )
-    if needs_note and not has_note:
+    if needs_note and not has_note and on("note-required"):
         errors.append(f"{where}: this change needs a note: explaining it")
 
-    # description-attribution + description-citation: description rules
+    # description-attribution + description-needs-inline-cite + description-no-entry-cite
     if has_description:
         want = f"flipcommons-ai-desc-{ref_type}"
-        if attribution != want:
+        if attribution != want and on("description-attribution"):
             errors.append(
                 f"{where}: a description: field must be attributed {want!r}, "
                 f"not {attribution!r}"
             )
-        if not (has_cite or inline_cite or has_note):
+        # A record description footnotes its facts inline; it must carry at least
+        # one [[cite:N]] marker. A note: no longer excuses a missing footnote.
+        if not inline_cite and on("description-needs-inline-cite"):
             errors.append(
-                f"{where}: description has no citation and no note — descriptions "
-                f"almost always cite non-catalog facts; add a cite, or a note "
-                f"stating it rests on catalogued data"
+                f"{where}: a description: needs at least one inline [[cite:N]] "
+                f"footnote (declare new ones in a cites: map)"
+            )
+        # The whole-field cite: covers the description opaquely; footnote each
+        # fact inline instead. (Predates inline footnotes in descriptions.)
+        if "cite" in unit and on("description-no-entry-cite"):
+            errors.append(
+                f"{where}: an entry-level cite: is not allowed on a description: "
+                f"— footnote facts inline with [[cite:N]]"
             )
 
     # alias-duplicates + alias-length: aliases / abbreviations
@@ -223,17 +277,18 @@ def _check_unit(
         for member in members:
             ident = str(member).casefold() if casefold else str(member)
             (dups if ident in seen else seen).add(ident)
-        if dups:
+        if dups and on("alias-duplicates"):
             errors.append(
                 f"{where}: {key} has duplicate members "
                 f"{sorted(dups)} ({'aliases case-fold' if casefold else 'verbatim'})"
             )
         limit = ABBREV_MAX if key == "abbreviation" else ALIAS_MAX
-        errors.extend(
-            f"{where}: {key} member {member!r} exceeds {limit} chars"
-            for member in members
-            if len(str(member)) > limit
-        )
+        if on("alias-length"):
+            errors.extend(
+                f"{where}: {key} member {member!r} exceeds {limit} chars"
+                for member in members
+                if len(str(member)) > limit
+            )
 
     return errors
 
@@ -245,6 +300,7 @@ def lint_patch(filename: str, data: object) -> list[str]:
     attribution = data.get("attribution", "")
     if not isinstance(attribution, str):
         attribution = ""
+    patch_num = _patch_number(filename)
     errors: list[str] = []
     claims = data.get("claims")
     if isinstance(claims, list):
@@ -256,7 +312,9 @@ def lint_patch(filename: str, data: object) -> list[str]:
                     continue
                 ref_type = ref.split(".", 1)[0]
                 for label, unit in _units(body):
-                    errors.extend(_check_unit(ref, ref_type, attribution, label, unit))
+                    errors.extend(
+                        _check_unit(ref, ref_type, attribution, label, unit, patch_num)
+                    )
     return [f"{filename}: {e}" for e in errors]
 
 
@@ -267,9 +325,8 @@ def main() -> int:
 
     errors: list[str] = []
     for path in sorted(PATCHES_DIR.glob("*.yaml")):
-        prefix = _PREFIX_RE.match(path.name)
-        if prefix and int(prefix.group(1)) < EDITABLE_FLOOR:
-            continue  # grandfathered immutable history (see EDITABLE_FLOOR)
+        # Every patch is linted; each rule grandfathers patches below its own
+        # introduction number (see RULE_SINCE), so immutable history stays clean.
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
         except yaml.YAMLError:

@@ -201,34 +201,20 @@ def test_substantive_assert_without_note_flagged():
     assert has(e, "needs a note")
 
 
-# --- 9: description needs a citation or a note ------------------------------
+# --- 9: a description must footnote at least one fact inline ----------------
 
 
-def test_description_without_cite_or_note_flagged():
+def test_description_with_no_inline_cite_flagged():
     e = errs(
         [{"manufacturer.x": {"expect": {"name": "X"}, "description": "rests on data"}}],
         attribution="flipcommons-ai-desc-manufacturer",
     )
-    assert has(e, "no citation and no note")
+    assert has(e, "at least one inline")
 
 
-def test_description_with_entry_cite_clean():
-    e = errs(
-        [
-            {
-                "manufacturer.x": {
-                    "expect": {"name": "X"},
-                    "cite": "ipdb:1",
-                    "description": "d",
-                }
-            }
-        ],
-        attribution="flipcommons-ai-desc-manufacturer",
-    )
-    assert not has(e, "no citation and no note")
-
-
-def test_description_with_only_note_clean():
+def test_description_note_only_now_flagged():
+    # A note: no longer excuses a missing footnote — every description must
+    # footnote at least one fact inline.
     e = errs(
         [
             {
@@ -241,7 +227,7 @@ def test_description_with_only_note_clean():
         ],
         attribution="flipcommons-ai-desc-manufacturer",
     )
-    assert not has(e, "no citation and no note")
+    assert has(e, "at least one inline")
 
 
 def test_description_with_inline_marker_clean():
@@ -257,20 +243,77 @@ def test_description_with_inline_marker_clean():
         ],
         attribution="flipcommons-ai-desc-manufacturer",
     )
-    assert not has(e, "no citation and no note")
+    assert not has(e, "at least one inline")
 
 
-# --- floor ------------------------------------------------------------------
+def test_description_no_inline_grandfathered_before_rule():
+    e = errs(
+        [{"manufacturer.x": {"note": "n", "description": "d"}}],
+        attribution="flipcommons-ai-desc-manufacturer",
+        filename="0010-x.yaml",
+    )
+    assert not has(e, "at least one inline")
 
 
-@pytest.mark.parametrize(
-    ("filename", "linted"),
-    [
-        ("0038-x.yaml", False),
-        ("0039-x.yaml", True),
-        ("0067-x.yaml", True),
-    ],
-)
-def test_editable_floor(filename, linted):
-    prefix = lp._PREFIX_RE.match(filename)
-    assert (int(prefix.group(1)) >= lp.EDITABLE_FLOOR) is linted
+# --- per-rule introduction number / grandfathering --------------------------
+
+
+def test_pre_baseline_patch_grandfathered():
+    # A patch numbered below a rule's introduction is grandfathered for it: this
+    # corporate-entity field assertion would need a note: at/after the baseline,
+    # but a 0010 patch predates the ruleset and stays clean.
+    e = errs(
+        [{"corporate-entity.x": {"manufacturer": "y"}}],
+        filename="0010-x.yaml",
+    )
+    assert e == []
+
+
+def test_at_baseline_patch_linted():
+    # The same fixture at/after the baseline IS linted.
+    e = errs([{"corporate-entity.x": {"manufacturer": "y"}}], filename="0039-x.yaml")
+    assert has(e, "needs a note")
+
+
+def test_rule_since_registry_has_description_rules():
+    # Both description footnote rules are registered with their own introduction
+    # number (39, because 0039+ were retrofitted to comply).
+    assert lp.RULE_SINCE["description-needs-inline-cite"] == 39
+    assert lp.RULE_SINCE["description-no-entry-cite"] == 39
+
+
+# --- an entry-level cite: on a description is always an error ----------------
+
+
+def test_description_entry_cite_forbidden():
+    e = errs(
+        [{"manufacturer.x": {"cite": "ipdb:1", "description": "d[[cite:1]]"}}],
+        attribution="flipcommons-ai-desc-manufacturer",
+        filename="0040-x.yaml",
+    )
+    assert has(e, "an entry-level cite: is not allowed")
+
+
+def test_description_inline_cites_map_clean():
+    e = errs(
+        [
+            {
+                "manufacturer.x": {
+                    "description": "a fact[[cite:1]]",
+                    "cites": {"1": "ipdb:1"},
+                }
+            }
+        ],
+        attribution="flipcommons-ai-desc-manufacturer",
+        filename="0040-x.yaml",
+    )
+    assert not has(e, "an entry-level cite: is not allowed")
+
+
+def test_description_entry_cite_grandfathered_before_rule():
+    e = errs(
+        [{"manufacturer.x": {"cite": "ipdb:1", "description": "d"}}],
+        attribution="flipcommons-ai-desc-manufacturer",
+        filename="0036-manufacturer-descriptions.yaml",
+    )
+    assert not has(e, "an entry-level cite: is not allowed")

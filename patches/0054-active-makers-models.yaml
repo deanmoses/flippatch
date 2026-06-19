@@ -1,16 +1,11 @@
 attribution: flipcommons-catalog
 description: >
-  Models for the new active makers, one per game. Each model's title (0053) and
-  corporate entity (0051) already exist. Production status reflects each game's
-  real state: Alice Goes to Wonderland is shipping (produced); the rest are
-  announced (a pre-order, an intended launch, a trademark filing). Corporate
-  inception years stay off the entities; these model years carry the makers'
-  timeline. The Wonderland and Pawlowski home machines carry the home-use tag; the
-  already-catalogued Ramp's Road Trip is tagged widebody. Where each game's cited
-  source supports it, models also carry cabinet, technology generation, display
-  type and a free-play reward type. game_format is deliberately left unset (the
-  catalog treats null as "assumed pinball" rather than asserting pinball per row).
+  Models for the new active makers.
 claims:
+  # Alice's credited artist, created before the credit below references it.
+  - person.carlos-mendoza-iii:
+      create: true
+      name: Carlos Mendoza III
   - model.alice-goes-to-wonderland:
       create: true
       name: Alice Goes to Wonderland
@@ -25,6 +20,16 @@ claims:
       reward_type: [free-play]
       note: 'nicole.express''s 2026 owner review, "Pinball in my House, 2026: Alice Goes to Wonderland" (March 2026): "two large cardboard boxes were delivered to the apartment" (shipped 2026); "The score is displayed on a small LCD screen"; "There are a series of controls on the front, in lieu of a coin slot"; "All the electronics are self-contained." A free-standing, roughly 80%-scale machine with a backbox.'
       cite: https://nicole.express/2026/nicole-in-blunderland.html
+      changesets:
+        # Art credit — manufacturer spec sheet, distinct from the owner-review cite above.
+        - credit:
+            - carlos-mendoza-iii: art
+          note: 'Wonderland Amusements'' Alice spec sheet: "Artwork: Original illustrations by Carlos Mendoza III."'
+          cite: https://wonderlandamusements.com/products/alice-goes-to-wonderland-pinball
+  # The TMNT machine's credited artist, created before the credit below references it.
+  - person.mateus-santolouco:
+      create: true
+      name: Mateus Santolouco
   - model.teenage-mutant-ninja-turtles-battle-in-the-sewer:
       create: true
       name: "Teenage Mutant Ninja Turtles: Battle in the Sewer"
@@ -40,6 +45,16 @@ claims:
       abbreviation: ["TMNT:BITS", "TMNT-BITS", "TMNTBITS"]
       note: 'Wonderland Amusements'' pre-sale page (2026): "PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Real mechanical flippers, slingshots, bumpers, ramps, and multi-ball [...] Scale: Approx 80 % of commercial pinball size [...] MDF wood cabinet and back box, chrome metal trim, steel legs with leveling feet [...] Integrated LCD display system [...] Wi-Fi-enabled for high-score tracking and software updates [...] It is not equipped with coin operation." Revealed for pre-order in 2026 following the Alice Kickstarter; not yet shipped.'
       cite: https://wonderlandamusements.com/products/tmntbattleinthesewer
+      changesets:
+        # Art credit for the machine — its own source, distinct from the spec-sheet cite above.
+        - credit:
+            - mateus-santolouco: art
+          note: 'Bleeding Cool (May 22, 2026), "Teenage Mutant Ninja Turtles Has a New Pinball Machine": "Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco and gameplay aimed at families."'
+          cite: https://bleedingcool.com/games/teenage-mutant-ninja-turtles-has-a-new-pinball-machine
+  # Pinball Eternal's creator, created before the credit below references it.
+  - person.adam-pawlowski:
+      create: true
+      name: Adam Pawlowski
   - model.pinball-eternal:
       create: true
       name: Pinball Eternal
@@ -51,6 +66,17 @@ claims:
       tag: [home-use]
       note: 'Pawlowski Pinball''s site: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences [...] Owning all software and parts, it allows ultimate flexibility in pricing and creativity [...] the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025."'
       cite: https://pawlowskipinball.com/
+      changesets:
+        # Software credit — first-person from the maker's own site (the primary source).
+        - credit:
+            - adam-pawlowski: software
+          note: 'Pawlowski Pinball''s About page, first-person by founder Adam Pawlowski: "Having a lifetime experience in software engineering videogames, and some experience in microcontrollers, I decided to question and look at every part [...] designing a proprietary platform with Pinball Designer to design, program and build pinball machines on a large scale."'
+          cite: https://pawlowskipinball.com/about
+        # Art credit — the maker's own site doesn't claim the art, so cite his ArtStation portfolio, which names him "Artist".
+        - credit:
+            - adam-pawlowski: art
+          note: 'Adam Pawlowski''s ArtStation portfolio lists him as "Programmer, Artist" and presents "My latest project Pinball Eternal."'
+          cite: https://dpadam450.artstation.com/projects/WmOKyN
   - model.little-shop-of-horrors:
       create: true
       name: Little Shop of Horrors
@@ -59,6 +85,33 @@ claims:
       production_status: announced
       note: 'This Week in Pinball: "I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year." Trademark-stage; no release date announced, so the year is left unset.'
       cite: https://twip.kineticist.com/p/brought-to-you-by-secrets
+  # Road Trip's credited designer (Ramp's founder), created before the credit below references it.
+  - person.bob-nies:
+      create: true
+      name: Bob Nies
+      person_alias: ["Bob Neis"]
+  # Bob Nies's prior one-off homebrew (not a Ramp's product); created so the Ramp's
+  # description can link it and credit him. No corporate entity — it is a homebrew.
+  - title.elf:
+      create: true
+      name: Elf
+  - model.elf:
+      create: true
+      name: Elf
+      title: elf
+      year: 2022
+      production_status: one-off
+      theme: [christmas, comedy, movie]
+      credit:
+        - bob-nies: design
+      note: 'Pinside game archive, "Elf" (Bob Nies, 2022): "Bob Nies / Elf / Based on the 2003 Movie Elf with Will Ferrell." A one-off homebrew — the archive lists it under designer Bob Nies, with no market history and only a couple of private collections.'
+      cite: https://pinside.com/pinball/machine/elf
+      changesets:
+        # Technology generation from the creator interview (separate source from the Pinside cite above).
+        - technology_generation: solid-state
+          technology_subgeneration: ss-pc
+          note: 'Bob Nies''s This Week in Pinball interview describes Elf as a fully custom homebrew (no donor machine) running Multimorphic P3-ROC hardware with MPF and Unity3D — a commodity-PC solid-state platform.'
+          cite: https://www.thisweekinpinball.com/interview-with-bob-nies-creator-of-elf-pinball/
   # Edit (not create): Ramp's debut is already in the catalog from OPDB; tag it widebody.
   - model.road-trip:
       expect: { opdb_id: GQKXy-MNENE }
@@ -66,3 +119,9 @@ claims:
       tag: [widebody]
       note: 'Flipper-News describes Ramp''s as the company "die vor wenigen Monaten in Florida mit dem Widebody Road Trip debütierte" (which debuted a few months ago in Florida with the widebody Road Trip) — a widebody being a full-size floor cabinet.'
       cite: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
+      changesets:
+        # Designer credit — Ramp's own site, distinct from the Flipper-News widebody cite above.
+        - credit:
+            - bob-nies: design
+          note: 'Ramp''s Pinball''s site: "Signature handcrafted machines from the award-winning designer Bob Nies."'
+          cite: https://www.rampspinball.com/machines/road-trip

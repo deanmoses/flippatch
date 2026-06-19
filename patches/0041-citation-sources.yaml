@@ -87,6 +87,50 @@ sources:
           label: Retro News,
           link_type: homepage,
         }
+  - name: Bleeding Cool
+    source_type: web
+    description: >-
+      Pop-culture, comics and games news site.
+    links:
+      - {
+          url: "https://bleedingcool.com/",
+          label: Bleeding Cool,
+          link_type: homepage,
+        }
+  - name: Adam Pawlowski (ArtStation)
+    source_type: web
+    description: >-
+      ArtStation portfolio of Adam Pawlowski, the programmer-artist who founded
+      Pawlowski Pinball and created Pinball Eternal.
+    links:
+      - {
+          url: "https://dpadam450.artstation.com/",
+          label: Adam Pawlowski on ArtStation,
+          link_type: homepage,
+        }
+  - name: Pinside
+    source_type: web
+    description: >-
+      Community pinball database and forum.
+    links:
+      - { url: "https://pinside.com/", label: Pinside, link_type: homepage }
+  - name: YouTube
+    source_type: web
+    description: >-
+      Video-sharing platform.
+    links:
+      - { url: "https://www.youtube.com/", label: YouTube, link_type: homepage }
+  - name: This Week in Pinball
+    source_type: web
+    description: >-
+      Pinball news site (thisweekinpinball.com), home of the TWIPY awards and
+      maker interviews.
+    links:
+      - {
+          url: "https://www.thisweekinpinball.com/",
+          label: This Week in Pinball,
+          link_type: homepage,
+        }
   - name: BizProfiles
     source_type: web
     description: >-
