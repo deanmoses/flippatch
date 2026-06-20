@@ -102,16 +102,18 @@ claims:
       year: 2022
       production_status: one-off
       theme: [christmas, comedy, movie]
+      system: multimorphic-p3-roc
+      technology_generation: solid-state
+      technology_subgeneration: ss-pc
       credit:
         - bob-nies: design
-      note: 'Pinside game archive, "Elf" (Bob Nies, 2022): "Bob Nies / Elf / Based on the 2003 Movie Elf with Will Ferrell." A one-off homebrew — the archive lists it under designer Bob Nies, with no market history and only a couple of private collections.'
+      note: 'Pinside game archive, "Elf" (Bob Nies, 2022), "Based on the 2003 Movie Elf with Will Ferrell": a one-off homebrew that is "100% custom (no donor), uses P3-ROC circuit boards, MPF and Unity3d" — no market history, only a couple of private collections.'
       cite: https://pinside.com/pinball/machine/elf
       changesets:
-        # Technology generation from the creator interview (separate source from the Pinside cite above).
-        - technology_generation: solid-state
-          technology_subgeneration: ss-pc
-          note: 'Bob Nies''s This Week in Pinball interview describes Elf as a fully custom homebrew (no donor machine) running Multimorphic P3-ROC hardware with MPF and Unity3D — a commodity-PC solid-state platform.'
-          cite: https://www.thisweekinpinball.com/interview-with-bob-nies-creator-of-elf-pinball/
+        # Display from the creator interview — a playfield monitor (LCD), which Pinside doesn't state.
+        - display_type: lcd
+          note: 'Bob Nies''s interview: he made a "playfield monitor" a must-have before he even started the build.'
+          cite: https://www.kineticist.com/news/bob-nies-interview-elf-pinball
   # Edit (not create): Ramp's debut is already in the catalog from OPDB; tag it widebody.
   - model.road-trip:
       expect: { opdb_id: GQKXy-MNENE }

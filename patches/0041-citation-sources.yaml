@@ -121,15 +121,15 @@ sources:
       Video-sharing platform.
     links:
       - { url: "https://www.youtube.com/", label: YouTube, link_type: homepage }
-  - name: This Week in Pinball
+  - name: Kineticist
     source_type: web
     description: >-
-      Pinball news site (thisweekinpinball.com), home of the TWIPY awards and
-      maker interviews.
+      Pinball news and database site (kineticist.com), home of the TWIPY awards
+      and maker interviews (formerly This Week in Pinball).
     links:
       - {
-          url: "https://www.thisweekinpinball.com/",
-          label: This Week in Pinball,
+          url: "https://www.kineticist.com/",
+          label: Kineticist,
           link_type: homepage,
         }
   - name: BizProfiles

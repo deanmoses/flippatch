@@ -31,8 +31,8 @@ claims:
         "1": https://twip.kineticist.com/p/brought-to-you-by-secrets
   - model.elf:
       description: |
-        Elf is a one-off homebrew designed by [[person:bob-nies]], based on the 2003 Christmas comedy film *Elf*.[[cite:1]] A fully custom build with no donor machine — running Multimorphic P3-ROC hardware with MPF and Unity3D[[cite:2]] — it was never a commercial product, and won the 2022 TWIPY award for Favorite Homebrew.[[cite:3]]
+        Elf is a one-off homebrew designed by [[person:bob-nies]], based on the 2003 Christmas comedy film *Elf*.[[cite:1]] Built on [[system:multimorphic-p3-roc]] hardware[[cite:1]] with a playfield monitor, it took Nies nearly three years rather than the intended one and debuted at the 2022 Texas Pinball Festival.[[cite:2]] Never a commercial product, it won that year's TWIPY award for Favorite Homebrew.[[cite:3]]
       cites:
         "1": https://pinside.com/pinball/machine/elf
-        "2": https://www.thisweekinpinball.com/interview-with-bob-nies-creator-of-elf-pinball/
+        "2": https://www.kineticist.com/news/bob-nies-interview-elf-pinball
         "3": youtube:O-2BXTXLXIY

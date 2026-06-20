@@ -102,11 +102,6 @@ claims:
         Pinnovating is a boutique homebrew studio led by developer Dennis van der Pas, known for custom pinball conversions and [[system:multimorphic-p-roc]] software work. It's known for *[[model:demolition-man-on-steroids]]* (2013), a heavily modified conversion of an existing machine rather than an original build.[[cite:1]]
       cites:
         "1": https://www.kineticist.com/manufacturers/pinnovating
-  - manufacturer.ramps-pinball:
-      description: |
-        Ramp's Pinball is an in-development manufacturer whose debut machine, *[[title:road-trip]]*, is announced as coming in late 2026.[[cite:1]]
-      cites:
-        "1": https://www.rampspinball.com/machines/road-trip
   - manufacturer.rebellion-pinball:
       description: |
         Rebellion Pinball is a homebrew project from [[location:france/bfc/doubs/besancon]], France — four friends who designed, built and programmed their machine from scratch. That machine, *[[title:space-singularity]]* (2024), is the brand's debut.[[cite:1]]
