@@ -1,8 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Assign each new active maker's headquarters city (the HQ, not a contract
-  factory) to its corporate entity. Cities created in 0040; Bergamo province in
-  0039. Structured catalog data the AI descriptions reference.
+  Assign headquarters cities to the active makers' entities.
 claims:
   - corporate-entity.wonderland-amusements:
       expect: { name: Wonderland Amusements }

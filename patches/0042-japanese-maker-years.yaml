@@ -1,11 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Assert production years on seven early-Japanese models flipcommons carried with a null or
-  placeholder (1900) year, from the eremeka catalog research (thetastates.com /
-  earlyarcadesjapan.blogspot.com, seeded in 0041). Sankyo: Apollo Moon, The World Series (was
-  1900), New Big Race; Universal: Asteroid Killer (was 1980); Komaya: Indy Game, Let's Go
-  Moon!; Nihon Gorakuki: Ultra Attack. Approximate eremeka dates are asserted with the
-  uncertainty noted. Guarded on ipdb_id.
+  Assert production years on early-Japanese models.
 claims:
   - model.apollo-moon:
       expect: { ipdb_id: 6812 }

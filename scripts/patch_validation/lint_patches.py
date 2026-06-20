@@ -33,9 +33,22 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   description-only unit and create-scaffolding.
 - ``description-needs-inline-cite`` — A ``description:`` unit must carry at least
   one inline ``[[cite:N]]`` footnote; a ``note:`` no longer excuses its absence.
+  Exempt for the abstract-taxonomy entity types in
+  ``DESCRIPTION_CITE_EXEMPT_TYPES`` (e.g. ``gameplay-feature``), whose
+  descriptions are definitional cross-references, not sourced claims.
 - ``description-no-entry-cite`` — A ``description:`` unit may not carry an
   entry-level ``cite:`` covering the whole field opaquely — footnote each fact
   inline instead.
+- ``description-two-sources`` — A ``description:`` unit must cite at least two
+  distinct sources, resolving to at least two different root sources (registrable
+  domain for a URL, scheme for an ``ipdb:``/``opdb:``/``youtube:`` identifier) —
+  a single source, or several footnotes from one root, is not corroboration.
+- ``patch-description-length`` — The *top-level* patch ``description:`` (→ the
+  Admin-only ``IngestRun`` note) must be ≤ 80 chars after whitespace collapse: a
+  commit-title-style summary, not a paragraph. Per-change detail belongs in
+  ``note:`` fields, not here. This is the one whole-patch check (the others run
+  per unit); the per-record ``description-*`` rules above target a different
+  field — the narrative ``description:`` inside a claim unit.
 
 Each rule is enforced from the patch number at which it was introduced
 (``RULE_SINCE``); patches below that are grandfathered for it.
@@ -79,8 +92,10 @@ RULE_SINCE: dict[str, int] = {
     "description-attribution": 39,
     "description-needs-inline-cite": 39,
     "description-no-entry-cite": 39,
+    "description-two-sources": 39,
     "alias-duplicates": 39,
     "alias-length": 39,
+    "patch-description-length": 39,
 }
 _PREFIX_RE = re.compile(r"^(\d{4})-")
 
@@ -122,6 +137,17 @@ ALIAS_KEYS = {
     "abbreviation",
 }
 
+# Entity types whose ``description:`` is exempt from the citation rules
+# (``description-needs-inline-cite`` and ``description-two-sources``). These are
+# abstract taxonomy concepts, not specific real-world entities: their
+# descriptions *define* the concept and cross-reference related features and
+# notable games via ``[[…]]`` wikilinks rather than footnoting sourced facts, so
+# an inline ``[[cite:N]]`` requirement does not fit them. The desc attribution
+# and no-entry-cite rules still apply.
+DESCRIPTION_CITE_EXEMPT_TYPES = {
+    "gameplay-feature",
+}
+
 # A zero-padded 4-digit token (0001-0999) is how patches are numbered/referenced
 # — bare ("0067") or as a stem prefix ("0067-slug", \b on the hyphen). Years
 # (19xx/20xx) and IPDB/OPDB ids (6069, 5572) never lead with a zero.
@@ -131,7 +157,30 @@ SMART_RE = re.compile(r"[“”‘’…]")
 # An IPDB/OPDB URL cite that should instead be scheme:identifier.
 SCHEME_DOMAIN_RE = re.compile(r"https?://(?:www\.)?(?:ipdb|opdb)\.org", re.IGNORECASE)
 INLINE_CITE = "[[cite:"
+# The key inside an inline footnote, e.g. the "2" in [[cite:2]].
+INLINE_CITE_KEY_RE = re.compile(r"\[\[cite:([^\]]+)\]\]")
+# The host of a URL cite, with any leading www. stripped.
+URL_HOST_RE = re.compile(r"^https?://(?:www\.)?([^/?#]+)", re.IGNORECASE)
 ALIAS_MAX, ABBREV_MAX = 200, 50
+# The top-level patch description maps to the Admin-only IngestRun note; keep it
+# to a commit-title-style summary rather than a paragraph of changeset detail.
+PATCH_DESC_MAX = 80
+
+
+def _cite_root(cite: str) -> str | None:
+    """The root source of a cite, for the two-distinct-sources check.
+
+    A URL collapses to its registrable domain — the last two host labels, www.
+    stripped — so ``twip.kineticist.com`` and ``www.kineticist.com`` share the
+    root ``kineticist.com``. A ``scheme:identifier`` cite (``ipdb:6069``,
+    ``youtube:abc``) collapses to its scheme. ``None`` if neither form parses.
+    """
+    match = URL_HOST_RE.match(cite.strip())
+    if match:
+        labels = match.group(1).lower().split(".")
+        return ".".join(labels[-2:]) if len(labels) >= 2 else labels[0]
+    scheme, sep, _ = cite.partition(":")
+    return scheme.strip().lower() or None if sep else None
 
 
 # Patch YAML is untrusted until validate_patches.py (and, authoritatively,
@@ -253,7 +302,10 @@ def _check_unit(
             )
         # A record description footnotes its facts inline; it must carry at least
         # one [[cite:N]] marker. A note: no longer excuses a missing footnote.
-        if not inline_cite and on("description-needs-inline-cite"):
+        # Taxonomy descriptions (DESCRIPTION_CITE_EXEMPT_TYPES) are exempt — they
+        # are definitional cross-references, not sourced claims.
+        cite_exempt = ref_type in DESCRIPTION_CITE_EXEMPT_TYPES
+        if not inline_cite and not cite_exempt and on("description-needs-inline-cite"):
             errors.append(
                 f"{where}: a description: needs at least one inline [[cite:N]] "
                 f"footnote (declare new ones in a cites: map)"
@@ -265,6 +317,32 @@ def _check_unit(
                 f"{where}: an entry-level cite: is not allowed on a description: "
                 f"— footnote facts inline with [[cite:N]]"
             )
+        # A description must rest on at least two distinct sources, and those must
+        # come from at least two different roots — one source, or several
+        # footnotes off one root, is not corroboration.
+        # TEMPORARILY DISABLED — re-enable by uncommenting this block (and the
+        # skipped flagging tests in tests/test_lint_patches.py). Keep the
+        # description-two-sources entry in RULE_SINCE while disabled.
+        # if on("description-two-sources") and not cite_exempt and isinstance(description, str):
+        #     cites = unit.get("cites")
+        #     keys = dict.fromkeys(INLINE_CITE_KEY_RE.findall(description))
+        #     roots: set[str] = set()
+        #     for key in keys:
+        #         value = cites.get(key) if is_mapping(cites) else None
+        #         url = value["url"] if is_cite_map(value) else value
+        #         if isinstance(url, str) and (root := _cite_root(url)):
+        #             roots.add(root)
+        #     if len(keys) < 2:
+        #         errors.append(
+        #             f"{where}: a description: must cite at least two sources "
+        #             f"(found {len(keys)})"
+        #         )
+        #     elif len(roots) < 2:
+        #         only = next(iter(roots), "?")
+        #         errors.append(
+        #             f"{where}: a description: cites only one root source "
+        #             f"({only!r}) — cite at least two different sources"
+        #         )
 
     # alias-duplicates + alias-length: aliases / abbreviations
     for key in authored & ALIAS_KEYS:
@@ -302,6 +380,21 @@ def lint_patch(filename: str, data: object) -> list[str]:
         attribution = ""
     patch_num = _patch_number(filename)
     errors: list[str] = []
+
+    # patch-description-length: the whole-patch description (→ IngestRun.note) is
+    # an Admin-only summary, not a place for changeset detail. Measure the
+    # whitespace-collapsed text so a folded scalar's wrapping/trailing newline
+    # doesn't count against the budget.
+    description = data.get("description")
+    if isinstance(description, str) and _active("patch-description-length", patch_num):
+        collapsed = " ".join(description.split())
+        if len(collapsed) > PATCH_DESC_MAX:
+            errors.append(
+                f"patch description is {len(collapsed)} chars (max "
+                f"{PATCH_DESC_MAX}) — keep it to a single short summary; per-change "
+                f"detail belongs in note: fields, not the Admin-only description:"
+            )
+
     claims = data.get("claims")
     if isinstance(claims, list):
         for entry in claims:

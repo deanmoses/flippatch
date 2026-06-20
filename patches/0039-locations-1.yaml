@@ -1,7 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  A location's parent must already exist in an earlier patch or the seed.
-  The new regions are created here and its cities in the next patch.
+  Create the region locations that parent the new cities.
 claims:
   - location.japan/osaka:
       create: true

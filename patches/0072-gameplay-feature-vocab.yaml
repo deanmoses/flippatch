@@ -1,0 +1,10 @@
+attribution: flipcommons-catalog
+description: >
+  New gameplay-feature vocabulary.
+claims:
+  - gameplay-feature.orbits:
+      create: true
+      name: Orbits
+  - gameplay-feature.auto-launch:
+      create: true
+      name: Auto-Launch

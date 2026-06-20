@@ -1,10 +1,6 @@
 attribution: flipcommons-ai-desc-manufacturer
 description: >
-  Narrative descriptions for the new active makers, each grounded in the catalog
-  plus a single cited source. Catalog-derived facts (model names, years, who made
-  what, location) are uncited; external facts carry the cite. Ramp's Pinball's
-  prior one-line description is superseded to record its TiltBob origin and second
-  game.
+  Narrative descriptions for the new active makers.
 claims:
   - manufacturer.wonderland-amusements:
       expect: { name: Wonderland Amusements }

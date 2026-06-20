@@ -1,10 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  One corporate entity per brand created in 0050, each marked operating_status
-  ongoing (all are currently-active makers). Corporate inception years are left
-  unset: a maker's pinball span is derived from its models, not its paperwork.
-  The TiltBob former company name is added as a corporate_entity_alias on the
-  existing Ramp's entity.
+  Create corporate entities for the new active makers.
 claims:
   - corporate-entity.wonderland-amusements:
       create: true

@@ -1,6 +1,6 @@
 attribution: flipcommons-ai-desc-manufacturer
 description: >
-  Re-assert the patch-0036 manufacturer descriptions with inline [[cite:N]] footnotes (0036 is immutable; this supersedes from the same source).
+  Add inline citation footnotes to the manufacturer descriptions.
 claims:
   - manufacturer.heighway-pinball:
       description: |

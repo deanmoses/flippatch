@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Retire orphaned Sankyo Yuen Setsubi brand, consolidated into Sankyo (sankyo-seiki) in 0067.
+  Retire the orphaned Sankyo Yuen Setsubi brand.
 claims:
   - manufacturer.sankyo-yuen-setsubi-kabushikigaisha:
       expect: { name: Sankyo Yuen Setsubi Kabushikigaisha }

@@ -1,11 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Create three currently-active pinball brands that Wikipedia's list of pinball
-  manufacturers carries but Flipcommons lacked: Wonderland Amusements, Pawlowski
-  Pinball and Euro Pinball Corp. TiltBob Pinball — the former name of the
-  already-catalogued Ramp's Pinball — is not a new brand; it is folded in as a
-  manufacturer_alias on Ramp's rather than a duplicate. Corporate entities,
-  locations, titles and models follow in 0051-0054; descriptions in 0055-0056.
+  Create manufacturers for the new active makers.
 claims:
   - manufacturer.wonderland-amusements:
       create: true

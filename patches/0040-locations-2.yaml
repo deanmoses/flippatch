@@ -1,13 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Cities whose prefecture parent now exists (Osaka from 0039; Tokyo from the seed): Higashi-Osaka (home of Tomato
-  Land), Mitaka (Sunwise), Shinagawa (Banpresto), and the Tokyo wards of two
-  early-Japanese makers later sourced in 0049 — Setagaya (Kato) and Nakano (Towa).
-  EM-era makers with no recoverable HQ stay at country level
-  (japan), as the existing Nihon Gorakuki record already does. Also the home cities of the new active makers added in
-  0050-0055: West Berlin NJ (Wonderland Amusements), Longwood FL (Pawlowski
-  Pinball), Odessa FL (Ramp's Pinball) and Bagnatica BG (Euro Pinball Corp, under
-  the Bergamo province created in 0039).
+  Create the city locations for the Japanese and active makers.
 claims:
   - location.japan/osaka/higashi-osaka:
       create: true

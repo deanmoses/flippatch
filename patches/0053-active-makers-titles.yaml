@@ -1,8 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Titles for the new active makers' games, created before their models (0054) —
-  a model's title FK must resolve to an already-committed title, since the patch
-  system can't create an FK target within the same patch.
+  Create titles for the new active makers' games.
 claims:
   - title.alice-goes-to-wonderland:
       create: true

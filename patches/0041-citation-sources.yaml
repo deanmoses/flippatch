@@ -1,7 +1,6 @@
 attribution: flipcommons-catalog
 description: >-
-  Seed website roots used by the Japanese-maker and active-maker patches so later
-  patches can cite them.
+  Seed website roots for the Japanese-maker and active-maker patches.
 sources:
   - name: "Eremeka — a foreigners' guide to eremeka arcades"
     source_type: web
@@ -125,7 +124,7 @@ sources:
     source_type: web
     description: >-
       Pinball news and database site (kineticist.com), home of the TWIPY awards
-      and maker interviews (formerly This Week in Pinball).
+      and maker interviews.
     links:
       - {
           url: "https://www.kineticist.com/",

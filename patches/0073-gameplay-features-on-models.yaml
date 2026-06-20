@@ -1,0 +1,80 @@
+attribution: flipcommons-catalog
+description: >
+  Gameplay features for some models.
+claims:
+  - model.galactic-tank-force-classic:
+      gameplay_feature:
+        - flippers: 2
+        - slingshots: 2
+        - pop-bumpers: 3
+        - vertical-up-kickers: 2
+        - ball-locks: 3
+        - spinners: 2
+        - orbits: 2
+        - magnets: 1
+        - up-posts: 1
+        - standup-targets
+        - rollovers
+        - auto-launch
+        - ramps
+        - multiball
+        - skill-shot
+      note: 'American Pinball''s Galactic Tank Force Game Manual (v1.0, October 2023). Coil Settings table: "Auto Fire [...] Bottom Pop Bumper [...] Left Flipper Main [...] Left Pop Bumper [...] Left Slingshot [...] Left VUK Eject [...] Lock Release [...] Right Flipper Main [...] Right Pop Bumper [...] Right Slingshot [...] Right VUK Eject [...] Up Post"; opto map: "Lock 1 [...] Lock 2 [...] Lock 3"; switches are "standup and rollover". Game Rules name "tank targets", "flank targets", "Left Orbit"/"Right Orbit", "spins at both spinners", a "Magnet", "Plastic Ramp" shots, "Meltdown Multiball" and "SKILL SHOTS (2)". Hence two flippers, two slingshots, three pop bumpers, two vertical up-kickers, three ball locks, two spinners, two orbits, one magnet, one up-post, auto-launch, standup targets, rollovers, ramps, multiball and skill shots.'
+      cite: http://s4.american-pinball.com/img/support/2023-11/Galactic-Tank-Force-Game-Manual-(Version-1.0_October-2023).pdf
+  - model.galactic-tank-force-deluxe:
+      gameplay_feature:
+        - flippers: 2
+        - slingshots: 2
+        - pop-bumpers: 3
+        - vertical-up-kickers: 2
+        - ball-locks: 3
+        - spinners: 2
+        - orbits: 2
+        - magnets: 1
+        - up-posts: 1
+        - standup-targets
+        - rollovers
+        - auto-launch
+        - ramps
+        - multiball
+        - skill-shot
+      note: 'American Pinball''s Galactic Tank Force Game Manual (v1.0, October 2023). Coil Settings table: "Auto Fire [...] Bottom Pop Bumper [...] Left Flipper Main [...] Left Pop Bumper [...] Left Slingshot [...] Left VUK Eject [...] Lock Release [...] Right Flipper Main [...] Right Pop Bumper [...] Right Slingshot [...] Right VUK Eject [...] Up Post"; opto map: "Lock 1 [...] Lock 2 [...] Lock 3"; switches are "standup and rollover". Game Rules name "tank targets", "flank targets", "Left Orbit"/"Right Orbit", "spins at both spinners", a "Magnet", "Plastic Ramp" shots, "Meltdown Multiball" and "SKILL SHOTS (2)". Hence two flippers, two slingshots, three pop bumpers, two vertical up-kickers, three ball locks, two spinners, two orbits, one magnet, one up-post, auto-launch, standup targets, rollovers, ramps, multiball and skill shots.'
+      cite: http://s4.american-pinball.com/img/support/2023-11/Galactic-Tank-Force-Game-Manual-(Version-1.0_October-2023).pdf
+  - model.galactic-tank-force-limited-edition:
+      gameplay_feature:
+        - flippers: 2
+        - slingshots: 2
+        - pop-bumpers: 3
+        - vertical-up-kickers: 2
+        - ball-locks: 3
+        - spinners: 2
+        - orbits: 2
+        - magnets: 1
+        - up-posts: 1
+        - standup-targets
+        - rollovers
+        - auto-launch
+        - ramps
+        - multiball
+        - skill-shot
+      note: 'American Pinball''s Galactic Tank Force Game Manual (v1.0, October 2023). Coil Settings table: "Auto Fire [...] Bottom Pop Bumper [...] Left Flipper Main [...] Left Pop Bumper [...] Left Slingshot [...] Left VUK Eject [...] Lock Release [...] Right Flipper Main [...] Right Pop Bumper [...] Right Slingshot [...] Right VUK Eject [...] Up Post"; opto map: "Lock 1 [...] Lock 2 [...] Lock 3"; switches are "standup and rollover". Game Rules name "tank targets", "flank targets", "Left Orbit"/"Right Orbit", "spins at both spinners", a "Magnet", "Plastic Ramp" shots, "Meltdown Multiball" and "SKILL SHOTS (2)". Hence two flippers, two slingshots, three pop bumpers, two vertical up-kickers, three ball locks, two spinners, two orbits, one magnet, one up-post, auto-launch, standup targets, rollovers, ramps, multiball and skill shots.'
+      cite: http://s4.american-pinball.com/img/support/2023-11/Galactic-Tank-Force-Game-Manual-(Version-1.0_October-2023).pdf
+  - model.galactic-tank-force-signature:
+      gameplay_feature:
+        - flippers: 2
+        - slingshots: 2
+        - pop-bumpers: 3
+        - vertical-up-kickers: 2
+        - ball-locks: 3
+        - spinners: 2
+        - orbits: 2
+        - magnets: 1
+        - up-posts: 1
+        - standup-targets
+        - rollovers
+        - auto-launch
+        - ramps
+        - multiball
+        - skill-shot
+      note: 'American Pinball''s Galactic Tank Force Game Manual (v1.0, October 2023). Coil Settings table: "Auto Fire [...] Bottom Pop Bumper [...] Left Flipper Main [...] Left Pop Bumper [...] Left Slingshot [...] Left VUK Eject [...] Lock Release [...] Right Flipper Main [...] Right Pop Bumper [...] Right Slingshot [...] Right VUK Eject [...] Up Post"; opto map: "Lock 1 [...] Lock 2 [...] Lock 3"; switches are "standup and rollover". Game Rules name "tank targets", "flank targets", "Left Orbit"/"Right Orbit", "spins at both spinners", a "Magnet", "Plastic Ramp" shots, "Meltdown Multiball" and "SKILL SHOTS (2)". Hence two flippers, two slingshots, three pop bumpers, two vertical up-kickers, three ball locks, two spinners, two orbits, one magnet, one up-post, auto-launch, standup targets, rollovers, ramps, multiball and skill shots.'
+      cite: http://s4.american-pinball.com/img/support/2023-11/Galactic-Tank-Force-Game-Manual-(Version-1.0_October-2023).pdf

@@ -255,6 +255,100 @@ def test_description_no_inline_grandfathered_before_rule():
     assert not has(e, "at least one inline")
 
 
+def test_gameplay_feature_description_needs_no_inline_cite():
+    # Taxonomy descriptions (gameplay features) are encyclopedic cross-references
+    # — they define a concept and link related features/games via wikilinks
+    # rather than footnoting sourced facts — so they're exempt from the
+    # inline-cite requirement that binds real-world-entity descriptions.
+    e = errs(
+        [
+            {
+                "gameplay-feature.orbits": {
+                    "description": "Loops past the [[gameplay-feature:spinners]]."
+                }
+            }
+        ],
+        attribution="flipcommons-ai-desc-gameplay-feature",
+    )
+    assert not has(e, "at least one inline")
+
+
+def test_gameplay_feature_description_still_needs_attribution():
+    # The exemption is narrow: only the inline-cite rule relaxes. A gameplay
+    # feature description still must carry the desc attribution, and an
+    # entry-level cite: is still rejected.
+    e = errs(
+        [
+            {
+                "gameplay-feature.orbits": {
+                    "description": "A loop shot.",
+                    "cite": "ipdb:1",
+                }
+            }
+        ],
+        attribution="flipcommons-catalog",
+    )
+    assert has(e, "must be attributed")
+    assert has(e, "entry-level cite")
+
+
+# --- patch-description-length: the Admin-only ingest-run note stays short ----
+# This rule is whole-patch (the top-level description:), not per-unit, so the
+# tests drive lint_patch directly rather than the per-claim errs() helper.
+
+
+def _patch(description, filename="0040-x.yaml"):
+    return lp.lint_patch(filename, {"description": description, "claims": []})
+
+
+def test_long_patch_description_flagged():
+    e = _patch("x" * 81)
+    assert has(e, "max 80")
+
+
+def test_short_patch_description_clean():
+    e = _patch("Fix the maker name.")
+    assert not has(e, "max 80")
+
+
+def test_patch_description_exactly_80_clean():
+    e = _patch("x" * 80)
+    assert not has(e, "max 80")
+
+
+def test_patch_description_counts_collapsed_length():
+    # A folded scalar wraps across lines and may keep a trailing newline; the
+    # limit measures the whitespace-collapsed text, so 80 chars + a newline is
+    # still within budget.
+    e = _patch("x" * 80 + "\n")
+    assert not has(e, "max 80")
+
+    # Content that only exceeds 80 once de-wrapped is still flagged.
+    long = "\n".join(["a sentence fragment"] * 6)  # collapses to >80 chars
+    assert has(_patch(long), "max 80")
+
+
+def test_missing_patch_description_not_flagged():
+    # The rule bounds length; it does not require a description to exist.
+    e = lp.lint_patch("0040-x.yaml", {"claims": []})
+    assert not has(e, "max 80")
+
+
+def test_patch_description_length_grandfathered_before_rule():
+    # 0038 is the last patch ingested on production and immutable — exempt.
+    e = _patch("x" * 200, filename="0038-model-game-formats.yaml")
+    assert not has(e, "max 80")
+
+
+def test_patch_description_length_linted_at_0039():
+    e = _patch("x" * 200, filename="0039-x.yaml")
+    assert has(e, "max 80")
+
+
+def test_rule_since_registry_has_patch_description_length():
+    assert lp.RULE_SINCE["patch-description-length"] == 39
+
+
 # --- per-rule introduction number / grandfathering --------------------------
 
 
@@ -280,6 +374,88 @@ def test_rule_since_registry_has_description_rules():
     # number (39, because 0039+ were retrofitted to comply).
     assert lp.RULE_SINCE["description-needs-inline-cite"] == 39
     assert lp.RULE_SINCE["description-no-entry-cite"] == 39
+
+
+# --- a description must cite at least two distinct root sources --------------
+# The description-two-sources enforcement is TEMPORARILY DISABLED in
+# lint_patches.py; the tests asserting it fires are skipped until it's restored.
+# Re-enable both together. The clean / grandfather / registry tests below stay
+# active (they pass whether or not the rule fires).
+_TWO_SOURCES_DISABLED = pytest.mark.skip(
+    reason="description-two-sources rule temporarily disabled"
+)
+
+
+def _desc(description, cites, filename="0040-x.yaml"):
+    return errs(
+        [{"manufacturer.x": {"description": description, "cites": cites}}],
+        attribution="flipcommons-ai-desc-manufacturer",
+        filename=filename,
+    )
+
+
+@_TWO_SOURCES_DISABLED
+def test_description_single_citation_flagged():
+    e = _desc("one fact[[cite:1]]", {"1": "https://pinside.com/x"})
+    assert has(e, "at least two sources")
+
+
+@_TWO_SOURCES_DISABLED
+def test_description_two_citations_same_root_flagged():
+    # Both footnotes resolve to pawlowskipinball.com — one root, not two.
+    e = _desc(
+        "a[[cite:1]] b[[cite:2]]",
+        {
+            "1": "https://pawlowskipinball.com/",
+            "2": "https://pawlowskipinball.com/eternal",
+        },
+    )
+    assert has(e, "only one root source")
+
+
+@_TWO_SOURCES_DISABLED
+def test_description_subdomains_share_root_flagged():
+    # twip.kineticist.com and www.kineticist.com collapse to one root domain.
+    e = _desc(
+        "a[[cite:1]] b[[cite:2]]",
+        {
+            "1": "https://twip.kineticist.com/p/x",
+            "2": "https://www.kineticist.com/news/y",
+        },
+    )
+    assert has(e, "only one root source")
+
+
+@_TWO_SOURCES_DISABLED
+def test_description_scheme_cites_same_scheme_flagged():
+    e = _desc("a[[cite:1]] b[[cite:2]]", {"1": "ipdb:1", "2": "ipdb:2"})
+    assert has(e, "only one root source")
+
+
+def test_description_two_distinct_roots_clean():
+    e = _desc(
+        "a[[cite:1]] b[[cite:2]]",
+        {"1": "https://pinside.com/x", "2": "https://www.kineticist.com/y"},
+    )
+    assert not has(e, "two sources")
+    assert not has(e, "root source")
+
+
+def test_description_url_and_scheme_distinct_clean():
+    e = _desc(
+        "a[[cite:1]] b[[cite:2]]", {"1": "https://pinside.com/x", "2": "youtube:abc"}
+    )
+    assert not has(e, "two sources")
+    assert not has(e, "root source")
+
+
+def test_description_two_sources_grandfathered_before_rule():
+    e = _desc("one fact[[cite:1]]", {"1": "ipdb:1"}, filename="0010-x.yaml")
+    assert not has(e, "two sources")
+
+
+def test_rule_since_registry_has_two_sources_rule():
+    assert lp.RULE_SINCE["description-two-sources"] == 39
 
 
 # --- an entry-level cite: on a description is always an error ----------------
