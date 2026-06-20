@@ -23,14 +23,24 @@
       "maxLength": 1000,
       "description": "Reason for the change; becomes a ChangeSet note. Shared by a flat entry and each `changesets:` item."
     },
+    "schemeIdentifier": {
+      "type": "string",
+      "pattern": "^(ipdb|opdb|youtube):.{1,200}$",
+      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme list is mirrored by the `sources` identifier_key enum below."
+    },
+    "httpUrl": {
+      "type": "string",
+      "maxLength": 2000,
+      "pattern": "^https?://.+$"
+    },
     "cite": {
       "type": "string",
       "maxLength": 2000,
       "anyOf": [
-        { "pattern": "^(ipdb|opdb):.{1,200}$" },
-        { "pattern": "^https?://.+$" }
+        { "$ref": "#/definitions/schemeIdentifier" },
+        { "$ref": "#/definitions/httpUrl" }
       ],
-      "description": "External evidence, either as scheme:identifier (ipdb:4443, opdb:GRhX5) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form. Attaches a citation to this entry's authored field claims (not create-owned slug/status)."
+      "description": "External evidence, either as scheme:identifier (ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form. Attaches a citation to this entry's authored field claims (not create-owned slug/status)."
     },
     "cites": {
       "type": "object",
@@ -41,29 +51,14 @@
       },
       "additionalProperties": {
         "oneOf": [
-          {
-            "type": "string",
-            "maxLength": 2000,
-            "anyOf": [
-              { "pattern": "^(ipdb|opdb):.{1,200}$" },
-              { "pattern": "^https?://.+$" }
-            ]
-          },
+          { "$ref": "#/definitions/cite" },
           {
             "type": "object",
             "additionalProperties": false,
             "required": ["url"],
             "properties": {
-              "url": {
-                "type": "string",
-                "maxLength": 2000,
-                "pattern": "^https?://.+$"
-              },
-              "archive": {
-                "type": "string",
-                "maxLength": 2000,
-                "pattern": "^https?://.+$"
-              }
+              "url": { "$ref": "#/definitions/httpUrl" },
+              "archive": { "$ref": "#/definitions/httpUrl" }
             }
           }
         ]
@@ -218,8 +213,8 @@
           "description": { "type": "string" },
           "identifier_key": {
             "type": "string",
-            "enum": ["", "ipdb", "opdb"],
-            "description": "Marks a scheme root whose children carry structured identifiers (ipdb/opdb). Root web sources only."
+            "enum": ["", "ipdb", "opdb", "youtube"],
+            "description": "Marks a scheme root whose children carry structured identifiers (ipdb/opdb/youtube). Root web sources only."
           },
           "links": {
             "type": "array",

@@ -116,6 +116,7 @@ sources:
       - { url: "https://pinside.com/", label: Pinside, link_type: homepage }
   - name: YouTube
     source_type: web
+    identifier_key: youtube
     description: >-
       Video-sharing platform.
     links:
