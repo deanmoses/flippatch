@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >-
-  Seed website roots for the Japanese-maker and active-maker patches.
+  Seed website roots for upcoming patches.
 sources:
   - name: "Eremeka — a foreigners' guide to eremeka arcades"
     source_type: web
@@ -155,6 +155,114 @@ sources:
       - {
           url: "https://nicole.express/",
           label: nicole.express,
+          link_type: homepage,
+        }
+  - name: Barrels of Fun
+    source_type: web
+    description: >-
+      Manufacturer site of Barrels of Fun, a Houston, Texas maker
+      (Labyrinth, Dune, Winchester Mystery House).
+    links:
+      - {
+          url: "https://www.barrelsoffun.com/",
+          label: Barrels of Fun,
+          link_type: homepage,
+        }
+  - name: Dutch Pinball
+    source_type: web
+    description: >-
+      Manufacturer site of Dutch Pinball, a Netherlands maker
+      (The Big Lebowski).
+    links:
+      - {
+          url: "https://www.dutchpinball.com/",
+          label: Dutch Pinball,
+          link_type: homepage,
+        }
+  - name: For Amusement Only Games
+    source_type: web
+    description: >-
+      Site of For Amusement Only Games, the label of designer Nick Baldridge,
+      a maker of games for Multimorphic's P3 platform.
+    links:
+      - {
+          url: "https://www.foramusementonlygames.com/",
+          label: For Amusement Only Games,
+          link_type: homepage,
+        }
+  - name: Homepin
+    source_type: web
+    description: >-
+      Manufacturer site of Homepin, maker of the Thunderbirds pinball machine.
+    links:
+      - {
+          url: "https://www.homepin.com/",
+          label: Homepin,
+          link_type: homepage,
+        }
+  - name: Ian Harrower Games
+    source_type: web
+    description: >-
+      Site of Ian Harrower Games, an indie maker of games for Multimorphic's
+      P3 platform.
+    links:
+      - {
+          url: "https://ianharrowergames.com/",
+          label: Ian Harrower Games,
+          link_type: homepage,
+        }
+  - name: Pedretti Gaming
+    source_type: web
+    description: >-
+      Manufacturer site of Pedretti Gaming (Pinball Remakes), an Italian maker
+      of officially licensed pinball remakes, in Bagnatica (Bergamo).
+    links:
+      - {
+          url: "https://www.pinballremakes.com/",
+          label: Pedretti Gaming,
+          link_type: homepage,
+        }
+  - name: Pinball Adventures
+    source_type: web
+    description: >-
+      Manufacturer site of Pinball Adventures, a boutique Canadian maker.
+    links:
+      - {
+          url: "https://www.pinballadventures.com/",
+          label: Pinball Adventures,
+          link_type: homepage,
+        }
+  - name: Rebellion Pinball
+    source_type: web
+    description: >-
+      Site of Rebellion Pinball, a homebrew project from Besancon, France
+      (Space Singularity).
+    links:
+      - {
+          url: "https://155601.wixsite.com/rebellionpinball",
+          label: Rebellion Pinball,
+          link_type: homepage,
+        }
+  - name: Tomato Land
+    source_type: web
+    description: >-
+      Manufacturer site of Tomato Land, a Japanese maker whose amusement
+      division produces Target Machine redemption games.
+    links:
+      - {
+          url: "https://www.tomatoland.jp/",
+          label: Tomato Land,
+          link_type: homepage,
+        }
+  - name: Turner Pinball
+    source_type: web
+    description: >-
+      Manufacturer site of Turner Pinball, a US maker of original games
+      (Merlin's Arcade, Ninja Eclipse).
+    links:
+      - {
+          url: "https://turnerpinball.com/",
+          label: Turner Pinball,
           link_type: homepage,
         }
 claims: []

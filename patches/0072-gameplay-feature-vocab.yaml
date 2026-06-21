@@ -8,3 +8,7 @@ claims:
   - gameplay-feature.auto-launch:
       create: true
       name: Auto-Launch
+      # Both: functionally a ball-shooter (puts the ball into play, like the
+      # manual plunger) and mechanically a coil kicker — dual parentage, as with
+      # other cross-category features (e.g. rollover-drop-targets).
+      gameplay_feature_parent: [ball-shooters, kickers]
