@@ -216,6 +216,83 @@ def test_quoted_cite_satisfies_note_requirement():
     assert not has(e, "needs a note")
 
 
+def test_note_quote_scaffolding_flagged():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "note": 'IPDB says "This game was never produced."',
+                    "cite": "ipdb:1",
+                    "year": 1970,
+                }
+            }
+        ],
+        filename="0076-x.yaml",
+    )
+    assert has(e, "scaffolding")
+
+
+def test_note_quote_scaffolding_grandfathered_before_rule():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "note": 'IPDB says "This game was never produced."',
+                    "cite": "ipdb:1",
+                    "year": 1970,
+                }
+            }
+        ],
+        filename="0040-x.yaml",
+    )
+    assert not has(e, "scaffolding")
+
+
+def test_own_data_quote_note_not_scaffolding():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "note": 'The name includes "Prototype", indicating a prototype.',
+                    "year": 1970,
+                }
+            }
+        ],
+        filename="0076-x.yaml",
+    )
+    assert not has(e, "scaffolding")
+
+
+def test_quote_smart_typography_flagged():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": {"ref": "ipdb:1", "quote": "never “produced”"},
+                    "year": 1970,
+                }
+            }
+        ],
+        filename="0076-x.yaml",
+    )
+    assert has(e, "cite quote contains smart typography")
+
+
+def test_quote_straight_typography_clean():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": {"ref": "ipdb:1", "quote": 'never "produced" [...]'},
+                    "year": 1970,
+                }
+            }
+        ],
+        filename="0076-x.yaml",
+    )
+    assert not has(e, "cite quote contains smart typography")
+
+
 def test_quoteless_cite_mapping_still_needs_note():
     e = errs(
         [

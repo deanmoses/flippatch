@@ -44,6 +44,14 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   distinct sources, resolving to at least two different root sources (registrable
   domain for a URL, scheme for an ``ipdb:``/``opdb:``/``youtube:`` identifier) —
   a single source, or several footnotes from one root, is not corroboration.
+- ``note-no-quote-scaffolding`` — A note must not carry the legacy
+  ``<source> says "<quote>"`` scaffolding — the verbatim excerpt belongs in
+  ``quote:`` on the ``cite:`` mapping, where the citation already names the
+  source. (Shipped patches keep their historical notes as-authored; their DB
+  rows were fixed by flipcommons' backfill migration, not the files.)
+- ``quote-typography`` — ``cite.quote`` values must use straight quotes and
+  write an ellipsis as ``[...]`` — the same normalization ``note-typography``
+  enforces on notes.
 - ``patch-description-length`` — The *top-level* patch ``description:`` (→ the
   Admin-only ``IngestRun`` note) must be ≤ 80 chars after whitespace collapse: a
   commit-title-style summary, not a paragraph. Per-change detail belongs in
@@ -95,6 +103,8 @@ RULE_SINCE: dict[str, int] = {
     "description-no-entry-cite": 39,
     "description-two-sources": 39,
     "alias-duplicates": 39,
+    "note-no-quote-scaffolding": 76,
+    "quote-typography": 76,
     "alias-length": 39,
     "patch-description-length": 39,
 }
@@ -160,6 +170,14 @@ SCHEME_DOMAIN_RE = re.compile(r"https?://(?:www\.)?(?:ipdb|opdb)\.org", re.IGNOR
 INLINE_CITE = "[[cite:"
 # The key inside an inline footnote, e.g. the "2" in [[cite:2]].
 INLINE_CITE_KEY_RE = re.compile(r"\[\[cite:([^\]]+)\]\]")
+# The legacy note-as-quote scaffolding shape: a short source phrase, a
+# quote-introducing verb (or a colon), then a quoted span. Verbs mirror the
+# migration recognizer's; own-data notes ('The name includes "Prototype"')
+# use none of them and stay legal.
+NOTE_QUOTE_SCAFFOLDING_RE = re.compile(
+    r'^[^"]{1,60}?(?:\s+(?:says|lists|states|reports|reported|dates this)'
+    r"(?:\s+that)?\s+|:\s+)\""
+)
 # The host of a URL cite, with any leading www. stripped.
 URL_HOST_RE = re.compile(r"^https?://(?:www\.)?([^/?#]+)", re.IGNORECASE)
 ALIAS_MAX, ABBREV_MAX = 200, 50
@@ -281,6 +299,23 @@ def _check_unit(
                 f"{where}: note contains smart typography {smart} — use straight "
                 f"quotes and write an ellipsis as [...]"
             )
+        if NOTE_QUOTE_SCAFFOLDING_RE.match(note) and on("note-no-quote-scaffolding"):
+            errors.append(
+                f"{where}: note carries '<source> says \"...\"' scaffolding — "
+                f"put the verbatim excerpt in quote: on the cite: mapping and "
+                f"keep the note for rationale"
+            )
+
+    # quote-typography: cite.quote content
+    if has_quoted_cite and is_cite_map(cite_value):
+        quote = cite_value.get("quote")
+        if isinstance(quote, str):
+            smart = sorted(set(SMART_RE.findall(quote)))
+            if smart and on("quote-typography"):
+                errors.append(
+                    f"{where}: cite quote contains smart typography {smart} — "
+                    f"use straight quotes and write an ellipsis as [...]"
+                )
 
     # cite-scheme-form
     if on("cite-scheme-form"):
