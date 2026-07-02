@@ -5,18 +5,21 @@ claims:
   - manufacturer.wonderland-amusements:
       create: true
       name: Wonderland Amusements
-      note: 'The Toy Book reported "the official launch of Wonderland Amusements. The new company, which debuted at this year''s Pinball Expo in Chicago, says it''s on a mission to bring the joy of real mechanical pinball machines to home arcades with a new line of compact, affordable tables."'
-      cite: https://toybook.com/wonderland-amusements-prototype-reveal/
+      cite:
+        ref: https://toybook.com/wonderland-amusements-prototype-reveal/
+        quote: 'the official launch of Wonderland Amusements. The new company, which debuted at this year''s Pinball Expo in Chicago, says it''s on a mission to bring the joy of real mechanical pinball machines to home arcades with a new line of compact, affordable tables.'
   - manufacturer.pawlowski-pinball:
       create: true
       name: Pawlowski Pinball
-      note: 'Pawlowski Pinball''s site: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences."'
-      cite: https://pawlowskipinball.com/
+      cite:
+        ref: https://pawlowskipinball.com/
+        quote: 'Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences.'
   - manufacturer.euro-pinball-corp:
       create: true
       name: Euro Pinball Corp
-      note: 'Pinball Brothers'' press release: "The move also sees us joining forces with our long-time partner Pedretti Gaming. Together we have shipped close to 800 games and have decided to take the partnership to the next level by forming Euro Pinball Corp."'
-      cite: https://www.pinball-magazine.com/?p=5081
+      cite:
+        ref: https://www.pinball-magazine.com/?p=5081
+        quote: 'The move also sees us joining forces with our long-time partner Pedretti Gaming. Together we have shipped close to 800 games and have decided to take the partnership to the next level by forming Euro Pinball Corp.'
   - manufacturer.ramps-pinball:
       expect: { name: "Ramp's Pinball" }
       manufacturer_alias: ["TiltBob Pinball", "TiltBob"]

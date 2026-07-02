@@ -9,8 +9,9 @@ claims:
       location: [usa/nj/west-berlin]
   - corporate-entity.pawlowski-pinball:
       expect: { name: Pawlowski Pinball }
-      note: 'BizProfiles: "PAWLOWSKI PINBALL LLC [...] is located at 186 BLUE FLAX PT, LONGWOOD, FL, 32750, US."'
-      cite: https://bisprofiles.com/fl/pawlowski-pinball-l21000070173
+      cite:
+        ref: https://bisprofiles.com/fl/pawlowski-pinball-l21000070173
+        quote: 'PAWLOWSKI PINBALL LLC [...] is located at 186 BLUE FLAX PT, LONGWOOD, FL, 32750, US.'
       location: [usa/fl/longwood]
   - corporate-entity.ramps-pinball:
       expect: { name: "Ramp's Pinball" }

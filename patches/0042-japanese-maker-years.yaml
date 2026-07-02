@@ -4,8 +4,9 @@ description: >
 claims:
   - model.apollo-moon:
       expect: { ipdb_id: 6812 }
-      note: 'The eremeka catalog lists "1972 Apollo Moon by Sankyo".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1972 Apollo Moon by Sankyo'
       year: 1972
       game_format: pinball
   - model.asteroid-killer:
@@ -28,8 +29,9 @@ claims:
       game_format: pinball
   - model.new-big-race:
       expect: { ipdb_id: 6070 }
-      note: 'Early Arcades Japan says "New Big Race appears in the 1973 game directory, which was printed in late 1972 [...] The 1972 print date of the machine directory is the only date we have, and the one we will use for the time being."'
-      cite: https://earlyarcadesjapan.blogspot.com/2025/09/new-big-race-by-sankyo.html
+      cite:
+        ref: https://earlyarcadesjapan.blogspot.com/2025/09/new-big-race-by-sankyo.html
+        quote: 'New Big Race appears in the 1973 game directory, which was printed in late 1972 [...] The 1972 print date of the machine directory is the only date we have, and the one we will use for the time being.'
       year: 1972
       game_format: pinball
   - model.the-world-series:

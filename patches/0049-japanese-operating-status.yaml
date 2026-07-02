@@ -66,5 +66,7 @@ claims:
       expect: { manufacturer: towa }
       operating_status: ended
       location: [japan/tokyo/nakano]
-      cite: https://www.ampress.co.jp/backnumber/bn1999.07.15.htm
-      note: 'AMpress (1999) reports "５月２１日に破産宣告を受けた㈱トーワジャパン（東京都中野区本町...負債総額２００億円）" — Towa Japan, of Nakano-ku, Tokyo, received a bankruptcy declaration on 21 May 1999.'
+      cite:
+        ref: https://www.ampress.co.jp/backnumber/bn1999.07.15.htm
+        quote: '５月２１日に破産宣告を受けた㈱トーワジャパン（東京都中野区本町...負債総額２００億円）'
+      note: 'Towa Japan, of Nakano-ku, Tokyo, received a bankruptcy declaration on 21 May 1999.'

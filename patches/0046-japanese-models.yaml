@@ -16,8 +16,9 @@ claims:
       abbreviation: [ホームランゲーム]
   - model.soccer-ace:
       create: true
-      note: 'The eremeka catalog lists "1969 Socker Ace (Soccer Ace) by Nihon Tenbo".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1969 Socker Ace (Soccer Ace) by Nihon Tenbo'
       name: 'Soccer Ace (サッカーエース)'
       year: 1969
       title: soccer-ace
@@ -56,8 +57,9 @@ claims:
       abbreviation: [サッカー8]
   - model.rocket-v:
       create: true
-      note: 'The eremeka catalog lists "1970 Rocket V by Showa Yuen".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1970 Rocket V by Showa Yuen'
       name: 'Rocket V (ロケットV)'
       year: 1970
       title: rocket-v
@@ -80,8 +82,10 @@ claims:
       abbreviation: [宇宙パトロール]
   - model.muden-kun:
       create: true
-      note: 'The eremeka catalog lists "1999 Muden Kun [shooting game] by Banpresto", a prize-dispenser flipper game.'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      note: 'a prize-dispenser flipper game.'
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1999 Muden Kun [shooting game] by Banpresto'
       name: 'Muden Kun (むでんくん)'
       year: 1999
       title: muden-kun
@@ -90,8 +94,10 @@ claims:
       abbreviation: [むでんくん]
   - model.kinnikuman-ii-power-mucho:
       create: true
-      note: 'The eremeka catalog lists "2002 Kinnikuman II Power Mucho by Banpresto", a licensed Kinnikuman prize-dispenser flipper game.'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      note: 'a licensed Kinnikuman prize-dispenser flipper game.'
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '2002 Kinnikuman II Power Mucho by Banpresto'
       name: 'Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ)'
       year: 2002
       title: kinnikuman-ii-power-mucho
@@ -101,8 +107,10 @@ claims:
       abbreviation: [キン肉マン2世 パワームーチョ]
   - model.target-machine-base-ball:
       create: true
-      note: 'The eremeka catalog lists "2007 Target Machine Base Ball by Tomato Land", a candy-vending flipper game.'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      note: 'a candy-vending flipper game.'
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '2007 Target Machine Base Ball by Tomato Land'
       name: 'Target Machine Base Ball (ターゲットマシン ベースボール)'
       year: 2007
       title: target-machine-base-ball
@@ -133,8 +141,10 @@ claims:
       abbreviation: [ターゲットマシン パイレーツ]
   - model.slap-shot-towa:
       create: true
-      note: 'The eremeka catalog lists "1996 Slap Shot by Towa", a hockey flipper game (also shown in a 1997 version).'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      note: 'a hockey flipper game (also shown in a 1997 version).'
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1996 Slap Shot by Towa'
       name: 'Slap Shot (スラップショット)'
       year: 1996
       title: slap-shot-towa
@@ -144,8 +154,9 @@ claims:
       abbreviation: [スラップショット]
   - model.american-battle-dome:
       create: true
-      note: 'The eremeka catalog lists "1995 American Battle Dome by Sunwise & Tsukuda Original".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1995 American Battle Dome by Sunwise & Tsukuda Original'
       name: 'American Battle Dome (アメリカンバトルゲーム)'
       year: 1995
       title: american-battle-dome
@@ -200,8 +211,9 @@ claims:
       abbreviation: [クレイジー15ゲーム]
   - model.pocket-ball:
       create: true
-      note: 'The eremeka catalog lists "1974 Pocket Ball by Komaya".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1974 Pocket Ball by Komaya'
       name: 'Pocket Ball (ポケットボール)'
       year: 1974
       title: pocket-ball
@@ -248,8 +260,10 @@ claims:
       abbreviation: [海賊ゲーム]
   - model.advantage:
       create: true
-      note: 'The eremeka catalog lists "1976 Advantage by Sankyo", a tennis game.'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      note: 'a tennis game.'
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1976 Advantage by Sankyo'
       name: 'Advantage (アドバンテージ)'
       year: 1976
       title: advantage
@@ -260,8 +274,9 @@ claims:
       abbreviation: [アドバンテージ]
   - model.american-football:
       create: true
-      note: 'The eremeka catalog lists "1976 American Football by Sankyo".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1976 American Football by Sankyo'
       name: 'American Football (アメリカンフットボール)'
       year: 1976
       title: american-football
@@ -296,8 +311,9 @@ claims:
       abbreviation: [日本シリーズ]
   - model.new-world-series:
       create: true
-      note: 'Early Arcades Japan says "The 1976 re-release is referred to as New World Series in Sankyo''s advertisements."'
-      cite: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
+      cite:
+        ref: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
+        quote: 'The 1976 re-release is referred to as New World Series in Sankyo''s advertisements.'
       name: 'New World Series (ニューワールドシリーズ)'
       year: 1976
       title: new-world-series
@@ -308,8 +324,9 @@ claims:
       abbreviation: [ニューワールドシリーズ]
   - model.orienteering:
       create: true
-      note: 'The eremeka catalog lists "1976 Orienteering by Universal".'
-      cite: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: '1976 Orienteering by Universal'
       name: 'Orienteering (オリエンテーリング)'
       year: 1976
       title: orienteering

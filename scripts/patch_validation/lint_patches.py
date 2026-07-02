@@ -30,7 +30,8 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   ``flipcommons-catalog``.
 - ``note-required`` — A unit needs a ``note:`` when it cites, deletes,
   retracts/removes, or asserts a substantive (non-alias) field — except a
-  description-only unit and create-scaffolding.
+  description-only unit and create-scaffolding. A ``cite:`` mapping carrying
+  a ``quote:`` satisfies it: the verbatim evidence is the explanation.
 - ``description-needs-inline-cite`` — A ``description:`` unit must carry at least
   one inline ``[[cite:N]]`` footnote; a ``note:`` no longer excuses its absence.
   Exempt for the abstract-taxonomy entity types in
@@ -252,6 +253,12 @@ def _check_unit(
     description_only = bool(authored) and authored <= {"description"}
     has_note = isinstance(unit.get("note"), str)
     has_cite = ("cite" in unit) or ("cites" in unit)
+    # A cite carrying a verbatim quote explains the change by itself — the
+    # note is for editorial rationale beyond the evidence, so it may be absent.
+    cite_value = unit.get("cite")
+    has_quoted_cite = is_mapping(cite_value) and isinstance(
+        cite_value.get("quote"), str
+    )
     is_create = unit.get("create") is True
     is_delete = unit.get("delete") is True
     has_retract_remove = ("retract" in unit) or ("remove" in unit)
@@ -284,14 +291,15 @@ def _check_unit(
             if SCHEME_DOMAIN_RE.search(cite)
         )
 
-    # note-required: note presence
+    # note-required: note presence (a quote-bearing cite counts as the
+    # explanation — see has_quoted_cite above)
     needs_note = (
         (has_cite and not description_only)
         or is_delete
         or has_retract_remove
         or (bool(nonalias_field) and not is_create)
     )
-    if needs_note and not has_note and on("note-required"):
+    if needs_note and not has_note and not has_quoted_cite and on("note-required"):
         errors.append(f"{where}: this change needs a note: explaining it")
 
     # description-attribution + description-needs-inline-cite + description-no-entry-cite

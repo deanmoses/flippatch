@@ -24,8 +24,9 @@ claims:
         # Art credit — manufacturer spec sheet, distinct from the owner-review cite above.
         - credit:
             - carlos-mendoza-iii: art
-          note: 'Wonderland Amusements'' Alice spec sheet: "Artwork: Original illustrations by Carlos Mendoza III."'
-          cite: https://wonderlandamusements.com/products/alice-goes-to-wonderland-pinball
+          cite:
+            ref: https://wonderlandamusements.com/products/alice-goes-to-wonderland-pinball
+            quote: 'Artwork: Original illustrations by Carlos Mendoza III.'
   # The TMNT machine's credited artist, created before the credit below references it.
   - person.mateus-santolouco:
       create: true
@@ -64,8 +65,9 @@ claims:
       production_status: announced
       technology_generation: solid-state
       tag: [home-use]
-      note: 'Pawlowski Pinball''s site: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences [...] Owning all software and parts, it allows ultimate flexibility in pricing and creativity [...] the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025."'
-      cite: https://pawlowskipinball.com/
+      cite:
+        ref: https://pawlowskipinball.com/
+        quote: 'Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences [...] Owning all software and parts, it allows ultimate flexibility in pricing and creativity [...] the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025.'
       changesets:
         # Software credit — first-person from the maker's own site (the primary source).
         - credit:
@@ -125,5 +127,6 @@ claims:
         # Designer credit — Ramp's own site, distinct from the Flipper-News widebody cite above.
         - credit:
             - bob-nies: design
-          note: 'Ramp''s Pinball''s site: "Signature handcrafted machines from the award-winning designer Bob Nies."'
-          cite: https://www.rampspinball.com/machines/road-trip
+          cite:
+            ref: https://www.rampspinball.com/machines/road-trip
+            quote: 'Signature handcrafted machines from the award-winning designer Bob Nies.'

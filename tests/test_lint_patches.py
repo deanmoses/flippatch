@@ -201,6 +201,35 @@ def test_substantive_assert_without_note_flagged():
     assert has(e, "needs a note")
 
 
+def test_quoted_cite_satisfies_note_requirement():
+    # A cite carrying a verbatim quote explains the change by itself.
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": {"ref": "ipdb:1", "quote": "never produced"},
+                    "production_status": "unreleased",
+                }
+            }
+        ]
+    )
+    assert not has(e, "needs a note")
+
+
+def test_quoteless_cite_mapping_still_needs_note():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": {"ref": "ipdb:1"},
+                    "production_status": "unreleased",
+                }
+            }
+        ]
+    )
+    assert has(e, "needs a note")
+
+
 # --- 9: a description must footnote at least one fact inline ----------------
 
 
