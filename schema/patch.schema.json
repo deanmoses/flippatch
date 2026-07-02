@@ -33,14 +33,39 @@
       "maxLength": 2000,
       "pattern": "^https?://.+$"
     },
-    "cite": {
+    "citeRef": {
       "type": "string",
       "maxLength": 2000,
       "anyOf": [
         { "$ref": "#/definitions/schemeIdentifier" },
         { "$ref": "#/definitions/httpUrl" }
       ],
-      "description": "External evidence, either as scheme:identifier (ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form. Attaches a citation to this entry's authored field claims (not create-owned slug/status)."
+      "description": "A reference to the cited source, either as scheme:identifier (ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form."
+    },
+    "cite": {
+      "oneOf": [
+        { "$ref": "#/definitions/citeRef" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ref"],
+          "properties": {
+            "ref": { "$ref": "#/definitions/citeRef" },
+            "archive": { "$ref": "#/definitions/httpUrl" },
+            "locator": {
+              "type": "string",
+              "maxLength": 200,
+              "description": "Where in the source: a page, section, timestamp."
+            },
+            "quote": {
+              "type": "string",
+              "maxLength": 2000,
+              "description": "Verbatim excerpt from the source: exact source text and '[...]' ellipses only. Interpretation, translation and rationale go in note: instead."
+            }
+          }
+        }
+      ],
+      "description": "External evidence: a bare cite-ref string, or a mapping widening it with an archive snapshot URL (http(s) refs only), a locator and a verbatim quote. Attaches a citation to this entry's authored field claims (not create-owned slug/status)."
     },
     "cites": {
       "type": "object",
@@ -51,19 +76,19 @@
       },
       "additionalProperties": {
         "oneOf": [
-          { "$ref": "#/definitions/cite" },
+          { "$ref": "#/definitions/citeRef" },
           {
             "type": "object",
             "additionalProperties": false,
-            "required": ["url"],
+            "required": ["ref"],
             "properties": {
-              "url": { "$ref": "#/definitions/httpUrl" },
+              "ref": { "$ref": "#/definitions/citeRef" },
               "archive": { "$ref": "#/definitions/httpUrl" }
             }
           }
         ]
       },
-      "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-spec in the same grammar as 'cite:' — scheme:identifier, an http(s):// URL, or a { url, archive } map of URLs. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
+      "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-ref string or a { ref, archive } mapping — an inline footnote takes no locator/quote. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
     },
     "retract": {
       "type": "array",
@@ -215,6 +240,11 @@
             "type": "string",
             "enum": ["", "ipdb", "opdb", "youtube"],
             "description": "Marks a scheme root whose children carry structured identifiers (ipdb/opdb/youtube). Root web sources only."
+          },
+          "domains": {
+            "type": "array",
+            "description": "Extra recognition hosts for this root, beyond its 'homepage' link — a rebrand's old domain, a .com/.co.uk pair, an asset/CDN host. One publication reachable at several registrable hosts stays one root all of them recognize. Each entry is a bare host or full URL ('oldpin.com' or 'https://oldpin.com/'); stored verbatim (no rounding), gated only against IP literals and bare public suffixes. Web roots only.",
+            "items": { "type": "string", "minLength": 1 }
           },
           "links": {
             "type": "array",

@@ -192,9 +192,9 @@ PatchUnit = Mapping[str, object]  # a provenance carrier: entity body OR changes
 
 
 class CiteMap(TypedDict):
-    """A cite given as a map; we read its ``url`` (any ``archive`` is ignored)."""
+    """A cite given as a map; we read its ``ref`` (other keys are ignored)."""
 
-    url: str
+    ref: str
 
 
 def is_mapping(value: object) -> TypeGuard[Mapping[str, object]]:
@@ -203,8 +203,8 @@ def is_mapping(value: object) -> TypeGuard[Mapping[str, object]]:
 
 
 def is_cite_map(value: object) -> TypeGuard[CiteMap]:
-    """Narrow a cite value to the ``{url, …}`` map form (not a bare string)."""
-    return isinstance(value, Mapping) and isinstance(value.get("url"), str)
+    """Narrow a cite value to the ``{ref, …}`` map form (not a bare string)."""
+    return isinstance(value, Mapping) and isinstance(value.get("ref"), str)
 
 
 def _units(body: PatchUnit) -> Iterator[tuple[str, PatchUnit]]:
@@ -222,13 +222,15 @@ def _cite_strings(unit: PatchUnit) -> Iterator[str]:
     cite = unit.get("cite")
     if isinstance(cite, str):
         yield cite
+    elif is_cite_map(cite):
+        yield cite["ref"]
     cites = unit.get("cites")
     if is_mapping(cites):
         for value in cites.values():
             if isinstance(value, str):
                 yield value
             elif is_cite_map(value):
-                yield value["url"]
+                yield value["ref"]
 
 
 def _check_unit(
@@ -329,7 +331,7 @@ def _check_unit(
         #     roots: set[str] = set()
         #     for key in keys:
         #         value = cites.get(key) if is_mapping(cites) else None
-        #         url = value["url"] if is_cite_map(value) else value
+        #         url = value["ref"] if is_cite_map(value) else value
         #         if isinstance(url, str) and (root := _cite_root(url)):
         #             roots.add(root)
         #     if len(keys) < 2:

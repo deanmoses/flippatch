@@ -232,7 +232,7 @@ def test_cites_map_forms_accepted(schema_validator):
                         "1": "ipdb:4443",
                         "2": "https://example.com/a",
                         "3": {
-                            "url": "https://example.com/b",
+                            "ref": "https://example.com/b",
                             "archive": "https://web.archive.org/x",
                         },
                     },
@@ -244,14 +244,14 @@ def test_cites_map_forms_accepted(schema_validator):
 
 
 def test_cites_url_only_map_accepted(schema_validator):
-    # The { url } map with no archive is the common map form.
+    # The { ref } map with no archive is the common map form.
     data = {
         "attribution": "flipcommons-ai-desc-model",
         "claims": [
             {
                 "model.foo": {
                     "description": "x[[cite:1]]",
-                    "cites": {"1": {"url": "https://example.com/a"}},
+                    "cites": {"1": {"ref": "https://example.com/a"}},
                 }
             }
         ],
@@ -268,6 +268,59 @@ def test_existing_slug_markers_need_no_cites(schema_validator):
         ],
     }
     assert not _has_error(schema_validator, data)
+
+
+def test_entry_cite_mapping_with_locator_and_quote_accepted(schema_validator):
+    # The entry-level cite: mapping widens the scalar ref with instance fields.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [
+            {
+                "model.foo": {
+                    "year": 1990,
+                    "cite": {
+                        "ref": "ipdb:4443",
+                        "locator": "Notes section",
+                        "quote": "This game was never produced.",
+                    },
+                }
+            }
+        ],
+    }
+    assert not _has_error(schema_validator, data)
+
+
+@pytest.mark.parametrize(
+    "cite",
+    [
+        {"quote": "no ref"},  # mapping missing ref
+        {"ref": "ipdb:4443", "bogus": 1},  # unknown key
+        {"ref": "ipdb:4443", "quote": "x" * 2001},  # overlong quote
+        {"ref": "ipdb:4443", "locator": "x" * 201},  # overlong locator
+    ],
+)
+def test_malformed_entry_cite_mapping_rejected(schema_validator, cite):
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.foo": {"year": 1990, "cite": cite}}],
+    }
+    assert _has_error(schema_validator, data)
+
+
+def test_inline_cites_quote_rejected(schema_validator):
+    # Inline footnotes take no locator/quote — those belong on the entry cite.
+    data = {
+        "attribution": "flipcommons-ai-desc-model",
+        "claims": [
+            {
+                "model.foo": {
+                    "description": "x[[cite:1]]",
+                    "cites": {"1": {"ref": "https://example.com/a", "quote": "x"}},
+                }
+            }
+        ],
+    }
+    assert _has_error(schema_validator, data)
 
 
 def test_cite_and_cites_coexist(schema_validator):
@@ -295,9 +348,9 @@ def test_cite_and_cites_coexist(schema_validator):
         {"1": "ftp://example.com"},  # non-http(s) URL
         {"1": "bogus:4443"},  # unknown scheme
         {"abc": "ipdb:4443"},  # non-numeric handle
-        {"1": {"archive": "https://web.archive.org/x"}},  # map missing url
-        {"1": {"url": "https://x/", "bogus": 1}},  # unknown key in map
-        {"1": {"url": "ftp://x/"}},  # map url not http(s)
+        {"1": {"archive": "https://web.archive.org/x"}},  # map missing ref
+        {"1": {"ref": "https://x/", "bogus": 1}},  # unknown key in map
+        {"1": {"ref": "ftp://x/"}},  # map ref not http(s)
         {},  # empty map
     ],
 )
