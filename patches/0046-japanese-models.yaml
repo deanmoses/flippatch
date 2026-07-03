@@ -45,7 +45,7 @@ claims:
             quote: '1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] theme ~ sports ~ football (soccer)'
   - model.beat-spark:
       expect: { ipdb_id: 6771 }
-      note: 'The eremeka catalog lists "1970 Beat & Spark [Socker] by Tokyo Corporation & Nihon Tenbo"; flipcommons held it with no maker (IPDB: "Unknown Manufacturer").'
+      note: 'flipcommons previously held this with no maker (IPDB: "Unknown Manufacturer").'
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
         quote: '1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] theme ~ sports ~ football (soccer)'
@@ -59,7 +59,7 @@ claims:
             quote: '1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] yokomono ~ flipper pinball'
   - model.jumbokick:
       expect: { ipdb_id: 6772 }
-      note: 'The eremeka catalog lists "1970 Jumbo Kick by Tokyo Corporation & Nihon Tenbo"; flipcommons held it with no maker (IPDB: "Unknown Manufacturer").'
+      note: 'flipcommons previously held this with no maker (IPDB: "Unknown Manufacturer").'
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
         quote: '1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo)'

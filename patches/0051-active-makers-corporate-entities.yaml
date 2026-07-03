@@ -7,7 +7,7 @@ claims:
       manufacturer: wonderland-amusements
       name: Wonderland Amusements
       operating_status: ongoing
-      note: 'Wonderland Amusements is shipping its first machine and taking pre-orders for a second. Retro News: "A Teenage Mutant Ninja Turtles (TMNT) home pinball machine is now available to pre-order from [...] Wonderland Amusements [...]. Following the successful Kickstarter release of their first machine, Alice Goes to Wonderland [...]."'
+      note: 'Wonderland Amusements is shipping its first machine and taking pre-orders for a second.'
       cite:
         ref: https://www.retronews.com/tmnt-pinball/
         quote: 'Wonderland Amusements [...] Following the successful Kickstarter release of their first machine, Alice Goes to Wonderland, Wonderland Amusements continues'
@@ -16,7 +16,7 @@ claims:
       manufacturer: pawlowski-pinball
       name: Pawlowski Pinball
       operating_status: ongoing
-      note: 'Pawlowski Pinball is an active maker bringing its first game to market. Its site: "the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025. There are other games in active development as well [...]."'
+      note: 'Pawlowski Pinball is an active maker bringing its first game to market.'
       cite:
         ref: https://pawlowskipinball.com/
         quote: 'the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025. There are other games in active development as well'
@@ -25,14 +25,14 @@ claims:
       manufacturer: euro-pinball-corp
       name: Euro Pinball Corp
       operating_status: ongoing
-      note: 'Euro Pinball Corp. S.R.L. is the active manufacturing joint venture of Pinball Brothers and Pedretti Gaming, formed for 2023 to "provide a superior platform for large scale manufacturing of pinball machines."'
+      note: 'Euro Pinball Corp. S.R.L. is the active manufacturing joint venture of Pinball Brothers and Pedretti Gaming, formed for 2023.'
       cite:
         ref: https://www.pinball-magazine.com/?p=5081
         quote: 'we have shipped close to 800 games and have decided to take the partnership to the next level by forming Euro Pinball Corp.'
   - corporate-entity.ramps-pinball:
       expect: { name: "Ramp's Pinball" }
       corporate_entity_alias: ["TiltBob Pinball", "TiltBob"]
-      note: 'The company now trading as Ramp''s Pinball Manufacturing, LLC was first announced as TiltBob Pinball. Flipper-News: "Laut USPTO ist es niemand anderes als Ramp''s Pinball Manufacturing (TiltBob Pinball), das von Bob Neis in Florida gegründete Unternehmen [...]."'
+      note: 'The company now trading as Ramp''s Pinball Manufacturing, LLC was first announced as TiltBob Pinball.'
       cite:
         ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
         quote: 'Ramp''s Pinball Manufacturing (TiltBob Pinball)'

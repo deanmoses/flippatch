@@ -53,7 +53,7 @@ claims:
       cite:
         ref: https://en.wikipedia.org/wiki/Banpresto
         quote: 'It continued producing games until 2008 when it was absorbed by Namco Bandai Games'
-      note: 'Wikipedia says Banpresto was "headquartered in Shinagawa, Tokyo" and that its video-game and amusement business was absorbed into Bandai Namco in 2008; the brand was later folded into Bandai Spirits in 2019.'
+      note: 'Banpresto''s video-game and amusement business was absorbed into Bandai Namco in 2008; the brand was later folded into Bandai Spirits in 2019.'
       changesets:
         - location: [japan/tokyo/shinagawa]
           cite:

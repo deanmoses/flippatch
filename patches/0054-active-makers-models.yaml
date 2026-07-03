@@ -16,7 +16,7 @@ claims:
       cabinet: floor
       technology_generation: solid-state
       tag: [home-use]
-      note: 'nicole.express''s 2026 owner review, "Pinball in my House, 2026: Alice Goes to Wonderland" (March 2026): "two large cardboard boxes were delivered to the apartment" (shipped 2026); "The score is displayed on a small LCD screen"; "There are a series of controls on the front, in lieu of a coin slot"; "All the electronics are self-contained." A free-standing, roughly 80%-scale machine with a backbox.'
+      note: 'The owner review (March 2026) documents the machine as shipped; a free-standing, roughly 80%-scale machine with a backbox.'
       cite:
         ref: https://nicole.express/2026/nicole-in-blunderland.html
         quote: 'two large cardboard boxes were delivered to the apartment'
@@ -47,7 +47,7 @@ claims:
       cabinet: floor
       technology_generation: solid-state
       abbreviation: ["TMNT:BITS", "TMNT-BITS", "TMNTBITS"]
-      note: 'Wonderland Amusements'' pre-sale page (2026): "PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Real mechanical flippers, slingshots, bumpers, ramps, and multi-ball [...] Scale: Approx 80 % of commercial pinball size [...] MDF wood cabinet and back box, chrome metal trim, steel legs with leveling feet [...] Integrated LCD display system [...] Wi-Fi-enabled for high-score tracking and software updates [...] It is not equipped with coin operation." Revealed for pre-order in 2026 following the Alice Kickstarter; not yet shipped.'
+      note: 'Revealed for pre-order in 2026 following the Alice Kickstarter; not yet shipped.'
       cite:
         ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
         quote: 'PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Official TMNT Mechanical Pinball Machine by Wonderland Amusements'
@@ -75,7 +75,6 @@ claims:
         # Art credit for the machine — its own source, distinct from the spec-sheet cite above.
         - credit:
             - mateus-santolouco: art
-          note: 'Bleeding Cool (May 22, 2026), "Teenage Mutant Ninja Turtles Has a New Pinball Machine": "Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco and gameplay aimed at families."'
           cite:
             ref: https://bleedingcool.com/games/teenage-mutant-ninja-turtles-has-a-new-pinball-machine
             quote: 'Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco'
@@ -102,14 +101,13 @@ claims:
         # Software credit — first-person from the maker's own site (the primary source).
         - credit:
             - adam-pawlowski: software
-          note: 'Pawlowski Pinball''s About page, first-person by founder Adam Pawlowski: "Having a lifetime experience in software engineering videogames, and some experience in microcontrollers, I decided to question and look at every part [...] designing a proprietary platform with Pinball Designer to design, program and build pinball machines on a large scale."'
+          note: 'First-person by founder Adam Pawlowski on the maker''s About page.'
           cite:
             ref: https://pawlowskipinball.com/about
             quote: 'Having a lifetime experience in software engineering videogames [...] designing a proprietary platform with Pinball Designer to design, program and build pinball machines on a large scale'
         # Art credit — the maker's own site doesn't claim the art, so cite his ArtStation portfolio, which names him "Artist".
         - credit:
             - adam-pawlowski: art
-          note: 'Adam Pawlowski''s ArtStation portfolio lists him as "Programmer, Artist" and presents "My latest project Pinball Eternal."'
           cite:
             ref: https://dpadam450.artstation.com/projects/WmOKyN
             quote: 'Adam Pawlowski [...] Programmer, Artist [...] My latest project Pinball Eternal.'
@@ -119,7 +117,7 @@ claims:
       title: little-shop-of-horrors
       corporate_entity: ramps-pinball
       production_status: announced
-      note: 'This Week in Pinball: "I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year." Trademark-stage; no release date announced, so the year is left unset.'
+      note: 'Trademark-stage; no release date announced, so the year is left unset.'
       cite:
         ref: https://twip.kineticist.com/p/brought-to-you-by-secrets
         quote: 'I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year.'
@@ -152,7 +150,6 @@ claims:
       changesets:
         # Display from the creator interview — a playfield monitor (LCD), which Pinside doesn't state.
         - display_type: lcd
-          note: 'Bob Nies''s interview: he made a "playfield monitor" a must-have before he even started the build.'
           cite:
             ref: https://www.kineticist.com/news/bob-nies-interview-elf-pinball
             quote: 'There was one ''must have'' before I even started and that was the playfield monitor.'

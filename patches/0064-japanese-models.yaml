@@ -17,21 +17,18 @@ claims:
           cite:
             ref: ipdb:5572
             quote: 'This game is based on a sugoroku game, a Japanese variety of Parcheesi.'
-        - note: 'Early Arcades Japan dates this "1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)".'
-          cite:
+        - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
             quote: '1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)'
           year: 1970
   - model.fishing-tengu:
       expect: { ipdb_id: 6872 }
       changesets:
-        - note: 'IPDB says "It may have mechanical backbox animation. We notice a red knob on the front of the cabinet, below the regular ball shooter knob."'
-          cite:
+        - cite:
             ref: ipdb:6872
             quote: 'We notice a red knob on the front of the cabinet, below the regular ball shooter knob.'
           cabinet: floor
-        - note: 'Early Arcades Japan dates this "1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)".'
-          cite:
+        - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
             quote: '1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)'
           year: 1973
@@ -46,21 +43,18 @@ claims:
           cite:
             ref: ipdb:6874
             quote: 'It dispenses prizes into a receptacle at the bottom of the cabinet front.'
-        - note: 'Early Arcades Japan dates this "1975 Attack Ball - アタック ボール by 三共 (Sankyo)".'
-          cite:
+        - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
             quote: '1975 Attack Ball - アタック ボール by 三共 (Sankyo)'
           year: 1975
   - model.circus-16:
       expect: { ipdb_id: 6871 }
       changesets:
-        - note: 'IPDB says "Wedge head." and "It may have mechanical backbox animation in the form of balls rolling down an angled viewing window [...]".'
-          cite:
+        - cite:
             ref: ipdb:6871
             quote: 'Wedge head.'
           cabinet: floor
-        - note: 'Early Arcades Japan dates this "1975 サーカス (Circus) by 三共 (Sankyo)".'
-          cite:
+        - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
             quote: '1975 サーカス (Circus) by 三共 (Sankyo)'
           year: 1975

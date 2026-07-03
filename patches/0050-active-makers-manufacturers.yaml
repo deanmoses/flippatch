@@ -23,7 +23,7 @@ claims:
   - manufacturer.ramps-pinball:
       expect: { name: "Ramp's Pinball" }
       manufacturer_alias: ["TiltBob Pinball", "TiltBob"]
-      note: 'Ramp''s Pinball was first announced in 2023 as TiltBob Pinball. Flipper-News: "Laut USPTO ist es niemand anderes als Ramp''s Pinball Manufacturing (TiltBob Pinball), das von Bob Neis in Florida gegründete Unternehmen [...]."'
+      note: 'Ramp''s Pinball was first announced in 2023 as TiltBob Pinball.'
       cite:
         ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
         quote: 'Ramp''s Pinball Manufacturing (TiltBob Pinball)'

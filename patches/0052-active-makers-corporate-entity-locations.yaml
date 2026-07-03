@@ -4,7 +4,7 @@ description: >
 claims:
   - corporate-entity.wonderland-amusements:
       expect: { name: Wonderland Amusements }
-      note: 'B2B Hint records Wonderland Amusements LLC''s legal address as "134 HADDON AVE, WEST BERLIN, NJ, 08091" — the West Berlin, NJ home of CEO Jerry Cummings'' ThinkUp.'
+      note: 'The legal address is the West Berlin, NJ home of CEO Jerry Cummings'' ThinkUp.'
       cite:
         ref: https://b2bhint.com/en/company/us-ca/wonderland-amusements-llc--B20250303120
         quote: 'Legal address [...] 134 HADDON AVE, WEST BERLIN, NJ, 08091'
@@ -17,14 +17,12 @@ claims:
       location: [usa/fl/longwood]
   - corporate-entity.ramps-pinball:
       expect: { name: "Ramp's Pinball" }
-      note: 'Ramp''s Pinball''s contact page gives its location as "Made In Odessa, FL USA."'
       cite:
         ref: https://www.rampspinball.com/contact
         quote: 'Made In [...] Odessa, FL'
       location: [usa/fl/odessa]
   - corporate-entity.euro-pinball-corp:
       expect: { name: Euro Pinball Corp }
-      note: 'Euro Pinball Corp''s contact page gives its address as "Euro Pinball Corp. S.R.L., Via Martin Luther King, 3, 24060 Bagnatica (BG) ITALY."'
       cite:
         ref: https://www.europinball.net/contact
         quote: 'Euro Pinball Corp. S.R.L. [...] Via Martin Luther King, 3 [...] 24060 Bagnatica (BG) ITALY'
