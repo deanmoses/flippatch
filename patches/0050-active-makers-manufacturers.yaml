@@ -7,7 +7,7 @@ claims:
       name: Wonderland Amusements
       cite:
         ref: https://toybook.com/wonderland-amusements-prototype-reveal/
-        quote: 'the official launch of Wonderland Amusements. The new company, which debuted at this year''s Pinball Expo in Chicago, says it''s on a mission to bring the joy of real mechanical pinball machines to home arcades with a new line of compact, affordable tables.'
+        quote: 'the official launch of Wonderland Amusements [...] The new company, which debuted at this year''s Pinball Expo in Chicago, says it''s on a mission "to bring the joy of real mechanical pinball machines to home arcades with a new line of compact, affordable tables."'
   - manufacturer.pawlowski-pinball:
       create: true
       name: Pawlowski Pinball
@@ -24,4 +24,6 @@ claims:
       expect: { name: "Ramp's Pinball" }
       manufacturer_alias: ["TiltBob Pinball", "TiltBob"]
       note: 'Ramp''s Pinball was first announced in 2023 as TiltBob Pinball. Flipper-News: "Laut USPTO ist es niemand anderes als Ramp''s Pinball Manufacturing (TiltBob Pinball), das von Bob Neis in Florida gegründete Unternehmen [...]."'
-      cite: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
+      cite:
+        ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
+        quote: 'Ramp''s Pinball Manufacturing (TiltBob Pinball)'
