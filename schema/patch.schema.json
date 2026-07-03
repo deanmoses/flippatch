@@ -226,7 +226,7 @@
           "name": { "type": "string", "minLength": 1 },
           "source_type": {
             "type": "string",
-            "enum": ["book", "magazine", "web"]
+            "enum": ["book", "magazine", "web", "video"]
           },
           "author": { "type": "string" },
           "publisher": { "type": "string" },
