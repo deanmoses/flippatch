@@ -1,0 +1,85 @@
+attribution: flipcommons-catalog
+# Movies enter the catalog as parentless `video` citation sources — the film is
+# the work itself, cited by timestamp, with no identifier_key/domains/links (a
+# movie has no canonical URL; only a per-copy access URL, which isn't modeled
+# yet). Director(s) go in `author` with the role in parentheses, semicolon-
+# separated for co-directors.
+description: Seed popular pinball movies as parentless video citation works.
+sources:
+  # Documentaries — pinball as the subject
+  - name: "Pleasure Machines: The History of Pinball"
+    source_type: video
+    year: 1998
+    author: Mark Helms (director)
+    description: Early broadcast history-of-pinball documentary.
+  - name: "Tilt: The Battle to Save Pinball"
+    source_type: video
+    year: 2006
+    author: Greg Maletic (director)
+    description: Williams' Pinball 2000 gambit and the industry's near-death.
+  - name: Pinball Passion
+    source_type: video
+    year: 2008
+    author: Bracken J. Batson (director); Beau B. Bellgraph (director)
+    description: Collector and pinball-culture portrait.
+  - name: "Special When Lit: A Pinball Documentary"
+    source_type: video
+    year: 2009
+    author: Brett Sullivan (director)
+    description: Pinball's rise, fall and revival; premiered at Raindance 2009.
+  - name: Wizard Mode
+    source_type: video
+    year: 2016
+    author: Nathan Drillot (director); Jeff Petry (director)
+    description: Autistic champion Robert Gagno's competitive pinball run.
+  - name: "Things That Go Bump in the Night: The Spooky Pinball Story"
+    source_type: video
+    year: 2017
+    author: Joel Reeves (director)
+    description: Portrait of boutique maker Spooky Pinball.
+  - name: Road to Pinball
+    source_type: video
+    year: 2018
+    author: Ilija Jelusic (director)
+    description: German pinball-scene documentary, originally Gladbeck flippt aus.
+  - name: "A World Under Glass: A Pinball Documentary"
+    source_type: video
+    year: 2022
+    author: Thomas D'Antuono (director)
+    description: Design-and-artistry portrait centered on a pinball museum couple.
+  - name: "Ball Runnings: A Pinball Story"
+    source_type: video
+    year: 2022
+    author: Steve Fudge (director)
+    description: Self-made competitive-scene pinball documentary.
+  - name: Token Taverns
+    source_type: video
+    year: 2023
+    author: Bob Rose (director)
+    description: Arcade-bar culture documentary touching on pinball.
+  - name: "Shoot Again: The Resurgence of Pinball"
+    source_type: video
+    year: 2024
+    author: Blake Faucette (director)
+    description: The modern pinball comeback wave.
+  # Narrative films — pinball central or iconic
+  - name: Tommy
+    source_type: video
+    year: 1975
+    author: Ken Russell (director)
+    description: The Who's rock opera; its "Pinball Wizard" is the sport's signature anthem.
+  - name: Tilt
+    source_type: video
+    year: 1979
+    author: Rudy Durand (director)
+    description: Brooke Shields as a teen pinball hustler.
+  - name: Pinball Summer
+    source_type: video
+    year: 1980
+    author: George Mihalka (director)
+    description: Canadian teen film climaxing in a pinball tournament; a.k.a. Pick-Up Summer.
+  - name: "Pinball: The Man Who Saved the Game"
+    source_type: video
+    year: 2022
+    author: Austin Bragg (director); Meredith Bragg (director)
+    description: Dramatizes Roger Sharpe's 1976 demo that overturned New York's pinball ban.

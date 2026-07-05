@@ -1,0 +1,60 @@
+attribution: flipcommons-catalog
+# Seeds every scheme root flipcommons recognizes but hasn't had a row seeded
+# yet: the remaining video platforms, plus the X (Twitter) root. X is
+# registered as a *web* scheme (posts are mixed media, so they mint as web
+# pages, never videos) — it lives here with the video roots for convenience,
+# not because it is one. Each root's name, homepage and recognition host(s)
+# must match the scheme's registered facts exactly (flipcommons holds them to
+# apps/citation/citation_types/schemes/*.py at ingest).
+description: Seed the remaining video platform roots and the X (Twitter) web root.
+sources:
+  - name: Vimeo
+    source_type: video
+    identifier_key: vimeo
+    description: Video-sharing platform.
+    links:
+      - { url: "https://vimeo.com/", label: Vimeo, link_type: homepage }
+  - name: TikTok
+    source_type: video
+    identifier_key: tiktok
+    description: Short-form video platform.
+    links:
+      - { url: "https://www.tiktok.com/", label: TikTok, link_type: homepage }
+  - name: Dailymotion
+    source_type: video
+    identifier_key: dailymotion
+    description: Video-sharing platform.
+    links:
+      - { url: "https://www.dailymotion.com/", label: Dailymotion, link_type: homepage }
+  - name: Rumble
+    source_type: video
+    identifier_key: rumble
+    description: Video-sharing platform.
+    links:
+      - { url: "https://rumble.com/", label: Rumble, link_type: homepage }
+  - name: Facebook
+    source_type: video
+    identifier_key: facebook
+    description: Social platform; video posts mint as video children.
+    links:
+      - { url: "https://www.facebook.com/", label: Facebook, link_type: homepage }
+  - name: Instagram
+    source_type: video
+    identifier_key: instagram
+    description: Photo-and-video social platform.
+    links:
+      - { url: "https://www.instagram.com/", label: Instagram, link_type: homepage }
+  - name: Snapchat
+    source_type: video
+    identifier_key: snapchat
+    description: Multimedia messaging and short-video platform.
+    links:
+      - { url: "https://www.snapchat.com/", label: Snapchat, link_type: homepage }
+  - name: X (Twitter)
+    source_type: web
+    identifier_key: x
+    description: Microblogging platform; posts mint as web pages.
+    domains:
+      - twitter.com
+    links:
+      - { url: "https://x.com/", label: X (Twitter), link_type: homepage }

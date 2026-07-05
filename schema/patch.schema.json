@@ -25,8 +25,8 @@
     },
     "schemeIdentifier": {
       "type": "string",
-      "pattern": "^(ipdb|opdb|youtube):.{1,200}$",
-      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme list is mirrored by the `sources` identifier_key enum below."
+      "pattern": "^[a-z][a-z0-9]*:.{1,200}$",
+      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme prefix is not enumerated here on purpose — the authoritative scheme list lives in the flipcommons registry (apps/citation/citation_types/registry.py) and drifts as schemes are added; ingest validates the actual key. This is a structural shape check only."
     },
     "httpUrl": {
       "type": "string",
@@ -238,8 +238,8 @@
           "description": { "type": "string" },
           "identifier_key": {
             "type": "string",
-            "enum": ["", "ipdb", "opdb", "youtube"],
-            "description": "Marks a scheme root whose children carry structured identifiers (ipdb/opdb/youtube). Root web sources only."
+            "pattern": "^([a-z][a-z0-9]*)?$",
+            "description": "Marks a scheme root whose children carry structured identifiers. The scheme key is not enumerated here on purpose — the authoritative list lives in the flipcommons registry (apps/citation/citation_types/registry.py) and drifts as schemes are added; ingest validates the key and holds the root to the scheme's registered facts. Root sources only; the root's source_type must be the scheme's owning type. Omit the field (or set it to \"\") for a non-scheme (schemeless) root."
           },
           "domains": {
             "type": "array",
