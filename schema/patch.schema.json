@@ -25,8 +25,8 @@
     },
     "schemeIdentifier": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9]*:.{1,200}$",
-      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme prefix is not enumerated here on purpose — the authoritative scheme list lives in the flipcommons registry (apps/citation/citation_types/registry.py) and drifts as schemes are added; ingest validates the actual key. This is a structural shape check only."
+      "pattern": "^[a-z][a-z0-9]*:(?!//).{1,200}$",
+      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme prefix is not enumerated here on purpose — the authoritative scheme list lives in the flipcommons registry (apps/citation/citation_types/registry.py) and drifts as schemes are added; ingest validates the actual key. This is a structural shape check only. The one shape excluded is '//' right after the colon: a scheme://… string is a URL, not a scheme identifier, and only http(s) URLs are legal cite refs."
     },
     "httpUrl": {
       "type": "string",
@@ -83,12 +83,22 @@
             "required": ["ref"],
             "properties": {
               "ref": { "$ref": "#/definitions/citeRef" },
-              "archive": { "$ref": "#/definitions/httpUrl" }
+              "archive": { "$ref": "#/definitions/httpUrl" },
+              "locator": {
+                "type": "string",
+                "maxLength": 200,
+                "description": "Where in the source: a page, section, timestamp."
+              },
+              "quote": {
+                "type": "string",
+                "maxLength": 2000,
+                "description": "Verbatim excerpt from the source: exact source text and '[...]' ellipses only. Interpretation, translation and rationale go in note: instead."
+              }
             }
           }
         ]
       },
-      "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-ref string or a { ref, archive } mapping — an inline footnote takes no locator/quote. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
+      "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-ref string or a { ref, archive, locator, quote } mapping — locator and quote land on the minted footnote instance, exactly like the entry-level cite. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
     },
     "retract": {
       "type": "array",

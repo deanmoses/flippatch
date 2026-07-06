@@ -205,8 +205,7 @@ def test_cite_forms_accepted(schema_validator, cite):
     "cite",
     [
         "ipdb",  # scheme without identifier
-        "bogus:4443",  # unknown scheme
-        "ftp://example.com",  # non-http(s) URL
+        "ftp://example.com",  # scheme://… is a URL shape, and only http(s) is legal
         "just some text",  # neither form
     ],
 )
@@ -216,6 +215,20 @@ def test_malformed_cite_rejected(schema_validator, cite):
         "claims": [{"corporate-entity.foo": {"year_start": 1990, "cite": cite}}],
     }
     assert _has_error(schema_validator, data)
+
+
+def test_unknown_scheme_accepted_structurally(schema_validator):
+    # Deliberate: the schema doesn't enumerate scheme prefixes (the
+    # authoritative list lives in the flipcommons registry and drifts), so an
+    # unknown scheme passes this structural pre-check and is rejected by
+    # ingest_patches, which validates the actual key.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [
+            {"corporate-entity.foo": {"year_start": 1990, "cite": "bogus:4443"}}
+        ],
+    }
+    assert not _has_error(schema_validator, data)
 
 
 # --- Schema: cites inline-citation map --------------------------------------
@@ -307,18 +320,41 @@ def test_malformed_entry_cite_mapping_rejected(schema_validator, cite):
     assert _has_error(schema_validator, data)
 
 
-def test_inline_cites_quote_rejected(schema_validator):
-    # Inline footnotes take no locator/quote — those belong on the entry cite.
+def test_inline_cites_quote_and_locator_accepted(schema_validator):
+    # Inline footnotes carry the same optional locator/quote as the entry cite.
     data = {
         "attribution": "flipcommons-ai-desc-model",
         "claims": [
             {
                 "model.foo": {
                     "description": "x[[cite:1]]",
-                    "cites": {"1": {"ref": "https://example.com/a", "quote": "x"}},
+                    "cites": {
+                        "1": {
+                            "ref": "https://example.com/a",
+                            "locator": "Notes section",
+                            "quote": "Only two are known to survive.",
+                        }
+                    },
                 }
             }
         ],
+    }
+    assert not _has_error(schema_validator, data)
+
+
+@pytest.mark.parametrize(
+    "spec",
+    [
+        {"quote": "no ref"},  # mapping missing ref
+        {"ref": "ipdb:4443", "bogus": 1},  # unknown key
+        {"ref": "ipdb:4443", "quote": "x" * 2001},  # overlong quote
+        {"ref": "ipdb:4443", "locator": "x" * 201},  # overlong locator
+    ],
+)
+def test_malformed_inline_cites_mapping_rejected(schema_validator, spec):
+    data = {
+        "attribution": "flipcommons-ai-desc-model",
+        "claims": [{"model.foo": {"description": "x[[cite:1]]", "cites": {"1": spec}}}],
     }
     assert _has_error(schema_validator, data)
 
@@ -345,8 +381,7 @@ def test_cite_and_cites_coexist(schema_validator):
     "cites",
     [
         {"1": "just text"},  # value neither scheme:id nor URL
-        {"1": "ftp://example.com"},  # non-http(s) URL
-        {"1": "bogus:4443"},  # unknown scheme
+        {"1": "ftp://example.com"},  # scheme://… is a URL shape, only http(s) legal
         {"abc": "ipdb:4443"},  # non-numeric handle
         {"1": {"archive": "https://web.archive.org/x"}},  # map missing ref
         {"1": {"ref": "https://x/", "bogus": 1}},  # unknown key in map

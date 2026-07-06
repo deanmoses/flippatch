@@ -15,7 +15,7 @@ import pytest
 import yaml
 from patchkit import (
     _check_cites,
-    _cite_spec,
+    _cite_spec_flow,
     _scalar,
     check_resolved,
     clean_ipdb_quote,
@@ -217,16 +217,18 @@ def test_entry_create_with_retract_raises() -> None:
 @pytest.mark.parametrize(
     ("spec", "expected"),
     [
-        ("ipdb:4443", "'ipdb:4443'"),  # scheme:id quoted (colon)
-        ("https://x.test/p", "'https://x.test/p'"),  # url quoted
         (
-            {"url": "https://x.test/p", "archive": "https://web.archive.org/y"},
-            "{ url: 'https://x.test/p', archive: 'https://web.archive.org/y' }",
+            {"ref": "https://x.test/p", "archive": "https://web.archive.org/y"},
+            "{ ref: 'https://x.test/p', archive: 'https://web.archive.org/y' }",
+        ),
+        (
+            {"ref": "ipdb:4443", "locator": "Notes section"},
+            "{ ref: 'ipdb:4443', locator: Notes section }",
         ),
     ],
 )
-def test_cite_spec(spec: object, expected: str) -> None:
-    assert _cite_spec(spec) == expected  # type: ignore[arg-type]
+def test_cite_spec_flow(spec: dict[str, str], expected: str) -> None:
+    assert _cite_spec_flow(spec) == expected
 
 
 def test_check_cites_accepts_valid_correspondence() -> None:
@@ -256,6 +258,16 @@ def test_check_cites_accepts_valid_correspondence() -> None:
         (["a[[cite:id:1]]"], None, "malformed"),  # raw-pk handle
         (["a[[cite:1a]]"], None, "malformed"),  # letter+digit mix
         (["a[[cite:Foo]]"], None, "malformed"),  # uppercase
+        (
+            ["a[[cite:1]]"],
+            {"1": {"url": "https://x.test/p"}},
+            "unknown key",
+        ),  # backend grammar takes 'ref', not 'url'
+        (
+            ["a[[cite:1]]"],
+            {"1": {"quote": "no ref"}},
+            "non-empty 'ref'",
+        ),  # mapping form requires ref
     ],
 )
 def test_check_cites_rejects(
@@ -278,7 +290,7 @@ def test_entry_emits_cites_block() -> None:
         cites={
             "1": "ipdb:4443",
             "2": {
-                "url": "https://pinside.com/thread",
+                "ref": "https://pinside.com/thread",
                 "archive": "https://web.archive.org/x",
             },
         },
@@ -287,11 +299,39 @@ def test_entry_emits_cites_block() -> None:
     assert "cites:" in e
     assert "'1': 'ipdb:4443'" in e
     assert (
-        "'2': { url: 'https://pinside.com/thread', archive: 'https://web.archive.org/x' }"
+        "'2': { ref: 'https://pinside.com/thread', archive: 'https://web.archive.org/x' }"
         in e
     )
     # the block is emitted after the description it annotates
     assert e.index("description:") < e.index("cites:")
+
+
+def test_entry_emits_quote_bearing_cite_as_block_map() -> None:
+    e = entry(
+        "model.mazatron",
+        description="Only two units are known to survive.[[cite:1]]",
+        cites={
+            "1": {
+                "ref": "ipdb:4443",
+                "locator": "Notes section",
+                "quote": "It doesn't work; only two are known to survive.",
+            },
+        },
+    )
+    # A quote-bearing spec goes block-form: handle line, then one line per field.
+    assert "'1':\n" in e
+    assert "\n          ref: 'ipdb:4443'" in e
+    assert "\n          locator: Notes section" in e
+    # The apostrophe survives via single-quote doubling.
+    assert "quote: 'It doesn''t work; only two are known to survive.'" in e
+    # Round-trips as YAML with the fields intact.
+    doc = yaml.safe_load("claims:\n" + e)
+    spec = doc["claims"][0]["model.mazatron"]["cites"]["1"]
+    assert spec == {
+        "ref": "ipdb:4443",
+        "locator": "Notes section",
+        "quote": "It doesn't work; only two are known to survive.",
+    }
 
 
 def test_entry_cite_markers_survive_folding() -> None:
