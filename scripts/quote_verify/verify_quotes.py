@@ -132,7 +132,12 @@ class _Sources:
 
 
 def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str]]:
-    """Every (ref, quote) pair in an entry: the header plus changesets items."""
+    """Every (ref, quote) pair in an entry: the header plus changesets items.
+
+    Walks the entry-level ``cite:`` mapping and each inline ``cites:`` entry
+    carrying a quote, so inline footnote quotes are verified against their
+    source exactly like entry-level ones.
+    """
     changesets = body.get("changesets")
     units: list[object] = [body]
     if isinstance(changesets, list):
@@ -143,6 +148,11 @@ def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str]]:
         cite = unit.get("cite")
         if isinstance(cite, dict) and cite.get("quote"):
             yield str(cite["ref"]), str(cite["quote"])
+        cites = unit.get("cites")
+        if isinstance(cites, dict):
+            for value in cites.values():
+                if isinstance(value, dict) and value.get("quote"):
+                    yield str(value["ref"]), str(value["quote"])
 
 
 def main() -> int:

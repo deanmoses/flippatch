@@ -293,6 +293,55 @@ def test_quote_straight_typography_clean():
     assert not has(e, "cite quote contains smart typography")
 
 
+def test_quoted_inline_cite_satisfies_note_requirement():
+    # An inline cites: entry carrying a quote counts as the explanation, same
+    # as the entry-level cite: mapping.
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "production_status": "unreleased",
+                    "description": "Never produced.[[cite:1]]",
+                    "cites": {"1": {"ref": "ipdb:1", "quote": "never produced"}},
+                }
+            }
+        ]
+    )
+    assert not has(e, "needs a note")
+
+
+def test_inline_quote_smart_typography_flagged():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "description": "Never produced.[[cite:1]]",
+                    "cites": {"1": {"ref": "ipdb:1", "quote": "never “produced”"}},
+                }
+            }
+        ],
+        filename="0076-x.yaml",
+    )
+    assert has(e, "cites['1'] quote contains smart typography")
+
+
+def test_inline_quote_straight_typography_clean():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "description": "Never produced.[[cite:1]]",
+                    "cites": {
+                        "1": {"ref": "ipdb:1", "quote": 'never "produced" [...]'}
+                    },
+                }
+            }
+        ],
+        filename="0076-x.yaml",
+    )
+    assert not has(e, "quote contains smart typography")
+
+
 def test_quoteless_cite_mapping_still_needs_note():
     e = errs(
         [

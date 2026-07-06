@@ -199,16 +199,20 @@ _SLUG_HANDLE = re.compile(r"^[a-z]+$")
 
 # A cite handle: the numeric label ('1', '2') wiring a [[cite:N]] marker to its spec.
 type Handle = str
-# One cite spec: a 'scheme:id' / URL string, or a `{url, archive}` map of URLs.
+# One cite spec: a 'scheme:id' / URL string, or a `{ref, archive, locator, quote}`
+# mapping — `ref` required; `locator`/`quote` land on the minted footnote instance,
+# exactly like the entry-level `cite:` mapping.
 type CiteSpec = str | Mapping[str, str]
 
+# The mapping-form keys the backend's cite grammar accepts (mirrors
+# _CITE_MAPPING_KEYS in flipcommons' patches/parsing.py — keep in sync).
+_CITE_SPEC_KEYS = frozenset({"ref", "archive", "locator", "quote"})
 
-def _cite_spec(spec: CiteSpec) -> str:
-    """Render one cite spec value: a `{url, archive}` flow map, or a scalar string."""
-    if isinstance(spec, Mapping):
-        inner = ", ".join(f"{k}: {_scalar(v)}" for k, v in spec.items())
-        return f"{{ {inner} }}"
-    return _scalar(spec)
+
+def _cite_spec_flow(spec: Mapping[str, str]) -> str:
+    """Render a short cite-spec mapping as a one-line flow map."""
+    inner = ", ".join(f"{k}: {_scalar(v)}" for k, v in spec.items())
+    return f"{{ {inner} }}"
 
 
 def _check_cites(
@@ -222,6 +226,18 @@ def _check_cites(
                 f"{ref}: cites key {key!r} must be a numeric handle "
                 f"(an existing slug marker needs no cites: entry)"
             )
+    for key, spec in (cites or {}).items():
+        if isinstance(spec, Mapping):
+            unknown = set(spec) - _CITE_SPEC_KEYS
+            if unknown:
+                raise ValueError(
+                    f"{ref}: cites[{key!r}] has unknown key(s) {sorted(unknown)}; "
+                    f"allowed keys are {', '.join(sorted(_CITE_SPEC_KEYS))}"
+                )
+            if not spec.get("ref"):
+                raise ValueError(
+                    f"{ref}: cites[{key!r}] mapping needs a non-empty 'ref'"
+                )
     numeric_markers: set[str] = set()
     for text in texts:
         for handle in _CITE_MARKER.findall(text):
@@ -278,7 +294,10 @@ def entry(
     description: folded `>` block (for vocab creation).
     cites:  inline-citation map for new cites referenced from `description`/`fields`
         markers: `{ handle: spec }` where handle is a numeric string ('1', '2' -
-        no ordering) and spec is a 'scheme:id', a URL string, or `{url, archive}`.
+        no ordering) and spec is a 'scheme:id', a URL string, or a
+        `{ref, archive, locator, quote}` mapping (`ref` required; `locator`/`quote`
+        land on the minted footnote instance, exactly like the entry-level `cite:`).
+        A quote-bearing spec is emitted as a block map so the prose stays readable.
         Each numeric `[[cite:<handle>]]` marker must have an entry here; each entry
         must be referenced by a marker. Existing-slug markers (`[[cite:<slug>]]`,
         from rehydration) need no entry. Emitted with the handle key quoted (the
@@ -321,7 +340,15 @@ def entry(
     if cites:
         lines.append(f"{sub}cites:")
         for handle, spec in cites.items():
-            lines.append(f"{sub}  '{handle}': {_cite_spec(spec)}")
+            if isinstance(spec, Mapping) and "quote" in spec:
+                # A quote is prose — a one-line flow map would be unreadable, so
+                # emit a block map with each field single-quote escaped.
+                lines.append(f"{sub}  '{handle}':")
+                lines.extend(f"{sub}    {k}: {_scalar(v)}" for k, v in spec.items())
+            elif isinstance(spec, Mapping):
+                lines.append(f"{sub}  '{handle}': {_cite_spec_flow(spec)}")
+            else:
+                lines.append(f"{sub}  '{handle}': {_scalar(spec)}")
     if tags:
         lines.append(f"{sub}tag: [{', '.join(tags)}]")
     for namespace, members in (relationships or {}).items():
@@ -421,8 +448,9 @@ if __name__ == "__main__":
             cites={
                 "1": "ipdb:4443",
                 "2": {
-                    "url": "https://pinside.com/thread",
+                    "ref": "https://pinside.com/thread",
                     "archive": "https://web.archive.org/x",
+                    "quote": "Only two are known to survive.",
                 },
             },
             note="Narrative compiled from IPDB and Pinside.",

@@ -30,8 +30,9 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   ``flipcommons-catalog``.
 - ``note-required`` — A unit needs a ``note:`` when it cites, deletes,
   retracts/removes, or asserts a substantive (non-alias) field — except a
-  description-only unit and create-scaffolding. A ``cite:`` mapping carrying
-  a ``quote:`` satisfies it: the verbatim evidence is the explanation.
+  description-only unit and create-scaffolding. A ``cite:`` mapping (or any
+  inline ``cites:`` entry) carrying a ``quote:`` satisfies it: the verbatim
+  evidence is the explanation.
 - ``description-needs-inline-cite`` — A ``description:`` unit must carry at least
   one inline ``[[cite:N]]`` footnote; a ``note:`` no longer excuses its absence.
   Exempt for the abstract-taxonomy entity types in
@@ -49,7 +50,8 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   ``quote:`` on the ``cite:`` mapping, where the citation already names the
   source. (Shipped patches keep their historical notes as-authored; their DB
   rows were fixed by flipcommons' backfill migration, not the files.)
-- ``quote-typography`` — ``cite.quote`` values must use straight quotes and
+- ``quote-typography`` — ``quote:`` values — on the entry-level ``cite:``
+  mapping and on inline ``cites:`` entries alike — must use straight quotes and
   write an ellipsis as ``[...]`` — the same normalization ``note-typography``
   enforces on notes.
 - ``patch-description-length`` — The *top-level* patch ``description:`` (→ the
@@ -69,7 +71,7 @@ import re
 import sys
 from collections.abc import Mapping
 from pathlib import Path
-from typing import TYPE_CHECKING, TypedDict
+from typing import TYPE_CHECKING, NotRequired, TypedDict
 
 import yaml
 
@@ -211,9 +213,10 @@ PatchUnit = Mapping[str, object]  # a provenance carrier: entity body OR changes
 
 
 class CiteMap(TypedDict):
-    """A cite given as a map; we read its ``ref`` (other keys are ignored)."""
+    """A cite given as a map; we read its ``ref`` and ``quote`` (other keys are ignored)."""
 
     ref: str
+    quote: NotRequired[str]
 
 
 def is_mapping(value: object) -> TypeGuard[Mapping[str, object]]:
@@ -252,6 +255,23 @@ def _cite_strings(unit: PatchUnit) -> Iterator[str]:
                 yield value["ref"]
 
 
+def _quote_values(unit: PatchUnit) -> Iterator[tuple[str, str]]:
+    """Yield ``(label, quote)`` for every verbatim quote on a unit.
+
+    Walks the entry-level ``cite:`` mapping and each inline ``cites:`` entry, so
+    quote-driven rules (``quote-typography``, the ``note-required`` exemption)
+    treat both carriers identically.
+    """
+    cite = unit.get("cite")
+    if is_cite_map(cite) and isinstance(cite.get("quote"), str):
+        yield "cite", cite["quote"]
+    cites = unit.get("cites")
+    if is_mapping(cites):
+        for handle, value in cites.items():
+            if is_cite_map(value) and isinstance(value.get("quote"), str):
+                yield f"cites[{handle!r}]", value["quote"]
+
+
 def _check_unit(
     ref: str,
     ref_type: str,
@@ -271,12 +291,11 @@ def _check_unit(
     description_only = bool(authored) and authored <= {"description"}
     has_note = isinstance(unit.get("note"), str)
     has_cite = ("cite" in unit) or ("cites" in unit)
-    # A cite carrying a verbatim quote explains the change by itself — the
-    # note is for editorial rationale beyond the evidence, so it may be absent.
-    cite_value = unit.get("cite")
-    has_quoted_cite = is_mapping(cite_value) and isinstance(
-        cite_value.get("quote"), str
-    )
+    # A cite carrying a verbatim quote — entry-level or inline — explains the
+    # change by itself; the note is for editorial rationale beyond the
+    # evidence, so it may be absent.
+    unit_quotes = list(_quote_values(unit))
+    has_quoted_cite = bool(unit_quotes)
     is_create = unit.get("create") is True
     is_delete = unit.get("delete") is True
     has_retract_remove = ("retract" in unit) or ("remove" in unit)
@@ -306,16 +325,14 @@ def _check_unit(
                 f"keep the note for rationale"
             )
 
-    # quote-typography: cite.quote content
-    if has_quoted_cite and is_cite_map(cite_value):
-        quote = cite_value.get("quote")
-        if isinstance(quote, str):
-            smart = sorted(set(SMART_RE.findall(quote)))
-            if smart and on("quote-typography"):
-                errors.append(
-                    f"{where}: cite quote contains smart typography {smart} — "
-                    f"use straight quotes and write an ellipsis as [...]"
-                )
+    # quote-typography: every quote on the unit (entry-level cite and inline cites)
+    for quote_label, quote in unit_quotes:
+        smart = sorted(set(SMART_RE.findall(quote)))
+        if smart and on("quote-typography"):
+            errors.append(
+                f"{where}: {quote_label} quote contains smart typography {smart} — "
+                f"use straight quotes and write an ellipsis as [...]"
+            )
 
     # cite-scheme-form
     if on("cite-scheme-form"):

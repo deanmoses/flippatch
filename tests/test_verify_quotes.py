@@ -1,11 +1,12 @@
 """Unit tests for the pure verification logic in quote_verify.verify_quotes.
 
 The pinexplore-backed source lookup needs a sibling checkout and its caches,
-so these tests cover only the pure functions (normalize, check_quote) — the
-part that decides whether a quote is verbatim.
+so these tests cover only the pure functions (normalize, check_quote,
+_quote_units) — the part that decides whether a quote is verbatim and which
+quotes get verified.
 """
 
-from quote_verify.verify_quotes import check_quote, normalize
+from quote_verify.verify_quotes import _quote_units, check_quote, normalize
 
 SOURCE = (
     "The new company, which debuted at this year’s Pinball Expo in Chicago,\n"
@@ -47,3 +48,22 @@ def test_spans_out_of_source_order_fail():
 
 def test_non_ascii_verbatim_verifies():
     assert check_quote("サッカーエース (Soccer Ace) by 日本展望娯楽社", SOURCE) is None
+
+
+def test_quote_units_walks_entry_inline_and_changesets_quotes():
+    body = {
+        "cite": {"ref": "ipdb:1", "quote": "entry quote"},
+        "description": "x[[cite:1]] y[[cite:2]]",
+        "cites": {
+            "1": {"ref": "https://a.test/p", "quote": "inline quote"},
+            "2": "ipdb:2",  # bare ref, no quote — skipped
+        },
+        "changesets": [
+            {"cite": {"ref": "ipdb:3", "quote": "changeset quote"}},
+        ],
+    }
+    assert list(_quote_units(body)) == [
+        ("ipdb:1", "entry quote"),
+        ("https://a.test/p", "inline quote"),
+        ("ipdb:3", "changeset quote"),
+    ]
