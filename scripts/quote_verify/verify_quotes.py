@@ -5,8 +5,10 @@ A ``quote:`` is trustworthy only if a reviewer could follow the citation and
 ctrl-F find it, so every span must be an exact verbatim substring of the
 source text, in source order. Sources come from the sister **pinexplore**
 repo: the web-scrape cache (``ingest_sources/web/cache.sqlite``) for
-``http(s)`` refs, and the ``ipdb_machines`` table in ``explore.duckdb`` for
-``ipdb:`` scheme refs.
+``http(s)`` refs — with ``opdb:`` and ``youtube:`` scheme refs resolved to
+their canonical cached page (the opdb.org machine page; the watch URL whose
+text is the video's caption-track transcript) — and the ``ipdb_machines``
+table in ``explore.duckdb`` for ``ipdb:`` scheme refs.
 
 Matching allows only the normalizations DataPatchAuthoring.md sanctions —
 smart quotes straightened and whitespace collapsed (text extraction
@@ -47,6 +49,37 @@ def normalize(text: str) -> str:
     for smart, straight in _SMART.items():
         text = text.replace(smart, straight)
     return re.sub(r"\s+", " ", text)
+
+
+def ipdb_row_text(
+    *,
+    title: str | None,
+    manufacturer: str | None,
+    type_: str | None,
+    players: object | None,
+    theme: str | None,
+    notable_features: str | None,
+    notes: str | None,
+) -> str:
+    """The quotable text of one IPDB machine row.
+
+    Mirrors what the IPDB page renders so a quote stays ctrl-F honest there:
+    the title as a bare heading, the structured fields as ``Label: value``
+    rows, then the Notable Features and Notes prose. Empty fields are omitted.
+    """
+    lines = []
+    if title:
+        lines.append(html.unescape(title))
+    for label, value in (
+        ("Manufacturer", manufacturer),
+        ("Type", type_),
+        ("Players", players),
+        ("Theme", theme),
+    ):
+        if value:
+            lines.append(f"{label}: {html.unescape(str(value))}")
+    lines.extend(html.unescape(prose) for prose in (notable_features, notes) if prose)
+    return "\n".join(lines)
 
 
 def check_quote(quote: str, source: str) -> str | None:
@@ -107,13 +140,24 @@ class _Sources:
 
     def text_for(self, ref: str) -> str | None:
         if ref.startswith(("http://", "https://")):
-            page = self._web_cache.get(ref)
-            text = (page or {}).get("text") or ""
-            return text if text.strip() else None
+            return self._page_text(ref)
         scheme, _, identifier = ref.partition(":")
         if scheme == "ipdb":
             return self._ipdb_text(identifier)
+        if scheme == "opdb":
+            # opdb:<id> is the opdb.org URL id (flipcommons' canonical URL
+            # template); its evidence text is the cached machine page.
+            return self._page_text(f"https://opdb.org/machines/{identifier}")
+        if scheme == "youtube":
+            # youtube:<id> maps to the canonical watch URL; its cached text is
+            # the caption-track transcript pinexplore's video transport stores.
+            return self._page_text(f"https://www.youtube.com/watch?v={identifier}")
         return None
+
+    def _page_text(self, url: str) -> str | None:
+        page = self._web_cache.get(url)
+        text = (page or {}).get("text") or ""
+        return text if text.strip() else None
 
     def _ipdb_text(self, identifier: str) -> str | None:
         if self._ipdb is None:
@@ -121,12 +165,21 @@ class _Sources:
 
             con = duckdb.connect(str(self._duck_db), read_only=True)
             rows = con.execute(
-                "SELECT IpdbId, NotableFeatures, Notes FROM ipdb_machines"
+                "SELECT IpdbId, Title, Manufacturer, Type, Players, Theme,"
+                " NotableFeatures, Notes FROM ipdb_machines"
             ).fetchall()
             con.close()
             self._ipdb = {
-                str(ipdb_id): html.unescape((features or "") + "\n" + (notes or ""))
-                for ipdb_id, features, notes in rows
+                str(ipdb_id): ipdb_row_text(
+                    title=title,
+                    manufacturer=manufacturer,
+                    type_=type_,
+                    players=players,
+                    theme=theme,
+                    notable_features=features,
+                    notes=notes,
+                )
+                for ipdb_id, title, manufacturer, type_, players, theme, features, notes in rows
             }
         return self._ipdb.get(identifier)
 
