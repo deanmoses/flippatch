@@ -1,0 +1,18 @@
+attribution: flipcommons-catalog
+description: >
+  Correct two model years against shipping evidence.
+claims:
+  - model.alien-standard-edition:
+      expect: { year: 2016 }
+      cite:
+        ref: https://en.wikipedia.org/wiki/Heighway_Pinball
+        quote: 'Production shipment began on 14 February 2017.'
+      note: "flipcommons previously had 2016, from the announcement/unveiling era; IPDB 6419 concurs with the correction, dating the standard edition February 2017."
+      year: 2017
+  - model.road-trip:
+      expect: { year: 2025 }
+      cite:
+        ref: https://www.rampspinball.com/machines/road-trip
+        quote: 'Ramp''s Road Trip [...] Expected Late 2026'
+      note: "flipcommons previously had 2025, from the TiltBob-era announcement; the maker's site now expects late 2026. Dated to the currently expected release, the same convention as Alice Goes to Wonderland (2026)."
+      year: 2026

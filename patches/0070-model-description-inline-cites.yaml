@@ -6,24 +6,37 @@ claims:
       description: |
         Cactus Canyon Continued is an aftermarket conversion of [[manufacturer:bally]]'s 1998 *[[title:cactus-canyon]]*, made by [[manufacturer:eric-priepke]].[[cite:1]]
       cites:
-        "1": opdb:2155
+        "1":
+          ref: opdb:2155
+          quote: 'Cactus Canyon Continued [...] Manufacturer - Eric Priepke [...] Converted game'
   - model.pinball-tronic:
       description: |
         Pinball Tronic is a virtual pinball machine by [[manufacturer:bifuca]]: a pinball-style cabinet that replaces the physical playfield with two LCD screens.[[cite:1]]
       cites:
-        "1": https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+        "1":
+          ref: https://www.recreativas.org/pinball-tronic-4437-bifuca-sl
+          quote: 'Pinball Tronic es una máquina recreativa de tipo pinball virtual fabricada por la empresa Bifuca. Incluye dos minotores LCD de 32 y 19 pulgadas.'
   - model.demolition-man-on-steroids:
       description: |
         Demolition Man on Steroids is a heavily modified conversion of [[manufacturer:williams]]' *[[title:demolition-man]]* (1994), built by the homebrew studio [[manufacturer:pinnovating]].[[cite:1]]
       cites:
-        "1": opdb:2153
+        "1":
+          ref: opdb:2153
+          quote: 'Demolition Man on Steroids [...] Manufacturer - Pinnovating [...] Converted game'
   - model.road-trip:
       description: |
-        Road Trip is the debut machine from [[manufacturer:ramps-pinball]], an in-development game designed by [[person:bob-nies]] announced as coming in late 2026.[[cite:1]]
+        Road Trip is the debut machine from [[manufacturer:ramps-pinball]], an in-development game designed by [[person:bob-nies]] announced as coming in late 2026.[[cite:1]][[cite:2]]
       cites:
-        "1": https://www.rampspinball.com/machines/road-trip
+        "1":
+          ref: https://www.rampspinball.com/machines/road-trip
+          quote: 'Ramp''s Road Trip [...] Expected Late 2026 [...] Coming soon.'
+        "2":
+          ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
+          quote: 'das von Bob Neis in Florida gegründete Unternehmen, das derzeit an seinem ersten kommerziellen Titel Road Trip arbeitet'
   - model.pinball-42:
       description: |
         Pinball-42 is a video-display virtual pinball machine by [[manufacturer:kieswetter-kg]] that replaces the physical playfield with a screen, offering five different games to choose from.[[cite:1]]
       cites:
-        "1": https://www.arcade-museum.com/Pinball/pinball-42
+        "1":
+          ref: https://www.arcade-museum.com/Pinball/pinball-42
+          quote: 'Cabinet that is a digital pinball machine. Has five different games that can be chosen. Pinball - 42 was produced by Pinball Company, The aka Kieswetter KG in 2014.'

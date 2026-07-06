@@ -5,24 +5,44 @@ claims:
   - manufacturer.komaya-seisakusho:
       expect: { name: Komaya Seisakusho }
       description: |
-        Komaya (こまや; Komaya Co., Ltd.) was a Japanese manufacturer of [[technology-generation:electromechanical]] amusement games based in [[location:japan/hyogo/kobe]]. Active from the mid-1960s into the late 1970s, it is best remembered for its long-running Crazy 15 series — [[model:crazy-15-15]] and [[model:crazy-15-mark-ii]] (1965), [[model:crazy-15-mark-iii]] (1969) and [[model:new-crazy-15]] (1977) — alongside other tables such as [[model:indy-game]] (c.1967), [[model:lets-go-moon]] (c.1968), [[model:saturn-komaya]] and the pirate-themed [[model:ware-sea-rover]] (both c.1969), [[model:ronin]] (1970) and [[model:pocket-ball]] (1974).[[cite:1]]
+        Komaya (こまや; Komaya Co., Ltd.) was a Japanese manufacturer of [[technology-generation:electromechanical]] amusement games based in [[location:japan/hyogo/kobe]].[[cite:2]] Active from the mid-1960s into the late 1970s, it is best remembered for its long-running Crazy 15 series — [[model:crazy-15-15]] and [[model:crazy-15-mark-ii]] (1965), [[model:crazy-15-mark-iii]] (1969) and [[model:new-crazy-15]] (1977) — alongside other tables such as [[model:indy-game]] (c.1967), [[model:lets-go-moon]] (c.1968), [[model:saturn-komaya]] and the pirate-themed [[model:ware-sea-rover]] (both c.1969), [[model:ronin]] (1970) and [[model:pocket-ball]] (1974).[[cite:1]]
       cites:
-        "1": "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+        "1":
+          ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+          quote: '1965 クレイジー15ゲーム (Crazy 15 game) [early backglass] by こまや (Komaya) [...] 1965 クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) by こまや (Komaya) [...] ~1967 Indy Game - インディゲーム by こまや (Komaya) [...] ~1968 Let''s Go Moon! - レッッゴームーン by こまや (Komaya) [...] 1969 クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) by こまや (Komaya) [...] ~1969 Saturn - サターン号 by こまや (Komaya) [...] ~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] 1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] 1974 ポケットボール (Pocket Ball) by こまや (Komaya) [...] 1977 New Crazy 15 - ニュークレイジー15 by こまや (Komaya)'
+        "2":
+          ref: ipdb:6775
+          quote: 'Manufacturer: Komaya Co., Ltd., of Kobe, Japan [Trade Name: Komaya Seisakusho]'
   - manufacturer.nihon-jidou-hanbaiki-kabushikigaisha:
       expect: { name: Nihon Jidou Hanbaiki Kabushikigaisha }
       description: |
-        Nihon Jidō Hanbaiki (日本自動販売機; Japan Automatic Vending Machine Company, Ltd.), which traded its amusement games under the name Game Mate, was a [[location:japan/tokyo/tokyo]]-based Japanese maker of [[technology-generation:electromechanical]] games. It produced the rodeo-themed [[model:rodeo-game-mate]] (1969) and the sugoroku-based [[model:dai-uchuu-ryokou]] (1970).[[cite:1]]
+        Nihon Jidō Hanbaiki (日本自動販売機; Japan Automatic Vending Machine Company, Ltd.), which traded its amusement games under the name Game Mate, was a [[location:japan/tokyo/tokyo]]-based Japanese maker of [[technology-generation:electromechanical]] games.[[cite:2]] It produced the rodeo-themed [[model:rodeo-game-mate]] (1969) and the sugoroku-based [[model:dai-uchuu-ryokou]] (1970).[[cite:1]][[cite:2]]
       cites:
-        "1": "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+        "1":
+          ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+          quote: '~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate) [...] yokomono ~ flipper pinball'
+        "2":
+          ref: ipdb:5572
+          quote: 'Dai Uchuu Ryokou (大宇宙旅行) [...] Manufacturer: Japan Automatic Vending Machine Company, Ltd., of Tokyo, Japan [Trade Name: Nihon Jidou Hanbaiki Kabushikigaisha] [...] Type: Electro-mechanical (EM)'
   - manufacturer.sankyo-seiki:
       expect: { name: Sankyo Seiki }
       description: |
-        Sankyo (三共) was a [[location:japan/tokyo/tokyo]]-based Japanese manufacturer of [[technology-generation:electromechanical]] amusement games, active from the late 1960s through the 1970s. It made a run of baseball-themed tables — [[model:japan-series]] (1969), [[model:the-world-series]] (1972) and [[model:new-world-series]] (1976) — alongside racing, sports and novelty games including [[model:big-race-sankyo]] (1969) and its sequel [[model:new-big-race]] (1972), [[model:apollo-moon]] (1972), [[model:fishing-tengu]] (1973), [[model:attack-ball]] and [[model:circus-16]] (both 1975), and [[model:advantage]] and [[model:american-football]] (both 1976).[[cite:1]]
+        Sankyo (三共) was a [[location:japan/tokyo/tokyo]]-based Japanese manufacturer of [[technology-generation:electromechanical]] amusement games, active from the late 1960s through the 1970s.[[cite:2]] It made a run of baseball-themed tables — [[model:japan-series]] (1969), [[model:the-world-series]] (1972) and [[model:new-world-series]] (1976) — alongside racing, sports and novelty games including [[model:big-race-sankyo]] (1969) and its sequel [[model:new-big-race]] (1972), [[model:apollo-moon]] (1972), [[model:fishing-tengu]] (1973), [[model:attack-ball]] and [[model:circus-16]] (both 1975), and [[model:advantage]] and [[model:american-football]] (both 1976).[[cite:1]]
       cites:
-        "1": "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+        "1":
+          ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+          quote: '~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] ~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] 1972 Apollo Moon - アポロムーン by 三共 (Sankyo) [...] 1972 ニュービッグレース (New Big Race) by 三共 (Sankyo) [...] 1972 The World Series - ワールドシリーズ by 三共 (Sankyo) [...] 1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] 1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] 1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo)'
+        "2":
+          ref: ipdb:6872
+          quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM)'
   - manufacturer.universal:
       expect: { name: Universal }
       description: |
-        Universal (ユニバーサル; Universal Company, Ltd.) was a [[location:japan/tochigi/oyama]]-based Japanese maker of amusement games. It built the [[technology-generation:electromechanical]] [[model:orienteering]] (1976) before moving to [[technology-generation:solid-state]] play with [[model:hard-rock]] (1977), [[model:hercules-2]] (1978), and [[model:asteroid-killer]] and [[model:harem-cat]] (both 1979).[[cite:1]]
+        Universal (ユニバーサル; Universal Company, Ltd.) was a [[location:japan/tochigi/oyama]]-based Japanese maker of amusement games.[[cite:2]] It built the [[technology-generation:electromechanical]] [[model:orienteering]] (1976) before moving to [[technology-generation:solid-state]] play with [[model:hard-rock]] (1977), [[model:hercules-2]] (1978), and [[model:asteroid-killer]] and [[model:harem-cat]] (both 1979).[[cite:1]][[cite:2]]
       cites:
-        "1": "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+        "1":
+          ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
+          quote: '1976 Orienteering - オリエンテーリング by ユニバーサル (Universal) [...] 1977 Hard Rock - ハードロック by ユニバーサル (Universal) [...] 1978 Hercules - ヘラクレス by ユニバーサル (Universal) [...] 1979 Asteroid Killer by ユニバーサル (Universal) [...] 1979 Harem Cat - ハーレムキャット by ユニバーサル (Universal)'
+        "2":
+          ref: ipdb:3810
+          quote: 'Asteroid Killer [...] Manufacturer: Universal Company, Ltd., of Oyama, Japan [...] Type: Solid State Electronic (SS)'

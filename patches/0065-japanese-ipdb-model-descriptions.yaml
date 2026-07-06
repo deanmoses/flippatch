@@ -6,31 +6,47 @@ claims:
       expect: { ipdb_id: 5572 }
       note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (sugoroku gameplay, bulb scoring)."
       description: |
-        Dai Uchuu Ryokou (大宇宙旅行) is an [[technology-generation:electromechanical]] amusement game produced around 1970 by [[manufacturer:nihon-jidou-hanbaiki-kabushikigaisha]] (Japan Automatic Vending Machine Company) of Tokyo.[[cite:1]] Its play derives from sugoroku, a Japanese variety of Parcheesi: the player advances a spaceship across the playfield toward a goal to win a replay, with some rollovers advancing the ship and others sending it backward.[[cite:2]] The game uses bulb scoring ([[display-type:backglass-lights]]) rather than [[display-type:score-reels]], and its title translates roughly as "Big Space Journey".[[cite:2]]
+        Dai Uchuu Ryokou (大宇宙旅行) is an [[technology-generation:electromechanical]] amusement game produced around 1970 by [[manufacturer:nihon-jidou-hanbaiki-kabushikigaisha]] (Japan Automatic Vending Machine Company) of Tokyo.[[cite:1]][[cite:2]] Its play derives from sugoroku, a Japanese variety of Parcheesi: the player advances a spaceship across the playfield toward a goal to win a replay, with some rollovers advancing the ship and others sending it backward.[[cite:2]] The game uses bulb scoring ([[display-type:backglass-lights]]) rather than [[display-type:score-reels]], and its title translates roughly as "Big Space Journey".[[cite:2]]
       cites:
-        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-        "2": ipdb:5572
+        "1":
+          ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          quote: '1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)'
+        "2":
+          ref: ipdb:5572
+          quote: 'Manufacturer: Japan Automatic Vending Machine Company, Ltd., of Tokyo, Japan [...] Type: Electro-mechanical (EM) [...] Bulb scoring, no score reels. [...] According to the flyer text, the player''s spaceship advances to reach a goal for replay. Some rollovers advance the spaceship, other rollovers move it backwards. [...] This game is based on a sugoroku game, a Japanese variety of Parcheesi. [...] ''Dai Uchuu Ryokou'' translates somewhat to ''Big Space Journey''.'
   - model.fishing-tengu:
       expect: { ipdb_id: 6872 }
       note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (folklore theme, documentation)."
       description: |
-        Fishing Tengu (つり天狗) is a single-player [[technology-generation:electromechanical]] game made in 1973 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]] Its theme draws on the tengu, a mythical creature of Japanese folklore.[[cite:2]] An image of the machine appears in the March 1976 issue of the trade magazine The Amusement Sangyo (アミューズメント産業).[[cite:2]]
+        Fishing Tengu (つり天狗) is a single-player [[technology-generation:electromechanical]] game made in 1973 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]][[cite:2]] Its theme draws on the tengu, a mythical creature of Japanese folklore.[[cite:2]] An image of the machine appears in the March 1976 issue of the trade magazine The Amusement Sangyo (アミューズメント産業).[[cite:2]]
       cites:
-        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-        "2": ipdb:6872
+        "1":
+          ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          quote: '1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)'
+        "2":
+          ref: ipdb:6872
+          quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] The only picture we have seen of this game is the one shown here from the industry magazine "The Amusement Sangyo (アミューズメント産業)" dated March 1976. [...] A tengu (天狗) is a mythical creature from Japanese folklore.'
   - model.attack-ball:
       expect: { ipdb_id: 6874 }
       note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (prize dispensing, cabinet)."
       description: |
-        Attack Ball (アタック ボール) is a single-player [[technology-generation:electromechanical]] game made in 1975 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]] It is a prize-dispensing machine, releasing prizes into a receptacle at the bottom of the cabinet front, and has an unusually padded or upholstered lower cabinet.[[cite:2]]
+        Attack Ball (アタック ボール) is a single-player [[technology-generation:electromechanical]] game made in 1975 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]][[cite:2]] It is a prize-dispensing machine, releasing prizes into a receptacle at the bottom of the cabinet front, and has an unusually padded or upholstered lower cabinet.[[cite:2]]
       cites:
-        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-        "2": ipdb:6874
+        "1":
+          ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          quote: '1975 Attack Ball - アタック ボール by 三共 (Sankyo)'
+        "2":
+          ref: ipdb:6874
+          quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] It dispenses prizes into a receptacle at the bottom of the cabinet front. [...] The unusual lower cabinet appears to be padded or upholstered.'
   - model.circus-16:
       expect: { ipdb_id: 6871 }
       note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (cabinet, documentation)."
       description: |
-        Circus (サーカス) is a single-player [[technology-generation:electromechanical]] game made in 1975 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]] The machine has a wedge-head cabinet, and an image of it appears in the March 1976 issue of the trade magazine The Amusement Sangyo (アミューズメント産業).[[cite:2]]
+        Circus (サーカス) is a single-player [[technology-generation:electromechanical]] game made in 1975 by [[manufacturer:sankyo-seiki]] (Sankyo Seiki).[[cite:1]][[cite:2]] The machine has a wedge-head cabinet, and an image of it appears in the March 1976 issue of the trade magazine The Amusement Sangyo (アミューズメント産業).[[cite:2]]
       cites:
-        "1": https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-        "2": ipdb:6871
+        "1":
+          ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
+          quote: '1975 サーカス (Circus) by 三共 (Sankyo)'
+        "2":
+          ref: ipdb:6871
+          quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] Wedge head. [...] The only picture we have seen of this game is the one shown here from the industry magazine "The Amusement Sangyo (アミューズメント産業)" dated March 1976.'
