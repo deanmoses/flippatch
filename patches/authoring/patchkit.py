@@ -45,6 +45,20 @@ def clean_text(s: str) -> str:
     return s.replace("�", "")
 
 
+# The only normalizations sanctioned for a verbatim quote: smart quotes
+# straightened, "…" spelled out as the "[...]" omission marker. The source's
+# own dashes (– —) stay — the verifier requires the exact text.
+_QUOTE_SMART = {"‘": "'", "’": "'", "“": '"', "”": '"', "…": "[...]"}
+
+
+def clean_quote(s: str) -> str:
+    """Normalize a verbatim quote: straighten smart quotes, spell out an
+    ellipsis, drop mojibake — and nothing else (dashes stay verbatim)."""
+    for k, v in _QUOTE_SMART.items():
+        s = s.replace(k, v)
+    return s.replace("�", "")
+
+
 def yamlq(s: str) -> str:
     """Render `s` as a single-quoted YAML scalar (the only note escaping needed).
 
@@ -268,15 +282,49 @@ def _check_cites(
 # --------------------------------------------------------------------------- #
 
 
+def _cite_spec_fields(spec: Mapping[str, str]) -> list[tuple[str, str]]:
+    """Schema-ordered (key, escaped-value) pairs of one {ref, quote, ...} spec
+    (quote typography normalized via clean_text)."""
+    return [
+        (k, _scalar(clean_quote(spec[k]) if k == "quote" else spec[k]))
+        for k in ("ref", "archive", "locator", "quote")
+        if k in spec
+    ]
+
+
+def _cite_lines(
+    cite: str | Mapping[str, str] | Sequence[str | Mapping[str, str]], indent: str
+) -> list[str]:
+    """Emit `cite:` — inline for a bare ref, a block map for a {ref, quote, ...}
+    spec, a block list when several sources back the same claims (each element
+    again a bare ref or a spec map). Everything escaped."""
+    if isinstance(cite, str):
+        return [f"{indent}cite: {cite}"]
+    if isinstance(cite, Mapping):
+        lines = [f"{indent}cite:"]
+        lines.extend(f"{indent}  {k}: {v}" for k, v in _cite_spec_fields(cite))
+        return lines
+    lines = [f"{indent}cite:"]
+    for spec in cite:
+        if isinstance(spec, Mapping):
+            pairs = _cite_spec_fields(spec)
+            lines.append(f"{indent}  - {pairs[0][0]}: {pairs[0][1]}")
+            lines.extend(f"{indent}    {k}: {v}" for k, v in pairs[1:])
+        else:
+            lines.append(f"{indent}  - {_scalar(spec)}")
+    return lines
+
+
 def entry(
     ref: Ref,
     *,
     create: bool = False,
     note: str | None = None,
-    cite: str | None = None,
+    cite: str | Mapping[str, str] | Sequence[str | Mapping[str, str]] | None = None,
     fields: Mapping[FieldName, FieldValue] | None = None,
     description: str | None = None,
     cites: Mapping[Handle, CiteSpec] | None = None,
+    changesets: Sequence[Mapping[str, object]] | None = None,
     tags: Sequence[str] | None = None,
     relationships: Mapping[str, Sequence[str]] | None = None,
     remove: Mapping[str, Sequence[str]] | None = None,
@@ -331,7 +379,7 @@ def entry(
     if note is not None:
         lines.append(f"{sub}note: {yamlq(clean_text(note))}")
     if cite:
-        lines.append(f"{sub}cite: {cite}")
+        lines.extend(_cite_lines(cite, sub))
     for k, v in (fields or {}).items():
         lines.append(f"{sub}{k}: {_scalar(v)}")
     if description is not None:
@@ -354,6 +402,28 @@ def entry(
     for namespace, members in (relationships or {}).items():
         inner = ", ".join(_scalar(m) for m in members)
         lines.append(f"{sub}{namespace}: [{inner}]")
+    if changesets:
+        lines.append(f"{sub}changesets:")
+        for cs in changesets:
+            item: list[str] = []
+            cs_note = cs.get("note")
+            if cs_note is not None:
+                item.append(f"note: {yamlq(clean_text(str(cs_note)))}")
+            cs_cite = cs.get("cite")
+            if isinstance(cs_cite, (str, Mapping, Sequence)) and cs_cite:
+                item.extend(ln[len(sub) :] for ln in _cite_lines(cs_cite, sub))
+            cs_fields = cs.get("fields")
+            if isinstance(cs_fields, Mapping):
+                item.extend(f"{k}: {_scalar(v)}" for k, v in cs_fields.items())
+            cs_rels = cs.get("relationships")
+            if isinstance(cs_rels, Mapping):
+                for namespace, members in cs_rels.items():
+                    inner = ", ".join(_scalar(m) for m in members)
+                    item.append(f"{namespace}: [{inner}]")
+            if not item:
+                raise ValueError(f"{ref}: empty changesets item")
+            lines.append(f"{sub}  - {item[0]}")
+            lines.extend(f"{sub}    {ln}" for ln in item[1:])
     if remove:
         inner = ", ".join(
             f"{ns}: [{', '.join(_scalar(m) for m in members)}]"

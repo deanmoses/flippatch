@@ -185,6 +185,57 @@ def test_entry_quotes_json_literal_strings(
     assert expected in entry("model.x", fields=fields)
 
 
+def test_entry_cite_mapping_emits_block_map_with_verbatim_quote() -> None:
+    e = entry(
+        "model.five-martians",
+        create=True,
+        cite={
+            "ref": "https://www.tilt.it/flipper_pinball/ipdb/ceff",
+            "quote": "esistono almeno due versioni di questo flipper",
+        },
+        fields={"name": "Five Martians"},
+    )
+    parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.five-martians"]
+    assert parsed["cite"] == {
+        "ref": "https://www.tilt.it/flipper_pinball/ipdb/ceff",
+        "quote": "esistono almeno due versioni di questo flipper",
+    }
+
+
+def test_entry_cite_mapping_normalizes_smart_typography_in_quote() -> None:
+    e = entry(
+        "model.marte",
+        cite={"ref": "https://x.example/pc", "quote": "Marte (“Electra Pool”)"},
+        fields={"corporate_entity": "pc"},
+    )
+    parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.marte"]
+    assert parsed["cite"]["quote"] == 'Marte ("Electra Pool")'
+
+
+def test_entry_changesets_emit_fields_with_own_provenance() -> None:
+    e = entry(
+        "model.home-run",
+        create=True,
+        cite={"ref": "https://x.example/page", "quote": "Home Run"},
+        fields={"name": "Home Run", "year": 1967},
+        changesets=[
+            {
+                "fields": {"game_format": "pinball"},
+                "note": "the page's category line",
+                "cite": {"ref": "https://x.example/page", "quote": "flipper pinball"},
+            },
+            {"relationships": {"theme": ["baseball"]}, "cite": "ipdb:123"},
+        ],
+    )
+    parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.home-run"]
+    cs = parsed["changesets"]
+    assert cs[0]["game_format"] == "pinball"
+    assert cs[0]["note"] == "the page's category line"
+    assert cs[0]["cite"]["quote"] == "flipper pinball"
+    assert cs[1]["theme"] == ["baseball"]
+    assert cs[1]["cite"] == "ipdb:123"
+
+
 def test_entry_relationships_and_remove() -> None:
     e = entry(
         "model.x",
@@ -416,3 +467,46 @@ def test_write_patch_orders_blocks_and_parses(tmp_path: Path) -> None:
     assert data["attribution"] == "flipcommons-catalog"
     assert isinstance(data["claims"], list)
     assert isinstance(data["sources"], list)
+
+
+def test_entry_cite_list_emits_yaml_list_of_specs() -> None:
+    e = entry(
+        "model.rugby",
+        create=True,
+        cite=[
+            {
+                "ref": "https://www.tilt.it/flipper_pinball/ipdb/sidam",
+                "quote": 'l\'altra "versione": Rugby (video-pinball)',
+            },
+            "ipdb:3340",
+        ],
+        fields={"name": "Rugby"},
+    )
+    parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.rugby"]
+    assert parsed["cite"] == [
+        {
+            "ref": "https://www.tilt.it/flipper_pinball/ipdb/sidam",
+            "quote": 'l\'altra "versione": Rugby (video-pinball)',
+        },
+        "ipdb:3340",
+    ]
+
+
+def test_clean_quote_keeps_dashes_verbatim() -> None:
+    # A quote's dashes are part of the exact source text the verifier ctrl-Fs;
+    # only smart quotes and the ellipsis are normalized.
+    from patchkit import clean_quote
+
+    assert clean_quote("Fly Man – ss – 1p") == "Fly Man – ss – 1p"
+    assert clean_quote("la “versione” … fine") == 'la "versione" [...] fine'
+
+
+def test_entry_cite_quote_preserves_source_dashes() -> None:
+    e = entry(
+        "model.fly-man",
+        create=True,
+        cite={"ref": "https://x.test/cea", "quote": "Fly Man – ss – 1p"},
+        fields={"name": "Fly Man"},
+    )
+    parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.fly-man"]
+    assert parsed["cite"]["quote"] == "Fly Man – ss – 1p"
