@@ -39,3 +39,17 @@ claims:
       technology_generation: solid-state
       player_count: 4
       game_format: pinball
+  - model.sky-star:
+      note: 'tilt.it credits the art to "Mike"; IPDB records the artist Michele "Mike" Martinelli on other Italian machines of this era (and all the Geiger conversion kits), so "Mike" is read as Martinelli.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/europlay'
+        quote: '(art: Mike)'
+      credit:
+        - michele-mike-martinelli: art
+  - model.red-arrow-3:
+      note: 'tilt.it credits the art to "Mike"; IPDB records the artist Michele "Mike" Martinelli on other Italian machines of this era (and all the Geiger conversion kits), so "Mike" is read as Martinelli.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/europlay'
+        quote: '(art: Mike)'
+      credit:
+        - michele-mike-martinelli: art

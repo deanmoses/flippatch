@@ -2,6 +2,9 @@ attribution: flipcommons-catalog
 description: >
   R.M.G.: additional machines from tilt.it (IPDB.it).
 claims:
+  - person.mister-x:
+      create: true
+      name: Mister X
   - title.the-best-card-king:
       create: true
       note: 'Title for The Best Card King, per the tilt.it Italian Pinball Database.'
@@ -21,3 +24,9 @@ claims:
       technology_generation: electromechanical
       player_count: 1
       game_format: pinball
+  - model.the-best-galaxie:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/skill-game-the-best'
+        quote: '(by "skill game")(art: Mister X)'
+      credit:
+        - mister-x: art

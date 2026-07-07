@@ -2,6 +2,9 @@ attribution: flipcommons-catalog
 description: >
   Italian conversion kits whose makers tilt.it cannot identify.
 claims:
+  - person.de-angelis:
+      create: true
+      name: De Angelis
   - title.hit-and-run-kit:
       create: true
       note: 'Title for Hit and Run, per the tilt.it Italian Pinball Database.'
@@ -161,6 +164,13 @@ claims:
       year: 1970
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - note: 'tilt.it credits the art to "Mike"; IPDB records the artist Michele "Mike" Martinelli on other Italian machines of this era (and all the Geiger conversion kits), so "Mike" is read as Martinelli.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+            quote: first work by Mike
+          credit:
+            - michele-mike-martinelli: art
   - model.full-kit:
       create: true
       note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; art by ''Mike'', possibly same (unidentified) producer as ''Happening''. tagged conversion-kit on the section''s membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail.'
@@ -191,6 +201,12 @@ claims:
       title: jolly-roger-kit
       game_format: pinball
       tag: [conversion-kit]
+  - model.thrills:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: 'grafica di "De Angelis", con firma sul piano di gioco'
+      credit:
+        - de-angelis: art
   - model.tex-op:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'

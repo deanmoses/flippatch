@@ -2,6 +2,9 @@ attribution: flipcommons-catalog
 description: >
   Dama S.R.L.: additional machines from tilt.it (IPDB.it).
 claims:
+  - person.cortez:
+      create: true
+      name: Cortez
   - title.golf-dama-srl:
       create: true
       note: 'Title for Golf, per the tilt.it Italian Pinball Database.'
@@ -43,6 +46,12 @@ claims:
       technology_generation: electromechanical
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            quote: Golf (grafica di Cortez)
+          credit:
+            - cortez: art
   - model.mexico-70:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); sold as a conversion kit.'
@@ -56,6 +65,12 @@ claims:
       technology_generation: electromechanical
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            quote: Mexico 70 (grafica di Cortez)
+          credit:
+            - cortez: art
   - model.gold-beach:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); sold as a conversion kit.'
@@ -82,3 +97,15 @@ claims:
       technology_generation: electromechanical
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
+          credit:
+            - cortez: art
+  - model.hippye-2:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        quote: Hippye (Top Hand)(grafica di Cortez)
+      credit:
+        - cortez: art

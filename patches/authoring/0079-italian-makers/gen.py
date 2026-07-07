@@ -45,7 +45,7 @@ django.setup()
 sys.path.insert(0, str(HERE.parent))
 import patchkit as pk  # noqa: E402
 
-from apps.catalog.models import CorporateEntity, MachineModel, Manufacturer, Title  # noqa: E402
+from apps.catalog.models import CorporateEntity, MachineModel, Manufacturer, Person, Title  # noqa: E402
 from django.utils.text import slugify  # noqa: E402
 
 TILT = "https://www.tilt.it/flipper_pinball/ipdb"
@@ -197,6 +197,56 @@ SEEDED_KIT_TAGS: dict[str, tuple[str | None, str | None]] = {
         'Lido (looks like a kit for a Gottlieb\'"Subway" – maybe from Dama – art by Cortez?)',
         'tilt.it hedges ("looks like a kit"); the maker guess (Dama? art by Cortez?) stays open.',
     ),
+}
+
+MIKE_NOTE = (
+    'tilt.it credits the art to "Mike"; IPDB records the artist Michele "Mike" '
+    "Martinelli on other Italian machines of this era (and all the Geiger "
+    'conversion kits), so "Mike" is read as Martinelli.'
+)
+
+# Artist credits from tilt.it. Persons named only partially/by pseudonym are
+# created from the name the source gives. Credits whose {person, role} the
+# flipcommons-catalog source already holds are a no-op re-assert, so they are
+# banked in corroborations.csv instead (built by the audit at apply time, not
+# here). role is a credit-role public_id.
+#
+# On CREATED models — keyed (page, machine name); the credit rides the model's
+# own entry as a changeset (slug resolved in model_entries).
+CREDITS_CREATE: dict[tuple[str, str], dict] = {
+    ("dama", "Golf"): {"person": "cortez", "role": "art", "quote": "Golf (grafica di Cortez)"},
+    ("dama", "Mexico 70"): {"person": "cortez", "role": "art", "quote": "Mexico 70 (grafica di Cortez)"},
+    ("dama", "Hippie"): {"person": "cortez", "role": "art", "quote": 'Hippie (Bally "Capersville") (grafica di Cortez)'},
+    ("ipdb-flipper-kit-italiani-non-identificati", "Happening"): {
+        "person": "michele-mike-martinelli", "role": "art",
+        "quote": "first work by Mike", "note": MIKE_NOTE,
+    },
+}
+
+# On EXISTING models — keyed page -> [(catalog slug, person, role, quote, note)];
+# emitted as assert entries appended to that maker's patch.
+CREDITS_EXISTING: dict[str, list[dict]] = {
+    "dama": [
+        {"slug": "hippye-2", "person": "cortez", "role": "art", "quote": "Hippye (Top Hand)(grafica di Cortez)"},
+    ],
+    "europlay": [
+        {"slug": "sky-star", "person": "michele-mike-martinelli", "role": "art", "quote": "(art: Mike)", "note": MIKE_NOTE},
+        {"slug": "red-arrow-3", "person": "michele-mike-martinelli", "role": "art", "quote": "(art: Mike)", "note": MIKE_NOTE},
+    ],
+    "skill-game-the-best": [
+        {"slug": "the-best-galaxie", "person": "mister-x", "role": "art", "quote": '(by "skill game")(art: Mister X)'},
+    ],
+    "ipdb-flipper-kit-italiani-non-identificati": [
+        {"slug": "thrills", "person": "de-angelis", "role": "art", "quote": 'grafica di "De Angelis", con firma sul piano di gioco'},
+    ],
+}
+
+# Persons to create (new, partial-name/pseudonym). page -> {slug: name}; the
+# create lands in that maker's patch, before the first entry that credits them.
+NEW_PERSONS: dict[str, dict[str, str]] = {
+    "dama": {"cortez": "Cortez"},
+    "skill-game-the-best": {"mister-x": "Mister X"},
+    "ipdb-flipper-kit-italiani-non-identificati": {"de-angelis": "De Angelis"},
 }
 
 TECH_MAP = {"em": "electromechanical", "ss": "solid-state"}
@@ -430,6 +480,17 @@ def main() -> None:
                 )
                 note = (note + " " if note else "") + extra.rstrip(".") + "."
             tags = ["conversion-kit"] if m["kit"] else None
+            changesets = []
+            cr = CREDITS_CREATE.get((page, nm))
+            if cr:
+                qc.check(url_, cr["quote"], f"credit {mslug}")
+                changesets.append(
+                    {
+                        "note": cr.get("note"),
+                        "cite": {"ref": url_, "quote": cr["quote"]},
+                        "credits": [(cr["person"], cr["role"])],
+                    }
+                )
             out.append(
                 pk.entry(
                     f"model.{mslug}",
@@ -438,6 +499,33 @@ def main() -> None:
                     cite=cite_list(url_, m["quote"], page, nm),
                     fields=fields,
                     tags=tags,
+                    changesets=changesets or None,
+                )
+            )
+        return out
+
+    def person_create_entries(page: str) -> list[str]:
+        """Person creates for the new artists credited on this maker's page."""
+        out = []
+        for slug, name in NEW_PERSONS.get(page, {}).items():
+            if Person.objects.filter(slug=slug).exists():
+                sys.exit(f"NEW_PERSONS slug already in catalog: {slug}")
+            out.append(pk.entry(f"person.{slug}", create=True, fields={"name": name}))
+        return out
+
+    def existing_credit_entries(page: str) -> list[str]:
+        """Assert entries for artist credits on this maker's existing models."""
+        out = []
+        for c in CREDITS_EXISTING.get(page, []):
+            if not MachineModel.objects.filter(slug=c["slug"]).exists():
+                sys.exit(f"CREDITS_EXISTING slug not in catalog: {c['slug']}")
+            qc.check(f"{TILT}/{page}", c["quote"], f"credit {c['slug']}")
+            out.append(
+                pk.entry(
+                    f"model.{c['slug']}",
+                    note=c.get("note"),
+                    cite={"ref": f"{TILT}/{page}", "quote": c["quote"]},
+                    credits=[(c["person"], c["role"])],
                 )
             )
         return out
@@ -504,7 +592,9 @@ def main() -> None:
                     fields=extra["fields"],
                 )
             )
+        entries = person_create_entries(page) + entries
         entries.extend(model_entries(page, by_page.get(page, []), cslug, mslug))
+        entries.extend(existing_credit_entries(page))
         write(page if page != "dalla-pria-abm" else "dalla-pria", f"{mname}: maker, corporate entity and machines, per tilt.it (IPDB.it).", entries)
 
     # --- existing-maker patches (alphabetical) ----------------------------
@@ -516,16 +606,20 @@ def main() -> None:
             sys.exit(f"page {page} has creates but no PAGE_CE mapping")
         ce = CorporateEntity.objects.get(slug=ce_slug)
         brand = ce.manufacturer.name if ce.manufacturer_id else ce.name
-        entries = model_entries(page, by_page[page], ce_slug, slugify(ce.manufacturer.slug if ce.manufacturer_id else ce_slug))
+        entries = person_create_entries(page)
+        entries.extend(model_entries(page, by_page[page], ce_slug, slugify(ce.manufacturer.slug if ce.manufacturer_id else ce_slug)))
+        entries.extend(existing_credit_entries(page))
         write(f"italian-models-{page}", f"{brand}: additional machines from tilt.it (IPDB.it).", entries)
 
     # --- maker-less kits ---------------------------------------------------
     kits_pages = [p for p in by_page if p.startswith("ipdb-flipper-kit")]
     if kits_pages:
-        entries = []
+        kits_main = "ipdb-flipper-kit-italiani-non-identificati"
+        entries = person_create_entries(kits_main)
         for page in kits_pages:
             entries.extend(model_entries(page, by_page[page], None, "kit"))
-        kits_url = f"{TILT}/ipdb-flipper-kit-italiani-non-identificati"
+        entries.extend(existing_credit_entries(kits_main))
+        kits_url = f"{TILT}/{kits_main}"
         for slug, (quote, extra) in SEEDED_KIT_TAGS.items():
             if not MachineModel.objects.filter(slug=slug).exists():
                 sys.exit(f"SEEDED_KIT_TAGS slug not in catalog: {slug}")
