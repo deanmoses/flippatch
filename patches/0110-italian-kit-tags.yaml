@@ -1,0 +1,80 @@
+attribution: flipcommons-catalog
+# Completes conversion-kit tagging for the machines on tilt.it's
+# unidentified-Italian-kits section (flipper kit italiani non identificati).
+# The generated sweep tagged only rows whose review verdict stated kit
+# outright, missing both the hedged creates and the seeded IPDB models the
+# page carries explicit "(kit for ...)" statements about. Machines tilt.it
+# files in the section without a per-machine statement are tagged on that
+# section membership, said so in the note. tilt.it's own hedges (forse,
+# "looks like") stay quoted/noted.
+description: conversion-kit tags for the tilt.it unidentified-Italian-kits machines.
+claims:
+  - model.tex-op:
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: "Tex-Op (kit for Gottlieb's Harmony/Troubadour)"
+      tag: [conversion-kit]
+  - model.bowling:
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'Bowling (kit for Gottlieb''s "Harmony"/"Troubadour")'
+      tag: [conversion-kit]
+  - model.el-viti:
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: "El Viti (kit for Gottlieb's Harmony/Troubadour)"
+      tag: [conversion-kit]
+  - model.el-tigre:
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'El Tigre (kit with ss scoring for em machines)'
+      tag: [conversion-kit]
+  - model.new-city:
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'New City (kit from the early seventies for Williams'' games "Hot Line" and "Big Strike"'
+      tag: [conversion-kit]
+  - model.grand-slam-10:
+      note: 'tilt.it hedges the attribution ("forse" - maybe an RMG kit for Gottlieb''s Ice Show), not the kit reading.'
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'Grand Slam (forse kit RMG per Ice Show Gottlieb)'
+      tag: [conversion-kit]
+  - model.lido-2:
+      note: 'tilt.it hedges ("looks like a kit"); the maker guess (Dama? art by Cortez?) stays open.'
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'Lido (looks like a kit for a Gottlieb''"Subway" – maybe from Dama – art by Cortez?)'
+      tag: [conversion-kit]
+  - model.aquarium:
+      note: 'tilt.it hedges ("looks like an italian kit").'
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'Aquarium looks like an italian kit inspired from the Gottlieb''s "Aquarius"'
+      tag: [conversion-kit]
+  - model.hit-and-run-kit:
+      note: 'tilt.it files this machine in its unidentified-Italian-conversion-kits section (flipper kit italiani non identificati) without per-machine kit detail; the tag rests on that section membership.'
+      cite: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+      tag: [conversion-kit]
+  - model.baseball-kit:
+      note: 'tilt.it files this machine in its unidentified-Italian-conversion-kits section (flipper kit italiani non identificati) without per-machine kit detail; the tag rests on that section membership.'
+      cite: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+      tag: [conversion-kit]
+  - model.fifteen-goals:
+      note: 'tilt.it files this machine in its unidentified-Italian-conversion-kits section (flipper kit italiani non identificati) without per-machine kit detail; the tag rests on that section membership.'
+      cite: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+      tag: [conversion-kit]
+  - model.card-trix-kit:
+      note: 'tilt.it files this machine in its unidentified-Italian-conversion-kits section (flipper kit italiani non identificati); its per-machine remark distinguishes it from RMG''s version rather than describing the kit.'
+      cite:
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+        quote: 'Card Trix (this is not the RMG version, there are some little differences)'
+      tag: [conversion-kit]
+  - model.full-kit:
+      note: 'tilt.it files this machine in its unidentified-Italian-conversion-kits section (flipper kit italiani non identificati) without per-machine kit detail; the tag rests on that section membership.'
+      cite: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+      tag: [conversion-kit]
+  - model.dig-a-star-kit:
+      note: 'tilt.it files this machine in its unidentified-Italian-conversion-kits section (flipper kit italiani non identificati) without per-machine kit detail; the tag rests on that section membership.'
+      cite: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+      tag: [conversion-kit]
