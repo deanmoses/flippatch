@@ -154,3 +154,23 @@ def test_quote_units_walks_entry_inline_and_changesets_quotes():
         ("https://a.test/p", "inline quote"),
         ("ipdb:3", "changeset quote"),
     ]
+
+
+def test_quote_units_walks_cite_lists():
+    # cite: takes a list of specs (multi-source evidence); every quote-bearing
+    # element must be verified, wherever it sits in the list.
+    body = {
+        "cite": [
+            "ipdb:1",  # bare ref, no quote — skipped
+            {"ref": "https://a.test/p", "quote": "first source"},
+            {"ref": "ipdb:2", "quote": "second source"},
+        ],
+        "changesets": [
+            {"cite": [{"ref": "ipdb:3", "quote": "changeset list quote"}]},
+        ],
+    }
+    assert list(_quote_units(body)) == [
+        ("https://a.test/p", "first source"),
+        ("ipdb:2", "second source"),
+        ("ipdb:3", "changeset list quote"),
+    ]

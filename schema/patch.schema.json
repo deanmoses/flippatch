@@ -42,7 +42,7 @@
       ],
       "description": "A reference to the cited source, either as scheme:identifier (ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form."
     },
-    "cite": {
+    "citeSpec": {
       "oneOf": [
         { "$ref": "#/definitions/citeRef" },
         {
@@ -65,7 +65,19 @@
           }
         }
       ],
-      "description": "External evidence: a bare cite-ref string, or a mapping widening it with an archive snapshot URL (http(s) refs only), a locator and a verbatim quote. Attaches a citation to this entry's authored field claims (not create-owned slug/status)."
+      "description": "One citation: a bare cite-ref string, or a mapping widening it with an archive snapshot URL (http(s) refs only), a locator and a verbatim quote."
+    },
+    "cite": {
+      "oneOf": [
+        { "$ref": "#/definitions/citeSpec" },
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/definitions/citeSpec" },
+          "description": "Several separate sources backing this entry's claims. Every citation in the list attaches to every claim the entry asserts. The same source, locator and quote twice in one list is rejected by ingest_patches (judged on the parsed, normalized spec)."
+        }
+      ],
+      "description": "External evidence: one cite spec or a non-empty list of them. Attaches the citation(s) to this entry's authored field claims (not create-owned slug/status)."
     },
     "cites": {
       "type": "object",
@@ -74,30 +86,7 @@
         "pattern": "^[0-9]+$",
         "description": "A numeric handle, quoted as a string ('1'). Ephemeral authoring label wiring a [[cite:N]] marker to its source; minted to a durable citation at apply time."
       },
-      "additionalProperties": {
-        "oneOf": [
-          { "$ref": "#/definitions/citeRef" },
-          {
-            "type": "object",
-            "additionalProperties": false,
-            "required": ["ref"],
-            "properties": {
-              "ref": { "$ref": "#/definitions/citeRef" },
-              "archive": { "$ref": "#/definitions/httpUrl" },
-              "locator": {
-                "type": "string",
-                "maxLength": 200,
-                "description": "Where in the source: a page, section, timestamp."
-              },
-              "quote": {
-                "type": "string",
-                "maxLength": 2000,
-                "description": "Verbatim excerpt from the source: exact source text and '[...]' ellipses only. Interpretation, translation and rationale go in note: instead."
-              }
-            }
-          }
-        ]
-      },
+      "additionalProperties": { "$ref": "#/definitions/citeSpec" },
       "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-ref string or a { ref, archive, locator, quote } mapping — locator and quote land on the minted footnote instance, exactly like the entry-level cite. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
     },
     "retract": {

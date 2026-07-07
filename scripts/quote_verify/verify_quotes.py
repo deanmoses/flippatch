@@ -199,8 +199,10 @@ def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str]]:
         if not isinstance(unit, dict):
             continue
         cite = unit.get("cite")
-        if isinstance(cite, dict) and cite.get("quote"):
-            yield str(cite["ref"]), str(cite["quote"])
+        specs = cite if isinstance(cite, list) else [cite]
+        for spec in specs:
+            if isinstance(spec, dict) and spec.get("quote"):
+                yield str(spec["ref"]), str(spec["quote"])
         cites = unit.get("cites")
         if isinstance(cites, dict):
             for value in cites.values():

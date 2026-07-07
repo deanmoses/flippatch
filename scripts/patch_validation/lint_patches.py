@@ -239,13 +239,23 @@ def _units(body: PatchUnit) -> Iterator[tuple[str, PatchUnit]]:
                 yield f" changesets[{i}]", changeset
 
 
+def _cite_specs(unit: PatchUnit) -> Iterator[object]:
+    """Yield each entry-level cite spec — ``cite:`` takes one bare-string/mapping
+    spec or a non-empty list of them (multi-source evidence)."""
+    cite = unit.get("cite")
+    if isinstance(cite, list):
+        yield from cite
+    elif cite is not None:
+        yield cite
+
+
 def _cite_strings(unit: PatchUnit) -> Iterator[str]:
     """Yield every cite URL/identifier on a unit (cite: and the cites: map)."""
-    cite = unit.get("cite")
-    if isinstance(cite, str):
-        yield cite
-    elif is_cite_map(cite):
-        yield cite["ref"]
+    for spec in _cite_specs(unit):
+        if isinstance(spec, str):
+            yield spec
+        elif is_cite_map(spec):
+            yield spec["ref"]
     cites = unit.get("cites")
     if is_mapping(cites):
         for value in cites.values():
@@ -258,13 +268,15 @@ def _cite_strings(unit: PatchUnit) -> Iterator[str]:
 def _quote_values(unit: PatchUnit) -> Iterator[tuple[str, str]]:
     """Yield ``(label, quote)`` for every verbatim quote on a unit.
 
-    Walks the entry-level ``cite:`` mapping and each inline ``cites:`` entry, so
-    quote-driven rules (``quote-typography``, the ``note-required`` exemption)
-    treat both carriers identically.
+    Walks the entry-level ``cite:`` spec(s) — including each element of a
+    list-valued ``cite:`` — and each inline ``cites:`` entry, so quote-driven
+    rules (``quote-typography``, the ``note-required`` exemption) treat every
+    carrier identically.
     """
-    cite = unit.get("cite")
-    if is_cite_map(cite) and isinstance(cite.get("quote"), str):
-        yield "cite", cite["quote"]
+    listed = isinstance(unit.get("cite"), list)
+    for i, spec in enumerate(_cite_specs(unit)):
+        if is_cite_map(spec) and isinstance(spec.get("quote"), str):
+            yield (f"cite[{i}]" if listed else "cite"), spec["quote"]
     cites = unit.get("cites")
     if is_mapping(cites):
         for handle, value in cites.items():

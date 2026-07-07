@@ -648,3 +648,52 @@ def test_description_entry_cite_grandfathered_before_rule():
         filename="0036-manufacturer-descriptions.yaml",
     )
     assert not has(e, "an entry-level cite: is not allowed")
+
+
+# --- cite lists (multi-source evidence) --------------------------------------
+
+
+def test_cite_list_quotes_get_typography_checked():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": [
+                        {"ref": "ipdb:1", "quote": "clean quote"},
+                        {"ref": "https://a.test/p", "quote": "smart “quote”"},
+                    ],
+                    "year": 1980,
+                }
+            }
+        ],
+        filename="0090-x.yaml",
+    )
+    assert has(e, "smart")
+
+
+def test_cite_list_members_get_scheme_form_checked():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": ["https://www.ipdb.org/machine.cgi?id=4443"],
+                    "year": 1980,
+                }
+            }
+        ]
+    )
+    assert has(e, "scheme")
+
+
+def test_cite_list_with_quote_satisfies_note_requirement():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "cite": ["ipdb:1", {"ref": "ipdb:2", "quote": "never produced"}],
+                    "production_status": "unreleased",
+                }
+            }
+        ]
+    )
+    assert not has(e, "needs a note")
