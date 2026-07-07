@@ -510,3 +510,31 @@ def test_entry_cite_quote_preserves_source_dashes() -> None:
     )
     parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.fly-man"]
     assert parsed["cite"]["quote"] == "Fly Man – ss – 1p"
+
+
+def test_entry_credits_emit_block_mapping_members() -> None:
+    e = entry(
+        "model.golf",
+        credits=[("cortez", "art")],
+        cite={"ref": "https://x.test/dama", "quote": "Golf (grafica di Cortez)"},
+    )
+    parsed = yaml.safe_load("claims:\n" + e)["claims"][0]["model.golf"]
+    assert parsed["credit"] == [{"cortez": "art"}]
+
+
+def test_changeset_credits_emit_block_mapping_members() -> None:
+    e = entry(
+        "model.golf",
+        create=True,
+        cite={"ref": "https://x.test/dama", "quote": "Golf"},
+        fields={"name": "Golf"},
+        changesets=[
+            {
+                "credits": [("cortez", "art")],
+                "cite": {"ref": "https://x.test/dama", "quote": "grafica di Cortez"},
+            }
+        ],
+    )
+    cs = yaml.safe_load("claims:\n" + e)["claims"][0]["model.golf"]["changesets"][0]
+    assert cs["credit"] == [{"cortez": "art"}]
+    assert cs["cite"]["quote"] == "grafica di Cortez"

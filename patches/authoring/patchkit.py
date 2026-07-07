@@ -315,6 +315,17 @@ def _cite_lines(
     return lines
 
 
+def _credit_lines(credits: Sequence[tuple[str, str]], indent: str) -> list[str]:
+    """Emit `credit:` as a block list of single-key `person: role` mappings —
+    the catalog's one multi-key relationship (DataPatches.md → Credits). Flow
+    style would quote the colon and turn each member into a string, so credits
+    always emit block form."""
+    lines = [f"{indent}credit:"]
+    for person, role in credits:
+        lines.append(f"{indent}  - {_scalar(person)}: {_scalar(role)}")
+    return lines
+
+
 def entry(
     ref: Ref,
     *,
@@ -326,6 +337,7 @@ def entry(
     cites: Mapping[Handle, CiteSpec] | None = None,
     changesets: Sequence[Mapping[str, object]] | None = None,
     tags: Sequence[str] | None = None,
+    credits: Sequence[tuple[str, str]] | None = None,
     relationships: Mapping[str, Sequence[str]] | None = None,
     remove: Mapping[str, Sequence[str]] | None = None,
     retract: Sequence[str] | None = None,
@@ -399,6 +411,8 @@ def entry(
                 lines.append(f"{sub}  '{handle}': {_scalar(spec)}")
     if tags:
         lines.append(f"{sub}tag: [{', '.join(tags)}]")
+    if credits:
+        lines.extend(_credit_lines(credits, sub))
     for namespace, members in (relationships or {}).items():
         inner = ", ".join(_scalar(m) for m in members)
         lines.append(f"{sub}{namespace}: [{inner}]")
@@ -420,6 +434,9 @@ def entry(
                 for namespace, members in cs_rels.items():
                     inner = ", ".join(_scalar(m) for m in members)
                     item.append(f"{namespace}: [{inner}]")
+            cs_credits = cs.get("credits")
+            if isinstance(cs_credits, Sequence):
+                item.extend(ln[len(sub) :] for ln in _credit_lines(cs_credits, sub))
             if not item:
                 raise ValueError(f"{ref}: empty changesets item")
             lines.append(f"{sub}  - {item[0]}")
