@@ -22,3 +22,8 @@ claims:
       player_count: 1
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/mambelli'
+            quote: Gorgar (kit for Jungle Life)
+          converted_from: jungle-life

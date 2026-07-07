@@ -23,3 +23,8 @@ claims:
       player_count: 1
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
+            quote: 'Carnival – em – 1p (Subway)'
+          converted_from: subway-2

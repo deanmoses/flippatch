@@ -102,6 +102,11 @@ claims:
       title: pool-kit
       game_format: pinball
       tag: [conversion-kit]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+            quote: 'POOL ("Cue-T", Williams)'
+          converted_from: cue-t
   - model.pokerrr:
       create: true
       note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit.'

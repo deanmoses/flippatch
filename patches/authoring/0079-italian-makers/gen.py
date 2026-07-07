@@ -249,6 +249,20 @@ NEW_PERSONS: dict[str, dict[str, str]] = {
     "ipdb-flipper-kit-italiani-non-identificati": {"de-angelis": "De Angelis"},
 }
 
+# converted_from: conversion-kit models whose tilt.it line names the single
+# donor machine the kit rethemes (DomainModel.md pairs the conversion-kit tag
+# with converted_from). Keyed (page, machine name) -> donor IPDB id + the
+# verbatim span that names it; the donor slug is resolved from the id at gen
+# time. Only unambiguous single-donor conversions — kits naming two donor games
+# ("Harmony/Troubadour", "Hot Line and Big Strike") or hedged ("forse", "looks
+# like") stay in the note, since converted_from is a single FK.
+CONVERTED_FROM: dict[tuple[str, str], dict] = {
+    ("dama", "Hippie"): {"donor_ipdb": 431, "quote": 'Hippie (Bally "Capersville") (grafica di Cortez)'},
+    ("elettronolo", "Carnival"): {"donor_ipdb": 2412, "quote": "Carnival – em – 1p (Subway)"},
+    ("ipdb-flipper-kit-italiani-non-identificati", "POOL"): {"donor_ipdb": 611, "quote": 'POOL ("Cue-T", Williams)'},
+    ("mambelli", "Gorgar"): {"donor_ipdb": 1337, "quote": "Gorgar (kit for Jungle Life)"},
+}
+
 TECH_MAP = {"em": "electromechanical", "ss": "solid-state"}
 
 # (page, name) -> game_format override. Default is pinball; tilt.it labels
@@ -292,6 +306,35 @@ class QuoteChecker:
             self.failures.append(f"{label}: quote not verbatim in {url}: {quote[:70]}")
 
 
+# Slugs the sweep itself has already emitted (create: true in its own patch
+# files, FIRST_PATCH_NUM and up). Subtracting these from the live-DB "taken"
+# sets lets gen.py re-run against a DB where its output is already applied and
+# still reproduce identical slugs — no pre-sweep snapshot needed. Ref prefix ->
+# taken-set key.
+_REF_KIND = {
+    "model": "model", "title": "title", "manufacturer": "mfr",
+    "corporate-entity": "ce", "person": "person",
+}
+
+
+def prior_created_slugs() -> dict[str, set[str]]:
+    import yaml
+
+    out: dict[str, set[str]] = {k: set() for k in ("model", "title", "mfr", "ce", "person")}
+    for path in PATCHES.glob("[0-9][0-9][0-9][0-9]-*.yaml"):
+        if int(path.name[:4]) < FIRST_PATCH_NUM:
+            continue
+        doc = yaml.safe_load(path.read_text())
+        for claim in doc.get("claims", []):
+            ((ref, body),) = claim.items()
+            if not (isinstance(body, dict) and body.get("create") is True):
+                continue
+            kind, _, slug = ref.partition(".")
+            if kind in _REF_KIND:
+                out[_REF_KIND[kind]].add(slug)
+    return out
+
+
 def main() -> None:
     rows = list(csv.DictReader((HERE / "reviewed.csv").open()))
     creates = [r for r in rows if r["verdict"] in ("create", "reassign")]
@@ -309,10 +352,12 @@ def main() -> None:
         sys.exit(f"PAGE_CE slugs not in catalog: {missing_ce}")
 
     # slug registries: catalog + this run
-    taken_model = set(MachineModel.objects.values_list("slug", flat=True))
-    taken_title = set(Title.objects.values_list("slug", flat=True))
-    taken_mfr = set(Manufacturer.objects.values_list("slug", flat=True))
-    taken_ce = set(CorporateEntity.objects.values_list("slug", flat=True))
+    prior = prior_created_slugs()
+    taken_model = set(MachineModel.objects.values_list("slug", flat=True)) - prior["model"]
+    taken_title = set(Title.objects.values_list("slug", flat=True)) - prior["title"]
+    taken_mfr = set(Manufacturer.objects.values_list("slug", flat=True)) - prior["mfr"]
+    taken_ce = set(CorporateEntity.objects.values_list("slug", flat=True)) - prior["ce"]
+    taken_person = set(Person.objects.values_list("slug", flat=True)) - prior["person"]
 
     def fresh(base: str, taken: set, maker: str) -> str:
         s = base
@@ -481,6 +526,18 @@ def main() -> None:
                 note = (note + " " if note else "") + extra.rstrip(".") + "."
             tags = ["conversion-kit"] if m["kit"] else None
             changesets = []
+            cf = CONVERTED_FROM.get((page, nm))
+            if cf:
+                donor = MachineModel.objects.filter(ipdb_id=cf["donor_ipdb"]).first()
+                if donor is None:
+                    sys.exit(f"CONVERTED_FROM donor ipdb {cf['donor_ipdb']} not in catalog ({nm})")
+                qc.check(url_, cf["quote"], f"converted_from {mslug}")
+                changesets.append(
+                    {
+                        "cite": {"ref": url_, "quote": cf["quote"]},
+                        "fields": {"converted_from": donor.slug},
+                    }
+                )
             cr = CREDITS_CREATE.get((page, nm))
             if cr:
                 qc.check(url_, cr["quote"], f"credit {mslug}")
@@ -508,7 +565,7 @@ def main() -> None:
         """Person creates for the new artists credited on this maker's page."""
         out = []
         for slug, name in NEW_PERSONS.get(page, {}).items():
-            if Person.objects.filter(slug=slug).exists():
+            if slug in taken_person:
                 sys.exit(f"NEW_PERSONS slug already in catalog: {slug}")
             out.append(pk.entry(f"person.{slug}", create=True, fields={"name": name}))
         return out

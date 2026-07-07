@@ -101,6 +101,10 @@ claims:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
             quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
+          converted_from: capersville
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
           credit:
             - cortez: art
   - model.hippye-2:
