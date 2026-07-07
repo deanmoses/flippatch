@@ -285,18 +285,44 @@ claims:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Cine Star – 1p – em'
       year: 1974
+  - model.devil-riders:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Devil Riders – ss – 4p – 04/84'
+      month: 4
+  - model.earth-wind-fire:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Earth, Wind & Fire – ss – 4p – 04/81'
+      month: 4
   - model.farfalla:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Farfalla – ss – 4p – 09/83'
       year: 1983
+      month: 9
       player_count: 4
+  - model.future-world:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Future World – 4p – ss – 10/78'
+      month: 10
   - model.granada-2:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Granada(?) – 1p – em'
       year: 1973
+  - model.hot-wheels:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Hot Wheels – 4p – ss – 09/79'
+      month: 9
   - model.house-of-diamonds:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
@@ -304,6 +330,18 @@ claims:
       year: 1978
       month: 7
       player_count: 4
+  - model.locomotion:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Locomotion – ss – 4p – 09/81'
+      month: 9
+  - model.magic-castle:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Magic Castle – ss – 4p – 09/84'
+      month: 9
   - model.pinball-champ:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
@@ -317,17 +355,63 @@ claims:
       year: 1982
       month: 4
       player_count: 4
+  - model.pool-champion:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Pool Champion – ss – 4p – 12/85'
+      month: 12
+  - model.queens-castle:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Queen Castle – 1p – em – 04/78'
+      month: 4
+  - model.shooting-the-rapids:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Shooting the rapids – 4p – ss – 04/79'
+      month: 4
+  - model.ski-jump:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Ski Jump – 1p – ss – 10/78'
+      month: 10
+  - model.soccer-kings:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Soccer King – ss – 4p – 09/82'
+      month: 9
+  - model.space-city:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Space City – 1p – ss – 09/79'
+      month: 9
   - model.space-shuttle:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Space Shuttle – ss – 4p – 09/80'
       year: 1980
+      month: 9
       player_count: 4
+  - model.strike:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Strike – 1p – ss – 09/78'
+      month: 9
   - model.time-machine-zaccaria:
+      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Time Machine – ss – 4p – 04/83'
       year: 1983
+      month: 4
       player_count: 4
   - model.top-hand-5:
       note: 'tilt.it marks the year uncertain ("(?)").'

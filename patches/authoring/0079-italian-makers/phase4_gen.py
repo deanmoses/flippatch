@@ -56,6 +56,19 @@ from django.contrib.contenttypes.models import ContentType  # noqa: E402
 TILT = "https://www.tilt.it/flipper_pinball/ipdb"
 TECH = {"em": "electromechanical", "ss": "solid-state"}
 
+# Conflict resolutions applied at generation (kept here so regeneration is
+# stable). (model, field) -> resolution text; rows resolved in the catalog's
+# favor are not asserted, just documented.
+RESOLUTIONS: dict[tuple[str, str], str] = {
+    ("derby-2", "year"): "resolved: catalog year stands - year means MANUFACTURE year; tilt.it dates the Enada trade-show presentation (user ruling 2026-07-07)",
+    ("lucky-shot", "year"): "resolved: catalog year stands - year means MANUFACTURE year; tilt.it dates the Enada V presentation (user ruling 2026-07-07)",
+}
+
+MONTH_ARTIFACT_NOTE = (
+    "the catalog's January month is OPDB's year-only date default (an unknown "
+    "month encodes as January 1); tilt.it states the production month"
+)
+
 
 def norm_text(t: str) -> str:
     for a, b in {"“": '"', "”": '"', "‘": "'", "’": "'"}.items():
@@ -130,7 +143,19 @@ def main() -> None:
             facts.append(("player_count", int(r["players"]), mm.player_count))
 
         assertable: dict[str, object] = {}
+        month_artifact = False
         for field, tilt_val, cat_val in facts:
+            if (
+                field == "month"
+                and cat_val is not None
+                and str(cat_val) == "1"
+                and str(tilt_val) != "1"
+            ):
+                # January-default artifact (see MONTH_ARTIFACT_NOTE): tilt.it's
+                # real month supersedes it (our source outranks opdb's).
+                assertable[field] = tilt_val
+                month_artifact = True
+                continue
             if cat_val is not None and str(cat_val) != str(tilt_val):
                 counts["conflict"] += 1
                 conflict_rows.append(
@@ -138,6 +163,7 @@ def main() -> None:
                         "model": slug, "field": field, "tilt": tilt_val,
                         "catalog": cat_val, "page": page, "raw_line": r["raw_line"],
                         "note": r["notes"],
+                        "resolution": RESOLUTIONS.get((slug, field), ""),
                     }
                 )
                 continue
@@ -162,9 +188,12 @@ def main() -> None:
             continue
         counts["models"] += 1
         counts["asserted-facts"] += len(assertable)
-        note = None
+        note_bits = []
         if r["year_uncertain"] and "year" in assertable:
-            note = 'tilt.it marks the year uncertain ("(?)").'
+            note_bits.append('tilt.it marks the year uncertain ("(?)")')
+        if month_artifact:
+            note_bits.append(MONTH_ARTIFACT_NOTE)
+        note = "; ".join(note_bits) + "." if note_bits else None
         entries.append(
             pk.entry(
                 f"model.{slug}",
@@ -184,7 +213,7 @@ def main() -> None:
     with (HERE / "conflicts.csv").open("w", newline="") as f:
         w = csv.DictWriter(
             f, lineterminator="\n",
-            fieldnames=["model", "field", "tilt", "catalog", "page", "raw_line", "note"],
+            fieldnames=["model", "field", "tilt", "catalog", "page", "raw_line", "note", "resolution"],
         )
         w.writeheader()
         w.writerows(conflict_rows)
