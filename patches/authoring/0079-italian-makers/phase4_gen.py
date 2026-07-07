@@ -69,6 +69,28 @@ MONTH_ARTIFACT_NOTE = (
     "month encodes as January 1); tilt.it states the production month"
 )
 
+# Existing Italian models the sweep found to be conversions — a machine reworked
+# into another maker's cabinet (DomainModel → Conversions). Emitted as a
+# conversion-kit tag + converted_from where the donor game is named; tag only
+# where tilt.it says merely "a Gottlieb cabinet". Keyed catalog slug -> spec
+# (page + verbatim quote + optional donor IPDB id + note).
+CONVERSIONS: dict[str, dict] = {
+    "zeus": {
+        "page": "centralmatic-lombarda",
+        "quote": (
+            'una copia, almeno nella grafica, dell\'elettronico Williams "Flash", '
+            "strutturata per essere installata in un mobile Gottlieb's, funzionante "
+            "elettromeccanicamente"
+        ),
+        "donor_ipdb": None,  # tilt.it names only "a Gottlieb cabinet", no game
+        "note": (
+            "tilt.it describes it as installed in a Gottlieb cabinet — a conversion, "
+            "not a from-scratch bootleg — with artwork copied from Williams' Flash; the "
+            "specific donor game is not named, so converted_from is left unset."
+        ),
+    },
+}
+
 
 def norm_text(t: str) -> str:
     for a, b in {"“": '"', "”": '"', "‘": "'", "’": "'"}.items():
@@ -200,6 +222,32 @@ def main() -> None:
                 note=note,
                 cite={"ref": url, "quote": quote},
                 fields=assertable,
+            )
+        )
+
+    # Conversion facts on existing Italian models (tag + converted_from), a
+    # separate ChangeSet from any scalar facts on the same model above.
+    for slug, c in sorted(CONVERSIONS.items()):
+        mm = MachineModel.objects.filter(slug=slug).first()
+        if mm is None:
+            sys.exit(f"CONVERSIONS slug not in catalog: {slug}")
+        url = f"{TILT}/{c['page']}"
+        if norm_text(c["quote"]) not in text_for(c["page"]):
+            sys.exit(f"CONVERSIONS quote not verbatim for {slug}")
+        fields: dict[str, object] = {}
+        if c.get("donor_ipdb"):
+            donor = MachineModel.objects.filter(ipdb_id=c["donor_ipdb"]).first()
+            if donor is None:
+                sys.exit(f"CONVERSIONS donor ipdb {c['donor_ipdb']} not in catalog ({slug})")
+            fields["converted_from"] = donor.slug
+        counts["conversions"] = counts.get("conversions", 0) + 1
+        entries.append(
+            pk.entry(
+                f"model.{slug}",
+                note=c.get("note"),
+                cite={"ref": url, "quote": c["quote"]},
+                tags=["conversion-kit"],
+                fields=fields or None,
             )
         )
 

@@ -298,7 +298,6 @@ claims:
         quote: 'Earth, Wind & Fire – ss – 4p – 04/81'
       month: 4
   - model.farfalla:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Farfalla – ss – 4p – 09/83'
@@ -392,7 +391,6 @@ claims:
         quote: 'Space City – 1p – ss – 09/79'
       month: 9
   - model.space-shuttle:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Space Shuttle – ss – 4p – 09/80'
@@ -406,7 +404,6 @@ claims:
         quote: 'Strike – 1p – ss – 09/78'
       month: 9
   - model.time-machine-zaccaria:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
         quote: 'Time Machine – ss – 4p – 04/83'
@@ -432,3 +429,9 @@ claims:
       year: 1978
       month: 1
       player_count: 4
+  - model.zeus:
+      note: 'tilt.it describes it as installed in a Gottlieb cabinet - a conversion, not a from-scratch bootleg - with artwork copied from Williams'' Flash; the specific donor game is not named, so converted_from is left unset.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/centralmatic-lombarda'
+        quote: 'una copia, almeno nella grafica, dell''elettronico Williams "Flash", strutturata per essere installata in un mobile Gottlieb''s, funzionante elettromeccanicamente'
+      tag: [conversion-kit]
