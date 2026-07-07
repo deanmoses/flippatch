@@ -50,3 +50,12 @@ claims:
       technology_generation: solid-state
       player_count: 2
       game_format: video-game
+      changesets:
+        - note: 'Sidam''s unlicensed copy of Atari''s Video Pinball, reskinned to a rugby theme.'
+          cite:
+            - ref: 'https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino'
+              quote: Da Video Pinball (Atari)
+            - ref: 'https://www.tilt.it/deb/sidam-en.html'
+              quote: Compared to Atari Video Pinball
+          bootleg_of: video-pinball
+          tag: [bootleg]

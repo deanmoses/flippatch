@@ -45,6 +45,19 @@ All 47 pages (index + 46 maker/section pages) fetched into the pinexplore web ca
 - **Steeple's "(?)"**: tilt.it hedges the machine/name itself ("Steeple (?)"); the shipped 0085 note carries only the missing-technology hedge. The name hedge goes in the Phase-5 description.
 - **Multi-source cites**: where the review pass found verifiable second sources under seeded roots, they ride the entry `cite:` lists (Rugby ×4, Pool Rabbit + VPForums, Big Dryvers + Pinside, Queen's Castle-era zaccaria-pinball.com quotes on their rows); unverifiable or unrooted ones (a Flickr photo, it.wikipedia) live in `third-sources.csv`/`corroborations.csv` for the description phase or a later roots patch.
 
+## Category 2 — bootlegs (bootleg_of + bootleg tag)
+
+The from-scratch copies the sweep created — unmodelable when first authored — now use the `bootleg_of` relation + `bootleg` tag added to the domain model (the `bootleg` tag itself is created in patch 0039; its description in 0110). Folded per-maker, in each model's own patch:
+
+- **Verbatim "copy" on tilt.it** → Emmepi *Jungle Life* ("copy of same Gottlieb's game") → jungle-life; Manilamatic *Joker* ("copia del Gottlieb's Monte Carlo") → monte-carlo-gottlieb.
+- **Corroborating source** → Sidam *Rugby* → video-pinball (Atari), cited to RetroCampus + tilt.it/deb — bootlegging crossing into video games; the DomainModel's own example.
+- **Copy stated, donor unnamed** → Bontempi *Action* ("copy of game from Chicago Coin's ?") gets the `bootleg` tag but no `bootleg_of`.
+- **Name-match inference** (user ruling 2026-07-08: assert with an explaining note) → Bensa *Jack in the Box*, LORI *Jungle Life* & *Space Orbit*, Zaccaria *Jungle Life*, RMG *Card Trix*, Skill Game's *The Best Card King* — tilt.it lists an EM-era Italian machine under the exact name of a Gottlieb title but never says "copy"; each note records that the bootleg reading rests on the name match.
+
+Not a bootleg: **Bell Games *Sinbad*** — tilt.it says "co-production Europlay/Bell Games", naming its makers, not a copied game, so no bootleg evidence. Excluded.
+
+The 0110 tag description, written before any models were tagged, was rewritten to draw its Italian examples from these now-tagged records (the multi-maker *Jungle Life*, Manilamatic's *Joker*, Sidam's *Rugby*), replacing the earlier Zeus example — which tilt.it describes as installed in a Gottlieb cabinet, i.e. a conversion, not a from-scratch bootleg.
+
 ## Corroboration ledger (`corroborations.csv`)
 
 The apply engine takes at most one citation per fact per assertion, and rejects a same-value re-assertion once the attributing source already holds the field — so a fact can't gain corroborating evidence after the fact today. Multi-cite support is being added separately; until then, every *additional* source found for a fact (beyond the one cited in the patch) is banked in `corroborations.csv` (`entity_ref, field, value, ref, quote, note`) for a second pass that attaches them once the system supports it. Quotes in the ledger follow the same verbatim rules as patch quotes so the second pass can ship them unedited.

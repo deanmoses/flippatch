@@ -263,6 +263,62 @@ CONVERTED_FROM: dict[tuple[str, str], dict] = {
     ("mambelli", "Gorgar"): {"donor_ipdb": 1337, "quote": "Gorgar (kit for Jungle Life)"},
 }
 
+# bootleg_of + bootleg tag: complete from-scratch copies of another maker's
+# game (DomainModel.md → Bootlegs), distinct from the cabinet-reusing kits in
+# CONVERTED_FROM. Keyed (page, machine name) -> donor IPDB id (None = tag only,
+# donor unstated) + the cite(s) evidencing the copy. name_match entries have no
+# verbatim "copy" statement on tilt.it: the machine simply carries the exact
+# name of a Gottlieb title, so the bootleg reading is an inference recorded in
+# an auto-generated note (user ruling 2026-07-08).
+_RETRO = "https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino"
+BOOTLEGS: dict[tuple[str, str], dict] = {
+    ("emmepi", "Jungle Life"): {
+        "donor_ipdb": 1337,
+        "cite": {"ref": f"{TILT}/emmepi", "quote": "Jungle Life (copy of same Gottlieb's game)"},
+    },
+    ("manilamatic", "Joker"): {
+        "donor_ipdb": 1622,
+        "cite": {"ref": f"{TILT}/manilamatic", "quote": 'Joker (copia del Gottlieb\'s "Monte Carlo")'},
+    },
+    ("sidam", "Rugby"): {
+        "donor_ipdb": 6292,
+        "cite": [
+            {"ref": _RETRO, "quote": "Da Video Pinball (Atari)"},
+            {"ref": "https://www.tilt.it/deb/sidam-en.html", "quote": "Compared to Atari Video Pinball"},
+        ],
+        "note": "Sidam's unlicensed copy of Atari's Video Pinball, reskinned to a rugby theme.",
+    },
+    ("bontempi", "Action"): {
+        "donor_ipdb": None,  # tilt.it hedges which Chicago Coin game
+        "cite": {"ref": f"{TILT}/bontempi", "quote": "Action (copy of game from Chicago Coin's ?)"},
+        "note": "tilt.it calls it a copy of a Chicago Coin game but does not identify which, so bootleg_of is left unset.",
+    },
+    ("bensa", "Jack in the box"): {
+        "donor_ipdb": 1277, "name_match": 'Gottlieb\'s "Jack In The Box"',
+        "cite": {"ref": f"{TILT}/bensa", "quote": "Jack in the box"},
+    },
+    ("lori", "Jungle Life"): {
+        "donor_ipdb": 1337, "name_match": 'Gottlieb\'s "Jungle Life"',
+        "cite": {"ref": f"{TILT}/lori", "quote": 'Top Hand ("Serigrafia Lori") Jungle Life Count-Down KO Space Orbit Play Pool'},
+    },
+    ("lori", "Space Orbit"): {
+        "donor_ipdb": 2255, "name_match": 'Gottlieb\'s "Space Orbit"',
+        "cite": {"ref": f"{TILT}/lori", "quote": "Space Orbit Play Pool"},
+    },
+    ("zaccaria", "Jungle Life"): {
+        "donor_ipdb": 1337, "name_match": 'Gottlieb\'s "Jungle Life"',
+        "cite": {"ref": f"{TILT}/zaccaria", "quote": "Jungle Life – 1p – em"},
+    },
+    ("rmg", "Card Trix"): {
+        "donor_ipdb": 446, "name_match": 'Gottlieb\'s "Card Trix"',
+        "cite": {"ref": f"{TILT}/rmg", "quote": "Card Trix"},
+    },
+    ("skill-game-the-best", "The Best Card King"): {
+        "donor_ipdb": 445, "name_match": 'Gottlieb\'s "Card King"',
+        "cite": {"ref": f"{TILT}/skill-game-the-best", "quote": "Card King"},
+    },
+}
+
 TECH_MAP = {"em": "electromechanical", "ss": "solid-state"}
 
 # (page, name) -> game_format override. Default is pinball; tilt.it labels
@@ -548,6 +604,28 @@ def main() -> None:
                         "credits": [(cr["person"], cr["role"])],
                     }
                 )
+            bl = BOOTLEGS.get((page, nm))
+            if bl:
+                bl_note = bl.get("note")
+                if bl.get("name_match"):
+                    bl_note = (
+                        f"Classified a bootleg of {bl['name_match']} on the exact-name "
+                        "match; tilt.it lists the machine but does not use the word \"copy\"."
+                    )
+                specs = bl["cite"] if isinstance(bl["cite"], list) else [bl["cite"]]
+                for spec in specs:
+                    qc.check(spec["ref"], spec["quote"], f"bootleg {mslug}")
+                cs: dict = {
+                    "note": bl_note,
+                    "cite": bl["cite"],
+                    "relationships": {"tag": ["bootleg"]},
+                }
+                if bl.get("donor_ipdb"):
+                    donor = MachineModel.objects.filter(ipdb_id=bl["donor_ipdb"]).first()
+                    if donor is None:
+                        sys.exit(f"BOOTLEGS donor ipdb {bl['donor_ipdb']} not in catalog ({nm})")
+                    cs["fields"] = {"bootleg_of": donor.slug}
+                changesets.append(cs)
             out.append(
                 pk.entry(
                     f"model.{mslug}",

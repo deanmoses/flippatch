@@ -21,3 +21,9 @@ claims:
       technology_generation: electromechanical
       player_count: 1
       game_format: pinball
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/emmepi'
+            quote: Jungle Life (copy of same Gottlieb's game)
+          bootleg_of: jungle-life
+          tag: [bootleg]

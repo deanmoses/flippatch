@@ -27,6 +27,12 @@ claims:
       corporate_entity: mm-computer-games
       technology_generation: solid-state
       game_format: pinball
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+            quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
+          bootleg_of: monte-carlo-gottlieb
+          tag: [bootleg]
   - model.pool-rabbit:
       create: true
       note: 'tilt.it gives no year.'

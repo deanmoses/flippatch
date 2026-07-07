@@ -5,11 +5,15 @@ claims:
       description: >
         A **bootleg** is a complete pinball machine, built from scratch, that reproduces another manufacturer's game without authorization. It is distinct from a conversion kit, which reworks the cabinet of a machine that already exists, and from a licensed remake: a bootleg is a wholly new build whose playfield, rules and often artwork are lifted from someone else's product.
 
+
         Bootlegging flourished in postwar Europe — above all in [[location:spain]] and [[location:italy]] — through the [[technology-generation:electromechanical]] era. Import barriers, light licensing enforcement and strong local demand for American-style pinball gave regional makers both the motive and the latitude to clone the dominant designs of [[manufacturer:gottlieb]], [[manufacturer:williams]] and [[manufacturer:bally]].
+
 
         In Spain the practice was almost an industry of its own. [[manufacturer:segasa]] issued *Astro-Flite*, a straight copy of Williams' *Strato-Flite*,[[cite:1]] while [[manufacturer:petaco]] reworked Gottlieb's *[[title:king-of-diamonds]]* into *Rey de Diamantes* — a faster game that Spanish players judged an improvement on the original.[[cite:2]]
 
-        Italian firms worked the same vein. [[manufacturer:giuliano-lodola]] built *Black Rider*, a copy of Williams' *[[title:black-knight]]*,[[cite:3]] and [[manufacturer:centralmatic-lombarda]] produced *[[title:zeus]]*, whose artwork copied Williams' *[[title:flash]]* and which was engineered to drop into a surplus Gottlieb cabinet and run electromechanically.[[cite:4]]
+
+        Italian firms worked the same vein, and a single American design often reappeared under several local badges: Gottlieb's *Jungle Life* alone was rebuilt from scratch by [[manufacturer:emmepi]] — "copy of same Gottlieb's game", in the archive's words[[cite:3]] — and independently by [[manufacturer:lori]] and [[manufacturer:zaccaria]]. [[manufacturer:giuliano-lodola]] copied Williams' *[[title:black-knight]]* as *Black Rider*,[[cite:4]] and [[manufacturer:manilamatic]] cloned Gottlieb's *[[title:monte-carlo-gottlieb]]* as *Joker*.[[cite:5]] The habit outlasted electromechanics: [[manufacturer:sidam]] of Turin bootlegged even a video game, reskinning Atari's *[[title:video-pinball]]* into *Rugby*.[[cite:6]]
+
 
         These copies ranged from faithful clones to modified reworkings, and it was precisely the electromechanical machine's simplicity — relays, stepping units and score motors rather than proprietary circuit boards — that made it straightforward to reverse-engineer. As [[technology-generation:solid-state]] electronics and custom ROMs took hold in the late 1970s, copying a machine came to mean copying its software as well, and the wholesale bootlegging of the earlier era faded.
       cites:
@@ -20,8 +24,14 @@ claims:
           ref: ipdb:4368
           quote: "A modified copy of Gottlieb's 1967 'King of Diamonds'. The result made for a faster game, one preferred and considered better by Spanish pinball players."
         "3":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/emmepi
+          quote: "Jungle Life (copy of same Gottlieb's game)"
+        "4":
           ref: ipdb:4085
           quote: "A copy of Williams' 1980 'Black Knight'."
-        "4":
-          ref: https://www.tilt.it/flipper_pinball/ipdb/centralmatic-lombarda
-          quote: "una copia, almeno nella grafica, dell'elettronico Williams \"Flash\", strutturata per essere installata in un mobile Gottlieb's, funzionante elettromeccanicamente"
+        "5":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/manilamatic
+          quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
+        "6":
+          ref: https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino
+          quote: "Da Video Pinball (Atari)"

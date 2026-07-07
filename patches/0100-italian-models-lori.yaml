@@ -42,6 +42,13 @@ claims:
       technology_generation: electromechanical
       player_count: 1
       game_format: pinball
+      changesets:
+        - note: 'Classified a bootleg of Gottlieb''s "Jungle Life" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+            quote: 'Top Hand ("Serigrafia Lori") Jungle Life Count-Down KO Space Orbit Play Pool'
+          bootleg_of: jungle-life
+          tag: [bootleg]
   - model.count-down-lori:
       create: true
       note: 'tilt.it gives no year; lineage per the source line: Unknown original; shares its name with Novamatic''s 1970 ''Count Down'' (ipdb 4118, catalog count-down-2) and with a Count Down on the Pasini page - relationship between the Italian Count Downs unresolved. Maker: LORI..'
@@ -78,3 +85,10 @@ claims:
       technology_generation: electromechanical
       player_count: 1
       game_format: pinball
+      changesets:
+        - note: 'Classified a bootleg of Gottlieb''s "Space Orbit" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+            quote: Space Orbit Play Pool
+          bootleg_of: space-orbit
+          tag: [bootleg]

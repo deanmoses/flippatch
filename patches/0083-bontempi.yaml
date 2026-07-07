@@ -39,3 +39,9 @@ claims:
       title: action-bontempi
       corporate_entity: bontempi
       game_format: pinball
+      changesets:
+        - note: 'tilt.it calls it a copy of a Chicago Coin game but does not identify which, so bootleg_of is left unset.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bontempi'
+            quote: 'Action (copy of game from Chicago Coin''s ?)'
+          tag: [bootleg]
