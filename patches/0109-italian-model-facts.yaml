@@ -1,0 +1,350 @@
+attribution: flipcommons-catalog
+description: >
+  Facts from tilt.it (IPDB.it) on existing Italian models.
+claims:
+  - model.sprint-girl:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ami'
+        quote: 'Sprint Girl – em – 1p'
+      technology_generation: electromechanical
+  - model.bowlingirl:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi'
+        quote: Bowlingirl
+      year: 1976
+  - model.cosmodrome:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Cosmodrome – ss – 4p'
+      year: 1980
+      player_count: 4
+  - model.fantasy:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Fantasy (Centaur) – ss – 4p'
+      year: 1982
+      player_count: 4
+  - model.king:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'The King – ss – 4p'
+      year: 1978
+      player_count: 4
+  - model.new-wave:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'New Wave (Black Pyramid) – ss – 4p'
+      year: 1985
+      player_count: 4
+  - model.pin-ball-pool:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Pinball Pool (Eight Ball De Luxe) – ss – 4p'
+      year: 1983
+      player_count: 4
+  - model.pinball:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Pin Ball (Pinball Champ ''82) – ss – 4p'
+      year: 1983
+      player_count: 4
+  - model.saturn-2:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Saturn II (Spy Hunter) – ss – 4p'
+      year: 1985
+      player_count: 4
+  - model.sexy-girl:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Sexy Girl – ss – 4p (co-production Arkon/Ranco/Bell Games)'
+      player_count: 4
+  - model.space-hawks:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Space Hawks (Cybernaut) – ss – 4p'
+      year: 1986
+      player_count: 4
+  - model.super-bowl:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Super Bowl (X''s & O''s) – ss – 4p'
+      year: 1984
+      player_count: 4
+  - model.the-hunter:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'The Hunter – ss – 4p'
+      year: 1980
+      player_count: 4
+  - model.tiger-rag:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Tiger Rag (King of Steel) – ss – 4p'
+      year: 1984
+      player_count: 4
+  - model.white-shark:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'White Shark – ss – 4p'
+      year: 1980
+      player_count: 4
+  - model.world-defender:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'World Defender – ss – 4p'
+      year: 1985
+      player_count: 4
+  - model.ascot:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Ascot (em)
+      year: 1976
+  - model.casino-5:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Casino' (testa piccola)
+      year: 1985
+  - model.dogs-race:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: 'Dog''s Race – em – 1p'
+      year: 1976
+  - model.jack-rabbit-3:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: 'Jack Rabbit – ss (''testa piccola'')'
+      year: 1976
+  - model.sure-shot-5:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
+        quote: Sure Shot
+      year: 1976
+  - model.timothy-t-2:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/cea'
+        quote: 'Timothyt T. – em – 1p'
+      year: 1977
+  - model.basket:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        quote: Basket (Bazaar)
+      year: 1970
+  - model.hippye-2:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        quote: Hippye (Top Hand)(grafica di Cortez)
+      year: 1970
+  - model.jolly-2:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        quote: Jolly (Hurdy Gurdy)
+      year: 1970
+  - model.spider:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        quote: Spider (Hurdy Gurdy)
+      year: 1970
+  - model.sea-devil:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elbos'
+        quote: 'Sea Devil – ss – 4p'
+      year: 1982
+  - model.calcio-italia-1st-series:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
+        quote: 'Calcio Italia (prima serie con lanciabiglia manuale) – em – 2p'
+      year: 1965
+  - model.night-club-2:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
+        quote: 'Night Club – em – 1p'
+      year: 1970
+  - model.giunone:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
+        quote: 'Giunone (Poseidon) – em – 1p'
+      player_count: 1
+  - model.rocky-girl:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
+        quote: 'Rocky Girl (Rock Star) – em – 1p'
+      year: 1979
+      player_count: 1
+  - model.space-woman:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
+        quote: 'Space Woman (GL ?) – ss – 4p – with "mixage record" feature'
+      year: 1981
+  - model.ice-mania:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
+        quote: 'Ice Mania – SS – 4p'
+      player_count: 4
+  - model.movie-masters:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
+        quote: 'Movie Master – SS – 4p'
+      year: 1978
+  - model.sky-warrior:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
+        quote: 'Sky Warrior – SS – 4p'
+      player_count: 4
+  - model.tiger-woman:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
+        quote: 'Tiger Woman – SS – 4p'
+      player_count: 4
+  - model.big-dryvers:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+        quote: 'Big Dryvers (Space Orbit) – em – 1p'
+      year: 1979
+      player_count: 1
+  - model.cleopatra-play-pool:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+        quote: 'Cleopatra (Play Pool) – em – 1p'
+      year: 1979
+      player_count: 1
+  - model.lovers:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+        quote: 'Lovers (Sky Divers) – em – 1p'
+      year: 1979
+      player_count: 1
+  - model.sisters:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+        quote: 'Sisters (Royal Pair) – em – 1p'
+      year: 1979
+      player_count: 1
+  - model.take-a-card:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+        quote: 'Take a card (Texas Ranger) – em – 1p'
+      year: 1979
+      player_count: 1
+  - model.dakar:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
+        quote: Dakar
+      year: 1988
+  - model.fast-track-2:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
+        quote: 'Fast Track (low cost version of "Motor Show" for export to USA: b/w monitor, no videogames)'
+      year: 1990
+  - model.motor-show:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
+        quote: Motor Show
+      year: 1989
+  - model.foot-baller:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/nordamatic'
+        quote: Foot Baller
+      year: 1975
+  - model.corsair:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/playmec'
+        quote: Corsair
+      year: 1976
+  - model.caravan-gold:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ripepi'
+        quote: Caravan Gold
+      year: 1976
+  - model.time-out:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ripepi'
+        quote: Time Out
+      year: 1975
+  - model.scramble:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/tecnoplay'
+        quote: 'Scramble – ss – 4p'
+      year: 1987
+      player_count: 4
+  - model.x-force:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/tecnoplay'
+        quote: 'X Force – ss – 6p'
+      year: 1987
+      player_count: 6
+  - model.cine-star:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Cine Star – 1p – em'
+      year: 1974
+  - model.farfalla:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Farfalla – ss – 4p – 09/83'
+      year: 1983
+      player_count: 4
+  - model.granada-2:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Granada(?) – 1p – em'
+      year: 1973
+  - model.house-of-diamonds:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'House of Diamonds – 4p – ss – 07/78'
+      year: 1978
+      month: 7
+      player_count: 4
+  - model.pinball-champ:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Pinball Champ – ss – 4p'
+      year: 1983
+      player_count: 4
+  - model.pinball-champ-82:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Pinball Champ ''82 – ss – 4p – 04/82'
+      year: 1982
+      month: 4
+      player_count: 4
+  - model.space-shuttle:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Space Shuttle – ss – 4p – 09/80'
+      year: 1980
+      player_count: 4
+  - model.time-machine-zaccaria:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Time Machine – ss – 4p – 04/83'
+      year: 1983
+      player_count: 4
+  - model.top-hand-5:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Top Hand – 1p – em'
+      year: 1973
+  - model.tropical:
+      note: 'tilt.it marks the year uncertain ("(?)").'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Tropical – 1p – em'
+      year: 1973
+  - model.winter-sports:
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Winter Sports – 4p – ss – 01/78'
+      year: 1978
+      month: 1
+      player_count: 4
