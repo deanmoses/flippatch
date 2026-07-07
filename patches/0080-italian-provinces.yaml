@@ -1,0 +1,17 @@
+attribution: flipcommons-catalog
+# A location parent must exist in an earlier patch, so the cities follow in
+# the next patch.
+description: Create the Turin and Padua provinces for the Italian maker cities.
+claims:
+  - location.italy/to:
+      create: true
+      name: Turin
+      slug: to
+      parent: italy
+      location_type: province
+  - location.italy/pd:
+      create: true
+      name: Padua
+      slug: pd
+      parent: italy
+      location_type: province

@@ -1,0 +1,23 @@
+attribution: flipcommons-catalog
+description: >
+  Emmepi: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.jungle-life-emmepi:
+      create: true
+      note: 'Title for Jungle Life, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/emmepi'
+        quote: Jungle Life (copy of same Gottlieb's game)
+      name: Jungle Life
+  - model.jungle-life-emmepi:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Tilt: ''copy of same Gottlieb''s game'' - copy of Gottlieb''s 1972 ''Jungle Life'' (ipdb 1337). Maker: Emmepi (catalog CE emmepi; precedent: Emmepi''s Card King copy, catalog card-king-3 / ipdb 6423)..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/emmepi'
+        quote: Jungle Life (copy of same Gottlieb's game)
+      name: Jungle Life
+      title: jungle-life-emmepi
+      corporate_entity: emmepi
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball

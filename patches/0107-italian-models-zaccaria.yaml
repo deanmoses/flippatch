@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  Zaccaria: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.jungle-life-zaccaria:
+      create: true
+      note: 'Title for Jungle Life, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Jungle Life – 1p – em'
+      name: Jungle Life
+  - model.jungle-life-zaccaria:
+      create: true
+      note: 'tilt.it marks the 1973 year uncertain ("(?)"); lineage per the source line: Copy of Gottlieb''s 1972 ''Jungle Life'' (ipdb 1337), from Zaccaria''s pre-brand era of modifying/copying US games. Maker: Zaccaria, Calderara di Reno (catalog CE zaccaria)..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
+        quote: 'Jungle Life – 1p – em'
+      name: Jungle Life
+      title: jungle-life-zaccaria
+      corporate_entity: zaccaria
+      year: 1973
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball

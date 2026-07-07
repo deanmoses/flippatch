@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  Bell Coin Matics: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.sinbad-bell-coin-matics:
+      create: true
+      note: 'Title for Sinbad, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Sinbad (co-production Europlay/Bell Games) – ss – 4p'
+      name: Sinbad
+  - model.sinbad-bell-coin-matics:
+      create: true
+      note: 'lineage per the source line: 4-player solid-state co-production by Europlay and Bell Games; copy of Gottlieb''s 1978 ''Sinbad'' (ipdb 2159); sibling of Europlay''s 1-player EM ''Sinbad Adventures'' (catalog sinbad-adventures, ipdb 3252)..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+        quote: 'Sinbad (co-production Europlay/Bell Games) – ss – 4p'
+      name: Sinbad
+      title: sinbad-bell-coin-matics
+      corporate_entity: bell-coin-matics
+      year: 1979
+      technology_generation: solid-state
+      player_count: 4
+      game_format: pinball

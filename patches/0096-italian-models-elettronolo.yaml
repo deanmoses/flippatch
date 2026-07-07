@@ -1,0 +1,25 @@
+attribution: flipcommons-catalog
+description: >
+  Elettrocoin: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.carnival-elettrocoin:
+      create: true
+      note: 'Title for Carnival, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
+        quote: 'Carnival – em – 1p (Subway)'
+      name: Carnival
+  - model.carnival-elettrocoin:
+      create: true
+      note: 'lineage per the source line: Per tilt parenthetical, based on Gottlieb''s 1966 ''Subway'' (ipdb 2412; an Italian-market ''Subway (Italy)'' also exists as ipdb 4777). Likely a conversion in line with the firm''s other output (Derby=kit for Bally Gold Rush, Mexico=kit for Bally Rocket III, etc.). Maker: Elettrocoin (catalog CE elettrocoin).; sold as a conversion kit.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
+        quote: 'Carnival – em – 1p (Subway)'
+      name: Carnival
+      title: carnival-elettrocoin
+      corporate_entity: elettrocoin
+      year: 1970
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+      tag: [conversion-kit]

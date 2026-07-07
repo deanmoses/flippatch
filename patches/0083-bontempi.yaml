@@ -1,0 +1,41 @@
+attribution: flipcommons-catalog
+description: >
+  Bontempi: maker, corporate entity and machines, per tilt.it (IPDB.it).
+claims:
+  - manufacturer.bontempi:
+      create: true
+      note: 'The tilt.it Italian Pinball Database credits Bontempi of Rome with one pinball machine; corroborating sources were sought at authoring time and none found.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bontempi'
+        quote: Bontempi
+      name: Bontempi
+  - corporate-entity.bontempi:
+      create: true
+      note: 'Corporate entity of Bontempi, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bontempi'
+        quote: Bontempi
+      name: Bontempi
+      manufacturer: bontempi
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bontempi'
+            quote: '(Roma, Italy)'
+          location: [italy/rm/rome]
+  - title.action-bontempi:
+      create: true
+      note: 'Title for Action, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bontempi'
+        quote: 'Action (copy of game from Chicago Coin''s ?)'
+      name: Action
+  - model.action-bontempi:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: Copy of an unidentified Chicago Coin game - tilt.it''s own hedge: ''copy of game from Chicago Coin''s ?''. Plausibly Chicago Coin''s ''Action'' (1969, ipdb 15) given the identical name, but tilt.it does not commit and the parenthetical here is a note, not an American-original title..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bontempi'
+        quote: 'Action (copy of game from Chicago Coin''s ?)'
+      name: Action
+      title: action-bontempi
+      corporate_entity: bontempi
+      game_format: pinball

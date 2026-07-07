@@ -1,0 +1,62 @@
+attribution: flipcommons-catalog
+description: >
+  Pasini: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.old-time:
+      create: true
+      note: 'Title for Old Time, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pasini'
+        quote: Old Time
+      name: Old Time
+  - title.count-down-pasini:
+      create: true
+      note: 'Title for Count Down, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pasini'
+        quote: Count Down
+      name: Count Down
+  - title.bonnie-clide:
+      create: true
+      note: 'Title for Bonnie & Clide, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pasini'
+        quote: Bonnie & Clide
+      name: Bonnie & Clide
+  - model.old-time:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Part of Pasini''s ''Old ...'' series (Old Bend, Old Gold, Old Time). Per tilt page comments these Bologna machines were hand-built from recovered parts of old American models (''flipper non originali, cioe'' creati con parti di recupero da vecchi modelli americani... costruito praticamente a mano''). Maker: Pasini (catalog CE pasini)..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pasini'
+        quote: Old Time
+      name: Old Time
+      title: old-time
+      corporate_entity: pasini
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+  - model.count-down-pasini:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Unknown original; shares its name with Novamatic''s 1970 ''Count Down'' (ipdb 4118, catalog count-down-2) and LORI''s Count-Down - relationship unresolved. Maker: Pasini..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pasini'
+        quote: Count Down
+      name: Count Down
+      title: count-down-pasini
+      corporate_entity: pasini
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+  - model.bonnie-clide:
+      create: true
+      note: 'lineage per the source line: Bonnie & Clyde film theme; no American original of this name found in IPDB. Maker: Pasini, hand-built from recovered American parts per tilt page comments..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pasini'
+        quote: Bonnie & Clide
+      name: Bonnie & Clide
+      title: bonnie-clide
+      corporate_entity: pasini
+      year: 1970
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball

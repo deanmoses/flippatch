@@ -1,0 +1,80 @@
+attribution: flipcommons-catalog
+description: >
+  LORI: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.jungle-life-lori:
+      create: true
+      note: 'Title for Jungle Life, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: Jungle Life
+      name: Jungle Life
+  - title.count-down-lori:
+      create: true
+      note: 'Title for Count-Down, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: Count-Down
+      name: Count-Down
+  - title.ko-lori:
+      create: true
+      note: 'Title for KO, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: KO
+      name: KO
+  - title.space-orbit-lori:
+      create: true
+      note: 'Title for Space Orbit, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: Space Orbit
+      name: Space Orbit
+  - model.jungle-life-lori:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Copy of Gottlieb''s 1972 ''Jungle Life'' (ipdb 1337), fitting LORI''s documented pattern of Gottlieb copies. Maker: LORI (catalog CE lori)..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: Jungle Life
+      name: Jungle Life
+      title: jungle-life-lori
+      corporate_entity: lori
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+  - model.count-down-lori:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Unknown original; shares its name with Novamatic''s 1970 ''Count Down'' (ipdb 4118, catalog count-down-2) and with a Count Down on the Pasini page - relationship between the Italian Count Downs unresolved. Maker: LORI..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: Count-Down
+      name: Count-Down
+      title: count-down-lori
+      corporate_entity: lori
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+  - model.ko-lori:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Unknown; tilt gives only the name. Possibly related to a Knockout-family original (cf. Bensa''s 1974 ''KnoKOut'', ipdb 5270), unverified. Maker: LORI..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: KO
+      name: KO
+      title: ko-lori
+      corporate_entity: lori
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+  - model.space-orbit-lori:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Copy of Gottlieb''s 1972 ''Space Orbit'' (ipdb 2255). Catalog precedent for per-maker copies of this title: space-orbit-2 (Skillgame d.b.a. RMG, 4783) and space-orbit-3 (RMG, 5458). Maker: LORI..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/lori'
+        quote: Space Orbit
+      name: Space Orbit
+      title: space-orbit-lori
+      corporate_entity: lori
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball

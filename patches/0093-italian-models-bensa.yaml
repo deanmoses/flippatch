@@ -1,0 +1,61 @@
+attribution: flipcommons-catalog
+description: >
+  Bensa s.a.s.: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.surf:
+      create: true
+      note: 'Title for Surf, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
+        quote: Surf (1 player -em)
+      name: Surf
+  - title.jack-in-the-box:
+      create: true
+      note: 'Title for Jack in the box, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
+        quote: Jack in the box
+      name: Jack in the box
+  - model.surf:
+      create: true
+      note: 'tilt.it gives no year.'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
+          quote: Surf (1 player -em)
+        - ref: 'https://pinside.com/pinball/forum/topic/bensa-italian-pinball'
+          quote: Seems like in Italy in the 70s a few different companies started to copy a few of the name brand pinballs. Nearly an exact copy except all the Italy ones were 1 player not two our four player.
+      name: Surf
+      title: surf
+      corporate_entity: bensa-sas
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+  - model.surf-bensa-sas:
+      create: true
+      note: 'tilt.it gives no year.'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
+          quote: Surf (1 player -ss)
+        - ref: 'https://pinside.com/pinball/forum/topic/bensa-italian-pinball'
+          quote: Seems like in Italy in the 70s a few different companies started to copy a few of the name brand pinballs. Nearly an exact copy except all the Italy ones were 1 player not two our four player.
+      name: Surf
+      title: surf
+      corporate_entity: bensa-sas
+      technology_generation: solid-state
+      player_count: 1
+      game_format: pinball
+  - model.jack-in-the-box-bensa-sas:
+      create: true
+      note: 'lineage per the source line: Copy of D. Gottlieb & Company''s 1973 ''Jack In The Box'' (ipdb 1277; catalog jack-in-the-box) - presumed from the name and Bensa''s copy-of-contemporary-Gottlieb pattern; the tilt page gives no parenthetical.'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
+          quote: Jack in the box
+        - ref: 'https://pinside.com/pinball/forum/topic/bensa-italian-pinball'
+          quote: 'That "Jack in the Box" looks very interesting, with the on the playfield drop down and lay flat targets ( kinda like InterFlip''s Dragon) .'
+      name: Jack in the box
+      title: jack-in-the-box
+      corporate_entity: bensa-sas
+      year: 1975
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball

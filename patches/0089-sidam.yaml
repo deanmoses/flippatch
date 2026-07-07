@@ -1,0 +1,52 @@
+attribution: flipcommons-catalog
+description: >
+  Sidam: maker, corporate entity and machines, per tilt.it (IPDB.it).
+claims:
+  - manufacturer.sidam:
+      create: true
+      note: 'Turin coin-op maker, best known for video games; tilt.it lists its one pinball-style machine. Renamed SIPEM late in its arcade era, kept as an alias (one corporate entity until a source separates them).'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/sidam'
+        quote: SIDAM/SIPEM
+      name: Sidam
+      manufacturer_alias: [SIPEM]
+  - corporate-entity.sidam:
+      create: true
+      note: 'Corporate entity of Sidam, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/sidam'
+        quote: SIDAM/SIPEM
+      name: SIDAM
+      manufacturer: sidam
+      corporate_entity_alias: [SIPEM]
+      changesets:
+        - cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/sidam'
+            quote: '(Torino, Italy)'
+          location: [italy/to/turin]
+  - title.rugby-sidam:
+      create: true
+      note: 'Title for Rugby, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/sidam'
+        quote: Rugby (video-pinball)
+      name: Rugby
+  - model.rugby-sidam:
+      create: true
+      note: 'lineage per the source line: Unauthorized copy of Atari''s ''Video Pinball'' (1979) with a rugby retheme - tilt.it/deb: ''Rugby | 1979 | Copy of Video Pinball (Atari)''; RetroCampus: ''Rugby | 1979 | Da Video Pinball (Atari)''.'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/sidam'
+          quote: Rugby (video-pinball)
+        - ref: 'https://www.arcade-museum.com/Videogame/rugby'
+          quote: A video pinball game. Rugby was produced by Sidam in 1976.
+        - ref: 'https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino/'
+          quote: 'Rugby | 1979 | Da Video Pinball (Atari)'
+        - ref: 'https://www.tilt.it/deb/sidam-en.html'
+          quote: 'Compared to Atari Video Pinball, ambientation changes completely, and then the background on which was reflected the image of the monitor. At the time, American football was almost unknown in Italy, and was identified as "a sort of Rugby football", hence probably the name.'
+      name: Rugby
+      title: rugby-sidam
+      corporate_entity: sidam
+      year: 1979
+      technology_generation: solid-state
+      player_count: 2
+      game_format: video-game

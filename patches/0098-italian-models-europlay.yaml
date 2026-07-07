@@ -1,0 +1,41 @@
+attribution: flipcommons-catalog
+description: >
+  Europlay: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.big-dryvers:
+      create: true
+      note: 'Title for Big Dryvers, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/europlay'
+        quote: 'Big Dryvers – em – 4p'
+      name: Big Dryvers
+  - model.big-dryvers-europlay:
+      create: true
+      note: 'lineage per the source line: Europlay 4-player game; EM sibling of the SS version listed on the same line-pair (seed convention: em/ss versions are separate models). Name shared with Mondialmatic''s 1979 Space Orbit conversion kit (catalog big-dryvers), relationship unknown..'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/europlay'
+          quote: 'Big Dryvers – em – 4p'
+        - ref: 'https://pinside.com/pinball/machine/big-dryver'
+          quote: 'Big Dryvers is a pinball machine from 1979, manufactured by Europlay.'
+      name: Big Dryvers
+      title: big-dryvers
+      corporate_entity: europlay
+      year: 1974
+      technology_generation: electromechanical
+      player_count: 4
+      game_format: pinball
+  - model.big-dryvers-europlay-2:
+      create: true
+      note: 'lineage per the source line: Europlay 4-player game; SS sibling of the EM version listed immediately above it on the page (both lines verified in the page HTML)..'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/europlay'
+          quote: 'Big Dryvers – ss – 4p'
+        - ref: 'https://pinside.com/pinball/machine/big-dryver'
+          quote: 'Big Dryvers is a pinball machine from 1979, manufactured by Europlay.'
+      name: Big Dryvers
+      title: big-dryvers
+      corporate_entity: europlay
+      year: 1974
+      technology_generation: solid-state
+      player_count: 4
+      game_format: pinball

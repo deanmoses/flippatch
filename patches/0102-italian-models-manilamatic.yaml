@@ -1,0 +1,42 @@
+attribution: flipcommons-catalog
+description: >
+  ManilaMatic: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.joker-manilamatic:
+      create: true
+      note: 'Title for Joker, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
+      name: Joker
+  - title.pool-rabbit:
+      create: true
+      note: 'Title for Pool Rabbit, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        quote: Pool Rabbit
+      name: Pool Rabbit
+  - model.joker-manilamatic:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Copy of Premier Technology (Gottlieb) 1987 ''Monte Carlo'' (ipdb 1622; catalog monte-carlo-gottlieb) - per the page: ''copia del Gottlieb''s "Monte Carlo"''. The 1987 SS Monte Carlo, not Bally''s 1973 EM, is the right original given ManilaMatic''s mid-80s Gottlieb-copy pattern..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
+      name: Joker
+      title: joker-manilamatic
+      corporate_entity: mm-computer-games
+      technology_generation: solid-state
+      game_format: pinball
+  - model.pool-rabbit:
+      create: true
+      note: 'tilt.it gives no year.'
+      cite:
+        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+          quote: Pool Rabbit
+        - ref: 'https://www.vpforums.org/index.php?showtopic=46118'
+          quote: 'The game is called "Pool Rabbit" by "MM Computer Games." Other forum members chimed in saying it was made by an Italian company called ManilaMatic in 1985, and the playfield is possibly a flipped "Eight Ball" layout.'
+      name: Pool Rabbit
+      title: pool-rabbit
+      corporate_entity: mm-computer-games
+      technology_generation: solid-state
+      game_format: pinball

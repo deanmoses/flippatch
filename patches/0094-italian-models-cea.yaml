@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  C.E.A.: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.fly-man:
+      create: true
+      note: 'Title for Fly Man, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/cea'
+        quote: 'Fly Man – ss – 1p'
+      name: Fly Man
+  - model.fly-man:
+      create: true
+      note: 'lineage per the source line: Original C.E.A. solid-state title; no American original named on the page. Maker: Costruzioni Elettroniche Automatiche (C.E.A.), Bologna..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/cea'
+        quote: 'Fly Man – ss – 1p'
+      name: Fly Man
+      title: fly-man
+      corporate_entity: costruzioni-elettroniche-automatiche
+      year: 1978
+      technology_generation: solid-state
+      player_count: 1
+      game_format: pinball

@@ -1,0 +1,23 @@
+attribution: flipcommons-catalog
+# Piacenza's province is already in the catalog; Turin and Piove di Sacco sit
+# in the provinces the previous patch created.
+description: Create the maker home cities Piacenza, Turin and Piove di Sacco.
+claims:
+  - location.italy/pc/piacenza:
+      create: true
+      name: Piacenza
+      slug: piacenza
+      parent: italy/pc
+      location_type: city
+  - location.italy/to/turin:
+      create: true
+      name: Turin
+      slug: turin
+      parent: italy/to
+      location_type: city
+  - location.italy/pd/piove-di-sacco:
+      create: true
+      name: Piove di Sacco
+      slug: piove-di-sacco
+      parent: italy/pd
+      location_type: city

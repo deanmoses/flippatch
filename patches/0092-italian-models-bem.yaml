@@ -1,0 +1,104 @@
+attribution: flipcommons-catalog
+description: >
+  BEM: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.black-gold-bem:
+      create: true
+      note: 'Title for Black Gold, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: 'Black Gold (versione "Arabic Power" testa piccola)'
+      name: Black Gold
+  - title.urania:
+      create: true
+      note: 'Title for Urania, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Urania (testa piccola)
+      name: Urania
+  - title.aliens-women:
+      create: true
+      note: 'Title for Aliens & Women, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Aliens & Women (testa piccola)
+      name: Aliens & Women
+  - title.papillon-bem:
+      create: true
+      note: 'Title for Papillon, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Papillon
+      name: Papillon
+  - title.black-jack-bem:
+      create: true
+      note: 'Title for Black Jack, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: 'Black Jack – ss (''testa piccola'')'
+      name: Black Jack
+  - model.black-gold-bem:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: Small-head (''testa piccola'') version of BEM''s own ''Arabic Power'' (tilt: ''versione "Arabic Power" testa piccola''); Arabic Power itself is per IPDB 5636 a conversion kit of an unknown Gottlieb game..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: 'Black Gold (versione "Arabic Power" testa piccola)'
+      name: Black Gold
+      title: black-gold-bem
+      corporate_entity: bigliardini-elettronici-milano
+      game_format: pinball
+  - model.urania:
+      create: true
+      note: 'no technology is stated.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Urania (testa piccola)
+      name: Urania
+      title: urania
+      corporate_entity: bigliardini-elettronici-milano
+      year: 1980
+      game_format: pinball
+  - model.aliens-women:
+      create: true
+      note: 'no technology is stated.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Aliens & Women (testa piccola)
+      name: Aliens & Women
+      title: aliens-women
+      corporate_entity: bigliardini-elettronici-milano
+      year: 1980
+      game_format: pinball
+  - model.papillon-bem:
+      create: true
+      note: 'no technology is stated.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Papillon
+      name: Papillon
+      title: papillon-bem
+      corporate_entity: bigliardini-elettronici-milano
+      year: 1985
+      game_format: pinball
+  - model.black-jack-bem:
+      create: true
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: 'Black Jack – ss (''testa piccola'')'
+      name: Black Jack
+      title: black-jack-bem
+      corporate_entity: bigliardini-elettronici-milano
+      year: 1976
+      technology_generation: solid-state
+      game_format: pinball
+  - model.urania-bem:
+      create: true
+      note: 'no technology is stated.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        quote: Urania
+      name: Urania
+      title: urania
+      corporate_entity: bigliardini-elettronici-milano
+      year: 1976
+      game_format: pinball

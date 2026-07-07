@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  Mambelli: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.gorgar-mambelli:
+      create: true
+      note: 'Title for Gorgar, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mambelli'
+        quote: Gorgar (kit for Jungle Life)
+      name: Gorgar
+  - model.gorgar-mambelli:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Conversion kit for (Gottlieb''s 1972) ''Jungle Life'', with art after Williams'' 1979 ''Gorgar'' (ipdb 1062). Exactly the L & V Mambelli pattern IPDB documents for its two known machines: Buck Rogers 4999 (''a conversion kit for Gottlieb''s 1975 Tiger'' with Gottlieb Buck Rogers art) and KISS 5002 (''a conversion of Gottlieb''s 1972 Space Orbit'' with Bally KISS-style art) - tilt''s same page lists ''Kiss (kit for Space Orbit)''. Maker: L & V Mambelli, Cesena (catalog CE l-v-mambelli).; sold as a conversion kit.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mambelli'
+        quote: Gorgar (kit for Jungle Life)
+      name: Gorgar
+      title: gorgar-mambelli
+      corporate_entity: l-v-mambelli
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball
+      tag: [conversion-kit]

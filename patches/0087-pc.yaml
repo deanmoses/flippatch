@@ -1,0 +1,25 @@
+attribution: flipcommons-catalog
+description: >
+  P.C.: maker, corporate entity and machines, per tilt.it (IPDB.it).
+claims:
+  - manufacturer.pc:
+      create: true
+      note: 'The tilt.it Italian Pinball Database credits P.C. (city unknown - tilt.it prints "(??)") with the machine Marte; the maker''s mark appears on the machine''s own instruction card.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pc'
+        quote: P.C.
+      name: P.C.
+  - corporate-entity.pc:
+      create: true
+      note: 'Corporate entity of P.C., per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pc'
+        quote: P.C.
+      name: P.C.
+      manufacturer: pc
+  - model.marte:
+      note: 'flipcommons previously held this with no maker (IPDB lists the manufacturer as unknown); tilt.it identifies the maker, whose mark the machine itself carries.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/pc'
+        quote: 'Marte ("Electra Pool")'
+      corporate_entity: pc

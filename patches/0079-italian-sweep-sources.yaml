@@ -1,0 +1,39 @@
+attribution: flipcommons-catalog
+# Website roots the Italian sweep cites. tilt.it hosts the Italian Pinball
+# Database (IPDB.it) under /flipper_pinball/ipdb/ — one page per Italian
+# manufacturer; like the eremeka catalog for early-Japanese games, it is
+# original research, effectively primary for obscure Italian-made machines.
+# dallapria.it is the Dalla Pria firm's own site — first-party evidence for
+# that maker.
+description: Seed the TILT.IT, Dalla Pria, RetroCampus and Zaccaria-Pinball web roots.
+sources:
+  - name: TILT.IT
+    source_type: web
+    description: >
+      Italian pinball site, home of IPDB.it — the Italian Pinball Database,
+      the reference archive of Italian-made pinball machines, online since
+      1995.
+    links:
+      - { url: "https://www.tilt.it/", label: TILT.IT, link_type: homepage }
+  - name: Dalla Pria
+    source_type: web
+    description: >
+      Corporate site of the Dalla Pria group of Piove di Sacco, Italy —
+      amusement-machine producer and distributor, in the game sector since
+      1958.
+    links:
+      - { url: "https://www.dallapria.it/", label: Dalla Pria, link_type: homepage }
+  - name: RetroCampus
+    source_type: web
+    description: >
+      Italian retrocomputing and videogame-history magazine; documents the
+      Italian coin-op industry.
+    links:
+      - { url: "https://retrocampus.com/", label: RetroCampus, link_type: homepage }
+  - name: Zaccaria Pinball (fan archive)
+    source_type: web
+    description: >
+      Fan-maintained archive dedicated to Zaccaria and the Bologna pinball
+      industry: company history, machine lists and restoration documentation.
+    links:
+      - { url: "https://www.zaccaria-pinball.com/", label: Zaccaria Pinball, link_type: homepage }

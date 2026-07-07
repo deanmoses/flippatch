@@ -1,0 +1,22 @@
+attribution: flipcommons-catalog
+description: >
+  Model Racing: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.satellite-tv:
+      create: true
+      note: 'Title for Satellite TV, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/model-racing'
+        quote: Satellite TV (UFO re-run)
+      name: Satellite TV
+  - model.satellite-tv:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: Re-run/re-release of Model Racing''s own ''UFO'' video flipper (catalog ufo, model-racing, ipdb 5314) - confirmed: catalog holds UFO under model-racing. Maker: Model Racing, Montemarciano (Ancona)..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/model-racing'
+        quote: Satellite TV (UFO re-run)
+      name: Satellite TV
+      title: satellite-tv
+      corporate_entity: model-racing
+      technology_generation: solid-state
+      game_format: pinball

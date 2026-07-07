@@ -1,0 +1,186 @@
+attribution: flipcommons-catalog
+description: >
+  Italian conversion kits whose makers tilt.it cannot identify (maker-less).
+claims:
+  - title.hit-and-run-kit:
+      create: true
+      note: 'Title for Hit and Run, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Hit and Run
+      name: Hit and Run
+  - title.pool-kit:
+      create: true
+      note: 'Title for POOL, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: 'POOL ("Cue-T", Williams)'
+      name: POOL
+  - title.pokerrr:
+      create: true
+      note: 'Title for POKERRR!!!, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: 'POKERRR!!!'
+      name: 'POKERRR!!!'
+  - title.baseball-kit:
+      create: true
+      note: 'Title for Baseball, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Baseball
+      name: Baseball
+  - title.aquarium:
+      create: true
+      note: 'Title for Aquarium, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Aquarium
+      name: Aquarium
+  - title.fifteen-goals:
+      create: true
+      note: 'Title for Fifteen Goals, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Fifteen Goals
+      name: Fifteen Goals
+  - title.card-trix-kit:
+      create: true
+      note: 'Title for Card Trix, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Card Trix
+      name: Card Trix
+  - title.happening:
+      create: true
+      note: 'Title for Happening, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Happening (ver.1)
+      name: Happening
+  - title.full-kit:
+      create: true
+      note: 'Title for Full, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Full
+      name: Full
+  - title.dig-a-star-kit:
+      create: true
+      note: 'Title for Dig a Star, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Dig a Star
+      name: Dig a Star
+  - title.jolly-roger-kit:
+      create: true
+      note: 'Title for Jolly Roger, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Jolly Roger
+      name: Jolly Roger
+  - model.hit-and-run-kit:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated on page; note existing unrelated games Williams ''Hit and Run Base-Ball'' (ipdb 1193, 1970) and H & M ''Hit and Run'' (ipdb 3992, 1933).'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Hit and Run
+      name: Hit and Run
+      title: hit-and-run-kit
+      game_format: pinball
+  - model.pool-kit:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: renamed backglass for Williams ''Cue-T'' (ipdb 611, Williams Electronics, 1968); tilt.it says it is more a redone glass than a full kit; sold as a conversion kit.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: 'POOL ("Cue-T", Williams)'
+      name: POOL
+      title: pool-kit
+      game_format: pinball
+      tag: [conversion-kit]
+  - model.pokerrr:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: 'POKERRR!!!'
+      name: 'POKERRR!!!'
+      title: pokerrr
+      game_format: pinball
+      tag: [conversion-kit]
+  - model.baseball-kit:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Baseball
+      name: Baseball
+      title: baseball-kit
+      game_format: pinball
+  - model.aquarium:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: inspired by Gottlieb ''Aquarius'' (ipdb 79, 1970).'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Aquarium
+      name: Aquarium
+      title: aquarium
+      game_format: pinball
+  - model.fifteen-goals:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Fifteen Goals
+      name: Fifteen Goals
+      title: fifteen-goals
+      game_format: pinball
+  - model.card-trix-kit:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: based on Gottlieb ''Card Trix'' (ipdb 446, 1970); explicitly NOT the RMG version and not the Gottlieb Italian export (ipdb 3748, catalog card-trix-2).'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Card Trix
+      name: Card Trix
+      title: card-trix-kit
+      technology_generation: electromechanical
+      game_format: pinball
+  - model.happening:
+      create: true
+      note: 'no technology is stated; lineage per the source line: donor not stated; art by ''Mike'' (his first work per tilt.it); sold as a conversion kit.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Happening (ver.1)
+      name: Happening
+      title: happening
+      year: 1970
+      game_format: pinball
+      tag: [conversion-kit]
+  - model.full-kit:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; art by ''Mike'', possibly same (unidentified) producer as ''Happening''.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Full
+      name: Full
+      title: full-kit
+      game_format: pinball
+  - model.dig-a-star-kit:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; tilt.it floats Dama and Cortez as guesses.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Dig a Star
+      name: Dig a Star
+      title: dig-a-star-kit
+      game_format: pinball
+  - model.jolly-roger-kit:
+      create: true
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
+        quote: Jolly Roger
+      name: Jolly Roger
+      title: jolly-roger-kit
+      game_format: pinball
+      tag: [conversion-kit]

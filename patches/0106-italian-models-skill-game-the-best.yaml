@@ -1,0 +1,23 @@
+attribution: flipcommons-catalog
+description: >
+  R.M.G.: additional machines from tilt.it (IPDB.it).
+claims:
+  - title.the-best-card-king:
+      create: true
+      note: 'Title for The Best Card King, per the tilt.it Italian Pinball Database.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/skill-game-the-best'
+        quote: The Best Card King
+      name: The Best Card King
+  - model.the-best-card-king:
+      create: true
+      note: 'tilt.it gives no year; lineage per the source line: ''The Best''-branded version of Card King - a copy of Gottlieb''s 1971 ''Card King'' (ipdb 445). Sibling catalog copies exist: RMG''s card-king-2 (ipdb 5214) and Emmepi''s card-king-3 (6423). Per IPDB 6836''s Notes, Italian backglass printers added ''The Best'' to glasses sold directly to operators, bypassing the manufacturer. Maker: Skillgame d.b.a. Renato Montanari Giochi (catalog CE skillgame-dba-renato-montanari-giochi), matching the catalog''s other the-best-* entries..'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/skill-game-the-best'
+        quote: The Best Card King
+      name: The Best Card King
+      title: the-best-card-king
+      corporate_entity: skillgame-dba-renato-montanari-giochi
+      technology_generation: electromechanical
+      player_count: 1
+      game_format: pinball

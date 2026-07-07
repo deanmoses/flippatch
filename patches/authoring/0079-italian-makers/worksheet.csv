@@ -1,0 +1,366 @@
+page,name,name_uncertain,parens,year,year_uncertain,tech,players,prod,notes,raw_line,disposition,catalog_slug,catalog_conf,catalog_maker,catalog_year,ipdb_id,ipdb_conf,ipdb_maker,opdb_id,review
+ad,Frogmen,,,,,,,,,Frogmen,new-maker,frogmen,low,dama-srl,1970,4399,med,"Dama S.R.L., of Milan, Italy (1970)",,yes
+ad,Spiders,,,,,,,,,Spiders,new-maker,,,,,,,,,
+ad,World Star,,,,,,,,,World Star,new-maker,world-star,low,dama-srl,1970,4405,med,"Dama S.R.L., of Milan, Italy (1970)",,yes
+ami,Derby,,,1974,range:1974-75,em,1,,(presentato Enada ottobre 1974),Derby – em – 1p (presentato Enada ottobre 1974),exists,derby-2,high,ami-spa,1975,3701,high,"AMI s.p.a., of Italy (1975-1977)",G43O1-MJ51E,
+ami,Hot Race,,,1974,range:1974-75,em,4,,,Hot Race – em – 4p,exists,hot-race,high,ami-spa,1975,4377,high,"AMI s.p.a., of Italy (1975-1977)",GRVby-MJpdx,
+ami,Hard Race,,,1974,range:1974-75,em,1,,,Hard Race – em – 1p,exists,hard-race,high,ami-spa,1976,6580,high,"AMI s.p.a., of Italy (1975-1977)",,
+ami,West Show,,,1976,,em,1,,,West Show – em – 1p,exists,west-show,high,ami-spa,1976,3737,high,"AMI s.p.a., of Italy (1975-1977)",GRbwx-MwNV3,
+ami,Big Hunt,,,1976,,em,1,,,Big Hunt – em – 1p,exists,big-hunt,high,ami-spa,1976,3692,high,"AMI s.p.a., of Italy (1975-1977)",GrJPo-MDXVN,
+ami,The Shark,,,1976,,em,1,,,The Shark – em – 1p,exists,the-shark,high,ami-spa,1976,4060,high,"AMI s.p.a., of Italy (1975-1977)",GxvZB-MrRze,
+ami,Navajo,,,1976,,em,4,,,Navajo – em – 4p,exists,navajo,high,ami-spa,1976,3716,high,"AMI s.p.a., of Italy (1975-1977)",GrJPo-MD3kn,
+ami,Sprint Girl,,,1976,,em,1,,,Sprint Girl – em – 1p,exists,sprint-girl,high,ami-spa,1976,4378,high,"AMI s.p.a., of Italy (1975-1977)",,
+ami,Big Hunt,,,1976,,,,,,Big Hunt,exists,big-hunt,high,ami-spa,1976,3692,high,"AMI s.p.a., of Italy (1975-1977)",GrJPo-MDXVN,
+ami,Derby,,,1976,,,,,,Derby,exists,derby-2,high,ami-spa,1975,3701,high,"AMI s.p.a., of Italy (1975-1977)",G43O1-MJ51E,
+ami,Hard Race,,,1976,,,,,,Hard Race,exists,hard-race,high,ami-spa,1976,6580,high,"AMI s.p.a., of Italy (1975-1977)",,
+ami,Navajo,,,1976,,,,,,Navajo,exists,navajo,high,ami-spa,1976,3716,high,"AMI s.p.a., of Italy (1975-1977)",GrJPo-MD3kn,
+ami,Sprint Girl,,collezione Giorgio Anselmi,1976,,,,,,Sprint Girl(collezione Giorgio Anselmi),exists,sprint-girl,high,ami-spa,1976,4378,high,"AMI s.p.a., of Italy (1975-1977)",,
+ami,The Shark,,,1976,,,,,,The Shark,exists,the-shark,high,ami-spa,1976,4060,high,"AMI s.p.a., of Italy (1975-1977)",GxvZB-MrRze,
+apple-time,Thunder Man,,,1987,,,,,,Thunder Man,exists,thunder-man,high,apple-time,1987,4666,high,"Apple Time, of Italy",GRoyw-M4ojr,
+apple-time,Thunderman,,,1987,,,,,,Thunderman,new-model-existing-maker,,,,,,,,,
+artigiana-ricambi,Sandokan,,modifica Card Trix | tiratura prevista: 10 pezzi,1976,,,,,,Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi),new-model-existing-maker,,,,,,,,,
+artigiana-ricambi,Bowlingirl,,,1976,,,,,,Bowlingirl,exists,bowlingirl,high,ditta-artigiana-ricambi,,3978,high,Ditta Artigiana Ricambi,,
+artigiana-ricambi,Stunt Cars,,modifica Card King,1976,range:1976-77,,,,,Stunt Cars (modifica Card King),new-model-existing-maker,,,,,,,,,
+bell-games,The King,,,1978,,ss,4,,,The King – ss – 4p,exists,king,high,bell-coin-matics,,3625,high,"Bell Coin Matics, of Bologna, Italy (1978-1980)",,
+bell-games,Sinbad,,co-production Europlay/Bell Games,1979,,ss,4,,,Sinbad (co-production Europlay/Bell Games) – ss – 4p,new-model-existing-maker,sinbad-3,low,electromatic-brasil,1978,2159,low,"D. Gottlieb & Company, a Columbia Pictures Industries Company (1977-1983)[Trade Name: Gottlieb]",G4xqN-MD1Rj,yes
+bell-games,Sexy Girl,,,1979,,ss,4,,(co-production Arkon/Ranco/Bell Games),Sexy Girl – ss – 4p (co-production Arkon/Ranco/Bell Games),new-model-existing-maker,sexy-girl,low,arkon-automaten-gmbh,,2106,low,"Arkon Automaten, GmbH, of Frankfurt, Germany (1980-1982)",GrkOB-MD00x,yes
+bell-games,The Hunter,,,1980,,ss,4,,,The Hunter – ss – 4p,exists,the-hunter,high,bell-coin-matics,,3733,high,"Bell Coin Matics, of Bologna, Italy (1978-1980)",G4Od9-MDlpK,
+bell-games,White Shark,,,1980,,ss,4,,,White Shark – ss – 4p,exists,white-shark,high,bell-coin-matics,,3555,high,"Bell Coin Matics, of Bologna, Italy (1978-1980)",G509D-M9RzK,
+bell-games,Cosmodrome,,,1980,,ss,4,,,Cosmodrome – ss – 4p,exists,cosmodrome,high,bell-coin-matics,,3696,high,"Bell Coin Matics, of Bologna, Italy (1978-1980)",G509D-MnKVN,
+bell-games,Frontier,,,1981,,ss,4,,,Frontier – ss – 4p,exists,frontier-2,high,bell-games,1981,3706,high,"Bell Games, of Bologna, Italy (1980-1985)",GRwjq-MQ29Y,
+bell-games,Fireball II,,,1981,,ss,4,,,Fireball II – ss – 4p,exists,fireball-ii-2,high,bell-games,1981,3704,high,"Bell Games, of Bologna, Italy (1980-1985)",Gry7q-MLyvr,
+bell-games,Flash Gordon,,,1981,,ss,4,,,Flash Gordon – ss – 4p,exists,flash-gordon-2,high,bell-games,1981,3705,high,"Bell Games, of Bologna, Italy (1980-1985)",G5728-MDbjD,
+bell-games,Fantasy,,Centaur,1982,,ss,4,,,Fantasy (Centaur) – ss – 4p,exists,fantasy,high,bell-games,,3091,high,"Bell Games, of Bologna, Italy (1980-1985)",GrX7q-MJop6,
+bell-games,Magic Picture Pin,,co-production Arkon/Ranco/Bell Games,1982,,ss,4,,,Magic Picture Pin (co-production Arkon/Ranco/Bell Games) – ss – 4p,exists,magic-picture-pin-2,high,bell-games,1982,3891,high,"Bell Games, of Bologna, Italy (1980-1985)",GRD2P-MQknK,
+bell-games,Pin Ball,,Pinball Champ ’82,1983,,ss,4,,,Pin Ball (Pinball Champ ’82) – ss – 4p,new-model-existing-maker,pin-ball-2,low,joctronic-juegos-electronicos-sa,1987,3805,low,"Recel S. A., of Madrid, Spain (1974-1986)",,yes
+bell-games,Pinball Pool,,Eight Ball De Luxe,1983,,ss,4,,,Pinball Pool (Eight Ball De Luxe) – ss – 4p,new-model-existing-maker,pinball-pool,low,d-gottlieb-company-a-columbia-pictures-industries-company,1979,1795,low,"D. Gottlieb & Company, a Columbia Pictures Industries Company (1977-1983)[Trade Name: Gottlieb]",G4kdB-MLqe3,yes
+bell-games,Cosmic Flash,,,1984,,ss,4,,,Cosmic Flash – ss – 4p,exists,cosmic-flash-2,high,bell-games,1984,3695,high,"Bell Games, of Bologna, Italy (1980-1985)",G5pxD-MBRWW,
+bell-games,Super Bowl,,X’s & O’s,1984,,ss,4,,,Super Bowl (X’s & O’s) – ss – 4p,exists,super-bowl,high,bell-games,,3399,high,"Bell Games, of Bologna, Italy (1980-1985)",GRpWD-MQork,
+bell-games,Tiger Rag,,King of Steel,1984,,ss,4,,,Tiger Rag (King of Steel) – ss – 4p,exists,tiger-rag,high,bell-games,,3501,high,"Bell Games, of Bologna, Italy (1980-1985)",GR67j-MLqwr,
+bell-games,New Wave,,Black Pyramid,1985,,ss,4,,,New Wave (Black Pyramid) – ss – 4p,exists,new-wave,high,bell-games,,3482,high,"Bell Games, of Bologna, Italy (1980-1985)",GRB8Z-MQKXV,
+bell-games,Saturn II,,Spy Hunter,1985,,ss,4,,,Saturn II (Spy Hunter) – ss – 4p,new-model-existing-maker,,,,,,,,,
+bell-games,World Defender,,,1985,,ss,4,,,World Defender – ss – 4p,exists,world-defender,high,nuova-bell-games,,3519,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",GR9NQ-MRjop,
+bell-games,Space Hawks,,Cybernaut,1986,,ss,4,,,Space Hawks (Cybernaut) – ss – 4p,exists,space-hawks,high,nuova-bell-games,,3621,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",GR69j-MdEEB,
+bell-games,Dark Shadow,,,1986,,ss,4,,,Dark Shadow – ss – 4p,exists,dark-shadow,high,nuova-bell-games,1986,3699,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",G4eQ2-MJNO7,
+bell-games,Skill Flight,,,1986,,ss,4,,,Skill Flight – ss – 4p,exists,skill-flight,high,nuova-bell-games,1986,3230,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",GRb7q-MDEn7,
+bell-games,Cobra,,,1987,,ss,4,,,Cobra – ss – 4p,exists,cobra,high,nuova-bell-games,1987,3026,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",G50zO-MJ97Z,
+bell-games,Future Queen,,,1987,,ss,4,,,Future Queen – ss – 4p,exists,future-queen,high,nuova-bell-games,1987,3114,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",GRpBV-MrRbE,
+bell-games,F1 Grand Prix,,,1987,,ss,4,,,F1 Grand Prix – ss – 4p,exists,f1-grand-prix,high,nuova-bell-games,1987,3623,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",G4Oye-MQPw8,
+bell-games,Top Pin,,Pinbot,1988,,ss,4,,,Top Pin (Pinbot) – ss – 4p,exists,top-pin,high,nuova-bell-games,1988,3471,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",,
+bell-games,U-Boat 65,,,1988,,ss,4,,,U-Boat 65 – ss – 4p,exists,u-boat-65,high,nuova-bell-games,1988,3736,high,"Nuova Bell Games, of Bologna, Italy (1985-1988)",GRD67-Mo1Ol,
+bem,(anno preciso di costruzione sconosciuto),,,,,,,,,(anno preciso di costruzione sconosciuto),new-model-existing-maker,,,,,,,,,
+bem,Jackpot,,identico a quello costruito dalla Playmec?,,,em,,,,Jackpot (em) (identico a quello costruito dalla Playmec?),exists,jackpot-2,high,bigliardini-elettronici-milano,1976,4991,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",GR987-MJPEX,
+bem,Arabic Power,,,,,em,,,,Arabic Power (em),new-model-existing-maker,arabic-power,low,,,5636,low,Unknown Manufacturer,,yes
+bem,Black Gold,,versione “Arabic Power” testa piccola,,,,,,,Black Gold (versione “Arabic Power” testa piccola),new-model-existing-maker,black-gold-2,low,williams-electronics-incorporated,1975,305,low,"Genco Manufacturing Company, of Chicago, Illinois, USA (1931-1958)",G4qy6-MLvvd,yes
+bem,Casino’,,testa piccola,,,,,,,Casino’ (testa piccola),exists,casino-5,high,bigliardini-elettronici-milano,,6710,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",G4xOz-MDnlX,
+bem,Crocket,,,,,em,,,,Crocket (em),new-model-existing-maker,crocket,low,giorgio-massiero,1976,4105,med,"Giorgio Massiero, of Milan, Italy (1976)",GR00k-MLxN2,yes
+bem,Dog’s Race,,,,,em,,,,Dog’s Race (em),exists,dogs-race,high,bigliardini-elettronici-milano,,5632,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",,
+bem,Ascot,,,1976,,em,,,,Ascot (em),new-model-existing-maker,ascot,low,,,5965,low,Unknown Manufacturer,,yes
+bem,Travel Agency,,,1976,,em,,,,Travel Agency (em),new-model-existing-maker,travel-agency,low,giorgio-massiero,1976,4106,med,"Giorgio Massiero, of Milan, Italy (1976)",,yes
+bem,Sun’s Cruise,,versione “Travel Agency” testa piccola,1976,,,,,,Sun’s Cruise (versione “Travel Agency” testa piccola),exists,suns-cruise-2,high,bigliardini-elettronici-milano,1978,5671,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",,
+bem,Urania,,testa piccola,1980,,,,,,Urania (testa piccola),new-model-existing-maker,,,,,,,,,
+bem,Aliens & Women,,testa piccola,1980,,,,,,Aliens & Women (testa piccola),new-model-existing-maker,,,,,,,,,
+bem,Aliens & Women,,testa normale,1980,,,,,,Aliens & Women (testa normale),new-model-existing-maker,,,,,,,,,
+bem,Papillon,,,1985,,,,,,Papillon,new-model-existing-maker,papillon-2,low,video-dens-sa,1986,3934,low,"Jeutel, of France (1981-1986)",GRQEO-MLyPy,yes
+bem,Casino’,,testa piccola,1985,,,,,,Casino’ (testa piccola),exists,casino-5,high,bigliardini-elettronici-milano,,6710,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",G4xOz-MDnlX,
+bem,Aliens & Women,,testa normale,1985,,,,,,Aliens & Women (testa normale),new-model-existing-maker,,,,,,,,,
+bem,Arabic Power,,,1985,,,,,,Arabic Power,new-model-existing-maker,arabic-power,low,,,5636,low,Unknown Manufacturer,,yes
+bem,“Arabic Power” versione ‘testa normale’,,,1985,,,,,,“Arabic Power” versione ‘testa normale’,new-model-existing-maker,,,,,,,,,
+bem,???,,year unknown – identified as manufactured by BEM thanks to Thierry Delisle,1985,,,,,,??? (year unknown – identified as manufactured by BEM thanks to Thierry Delisle),new-model-existing-maker,,,,,,,,,
+bem,Ascot,,,1985,,,,,"(cavallini, anzi, cani, in movimento sotto al piano di gioco, come nel “Winner” Williams)",Ascot,new-model-existing-maker,ascot,low,,,5965,low,Unknown Manufacturer,,yes
+bem,Crocket,,,1976,,em,1,,,Crocket – em – 1p,new-model-existing-maker,crocket,low,giorgio-massiero,1976,4105,med,"Giorgio Massiero, of Milan, Italy (1976)",GR00k-MLxN2,yes
+bem,Jackpot,,,1976,,em,1,,,Jackpot – em – 1p,exists,jackpot-2,high,bigliardini-elettronici-milano,1976,4991,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",GR987-MJPEX,
+bem,Black Jack,,,1976,,ss,,,(‘testa piccola’),Black Jack – ss (‘testa piccola’),new-model-existing-maker,black-jack-2,low,bally-manufacturing-corporation,1977,308,low,Williams Electronic Manufacturing Corporation (1958-1967) [Trade Name: Williams],G5nbD-MDyXb,yes
+bem,Travel Agency,,,1976,,em,1,,,Travel Agency – em – 1p,new-model-existing-maker,travel-agency,low,giorgio-massiero,1976,4106,med,"Giorgio Massiero, of Milan, Italy (1976)",,yes
+bem,Sun’s Cruise,,,1976,,ss,1,,(‘testa piccola’) | (stesso piano del “Travel Agency”),Sun’s Cruise – ss (‘testa piccola’) – 1p,exists,suns-cruise-2,high,bigliardini-elettronici-milano,1978,5671,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",,
+bem,Jack Rabbit,,,1976,,ss,,,(‘testa piccola’),Jack Rabbit – ss (‘testa piccola’),exists,jack-rabbit-3,high,bigliardini-elettronici-milano,,5670,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",,
+bem,Dog’s Race,,,1976,,em,1,,"(running dogs in the headbox, similar to Williams’ “Derby Day”)",Dog’s Race – em – 1p,exists,dogs-race,high,bigliardini-elettronici-milano,,5632,high,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",,
+bem,Urania,,,1976,,,,,,Urania,new-model-existing-maker,,,,,,,,,
+bensa,???,,year unknown – identified as manufactured by Bensa thanks to Thierry Delisle,,,,,,,??? (year unknown – identified as manufactured by Bensa thanks to Thierry Delisle),new-model-existing-maker,,,,,,,,,
+bensa,Surf,,,,,em,1,,,Surf (1 player -em),new-model-existing-maker,,,,,,,,,
+bensa,Surf,,,,,ss,1,,,Surf (1 player -ss),new-model-existing-maker,,,,,,,,,
+bensa,Space Time,,,1973,,,,,,Space Time,exists,space-time-2,high,bensa-sas,1973,4062,high,"Bensa s.a.s., of Milan, Italy (1973-1974)",GRvE1-MQ2P6,
+bensa,Wild Boy,,,1973,,,,,,Wild Boy,exists,wild-boy,high,bensa-sas,1974,4063,high,"Bensa s.a.s., of Milan, Italy (1973-1974)",,
+bensa,Big Brave,,"grafica della testata ispirata dal Gottlieb, ma piano totalmente diverso",1974,,em,1,,,"Big Brave (grafica della testata ispirata dal Gottlieb, ma piano totalmente diverso) – em – 1p",exists,big-brave-2,high,bensa-sas,1974,4061,high,"Bensa s.a.s., of Milan, Italy (1973-1974)",GrXKb-MQ4OY,
+bensa,Knokout,,,1974,,,,,,Knokout,exists,knokout,high,bensa-sas,1974,5270,high,"Bensa s.a.s., of Milan, Italy (1973-1974)",,
+bensa,Jack in the box,,,1975,,,,,,Jack in the box,new-model-existing-maker,jack-in-the-box,low,d-gottlieb-company,1973,1277,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],Gr2JJ-MnKlB,yes
+bensa,Sure Shot,,,1976,,,,,,Sure Shot,new-model-existing-maker,sure-shot-2,low,d-gottlieb-company,1976,2457,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],GrqL6-Mx07k,yes
+bontempi,Action,,copy of game from Chicago Coin’s ?,,,,,,,Action (copy of game from Chicago Coin’s ?),new-maker,action-2,low,exhibit-supply-company,1943,15,low,Chicago Coin Machine Manufacturing Company (1932-1977),GrJQv-M2Yjq,yes
+cea,Lucky Shot,,,1976,,ss,1,,(Enada V),Lucky Shot – ss – 1p (Enada V),exists,lucky-shot,high,costruzioni-elettroniche-automatiche,1978,3714,high,"Costruzioni Elettroniche Automatiche, of Bologna, Italy (1977-1979) [Trade Name: C.E.A.]",Gr2oD-MZell,
+cea,Timothyt T.,,,1977,,em,1,,,Timothyt T. – em – 1p,new-model-existing-maker,,,,,,,,,
+cea,Alpha 2001,,,1977,,ss,1,,,Alpha 2001 – ss – 1p,exists,alpha-2001,high,costruzioni-elettroniche-automatiche,1977,3688,high,"Costruzioni Elettroniche Automatiche, of Bologna, Italy (1977-1979) [Trade Name: C.E.A.]",GRLdW-MDOz8,
+cea,Timothyt,,,1977,,ss,4,,,Timothyt – ss – 4p,exists,timothy-t,high,costruzioni-elettroniche-automatiche,1977,,,,GRBv3-MJ9xx,
+cea,Fly Man,,,1978,,ss,1,,,Fly Man – ss – 1p,new-model-existing-maker,,,,,,,,,
+cea,Satellite,,,1978,,ss,4,,,Satellite – ss – 4p,exists,satellite-2,high,costruzioni-elettroniche-automatiche,1978,3722,high,"Costruzioni Elettroniche Automatiche, of Bologna, Italy (1977-1979) [Trade Name: C.E.A.]",Grqwp-MQ626,
+cea,Super Tris,,,1979,,ss,1,,,Super Tris – ss – 1p,exists,super-tris,high,costruzioni-elettroniche-automatiche,1979,3731,high,"Costruzioni Elettroniche Automatiche, of Bologna, Italy (1977-1979) [Trade Name: C.E.A.]",GRLpx-MJwxe,
+cea,Three Aces,,,1979,,ss,4,,,Three Aces – ss – 4p,exists,three-aces,high,costruzioni-elettroniche-automatiche,1979,3734,high,"Costruzioni Elettroniche Automatiche, of Bologna, Italy (1977-1979) [Trade Name: C.E.A.]",,
+ceff,Five Martians,,,,,,,,"*esistono almeno due versioni di questo flipper; una con le ruote dei punti, l’altra per i flipper a milioni (vedi depliant)",Five Martians,new-maker,,,,,,,,,
+ceff,Joker Ball,,,,,,,,"*non e’ chiaro se e’ il nome di un secondo modello, o solo il nome di una caratteristica di gioco del “Five Martians”",Joker Ball,new-maker,joker-ball,low,midway-manufacturing-company,,5561,low,"Midway Manufacturing Company, of Chicago, Illinois, USA (1959-1978) [Trade Name: Midway]",,yes
+centralmatic-lombarda,ZEUS,,,1979,,,,,"una copia, almeno nella grafica, dell’elettronico Williams “Flash”, strutturata per essere installata in un mobile Gottlieb’s, funzionante elettromeccanicamente (a parte i punteggi ed i suoni, tutti prodotti dalla scheda nella testata)",ZEUS (1979),exists,zeus,high,centralmatic-lombarda,1979,6674,high,"Centralmatic Lombarda, of Milano, Italy",,
+dalla-pria-abm,Stellar Airship,,,,,,,,(art by Mike)(kit for em Gottliebs),Stellar Airship,new-maker,stellar-airship,low,geiger-automatenbau-gmbh,,4016,low,"Geiger-Automatenbau GmbH, of Germany (1978-1992)",GrN7J-MQj62,yes
+dama,Grand Slam,,Ice Show,,,,,,,Grand Slam (Ice Show),new-model-existing-maker,grand-slam-10,low,,,1074,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G4PL3-MLeBP,yes
+dama,Golf,,grafica di Cortez,1970,yes,,,,,Golf (grafica di Cortez),new-model-existing-maker,golf-2,low,fabrica-de-aparatos-electro-mecanicos-recreativos-sl-ofmadrid,,6169,low,"Sport matic, S.A., of Barcelona, Spain",,yes
+dama,Mexico 70,,grafica di Cortez,1970,yes,,,,,Mexico 70 (grafica di Cortez),new-model-existing-maker,,,,,,,,,
+dama,Angels,,Rancho,1970,yes,,,,,Angels (Rancho),exists,angels,high,dama-srl,1970,4396,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Basket,,Bazaar,1970,yes,,,,,Basket (Bazaar),exists,basket,high,dama-srl,,5852,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Bookmaker’s,,Lunar Shot,1970,yes,,,,,Bookmaker’s (Lunar Shot),exists,bookmakers,high,dama-srl,1970,4397,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Devil’s,,Rocket III,1970,yes,,,,,Devil’s (Rocket III),exists,devils,high,dama-srl,1970,4398,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Frogmen,,Bazaar,1970,yes,,,,,Frogmen (Bazaar),exists,frogmen,high,dama-srl,1970,4399,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Gold Beach,,,1970,yes,,,,,Gold Beach,new-model-existing-maker,,,,,,,,,
+dama,Hippies,,Top Hand,1970,yes,,,,,Hippies (Top Hand),new-model-existing-maker,,,,,,,,,
+dama,Hippye,,Top Hand | grafica di Cortez,1970,yes,,,,,Hippye (Top Hand)(grafica di Cortez),exists,hippye-2,high,dama-srl,,4818,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Hippie,,Bally “Capersville” | grafica di Cortez,1970,yes,,,,,Hippie (Bally “Capersville”) (grafica di Cortez),new-model-existing-maker,,,,,,,,,
+dama,Basket,,Bazaar,1970,yes,,,,,Basket (Bazaar),exists,basket,high,dama-srl,,5852,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Book Makers,,,1970,yes,,,,,Book Makers,new-model-existing-maker,,,,,,,,,
+dama,Flipper,,,1970,yes,,,,,Flipper,new-model-existing-maker,flipper-2,low,smith-manufacturing-company,1932,891,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],GrNXw-MLOYP,yes
+dama,O.K. Corral,,,1970,yes,,,,,O.K. Corral,new-model-existing-maker,,,,,,,,,
+dama,Novelty,,,1970,yes,,,,,Novelty,new-model-existing-maker,,,,,,,,,
+dama,Player,,,1970,yes,,,,,Player,new-model-existing-maker,,,,,,,,,
+dama,Ponies,,,1970,yes,,,,,Ponies,new-model-existing-maker,ponies,low,western-equipment-supply-company,1936,1845,low,"Western Equipment & Supply Company, of Chicago, Illinois, USA (1934-1938)",,yes
+dama,World Star,,,1970,yes,,,,,World Star,exists,world-star,high,dama-srl,1970,4405,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Las Vegas,,Solitaire,1970,yes,,,,,Las Vegas (Solitaire),exists,las-vegas-3,high,dama-srl,1970,4068,high,"Dama S.R.L., of Milan, Italy (1970)",G4Jzo-MQ7jl,
+dama,Mondial Bank,,Harmony,1970,yes,,,,,Mondial Bank (Harmony),exists,mondial-bank,high,dama-srl,1970,4069,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,New City,,Big Strike,1970,yes,,,,,New City (Big Strike),exists,new-city,high,dama-srl,1970,4401,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Play Time,,Ice Show,1970,yes,,,,,Play Time (Ice Show),exists,play-time-2,high,dama-srl,1970,4402,high,"Dama S.R.L., of Milan, Italy (1970)",G5Koz-M61e0,
+dama,Rally,,Elite Guard,1970,yes,,,,,Rally (Elite Guard),exists,rally,high,dama-srl,1970,4067,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Road,,Electra Pool,1970,yes,,,,,Road (Electra Pool),exists,road,high,dama-srl,1970,4403,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Spider,,Hurdy Gurdy,1970,yes,,,,,Spider (Hurdy Gurdy),exists,spider,high,dama-srl,,4404,high,"Dama S.R.L., of Milan, Italy (1970)",GRpYQ-MkPd9,
+dama,Western,,Subway,1970,yes,,,,,Western (Subway),exists,western-2,high,dama-srl,1970,4066,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,World Star,,Magic Town,1970,yes,,,,,World Star (Magic Town),exists,world-star,high,dama-srl,1970,4405,high,"Dama S.R.L., of Milan, Italy (1970)",,
+dama,Jolly,,Hurdy Gurdy,1970,yes,,,,,Jolly (Hurdy Gurdy),exists,jolly-2,high,dama-srl,,6837,high,"Dama S.R.L., of Milan, Italy (1970)",,
+eagle,Lucky Card,,,,,,,,"una copia del Gottlieb’s “Lucky Card”, strutturata per essere installata in mobili Williams",Lucky Card,exists,lucky-card-2,high,eagle,,5657,high,"Eagle, of Italy",GrPpb-MLEk7,
+egs,New York Defence,,vid-pinball,1981,,,,,,New York Defence (vid-pinball),exists,new-york-defence,high,electronic-games-systems-srl,1981,3920,high,"Electronic Games Systems S.R.L., of Fano, Italy(1981) [Trade Name: E. G. S.]",,
+elbos,Sea Devil,,,1982,,ss,4,,,Sea Devil – ss – 4p,exists,sea-devil,high,elbos-electronics,,6386,high,"Elbos Electronics, of Italy",,
+elbos,Genesis,,,1982,,ss,4,,,Genesis – ss – 4p,exists,genesis-2,high,elbos-electronics,1982,5179,high,"Elbos Electronics, of Italy",Gr2wz-MLBob,
+elettronolo,Calcio Italia,,prima serie con lanciabiglia manuale,1965,,em,2,,,Calcio Italia (prima serie con lanciabiglia manuale) – em – 2p,new-model-existing-maker,,,,,,,,,
+elettronolo,Calcio Italia,,seconda serie con testatina,1966,,em,2,,(same cabinet graphics as rare Bally’s “Boot-a-Ball”),Calcio Italia (seconda serie con testatina) – em – 2p,new-model-existing-maker,,,,,,,,,
+elettronolo,Casino’,,,1966,,,,,,Casino’,exists,casino-3,high,elettrocoin,1965,3964,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",G4xOz-MDnlX,
+elettronolo,Derby,,kit for Bally’s Gold Rush,1970,,,,,,Derby (kit for Bally’s Gold Rush),exists,derby-3,high,elettrocoin,1970,4075,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",G43O1-MJ51E,
+elettronolo,Selen Cup,,head to head | date: 7-6-1969,1969,,,,,,Selen Cup (head to head) (date: 7-6-1969),exists,selen-cup,high,elettrocoin,1969,3977,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Good Year,,kit for Williams’ Lunar Shot,1969,,,,,,Good Year (kit for Williams’ Lunar Shot),exists,good-year,high,elettrocoin,1969,4071,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Macao,,,1968,,,,,,Macao,exists,macao,high,elettrocoin,1968,3966,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Rose & Can Can,,,1968,,,,,,Rose & Can Can,exists,rose-can-can,high,elettrocoin,1968,4073,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Mexico,,kit for Bally’s Rocket III,1970,,,,,,Mexico (kit for Bally’s Rocket III),exists,mexico-3,high,elettrocoin,1970,4074,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Scala Reale,,,1970,,,,,,Scala Reale,exists,scala-reale,high,elettrocoin,1970,4076,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Summer Time,,kit for Gottliebs’ Solitaire – Hit a card,1970,,,,,,Summer Time (kit for Gottliebs’ Solitaire – Hit a card),exists,summer-time-4,high,elettrocoin,1970,4072,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",GrJED-MLOwz,
+elettronolo,????,,,1970,,,,,,????,new-model-existing-maker,,,,,,,,,
+elettronolo,Night Club,,,1970,,em,1,,,Night Club – em – 1p,exists,night-club-2,high,elettrocoin,,5003,high,"Elettrocoin, of Firenze (Florence), Italy (1965-1970)",,
+elettronolo,Carnival,,,1970,,em,1,,(Subway),Carnival – em – 1p (Subway),new-model-existing-maker,carnival-2,low,sega-enterprises-ltd,1971,450,low,Bally Manufacturing Corporation (1931-1983) [Trade Name: Bally],GRBv9-MLXlL,yes
+emmepi,Card King,,copy of same Gottlieb’s game,,,,,,,Card King (copy of same Gottlieb’s game),exists,card-king-3,high,emmepi,,6423,high,Emmepi,GRL9Q-MJpKr,
+emmepi,Jungle Life,,copy of same Gottlieb’s game,,,,,,,Jungle Life (copy of same Gottlieb’s game),new-model-existing-maker,jungle-life-2,low,,,1337,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G5B0y-MZeOe,yes
+europlay,Sky Star,,,1974,,em,1,,(primo modello – presentato Fiera di Milano 73 o 74)(art: Mike),Sky Star – em – 1p (primo modello – presentato Fiera di Milano 73 o 74)(art: Mike),exists,sky-star,high,europlay,1974,5050,high,"Europlay, of Italy",G4xlK-MQkWr,
+europlay,Tic & Toc,,,1974,,em,1,,(oct. 1974 – scritte in italiano – presentato Enada III),Tic & Toc – em – 1p (oct. 1974 – scritte in italiano – presentato Enada III),exists,tic-toc,high,europlay,1974,4079,high,"Europlay, of Italy",GRWwO-Mz2B6,
+europlay,Big Dryvers,,,1974,,em,4,,,Big Dryvers – em – 4p,new-model-existing-maker,big-dryvers,low,mondialmatic,,4110,med,"Mondialmatic, of Florence, Italy (1979)",G43WO-MJYYV,yes
+europlay,Big Dryvers,,,1974,,ss,4,,,Big Dryvers – ss – 4p,new-model-existing-maker,big-dryvers,low,mondialmatic,,4110,med,"Mondialmatic, of Florence, Italy (1979)",G43WO-MJYYV,yes
+europlay,Tanga,,,1975,,em,1,,(scritte in italiano),Tanga – em – 1p (scritte in italiano),exists,tanga,high,europlay,1975,4080,high,"Europlay, of Italy",GryjX-MvBXe,
+europlay,El Dorado,,,1976,,em,1,,"(esiste con vetro marcato “Europlay”, ma anche con vetro marcato “RMG”)","El Dorado – em – 1p (esiste con vetro marcato “Europlay”, ma anche con vetro marcato “RMG”)",exists,el-dorado-3,high,europlay,1976,5216,high,"Europlay, of Italy",GrEZ5-MDWv8,
+europlay,Card Whiz,,,1976,,em,1,,,Card Whiz – em – 1p,exists,card-whiz-2,high,europlay,1976,4844,high,"Europlay, of Italy",GrEWx-MQPPX,
+europlay,Red Arrow,,,1978,,em,1,,(by “New Europlay)(art: Mike)(first with “Biri Biri” feature),Red Arrow – em – 1p,exists,red-arrow-3,high,europlay,1978,4078,high,"Europlay, of Italy",G5WPp-MDbNj,
+europlay,Royal King,,,1978,,em,1,,,Royal King – em – 1p,new-model-existing-maker,royal-king,low,renato-montanari-giochi,1976,4736,med,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",G4JND-MP3qK,yes
+europlay,Sky Fly,,,1978,,,,,,Sky Fly – F,exists,sky-fly,high,europlay,1978,5255,high,"Europlay, of Italy",G5Yqx-MKNjX,yes
+europlay,Sinbad,,,1979,,em,1,,"(by “New Europlay)(“SiMbad” on the flyer and cabinet, “SiNbad” on the backglass and schematics)",Sinbad – em – 1p,new-model-existing-maker,sinbad-3,low,electromatic-brasil,1978,2159,low,"D. Gottlieb & Company, a Columbia Pictures Industries Company (1977-1983)[Trade Name: Gottlieb]",G4xqN-MD1Rj,yes
+europlay,Dragon,,,1979,,em,1,,,Dragon – em – 1p,exists,dragon-6,high,europlay,1979,6298,high,"Europlay, of Italy",G4qPZ-ME0Nr,
+europlay,Dragon,,,1979,,,,,,Dragon,exists,dragon-6,high,europlay,1979,6298,high,"Europlay, of Italy",G4qPZ-ME0Nr,
+ferna,Steeple,yes,,1979,,,,,,Steeple (?),new-maker,,,,,,,,,
+g_braun,copia del Galaxie Gottlieb’s,,,,,,,,,copia del Galaxie Gottlieb’s,new-maker,,,,,,,,,
+gl,????,,,,,,,,,????,new-model-existing-maker,,,,,,,,,
+gl,Jolly Joker,,,,,,,,,Jolly Joker,new-model-existing-maker,jolly-joker-2,low,united-manufacturing-company,1955,4113,med,"Mondialmatic, of Florence, Italy (1979)",GrlEB-ML0Pz,yes
+gl,Golden Arrow,,,1978,,em,1,,,Golden Arrow – em – 1p,exists,golden-arrow-3,high,giuliano-lodola,1978,4082,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",G5WPp-MDBx9,
+gl,Giunone,,Poseidon,1978,,em,1,,,Giunone (Poseidon) – em – 1p,exists,giunone,high,giuliano-lodola,1978,5178,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",,
+gl,Rocky Girl,,Rock Star,1979,,em,1,,,Rocky Girl (Rock Star) – em – 1p,exists,rocky-girl,high,giuliano-lodola,,4084,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",GRbD8-M9Rqz,
+gl,Rocky Girl,,Rock Star,1979,,ss,1,,,Rocky Girl (Rock Star) – ss – 1p,exists,rocky-girl,high,giuliano-lodola,,4084,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",GRbD8-M9Rqz,
+gl,Basket World Trotter,,Harlem Globetrotters,1979,,ss,1,,,Basket World Trotter (Harlem Globetrotters) – ss – 1p,exists,basket-world-trotter,high,giuliano-lodola,1979,4083,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",,
+gl,Basket World Trotter,,Harlem Globetrotters,1979,,ss,4,,,Basket World Trotter (Harlem Globetrotters) – ss – 4p,exists,basket-world-trotter,high,giuliano-lodola,1979,4083,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",,
+gl,Black Hole,,Blackout,1980,,ss,4,,,Black Hole (Blackout) – ss – 4p,exists,black-hole-2,high,giuliano-lodola,1980,4087,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",GRwYo-MQ2RR,
+gl,Black Rider,,Black Knight,1980,,ss,4,,,Black Rider (Black Knight) – ss – 4p,exists,black-rider,high,giuliano-lodola,1981,4085,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",GrO7w-Mo1Zl,
+gl,Diablo,,,1980,,ss,4,,,Diablo – ss – 4p,new-model-existing-maker,,,,,,,,,
+gl,Zoser,,Pharaoh,1981,,ss,4,,,Zoser (Pharaoh) – ss – 4p,exists,zoser,high,giuliano-lodola,1981,4086,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",,
+gl,????,,,1981,,,,,,????,new-model-existing-maker,,,,,,,,,
+gl,Space Woman,,GL ?,1981,,ss,4,,with “mixage record” feature,Space Woman (GL ?) – ss – 4p – with “mixage record” feature,new-model-existing-maker,space-woman,low,,,5951,low,Unknown Manufacturer,,yes
+idi,Ice Mania,,,1978,,ss,4,,,Ice Mania – SS – 4p,exists,ice-mania,high,idi,,3911,high,"I.D.I., of Italy",G43DV-MBREl,
+idi,Movie Master,,,1978,,ss,4,,,Movie Master – SS – 4p,new-model-existing-maker,,,,,,,,,
+idi,Sky Warrior,,,1978,,ss,4,,,Sky Warrior – SS – 4p,exists,sky-warrior,high,idi,,3905,high,"I.D.I., of Italy",Gr3VN-MJ5qB,
+idi,Tiger Woman,,,1978,,ss,4,,,Tiger Woman – SS – 4p,exists,tiger-woman,high,idi,,3904,high,"I.D.I., of Italy",G4eEJ-M61q0,
+ipdb-flipper-kit-italiani-non-identificati,Time Out,,Bologna,,,,,,,Time Out (Bologna),new-maker,time-out-2,low,v-p-distributing-company,1944,4992,med,"Ripepi, of Messina, Italy",,yes
+ipdb-flipper-kit-italiani-non-identificati,Hot Bullet,,,,,,,,,Hot Bullet,new-maker,hot-bullet,low,,1970,6421,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Hit and Run,,,,,,,,,Hit and Run,new-maker,hit-and-run,low,h-m-manufacturing-company,1933,3992,low,"H & M Manufacturing Company, of Chicago, Illinois, USA (1932-1933)",,yes
+ipdb-flipper-kit-italiani-non-identificati,Stunt Cars,,,,,,,,,Stunt Cars,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,POOL,,"“Cue-T”, Williams",,,,,,,"POOL (“Cue-T”, Williams)",new-maker,pool,low,williams-electronics-games-incorporated-a-subsidiary-of-wms-industries-incorporated,,3717,low,"Williams Electronics Games, Incorporated, a subsidiary of WMS Ind., Incorporated (1985-1999) [Trade Name: Williams]",,yes
+ipdb-flipper-kit-italiani-non-identificati,"Piu’ che un kit, parrebbe un vetro rifatto con nome differente per un CUE-T Williams. Viene riportato il costruttore originale (Williams), il flipper e’ un CUE-T, ma cambia il nome. Forse costruito per zone in cui il CUE-T era finito in qualche lista di giochi proibiti?",,,,,,,,,"Piu’ che un kit, parrebbe un vetro rifatto con nome differente per un CUE-T Williams. Viene riportato il costruttore originale (Williams), il flipper e’ un CUE-T, ma cambia il nome. Forse costruito per zone in cui il CUE-T era finito in qualche lista di giochi proibiti?",new-maker,,,,,,,,,yes
+ipdb-flipper-kit-italiani-non-identificati,POKERRR!!!,,,,,,,,,POKERRR!!!,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Kit per Harmony/Troubadour,,,,,,,,,Kit per Harmony/Troubadour,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,KO,,,,,,,,"grafica by Lorenzo Rimondini, logo illeggibile ma volutamente simile a Gottlieb (in realta’ c’e’ scritto altro)",KO,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Baseball,,,,,,,,,Baseball,new-maker,baseball-10,low,bally-manufacturing-corporation,1936,184,low,"Stoner Manufacturing Company, of Aurora, Illinois, USA (1933-1941)",G4E2y-MJ5Pv,yes
+ipdb-flipper-kit-italiani-non-identificati,Arrow,,,,,,,,,Arrow,new-maker,arrow-2,low,allied-amusement-company,1935,6454,med,"Ripepi, of Messina, Italy",,yes
+ipdb-flipper-kit-italiani-non-identificati,AI-LO,,,,,,,,,AI-LO,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Thrills,,,,,,,,"(grafica di “De Angelis”, con firma sul piano di gioco, canale esterno desto; notare i due strani contatti di fianco all’outhole, montati sull’apron metallico, visibili in foto n.21, il cui utilizzo e’ sconosciuto)",Thrills,new-maker,thrills,low,,,5381,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Aquarium,,,,,,,,"looks like an italian kit inspired from the Gottlieb’s “Aquarius” – check the differencies (higher scoring, no credit window, score windows’ sizes reduced from behind, as if originally designed to fit old metal score wheels, etc)",Aquarium,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Lido,,,,,,,,(looks like a kit for a Gottlieb'”Subway” – maybe from Dama – art by Cortez?),Lido,new-maker,lido-2,low,,,1439,low,Bally Manufacturing Corporation (1931-1983) [Trade Name: Bally],,yes
+ipdb-flipper-kit-italiani-non-identificati,Neptune,,,,,,,,,Neptune,new-maker,neptune-2,low,giuliano-lodola,1979,5177,med,"Giuliano Lodola, of Avenza, Massa-Carrera, Toscana, Italy (1978-1981)",GRoWo-MDllp,yes
+ipdb-flipper-kit-italiani-non-identificati,El Viti,,,,,,,,(kit for Gottlieb’s Harmony/Troubadour),El Viti,new-maker,el-viti,low,,,5029,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Tex-Op,,,,,,,,(kit for Gottlieb’s Harmony/Troubadour),Tex-Op,new-maker,tex-op,low,,,5166,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Sky Devil’s,,,,,,,,,Sky Devil’s,new-maker,sky-devils,low,,,5160,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Fifteen Goals,,,,,,,,"(strange name for an italian game, too hard to remember for italian operators not speaking english – maybe, it’s not an italian kit?)",Fifteen Goals,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Card Trix,,,,,,,,"(this is not the RMG version, there are some little differences)",Card Trix,new-maker,card-trix-2,low,d-gottlieb-company,1970,446,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],GRWZN-MDv6X,yes
+ipdb-flipper-kit-italiani-non-identificati,Happening,,ver.1,,,,,,(1970 – first work by Mike),Happening (ver.1),new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Happening,,ver.2,,,,,,,Happening (ver.2),new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,Full,,,,,,,,(grafica di Mike – forse lo stesso produttore del modello “Happening”),Full,new-maker,full-2,low,recreativos-franco,1977,4375,low,"Interflip S. A., of Spain",Gj6Dj-MOE0d,yes
+ipdb-flipper-kit-italiani-non-identificati,Dig a Star,,,,,,,,(forse DAMA? forse grafica di Cortez?),Dig a Star,new-maker,dig-a-star,low,talleres-del-llobregat-sa-automaticos,1966,4422,low,"Talleres del Llobregat S.A. [Automaticos], of Barcelona, Spain [Trade Name: Automaticos]",,yes
+ipdb-flipper-kit-italiani-non-identificati,The Royal,,,,,,,,,The Royal,new-maker,the-royal,low,,,6422,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Jolly Roger,,,,,,,,(kit for the Gottlieb’s “Harmony”/”Troubadour”),Jolly Roger,new-maker,jolly-roger-2,low,creative-products,,1314,low,"Williams Electronics, Incorporated (1967-1985) [Trade Name: Williams]",G4djP-MLnz0,yes
+ipdb-flipper-kit-italiani-non-identificati,Grand Slam,,,,,,,,(forse kit RMG per Ice Show Gottlieb),Grand Slam,new-maker,grand-slam-10,low,,,1074,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G4PL3-MLeBP,yes
+ipdb-flipper-kit-italiani-non-identificati,Countdown,,,,,,,,,Countdown,new-maker,,,,,,,,,
+ipdb-flipper-kit-italiani-non-identificati,El Tigre,,,,,,,,(kit with ss scoring for em machines),El Tigre,new-maker,el-tigre,low,,1977,5297,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,The Circus Tiger,,,,,,,,,The Circus Tiger,new-maker,the-circus-tiger,low,,,5215,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,New City,,,,,,,,(kit from the early seventies for Williams’ games “Hot Line” and “Big Strike”. One of the most sexually evocating graphics of them all!)(art by Cortez?),New City,new-maker,new-city-2,low,procedimientos-electromagneticos-de-tanteo-y-color,1966,4401,med,"Dama S.R.L., of Milan, Italy (1970)",,yes
+ipdb-flipper-kit-italiani-non-identificati,"Vetro testata piu’ alto del precedente, probabilmente per flipper Williams dal vetro testata di misura differente",,,,,,,,,"Vetro testata piu’ alto del precedente, probabilmente per flipper Williams dal vetro testata di misura differente",new-maker,,,,,,,,,yes
+ipdb-flipper-kit-italiani-non-identificati,Mini Flipper,,,,,,,,"(from eBay.it – not a pinball backglass, but taken from some pinball videogame with score displays. Maybe from Spain.)",Mini Flipper,new-maker,mini-flipper,low,rumatic,,5368,low,"Rumatic, of Spain",,yes
+ipdb-flipper-kit-italiani-non-identificati,Cosmos,,,,,,,,(art by “Mr Maze”?),Cosmos,new-maker,cosmos-2,low,renov-automatic-jolux,1969,572,low,Bally Manufacturing Corporation (1931-1983) [Trade Name: Bally],G5p2Y-MDqKz,yes
+ipdb-flipper-kit-italiani-non-identificati,Bowling,,,,,,,,(kit for Gottlieb’s “Harmony”/”Troubadour”),Bowling,new-maker,bowling-2,low,fabrica-de-aparatos-electro-mecanicos-recreativos-sl-ofmadrid,,5380,low,Unknown Manufacturer,,yes
+ipdb-flipper-kit-italiani-non-identificati,Big Sakem,,,,,,,,,Big Sakem,new-maker,big-sakem,low,ripepi,1974,5622,med,"Ripepi, of Messina, Italy",,yes
+italiana-biliardi,Pin football,,,1976,,,,,,Pin football,new-maker,,,,,,,,,
+lori,Top Hand,,“Serigrafia Lori”,,,,,,,Top Hand (“Serigrafia Lori”),exists,top-hand-4,high,lori,,4990,high,"LORI, of Bologna, Italy",G4EeX-MLzRl,
+lori,Jungle Life,,,,,,,,,Jungle Life,new-model-existing-maker,jungle-life-2,low,,,1337,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G5B0y-MZeOe,yes
+lori,Count-Down,,,,,,,,,Count-Down,new-model-existing-maker,count-down-2,low,novamatic-spa,1970,4118,med,"Novamatic S.p.A., of Milan, Italy (1970)",G56zB-MLv9k,yes
+lori,KO,,,,,,,,,KO,new-model-existing-maker,,,,,,,,,
+lori,Space Orbit,,,,,,,,,Space Orbit,new-model-existing-maker,space-orbit-2,low,skillgame-dba-renato-montanari-giochi,1972,4783,med,"Skillgame d.b.a. Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",G43WO-M1rdV,yes
+lori,Play Pool,,,,,,,,,Play Pool,exists,play-pool-2,high,lori,,5030,high,"LORI, of Bologna, Italy",G5n1Q-MXrnx,
+mambelli,Buck Rogers,,,,,,,,,Buck Rogers,exists,buck-rogers,high,l-v-mambelli,,4999,high,"L & V Mambelli, of Cesena, Italy [Trade Name: Mambelli]",GRw8o-MDxjq,
+mambelli,Gorgar,,kit for Jungle Life,,,,,,,Gorgar (kit for Jungle Life),new-model-existing-maker,gorgar,low,williams-electronics-incorporated,1979,1062,low,"Williams Electronics, Incorporated (1967-1985) [Trade Name: Williams]",G5zd6-MJVo4,yes
+mambelli,Kiss,,kit for Space Orbit,,,,,,(immagini dalla collezione di Red Ronnie),Kiss (kit for Space Orbit),exists,kiss-2,high,l-v-mambelli,,5002,high,"L & V Mambelli, of Cesena, Italy [Trade Name: Mambelli]",G4jXr-MQ6kz,
+manilamatic,Lucky Man,,,1976,,,,,,Lucky Man,new-model-existing-maker,lucky-man,low,nordamatic,1976,3713,med,"Nordamatic, of Verona, Italy (1975-1979)",G5wLN-MJ2YO,yes
+manilamatic,???,,,1976,,,,,flipper elettronico presentato ultimo giorno Enada III | designer Tito Bresca,??? – flipper elettronico presentato ultimo giorno Enada III – designer Tito Bresca,new-model-existing-maker,,,,,,,,,
+manilamatic,Out Law,,copia del Gottlieb’s “Tag Team”,1976,,,,,,Out Law (copia del Gottlieb’s “Tag Team”),exists,out-law,high,mm-computer-games,1986,4425,high,"MM Computer Games, of Roma, Italy [Trade Name: ManilaMatic]",G41N8-MNEEk,
+manilamatic,Defender,,copia del Gottlieb’s “Arena”,1976,,,,,,Defender (copia del Gottlieb’s “Arena”),exists,defender,high,mm-computer-games,1987,4428,high,"MM Computer Games, of Roma, Italy [Trade Name: ManilaMatic]",G5p7D-MJNVo,
+manilamatic,Joker,,copia del Gottlieb’s “Monte Carlo”,1976,,,,,,Joker (copia del Gottlieb’s “Monte Carlo”),new-model-existing-maker,joker-2,low,playmatic,1974,1304,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G5vjP-M1rWj,yes
+manilamatic,Pool Rabbit,,,1976,,,,,,Pool Rabbit,new-model-existing-maker,,,,,,,,,
+manilamatic,Top Sound,,,1976,,,,,,Top Sound,exists,top-sound,high,mm-computer-games,1988,4431,high,"MM Computer Games, of Roma, Italy [Trade Name: ManilaMatic]",,
+md,Las Vegas,,,,,,,,,Las Vegas,new-model-existing-maker,las-vegas-2,low,mattel-electronics-company,1977,4068,med,"Dama S.R.L., of Milan, Italy (1970)",G4Jzo-MQ7jl,yes
+md,"A conversion kit for Gottlieb’s “Electra Pool”. It consisted of a new backglass, and a self-adhesive sheet to be applied on the original playfield.",,,,,,,,,"A conversion kit for Gottlieb’s “Electra Pool”. It consisted of a new backglass, and a self-adhesive sheet to be applied on the original playfield.",new-model-existing-maker,,,,,,,,,yes
+model-racing,UFO,,video flipper,,,,,,,UFO (video flipper),exists,ufo,high,model-racing,,5314,high,"Model Racing, of Montemarciano - Ancona, Italy",,
+model-racing,Satellite TV,,UFO re-run,,,,,,,Satellite TV (UFO re-run),new-model-existing-maker,,,,,,,,,
+mondial-matic,Sisters,,Royal Pair,1979,,em,1,,,Sisters (Royal Pair) – em – 1p,exists,sisters,high,mondialmatic,,4108,high,"Mondialmatic, of Florence, Italy (1979)",G5WPp-MLyZJ,
+mondial-matic,Take a card,,Texas Ranger,1979,,em,1,,,Take a card (Texas Ranger) – em – 1p,exists,take-a-card,high,mondialmatic,,4109,high,"Mondialmatic, of Florence, Italy (1979)",GrEXx-MJ5Yv,
+mondial-matic,Big Dryvers,,Space Orbit,1979,,em,1,,,Big Dryvers (Space Orbit) – em – 1p,exists,big-dryvers,high,mondialmatic,,4110,high,"Mondialmatic, of Florence, Italy (1979)",G43WO-MJYYV,
+mondial-matic,Cleopatra,,Play Pool,1979,,em,1,,,Cleopatra (Play Pool) – em – 1p,exists,cleopatra-play-pool,high,mondialmatic,,4111,high,"Mondialmatic, of Florence, Italy (1979)",G5n1Q-MQPRP,
+mondial-matic,Lovers,,Sky Divers,1979,,em,1,,,Lovers (Sky Divers) – em – 1p,exists,lovers,high,mondialmatic,,4112,high,"Mondialmatic, of Florence, Italy (1979)",G4xlK-MJp6z,
+mondial-matic,Jolly Joker,,,1979,,,,,,Jolly Joker,exists,jolly-joker-3,high,mondialmatic,1979,4113,high,"Mondialmatic, of Florence, Italy (1979)",GrlEB-ML0Pz,
+mondial-matic,The Best Jump,,,1979,,,,,,The Best Jump,exists,the-best-jump,high,mondialmatic,1979,4114,high,"Mondialmatic, of Florence, Italy (1979)",G5pnl-MDWyn,
+mrgame,Dakar,,,1988,,,,,,Dakar,exists,dakar,high,mr-game,,3629,high,"Mr. Game, of Bologna, Italy (1988-1990)",GR02j-MLy1Z,
+mrgame,Motor Show,,,1989,,,,,,Motor Show,exists,motor-show,high,mr-game,,3631,high,"Mr. Game, of Bologna, Italy (1988-1990)",GRb2y-MZezV,
+mrgame,Mac Attack,,game and flyer design by Toni Ramunni,1989,,,,,,Mac Attack (game and flyer design by Toni Ramunni),exists,mac-attack,high,mr-game,1989,3604,high,"Mr. Game, of Bologna, Italy (1988-1990)",GrJ07-MjB7X,
+mrgame,World Cup ’90,,game and flyer design by Toni Ramunni,1990,,,,,,World Cup ’90 (game and flyer design by Toni Ramunni),exists,world-cup-90,high,mr-game,1990,3603,high,"Mr. Game, of Bologna, Italy (1988-1990)",G56Y8-MDlqK,
+mrgame,Fast Track,,"low cost version of “Motor Show” for export to USA: b/w monitor, no videogames",1990,,,,,,"Fast Track (low cost version of “Motor Show” for export to USA: b/w monitor, no videogames)",exists,fast-track-2,high,mr-game,,5217,high,"Mr. Game, of Bologna, Italy (1988-1990)",,
+nordamatic,Big Sakem,,Nordamatic – presentato alla 3a Enada,1974,,,,,,Big Sakem (Nordamatic – presentato alla 3a Enada),new-model-existing-maker,big-sakem,low,ripepi,1974,5622,med,"Ripepi, of Messina, Italy",,yes
+nordamatic,Champion,,,1975,,em,1,,,Champion – em – 1p,exists,champion-replay-model,high,nordamatic,1975,487,low,Chicago Coin Machine Manufacturing Company (1932-1977),G5v11-ML0Nk,yes
+nordamatic,Foot Baller,,,1975,,,,,,Foot Baller,exists,foot-baller,high,nordamatic,,4975,high,"Nordamatic, of Verona, Italy (1975-1979)",,
+nordamatic,Explorer,,,1976,,em,1,,,Explorer – em – 1p,exists,explorer-2,high,nordamatic,1976,4117,high,"Nordamatic, of Verona, Italy (1975-1979)",G5VPX-MQjXJ,
+nordamatic,Monte Carlo,,,1976,,em,1,,,Monte Carlo – em – 1p,exists,monte-carlo-5,high,nordamatic,1976,3746,high,"Nordamatic, of Verona, Italy (1975-1979)",G5Wl0-MJoR7,
+nordamatic,Lucky Man,,,1976,,em,2,,,Lucky Man – em – 2p,exists,lucky-man,high,nordamatic,1976,3713,high,"Nordamatic, of Verona, Italy (1975-1979)",G5wLN-MJ2YO,
+nordamatic,Card Castle,,,1977,,em,1,,,Card Castle – em – 1p,exists,card-castle,high,nordamatic,1977,3677,high,"Nordamatic, of Verona, Italy (1975-1979)",GRodq-M5RY1,
+nordamatic,Saturn,,,1977,,em,1,,,Saturn – em – 1p,exists,saturn,high,nordamatic,1977,3723,high,"Nordamatic, of Verona, Italy (1975-1979)",G41bD-MQK0k,
+nordamatic,Atlantis,,,1978,,em,1,,,Atlantis – em – 1p,exists,atlantis-3,high,nordamatic,1978,3690,high,"Nordamatic, of Verona, Italy (1975-1979)",G48OE-MD0bk,
+nordamatic,Devil,,,1978,,em,1,,,Devil – em – 1p,exists,devil,high,nordamatic,1978,3702,high,"Nordamatic, of Verona, Italy (1975-1979)",GRbJN-Mz2yK,
+nordamatic,Discomania,,,1979,,em,1,,,Discomania – em – 1p,exists,discomania,high,nordamatic,1979,6704,high,"Nordamatic, of Verona, Italy (1975-1979)",,
+nordamatic,Antares,,,1979,,ss,4,,,Antares – ss – 4p,exists,antares,high,nordamatic,1979,3689,high,"Nordamatic, of Verona, Italy (1975-1979)",GRVyP-MW9ON,
+pasini,Old Bend,,,,,,,,,Old Bend,new-model-existing-maker,,,,,,,,,
+pasini,Old Gold,,,,,,,,,Old Gold,exists,old-gold,high,pasini,1970,5948,high,"Pasini, of Bologna, Italy",,
+pasini,Old Time,,,,,,,,,Old Time,new-model-existing-maker,,,,,,,,,
+pasini,Count Down,,,,,,,,,Count Down,new-model-existing-maker,count-down-2,low,novamatic-spa,1970,4118,med,"Novamatic S.p.A., of Milan, Italy (1970)",G56zB-MLv9k,yes
+pasini,Bonnie ’70,,Bonnie & Clide ?,,,,,,,Bonnie ’70 (Bonnie & Clide ?),new-model-existing-maker,,,,,,,,,
+pasini,Bonnie & Clide,,,,,,,,,Bonnie & Clide,new-model-existing-maker,,,,,,,,,
+pc,Marte,,“Electra Pool”,,,,,,,Marte (“Electra Pool”),new-maker,marte,low,,,5942,low,Unknown Manufacturer,,yes
+pinball-shop,Flesh and Blood,,“Pinball Champ”,,,,,,,Flesh and Blood (“Pinball Champ”),exists,flesh-and-blood,high,pinball-shop,,5157,high,"Pinball Shop, of Bologna, Italy",GrPdq-MnKwO,
+pinball-shop,Gremlins,,,,,,,,,Gremlins,exists,gremlins,high,pinball-shop,1988,4595,high,"Pinball Shop, of Bologna, Italy",,
+pinball-shop,Horror,,,,,,,,,Horror,exists,horror,high,pinball-shop,,5118,high,"Pinball Shop, of Bologna, Italy",G4jyz-M5REB,
+pinball-shop,Kit di modifica per lo “Space Shuttle” Zaccaria,,,,,,,,,Kit di modifica per lo “Space Shuttle” Zaccaria,new-model-existing-maker,,,,,,,,,
+playmec,Big Sakem,,rigenerato,1973,range:1973-74,,,,,Big Sakem (rigenerato),new-model-existing-maker,big-sakem,low,ripepi,1974,5622,med,"Ripepi, of Messina, Italy",,yes
+playmec,Speed Rush,,,1975,,em,1,,,Speed Rush – em – 1p,exists,speed-rush,high,playmec,1975,4125,high,"Playmec, of Bologna, Italy (1975)",G4qln-MDbq6,
+playmec,El Tigre,,,1976,yes,,,,,El Tigre,new-model-existing-maker,el-tigre,low,,1977,5297,low,Unknown Manufacturer,,yes
+playmec,Jackpot,,,1976,yes,,,,,Jackpot,new-model-existing-maker,jackpot-2,low,bigliardini-elettronici-milano,1976,4991,med,"Bigliardini Elettronici Milano, of Milano, Italy [Trade Name: BEM]",GR987-MJPEX,yes
+playmec,15° Pool,,,1976,yes,,,,,15° Pool,exists,15pool,high,playmec,1976,5197,low,Unknown Manufacturer,GrqL6-MLy7l,yes
+playmec,Corsair,,,1976,yes,,,,,Corsair,new-model-existing-maker,corsair,low,,,6873,low,Unknown Manufacturer,,yes
+riflip,San Marco,,,1968,,,,,,San Marco,new-maker,,,,,,,,,
+ripepi,Time Out,,,1975,yes,,,,,Time Out,exists,time-out,high,ripepi,,4992,high,"Ripepi, of Messina, Italy",,
+ripepi,Caravan Gold,,,1976,,,,,,Caravan Gold,exists,caravan-gold,high,ripepi,,5943,high,"Ripepi, of Messina, Italy",,
+ripepi,Gold Star,,,1976,,,,,,Gold Star,exists,gold-star-5,high,ditta-ripepi-spa,1976,4127,high,"Ditta Ripepi s.p.a., of Messina, Italy (1976)",GRKyL-MJpbw,
+rmg,Grand Slam,,,,,,,,(kit per Ice Show Gottlieb),Grand Slam,new-model-existing-maker,grand-slam-10,low,,,1074,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G4PL3-MLeBP,yes
+rmg,The 30′ Years,,,,,,,,em – 1p (kit for Gottlieb’s “Elite Guard”),The 30′ Years,exists,the-30-years,high,renato-montanari-giochi,,5018,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",,
+rmg,Race Day,,,,,em,1,,(kit for Gottlieb “Solitaire”),Race Day – em – 1p (kit for Gottlieb “Solitaire”),exists,race-day,high,renato-montanari-giochi,,5365,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",,
+rmg,Poker Game,,,,,,,,,Poker Game,exists,poker-game,high,renato-montanari-giochi,,4596,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",,
+rmg,Big Valley,,,,,em,4,,(copy of Bally “Big Valley”),Big Valley – em – 4p (copy of Bally “Big Valley”),exists,big-valley-2,high,renato-montanari-giochi,1970,4779,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",Gr1lY-MJ55W,
+rmg,Jungle King,,,,,em,1,,(copy of Gottlieb “Jungle King”),Jungle King – em – 1p (copy of Gottlieb “Jungle King”),exists,jungle-king-2,high,renato-montanari-giochi,1973,4780,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",G5B0y-MQ2K0,
+rmg,Miss Theresine,,,,,em,1,,(copy of Gottlieb “Hi-Lo”),Miss Theresine – em – 1p (copy of Gottlieb “Hi-Lo”),exists,miss-theresine,high,renato-montanari-giochi,1970,4781,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",,
+rmg,Only Star,,,,,em,1,,(copy of Gottlieb “Star Trek”),Only Star – em – 1p (copy of Gottlieb “Star Trek”),exists,only-star,high,renato-montanari-giochi,1971,4782,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",,
+rmg,Space Orbit,,,,,em,1,,(copy of Gottlieb “Space Orbit”),Space Orbit – em – 1p (copy of Gottlieb “Space Orbit”),exists,space-orbit-2,high,skillgame-dba-renato-montanari-giochi,1972,4783,high,"Skillgame d.b.a. Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",G43WO-M1rdV,
+rmg,Strike,,,,,em,1,,(1973)(copy of Gottlieb “Ten Up”) | (by “erremmegi”)(art: Mike) | (1973 – Enada II) Top Hand – em – 1p (copy of Gottlieb “Top Hand”) | (by “erremmegi”)(“app. modificato”),Strike – em – 1p (1973)(copy of Gottlieb “Ten Up”),exists,strike-4,high,renato-montanari-giochi,1973,4784,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",GRpyl-MJNBo,
+rmg,Flying Carpet,,,,,em,1,,(1972) (copy of Gottlieb “Flying Carpet”),Flying Carpet – em – 1p (1972) (copy of Gottlieb “Flying Carpet”),exists,flying-carpet-2,high,renato-montanari-giochi,1972,4786,high,"Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",GrNPZ-MJNd0,
+rmg,Card Trix,,,,,,,,,Card Trix,new-model-existing-maker,card-trix-2,low,d-gottlieb-company,1970,446,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],GRWZN-MDv6X,yes
+rmg,Galaxy,,,,,,,,,Galaxy,new-model-existing-maker,galaxy-2,low,bally-manufacturing-corporation,1978,979,low,"Sega Enterprises, Ltd., of Tokyo, Japan (1971-1979)",GrxJV-MDOXX,yes
+romagnoli,Play Girl,,,1979,,,,,,Play Girl,exists,play-girl,high,romagnoli,1979,4702,high,"Romagnoli, of Italy",,
+sidam,Rugby,,video-pinball,,,,,,,Rugby (video-pinball),new-maker,rugby,low,chicago-coin-machine-manufacturing-company,1936,3340,low,Chicago Coin Machine Manufacturing Company (1932-1977),,yes
+skill-game-the-best,Space Time,,,,,em,1,,,Space Time – em – 1p,new-model-existing-maker,space-time-2,low,bensa-sas,1973,4062,med,"Bensa s.a.s., of Milan, Italy (1973-1974)",GRvE1-MQ2P6,yes
+skill-game-the-best,The Best Corsair,,art: Mike,1976,,,,,,The Best Corsair (1976)(art: Mike),new-model-existing-maker,the-best-corsair,low,europlay,1976,4921,med,"Europlay, of Italy",G5L8W-MQ6Yp,yes
+skill-game-the-best,The Best Card King,,,,,,,,,The Best Card King,new-model-existing-maker,,,,,,,,,
+skill-game-the-best,The Best Galaxie,,,,,em,1,,(by “skill game”)(art: Mister X),The Best Galaxie – em – 1p,new-model-existing-maker,the-best-galaxie,low,,,6836,low,Unknown Manufacturer,,yes
+skill-game-the-best,The Best Wizard,,,,,em,1,,(inspired from Gottlieb’s “Wizard”)(art: Mike) | (signed backglass from Federico Croci’s collection),The Best Wizard – em – 1p,exists,the-best-wizard,high,skillgame-dba-renato-montanari-giochi,1972,4919,high,"Skillgame d.b.a. Renato Montanari Giochi, of Bologna, Italy [Trade Name: R.M.G.]",,
+tecnoplay,Devil King,,re-release of Zaccaria’s kit “Mystic Star”,1987,,ss,4,,,Devil King (re-release of Zaccaria’s kit “Mystic Star”) – ss – 4p,exists,devil-king,high,tecnoplay,1987,3703,high,"Tecnoplay, of San Marino, Italy (1987-1989)",G5QOw-MDOv0,
+tecnoplay,Scramble,,,1987,,ss,4,,,Scramble – ss – 4p,exists,scramble,high,tecnoplay,,3557,high,"Tecnoplay, of San Marino, Italy (1987-1989)",G5p8V-MD0op,
+tecnoplay,X Force,,,1987,,ss,6,,,X Force – ss – 6p,exists,x-force,high,tecnoplay,,3539,high,"Tecnoplay, of San Marino, Italy (1987-1989)",GRzJ1-MkPEj,
+tecnoplay,Space Team,,,1988,,ss,4,,,Space Team – ss – 4p,exists,space-team,high,tecnoplay,1988,3258,high,"Tecnoplay, of San Marino, Italy (1987-1989)",G4kyZ-MLR5r,
+tecnoplay,Hi Ball,,,1988,,ss,4,,,Hi Ball – ss – 4p,exists,hi-ball-3,high,tecnoplay,1988,3709,high,"Tecnoplay, of San Marino, Italy (1987-1989)",GR7j6-MDxWl,
+zaccaria,Granada,yes,,1973,yes,em,1,,,Granada(?) – 1p – em,exists,granada-2,high,zaccaria,,6139,high,"Zaccaria, of Bologna, Italy (1974-1987)",GPBdK-M0o99,
+zaccaria,Tropical,,,1973,yes,em,1,,,Tropical – 1p – em,exists,tropical,high,zaccaria,,5511,high,"Zaccaria, of Bologna, Italy (1974-1987)",,
+zaccaria,Top Hand,,,1973,yes,em,1,,,Top Hand – 1p – em,exists,top-hand-5,high,zaccaria,,5288,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4EeX-MLzRl,
+zaccaria,Jungle Life,,,1973,yes,em,1,,,Jungle Life – 1p – em,new-model-existing-maker,jungle-life-2,low,,,1337,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],G5B0y-MZeOe,yes
+zaccaria,Cine Star,,,1974,yes,em,1,,,Cine Star – 1p – em,exists,cine-star,high,zaccaria,,5048,high,"Zaccaria, of Bologna, Italy (1974-1987)",,
+zaccaria,Strike,,,1974,yes,em,1,,,Strike – 1p – em,exists,strike,high,zaccaria,1978,3363,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRpyl-MJNBo,
+zaccaria,Strike,,,1974,yes,em,1,,"(home model, no coin door – sound card)","Strike – 1p – em (home model, no coin door – sound card)",exists,strike,high,zaccaria,1978,3363,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRpyl-MJNBo,
+zaccaria,Red Show,,,1975,,em,1,,,Red Show – 1p – em,exists,red-show,high,zaccaria,1975,3720,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrP7X-ML05X,
+zaccaria,Lucky Fruit,,,1975,,em,1,,,Lucky Fruit – 1p – em,exists,lucky-fruit,high,zaccaria,1975,1487,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5n0W-MQP6n,
+zaccaria,Ten Up,,,1975,,em,4,,,Ten Up – 4p – em,new-model-existing-maker,ten-up-2,low,,,2521,low,D. Gottlieb & Company (1931-1977) [Trade Name: Gottlieb],GR6DZ-MLOWE,yes
+zaccaria,Woods Queen,,,1976,,em,1,,,Woods Queen – 1p – em,exists,woods-queen,high,zaccaria,1976,2806,high,"Zaccaria, of Bologna, Italy (1974-1987)",,
+zaccaria,Woods Queen,,,1976,,em,2,,,Woods Queen – 2p – em,exists,woods-queen,high,zaccaria,1976,2806,high,"Zaccaria, of Bologna, Italy (1974-1987)",,
+zaccaria,Woods Queen,,,1976,,em,4,,,Woods Queen – 4p – em,exists,woods-queen,high,zaccaria,1976,2806,high,"Zaccaria, of Bologna, Italy (1974-1987)",,
+zaccaria,Ten Stars,,,1976,,em,1,,,Ten Stars – 1p – em,exists,ten-stars,high,zaccaria,1976,3373,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4PW2-MDExV,
+zaccaria,Moon Flight,,,1977,,em,1,,,Moon Flight – 1p – em,exists,moon-flight,high,zaccaria,1976,1626,high,"Zaccaria, of Bologna, Italy (1974-1987)",GreN3-MJ7wJ,
+zaccaria,Universe,,,1977,,em,4,,,Universe – 4p – em,exists,universe-3,high,zaccaria,1976,2706,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4dxZ-MVKn9,
+zaccaria,Circus,,,1977,,em,4,,,Circus – 4p – em,exists,circus-4,high,zaccaria,1977,518,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5KJW-MDnKx,
+zaccaria,Aerobatics,,,1977,,em,1,,,Aerobatics – 1p – em,exists,aerobatics,high,zaccaria,1977,24,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5WJw-MkP98,
+zaccaria,Supersonic,,,1977,,em,1,,,Supersonic – 1p – em,exists,supersonic-2,high,zaccaria,1977,3419,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4xyV-MJK7V,
+zaccaria,Nautilus,,,1977,,em,1,,,Nautilus – 1p – em,exists,nautilus-2,high,zaccaria,1977,3381,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRKYx-MD067,
+zaccaria,Combat,,,1977,,em,4,,,Combat – 4p – em,exists,combat,high,zaccaria,1977,3609,high,"Zaccaria, of Bologna, Italy (1974-1987)",GryPZ-ML07x,
+zaccaria,Combat,,,1977,,ss,4,,,Combat – 4p – ss,exists,combat,high,zaccaria,1977,3609,high,"Zaccaria, of Bologna, Italy (1974-1987)",GryPZ-ML07x,
+zaccaria,Winter Sports,,,1978,,ss,4,01/78,,Winter Sports – 4p – ss – 01/78,exists,winter-sports,high,zaccaria,,3563,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrxWp-MDvrD,
+zaccaria,Queen Castle,,,1978,,em,1,04/78,,Queen Castle – 1p – em – 04/78,new-model-existing-maker,,,,,,,,,
+zaccaria,House of Diamonds,,,1978,,ss,4,07/78,,House of Diamonds – 4p – ss – 07/78,exists,house-of-diamonds,high,zaccaria,,3165,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRVpL-MJjPR,
+zaccaria,Strike,,,1978,,ss,1,09/78,,Strike – 1p – ss – 09/78,exists,strike,high,zaccaria,1978,3363,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRpyl-MJNBo,
+zaccaria,Ski Jump,,,1978,,ss,1,10/78,,Ski Jump – 1p – ss – 10/78,exists,ski-jump,high,zaccaria,1978,3637,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRzxO-MQP8j,
+zaccaria,Ski Jump,,,1978,,em,1,??/78,,Ski Jump – 1p – em ??/78,exists,ski-jump,high,zaccaria,1978,3637,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRzxO-MQP8j,
+zaccaria,Future World,,,1978,,ss,4,10/78,,Future World – 4p – ss – 10/78,exists,future-world,high,zaccaria,1978,3613,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5Kl7-MDxel,
+zaccaria,Shooting the rapids,,,1979,,ss,4,04/79,,Shooting the rapids – 4p – ss – 04/79,exists,shooting-the-rapids,high,zaccaria,1979,3606,high,"Zaccaria, of Bologna, Italy (1974-1987)",G41oq-MQVR1,
+zaccaria,Hot Wheels,,,1979,,ss,4,09/79,,Hot Wheels – 4p – ss – 09/79,exists,hot-wheels,high,zaccaria,1979,3164,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrOY9-Mq14V,
+zaccaria,Space City,,,1979,,ss,1,09/79,,Space City – 1p – ss – 09/79,exists,space-city,high,zaccaria,1979,3267,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5Kl7-M1rzV,
+zaccaria,Fire Mountain,,,1980,,ss,4,01/80,,Fire Mountain – ss – 4p – 01/80,exists,fire-mountain,high,zaccaria,1980,3097,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4E9p-MDOrl,
+zaccaria,Star God,,,1980,,ss,4,05/80,,Star God – ss – 4p – 05/80,exists,star-god,high,zaccaria,1980,3458,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5vXk-M2Y8r,
+zaccaria,Space Shuttle,,,1980,,ss,4,09/80,,Space Shuttle – ss – 4p – 09/80,exists,space-shuttle,high,zaccaria,,3263,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4jyz-MDyYE,
+zaccaria,"Earth, Wind & Fire",,,1981,,ss,4,04/81,,"Earth, Wind & Fire – ss – 4p – 04/81",exists,earth-wind-fire,high,zaccaria,1981,3611,high,"Zaccaria, of Bologna, Italy (1974-1987)",GR96Q-MNEnx,
+zaccaria,Locomotion,,,1981,,ss,4,09/81,,Locomotion – ss – 4p – 09/81,exists,locomotion,high,zaccaria,1981,3217,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4d7B-MJVlK,
+zaccaria,Pinball Champ ’82,,,1982,,ss,4,04/82,,Pinball Champ ’82 – ss – 4p – 04/82,exists,pinball-champ-82,high,zaccaria,,1794,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrPdq-MQYkJ,
+zaccaria,Soccer King,,,1982,,ss,4,09/82,,Soccer King – ss – 4p – 09/82,new-model-existing-maker,,,,,,,,,
+zaccaria,Pinball Champ,,,1983,,ss,4,,,Pinball Champ – ss – 4p,exists,pinball-champ,high,zaccaria,,1793,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrPdq-M9RRe,
+zaccaria,Time Machine,,,1983,,ss,4,04/83,,Time Machine – ss – 4p – 04/83,exists,time-machine-zaccaria,high,zaccaria,,3494,high,"Zaccaria, of Bologna, Italy (1974-1987)",GR99Y-MJ9Zy,
+zaccaria,Farfalla,,,1983,,ss,4,09/83,,Farfalla – ss – 4p – 09/83,exists,farfalla,high,zaccaria,,824,high,"Zaccaria, of Bologna, Italy (1974-1987)",GRVw2-M4oWO,
+zaccaria,Pinball Champ,,,1983,,ss,4,,(seven digit displays),Pinball Champ – ss (seven digit displays) – 4p,exists,pinball-champ,high,zaccaria,,1793,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrPdq-M9RRe,
+zaccaria,Devil Riders,,,1984,,ss,4,04/84,,Devil Riders – ss – 4p – 04/84,exists,devil-riders,high,zaccaria,1984,672,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5DPP-MJKbp,
+zaccaria,Magic Castle,,,1984,,ss,4,09/84,,Magic Castle – ss – 4p – 09/84,exists,magic-castle,high,zaccaria,1984,1511,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5v2B-MQ2xy,
+zaccaria,Robot,,,1985,,ss,4,01/85,,Robot – ss – 4p – 01/85,exists,robot,high,zaccaria,1985,1977,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5Wjk-MLvBr,
+zaccaria,Clown,,,1985,,ss,4,07/85,,Clown – ss – 4p – 07/85,exists,clown,high,zaccaria,1985,3024,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5Wjo-MJ9ll,
+zaccaria,Pool Champion,,,1985,,ss,4,12/85,,Pool Champion – ss – 4p – 12/85,exists,pool-champion,high,zaccaria,1985,3311,high,"Zaccaria, of Bologna, Italy (1974-1987)",G4jex-MLly8,
+zaccaria,Blackbelt,,,1986,,ss,4,,,Blackbelt – ss – 4p,exists,blackbelt,high,zaccaria,1986,316,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5Ljd-MLWj0,
+zaccaria,Mexico ’86,,,1986,,ss,4,,,Mexico ’86 – ss – 4p,exists,mexico-86,high,zaccaria,1986,3382,high,"Zaccaria, of Bologna, Italy (1974-1987)",GrxeN-MD0ky,
+zaccaria,Zankor,,,1986,,ss,4,,,Zankor – ss – 4p,exists,zankor,high,zaccaria,1986,3531,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5z71-MBRXz,
+zaccaria,Mystic Star,,,1986,,ss,4,,(kit),Mystic Star – ss – 4p (kit),exists,mystic-star,high,zaccaria,1986,3375,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5QOw-M61dY,
+zaccaria,Spooky,,,1987,,ss,4,,,Spooky – ss – 4p,exists,spooky,high,zaccaria,1987,3459,high,"Zaccaria, of Bologna, Italy (1974-1987)",Gr1j8-MDxzp,
+zaccaria,Star’s Phoenix,,,1987,,ss,4,,,Star’s Phoenix – ss – 4p,exists,stars-phoenix,high,zaccaria,1987,4509,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5VYY-MJ9V1,
+zaccaria,New Star’s Phoenix,,,1987,,ss,4,,,New Star’s Phoenix – ss – 4p,exists,new-stars-phoenix,high,zaccaria,1987,4510,high,"Zaccaria, of Bologna, Italy (1974-1987)",G5VYY-MRjqd,
