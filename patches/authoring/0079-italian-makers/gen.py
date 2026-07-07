@@ -173,6 +173,32 @@ ROW_DROPS: dict[tuple[str, str], str] = {
     ("pinball-shop", "Kit di modifica"): "unnameable kit — deferred",
 }
 
+# Per-machine hedge notes for kits-page creates tilt.it comments on
+# individually (everything else gets the section-membership note).
+KIT_HEDGE_NOTES = {
+    "Aquarium": 'tilt.it hedges the kit reading itself ("looks like an italian kit inspired from the Gottlieb\'s Aquarius")',
+    "Card Trix": "tilt.it's per-machine remark distinguishes it from RMG's version rather than describing the kit; the tag rests on the section's membership",
+}
+
+# Seeded IPDB models on the same kits page that carry explicit per-machine
+# "(kit for ...)" statements — tagged here so the whole section reviews as one
+# unit. slug -> (quote or None, extra note or None).
+SEEDED_KIT_TAGS: dict[str, tuple[str | None, str | None]] = {
+    "tex-op": ("Tex-Op (kit for Gottlieb's Harmony/Troubadour)", None),
+    "bowling": ('Bowling (kit for Gottlieb\'s "Harmony"/"Troubadour")', None),
+    "el-viti": ("El Viti (kit for Gottlieb's Harmony/Troubadour)", None),
+    "el-tigre": ("El Tigre (kit with ss scoring for em machines)", None),
+    "new-city": ('New City (kit from the early seventies for Williams\' games "Hot Line" and "Big Strike"', None),
+    "grand-slam-10": (
+        "Grand Slam (forse kit RMG per Ice Show Gottlieb)",
+        'tilt.it hedges the attribution ("forse" - maybe an RMG kit for Gottlieb\'s Ice Show), not the kit reading.',
+    ),
+    "lido-2": (
+        'Lido (looks like a kit for a Gottlieb\'"Subway" – maybe from Dama – art by Cortez?)',
+        'tilt.it hedges ("looks like a kit"); the maker guess (Dama? art by Cortez?) stays open.',
+    ),
+}
+
 TECH_MAP = {"em": "electromechanical", "ss": "solid-state"}
 
 # (page, name) -> game_format override. Default is pinball; tilt.it labels
@@ -392,6 +418,17 @@ def main() -> None:
                 fields["player_count"] = int(m["players"])
             fields["game_format"] = GAME_FORMAT_FIXES.get((page, nm), "pinball")
             qc.check(url_, m["quote"], f"model.{mslug}")
+            on_kits_page = page.startswith("ipdb-flipper-kit")
+            if on_kits_page and not m["kit"]:
+                # The whole section is tilt.it's unidentified-Italian-kits
+                # archive; a machine it files there is tagged on that
+                # membership even when the page states no per-machine detail.
+                m["kit"] = True
+                extra = KIT_HEDGE_NOTES.get(
+                    nm,
+                    "tagged conversion-kit on the section's membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail",
+                )
+                note = (note + " " if note else "") + extra.rstrip(".") + "."
             tags = ["conversion-kit"] if m["kit"] else None
             out.append(
                 pk.entry(
@@ -488,9 +525,23 @@ def main() -> None:
         entries = []
         for page in kits_pages:
             entries.extend(model_entries(page, by_page[page], None, "kit"))
+        kits_url = f"{TILT}/ipdb-flipper-kit-italiani-non-identificati"
+        for slug, (quote, extra) in SEEDED_KIT_TAGS.items():
+            if not MachineModel.objects.filter(slug=slug).exists():
+                sys.exit(f"SEEDED_KIT_TAGS slug not in catalog: {slug}")
+            if quote:
+                qc.check(kits_url, quote, f"kit-tag {slug}")
+            entries.append(
+                pk.entry(
+                    f"model.{slug}",
+                    note=extra,
+                    cite={"ref": kits_url, "quote": quote} if quote else kits_url,
+                    tags=["conversion-kit"],
+                )
+            )
         write(
             "italian-unidentified-kits",
-            "Italian conversion kits whose makers tilt.it cannot identify (maker-less).",
+            "Italian conversion kits whose makers tilt.it cannot identify.",
             entries,
         )
 
