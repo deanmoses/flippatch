@@ -5,7 +5,7 @@ attribution: flipcommons-catalog
 # original research, effectively primary for obscure Italian-made machines.
 # dallapria.it is the Dalla Pria firm's own site — first-party evidence for
 # that maker.
-description: Seed the TILT.IT, Dalla Pria, RetroCampus and Zaccaria-Pinball web roots.
+description: Seed the web citation roots cited by the Italian sweep.
 sources:
   - name: TILT.IT
     source_type: web
@@ -37,3 +37,77 @@ sources:
       industry: company history, machine lists and restoration documentation.
     links:
       - { url: "https://www.zaccaria-pinball.com/", label: Zaccaria Pinball, link_type: homepage }
+  - name: Arcade History
+    source_type: web
+    description: Database of coin-op arcade machines and their manufacturers.
+    links:
+      - { url: "https://www.arcade-history.com/", label: Arcade History, link_type: homepage }
+  - name: ArcadeItalia
+    source_type: web
+    description: Italian arcade-gaming community and collector forum.
+    links:
+      - { url: "http://www.arcadeitalia.net/", label: ArcadeItalia, link_type: homepage }
+  - name: Il Sole 24 Ore
+    source_type: web
+    description: Italy's leading financial daily newspaper.
+    links:
+      - { url: "https://www.ilsole24ore.com/", label: Il Sole 24 Ore, link_type: homepage }
+    domains:
+      - en.ilsole24ore.com
+  - name: Impresa Italia
+    source_type: web
+    description: >
+      Italian business-registry aggregator — company name, legal form,
+      registered address and ATECO trade classification for registered firms.
+    links:
+      - { url: "https://www.impresaitalia.info/", label: Impresa Italia, link_type: homepage }
+  - name: Flippers.be
+    source_type: web
+    description: Belgian pinball collector reference site with maker and machine histories.
+    links:
+      - { url: "https://www.flippers.be/", label: Flippers.be, link_type: homepage }
+  - name: La Nouvelle Vague
+    source_type: web
+    description: Italian film and television culture magazine.
+    links:
+      - { url: "https://www.lanouvellevague.it/", label: La Nouvelle Vague, link_type: homepage }
+  - name: Pac-Man Fandom
+    source_type: web
+    description: Community-maintained Pac-Man wiki hosted on Fandom.
+    links:
+      - { url: "https://pacman.fandom.com/", label: Pac-Man Fandom, link_type: homepage }
+  - name: Pinball Repair & History (pinrepair.com)
+    source_type: web
+    description: Clay Harrell's pinball repair and history reference site.
+    links:
+      - { url: "https://www.pinrepair.com/", label: pinrepair.com, link_type: homepage }
+  - name: Planet World Cup
+    source_type: web
+    description: Historical reference site for past FIFA World Cup tournaments.
+    links:
+      - { url: "https://www.planetworldcup.com/", label: Planet World Cup, link_type: homepage }
+  - name: SAPAR
+    source_type: web
+    description: Associazione Nazionale SAPAR, the Italian amusement and gaming trade association.
+    links:
+      - { url: "https://www.sapar.it/", label: SAPAR, link_type: homepage }
+  - name: Seattle Pinball Museum
+    source_type: web
+    description: Seattle Pinball Museum; per-machine history and feature pages.
+    links:
+      - { url: "https://seattlepinballmuseum.com/", label: Seattle Pinball Museum, link_type: homepage }
+  - name: Strananet
+    source_type: web
+    description: Italian retro-gaming and technology-culture site.
+    links:
+      - { url: "https://www.strananet.it/", label: Strananet, link_type: homepage }
+  - name: Taste Bologna
+    source_type: web
+    description: Bologna food and culture site; documents the city's pinball history.
+    links:
+      - { url: "https://www.tastebologna.net/", label: Taste Bologna, link_type: homepage }
+  - name: The Skill Shot
+    source_type: web
+    description: Pinball history and culture newsletter.
+    links:
+      - { url: "https://theskillshot.substack.com/", label: The Skill Shot, link_type: homepage }

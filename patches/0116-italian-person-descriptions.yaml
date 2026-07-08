@@ -1,0 +1,27 @@
+attribution: flipcommons-ai-desc-person
+description: AI-authored descriptions for Italian-sweep people.
+claims:
+- person.antonio-manili:
+    description: 'Antonio Manili was the proprietor of [[manufacturer:manilamatic]], a [[location:italy/rm/rome]]
+      coin-op firm.[[cite:1]] Trading as [[corporate-entity:mm-computer-games]], it built [[technology-generation:solid-state]]
+      pinball in the second half of the 1980s,[[cite:2]] almost all of it unlicensed rebuilds of [[manufacturer:gottlieb]]
+      tables.[[cite:3]] The business he ran outlasted its pinball line: as of 2026 it remains a registered
+      Rome company in the coin-op trade.[[cite:4]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/manilamatic
+        quote: (Roma, Italy – Sig. Antonio Manili)
+      '2':
+        ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
+        quote: ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
+          starting in 1986.
+      '3':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/manilamatic
+        quote: Out Law (copia del Gottlieb's "Tag Team") [...] Defender (copia del Gottlieb's "Arena")
+          [...] Joker (copia del Gottlieb's "Monte Carlo")
+      '4':
+        ref: https://www.impresaitalia.info/ik01950024/manilamatic-computer-games-srl/roma.aspx
+        quote: 'manilamatic - computer games srl ROMA è una azienda registrata in provincia di RM, avente
+          la seguente forma giuridica: SRL e partita IVA 05685931007.'

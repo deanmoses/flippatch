@@ -1,0 +1,117 @@
+attribution: flipcommons-catalog
+description: Themes and reward types for the Italian-sweep models.
+claims:
+  - model.sinbad-bell-coin-matics:
+      note: "Theme read off the game's name and subject."
+      theme: [fantasy, mythology]
+  - model.aliens-women:
+      note: "Theme read off the game's name and subject."
+      theme: [aliens]
+  - model.black-jack-bem:
+      note: "Theme read off the game's name and subject."
+      theme: [cards]
+  - model.jack-in-the-box-bensa-sas:
+      note: "Theme read off the game's name and subject."
+      theme: [circus]
+  - model.surf:
+      note: "Theme read off the game's name and subject."
+      theme: [surfing]
+  - model.surf-bensa-sas:
+      note: "Theme read off the game's name and subject."
+      theme: [surfing]
+  - model.five-martians:
+      note: "Theme read off the game's name and subject."
+      theme: [aliens]
+  - model.hippie:
+      note: "Theme read off the game's name and subject."
+      theme: [flower-power]
+  - model.gold-beach:
+      note: "Theme read off the game's name and subject."
+      theme: [beach]
+  - model.golf-dama-srl:
+      note: "Theme read off the game's name and subject."
+      theme: [golf]
+  - model.mexico-70:
+      note: "Theme read off the game's name and subject."
+      theme: [soccer]
+  - model.sandokan:
+      note: "Theme read off the game's name and subject."
+      theme: [pirates, adventure]
+  - model.stunt-cars:
+      note: "Theme read off the game's name and subject."
+      theme: [cars]
+  - model.carnival-elettrocoin:
+      note: "Theme read off the game's name and subject."
+      theme: [carnival]
+  - model.jungle-life-emmepi:
+      note: "Theme read off the game's name and subject."
+      theme: [jungle]
+  - model.big-dryvers-em:
+      note: "Theme read off the game's name and subject."
+      theme: [driving]
+  - model.big-dryvers-ss:
+      note: "Theme read off the game's name and subject."
+      theme: [driving]
+  - model.diablo:
+      note: "Theme read off the game's name and subject."
+      theme: [demonic]
+  - model.pin-football:
+      note: "Theme read off the game's name and subject."
+      theme: [soccer]
+  - model.pokerrr:
+      note: "Theme read off the game's name and subject."
+      theme: [poker]
+  - model.jolly-roger-kit:
+      note: "Theme read off the game's name and subject."
+      theme: [pirates]
+  - model.pool-kit:
+      note: "Theme read off the game's name and subject."
+      theme: [billiards]
+  - model.aquarium:
+      note: "Theme read off the game's name and subject."
+      theme: [fish]
+  - model.card-trix-kit:
+      note: "Theme read off the game's name and subject."
+      theme: [playing-cards]
+  - model.fifteen-goals:
+      note: "Theme read off the game's name and subject."
+      theme: [soccer]
+  - model.baseball-kit:
+      note: "Theme read off the game's name and subject."
+      theme: [baseball]
+  - model.jungle-life-lori:
+      note: "Theme read off the game's name and subject."
+      theme: [jungle]
+  - model.space-orbit-lori:
+      note: "Theme read off the game's name and subject."
+      theme: [outer-space]
+  - model.ko-lori:
+      note: "Theme read off the game's name and subject."
+      theme: [boxing]
+  - model.gorgar-mambelli:
+      note: "Theme read off the game's name and subject."
+      theme: [fantasy]
+  - model.joker-manilamatic:
+      note: "Theme read off the game's name and subject."
+      theme: [gambling, casino, playing-cards]
+  - model.pool-rabbit:
+      note: "Theme read off the game's name and subject."
+      theme: [cartoon-characters]
+  - model.old-time:
+      note: "Theme read off the game's name and subject."
+      theme: [western]
+  - model.bonnie-clide:
+      note: "Theme read off the game's name and subject."
+      theme: [gangsters]
+  - model.card-trix-rmg:
+      note: "Theme read off the game's name and subject."
+      theme: [cards]
+  - model.the-best-card-king:
+      note: "Theme read off the game's name and subject."
+      theme: [cards]
+  - model.rugby-sidam:
+      note: "Theme read off the game's name and subject."
+      theme: [sports]
+  - model.san-marco:
+      note: "Italy's 1960s ban on all pinball payouts (the free replay included) left a legally-sold table amusement-only; the reward type follows from that legal context."
+      reward_type: [novelty]

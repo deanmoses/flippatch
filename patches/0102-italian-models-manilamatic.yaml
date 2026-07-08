@@ -2,6 +2,16 @@ attribution: flipcommons-catalog
 description: >
   ManilaMatic: additional machines from tilt.it (IPDB.it).
 claims:
+  # ManilaMatic's proprietor, named on the tilt.it maker page. Created here so the
+  # 0111/0115 descriptions can wikilink him; no per-machine credit — the sources
+  # place him as the firm's owner, not a game's designer, and its games are copies.
+  - person.antonio-manili:
+      create: true
+      note: 'ManilaMatic (Rome) is headed on the tilt.it Italian Pinball Database page as the firm of Sig. Antonio Manili.'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        quote: '(Roma, Italy – Sig. Antonio Manili)'
+      name: Antonio Manili
   - title.joker-manilamatic:
       create: true
       note: 'Title for Joker, per the tilt.it Italian Pinball Database.'
@@ -46,3 +56,19 @@ claims:
       corporate_entity: mm-computer-games
       technology_generation: solid-state
       game_format: pinball
+  # Existing (seed) ManilaMatic models the tilt.it maker page marks as Gottlieb
+  # copies. Encode the bootleg lineage to match the 0111 manufacturer description.
+  - model.defender:
+      note: 'tilt.it lists Defender as a copy of Gottlieb''s "Arena" (catalog arena, Gottlieb 1987 solid-state).'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        quote: 'Defender (copia del Gottlieb''s "Arena")'
+      bootleg_of: arena
+      tag: [bootleg]
+  - model.out-law:
+      note: 'tilt.it lists Out Law as a copy of Gottlieb''s "Tag Team" (now catalog tag-team-pinball).'
+      cite:
+        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        quote: 'Out Law (copia del Gottlieb''s "Tag Team")'
+      bootleg_of: tag-team-pinball
+      tag: [bootleg]

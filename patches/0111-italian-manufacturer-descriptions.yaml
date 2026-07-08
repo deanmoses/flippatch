@@ -1,0 +1,327 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: AI-authored descriptions for the new Italian-sweep manufacturers.
+claims:
+- manufacturer.bontempi:
+    description: 'Bontempi was a coin-op maker in [[location:italy/rm/rome]] whose place in the pinball
+      record rests on a single machine, *[[model:action-bontempi]]*, an Italian copy of a game by Chicago''s
+      [[manufacturer:chicago-coin]]. It should not be confused with the far better-known Bontempi of the
+      Marche — the musical-instrument dynasty that Paolo Bontempi grew out of a small accordion business
+      his father Egisto had started in 1937, eventually employing around a thousand people at Potenza
+      Picena, a wholly separate company in another region.[[cite:1]]
+
+      '
+    cites:
+      '1':
+        ref: https://en.ilsole24ore.com/art/goodbye-paolo-bontempi-put-music-under-the-tree-christmas-millions-of-children-AIyjAlZ
+        quote: From the small accordion workshop founded by his father Egisto in 1937, Paolo Bontempi
+          was able to build an industrial empire. [...] Bontempi had up to a thousand employees in the
+          1970s, with factories in Potenza Picena, Martinsicuro and San Claudio di Corridonia
+- manufacturer.ceff:
+    description: 'CEFF Costruzioni Meccaniche — its name Italian for "mechanical engineering works" —
+      was a small manufacturer in [[location:italy/pc/piacenza]], in the Emilia-Romagna region of northern
+      Italy. It is known in the pinball record for *[[title:five-martians]]*, which the Italian pinball
+      archive documents in at least two distinct builds reconstructed from a surviving sales leaflet:
+      one retaining mechanical score reels, the other scoring into the millions.[[cite:1]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
+        quote: esistono almeno due versioni di questo flipper; una con le ruote dei punti, l'altra per
+          i flipper a milioni (vedi depliant)
+- manufacturer.dalla-pria:
+    description: 'Dalla Pria is the catalog name of a family amusement-machine group based in [[location:italy/pd/piove-di-sacco]],
+      a town in the Padua province near the Venetian lagoon. The group has worked the Italian coin-op
+      trade since 1958, earning its living mainly as an importer and exclusive Italian distributor of
+      leading international arcade brands and building a smaller run of high-circulation machines of its
+      own.[[cite:1]] Its place in the pinball record comes through a venture badged Dalla Pria / ABM Electronics:
+      *Stellar Airship*, a [[tag:conversion-kit]] that rebuilt an [[technology-generation:electromechanical]]
+      [[manufacturer:gottlieb]] table into a fresh game — the low-cost route by which Italian operators
+      kept ageing American machines earning.[[cite:2]] The distribution business long outlasted that experiment
+      and still supplies arcade equipment from Piove di Sacco.[[cite:1]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.dallapria.it/
+        quote: Il Gruppo DALLA PRIA opera nel settore dei videogame dal 1958. È concessionario, importatore,
+          distributore esclusivo dei migliori marchi internazionali di giochi arcade, oltre che produttore
+          diretto di alcuni apparecchi a grande diffusione.
+      '2':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm
+        quote: Dalla Pria/ABM Electronics srl (Piove di Sacco – PD) Stellar Airship (art by Mike)(kit
+          for em Gottliebs)
+- manufacturer.ferna:
+    description: 'Ferna srl was an Italian pinball manufacturer active at the close of the [[technology-generation:electromechanical]]
+      era, one of the many small independent coin-op firms that supplied the domestic market in 1970s
+      Italy as the trade was turning toward [[technology-generation:solid-state]] electronics. The Italian
+      pinball archive records the company as the maker of *[[model:steeple]]*, a table of 1979.[[cite:1]][[cite:2]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/ferna
+        quote: Ferna srl [...] (???) [...] Steeple (?)
+      '2':
+        ref: https://www.tilt.it/itmade.htm
+        quote: FERNA srl (??-??) [...] 1979 Steeple (?)
+- manufacturer.italiana-biliardi:
+    description: 'Italiana Biliardi is an Italian maker of pinball machines whose record credits the firm
+      to a proprietor named Sig. G. Onorato.[[cite:1]] It made the pinball *[[model:pin-football]]*, released
+      in 1976.
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi
+        quote: Italiana Biliardi (??-Sig. G.Onorato)
+- manufacturer.manilamatic:
+    description: 'ManilaMatic was the [[location:italy/rm/rome]] pinball firm of [[person:antonio-manili]].[[cite:1]]
+      Trading under the name [[corporate-entity:mm-computer-games]], it built [[technology-generation:solid-state]]
+      tables in the second half of the 1980s.[[cite:2]] Almost all were unlicensed rebuilds of [[manufacturer:gottlieb]]
+      machines, reworked from scratch for the Italian market — the casino game *[[model:joker-manilamatic]]*
+      after Gottlieb''s *[[model:monte-carlo-gottlieb]]*, *[[model:defender]]* after *[[model:arena]]*,
+      and *[[model:out-law]]* after Gottlieb''s *[[model:tag-team-pinball]]*.[[cite:3]] The firm outlived
+      its pinball years: as of 2026 it remains a registered Rome company, a dealer and renter of video
+      games, pinball tables and table football.[[cite:4]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/manilamatic
+        quote: (Roma, Italy – Sig. Antonio Manili)
+      '2':
+        ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
+        quote: ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
+          starting in 1986.
+      '3':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/manilamatic
+        quote: Out Law (copia del Gottlieb's "Tag Team") [...] Defender (copia del Gottlieb's "Arena")
+          [...] Joker (copia del Gottlieb's "Monte Carlo")
+      '4':
+        ref: https://www.impresaitalia.info/ik01950024/manilamatic-computer-games-srl/roma.aspx
+        quote: 'manilamatic - computer games srl ROMA è una azienda registrata in provincia di RM, avente
+          la seguente forma giuridica: SRL [...] vendita e noleggio - videogiochi flippers e biliardini'
+- manufacturer.pc:
+    description: 'P.C. was an Italian pinball manufacturer of the [[technology-generation:electromechanical]]
+      era. It is credited with a single game, *[[model:marte]]*, a home-built reworking of [[manufacturer:gottlieb]]''s
+      *[[model:electra-pool]]*.[[cite:1]] That donor carried an Italian pedigree of its own: Gottlieb
+      had issued Electra-Pool as the [[reward-type:add-a-ball]] edition of its Bank-A-Ball table, a machine
+      built for the Italian market — so P.C.''s remake retraced a design that had been shaped for Italy
+      from the start.[[cite:2]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/pc
+        quote: Marte ("Electra Pool")
+      '2':
+        ref: https://www.pinrepair.com/gtb/index.htm
+        quote: Flipper Pool*, 10/65, 700 produced, Add-a-Ball version of Bank-A-Ball (9/65), animated
+          pool balls in backbox. Gottlieb Electra Pool made for Italy.
+- manufacturer.riflip:
+    description: 'RIFLIP, whose fuller corporate style was RIFLIP – Organizzazione Costa, was a coin-op
+      maker in [[location:italy/to/turin]] known in the pinball record for a single [[technology-generation:electromechanical]]
+      table, *[[model:san-marco]]* (1968). It belonged to the first generation of homegrown Italian builders.
+      From the 1960s, Italian law barred pinball machines from awarding any prize, whether a cash [[reward-type:cash-payout]]
+      or a free [[reward-type:replay]].[[cite:1]] Where most Italian makers of the day answered demand
+      by rebuilding [[manufacturer:gottlieb]], [[manufacturer:williams]] and [[manufacturer:bally]] designs
+      as unlicensed [[tag:bootleg]] copies, San Marco carried no American original and stands out as a
+      rare wholly-Italian design of the era.
+
+      '
+    cites:
+      '1':
+        ref: https://www.sapar.it/2021/07/08/pillole-di-amusement-il-flipper-la-storia-del-gioco-di-abilita
+        quote: il flipper fu oggetto di regolamentazioni e limitazioni giuridiche volte a proibirne ogni
+          tipo di vincita, inclusa la ripetizione della partita.
+- manufacturer.rmg:
+    description: '*R.M.G.* — Renato Montanari Giochi — was one of the many small artisan coin-op firms
+      clustered around [[location:italy/bo/bologna]] in the 1960s and 70s, working from a base at Quarto
+      Inferiore and turning out [[technology-generation:electromechanical]] pinballs and video games whose
+      market reached well beyond Italy.[[cite:1]] Founded by Renato Montanari, the firm produced a modest
+      line of roughly fifteen machines from 1970 onward,[[cite:2]] most of them [[tag:bootleg]] rebuilds
+      of [[manufacturer:gottlieb]] designs recreated from scratch. Montanari presented the firm''s wares
+      at the first ENADA coin-op trade fair, held in Rome in 1972.[[cite:3]]
+
+
+      R.M.G. also traded as Skill Game, issuing a run of tables badged "The Best" in place of a maker''s
+      name — among them *[[model:the-best-wizard]]*, its take on [[manufacturer:gottlieb]]''s *[[model:wizard]]*.[[cite:4]]
+      That label had a curious origin in the Italian trade: print shops that supplied backglasses to game
+      makers began selling glasses straight to arcade operators, cutting the maker out, and lettered them
+      "The Best" where the manufacturer''s name would otherwise sit.[[cite:5]] The firm built pinball
+      from 1968 until 1974, when the business was reconstituted as [[manufacturer:europlay]].[[cite:6]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/museo
+        quote: Dalla 'Zaccaria' di Calderara di Reno alla 'RMG' di Quarto Inferiore, dozzine di aziende
+          artigiane costruivano flipper e videogiochi poi esportati in tutto il mondo. [...] Renato Montanari
+          della RMG di Quarto Inferiore (Bologna)
+      '2':
+        ref: https://www.arcade-museum.com/company/renato-montanari-giochi-rmg
+        quote: Renato Montanari Giochi / RMG released 15 machines in our database under this trade name,
+          starting in 1970.
+      '3':
+        ref: https://www.tilt.it/flipper_pinball/2007/02/bonus-scan-enada-1972-stand-rmg-renato-montanari-giochi-022007
+        quote: 'risalente alla prima Enada, tenutasi a Roma nel 1972. Stand RMG: Renato Montanari (al
+          centro nella foto) presenta i suoi prodotti'
+      '4':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/skill-game-the-best
+        quote: The Best Card King [...] The Best Wizard – em – 1p [...] (inspired from Gottlieb's "Wizard")
+      '5':
+        ref: ipdb:6836
+        quote: Printing companies in Italy that made backglasses for manufacturers of games such as Skilgame's
+          Galaxie would also sell some of the glasses directly to operators, bypassing the pinball manufacturer,
+          and for these glasses they were known to add the words "The Best" as part of the name
+      '6':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/rmg
+        quote: R.M.G. (1968-1974 -> Europlay)
+- manufacturer.sidam:
+    description: 'Sidam was a coin-op maker in [[location:italy/to/turin]] that, before it built a single
+      video game, turned out foosball tables, photo-booth cabinets and similar amusements.[[cite:1]] In
+      1978 it began copying arcade video games — [[manufacturer:atari]]''s above all — at a time when
+      Italian law did not yet extend copyright to software, so that cloning a game was widely treated
+      as legal.[[cite:2]] Sidam rebuilt hit after hit by reading and reworking the circuit boards rather
+      than the cabinets, and one Italian retro-gaming history remembers it as the "queen of the bootlegs."[[cite:3]]
+      One clone, *[[model:rugby-sidam]]*, carried the practice even into the video-pinball genre by reskinning
+      Atari''s *[[model:video-pinball]]*.
+
+
+      The copying ended in court. Atari, through its Italian concessionaires the Bertolino brothers, sued
+      Sidam for plagiarism over games including Asteroids,[[cite:4]] and the court upheld copyright in
+      video games, classing them as works of the intellect in a precedent-setting judgment that punished
+      the plagiarism.[[cite:5]] Condemned in 1983, Sidam thereafter built and distributed its games under
+      proper license, trading as SIPEM and continuing to distribute until 2010[[cite:6]] — putting out
+      officially licensed Namco titles across Italy, France and the Benelux.[[cite:7]] The company itself
+      outlived its games: it survives in Turin today as a maker of industrial ventilation systems.[[cite:8]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/deb/sidam-en.html
+        quote: 'A company in Turin: before videogames it produced fussball tables, photo cabinets and
+          such.'
+      '2':
+        ref: https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino/
+        quote: La SIDAM era una ditta di Torino che nel 1978 inizia a copiare videogiochi, specialmente
+          ATARI. [...] Questa pratica della copia era molto in voga al tempo ed in italia non essendoci
+          nulla che tutelava i diritti d'autore, nel settore informatico e videoludico, questo era ritenuto
+          legale.
+      '3':
+        ref: https://www.strananet.it/tutorial/bootleg-arcade-italiani-come-taroccavamo-i-videogiochi-da-bar-negli-anni-80
+        quote: Sidam, la regina dei bootleg
+      '4':
+        ref: http://www.arcadeitalia.net/viewtopic.php?t=10034
+        quote: Finalmente sono riuscito a trovare l'atto dove è documentata la causa condotta dall'Atari
+          per mezzo dei fratelli Bertolino (concessionari Atari in Italia) contro la Sidam, azienda italiana,
+          colpevole di aver copiato alcuni loro giochi (tra cui Asteroids, Space invaders...)
+      '5':
+        ref: http://www.arcadeitalia.net/viewtopic.php?t=10034
+        quote: La corte però ritenne valido il diritto d'autore anche nel campo dei videogiochi classificandoli
+          come opera d'ingegno (fu una sentenza che fece giurisprudenza) e punì il plagio.
+      '6':
+        ref: https://www.tilt.it/deb/sidam-en.html
+        quote: Sidam was condemned in 1983, the judgment was confirmed in various degrees. [...] Acknowledged
+          its modus operandi was illegal, Sidam started to build and distribute games on a regular license.
+          [...] It went on to distribute the games until 2010.
+      '7':
+        ref: https://pacman.fandom.com/wiki/Sidam
+        quote: The company produced arcade machines of several Pac-Man and other Namco titles; these were
+          distributed in various European countries, including Italy, France, and Benelux (likely among
+          others).
+      '8':
+        ref: https://www.tilt.it/deb/sidam-en.html
+        quote: It still exists. It is based in Turin, in strada Francese, but now produces industrial
+          ventilation systems.
+- manufacturer.zaccaria:
+    description: 'Zaccaria began as the venture of three brothers from the [[location:italy/bo/bologna]]
+      area — one a carpenter, one an electrician, one a barista — none with any background in designing
+      games.[[cite:1]] They entered the trade at a peculiar moment. A 1965 Italian law had outlawed pinball
+      as a form of gambling, and Bologna''s artisans answered with a workaround: machines that rewarded
+      the player only with extra balls rather than cash, which kept them within the law and seeded dozens
+      of small local manufacturers.[[cite:2]] When an economic crisis pushed up the cost of the American
+      machines Italy''s operators depended on, the brothers found their way in through refurbishment rather
+      than design, buying up worn imported tables and reskinning them with fresh artwork — an idea suggested
+      to them by a friend, [[person:lorenzo-rimondini]].[[cite:3]] In those unbranded early years the
+      shop went further than new paint, rebuilding American games outright, among them [[manufacturer:gottlieb]]''s
+      1973 *[[model:jungle-life]]*.
+
+
+      The copy-shop business grew quickly, and the brothers formally established the company under the
+      Zaccaria name in 1974, based just outside the city, by which time they had already moved from freshening
+      other makers'' cabinets to building original machines; the first game to carry the name was *Strike*,
+      a single-player [[technology-generation:electromechanical]] table on a bowling theme.[[cite:4]]
+      Much of the line''s identity came from Rimondini, the self-taught artist behind most of its games,
+      who drew each backglass and playfield by hand in pen and ink.[[cite:5]] From 1975 the firm began
+      to export — first across Europe, then to Japan, Australia and the United States.[[cite:6]]
+
+
+      Zaccaria''s rise coincided with pinball''s shift from relays to circuit boards, and where many of
+      the copy-shops that had multiplied under the 1965 loophole could not make that leap, Zaccaria was
+      one of the few Italian firms to carry through the transition to [[technology-generation:solid-state]]
+      play, its business running on into the early 1990s.[[cite:7]] By then it counted among the most
+      important pinball companies the industry had produced,[[cite:1]] with a catalogue of more than forty
+      distinct games known for vibrant artwork and inventive playfields.[[cite:8]] Its designers worked
+      the new electronics hard: *Pinball Champ*, the company claimed, was the first machine anywhere to
+      address its players in four separate languages.[[cite:9]] Late in the 1980s the firm regrouped under
+      the name Mr. Game before pinball production wound down.[[cite:10]]
+
+
+      Zaccaria''s machines never lost their following. Long after the factory fell silent they became
+      among the most sought-after games of their era, and the company''s catalogue found a second life
+      in officially licensed digital recreations that carried the games to PC and console players.[[cite:11]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+        quote: a carpenter, an electrician and a barista who created one of the most important pinball
+          companies ever.
+      '2':
+        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+        quote: In 1965 an Italian law declared pinball outlaw because of gambling. A few artisans in Bologna
+          found a workaround and started to sell new machines that allowed them to win only other balls
+          and not matches. More than 30 companies were born and history began.
+      '3':
+        ref: https://www.pinballnews.com/learn/zaccaria
+        quote: At the time pinballs were mostly being imported from the USA, but due to an economic crisis
+          in Italy their cost increased a lot, and so we decided to start refurbishing used pinballs with
+          new graphics applied. Lorenzo, a friend of ours, introduced us to this idea.
+      '4':
+        ref: https://www.pinballnews.com/learn/zaccaria
+        quote: The company was established in 1974 in Calderara di Reno, Bologna, and set up by three
+          brothers (Mario, Franco and Natale Zaccaria). The first model they released under the Zaccaria
+          company name was a single player, electromechanical pinball called Strike.
+      '5':
+        ref: https://www.pinballnews.com/learn/zaccaria
+        quote: Most of them were designed by self-taught visual artist Lorenzo Rimondini. [...] He designed
+          everything by hand, which took a long time. Each design, each model was composed of twelve colours
+          and then twelve separate designs components - such as the backglass and the playfield - each
+          one hand-drawn with pen and ink.
+      '6':
+        ref: https://www.pinballnews.com/learn/zaccaria
+        quote: We started exporting to other European countries in 1975, and soon after to the rest of
+          the world as well - Japan, Australia, America, etc.
+      '7':
+        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+        quote: Zaccaria was one of the few companies to survive the transition to electronic pinball machines
+          and their story lasted until 1991.
+      '8':
+        ref: https://www.kineticist.com/manufacturers/zaccaria
+        quote: Over its run Zaccaria produced more than 40 distinct machines known for vibrant artwork,
+          inventive playfield designs and early adoption of solid-state electronics
+      '9':
+        ref: https://www.pinballnews.com/learn/zaccaria
+        quote: Pinball Champ was the first pinball in the world that talked to the player in four different
+          languages. It was a real success for us.
+      '10':
+        ref: https://www.zaccaria-pinball.com/backround.html
+        quote: Zaccaria Games, from Bologna, Italy, produced pinball machines from the early 1970s (electromechanical),
+          through the early 1980s (solid state). They briefly reorganized under the name Mr. Game before
+          ending production.
+      '11':
+        ref: https://www.kineticist.com/manufacturers/zaccaria
+        quote: those vintage pinball machines remain highly sought-after by collectors and preservationists.
+          [...] preserved for modern audiences through licensed digital recreations and releases on PC/Steam

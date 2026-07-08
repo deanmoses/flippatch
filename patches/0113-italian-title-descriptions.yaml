@@ -1,0 +1,56 @@
+attribution: flipcommons-ai-desc-title
+description: AI-authored umbrella descriptions for multi-model Italian titles.
+claims:
+- title.urania:
+    description: '*Urania* is a name [[manufacturer:bem]] used twice, for two different machines built
+      four years apart at its [[location:italy/mi/milan]] premises: a 1976 original and a 1980 version
+      in the firm''s compact "testa piccola" (small-head) cabinet.[[cite:1]] Both came out of Giorgio
+      Masiero''s [[corporate-entity:bigliardini-elettronici-milano]].[[cite:2]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+        quote: Urania (testa piccola)
+      '2':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+        quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
+- title.surf:
+    description: '*Surf* is the name [[manufacturer:bensa-sas]] gave two distinct machines: an [[technology-generation:electromechanical]]
+      build (*[[model:surf]]*) and a later [[technology-generation:solid-state]] one (*[[model:surf-bensa-sas]]*),
+      a pairing that straddles the shift from relay-driven tables to circuit-board electronics in Italian
+      pinball. Both [[theme:surfing]] tables owe their attribution to the [[location:italy/mi/milan]]
+      maker to the collector Thierry Delisle, whom tilt.it credits with identifying the undated machine
+      as a Bensa build.[[cite:1]] The two Surfs sit within the pattern of the rest of Bensa''s line —
+      copies "of the gottlieb pinballs around the same year."[[cite:2]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/bensa
+        quote: year unknown – identified as manufactured by Bensa thanks to Thierry Delisle
+      '2':
+        ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
+        quote: One bit of info is they are a copy of the gottlieb pinballs around the same year.
+- title.big-dryvers:
+    description: '*Big Dryvers* was one of the games [[manufacturer:europlay]] put on the market in 1974,
+      the year the firm began trading, and it appeared in two parallel four-player builds — one [[technology-generation:electromechanical]],
+      the other [[technology-generation:solid-state]]. Its name, a stylised spelling of "drivers," points
+      to a [[theme:driving]] subject. Europlay was itself new that season, formed as the continuation
+      of the coin-op maker [[manufacturer:rmg]] (Renato Montanari Giochi), which had been turning out
+      games since about 1970[[cite:1]] before it was reconstituted under the Europlay name in 1974.[[cite:2]]
+      Big Dryvers reached buyers in that first year alongside *[[model:sky-star]]*, the company''s earliest
+      model.[[cite:3]]
+
+      '
+    cites:
+      '1':
+        ref: https://www.arcade-museum.com/company/renato-montanari-giochi-rmg
+        quote: Renato Montanari Giochi / RMG released 15 machines in our database under this trade name,
+          starting in 1970.
+      '2':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/rmg
+        quote: (1968-1974 -> Europlay)
+      '3':
+        ref: https://www.tilt.it/flipper_pinball/ipdb/europlay
+        quote: 'Sky Star  – em – 1p (primo modello – presentato Fiera di Milano 73 o 74)(art: Mike)'
