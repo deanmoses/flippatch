@@ -8,6 +8,7 @@ dependencies = [
     "jsonschema",
     "boto3",
     "python-dotenv",
+    "anthropic>=0.116.0",
 ]
 
 [tool.pytest.ini_options]
@@ -88,7 +89,7 @@ ignore = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*.py" = ["S101", "S106", "S603", "S607", "S506", "ANN", "PT011"]  # asserts, test creds, subprocess, project strict-loader, untyped tests, broad raises
+"tests/*.py" = ["S101", "S106", "S603", "S607", "S506", "ANN", "PT011", "TC"]  # asserts, test creds, subprocess, project strict-loader, untyped tests, broad raises, runtime type imports
 "tests/conftest.py" = ["S101", "ANN"]
 "scripts/**/*.py" = ["T201"]  # CLI scripts legitimately print
 "patches/authoring/**/*.py" = ["T201"]  # patch generators legitimately print

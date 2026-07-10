@@ -92,6 +92,24 @@ def test_ipdb_row_text_skips_empty_fields():
     ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
 
 
+def test_ipdb_notes_text_is_free_text_prose_only():
+    from quote_verify.verify_quotes import ipdb_notes_text
+
+    # AI extraction reads only the editor-authored prose; IPDB's structured
+    # fields are deterministic data resolved directly, never re-read by a model.
+    text = ipdb_notes_text(
+        notable_features="Red knob on the cabinet.",
+        notes="A tengu is a mythical creature.",
+    )
+    assert text == "Red knob on the cabinet.\nA tengu is a mythical creature."
+
+
+def test_ipdb_notes_text_empty_prose_is_empty_string():
+    from quote_verify.verify_quotes import ipdb_notes_text
+
+    assert ipdb_notes_text(notable_features=None, notes=None) == ""
+
+
 class _FakeWebCache:
     """Stands in for pinexplore's web_cache module in text_for tests."""
 
@@ -135,6 +153,23 @@ def test_youtube_ref_resolves_via_cached_watch_page_transcript():
     )
     assert sources.text_for("youtube:O-2BXTXLXIY") == "and the winner is Elf"
     assert fake.requested == ["https://www.youtube.com/watch?v=O-2BXTXLXIY"]
+
+
+def test_free_text_for_ipdb_returns_notes_prose_only():
+    # The AI extractor's input adapter: an ipdb: ref resolves to its free-text
+    # Notes / Notable-Features prose alone.
+    sources, _ = _sources_with({})
+    sources._ipdb_notes = {"5632": "Converted from an earlier Gottlieb model."}
+    assert sources.free_text_for("ipdb:5632") == (
+        "Converted from an earlier Gottlieb model."
+    )
+
+
+def test_free_text_for_web_ref_matches_text_for():
+    # Web / opdb / youtube refs already resolve to unstructured readable text, so
+    # the free-text adapter passes them straight through.
+    sources, _ = _sources_with({"https://a.test/p": "readable page text"})
+    assert sources.free_text_for("https://a.test/p") == "readable page text"
 
 
 def test_quote_units_walks_entry_inline_and_changesets_quotes():

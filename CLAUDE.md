@@ -103,6 +103,10 @@ For the concepts a patch rests on, read these two when a claim or citation quest
 4. **Validate against flipcommons** behind a SQLite snapshot — apply from an isolated dir, inspect the result, roll back. The snapshot/rollback loop and the misleading-dry-run trap for vocab+assignment pairs are in DataPatchAuthoring.md.
 5. **`make validate`** here (the [structural gate](#validation)) — where the authoring loop ends, on localhost. Hand off: **committing and `make push` are both the user's call — never automatic, never something you do yourself.** `make push` publishes the patches to R2 (whence other environments pull them via `make pull-patches && make ingest-patches`); it is a deliberate command the user issues, on the same footing as `git commit`/`git push`, never a step the loop takes on its own. Tell the user the patch is validated and ready, and let them decide when to commit and when to publish.
 
+### Extracting a model's data from an unstructured web page
+
+For pulling a model's field values out of a cached free-text source (a review, a maker page, a blog, or IPDB free-text Notes) at higher recall than a hand pass, use the **AI page extractor** — `make extract-page ARGS="<ref> --target '<model>' --maker '<maker>'"`. Follow its operator guide, [docs/page_extractor/ModelPageExtractionAuthoring.md](page_extractor/ModelPageExtractionAuthoring.md): it hands back _candidate_ claims with verbatim-checked quotes that **you vet against the full page** before authoring — it raises recall, it is not a patch generator or an authority. Structured IPDB/OPDB columns are resolved directly and never go through it. (Localhost only; the page must already be in the pinexplore web cache.)
+
 ## Validation
 
 `make validate` runs two fast gates over the patches:

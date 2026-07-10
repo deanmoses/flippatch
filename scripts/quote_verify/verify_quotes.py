@@ -82,6 +82,21 @@ def ipdb_row_text(
     return "\n".join(lines)
 
 
+def ipdb_notes_text(*, notable_features: str | None, notes: str | None) -> str:
+    """The free-text prose of one IPDB machine row — Notable Features and Notes.
+
+    This is the AI-consumable slice of an IPDB row. IPDB's structured fields
+    (Manufacturer, Type, Players, Theme, year) are deterministic data, read
+    directly from the columns — never re-extracted by a model, which would
+    forfeit their determinism and precision. So AI extraction sees only the
+    editor-authored prose here, not the structured rows ``ipdb_row_text``
+    renders for the verify-quotes verbatim gate.
+    """
+    return "\n".join(
+        html.unescape(prose) for prose in (notable_features, notes) if prose
+    )
+
+
 def check_quote(quote: str, source: str) -> str | None:
     """Why *quote* fails to verify against *source*, or None if it verifies.
 
@@ -128,7 +143,13 @@ def _require_pinexplore() -> tuple[Path, Path]:
 
 
 class _Sources:
-    """Source-text lookup over pinexplore's web cache and IPDB table."""
+    """Source-text lookup over pinexplore's web cache and IPDB table.
+
+    Two views of the same sources, for two callers:
+    :meth:`text_for` returns the full text (IPDB's structured rows included) for
+    the verbatim quote gate; :meth:`free_text_for` returns unstructured prose
+    only, for AI extraction.
+    """
 
     def __init__(self, cache_db: Path, duck_db: Path) -> None:
         sys.path.insert(0, str(PINEXPLORE_DIR / "scripts" / "web_scrape"))
@@ -137,8 +158,31 @@ class _Sources:
         self._web_cache = web_cache
         self._duck_db = duck_db
         self._ipdb: dict[str, str] | None = None
+        self._ipdb_notes: dict[str, str] | None = None
+
+    def free_text_for(self, ref: str) -> str | None:
+        """Source text for AI extraction — unstructured free text only.
+
+        The input adapter for the page extractor. Web / opdb / youtube refs
+        already resolve to unstructured readable text, so it passes them
+        through :meth:`text_for`; an ``ipdb:`` ref resolves to its free-text
+        Notes / Notable-Features prose alone, so IPDB's structured fields stay
+        out of the model's context (they are deterministic data, read directly).
+        """
+        if ref.startswith("ipdb:"):
+            return self._ipdb_notes_text(ref.partition(":")[2])
+        return self.text_for(ref)
 
     def text_for(self, ref: str) -> str | None:
+        """The full quotable source text for a ref — the verbatim-gate view.
+
+        Used by ``make verify-quotes`` to confirm a ``cite:`` quote is verbatim
+        in its source. For ``ipdb:`` this is the whole rendered row (title, the
+        structured Manufacturer/Type/Players/Theme rows, then Notable Features
+        and Notes), so a quote may legitimately cite a structured field. AI
+        extraction wants :meth:`free_text_for` instead, which drops those
+        structured rows.
+        """
         if ref.startswith(("http://", "https://")):
             return self._page_text(ref)
         scheme, _, identifier = ref.partition(":")
@@ -182,6 +226,22 @@ class _Sources:
                 for ipdb_id, title, manufacturer, type_, players, theme, features, notes in rows
             }
         return self._ipdb.get(identifier)
+
+    def _ipdb_notes_text(self, identifier: str) -> str | None:
+        if self._ipdb_notes is None:
+            import duckdb
+
+            con = duckdb.connect(str(self._duck_db), read_only=True)
+            rows = con.execute(
+                "SELECT IpdbId, NotableFeatures, Notes FROM ipdb_machines"
+            ).fetchall()
+            con.close()
+            self._ipdb_notes = {
+                str(ipdb_id): ipdb_notes_text(notable_features=features, notes=notes)
+                for ipdb_id, features, notes in rows
+            }
+        text = self._ipdb_notes.get(identifier)
+        return text if text and text.strip() else None
 
 
 def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str]]:
