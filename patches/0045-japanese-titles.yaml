@@ -210,3 +210,31 @@ claims:
         quote: 'Orienteering - オリエンテーリング'
       name: 'Orienteering (オリエンテーリング)'
       abbreviation: [オリエンテーリング]
+  - series.crazy-15:
+      create: true
+      note: 'Komaya''s Crazy 15 line: the original Crazy 15 (1965) and its successive improved editions — Mark II (1965), Mark III (1969), and New Crazy 15 (1977) — all the same numbered-hole flipper game. Modeled as a Series (a design lineage by one maker) rather than variants, since each edition changed the machine functionally, not just cosmetically.'
+      name: Crazy 15
+  - title.crazy-15-15:
+      expect: { name: 'Crazy 15 (クレイジー15)' }
+      series: crazy-15
+      cite:
+        ref: ipdb:6775
+        quote: 'Crazy 15 (クレイジー15) [...] The manufacturer issued an "improved" version of this game as Komaya Seisakusho''s 1977 ''New Crazy 15''.'
+  - title.crazy-15-mark-ii:
+      expect: { name: 'Crazy 15 [Mark II] (クレイジー15ゲーム)' }
+      series: crazy-15
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: 'クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII]'
+  - title.crazy-15-mark-iii:
+      expect: { name: 'Crazy 15 [Mark III] (クレイジー15ゲーム)' }
+      series: crazy-15
+      cite:
+        ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
+        quote: 'クレイジー15ゲーム [マークIII]'
+  - title.new-crazy-15:
+      expect: { name: 'New Crazy 15' }
+      series: crazy-15
+      cite:
+        ref: ipdb:6786
+        quote: 'It is an improved version of Komaya Seisakusho''s 1965 ''Crazy 15 (クレイジー15)''.'

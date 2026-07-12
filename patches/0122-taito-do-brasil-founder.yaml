@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: Create Taito do Brasil's director Abraham Kogan as a person.
+claims:
+  - person.abraham-kogan:
+      create: true
+      name: Abraham Kogan
+      person_alias: [Abba Kogan]
+      note: 'Son of Taito founder Michael Kogan; directed the Brazilian operation across its Trevo, importing and manufacturing phases. Known as "Abba".'
+      cite:
+        ref: https://augustocampos.net/taito-brasil
+        quote: 'Todas essas fases foram dirigidas por Abraham "Abba" Kogan (foto acima), filho do fundador da Taito japonesa.'

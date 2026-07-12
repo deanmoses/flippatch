@@ -1,0 +1,44 @@
+attribution: flipcommons-ai-desc-model
+description: Descriptions Party Animal.
+claims:
+  - model.party-animal:
+      description: >
+        *Party Animal* is a pinball machine for [[manufacturer:bally]] by [[person:dennis-nordman]], who over a long career designed for Bally, Williams and Stern.[[cite:1]] Bally Midway put it on the market in 1987[[cite:2]] with a raucous [[theme:1980s]] [[theme:party]] theme and a sound package that broke new ground: it was the first pinball to greet players with the sounds of a belch and a flushing toilet.[[cite:3]]
+
+        Two translites shipped — a bar version with a plain beer stein and a home version whose stein reads "Dad's Old Fashioned Root Beer".[[cite:4]]
+
+        Bally Midway produced 2,250, and [[manufacturer:bally]]'s German subsidiary [[manufacturer:bally-wulff]] built a licensed European edition, *[[model:party-animal-bally-wulff]]*.
+      cites:
+        "1":
+          ref: https://www.pinball-magazine.com/?p=1181
+          quote: Dennis worked for Bally, Williams, Stern, Jersey Jack, and as of just recently, Multimorphic.
+        "2":
+          ref: https://www.arcade-museum.com/Pinball/party-animal--bally--1987--4458
+          quote: Party Animal was produced by Bally Midway in 1987.
+        "3":
+          ref: ipdb:1763
+          quote: First pinball game to have the sounds of a belch and a flushing toilet.
+        "4":
+          ref: ipdb:1763
+          quote: The bar version has a plain beer stein while the home version has a stein with the words "Dad's Old Fashioned Root Beer" printed on it.
+  - model.party-animal-bally-wulff:
+      description: >
+        *Party Animal (Bally Wulff)* is the German-market licensed build of [[person:dennis-nordman]]'s 1987
+        *[[model:party-animal]]*, produced by [[manufacturer:bally]]'s German subsidiary [[manufacturer:bally-wulff]],
+        a Berlin firm[[cite:1]] that Bally had acquired from its founder [[person:gunter-wulff]] and renamed.[[cite:2]]
+
+        As Bally's European arm, the Berlin house turned out its own editions of several
+        [[corporate-entity:bally-midway-manufacturing-company]] solid-state pinballs — among them
+        *[[model:fireball-classic-bally-wulff]]*, *[[model:eight-ball-champ-bally-wulff]]* and *[[model:special-force-girls]]*. Its
+        Party Animal was offered with two translites — a plain beer stein on the bar version and a "Dads Rootbeer"
+        stein on the home version[[cite:3]] — mirroring the American original.
+      cites:
+        "1":
+          ref: https://de.wikipedia.org/wiki/Bally_Wulff
+          quote: Die Bally Wulff Games & Entertainment GmbH ist ein deutscher Hersteller von Geld-Gewinn-Spiel-Geräten mit Firmen- und Produktionssitz in Berlin
+        "2":
+          ref: https://en.wikipedia.org/wiki/Bally_Manufacturing
+          quote: The company expanded internationally in 1974 when it acquired German company Guenter Wulff-Apparatebau, which was renamed Bally Wulff.
+        "3":
+          ref: ipdb:3293
+          quote: 'Two translites available: bar and home version. Bar version has a plain beer stein while home version has a stein with "Dads Rootbeer" printed on it.'

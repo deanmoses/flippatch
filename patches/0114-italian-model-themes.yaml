@@ -82,6 +82,9 @@ claims:
   - model.jungle-life-lori:
       note: "Theme read off the game's name and subject."
       theme: [jungle]
+  - model.jungle-life-zaccaria:
+      note: "Theme read off the game's name and subject."
+      theme: [jungle]
   - model.space-orbit-lori:
       note: "Theme read off the game's name and subject."
       theme: [outer-space]
@@ -115,3 +118,15 @@ claims:
   - model.san-marco:
       note: "Italy's 1960s ban on all pinball payouts (the free replay included) left a legally-sold table amusement-only; the reward type follows from that legal context."
       reward_type: [novelty]
+  - model.cosmodrome:
+      note: "Theme read off the game's name and subject."
+      theme: [outer-space]
+  - model.the-best-galaxie:
+      note: "Theme read off the game's name and subject."
+      theme: [outer-space]
+  - model.hippye-2:
+      note: "Theme read off the game's name and subject."
+      theme: [flower-power]
+  - model.lovers:
+      note: "Theme read off the game's name and subject."
+      theme: [romance]

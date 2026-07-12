@@ -1,0 +1,19 @@
+attribution: flipcommons-ai-desc-title
+description: AI-authored umbrella description for the Party Animal title.
+claims:
+  - title.party-animal:
+      description: >
+        *Party Animal* is a [[theme:1980s]] [[theme:party]]-themed pinball machine designed by
+        [[person:dennis-nordman]] for [[corporate-entity:bally-midway-manufacturing-company]]. Nordman was a
+        designer renowned for bringing humor, narrative depth and mechanical innovation to the arcade.[[cite:1]]
+
+        It is remembered as the first pinball to greet players with the sounds of a belch and a flushing toilet.[[cite:2]]
+
+        The design exists in two builds: the American original, *[[model:party-animal]]*, and *[[model:party-animal-bally-wulff]]*, the German-market edition built under license by Berlin subsidiary [[manufacturer:bally-wulff]].
+      cites:
+        "1":
+          ref: https://www.kineticist.com/people/dennis-nordman
+          quote: Dennis Nordman is a noteworthy pinball designer renowned for bringing humor, narrative depth, and mechanical innovation to the arcade world.
+        "2":
+          ref: ipdb:1763
+          quote: First pinball game to have the sounds of a belch and a flushing toilet.

@@ -1,0 +1,12 @@
+attribution: ipdb
+description: Drop IPDB's fabricated brand links for the split-out firms.
+claims:
+  - corporate-entity.automatic-games-company-st-paul:
+      note: 'Correcting the earlier ingest: IPDB asserts no brand-level manufacturer for this firm (it is IPDB manufacturer 41 in its own right); the Flipcommons ingestion system fabricated a link to the shared "Automatic Games" brand by name-match. Retracting that erroneous claim.'
+      retract: [manufacturer]
+  - corporate-entity.bally-wulff:
+      note: 'Correcting the earlier ingest: IPDB lists this firm as "Bally Wulff, of Germany" (IPDB manufacturer 49) in its own right, distinct from Bally (IPDB 47/48); the Flipcommons ingestion system fabricated a brand link to Bally by name-match. Retracting that erroneous claim.'
+      retract: [manufacturer]
+  - corporate-entity.taito-do-brasil-a-division-of-taito-japan:
+      note: 'Correcting the earlier ingest: IPDB lists this firm as "Taito do Brasil" (IPDB manufacturer 367) in its own right, distinct from Taito Trading Co., Ltd. (IPDB 312) and Taito America Corporation (IPDB 778); the Flipcommons ingestion system fabricated a brand link to the umbrella "Taito" manufacturer by name-match. Retracting that erroneous claim.'
+      retract: [manufacturer]

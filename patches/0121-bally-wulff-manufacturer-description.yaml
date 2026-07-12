@@ -1,0 +1,55 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: Narrative description for the Bally Wulff manufacturer.
+claims:
+  - manufacturer.bally-wulff:
+      note: 'German sources (de.wikipedia, and the catalog corporate entity''s 1972-1991 span) date Bally''s takeover to 1972; English Wikipedia says 1974. The description says "the early 1970s" to span both. The 1991 divestment is agreed across sources.'
+      description: |
+        Bally Wulff — today Bally Wulff Games & Entertainment GmbH — is a German maker of *Geldspielgeräte*, the money-prize gaming machines of the German market, with both its headquarters and its factory in [[location:germany/be/berlin]].[[cite:1]] The company was founded in 1950 by [[person:gunter-wulff]] as Günter Wulff Apparatebau,[[cite:2]] and reckons itself among the country's leading and most influential gaming-machine manufacturers.[[cite:3]]
+
+        For roughly two decades it belonged to the American pinball and slot-machine giant [[manufacturer:bally]], which took over Günter Wulff Apparatebau and renamed it Bally Wulff.[[cite:4]] It stayed under Bally's ownership from the early 1970s until 1991, when Bally, paying down debt, spun the German subsidiary back out as an independent company.[[cite:5]]
+
+        Almost the whole of Bally Wulff's footprint in pinball belongs to those Bally years. As the group's German arm it built licensed, German-market editions of [[corporate-entity:bally-midway-manufacturing-company]]'s [[technology-generation:solid-state]] [[game-format:pinball]] machines — its *[[model:eight-ball-champ-2]]* of *[[title:eight-ball-champ]]*, its *[[model:party-animal-2]]* of *[[title:party-animal]]*, and likewise *[[title:motordome]]*, *[[title:beat-the-clock]]*, *[[title:cybernaut]]* and *[[title:lady-luck]]* — each finished in Berlin under a cabinet legend reading "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA".[[cite:6]] Bally Wulff's own *[[model:fireball-classic-2]]*, its edition of Bally Midway's 1985 Fireball Classic, is noted in the databases simply as "made in Germany under license from Bally Midway".[[cite:7]]
+
+        A handful of titles the Berlin house reworked more openly, printing fresh backglasses in its own screen-printing shop. Bally Midway's *[[title:special-force]]* was reissued as *[[model:special-force-girls]]* with new artwork after its American backglass was judged too militaristic — a decision designer [[person:dennis-nordman]] later recounted[[cite:8]] — and its *[[title:hardbody]]*, which Bally Wulff sold as *[[model:hardbody-2]]*, was rebadged again as *[[model:super-sport]]* with its bodybuilder pin-up redrawn more modestly after operators complained, in a switch a Bally Wulff advertisement announced under the line "Less sex in the game".[[cite:9]] The replacement art was the work of Berlin artist [[person:mychael-gerstenberger]].[[cite:10]]
+
+        After Bally's exit the firm changed hands again — to the Schmidt Group in 2007 and to the Czech gaming company APEX in 2022.[[cite:11]] It never returned to pinball, and it remains one of Germany's foremost gaming-machine makers, still headquartered in Berlin[[cite:12]] with additional operations in Spain.[[cite:13]]
+      cites:
+        "1":
+          ref: https://de.wikipedia.org/wiki/Bally_Wulff
+          quote: "Die Bally Wulff Games & Entertainment GmbH ist ein deutscher Hersteller von Geld-Gewinn-Spiel-Geräten mit Firmen- und Produktionssitz in Berlin"
+        "2":
+          ref: https://de.wikipedia.org/wiki/Bally_Wulff
+          quote: "Unter dem Namen Günter Wulff Apparatebau wurde das Unternehmen im Jahr 1950 von Günter Wulff (1912–1980) [...] in Berlin mit einem Anfangskapital von 500,00 DM gegründet"
+        "3":
+          ref: https://www.ballywulff.de/unternehmen
+          quote: "Seit über 7 Jahrzehnten steht BALLY WULFF für zukunftsweisende Geldspielgeräte und bahnbrechende Spielehighlights [...] behaupten uns seit jeher als einer der führenden und einflussreichsten deutschen Hersteller"
+        "4":
+          ref: https://en.wikipedia.org/wiki/Bally_Manufacturing
+          quote: "The company expanded internationally in 1974 when it acquired German company Guenter Wulff-Apparatebau, which was renamed Bally Wulff."
+        "5":
+          ref: https://en.wikipedia.org/wiki/Bally_Manufacturing
+          quote: "To pay down debts, German subsidiary Bally Wulff was spun off into an independent company in 1991"
+        "6":
+          ref: ipdb:4518
+          quote: "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA"
+        "7":
+          ref: ipdb:4544
+          quote: "Same as US model, Bally Midway's 1985 'Fireball Classic', but made in Germany under license from Bally Midway."
+        "8":
+          ref: ipdb:3270
+          quote: "'Special Force Girls' is the same game as Bally Midway's 1986 'Special Force' but with a different backglass. Dennis Nordman said Bally Wulff imported this game from the USA and put their own backglass on it because the USA backglass art was deemed too military. [...] printed at Bally Wulff's own screen printing department in Berlin, and then assembled into the original U.S. machines in Berlin."
+        "9":
+          ref: ipdb:6105
+          quote: 'This is the same game as Bally Wulff''s 1987 ''Hardbody'' but with a different backglass that shows the women wearing more clothing. [...] a Bally Wulff ad (shown here) is titled "Less sex in the game"'
+        "10":
+          ref: ipdb:3270
+          quote: "The artist of this backglass is Mychael Gerstenberger from Berlin."
+        "11":
+          ref: https://de.wikipedia.org/wiki/Bally_Wulff
+          quote: "Seit 2022 gehört Bally Wulff zur Gruppe um den tschechischen Geld-Gewinn-Spiel-Geräte Hersteller Apex Gaming davor seit 2007 zur Schmidt-Gruppe"
+        "12":
+          ref: https://www.ballywulff.de/unternehmen
+          quote: "behaupten uns seit jeher als einer der führenden und einflussreichsten deutschen Hersteller [...] 1 Firmenzentrale in Berlin"
+        "13":
+          ref: https://en.wikipedia.org/wiki/Bally_Manufacturing
+          quote: "Former subsidiary Bally Wulff remains a gaming and vending equipment manufacturer in Germany, with additional operations in Spain"

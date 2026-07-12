@@ -1,0 +1,31 @@
+attribution: flipcommons-catalog
+description: Consolidate the duplicate Ripepi corporate entity, IPDB 457 into 104.
+claims:
+  - model.arrow-3:
+      expect: { ipdb_id: 6454 }
+      note: 'Reattributed to the canonical Ditta Ripepi s.p.a. corporate entity (IPDB manufacturer 104). IPDB also carries this Messina firm as manufacturer 457 "Ripepi" -- a duplicate of the same company ("Ditta" is the firm, "s.p.a." its legal form) -- so its games are consolidated onto the legal-name entity.'
+      corporate_entity: ditta-ripepi-spa
+  - model.big-sakem:
+      expect: { ipdb_id: 5622 }
+      note: 'Reattributed to the canonical Ditta Ripepi s.p.a. corporate entity (IPDB manufacturer 104). IPDB also carries this Messina firm as manufacturer 457 "Ripepi" -- a duplicate of the same company ("Ditta" is the firm, "s.p.a." its legal form) -- so its games are consolidated onto the legal-name entity.'
+      corporate_entity: ditta-ripepi-spa
+  - model.caravan-gold:
+      expect: { ipdb_id: 5943 }
+      note: 'Reattributed to the canonical Ditta Ripepi s.p.a. corporate entity (IPDB manufacturer 104). IPDB also carries this Messina firm as manufacturer 457 "Ripepi" -- a duplicate of the same company ("Ditta" is the firm, "s.p.a." its legal form) -- so its games are consolidated onto the legal-name entity.'
+      corporate_entity: ditta-ripepi-spa
+  - model.gold-star-8:
+      expect: { ipdb_id: 5269 }
+      note: 'Reattributed to the canonical Ditta Ripepi s.p.a. corporate entity (IPDB manufacturer 104). IPDB also carries this Messina firm as manufacturer 457 "Ripepi" -- a duplicate of the same company ("Ditta" is the firm, "s.p.a." its legal form) -- so its games are consolidated onto the legal-name entity. This is the surviving Ripepi "Gold Star"; the duplicate gold-star-5 is merged into this record.'
+      corporate_entity: ditta-ripepi-spa
+  - model.gold-star-5:
+      expect: { ipdb_id: 4127 }
+      note: 'Duplicate of gold-star-8: the same 1976 Ripepi "Gold Star" copy of Gottlieb Fast Draw, which IPDB carries as a second machine record (IPDB 4127 vs 5269). Merged under the gold-star-8 title ahead of retiring this redundant record. Already sits under the Ditta Ripepi s.p.a. entity, so no corporate-entity change is needed.'
+      title: gold-star-8
+  - model.time-out:
+      expect: { ipdb_id: 4992 }
+      note: 'Reattributed to the canonical Ditta Ripepi s.p.a. corporate entity (IPDB manufacturer 104). IPDB also carries this Messina firm as manufacturer 457 "Ripepi" -- a duplicate of the same company ("Ditta" is the firm, "s.p.a." its legal form) -- so its games are consolidated onto the legal-name entity.'
+      corporate_entity: ditta-ripepi-spa
+  - corporate-entity.ditta-ripepi-spa:
+      expect: { ipdb_manufacturer_id: 104, manufacturer: ditta-ripepi-spa }
+      note: 'Repoint the surviving corporate entity to the Ripepi manufacturer, the trade-name brand kept in the merge. Supersedes the seeded brand link at the flipcommons-catalog layer; IPDB''s manufacturer-104 claim is untouched.'
+      manufacturer: ripepi

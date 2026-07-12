@@ -1,0 +1,15 @@
+attribution: ipdb
+description: Drop ipdb's stray/garbled theme memberships ahead of theme cleanup.
+claims:
+  - model.daily-double-de-luxe:
+      remove: { theme: [theme-sports] }
+      note: "'Theme Sports' duplicates the 'Sports' theme already on this model; being retired in favor of it."
+  - model.independence-day:
+      remove: { theme: [outer-spacelicensed-themeaction-movie] }
+      note: "Garbled theme value concatenating Outer Space, Licensed Theme and Action Movie; the model already carries outer-space and action-movies separately, and is being given Licensed Theme in its place."
+  - model.party-animal:
+      remove: { theme: [1980s-party-theme] }
+      note: "Garbled theme value concatenating '1980s' and 'Party'; being split into those two proper themes."
+  - model.party-animal-2:
+      remove: { theme: [1980s-party-theme] }
+      note: "Garbled theme value concatenating '1980s' and 'Party'; being split into those two proper themes."

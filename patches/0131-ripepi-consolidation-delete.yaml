@@ -1,0 +1,19 @@
+attribution: flipcommons-catalog
+description: Delete the orphaned duplicates from the Ripepi consolidation.
+claims:
+  - corporate-entity.ripepi:
+      expect: { ipdb_manufacturer_id: 457 }
+      note: 'Duplicate of the Ditta Ripepi s.p.a. corporate entity (IPDB manufacturer 104): the same Messina firm carried under its trade name. Its games were reattributed to that entity, leaving this record with no referrers. IPDB''s manufacturer-457 claim is left intact; only this Flipcommons copy is retired.'
+      delete: true
+  - manufacturer.ditta-ripepi-spa:
+      expect: { name: Ditta Ripepi s.p.a. }
+      note: 'Redundant brand seeded from IPDB manufacturer 104''s legal name. Its corporate entity was repointed to the surviving Ripepi manufacturer, leaving this brand orphaned.'
+      delete: true
+  - model.gold-star-5:
+      expect: { ipdb_id: 4127 }
+      note: 'Redundant duplicate of gold-star-8 -- the same 1976 Ripepi "Gold Star" copy of Gottlieb Fast Draw, which IPDB carries twice (machines 4127 and 5269). Merged under the gold-star-8 title, now retired. IPDB''s machine-4127 claim is left intact; only this Flipcommons copy is retired.'
+      delete: true
+  - title.gold-star-5:
+      expect: { name: Gold Star }
+      note: 'Orphaned after its sole model (gold-star-5) was merged into the gold-star-8 title as a duplicate.'
+      delete: true

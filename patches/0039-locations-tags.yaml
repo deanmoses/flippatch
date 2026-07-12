@@ -1,10 +1,13 @@
 attribution: flipcommons-catalog
 description: >
-  Create region locations for the new cities, plus the bootleg tag.
+  Create regions for the upcoming new cities, plus some new tags.
 claims:
   - tag.bootleg:
       create: true
       name: Bootleg
+  - tag.licensed-build:
+      create: true
+      name: Licensed Build
   - location.japan/osaka:
       create: true
       name: Osaka

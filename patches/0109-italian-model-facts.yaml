@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Facts from tilt.it (IPDB.it) on existing Italian models.
+  Facts from tilt.it (IPDB.it) and IPDB on existing Italian models.
 claims:
   - model.sprint-girl:
       cite:
@@ -63,8 +63,13 @@ claims:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
         quote: 'Space Hawks (Cybernaut) – ss – 4p'
-      year: 1986
       player_count: 4
+      changesets:
+        - note: 'Year from the tilt.it section header the game is listed under.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+            quote: '1986'
+          year: 1986
   - model.super-bowl:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
@@ -81,30 +86,40 @@ claims:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
         quote: 'Tiger Rag (King of Steel) – ss – 4p'
-      year: 1984
       player_count: 4
+      changesets:
+        - note: 'Year from the tilt.it section header the game is listed under.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+            quote: '1984'
+          year: 1984
   - model.white-shark:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
         quote: 'White Shark – ss – 4p'
-      year: 1980
       player_count: 4
+      changesets:
+        - note: 'Year from the tilt.it section header the game is listed under.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+            quote: '1980'
+          year: 1980
   - model.world-defender:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
         quote: 'World Defender – ss – 4p'
-      year: 1985
       player_count: 4
+      changesets:
+        - note: 'Year from the tilt.it section header the game is listed under.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
+            quote: '1985'
+          year: 1985
   - model.ascot:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
         quote: Ascot (em)
       year: 1976
-  - model.casino-5:
-      cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
-        quote: Casino' (testa piccola)
-      year: 1985
   - model.dogs-race:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
@@ -116,14 +131,16 @@ claims:
         quote: 'Jack Rabbit – ss (''testa piccola'')'
       year: 1976
   - model.sure-shot-5:
+      note: 'Year from the tilt.it section header the game is listed under.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
-        quote: Sure Shot
+        quote: '1976'
       year: 1976
   - model.timothy-t-2:
+      note: 'Year from the tilt.it section header the game is listed under.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/cea'
-        quote: 'Timothyt T. – em – 1p'
+        quote: '1977'
       year: 1977
   - model.basket:
       note: 'tilt.it marks the year uncertain ("(?)").'
@@ -144,10 +161,10 @@ claims:
         quote: Jolly (Hurdy Gurdy)
       year: 1970
   - model.spider:
-      note: 'tilt.it marks the year uncertain ("(?)").'
+      note: 'Year from the tilt.it section header the game is listed under; tilt.it marks it uncertain ("(?)").'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
-        quote: Spider (Hurdy Gurdy)
+        quote: '(?) 1970'
       year: 1970
   - model.sea-devil:
       cite:
@@ -159,11 +176,6 @@ claims:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
         quote: 'Calcio Italia (prima serie con lanciabiglia manuale) – em – 2p'
       year: 1965
-  - model.night-club-2:
-      cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
-        quote: 'Night Club – em – 1p'
-      year: 1970
   - model.giunone:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
@@ -175,11 +187,6 @@ claims:
         quote: 'Rocky Girl (Rock Star) – em – 1p'
       year: 1979
       player_count: 1
-  - model.space-woman:
-      cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
-        quote: 'Space Woman (GL ?) – ss – 4p – with "mixage record" feature'
-      year: 1981
   - model.ice-mania:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
@@ -222,14 +229,24 @@ claims:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
         quote: 'Sisters (Royal Pair) – em – 1p'
-      year: 1979
       player_count: 1
+      changesets:
+        - note: 'Year from the tilt.it section header the game is listed under.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+            quote: '1979'
+          year: 1979
   - model.take-a-card:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
         quote: 'Take a card (Texas Ranger) – em – 1p'
-      year: 1979
       player_count: 1
+      changesets:
+        - note: 'Year from the tilt.it section header the game is listed under.'
+          cite:
+            ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
+            quote: '1979'
+          year: 1979
   - model.dakar:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
@@ -262,10 +279,10 @@ claims:
         quote: Caravan Gold
       year: 1976
   - model.time-out:
-      note: 'tilt.it marks the year uncertain ("(?)").'
+      note: 'Year and title from the tilt.it entry; tilt.it marks the year uncertain ("1975?").'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ripepi'
-        quote: Time Out
+        quote: '1975? Time Out'
       year: 1975
   - model.scramble:
       cite:
@@ -304,6 +321,20 @@ claims:
       year: 1983
       month: 9
       player_count: 4
+      changesets:
+        - note: "Play mechanisms, flipper count, and game format from IPDB #824's Notable Features. The six flippers span a main and an \"upper transparent\" second-level playfield, hence multi-level-playfield; the flipper/bumper/drop-target complement fixes the format as pinball. Drop-target banks: one 3-bank, two 4-bank, one 6-bank."
+          cite:
+            ref: ipdb:824
+            quote: 'Pop bumpers (4). One 3-bank, two 4-bank, and one 6-bank drop targets. Six flippers (two on the main playfield, two on the upper transparent playfield, and two outlane-save flippers).'
+          game_format: pinball
+          flipper_count: 6
+          gameplay_feature:
+            - pop-bumpers: 4
+            - 3-bank-drop-targets: 1
+            - 4-bank-drop-targets: 2
+            - 6-bank-drop-targets: 1
+            - flippers: 6
+            - multi-level-playfield
   - model.future-world:
       note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
       cite:
@@ -411,16 +442,34 @@ claims:
       month: 4
       player_count: 4
   - model.top-hand-5:
-      note: 'tilt.it marks the year uncertain ("(?)").'
+      note: 'Year from the tilt.it section header the game is listed under; tilt.it marks it uncertain ("(?)").'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Top Hand – 1p – em'
+        quote: '(?) 1973:'
       year: 1973
+      changesets:
+        - note: "Display type from IPDB #5288's Notable Features."
+          cite:
+            ref: ipdb:5288
+            quote: 'Only a maximum score of 99,990 points is displayed by the score reels.'
+          display_type: score-reels
+  - model.combat-3:
+      note: "Solid-state 'Combat' prototype (IPDB #6682), distinct from the produced EM 'Combat' (model.combat, IPDB #3609). Presented at the ENADA show in Rome on 12-14 October 1977 and the AMOA Expo in Chicago on 28-30 October 1977; never produced (catalog production status 'Unreleased'). Year is the presentation year from IPDB #6682's Notes; no month is asserted, as a show-presented prototype has no manufacture date (IPDB records no DateOfManufacture)."
+      cite:
+        ref: ipdb:6682
+        quote: "This solid state 'Combat' prototype with a Signetics microprocessor was presented at the 1977 ENADA show in Rome, Italy on October 12-14, 1977"
+      year: 1977
+      changesets:
+        - note: "Display type from IPDB #6682's Notes, which describe a digital display like the ones on Zaccaria's first production solid-state game, the 1978 'Winter Sports' (alphanumeric segmented LEDs)."
+          cite:
+            ref: ipdb:6682
+            quote: "Player 2 display shows the smaller size of the actual digital display, similar to the ones on the Bally's 1974 'Bow and Arrow' prototypes and to the ones ultimately used on Zaccaria's first production solid state game, Zaccaria's 1978 'Winter Sports'."
+          display_type: alphanumeric
   - model.tropical:
-      note: 'tilt.it marks the year uncertain ("(?)").'
+      note: 'Year from the tilt.it section header the game is listed under; tilt.it marks it uncertain ("(?)").'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Tropical – 1p – em'
+        quote: '(?) 1973:'
       year: 1973
   - model.winter-sports:
       cite:

@@ -50,3 +50,42 @@ claims:
         "2":
           ref: ipdb:6871
           quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] Wedge head. [...] The only picture we have seen of this game is the one shown here from the industry magazine "The Amusement Sangyo (アミューズメント産業)" dated March 1976.'
+  - model.crazy-15-15:
+      expect: { ipdb_id: 6775 }
+      note: "Narrative description compiled from IPDB's structured rows and Notes prose; the 1965 date for Crazy 15 is stated in the New Crazy 15 listing (cite 2)."
+      description: |
+        Crazy 15 (クレイジー15) is a single-player [[technology-generation:electromechanical]] flipper game made by [[manufacturer:komaya-seisakusho]] (Komaya) of Kobe, Japan, dating to 1965.[[cite:1]][[cite:2]] The player works two flippers, shooting balls into nine numbered trap holes; lighting lamps in a row on the backglass — vertically, horizontally, or diagonally, fifteen points in all — wins a [[reward-type:replay]], with the score shown by [[display-type:backglass-lights]].[[cite:1]] A green button on the lockdown bar serves a ball to the manual shooter, and a red button works both (non-impulse) flippers at once.[[cite:1]] Komaya later issued an improved version as [[model:new-crazy-15]] (1977).[[cite:1]]
+      cites:
+        "1":
+          ref: ipdb:6775
+          quote: 'Crazy 15 (クレイジー15) [...] Manufacturer: Komaya Co., Ltd., of Kobe, Japan [Trade Name: Komaya Seisakusho] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] Flippers (2), Trap holes (9). Coin slot in lockdown bar. Pressing green button on lockdown bar serves ball to manual ball shooter. Pressing red button on lockdown bar activates both flippers simultaneously. They are not impulse flippers. [...] If make lit lamps in vertical, horizontal, or diagonal in backglass (15 points total), win replay. [...] The manufacturer issued an "improved" version of this game as Komaya Seisakusho''s 1977 ''New Crazy 15''.'
+        "2":
+          ref: ipdb:6786
+          quote: 'It is an improved version of Komaya Seisakusho''s 1965 ''Crazy 15 (クレイジー15)''.'
+  - model.new-crazy-15:
+      expect: { ipdb_id: 6786 }
+      note: "Narrative description compiled from IPDB's structured rows and Notes prose. IPDB dates the start of manufacture to 1977 from a Jan-1978 announcement."
+      description: |
+        New Crazy 15 (ニュークレイジー15) is a single-player [[technology-generation:electromechanical]] flipper game made by [[manufacturer:komaya-seisakusho]] (Komaya) of Kobe, Japan, its start of manufacture dated to 1977.[[cite:1]] An improved edition of Komaya's 1965 [[model:crazy-15-15]], it adds a sound effect, a motor-driven ball loader, and improved flippers.[[cite:1]] Play is otherwise unchanged: two flippers shoot balls into numbered holes that light corresponding numbers on the backglass ([[display-type:backglass-lights]]), and completing three in a row — vertically, horizontally, or diagonally — wins a [[reward-type:replay]].[[cite:1]] Komaya introduced it alongside a non-pinball novelty, Pop Up.[[cite:1]]
+      cites:
+        "1":
+          ref: ipdb:6786
+          quote: 'New Crazy 15 [...] Manufacturer: Komaya Co., Ltd., of Kobe, Japan [Trade Name: Komaya Seisakusho] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] Balls landing in numbered holes on the playfield light up corresponding numbers on the backglass. Lighting three numbers in a row awards a replay. [...] It is an improved version of Komaya Seisakusho''s 1965 ''Crazy 15 (クレイジー15)''. [...] we date this game''s start of manufacture in 1977 [...] has released the brand new product "New Crazy 15" and "Pop Up". [...] "New Crazy 15" is a new model of "Crazy 15", added sound effect. Also ball loader driven by motor and flipper improved.'
+  - model.hard-rock:
+      expect: { ipdb_id: 6071 }
+      note: "Narrative description compiled from IPDB's structured rows and Notes prose (a translated Japanese flyer)."
+      description: |
+        Hard Rock is a [[technology-generation:solid-state]] pinball machine made by [[manufacturer:universal]] (Universal Company, Ltd.) of Oyama, Japan, dating to 1977.[[cite:1]] Its flyer bills it as "a contemporary pinball machine" that looks electromechanical but is equipped with a CPU, electrical sound, and contactless switches; despite the solid-state hardware, its backbox keeps mechanical [[display-type:score-reels]].[[cite:1]] The two-flipper playfield adds pop bumpers, slingshots, kick-out holes, and standup targets in a 1730 mm-tall [[cabinet:floor]] cabinet.[[cite:1]] Universal exhibited it at the 15th Amusement Machine Show in October 1977.[[cite:1]]
+      cites:
+        "1":
+          ref: ipdb:6071
+          quote: 'Hard Rock [...] Manufacturer: Universal Company, Ltd., of Oyama, Japan (1977-1980)[Trade Name: Universal Kabushikigaisha] [...] Type: Solid State Electronic (SS) [...] Flippers (2), Pop bumpers (5), Slingshots (2), Kick-out holes (6), Standup targets (2). [...] It is a contemporary pinball machine. [...] * Equipped with CPU [...] * Electrical sound [...] * Contactless switch [...] Height 1730mm Width 521mm Length 1320mm [...] The "ring counter" may be a reference to the backbox score reels. The "ones" reel looks like a dummy zero. [...] According to Japan collector Yasushi Takeda, this game first appeared in Universal''s new product catalogue of 1977. [...] The arcade industry newspaper Game Machine dated Oct-15-1977 indicated that Universal exhibited ''Hard Rock'' at the 15th Amusement Machine Show, a Japanese arcade exhibition held during October 5-7, 1977.'
+  - model.hercules-2:
+      expect: { ipdb_id: 4394 }
+      note: "Narrative description compiled from IPDB's structured rows and Notes prose. IPDB's flyer date (June 1978) and the July 1978 trade announcement bracket the catalog's 1978 date."
+      description: |
+        Hercules is a [[technology-generation:solid-state]] pinball machine made by [[manufacturer:universal]] (Universal Company, Ltd.) of Oyama, Japan, dating to 1978.[[cite:1]] Though it looks electromechanical from the outside, it runs on a CPU circuit board and has electrical sound — early Japanese solid-state hardware — yet its backbox keeps mechanical [[display-type:score-reels]], the ones reel a dummy zero.[[cite:1]] Its two-flipper playfield carries pop bumpers, slingshots, star rollovers, standup and spinning targets, and a ball kicker.[[cite:1]] The arcade-industry newspaper Game Machine announced the game in its July 15, 1978 issue.[[cite:1]]
+      cites:
+        "1":
+          ref: ipdb:4394
+          quote: 'Hercules [...] Manufacturer: Universal Company, Ltd., of Oyama, Japan (1977-1980)[Trade Name: Universal Kabushikigaisha] [...] Type: Solid State Electronic (SS) [...] Flippers (2), Pop bumpers (3), Slingshots (2), Star rollovers (10), Standup targets (4), Spinning target (1), Ball kicker (1) [...] The game looks electro-mechanical from the outside but, according to the Japanese flyer, it uses a CPU circuit board and has electrical sound. The backbox has score reels. The "ones" reel looks like a dummy zero. [...] The arcade industry newspaper Game Machine dated Jul-15-1978 page 15 announced ''Hercules''.'

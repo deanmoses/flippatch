@@ -265,4 +265,69 @@ sources:
           label: Turner Pinball,
           link_type: homepage,
         }
+  - name: BALLY WULFF
+    source_type: web
+    description: >-
+      Manufacturer site of Bally Wulff (Bally Wulff Games & Entertainment GmbH),
+      a Berlin maker of German-market gaming machines.
+    links:
+      - {
+          url: "https://www.ballywulff.de/",
+          label: BALLY WULFF,
+          link_type: homepage,
+        }
+  - name: "Pinball con Ñ"
+    source_type: web
+    description: >-
+      Spanish-language original-research blog on the history of Spanish pinball
+      manufacturers, drawing on interviews with industry veterans.
+    links:
+      - {
+          url: "https://blogpinball.blogspot.com/",
+          label: "Pinball con Ñ",
+          link_type: homepage,
+        }
+  - name: Augusto Campos
+    source_type: web
+    description: >-
+      Personal technology-and-history blog of the Brazilian writer Augusto
+      Campos, carrying original-research articles drawing on interviews with
+      industry veterans.
+    links:
+      - {
+          url: "https://augustocampos.net/",
+          label: Augusto Campos,
+          link_type: homepage,
+        }
+  - name: Time Extension
+    source_type: web
+    description: >-
+      Retro-gaming news, features and history site.
+    links:
+      - {
+          url: "https://www.timeextension.com/",
+          label: Time Extension,
+          link_type: homepage,
+        }
+  - name: Gaming Alexandria
+    source_type: web
+    description: >-
+      Games-history and preservation site publishing long-form original research.
+    links:
+      - {
+          url: "https://www.gamingalexandria.com/",
+          label: Gaming Alexandria,
+          link_type: homepage,
+        }
+  - name: Pinball Magazine
+    source_type: web
+    description: >-
+      Pinball history magazine publishing long-form designer interviews and
+      feature articles.
+    links:
+      - {
+          url: "https://www.pinball-magazine.com/",
+          label: Pinball Magazine,
+          link_type: homepage,
+        }
 claims: []

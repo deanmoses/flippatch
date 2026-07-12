@@ -1,0 +1,67 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: Narrative description for the Taito do Brasil manufacturer.
+claims:
+  - manufacturer.taito-do-brasil:
+      note: 'Sources disagree on the pre-1972 name: en.wikipedia calls the earlier operation "Clover Electronic Amusement", while two original-research accounts (augustocampos, gamingalexandria) both give "Trevo Diversões Eletrônicas"; the description follows the two corroborating accounts. Time Extension (Dr. Perani''s scholarship) is cited to flag that much of this history rests on oral accounts and that the bootleg/licensed line is not as clean as the community once assumed.'
+      description: |
+        Taito do Brasil was the Brazilian arm of the Japanese amusement company [[manufacturer:taito]] and, from the mid-1970s until 1985, the dominant maker of [[game-format:pinball]] and arcade machines in [[location:brazil]].[[cite:1]] Registered in [[location:brazil/sp/sao-paulo]] in 1972 as Taito do Brasil Indústria e Comércio Ltda., it was directed by [[person:abraham-kogan]] — "Abba", the son of Taito's founder Michael Kogan — and had already operated for up to four years under the name Trevo Diversões Eletrônicas, a domestic front floated to satisfy Brazil's rules on foreign electronics companies.[[cite:2]]
+
+        The subsidiary began as an importer, bringing in U.S. machines and Japanese components for assembly within the country.[[cite:3]] That model became untenable as import taxes climbed and the government, treating pinball as a game of chance, tightened its rules; by 1976 a computing market-reserve regime under CAPRE (the Electronic Processing Activities Coordinating Committee) had made importing pinball machines illegal.[[cite:3]] Cut off from finished imports but facing booming demand, Taito do Brasil did what many Brazilian technology firms did at the turn of the 1980s: with capital from its Japanese parent it built a factory in São Paulo, absorbed smaller local outfits such as Liberty, Fipermatic and Mecatronics, and began producing national imitations of foreign machines.[[cite:4]]
+
+        Those machines were, for the most part, unlicensed copies — [[tag:bootleg]] pinballs whose target-and-obstacle layouts reproduced successful imports while their artwork was redrawn (by the illustrator J. Pecegueiro) and their scoring logic was re-implemented locally.[[cite:5]] The results were the games a generation of Brazilian arcade-goers remembers. *[[model:cosmic]]*, the firm's greatest commercial success, was a clone of [[manufacturer:stern-electronics]]'s *[[title:galaxy-stern]]*;[[cite:6]] *[[model:drakor]]* was nearly identical to [[manufacturer:williams]]'s *[[title:gorgar]]*;[[cite:7]] *[[model:cavaleiro-negro]]* was, in one Brazilian historian's words, far more than "inspired" by Williams' *[[title:black-knight]]*;[[cite:8]] and *[[model:oba-oba]]* took the playfield of [[manufacturer:bally]]'s *[[title:playboy-arkon]]* but rethemed it around Oba Oba, the Rio de Janeiro samba house of showman Oswaldo Sargentelli.[[cite:9]] Only *[[model:shark-2]]*, according to a Brazilian pinball club, carried an original playfield of the maker's own design.[[cite:10]]
+
+        Almost none of this was done with permission, which makes the firm's one true [[tag:licensed-build]] the exception that proves the rule. Its own *[[model:meteor-2]]*, a version of Stern's 1979 machine of the same name, was "manufactured in Brazil under license from Stern" — a grant printed on the playfield apron — and is remembered as the only Taito do Brasil game that acknowledges any licence at all.[[cite:11]] Yet the line between bootleg and licensed build is blurrier than it first appears: much of the company's documented history rests on oral accounts, and recent scholarship has turned up evidence that some titles may have been made legitimately under parent Taito Corporation's own distribution deals rather than pirated — the arcade game Time Fighter, for one, proving to be a licensed conversion of Konami's Time Pilot.[[cite:12]]
+
+        Technically the firm climbed a steep curve. Its earliest pinballs, up to about 1978 and including *[[model:roman-victory]]*, were CPU-less digital machines copied from the TTL designs of Spain's [[manufacturer:recel]], and they lost money, plagued by reliability and maintenance problems.[[cite:13]] A staff engineer, Viggo Tristed, then developed a microprocessor board around Intel's 8080 — and later Zilog's Z80 — that let the company chase the more advanced [[technology-generation:solid-state]] machines of [[manufacturer:bally]], Williams, [[manufacturer:gottlieb]], Stern and [[manufacturer:zaccaria]].[[cite:14]] Across roughly a decade it turned out more than thirty pinball models and, all told, some 25,000 machines.[[cite:15]] The end came abruptly: after founder Michael Kogan died on a U.S. business trip in early 1984 and public appetite for pinball collapsed against home video games, the owners wound Taito do Brasil up in 1985 — honouring every debt, without bankruptcy — and the Japanese parent passed to Kyocera the following year.[[cite:16]] Among the assets it left behind was the [[manufacturer:sega]] trademark in Brazil, which Taito do Brasil had held and sold on to TecToy.[[cite:17]]
+      cites:
+        "1":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "a marca dominou esse ramo no país até 1985, primeiro importando e depois com fábrica própria em São Paulo, produzindo e distribuindo dezenas de milhares máquinas de vídeo jogo (arcade) e de flíper (pinball)."
+        "2":
+          ref: https://www.gamingalexandria.com/wp/2025/11/playful-to-the-core-origins-of-taito
+          quote: 'Taito was created by Mikhail/Michael ("Misha") Kogan [...] 1972 saw the formal establishment of Taito do Brasil Indústria e Comércio Ltd under Kogan''s son Abraham ''Abba'' (though Brazil''s byzantine rules around foreign companies had meant they had been operating up to four years earlier under the name Trevo Diversōes Electronicas.)'
+        "3":
+          ref: https://en.wikipedia.org/wiki/Taito_of_Brazil
+          quote: "This subsidiary was originally an importer of existing U.S. and Japanese machine components to be assembled within the country. [...] By 1976, within rules created by the Electronic Processing Activities Coordinating Committee (CAPRE), it became illegal to import pinball machines."
+        "4":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "montou uma fábrica em SP (foto acima), comprou empresas menores (como Liberty, Flipermatic e Mecatronics) que atuavam no mesmo mercado, e começou a criar imitações nacionais de aparelhos do exterior."
+        "5":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "Os clones feitos pela Taito do Brasil eram máquinas de pinball com arte adaptada (ou criada, seguindo o tema original, pelo ilustrador J. Pecegueiro), e disposição dos obstáculos e dos alvos copiando máquinas de sucesso do exterior. A lógica dos jogos (regras para pontuação, bônus, bolas extras, etc. - implementadas em hardware e, mais tarde, também software) era criada localmente."
+        "6":
+          ref: https://en.wikipedia.org/wiki/Taito_of_Brazil
+          quote: "Taito of Brazil's most commercially successful pinball machine was Cosmic, a clone of Stern Electronics Galaxy."
+        "7":
+          ref: https://en.wikipedia.org/wiki/Taito_of_Brazil
+          quote: "such as the case with Drakor, [...] which is nearly identical to Gorgar from Williams Electronics."
+        "8":
+          ref: https://augustocampos.net/taito-brasil
+          quote: 'A máquina Cavaleiro Negro é uma das mais lembradas, e foi muito mais do que "inspirada" na Black Knight, da Williams.'
+        "9":
+          ref: ipdb:4572
+          quote: "Similar to Bally's 1978 'Playboy'. [...] 'Oba Oba' was a playhouse in Rio de Janeiro, established in 1973. The man who appears on the playfield is Oswaldo Sargentelli, founder of the house."
+        "10":
+          ref: ipdb:4582
+          quote: "According to a pinball club in Brazil, 'Shark' is the only game from this manufacturer that has an original playfield design (not a copy of a game from another manufacturer)."
+        "11":
+          ref: ipdb:4571
+          quote: "This is a version of Stern's 1979 'Meteor' manufactured in Brazil under license from Stern as indicated on the playfield apron. [...] Meteor is the only game from Taito do Brasil that acknowledges licensing."
+        "12":
+          ref: https://www.timeextension.com/features/the-forgotten-legacy-of-taito-of-brazil
+          quote: "A lot of the documented history of Taito Brazil is based on unsubstantiated oral histories, or official statements likely made to capitalise on certain laws. [...] Despite conjecture that a lot of the companies pinball and arcade machines were unlicensed copies, there's some evidence that actually, they might have been manufactured due to its parent company, Taito Corporation, having official distribution deals. Two examples being Catch Match and Time Fighter - the latter of which is actually a license of Konami's Time Pilot"
+        "13":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "as primeiras máquinas de pinball produzidas pela Taito no Brasil, mais ou menos até 1978 (como Criterium e Roman Victory), eram engenhocas eletrônicas digitais (mas sem CPU), copiadas de modelos TTL da espanhola Recel. Elas deram grande prejuízo, sendo assoladas por problemas de usabilidade e dificuldade de manutenção devido à sua complexidade e à qualidade das peças disponíveis."
+        "14":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "para copiar máquinas de pinball mais avançadas das grandes marcas dos EUA e do Japão (como como Bally, Williams, Gottlieb, Stern e Zaccaria), recebeu um investimento considerável da Taito japonesa e passou a usar um sistema adotando um microprocessador como CPU. O sistema foi desenvolvido localmente pelo funcionário Viggo Tristed (aparentemente usando modelos da Gottlieb como benchmark) [...] as máquinas de pinball da Taito do Brasil passaram a usar o processador 8080, da Intel (lançado em 1974) [...] a Taito do Brasil lançou algumas máquinas de pinball usando o processador Z80, da Zilog"
+        "15":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "Entre as mais de 30 máquinas de pinball produzidas pela Taito do Brasil nos seus cerca de 10 anos de produção [...] a empresa produziu cerca de 25.000 máquinas no país"
+        "16":
+          ref: https://en.wikipedia.org/wiki/Taito_of_Brazil
+          quote: "Michael Kogan, the founder of the parent company, Taito Corporation had died on a business trip to the U.S. in early 1984. [...] prompted the decision to close down Taito of Brazil in 1985. The company was liquidated and all its debts honored without the need for bankruptcy. Kyocera purchased what remained of Taito Corporation in 1986."
+        "17":
+          ref: https://augustocampos.net/taito-brasil
+          quote: "a Taito do Brasil era a dona da marca Sega no nosso país. Antes de encerrar suas operações, a empresa vendeu a marca para a TecToy"

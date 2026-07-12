@@ -1,6 +1,0 @@
-attribution: ipdb
-description: Drop IPDB's fabricated Automatic Games brand link for the St. Paul firm.
-claims:
-  - corporate-entity.automatic-games-company-st-paul:
-      note: 'Correcting the earlier ingest: IPDB asserts no brand-level manufacturer for this firm (it is IPDB manufacturer 41 in its own right); the parse fabricated a link to the shared "Automatic Games" brand by name-match. Dropping that claim so the catalog re-attribution stands as the sole active manufacturer claim.'
-      retract: [manufacturer]

@@ -1,0 +1,94 @@
+attribution: flipcommons-ai-desc-tag
+description: Description for some new tags.
+claims:
+  - tag.bootleg:
+      description: >
+        A **bootleg** is a complete pinball machine, built from scratch, that reproduces another manufacturer's game without authorization. It is distinct from a conversion kit, which reworks the cabinet of a machine that already exists, and from a licensed remake: a bootleg is a wholly new build whose playfield, rules and often artwork are lifted from someone else's product.
+
+        Bootlegging flourished in postwar Europe — above all in [[location:spain]] and [[location:italy]] — through the [[technology-generation:electromechanical]] era. Import barriers, light licensing enforcement and strong local demand for American-style pinball gave regional makers both the motive and the latitude to clone the dominant designs of [[manufacturer:gottlieb]], [[manufacturer:williams]] and [[manufacturer:bally]].
+
+        In Spain the practice was almost an industry of its own. [[manufacturer:segasa]] issued *[[model:astro-flite]]*, a straight copy of Williams' *[[model:strato-flite]]*,[[cite:1]] while [[manufacturer:petaco]] reworked Gottlieb's *[[model:king-of-diamonds]]* into *[[model:rey-de-diamantes]]* — a faster game that Spanish players judged an improvement on the original.[[cite:2]]
+
+        Italian firms worked the same vein, and a single American design often reappeared under several local badges: Gottlieb's *[[model:jungle-life]]* alone was rebuilt from scratch by [[manufacturer:emmepi]],[[cite:3]] [[manufacturer:lori]] and [[manufacturer:zaccaria]]. [[manufacturer:giuliano-lodola]] copied Williams' *[[model:black-knight]]* as *[[model:black-rider]]*,[[cite:4]] and [[manufacturer:manilamatic]] cloned Gottlieb's *[[model:monte-carlo-gottlieb]]* as *[[model:joker-manilamatic]]*.[[cite:5]] The habit outlasted electromechanics: [[manufacturer:sidam]] of [[location:italy/to/turin]] bootlegged even a video game, reskinning Atari's *[[model:video-pinball]]* into *[[model:rugby-sidam]]*.[[cite:6]]
+
+        These copies ranged from faithful clones to modified reworkings, and it was precisely the electromechanical machine's simplicity — relays, stepping units and score motors rather than proprietary circuit boards — that made it straightforward to reverse-engineer. As [[technology-generation:solid-state]] electronics and custom ROMs took hold in the late 1970s, copying a machine came to mean copying its software as well, and the wholesale bootlegging of the earlier era faded.
+      cites:
+        "1":
+          ref: ipdb:100
+          quote: "Copy of Williams' 1974 'Strato-Flite'."
+        "2":
+          ref: ipdb:4368
+          quote: "A modified copy of Gottlieb's 1967 'King of Diamonds'. The result made for a faster game, one preferred and considered better by Spanish pinball players."
+        "3":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/emmepi
+          quote: "Jungle Life (copy of same Gottlieb's game)"
+        "4":
+          ref: ipdb:4085
+          quote: "A copy of Williams' 1980 'Black Knight'."
+        "5":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/manilamatic
+          quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
+        "6":
+          ref: https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino
+          quote: "Da Video Pinball (Atari)"
+  - tag.licensed-build:
+      note: 'Description for the new licensed-build tag. Petaco''s 1964–1974 Gottlieb licence is documented by a Petaco-insider Spanish blog (cite 6); flippers.be frames Recel''s later solid-state games as copies rather than VIFICO-style licensed builds, so the two describe different periods, and the cited example is the uncontested Escalera de Color, not the separately-bootlegged Rey de Diamantes. Nuova Bell Games was also checked and its evidence frames it as a conversion-kit/copy maker, not a licensee, so it is not cited here.'
+      description: |
+        A **licensed build** is the authorized counterpart of a [[tag:bootleg]]: a complete pinball machine, assembled from scratch by a licensee or by a manufacturer's own foreign subsidiary, that reproduces another maker's design under license for a market the original could not easily reach. It is distinct from a conversion, which reworks the cabinet of a machine that already exists, and from a bootleg, which copies a design without permission — a licensed build is official production, and the arrangement was frequently printed on the cabinet itself, in legends such as "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA".[[cite:1]]
+
+        The practice grew out of the economics of moving coin-op machines across postwar borders. Import duties, protective regulation and unfavourable exchange rates could make a finished American cabinet expensive — or, in some markets, impossible — to import, even as local appetite for American-style pinball ran high, so a US maker often reached these markets only by having the game built on the spot. [[location:spain]] shielded its home trade with regulation and a dollar exchange rate that priced imported cabinets out of reach,[[cite:2]] while [[location:brazil]] went further still, banning the import of pinball machines outright by 1976.[[cite:3]]
+
+        The tidiest example is a subsidiary building for its parent's continent. [[manufacturer:bally]]'s German arm, [[manufacturer:bally-wulff]] — the Berlin firm [[person:gunter-wulff]] had founded as Günter Wulff Apparatebau, which Bally acquired and renamed[[cite:4]] — turned out its own European production run of Bally Midway [[technology-generation:solid-state]] [[game-format:pinball]] machines: its *[[model:eight-ball-champ-bally-wulff]]* of *[[title:eight-ball-champ]]*, its *[[model:motordome-bally-wulff]]*, and its *[[model:fireball-classic-bally-wulff]]*, the last recorded simply as "made in Germany under license from Bally Midway".[[cite:5]] The pinball community and the databases catalogue these as distinct machines by a distinct maker, not as footnotes on the American originals.
+
+        Spain hosted the pattern for a quarter-century, and in more than one flavour. It began in the [[technology-generation:electromechanical]] era, when [[manufacturer:petaco]] reached an agreement with [[manufacturer:gottlieb]] and, across roughly 1964–1974, released pinballs licensed from Gottlieb but adapted to Spanish tastes and Spanish factories — among them its *[[model:escalera-de-color]]*, a reworking of Gottlieb's *[[title:sweet-hearts]]*.[[cite:6]] A second Madrid house, [[manufacturer:segasa]] — the Spanish arm of Sega, which "instead of copying Gottlieb, concentrated on recreating Williams' products"[[cite:7]] — built [[manufacturer:williams]] designs under licence: its *[[model:high-ace-2]]*,[[cite:8]] and, under the [[manufacturer:sonic]] brand, its *[[model:star-flite]]*, whose apron named Williams as the licensor.[[cite:9]] Some builds even foregrounded the American licensor for local appeal — the Italian-export *[[model:big-ben-italy]]* printed the Williams name above its own.[[cite:10]] Later, from 1985 to 1989, [[manufacturer:vifico-sa]] built Gottlieb games under licence,[[cite:11]] assembled the way many of these machines were: Gottlieb shipped the translites, unpopulated playfields and circuit boards from the USA, and VIFICO made the cabinets, wiring, coils and transformers locally — the process behind builds like its *[[model:raven-2]]* of Gottlieb's *[[title:raven]]*.[[cite:12]]
+
+        The same arrangement reached back to the electromechanical 1950s and out across the world. In [[location:france]], [[manufacturer:alben]] was building [[manufacturer:gottlieb]] games by 1959, their backglasses reading "Manufactured in France under license of D Gottlieb & Co Chicago USA";[[cite:13]] in [[location:australia]], [[manufacturer:lai]] assembled Stern machines under licence from "knock-down" kits shipped out from Chicago.[[cite:14]] The boundary between a licensed build and a [[tag:bootleg]] could even run through a single maker's catalogue: Taito do Brasil, walled in by [[location:brazil]]'s import ban, mostly copied the designs it reproduced,[[cite:15]] yet its version of Stern's *[[title:meteor]]* was "the only game from Taito do Brasil that acknowledges licensing"[[cite:16]] — a lone licensed build among its maker's bootlegs, set apart from them by nothing more than a grant of permission.
+      cites:
+        "1":
+          ref: ipdb:5461
+          quote: "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA"
+        "2":
+          ref: https://www.flippers.be/vifico.html
+          quote: "the exchange rate with the US Dollar that made foreign games more expensive. Further at the time Spain had several regulations to protect their own market and make the import of foreign goods difficult and expensive."
+        "3":
+          ref: https://en.wikipedia.org/wiki/Taito_of_Brazil
+          quote: "By 1976, within rules created by the Electronic Processing Activities Coordinating Committee (CAPRE), it became illegal to import pinball machines."
+        "4":
+          ref: https://en.wikipedia.org/wiki/Bally_Manufacturing
+          quote: "The company expanded internationally in 1974 when it acquired German company Guenter Wulff-Apparatebau, which was renamed Bally Wulff."
+        "5":
+          ref: ipdb:4544
+          quote: "Same as US model, Bally Midway's 1985 'Fireball Classic', but made in Germany under license from Bally Midway."
+        "6":
+          ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
+          quote: 'Petaco comenzó a lanzar pinballs licenciados por Gottlieb pero adaptados al público español y a los medios de producción con los que contaba España. Este acuerdo duró una década (1964-1974) [...] "Escalera de Color" (1965/04), réplica del pinball "Sweet Hearts" de 1963/09.'
+        "7":
+          ref: https://www.pinballnews.com/learn/spanishpinball/index.html
+          quote: "instead of copying Gottlieb, concentrated on recreating Williams' products. They were called Sega S.A., and their logo was stylized as Segasa."
+        "8":
+          ref: ipdb:5424
+          quote: "'High Ace' was made by Segasa under license from Williams."
+        "9":
+          ref: ipdb:4979
+          quote: "Backglass and playfield apron indicate manufactured by Segasa under license from Williams Electronics, Inc."
+        "10":
+          ref: ipdb:6196
+          quote: "prominently displays the Williams name above the game name instead of the Segasa name, reportedly to provide more appeal to the Italian market."
+        "11":
+          ref: https://www.flippers.be/vifico.html
+          quote: "the Spanish company Vifico S.A. built Gottlieb games under license from 1985 to 1989."
+        "12":
+          ref: ipdb:6686
+          quote: "A copy of Premier's 1986 'Raven' manufactured by VIFICO S.A. under license from Gottlieb/Premier. [...] Gottlieb shipped the translites, unpopulated playfields, and the printed circuit boards to Spain. VIFICO made the cabinets, wiring, coils, assemblies, and the transformer."
+        "13":
+          ref: ipdb:3415
+          quote: 'The upper backglass indicates "Manufactured in France under license of D Gottlieb & Co Chicago USA".'
+        "14":
+          ref: ipdb:3967
+          quote: "This game was manufactured in Australia by Leisure & Allied Industries (LAI) under license from Stern Electronics. [...] Stern's documentation indicates they shipped 336 knock-down games."
+        "15":
+          ref: https://en.wikipedia.org/wiki/Taito_of_Brazil
+          quote: "Taito of Brazil began creating games by copying existing designs of successful pinball machines made elsewhere."
+        "16":
+          ref: ipdb:4571
+          quote: "This is a version of Stern's 1979 'Meteor' manufactured in Brazil under license from Stern as indicated on the playfield apron. [...] Meteor is the only game from Taito do Brasil that acknowledges licensing."

@@ -1,0 +1,20 @@
+attribution: flipcommons-catalog
+description: Reassign models off three garbled themes ahead of retiring them.
+claims:
+  - theme.1980s:
+      create: true
+      name: "1980s"
+  - theme.party:
+      create: true
+      name: Party
+  - model.independence-day:
+      theme: [licensed-theme]
+      note: "Replacing the garbled outer-spacelicensed-themeaction-movie theme; the model already carries outer-space and action-movies separately."
+  - model.party-animal:
+      theme: [1980s, party]
+      remove: { theme: [1980s-party-theme] }
+      note: "Splitting the garbled 1980s-party-theme into its two constituent themes."
+  - model.party-animal-2:
+      theme: [1980s, party]
+      remove: { theme: [1980s-party-theme] }
+      note: "Splitting the garbled 1980s-party-theme into its two constituent themes."

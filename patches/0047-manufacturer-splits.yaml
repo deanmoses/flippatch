@@ -1,0 +1,30 @@
+attribution: flipcommons-catalog
+description: Split over-merged manufacturer brands into their distinct firms.
+claims:
+  - manufacturer.automatic-games:
+      expect: { name: Automatic Games }
+      note: 'Correcting the earlier ingest, which erroneously name-matched two distinct firms into a single "Automatic Games" brand. IPDB manufacturer 40 (Automatic Games Company, of Inglewood, California; sole product Fifty Grand, 1933) and IPDB manufacturer 41 (Automatic Games Company, of St. Paul, Minnesota; sole product Hi-Lo, 1932) are separate companies -- different states, no shared products. Naming this manufacturer for its Inglewood firm; the St. Paul firm is split to its own manufacturer.'
+      name: Automatic Games Company (Inglewood)
+  - manufacturer.automatic-games-company-st-paul:
+      name: Automatic Games Company (St. Paul)
+      create: true
+  - corporate-entity.automatic-games-company-st-paul:
+      expect: { ipdb_manufacturer_id: 41, manufacturer: automatic-games }
+      note: 'Correcting the earlier ingest: the St. Paul firm (IPDB manufacturer 41) was erroneously name-matched onto the shared "Automatic Games" brand though it is unrelated to the Inglewood firm (IPDB manufacturer 40). Re-attributed to its own manufacturer.'
+      manufacturer: automatic-games-company-st-paul
+  - manufacturer.bally-wulff:
+      create: true
+      name: Bally Wulff
+      website: "https://www.ballywulff.de/"
+      note: "Official manufacturer website."
+  - corporate-entity.bally-wulff:
+      expect: { ipdb_manufacturer_id: 49, manufacturer: bally }
+      note: 'Correcting the earlier ingest, which erroneously name-matched the German firm Bally Wulff (IPDB manufacturer 49, "Bally Wulff, of Germany") onto the American Bally brand though IPDB lists it as a manufacturer in its own right, distinct from Bally Manufacturing (IPDB 47) and Bally Midway (IPDB 48). Günter Wulff Apparatebau of Berlin traded as Bally Wulff while the Chicago firm Bally owned it (the entity''s 1972-1991 span); it is its own manufacturer, not Bally. Re-attributed to its own manufacturer.'
+      manufacturer: bally-wulff
+  - manufacturer.taito-do-brasil:
+      create: true
+      name: Taito do Brasil
+  - corporate-entity.taito-do-brasil-a-division-of-taito-japan:
+      expect: { ipdb_manufacturer_id: 367, manufacturer: taito }
+      note: 'Correcting the earlier ingest, which erroneously name-matched the Brazilian firm Taito do Brasil (IPDB manufacturer 367) onto the umbrella "Taito" brand though IPDB lists it as a manufacturer in its own right, distinct from Taito Trading Co., Ltd. (IPDB 312) and Taito America Corporation (IPDB 778). Taito do Brasil (originally Clover Electronic Amusement, renamed in 1972 under Abraham Kogan) operated its own São Paulo factory producing largely bootlegged and licensed-adaptation games under its own name, distinct in the pinball community from its Japanese parent -- IPDB itself credits games to "Taito do Brasil," never plain "Taito." Re-attributed to its own manufacturer.'
+      manufacturer: taito-do-brasil

@@ -1,0 +1,12 @@
+attribution: flipcommons-catalog
+description: Delete three garbled themes now that no model uses them.
+claims:
+  - theme.outer-spacelicensed-themeaction-movie:
+      delete: true
+      note: "Garbled theme concatenating Outer Space, Licensed Theme and Action Movie; its one model was reassigned to Licensed Theme."
+  - theme.1980s-party-theme:
+      delete: true
+      note: "Garbled theme concatenating '1980s' and 'Party'; its two models were reassigned to those two themes."
+  - theme.theme-sports:
+      delete: true
+      note: "Duplicate of the existing Sports theme; its one model already carried Sports."

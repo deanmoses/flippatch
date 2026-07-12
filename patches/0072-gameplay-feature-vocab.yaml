@@ -2,9 +2,13 @@ attribution: flipcommons-catalog
 description: >
   New gameplay-feature vocabulary.
 claims:
+  - gameplay-feature.lanes:
+      create: true
+      name: Lanes
   - gameplay-feature.orbits:
       create: true
       name: Orbits
+      gameplay_feature_parent: [lanes]
   - gameplay-feature.auto-launch:
       create: true
       name: Auto-Launch
@@ -12,3 +16,32 @@ claims:
       # manual plunger) and mechanically a coil kicker — dual parentage, as with
       # other cross-category features (e.g. rollover-drop-targets).
       gameplay_feature_parent: [ball-shooters, kickers]
+  - gameplay-feature.outlanes:
+      create: true
+      name: Outlanes
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.inlanes:
+      create: true
+      name: Inlanes
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.shooter-lanes:
+      create: true
+      name: Shooter Lanes
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.top-lanes:
+      create: true
+      name: Top Lanes
+      gameplay_feature_alias: [Upper Lanes]
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.horseshoe-lanes:
+      note: A named lane variant; belongs under the new generic Lanes parent.
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.kicker-lanes:
+      note: A named lane variant; belongs under the new generic Lanes parent.
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.kickback-lanes:
+      note: A named lane variant; belongs under the new generic Lanes parent.
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.flex-save-lanes:
+      note: A named lane variant; belongs under the new generic Lanes parent.
+      gameplay_feature_parent: [lanes]

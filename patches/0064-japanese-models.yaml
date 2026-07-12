@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Additional details about some early-Japanese EM models.
+  Additional details about some early-Japanese models.
 claims:
   - model.dai-uchuu-ryokou:
       expect: { ipdb_id: 5572 }
@@ -58,3 +58,97 @@ claims:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
             quote: '1975 サーカス (Circus) by 三共 (Sankyo)'
           year: 1975
+  - model.the-world-series:
+      expect: { ipdb_id: 6069 }
+      changesets:
+        - flipper_count: 2
+          cite:
+            ref: ipdb:6069
+            quote: 'Flippers (2), Gobble holes (8), Kick-out holes (3), Left and right dual outlanes.'
+        - production_status: produced
+          note: 'Extant examples establish the game was manufactured and sold.'
+          cite:
+            ref: ipdb:6069
+            quote: 'The Japan Pinball Museum knows of only two examples of this game, both in Japan.'
+  - model.crazy-15-15:
+      expect: { ipdb_id: 6775 }
+      changesets:
+        - game_format: pinball
+          flipper_count: 2
+          cite:
+            ref: ipdb:6775
+            quote: 'Flippers (2), Trap holes (9). Coin slot in lockdown bar.'
+        - display_type: backglass-lights
+          reward_type: [replay]
+          cite:
+            ref: ipdb:6775
+            quote: 'If make lit lamps in vertical, horizontal, or diagonal in backglass (15 points total), win replay.'
+        - production_status: produced
+          note: 'Komaya sold Crazy 15 as a product and later issued an improved version, New Crazy 15.'
+          cite:
+            ref: ipdb:6775
+            quote: 'The manufacturer issued an "improved" version of this game as Komaya Seisakusho''s 1977 ''New Crazy 15''.'
+  - model.new-crazy-15:
+      expect: { ipdb_id: 6786 }
+      changesets:
+        - game_format: pinball
+          flipper_count: 2
+          cite:
+            ref: ipdb:6786
+            quote: 'Flippers (2), Trap holes (9). Coin slot in lockdown bar.'
+        - display_type: backglass-lights
+          cite:
+            ref: ipdb:6786
+            quote: 'Balls landing in numbered holes on the playfield light up corresponding numbers on the backglass.'
+        - production_status: produced
+          cite:
+            ref: ipdb:6786
+            quote: 'has released the brand new product "New Crazy 15" and "Pop Up".'
+  - model.hard-rock:
+      expect: { ipdb_id: 6071 }
+      changesets:
+        - game_format: pinball
+          cite:
+            ref: ipdb:6071
+            quote: 'It is a contemporary pinball machine.'
+        - flipper_count: 2
+          cite:
+            ref: ipdb:6071
+            quote: 'Flippers (2), Pop bumpers (5), Slingshots (2), Kick-out holes (6), Standup targets (2).'
+        - technology_subgeneration: ss-discrete
+          note: 'The catalog already holds solid-state; the 1977 CPU-board hardware fixes the subgeneration as discrete (off-the-shelf CPU boards, 1977–1990).'
+          cite:
+            ref: ipdb:6071
+            quote: 'according to the Japanese flyer, it uses a CPU circuit board'
+        - display_type: score-reels
+          note: 'A solid-state game with mechanical score reels; the "dummy zero" ones-reel confirms physical reels.'
+          cite:
+            ref: ipdb:6071
+            quote: 'The "ring counter" may be a reference to the backbox score reels. The "ones" reel looks like a dummy zero.'
+        - cabinet: floor
+          note: 'A 1730 mm-tall cabinet is a free-standing floor machine.'
+          cite:
+            ref: ipdb:6071
+            quote: 'Height 1730mm Width 521mm Length 1320mm'
+        - production_status: produced
+          cite:
+            ref: ipdb:6071
+            quote: 'According to Japan collector Yasushi Takeda, this game first appeared in Universal''s new product catalogue of 1977.'
+  - model.hercules-2:
+      expect: { ipdb_id: 4394 }
+      changesets:
+        - game_format: pinball
+          flipper_count: 2
+          cite:
+            ref: ipdb:4394
+            quote: 'Flippers (2), Pop bumpers (3), Slingshots (2), Star rollovers (10), Standup targets (4), Spinning target (1), Ball kicker (1), Upper right free ball return lane.'
+        - technology_subgeneration: ss-discrete
+          note: 'The catalog already holds solid-state; the CPU-board hardware fixes the subgeneration as discrete (off-the-shelf CPU boards, 1977–1990).'
+          cite:
+            ref: ipdb:4394
+            quote: 'according to the Japanese flyer, it uses a CPU circuit board and has electrical sound'
+        - display_type: score-reels
+          note: 'A solid-state game with mechanical score reels in the backbox.'
+          cite:
+            ref: ipdb:4394
+            quote: 'The backbox has score reels.'

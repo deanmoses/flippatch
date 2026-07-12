@@ -1,0 +1,37 @@
+attribution: flipcommons-catalog
+description: Shorten manufacturer names and slugs to their common short forms.
+claims:
+  - manufacturer.fipermatic-industria-comercio-importacao-e-exportacao-ltda:
+      note: 'Shortened the manufacturer name and slug to "Fipermatic", the brand printed on the backglass (visually confirmed), and the name used throughout IPDB.'
+      expect:
+        { name: Fipermatic Indústria Comércio Importação e Exportação Ltda }
+      name: Fipermatic
+      slug: fipermatic
+  - manufacturer.american-home-entertainment-a-division-of-azrak-hamway-international-inc:
+      note: 'Shortened the manufacturer name and slug to "American Home Entertainment" — the brand these home games were sold under and the lead of IPDB''s manufacturer string — by dropping the corporate tail "a division of Azrak-Hamway International, Inc."'
+      expect:
+        {
+          name: "American Home Entertainment, a division of Azrak-Hamway International, Inc.",
+        }
+      name: American Home Entertainment
+      slug: american-home-entertainment
+  - manufacturer.vifico-sa:
+      note: 'Shortened the manufacturer name and slug to "VIFICO" — the trade name IPDB and the pinball community use — by stripping the "S.A." (Sociedad Anónima) legal form.'
+      expect: { name: VIFICO S.A. }
+      name: VIFICO
+      slug: vifico
+  - manufacturer.dama-srl:
+      note: 'Shortened the manufacturer name and slug to "Dama" — the trade name IPDB and the pinball community use — by stripping the "S.R.L." Italian legal form. Manufacturer only; the corporate entity keeps "Dama S.R.L." and the long slug.'
+      expect: { name: Dama S.R.L. }
+      name: Dama
+      slug: dama
+  - manufacturer.adp-automaten-gmbh:
+      note: 'Shortened the manufacturer name to "ADP Automaten" and the slug to "adp" by stripping the "GmbH" German legal form.'
+      expect: { name: ADP Automaten GmbH }
+      name: ADP Automaten
+      slug: adp
+  - manufacturer.werbeplan-gmbh:
+      note: 'Shortened the manufacturer name and slug to "Werbeplan" by stripping the "GmbH" German legal form.'
+      expect: { name: Werbeplan GmbH }
+      name: Werbeplan
+      slug: werbeplan
