@@ -1,0 +1,76 @@
+attribution: flipcommons-catalog
+description: Disambiguate the Big Ben titles and models and re-home the Segasa Italy build.
+claims:
+  # ---------------------------------------------------------------------------
+  # Titles. Seven "Big Ben" machines shared bare/numeric-suffix title slugs;
+  # give each a durable maker-and-era slug. Williams made two entirely separate
+  # Big Ben titles (1954 and 1975) — not remakes, sequels or variants of each
+  # other. The 1975 title also carries Segasa's licensed builds, so it keeps a
+  # maker-neutral year slug. Display names are unchanged.
+  # ---------------------------------------------------------------------------
+  - title.big-ben:
+      note: "The Williams 1975 Big Ben title, shared by the Segasa licensed builds; disambiguated from the separate Williams 1954 title by year. Kept maker-neutral because the title also carries the Segasa builds."
+      slug: big-ben-1975
+      name: Big Ben (1975)
+  - title.big-ben-2:
+      note: "The Williams 1954 Big Ben title, an entirely separate title from the Williams 1975 Big Ben; disambiguated by maker and year."
+      slug: big-ben-williams-1954
+      name: Big Ben (Williams 1954)
+  - title.big-ben-3:
+      note: "Daval's 1936 Big Ben title; disambiguated by maker and year."
+      slug: big-ben-daval-1936
+      name: Big Ben (Daval 1936)
+  - title.big-ben-4:
+      note: "Hawtins' 1946 Big Ben title; disambiguated by maker and year."
+      slug: big-ben-hawtins-1946
+      name: Big Ben (Hawtins 1946)
+  - title.big-ben-5:
+      note: 'An unknown-manufacturer, pure-mechanical Big Ben (IPDB 6613), a distinct machine from the Williams and Segasa games; suffixed "pm" (pure mechanical) since neither maker nor year is known.'
+      slug: big-ben-pm
+      name: Big Ben (Unknown Manufacturer)
+
+  # ---------------------------------------------------------------------------
+  # Models. Same disambiguation; each model's slug matched to its title where it
+  # is the sole model of that title. The Williams 1975 title keeps three models
+  # (Williams original + both Segasa builds), so those carry maker suffixes.
+  # ---------------------------------------------------------------------------
+  - model.big-ben:
+      note: "Segasa's 1975 licensed build of the Williams 1975 Big Ben; disambiguated by maker."
+      slug: big-ben-segasa
+      name: Big Ben (Segasa)
+  - model.big-ben-2:
+      note: "Daval's 1936 Big Ben; slug matched to its title."
+      slug: big-ben-daval-1936
+      name: Big Ben (Daval 1936)
+  - model.big-ben-3:
+      note: "Hawtins' 1946 Big Ben; slug matched to its title."
+      slug: big-ben-hawtins-1946
+      name: Big Ben (Hawtins 1946)
+  - model.big-ben-4:
+      note: "Williams' 1954 Big Ben; disambiguated by maker and year."
+      slug: big-ben-williams-1954
+      name: Big Ben (Williams 1954)
+  - model.big-ben-5:
+      note: "Williams' 1975 Big Ben; disambiguated by maker and year."
+      slug: big-ben-williams-1975
+      name: Big Ben (Williams 1975)
+  - model.big-ben-6:
+      note: "The unknown-manufacturer, pure-mechanical Big Ben (IPDB 6613); slug matched to its title."
+      slug: big-ben-pm
+      name: Big Ben (Unknown Manufacturer)
+
+  # ---------------------------------------------------------------------------
+  # Re-home the Segasa Italy export under the shared Williams 1975 title. It is
+  # the add-a-ball export version of Segasa's Big Ben (visually the same
+  # backglass), so it belongs under the same title as the other Segasa build and
+  # the Williams original rather than in its own one-model title. The `title:`
+  # references the current `big-ben` slug, which this same patch renames to
+  # `big-ben-1975` — the FK resolves to the same title object.
+  # ---------------------------------------------------------------------------
+  - model.big-ben-italy:
+      note: "Re-homed under the shared Big Ben (1975) title, alongside the other Segasa build and the Williams original, and slug disambiguated by maker. This is the add-a-ball export version of Segasa's Big Ben, made for Italy, on the same backglass."
+      cite:
+        ref: ipdb:6196
+        quote: "This is the add-a-ball version of Segasa's 1975 'Big Ben' made for export to Italy."
+      slug: big-ben-segasa-italy
+      title: big-ben

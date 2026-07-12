@@ -1,0 +1,54 @@
+attribution: flipcommons-catalog
+description: Re-home the LAI Nugent build and free the nugent slug for the Stern title.
+claims:
+  # ---------------------------------------------------------------------------
+  # Two 1978 "Nugent" machines — Stern's US original and Leisure & Allied
+  # Industries' Australian licensed build — are consolidated under a single
+  # title. The original Stern title was misnamed `ted-nugent` while the LAI
+  # build's title wrongly took `nugent`; the Stern record is the one to keep
+  # (it carries the OPDB group id, the Ted Nugent franchise and the Fandom
+  # page), so it is reslugged to `nugent` in a later patch and the LAI title is
+  # retired. This patch re-homes the LAI build onto the Stern title, reslugs and
+  # renames both models, and frees the `nugent` slug off the LAI title.
+  # ---------------------------------------------------------------------------
+
+  # LAI's 1978 Nugent, the licensed Australian build (already linked via
+  # licensed_build_of). Re-homed from its own title onto Stern's title — the
+  # `title:` references that title's current `ted-nugent` slug, which a later
+  # patch renames to `nugent`; the FK resolves to the same title object — and
+  # renamed to disambiguate it from the Stern original now sharing that title.
+  - model.nugent-lai:
+      note: >
+        Leisure & Allied Industries' 1978 Australian licensed build of Stern's
+        Nugent, already linked via licensed_build_of. Re-homed onto Stern's
+        Nugent title (currently ted-nugent, the surviving record) and renamed to
+        "Nugent (LAI)" to disambiguate it from the Stern original now sharing
+        that title.
+      cite:
+        ref: ipdb:6460
+        quote: "This is the same game as Stern's 1978 'Nugent' but manufactured in Australia under license."
+      name: Nugent (LAI)
+      title: ted-nugent
+
+  # Stern's 1978 Nugent, the original. Reslugged and renamed to disambiguate it
+  # from the LAI build now sharing its title; its title FK is unchanged.
+  - model.nugent:
+      note: >
+        Stern Electronics' 1978 Nugent, the original. Reslugged to nugent-stern
+        with a "(Stern)" name suffix to disambiguate it from the LAI licensed
+        build now sharing its title.
+      slug: nugent-stern
+      name: Nugent (Stern)
+
+  # Free the `nugent` slug off the LAI title so the surviving Stern title can
+  # take it. slug is a UNIQUE column and a soft-delete does not release it, so
+  # this doomed title is reslugged here, ahead of being deleted, before the
+  # Stern title claims `nugent`.
+  - title.nugent:
+      note: >
+        Reslugged off "nugent" to free that slug for the surviving Stern Nugent
+        title (currently ted-nugent), which claims it in a later patch. This LAI
+        title held only the licensed build, now re-homed onto the Stern title,
+        and is deleted next; the disambiguated slug marks it as the retired LAI
+        duplicate.
+      slug: nugent-duplicate

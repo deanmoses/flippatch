@@ -7,6 +7,7 @@ claims:
   - model.arena-2:
       expect: { ipdb_id: 6692 }
       slug: arena-vifico
+      title: arena
       cite:
         ref: ipdb:6692
         quote: 'A copy of Premier''s 1987 ''Arena'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -15,6 +16,7 @@ claims:
   - model.bad-girls-2:
       expect: { ipdb_id: 6695 }
       slug: bad-girls-vifico
+      title: bad-girls
       cite:
         ref: ipdb:6695
         quote: 'A copy of Premier''s 1988 ''Bad Girls'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -23,6 +25,7 @@ claims:
   - model.chicago-cubs-triple-play-2:
       expect: { ipdb_id: 6685 }
       slug: chicago-cubs-triple-play-vifico
+      title: chicago-cubs-triple-play
       cite:
         ref: ipdb:6685
         quote: 'A copy of Premier''s 1985 ''Chicago Cubs "Triple Play"'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -31,6 +34,7 @@ claims:
   - model.diamond-lady-2:
       expect: { ipdb_id: 6694 }
       slug: diamond-lady-vifico
+      title: diamond-lady
       cite:
         ref: ipdb:6694
         quote: 'A copy of Premier''s 1988 ''Diamond Lady'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -39,6 +43,7 @@ claims:
   - model.excalibur-3:
       expect: { ipdb_id: 6696 }
       slug: excalibur-vifico
+      title: excalibur
       cite:
         ref: ipdb:6696
         quote: 'A copy of Premier''s 1988 ''Excalibur'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -47,6 +52,7 @@ claims:
   - model.genesis-3:
       expect: { ipdb_id: 6688 }
       slug: genesis-vifico
+      title: genesis
       cite:
         ref: ipdb:6688
         quote: 'A copy of Premier''s 1986 ''Genesis'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -55,6 +61,7 @@ claims:
   - model.gold-wings-2:
       expect: { ipdb_id: 6689 }
       slug: gold-wings-vifico
+      title: gold-wings
       cite:
         ref: ipdb:6689
         quote: 'A copy of Premier''s 1986 ''Gold Wings'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -63,6 +70,7 @@ claims:
   - model.hollywood-heat-2:
       expect: { ipdb_id: 6687 }
       slug: hollywood-heat-vifico
+      title: hollywood-heat
       cite:
         ref: ipdb:6687
         quote: 'A copy of Premier''s 1986 ''Hollywood Heat'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -71,6 +79,7 @@ claims:
   - model.hot-shots-2:
       expect: { ipdb_id: 6697 }
       slug: hot-shots-vifico
+      title: hot-shots
       cite:
         ref: ipdb:6697
         quote: 'A copy of Premier''s 1989 ''Hot Shots'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -79,6 +88,7 @@ claims:
   - model.monte-carlo-6:
       expect: { ipdb_id: 6690 }
       slug: monte-carlo-vifico
+      title: monte-carlo-gottlieb
       cite:
         ref: ipdb:6690
         quote: 'A copy of Premier''s 1987 ''Monte Carlo'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -87,6 +97,7 @@ claims:
   - model.raven-2:
       expect: { ipdb_id: 6686 }
       slug: raven-vifico
+      title: raven
       cite:
         ref: ipdb:6686
         quote: 'A copy of Premier''s 1986 ''Raven'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -95,6 +106,7 @@ claims:
   - model.spring-break-2:
       expect: { ipdb_id: 6691 }
       slug: spring-break-vifico
+      title: spring-break
       cite:
         ref: ipdb:6691
         quote: 'A copy of Premier''s 1987 ''Spring Break'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -103,6 +115,7 @@ claims:
   - model.victory-4:
       expect: { ipdb_id: 6693 }
       slug: victory-vifico
+      title: victory
       cite:
         ref: ipdb:6693
         quote: 'A copy of Premier''s 1987 ''Victory'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
@@ -114,6 +127,7 @@ claims:
   - model.dracula-2:
       expect: { ipdb_id: 6325 }
       slug: dracula-lai
+      title: dracula-2
       cite:
         ref: ipdb:6325
         quote: 'This is the same game as Stern''s 1979 ''Dracula'' but manufactured in Australia under license, using knock-down games shipped from Stern.'
@@ -122,6 +136,7 @@ claims:
   - model.galaxy-4:
       expect: { ipdb_id: 6318 }
       slug: galaxy-lai
+      title: galaxy-stern
       cite:
         ref: ipdb:6318
         quote: 'This is the same game as Stern''s 1980 ''Galaxy'' but manufactured in Australia under license.'
@@ -130,6 +145,7 @@ claims:
   - model.hot-hand-2:
       expect: { ipdb_id: 6471 }
       slug: hot-hand-lai
+      title: hot-hand
       cite:
         ref: ipdb:6471
         quote: 'This is the same game as Stern''s 1979 ''Hot Hand'' but manufactured in Australia under license.'
@@ -138,6 +154,7 @@ claims:
   - model.magic-5:
       expect: { ipdb_id: 6434 }
       slug: magic-lai
+      title: magic
       cite:
         ref: ipdb:6434
         quote: 'This is the same game as Stern''s 1979 ''Magic'' but manufactured in Australia under license.'
@@ -146,6 +163,7 @@ claims:
   - model.meteor-3:
       expect: { ipdb_id: 6207 }
       slug: meteor-lai
+      title: meteor
       cite:
         ref: ipdb:6207
         quote: 'This is the same game as Stern''s 1979 ''Meteor'' but manufactured in Australia under license.'
@@ -162,6 +180,7 @@ claims:
   - model.trident-2:
       expect: { ipdb_id: 6443 }
       slug: trident-lai
+      title: trident
       cite:
         ref: ipdb:6443
         quote: 'This is the same game as Stern''s 1979 ''Trident'' but manufactured in Australia under license, using knock-down games shipped from Stern.'
@@ -206,6 +225,7 @@ claims:
   - model.meteor-2:
       expect: { ipdb_id: 4571 }
       slug: meteor-taito-do-brasil
+      title: meteor
       cite:
         ref: ipdb:4571
         quote: 'This is a version of Stern''s 1979 ''Meteor'' manufactured in Brazil under license from Stern as indicated on the playfield apron.'
@@ -217,6 +237,7 @@ claims:
   - model.lortium-2:
       expect: { ipdb_id: 5952 }
       slug: lortium-automaticos-montecarlo
+      title: lortium
       cite:
         ref: ipdb:5952
         quote: 'The flyer indicates this game was manufactured under license from Juegos Populares.'
@@ -228,6 +249,7 @@ claims:
   - model.the-getaway-high-speed-ii-2:
       expect: { ipdb_id: 5181 }
       slug: the-getaway-high-speed-ii-american-home-entertainment
+      title: the-getaway-high-speed-ii
       cite:
         ref: ipdb:5181
         quote: 'Manufactured under license from Midway Manufacturing Company.'

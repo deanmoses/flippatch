@@ -1,0 +1,16 @@
+attribution: flipcommons-catalog
+description: Rename the surviving Stern Nugent title from ted-nugent to nugent.
+claims:
+  # The Stern Nugent title was misnamed `ted-nugent`. It is the surviving Nugent
+  # title — it carries the OPDB group id, the Ted Nugent franchise and the Fandom
+  # page, and both models now sit under it — so it is reslugged to the correct
+  # `nugent`. That slug was freed by reslugging and deleting the LAI title in the
+  # earlier patches, so it is available here. No other fields change: the
+  # franchise, OPDB and Fandom identifiers stay on this record.
+  - title.ted-nugent:
+      note: >
+        Renamed from the incorrect ted-nugent slug to nugent. This is the Stern
+        1978 Nugent title (OPDB G5VWL) and the surviving record; its Ted Nugent
+        franchise, OPDB and Fandom links are unchanged. The nugent slug was
+        freed when the duplicate LAI title was reslugged and deleted earlier.
+      slug: nugent

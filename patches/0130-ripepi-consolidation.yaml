@@ -27,5 +27,5 @@ claims:
       corporate_entity: ditta-ripepi-spa
   - corporate-entity.ditta-ripepi-spa:
       expect: { ipdb_manufacturer_id: 104, manufacturer: ditta-ripepi-spa }
-      note: 'Repoint the surviving corporate entity to the Ripepi manufacturer, the trade-name brand kept in the merge. Supersedes the seeded brand link at the flipcommons-catalog layer; IPDB''s manufacturer-104 claim is untouched.'
+      note: "Repoint the surviving corporate entity to the Ripepi manufacturer, the trade-name brand kept in the merge. Supersedes the seeded brand link at the flipcommons-catalog layer; IPDB's manufacturer-104 claim is untouched."
       manufacturer: ripepi

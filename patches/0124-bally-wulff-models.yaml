@@ -11,6 +11,12 @@ claims:
         ref: ipdb:1763
         quote: First pinball game to have the sounds of a belch and a flushing toilet.
       game_format: pinball
+      changesets:
+        - name: Party Animal (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Party Animal (Bally Wulff)) now
+            sharing this title.
   - model.party-animal-2:
       expect: { ipdb_id: 3293 }
       note: >
@@ -45,6 +51,12 @@ claims:
         quote: 'Flippers (3), Pop bumpers (3), 6-bank drop targets (1), Single drop target (1), Kick-out holes (2), Star rollovers (3), Left crossover return lane.'
       game_format: pinball
       flipper_count: 3
+      changesets:
+        - name: Beat the Clock (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Beat the Clock (Bally Wulff)) now
+            sharing this title.
   - model.beat-the-clock-3:
       expect: { ipdb_id: 4518 }
       note: >
@@ -78,6 +90,12 @@ claims:
         quote: 'Flippers (3), Pop bumper (1), Drop targets (4), Kick-out hole (1).'
       game_format: pinball
       flipper_count: 3
+      changesets:
+        - name: Cybernaut (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Cybernaut (Bally Wulff)) now sharing
+            this title.
   - model.cybernaut-2:
       expect: { ipdb_id: 4545 }
       note: >
@@ -110,6 +128,12 @@ claims:
         quote: 'Flippers (3), Pop bumpers (2), Slingshots (2), Drop targets (5), Star rollovers (2), Kick-out hole (1), Spinning target (1).'
       game_format: pinball
       flipper_count: 3
+      changesets:
+        - name: Eight Ball Champ (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Eight Ball Champ (Bally Wulff)) now
+            sharing this title.
   - model.eight-ball-champ-2:
       expect: { ipdb_id: 5461 }
       note: >
@@ -144,6 +168,12 @@ claims:
         quote: 'Flippers (2), Pop bumpers (3), Mushroom bumpers (3), Captive ball kick-out holes (2), Messenger ball (1), Spinning disc, Ramp skill shot, Left kickback outlane, Multiball (2 or 3 ball).'
       game_format: pinball
       flipper_count: 2
+      changesets:
+        - name: Fireball Classic (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Fireball Classic (Bally Wulff)) now
+            sharing the fireball title.
   - model.fireball-classic-2:
       expect: { ipdb_id: 4544 }
       note: >
@@ -179,6 +209,12 @@ claims:
         quote: 'Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2).'
       game_format: pinball
       flipper_count: 4
+      changesets:
+        - name: Hardbody (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Hardbody (Bally Wulff)) now sharing
+            this title.
   - model.hardbody-2:
       expect: { ipdb_id: 3137 }
       note: >
@@ -268,6 +304,12 @@ claims:
         quote: 'Flippers (3), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Captive ball (1), Spinning target (1).'
       game_format: pinball
       flipper_count: 3
+      changesets:
+        - name: Lady Luck (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Lady Luck (Bally Wulff)) now sharing
+            this title.
   - model.lady-luck-7:
       expect: { ipdb_id: 5429 }
       note: >
@@ -302,6 +344,12 @@ claims:
         quote: 'Flippers (4), Pop bumpers (3), Slingshots (2), Standup targets (6), Kick-out holes (2), Spinning target (1), Drop target (1), Aerial ramps, Left outlane detour gate, Right outlane detour gate.'
       game_format: pinball
       flipper_count: 4
+      changesets:
+        - name: Motordome (Bally Midway)
+          note: >
+            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
+            Wulff's licensed German build (Motordome (Bally Wulff)) now sharing
+            this title.
   - model.motordome-2:
       expect: { ipdb_id: 4551 }
       note: >
@@ -372,6 +420,12 @@ claims:
         quote: 'Flippers (2), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Kick-out hole (1), Spinning target (1), Right outlane ball return gate.'
       game_format: pinball
       flipper_count: 2
+      changesets:
+        - name: Supersonic (Bally)
+          note: >
+            Suffixed "(Bally)" to disambiguate the US original from Bally Wulff's
+            licensed German build (Supersonic (Bally Wulff)) now sharing the
+            star-ship title.
   - model.supersonic-3:
       expect: { ipdb_id: 4850 }
       note: >

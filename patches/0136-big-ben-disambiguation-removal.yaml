@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: Delete the Big Ben (Italy) title orphaned by the Segasa re-home.
+claims:
+  # The big-ben-italy title held only the Segasa Italy export, which was re-homed
+  # under the shared Big Ben (Williams 1975) title in the previous patch. The
+  # re-home and this delete must be separate patches: the delete planner's
+  # referrer check reads live DB state, so a same-patch reassignment isn't yet
+  # visible to it.
+  - title.big-ben-italy:
+      delete: true
+      note: 'Orphaned after its sole model (the Segasa Italy export, now big-ben-segasa-italy) was re-homed under the shared Big Ben (Williams 1975) title.'

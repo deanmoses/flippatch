@@ -1,0 +1,14 @@
+attribution: flipcommons-catalog
+description: Delete the retired LAI Nugent title, merged into the Stern title.
+claims:
+  # The LAI Nugent title (reslugged to nugent-duplicate in the previous patch)
+  # held only the LAI licensed build, which was re-homed onto Stern's Nugent
+  # title. The re-home and this delete must be separate patches: the delete
+  # planner's referrer check reads live DB state, so a same-patch reassignment
+  # would not yet be visible to it.
+  - title.nugent-duplicate:
+      delete: true
+      note: >
+        The LAI Nugent title, a duplicate that wrongly took the "nugent" slug.
+        Its sole model (the LAI licensed build) was re-homed onto Stern's Nugent
+        title and the slug freed beforehand, leaving it with no models.
