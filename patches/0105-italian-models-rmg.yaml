@@ -22,9 +22,11 @@ claims:
       player_count: 1
       game_format: pinball
       changesets:
-        - note: 'Classified a bootleg of Gottlieb''s "Card Trix" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
+        - note: 'Classified a copy of Gottlieb''s "Card Trix" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
           cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/rmg'
             quote: Card Trix
-          bootleg_of: card-trix
-          tag: [bootleg]
+          model_relationship:
+            - target_machine: card-trix
+              relationship_type: copy
+              license_status: unknown

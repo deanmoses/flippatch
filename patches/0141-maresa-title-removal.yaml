@@ -1,0 +1,42 @@
+attribution: flipcommons-catalog
+description: Delete titles orphaned by the Maresa bootleg title merges.
+claims:
+  # Each title below held only its single Maresa bootleg, which patch 0140
+  # re-homed onto the Gottlieb original's title. Each is now empty and retired.
+  # A delete must be the only entry touching the entity it removes.
+  - title.big-brave-2:
+      delete: true
+      note: 'Orphaned after its sole model (big-brave-maresa) was merged into the big-indian-big-brave title.'
+  - title.domino-3:
+      delete: true
+      note: 'Orphaned after its sole model (domino-maresa) was merged into the domino-playmates title.'
+  - title.jacks-open:
+      delete: true
+      note: 'Orphaned after its sole model (jacks-open-maresa) was merged into the jacks-open-lucky-hand title.'
+  - title.pro-football:
+      delete: true
+      note: 'Orphaned after its sole model (pro-football-maresa) was merged into the gridiron-pro-football title.'
+  - title.surfer:
+      delete: true
+      note: 'Orphaned after its sole model (surfer-maresa) was merged into the surf-champ-surfer title.'
+  - title.road-race:
+      delete: true
+      note: 'Orphaned after its sole model (road-race-maresa) was merged into the road-race-stock-car title.'
+  - title.target-pool:
+      delete: true
+      note: 'Orphaned after its sole model (target-pool-maresa) was merged into the target-pool-mini-pool title.'
+  - title.surf-champ-3:
+      delete: true
+      note: 'Orphaned after its sole model (surf-champ-maresa) was merged into the surf-champ-surfer title.'
+  - title.spin-out-2:
+      delete: true
+      note: 'Orphaned after its sole model (spin-out-maresa) was merged into the spin-out title.'
+  - title.top-card:
+      delete: true
+      note: 'Orphaned after its sole model (top-card-maresa) was merged into the top-card-royal-pair title.'
+  - title.roller-coaster-2:
+      delete: true
+      note: 'Orphaned after its sole model (roller-coaster-maresa) was merged into the roller-coaster title.'
+  - title.king-pin-4:
+      delete: true
+      note: 'Orphaned after its sole model (king-pin-maresa) was merged into the king-pin-pin-up title.'

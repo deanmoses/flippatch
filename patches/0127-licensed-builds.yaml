@@ -1,6 +1,21 @@
 attribution: flipcommons-catalog
-description: Licensed-build tags for foreign under-license editions of US/Spanish games.
+description: Lineage of foreign under-license editions of US/Spanish games.
 claims:
+  # ==========================================================================
+  # Foreign under-license editions — a licensee/subsidiary built a complete copy
+  # of another maker's design UNDER LICENSE for its own market. Each row is one
+  # model_relationship edge: relationship_type: copy, license_status: licensed,
+  # target the named original. The licence is sourced on every row — each IPDB
+  # note says "under license" / "under licence" verbatim (quoted in the cite).
+  # Contrast 0140 Maresa / 0145 Petaco / 0148 RMG, copies with NO authorization
+  # source (license_status: unknown).
+  #
+  # Same-name builds are merged under the original's title with the slug renamed
+  # to end in the maker (arena-vifico, dracula-lai …). Builds disambiguate by
+  # slug alone; the original keeps its bare name, and the UI distinguishes the
+  # two same-title machines by maker.
+  # ==========================================================================
+
   # ------------------------------------------------------------------------
   # VIFICO S.A. (Spain) — licensed Gottlieb/Premier builds
   # ------------------------------------------------------------------------
@@ -10,18 +25,22 @@ claims:
       title: arena
       cite:
         ref: ipdb:6692
-        quote: 'A copy of Premier''s 1987 ''Arena'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: arena
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1987 'Arena' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: arena
+          relationship_type: copy
+          license_status: licensed
   - model.bad-girls-2:
       expect: { ipdb_id: 6695 }
       slug: bad-girls-vifico
       title: bad-girls
       cite:
         ref: ipdb:6695
-        quote: 'A copy of Premier''s 1988 ''Bad Girls'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: bad-girls
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1988 'Bad Girls' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: bad-girls
+          relationship_type: copy
+          license_status: licensed
   - model.chicago-cubs-triple-play-2:
       expect: { ipdb_id: 6685 }
       slug: chicago-cubs-triple-play-vifico
@@ -29,98 +48,120 @@ claims:
       cite:
         ref: ipdb:6685
         quote: 'A copy of Premier''s 1985 ''Chicago Cubs "Triple Play"'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: chicago-cubs-triple-play
-      tag: [licensed-build]
+      model_relationship:
+        - target_machine: chicago-cubs-triple-play
+          relationship_type: copy
+          license_status: licensed
   - model.diamond-lady-2:
       expect: { ipdb_id: 6694 }
       slug: diamond-lady-vifico
       title: diamond-lady
       cite:
         ref: ipdb:6694
-        quote: 'A copy of Premier''s 1988 ''Diamond Lady'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: diamond-lady
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1988 'Diamond Lady' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: diamond-lady
+          relationship_type: copy
+          license_status: licensed
   - model.excalibur-3:
       expect: { ipdb_id: 6696 }
       slug: excalibur-vifico
       title: excalibur
       cite:
         ref: ipdb:6696
-        quote: 'A copy of Premier''s 1988 ''Excalibur'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: excalibur
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1988 'Excalibur' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: excalibur
+          relationship_type: copy
+          license_status: licensed
   - model.genesis-3:
       expect: { ipdb_id: 6688 }
       slug: genesis-vifico
       title: genesis
       cite:
         ref: ipdb:6688
-        quote: 'A copy of Premier''s 1986 ''Genesis'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: genesis
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1986 'Genesis' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: genesis
+          relationship_type: copy
+          license_status: licensed
   - model.gold-wings-2:
       expect: { ipdb_id: 6689 }
       slug: gold-wings-vifico
       title: gold-wings
       cite:
         ref: ipdb:6689
-        quote: 'A copy of Premier''s 1986 ''Gold Wings'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: gold-wings
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1986 'Gold Wings' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: gold-wings
+          relationship_type: copy
+          license_status: licensed
   - model.hollywood-heat-2:
       expect: { ipdb_id: 6687 }
       slug: hollywood-heat-vifico
       title: hollywood-heat
       cite:
         ref: ipdb:6687
-        quote: 'A copy of Premier''s 1986 ''Hollywood Heat'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: hollywood-heat
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1986 'Hollywood Heat' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: hollywood-heat
+          relationship_type: copy
+          license_status: licensed
   - model.hot-shots-2:
       expect: { ipdb_id: 6697 }
       slug: hot-shots-vifico
       title: hot-shots
       cite:
         ref: ipdb:6697
-        quote: 'A copy of Premier''s 1989 ''Hot Shots'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: hot-shots
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1989 'Hot Shots' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: hot-shots
+          relationship_type: copy
+          license_status: licensed
   - model.monte-carlo-6:
       expect: { ipdb_id: 6690 }
       slug: monte-carlo-vifico
       title: monte-carlo-gottlieb
       cite:
         ref: ipdb:6690
-        quote: 'A copy of Premier''s 1987 ''Monte Carlo'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: monte-carlo-gottlieb
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1987 'Monte Carlo' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: monte-carlo-gottlieb
+          relationship_type: copy
+          license_status: licensed
   - model.raven-2:
       expect: { ipdb_id: 6686 }
       slug: raven-vifico
       title: raven
       cite:
         ref: ipdb:6686
-        quote: 'A copy of Premier''s 1986 ''Raven'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: raven
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1986 'Raven' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: raven
+          relationship_type: copy
+          license_status: licensed
   - model.spring-break-2:
       expect: { ipdb_id: 6691 }
       slug: spring-break-vifico
       title: spring-break
       cite:
         ref: ipdb:6691
-        quote: 'A copy of Premier''s 1987 ''Spring Break'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: spring-break
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1987 'Spring Break' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: spring-break
+          relationship_type: copy
+          license_status: licensed
   - model.victory-4:
       expect: { ipdb_id: 6693 }
       slug: victory-vifico
       title: victory
       cite:
         ref: ipdb:6693
-        quote: 'A copy of Premier''s 1987 ''Victory'' manufactured by VIFICO S.A. under license from Gottlieb/Premier.'
-      licensed_build_of: victory-3
-      tag: [licensed-build]
+        quote: "A copy of Premier's 1987 'Victory' manufactured by VIFICO S.A. under license from Gottlieb/Premier."
+      model_relationship:
+        - target_machine: victory-3
+          relationship_type: copy
+          license_status: licensed
   # ------------------------------------------------------------------------
   # Leisure & Allied Industries (Australia) — licensed Stern builds
   # ------------------------------------------------------------------------
@@ -130,62 +171,76 @@ claims:
       title: dracula-2
       cite:
         ref: ipdb:6325
-        quote: 'This is the same game as Stern''s 1979 ''Dracula'' but manufactured in Australia under license, using knock-down games shipped from Stern.'
-      licensed_build_of: dracula
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1979 'Dracula' but manufactured in Australia under license, using knock-down games shipped from Stern."
+      model_relationship:
+        - target_machine: dracula
+          relationship_type: copy
+          license_status: licensed
   - model.galaxy-4:
       expect: { ipdb_id: 6318 }
       slug: galaxy-lai
       title: galaxy-stern
       cite:
         ref: ipdb:6318
-        quote: 'This is the same game as Stern''s 1980 ''Galaxy'' but manufactured in Australia under license.'
-      licensed_build_of: galaxy-stern
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1980 'Galaxy' but manufactured in Australia under license."
+      model_relationship:
+        - target_machine: galaxy-stern
+          relationship_type: copy
+          license_status: licensed
   - model.hot-hand-2:
       expect: { ipdb_id: 6471 }
       slug: hot-hand-lai
       title: hot-hand
       cite:
         ref: ipdb:6471
-        quote: 'This is the same game as Stern''s 1979 ''Hot Hand'' but manufactured in Australia under license.'
-      licensed_build_of: hot-hand
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1979 'Hot Hand' but manufactured in Australia under license."
+      model_relationship:
+        - target_machine: hot-hand
+          relationship_type: copy
+          license_status: licensed
   - model.magic-5:
       expect: { ipdb_id: 6434 }
       slug: magic-lai
       title: magic
       cite:
         ref: ipdb:6434
-        quote: 'This is the same game as Stern''s 1979 ''Magic'' but manufactured in Australia under license.'
-      licensed_build_of: magic-2
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1979 'Magic' but manufactured in Australia under license."
+      model_relationship:
+        - target_machine: magic-2
+          relationship_type: copy
+          license_status: licensed
   - model.meteor-3:
       expect: { ipdb_id: 6207 }
       slug: meteor-lai
       title: meteor
       cite:
         ref: ipdb:6207
-        quote: 'This is the same game as Stern''s 1979 ''Meteor'' but manufactured in Australia under license.'
-      licensed_build_of: meteor
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1979 'Meteor' but manufactured in Australia under license."
+      model_relationship:
+        - target_machine: meteor
+          relationship_type: copy
+          license_status: licensed
   - model.nugent-2:
       expect: { ipdb_id: 6460 }
       slug: nugent-lai
       cite:
         ref: ipdb:6460
-        quote: 'This is the same game as Stern''s 1978 ''Nugent'' but manufactured in Australia under license.'
-      licensed_build_of: nugent
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1978 'Nugent' but manufactured in Australia under license."
+      model_relationship:
+        - target_machine: nugent
+          relationship_type: copy
+          license_status: licensed
   - model.trident-2:
       expect: { ipdb_id: 6443 }
       slug: trident-lai
       title: trident
       cite:
         ref: ipdb:6443
-        quote: 'This is the same game as Stern''s 1979 ''Trident'' but manufactured in Australia under license, using knock-down games shipped from Stern.'
-      licensed_build_of: trident
-      tag: [licensed-build]
+        quote: "This is the same game as Stern's 1979 'Trident' but manufactured in Australia under license, using knock-down games shipped from Stern."
+      model_relationship:
+        - target_machine: trident
+          relationship_type: copy
+          license_status: licensed
   # ------------------------------------------------------------------------
   # Segasa (Spain) — licensed Williams builds
   # ------------------------------------------------------------------------
@@ -193,32 +248,40 @@ claims:
       expect: { ipdb_id: 228 }
       cite:
         ref: ipdb:228
-        quote: 'This is the same replay game as Williams'' 1975 ''Big Ben'' but made under license.'
-      licensed_build_of: big-ben-5
-      tag: [licensed-build]
+        quote: "This is the same replay game as Williams' 1975 'Big Ben' but made under license."
+      model_relationship:
+        - target_machine: big-ben-5
+          relationship_type: copy
+          license_status: licensed
   - model.big-ben-italy:
       expect: { ipdb_id: 6196 }
       cite:
         ref: ipdb:6196
         quote: 'The backglass indicates this version is manufactured "By Segasa under licence"'
-      licensed_build_of: big-ben-5
-      tag: [licensed-build]
+      model_relationship:
+        - target_machine: big-ben-5
+          relationship_type: copy
+          license_status: licensed
   - model.lucky-ace-2:
       expect: { ipdb_id: 1484 }
       slug: lucky-ace-segasa
       cite:
         ref: ipdb:1484
-        quote: 'A version of Williams'' 1974 ''Lucky Ace'' manufactured under license from Williams.'
-      licensed_build_of: lucky-ace
-      tag: [licensed-build]
+        quote: "A version of Williams' 1974 'Lucky Ace' manufactured under license from Williams."
+      model_relationship:
+        - target_machine: lucky-ace
+          relationship_type: copy
+          license_status: licensed
   - model.travel-time-2:
       expect: { ipdb_id: 2637 }
       slug: travel-time-segasa
       cite:
         ref: ipdb:2637
-        quote: 'The backglass indicates manufactured under license from Williams.'
-      licensed_build_of: travel-time
-      tag: [licensed-build]
+        quote: "The backglass indicates manufactured under license from Williams."
+      model_relationship:
+        - target_machine: travel-time
+          relationship_type: copy
+          license_status: licensed
   # ------------------------------------------------------------------------
   # Taito do Brasil (Brazil) — licensed Stern build
   # ------------------------------------------------------------------------
@@ -228,9 +291,11 @@ claims:
       title: meteor
       cite:
         ref: ipdb:4571
-        quote: 'This is a version of Stern''s 1979 ''Meteor'' manufactured in Brazil under license from Stern as indicated on the playfield apron.'
-      licensed_build_of: meteor
-      tag: [licensed-build]
+        quote: "This is a version of Stern's 1979 'Meteor' manufactured in Brazil under license from Stern as indicated on the playfield apron."
+      model_relationship:
+        - target_machine: meteor
+          relationship_type: copy
+          license_status: licensed
   # ------------------------------------------------------------------------
   # Automaticos MonteCarlo (Spain) — licensed Juegos Populares build
   # ------------------------------------------------------------------------
@@ -240,9 +305,11 @@ claims:
       title: lortium
       cite:
         ref: ipdb:5952
-        quote: 'The flyer indicates this game was manufactured under license from Juegos Populares.'
-      licensed_build_of: lortium
-      tag: [licensed-build]
+        quote: "The flyer indicates this game was manufactured under license from Juegos Populares."
+      model_relationship:
+        - target_machine: lortium
+          relationship_type: copy
+          license_status: licensed
   # ------------------------------------------------------------------------
   # American Home Entertainment (USA) — licensed Williams/Midway build
   # ------------------------------------------------------------------------
@@ -252,6 +319,8 @@ claims:
       title: the-getaway-high-speed-ii
       cite:
         ref: ipdb:5181
-        quote: 'Manufactured under license from Midway Manufacturing Company.'
-      licensed_build_of: the-getaway-high-speed-ii
-      tag: [licensed-build]
+        quote: "Manufactured under license from Midway Manufacturing Company."
+      model_relationship:
+        - target_machine: the-getaway-high-speed-ii
+          relationship_type: copy
+          license_status: licensed

@@ -4,328 +4,373 @@ description: >
 claims:
   - model.sprint-girl:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ami'
-        quote: 'Sprint Girl – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ami"
+        quote: "Sprint Girl – em – 1p"
       technology_generation: electromechanical
   - model.bowlingirl:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi"
         quote: Bowlingirl
       year: 1976
   - model.cosmodrome:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Cosmodrome – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Cosmodrome – ss – 4p"
       year: 1980
       player_count: 4
   - model.fantasy:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Fantasy (Centaur) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Fantasy (Centaur) – ss – 4p"
       year: 1982
       player_count: 4
   - model.king:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'The King – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "The King – ss – 4p"
       year: 1978
       player_count: 4
   - model.new-wave:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'New Wave (Black Pyramid) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "New Wave (Black Pyramid) – ss – 4p"
       year: 1985
       player_count: 4
   - model.pin-ball-pool:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Pinball Pool (Eight Ball De Luxe) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Pinball Pool (Eight Ball De Luxe) – ss – 4p"
       year: 1983
       player_count: 4
+      changesets:
+        - cite:
+            ref: ipdb:3310
+            quote: "This is a conversion kit for Bally's 1981 'Eight Ball Deluxe' and uses the same ROMs."
+          remove:
+            model_relationship:
+              - target_machine: sure-shot
+          model_relationship:
+            - target_machine: eight-ball-deluxe
+              relationship_type: conversion_kit
+              license_status: unknown
   - model.pinball:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Pin Ball (Pinball Champ ''82) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Pin Ball (Pinball Champ '82) – ss – 4p"
       year: 1983
       player_count: 4
   - model.saturn-2:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Saturn II (Spy Hunter) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Saturn II (Spy Hunter) – ss – 4p"
       year: 1985
       player_count: 4
   - model.sexy-girl:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Sexy Girl – ss – 4p (co-production Arkon/Ranco/Bell Games)'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Sexy Girl – ss – 4p (co-production Arkon/Ranco/Bell Games)"
       player_count: 4
   - model.space-hawks:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Space Hawks (Cybernaut) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Space Hawks (Cybernaut) – ss – 4p"
       player_count: 4
       changesets:
-        - note: 'Year from the tilt.it section header the game is listed under.'
+        - note: "Year from the tilt.it section header the game is listed under."
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-            quote: '1986'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+            quote: "1986"
           year: 1986
   - model.super-bowl:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Super Bowl (X''s & O''s) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Super Bowl (X's & O's) – ss – 4p"
       year: 1984
       player_count: 4
   - model.the-hunter:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'The Hunter – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "The Hunter – ss – 4p"
       year: 1980
       player_count: 4
   - model.tiger-rag:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Tiger Rag (King of Steel) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Tiger Rag (King of Steel) – ss – 4p"
       player_count: 4
       changesets:
-        - note: 'Year from the tilt.it section header the game is listed under.'
+        - note: "Year from the tilt.it section header the game is listed under."
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-            quote: '1984'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+            quote: "1984"
           year: 1984
   - model.white-shark:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'White Shark – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "White Shark – ss – 4p"
       player_count: 4
       changesets:
-        - note: 'Year from the tilt.it section header the game is listed under.'
+        - note: "Year from the tilt.it section header the game is listed under."
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-            quote: '1980'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+            quote: "1980"
           year: 1980
   - model.world-defender:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'World Defender – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "World Defender – ss – 4p"
       player_count: 4
       changesets:
-        - note: 'Year from the tilt.it section header the game is listed under.'
+        - note: "Year from the tilt.it section header the game is listed under."
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-            quote: '1985'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+            quote: "1985"
           year: 1985
   - model.ascot:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bem"
         quote: Ascot (em)
       year: 1976
   - model.dogs-race:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
-        quote: 'Dog''s Race – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bem"
+        quote: "Dog's Race – em – 1p"
       year: 1976
   - model.jack-rabbit-3:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bem'
-        quote: 'Jack Rabbit – ss (''testa piccola'')'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bem"
+        quote: "Jack Rabbit – ss ('testa piccola')"
       year: 1976
   - model.sure-shot-5:
-      note: 'Year from the tilt.it section header the game is listed under.'
+      note: "Year from the tilt.it section header the game is listed under."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
-        quote: '1976'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bensa"
+        quote: "1976"
       year: 1976
   - model.timothy-t-2:
-      note: 'Year from the tilt.it section header the game is listed under.'
+      note: "Year from the tilt.it section header the game is listed under."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/cea'
-        quote: '1977'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/cea"
+        quote: "1977"
       year: 1977
   - model.basket:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Basket (Bazaar)
       year: 1970
   - model.hippye-2:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Hippye (Top Hand)(grafica di Cortez)
       year: 1970
   - model.jolly-2:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Jolly (Hurdy Gurdy)
       year: 1970
   - model.spider:
       note: 'Year from the tilt.it section header the game is listed under; tilt.it marks it uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
-        quote: '(?) 1970'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
+        quote: "(?) 1970"
       year: 1970
+      changesets:
+        - note: 'Donor is the 1966 Italian-market Gottlieb "Hurdy Gurdy (Italy)"; removes an incorrect donor (central-park).'
+          cite:
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
+            quote: "Spider (Hurdy Gurdy)"
+          remove:
+            model_relationship:
+              - target_machine: central-park
+          model_relationship:
+            - target_machine: hurdy-gurdy-italy
+              relationship_type: conversion_kit
+              license_status: unknown
   - model.sea-devil:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elbos'
-        quote: 'Sea Devil – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/elbos"
+        quote: "Sea Devil – ss – 4p"
       year: 1982
   - model.calcio-italia-1st-series:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/elettronolo'
-        quote: 'Calcio Italia (prima serie con lanciabiglia manuale) – em – 2p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/elettronolo"
+        quote: "Calcio Italia (prima serie con lanciabiglia manuale) – em – 2p"
       year: 1965
   - model.giunone:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
-        quote: 'Giunone (Poseidon) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/gl"
+        quote: "Giunone (Poseidon) – em – 1p"
       player_count: 1
   - model.rocky-girl:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
-        quote: 'Rocky Girl (Rock Star) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/gl"
+        quote: "Rocky Girl (Rock Star) – em – 1p"
       year: 1979
       player_count: 1
   - model.ice-mania:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
-        quote: 'Ice Mania – SS – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/idi"
+        quote: "Ice Mania – SS – 4p"
       player_count: 4
   - model.movie-masters:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
-        quote: 'Movie Master – SS – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/idi"
+        quote: "Movie Master – SS – 4p"
       year: 1978
   - model.sky-warrior:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
-        quote: 'Sky Warrior – SS – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/idi"
+        quote: "Sky Warrior – SS – 4p"
       player_count: 4
   - model.tiger-woman:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/idi'
-        quote: 'Tiger Woman – SS – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/idi"
+        quote: "Tiger Woman – SS – 4p"
       player_count: 4
   - model.big-dryvers:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-        quote: 'Big Dryvers (Space Orbit) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+        quote: "Big Dryvers (Space Orbit) – em – 1p"
       year: 1979
       player_count: 1
   - model.cleopatra-play-pool:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-        quote: 'Cleopatra (Play Pool) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+        quote: "Cleopatra (Play Pool) – em – 1p"
       year: 1979
       player_count: 1
   - model.lovers:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-        quote: 'Lovers (Sky Divers) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+        quote: "Lovers (Sky Divers) – em – 1p"
       year: 1979
       player_count: 1
   - model.sisters:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-        quote: 'Sisters (Royal Pair) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+        quote: "Sisters (Royal Pair) – em – 1p"
       player_count: 1
       changesets:
-        - note: 'Year from the tilt.it section header the game is listed under.'
+        - note: "Removes golden-arrow, which IPDB names only as a playfield resemblance rather than the donor."
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-            quote: '1979'
+            ref: ipdb:4108
+            quote: "The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1974 'Royal Pair'."
+          remove:
+            model_relationship:
+              - target_machine: golden-arrow
+          model_relationship:
+            - target_machine: royal-pair
+              relationship_type: conversion
+              license_status: unknown
+        - note: "Year from the tilt.it section header the game is listed under."
+          cite:
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+            quote: "1979"
           year: 1979
   - model.take-a-card:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-        quote: 'Take a card (Texas Ranger) – em – 1p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+        quote: "Take a card (Texas Ranger) – em – 1p"
       player_count: 1
       changesets:
-        - note: 'Year from the tilt.it section header the game is listed under.'
+        - note: "Removes an earlier, unsupported donor (lawman)."
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/mondial-matic'
-            quote: '1979'
+            ref: ipdb:4109
+            quote: "Conversion kit for Gottlieb's 1972 'Texas Ranger'."
+          remove:
+            model_relationship:
+              - target_machine: lawman
+          model_relationship:
+            - target_machine: texas-ranger
+              relationship_type: conversion_kit
+              license_status: unknown
+        - note: "Year from the tilt.it section header the game is listed under."
+          cite:
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/mondial-matic"
+            quote: "1979"
           year: 1979
   - model.dakar:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mrgame"
         quote: Dakar
       year: 1988
   - model.fast-track-2:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mrgame"
         quote: 'Fast Track (low cost version of "Motor Show" for export to USA: b/w monitor, no videogames)'
       year: 1990
   - model.motor-show:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/mrgame'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/mrgame"
         quote: Motor Show
       year: 1989
   - model.foot-baller:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/nordamatic'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/nordamatic"
         quote: Foot Baller
       year: 1975
   - model.corsair:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/playmec'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/playmec"
         quote: Corsair
       year: 1976
   - model.caravan-gold:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ripepi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ripepi"
         quote: Caravan Gold
       year: 1976
   - model.time-out:
       note: 'Year and title from the tilt.it entry; tilt.it marks the year uncertain ("1975?").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ripepi'
-        quote: '1975? Time Out'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ripepi"
+        quote: "1975? Time Out"
       year: 1975
   - model.scramble:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/tecnoplay'
-        quote: 'Scramble – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/tecnoplay"
+        quote: "Scramble – ss – 4p"
       year: 1987
       player_count: 4
   - model.x-force:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/tecnoplay'
-        quote: 'X Force – ss – 6p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/tecnoplay"
+        quote: "X Force – ss – 6p"
       year: 1987
       player_count: 6
   - model.cine-star:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Cine Star – 1p – em'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Cine Star – 1p – em"
       year: 1974
   - model.devil-riders:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Devil Riders – ss – 4p – 04/84'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Devil Riders – ss – 4p – 04/84"
       month: 4
   - model.earth-wind-fire:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Earth, Wind & Fire – ss – 4p – 04/81'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Earth, Wind & Fire – ss – 4p – 04/81"
       month: 4
   - model.farfalla:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Farfalla – ss – 4p – 09/83'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Farfalla – ss – 4p – 09/83"
       year: 1983
       month: 9
       player_count: 4
       changesets:
-        - note: "Play mechanisms, flipper count, and game format from IPDB #824's Notable Features. The six flippers span a main and an \"upper transparent\" second-level playfield, hence multi-level-playfield; the flipper/bumper/drop-target complement fixes the format as pinball. Drop-target banks: one 3-bank, two 4-bank, one 6-bank."
+        - note: 'Play mechanisms, flipper count, and game format from IPDB #824''s Notable Features. The six flippers span a main and an "upper transparent" second-level playfield, hence multi-level-playfield; the flipper/bumper/drop-target complement fixes the format as pinball. Drop-target banks: one 3-bank, two 4-bank, one 6-bank.'
           cite:
             ref: ipdb:824
-            quote: 'Pop bumpers (4). One 3-bank, two 4-bank, and one 6-bank drop targets. Six flippers (two on the main playfield, two on the upper transparent playfield, and two outlane-save flippers).'
+            quote: "Pop bumpers (4). One 3-bank, two 4-bank, and one 6-bank drop targets. Six flippers (two on the main playfield, two on the upper transparent playfield, and two outlane-save flippers)."
           game_format: pinball
           flipper_count: 6
           gameplay_feature:
@@ -336,122 +381,122 @@ claims:
             - flippers: 6
             - multi-level-playfield
   - model.future-world:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Future World – 4p – ss – 10/78'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Future World – 4p – ss – 10/78"
       month: 10
   - model.granada-2:
       note: 'tilt.it marks the year uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Granada(?) – 1p – em'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Granada(?) – 1p – em"
       year: 1973
   - model.hot-wheels:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Hot Wheels – 4p – ss – 09/79'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Hot Wheels – 4p – ss – 09/79"
       month: 9
   - model.house-of-diamonds:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'House of Diamonds – 4p – ss – 07/78'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "House of Diamonds – 4p – ss – 07/78"
       year: 1978
       month: 7
       player_count: 4
   - model.locomotion:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Locomotion – ss – 4p – 09/81'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Locomotion – ss – 4p – 09/81"
       month: 9
   - model.magic-castle:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Magic Castle – ss – 4p – 09/84'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Magic Castle – ss – 4p – 09/84"
       month: 9
   - model.pinball-champ:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Pinball Champ – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Pinball Champ – ss – 4p"
       year: 1983
       player_count: 4
   - model.pinball-champ-82:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Pinball Champ ''82 – ss – 4p – 04/82'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Pinball Champ '82 – ss – 4p – 04/82"
       year: 1982
       month: 4
       player_count: 4
   - model.pool-champion:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Pool Champion – ss – 4p – 12/85'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Pool Champion – ss – 4p – 12/85"
       month: 12
   - model.queens-castle:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Queen Castle – 1p – em – 04/78'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Queen Castle – 1p – em – 04/78"
       month: 4
   - model.shooting-the-rapids:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Shooting the rapids – 4p – ss – 04/79'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Shooting the rapids – 4p – ss – 04/79"
       month: 4
   - model.ski-jump:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Ski Jump – 1p – ss – 10/78'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Ski Jump – 1p – ss – 10/78"
       month: 10
   - model.soccer-kings:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Soccer King – ss – 4p – 09/82'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Soccer King – ss – 4p – 09/82"
       month: 9
   - model.space-city:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Space City – 1p – ss – 09/79'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Space City – 1p – ss – 09/79"
       month: 9
   - model.space-shuttle:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Space Shuttle – ss – 4p – 09/80'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Space Shuttle – ss – 4p – 09/80"
       year: 1980
       month: 9
       player_count: 4
   - model.strike:
-      note: 'the catalog''s January month is OPDB''s year-only date default (an unknown month encodes as January 1); tilt.it states the production month.'
+      note: "the catalog's January month is OPDB's year-only date default (an unknown month encodes as January 1); tilt.it states the production month."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Strike – 1p – ss – 09/78'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Strike – 1p – ss – 09/78"
       month: 9
   - model.time-machine-zaccaria:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Time Machine – ss – 4p – 04/83'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Time Machine – ss – 4p – 04/83"
       year: 1983
       month: 4
       player_count: 4
   - model.top-hand-5:
       note: 'Year from the tilt.it section header the game is listed under; tilt.it marks it uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: '(?) 1973:'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "(?) 1973:"
       year: 1973
       changesets:
         - note: "Display type from IPDB #5288's Notable Features."
           cite:
             ref: ipdb:5288
-            quote: 'Only a maximum score of 99,990 points is displayed by the score reels.'
+            quote: "Only a maximum score of 99,990 points is displayed by the score reels."
           display_type: score-reels
   - model.combat-3:
       note: "Solid-state 'Combat' prototype (IPDB #6682), distinct from the produced EM 'Combat' (model.combat, IPDB #3609). Presented at the ENADA show in Rome on 12-14 October 1977 and the AMOA Expo in Chicago on 28-30 October 1977; never produced (catalog production status 'Unreleased'). Year is the presentation year from IPDB #6682's Notes; no month is asserted, as a show-presented prototype has no manufacture date (IPDB records no DateOfManufacture)."
@@ -468,19 +513,22 @@ claims:
   - model.tropical:
       note: 'Year from the tilt.it section header the game is listed under; tilt.it marks it uncertain ("(?)").'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: '(?) 1973:'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "(?) 1973:"
       year: 1973
   - model.winter-sports:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
-        quote: 'Winter Sports – 4p – ss – 01/78'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/zaccaria"
+        quote: "Winter Sports – 4p – ss – 01/78"
       year: 1978
       month: 1
       player_count: 4
   - model.zeus:
-      note: 'tilt.it describes it as installed in a Gottlieb cabinet - a conversion, not a from-scratch bootleg - with artwork copied from Williams'' Flash; the specific donor game is not named, so converted_from is left unset.'
+      note: "tilt.it describes a complete conversion installed in a Gottlieb cabinet, with artwork copied from Williams' Flash; the specific Gottlieb donor is not named, and Williams' Flash is only the art source, not the donor."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/centralmatic-lombarda'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/centralmatic-lombarda"
         quote: 'una copia, almeno nella grafica, dell''elettronico Williams "Flash", strutturata per essere installata in un mobile Gottlieb''s, funzionante elettromeccanicamente'
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: a Gottlieb machine
+          relationship_type: conversion
+          license_status: unknown

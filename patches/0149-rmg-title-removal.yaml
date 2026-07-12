@@ -1,0 +1,27 @@
+attribution: flipcommons-catalog
+description: Delete titles orphaned by the R.M.G. bootleg title merges.
+claims:
+  # Each title below held only its single R.M.G. bootleg, which patch 0148
+  # re-homed onto the original's title. Each is now empty and retired.
+  # A delete must be the only entry touching the entity it removes.
+  - title.big-valley-2:
+      delete: true
+      note: 'Orphaned after its sole model (big-valley-rmg) was merged into the big-valley title.'
+  - title.card-king:
+      delete: true
+      note: 'Orphaned after its sole model (card-king-rmg) was merged into the drop-a-card-pop-a-card title.'
+  - title.flying-carpet-2:
+      delete: true
+      note: 'Orphaned after its sole model (flying-carpet-rmg) was merged into the flying-carpet title.'
+  - title.jungle-king:
+      delete: true
+      note: 'Orphaned after its sole model (jungle-king-rmg) was merged into the jungle-wild-life-jungle-king title.'
+  - title.top-hand:
+      delete: true
+      note: 'Orphaned after its sole model (top-hand-rmg) was merged into the high-hand-capt-card title.'
+  - title.galaxie:
+      delete: true
+      note: 'Orphaned after its sole model (galaxie-rmg) was merged into the 2001-dimension-galaxie title.'
+  - title.space-orbit-2:
+      delete: true
+      note: 'Orphaned after its two models were retired: space-orbit-2 (ipdb:4783) deleted as a duplicate and space-orbit-rmg (ipdb:5458) merged into the space-orbit title.'

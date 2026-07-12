@@ -1,0 +1,92 @@
+attribution: flipcommons-catalog
+description: Irmacor conversion lineage on Recel/Playmatic/INDER donors.
+claims:
+  # ==========================================================================
+  # Irmacor (Porto, Portugal) sold Spanish-made pinballs into 1970s Portugal by
+  # re-badging them — a backglass swap, Portuguese playfield text, its logo — and
+  # claiming Portuguese manufacture to skirt gambling-import laws. Each IPDB note
+  # names the donor game verbatim as "a conversion of <maker>'s <year> '<title>'".
+  #
+  # Each row is one model_relationship edge with relationship_type: conversion —
+  # a complete converted machine built FROM a donor, not a conversion_kit ("built
+  # from" vs "compatible with"; contrast 0142-geiger, which are kits). Its
+  # license_status is unknown: no source addresses authorization either way.
+  #
+  # One of the eight worklist rows stays held back, NOT authored here:
+  #   s-joao (ipdb:5738): IPDB itself flags the conversion unconfirmed ("It has
+  #     been reported ... We will need ... pictures ... to confirm this"), and the
+  #     4-player S. Joao vs 2-player Carnival player-count differs. This is an
+  #     evidence doubt, not a model-representation limit, so it stays withheld.
+  #
+  # playtime (ipdb:6838) — previously held back because the single-FK
+  # converted_from could not express its two-donor note — is now authored below
+  # as two conversion edges (see its entry).
+  # ==========================================================================
+  - model.conquistador:
+      cite:
+        ref: ipdb:5739
+        quote: '"Conquistador" is a conversion of Recel''s 1979 ''D. Quijote''.'
+      model_relationship:
+        - target_machine: d-quijote
+          relationship_type: conversion
+          license_status: unknown
+  - model.dona-elvira:
+      cite:
+        ref: ipdb:5736
+        quote: "This game is a conversion of Playmatic's 1979 'Party'"
+      model_relationship:
+        - target_machine: party
+          relationship_type: conversion
+          license_status: unknown
+  - model.feitico:
+      cite:
+        ref: ipdb:6517
+        quote: "This game is a conversion of Playmatic's 1978 'Chance'"
+      model_relationship:
+        - target_machine: chance
+          relationship_type: conversion
+          license_status: unknown
+  - model.flash-baseball-2:
+      cite:
+        ref: ipdb:6437
+        quote: "This game is a conversion of Playmatic's 1978 'Space Gambler' consisting of only a change of backglass."
+      model_relationship:
+        - target_machine: space-gambler
+          relationship_type: conversion
+          license_status: unknown
+  - model.sol-do-algarve:
+      cite:
+        ref: ipdb:5737
+        quote: "This is a conversion of the EM game, INDER's 1978 'Hot & Cold'."
+      model_relationship:
+        - target_machine: hot-cold-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.zira-2:
+      cite:
+        ref: ipdb:6518
+        quote: "This game is a conversion of Playmatic's 1980 'Zira'."
+      model_relationship:
+        - target_machine: zira
+          relationship_type: conversion
+          license_status: unknown
+  # --------------------------------------------------------------------------
+  # playtime (ipdb:6838): TWO conversion edges. The IPDB note names the donor
+  # disjunctively-with-uncertainty — "Recel's 1978 'Fair Fight' OR MAYBE Petaco's
+  # 'Fair Fight'" — and BOTH candidate donors are seeded (fair-fight = Recel,
+  # fair-fight-2 = Petaco, both 1978). The single-FK converted_from forced a
+  # choice between them, so the row was withheld; the model_relationship edge set
+  # records both, letting the "one of these, we don't know which" uncertainty
+  # stand instead of guessing. Same verbatim note-quote cites both edges.
+  # --------------------------------------------------------------------------
+  - model.playtime-5:
+      cite:
+        ref: ipdb:6838
+        quote: "This game is a conversion of Recel's 1978 'Fair Fight' or maybe Petaco's 'Fair Fight'."
+      model_relationship:
+        - target_machine: fair-fight
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: fair-fight-2
+          relationship_type: conversion
+          license_status: unknown

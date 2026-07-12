@@ -1,0 +1,14 @@
+attribution: flipcommons-catalog
+description: Suffix Gottlieb's Italian-export Card Trix with "(Italy)".
+claims:
+  # Gottlieb's 1970 Card Trix has two seeded records sharing one title and OPDB
+  # group but distinct IPDB ids and Gottlieb model numbers: the domestic
+  # add-a-ball (model:card-trix, IPDB 446, model# 283) and an Italian-export
+  # version (model:card-trix-2, IPDB 3748, model# 300, whose note reads "made
+  # for export to Italy"). Both currently display as bare "Card Trix". Suffix
+  # the export "(Italy)" to disambiguate, matching the catalog's export-naming
+  # convention (e.g. Ice Show (Italy)); the domestic one keeps the bare name.
+  - model.card-trix-2:
+      name: Card Trix (Italy)
+      slug: card-trix-italy
+      note: 'Suffixed "(Italy)" to distinguish Gottlieb''s Italian-export Card Trix (IPDB 3748, "This is a version of Gottlieb''s 1970 ''Card Trix'' made for export to Italy") from the domestic add-a-ball Card Trix (model:card-trix), matching the catalog''s (Italy)-export naming.'

@@ -1,0 +1,181 @@
+attribution: flipcommons-catalog
+description: J. Martina conversion lineage on 1960s Gottlieb donors.
+claims:
+  # ==========================================================================
+  # J. Martina (France) rebuilt used 1960s Gottlieb machines into complete,
+  # re-themed games — new backglass/playfield art (often by Jean Amiot), reusing
+  # the original Gottlieb cabinet and mechanics. Each IPDB note names the donor
+  # verbatim as "a conversion of Gottlieb's <year> '<title>'", so the target is
+  # unambiguous and the note's stated year matches the seeded donor.
+  #
+  # Each row is one model_relationship edge with relationship_type: conversion —
+  # a complete converted machine built FROM a donor, not a conversion_kit ("built
+  # from" vs "compatible with"; contrast 0142-geiger, which are kits). Its
+  # license_status is unknown: no source addresses authorization either way
+  # (conversions CAN be licensed — cf. headsup's "licensed conversion kit for
+  # Team One" — but nothing here says so, so we do not assert licensed/unlicensed).
+  # Every conversion carries its own re-theme name distinct from the donor, so
+  # there is no same-name merge, title, or slug work — just the edge + cite.
+  #
+  # The last three entries exercise the model's richer target forms — cases the
+  # single-FK converted_from could not express:
+  #   the-happy-musketeers (ipdb:5285): TWO conversion edges — "Gottlieb's 1967
+  #     'Hi-Score' and Gottlieb's 1967 'Super Score'" (hi-score + super-score-3).
+  #   wine-grower (ipdb:5537): a target_label — the donor is "an unknown 1960's
+  #     era Gottlieb game". The maker is known but the specific machine is not,
+  #     and target_manufacturer is intentionally not modeled, so the maker rides
+  #     the label text.
+  #   star (ipdb:6321): a target_label — "an unidentified 4-player replay game".
+  #     IPDB *suggests*, unconfirmed (from "a very small" photo), the donor may be
+  #     Ship-Mates; that hedge stays in the note, not asserted as target_machine.
+  # (unknown-25 (ipdb:6594) shares only a *layout* with Quick Draw; the note
+  # never calls it a conversion, so it is not a candidate at all.)
+  # ==========================================================================
+  - model.big-eagle:
+      cite:
+        ref: ipdb:5035
+        quote: "This is a conversion of Gottlieb's 1964 'Ship-Mates'."
+      model_relationship:
+        - target_machine: ship-mates
+          relationship_type: conversion
+          license_status: unknown
+  - model.chivalery:
+      cite:
+        ref: ipdb:5096
+        quote: "This is a conversion of Gottlieb's 1964 'Happy Clown'."
+      model_relationship:
+        - target_machine: happy-clown
+          relationship_type: conversion
+          license_status: unknown
+  - model.cosmos-2:
+      cite:
+        ref: ipdb:5079
+        quote: "This is a conversion of Gottlieb's 1962 'Liberty Belle'."
+      model_relationship:
+        - target_machine: liberty-belle
+          relationship_type: conversion
+          license_status: unknown
+  - model.faukland:
+      cite:
+        ref: ipdb:4376
+        quote: "'Faukland' is a conversion of Gottlieb's 1961 'Oklahoma'"
+      model_relationship:
+        - target_machine: oklahoma-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.first-bolide:
+      cite:
+        ref: ipdb:5656
+        quote: "A conversion of Gottlieb's 1961 'Oklahoma'"
+      model_relationship:
+        - target_machine: oklahoma-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.gulf:
+      cite:
+        ref: ipdb:6507
+        quote: "This is a conversion of Gottlieb's 1963 'Swing-Along'."
+      model_relationship:
+        - target_machine: swing-along
+          relationship_type: conversion
+          license_status: unknown
+  - model.khalifa:
+      cite:
+        ref: ipdb:5667
+        quote: "Conversion of Gottlieb's 1963 'Gaucho'."
+      model_relationship:
+        - target_machine: gaucho
+          relationship_type: conversion
+          license_status: unknown
+  - model.nuclear:
+      cite:
+        ref: ipdb:6316
+        quote: "This is a conversion of Gottlieb's 1962 'Liberty Belle'."
+      model_relationship:
+        - target_machine: liberty-belle
+          relationship_type: conversion
+          license_status: unknown
+  - model.robin-hood-4:
+      cite:
+        ref: ipdb:5017
+        quote: "This is a conversion of Gottlieb's 1964 'Ship-Mates'."
+      model_relationship:
+        - target_machine: ship-mates
+          relationship_type: conversion
+          license_status: unknown
+  - model.sindbad:
+      cite:
+        ref: ipdb:4555
+        quote: "Conversion of Gottlieb's 1964 'Ship-Mates'."
+      model_relationship:
+        - target_machine: ship-mates
+          relationship_type: conversion
+          license_status: unknown
+  - model.sub-marine:
+      cite:
+        ref: ipdb:4967
+        quote: "This is a conversion of Gottlieb's 1963 'Gaucho'."
+      model_relationship:
+        - target_machine: gaucho
+          relationship_type: conversion
+          license_status: unknown
+  - model.the-jungle:
+      cite:
+        ref: ipdb:5438
+        quote: "This is a conversion of Gottlieb's 1965 'Dodge City'."
+      model_relationship:
+        - target_machine: dodge-city
+          relationship_type: conversion
+          license_status: unknown
+  - model.tropical-2:
+      cite:
+        ref: ipdb:6317
+        quote: "This is a conversion of Gottlieb's 1961 'Oklahoma'."
+      model_relationship:
+        - target_machine: oklahoma-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.venus-4:
+      cite:
+        ref: ipdb:3951
+        quote: "This is a conversion of Gottlieb's 1962 'Liberty Belle'."
+      model_relationship:
+        - target_machine: liberty-belle
+          relationship_type: conversion
+          license_status: unknown
+  - model.viking-4:
+      cite:
+        ref: ipdb:5027
+        quote: "This is a conversion of Gottlieb's 1962 'Fashion Show'."
+      model_relationship:
+        - target_machine: fashion-show
+          relationship_type: conversion
+          license_status: unknown
+  - model.the-happy-musketeers:
+      cite:
+        ref: ipdb:5285
+        quote: "Conversion of Gottlieb's 1967 'Hi-Score' and Gottlieb's 1967 'Super Score'"
+      model_relationship:
+        - target_machine: hi-score
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: super-score-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.wine-grower:
+      cite:
+        ref: ipdb:5537
+        quote: "A conversion of an unknown 1960's era Gottlieb game."
+      model_relationship:
+        - target_label: "an unknown 1960's era Gottlieb game"
+          relationship_type: conversion
+          license_status: unknown
+  - model.star:
+      note: 'IPDB records the donor as unidentified; it suggests, unconfirmed (from "a very small" playfield photo), that it may be Gottlieb''s 1964 "Ship-Mates", so no target_machine is asserted.'
+      cite:
+        ref: ipdb:6321
+        quote: "'Star' is a conversion of an unidentified 4-player replay game."
+      model_relationship:
+        - target_label: "an unidentified 4-player replay game"
+          relationship_type: conversion
+          license_status: unknown

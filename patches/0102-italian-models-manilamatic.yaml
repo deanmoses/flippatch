@@ -41,8 +41,10 @@ claims:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
             quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
-          bootleg_of: monte-carlo-gottlieb
-          tag: [bootleg]
+          model_relationship:
+            - target_machine: monte-carlo-gottlieb
+              relationship_type: copy
+              license_status: unknown
   - model.pool-rabbit:
       create: true
       note: 'tilt.it gives no year.'
@@ -63,12 +65,16 @@ claims:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
         quote: 'Defender (copia del Gottlieb''s "Arena")'
-      bootleg_of: arena
-      tag: [bootleg]
+      model_relationship:
+        - target_machine: arena
+          relationship_type: copy
+          license_status: unknown
   - model.out-law:
       note: 'tilt.it lists Out Law as a copy of Gottlieb''s "Tag Team" (now catalog tag-team-pinball).'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
         quote: 'Out Law (copia del Gottlieb''s "Tag Team")'
-      bootleg_of: tag-team-pinball
-      tag: [bootleg]
+      model_relationship:
+        - target_machine: tag-team-pinball
+          relationship_type: copy
+          license_status: unknown

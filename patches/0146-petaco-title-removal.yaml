@@ -1,0 +1,29 @@
+attribution: flipcommons-catalog
+description: Delete titles orphaned by the Petaco bootleg title merges.
+claims:
+  # Each title below held only its single Petaco bootleg, which patch 0145
+  # re-homed onto the Gottlieb original's title. Each is now empty and retired.
+  # A delete must be the only entry touching the entity it removes.
+  # (grand-slam-7 and spin-a-card-2 already shared their original's title, so
+  # no title was orphaned for them.)
+  - title.aquarius-2:
+      delete: true
+      note: 'Orphaned after its sole model (aquarius-petaco) was merged into the aquarius title.'
+  - title.flip-a-card:
+      delete: true
+      note: 'Orphaned after its sole model (flip-a-card-petaco) was merged into the flip-a-card-card-trix title.'
+  - title.mibs-2:
+      delete: true
+      note: 'Orphaned after its sole model (mibs-petaco) was merged into the mibs title.'
+  - title.mini-cycle:
+      delete: true
+      note: 'Orphaned after its sole model (mini-cycle-petaco) was merged into the polo-mini-cycle title.'
+  - title.olympics-4:
+      delete: true
+      note: 'Orphaned after its sole model (olympics-petaco) was merged into the olympics title.'
+  - title.drop-a-card:
+      delete: true
+      note: 'Orphaned after its sole model (drop-a-card-petaco) was merged into the drop-a-card-pop-a-card title.'
+  - title.sky-jump-2:
+      delete: true
+      note: 'Orphaned after its sole model (sky-jump-petaco) was merged into the sky-dive title.'

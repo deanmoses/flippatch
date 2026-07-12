@@ -1,0 +1,170 @@
+attribution: flipcommons-catalog
+description: Copy/conversion lineage for R.M.G. (license status unknown — see header).
+claims:
+  # ==========================================================================
+  # R.M.G. (Renato Montanari Giochi), Italy, built copies of US and Italian
+  # pinball designs — mostly Gottlieb, plus one Bally and one Bensa — for the
+  # Italian market, several as add-a-ball versions. Each IPDB note names the
+  # original verbatim as "a copy of <maker>'s <year> '<title>'", so the copy
+  # relationship + target is unambiguous: relationship_type: copy, target the
+  # named original, cited to that IPDB note.
+  #
+  # license_status: unknown on every row. No source establishes authorization
+  # either way — the IPDB "copy of" wording speaks only to derivation, not to a
+  # licence, and (unlike Franco-era Spain or Brazil's Reserva de Mercado) Italy
+  # had no import ban to imply unauthorized copying. So we deliberately do NOT
+  # launder an unsourced "unlicensed"/bootleg here (contrast 0150-ltd-do-brasil,
+  # where "unlicensed" IS sourced to Augusto Campos). If a period licence or an
+  # explicit "unauthorized" source ever surfaces, set license_status accordingly.
+  #
+  # Same-name copies (below): the derivative carries the original's name, so
+  # per the campaign slug convention its disambiguation-numbered slug is renamed
+  # to end in -rmg and it is merged under the original's title (the emptied
+  # R.M.G. title is retired in 0149). The copy and the original keep their bare
+  # shared name; the UI tells them apart by maker. Renamed copies (different
+  # name from the original) keep their own slug/title. The one conversion *kit*
+  # (the-best-wizard) takes
+  # relationship_type: conversion_kit (IPDB: "Conversion kit for …").
+  #
+  # Duplicate consolidation: space-orbit-2 (ipdb:4783) and space-orbit-3
+  # (ipdb:5458) were two IPDB listings of the SAME R.M.G. "Space Orbit!" — same
+  # maker, name, year (1972) and player count. 5458 carries the fuller record
+  # (a superset feature list, 26 images vs 6, a detailed provenance note) and
+  # 4783 has nothing unique at the catalog level. With no model-merge operation,
+  # 4783 is soft-deleted as a duplicate (below) and the surviving 5458 is
+  # same-name-merged onto the Gottlieb original like the other copies.
+  # ==========================================================================
+
+  # ---- Same-name copies: slug rename + title merge
+  - model.big-valley-2:
+      slug: big-valley-rmg
+      title: big-valley
+      cite:
+        ref: ipdb:4779
+        quote: "A copy of Bally's 1970 'Big Valley'."
+      model_relationship:
+        - target_machine: big-valley
+          relationship_type: copy
+          license_status: unknown
+  - model.card-king-2:
+      slug: card-king-rmg
+      title: drop-a-card-pop-a-card
+      cite:
+        ref: ipdb:5214
+        quote: "A copy of Gottlieb's 1971 'Card King', its lower playfield indicates R.M.G. is the manufacturer."
+      model_relationship:
+        - target_machine: card-king
+          relationship_type: copy
+          license_status: unknown
+  - model.flying-carpet-2:
+      slug: flying-carpet-rmg
+      title: flying-carpet
+      cite:
+        ref: ipdb:4786
+        quote: "A copy of Gottlieb's 1972 'Flying Carpet'."
+      model_relationship:
+        - target_machine: flying-carpet
+          relationship_type: copy
+          license_status: unknown
+  - model.jungle-king-2:
+      slug: jungle-king-rmg
+      title: jungle-wild-life-jungle-king
+      cite:
+        ref: ipdb:4780
+        quote: "A copy of Gottlieb's 1973 'Jungle King'."
+      model_relationship:
+        - target_machine: jungle-king
+          relationship_type: copy
+          license_status: unknown
+  - model.top-hand-3:
+      slug: top-hand-rmg
+      title: high-hand-capt-card
+      cite:
+        ref: ipdb:4785
+        quote: "A copy of Gottlieb's 1973 'Top Hand'."
+      model_relationship:
+        - target_machine: top-hand-2
+          relationship_type: copy
+          license_status: unknown
+  - model.galaxie-2:
+      slug: galaxie-rmg
+      title: 2001-dimension-galaxie
+      cite:
+        ref: ipdb:4920
+        quote: "This is a copy of Gottlieb's 1971 'Galaxie'."
+      model_relationship:
+        - target_machine: galaxie
+          relationship_type: copy
+          license_status: unknown
+  - model.space-orbit-3:
+      # Surviving record of the space-orbit duplicate pair (see header); now the
+      # sole R.M.G. Space Orbit, it merges onto the Gottlieb original like above.
+      slug: space-orbit-rmg
+      title: space-orbit
+      cite:
+        ref: ipdb:5458
+        quote: "A copy of the 1972 Gottlieb add-a-ball 'Space Orbit!'."
+      model_relationship:
+        - target_machine: space-orbit
+          relationship_type: copy
+          license_status: unknown
+
+  # ---- Renamed copies: different name from the original, own slug/title kept
+  - model.miss-theresine:
+      cite:
+        ref: ipdb:4781
+        quote: "A copy of Gottlieb's 1969 'Hi-Lo'."
+      model_relationship:
+        - target_machine: hi-lo-2
+          relationship_type: copy
+          license_status: unknown
+  - model.only-star:
+      cite:
+        ref: ipdb:4782
+        quote: "A copy of Gottlieb's 1971 'Star Trek'."
+      model_relationship:
+        - target_machine: star-trek-2
+          relationship_type: copy
+          license_status: unknown
+  - model.strike-4:
+      cite:
+        ref: ipdb:4784
+        quote: "A copy of Gottlieb's 1973 'Ten-Up'."
+      model_relationship:
+        - target_machine: ten-up
+          relationship_type: copy
+          license_status: unknown
+  - model.univerx:
+      cite:
+        ref: ipdb:6702
+        quote: "This is a copy of Gottlieb's 1971 'Galaxie'"
+      model_relationship:
+        - target_machine: galaxie
+          relationship_type: copy
+          license_status: unknown
+  - model.the-best-space-time:
+      cite:
+        ref: ipdb:6133
+        quote: "This is a copy of Bensa's 1973 'Space Time'."
+      model_relationship:
+        - target_machine: space-time-2
+          relationship_type: copy
+          license_status: unknown
+
+  # ---- Conversion kit (not a copy): IPDB "Conversion kit for …"
+  - model.the-best-wizard:
+      cite:
+        ref: ipdb:4919
+        quote: "Conversion kit for Gottlieb's 1971 'Wizard'."
+      model_relationship:
+        - target_machine: wizard
+          relationship_type: conversion_kit
+          license_status: unknown
+
+  # ---- Duplicate consolidation: soft-delete the sparser Space Orbit twin.
+  #      No model-merge op exists; the fuller ipdb:5458 record (now
+  #      space-orbit-rmg) already dominates it on every catalog field, so nothing
+  #      is copied over — only the redundant listing is retired.
+  - model.space-orbit-2:
+      delete: true
+      note: 'Duplicate IPDB listing (ipdb:4783) of the same R.M.G. "Space Orbit!" as the fuller model:space-orbit-rmg (ipdb:5458); soft-deleted, its lineage consolidated onto that record.'

@@ -11,12 +11,6 @@ claims:
         ref: ipdb:1763
         quote: First pinball game to have the sounds of a belch and a flushing toilet.
       game_format: pinball
-      changesets:
-        - name: Party Animal (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Party Animal (Bally Wulff)) now
-            sharing this title.
   - model.party-animal-2:
       expect: { ipdb_id: 3293 }
       note: >
@@ -28,17 +22,17 @@ claims:
         Midway solid-state pinballs (see the manufacturer and licensed-build tag
         descriptions), so this is recorded as a licensed build of the US Party
         Animal. Merged under the party-animal title — OPDB catalogues only the US
-        machine (group G42Zz), so a single title contradicts nothing there — with
-        a "(Bally Wulff)" name suffix to disambiguate the two builds.
+        machine (group G42Zz), so a single title contradicts nothing there.
       slug: party-animal-bally-wulff
-      name: Party Animal (Bally Wulff)
       title: party-animal
-      licensed_build_of: party-animal
-      tag: [licensed-build]
+      model_relationship:
+        - target_machine: party-animal
+          relationship_type: copy
+          license_status: licensed
       changesets:
         - cite:
             ref: ipdb:3293
-            quote: 'Flippers (3), Ramps (2), Out Holes (3).'
+            quote: "Flippers (3), Ramps (2), Out Holes (3)."
           game_format: pinball
 
   # ---------------------------------------------------------------------------
@@ -48,35 +42,29 @@ claims:
       expect: { ipdb_id: 212 }
       cite:
         ref: ipdb:212
-        quote: 'Flippers (3), Pop bumpers (3), 6-bank drop targets (1), Single drop target (1), Kick-out holes (2), Star rollovers (3), Left crossover return lane.'
+        quote: "Flippers (3), Pop bumpers (3), 6-bank drop targets (1), Single drop target (1), Kick-out holes (2), Star rollovers (3), Left crossover return lane."
       game_format: pinball
       flipper_count: 3
-      changesets:
-        - name: Beat the Clock (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Beat the Clock (Bally Wulff)) now
-            sharing this title.
   - model.beat-the-clock-3:
       expect: { ipdb_id: 4518 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1985 Beat the
         Clock (model:beat-the-clock-2). Merged under the beat-the-clock title
-        with a "(Bally Wulff)" suffix to disambiguate the two builds, and the
-        slug renamed to match; OPDB has no record of the Bally Wulff build, so a
+        with the slug renamed to disambiguate the two builds; OPDB has no record of the Bally Wulff build, so a
         single title contradicts nothing there.
       slug: beat-the-clock-bally-wulff
-      name: Beat the Clock (Bally Wulff)
       title: beat-the-clock
       changesets:
         - cite:
             ref: ipdb:4518
             quote: "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA"
-          licensed_build_of: beat-the-clock-2
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: beat-the-clock-2
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:4518
-            quote: 'Flippers (3), Pop bumpers (3), 6-bank drop targets (1), single drop target (1), Kick-out holes (2).'
+            quote: "Flippers (3), Pop bumpers (3), 6-bank drop targets (1), single drop target (1), Kick-out holes (2)."
           game_format: pinball
           flipper_count: 3
 
@@ -87,34 +75,28 @@ claims:
       expect: { ipdb_id: 614 }
       cite:
         ref: ipdb:614
-        quote: 'Flippers (3), Pop bumper (1), Drop targets (4), Kick-out hole (1).'
+        quote: "Flippers (3), Pop bumper (1), Drop targets (4), Kick-out hole (1)."
       game_format: pinball
       flipper_count: 3
-      changesets:
-        - name: Cybernaut (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Cybernaut (Bally Wulff)) now sharing
-            this title.
   - model.cybernaut-2:
       expect: { ipdb_id: 4545 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1985 Cybernaut
-        (model:cybernaut). Merged under the cybernaut title with a "(Bally
-        Wulff)" suffix and the slug renamed to match; OPDB has no record of the
+        (model:cybernaut). Merged under the cybernaut title with the slug renamed to match; OPDB has no record of the
         Bally Wulff build, so a single title contradicts nothing there.
       slug: cybernaut-bally-wulff
-      name: Cybernaut (Bally Wulff)
       title: cybernaut
       changesets:
         - cite:
             ref: ipdb:4545
             quote: "Made in Germany under license from Bally Midway."
-          licensed_build_of: cybernaut
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: cybernaut
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:4545
-            quote: 'Flippers (3), Pop bumper (1), Drop targets (4), Kick-out hole (1).'
+            quote: "Flippers (3), Pop bumper (1), Drop targets (4), Kick-out hole (1)."
           game_format: pinball
           flipper_count: 3
 
@@ -125,35 +107,30 @@ claims:
       expect: { ipdb_id: 761 }
       cite:
         ref: ipdb:761
-        quote: 'Flippers (3), Pop bumpers (2), Slingshots (2), Drop targets (5), Star rollovers (2), Kick-out hole (1), Spinning target (1).'
+        quote: "Flippers (3), Pop bumpers (2), Slingshots (2), Drop targets (5), Star rollovers (2), Kick-out hole (1), Spinning target (1)."
       game_format: pinball
       flipper_count: 3
-      changesets:
-        - name: Eight Ball Champ (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Eight Ball Champ (Bally Wulff)) now
-            sharing this title.
   - model.eight-ball-champ-2:
       expect: { ipdb_id: 5461 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1985 Eight Ball
         Champ (model:eight-ball-champ). Merged under the eight-ball-champ title
-        with a "(Bally Wulff)" suffix and the slug renamed to match; OPDB has no
+        with the slug renamed to match; OPDB has no
         record of the Bally Wulff build, so a single title contradicts nothing
         there.
       slug: eight-ball-champ-bally-wulff
-      name: Eight Ball Champ (Bally Wulff)
       title: eight-ball-champ
       changesets:
         - cite:
             ref: ipdb:5461
             quote: "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA"
-          licensed_build_of: eight-ball-champ
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: eight-ball-champ
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:5461
-            quote: 'Flippers (3), Pop bumpers (2), Slingshots (2), Drop targets (5), Standup targets (5), Kick-out hole (1), Spinning target (1).'
+            quote: "Flippers (3), Pop bumpers (2), Slingshots (2), Drop targets (5), Standup targets (5), Kick-out hole (1), Spinning target (1)."
           game_format: pinball
           flipper_count: 3
 
@@ -165,36 +142,30 @@ claims:
       expect: { ipdb_id: 853 }
       cite:
         ref: ipdb:853
-        quote: 'Flippers (2), Pop bumpers (3), Mushroom bumpers (3), Captive ball kick-out holes (2), Messenger ball (1), Spinning disc, Ramp skill shot, Left kickback outlane, Multiball (2 or 3 ball).'
+        quote: "Flippers (2), Pop bumpers (3), Mushroom bumpers (3), Captive ball kick-out holes (2), Messenger ball (1), Spinning disc, Ramp skill shot, Left kickback outlane, Multiball (2 or 3 ball)."
       game_format: pinball
       flipper_count: 2
-      changesets:
-        - name: Fireball Classic (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Fireball Classic (Bally Wulff)) now
-            sharing the fireball title.
   - model.fireball-classic-2:
       expect: { ipdb_id: 4544 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1985 Fireball
         Classic (model:fireball-classic). Merged under the fireball title, where
         the US Fireball Classic already sits alongside the Fireball family (OPDB
-        group G48ZN), with a "(Bally Wulff)" suffix and the slug renamed to
-        match; OPDB has no record of the Bally Wulff build, so this contradicts
+        group G48ZN), with the slug renamed to match; OPDB has no record of the Bally Wulff build, so this contradicts
         nothing there.
       slug: fireball-classic-bally-wulff
-      name: Fireball Classic (Bally Wulff)
       title: fireball
       changesets:
         - cite:
             ref: ipdb:4544
             quote: "Same as US model, Bally Midway's 1985 'Fireball Classic', but made in Germany under license from Bally Midway."
-          licensed_build_of: fireball-classic
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: fireball-classic
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:4544
-            quote: 'Flippers (2), Pop bumpers (3), Mushroom bumpers (3), Captive ball kick-out holes (2), Messenger ball (1), Spinning disc, Ramp skill shot, Left kickback outlane, Multiball (2 or 3 ball).'
+            quote: "Flippers (2), Pop bumpers (3), Mushroom bumpers (3), Captive ball kick-out holes (2), Messenger ball (1), Spinning disc, Ramp skill shot, Left kickback outlane, Multiball (2 or 3 ball)."
           game_format: pinball
           flipper_count: 2
 
@@ -206,34 +177,28 @@ claims:
       expect: { ipdb_id: 1122 }
       cite:
         ref: ipdb:1122
-        quote: 'Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2).'
+        quote: "Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2)."
       game_format: pinball
       flipper_count: 4
-      changesets:
-        - name: Hardbody (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Hardbody (Bally Wulff)) now sharing
-            this title.
   - model.hardbody-2:
       expect: { ipdb_id: 3137 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1987 Hardbody
-        (model:hardbody). Merged under the hardbody title with a "(Bally Wulff)"
-        suffix and the slug renamed to match; OPDB has no record of the Bally
+        (model:hardbody). Merged under the hardbody title with the slug renamed to match; OPDB has no record of the Bally
         Wulff build, so a single title contradicts nothing there.
       slug: hardbody-bally-wulff
-      name: Hardbody (Bally Wulff)
       title: hardbody
       changesets:
         - cite:
             ref: ipdb:3137
             quote: "A version of Bally Midway's 1987 'Hardbody' made in Germany."
-          licensed_build_of: hardbody
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: hardbody
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:3137
-            quote: 'Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2).'
+            quote: "Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2)."
           game_format: pinball
           flipper_count: 4
   - model.super-sport:
@@ -254,11 +219,13 @@ claims:
             with the variant_of link above capturing its direct sibling relation to
             the Bally Wulff Hardbody. It keeps its own Super Sport title, since the
             renamed edition is a distinct name rather than a same-name build.
-          licensed_build_of: hardbody
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: hardbody
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:6105
-            quote: 'Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2).'
+            quote: "Flippers (4), Slingshots (2), Standup targets (16), Star rollovers (6), Flex-save lanes (2), 3-bank drop targets (1), 3-in-line drop targets (3), Mechanically raised/lowered ramps (2)."
           game_format: pinball
           flipper_count: 4
 
@@ -271,7 +238,7 @@ claims:
       expect: { ipdb_id: 303 }
       cite:
         ref: ipdb:303
-        quote: 'Flippers (4), Pop bumpers (2), Mushroom bumper (1), 3-bank standup targets (4), 3-bank drop targets (2), Rollunders (3), Kick-out holes (2), Spinning target (1), Ball kicker (1), Right outlane detour gate.'
+        quote: "Flippers (4), Pop bumpers (2), Mushroom bumper (1), 3-bank standup targets (4), 3-bank drop targets (2), Rollunders (3), Kick-out holes (2), Spinning target (1), Ball kicker (1), Right outlane detour gate."
       game_format: pinball
       flipper_count: 4
   - model.karate-fight:
@@ -286,11 +253,13 @@ claims:
             it already shares the black-belt-karate-fight title, so no title change
             is needed. IPDB's note for this record only cross-references the game,
             so the lineage rests on that binding rather than a source quote.
-          licensed_build_of: black-belt
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: black-belt
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:1346
-            quote: 'Flippers (4), Pop bumpers (2), Mushroom bumper (1), 3-bank standup targets (4), 3-bank drop targets (2), Rollunders (3), Kick-out holes (2), Spinning target (1), Ball kicker (1), Right outlane detour gate.'
+            quote: "Flippers (4), Pop bumpers (2), Mushroom bumper (1), 3-bank standup targets (4), 3-bank drop targets (2), Rollunders (3), Kick-out holes (2), Spinning target (1), Ball kicker (1), Right outlane detour gate."
           game_format: pinball
           flipper_count: 4
 
@@ -301,34 +270,28 @@ claims:
       expect: { ipdb_id: 1402 }
       cite:
         ref: ipdb:1402
-        quote: 'Flippers (3), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Captive ball (1), Spinning target (1).'
+        quote: "Flippers (3), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Captive ball (1), Spinning target (1)."
       game_format: pinball
       flipper_count: 3
-      changesets:
-        - name: Lady Luck (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Lady Luck (Bally Wulff)) now sharing
-            this title.
   - model.lady-luck-7:
       expect: { ipdb_id: 5429 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1986 Lady Luck
-        (model:lady-luck). Merged under the lady-luck title with a "(Bally
-        Wulff)" suffix and the slug renamed to match; OPDB has no record of the
+        (model:lady-luck). Merged under the lady-luck title with the slug renamed to match; OPDB has no record of the
         Bally Wulff build, so a single title contradicts nothing there.
       slug: lady-luck-bally-wulff
-      name: Lady Luck (Bally Wulff)
       title: lady-luck
       changesets:
         - cite:
             ref: ipdb:5429
             quote: "Made in Germany under license from Bally Midway."
-          licensed_build_of: lady-luck
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: lady-luck
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:5429
-            quote: 'Flippers (3), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Captive ball (1), Spinning target (1).'
+            quote: "Flippers (3), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Captive ball (1), Spinning target (1)."
           game_format: pinball
           flipper_count: 3
 
@@ -341,31 +304,25 @@ claims:
       expect: { ipdb_id: 1633 }
       cite:
         ref: ipdb:1633
-        quote: 'Flippers (4), Pop bumpers (3), Slingshots (2), Standup targets (6), Kick-out holes (2), Spinning target (1), Drop target (1), Aerial ramps, Left outlane detour gate, Right outlane detour gate.'
+        quote: "Flippers (4), Pop bumpers (3), Slingshots (2), Standup targets (6), Kick-out holes (2), Spinning target (1), Drop target (1), Aerial ramps, Left outlane detour gate, Right outlane detour gate."
       game_format: pinball
       flipper_count: 4
-      changesets:
-        - name: Motordome (Bally Midway)
-          note: >
-            Suffixed "(Bally Midway)" to disambiguate the US original from Bally
-            Wulff's licensed German build (Motordome (Bally Wulff)) now sharing
-            this title.
   - model.motordome-2:
       expect: { ipdb_id: 4551 }
       note: >
         Bally Wulff's licensed German edition of Bally Midway's 1986 Motordome
-        (model:motordome). Merged under the motordome title with a "(Bally
-        Wulff)" suffix and the slug renamed to match; OPDB has no record of the
+        (model:motordome). Merged under the motordome title with the slug renamed to match; OPDB has no record of the
         Bally Wulff build, so a single title contradicts nothing there.
       slug: motordome-bally-wulff
-      name: Motordome (Bally Wulff)
       title: motordome
       changesets:
         - cite:
             ref: ipdb:4551
             quote: "Produced by: Bally Wulff, Berlin, West Germany under Licence of Bally Midway Mfg Company, USA"
-          licensed_build_of: motordome
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: motordome
+              relationship_type: copy
+              license_status: licensed
         - note: >
             The same solid-state pinball as Bally Midway's Motordome
             (model:motordome), whose IPDB feature list records its flippers; IPDB
@@ -383,7 +340,7 @@ claims:
       expect: { ipdb_id: 2272 }
       cite:
         ref: ipdb:2272
-        quote: 'Flippers (2), Pop bumpers (3), Drop targets (3-in line, and two solo ones), 3-ball multiball.'
+        quote: "Flippers (2), Pop bumpers (3), Drop targets (3-in line, and two solo ones), 3-ball multiball."
       game_format: pinball
       flipper_count: 2
   - model.special-force-girls:
@@ -399,11 +356,13 @@ claims:
         - cite:
             ref: ipdb:3270
             quote: "'Special Force Girls' is the same game as Bally Midway's 1986 'Special Force' but with a different backglass."
-          licensed_build_of: special-force
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: special-force
+              relationship_type: copy
+              license_status: licensed
         - cite:
             ref: ipdb:3270
-            quote: 'Flippers (2), Pop bumpers (3), Drop targets (3-in line, and two solo ones).'
+            quote: "Flippers (2), Pop bumpers (3), Drop targets (3-in line, and two solo ones)."
           game_format: pinball
           flipper_count: 2
 
@@ -417,34 +376,27 @@ claims:
       expect: { ipdb_id: 2455 }
       cite:
         ref: ipdb:2455
-        quote: 'Flippers (2), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Kick-out hole (1), Spinning target (1), Right outlane ball return gate.'
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2), 5-bank drop targets (1), Standup targets (4), Kick-out hole (1), Spinning target (1), Right outlane ball return gate."
       game_format: pinball
       flipper_count: 2
-      changesets:
-        - name: Supersonic (Bally)
-          note: >
-            Suffixed "(Bally)" to disambiguate the US original from Bally Wulff's
-            licensed German build (Supersonic (Bally Wulff)) now sharing the
-            star-ship title.
   - model.supersonic-3:
       expect: { ipdb_id: 4850 }
       note: >
         Bally Wulff's licensed German edition of Bally's 1979 Supersonic
         (model:supersonic). Merged under the star-ship title, where the US
-        Supersonic already sits (OPDB group GRLXd), with a "(Bally Wulff)" suffix
-        and the slug renamed to match; OPDB has no record of the Bally Wulff
+        Supersonic already sits (OPDB group GRLXd), with the slug renamed to match; OPDB has no record of the Bally Wulff
         build, so this contradicts nothing there.
       slug: supersonic-bally-wulff
-      name: Supersonic (Bally Wulff)
       title: star-ship
       changesets:
         - note: >
-            IPDB carries no notes or feature list for this Bally Wulff record, so
-            the licensed-build lineage, the tag, and the pinball game format all
-            rest on the record's shared identity with Bally's 1979 Supersonic
+            The licensed copy lineage and the pinball game format both rest on
+            the record's shared identity with Bally's 1979 Supersonic
             (model:supersonic) — same name and year — and Bally Wulff's
             established role as Bally's licensed German subsidiary, rather than on
             a source quote.
-          licensed_build_of: supersonic
-          tag: [licensed-build]
+          model_relationship:
+            - target_machine: supersonic
+              relationship_type: copy
+              license_status: licensed
           game_format: pinball

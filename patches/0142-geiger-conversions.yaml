@@ -1,0 +1,75 @@
+attribution: flipcommons-catalog
+description: Geiger-Automatenbau conversion-kit lineage on Bally/Williams donors.
+claims:
+  # ==========================================================================
+  # Geiger-Automatenbau GmbH (Germany) built re-themed conversion KITS on the
+  # boards of existing Bally/Williams machines. Each IPDB note states the donor
+  # verbatim as "a conversion kit for <maker>'s <year> '<title>'".
+  #
+  # Each row is one model_relationship edge with relationship_type: conversion_kit
+  # — a kit COMPATIBLE WITH a donor machine ("compatible with", not "built from";
+  # contrast 0143-irmacor / 0144-j-martina, which are complete conversions). Its
+  # license_status is unknown: no source addresses authorization either way.
+  #
+  # Scope note: this patch authors the three seed-gap rows whose note is an
+  # undisputable "conversion kit for X" (miss-world, dino-turbo, magic-eight),
+  # plus the two donor-correction rows (fly-high, lady-death). Geiger's other
+  # conversions (dark-rider, wild-schutz, la-retata) carry their relationship
+  # from the seed baseline and are not re-authored here.
+  #
+  # fly-high and lady-death name a donor different from the one the seed baseline
+  # recorded. That seed converted_from was migrated to a conversion_kit edge by
+  # migration 0021_lineage_fk_claims_to_edges, so — edges being additive, a new
+  # target does NOT overwrite the old one the way the single FK did — each row
+  # REMOVES the stale seed edge and asserts the donor its IPDB note names:
+  #   fly-high:   note names Bally's 1979 'Supersonic'; remove seed edge star-ship.
+  #   lady-death: note names Bally's 1978 'Mata Hari' — the solid-state game
+  #               (slug mata-hari); remove the seed edge to the EM mata-hari-em.
+  # ==========================================================================
+  - model.miss-world:
+      cite:
+        ref: ipdb:3970
+        quote: "A conversion kit for Bally's 1979 'KISS'."
+      model_relationship:
+        - target_machine: kiss
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.dino-turbo:
+      cite:
+        ref: ipdb:4493
+        quote: "A conversion kit for Williams' 1980 'Firepower'."
+      model_relationship:
+        - target_machine: firepower
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.magic-eight:
+      cite:
+        ref: ipdb:5606
+        quote: "'Magic Eight' is a conversion kit for Bally's 1977 'Eight Ball'."
+      model_relationship:
+        - target_machine: eight-ball
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.fly-high:
+      cite:
+        ref: ipdb:3974
+        quote: "A conversion kit for Bally's 1979 'Supersonic'."
+      remove:
+        model_relationship:
+          - target_machine: star-ship
+      model_relationship:
+        - target_machine: supersonic
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.lady-death:
+      note: "Correct donor is the SS not EM Mata Hari."
+      cite:
+        ref: ipdb:3972
+        quote: "A conversion kit for Bally's 1978 'Mata Hari'."
+      remove:
+        model_relationship:
+          - target_machine: mata-hari-em
+      model_relationship:
+        - target_machine: mata-hari
+          relationship_type: conversion_kit
+          license_status: unknown

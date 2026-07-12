@@ -2,6 +2,19 @@ attribution: flipcommons-catalog
 description: >
   Italian conversion kits whose makers tilt.it cannot identify.
 claims:
+  # ==========================================================================
+  # Every model here is a conversion KIT (relationship_type: conversion_kit —
+  # "compatible with" a donor), all filed by tilt.it in its "unidentified Italian
+  # kits" section. license_status is unknown throughout (no source addresses
+  # authorization; Italy had no import ban to imply one). The donor is recorded at
+  # whatever resolution the source supports:
+  #   - a named, seeded donor -> target_machine (Harmony/Troubadour kits carry two
+  #     edges, one per compatible donor);
+  #   - a described-but-unseeded/generic donor -> target_label ("electromechanical
+  #     machines");
+  #   - no donor stated at all -> target_label "unknown donor" (the kit itself is
+  #     sourced; the donor simply is not).
+  # ==========================================================================
   - person.de-angelis:
       create: true
       name: De Angelis
@@ -84,14 +97,17 @@ claims:
       name: Jolly Roger
   - model.hit-and-run-kit:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated on page; note existing unrelated games Williams ''Hit and Run Base-Ball'' (ipdb 1193, 1970) and H & M ''Hit and Run'' (ipdb 3992, 1933). tagged conversion-kit on the section''s membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated on page; note existing unrelated games Williams ''Hit and Run Base-Ball'' (ipdb 1193, 1970) and H & M ''Hit and Run'' (ipdb 3992, 1933). Classified a conversion kit by its membership in tilt.it''s unidentified-kits section; the page names no donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Hit and Run
       name: Hit and Run
       title: hit-and-run-kit
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.pool-kit:
       create: true
       note: 'tilt.it gives no year; no technology is stated; lineage per the source line: renamed backglass for Williams ''Cue-T'' (ipdb 611, Williams Electronics, 1968); tilt.it says it is more a redone glass than a full kit; sold as a conversion kit.'
@@ -101,32 +117,43 @@ claims:
       name: POOL
       title: pool-kit
       game_format: pinball
-      tag: [conversion-kit]
       changesets:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
             quote: 'POOL ("Cue-T", Williams)'
-          converted_from: cue-t
+          model_relationship:
+            - target_machine: cue-t
+              relationship_type: conversion_kit
+              license_status: unknown
   - model.pokerrr:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit, compatible with either donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: 'POKERRR!!!'
       name: 'POKERRR!!!'
       title: pokerrr
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: troubadour
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.baseball-kit:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated. tagged conversion-kit on the section''s membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated. Classified a conversion kit by its membership in tilt.it''s unidentified-kits section; the page names no donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Baseball
       name: Baseball
       title: baseball-kit
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.aquarium:
       create: true
       note: 'tilt.it gives no year; no technology is stated; lineage per the source line: inspired by Gottlieb ''Aquarius'' (ipdb 79, 1970). tilt.it hedges the kit reading itself ("looks like an italian kit inspired from the Gottlieb''s Aquarius").'
@@ -136,20 +163,26 @@ claims:
       name: Aquarium
       title: aquarium
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: aquarius
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.fifteen-goals:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated. tagged conversion-kit on the section''s membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated. Classified a conversion kit by its membership in tilt.it''s unidentified-kits section; the page names no donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Fifteen Goals
       name: Fifteen Goals
       title: fifteen-goals
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.card-trix-kit:
       create: true
-      note: 'tilt.it gives no year; lineage per the source line: based on Gottlieb ''Card Trix'' (ipdb 446, 1970); explicitly NOT the RMG version and not the Gottlieb Italian export (ipdb 3748, catalog card-trix-2). tilt.it''s per-machine remark distinguishes it from RMG''s version rather than describing the kit; the tag rests on the section''s membership.'
+      note: 'tilt.it gives no year; lineage per the source line: based on Gottlieb ''Card Trix'' (ipdb 446, 1970); explicitly NOT the RMG version and not the Gottlieb Italian export (ipdb 3748, catalog card-trix-2). tilt.it''s per-machine remark distinguishes it from RMG''s version rather than describing the kit; the kit classification rests on its section membership.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Card Trix
@@ -157,10 +190,13 @@ claims:
       title: card-trix-kit
       technology_generation: electromechanical
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: card-trix
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.happening:
       create: true
-      note: 'no technology is stated; lineage per the source line: donor not stated; art by ''Mike'' (his first work per tilt.it); sold as a conversion kit.'
+      note: 'no technology is stated; lineage per the source line: donor not stated; art by ''Mike'' (his first work per tilt.it); sold as a conversion kit; the page names no donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Happening (ver.1)
@@ -168,7 +204,10 @@ claims:
       title: happening
       year: 1970
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
       changesets:
         - note: 'tilt.it credits the art to "Mike"; IPDB records the artist Michele "Mike" Martinelli on other Italian machines of this era (and all the Geiger conversion kits), so "Mike" is read as Martinelli.'
           cite:
@@ -178,34 +217,46 @@ claims:
             - michele-mike-martinelli: art
   - model.full-kit:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; art by ''Mike'', possibly same (unidentified) producer as ''Happening''. tagged conversion-kit on the section''s membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; art by ''Mike'', possibly same (unidentified) producer as ''Happening''. Classified a conversion kit by its membership in tilt.it''s unidentified-kits section; the page names no donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Full
       name: Full
       title: full-kit
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.dig-a-star-kit:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; tilt.it floats Dama and Cortez as guesses. tagged conversion-kit on the section''s membership (tilt.it files it among the unidentified Italian kits); the page states no per-machine kit detail.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: donor not stated; tilt.it floats Dama and Cortez as guesses. Classified a conversion kit by its membership in tilt.it''s unidentified-kits section; the page names no donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Dig a Star
       name: Dig a Star
       title: dig-a-star-kit
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.jolly-roger-kit:
       create: true
-      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit.'
+      note: 'tilt.it gives no year; no technology is stated; lineage per the source line: kit for Gottlieb ''Harmony'' (ipdb 1127, 1967) / ''Troubadour'' (ipdb 2666, 1967); sold as a conversion kit, compatible with either donor.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Jolly Roger
       name: Jolly Roger
       title: jolly-roger-kit
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: troubadour
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.thrills:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
@@ -216,36 +267,69 @@ claims:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Tex-Op (kit for Gottlieb's Harmony/Troubadour)
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: troubadour
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.bowling:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: 'Bowling (kit for Gottlieb''s "Harmony"/"Troubadour")'
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: troubadour
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.el-viti:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: El Viti (kit for Gottlieb's Harmony/Troubadour)
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: troubadour
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.el-tigre:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: El Tigre (kit with ss scoring for em machines)
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: electromechanical machines
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.new-city:
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: 'New City (kit from the early seventies for Williams'' games "Hot Line" and "Big Strike"'
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: hot-line
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: big-strike
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.grand-slam-10:
       note: 'tilt.it hedges the attribution ("forse" - maybe an RMG kit for Gottlieb''s Ice Show), not the kit reading.'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: Grand Slam (forse kit RMG per Ice Show Gottlieb)
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: ice-show
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.lido-2:
-      note: 'tilt.it hedges ("looks like a kit"); the maker guess (Dama? art by Cortez?) stays open.'
+      note: 'tilt.it hedges ("looks like a kit"); the maker guess (Dama? art by Cortez?) stays open. Donor read as Gottlieb''s Subway (catalog subway-2, ipdb 2412).'
       cite:
         ref: 'https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati'
         quote: 'Lido (looks like a kit for a Gottlieb''"Subway" – maybe from Dama – art by Cortez?)'
-      tag: [conversion-kit]
+      model_relationship:
+        - target_machine: subway-2
+          relationship_type: conversion_kit
+          license_status: unknown

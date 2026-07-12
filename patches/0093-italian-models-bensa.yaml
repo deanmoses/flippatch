@@ -60,9 +60,11 @@ claims:
       player_count: 1
       game_format: pinball
       changesets:
-        - note: 'Classified a bootleg of Gottlieb''s "Jack In The Box" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
+        - note: 'Classified a copy of Gottlieb''s "Jack In The Box" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
           cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/bensa'
             quote: Jack in the box
-          bootleg_of: jack-in-the-box
-          tag: [bootleg]
+          model_relationship:
+            - target_machine: jack-in-the-box
+              relationship_type: copy
+              license_status: unknown

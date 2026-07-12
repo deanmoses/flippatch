@@ -45,7 +45,10 @@ claims:
       year: 1970
       technology_generation: electromechanical
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
       changesets:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
@@ -64,7 +67,10 @@ claims:
       year: 1970
       technology_generation: electromechanical
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
       changesets:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
@@ -83,7 +89,10 @@ claims:
       year: 1970
       technology_generation: electromechanical
       game_format: pinball
-      tag: [conversion-kit]
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
   - model.hippie:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); lineage per the source line: Conversion/retheme of Bally''s 1966 ''Capersville'' (ipdb 431; catalog capersville); artwork by Cortez; sold as a conversion kit.'
@@ -96,12 +105,14 @@ claims:
       year: 1970
       technology_generation: electromechanical
       game_format: pinball
-      tag: [conversion-kit]
       changesets:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
             quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
-          converted_from: capersville
+          model_relationship:
+            - target_machine: capersville
+              relationship_type: conversion_kit
+              license_status: unknown
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
             quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'

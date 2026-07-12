@@ -23,9 +23,11 @@ claims:
       player_count: 1
       game_format: pinball
       changesets:
-        - note: 'Classified a bootleg of Gottlieb''s "Jungle Life" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
+        - note: 'Classified a copy of Gottlieb''s "Jungle Life" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
           cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/zaccaria'
             quote: 'Jungle Life – 1p – em'
-          bootleg_of: jungle-life
-          tag: [bootleg]
+          model_relationship:
+            - target_machine: jungle-life
+              relationship_type: copy
+              license_status: unknown

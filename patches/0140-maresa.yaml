@@ -1,0 +1,220 @@
+attribution: flipcommons-catalog
+description: Lineage for Maresa's Gottlieb copies.
+claims:
+  # ==========================================================================
+  # Maquinas Recreativas S.A. (Maresa), Madrid, Spain. Under Spain's 1960s-70s
+  # ban on importing US pinball, Maresa built copies of Gottlieb designs. Each
+  # IPDB note names the original verbatim as "a copy of Gottlieb's <year>
+  # '<title>'", so the copy relationship + target is unambiguous:
+  # relationship_type: copy, target the named original, cited to that IPDB note.
+  #
+  # license_status: unknown on every row. The COPY is well sourced (IPDB "a copy
+  # of Gottlieb's ..."); the AUTHORIZATION is not — no source establishes it
+  # either way. So we deliberately do NOT launder an unsourced "unlicensed"/
+  # bootleg here: the Spanish import ban explains WHY the copies exist but is not
+  # itself a statement that Gottlieb withheld authorization (contrast
+  # 0150-ltd-do-brasil, where "unlicensed" IS sourced to Augusto Campos, and
+  # 0127 VIFICO, a documented Gottlieb licence). Big Brave (ipdb:4634) makes the
+  # point explicit — IPDB there literally says "whether ... a licensed copy or
+  # not is unknown". If a period licence or an explicit "unauthorized" source
+  # ever surfaces, set license_status accordingly.
+  #
+  # Same-name copies (below): the derivative carries the original's name, so
+  # per the campaign slug convention its disambiguation-numbered slug is renamed
+  # to end in -maresa and it is merged under the original's title (the emptied
+  # Maresa title is retired in 0141). The copy and the original keep their bare
+  # shared name; the UI tells them apart by maker.
+  # Renamed copies (different name from the original) keep their own slug/title.
+  # ==========================================================================
+
+  # ---- Same-name copies: slug rename + title merge
+  - model.big-brave-3:
+      slug: big-brave-maresa
+      title: big-indian-big-brave
+      cite:
+        ref: ipdb:4634
+        quote: "This game is a copy of Gottlieb's 1974 'Big Brave'"
+      model_relationship:
+        - target_machine: big-brave
+          relationship_type: copy
+          license_status: unknown
+  - model.domino-4:
+      slug: domino-maresa
+      title: domino-playmates
+      cite:
+        ref: ipdb:4637
+        quote: "A copy of Gottlieb's 1968 'Domino'."
+      model_relationship:
+        - target_machine: domino-2
+          relationship_type: copy
+          license_status: unknown
+  - model.jacks-open-2:
+      slug: jacks-open-maresa
+      title: jacks-open-lucky-hand
+      cite:
+        ref: ipdb:4643
+        quote: "A copy of Gottlieb's 1977 'Jacks Open'."
+      model_relationship:
+        - target_machine: jacks-open
+          relationship_type: copy
+          license_status: unknown
+  - model.pro-football-2:
+      slug: pro-football-maresa
+      title: gridiron-pro-football
+      cite:
+        ref: ipdb:5155
+        quote: "A near copy of Gottlieb's 1973 'Pro-Football'."
+      model_relationship:
+        - target_machine: pro-football
+          relationship_type: copy
+          license_status: unknown
+  - model.surfer-2:
+      slug: surfer-maresa
+      title: surf-champ-surfer
+      cite:
+        ref: ipdb:5305
+        quote: "A copy of the 2-player Gottlieb's 1976 'Surfer'."
+      model_relationship:
+        - target_machine: surfer
+          relationship_type: copy
+          license_status: unknown
+  - model.road-race-2:
+      slug: road-race-maresa
+      title: road-race-stock-car
+      cite:
+        ref: ipdb:5317
+        quote: "A copy of Gottlieb's 1969 'Road Race'."
+      model_relationship:
+        - target_machine: road-race
+          relationship_type: copy
+          license_status: unknown
+  - model.target-pool-2:
+      slug: target-pool-maresa
+      title: target-pool-mini-pool
+      cite:
+        ref: ipdb:5318
+        quote: "A copy of Gottlieb's 1969 'Target Pool'."
+      model_relationship:
+        - target_machine: target-pool
+          relationship_type: copy
+          license_status: unknown
+  - model.surf-champ-4:
+      slug: surf-champ-maresa
+      title: surf-champ-surfer
+      cite:
+        ref: ipdb:5762
+        quote: "A copy of Gottlieb's 1976 'Surf Champ'."
+      model_relationship:
+        - target_machine: surf-champ
+          relationship_type: copy
+          license_status: unknown
+  - model.spin-out-2:
+      slug: spin-out-maresa
+      title: spin-out
+      cite:
+        ref: ipdb:5801
+        quote: "This is a copy of Gottlieb's 1975 'Spin Out'."
+      model_relationship:
+        - target_machine: spin-out
+          relationship_type: copy
+          license_status: unknown
+  - model.top-card-2:
+      slug: top-card-maresa
+      title: top-card-royal-pair
+      cite:
+        ref: ipdb:5817
+        quote: "A copy of Gottlieb's 1974 'Top Card'."
+      model_relationship:
+        - target_machine: top-card
+          relationship_type: copy
+          license_status: unknown
+  - model.roller-coaster-2:
+      slug: roller-coaster-maresa
+      title: roller-coaster
+      cite:
+        ref: ipdb:5914
+        quote: "A copy of Gottlieb's 1971 'Roller Coaster'."
+      model_relationship:
+        - target_machine: roller-coaster
+          relationship_type: copy
+          license_status: unknown
+  - model.king-pin-5:
+      slug: king-pin-maresa
+      title: king-pin-pin-up
+      cite:
+        ref: ipdb:5917
+        quote: "This is a copy of Gottlieb's 1973 'King Pin'"
+      model_relationship:
+        - target_machine: king-pin-2
+          relationship_type: copy
+          license_status: unknown
+
+  # ---- Renamed copies: different name from the original, own slug/title kept
+  - model.king-ball-2:
+      cite:
+        ref: ipdb:4365
+        quote: "This is a copy of Gottlieb's 1962 'Rack-A-Ball' but with different art."
+      model_relationship:
+        - target_machine: rack-a-ball
+          relationship_type: copy
+          license_status: unknown
+  - model.picnic-2:
+      cite:
+        ref: ipdb:4366
+        quote: "A copy of Gottlieb's 1966 'Central Park'."
+      model_relationship:
+        - target_machine: central-park
+          relationship_type: copy
+          license_status: unknown
+  - model.boxing:
+      cite:
+        ref: ipdb:4367
+        quote: "A copy of Gottlieb's 1965 'Ice-Revue'."
+      model_relationship:
+        - target_machine: ice-revue
+          relationship_type: copy
+          license_status: unknown
+  - model.ye-ye-club:
+      note: >
+        The target is Gottlieb's 1965 Sky-Line (model:skyline-2); the IPDB note
+        renders the title with a mojibake character between "Sky" and "Line",
+        quoted verbatim below.
+      cite:
+        ref: ipdb:4645
+        quote: "This game is a copy of Gottlieb's 1965 'Sky�Line' but with different artwork."
+      model_relationship:
+        - target_machine: skyline-2
+          relationship_type: copy
+          license_status: unknown
+  - model.beisbol:
+      cite:
+        ref: ipdb:5320
+        quote: "A copy of Gottlieb's 1970 'Baseball'."
+      model_relationship:
+        - target_machine: baseball-2
+          relationship_type: copy
+          license_status: unknown
+  - model.4x4-2:
+      cite:
+        ref: ipdb:5486
+        quote: "Copy of Gottlieb's 1971 '4 Square'."
+      model_relationship:
+        - target_machine: 4-square
+          relationship_type: copy
+          license_status: unknown
+  - model.music-hall:
+      cite:
+        ref: ipdb:5805
+        quote: "A copy of Gottlieb's 1967 'Sing Along'."
+      model_relationship:
+        - target_machine: sing-along
+          relationship_type: copy
+          license_status: unknown
+  - model.tahiti-6:
+      cite:
+        ref: ipdb:5807
+        quote: "A copy of Gottlieb's 1962 'Tropic Isle'."
+      model_relationship:
+        - target_machine: tropic-isle
+          relationship_type: copy
+          license_status: unknown

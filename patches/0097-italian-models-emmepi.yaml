@@ -25,5 +25,7 @@ claims:
         - cite:
             ref: 'https://www.tilt.it/flipper_pinball/ipdb/emmepi'
             quote: Jungle Life (copy of same Gottlieb's game)
-          bootleg_of: jungle-life
-          tag: [bootleg]
+          model_relationship:
+            - target_machine: jungle-life
+              relationship_type: copy
+              license_status: unknown

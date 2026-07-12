@@ -11,53 +11,54 @@ claims:
   - title.big-ben:
       note: "The Williams 1975 Big Ben title, shared by the Segasa licensed builds; disambiguated from the separate Williams 1954 title by year. Kept maker-neutral because the title also carries the Segasa builds."
       slug: big-ben-1975
-      name: Big Ben (1975)
+      name: Big Ben
   - title.big-ben-2:
       note: "The Williams 1954 Big Ben title, an entirely separate title from the Williams 1975 Big Ben; disambiguated by maker and year."
       slug: big-ben-williams-1954
-      name: Big Ben (Williams 1954)
+      name: Big Ben
   - title.big-ben-3:
       note: "Daval's 1936 Big Ben title; disambiguated by maker and year."
       slug: big-ben-daval-1936
-      name: Big Ben (Daval 1936)
+      name: Big Ben
   - title.big-ben-4:
       note: "Hawtins' 1946 Big Ben title; disambiguated by maker and year."
       slug: big-ben-hawtins-1946
-      name: Big Ben (Hawtins 1946)
+      name: Big Ben
   - title.big-ben-5:
       note: 'An unknown-manufacturer, pure-mechanical Big Ben (IPDB 6613), a distinct machine from the Williams and Segasa games; suffixed "pm" (pure mechanical) since neither maker nor year is known.'
       slug: big-ben-pm
-      name: Big Ben (Unknown Manufacturer)
+      name: Big Ben
 
   # ---------------------------------------------------------------------------
   # Models. Same disambiguation; each model's slug matched to its title where it
   # is the sole model of that title. The Williams 1975 title keeps three models
-  # (Williams original + both Segasa builds), so those carry maker suffixes.
+  # (Williams original + both Segasa builds), so those carry maker-suffixed slugs.
+  # Display names stay bare "Big Ben"; the UI distinguishes them by maker/year.
   # ---------------------------------------------------------------------------
   - model.big-ben:
       note: "Segasa's 1975 licensed build of the Williams 1975 Big Ben; disambiguated by maker."
       slug: big-ben-segasa
-      name: Big Ben (Segasa)
+      name: Big Ben
   - model.big-ben-2:
       note: "Daval's 1936 Big Ben; slug matched to its title."
       slug: big-ben-daval-1936
-      name: Big Ben (Daval 1936)
+      name: Big Ben
   - model.big-ben-3:
       note: "Hawtins' 1946 Big Ben; slug matched to its title."
       slug: big-ben-hawtins-1946
-      name: Big Ben (Hawtins 1946)
+      name: Big Ben
   - model.big-ben-4:
       note: "Williams' 1954 Big Ben; disambiguated by maker and year."
       slug: big-ben-williams-1954
-      name: Big Ben (Williams 1954)
+      name: Big Ben
   - model.big-ben-5:
       note: "Williams' 1975 Big Ben; disambiguated by maker and year."
       slug: big-ben-williams-1975
-      name: Big Ben (Williams 1975)
+      name: Big Ben
   - model.big-ben-6:
       note: "The unknown-manufacturer, pure-mechanical Big Ben (IPDB 6613); slug matched to its title."
       slug: big-ben-pm
-      name: Big Ben (Unknown Manufacturer)
+      name: Big Ben
 
   # ---------------------------------------------------------------------------
   # Re-home the Segasa Italy export under the shared Williams 1975 title. It is
