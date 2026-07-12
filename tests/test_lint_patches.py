@@ -248,6 +248,22 @@ def test_note_quote_scaffolding_grandfathered_before_rule():
     assert not has(e, "scaffolding")
 
 
+def test_expect_obsolete_flagged():
+    e = errs(
+        [{"model.x": {"expect": {"ipdb_id": 6454}, "note": "n", "year": 1970}}],
+        filename="0130-x.yaml",
+    )
+    assert has(e, "expect: is obsolete")
+
+
+def test_expect_grandfathered_before_rule():
+    e = errs(
+        [{"model.x": {"expect": {"ipdb_id": 6454}, "note": "n", "year": 1970}}],
+        filename="0129-x.yaml",
+    )
+    assert not has(e, "obsolete")
+
+
 def test_own_data_quote_note_not_scaffolding():
     e = errs(
         [

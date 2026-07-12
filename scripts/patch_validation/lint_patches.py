@@ -60,6 +60,11 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   ``note:`` fields, not here. This is the one whole-patch check (the others run
   per unit); the per-record ``description-*`` rules above target a different
   field — the narrative ``description:`` inside a claim unit.
+- ``expect-obsolete`` — A unit must not carry ``expect:``. It was a drift guard
+  (assert stable attributes of the slug-addressed record before mutating it) that
+  flipcommons' apply engine now accepts-but-ignores. Older patches keep it
+  (grandfathered); it is rejected going forward so AI sessions stop copying it out
+  of recent patches.
 
 Each rule is enforced from the patch number at which it was introduced
 (``RULE_SINCE``); patches below that are grandfathered for it.
@@ -109,6 +114,7 @@ RULE_SINCE: dict[str, int] = {
     "quote-typography": 76,
     "alias-length": 39,
     "patch-description-length": 39,
+    "expect-obsolete": 130,
 }
 _PREFIX_RE = re.compile(r"^(\d{4})-")
 
@@ -297,6 +303,15 @@ def _check_unit(
 
     def on(rule: str) -> bool:
         return _active(rule, patch_num)
+
+    # expect-obsolete: the drift guard flipcommons' apply engine now ignores.
+    # Grandfathered on older patches; rejected going forward so it stops being
+    # copied out of recent patches.
+    if "expect" in unit and on("expect-obsolete"):
+        errors.append(
+            f"{where}: expect: is obsolete — the apply engine ignores it; remove "
+            f"it and do not copy it from older patches"
+        )
 
     authored = {k for k in unit if k not in RESERVED}
     nonalias_field = authored - ALIAS_KEYS - {"description"}
