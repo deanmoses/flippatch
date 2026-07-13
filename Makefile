@@ -1,4 +1,4 @@
-.PHONY: validate verify-quotes lint-descriptions verify-citations extract-page push agent-docs lint typecheck test check
+.PHONY: validate verify-quotes lint-descriptions verify-citations extract-page sweep push agent-docs lint typecheck test check
 
 # Validate data patches against the patch schema (structural gate) plus the
 # editorial authoring lint. Run this before push.
@@ -40,6 +40,17 @@ verify-citations:
 #   make extract-page ARGS="https://example.com/page"
 extract-page:
 	@PYTHONPATH=scripts uv run python3 -m ai_page_extract.cli $(ARGS)
+
+# ── AI corpus sweep ────────────────────────
+# Judge a candidate set's corpus-vs-catalog deltas: one trusted-tier call per
+# candidate over its full source note, deterministic gates, then REVIEW.md +
+# results.json artifacts. Needs the flipcommons dev DB; judging also needs
+# ANTHROPIC_API_KEY + the pinexplore evidence stores. --no-ai reconciles free.
+#
+#   make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --no-ai"
+#   make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --limit 10"
+sweep:
+	@PYTHONPATH=scripts uv run python3 -m ai_corpus_sweep.cli $(ARGS)
 
 # Lint + format-check the Python tooling (same ruff config pre-commit uses).
 lint:

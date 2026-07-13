@@ -118,6 +118,10 @@ For the concepts a patch rests on, read these two when a claim or citation quest
 
 For pulling a model's field values out of a cached free-text source (a review, a maker page, a blog, or IPDB free-text Notes) at higher recall than a hand pass, use the **AI page extractor** — `make extract-page ARGS="<ref> --target '<model>' --maker '<maker>'"`. Follow its operator guide, [docs/page_extractor/ModelPageExtractionAuthoring.md](page_extractor/ModelPageExtractionAuthoring.md): it hands back _candidate_ claims with verbatim-checked quotes that **you vet against the full page** before authoring — it raises recall, it is not a patch generator or an authority. Structured IPDB/OPDB columns are resolved directly and never go through it. (Localhost only; the page must already be in the pinexplore web cache.)
 
+### Sweeping one field across the whole corpus
+
+To populate or audit one sparse field across many models at once (a lineage relationship, later booleans like widebody), use the **AI corpus sweep** — `make sweep ARGS="<candidates.jsonl>"`. Follow its operator guide, [docs/corpus_sweep/CorpusSweepOperating.md](corpus_sweep/CorpusSweepOperating.md). You supply the candidate set (deterministic SQL/FTS mining, one JSONL row per model+field, prior guesses as never-shown-to-the-model `hint`s); it reconciles every row against the dev DB, judges each full source note in an independent trusted-tier call, gates deterministically (verbatim quote + unique target resolution + catalog diff), and emits `results.json` + a `REVIEW.md` filtered to disagreements and doubt. It judges already-set values too — that is what catches wrong seeded data. Start with `--no-ai` (free reconcile) and `--limit 10` (trial) before a full run. (Localhost only; needs the dev DB, the pinexplore stores, and `ANTHROPIC_API_KEY`.)
+
 ## Validation
 
 `make validate` runs two fast gates over the patches:
