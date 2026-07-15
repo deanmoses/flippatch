@@ -3,71 +3,71 @@ description: >-
   Set website on manufacturers that have a root citation source.
 claims:
   - manufacturer.american-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.american-pinball.com/"
   - manufacturer.barrels-of-fun:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.barrelsoffun.com/"
   - manufacturer.chicago-gaming:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.chicago-gaming.com/"
   - manufacturer.dutch-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.dutchpinball.com/"
   - manufacturer.euro-pinball-corp:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.europinball.net/"
   - manufacturer.for-amusement-only-games:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.foramusementonlygames.com/"
   - manufacturer.hexa-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.hexa-pinball.com/"
   - manufacturer.homepin:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.homepin.com/"
   - manufacturer.ian-harrower-games:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://ianharrowergames.com/"
   - manufacturer.jersey-jack:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.jerseyjackpinball.com/"
   - manufacturer.multimorphic:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.multimorphic.com/"
   - manufacturer.pawlowski-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://pawlowskipinball.com/"
   - manufacturer.pedretti-gaming:
-      note: 'Official manufacturer website (pedrettigaming.it redirects here).'
+      note: "Official manufacturer website (pedrettigaming.it redirects here)."
       website: "https://www.pinballremakes.com/"
   - manufacturer.pinball-adventures:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.pinballadventures.com/"
   - manufacturer.pinball-brothers:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.pinballbrothers.com/"
   - manufacturer.ramps-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.rampspinball.com/"
   - manufacturer.rebellion-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://155601.wixsite.com/rebellionpinball"
   - manufacturer.spooky:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.spookypinball.com/"
   - manufacturer.stern-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.sternpinball.com/"
   - manufacturer.tomato-land:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://www.tomatoland.jp/"
   - manufacturer.turner-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://turnerpinball.com/"
   - manufacturer.vector-pinball:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://vectorpinball.com/"
   - manufacturer.wonderland-amusements:
-      note: 'Official manufacturer website.'
+      note: "Official manufacturer website."
       website: "https://wonderlandamusements.com/"

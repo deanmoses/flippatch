@@ -16,25 +16,25 @@ claims:
       cabinet: floor
       technology_generation: solid-state
       tag: [home-use]
-      note: 'The owner review (March 2026) documents the machine as shipped; a free-standing, roughly 80%-scale machine with a backbox.'
+      note: "The owner review (March 2026) documents the machine as shipped; a free-standing, roughly 80%-scale machine with a backbox."
       cite:
         ref: https://nicole.express/2026/nicole-in-blunderland.html
-        quote: 'two large cardboard boxes were delivered to the apartment'
+        quote: "two large cardboard boxes were delivered to the apartment"
       changesets:
         - display_type: lcd
           cite:
             ref: https://nicole.express/2026/nicole-in-blunderland.html
-            quote: 'The score is displayed on a small LCD screen'
+            quote: "The score is displayed on a small LCD screen"
         - reward_type: [free-play]
           cite:
             ref: https://nicole.express/2026/nicole-in-blunderland.html
-            quote: 'There are a series of controls on the front, in lieu of a coin slot'
+            quote: "There are a series of controls on the front, in lieu of a coin slot"
         # Art credit — manufacturer spec sheet, distinct from the owner-review cite above.
         - credit:
             - carlos-mendoza-iii: art
           cite:
             ref: https://wonderlandamusements.com/products/alice-goes-to-wonderland-pinball
-            quote: 'Artwork: Original illustrations by Carlos Mendoza III'
+            quote: "Artwork: Original illustrations by Carlos Mendoza III"
   # The TMNT machine's credited artist, created before the credit below references it.
   - person.mateus-santolouco:
       create: true
@@ -47,37 +47,37 @@ claims:
       cabinet: floor
       technology_generation: solid-state
       abbreviation: ["TMNT:BITS", "TMNT-BITS", "TMNTBITS"]
-      note: 'Revealed for pre-order in 2026 following the Alice Kickstarter; not yet shipped.'
+      note: "Revealed for pre-order in 2026 following the Alice Kickstarter; not yet shipped."
       cite:
         ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-        quote: 'PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Official TMNT Mechanical Pinball Machine by Wonderland Amusements'
+        quote: "PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Official TMNT Mechanical Pinball Machine by Wonderland Amusements"
       changesets:
         - production_status: announced
           cite:
             ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-            quote: 'PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine'
+            quote: "PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine"
         - year: 2026
           cite:
             ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-            quote: 'pre-ordering guarantees your spot in line'
+            quote: "pre-ordering guarantees your spot in line"
         - display_type: lcd
           cite:
             ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-            quote: 'Integrated LCD display system'
+            quote: "Integrated LCD display system"
         - tag: [home-use]
           cite:
             ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-            quote: 'TMNT Pinball is designed for home use only'
+            quote: "TMNT Pinball is designed for home use only"
         - reward_type: [free-play]
           cite:
             ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-            quote: 'It is not equipped with coin operation'
+            quote: "It is not equipped with coin operation"
         # Art credit for the machine — its own source, distinct from the spec-sheet cite above.
         - credit:
             - mateus-santolouco: art
           cite:
             ref: https://bleedingcool.com/games/teenage-mutant-ninja-turtles-has-a-new-pinball-machine
-            quote: 'Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco'
+            quote: "Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco"
   # Pinball Eternal's creator, created before the credit below references it.
   - person.adam-pawlowski:
       create: true
@@ -92,35 +92,35 @@ claims:
       technology_generation: solid-state
       cite:
         ref: https://pawlowskipinball.com/
-        quote: 'the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025.'
+        quote: "the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025."
       changesets:
         - tag: [home-use]
           cite:
             ref: https://pawlowskipinball.com/
-            quote: 'Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences'
+            quote: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences"
         # Software credit — first-person from the maker's own site (the primary source).
         - credit:
             - adam-pawlowski: software
-          note: 'First-person by founder Adam Pawlowski on the maker''s About page.'
+          note: "First-person by founder Adam Pawlowski on the maker's About page."
           cite:
             ref: https://pawlowskipinball.com/about
-            quote: 'Having a lifetime experience in software engineering videogames [...] designing a proprietary platform with Pinball Designer to design, program and build pinball machines on a large scale'
+            quote: "Having a lifetime experience in software engineering videogames [...] designing a proprietary platform with Pinball Designer to design, program and build pinball machines on a large scale"
         # Art credit — the maker's own site doesn't claim the art, so cite his ArtStation portfolio, which names him "Artist".
         - credit:
             - adam-pawlowski: art
           cite:
             ref: https://dpadam450.artstation.com/projects/WmOKyN
-            quote: 'Adam Pawlowski [...] Programmer, Artist [...] My latest project Pinball Eternal.'
+            quote: "Adam Pawlowski [...] Programmer, Artist [...] My latest project Pinball Eternal."
   - model.little-shop-of-horrors:
       create: true
       name: Little Shop of Horrors
       title: little-shop-of-horrors
       corporate_entity: ramps-pinball
       production_status: announced
-      note: 'Trademark-stage; no release date announced, so the year is left unset.'
+      note: "Trademark-stage; no release date announced, so the year is left unset."
       cite:
         ref: https://twip.kineticist.com/p/brought-to-you-by-secrets
-        quote: 'I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year.'
+        quote: "I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year."
   # Road Trip's credited designer (Ramp's founder), created before the credit below references it.
   - person.bob-nies:
       create: true
@@ -146,13 +146,13 @@ claims:
       note: 'Pinside game archive, "Elf" (Bob Nies, 2022), "Based on the 2003 Movie Elf with Will Ferrell": a one-off homebrew that is "100% custom (no donor), uses P3-ROC circuit boards, MPF and Unity3d" — no market history, only a couple of private collections.'
       cite:
         ref: https://pinside.com/pinball/machine/elf
-        quote: 'Bob Nies [...] Elf [...] Based on the 2003 Movie Elf with Will Ferrell.'
+        quote: "Bob Nies [...] Elf [...] Based on the 2003 Movie Elf with Will Ferrell."
       changesets:
         # Display from the creator interview — a playfield monitor (LCD), which Pinside doesn't state.
         - display_type: lcd
           cite:
             ref: https://www.kineticist.com/news/bob-nies-interview-elf-pinball
-            quote: 'There was one ''must have'' before I even started and that was the playfield monitor.'
+            quote: "There was one 'must have' before I even started and that was the playfield monitor."
   # Edit (not create): Ramp's debut is already in the catalog from OPDB; tag it widebody.
   - model.road-trip:
       expect: { opdb_id: GQKXy-MNENE }
@@ -161,12 +161,12 @@ claims:
       note: 'Flipper-News describes Ramp''s as the company "die vor wenigen Monaten in Florida mit dem Widebody Road Trip debütierte" (which debuted a few months ago in Florida with the widebody Road Trip) — a widebody being a full-size floor cabinet.'
       cite:
         ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
-        quote: 'mit dem Widebody Road Trip debütierte'
+        quote: "mit dem Widebody Road Trip debütierte"
       changesets:
         # Designer credit — Ramp's own site, distinct from the Flipper-News widebody cite above.
         - credit:
             - bob-nies: design
-          note: "Ramp's own site credits Road Trip to \"the award-winning designer Bob Nies\", but the page is script-rendered and can't be captured for verification; Flipper-News states the machine is by the company Bob Neis founded."
+          note: 'Ramp''s own site credits Road Trip to "the award-winning designer Bob Nies", but the page is script-rendered and can''t be captured for verification; Flipper-News states the machine is by the company Bob Neis founded.'
           cite:
             ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
-            quote: 'das von Bob Neis in Florida gegründete Unternehmen, das derzeit an seinem ersten kommerziellen Titel Road Trip arbeitet'
+            quote: "das von Bob Neis in Florida gegründete Unternehmen, das derzeit an seinem ersten kommerziellen Titel Road Trip arbeitet"

@@ -195,11 +195,7 @@ sources:
     description: >-
       Manufacturer site of Homepin, maker of the Thunderbirds pinball machine.
     links:
-      - {
-          url: "https://www.homepin.com/",
-          label: Homepin,
-          link_type: homepage,
-        }
+      - { url: "https://www.homepin.com/", label: Homepin, link_type: homepage }
   - name: Ian Harrower Games
     source_type: web
     description: >-

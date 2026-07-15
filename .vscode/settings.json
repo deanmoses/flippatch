@@ -1,7 +1,16 @@
 {
   "editor.formatOnSave": true,
   "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[yaml]": { "editor.wordWrap": "on" },
+  // Format YAML with Prettier (not redhat.vscode-yaml's own formatter) so the
+  // editor's format-on-save exactly matches the prettier-yaml pre-commit hook.
+  // Both normalise the same way (e.g. single- -> double-quoted scalars), so a
+  // patch is byte-identical whether it was last touched by the IDE or a
+  // generator/AI author. This is a cosmetic reformat only: it never changes
+  // parsed values, so it never trips flipcommons' ingest immutability hash.
+  "[yaml]": {
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.codeActionsOnSave": { "source.fixAll.markdownlint": "explicit" },
 
   // Turn Pylance/Pyright type checking OFF so it doesn't double-report with the

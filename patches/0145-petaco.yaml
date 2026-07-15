@@ -61,7 +61,7 @@ claims:
             - target_machine: aquarius
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Aquarius" (1971), réplica del pinball homónimo de 1970/10.'
@@ -79,7 +79,7 @@ claims:
             - target_machine: flip-a-card
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Flip a Card" (1971), réplica del pinball homónimo de 1970/03.'
@@ -97,7 +97,7 @@ claims:
         - target_machine: grand-slam-5
           relationship_type: copy
           license_status: unknown
-      note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.mibs-2:
       changesets:
         - slug: mibs-petaco
@@ -111,7 +111,7 @@ claims:
             - target_machine: mibs
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Mibs" (1969), réplica del pinball homónimo de 1969/10.'
@@ -129,7 +129,7 @@ claims:
             - target_machine: mini-cycle
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Mini Cycle" (1971), réplica del pinball homónimo de Gottlieb 1970/02.'
@@ -146,7 +146,7 @@ claims:
         - target_machine: olympics-3
           relationship_type: copy
           license_status: unknown
-      note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.spin-a-card-2:
       # Already shares the spin-a-card-hearts-and-spades title with the original,
       # so no title move is needed; only the slug rename.
@@ -160,7 +160,7 @@ claims:
         - target_machine: spin-a-card
           relationship_type: copy
           license_status: unknown
-      note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.drop-a-card-2:
       changesets:
         - slug: drop-a-card-petaco
@@ -192,7 +192,7 @@ claims:
             - target_machine: sky-jump
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Sky Jump" (1974), réplica del pinball homónimo de Gottlieb 1974/05.'
@@ -209,7 +209,7 @@ claims:
         - target_machine: sweet-hearts
           relationship_type: copy
           license_status: unknown
-      note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.esmeralda-ball:
       changesets:
         - cite:
@@ -221,7 +221,7 @@ claims:
             - target_machine: spin-wheel
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Esmeralda Ball" (1968), réplica del pinball "Spin Wheel" de 1968/03.'
@@ -237,7 +237,7 @@ claims:
             - target_machine: royal-guard
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Gran Parada" (1968), réplica del pinball "Royal Guard" de 1968/01.'
@@ -252,7 +252,7 @@ claims:
         - target_machine: high-hand-2
           relationship_type: copy
           license_status: unknown
-      note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.new-city-2:
       cite:
         - ref: ipdb:6225
@@ -263,7 +263,7 @@ claims:
         - target_machine: kings-queens
           relationship_type: copy
           license_status: unknown
-      note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.rey-de-diamantes:
       note: >
         Already shares the king-of-diamonds title with the original (OPDB groups
@@ -292,7 +292,7 @@ claims:
             - target_machine: outer-space
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog''s licence claim was weighed and rejected.'
+          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Orbit" (1972), réplica del pinball "Outer Space" de 1972/02.'
@@ -329,65 +329,65 @@ claims:
   - model.cavalier-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Cavalier | 1979 | Electromecánica/Electrónica | 4'
+        quote: "Cavalier | 1979 | Electromecánica/Electrónica | 4"
       year: 1979
   - model.crazy-race-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Crazy Race | 1978 | Electrónica | 4'
+        quote: "Crazy Race | 1978 | Electrónica | 4"
       year: 1978
   - model.criterium-2000-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Criterium 2000 | 1975 | Electromecánica | 1'
+        quote: "Criterium 2000 | 1975 | Electromecánica | 1"
       year: 1975
   - model.criterium-75-3:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Criterium 75 | 1975 | Electromecánica/Electrónica | 4'
+        quote: "Criterium 75 | 1975 | Electromecánica/Electrónica | 4"
       year: 1975
   - model.fair-fight-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Fair Fight | 1978 | Electrónica | 4'
+        quote: "Fair Fight | 1978 | Electrónica | 4"
       year: 1978
   - model.jake-mate-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Jake Mate | 1975 | Electromecánica | 1'
+        quote: "Jake Mate | 1975 | Electromecánica | 1"
       year: 1975
   - model.master-stroke-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Master Stroke | 1977 | Electromecánica | 1'
+        quote: "Master Stroke | 1977 | Electromecánica | 1"
       year: 1977
   - model.mr-doom-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Mr Doom | 1979 | Electrónica | 4'
+        quote: "Mr Doom | 1979 | Electrónica | 4"
       year: 1979
   - model.mr-evil-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Mr Evil | 1978 | Electrónica | 1'
+        quote: "Mr Evil | 1978 | Electrónica | 1"
       year: 1978
   - model.poker-plus-3:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Poker Plus | 1978 | Electromecánica/Electrónica | 4'
+        quote: "Poker Plus | 1978 | Electromecánica/Electrónica | 4"
       year: 1978
   - model.sea-scare-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Sea Scare | 1975 | Electromecánica | 1'
+        quote: "Sea Scare | 1975 | Electromecánica | 1"
       year: 1975
   - model.torneo-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Torneo | 1978 | Electrónica | 1'
+        quote: "Torneo | 1978 | Electrónica | 1"
       year: 1978
   - model.underwater-2:
       cite:
         ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
-        quote: 'Underwater | 1976 | Electromecánica | 4'
+        quote: "Underwater | 1976 | Electromecánica | 4"
       year: 1976

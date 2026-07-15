@@ -6,81 +6,81 @@ claims:
       expect: { ipdb_id: 6812 }
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1972 Apollo Moon - アポロムーン by 三共 (Sankyo)'
+        quote: "1972 Apollo Moon - アポロムーン by 三共 (Sankyo)"
       year: 1972
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1972 Apollo Moon - アポロムーン by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "1972 Apollo Moon - アポロムーン by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
   - model.asteroid-killer:
       expect: { ipdb_id: 3810 }
-      note: 'flipcommons previously had 1980; the eremeka catalog and Early Arcades Japan both show 1979.'
+      note: "flipcommons previously had 1980; the eremeka catalog and Early Arcades Japan both show 1979."
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2026/05/1979-asteroid-killer-by-universal.html
-        quote: 'The only image I''ve seen of Asteroid Killer so far is from this write-up in Play Meter 1979-12-15. [...] So if it''s shown in 1979, we''re marking that down as 1979.'
+        quote: "The only image I've seen of Asteroid Killer so far is from this write-up in Play Meter 1979-12-15. [...] So if it's shown in 1979, we're marking that down as 1979."
       year: 1979
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1979 Asteroid Killer by ユニバーサル (Universal) [...] yokomono ~ flipper pinball'
+            quote: "1979 Asteroid Killer by ユニバーサル (Universal) [...] yokomono ~ flipper pinball"
   - model.indy-game:
       expect: { ipdb_id: 6774 }
-      note: 'The eremeka catalog marks the date approximate (~).'
+      note: "The eremeka catalog marks the date approximate (~)."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1967 Indy Game - インディゲーム by こまや (Komaya)'
+        quote: "~1967 Indy Game - インディゲーム by こまや (Komaya)"
       year: 1967
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1967 Indy Game - インディゲーム by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "~1967 Indy Game - インディゲーム by こまや (Komaya) [...] yokomono ~ flipper pinball"
   - model.lets-go-moon:
       expect: { ipdb_id: 6773 }
-      note: 'The eremeka catalog marks the date approximate (~).'
+      note: "The eremeka catalog marks the date approximate (~)."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1968 Let''s Go Moon! - レッッゴームーン by こまや (Komaya)'
+        quote: "~1968 Let's Go Moon! - レッッゴームーン by こまや (Komaya)"
       year: 1968
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1968 Let''s Go Moon! - レッッゴームーン by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "~1968 Let's Go Moon! - レッッゴームーン by こまや (Komaya) [...] yokomono ~ flipper pinball"
   - model.new-big-race:
       expect: { ipdb_id: 6070 }
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2025/09/new-big-race-by-sankyo.html
-        quote: 'New Big Race appears in the 1973 game directory, which was printed in late 1972 [...] The 1972 print date of the machine directory is the only date we have, and the one we will use for the time being.'
+        quote: "New Big Race appears in the 1973 game directory, which was printed in late 1972 [...] The 1972 print date of the machine directory is the only date we have, and the one we will use for the time being."
       year: 1972
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1972 ニュービッグレース (New Big Race) by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "1972 ニュービッグレース (New Big Race) by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
   - model.the-world-series:
       expect: { ipdb_id: 6069 }
-      note: 'A 1976 re-release was sold as New World Series.'
+      note: "A 1976 re-release was sold as New World Series."
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2022/06/the-world-series-by-sankyo.html
-        quote: 'The World Series [...] 1972'
+        quote: "The World Series [...] 1972"
       year: 1972
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1972 The World Series - ワールドシリーズ by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "1972 The World Series - ワールドシリーズ by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
   - model.ultra-attack:
       expect: { ipdb_id: 6068 }
-      note: 'The eremeka catalog dates this to approximately 1972 (marked ~), co-credited to Nihon Gorakuki and Nihon Tenbo.'
+      note: "The eremeka catalog dates this to approximately 1972 (marked ~), co-credited to Nihon Gorakuki and Nihon Tenbo."
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
-        quote: 'Year: ~1972'
+        quote: "Year: ~1972"
       year: 1972
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1972 ウルトラアタック (Ultra Attack) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] yokomono ~ flipper pinball'
+            quote: "~1972 ウルトラアタック (Ultra Attack) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] yokomono ~ flipper pinball"

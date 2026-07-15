@@ -4,31 +4,31 @@ description: >
 claims:
   - manufacturer.italiana-biliardi:
       create: true
-      note: 'The tilt.it Italian Pinball Database credits Italiana Biliardi (Sig. G. Onorato; city unknown) with one pinball machine; corroborating sources were sought at authoring time and none found.'
+      note: "The tilt.it Italian Pinball Database credits Italiana Biliardi (Sig. G. Onorato; city unknown) with one pinball machine; corroborating sources were sought at authoring time and none found."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi"
         quote: Italiana Biliardi
       name: Italiana Biliardi
   - corporate-entity.italiana-biliardi:
       create: true
-      note: 'Corporate entity of Italiana Biliardi, per the tilt.it Italian Pinball Database.'
+      note: "Corporate entity of Italiana Biliardi, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi"
         quote: Italiana Biliardi
       name: Italiana Biliardi
       manufacturer: italiana-biliardi
   - title.pin-football:
       create: true
-      note: 'Title for Pin football, per the tilt.it Italian Pinball Database.'
+      note: "Title for Pin football, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi"
         quote: Pin football
       name: Pin football
   - model.pin-football:
       create: true
-      note: 'no technology is stated.'
+      note: "no technology is stated."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi"
         quote: Pin football
       name: Pin football
       title: pin-football

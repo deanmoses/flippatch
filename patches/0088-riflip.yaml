@@ -4,36 +4,36 @@ description: >
 claims:
   - manufacturer.riflip:
       create: true
-      note: 'The tilt.it Italian Pinball Database credits RIFLIP - Organizzazione Costa of Turin with one pinball machine; corroborating sources were sought at authoring time and none found.'
+      note: "The tilt.it Italian Pinball Database credits RIFLIP - Organizzazione Costa of Turin with one pinball machine; corroborating sources were sought at authoring time and none found."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/riflip'
-        quote: 'RIFLIP – Organizzazione Costa'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/riflip"
+        quote: "RIFLIP – Organizzazione Costa"
       name: RIFLIP
   - corporate-entity.riflip-organizzazione-costa:
       create: true
-      note: 'Corporate entity of RIFLIP, per the tilt.it Italian Pinball Database.'
+      note: "Corporate entity of RIFLIP, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/riflip'
-        quote: 'RIFLIP – Organizzazione Costa'
-      name: 'RIFLIP – Organizzazione Costa'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/riflip"
+        quote: "RIFLIP – Organizzazione Costa"
+      name: "RIFLIP – Organizzazione Costa"
       manufacturer: riflip
       changesets:
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/riflip'
-            quote: '(Torino, Italy)'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/riflip"
+            quote: "(Torino, Italy)"
           location: [italy/to/turin]
   - title.san-marco:
       create: true
-      note: 'Title for San Marco, per the tilt.it Italian Pinball Database.'
+      note: "Title for San Marco, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/riflip'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/riflip"
         quote: San Marco
       name: San Marco
   - model.san-marco:
       create: true
-      note: 'lineage per the source line: Advertised as an entirely Italian original (''interamente italiano''); no American original named.'
+      note: "lineage per the source line: Advertised as an entirely Italian original ('interamente italiano'); no American original named."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/riflip'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/riflip"
         quote: San Marco
       name: San Marco
       title: san-marco

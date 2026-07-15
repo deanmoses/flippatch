@@ -7,37 +7,37 @@ claims:
       name: Cortez
   - title.golf-dama-srl:
       create: true
-      note: 'Title for Golf, per the tilt.it Italian Pinball Database.'
+      note: "Title for Golf, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Golf (grafica di Cortez)
       name: Golf
   - title.mexico-70:
       create: true
-      note: 'Title for Mexico 70, per the tilt.it Italian Pinball Database.'
+      note: "Title for Mexico 70, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Mexico 70 (grafica di Cortez)
       name: Mexico 70
   - title.gold-beach:
       create: true
-      note: 'Title for Gold Beach, per the tilt.it Italian Pinball Database.'
+      note: "Title for Gold Beach, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Gold Beach
       name: Gold Beach
   - title.hippie:
       create: true
-      note: 'Title for Hippie, per the tilt.it Italian Pinball Database.'
+      note: "Title for Hippie, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
       name: Hippie
   - model.golf-dama-srl:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); sold as a conversion kit.'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Golf (grafica di Cortez)
       name: Golf
       title: golf-dama-srl
@@ -51,7 +51,7 @@ claims:
           license_status: unknown
       changesets:
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
             quote: Golf (grafica di Cortez)
           credit:
             - cortez: art
@@ -59,7 +59,7 @@ claims:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); sold as a conversion kit.'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Mexico 70 (grafica di Cortez)
       name: Mexico 70
       title: mexico-70
@@ -73,7 +73,7 @@ claims:
           license_status: unknown
       changesets:
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
             quote: Mexico 70 (grafica di Cortez)
           credit:
             - cortez: art
@@ -81,7 +81,7 @@ claims:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); sold as a conversion kit.'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Gold Beach
       name: Gold Beach
       title: gold-beach
@@ -97,7 +97,7 @@ claims:
       create: true
       note: 'tilt.it marks the 1970 year uncertain ("(?)"); lineage per the source line: Conversion/retheme of Bally''s 1966 ''Capersville'' (ipdb 431; catalog capersville); artwork by Cortez; sold as a conversion kit.'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
       name: Hippie
       title: hippie
@@ -107,20 +107,20 @@ claims:
       game_format: pinball
       changesets:
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
             quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
           model_relationship:
             - target_machine: capersville
               relationship_type: conversion_kit
               license_status: unknown
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
             quote: 'Hippie (Bally "Capersville") (grafica di Cortez)'
           credit:
             - cortez: art
   - model.hippye-2:
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dama'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dama"
         quote: Hippye (Top Hand)(grafica di Cortez)
       credit:
         - cortez: art

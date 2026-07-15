@@ -4,17 +4,17 @@ description: >
 claims:
   - title.sinbad-bell-coin-matics:
       create: true
-      note: 'Title for Sinbad, per the tilt.it Italian Pinball Database.'
+      note: "Title for Sinbad, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Sinbad (co-production Europlay/Bell Games) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Sinbad (co-production Europlay/Bell Games) – ss – 4p"
       name: Sinbad
   - model.sinbad-bell-coin-matics:
       create: true
-      note: 'lineage per the source line: 4-player solid-state co-production by Europlay and Bell Games; copy of Gottlieb''s 1978 ''Sinbad'' (ipdb 2159); sibling of Europlay''s 1-player EM ''Sinbad Adventures'' (catalog sinbad-adventures, ipdb 3252)..'
+      note: "lineage per the source line: 4-player solid-state co-production by Europlay and Bell Games; copy of Gottlieb's 1978 'Sinbad' (ipdb 2159); sibling of Europlay's 1-player EM 'Sinbad Adventures' (catalog sinbad-adventures, ipdb 3252).."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/bell-games'
-        quote: 'Sinbad (co-production Europlay/Bell Games) – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/bell-games"
+        quote: "Sinbad (co-production Europlay/Bell Games) – ss – 4p"
       name: Sinbad
       title: sinbad-bell-coin-matics
       corporate_entity: bell-coin-matics

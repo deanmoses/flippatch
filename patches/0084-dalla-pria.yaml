@@ -4,28 +4,28 @@ description: >
 claims:
   - manufacturer.dalla-pria:
       create: true
-      note: 'tilt.it lists a Dalla Pria/ABM Electronics pinball conversion kit; the firm''s own site describes the Dalla Pria group of Piove di Sacco as an amusement-machine producer and distributor in the game sector since 1958.'
+      note: "tilt.it lists a Dalla Pria/ABM Electronics pinball conversion kit; the firm's own site describes the Dalla Pria group of Piove di Sacco as an amusement-machine producer and distributor in the game sector since 1958."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm"
         quote: Dalla Pria/ABM Electronics srl
       name: Dalla Pria
       manufacturer_alias: [Dalla Pria-ABM]
   - corporate-entity.dalla-pria-abm-electronics:
       create: true
-      note: 'Corporate entity of Dalla Pria, per the tilt.it Italian Pinball Database.'
+      note: "Corporate entity of Dalla Pria, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm"
         quote: Dalla Pria/ABM Electronics srl
       name: Dalla Pria/ABM Electronics srl
       manufacturer: dalla-pria
       changesets:
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm'
-            quote: '(Piove di Sacco – PD)'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/dalla-pria-abm"
+            quote: "(Piove di Sacco – PD)"
           location: [italy/pd/piove-di-sacco]
   - corporate-entity.dalla-pria-abm-electronics:
-      note: 'The firm''s own site says it has operated in the game sector since 1958.'
+      note: "The firm's own site says it has operated in the game sector since 1958."
       cite:
-        ref: 'https://www.dallapria.it/'
+        ref: "https://www.dallapria.it/"
         quote: Il Gruppo DALLA PRIA opera nel settore dei videogame dal 1958.
       operating_status: ongoing

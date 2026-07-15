@@ -9,10 +9,10 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '1965 クレイジー15ゲーム (Crazy 15 game) [early backglass] by こまや (Komaya) [...] 1965 クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) by こまや (Komaya) [...] ~1967 Indy Game - インディゲーム by こまや (Komaya) [...] ~1968 Let''s Go Moon! - レッッゴームーン by こまや (Komaya) [...] 1969 クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) by こまや (Komaya) [...] ~1969 Saturn - サターン号 by こまや (Komaya) [...] ~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] 1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] 1974 ポケットボール (Pocket Ball) by こまや (Komaya) [...] 1977 New Crazy 15 - ニュークレイジー15 by こまや (Komaya)'
+          quote: "1965 クレイジー15ゲーム (Crazy 15 game) [early backglass] by こまや (Komaya) [...] 1965 クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) by こまや (Komaya) [...] ~1967 Indy Game - インディゲーム by こまや (Komaya) [...] ~1968 Let's Go Moon! - レッッゴームーン by こまや (Komaya) [...] 1969 クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) by こまや (Komaya) [...] ~1969 Saturn - サターン号 by こまや (Komaya) [...] ~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] 1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] 1974 ポケットボール (Pocket Ball) by こまや (Komaya) [...] 1977 New Crazy 15 - ニュークレイジー15 by こまや (Komaya)"
         "2":
           ref: ipdb:6775
-          quote: 'Manufacturer: Komaya Co., Ltd., of Kobe, Japan [Trade Name: Komaya Seisakusho]'
+          quote: "Manufacturer: Komaya Co., Ltd., of Kobe, Japan [Trade Name: Komaya Seisakusho]"
   - manufacturer.nihon-jidou-hanbaiki-kabushikigaisha:
       expect: { name: Nihon Jidou Hanbaiki Kabushikigaisha }
       description: |
@@ -20,10 +20,10 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate) [...] yokomono ~ flipper pinball'
+          quote: "~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate) [...] yokomono ~ flipper pinball"
         "2":
           ref: ipdb:5572
-          quote: 'Dai Uchuu Ryokou (大宇宙旅行) [...] Manufacturer: Japan Automatic Vending Machine Company, Ltd., of Tokyo, Japan [Trade Name: Nihon Jidou Hanbaiki Kabushikigaisha] [...] Type: Electro-mechanical (EM)'
+          quote: "Dai Uchuu Ryokou (大宇宙旅行) [...] Manufacturer: Japan Automatic Vending Machine Company, Ltd., of Tokyo, Japan [Trade Name: Nihon Jidou Hanbaiki Kabushikigaisha] [...] Type: Electro-mechanical (EM)"
   - manufacturer.sankyo-seiki:
       expect: { name: Sankyo Seiki }
       description: |
@@ -31,10 +31,10 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] ~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] 1972 Apollo Moon - アポロムーン by 三共 (Sankyo) [...] 1972 ニュービッグレース (New Big Race) by 三共 (Sankyo) [...] 1972 The World Series - ワールドシリーズ by 三共 (Sankyo) [...] 1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] 1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] 1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo)'
+          quote: "~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] ~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] 1972 Apollo Moon - アポロムーン by 三共 (Sankyo) [...] 1972 ニュービッグレース (New Big Race) by 三共 (Sankyo) [...] 1972 The World Series - ワールドシリーズ by 三共 (Sankyo) [...] 1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] 1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] 1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo)"
         "2":
           ref: ipdb:6872
-          quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM)'
+          quote: "Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM)"
   - manufacturer.universal:
       expect: { name: Universal }
       description: |
@@ -42,7 +42,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '1976 Orienteering - オリエンテーリング by ユニバーサル (Universal) [...] 1977 Hard Rock - ハードロック by ユニバーサル (Universal) [...] 1978 Hercules - ヘラクレス by ユニバーサル (Universal) [...] 1979 Asteroid Killer by ユニバーサル (Universal) [...] 1979 Harem Cat - ハーレムキャット by ユニバーサル (Universal)'
+          quote: "1976 Orienteering - オリエンテーリング by ユニバーサル (Universal) [...] 1977 Hard Rock - ハードロック by ユニバーサル (Universal) [...] 1978 Hercules - ヘラクレス by ユニバーサル (Universal) [...] 1979 Asteroid Killer by ユニバーサル (Universal) [...] 1979 Harem Cat - ハーレムキャット by ユニバーサル (Universal)"
         "2":
           ref: ipdb:3810
-          quote: 'Asteroid Killer [...] Manufacturer: Universal Company, Ltd., of Oyama, Japan [...] Type: Solid State Electronic (SS)'
+          quote: "Asteroid Killer [...] Manufacturer: Universal Company, Ltd., of Oyama, Japan [...] Type: Solid State Electronic (SS)"

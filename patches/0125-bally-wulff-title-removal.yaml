@@ -8,36 +8,36 @@ claims:
   - title.party-animal-2:
       expect: { name: Party Animal }
       delete: true
-      note: 'Orphaned after its sole model (party-animal-2) was merged into the party-animal title.'
+      note: "Orphaned after its sole model (party-animal-2) was merged into the party-animal title."
   - title.beat-the-clock-3:
       expect: { name: Beat the Clock }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Beat the Clock) was merged into the beat-the-clock title.'
+      note: "Orphaned after its sole model (the Bally Wulff Beat the Clock) was merged into the beat-the-clock title."
   - title.cybernaut-2:
       expect: { name: Cybernaut }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Cybernaut) was merged into the cybernaut title.'
+      note: "Orphaned after its sole model (the Bally Wulff Cybernaut) was merged into the cybernaut title."
   - title.eight-ball-champ-2:
       expect: { name: Eight Ball Champ }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Eight Ball Champ) was merged into the eight-ball-champ title.'
+      note: "Orphaned after its sole model (the Bally Wulff Eight Ball Champ) was merged into the eight-ball-champ title."
   - title.fireball-classic:
       expect: { name: Fireball Classic }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Fireball Classic) was merged into the fireball title, where the US Fireball Classic already sits.'
+      note: "Orphaned after its sole model (the Bally Wulff Fireball Classic) was merged into the fireball title, where the US Fireball Classic already sits."
   - title.hardbody-2:
       expect: { name: Hardbody }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Hardbody) was merged into the hardbody title.'
+      note: "Orphaned after its sole model (the Bally Wulff Hardbody) was merged into the hardbody title."
   - title.lady-luck-6:
       expect: { name: Lady Luck }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Lady Luck) was merged into the lady-luck title.'
+      note: "Orphaned after its sole model (the Bally Wulff Lady Luck) was merged into the lady-luck title."
   - title.motordome-2:
       expect: { name: Motordome }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Motordome) was merged into the motordome title.'
+      note: "Orphaned after its sole model (the Bally Wulff Motordome) was merged into the motordome title."
   - title.supersonic-2:
       expect: { name: Supersonic }
       delete: true
-      note: 'Orphaned after its sole model (the Bally Wulff Supersonic) was merged into the star-ship title, where the US Supersonic already sits.'
+      note: "Orphaned after its sole model (the Bally Wulff Supersonic) was merged into the star-ship title, where the US Supersonic already sits."

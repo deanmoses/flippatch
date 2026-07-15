@@ -4,24 +4,24 @@ description: >
 claims:
   - title.sandokan:
       create: true
-      note: 'Title for Sandokan, per the tilt.it Italian Pinball Database.'
+      note: "Title for Sandokan, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi'
-        quote: 'Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi)'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi"
+        quote: "Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi)"
       name: Sandokan
   - title.stunt-cars:
       create: true
-      note: 'Title for Stunt Cars, per the tilt.it Italian Pinball Database.'
+      note: "Title for Stunt Cars, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi"
         quote: Stunt Cars (modifica Card King)
       name: Stunt Cars
   - model.sandokan:
       create: true
-      note: 'lineage per the source line: Modification (''modifica'') of Gottlieb''s 1970 ''Card Trix'' (ipdb 446); Sandokan TV-hero theme; planned production run of only 10 units (''tiratura prevista: 10 pezzi''). Maker: Ditta Artigiana Ricambi (catalog CE ditta-artigiana-ricambi), Sesto Fiorentino..'
+      note: "lineage per the source line: Modification ('modifica') of Gottlieb's 1970 'Card Trix' (ipdb 446); Sandokan TV-hero theme; planned production run of only 10 units ('tiratura prevista: 10 pezzi'). Maker: Ditta Artigiana Ricambi (catalog CE ditta-artigiana-ricambi), Sesto Fiorentino.."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi'
-        quote: 'Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi)'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi"
+        quote: "Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi)"
       name: Sandokan
       title: sandokan
       corporate_entity: ditta-artigiana-ricambi
@@ -33,7 +33,7 @@ claims:
       create: true
       note: 'tilt.it marks the 1976 year uncertain ("(?)"); lineage per the source line: Modification (''modifica'') of Gottlieb''s 1971 ''Card King'' (ipdb 445). Maker: Ditta Artigiana Ricambi (catalog CE ditta-artigiana-ricambi)..'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi"
         quote: Stunt Cars (modifica Card King)
       name: Stunt Cars
       title: stunt-cars

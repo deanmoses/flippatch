@@ -1,19 +1,22 @@
 attribution: flipcommons-ai-desc-corporate-entity
 description: AI-authored descriptions for Italian-sweep corporate entities (trade names).
 claims:
-- corporate-entity.mm-computer-games:
-    description: 'MM Computer Games was the trade name under which the [[location:italy/rm/rome]] maker
-      [[manufacturer:manilamatic]] sold its pinball machines; the two names denote a single firm, whose
-      tables date from 1986.[[cite:1]] The name survives in the company''s own registration, as Manilamatic
-      - Computer Games S.r.l., a Rome business still listed in the coin-op trade as of 2026.[[cite:2]]
+  - corporate-entity.mm-computer-games:
+      description:
+        "MM Computer Games was the trade name under which the [[location:italy/rm/rome]] maker
+        [[manufacturer:manilamatic]] sold its pinball machines; the two names denote a single firm, whose
+        tables date from 1986.[[cite:1]] The name survives in the company's own registration, as Manilamatic
+        - Computer Games S.r.l., a Rome business still listed in the coin-op trade as of 2026.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
-        quote: ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
-          starting in 1986.
-      '2':
-        ref: https://www.impresaitalia.info/ik01950024/manilamatic-computer-games-srl/roma.aspx
-        quote: 'manilamatic - computer games srl ROMA è una azienda registrata in provincia di RM, avente
-          la seguente forma giuridica: SRL e partita IVA 05685931007.'
+        "
+      cites:
+        "1":
+          ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
+          quote:
+            ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
+            starting in 1986.
+        "2":
+          ref: https://www.impresaitalia.info/ik01950024/manilamatic-computer-games-srl/roma.aspx
+          quote:
+            "manilamatic - computer games srl ROMA è una azienda registrata in provincia di RM, avente
+            la seguente forma giuridica: SRL e partita IVA 05685931007."

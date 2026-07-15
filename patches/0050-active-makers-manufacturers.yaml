@@ -13,17 +13,17 @@ claims:
       name: Pawlowski Pinball
       cite:
         ref: https://pawlowskipinball.com/
-        quote: 'Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences.'
+        quote: "Pawlowski Pinball is an upcoming pinball manufacturer intent to fill the demand for affordability in home pinball experiences."
   - manufacturer.euro-pinball-corp:
       create: true
       name: Euro Pinball Corp
       cite:
         ref: https://www.pinball-magazine.com/?p=5081
-        quote: 'The move also sees us joining forces with our long-time partner Pedretti Gaming. Together we have shipped close to 800 games and have decided to take the partnership to the next level by forming Euro Pinball Corp.'
+        quote: "The move also sees us joining forces with our long-time partner Pedretti Gaming. Together we have shipped close to 800 games and have decided to take the partnership to the next level by forming Euro Pinball Corp."
   - manufacturer.ramps-pinball:
       expect: { name: "Ramp's Pinball" }
       manufacturer_alias: ["TiltBob Pinball", "TiltBob"]
-      note: 'Ramp''s Pinball was first announced in 2023 as TiltBob Pinball.'
+      note: "Ramp's Pinball was first announced in 2023 as TiltBob Pinball."
       cite:
         ref: https://flipper-news.de/little-shop-of-horrors-kommt-von-tilt-bob
-        quote: 'Ramp''s Pinball Manufacturing (TiltBob Pinball)'
+        quote: "Ramp's Pinball Manufacturing (TiltBob Pinball)"

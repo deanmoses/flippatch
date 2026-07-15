@@ -45,38 +45,38 @@ claims:
       location: [japan/osaka/higashi-osaka]
       cite:
         ref: https://tenshoku.mynavi.jp/company/208368/
-        quote: '■大阪府東大阪市中野2-2-45'
+        quote: "■大阪府東大阪市中野2-2-45"
       note: "Mynavi's company profile lists トマトランド株式会社 (Tomato Land Co., Ltd.) as a current business — established July 1995, based in Higashi-Osaka — with 遊技機開発 (gaming-machine development) among its activities."
   - corporate-entity.banpresto:
       expect: { manufacturer: banpresto }
       operating_status: ended
       cite:
         ref: https://en.wikipedia.org/wiki/Banpresto
-        quote: 'It continued producing games until 2008 when it was absorbed by Namco Bandai Games'
-      note: 'Banpresto''s video-game and amusement business was absorbed into Bandai Namco in 2008; the brand was later folded into Bandai Spirits in 2019.'
+        quote: "It continued producing games until 2008 when it was absorbed by Namco Bandai Games"
+      note: "Banpresto's video-game and amusement business was absorbed into Bandai Namco in 2008; the brand was later folded into Bandai Spirits in 2019."
       changesets:
         - location: [japan/tokyo/shinagawa]
           cite:
             ref: https://en.wikipedia.org/wiki/Banpresto
-            quote: 'Headquarters [...] Shinagawa, Tokyo'
+            quote: "Headquarters [...] Shinagawa, Tokyo"
   - corporate-entity.sunwise:
       expect: { manufacturer: sunwise }
       operating_status: ended
       cite:
         ref: https://www.weblio.jp/content/%E3%82%B5%E3%83%B3%E3%83%AF%E3%82%A4%E3%82%BA
-        quote: '有限会社から株式会社に改まり、株式公開も準備していたが、1998年3月6日に倒産した。'
+        quote: "有限会社から株式会社に改まり、株式公開も準備していたが、1998年3月6日に倒産した。"
       note: 'Weblio says サンワイズ (Sunwise) "1998年3月6日に倒産した" (went bankrupt on 6 March 1998); it was based in Mitaka, Tokyo.'
       changesets:
         - location: [japan/tokyo/mitaka]
           cite:
             ref: https://www.weblio.jp/content/%E3%82%B5%E3%83%B3%E3%83%AF%E3%82%A4%E3%82%BA
-            quote: '旧サンワイズと同じ東京都三鷹市に本社を置く'
+            quote: "旧サンワイズと同じ東京都三鷹市に本社を置く"
   - corporate-entity.kato:
       expect: { manufacturer: kato }
       location: [japan/tokyo/setagaya]
       cite:
         ref: https://news.denfaminicogamer.jp/projectbook/180914
-        quote: '1964年に東京都世田谷区で設立された遊戯機械メーカー。'
+        quote: "1964年に東京都世田谷区で設立された遊戯機械メーカー。"
       note: 'Denfaminicogamer says カトウ製作所 was "1964年に東京都世田谷区で設立された遊戯機械メーカー" (a game-machine maker established in Setagaya-ku, Tokyo in 1964), renamed カトウ株式会社 in 2008. Current operating status left unknown — affiliated firms now run its arcades.'
   - corporate-entity.towa:
       expect: { manufacturer: towa }
@@ -84,5 +84,5 @@ claims:
       location: [japan/tokyo/nakano]
       cite:
         ref: https://www.ampress.co.jp/backnumber/bn1999.07.15.htm
-        quote: '５月２１日に破産宣告を受けた㈱トーワジャパン（東京都中野区本町、正岡力社長、負債総額２００億円）'
-      note: 'Towa Japan, of Nakano-ku, Tokyo, received a bankruptcy declaration on 21 May 1999.'
+        quote: "５月２１日に破産宣告を受けた㈱トーワジャパン（東京都中野区本町、正岡力社長、負債総額２００億円）"
+      note: "Towa Japan, of Nakano-ku, Tokyo, received a bankruptcy declaration on 21 May 1999."

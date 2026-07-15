@@ -4,16 +4,16 @@ description: >
 claims:
   - title.card-trix:
       create: true
-      note: 'Title for Card Trix, per the tilt.it Italian Pinball Database.'
+      note: "Title for Card Trix, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/rmg'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/rmg"
         quote: Card Trix
       name: Card Trix
   - model.card-trix-rmg:
       create: true
-      note: 'tilt.it gives no year; lineage per the source line: Copy of Gottlieb''s 1970 ''Card Trix'' (ipdb 446); per tilt''s Italian-pinball index the RMG copy was ''very similar to the original from Gottlieb, apart for the position of the writing Senza ripetizione della partita''. Maker: Renato Montanari Giochi (R.M.G.), Bologna..'
+      note: "tilt.it gives no year; lineage per the source line: Copy of Gottlieb's 1970 'Card Trix' (ipdb 446); per tilt's Italian-pinball index the RMG copy was 'very similar to the original from Gottlieb, apart for the position of the writing Senza ripetizione della partita'. Maker: Renato Montanari Giochi (R.M.G.), Bologna.."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/rmg'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/rmg"
         quote: Card Trix
       name: Card Trix
       title: card-trix
@@ -24,7 +24,7 @@ claims:
       changesets:
         - note: 'Classified a copy of Gottlieb''s "Card Trix" on the exact-name match; tilt.it lists the machine but does not use the word "copy".'
           cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/rmg'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/rmg"
             quote: Card Trix
           model_relationship:
             - target_machine: card-trix

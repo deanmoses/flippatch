@@ -25,7 +25,11 @@ sources:
     identifier_key: dailymotion
     description: Video-sharing platform.
     links:
-      - { url: "https://www.dailymotion.com/", label: Dailymotion, link_type: homepage }
+      - {
+          url: "https://www.dailymotion.com/",
+          label: Dailymotion,
+          link_type: homepage,
+        }
   - name: Rumble
     source_type: video
     identifier_key: rumble
@@ -37,19 +41,31 @@ sources:
     identifier_key: facebook
     description: Social platform; video posts mint as video children.
     links:
-      - { url: "https://www.facebook.com/", label: Facebook, link_type: homepage }
+      - {
+          url: "https://www.facebook.com/",
+          label: Facebook,
+          link_type: homepage,
+        }
   - name: Instagram
     source_type: video
     identifier_key: instagram
     description: Photo-and-video social platform.
     links:
-      - { url: "https://www.instagram.com/", label: Instagram, link_type: homepage }
+      - {
+          url: "https://www.instagram.com/",
+          label: Instagram,
+          link_type: homepage,
+        }
   - name: Snapchat
     source_type: video
     identifier_key: snapchat
     description: Multimedia messaging and short-video platform.
     links:
-      - { url: "https://www.snapchat.com/", label: Snapchat, link_type: homepage }
+      - {
+          url: "https://www.snapchat.com/",
+          label: Snapchat,
+          link_type: homepage,
+        }
   - name: X (Twitter)
     source_type: web
     identifier_key: x

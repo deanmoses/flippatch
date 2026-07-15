@@ -7,7 +7,7 @@ claims:
       note: 'The eremeka catalog of early Japanese flipper games attributes this maker''s entire pinball line to one maker, 三共 (Sankyo); it reserves the longer name 三共精機 (Sankyo Seiki) for a single unrelated crane game. IPDB''s "Sankyo Seiki / Sankyo Precision Equipment" label — echoed only by IPDB-derived sources (OPDB, kineticist) — risks conflating the maker with the unrelated Nidec Sankyo (三共精機, music boxes). Renaming the brand to plain Sankyo (三共) per the independent primary source; the IPDB legal name is kept on the corporate entity and as an alias.'
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-        quote: '~1969 クレーンゲーム (crane game) by 三共精機 (Sankyo Seiki) [...] ~1969 ジャンパー (Jumper) [これはオモシロイ (This is interesting)] by 三共 (Sankyo)'
+        quote: "~1969 クレーンゲーム (crane game) by 三共精機 (Sankyo Seiki) [...] ~1969 ジャンパー (Jumper) [これはオモシロイ (This is interesting)] by 三共 (Sankyo)"
       name: Sankyo
       manufacturer_alias:
         [Sankyo Seiki, Sankyo Yuen Setsubi, Sankyo Precision Equipment]
@@ -16,5 +16,5 @@ claims:
       note: 'Early Arcades Japan / eremeka credit both New Big Race "by 三共 (Sankyo)" and its namesake predecessor Big Race (1969) to the same 三共 — so the "New" sequel plainly belongs to that maker. And the split reads as a curator artifact: New Big Race (IPDB id 6070) sits one id after The World Series (IPDB id 6069), entered in the same curator session, yet IPDB filed New Big Race under manufacturer 655 (三共遊園設備 / Sankyo Yuen Setsubi) while The World Series and the rest of the line went under 653 — splitting a sequel from its sibling games into a separate "company". The split is not reflected in the primary source, and OPDB (an IPDB scrape) carries no such second maker. Repointing this corporate entity (IPDB 655, preserved as-is) onto the consolidated Sankyo brand.'
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2025/09/new-big-race-by-sankyo.html
-        quote: 'Sankyo'
+        quote: "Sankyo"
       manufacturer: sankyo-seiki

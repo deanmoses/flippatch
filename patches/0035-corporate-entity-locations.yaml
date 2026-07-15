@@ -9,7 +9,11 @@ sources:
     source_type: web
     description: Manufacturer site of HEXA Pinball, a French pinball manufacturer in Martillac.
     links:
-      - { url: "https://www.hexa-pinball.com/", label: Hexa Pinball, link_type: homepage }
+      - {
+          url: "https://www.hexa-pinball.com/",
+          label: Hexa Pinball,
+          link_type: homepage,
+        }
 claims:
   - corporate-entity.deeproot:
       expect: { name: deeproot }

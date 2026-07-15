@@ -3,902 +3,902 @@ description: >
   Retract flipcommons-catalog's OPDB-derived bad January months.
 claims:
   - model.acdc-let-there-be-rock-limited-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.af-tor:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.ag-football:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.ag-soccer-ball:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.agents-777:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.airborne-avenger:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.alaska-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.alaska-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.algar:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.alice-coopers-nightmare-castle:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.alices-adventures-in-wonderland:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.alien-poker:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.alien-standard-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.als-garage-band-goes-on-a-world-tour:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.amazon-hunt:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.andromeda:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.antar:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.apache-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.apollo-13:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.asteroid-annie-and-the-aliens:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.atlantis-2:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.attack:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.attack-from-mars:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.attack-from-mars-remake-special-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.baby-pac-man:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.bad-cats:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.bad-girls:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.ballerina-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.barb-wire:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.barnacle-bill:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.barracora:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.batman:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.batman-66-super-limited-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.beat-the-clock-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.big-bang-bar:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.big-guns-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.big-top-4:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.big-town-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.bigfoot:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.black-fever:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.black-hole-4:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.black-knight:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.black-knight-2000:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.boogie:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.boston:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.bram-stokers-dracula:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.bugs-bunnys-birthday-ball:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.cactus-jacks:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.canada-dry:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.captain-hook:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.card-trix:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.carnaval-no-rio:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.carnival-5:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.catacomb:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.caveman:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cha-cha-cha:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.challenge-round:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.chance:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.charlies-angels:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.charlies-angels-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.check-mate-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.cinderella:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.class-of-1812:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.close-encounters-of-the-third-kind:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.clown-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.conquest-200:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.corvette:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cosmic-pinball:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cosmic-princess:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.counterforce:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.crazy-race:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.criss-cross:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.criterium-75-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.crystal-ball-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.d-quijote-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.deadly-weapon:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.dew-wa-ditty:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.diana:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.diner:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.disco-fever:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.doctor-who:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.dr-dude-and-his-excellent-ray:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.dragonfist:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.dungeons-dragons:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.dungeons-dragons-the-tyrants-eye-pro:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.dyn-o-mite:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.eight-ball-champ:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.eight-ball-fury:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.el-dorado-city-of-gold:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.eleven-belles:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.elvira-and-the-party-monsters:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.escape:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.excalibur:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.faces:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.fairy:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.fans:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.fire:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.fire-champagne-edition:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.fireball-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.fireball-ii-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.firepower-ii:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.fish-tales:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.flash-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.flight-2000:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.flying-aces:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.flying-aces-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.football:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.football-6:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.freak-out:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.freddy-a-nightmare-on-elm-street:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.full:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.full-throttle-standard-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gemini:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.genesis:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.getaway:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.ghostbusters-pro:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gladiators:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.godzilla:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.gold-ball-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gold-strike:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gold-wings:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gorgar:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gork:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.granada-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.grand-lizard:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.grand-slam-6:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.gun-smoke:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.harem-cat:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.harley-davidson:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.harley-davidson-2nd-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.harley-davidson-3rd-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.heavy-metal-meltdown:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.hi-straight:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.high-seas:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.hit-the-deck:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.hot-shots:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.hustler:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.independence-day:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.indiana-jones-the-pinball-adventure:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.invasion-stratogy:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.iron-man-pro-vault-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.james-bond-007:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.jarama:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.johnny-mnemonic:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.joker-poker:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.jokers-wild-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.jokerz:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.judge-dredd:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.jungle-life:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.junk-yard:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.king-kong:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.lady-luck-4:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.lady-luck-6:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.laser-ball:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.last-action-hero:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.last-lap:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.lectronamo:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.lethal-weapon-3:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.lightscameraaction:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.looney-tunes-blood-sucker-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.loop-the-loop-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.lucky-strike-8:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.magic-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.mario-andretti:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.maverick-the-movie:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.medieval-madness-remake-royal-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.medieval-madness-remake-special-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.megaaton:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.mikoshi:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.miss-nessie:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.miss-universo-3-ladies:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.mississippi:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.monday-night-football:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.monte-rosa:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.mousin-around:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.mr-black:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.mustang-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.mystery-castle:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.neptune:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.no-good-gofers:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.north-pole:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.nugent:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.oba-oba:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.pac-man-panic:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.papillon:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.pin-up:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.pinball-magic:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.pinball-pool:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.pistol-poker:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.polar-explorer:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.punchy-the-clown:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.punk:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.quest-for-glory:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.quijote:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.radical:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.readyaimfire:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.red-baron-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.red-teds-road-show:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.rick-and-morty-blood-sucker-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.robin-hood-5:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.robo-war:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.rock:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.rocky:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.rollercoaster-tycoon:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.roman-victory:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.royal-king:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.scared-stiff:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.sharp-shooter-ii:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.sherokee:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.shock:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.sinbad-adventures:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.skill-flight:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.snake-machine:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.solar-ride-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.solar-ride-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-patrol:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-poker:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-race:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-riders:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-shuttle-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.space-shuttle-4:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-station:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.space-walk:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.spain-82:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.speakeasy-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.special-force:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.speed-test:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.speed-way:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.spirit:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.spirit-of-76:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.spirit-of-76-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.split-second:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.spooky:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.spring-break:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.star-action:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.star-gazer:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.star-race:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.star-trek-3:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.star-trek-the-next-generation:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.star-wars:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.stars-phoenix:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.starship-troopers:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.stingray:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.strange-science:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.striker:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.subway-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.sultan:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.super-flipp:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.super-panic-ball:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.tales-from-the-crypt:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.taxi:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.terminator-3-rise-of-the-machines:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-30s:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-addams-family:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-champion-pub:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-flip-side:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-games:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-incredible-hulk:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.the-pabst-can-crusher:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.the-party-zone:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-simpsons:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.the-simpsons-pinball-party:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-sopranos:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.the-texas-chainsaw-massacre-blood-sucker-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-wizard-of-oz-75th-anniversary-edition:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.the-wizard-of-oz-emerald-city:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-wizard-of-oz-yellow-brick-road:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-world-series:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.thunderbolt:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.time-line:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.time-machine:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.tiros:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.title-fight:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.top-secret:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.top-speed:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.totem-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.touchdown-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.tramway:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.transporter-the-rescue:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.travel-time:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.tri-score:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.truck-stop:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.twister-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.ufo-x:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.universe-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.varkon:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.vegas-3:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.viper:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.volcano:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.volley-2:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.voltan-escapes-cosmic-doom:
-      note: 'The seed derived this January from OPDB''s manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "The seed derived this January from OPDB's manufacture date, which is not credible - it disagrees with IPDB and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.walkyria:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.warlok:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.warrior-sea:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.waterworld:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.who-dunnit:
-      note: 'The seed derived this month from OPDB''s manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which stored a month-precision date with the month transposed into the day position (reading as January). Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.wild-fyre:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.wimbledon:
-      note: 'The seed derived this month from OPDB''s manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "The seed derived this month from OPDB's manufacture date, a year-only date defaulted to January 1, with no other source recording a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.wipe-out:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]
   - model.zankor:
-      note: 'The seed derived this month from OPDB''s manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB''s real month resolves.'
+      note: "The seed derived this month from OPDB's manufacture date, which defaulted a year-only date to January 1. Retracted as an ingest refinement so IPDB's real month resolves."
       retract: [month]

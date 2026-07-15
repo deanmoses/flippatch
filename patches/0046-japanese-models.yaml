@@ -4,11 +4,11 @@ description: >
 claims:
   - model.home-run-nihon-tenbo:
       create: true
-      note: 'The eremeka catalog dates this baseball game to approximately 1967 (marked ~) by Nihon Tenbo.'
+      note: "The eremeka catalog dates this baseball game to approximately 1967 (marked ~) by Nihon Tenbo."
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2023/01/home-run-by-japan-outlook-entertainment.html
-        quote: 'Home Run - ホームランゲーム [...] ~1967 [...] 日本展望娯楽社 (Nihon Tenbo)'
-      name: 'Home Run (ホームランゲーム)'
+        quote: "Home Run - ホームランゲーム [...] ~1967 [...] 日本展望娯楽社 (Nihon Tenbo)"
+      name: "Home Run (ホームランゲーム)"
       year: 1967
       title: home-run-nihon-tenbo
       corporate_entity: nihon-tenbo-goraku-sha
@@ -18,17 +18,17 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1967 Home Run - ホームランゲーム by 日本展望娯楽社 (Nihon Tenbo Entertainment Company) [...] yokomono ~ flipper pinball'
+            quote: "~1967 Home Run - ホームランゲーム by 日本展望娯楽社 (Nihon Tenbo Entertainment Company) [...] yokomono ~ flipper pinball"
         - theme: [baseball]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1967 Home Run - ホームランゲーム by 日本展望娯楽社 (Nihon Tenbo Entertainment Company) [...] theme ~ sports ~ baseball'
+            quote: "~1967 Home Run - ホームランゲーム by 日本展望娯楽社 (Nihon Tenbo Entertainment Company) [...] theme ~ sports ~ baseball"
   - model.soccer-ace:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten)'
-      name: 'Soccer Ace (サッカーエース)'
+        quote: "1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten)"
+      name: "Soccer Ace (サッカーエース)"
       year: 1969
       title: soccer-ace
       corporate_entity: nihon-tenbo-goraku-sha
@@ -38,17 +38,17 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] yokomono ~ flipper pinball'
+            quote: "1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] yokomono ~ flipper pinball"
         - theme: [soccer]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] theme ~ sports ~ football (soccer)'
+            quote: "1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] theme ~ sports ~ football (soccer)"
   - model.beat-spark:
       expect: { ipdb_id: 6771 }
       note: 'flipcommons previously held this with no maker (IPDB: "Unknown Manufacturer").'
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] theme ~ sports ~ football (soccer)'
+        quote: "1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] theme ~ sports ~ football (soccer)"
       theme: [soccer]
       corporate_entity: nihon-tenbo-goraku-sha
       year: 1970
@@ -56,31 +56,31 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] yokomono ~ flipper pinball'
+            quote: "1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] yokomono ~ flipper pinball"
   - model.jumbokick:
       expect: { ipdb_id: 6772 }
       note: 'flipcommons previously held this with no maker (IPDB: "Unknown Manufacturer").'
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo)'
+        quote: "1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo)"
       corporate_entity: nihon-tenbo-goraku-sha
       year: 1970
       changesets:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] yokomono ~ flipper pinball'
+            quote: "1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] yokomono ~ flipper pinball"
         - theme: [martial-arts]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] theme ~ sports ~ martial arts'
+            quote: "1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] theme ~ sports ~ martial arts"
   - model.soccer-8:
       create: true
-      note: 'The eremeka catalog dates this soccer game to approximately 1967 (marked ~) by Kato.'
+      note: "The eremeka catalog dates this soccer game to approximately 1967 (marked ~) by Kato."
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2024/02/blog-post.html
-        quote: '~1967 [...] カトウ (Kato) [...] サッカー8'
-      name: 'Soccer 8 (サッカー8)'
+        quote: "~1967 [...] カトウ (Kato) [...] サッカー8"
+      name: "Soccer 8 (サッカー8)"
       year: 1967
       title: soccer-8
       corporate_entity: kato
@@ -90,17 +90,17 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1967 サッカー8 [エイト] (Soccer 8) by カトウ (Kato) [...] yokomono ~ flipper pinball'
+            quote: "~1967 サッカー8 [エイト] (Soccer 8) by カトウ (Kato) [...] yokomono ~ flipper pinball"
         - theme: [soccer]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1967 サッカー8 [エイト] (Soccer 8) by カトウ (Kato) [...] theme ~ sports ~ football (soccer)'
+            quote: "~1967 サッカー8 [エイト] (Soccer 8) by カトウ (Kato) [...] theme ~ sports ~ football (soccer)"
   - model.rocket-v:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen)'
-      name: 'Rocket V (ロケットV)'
+        quote: "1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen)"
+      name: "Rocket V (ロケットV)"
       year: 1970
       title: rocket-v
       corporate_entity: showa-yuen
@@ -110,18 +110,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen) [...] yokomono ~ flipper pinball'
+            quote: "1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen) [...] yokomono ~ flipper pinball"
         - theme: [space, science-fiction]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen) [...] theme ~ space/UFOs/scifi'
+            quote: "1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen) [...] theme ~ space/UFOs/scifi"
   - model.space-patrol-childrens:
       create: true
-      note: 'The eremeka catalog dates this to approximately 1968 (marked ~) by Children''s Amusement Park Facilities.'
+      note: "The eremeka catalog dates this to approximately 1968 (marked ~) by Children's Amusement Park Facilities."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children''s Amusement Park Facilities) [presumed]'
-      name: 'Space Patrol (宇宙パトロール)'
+        quote: "~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children's Amusement Park Facilities) [presumed]"
+      name: "Space Patrol (宇宙パトロール)"
       year: 1968
       title: space-patrol-childrens
       corporate_entity: childrens-amusement-park-facilities
@@ -131,18 +131,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children''s Amusement Park Facilities) [presumed] [...] yokomono ~ flipper pinball'
+            quote: "~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children's Amusement Park Facilities) [presumed] [...] yokomono ~ flipper pinball"
         - theme: [space, science-fiction]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children''s Amusement Park Facilities) [presumed] [...] theme ~ space/UFOs/scifi'
+            quote: "~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children's Amusement Park Facilities) [presumed] [...] theme ~ space/UFOs/scifi"
   - model.muden-kun:
       create: true
-      note: 'a prize-dispenser flipper game.'
+      note: "a prize-dispenser flipper game."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1999 Muden Kun [shooting game] - むでんくん [シューティングゲーム] by バンプレスト (Banpresto)'
-      name: 'Muden Kun (むでんくん)'
+        quote: "1999 Muden Kun [shooting game] - むでんくん [シューティングゲーム] by バンプレスト (Banpresto)"
+      name: "Muden Kun (むでんくん)"
       year: 1999
       title: muden-kun
       corporate_entity: banpresto
@@ -151,15 +151,15 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1999 Muden Kun [shooting game] - むでんくん [シューティングゲーム] by バンプレスト (Banpresto) [...] yokomono ~ flipper pinball'
+            quote: "1999 Muden Kun [shooting game] - むでんくん [シューティングゲーム] by バンプレスト (Banpresto) [...] yokomono ~ flipper pinball"
   - model.kinnikuman-ii-power-mucho:
       create: true
-      note: 'a licensed Kinnikuman prize-dispenser flipper game.'
+      note: "a licensed Kinnikuman prize-dispenser flipper game."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '2002 キン肉マン2世 パワームーチョ (Kinnikuman II Power Mucho) by バンプレスト (Banpresto)'
+        quote: "2002 キン肉マン2世 パワームーチョ (Kinnikuman II Power Mucho) by バンプレスト (Banpresto)"
       theme: [licensed]
-      name: 'Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ)'
+      name: "Kinnikuman II Power Mucho (キン肉マン2世 パワームーチョ)"
       year: 2002
       title: kinnikuman-ii-power-mucho
       corporate_entity: banpresto
@@ -168,15 +168,15 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '2002 キン肉マン2世 パワームーチョ (Kinnikuman II Power Mucho) by バンプレスト (Banpresto) [...] yokomono ~ flipper pinball'
+            quote: "2002 キン肉マン2世 パワームーチョ (Kinnikuman II Power Mucho) by バンプレスト (Banpresto) [...] yokomono ~ flipper pinball"
   - model.target-machine-base-ball:
       create: true
-      note: 'a candy-vending flipper game.'
+      note: "a candy-vending flipper game."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '2007 Target Machine Base Ball - ターゲットマシン ベースボール by トマトランド (Tomato Land)'
+        quote: "2007 Target Machine Base Ball - ターゲットマシン ベースボール by トマトランド (Tomato Land)"
       theme: [baseball]
-      name: 'Target Machine Base Ball (ターゲットマシン ベースボール)'
+      name: "Target Machine Base Ball (ターゲットマシン ベースボール)"
       year: 2007
       title: target-machine-base-ball
       corporate_entity: tomato-land
@@ -185,14 +185,14 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '2007 Target Machine Base Ball - ターゲットマシン ベースボール by トマトランド (Tomato Land) [...] vending machine ~ candy [...] yokomono ~ flipper pinball'
+            quote: "2007 Target Machine Base Ball - ターゲットマシン ベースボール by トマトランド (Tomato Land) [...] vending machine ~ candy [...] yokomono ~ flipper pinball"
   - model.target-machine-type-1:
       create: true
-      note: 'The eremeka catalog dates this Target Machine (Tropical Q) to approximately 2007 (marked ~) by Tomato Land.'
+      note: "The eremeka catalog dates this Target Machine (Tropical Q) to approximately 2007 (marked ~) by Tomato Land."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~2007 Target Machine Tropical Q - ターゲットマシン タイプ１ (Target machine type 1) by トマトランド (Tomato Land)'
-      name: 'Target Machine Type 1 (ターゲットマシン タイプ１)'
+        quote: "~2007 Target Machine Tropical Q - ターゲットマシン タイプ１ (Target machine type 1) by トマトランド (Tomato Land)"
+      name: "Target Machine Type 1 (ターゲットマシン タイプ１)"
       year: 2007
       title: target-machine-type-1
       corporate_entity: tomato-land
@@ -201,14 +201,14 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~2007 Target Machine Tropical Q - ターゲットマシン タイプ１ (Target machine type 1) by トマトランド (Tomato Land) [...] vending machine ~ candy [...] yokomono ~ flipper pinball'
+            quote: "~2007 Target Machine Tropical Q - ターゲットマシン タイプ１ (Target machine type 1) by トマトランド (Tomato Land) [...] vending machine ~ candy [...] yokomono ~ flipper pinball"
   - model.target-machine-pirates:
       create: true
-      note: 'The eremeka catalog dates this pirate-themed Target Machine to approximately 2010 (marked ~) by Tomato Land.'
+      note: "The eremeka catalog dates this pirate-themed Target Machine to approximately 2010 (marked ~) by Tomato Land."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land)'
-      name: 'Target Machine Pirates (ターゲットマシン パイレーツ)'
+        quote: "2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land)"
+      name: "Target Machine Pirates (ターゲットマシン パイレーツ)"
       year: 2010
       title: target-machine-pirates
       corporate_entity: tomato-land
@@ -217,18 +217,18 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land) [...] vending machine ~ candy [...] yokomono ~ flipper pinball'
+            quote: "2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land) [...] vending machine ~ candy [...] yokomono ~ flipper pinball"
         - theme: [pirates, boats]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land) [...] theme ~ pirates [...] theme ~ space/UFOs/scifi [...] theme ~ vehicles ~ boats / water craft'
+            quote: "2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land) [...] theme ~ pirates [...] theme ~ space/UFOs/scifi [...] theme ~ vehicles ~ boats / water craft"
   - model.slap-shot-towa:
       create: true
-      note: 'a hockey flipper game (also shown in a 1997 version).'
+      note: "a hockey flipper game (also shown in a 1997 version)."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1996 Slap Shot - スラップショット by トーワ (Towa)'
-      name: 'Slap Shot (スラップショット)'
+        quote: "1996 Slap Shot - スラップショット by トーワ (Towa)"
+      name: "Slap Shot (スラップショット)"
       year: 1996
       title: slap-shot-towa
       corporate_entity: towa
@@ -237,17 +237,17 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1996 Slap Shot - スラップショット by トーワ (Towa) [...] yokomono ~ flipper pinball'
+            quote: "1996 Slap Shot - スラップショット by トーワ (Towa) [...] yokomono ~ flipper pinball"
         - theme: [hockey]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1996 Slap Shot - スラップショット by トーワ (Towa) [...] theme ~ sports ~ hockey'
+            quote: "1996 Slap Shot - スラップショット by トーワ (Towa) [...] theme ~ sports ~ hockey"
   - model.american-battle-dome:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1995 American Battle Dome - アメリカンバトルゲーム by サンワイズ (Sunwise) & Tsukuda Original'
-      name: 'American Battle Dome (アメリカンバトルゲーム)'
+        quote: "1995 American Battle Dome - アメリカンバトルゲーム by サンワイズ (Sunwise) & Tsukuda Original"
+      name: "American Battle Dome (アメリカンバトルゲーム)"
       year: 1995
       title: american-battle-dome
       corporate_entity: sunwise
@@ -256,14 +256,14 @@ claims:
         - game_format: miscellaneous
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1995 American Battle Dome - アメリカンバトルゲーム by サンワイズ (Sunwise) & Tsukuda Original [...] yokomono ~ flipper pinball'
+            quote: "1995 American Battle Dome - アメリカンバトルゲーム by サンワイズ (Sunwise) & Tsukuda Original [...] yokomono ~ flipper pinball"
   - model.ultra-spark:
       create: true
-      note: 'The eremeka catalog dates this kaiju/mecha game to approximately 1972 (marked ~), co-credited to Nihon Gorakuki and Nihon Tenbo.'
+      note: "The eremeka catalog dates this kaiju/mecha game to approximately 1972 (marked ~), co-credited to Nihon Gorakuki and Nihon Tenbo."
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2024/03/1972-ultra-attack-by-nihon-gorakuki.html
-        quote: 'Ultra Spark [...] Ultra Spark uses the same side cabinet art as the other model'
-      name: 'Ultra Spark (ウルトラスパーク)'
+        quote: "Ultra Spark [...] Ultra Spark uses the same side cabinet art as the other model"
+      name: "Ultra Spark (ウルトラスパーク)"
       year: 1972
       title: ultra-spark
       corporate_entity: japan-amusement-machine-company-ltd
@@ -273,19 +273,19 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1972 ウルトラスパーク (Ultra Spark) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] yokomono ~ flipper pinball'
+            quote: "~1972 ウルトラスパーク (Ultra Spark) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] yokomono ~ flipper pinball"
         - theme: [monsters, robots, licensed]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1972 ウルトラスパーク (Ultra Spark) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] theme ~ kaiju & mecha [...] theme ~ licensed property'
+            quote: "~1972 ウルトラスパーク (Ultra Spark) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] theme ~ kaiju & mecha [...] theme ~ licensed property"
   - model.rodeo-game-mate:
       create: true
-      note: 'The eremeka catalog dates this to approximately 1969 (marked ~) by Nihon Jidou Hanbaiki (Game Mate).'
+      note: "The eremeka catalog dates this to approximately 1969 (marked ~) by Nihon Jidou Hanbaiki (Game Mate)."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate)'
+        quote: "~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate)"
       theme: [rodeo]
-      name: 'Rodeo (ロデオ)'
+      name: "Rodeo (ロデオ)"
       year: 1969
       title: rodeo-game-mate
       corporate_entity: japan-automatic-vending-machine-company-ltd
@@ -295,13 +295,13 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate) [...] yokomono ~ flipper pinball'
+            quote: "~1969 ロデオ (Rodeo) by 日本自動販売機 (Nihon Jidô Hanbaiki — Game Mate) [...] yokomono ~ flipper pinball"
   - model.crazy-15-mark-ii:
       create: true
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2022/03/15-crazy-15-by-komaya.html
-        quote: 'クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) [...] 1965 [...] こまや (Komaya)'
-      name: 'Crazy 15 [Mark II] (クレイジー15ゲーム)'
+        quote: "クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) [...] 1965 [...] こまや (Komaya)"
+      name: "Crazy 15 [Mark II] (クレイジー15ゲーム)"
       year: 1965
       title: crazy-15-mark-ii
       corporate_entity: komaya-co-ltd
@@ -311,13 +311,13 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1965 クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "1965 クレイジー15ゲーム [クレイジーフィフティーンゲーム] [マークII] (Crazy 15 game [mark II]) by こまや (Komaya) [...] yokomono ~ flipper pinball"
   - model.crazy-15-mark-iii:
       create: true
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2022/04/1970-15-2nd-version-crazy-15-by-komaya.html
-        quote: 'クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) [...] 1969 [...] こまや (Komaya)'
-      name: 'Crazy 15 [Mark III] (クレイジー15ゲーム)'
+        quote: "クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) [...] 1969 [...] こまや (Komaya)"
+      name: "Crazy 15 [Mark III] (クレイジー15ゲーム)"
       year: 1969
       title: crazy-15-mark-iii
       corporate_entity: komaya-co-ltd
@@ -327,14 +327,14 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1969 クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "1969 クレイジー15ゲーム [マークIII] (Crazy 15 game mark III) by こまや (Komaya) [...] yokomono ~ flipper pinball"
   - model.pocket-ball:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1974 ポケットボール (Pocket Ball) by こまや (Komaya)'
+        quote: "1974 ポケットボール (Pocket Ball) by こまや (Komaya)"
       theme: [tennis]
-      name: 'Pocket Ball (ポケットボール)'
+      name: "Pocket Ball (ポケットボール)"
       year: 1974
       title: pocket-ball
       corporate_entity: komaya-co-ltd
@@ -344,13 +344,13 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1974 ポケットボール (Pocket Ball) by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "1974 ポケットボール (Pocket Ball) by こまや (Komaya) [...] yokomono ~ flipper pinball"
   - model.ronin:
       create: true
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2023/05/1970-ronin.html
-        quote: '1970 [...] こまや (Komaya)'
-      name: 'Ronin (浪人)'
+        quote: "1970 [...] こまや (Komaya)"
+      name: "Ronin (浪人)"
       year: 1970
       title: ronin
       corporate_entity: komaya-co-ltd
@@ -360,18 +360,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] yokomono ~ flipper pinball'
+            quote: "1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] yokomono ~ flipper pinball"
         - theme: [japanese-culture, martial-arts]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] theme ~ ninjas, samurai [...] theme ~ sports ~ martial arts'
+            quote: "1970 Ronin - 浪人 by こまや (Komaya) [presumed] [...] theme ~ ninjas, samurai [...] theme ~ sports ~ martial arts"
   - model.saturn-komaya:
       create: true
-      note: 'The eremeka catalog dates this space-themed game to approximately 1969 (marked ~) by Komaya.'
+      note: "The eremeka catalog dates this space-themed game to approximately 1969 (marked ~) by Komaya."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1969 Saturn - サターン号 by こまや (Komaya)'
-      name: 'Saturn (サターン号)'
+        quote: "~1969 Saturn - サターン号 by こまや (Komaya)"
+      name: "Saturn (サターン号)"
       year: 1969
       title: saturn-komaya
       corporate_entity: komaya-co-ltd
@@ -381,18 +381,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 Saturn - サターン号 by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "~1969 Saturn - サターン号 by こまや (Komaya) [...] yokomono ~ flipper pinball"
         - theme: [space, science-fiction]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 Saturn - サターン号 by こまや (Komaya) [...] theme ~ space/UFOs/scifi'
+            quote: "~1969 Saturn - サターン号 by こまや (Komaya) [...] theme ~ space/UFOs/scifi"
   - model.ware-sea-rover:
       create: true
-      note: 'The eremeka catalog dates this pirate game to approximately 1969 (marked ~) by Komaya.'
+      note: "The eremeka catalog dates this pirate game to approximately 1969 (marked ~) by Komaya."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya)'
-      name: 'Ware Sea Rover (海賊ゲーム)'
+        quote: "~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya)"
+      name: "Ware Sea Rover (海賊ゲーム)"
       year: 1969
       title: ware-sea-rover
       corporate_entity: komaya-co-ltd
@@ -402,18 +402,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] yokomono ~ flipper pinball'
+            quote: "~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] yokomono ~ flipper pinball"
         - theme: [pirates, boats]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] theme ~ pirates [...] theme ~ vehicles ~ boats / water craft'
+            quote: "~1969 Ware Sea Rover - 海賊ゲーム (pirate game) by こまや (Komaya) [...] theme ~ pirates [...] theme ~ vehicles ~ boats / water craft"
   - model.advantage:
       create: true
-      note: 'a tennis game.'
+      note: "a tennis game."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1976 Advantage - アドバンテージ by 三共 (Sankyo)'
-      name: 'Advantage (アドバンテージ)'
+        quote: "1976 Advantage - アドバンテージ by 三共 (Sankyo)"
+      name: "Advantage (アドバンテージ)"
       year: 1976
       title: advantage
       corporate_entity: sankyo-precision-equipment-company-ltd
@@ -423,17 +423,17 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
         - theme: [tennis]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] theme ~ sports ~ tennis'
+            quote: "1976 Advantage - アドバンテージ by 三共 (Sankyo) [...] theme ~ sports ~ tennis"
   - model.american-football:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1976 American Football - アメリカンフットボール by 三共 (Sankyo)'
-      name: 'American Football (アメリカンフットボール)'
+        quote: "1976 American Football - アメリカンフットボール by 三共 (Sankyo)"
+      name: "American Football (アメリカンフットボール)"
       year: 1976
       title: american-football
       corporate_entity: sankyo-precision-equipment-company-ltd
@@ -443,18 +443,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
         - theme: [american-football, america]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] theme ~ sports ~ football (american) [...] theme ~ USA kitsch'
+            quote: "1976 American Football - アメリカンフットボール by 三共 (Sankyo) [...] theme ~ sports ~ football (american) [...] theme ~ USA kitsch"
   - model.big-race-sankyo:
       create: true
       note: 'The eremeka catalog dates this to approximately 1969 (marked ~) by Sankyo; Early Arcades Japan notes it "appeared in the 1969 machine directory, but could be from an earlier year."'
       cite:
         ref: https://earlyarcadesjapan.blogspot.com/2024/06/big-race-by-sankyo.html
-        quote: 'ビックレース (Big Race) [...] It appeared in the 1969 machine directory'
-      name: 'Big Race (ビックレース)'
+        quote: "ビックレース (Big Race) [...] It appeared in the 1969 machine directory"
+      name: "Big Race (ビックレース)"
       year: 1969
       title: big-race-sankyo
       corporate_entity: sankyo-precision-equipment-company-ltd
@@ -464,18 +464,18 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
         - theme: [cars]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] theme ~ vehicles ~ cars'
+            quote: "~1969 ビックレース (Big Race) by 三共 (Sankyo) [...] theme ~ vehicles ~ cars"
   - model.japan-series:
       create: true
-      note: 'The eremeka catalog dates this baseball game to approximately 1969 (marked ~) by Sankyo.'
+      note: "The eremeka catalog dates this baseball game to approximately 1969 (marked ~) by Sankyo."
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo)'
-      name: 'Japan Series (日本シリーズ)'
+        quote: "~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo)"
+      name: "Japan Series (日本シリーズ)"
       year: 1969
       title: japan-series
       corporate_entity: sankyo-precision-equipment-company-ltd
@@ -485,17 +485,17 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
         - theme: [baseball]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] theme ~ sports ~ baseball'
+            quote: "~1969 Nihon リーズ - 日本シリーズ (Japan Series) by 三共 (Sankyo) [...] theme ~ sports ~ baseball"
   - model.new-world-series:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo)'
-      name: 'New World Series (ニューワールドシリーズ)'
+        quote: "1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo)"
+      name: "New World Series (ニューワールドシリーズ)"
       year: 1976
       title: new-world-series
       corporate_entity: sankyo-precision-equipment-company-ltd
@@ -505,17 +505,17 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo) [...] yokomono ~ flipper pinball'
+            quote: "1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo) [...] yokomono ~ flipper pinball"
         - theme: [baseball]
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo) [...] theme ~ sports ~ baseball'
+            quote: "1976 The World Series - ニューワールドシリーズ (New World Series) by 三共 (Sankyo) [...] theme ~ sports ~ baseball"
   - model.orienteering:
       create: true
       cite:
         ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-        quote: '1976 Orienteering - オリエンテーリング by ユニバーサル (Universal)'
-      name: 'Orienteering (オリエンテーリング)'
+        quote: "1976 Orienteering - オリエンテーリング by ユニバーサル (Universal)"
+      name: "Orienteering (オリエンテーリング)"
       year: 1976
       title: orienteering
       corporate_entity: universal-company-ltd
@@ -525,4 +525,4 @@ claims:
         - game_format: pinball
           cite:
             ref: https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball
-            quote: '1976 Orienteering - オリエンテーリング by ユニバーサル (Universal) [...] yokomono ~ flipper pinball'
+            quote: "1976 Orienteering - オリエンテーリング by ユニバーサル (Universal) [...] yokomono ~ flipper pinball"

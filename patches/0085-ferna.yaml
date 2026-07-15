@@ -6,30 +6,30 @@ claims:
       create: true
       note: 'The tilt.it Italian Pinball Database credits Ferna srl with one pinball machine (city unknown - tilt.it prints "(???)"); corroborating sources were sought at authoring time and none found.'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ferna'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ferna"
         quote: Ferna srl
       name: Ferna
   - corporate-entity.ferna-srl:
       create: true
-      note: 'Corporate entity of Ferna, per the tilt.it Italian Pinball Database.'
+      note: "Corporate entity of Ferna, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ferna'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ferna"
         quote: Ferna srl
       name: Ferna srl
       manufacturer: ferna
   - title.steeple:
       create: true
-      note: 'Title for Steeple, per the tilt.it Italian Pinball Database.'
+      note: "Title for Steeple, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ferna'
-        quote: 'Steeple (?)'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ferna"
+        quote: "Steeple (?)"
       name: Steeple
   - model.steeple:
       create: true
-      note: 'no technology is stated.'
+      note: "no technology is stated."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/ferna'
-        quote: 'Steeple (?)'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/ferna"
+        quote: "Steeple (?)"
       name: Steeple
       title: steeple
       corporate_entity: ferna-srl

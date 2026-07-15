@@ -10,10 +10,10 @@ claims:
       cites:
         "1":
           ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-          quote: '1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)'
+          quote: "1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)"
         "2":
           ref: ipdb:5572
-          quote: 'Manufacturer: Japan Automatic Vending Machine Company, Ltd., of Tokyo, Japan [...] Type: Electro-mechanical (EM) [...] Bulb scoring, no score reels. [...] According to the flyer text, the player''s spaceship advances to reach a goal for replay. Some rollovers advance the spaceship, other rollovers move it backwards. [...] This game is based on a sugoroku game, a Japanese variety of Parcheesi. [...] ''Dai Uchuu Ryokou'' translates somewhat to ''Big Space Journey''.'
+          quote: "Manufacturer: Japan Automatic Vending Machine Company, Ltd., of Tokyo, Japan [...] Type: Electro-mechanical (EM) [...] Bulb scoring, no score reels. [...] According to the flyer text, the player's spaceship advances to reach a goal for replay. Some rollovers advance the spaceship, other rollovers move it backwards. [...] This game is based on a sugoroku game, a Japanese variety of Parcheesi. [...] 'Dai Uchuu Ryokou' translates somewhat to 'Big Space Journey'."
   - model.fishing-tengu:
       expect: { ipdb_id: 6872 }
       note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (folklore theme, documentation)."
@@ -22,7 +22,7 @@ claims:
       cites:
         "1":
           ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-          quote: '1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)'
+          quote: "1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)"
         "2":
           ref: ipdb:6872
           quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] The only picture we have seen of this game is the one shown here from the industry magazine "The Amusement Sangyo (アミューズメント産業)" dated March 1976. [...] A tengu (天狗) is a mythical creature from Japanese folklore.'
@@ -34,10 +34,10 @@ claims:
       cites:
         "1":
           ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-          quote: '1975 Attack Ball - アタック ボール by 三共 (Sankyo)'
+          quote: "1975 Attack Ball - アタック ボール by 三共 (Sankyo)"
         "2":
           ref: ipdb:6874
-          quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] It dispenses prizes into a receptacle at the bottom of the cabinet front. [...] The unusual lower cabinet appears to be padded or upholstered.'
+          quote: "Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] It dispenses prizes into a receptacle at the bottom of the cabinet front. [...] The unusual lower cabinet appears to be padded or upholstered."
   - model.circus-16:
       expect: { ipdb_id: 6871 }
       note: "Narrative description compiled from Early Arcades Japan (year) and IPDB (cabinet, documentation)."
@@ -46,7 +46,7 @@ claims:
       cites:
         "1":
           ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-          quote: '1975 サーカス (Circus) by 三共 (Sankyo)'
+          quote: "1975 サーカス (Circus) by 三共 (Sankyo)"
         "2":
           ref: ipdb:6871
           quote: 'Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan [Trade Name: Sankyo Seiki Kabushikigaisha] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] Wedge head. [...] The only picture we have seen of this game is the one shown here from the industry magazine "The Amusement Sangyo (アミューズメント産業)" dated March 1976.'
@@ -61,7 +61,7 @@ claims:
           quote: 'Crazy 15 (クレイジー15) [...] Manufacturer: Komaya Co., Ltd., of Kobe, Japan [Trade Name: Komaya Seisakusho] [...] Type: Electro-mechanical (EM) [...] Players: 1 [...] Flippers (2), Trap holes (9). Coin slot in lockdown bar. Pressing green button on lockdown bar serves ball to manual ball shooter. Pressing red button on lockdown bar activates both flippers simultaneously. They are not impulse flippers. [...] If make lit lamps in vertical, horizontal, or diagonal in backglass (15 points total), win replay. [...] The manufacturer issued an "improved" version of this game as Komaya Seisakusho''s 1977 ''New Crazy 15''.'
         "2":
           ref: ipdb:6786
-          quote: 'It is an improved version of Komaya Seisakusho''s 1965 ''Crazy 15 (クレイジー15)''.'
+          quote: "It is an improved version of Komaya Seisakusho's 1965 'Crazy 15 (クレイジー15)'."
   - model.new-crazy-15:
       expect: { ipdb_id: 6786 }
       note: "Narrative description compiled from IPDB's structured rows and Notes prose. IPDB dates the start of manufacture to 1977 from a Jan-1978 announcement."

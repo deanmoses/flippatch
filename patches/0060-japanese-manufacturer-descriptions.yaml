@@ -9,7 +9,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '~1967 Home Run - ホームランゲーム by 日本展望娯楽社 (Nihon Tenbo Entertainment Company) [...] 1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] yokomono ~ flipper pinball [...] 1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] 1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] ~1972 ウルトラアタック (Ultra Attack) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] theme ~ kaiju & mecha [...] theme ~ licensed property [...] ~1972 ウルトラスパーク (Ultra Spark) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed]'
+          quote: "~1967 Home Run - ホームランゲーム by 日本展望娯楽社 (Nihon Tenbo Entertainment Company) [...] 1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社 (Nihon Tenbo Entertainment Company — Nitten) [...] yokomono ~ flipper pinball [...] 1970 ビート & スパーク (Beat & Spark) [Socker] by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] 1970 ジャンボ キック (Jumbo Kick) by 東急商事株式會社 (Tokyo Corporation) & 日本展望娯楽社 (Nihon Tenbo) [...] ~1972 ウルトラアタック (Ultra Attack) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed] [...] theme ~ kaiju & mecha [...] theme ~ licensed property [...] ~1972 ウルトラスパーク (Ultra Spark) by 日本娯楽機 (Nihon Gorakuki) & 日本展望娯楽社 (Nihon Tenbo) [presumed]"
   - manufacturer.kato:
       expect: { name: Kato }
       description: |
@@ -17,7 +17,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '~1967 サッカー8 [エイト] (Soccer 8) by カトウ (Kato) [...] theme ~ sports ~ football (soccer)'
+          quote: "~1967 サッカー8 [エイト] (Soccer 8) by カトウ (Kato) [...] theme ~ sports ~ football (soccer)"
   - manufacturer.showa-yuen:
       expect: { name: Showa Yuen }
       description: |
@@ -25,7 +25,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen) [...] theme ~ space/UFOs/scifi [...] yokomono ~ flipper pinball'
+          quote: "1970 Rocket V - ロケットV by 昭和遊園 (Showa Yuen) [...] theme ~ space/UFOs/scifi [...] yokomono ~ flipper pinball"
   - manufacturer.childrens-amusement-park-facilities:
       expect: { name: "Children's Amusement Park Facilities" }
       description: |
@@ -33,7 +33,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children''s Amusement Park Facilities) [presumed] [...] theme ~ space/UFOs/scifi'
+          quote: "~1968 宇宙パトロール (space patrol) [presumed] by 児童遊園設備 (Children's Amusement Park Facilities) [presumed] [...] theme ~ space/UFOs/scifi"
   - manufacturer.banpresto:
       expect: { name: Banpresto }
       description: |
@@ -41,7 +41,7 @@ claims:
       cites:
         "1":
           ref: https://en.wikipedia.org/wiki/Banpresto
-          quote: 'Banpresto Co., Ltd.[c] (formerly Coreland Technology Inc.) was a Japanese video game developer and publisher headquartered in Shinagawa, Tokyo. [...] In addition to video games, Banpresto produced toys, keyrings, apparel, and plastic models. [...] Banpresto was founded by Japanese businessman Yasushi Matsuda as Hoei International on April 30, 1977. [...] Coreland was majority-acquired by Bandai in 1989 following severe financial difficulties and renamed Banpresto, becoming Bandai''s arcade game division. [...] It continued producing games until 2008 when it was absorbed by Namco Bandai Games, and its toy and arcade divisions were spun-off into an unrelated company that carried the same name. [...] It also operated amusement facilities across Japan, including Hanayashiki, as well as producing model kits, stuffed toys, and UFO catcher prizes.'
+          quote: "Banpresto Co., Ltd.[c] (formerly Coreland Technology Inc.) was a Japanese video game developer and publisher headquartered in Shinagawa, Tokyo. [...] In addition to video games, Banpresto produced toys, keyrings, apparel, and plastic models. [...] Banpresto was founded by Japanese businessman Yasushi Matsuda as Hoei International on April 30, 1977. [...] Coreland was majority-acquired by Bandai in 1989 following severe financial difficulties and renamed Banpresto, becoming Bandai's arcade game division. [...] It continued producing games until 2008 when it was absorbed by Namco Bandai Games, and its toy and arcade divisions were spun-off into an unrelated company that carried the same name. [...] It also operated amusement facilities across Japan, including Hanayashiki, as well as producing model kits, stuffed toys, and UFO catcher prizes."
   - manufacturer.tomato-land:
       expect: { name: Tomato Land }
       description: |
@@ -49,7 +49,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '2007 Target Machine Base Ball - ターゲットマシン ベースボール by トマトランド (Tomato Land) [...] vending machine ~ candy [...] ~2007 Target Machine Tropical Q - ターゲットマシン タイプ１ (Target machine type 1) by トマトランド (Tomato Land) [...] 2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land) [...] theme ~ pirates [...] vending machine ~ candy'
+          quote: "2007 Target Machine Base Ball - ターゲットマシン ベースボール by トマトランド (Tomato Land) [...] vending machine ~ candy [...] ~2007 Target Machine Tropical Q - ターゲットマシン タイプ１ (Target machine type 1) by トマトランド (Tomato Land) [...] 2010s ターゲットマシン パイレーツ (Target machine pirates) by トマトランド (Tomato Land) [...] theme ~ pirates [...] vending machine ~ candy"
   - manufacturer.towa:
       expect: { name: Towa }
       description: |
@@ -57,7 +57,7 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '1996 Slap Shot - スラップショット by トーワ (Towa) [...] theme ~ sports ~ hockey [...] yokomono ~ flipper pinball [...] 1997 Slap Shot - スラップショット by トーワ (Towa)'
+          quote: "1996 Slap Shot - スラップショット by トーワ (Towa) [...] theme ~ sports ~ hockey [...] yokomono ~ flipper pinball [...] 1997 Slap Shot - スラップショット by トーワ (Towa)"
   - manufacturer.sunwise:
       expect: { name: Sunwise }
       description: |
@@ -65,4 +65,4 @@ claims:
       cites:
         "1":
           ref: "https://thetastates.com/eremeka/eremekaDisplay.php?mentionOnly=1&search=yes&tag=yokomono+~+flipper+pinball"
-          quote: '1995 American Battle Dome - アメリカンバトルゲーム by サンワイズ (Sunwise) & Tsukuda Original'
+          quote: "1995 American Battle Dome - アメリカンバトルゲーム by サンワイズ (Sunwise) & Tsukuda Original"

@@ -8,29 +8,29 @@ claims:
         - display_type: backglass-lights
           cite:
             ref: ipdb:5572
-            quote: 'Bulb scoring, no score reels.'
+            quote: "Bulb scoring, no score reels."
         - cabinet: floor
           cite:
             ref: ipdb:5572
-            quote: 'Wedge head backbox.'
+            quote: "Wedge head backbox."
         - game_format: miscellaneous
           cite:
             ref: ipdb:5572
-            quote: 'This game is based on a sugoroku game, a Japanese variety of Parcheesi.'
+            quote: "This game is based on a sugoroku game, a Japanese variety of Parcheesi."
         - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-            quote: '1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)'
+            quote: "1970 大宇宙旅行 (big space travel) by 日本自動販売機 (Nihon Jidô Hanbaiki)"
           year: 1970
   - model.fishing-tengu:
       expect: { ipdb_id: 6872 }
       changesets:
         - cite:
             ref: ipdb:6872
-            quote: 'We notice a red knob on the front of the cabinet, below the regular ball shooter knob.'
+            quote: "We notice a red knob on the front of the cabinet, below the regular ball shooter knob."
           cabinet: floor
         - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-            quote: '1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)'
+            quote: "1973 つり天狗 (Fishing Tengu) by 三共 (Sankyo)"
           year: 1973
   - model.attack-ball:
       expect: { ipdb_id: 6874 }
@@ -38,25 +38,25 @@ claims:
         - cabinet: floor
           cite:
             ref: ipdb:6874
-            quote: 'The unusual lower cabinet appears to be padded or upholstered.'
+            quote: "The unusual lower cabinet appears to be padded or upholstered."
         - game_format: miscellaneous
           cite:
             ref: ipdb:6874
-            quote: 'It dispenses prizes into a receptacle at the bottom of the cabinet front.'
+            quote: "It dispenses prizes into a receptacle at the bottom of the cabinet front."
         - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-            quote: '1975 Attack Ball - アタック ボール by 三共 (Sankyo)'
+            quote: "1975 Attack Ball - アタック ボール by 三共 (Sankyo)"
           year: 1975
   - model.circus-16:
       expect: { ipdb_id: 6871 }
       changesets:
         - cite:
             ref: ipdb:6871
-            quote: 'Wedge head.'
+            quote: "Wedge head."
           cabinet: floor
         - cite:
             ref: https://earlyarcadesjapan.blogspot.com/2022/02/introduction.html
-            quote: '1975 サーカス (Circus) by 三共 (Sankyo)'
+            quote: "1975 サーカス (Circus) by 三共 (Sankyo)"
           year: 1975
   - model.the-world-series:
       expect: { ipdb_id: 6069 }
@@ -64,12 +64,12 @@ claims:
         - flipper_count: 2
           cite:
             ref: ipdb:6069
-            quote: 'Flippers (2), Gobble holes (8), Kick-out holes (3), Left and right dual outlanes.'
+            quote: "Flippers (2), Gobble holes (8), Kick-out holes (3), Left and right dual outlanes."
         - production_status: produced
-          note: 'Extant examples establish the game was manufactured and sold.'
+          note: "Extant examples establish the game was manufactured and sold."
           cite:
             ref: ipdb:6069
-            quote: 'The Japan Pinball Museum knows of only two examples of this game, both in Japan.'
+            quote: "The Japan Pinball Museum knows of only two examples of this game, both in Japan."
   - model.crazy-15-15:
       expect: { ipdb_id: 6775 }
       changesets:
@@ -77,14 +77,14 @@ claims:
           flipper_count: 2
           cite:
             ref: ipdb:6775
-            quote: 'Flippers (2), Trap holes (9). Coin slot in lockdown bar.'
+            quote: "Flippers (2), Trap holes (9). Coin slot in lockdown bar."
         - display_type: backglass-lights
           reward_type: [replay]
           cite:
             ref: ipdb:6775
-            quote: 'If make lit lamps in vertical, horizontal, or diagonal in backglass (15 points total), win replay.'
+            quote: "If make lit lamps in vertical, horizontal, or diagonal in backglass (15 points total), win replay."
         - production_status: produced
-          note: 'Komaya sold Crazy 15 as a product and later issued an improved version, New Crazy 15.'
+          note: "Komaya sold Crazy 15 as a product and later issued an improved version, New Crazy 15."
           cite:
             ref: ipdb:6775
             quote: 'The manufacturer issued an "improved" version of this game as Komaya Seisakusho''s 1977 ''New Crazy 15''.'
@@ -95,11 +95,11 @@ claims:
           flipper_count: 2
           cite:
             ref: ipdb:6786
-            quote: 'Flippers (2), Trap holes (9). Coin slot in lockdown bar.'
+            quote: "Flippers (2), Trap holes (9). Coin slot in lockdown bar."
         - display_type: backglass-lights
           cite:
             ref: ipdb:6786
-            quote: 'Balls landing in numbered holes on the playfield light up corresponding numbers on the backglass.'
+            quote: "Balls landing in numbered holes on the playfield light up corresponding numbers on the backglass."
         - production_status: produced
           cite:
             ref: ipdb:6786
@@ -110,30 +110,30 @@ claims:
         - game_format: pinball
           cite:
             ref: ipdb:6071
-            quote: 'It is a contemporary pinball machine.'
+            quote: "It is a contemporary pinball machine."
         - flipper_count: 2
           cite:
             ref: ipdb:6071
-            quote: 'Flippers (2), Pop bumpers (5), Slingshots (2), Kick-out holes (6), Standup targets (2).'
+            quote: "Flippers (2), Pop bumpers (5), Slingshots (2), Kick-out holes (6), Standup targets (2)."
         - technology_subgeneration: ss-discrete
-          note: 'The catalog already holds solid-state; the 1977 CPU-board hardware fixes the subgeneration as discrete (off-the-shelf CPU boards, 1977–1990).'
+          note: "The catalog already holds solid-state; the 1977 CPU-board hardware fixes the subgeneration as discrete (off-the-shelf CPU boards, 1977–1990)."
           cite:
             ref: ipdb:6071
-            quote: 'according to the Japanese flyer, it uses a CPU circuit board'
+            quote: "according to the Japanese flyer, it uses a CPU circuit board"
         - display_type: score-reels
           note: 'A solid-state game with mechanical score reels; the "dummy zero" ones-reel confirms physical reels.'
           cite:
             ref: ipdb:6071
             quote: 'The "ring counter" may be a reference to the backbox score reels. The "ones" reel looks like a dummy zero.'
         - cabinet: floor
-          note: 'A 1730 mm-tall cabinet is a free-standing floor machine.'
+          note: "A 1730 mm-tall cabinet is a free-standing floor machine."
           cite:
             ref: ipdb:6071
-            quote: 'Height 1730mm Width 521mm Length 1320mm'
+            quote: "Height 1730mm Width 521mm Length 1320mm"
         - production_status: produced
           cite:
             ref: ipdb:6071
-            quote: 'According to Japan collector Yasushi Takeda, this game first appeared in Universal''s new product catalogue of 1977.'
+            quote: "According to Japan collector Yasushi Takeda, this game first appeared in Universal's new product catalogue of 1977."
   - model.hercules-2:
       expect: { ipdb_id: 4394 }
       changesets:
@@ -141,14 +141,14 @@ claims:
           flipper_count: 2
           cite:
             ref: ipdb:4394
-            quote: 'Flippers (2), Pop bumpers (3), Slingshots (2), Star rollovers (10), Standup targets (4), Spinning target (1), Ball kicker (1), Upper right free ball return lane.'
+            quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Star rollovers (10), Standup targets (4), Spinning target (1), Ball kicker (1), Upper right free ball return lane."
         - technology_subgeneration: ss-discrete
-          note: 'The catalog already holds solid-state; the CPU-board hardware fixes the subgeneration as discrete (off-the-shelf CPU boards, 1977–1990).'
+          note: "The catalog already holds solid-state; the CPU-board hardware fixes the subgeneration as discrete (off-the-shelf CPU boards, 1977–1990)."
           cite:
             ref: ipdb:4394
-            quote: 'according to the Japanese flyer, it uses a CPU circuit board and has electrical sound'
+            quote: "according to the Japanese flyer, it uses a CPU circuit board and has electrical sound"
         - display_type: score-reels
-          note: 'A solid-state game with mechanical score reels in the backbox.'
+          note: "A solid-state game with mechanical score reels in the backbox."
           cite:
             ref: ipdb:4394
-            quote: 'The backbox has score reels.'
+            quote: "The backbox has score reels."

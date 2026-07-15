@@ -8,4 +8,4 @@ claims:
   # visible to it.
   - title.big-ben-italy:
       delete: true
-      note: 'Orphaned after its sole model (the Segasa Italy export, now big-ben-segasa-italy) was re-homed under the shared Big Ben (Williams 1975) title.'
+      note: "Orphaned after its sole model (the Segasa Italy export, now big-ben-segasa-italy) was re-homed under the shared Big Ben (Williams 1975) title."

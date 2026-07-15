@@ -7,30 +7,30 @@ claims:
   # place him as the firm's owner, not a game's designer, and its games are copies.
   - person.antonio-manili:
       create: true
-      note: 'ManilaMatic (Rome) is headed on the tilt.it Italian Pinball Database page as the firm of Sig. Antonio Manili.'
+      note: "ManilaMatic (Rome) is headed on the tilt.it Italian Pinball Database page as the firm of Sig. Antonio Manili."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
-        quote: '(Roma, Italy – Sig. Antonio Manili)'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
+        quote: "(Roma, Italy – Sig. Antonio Manili)"
       name: Antonio Manili
   - title.joker-manilamatic:
       create: true
-      note: 'Title for Joker, per the tilt.it Italian Pinball Database.'
+      note: "Title for Joker, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
         quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
       name: Joker
   - title.pool-rabbit:
       create: true
-      note: 'Title for Pool Rabbit, per the tilt.it Italian Pinball Database.'
+      note: "Title for Pool Rabbit, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
         quote: Pool Rabbit
       name: Pool Rabbit
   - model.joker-manilamatic:
       create: true
       note: 'tilt.it gives no year; lineage per the source line: Copy of Premier Technology (Gottlieb) 1987 ''Monte Carlo'' (ipdb 1622; catalog monte-carlo-gottlieb) - per the page: ''copia del Gottlieb''s "Monte Carlo"''. The 1987 SS Monte Carlo, not Bally''s 1973 EM, is the right original given ManilaMatic''s mid-80s Gottlieb-copy pattern..'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
         quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
       name: Joker
       title: joker-manilamatic
@@ -39,7 +39,7 @@ claims:
       game_format: pinball
       changesets:
         - cite:
-            ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+            ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
             quote: 'Joker (copia del Gottlieb''s "Monte Carlo")'
           model_relationship:
             - target_machine: monte-carlo-gottlieb
@@ -47,11 +47,11 @@ claims:
               license_status: unknown
   - model.pool-rabbit:
       create: true
-      note: 'tilt.it gives no year.'
+      note: "tilt.it gives no year."
       cite:
-        - ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        - ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
           quote: Pool Rabbit
-        - ref: 'https://www.vpforums.org/index.php?showtopic=46118'
+        - ref: "https://www.vpforums.org/index.php?showtopic=46118"
           quote: 'The game is called "Pool Rabbit" by "MM Computer Games." Other forum members chimed in saying it was made by an Italian company called ManilaMatic in 1985, and the playfield is possibly a flipped "Eight Ball" layout.'
       name: Pool Rabbit
       title: pool-rabbit
@@ -63,7 +63,7 @@ claims:
   - model.defender:
       note: 'tilt.it lists Defender as a copy of Gottlieb''s "Arena" (catalog arena, Gottlieb 1987 solid-state).'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
         quote: 'Defender (copia del Gottlieb''s "Arena")'
       model_relationship:
         - target_machine: arena
@@ -72,7 +72,7 @@ claims:
   - model.out-law:
       note: 'tilt.it lists Out Law as a copy of Gottlieb''s "Tag Team" (now catalog tag-team-pinball).'
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/manilamatic'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/manilamatic"
         quote: 'Out Law (copia del Gottlieb''s "Tag Team")'
       model_relationship:
         - target_machine: tag-team-pinball

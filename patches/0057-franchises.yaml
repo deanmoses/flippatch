@@ -5,7 +5,11 @@ sources:
   - name: Wikipedia
     source_type: web
     links:
-      - { url: "https://ja.wikipedia.org/", label: "Wikipedia (日本語)", link_type: homepage }
+      - {
+          url: "https://ja.wikipedia.org/",
+          label: "Wikipedia (日本語)",
+          link_type: homepage,
+        }
   - name: Anjar
     source_type: web
     description: >-
@@ -24,5 +28,5 @@ claims:
       note: "Battle Dome (バトルドーム) is a flipper-ball game property originally from Anjar Co. (US), brought to Japan by Tsukuda Original (ツクダオリジナル) as the American Battle Dome toy line (1994). Sunwise's 1995 arcade flipper machine is a licensed adaptation."
       cite:
         ref: https://www.anjar.com/news/american-battle-dome-returns-in-japan-promises-to-be-cho-exciting-2
-        quote: 'Tsukuda Original licensed the game/toy design from Anjar, a U.S.-based toy licensing and development agency. [...] the same game was offered in different countries with names like Marble Dome, Flipper Fun, Quattro-Flipper, and just plain Battle Dome'
+        quote: "Tsukuda Original licensed the game/toy design from Anjar, a U.S.-based toy licensing and development agency. [...] the same game was offered in different countries with names like Marble Dome, Flipper Fun, Quattro-Flipper, and just plain Battle Dome"
       name: Battle Dome

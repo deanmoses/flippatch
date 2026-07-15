@@ -1,1019 +1,1129 @@
 attribution: flipcommons-ai-desc-model
 description: AI-authored descriptions for the new Italian-sweep models.
 claims:
-- model.sinbad-bell-coin-matics:
-    description: '*Sinbad* is [[manufacturer:bell-coin-matics]]''s solid-state, four-player pinball, built
-      in [[location:italy/bo/bologna]] in 1979 as a joint production with the fellow Bolognese firm [[manufacturer:europlay]].
-      It reworks [[manufacturer:gottlieb]]''s 1978 *[[model:sinbad]]*[[cite:2]], sharing that game''s
-      [[theme:fantasy]] cast of the legendary Arabian sailor — a subject Gottlieb had drawn from Ray Harryhausen''s
-      swashbuckling *Sinbad and the Eye of the Tiger*, the 1977 film Columbia Pictures had in cinemas
-      the very year it bought Gottlieb outright. That coincidence made Gottlieb''s machine the first pin
-      whose film and factory answered to one corporate parent, the template every later Hollywood tie-in
-      would follow.[[cite:1]]
+  - model.sinbad-bell-coin-matics:
+      description:
+        "*Sinbad* is [[manufacturer:bell-coin-matics]]'s solid-state, four-player pinball, built
+        in [[location:italy/bo/bologna]] in 1979 as a joint production with the fellow Bolognese firm [[manufacturer:europlay]].
+        It reworks [[manufacturer:gottlieb]]'s 1978 *[[model:sinbad]]*[[cite:2]], sharing that game's
+        [[theme:fantasy]] cast of the legendary Arabian sailor — a subject Gottlieb had drawn from Ray Harryhausen's
+        swashbuckling *Sinbad and the Eye of the Tiger*, the 1977 film Columbia Pictures had in cinemas
+        the very year it bought Gottlieb outright. That coincidence made Gottlieb's machine the first pin
+        whose film and factory answered to one corporate parent, the template every later Hollywood tie-in
+        would follow.[[cite:1]]
 
 
-      For the two Bologna firms, though, the hit was less a licence to buy than a design to rebuild. Europlay
-      specialised in [[technology-generation:electromechanical]] remakes of the earliest [[technology-generation:solid-state]]
-      tables, and its own one-player electromechanical Sinbad — carried in the catalog as *[[model:sinbad-adventures]]*
-      — ranked among the firm''s biggest sellers.[[cite:2]] Its partner had itself been founded only a
-      year earlier, in 1978, and earned its living from conversion kits that reworked older [[manufacturer:bally]]
-      machines rather than from designing games of its own.[[cite:3]] Bologna''s coin-op trade was crowded
-      enough that at its peak the city reportedly held more pinball factories than Chicago, the American
-      industry''s own capital.[[cite:4]] Bell returned to Gottlieb''s design the following year, paring
-      it back further into a 1980 kit titled *The Hunter*.[[cite:5]] Only in the mid-1980s did the company
-      set rebadged kits aside for machines of its own, by then trading as Nuova Bell Games and building
-      its own circuit boards.[[cite:6]]
+        For the two Bologna firms, though, the hit was less a licence to buy than a design to rebuild. Europlay
+        specialised in [[technology-generation:electromechanical]] remakes of the earliest [[technology-generation:solid-state]]
+        tables, and its own one-player electromechanical Sinbad — carried in the catalog as *[[model:sinbad-adventures]]*
+        — ranked among the firm's biggest sellers.[[cite:2]] Its partner had itself been founded only a
+        year earlier, in 1978, and earned its living from conversion kits that reworked older [[manufacturer:bally]]
+        machines rather than from designing games of its own.[[cite:3]] Bologna's coin-op trade was crowded
+        enough that at its peak the city reportedly held more pinball factories than Chicago, the American
+        industry's own capital.[[cite:4]] Bell returned to Gottlieb's design the following year, paring
+        it back further into a 1980 kit titled *The Hunter*.[[cite:5]] Only in the mid-1980s did the company
+        set rebadged kits aside for machines of its own, by then trading as Nuova Bell Games and building
+        its own circuit boards.[[cite:6]]
 
-      '
-    cites:
-      '1':
-        ref: https://theskillshot.substack.com/p/the-pinball-machine-that-started
-        quote: In 1977, Columbia Pictures released a movie called Sinbad and the Eye of the Tiger. [...]
-          The same year Columbia released the film, Columbia bought Gottlieb. [...] And almost immediately,
-          Gottlieb made a Sinbad pinball machine. This had never happened before [...] the movie studio
-          that made the movie now also owned the pinball company that made the pinball. [...] Every pinball
-          machine you've ever played that's based on a current Hollywood film owes something to that 1977
-          corporate deal.
-      '2':
-        ref: https://www.tilt.it/bell.htm
-        quote: Some of them, like EUROPLAY (again based in Bologna), produced some EM versions of the
-          very first SS pinballs. Their major success was a one-player EM version of the Gottlieb SS pinball
-          "SINBAD".
-      '3':
-        ref: https://www.kineticist.com/manufacturers/bell-games-nuova-11
-        quote: Bell Games (later Nuova 11) is an Italian pinball manufacturer founded in Bologna in 1978
-          by Mr. [...] Cavazza that began as a specialist in conversion kits and budget operator upgrades
-          for older Bally machines
-      '4':
-        ref: https://www.tilt.it/bell.htm
-        quote: This factory was also based in Bologna; at one time there were more pinball factories in
-          Bologna than in Chicago!
-      '5':
-        ref: https://www.tilt.it/bell.htm
-        quote: '"THE HUNTER" (1980) was a simplified version of Gottlieb''s "Sinbad" (1978).'
-      '6':
-        ref: https://www.flippers.be/bellgames.html
-        quote: The company started as Bell games and made conversion kits for Bally pinball games. [...]
-          The company later changed into Nuova Bell games [...] and these all have their own custom boardset,
-          no more kits for Bally pinball machines were produced.
-- model.aliens-women:
-    description: '*Aliens & Women* is a 1980 pinball machine from [[manufacturer:bem]], the [[location:italy/mi/milan]]
-      firm [[corporate-entity:bigliardini-elettronici-milano]] run by Giorgio Masiero, its title pointing
-      to an [[theme:aliens]] subject.[[cite:1]] BEM built its tables not from original designs but from
-      recycled American hardware: a surviving *[[model:dogs-race]]* was found with its Gottlieb cabinet,
-      front door and coin plate wrapped around mechanics that were otherwise almost entirely Williams.[[cite:2]]
-      The game came in two cabinet formats — the compact "testa piccola" (small-head) build the firm favoured,
-      and a full-size "testa normale" version.[[cite:3]]
+        "
+      cites:
+        "1":
+          ref: https://theskillshot.substack.com/p/the-pinball-machine-that-started
+          quote:
+            In 1977, Columbia Pictures released a movie called Sinbad and the Eye of the Tiger. [...]
+            The same year Columbia released the film, Columbia bought Gottlieb. [...] And almost immediately,
+            Gottlieb made a Sinbad pinball machine. This had never happened before [...] the movie studio
+            that made the movie now also owned the pinball company that made the pinball. [...] Every pinball
+            machine you've ever played that's based on a current Hollywood film owes something to that 1977
+            corporate deal.
+        "2":
+          ref: https://www.tilt.it/bell.htm
+          quote:
+            Some of them, like EUROPLAY (again based in Bologna), produced some EM versions of the
+            very first SS pinballs. Their major success was a one-player EM version of the Gottlieb SS pinball
+            "SINBAD".
+        "3":
+          ref: https://www.kineticist.com/manufacturers/bell-games-nuova-11
+          quote:
+            Bell Games (later Nuova 11) is an Italian pinball manufacturer founded in Bologna in 1978
+            by Mr. [...] Cavazza that began as a specialist in conversion kits and budget operator upgrades
+            for older Bally machines
+        "4":
+          ref: https://www.tilt.it/bell.htm
+          quote:
+            This factory was also based in Bologna; at one time there were more pinball factories in
+            Bologna than in Chicago!
+        "5":
+          ref: https://www.tilt.it/bell.htm
+          quote: '"THE HUNTER" (1980) was a simplified version of Gottlieb''s "Sinbad" (1978).'
+        "6":
+          ref: https://www.flippers.be/bellgames.html
+          quote:
+            The company started as Bell games and made conversion kits for Bally pinball games. [...]
+            The company later changed into Nuova Bell games [...] and these all have their own custom boardset,
+            no more kits for Bally pinball machines were produced.
+  - model.aliens-women:
+      description:
+        '*Aliens & Women* is a 1980 pinball machine from [[manufacturer:bem]], the [[location:italy/mi/milan]]
+        firm [[corporate-entity:bigliardini-elettronici-milano]] run by Giorgio Masiero, its title pointing
+        to an [[theme:aliens]] subject.[[cite:1]] BEM built its tables not from original designs but from
+        recycled American hardware: a surviving *[[model:dogs-race]]* was found with its Gottlieb cabinet,
+        front door and coin plate wrapped around mechanics that were otherwise almost entirely Williams.[[cite:2]]
+        The game came in two cabinet formats — the compact "testa piccola" (small-head) build the firm favoured,
+        and a full-size "testa normale" version.[[cite:3]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
-      '2':
-        ref: ipdb:5632
-        quote: 'The cabinet, its front door, and its coin entrance plate are Gottlieb, with a Williams
-          lockdown bar. [...] All other internal mechanics are Williams: relays, pop bumper assemblies,
-          flipper assemblies, stepper units, score motor etc.'
-      '3':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: Aliens & Women (testa piccola) [...] Aliens & Women (testa normale)
-- model.black-gold-bem:
-    description: '*Black Gold* was [[manufacturer:bem]]''s small-head ("testa piccola") restyling of the
-      [[location:italy/mi/milan]] firm''s own earlier *[[model:arabic-power]]*.[[cite:1]] That parent
-      game was itself no original title but a conversion kit laid over an unidentified [[manufacturer:gottlieb]]
-      machine, reportedly BEM''s own work — leaving *Black Gold* a rebuild of a rebuild, two steps removed
-      from the American table underneath.[[cite:2]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
+        "2":
+          ref: ipdb:5632
+          quote:
+            "The cabinet, its front door, and its coin entrance plate are Gottlieb, with a Williams
+            lockdown bar. [...] All other internal mechanics are Williams: relays, pop bumper assemblies,
+            flipper assemblies, stepper units, score motor etc."
+        "3":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: Aliens & Women (testa piccola) [...] Aliens & Women (testa normale)
+  - model.black-gold-bem:
+      description:
+        '*Black Gold* was [[manufacturer:bem]]''s small-head ("testa piccola") restyling of the
+        [[location:italy/mi/milan]] firm''s own earlier *[[model:arabic-power]]*.[[cite:1]] That parent
+        game was itself no original title but a conversion kit laid over an unidentified [[manufacturer:gottlieb]]
+        machine, reportedly BEM''s own work — leaving *Black Gold* a rebuild of a rebuild, two steps removed
+        from the American table underneath.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: Black Gold (versione "Arabic Power" testa piccola)
-      '2':
-        ref: ipdb:5636
-        quote: This is a conversion kit of an unknown Gottlieb game. The maker of this kit is purported
-          to be BEM of Milano, Italy
-- model.black-jack-bem:
-    description: '*Black Jack* is a 1976 [[technology-generation:solid-state]] machine from [[manufacturer:bem]]
-      of [[location:italy/mi/milan]], named for the [[theme:cards]] game blackjack and sold in the firm''s
-      compact "testa piccola" (small-head) cabinet.[[cite:1]] Its electronics were rudimentary even for
-      early solid-state pinball: in place of a microprocessor it ran on banks of small circuit boards
-      sealed in yellow plastic boxes, reproducing the old relay logic with digital ICs — the same scheme
-      documented on BEM''s contemporaneous *[[model:suns-cruise-2]]*.[[cite:2]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: Black Gold (versione "Arabic Power" testa piccola)
+        "2":
+          ref: ipdb:5636
+          quote:
+            This is a conversion kit of an unknown Gottlieb game. The maker of this kit is purported
+            to be BEM of Milano, Italy
+  - model.black-jack-bem:
+      description:
+        '*Black Jack* is a 1976 [[technology-generation:solid-state]] machine from [[manufacturer:bem]]
+        of [[location:italy/mi/milan]], named for the [[theme:cards]] game blackjack and sold in the firm''s
+        compact "testa piccola" (small-head) cabinet.[[cite:1]] Its electronics were rudimentary even for
+        early solid-state pinball: in place of a microprocessor it ran on banks of small circuit boards
+        sealed in yellow plastic boxes, reproducing the old relay logic with digital ICs — the same scheme
+        documented on BEM''s contemporaneous *[[model:suns-cruise-2]]*.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: Black Jack – ss ('testa piccola')
-      '2':
-        ref: ipdb:5671
-        quote: Federico states this is an electronic machine but not CPU-controlled. It is based on a
-          number of modules, that is, little circuit boards enclosed in yellow plastic boxes, that reproduce
-          with digital ICs the electro-mechanical circuits.
-- model.papillon-bem:
-    description: '*Papillon* is a 1985 pinball machine from [[manufacturer:bem]], the [[location:italy/mi/milan]]
-      firm [[corporate-entity:bigliardini-elettronici-milano]] founded by Giorgio Masiero.[[cite:1]] It
-      shares the firm''s 1985 catalogue with *[[model:casino-5]]*, among the last tables BEM is recorded
-      as building — and, like the rest of the shop''s line, it was assembled from salvaged American parts
-      rather than drawn up as an original design.[[cite:2]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: Black Jack – ss ('testa piccola')
+        "2":
+          ref: ipdb:5671
+          quote:
+            Federico states this is an electronic machine but not CPU-controlled. It is based on a
+            number of modules, that is, little circuit boards enclosed in yellow plastic boxes, that reproduce
+            with digital ICs the electro-mechanical circuits.
+  - model.papillon-bem:
+      description:
+        "*Papillon* is a 1985 pinball machine from [[manufacturer:bem]], the [[location:italy/mi/milan]]
+        firm [[corporate-entity:bigliardini-elettronici-milano]] founded by Giorgio Masiero.[[cite:1]] It
+        shares the firm's 1985 catalogue with *[[model:casino-5]]*, among the last tables BEM is recorded
+        as building — and, like the rest of the shop's line, it was assembled from salvaged American parts
+        rather than drawn up as an original design.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
-      '2':
-        ref: ipdb:4991
-        quote: three games that share the same playfield layout between them and from which this Italian-made
-          game was derived. [...] Both games pictured here have the Gottlieb-style single-player wedge
-          head cabinet with Gottlieb's apron and coin door.
-- model.urania:
-    description: '*Urania* is a 1980 pinball machine from [[manufacturer:bem]] of [[location:italy/mi/milan]],
-      sold in the compact "testa piccola" (small-head) cabinet the firm used across its early-1980s tables.[[cite:1]]
-      It is the later of two BEM machines to carry the *[[title:urania]]* name — the first dating from
-      1976 — and came out of the same 1980 run as the firm''s *[[model:aliens-women]]*, both assembled
-      in Giorgio Masiero''s [[corporate-entity:bigliardini-elettronici-milano]].[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
+        "2":
+          ref: ipdb:4991
+          quote:
+            three games that share the same playfield layout between them and from which this Italian-made
+            game was derived. [...] Both games pictured here have the Gottlieb-style single-player wedge
+            head cabinet with Gottlieb's apron and coin door.
+  - model.urania:
+      description:
+        '*Urania* is a 1980 pinball machine from [[manufacturer:bem]] of [[location:italy/mi/milan]],
+        sold in the compact "testa piccola" (small-head) cabinet the firm used across its early-1980s tables.[[cite:1]]
+        It is the later of two BEM machines to carry the *[[title:urania]]* name — the first dating from
+        1976 — and came out of the same 1980 run as the firm''s *[[model:aliens-women]]*, both assembled
+        in Giorgio Masiero''s [[corporate-entity:bigliardini-elettronici-milano]].[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: Urania (testa piccola)
-      '2':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
-- model.urania-bem:
-    description: '*Urania* is a 1976 pinball machine from [[manufacturer:bem]] of [[location:italy/mi/milan]],
-      the first of two games the firm named *[[title:urania]]* — a small-head second version would follow
-      in 1980.[[cite:1]] It dates from the same year as BEM''s *[[model:black-jack-bem]]* and *[[model:dogs-race]]*,
-      all of them turned out in Giorgio Masiero''s [[corporate-entity:bigliardini-elettronici-milano]].[[cite:2]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: Urania (testa piccola)
+        "2":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
+  - model.urania-bem:
+      description:
+        "*Urania* is a 1976 pinball machine from [[manufacturer:bem]] of [[location:italy/mi/milan]],
+        the first of two games the firm named *[[title:urania]]* — a small-head second version would follow
+        in 1980.[[cite:1]] It dates from the same year as BEM's *[[model:black-jack-bem]]* and *[[model:dogs-race]]*,
+        all of them turned out in Giorgio Masiero's [[corporate-entity:bigliardini-elettronici-milano]].[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: Urania (testa piccola)
-      '2':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bem
-        quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
-- model.jack-in-the-box-bensa-sas:
-    description: '*Jack in the box* is [[manufacturer:bensa-sas]]''s single-player rebuild of [[manufacturer:gottlieb]]''s
-      *[[model:jack-in-the-box]]*, one of several Gottlieb designs the [[location:italy/mi/milan]] maker
-      reproduced without licence as [[tag:bootleg]] copies.[[cite:1]] It carries over the American game''s
-      [[theme:circus]] treatment: where Gottlieb''s four-player table was built around a ten-bank of drop
-      targets and spun off a two-player twin, *Jumping Jack*, Bensa reduced the layout to a single player.[[cite:2]]
-      Collectors have singled out its drop targets — which fall flat into the playfield rather than simply
-      dropping — as the clearest tell of the Gottlieb source,[[cite:3]] and noted that even the coin door
-      was made to pass for a Gottlieb''s, part of the close mimicry that marked the firm''s remanufacturing
-      through the mid-1970s.[[cite:4]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: Urania (testa piccola)
+        "2":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bem
+          quote: BEM srl [...] Sig. Giorgio Masiero – Milano, Italy
+  - model.jack-in-the-box-bensa-sas:
+      description:
+        "*Jack in the box* is [[manufacturer:bensa-sas]]'s single-player rebuild of [[manufacturer:gottlieb]]'s
+        *[[model:jack-in-the-box]]*, one of several Gottlieb designs the [[location:italy/mi/milan]] maker
+        reproduced without licence as [[tag:bootleg]] copies.[[cite:1]] It carries over the American game's
+        [[theme:circus]] treatment: where Gottlieb's four-player table was built around a ten-bank of drop
+        targets and spun off a two-player twin, *Jumping Jack*, Bensa reduced the layout to a single player.[[cite:2]]
+        Collectors have singled out its drop targets — which fall flat into the playfield rather than simply
+        dropping — as the clearest tell of the Gottlieb source,[[cite:3]] and noted that even the coin door
+        was made to pass for a Gottlieb's, part of the close mimicry that marked the firm's remanufacturing
+        through the mid-1970s.[[cite:4]]
 
-      '
-    cites:
-      '1':
-        ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
-        quote: One bit of info is they are a copy of the gottlieb pinballs around the same year.
-      '2':
-        ref: ipdb:1277
-        quote: 'Players: 4 [...] 10-bank drop targets [...] The 2-player version is Gottlieb''s 1973 ''Jumping
-          Jack''.'
-      '3':
-        ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
-        quote: That "Jack in the Box" looks very interesting, with the on the playfield drop down and
-          lay flat targets ( kinda like InterFlip's Dragon) .
-      '4':
-        ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
-        quote: On IPDB it shows Bensa of Milan. 1973 to 1975 made or remanufactured machines as the coin
-          door looks like a Gottlieb.
-- model.surf:
-    description: '*Surf* is one of two Bensa machines to carry that name, and its authorship was not evident
-      from the machine itself: tilt.it credits the collector Thierry Delisle with attributing the undated
-      table to the [[location:italy/mi/milan]] maker.[[cite:1]] This is the [[technology-generation:electromechanical]]
-      version, a single-player [[theme:surfing]] table that fits the pattern of Bensa''s short line of
-      copies "of the gottlieb pinballs around the same year."[[cite:2]] A [[technology-generation:solid-state]]
-      machine of the same name, *[[model:surf-bensa-sas]]*, followed.
+        "
+      cites:
+        "1":
+          ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
+          quote: One bit of info is they are a copy of the gottlieb pinballs around the same year.
+        "2":
+          ref: ipdb:1277
+          quote:
+            "Players: 4 [...] 10-bank drop targets [...] The 2-player version is Gottlieb's 1973 'Jumping
+            Jack'."
+        "3":
+          ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
+          quote:
+            That "Jack in the Box" looks very interesting, with the on the playfield drop down and
+            lay flat targets ( kinda like InterFlip's Dragon) .
+        "4":
+          ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
+          quote:
+            On IPDB it shows Bensa of Milan. 1973 to 1975 made or remanufactured machines as the coin
+            door looks like a Gottlieb.
+  - model.surf:
+      description:
+        '*Surf* is one of two Bensa machines to carry that name, and its authorship was not evident
+        from the machine itself: tilt.it credits the collector Thierry Delisle with attributing the undated
+        table to the [[location:italy/mi/milan]] maker.[[cite:1]] This is the [[technology-generation:electromechanical]]
+        version, a single-player [[theme:surfing]] table that fits the pattern of Bensa''s short line of
+        copies "of the gottlieb pinballs around the same year."[[cite:2]] A [[technology-generation:solid-state]]
+        machine of the same name, *[[model:surf-bensa-sas]]*, followed.
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bensa
-        quote: year unknown – identified as manufactured by Bensa thanks to Thierry Delisle
-      '2':
-        ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
-        quote: One bit of info is they are a copy of the gottlieb pinballs around the same year.
-- model.surf-bensa-sas:
-    description: '*Surf* exists under the Bensa name in two builds; this is the single-player [[technology-generation:solid-state]]
-      one, made as circuit boards began to replace relays in Italian pinball, alongside an [[technology-generation:electromechanical]]
-      counterpart catalogued as *[[model:surf]]*. The other Bensa tables that arcade-museum.com records
-      — Big Brave, KnoKOut, Space Time and Wild Boy — are electromechanical builds of the mid-1970s,[[cite:1]]
-      and, as with the EM Surf, this [[theme:surfing]] game''s attribution to the [[location:italy/mi/milan]]
-      maker rests on the identification made by the collector Thierry Delisle.[[cite:2]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bensa
+          quote: year unknown – identified as manufactured by Bensa thanks to Thierry Delisle
+        "2":
+          ref: https://pinside.com/pinball/forum/topic/bensa-italian-pinball
+          quote: One bit of info is they are a copy of the gottlieb pinballs around the same year.
+  - model.surf-bensa-sas:
+      description:
+        "*Surf* exists under the Bensa name in two builds; this is the single-player [[technology-generation:solid-state]]
+        one, made as circuit boards began to replace relays in Italian pinball, alongside an [[technology-generation:electromechanical]]
+        counterpart catalogued as *[[model:surf]]*. The other Bensa tables that arcade-museum.com records
+        — Big Brave, KnoKOut, Space Time and Wild Boy — are electromechanical builds of the mid-1970s,[[cite:1]]
+        and, as with the EM Surf, this [[theme:surfing]] game's attribution to the [[location:italy/mi/milan]]
+        maker rests on the identification made by the collector Thierry Delisle.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.arcade-museum.com/company/bensa
-        quote: Big Brave | 1974 | Pinball / Electro-Mechanical [...] KnoKOut | 1974 | Pinball / Electro-Mechanical
-          [...] Space Time | 1973 | Pinball / Electro-Mechanical [...] Wild Boy | 1974 | Pinball / Electro-Mechanical
-      '2':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/bensa
-        quote: year unknown – identified as manufactured by Bensa thanks to Thierry Delisle
-- model.action-bontempi:
-    description: '*Action* is the machine the catalog records for [[manufacturer:bontempi]] of [[location:italy/rm/rome]]:
-      an Italian-made copy of an American pinball design. The record identifies its donor only as an unnamed
-      [[manufacturer:chicago-coin]] game, so the catalog files it as a [[tag:bootleg]] with the original
-      left open. A natural candidate is Chicago Coin''s own *Action*, an [[technology-generation:electromechanical]]
-      pinball the Chicago firm catalogued in 1969, though the match cannot be pinned down.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.arcade-museum.com/company/bensa
+          quote:
+            Big Brave | 1974 | Pinball / Electro-Mechanical [...] KnoKOut | 1974 | Pinball / Electro-Mechanical
+            [...] Space Time | 1973 | Pinball / Electro-Mechanical [...] Wild Boy | 1974 | Pinball / Electro-Mechanical
+        "2":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/bensa
+          quote: year unknown – identified as manufactured by Bensa thanks to Thierry Delisle
+  - model.action-bontempi:
+      description:
+        "*Action* is the machine the catalog records for [[manufacturer:bontempi]] of [[location:italy/rm/rome]]:
+        an Italian-made copy of an American pinball design. The record identifies its donor only as an unnamed
+        [[manufacturer:chicago-coin]] game, so the catalog files it as a [[tag:bootleg]] with the original
+        left open. A natural candidate is Chicago Coin's own *Action*, an [[technology-generation:electromechanical]]
+        pinball the Chicago firm catalogued in 1969, though the match cannot be pinned down.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.arcade-museum.com/company/chicago-coin-machine-co
-        quote: Action | 1969 | Pinball / Electro-Mechanical
-- model.fly-man:
-    description: '*Fly Man* is a single-player solid-state table built in 1978 by [[manufacturer:cea]]
-      — Costruzioni Elettroniche Automatiche, the small [[location:italy/bo/bologna]] firm headed by Dante
-      Pavone.[[cite:1]] C.E.A. built pinball machines for only a brief run at the close of the decade,
-      on a wholly in-house [[technology-generation:solid-state]] boardset whose play stayed spartan next
-      to the machines of Chicago or of nearby [[manufacturer:zaccaria]].[[cite:2]] Like many small European
-      makers of the era it borrowed from American designs — its stablemate *[[model:satellite-2]]* reworked
-      [[manufacturer:gottlieb]]''s *[[model:jet-spin]]* into a pared-down solid-state machine — while
-      *Fly Man* went out under a name of the firm''s own.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: https://www.arcade-museum.com/company/chicago-coin-machine-co
+          quote: Action | 1969 | Pinball / Electro-Mechanical
+  - model.fly-man:
+      description:
+        "*Fly Man* is a single-player solid-state table built in 1978 by [[manufacturer:cea]]
+        — Costruzioni Elettroniche Automatiche, the small [[location:italy/bo/bologna]] firm headed by Dante
+        Pavone.[[cite:1]] C.E.A. built pinball machines for only a brief run at the close of the decade,
+        on a wholly in-house [[technology-generation:solid-state]] boardset whose play stayed spartan next
+        to the machines of Chicago or of nearby [[manufacturer:zaccaria]].[[cite:2]] Like many small European
+        makers of the era it borrowed from American designs — its stablemate *[[model:satellite-2]]* reworked
+        [[manufacturer:gottlieb]]'s *[[model:jet-spin]]* into a pared-down solid-state machine — while
+        *Fly Man* went out under a name of the firm's own.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/cea
-        quote: Costruzioni Elettroniche Automatiche di Pavone & c. [...] (Sig. Dante Pavone)
-      '2':
-        ref: https://www.flippers.be/cea_italy.html
-        quote: CEA Electronics Corporation is an Italian company (from Bologna) that made pinball machines
-          between 1977 and 1979. [...] their boardset was also totally custom. Although solid state, their
-          games were still very basic. CEA Satelite for instance is a simplified copy of the electro-mechanical
-          Gottlieb Jet Spin (many small European pinball companies just copied other models).
-- model.five-martians:
-    description: '*Five Martians* is a pinball machine from [[manufacturer:ceff]], a mechanical-engineering
-      firm in [[location:italy/pc/piacenza]]. As its name announces, the game took a science-fiction subject
-      of invading Martians — the [[theme:aliens]] motif that ran through pinball''s electromechanical
-      years. The Italian pinball archive records the machine in more than one form: at least two versions
-      are known from an old dealer leaflet, one built with conventional mechanical score reels, the other
-      reworked to score into the millions.[[cite:1]] A second name, "Joker Ball", appears beside it in
-      the same record, unresolved even there — whether a separate CEFF machine or merely a feature within
-      *Five Martians* itself.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/cea
+          quote: Costruzioni Elettroniche Automatiche di Pavone & c. [...] (Sig. Dante Pavone)
+        "2":
+          ref: https://www.flippers.be/cea_italy.html
+          quote:
+            CEA Electronics Corporation is an Italian company (from Bologna) that made pinball machines
+            between 1977 and 1979. [...] their boardset was also totally custom. Although solid state, their
+            games were still very basic. CEA Satelite for instance is a simplified copy of the electro-mechanical
+            Gottlieb Jet Spin (many small European pinball companies just copied other models).
+  - model.five-martians:
+      description:
+        '*Five Martians* is a pinball machine from [[manufacturer:ceff]], a mechanical-engineering
+        firm in [[location:italy/pc/piacenza]]. As its name announces, the game took a science-fiction subject
+        of invading Martians — the [[theme:aliens]] motif that ran through pinball''s electromechanical
+        years. The Italian pinball archive records the machine in more than one form: at least two versions
+        are known from an old dealer leaflet, one built with conventional mechanical score reels, the other
+        reworked to score into the millions.[[cite:1]] A second name, "Joker Ball", appears beside it in
+        the same record, unresolved even there — whether a separate CEFF machine or merely a feature within
+        *Five Martians* itself.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-        quote: esistono almeno due versioni di questo flipper; una con le ruote dei punti, l'altra per
-          i flipper a milioni (vedi depliant)
-      '2':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-        quote: non e' chiaro se e' il nome di un secondo modello, o solo il nome di una caratteristica
-          di gioco del "Five Martians"
-- model.hippie:
-    description: '*Hippie* is [[manufacturer:dama-srl]]''s 1970 reworking of [[manufacturer:bally]]''s
-      1966 *[[model:capersville]]*, one of the [[location:italy/mi/milan]] firm''s [[technology-generation:electromechanical]]
-      pinball [[tag:conversion-kit]]s. The donor was an unlikely candidate for flower-power artwork: *Capersville*
-      was a Cold War [[theme:spy-adventure]] caper, designed by Ted Zale and illustrated by Jerry Kelley,
-      and it outsold every other Bally table of its decade.[[cite:1]] It was a landmark of the form as
-      well as a hit — the first game to offer three-ball multiball play[[cite:2]] — and an early showcase
-      for Bally''s zipper flippers, which could snap together to close the gap between them and keep the
-      ball alive.[[cite:3]] Onto that mechanism Dama grafted an entirely new subject, swapping espionage
-      for the [[theme:flower-power]] counterculture of its own moment.
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
+          quote:
+            esistono almeno due versioni di questo flipper; una con le ruote dei punti, l'altra per
+            i flipper a milioni (vedi depliant)
+        "2":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
+          quote:
+            non e' chiaro se e' il nome di un secondo modello, o solo il nome di una caratteristica
+            di gioco del "Five Martians"
+  - model.hippie:
+      description:
+        "*Hippie* is [[manufacturer:dama-srl]]'s 1970 reworking of [[manufacturer:bally]]'s
+        1966 *[[model:capersville]]*, one of the [[location:italy/mi/milan]] firm's [[technology-generation:electromechanical]]
+        pinball [[tag:conversion-kit]]s. The donor was an unlikely candidate for flower-power artwork: *Capersville*
+        was a Cold War [[theme:spy-adventure]] caper, designed by Ted Zale and illustrated by Jerry Kelley,
+        and it outsold every other Bally table of its decade.[[cite:1]] It was a landmark of the form as
+        well as a hit — the first game to offer three-ball multiball play[[cite:2]] — and an early showcase
+        for Bally's zipper flippers, which could snap together to close the gap between them and keep the
+        ball alive.[[cite:3]] Onto that mechanism Dama grafted an entirely new subject, swapping espionage
+        for the [[theme:flower-power]] counterculture of its own moment.
 
-      '
-    cites:
-      '1':
-        ref: https://seattlepinballmuseum.com/capersville
-        quote: Designed by Ted Zale, known as the "King of Pinball," and illustrated by Jerry Kelley,
-          this game captured the thrilling essence of mid-20th-century espionage. [...] Capersville was
-          a resounding success, becoming Bally's best-selling machine of the 1960s and maintaining that
-          position until the early 1970s.
-      '2':
-        ref: https://www.arcade-museum.com/Pinball/capersville
-        quote: The Capersville by Bally was the first pinball machine that allowed a 3-ball multiball
-          sequence.
-      '3':
-        ref: https://seattlepinballmuseum.com/capersville
-        quote: The machine's standout feature was its "zipper flippers," a groundbreaking innovation that
-          allowed the flippers to move closer together, preventing center drains and extending gameplay.
-- model.gold-beach:
-    description: '*Gold Beach* is a seaside-themed [[theme:beach]] [[technology-generation:electromechanical]]
-      pinball that [[manufacturer:dama-srl]] built in [[location:italy/mi/milan]] in 1970. Dama worked
-      as a kit manufacturer,[[cite:1]] taking finished American tables and reissuing them under Italian
-      names as [[tag:conversion-kit]]s: its *[[model:angels]]* reworked [[manufacturer:gottlieb]]''s 1966
-      *[[model:rancho-2]]*,[[cite:2]] and its *[[model:las-vegas-3]]* was built on Gottlieb''s 1965 *[[model:electra-pool]]*.[[cite:3]]
-      *Gold Beach* belongs to that same 1970 line of rebadged conversions.
+        "
+      cites:
+        "1":
+          ref: https://seattlepinballmuseum.com/capersville
+          quote:
+            Designed by Ted Zale, known as the "King of Pinball," and illustrated by Jerry Kelley,
+            this game captured the thrilling essence of mid-20th-century espionage. [...] Capersville was
+            a resounding success, becoming Bally's best-selling machine of the 1960s and maintaining that
+            position until the early 1970s.
+        "2":
+          ref: https://www.arcade-museum.com/Pinball/capersville
+          quote:
+            The Capersville by Bally was the first pinball machine that allowed a 3-ball multiball
+            sequence.
+        "3":
+          ref: https://seattlepinballmuseum.com/capersville
+          quote:
+            The machine's standout feature was its "zipper flippers," a groundbreaking innovation that
+            allowed the flippers to move closer together, preventing center drains and extending gameplay.
+  - model.gold-beach:
+      description:
+        "*Gold Beach* is a seaside-themed [[theme:beach]] [[technology-generation:electromechanical]]
+        pinball that [[manufacturer:dama-srl]] built in [[location:italy/mi/milan]] in 1970. Dama worked
+        as a kit manufacturer,[[cite:1]] taking finished American tables and reissuing them under Italian
+        names as [[tag:conversion-kit]]s: its *[[model:angels]]* reworked [[manufacturer:gottlieb]]'s 1966
+        *[[model:rancho-2]]*,[[cite:2]] and its *[[model:las-vegas-3]]* was built on Gottlieb's 1965 *[[model:electra-pool]]*.[[cite:3]]
+        *Gold Beach* belongs to that same 1970 line of rebadged conversions.
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/itmade.htm
-        quote: DAMA (kit manufacturer) (Milano, Italy)
-      '2':
-        ref: ipdb:4396
-        quote: Conversion kit for Gottlieb's 1966 'Rancho'.
-      '3':
-        ref: ipdb:4068
-        quote: A conversion kit for Gottlieb's 1965 'Electra-Pool'.
-- model.golf-dama-srl:
-    description: '*Golf* carried a [[theme:golf]] theme into [[manufacturer:dama-srl]]''s 1970 catalogue,
-      its backglass and playfield illustrated by the artist Cortez. Like the rest of the [[location:italy/mi/milan]]
-      firm''s output, it was an [[technology-generation:electromechanical]] pinball assembled as a [[tag:conversion-kit]]
-      on top of an existing American machine rather than designed from scratch.[[cite:1]] Dama''s rebuilds
-      drew on [[manufacturer:bally]] as freely as on [[manufacturer:gottlieb]] — the firm turned Bally''s
-      1966 *[[model:bazaar-2]]* into its *[[model:frogmen]]*[[cite:2]] and Bally''s 1967 *[[model:rocket-iii]]*
-      into *[[model:devils]]*.[[cite:3]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/itmade.htm
+          quote: DAMA (kit manufacturer) (Milano, Italy)
+        "2":
+          ref: ipdb:4396
+          quote: Conversion kit for Gottlieb's 1966 'Rancho'.
+        "3":
+          ref: ipdb:4068
+          quote: A conversion kit for Gottlieb's 1965 'Electra-Pool'.
+  - model.golf-dama-srl:
+      description:
+        "*Golf* carried a [[theme:golf]] theme into [[manufacturer:dama-srl]]'s 1970 catalogue,
+        its backglass and playfield illustrated by the artist Cortez. Like the rest of the [[location:italy/mi/milan]]
+        firm's output, it was an [[technology-generation:electromechanical]] pinball assembled as a [[tag:conversion-kit]]
+        on top of an existing American machine rather than designed from scratch.[[cite:1]] Dama's rebuilds
+        drew on [[manufacturer:bally]] as freely as on [[manufacturer:gottlieb]] — the firm turned Bally's
+        1966 *[[model:bazaar-2]]* into its *[[model:frogmen]]*[[cite:2]] and Bally's 1967 *[[model:rocket-iii]]*
+        into *[[model:devils]]*.[[cite:3]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/itmade.htm
-        quote: DAMA (kit manufacturer) (Milano, Italy)
-      '2':
-        ref: ipdb:4399
-        quote: Conversion kit for Bally's 1966 'Bazaar'.
-      '3':
-        ref: ipdb:4398
-        quote: Conversion kit for Bally's 1967 'Rocket III'.
-- model.mexico-70:
-    description: '*Mexico 70* takes its name and its [[theme:soccer]] subject from the 1970 World Cup,
-      which Mexico hosted that year — a tournament the country had won the right to stage over Argentina,
-      and one many still reckon the finest ever played.[[cite:1]] [[manufacturer:dama-srl]] released the
-      game that same year as one of its [[technology-generation:electromechanical]] pinball [[tag:conversion-kit]]s,
-      with artwork by Cortez. A small "Md" monogram appears on some of the [[location:italy/mi/milan]]
-      firm''s converted backglasses, a mark that one account ties to a predecessor business reorganized
-      into Dama.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/itmade.htm
+          quote: DAMA (kit manufacturer) (Milano, Italy)
+        "2":
+          ref: ipdb:4399
+          quote: Conversion kit for Bally's 1966 'Bazaar'.
+        "3":
+          ref: ipdb:4398
+          quote: Conversion kit for Bally's 1967 'Rocket III'.
+  - model.mexico-70:
+      description:
+        '*Mexico 70* takes its name and its [[theme:soccer]] subject from the 1970 World Cup,
+        which Mexico hosted that year — a tournament the country had won the right to stage over Argentina,
+        and one many still reckon the finest ever played.[[cite:1]] [[manufacturer:dama-srl]] released the
+        game that same year as one of its [[technology-generation:electromechanical]] pinball [[tag:conversion-kit]]s,
+        with artwork by Cortez. A small "Md" monogram appears on some of the [[location:italy/mi/milan]]
+        firm''s converted backglasses, a mark that one account ties to a predecessor business reorganized
+        into Dama.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.planetworldcup.com/CUPS/1970/wc70story.html
-        quote: The 1970 World Cup is regarded by many to be the best ever. Mexico ousted Argentina during
-          the FIFA congress in 1964 and won the right to host the ninth edition of the tournament.
-      '2':
-        ref: ipdb:4401
-        quote: The upper right corner of the backglass has an 'Md' logo which reportedly is a company
-          that later became Dama.
-- model.sandokan:
-    description: '*Sandokan* is a one-off [[technology-generation:electromechanical]] pinball that [[manufacturer:ditta-artigiana-ricambi]],
-      an artisan parts-and-repair firm at Sesto Fiorentino outside Florence, built by re-skinning a single-player
-      [[manufacturer:gottlieb]] table, *[[model:card-trix]]*, whose backglass had originally pictured
-      a college dorm room.[[cite:1]] The game borrows its name and its swashbuckling subject from the
-      television event of the year: the RAI miniseries *Sandokan*, six episodes broadcast in 1976 that
-      dramatised Emilio Salgari''s [[theme:adventure]] tales of the Malaysian [[theme:pirates]], turned
-      the unknown Kabir Bedi into a star, and drew an average of twenty-seven million viewers a night.[[cite:2]]
-      Only ten examples were ever planned — a run tiny even by the measure of Italy''s cottage pinball
-      trade.[[cite:3]]
+        '
+      cites:
+        "1":
+          ref: https://www.planetworldcup.com/CUPS/1970/wc70story.html
+          quote:
+            The 1970 World Cup is regarded by many to be the best ever. Mexico ousted Argentina during
+            the FIFA congress in 1964 and won the right to host the ninth edition of the tournament.
+        "2":
+          ref: ipdb:4401
+          quote:
+            The upper right corner of the backglass has an 'Md' logo which reportedly is a company
+            that later became Dama.
+  - model.sandokan:
+      description:
+        "*Sandokan* is a one-off [[technology-generation:electromechanical]] pinball that [[manufacturer:ditta-artigiana-ricambi]],
+        an artisan parts-and-repair firm at Sesto Fiorentino outside Florence, built by re-skinning a single-player
+        [[manufacturer:gottlieb]] table, *[[model:card-trix]]*, whose backglass had originally pictured
+        a college dorm room.[[cite:1]] The game borrows its name and its swashbuckling subject from the
+        television event of the year: the RAI miniseries *Sandokan*, six episodes broadcast in 1976 that
+        dramatised Emilio Salgari's [[theme:adventure]] tales of the Malaysian [[theme:pirates]], turned
+        the unknown Kabir Bedi into a star, and drew an average of twenty-seven million viewers a night.[[cite:2]]
+        Only ten examples were ever planned — a run tiny even by the measure of Italy's cottage pinball
+        trade.[[cite:3]]
 
-      '
-    cites:
-      '1':
-        ref: ipdb:446
-        quote: 'Manufacturer: D. Gottlieb & Company (1931-1977) [...] The backglass shows a college dorm
-          room with pennants on the wall and a study desk.'
-      '2':
-        ref: https://www.lanouvellevague.it/quel-fenomeno-di-sandokan-rai-storia-anniversario
-        quote: Era il 1976 quando Sandokan fece il suo debutto sul piccolo schermo italiano. Sei episodi,
-          una produzione ambiziosa girata fra India e Malesia, un protagonista allora sconosciuto — Kabir
-          Bedi — e una storia avventurosa tratta dai romanzi di Emilio Salgari. [...] 27 milioni di telespettatori
-          in media
-      '3':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi
-        quote: 'Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi)'
-- model.stunt-cars:
-    description: '*Stunt Cars* is a [[technology-generation:electromechanical]] game that put a [[theme:cars]]
-      motoring skin over the playing-card theme of the [[manufacturer:gottlieb]] machine it was built
-      on, *[[model:card-king]]*.[[cite:1]] That donor was itself a well-travelled design: Gottlieb had
-      worked it up from its own 1972 table *Pop-A-Card* and shipped it to Italy, so the Sesto Fiorentino
-      firm was reworking a game already localised once for the Italian market.[[cite:1]] It was one of
-      a handful the maker turned out, alongside a bowling-themed table and the *[[model:sandokan]]* conversion
-      drawn from another Gottlieb card game.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: ipdb:446
+          quote:
+            "Manufacturer: D. Gottlieb & Company (1931-1977) [...] The backglass shows a college dorm
+            room with pennants on the wall and a study desk."
+        "2":
+          ref: https://www.lanouvellevague.it/quel-fenomeno-di-sandokan-rai-storia-anniversario
+          quote:
+            Era il 1976 quando Sandokan fece il suo debutto sul piccolo schermo italiano. Sei episodi,
+            una produzione ambiziosa girata fra India e Malesia, un protagonista allora sconosciuto — Kabir
+            Bedi — e una storia avventurosa tratta dai romanzi di Emilio Salgari. [...] 27 milioni di telespettatori
+            in media
+        "3":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/artigiana-ricambi
+          quote: "Sandokan (modifica Card Trix) (tiratura prevista: 10 pezzi)"
+  - model.stunt-cars:
+      description:
+        "*Stunt Cars* is a [[technology-generation:electromechanical]] game that put a [[theme:cars]]
+        motoring skin over the playing-card theme of the [[manufacturer:gottlieb]] machine it was built
+        on, *[[model:card-king]]*.[[cite:1]] That donor was itself a well-travelled design: Gottlieb had
+        worked it up from its own 1972 table *Pop-A-Card* and shipped it to Italy, so the Sesto Fiorentino
+        firm was reworking a game already localised once for the Italian market.[[cite:1]] It was one of
+        a handful the maker turned out, alongside a bowling-themed table and the *[[model:sandokan]]* conversion
+        drawn from another Gottlieb card game.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: ipdb:445
-        quote: 'Manufacturer: D. Gottlieb & Company (1931-1977) [...] This is a version of Gottlieb''s
-          1972 ''Pop-A-Card'' made for export to Italy.'
-      '2':
-        ref: https://www.tilt.it/itmade.htm
-        quote: Sandokan (modifica Card Trix) 1976 (?) Bowlingirl1977 Stunt Cars (modifica Card King)
-- model.carnival-elettrocoin:
-    description: '*Carnival* is a single-player [[technology-generation:electromechanical]] pinball game
-      that [[manufacturer:elettrocoin]] of [[location:italy/fi/florence]] assembled as a re-titled conversion
-      of [[manufacturer:gottlieb]]''s 1966 *[[model:subway-2]]*, its new name giving the American table
-      a [[theme:carnival]] billing for Italian arcades. Elettrocoin was one of several trading names —
-      alongside Elettronolo and Elettrogiochi — that a single Florentine maker used to refit imported
-      American machines, rebuilding [[tag:conversion-kit]] versions of Bally, Williams and Gottlieb games
-      under fresh Italian titles.[[cite:1]] The donor, Subway, was a Gottlieb design whose backbox featured
-      a mechanical animation of sliding subway doors; together with its replay-model twin *[[model:cross-town-2]]*
-      it numbered among the final Gottlieb tables to retain a manual ball-lift.[[cite:2]] Under the Carnival
-      name the layout stayed as Gottlieb had drawn it: its colored top lanes lit the matching bumpers
-      beneath them, and the central standup target paid its bonus only if the two lights under it — one
-      red, one yellow — showed the same value.[[cite:3]]
+        "
+      cites:
+        "1":
+          ref: ipdb:445
+          quote:
+            "Manufacturer: D. Gottlieb & Company (1931-1977) [...] This is a version of Gottlieb's
+            1972 'Pop-A-Card' made for export to Italy."
+        "2":
+          ref: https://www.tilt.it/itmade.htm
+          quote: Sandokan (modifica Card Trix) 1976 (?) Bowlingirl1977 Stunt Cars (modifica Card King)
+  - model.carnival-elettrocoin:
+      description:
+        "*Carnival* is a single-player [[technology-generation:electromechanical]] pinball game
+        that [[manufacturer:elettrocoin]] of [[location:italy/fi/florence]] assembled as a re-titled conversion
+        of [[manufacturer:gottlieb]]'s 1966 *[[model:subway-2]]*, its new name giving the American table
+        a [[theme:carnival]] billing for Italian arcades. Elettrocoin was one of several trading names —
+        alongside Elettronolo and Elettrogiochi — that a single Florentine maker used to refit imported
+        American machines, rebuilding [[tag:conversion-kit]] versions of Bally, Williams and Gottlieb games
+        under fresh Italian titles.[[cite:1]] The donor, Subway, was a Gottlieb design whose backbox featured
+        a mechanical animation of sliding subway doors; together with its replay-model twin *[[model:cross-town-2]]*
+        it numbered among the final Gottlieb tables to retain a manual ball-lift.[[cite:2]] Under the Carnival
+        name the layout stayed as Gottlieb had drawn it: its colored top lanes lit the matching bumpers
+        beneath them, and the central standup target paid its bonus only if the two lights under it — one
+        red, one yellow — showed the same value.[[cite:3]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/elettronolo
-        quote: Elettronolo/Elettrocoin/Elettrogiochi (Firenze) [...] Derby (kit for Bally's Gold Rush)
-          [...] Mexico (kit for Bally's Rocket III)
-      '2':
-        ref: ipdb:2412
-        quote: Mechanical backbox animation (subway doors open). [...] Subway and its replay version,
-          Gottlieb's 1966 'Cross Town', were the last Gottlieb games to have the manual ball-lift.
-      '3':
-        ref: https://www.kineticist.com/games/pinball/subway-cross-town
-        quote: Color-coded top lanes light the corresponding colored bumper underneath when made. [...]
-          The center target is only worth 10 points, except when the red and yellow lights below it are
-          on matching values
-- model.jungle-life-emmepi:
-    description: '*Jungle Life* is [[manufacturer:emmepi]]''s unauthorized rebuild of [[manufacturer:gottlieb]]''s
-      1973 *[[model:jungle-life]]* — a [[tag:bootleg]] copy of the American game reconstructed from scratch
-      in the [[technology-generation:electromechanical]] era. Its [[theme:jungle]] theme came straight
-      from the donor, which Gottlieb had itself tailored to the Italian trade: *Jungle Life* was the single-player,
-      add-a-ball member of a three-machine family — its four-player replay sibling sold as *[[model:jungle-2]]*
-      and its two-player replay sibling as *[[model:wild-life]]* — and it was built specifically for export
-      to [[location:italy]].[[cite:1]] The three shared one playfield across different player counts,
-      and the export edition was the scarcest: 2,731 were built against 5,775 of the domestic four-player
-      *Jungle*, so the genuine American machine was thin on Italian floors and ripe for copying.[[cite:2]]
-      Emmepi was one of several Italian firms to reconstruct it outright — [[manufacturer:lori]] and [[manufacturer:zaccaria]]
-      issued their own versions as *[[model:jungle-life-lori]]* and *[[model:jungle-life-zaccaria]]*.
-      Emmepi''s own catalogue was narrow, pairing this jungle table with a copy of Gottlieb''s export
-      *[[model:card-king]]*, catalogued as *[[model:card-king-3]]*.[[cite:3]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/elettronolo
+          quote:
+            Elettronolo/Elettrocoin/Elettrogiochi (Firenze) [...] Derby (kit for Bally's Gold Rush)
+            [...] Mexico (kit for Bally's Rocket III)
+        "2":
+          ref: ipdb:2412
+          quote:
+            Mechanical backbox animation (subway doors open). [...] Subway and its replay version,
+            Gottlieb's 1966 'Cross Town', were the last Gottlieb games to have the manual ball-lift.
+        "3":
+          ref: https://www.kineticist.com/games/pinball/subway-cross-town
+          quote:
+            Color-coded top lanes light the corresponding colored bumper underneath when made. [...]
+            The center target is only worth 10 points, except when the red and yellow lights below it are
+            on matching values
+  - model.jungle-life-emmepi:
+      description:
+        "*Jungle Life* is [[manufacturer:emmepi]]'s unauthorized rebuild of [[manufacturer:gottlieb]]'s
+        1973 *[[model:jungle-life]]* — a [[tag:bootleg]] copy of the American game reconstructed from scratch
+        in the [[technology-generation:electromechanical]] era. Its [[theme:jungle]] theme came straight
+        from the donor, which Gottlieb had itself tailored to the Italian trade: *Jungle Life* was the single-player,
+        add-a-ball member of a three-machine family — its four-player replay sibling sold as *[[model:jungle-2]]*
+        and its two-player replay sibling as *[[model:wild-life]]* — and it was built specifically for export
+        to [[location:italy]].[[cite:1]] The three shared one playfield across different player counts,
+        and the export edition was the scarcest: 2,731 were built against 5,775 of the domestic four-player
+        *Jungle*, so the genuine American machine was thin on Italian floors and ripe for copying.[[cite:2]]
+        Emmepi was one of several Italian firms to reconstruct it outright — [[manufacturer:lori]] and [[manufacturer:zaccaria]]
+        issued their own versions as *[[model:jungle-life-lori]]* and *[[model:jungle-life-zaccaria]]*.
+        Emmepi's own catalogue was narrow, pairing this jungle table with a copy of Gottlieb's export
+        *[[model:card-king]]*, catalogued as *[[model:card-king-3]]*.[[cite:3]]
 
-      '
-    cites:
-      '1':
-        ref: ipdb:1337
-        quote: This add-a-ball game was made for export to Italy. The 2-player replay version is Gottlieb's
-          1972 'Wild Life' and the 4-player replay version is Gottlieb's 1972 'Jungle'.
-      '2':
-        ref: https://www.pinrepair.com/gtb/jungle.htm
-        quote: Same game, just different number of players (4 players versus 2 players versus 1 player).
-          [...] They made 5775 Gottlieb Jungle pinballs, and 3875 Gottlieb Wild Life pinballs, and 2731
-          Gottlieb Jungle Life pinball machines (for export to Italy).
-      '3':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/emmepi
-        quote: Card King (copy of same Gottlieb's game) Jungle Life (copy of same Gottlieb's game)
-- model.big-dryvers-em:
-    description: 'The [[technology-generation:electromechanical]] *Big Dryvers* is the relay-and-stepper,
-      four-player edition of a game Europlay released in two versions in 1974; a [[technology-generation:solid-state]]
-      sibling, *[[model:big-dryvers-ss]]*, carried the same title onto electronic scoring. It belonged
-      to Europlay''s opening line, in the maker''s first year of trading, when its debut machine was *[[model:sky-star]]*,
-      shown at the Fiera di Milano.[[cite:1]] The firm had only just emerged from its predecessor, the
-      [[manufacturer:rmg]] coin-op works.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: ipdb:1337
+          quote:
+            This add-a-ball game was made for export to Italy. The 2-player replay version is Gottlieb's
+            1972 'Wild Life' and the 4-player replay version is Gottlieb's 1972 'Jungle'.
+        "2":
+          ref: https://www.pinrepair.com/gtb/jungle.htm
+          quote:
+            Same game, just different number of players (4 players versus 2 players versus 1 player).
+            [...] They made 5775 Gottlieb Jungle pinballs, and 3875 Gottlieb Wild Life pinballs, and 2731
+            Gottlieb Jungle Life pinball machines (for export to Italy).
+        "3":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/emmepi
+          quote: Card King (copy of same Gottlieb's game) Jungle Life (copy of same Gottlieb's game)
+  - model.big-dryvers-em:
+      description:
+        "The [[technology-generation:electromechanical]] *Big Dryvers* is the relay-and-stepper,
+        four-player edition of a game Europlay released in two versions in 1974; a [[technology-generation:solid-state]]
+        sibling, *[[model:big-dryvers-ss]]*, carried the same title onto electronic scoring. It belonged
+        to Europlay's opening line, in the maker's first year of trading, when its debut machine was *[[model:sky-star]]*,
+        shown at the Fiera di Milano.[[cite:1]] The firm had only just emerged from its predecessor, the
+        [[manufacturer:rmg]] coin-op works.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/europlay
-        quote: 'Sky Star  – em – 1p (primo modello – presentato Fiera di Milano 73 o 74)(art: Mike)'
-      '2':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/rmg
-        quote: (1968-1974 -> Europlay)
-- model.big-dryvers-ss:
-    description: 'The [[technology-generation:solid-state]] *Big Dryvers* is the electronic edition of
-      Europlay''s four-player 1974 game, sharing its name with the [[technology-generation:electromechanical]]
-      *[[model:big-dryvers-em]]*. Fielding a solid-state table was an ambitious move for so young a company:
-      Europlay had taken shape only that year, as the successor to the coin-op maker [[manufacturer:rmg]]
-      (Renato Montanari Giochi),[[cite:1]] which had been in the trade since about 1970.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/europlay
+          quote: "Sky Star  – em – 1p (primo modello – presentato Fiera di Milano 73 o 74)(art: Mike)"
+        "2":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/rmg
+          quote: (1968-1974 -> Europlay)
+  - model.big-dryvers-ss:
+      description:
+        "The [[technology-generation:solid-state]] *Big Dryvers* is the electronic edition of
+        Europlay's four-player 1974 game, sharing its name with the [[technology-generation:electromechanical]]
+        *[[model:big-dryvers-em]]*. Fielding a solid-state table was an ambitious move for so young a company:
+        Europlay had taken shape only that year, as the successor to the coin-op maker [[manufacturer:rmg]]
+        (Renato Montanari Giochi),[[cite:1]] which had been in the trade since about 1970.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/rmg
-        quote: (1968-1974 -> Europlay)
-      '2':
-        ref: https://www.arcade-museum.com/company/renato-montanari-giochi-rmg
-        quote: Renato Montanari Giochi / RMG released 15 machines in our database under this trade name,
-          starting in 1970.
-- model.steeple:
-    description: '*Steeple* is a 1979 pinball table by [[manufacturer:ferna]]. It appeared at the close
-      of the [[technology-generation:electromechanical]] era, just as Italian makers were beginning to
-      adopt [[technology-generation:solid-state]] electronics. The game is documented in the Italian pinball
-      archive, which lists it under Ferna''s name.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/rmg
+          quote: (1968-1974 -> Europlay)
+        "2":
+          ref: https://www.arcade-museum.com/company/renato-montanari-giochi-rmg
+          quote:
+            Renato Montanari Giochi / RMG released 15 machines in our database under this trade name,
+            starting in 1970.
+  - model.steeple:
+      description:
+        "*Steeple* is a 1979 pinball table by [[manufacturer:ferna]]. It appeared at the close
+        of the [[technology-generation:electromechanical]] era, just as Italian makers were beginning to
+        adopt [[technology-generation:solid-state]] electronics. The game is documented in the Italian pinball
+        archive, which lists it under Ferna's name.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ferna
-        quote: Ferna srl [...] (???) [...] Steeple (?)
-- model.diablo:
-    description: '*Diablo* is a [[technology-generation:solid-state]] four-player pinball machine that
-      [[manufacturer:giuliano-lodola]], a small maker based in [[location:italy/ms/avenza]], built in
-      1980. The bulk of Lodola''s output rebuilt American [[manufacturer:williams]] designs without licence:
-      Williams'' *[[model:blackout]]* became *[[model:black-hole-2]]* (1980) and its *[[model:black-knight]]*
-      became *[[model:black-rider]]* (1981), each reconstructed from scratch under a new Italian name.[[cite:1]]
-      *Diablo* -- Italian for "the Devil" -- belongs to that same brief run of solid-state four-player
-      tables, but its [[theme:demonic]] name sets it apart from those siblings, which took their titles
-      straight from the Williams machines they reproduced.
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ferna
+          quote: Ferna srl [...] (???) [...] Steeple (?)
+  - model.diablo:
+      description:
+        '*Diablo* is a [[technology-generation:solid-state]] four-player pinball machine that
+        [[manufacturer:giuliano-lodola]], a small maker based in [[location:italy/ms/avenza]], built in
+        1980. The bulk of Lodola''s output rebuilt American [[manufacturer:williams]] designs without licence:
+        Williams'' *[[model:blackout]]* became *[[model:black-hole-2]]* (1980) and its *[[model:black-knight]]*
+        became *[[model:black-rider]]* (1981), each reconstructed from scratch under a new Italian name.[[cite:1]]
+        *Diablo* -- Italian for "the Devil" -- belongs to that same brief run of solid-state four-player
+        tables, but its [[theme:demonic]] name sets it apart from those siblings, which took their titles
+        straight from the Williams machines they reproduced.
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/gl
-        quote: Black Hole (Blackout) – ss – 4p [...] Black Rider (Black Knight) – ss – 4p
-- model.pin-football:
-    description: '*Pin football* is a 1976 pinball from [[manufacturer:italiana-biliardi]] built around
-      association football — the sport played across much of Europe as [[theme:soccer]]. The record credits
-      the game, like the firm itself, to the proprietor Sig. G. Onorato.[[cite:1]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/gl
+          quote: Black Hole (Blackout) – ss – 4p [...] Black Rider (Black Knight) – ss – 4p
+  - model.pin-football:
+      description:
+        "*Pin football* is a 1976 pinball from [[manufacturer:italiana-biliardi]] built around
+        association football — the sport played across much of Europe as [[theme:soccer]]. The record credits
+        the game, like the firm itself, to the proprietor Sig. G. Onorato.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi
-        quote: Italiana Biliardi (??-Sig. G.Onorato)
-- model.pokerrr:
-    description: '*POKERRR!!!* is an Italian [[tag:conversion-kit]] of the [[technology-generation:electromechanical]]
-      era — a new backglass, playfield art and name laid over an existing machine rather than a game built
-      from scratch. It reskins [[manufacturer:gottlieb]]''s single-player *[[model:harmony]]* (or its
-      identical twin *[[model:troubadour]]*) into a [[theme:poker]] game, the exclamatory title all but
-      dealing the hand.[[cite:1]] The donors were themselves Gottlieb export models — versions of the
-      firm''s 1967 *[[model:melody]]* dressed for the Italian market[[cite:2]] — so cabinets to rework
-      were plentiful in Italy.
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/italiana-biliardi
+          quote: Italiana Biliardi (??-Sig. G.Onorato)
+  - model.pokerrr:
+      description:
+        "*POKERRR!!!* is an Italian [[tag:conversion-kit]] of the [[technology-generation:electromechanical]]
+        era — a new backglass, playfield art and name laid over an existing machine rather than a game built
+        from scratch. It reskins [[manufacturer:gottlieb]]'s single-player *[[model:harmony]]* (or its
+        identical twin *[[model:troubadour]]*) into a [[theme:poker]] game, the exclamatory title all but
+        dealing the hand.[[cite:1]] The donors were themselves Gottlieb export models — versions of the
+        firm's 1967 *[[model:melody]]* dressed for the Italian market[[cite:2]] — so cabinets to rework
+        were plentiful in Italy.
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: Kit per Harmony/Troubadour
-      '2':
-        ref: ipdb:1127
-        quote: '''Harmony'' and Gottlieb''s 1967 ''Troubadour'' are versions of Gottlieb''s 1967 ''Melody''
-          made for export to Italy.'
-- model.jolly-roger-kit:
-    description: '*Jolly Roger* runs up the [[theme:pirates]] flag over the same pair of Gottlieb export
-      single-players that several Italian kits reworked, *[[model:harmony]]* and *[[model:troubadour]]*.[[cite:1]]
-      Turning one of these [[manufacturer:gottlieb]] cabinets into a wholly new pinball game extended
-      a habit already common in Italy, where operators routinely modified the machines — most simply by
-      adding a fake or, sometimes, a real extra scoring digit.[[cite:2]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: Kit per Harmony/Troubadour
+        "2":
+          ref: ipdb:1127
+          quote:
+            "'Harmony' and Gottlieb's 1967 'Troubadour' are versions of Gottlieb's 1967 'Melody'
+            made for export to Italy."
+  - model.jolly-roger-kit:
+      description:
+        "*Jolly Roger* runs up the [[theme:pirates]] flag over the same pair of Gottlieb export
+        single-players that several Italian kits reworked, *[[model:harmony]]* and *[[model:troubadour]]*.[[cite:1]]
+        Turning one of these [[manufacturer:gottlieb]] cabinets into a wholly new pinball game extended
+        a habit already common in Italy, where operators routinely modified the machines — most simply by
+        adding a fake or, sometimes, a real extra scoring digit.[[cite:2]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: kit for the Gottlieb's "Harmony"/"Troubadour"
-      '2':
-        ref: ipdb:2666
-        quote: It was not uncommon for local operators to modify games for 5-digit scoring. Most often,
-          the new digit was a fake "0" but in some cases they added a real counter.
-- model.pool-kit:
-    description: '*POOL* is less a conversion kit than a rebadge: a fresh backglass under a new name fitted
-      to [[manufacturer:williams]]'' 1968 [[theme:billiards]] game *[[model:cue-t]]*, keeping the original
-      machine intact underneath.[[cite:1]] Williams had built *Cue-T* overwhelmingly for export — some
-      2,479 of roughly 2,800 units went overseas[[cite:2]] — leaving the cabinets common in Europe; tilt.it
-      speculates the renaming may have been a way to slip the *Cue-T* name past a local list of prohibited
-      games.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: kit for the Gottlieb's "Harmony"/"Troubadour"
+        "2":
+          ref: ipdb:2666
+          quote:
+            It was not uncommon for local operators to modify games for 5-digit scoring. Most often,
+            the new digit was a fake "0" but in some cases they added a real counter.
+  - model.pool-kit:
+      description:
+        "*POOL* is less a conversion kit than a rebadge: a fresh backglass under a new name fitted
+        to [[manufacturer:williams]]' 1968 [[theme:billiards]] game *[[model:cue-t]]*, keeping the original
+        machine intact underneath.[[cite:1]] Williams had built *Cue-T* overwhelmingly for export — some
+        2,479 of roughly 2,800 units went overseas[[cite:2]] — leaving the cabinets common in Europe; tilt.it
+        speculates the renaming may have been a way to slip the *Cue-T* name past a local list of prohibited
+        games.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: Piu' che un kit, parrebbe un vetro rifatto con nome differente per un CUE-T Williams.[...]Forse
-          costruito per zone in cui il CUE-T era finito in qualche lista di giochi proibiti?
-      '2':
-        ref: ipdb:611
-        quote: 'Quantity produced for export: 2479[...]Total quantity produced: 2802'
-- model.aquarium:
-    description: '*Aquarium* is an Italian conversion kit whose [[theme:fish]]-tank name sits over a machine
-      that the archive tilt.it reads as loosely modelled on [[manufacturer:gottlieb]]''s 1970 *[[model:aquarius]]*,
-      an astrology-themed single-player.[[cite:2]] The link is hedged rather than certain: the kit departs
-      from its apparent source in scoring and in the size of its score windows, enough that the archive
-      frames it only as inspired by the Gottlieb game.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote:
+            Piu' che un kit, parrebbe un vetro rifatto con nome differente per un CUE-T Williams.[...]Forse
+            costruito per zone in cui il CUE-T era finito in qualche lista di giochi proibiti?
+        "2":
+          ref: ipdb:611
+          quote: "Quantity produced for export: 2479[...]Total quantity produced: 2802"
+  - model.aquarium:
+      description:
+        "*Aquarium* is an Italian conversion kit whose [[theme:fish]]-tank name sits over a machine
+        that the archive tilt.it reads as loosely modelled on [[manufacturer:gottlieb]]'s 1970 *[[model:aquarius]]*,
+        an astrology-themed single-player.[[cite:2]] The link is hedged rather than certain: the kit departs
+        from its apparent source in scoring and in the size of its score windows, enough that the archive
+        frames it only as inspired by the Gottlieb game.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: looks like an italian kit inspired from the Gottlieb's "Aquarius" – check the differencies
-          (higher scoring, no credit window[...])
-      '2':
-        ref: ipdb:79
-        quote: 'Theme: Astrology'
-- model.card-trix-kit:
-    description: '*Card Trix* copies [[manufacturer:gottlieb]]''s 1970 [[theme:playing-cards]] game of
-      the same name, whose backglass depicts a college dorm room hung with pennants above a study desk.[[cite:2]]
-      It is one of two Italian reworkings of that *[[model:card-trix]]* design, and tilt.it is careful
-      to distinguish this kit from the version produced by the maker RMG.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote:
+            looks like an italian kit inspired from the Gottlieb's "Aquarius" – check the differencies
+            (higher scoring, no credit window[...])
+        "2":
+          ref: ipdb:79
+          quote: "Theme: Astrology"
+  - model.card-trix-kit:
+      description:
+        "*Card Trix* copies [[manufacturer:gottlieb]]'s 1970 [[theme:playing-cards]] game of
+        the same name, whose backglass depicts a college dorm room hung with pennants above a study desk.[[cite:2]]
+        It is one of two Italian reworkings of that *[[model:card-trix]]* design, and tilt.it is careful
+        to distinguish this kit from the version produced by the maker RMG.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: this is not the RMG version, there are some little differences
-      '2':
-        ref: ipdb:446
-        quote: The backglass shows a college dorm room with pennants on the wall and a study desk.
-- model.happening:
-    description: '*Happening* is an Italian conversion kit dated to 1970, distinguished as the debut of
-      the artist known only as "Mike" — identified in the catalogue as [[person:michele-mike-martinelli]]
-      — who signed its playfield and went on to decorate other Italian machines and kits of the era.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: this is not the RMG version, there are some little differences
+        "2":
+          ref: ipdb:446
+          quote: The backglass shows a college dorm room with pennants on the wall and a study desk.
+  - model.happening:
+      description:
+        '*Happening* is an Italian conversion kit dated to 1970, distinguished as the debut of
+        the artist known only as "Mike" — identified in the catalogue as [[person:michele-mike-martinelli]]
+        — who signed its playfield and went on to decorate other Italian machines and kits of the era.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: 1970 – first work by Mike
-- model.full-kit:
-    description: '*Full* shares the hand of the artist "Mike" — [[person:michele-mike-martinelli]] — with
-      *[[model:happening]]*, and tilt.it suspects the same producer was behind both kits.[[cite:1]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: 1970 – first work by Mike
+  - model.full-kit:
+      description:
+        '*Full* shares the hand of the artist "Mike" — [[person:michele-mike-martinelli]] — with
+        *[[model:happening]]*, and tilt.it suspects the same producer was behind both kits.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: grafica di Mike – forse lo stesso produttore del modello "Happening"
-- model.fifteen-goals:
-    description: '*Fifteen Goals* is a [[theme:soccer]]-themed Italian conversion kit — though tilt.it
-      questions even that nationality: its English name would have been an awkward mouthful for Italian
-      operators, leading the archive to wonder whether the kit is Italian at all.[[cite:1]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: grafica di Mike – forse lo stesso produttore del modello "Happening"
+  - model.fifteen-goals:
+      description:
+        "*Fifteen Goals* is a [[theme:soccer]]-themed Italian conversion kit — though tilt.it
+        questions even that nationality: its English name would have been an awkward mouthful for Italian
+        operators, leading the archive to wonder whether the kit is Italian at all.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: strange name for an italian game, too hard to remember for italian operators not speaking
-          english – maybe, it's not an italian kit?
-- model.dig-a-star-kit:
-    description: '*Dig a Star* is an Italian conversion kit whose origin tilt.it can only guess at, floating
-      the firm Dama and the artist Cortez as possible hands behind it.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote:
+            strange name for an italian game, too hard to remember for italian operators not speaking
+            english – maybe, it's not an italian kit?
+  - model.dig-a-star-kit:
+      description:
+        "*Dig a Star* is an Italian conversion kit whose origin tilt.it can only guess at, floating
+        the firm Dama and the artist Cortez as possible hands behind it.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: forse DAMA? forse grafica di Cortez?
-- model.hit-and-run-kit:
-    description: '*Hit and Run* is one of the Italian conversion kits that the pinball archive tilt.it
-      records by name among the era''s reworked machines.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: forse DAMA? forse grafica di Cortez?
+  - model.hit-and-run-kit:
+      description:
+        "*Hit and Run* is one of the Italian conversion kits that the pinball archive tilt.it
+        records by name among the era's reworked machines.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: Hit and Run
-- model.baseball-kit:
-    description: '*Baseball* is an Italian conversion kit that dressed an earlier machine in a [[theme:baseball]]
-      theme, one of the reworked tables tilt.it catalogues from the period.[[cite:1]]
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: Hit and Run
+  - model.baseball-kit:
+      description:
+        "*Baseball* is an Italian conversion kit that dressed an earlier machine in a [[theme:baseball]]
+        theme, one of the reworked tables tilt.it catalogues from the period.[[cite:1]]
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
-        quote: Baseball
-- model.jungle-life-lori:
-    description: '*Jungle Life* is [[manufacturer:lori]]''s unlicensed, built-from-scratch copy of [[manufacturer:gottlieb]]''s
-      *[[model:jungle-life]]*, and one of at least three Italian [[tag:bootleg]] versions of that single
-      American design — [[manufacturer:emmepi]] and [[manufacturer:zaccaria]] rebuilt it too. Gottlieb''s
-      original was itself an [[reward-type:add-a-ball]] game turned out expressly for export to Italy:
-      the one-player entry in a [[theme:jungle]]-themed trio whose two- and four-player relatives were
-      sold as *[[model:wild-life]]* and *[[model:jungle-2]]*.[[cite:1]] The three machines shared a playfield
-      and differed mainly in player count, which Gottlieb priced in tiers so that operators with less
-      to spend could buy the smaller versions.[[cite:2]] From [[location:italy/bo/bologna]], LORI reproduced
-      this much-copied [[technology-generation:electromechanical]] cabinet for the domestic market.
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/ipdb-flipper-kit-italiani-non-identificati
+          quote: Baseball
+  - model.jungle-life-lori:
+      description:
+        "*Jungle Life* is [[manufacturer:lori]]'s unlicensed, built-from-scratch copy of [[manufacturer:gottlieb]]'s
+        *[[model:jungle-life]]*, and one of at least three Italian [[tag:bootleg]] versions of that single
+        American design — [[manufacturer:emmepi]] and [[manufacturer:zaccaria]] rebuilt it too. Gottlieb's
+        original was itself an [[reward-type:add-a-ball]] game turned out expressly for export to Italy:
+        the one-player entry in a [[theme:jungle]]-themed trio whose two- and four-player relatives were
+        sold as *[[model:wild-life]]* and *[[model:jungle-2]]*.[[cite:1]] The three machines shared a playfield
+        and differed mainly in player count, which Gottlieb priced in tiers so that operators with less
+        to spend could buy the smaller versions.[[cite:2]] From [[location:italy/bo/bologna]], LORI reproduced
+        this much-copied [[technology-generation:electromechanical]] cabinet for the domestic market.
 
-      '
-    cites:
-      '1':
-        ref: ipdb:1337
-        quote: This add-a-ball game was made for export to Italy. The 2-player replay version is Gottlieb's
-          1972 'Wild Life' and the 4-player replay version is Gottlieb's 1972 'Jungle'.
-      '2':
-        ref: https://www.pinrepair.com/gtb/jungle.htm
-        quote: The 2 player version (Wild Life) had a lower price than the 4 player (Jungle), and was
-          marketed to game operators with less money to spend.
-- model.space-orbit-lori:
-    description: '*Space Orbit* is [[manufacturer:lori]]''s unlicensed, from-scratch copy of [[manufacturer:gottlieb]]''s
-      single-player *[[model:space-orbit]]* — an [[technology-generation:electromechanical]] [[tag:bootleg]]
-      rebuilt in [[location:italy/bo/bologna]]. The Gottlieb source was itself an [[reward-type:add-a-ball]]
-      game, one built for export to Italy in 1972,[[cite:1]] and that reward type was the whole point:
-      a 1965 Italian law had outlawed pinball as gambling, so a machine sold there could reward the player
-      only with further balls, never a free [[reward-type:replay]] — which is exactly what add-a-ball
-      means.[[cite:3]] The machine was already a patchwork of Gottlieb''s own parts: its [[theme:outer-space]]
-      backglass borrowed artwork from Gottlieb''s 1972 *[[model:outer-space]]*, while its playfield followed
-      the layout of the earlier *[[model:mini-cycle]]* and *[[model:polo]]*.[[cite:2]] The design drew
-      several Italian copyists — [[manufacturer:rmg]] rebuilt it as *[[model:space-orbit-2]]* (1972) and
-      [[manufacturer:mondialmatic]] as *[[model:big-dryvers]]* (1979) — with LORI''s copy among them.
+        "
+      cites:
+        "1":
+          ref: ipdb:1337
+          quote:
+            This add-a-ball game was made for export to Italy. The 2-player replay version is Gottlieb's
+            1972 'Wild Life' and the 4-player replay version is Gottlieb's 1972 'Jungle'.
+        "2":
+          ref: https://www.pinrepair.com/gtb/jungle.htm
+          quote:
+            The 2 player version (Wild Life) had a lower price than the 4 player (Jungle), and was
+            marketed to game operators with less money to spend.
+  - model.space-orbit-lori:
+      description:
+        "*Space Orbit* is [[manufacturer:lori]]'s unlicensed, from-scratch copy of [[manufacturer:gottlieb]]'s
+        single-player *[[model:space-orbit]]* — an [[technology-generation:electromechanical]] [[tag:bootleg]]
+        rebuilt in [[location:italy/bo/bologna]]. The Gottlieb source was itself an [[reward-type:add-a-ball]]
+        game, one built for export to Italy in 1972,[[cite:1]] and that reward type was the whole point:
+        a 1965 Italian law had outlawed pinball as gambling, so a machine sold there could reward the player
+        only with further balls, never a free [[reward-type:replay]] — which is exactly what add-a-ball
+        means.[[cite:3]] The machine was already a patchwork of Gottlieb's own parts: its [[theme:outer-space]]
+        backglass borrowed artwork from Gottlieb's 1972 *[[model:outer-space]]*, while its playfield followed
+        the layout of the earlier *[[model:mini-cycle]]* and *[[model:polo]]*.[[cite:2]] The design drew
+        several Italian copyists — [[manufacturer:rmg]] rebuilt it as *[[model:space-orbit-2]]* (1972) and
+        [[manufacturer:mondialmatic]] as *[[model:big-dryvers]]* (1979) — with LORI's copy among them.
 
-      '
-    cites:
-      '1':
-        ref: https://www.pinrepair.com/gtb/index.htm
-        quote: Space Orbit, 4/72, 1 player AAB for Italy
-      '2':
-        ref: ipdb:2255
-        quote: This game was made for export to Italy. Compare the backglass artwork to Gottlieb's 1972
-          'Outer Space'. The playfield layout is similar to Gottlieb's 1970 'Mini Cycle' and Gottlieb's
-          1970 'Polo'
-      '3':
-        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
-        quote: In 1965 an Italian law declared pinball outlaw because of gambling. A few artisans in Bologna
-          found a workaround and started to sell new machines that allowed them to win only other balls
-          and not matches.
-- model.count-down-lori:
-    description: '*Count-Down* is an [[technology-generation:electromechanical]] pinball from [[manufacturer:lori]],
-      the [[location:italy/bo/bologna]] firm whose name abbreviates that of its founder, [[person:lorenzo-rimondini]].[[cite:1]]
-      It stands alongside the firm''s [[tag:bootleg]] rebuilds of [[manufacturer:gottlieb]] machines —
-      *[[model:jungle-life-lori]]* and *[[model:space-orbit-lori]]* — among the handful of tables LORI
-      assembled for the Italian market.
+        "
+      cites:
+        "1":
+          ref: https://www.pinrepair.com/gtb/index.htm
+          quote: Space Orbit, 4/72, 1 player AAB for Italy
+        "2":
+          ref: ipdb:2255
+          quote:
+            This game was made for export to Italy. Compare the backglass artwork to Gottlieb's 1972
+            'Outer Space'. The playfield layout is similar to Gottlieb's 1970 'Mini Cycle' and Gottlieb's
+            1970 'Polo'
+        "3":
+          ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+          quote:
+            In 1965 an Italian law declared pinball outlaw because of gambling. A few artisans in Bologna
+            found a workaround and started to sell new machines that allowed them to win only other balls
+            and not matches.
+  - model.count-down-lori:
+      description:
+        "*Count-Down* is an [[technology-generation:electromechanical]] pinball from [[manufacturer:lori]],
+        the [[location:italy/bo/bologna]] firm whose name abbreviates that of its founder, [[person:lorenzo-rimondini]].[[cite:1]]
+        It stands alongside the firm's [[tag:bootleg]] rebuilds of [[manufacturer:gottlieb]] machines —
+        *[[model:jungle-life-lori]]* and *[[model:space-orbit-lori]]* — among the handful of tables LORI
+        assembled for the Italian market.
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/lori
-        quote: Sig. Lorenzo Rimondini
-- model.ko-lori:
-    description: '*KO* is one of the small run of [[technology-generation:electromechanical]] pinballs
-      [[manufacturer:lori]] built around [[location:italy/bo/bologna]]. The firm came to pinball from
-      silk-screen printing — it traded as "Serigrafia Lori," a *serigrafia*, or screen-printing works,
-      before it moved into assembling and rebadging machines.[[cite:1]] Its name is boxing shorthand for
-      a knockout, marking it as a [[theme:boxing]] table.
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/lori
+          quote: Sig. Lorenzo Rimondini
+  - model.ko-lori:
+      description:
+        '*KO* is one of the small run of [[technology-generation:electromechanical]] pinballs
+        [[manufacturer:lori]] built around [[location:italy/bo/bologna]]. The firm came to pinball from
+        silk-screen printing — it traded as "Serigrafia Lori," a *serigrafia*, or screen-printing works,
+        before it moved into assembling and rebadging machines.[[cite:1]] Its name is boxing shorthand for
+        a knockout, marking it as a [[theme:boxing]] table.
 
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/lori
-        quote: Serigrafia Lori
-- model.gorgar-mambelli:
-    description: '*Gorgar* is a single-player [[technology-generation:electromechanical]] pinball machine
-      assembled by [[manufacturer:mambelli]] — the [[location:italy/fc/cesena]] firm of [[corporate-entity:l-v-mambelli]]
-      — not as an original design but as a [[tag:conversion-kit]], rebuilding [[manufacturer:gottlieb]]''s
-      1973 *[[model:jungle-life]]* under borrowed livery. The name it borrowed carried real weight: [[manufacturer:williams]]''
-      1979 *[[model:gorgar]]* had broken ground as the earliest pinball machine to speak aloud, its playfield
-      pulsing with a heartbeat that quickened as a ball stayed in play.[[cite:1]] That original was a
-      four-player [[technology-generation:solid-state]] game with a vocabulary of only seven words;[[cite:2]]
-      Mambelli''s namesake is its plain inverse — a mute single-player electromechanical cabinet dressed
-      in the [[theme:fantasy]] monster artwork of a celebrated later hit.
-
-
-      Reclothing an older Gottlieb chassis in the artwork of a newer American machine was the Cesena firm''s
-      habit rather than a single stunt. It reworked a Gottlieb *[[model:tiger]]* into a Mambelli *[[model:buck-rogers]]*
-      finished in backglass and playfield art taken from Gottlieb''s own solid-state 1980 game of that
-      name,[[cite:3]] and turned a Gottlieb *[[model:space-orbit]]* into a *[[model:kiss-2]]*[[cite:4]]
-      — each a one-player conversion dressed up as a flashier, later machine.
-
-      '
-    cites:
-      '1':
-        ref: https://www.arcade-museum.com/Pinball/gorgar
-        quote: This game was the very first talking pinball. As you play, the sound effect of a heart
-          beating is played in the background and the longer you keep the ball in play the faster the
-          heart beat gets.
-      '2':
-        ref: ipdb:1062
-        quote: 'Type: Solid State Electronic (SS) [...] Players: 4 [...] It had a vocabulary of seven
-          words'
-      '3':
-        ref: ipdb:4999
-        quote: This is a conversion kit for Gottlieb's 1975 'Tiger'. The backglass and playfield art are
-          from the 4-player Solid State Gottlieb's 1980 'Buck Rogers'
-      '4':
-        ref: ipdb:5002
-        quote: A source indicates that this is a conversion of Gottlieb's 1972 'Space Orbit'.
-- model.joker-manilamatic:
-    description: '*Joker* is [[manufacturer:manilamatic]]''s unlicensed copy of [[manufacturer:gottlieb]]''s
-      1987 *[[model:monte-carlo-gottlieb]]*, rebuilt from scratch rather than imported. The [[location:italy/rm/rome]]
-      firm of [[person:antonio-manili]], trading as [[corporate-entity:mm-computer-games]], spent the
-      later 1980s reproducing [[technology-generation:solid-state]] Gottlieb tables for the Italian market.[[cite:1]]
-      Like the Monte Carlo game it copies, *Joker* is a [[theme:gambling]] table set on a [[theme:casino]]
-      floor and built around the [[theme:playing-cards]] deck — Gottlieb''s original laid that floor out
-      in banks of [[gameplay-feature:drop-targets]] and a [[gameplay-feature:multiball]] mode,[[cite:2]]
-      which the Rome shop reissued under the name of the deck''s wild card.
-
-      '
-    cites:
-      '1':
-        ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
-        quote: ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
-          starting in 1986.
-      '2':
-        ref: ipdb:1622
-        quote: 'Theme: Gambling [...] 3-bank drop targets (2), 2-bank drop targets (2) [...] Multiball'
-- model.pool-rabbit:
-    description: '*Pool Rabbit* survives chiefly through a single photograph of its backglass — a [[theme:cartoon-characters]]
-      design built around a rabbit modelled on Roger Rabbit[[cite:1]] — carrying the [[corporate-entity:mm-computer-games]]
-      badge that the [[location:italy/rm/rome]] maker [[manufacturer:manilamatic]] used for its [[technology-generation:solid-state]]
-      pinball. Collectors who have studied that picture read the playfield as a mirror image of [[manufacturer:bally]]''s
-      1977 *[[model:eight-ball]]*, with a fluorescent scoreline reminiscent of later [[manufacturer:gottlieb]]
-      boards.[[cite:3]] The firm issued its machines under the [[corporate-entity:mm-computer-games]]
-      name across those same mid-1980s years.[[cite:2]]
-
-      '
-    cites:
-      '1':
-        ref: https://www.vpforums.org/index.php?showtopic=46118
-        quote: a Roger Rabbit inspired pinball backglass
-      '2':
-        ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
-        quote: ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
-          starting in 1986.
-      '3':
-        ref: https://www.vpforums.org/index.php?showtopic=46118
-        quote: The game is called "Pool Rabbit" by "MM Computer Games." Other forum members chimed in
-          saying it was made by an Italian company called ManilaMatic in 1985, and the playfield is possibly
-          a flipped "Eight Ball" layout. The fluorescent display smacks a bit of later Gottlieb boards.
-          IPDB has precious little information on the game, and no pictures.
-- model.satellite-tv:
-    description: '*Satellite TV* is a reissue of [[manufacturer:model-racing]]''s *[[model:ufo]]*, the
-      game that gave the [[location:italy/an/montemarciano]] firm the distinction of producing the first
-      original coin-op video game designed in Italy.[[cite:1]] UFO defied the usual categories: Model
-      Racing sold it as a video pinball, mounting a screen inside a pinball cabinet in place of the playfield,[[cite:2]]
-      and its action sat somewhere between pinball and Breakout.[[cite:3]] UFO debuted on 11 January 1975
-      at the ATEI trade fair in London, where Model Racing struck a deal for [[manufacturer:chicago-coin]]
-      to take the game into the American market.[[cite:4]] Chicago Coin''s licensed edition reached United
-      States arcades that same year as *[[model:super-flipper]]*.[[cite:5]] *Satellite TV* followed as
-      a near-identical re-run of UFO, its playfield all but indistinguishable from the original — quite
-      possibly the same game under a second name.[[cite:6]]
-
-      '
-    cites:
-      '1':
-        ref: https://www.tilt.it/deb/modelracing-en.html
-        quote: This is the first original game made in Italy
-      '2':
-        ref: https://www.arcade-museum.com/Videogame/ufo--model
-        quote: The machine is a pinball cabinet with a vidoe screen for the playfield.
-      '3':
-        ref: https://www.tilt.it/deb/modelracing-en.html
-        quote: It's a sort of a medley between pinball and Breakout.
-      '4':
-        ref: https://www.tilt.it/deb/modelracing-en.html
-        quote: presented in January, 11 1975 at ATEI in London. During this exibition, MR leaders reached
-          an agreement with Chicago Coin to distribute the game in the USA.
-      '5':
-        ref: https://www.arcade-history.com/?id=4398&n=super-flipper&page=detail
-        quote: Super Flipper © 1975 Chicago Coin. [...] Licensed version of Model Racing's
-      '6':
-        ref: https://www.tilt.it/deb/modelracing-en.html
-        quote: A later version of Ufo. [...] the playing field is almost identical. [...] Maybe it's just
-          the same game with two names.
-- model.old-time:
-    description: '*Old Time* is one half of [[manufacturer:pasini]]''s Western-themed "Old" pair, alongside
-      its better-known companion *[[model:old-gold]]* — both single-player [[technology-generation:electromechanical]]
-      tables built in [[location:italy/bo/bologna]] and working the same [[theme:western]] register.[[cite:1]]
-      *Old Gold* reached players in 1970,[[cite:2]] which places the pair in Pasini''s short early-1970s
-      run. The firm was one of the small makers clustered around Bologna, a city that for a stretch of
-      the mid-century stood among the leading centres of world pinball manufacture.[[cite:3]]
-
-      '
-    cites:
-      '1':
-        ref: ipdb:5948
-        quote: 'Theme: Western'
-      '2':
-        ref: https://www.arcade-museum.com/Pinball/old-gold
-        quote: Old Gold was produced by Pasini in 1970.
-      '3':
-        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
-        quote: There was a time when Bologna was one of the world's capitals of pinball.
-- model.count-down-pasini:
-    description: '*Count Down* is a single-player [[technology-generation:electromechanical]] table by
-      [[manufacturer:pasini]] of [[location:italy/bo/bologna]]. The name was a common one in the Italian
-      trade: Novamatic''s *[[model:count-down-2]]* (1970) and [[manufacturer:lori]]''s *[[model:count-down-lori]]*
-      were separate machines from other makers rather than versions of Pasini''s game. Pasini''s own output
-      sits in the early 1970s, anchored by its dated sibling *[[model:old-gold]]* of 1970.[[cite:1]] The
-      firm belonged to the wave of Bologna makers that emerged after a 1965 Italian law banned pinball
-      as a form of gambling,[[cite:2]] a shop trade that stayed legal by building tables paying out only
-      in [[reward-type:replay]] free games instead of cash.[[cite:3]]
-
-      '
-    cites:
-      '1':
-        ref: https://www.arcade-museum.com/Pinball/old-gold
-        quote: Old Gold was produced by Pasini in 1970.
-      '2':
-        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
-        quote: In 1965 an Italian law declared pinball outlaw because of gambling.
-      '3':
-        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
-        quote: A few artisans in Bologna found a workaround and started to sell new machines that allowed
-          them to win only other balls and not matches.
-- model.bonnie-clide:
-    description: '*Bonnie & Clide* — the spelling is Pasini''s own — is a 1970 single-player [[technology-generation:electromechanical]]
-      table named for Bonnie and Clyde, the Depression-era American outlaws. It came out of the same [[location:italy/bo/bologna]]
-      shop as Pasini''s Western *[[model:old-gold]]*, whose surviving backglass still carries the Pasini
-      name and is signed "Lore 70."[[cite:1]] That glass is held by Federico Croci, the Bologna collector
-      who went on to found the city''s Spazio Tilt pinball museum,[[cite:2]] a line of preservation that
-      keeps these early Bologna machines in view.
-
-      '
-    cites:
-      '1':
-        ref: ipdb:5948
-        quote: Federico Croci, a collector in Italy, has a backglass for this game indicating the Pasini
-          name in the upper right corner and the artist signature "Lore 70" in the lower right corner.
-      '2':
-        ref: https://www.tastebologna.net/blog/pinball-museum-bologna
-        quote: This place is in Bologna, where Federico Croci created a Pinball Museum called Spazio Tilt.
-- model.san-marco:
-    description: '*San Marco* is the [[technology-generation:electromechanical]] table that [[manufacturer:riflip]]
-      — in full, RIFLIP – Organizzazione Costa of [[location:italy/to/turin]] — brought out in 1968, near
-      the close of the pure electromechanical age. It is a [[reward-type:novelty]] machine, with no reward
-      mechanism of any kind: when it appeared, Italian law barred pinball tables from awarding any prize,
-      whether a [[reward-type:cash-payout]] or a free [[reward-type:replay]].[[cite:1]] Most Italian tables
-      of the moment were unlicensed rebuilds of American [[manufacturer:gottlieb]], [[manufacturer:williams]]
-      and [[manufacturer:bally]] games. *San Marco* was the rarer thing: it carries no American donor
-      in the catalogue, an original Italian design rather than a copy.
-
-      '
-    cites:
-      '1':
-        ref: https://www.sapar.it/2021/07/08/pillole-di-amusement-il-flipper-la-storia-del-gioco-di-abilita
-        quote: il flipper fu oggetto di regolamentazioni e limitazioni giuridiche volte a proibirne ogni
-          tipo di vincita, inclusa la ripetizione della partita.
-- model.card-trix-rmg:
-    description: '*Card Trix* is [[manufacturer:rmg]]''s unlicensed reworking of [[manufacturer:gottlieb]]''s
-      1970 *[[model:card-trix]]*, a [[theme:cards]]-themed single-player [[technology-generation:electromechanical]]
-      table rebuilt from scratch for the Italian trade. The Gottlieb original was a [[theme:college]]
-      game, its backglass staged in a student''s dorm hung with pennants, and it shipped in a separate
-      [[reward-type:replay]] edition sold under the name *[[model:flip-a-card]]*.[[cite:1]]
-
-      '
-    cites:
-      '1':
-        ref: ipdb:446
-        quote: The replay version of this game is Gottlieb's 1970 'Flip a Card'. [...] The backglass shows
-          a college dorm room with pennants on the wall and a study desk.
-- model.the-best-card-king:
-    description: '*The Best Card King* is [[manufacturer:rmg]]''s take on [[manufacturer:gottlieb]]''s
-      1971 *[[model:card-king]]* — itself an export edition of Gottlieb''s *[[model:pop-a-card]]* for
-      the Italian market — a [[theme:cards]]-themed single-player table built on banks of [[gameplay-feature:drop-targets]]
-      that took 100 lire a play.[[cite:1]] On the copies R.M.G. sold under its own name, the firm''s mark
-      is printed on the lower playfield.[[cite:2]] The game also went out under a "The Best" badge — a
-      label with a curious origin in the Italian trade, where print shops that supplied backglasses to
-      game makers began selling them straight to arcade operators, lettering "The Best" where the manufacturer''s
-      name would otherwise sit.[[cite:4]] Under that badge it belonged to R.M.G.''s Skill Game line, alongside
-      *[[model:the-best-wizard]]*, a rebuild of Gottlieb''s *[[model:wizard]]*.[[cite:3]]
-
-      '
-    cites:
-      '1':
-        ref: ipdb:445
-        quote: 'Players: 1 [...] 100 lire for 1 play, 2 x 100 lire for 2 plays. Flippers (2), Pop bumpers
-          (2), 5-bank drop targets (1), 4-bank drop targets (2), [...] This is a version of Gottlieb''s
-          1972 ''Pop-A-Card'' made for export to Italy.'
-      '2':
-        ref: ipdb:5214
-        quote: A copy of Gottlieb's 1971 'Card King', its lower playfield indicates R.M.G. is the manufacturer.
-      '3':
-        ref: https://www.tilt.it/flipper_pinball/ipdb/skill-game-the-best
-        quote: The Best Card King [...] The Best Wizard – em – 1p [...] (inspired from Gottlieb's "Wizard")
-      '4':
-        ref: ipdb:6836
-        quote: Printing companies in Italy that made backglasses for manufacturers of games such as Skilgame's
-          Galaxie would also sell some of the glasses directly to operators, bypassing the pinball manufacturer,
-          and for these glasses they were known to add the words "The Best" as part of the name
-- model.rugby-sidam:
-    description: '*Rugby* is [[manufacturer:sidam]]''s unlicensed copy of [[manufacturer:atari]]''s *[[model:video-pinball]]*,
-      reworked from a pinball simulation into a [[theme:sports]]-themed game. By 1979 the [[location:italy/to/turin]]
-      firm had spent a couple of years rebuilding Atari''s arcade video games from scratch,[[cite:1]]
-      and Rugby carried that run into Atari''s pinball title — a machine promoted at its release as the
-      earliest arcade video game to recreate pinball on a screen, its fluorescent ''disco'' 3-D playfield
-      of [[gameplay-feature:bumpers]], [[gameplay-feature:slingshots]], [[gameplay-feature:rollovers]]
-      and [[gameplay-feature:drop-targets]] drawn entirely in the monitor.[[cite:2]]
+        '
+      cites:
+        "1":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/lori
+          quote: Serigrafia Lori
+  - model.gorgar-mambelli:
+      description:
+        "*Gorgar* is a single-player [[technology-generation:electromechanical]] pinball machine
+        assembled by [[manufacturer:mambelli]] — the [[location:italy/fc/cesena]] firm of [[corporate-entity:l-v-mambelli]]
+        — not as an original design but as a [[tag:conversion-kit]], rebuilding [[manufacturer:gottlieb]]'s
+        1973 *[[model:jungle-life]]* under borrowed livery. The name it borrowed carried real weight: [[manufacturer:williams]]'
+        1979 *[[model:gorgar]]* had broken ground as the earliest pinball machine to speak aloud, its playfield
+        pulsing with a heartbeat that quickened as a ball stayed in play.[[cite:1]] That original was a
+        four-player [[technology-generation:solid-state]] game with a vocabulary of only seven words;[[cite:2]]
+        Mambelli's namesake is its plain inverse — a mute single-player electromechanical cabinet dressed
+        in the [[theme:fantasy]] monster artwork of a celebrated later hit.
 
 
-      Rather than merely rename the game, Sidam recast its whole visual environment.[[cite:3]] The title
-      is an accident of translation: gridiron football had scarcely any following in Italy at the time
-      and was taken for a form of rugby, which likely gave the game its name.[[cite:3]] Like Sidam''s
-      other clones it was a from-scratch [[technology-generation:solid-state]] [[tag:bootleg]] — a [[game-format:video-game]]
-      rather than a genuine pinball machine.
+        Reclothing an older Gottlieb chassis in the artwork of a newer American machine was the Cesena firm's
+        habit rather than a single stunt. It reworked a Gottlieb *[[model:tiger]]* into a Mambelli *[[model:buck-rogers]]*
+        finished in backglass and playfield art taken from Gottlieb's own solid-state 1980 game of that
+        name,[[cite:3]] and turned a Gottlieb *[[model:space-orbit]]* into a *[[model:kiss-2]]*[[cite:4]]
+        — each a one-player conversion dressed up as a flashier, later machine.
 
-      '
-    cites:
-      '1':
-        ref: https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino/
-        quote: La SIDAM era una ditta di Torino che nel 1978 inizia a copiare videogiochi, specialmente
-          ATARI.
-      '2':
-        ref: https://www.arcade-history.com/?id=3069&n=video-pinball&page=detail
-        quote: Video Pinball was the world's first video attraction to simulate a pinball game, and was
-          an instant winner. With fluorescent 'disco' 3-D play-field, challenging targets, bumpers, slingshots,
-          rollovers and drop targets, Atari Video Pinball had it all, but without all the mechanical objects
-          associated with classic pinball games.
-      '3':
-        ref: https://www.tilt.it/deb/sidam-en.html
-        quote: Compared to Atari Video Pinball, ambientation changes completely, and then the background
-          on which was reflected the image of the monitor. At the time, American football was almost unknown
-          in Italy, and was identified as "a sort of Rugby football", hence probably the name.
-- model.jungle-life-zaccaria:
-    description: '*Jungle Life* is [[manufacturer:zaccaria]]''s unlicensed reproduction of [[manufacturer:gottlieb]]''s
-      1973 *[[model:jungle-life]]*, built from scratch as a single-player [[technology-generation:electromechanical]]
-      machine — one of at least three Italian copies of the American game, alongside those of [[manufacturer:emmepi]]
-      and [[manufacturer:lori]]. It comes from a moment before Zaccaria was formally a pinball manufacturer
-      at all: by founder Natale Zaccaria''s own account, the brothers began not by designing games but
-      by refreshing worn imported machines with new artwork, after an economic crisis pushed the cost
-      of American pinballs out of reach.[[cite:1]] A copy such as this one belongs to that early reskinning
-      trade, before the firm turned to original designs of its own.
+        "
+      cites:
+        "1":
+          ref: https://www.arcade-museum.com/Pinball/gorgar
+          quote:
+            This game was the very first talking pinball. As you play, the sound effect of a heart
+            beating is played in the background and the longer you keep the ball in play the faster the
+            heart beat gets.
+        "2":
+          ref: ipdb:1062
+          quote:
+            "Type: Solid State Electronic (SS) [...] Players: 4 [...] It had a vocabulary of seven
+            words"
+        "3":
+          ref: ipdb:4999
+          quote:
+            This is a conversion kit for Gottlieb's 1975 'Tiger'. The backglass and playfield art are
+            from the 4-player Solid State Gottlieb's 1980 'Buck Rogers'
+        "4":
+          ref: ipdb:5002
+          quote: A source indicates that this is a conversion of Gottlieb's 1972 'Space Orbit'.
+  - model.joker-manilamatic:
+      description:
+        "*Joker* is [[manufacturer:manilamatic]]'s unlicensed copy of [[manufacturer:gottlieb]]'s
+        1987 *[[model:monte-carlo-gottlieb]]*, rebuilt from scratch rather than imported. The [[location:italy/rm/rome]]
+        firm of [[person:antonio-manili]], trading as [[corporate-entity:mm-computer-games]], spent the
+        later 1980s reproducing [[technology-generation:solid-state]] Gottlieb tables for the Italian market.[[cite:1]]
+        Like the Monte Carlo game it copies, *Joker* is a [[theme:gambling]] table set on a [[theme:casino]]
+        floor and built around the [[theme:playing-cards]] deck — Gottlieb's original laid that floor out
+        in banks of [[gameplay-feature:drop-targets]] and a [[gameplay-feature:multiball]] mode,[[cite:2]]
+        which the Rome shop reissued under the name of the deck's wild card.
 
-      '
-    cites:
-      '1':
-        ref: https://www.pinballnews.com/learn/zaccaria
-        quote: At the time pinballs were mostly being imported from the USA, but due to an economic crisis
-          in Italy their cost increased a lot, and so we decided to start refurbishing used pinballs with
-          new graphics applied.
+        "
+      cites:
+        "1":
+          ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
+          quote:
+            ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
+            starting in 1986.
+        "2":
+          ref: ipdb:1622
+          quote: "Theme: Gambling [...] 3-bank drop targets (2), 2-bank drop targets (2) [...] Multiball"
+  - model.pool-rabbit:
+      description:
+        "*Pool Rabbit* survives chiefly through a single photograph of its backglass — a [[theme:cartoon-characters]]
+        design built around a rabbit modelled on Roger Rabbit[[cite:1]] — carrying the [[corporate-entity:mm-computer-games]]
+        badge that the [[location:italy/rm/rome]] maker [[manufacturer:manilamatic]] used for its [[technology-generation:solid-state]]
+        pinball. Collectors who have studied that picture read the playfield as a mirror image of [[manufacturer:bally]]'s
+        1977 *[[model:eight-ball]]*, with a fluorescent scoreline reminiscent of later [[manufacturer:gottlieb]]
+        boards.[[cite:3]] The firm issued its machines under the [[corporate-entity:mm-computer-games]]
+        name across those same mid-1980s years.[[cite:2]]
+
+        "
+      cites:
+        "1":
+          ref: https://www.vpforums.org/index.php?showtopic=46118
+          quote: a Roger Rabbit inspired pinball backglass
+        "2":
+          ref: https://www.arcade-museum.com/company/manilamatic-mm-computer-games
+          quote:
+            ManilaMatic / MM Computer Games released 5 machines in our database under this trade name,
+            starting in 1986.
+        "3":
+          ref: https://www.vpforums.org/index.php?showtopic=46118
+          quote:
+            The game is called "Pool Rabbit" by "MM Computer Games." Other forum members chimed in
+            saying it was made by an Italian company called ManilaMatic in 1985, and the playfield is possibly
+            a flipped "Eight Ball" layout. The fluorescent display smacks a bit of later Gottlieb boards.
+            IPDB has precious little information on the game, and no pictures.
+  - model.satellite-tv:
+      description:
+        "*Satellite TV* is a reissue of [[manufacturer:model-racing]]'s *[[model:ufo]]*, the
+        game that gave the [[location:italy/an/montemarciano]] firm the distinction of producing the first
+        original coin-op video game designed in Italy.[[cite:1]] UFO defied the usual categories: Model
+        Racing sold it as a video pinball, mounting a screen inside a pinball cabinet in place of the playfield,[[cite:2]]
+        and its action sat somewhere between pinball and Breakout.[[cite:3]] UFO debuted on 11 January 1975
+        at the ATEI trade fair in London, where Model Racing struck a deal for [[manufacturer:chicago-coin]]
+        to take the game into the American market.[[cite:4]] Chicago Coin's licensed edition reached United
+        States arcades that same year as *[[model:super-flipper]]*.[[cite:5]] *Satellite TV* followed as
+        a near-identical re-run of UFO, its playfield all but indistinguishable from the original — quite
+        possibly the same game under a second name.[[cite:6]]
+
+        "
+      cites:
+        "1":
+          ref: https://www.tilt.it/deb/modelracing-en.html
+          quote: This is the first original game made in Italy
+        "2":
+          ref: https://www.arcade-museum.com/Videogame/ufo--model
+          quote: The machine is a pinball cabinet with a vidoe screen for the playfield.
+        "3":
+          ref: https://www.tilt.it/deb/modelracing-en.html
+          quote: It's a sort of a medley between pinball and Breakout.
+        "4":
+          ref: https://www.tilt.it/deb/modelracing-en.html
+          quote:
+            presented in January, 11 1975 at ATEI in London. During this exibition, MR leaders reached
+            an agreement with Chicago Coin to distribute the game in the USA.
+        "5":
+          ref: https://www.arcade-history.com/?id=4398&n=super-flipper&page=detail
+          quote: Super Flipper © 1975 Chicago Coin. [...] Licensed version of Model Racing's
+        "6":
+          ref: https://www.tilt.it/deb/modelracing-en.html
+          quote:
+            A later version of Ufo. [...] the playing field is almost identical. [...] Maybe it's just
+            the same game with two names.
+  - model.old-time:
+      description:
+        '*Old Time* is one half of [[manufacturer:pasini]]''s Western-themed "Old" pair, alongside
+        its better-known companion *[[model:old-gold]]* — both single-player [[technology-generation:electromechanical]]
+        tables built in [[location:italy/bo/bologna]] and working the same [[theme:western]] register.[[cite:1]]
+        *Old Gold* reached players in 1970,[[cite:2]] which places the pair in Pasini''s short early-1970s
+        run. The firm was one of the small makers clustered around Bologna, a city that for a stretch of
+        the mid-century stood among the leading centres of world pinball manufacture.[[cite:3]]
+
+        '
+      cites:
+        "1":
+          ref: ipdb:5948
+          quote: "Theme: Western"
+        "2":
+          ref: https://www.arcade-museum.com/Pinball/old-gold
+          quote: Old Gold was produced by Pasini in 1970.
+        "3":
+          ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+          quote: There was a time when Bologna was one of the world's capitals of pinball.
+  - model.count-down-pasini:
+      description:
+        "*Count Down* is a single-player [[technology-generation:electromechanical]] table by
+        [[manufacturer:pasini]] of [[location:italy/bo/bologna]]. The name was a common one in the Italian
+        trade: Novamatic's *[[model:count-down-2]]* (1970) and [[manufacturer:lori]]'s *[[model:count-down-lori]]*
+        were separate machines from other makers rather than versions of Pasini's game. Pasini's own output
+        sits in the early 1970s, anchored by its dated sibling *[[model:old-gold]]* of 1970.[[cite:1]] The
+        firm belonged to the wave of Bologna makers that emerged after a 1965 Italian law banned pinball
+        as a form of gambling,[[cite:2]] a shop trade that stayed legal by building tables paying out only
+        in [[reward-type:replay]] free games instead of cash.[[cite:3]]
+
+        "
+      cites:
+        "1":
+          ref: https://www.arcade-museum.com/Pinball/old-gold
+          quote: Old Gold was produced by Pasini in 1970.
+        "2":
+          ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+          quote: In 1965 an Italian law declared pinball outlaw because of gambling.
+        "3":
+          ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+          quote:
+            A few artisans in Bologna found a workaround and started to sell new machines that allowed
+            them to win only other balls and not matches.
+  - model.bonnie-clide:
+      description:
+        '*Bonnie & Clide* — the spelling is Pasini''s own — is a 1970 single-player [[technology-generation:electromechanical]]
+        table named for Bonnie and Clyde, the Depression-era American outlaws. It came out of the same [[location:italy/bo/bologna]]
+        shop as Pasini''s Western *[[model:old-gold]]*, whose surviving backglass still carries the Pasini
+        name and is signed "Lore 70."[[cite:1]] That glass is held by Federico Croci, the Bologna collector
+        who went on to found the city''s Spazio Tilt pinball museum,[[cite:2]] a line of preservation that
+        keeps these early Bologna machines in view.
+
+        '
+      cites:
+        "1":
+          ref: ipdb:5948
+          quote:
+            Federico Croci, a collector in Italy, has a backglass for this game indicating the Pasini
+            name in the upper right corner and the artist signature "Lore 70" in the lower right corner.
+        "2":
+          ref: https://www.tastebologna.net/blog/pinball-museum-bologna
+          quote: This place is in Bologna, where Federico Croci created a Pinball Museum called Spazio Tilt.
+  - model.san-marco:
+      description:
+        "*San Marco* is the [[technology-generation:electromechanical]] table that [[manufacturer:riflip]]
+        — in full, RIFLIP – Organizzazione Costa of [[location:italy/to/turin]] — brought out in 1968, near
+        the close of the pure electromechanical age. It is a [[reward-type:novelty]] machine, with no reward
+        mechanism of any kind: when it appeared, Italian law barred pinball tables from awarding any prize,
+        whether a [[reward-type:cash-payout]] or a free [[reward-type:replay]].[[cite:1]] Most Italian tables
+        of the moment were unlicensed rebuilds of American [[manufacturer:gottlieb]], [[manufacturer:williams]]
+        and [[manufacturer:bally]] games. *San Marco* was the rarer thing: it carries no American donor
+        in the catalogue, an original Italian design rather than a copy.
+
+        "
+      cites:
+        "1":
+          ref: https://www.sapar.it/2021/07/08/pillole-di-amusement-il-flipper-la-storia-del-gioco-di-abilita
+          quote:
+            il flipper fu oggetto di regolamentazioni e limitazioni giuridiche volte a proibirne ogni
+            tipo di vincita, inclusa la ripetizione della partita.
+  - model.card-trix-rmg:
+      description:
+        "*Card Trix* is [[manufacturer:rmg]]'s unlicensed reworking of [[manufacturer:gottlieb]]'s
+        1970 *[[model:card-trix]]*, a [[theme:cards]]-themed single-player [[technology-generation:electromechanical]]
+        table rebuilt from scratch for the Italian trade. The Gottlieb original was a [[theme:college]]
+        game, its backglass staged in a student's dorm hung with pennants, and it shipped in a separate
+        [[reward-type:replay]] edition sold under the name *[[model:flip-a-card]]*.[[cite:1]]
+
+        "
+      cites:
+        "1":
+          ref: ipdb:446
+          quote:
+            The replay version of this game is Gottlieb's 1970 'Flip a Card'. [...] The backglass shows
+            a college dorm room with pennants on the wall and a study desk.
+  - model.the-best-card-king:
+      description:
+        '*The Best Card King* is [[manufacturer:rmg]]''s take on [[manufacturer:gottlieb]]''s
+        1971 *[[model:card-king]]* — itself an export edition of Gottlieb''s *[[model:pop-a-card]]* for
+        the Italian market — a [[theme:cards]]-themed single-player table built on banks of [[gameplay-feature:drop-targets]]
+        that took 100 lire a play.[[cite:1]] On the copies R.M.G. sold under its own name, the firm''s mark
+        is printed on the lower playfield.[[cite:2]] The game also went out under a "The Best" badge — a
+        label with a curious origin in the Italian trade, where print shops that supplied backglasses to
+        game makers began selling them straight to arcade operators, lettering "The Best" where the manufacturer''s
+        name would otherwise sit.[[cite:4]] Under that badge it belonged to R.M.G.''s Skill Game line, alongside
+        *[[model:the-best-wizard]]*, a rebuild of Gottlieb''s *[[model:wizard]]*.[[cite:3]]
+
+        '
+      cites:
+        "1":
+          ref: ipdb:445
+          quote:
+            "Players: 1 [...] 100 lire for 1 play, 2 x 100 lire for 2 plays. Flippers (2), Pop bumpers
+            (2), 5-bank drop targets (1), 4-bank drop targets (2), [...] This is a version of Gottlieb's
+            1972 'Pop-A-Card' made for export to Italy."
+        "2":
+          ref: ipdb:5214
+          quote: A copy of Gottlieb's 1971 'Card King', its lower playfield indicates R.M.G. is the manufacturer.
+        "3":
+          ref: https://www.tilt.it/flipper_pinball/ipdb/skill-game-the-best
+          quote: The Best Card King [...] The Best Wizard – em – 1p [...] (inspired from Gottlieb's "Wizard")
+        "4":
+          ref: ipdb:6836
+          quote:
+            Printing companies in Italy that made backglasses for manufacturers of games such as Skilgame's
+            Galaxie would also sell some of the glasses directly to operators, bypassing the pinball manufacturer,
+            and for these glasses they were known to add the words "The Best" as part of the name
+  - model.rugby-sidam:
+      description:
+        "*Rugby* is [[manufacturer:sidam]]'s unlicensed copy of [[manufacturer:atari]]'s *[[model:video-pinball]]*,
+        reworked from a pinball simulation into a [[theme:sports]]-themed game. By 1979 the [[location:italy/to/turin]]
+        firm had spent a couple of years rebuilding Atari's arcade video games from scratch,[[cite:1]]
+        and Rugby carried that run into Atari's pinball title — a machine promoted at its release as the
+        earliest arcade video game to recreate pinball on a screen, its fluorescent 'disco' 3-D playfield
+        of [[gameplay-feature:bumpers]], [[gameplay-feature:slingshots]], [[gameplay-feature:rollovers]]
+        and [[gameplay-feature:drop-targets]] drawn entirely in the monitor.[[cite:2]]
+
+
+        Rather than merely rename the game, Sidam recast its whole visual environment.[[cite:3]] The title
+        is an accident of translation: gridiron football had scarcely any following in Italy at the time
+        and was taken for a form of rugby, which likely gave the game its name.[[cite:3]] Like Sidam's
+        other clones it was a from-scratch [[technology-generation:solid-state]] [[tag:bootleg]] — a [[game-format:video-game]]
+        rather than a genuine pinball machine.
+
+        "
+      cites:
+        "1":
+          ref: https://retrocampus.com/2015/12/31/sidam-videogiochi-a-torino/
+          quote:
+            La SIDAM era una ditta di Torino che nel 1978 inizia a copiare videogiochi, specialmente
+            ATARI.
+        "2":
+          ref: https://www.arcade-history.com/?id=3069&n=video-pinball&page=detail
+          quote:
+            Video Pinball was the world's first video attraction to simulate a pinball game, and was
+            an instant winner. With fluorescent 'disco' 3-D play-field, challenging targets, bumpers, slingshots,
+            rollovers and drop targets, Atari Video Pinball had it all, but without all the mechanical objects
+            associated with classic pinball games.
+        "3":
+          ref: https://www.tilt.it/deb/sidam-en.html
+          quote:
+            Compared to Atari Video Pinball, ambientation changes completely, and then the background
+            on which was reflected the image of the monitor. At the time, American football was almost unknown
+            in Italy, and was identified as "a sort of Rugby football", hence probably the name.
+  - model.jungle-life-zaccaria:
+      description:
+        "*Jungle Life* is [[manufacturer:zaccaria]]'s unlicensed reproduction of [[manufacturer:gottlieb]]'s
+        1973 *[[model:jungle-life]]*, built from scratch as a single-player [[technology-generation:electromechanical]]
+        machine — one of at least three Italian copies of the American game, alongside those of [[manufacturer:emmepi]]
+        and [[manufacturer:lori]]. It comes from a moment before Zaccaria was formally a pinball manufacturer
+        at all: by founder Natale Zaccaria's own account, the brothers began not by designing games but
+        by refreshing worn imported machines with new artwork, after an economic crisis pushed the cost
+        of American pinballs out of reach.[[cite:1]] A copy such as this one belongs to that early reskinning
+        trade, before the firm turned to original designs of its own.
+
+        "
+      cites:
+        "1":
+          ref: https://www.pinballnews.com/learn/zaccaria
+          quote:
+            At the time pinballs were mostly being imported from the USA, but due to an economic crisis
+            in Italy their cost increased a lot, and so we decided to start refurbishing used pinballs with
+            new graphics applied.

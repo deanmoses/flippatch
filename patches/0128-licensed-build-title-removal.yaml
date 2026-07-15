@@ -7,88 +7,88 @@ claims:
   - title.arena-2:
       expect: { name: Arena }
       delete: true
-      note: 'Orphaned after its sole model (arena-vifico) was merged into the arena title.'
+      note: "Orphaned after its sole model (arena-vifico) was merged into the arena title."
   - title.bad-girls-2:
       expect: { name: Bad Girls }
       delete: true
-      note: 'Orphaned after its sole model (bad-girls-vifico) was merged into the bad-girls title.'
+      note: "Orphaned after its sole model (bad-girls-vifico) was merged into the bad-girls title."
   - title.chicago-cubs-triple-play-2:
       expect: { name: 'Chicago Cubs "Triple Play"' }
       delete: true
-      note: 'Orphaned after its sole model (chicago-cubs-triple-play-vifico) was merged into the chicago-cubs-triple-play title.'
+      note: "Orphaned after its sole model (chicago-cubs-triple-play-vifico) was merged into the chicago-cubs-triple-play title."
   - title.diamond-lady-2:
       expect: { name: Diamond Lady }
       delete: true
-      note: 'Orphaned after its sole model (diamond-lady-vifico) was merged into the diamond-lady title.'
+      note: "Orphaned after its sole model (diamond-lady-vifico) was merged into the diamond-lady title."
   - title.excalibur-3:
       expect: { name: Excalibur }
       delete: true
-      note: 'Orphaned after its sole model (excalibur-vifico) was merged into the excalibur title.'
+      note: "Orphaned after its sole model (excalibur-vifico) was merged into the excalibur title."
   - title.genesis-3:
       expect: { name: Genesis }
       delete: true
-      note: 'Orphaned after its sole model (genesis-vifico) was merged into the genesis title.'
+      note: "Orphaned after its sole model (genesis-vifico) was merged into the genesis title."
   - title.gold-wings-2:
       expect: { name: Gold Wings }
       delete: true
-      note: 'Orphaned after its sole model (gold-wings-vifico) was merged into the gold-wings title.'
+      note: "Orphaned after its sole model (gold-wings-vifico) was merged into the gold-wings title."
   - title.hollywood-heat-2:
       expect: { name: Hollywood Heat }
       delete: true
-      note: 'Orphaned after its sole model (hollywood-heat-vifico) was merged into the hollywood-heat title.'
+      note: "Orphaned after its sole model (hollywood-heat-vifico) was merged into the hollywood-heat title."
   - title.hot-shots-2:
       expect: { name: Hot Shots }
       delete: true
-      note: 'Orphaned after its sole model (hot-shots-vifico) was merged into the hot-shots title.'
+      note: "Orphaned after its sole model (hot-shots-vifico) was merged into the hot-shots title."
   - title.monte-carlo-4:
       expect: { name: Monte Carlo }
       delete: true
-      note: 'Orphaned after its sole model (monte-carlo-vifico) was merged into the monte-carlo-gottlieb title.'
+      note: "Orphaned after its sole model (monte-carlo-vifico) was merged into the monte-carlo-gottlieb title."
   - title.raven-2:
       expect: { name: Raven }
       delete: true
-      note: 'Orphaned after its sole model (raven-vifico) was merged into the raven title.'
+      note: "Orphaned after its sole model (raven-vifico) was merged into the raven title."
   - title.spring-break-2:
       expect: { name: Spring Break }
       delete: true
-      note: 'Orphaned after its sole model (spring-break-vifico) was merged into the spring-break title.'
+      note: "Orphaned after its sole model (spring-break-vifico) was merged into the spring-break title."
   - title.victory-4:
       expect: { name: Victory }
       delete: true
-      note: 'Orphaned after its sole model (victory-vifico) was merged into the victory title.'
+      note: "Orphaned after its sole model (victory-vifico) was merged into the victory title."
   - title.dracula-3:
       expect: { name: Dracula }
       delete: true
-      note: 'Orphaned after its sole model (dracula-lai) was merged into the dracula-2 title.'
+      note: "Orphaned after its sole model (dracula-lai) was merged into the dracula-2 title."
   - title.galaxy-4:
       expect: { name: Galaxy }
       delete: true
-      note: 'Orphaned after its sole model (galaxy-lai) was merged into the galaxy-stern title.'
+      note: "Orphaned after its sole model (galaxy-lai) was merged into the galaxy-stern title."
   - title.hot-hand-2:
       expect: { name: Hot Hand }
       delete: true
-      note: 'Orphaned after its sole model (hot-hand-lai) was merged into the hot-hand title.'
+      note: "Orphaned after its sole model (hot-hand-lai) was merged into the hot-hand title."
   - title.magic-5:
       expect: { name: Magic }
       delete: true
-      note: 'Orphaned after its sole model (magic-lai) was merged into the magic title.'
+      note: "Orphaned after its sole model (magic-lai) was merged into the magic title."
   - title.meteor-3:
       expect: { name: Meteor }
       delete: true
-      note: 'Orphaned after its sole model (meteor-lai) was merged into the meteor title.'
+      note: "Orphaned after its sole model (meteor-lai) was merged into the meteor title."
   - title.trident-2:
       expect: { name: Trident }
       delete: true
-      note: 'Orphaned after its sole model (trident-lai) was merged into the trident title.'
+      note: "Orphaned after its sole model (trident-lai) was merged into the trident title."
   - title.meteor-2:
       expect: { name: Meteor }
       delete: true
-      note: 'Orphaned after its sole model (meteor-taito-do-brasil) was merged into the meteor title.'
+      note: "Orphaned after its sole model (meteor-taito-do-brasil) was merged into the meteor title."
   - title.lortium-2:
       expect: { name: Lortium }
       delete: true
-      note: 'Orphaned after its sole model (lortium-automaticos-montecarlo) was merged into the lortium title.'
+      note: "Orphaned after its sole model (lortium-automaticos-montecarlo) was merged into the lortium title."
   - title.the-getaway-high-speed-ii-2:
       expect: { name: The Getaway High Speed II }
       delete: true
-      note: 'Orphaned after its sole model (the-getaway-high-speed-ii-american-home-entertainment) was merged into the the-getaway-high-speed-ii title.'
+      note: "Orphaned after its sole model (the-getaway-high-speed-ii-american-home-entertainment) was merged into the the-getaway-high-speed-ii title."

@@ -82,7 +82,7 @@ claims:
       year_end: 1988
   - corporate-entity.bally-wulff:
       expect: { ipdb_manufacturer_id: 49 }
-      note: 'German Wikipedia records that the firm, founded in 1950 as Guenter Wulff Apparatebau in Berlin, was taken over by the American maker Bally in 1972 (operating thereafter as Bally Wulff), and that Bally divested it again in 1991 (the company continues independently as Bally Wulff).'
+      note: "German Wikipedia records that the firm, founded in 1950 as Guenter Wulff Apparatebau in Berlin, was taken over by the American maker Bally in 1972 (operating thereafter as Bally Wulff), and that Bally divested it again in 1991 (the company continues independently as Bally Wulff)."
       cite: https://de.wikipedia.org/wiki/Bally_Wulff
       year_start: 1972
       year_end: 1991

@@ -9,12 +9,20 @@ sources:
     source_type: web
     description: Reference site on American coin-operated music and amusement makers, including company factory histories (e.g. J. H. Keeney & Co.).
     links:
-      - { url: "https://www.jukeboxhistory.info/", label: American Jukebox History, link_type: homepage }
+      - {
+          url: "https://www.jukeboxhistory.info/",
+          label: American Jukebox History,
+          link_type: homepage,
+        }
   - name: Aurora Historical Society
     source_type: web
     description: Local-history museum for Aurora, Illinois; publishes histories of Aurora manufacturers including Stoner Manufacturing Corporation.
     links:
-      - { url: "https://aurorahistory.org/", label: Aurora Historical Society, link_type: homepage }
+      - {
+          url: "https://aurorahistory.org/",
+          label: Aurora Historical Society,
+          link_type: homepage,
+        }
 claims:
   - corporate-entity.exhibit-supply-company:
       expect: { ipdb_manufacturer_id: 117 }

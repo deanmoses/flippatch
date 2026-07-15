@@ -13,43 +13,71 @@ sources:
     description: >
       Arcade and amusement industry news site covering coin-op releases and trade shows.
     links:
-      - { url: 'https://arcadeheroes.com/', label: Arcade Heroes, link_type: homepage }
+      - {
+          url: "https://arcadeheroes.com/",
+          label: Arcade Heroes,
+          link_type: homepage,
+        }
   - name: This Week in Pinball
     source_type: web
     description: >
       Weekly pinball news archive now hosted by Kineticist.
     links:
-      - { url: 'https://twip.kineticist.com/', label: This Week in Pinball, link_type: homepage }
+      - {
+          url: "https://twip.kineticist.com/",
+          label: This Week in Pinball,
+          link_type: homepage,
+        }
   - name: Ramp's Pinball
     source_type: web
     description: >
       Manufacturer site of Ramp's Pinball, whose debut machine is Road Trip.
     links:
-      - { url: 'https://www.rampspinball.com/', label: Ramp's Pinball, link_type: homepage }
+      - {
+          url: "https://www.rampspinball.com/",
+          label: Ramp's Pinball,
+          link_type: homepage,
+        }
   - name: Vector Pinball
     source_type: web
     description: >
       Manufacturer site of Vector Pinball, an Australian pinball maker.
     links:
-      - { url: 'https://vectorpinball.com/', label: Vector Pinball, link_type: homepage }
+      - {
+          url: "https://vectorpinball.com/",
+          label: Vector Pinball,
+          link_type: homepage,
+        }
   - name: VPForums
     source_type: web
     description: >
       Long-running virtual-pinball community forum.
     links:
-      - { url: 'https://www.vpforums.org/', label: VPForums, link_type: homepage }
+      - {
+          url: "https://www.vpforums.org/",
+          label: VPForums,
+          link_type: homepage,
+        }
   - name: Bingo Pinballs
     source_type: web
     description: >
       Reference site documenting bingo-style coin-op amusement machines and their makers.
     links:
-      - { url: 'https://bingo.cdyn.com/', label: Bingo Pinballs, link_type: homepage }
+      - {
+          url: "https://bingo.cdyn.com/",
+          label: Bingo Pinballs,
+          link_type: homepage,
+        }
   - name: Recreativas.org
     source_type: web
     description: >
       Spanish-language database of arcade and amusement machines.
     links:
-      - { url: 'https://www.recreativas.org/', label: Recreativas.org, link_type: homepage }
+      - {
+          url: "https://www.recreativas.org/",
+          label: Recreativas.org,
+          link_type: homepage,
+        }
 claims:
   - corporate-entity.american-pinball-inc:
       expect: { ipdb_manufacturer_id: 705 }

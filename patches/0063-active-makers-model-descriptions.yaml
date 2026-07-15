@@ -9,10 +9,10 @@ claims:
       cites:
         "1":
           ref: https://wonderlandamusements.com/products/alice-goes-to-wonderland-pinball
-          quote: 'Scale: Approx 80 % of commercial pinball size [...] Alice Goes to Wonderland Pinball is a fully mechanical home pinball machine that puts players in the middle of a fast-paced quest to rescue Alice from the depths of Wonderland. Navigate a series of bizarre and whimsical challenges assigned by the Mad Hatter, Cheshire Cat, White Rabbit, and other curious characters, all while triggering real flippers, bumpers, spinners, and modern game code. With multiball action, LED lighting, and custom art, it delivers an authentic pinball experience in a compact, affordable cabinet built for home arcade fans.'
+          quote: "Scale: Approx 80 % of commercial pinball size [...] Alice Goes to Wonderland Pinball is a fully mechanical home pinball machine that puts players in the middle of a fast-paced quest to rescue Alice from the depths of Wonderland. Navigate a series of bizarre and whimsical challenges assigned by the Mad Hatter, Cheshire Cat, White Rabbit, and other curious characters, all while triggering real flippers, bumpers, spinners, and modern game code. With multiball action, LED lighting, and custom art, it delivers an authentic pinball experience in a compact, affordable cabinet built for home arcade fans."
         "2":
           ref: https://www.pinballnews.com/site/2025/03/11/alice-kickstarter-goes-live/
-          quote: 'Wonderland Amusements today launched their Kickstarter campaign for their Alice Goes To Wonderland pinball machine. [...] The full MSRP price of Alice Goes To Wonderland is $999 [...] The Kickstarter achieved its funding target almost immediately after launch'
+          quote: "Wonderland Amusements today launched their Kickstarter campaign for their Alice Goes To Wonderland pinball machine. [...] The full MSRP price of Alice Goes To Wonderland is $999 [...] The Kickstarter achieved its funding target almost immediately after launch"
   - model.teenage-mutant-ninja-turtles-battle-in-the-sewer:
       expect: { year: 2026 }
       description: |
@@ -20,10 +20,10 @@ claims:
       cites:
         "1":
           ref: https://wonderlandamusements.com/products/tmntbattleinthesewer
-          quote: 'PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Gameplay: Real mechanical flippers, slingshots, bumpers, ramps, and multi-ball [...] Scale: Approx 80 % of commercial pinball size [...] Official TMNT Mechanical Pinball Machine by Wonderland Amusements'
+          quote: "PRESALE: Teenage Mutant Ninja Turtles: Battle in the Sewer Pinball Machine [...] Gameplay: Real mechanical flippers, slingshots, bumpers, ramps, and multi-ball [...] Scale: Approx 80 % of commercial pinball size [...] Official TMNT Mechanical Pinball Machine by Wonderland Amusements"
         "2":
           ref: https://bleedingcool.com/games/teenage-mutant-ninja-turtles-has-a-new-pinball-machine
-          quote: 'Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco'
+          quote: "Battle In The Sewer features original art by TMNT comic artist Mateus Santolouco"
   - model.pinball-eternal:
       expect: { year: 2025 }
       description: |
@@ -31,10 +31,10 @@ claims:
       cites:
         "1":
           ref: https://pawlowskipinball.com/
-          quote: 'the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025.'
+          quote: "the goal is to launch Pinball Eternal, a highly animated, highly featured metal/death-metal pinball machine at Free Play Florida November 2025."
         "2":
           ref: https://pawlowskipinball.com/pinballeternal
-          quote: 'The most affordable, portable and the most METAL pinball machine ever made! Pinball Eternal is our first game to come to market.'
+          quote: "The most affordable, portable and the most METAL pinball machine ever made! Pinball Eternal is our first game to come to market."
   - model.little-shop-of-horrors:
       expect: { name: Little Shop of Horrors }
       description: |
@@ -42,18 +42,18 @@ claims:
       cites:
         "1":
           ref: https://twip.kineticist.com/p/brought-to-you-by-secrets
-          quote: 'I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year.'
+          quote: "I stumbled upon a trademark filing by TiltBob Pinball for a Little Shop of Horrors machine, which was filed earlier this year."
   - model.elf:
       description: |
         Elf is a one-off homebrew designed by [[person:bob-nies]], based on the 2003 Christmas comedy film *Elf*.[[cite:1]] Built on [[system:multimorphic-p3-roc]] hardware[[cite:1]] with a playfield monitor, it took Nies nearly three years rather than the intended one and debuted at the 2022 Texas Pinball Festival.[[cite:2]] Never a commercial product, it won that year's TWIPY award for Favorite Homebrew.[[cite:3]][[cite:4]]
       cites:
         "1":
           ref: https://pinside.com/pinball/machine/elf
-          quote: 'Bob Nies [...] Elf [...] Based on the 2003 Movie Elf with Will Ferrell.'
+          quote: "Bob Nies [...] Elf [...] Based on the 2003 Movie Elf with Will Ferrell."
         "2":
           ref: https://www.kineticist.com/news/bob-nies-interview-elf-pinball
-          quote: 'I was trying to build this within a year (took almost 3) [...] There was one ''must have'' before I even started and that was the playfield monitor. [...] I built Elf for fun, not to sell it. I don''t own the license so kudos to anyone that may have snatched it up after my TPF reveal.'
+          quote: "I was trying to build this within a year (took almost 3) [...] There was one 'must have' before I even started and that was the playfield monitor. [...] I built Elf for fun, not to sell it. I don't own the license so kudos to anyone that may have snatched it up after my TPF reveal."
         "3": youtube:O-2BXTXLXIY
         "4":
           ref: https://twipys.com/2022-twipy-results-percentages/
-          quote: 'A ranked voting system was used to determine the order of results for the 2022 TWIPYs. [...] Favorite Home Brew Pinball Machine [...] Elf by Bob Nies'
+          quote: "A ranked voting system was used to determine the order of results for the 2022 TWIPYs. [...] Favorite Home Brew Pinball Machine [...] Elf by Bob Nies"

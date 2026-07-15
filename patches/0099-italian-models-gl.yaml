@@ -4,16 +4,16 @@ description: >
 claims:
   - title.diablo:
       create: true
-      note: 'Title for Diablo, per the tilt.it Italian Pinball Database.'
+      note: "Title for Diablo, per the tilt.it Italian Pinball Database."
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
-        quote: 'Diablo – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/gl"
+        quote: "Diablo – ss – 4p"
       name: Diablo
   - model.diablo:
       create: true
       cite:
-        ref: 'https://www.tilt.it/flipper_pinball/ipdb/gl'
-        quote: 'Diablo – ss – 4p'
+        ref: "https://www.tilt.it/flipper_pinball/ipdb/gl"
+        quote: "Diablo – ss – 4p"
       name: Diablo
       title: diablo
       corporate_entity: giuliano-lodola

@@ -15,35 +15,35 @@ description: CEFF (Piacenza) manufacturer, corporate entity, title and model.
 claims:
   - manufacturer.ceff:
       create: true
-      note: 'The tilt.it Italian Pinball Database credits CEFF Costruzioni Meccaniche of Piacenza with the pinball machine Five Martians; corroborating sources were sought at authoring time and none found.'
+      note: "The tilt.it Italian Pinball Database credits CEFF Costruzioni Meccaniche of Piacenza with the pinball machine Five Martians; corroborating sources were sought at authoring time and none found."
       cite:
         ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-        quote: 'CEFF Costruzioni Meccaniche'
+        quote: "CEFF Costruzioni Meccaniche"
       name: CEFF
       manufacturer_alias: [CEFF Costruzioni Meccaniche]
   - corporate-entity.ceff-costruzioni-meccaniche:
       create: true
-      note: 'Corporate entity of CEFF, per the tilt.it Italian Pinball Database.'
+      note: "Corporate entity of CEFF, per the tilt.it Italian Pinball Database."
       cite:
         ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-        quote: 'CEFF Costruzioni Meccaniche'
+        quote: "CEFF Costruzioni Meccaniche"
       name: CEFF Costruzioni Meccaniche
       manufacturer: ceff
       changesets:
         - location: [italy/pc/piacenza]
           cite:
             ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-            quote: 'CEFF Costruzioni Meccaniche (Piacenza, Italy)'
+            quote: "CEFF Costruzioni Meccaniche (Piacenza, Italy)"
   - title.five-martians:
       create: true
-      note: 'Title for Five Martians, per the tilt.it Italian Pinball Database.'
+      note: "Title for Five Martians, per the tilt.it Italian Pinball Database."
       cite:
         ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-        quote: 'Five Martians'
+        quote: "Five Martians"
       name: Five Martians
   - model.five-martians:
       create: true
-      note: 'tilt.it gives no year and no technology for Five Martians; it notes two versions exist (score reels vs. millions scoring), a distinction left to the record description rather than asserted as separate models.'
+      note: "tilt.it gives no year and no technology for Five Martians; it notes two versions exist (score reels vs. millions scoring), a distinction left to the record description rather than asserted as separate models."
       cite:
         ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
         quote: "Five Martians *esistono almeno due versioni di questo flipper; una con le ruote dei punti, l'altra per i flipper a milioni (vedi depliant)"
@@ -52,7 +52,7 @@ claims:
       corporate_entity: ceff-costruzioni-meccaniche
       changesets:
         - game_format: pinball
-          note: 'tilt.it calls it a flipper — the Italian term for a pinball machine.'
+          note: "tilt.it calls it a flipper — the Italian term for a pinball machine."
           cite:
             ref: https://www.tilt.it/flipper_pinball/ipdb/ceff
-            quote: 'esistono almeno due versioni di questo flipper'
+            quote: "esistono almeno due versioni di questo flipper"

@@ -3,1238 +3,1238 @@ description: >
   Retract OPDB's known-bad January months (transposed and year-only defaults).
 claims:
   - model.ac-dc-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.acdc-let-there-be-rock-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.af-tor:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.ag-football:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.ag-soccer-ball:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.agents-777:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.airborne-avenger:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.alaska-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.alaska-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.algar:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.alice-coopers-nightmare-castle:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.alices-adventures-in-wonderland:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.alien-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.alien-poker:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.alien-standard-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.als-garage-band-goes-on-a-world-tour:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.amazon-hunt:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.amazon-hunt-iii:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.andromeda:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.antar:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.apache-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.apollo-13:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.asteroid-annie-and-the-aliens:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.atlantis-2:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.attack:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.attack-from-mars:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.attack-from-mars-remake-special-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.attila-the-hun:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.baby-pac-man:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.bad-cats:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.bad-girls:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.ballerina-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.barb-wire:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.barnacle-bill:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.barracora:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.batman:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.batman-66-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.batman-66-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.batman-66-super-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.beat-the-clock-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.big-bang-bar:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.big-guns-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.big-top-4:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.big-town-2:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.bigfoot:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.black-fever:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.black-hole:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.black-hole-4:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.black-knight:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.black-knight-2000:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.bone-busters-inc:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.boogie:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.boston:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.bram-stokers-dracula:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.buck-rogers:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.bugs-bunnys-birthday-ball:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.cactus-canyon:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.cactus-jacks:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.canada-dry:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.captain-hook:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.card-trix:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.carnaval-no-rio:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.carnival-5:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.catacomb:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.caveman:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cha-cha-cha:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.challenge-round:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.chance:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.charlies-angels:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.charlies-angels-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.check-mate-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.chuck-a-luck:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.cinderella:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.cirqus-voltaire:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.class-of-1812:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.close-encounters-of-the-third-kind:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.clown-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.coney-island:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.conquest-200:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.corvette:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cosmic-flash:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.cosmic-pinball:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cosmic-princess:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.cosmic-wars:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.counterforce:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.crazy-race:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.criss-cross:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.criterium-75-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.crystal-ball-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.cue-ball-wizard:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.cyclopes:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.d-quijote-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.deadly-weapon:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.defender-pinball:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.devil-riders:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.dew-wa-ditty:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.diana:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.diner:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.disco-fever:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.doctor-who:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.dr-dude-and-his-excellent-ray:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.dragonfist:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.dungeons-and-dragons-the-tyrants-eye-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.dungeons-and-dragons-the-tyrants-eye-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.dungeons-dragons:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.dungeons-dragons-the-tyrants-eye-pro:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.dyn-o-mite:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.earth-wind-fire:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.eight-ball:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.eight-ball-champ:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.eight-ball-fury:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.el-dorado-city-of-gold:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.eleven-belles:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.elvira-and-the-party-monsters:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.escape:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.excalibur:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.fabulous-50s:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.faces:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.fairy:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.family-fun:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.fans:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.farfalla:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.fire:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.fire-champagne-edition:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.fireball-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.fireball-ii-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.firepower-ii:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.fish-tales:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.flame-of-athens:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.flash-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.flight-2000:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.flipper-foxtrot-rhythm-explosion:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.flying-aces:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.flying-aces-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.football:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.football-6:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.freak-out:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.freddy-a-nightmare-on-elm-street:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.full:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.full-throttle-standard-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.future-world:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gamatron-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gemini:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.genesis:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.genie:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.getaway:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.ghostbusters-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.ghostbusters-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.ghostbusters-pro:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gladiators:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.godzilla:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.gold-ball-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gold-strike:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gold-wings:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gorgar:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gork:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.granada-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.grand-lizard:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.grand-slam-6:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.gun-smoke:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.harem-cat:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.harley-davidson:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.harley-davidson-2nd-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.harley-davidson-3rd-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.hearts-spades:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.heavy-metal-meltdown:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.hi-straight:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.high-seas:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.hit-the-deck:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.holden-heritage:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.horror:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.hot-fire-birds:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.hot-shots:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.hot-wheels:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.hustler:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.ice-mania:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.independence-day:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.indiana-jones-the-pinball-adventure:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.invasion-stratogy:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.iron-man-pro-vault-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.jack-bot:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.james-bond-007:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.jarama:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.johnny-mnemonic:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.joker-poker:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.jokers-wild-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.jokerz:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.joust:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.judge-dredd:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.jungle-life:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.junk-yard:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.king-kong:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.lady-luck-4:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.lady-luck-6:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.laser-ball:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.last-action-hero:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.last-lap:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.lectronamo:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.lethal-weapon-3:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.lhexagone:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.lightscameraaction:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.locomotion:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.looney-tunes-blood-sucker-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.looney-tunes-collectors-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.looney-tunes-standard-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.loop-the-loop-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.lucky-strike-8:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.magic-2:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.magic-castle:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.magic-picture-pin:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.mario-andretti:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.maverick-the-movie:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.medieval-madness-remake-royal-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.medieval-madness-remake-special-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.megaaton:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.metallica-retheme:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.meteor:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.mikoshi:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.miss-nessie:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.miss-universo-3-ladies:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.mississippi:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.monday-night-football:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.monte-rosa:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.mousin-around:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.mr-black:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.mustang-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.mustang-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.mystery-castle:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.neptune:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.new-wave:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.night-moves:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.no-good-gofers:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.north-pole:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.nugent:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.oba-oba:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.old-coney-island:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pac-man-panic:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.papillon:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.peter-brock-king-of-the-mountain-torana:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.peter-brock-king-of-the-mountain-vk-commodore:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.phoenix-williams:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pin-ball-pool:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pin-up:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.pinball-champ:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.pinball-magic:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pinball-pool:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.pinball-stern:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.pirates-of-the-caribbean-collectors-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pirates-of-the-caribbean-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pirates-of-the-caribbean-standard-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pistol-poker:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.pokerino:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.polar-explorer:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.police-force:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.pool-champion:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.punchy-the-clown:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.punk:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.queens-castle:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.quest-for-glory:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.quijote:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.rack-em-up:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.radical:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.readyaimfire:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.red-baron-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.red-teds-road-show:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.rick-and-morty-blood-sucker-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.riverboat-gambler:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.robin-hood-5:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.robo-war:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.rock:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.rock-star:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.rocky:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.rollercoaster-tycoon:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.roman-victory:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.rotation-viii:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.roy-clark-the-entertainer:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.royal-king:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.rush-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.rush-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.saturn-2:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.scared-stiff:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.sexy-girl:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.sharp-shooter-ii:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.sherokee:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.shock:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.shooting-the-rapids:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.sinbad-adventures:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.ski-jump:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.skill-flight:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.sky-warrior:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.snake-machine:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.soccer-kings:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.solar-ride-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.solar-ride-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-city:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-hawks:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-patrol:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-poker:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-race:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-rider:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.space-riders:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-shuttle:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.space-shuttle-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.space-shuttle-4:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.space-station:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.space-walk:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.spain-82:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.speakeasy-2:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.special-force:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.spectra-iv:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.speed-test:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.speed-way:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.spider:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.spirit:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.spirit-of-76:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.spirit-of-76-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.split-second:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.spooky:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.spring-break:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.spy-hunter:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.star-action:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.star-gazer:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.star-race:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.star-shooter:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.star-trek-3:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.star-trek-the-next-generation:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.star-trip:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.star-wars:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.stars-phoenix:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.starship-troopers:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.stingray:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.strange-science:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.strike:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.striker:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.subway-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.sultan:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.super-bowl:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.super-flipp:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.super-panic-ball:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.surf-n-safari:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.tag-team-pinball:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.take-five:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.tales-from-the-crypt:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.taxi:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.terminator-3-rise-of-the-machines:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-30s:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-addams-family:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-atarians:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-champion-pub:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-flip-side:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-games:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-hobbit-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-incredible-hulk:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-munsters-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-munsters-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-pabst-can-crusher:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-party-zone:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-simpsons:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-simpsons-pinball-party:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.the-sopranos:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.the-texas-chainsaw-massacre-blood-sucker-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-texas-chainsaw-massacre-collectors-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-texas-chainsaw-massacre-standard-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-walking-dead-premium:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-wizard-of-oz-75th-anniversary-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.the-wizard-of-oz-emerald-city:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-wizard-of-oz-limited-edition:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-wizard-of-oz-yellow-brick-road:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.the-world-series:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.thunderbolt:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.tiger:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.tiger-woman:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.time-line:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.time-machine:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.time-machine-zaccaria:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.tiros:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.title-fight:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.top-secret:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.top-speed:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.torpedo-alley:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.total-nuclear-annihilation:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.totem-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.touchdown-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.tramway:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.transporter-the-rescue:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.travel-time:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.tri-score:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.truck-stop:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.twister-3:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.ufo-x:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.universe-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.varkon:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.vegas:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.vegas-3:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.viper:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.volcano:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.volley-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.voltan-escapes-cosmic-doom:
-      note: 'OPDB''s January is not credible: it disagrees with IPDB''s month and fits neither a genuine January nor OPDB''s month-into-day transposition. Retracted as an ingest refinement so IPDB''s month resolves.'
+      note: "OPDB's January is not credible: it disagrees with IPDB's month and fits neither a genuine January nor OPDB's month-into-day transposition. Retracted as an ingest refinement so IPDB's month resolves."
       retract: [month]
   - model.walkyria:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.war-viza:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.warlok:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.warrior-sea:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.waterworld:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.who-dunnit:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.whoa-nellie-big-juicy-melons-2:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.wild-fyre:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.wild-schutz:
-      note: 'OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves.'
+      note: "OPDB stored this month-precision date with the month transposed into the day position (YYYY-MM-01 as YYYY-01-MM), so its month reads as January. Retracted as an ingest refinement; the real month, recorded by IPDB, now resolves."
       retract: [month]
   - model.wimbledon:
-      note: 'OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one.'
+      note: "OPDB defaulted a year-only manufacture date to January 1 and no other source records a month. Retracted as an ingest refinement - no month is better than an untrustworthy one."
       retract: [month]
   - model.wipe-out:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.world-defender:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.xs-os:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
   - model.zankor:
-      note: 'OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves.'
+      note: "OPDB defaulted a year-only manufacture date to January 1, so its January carries no month information; IPDB records a real month. Retracted as an ingest refinement so that month resolves."
       retract: [month]
