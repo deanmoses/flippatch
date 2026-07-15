@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Create the city locations for the Japanese and active makers.
+  Cities for upcoming makers.
 claims:
   - location.japan/osaka/higashi-osaka:
       create: true

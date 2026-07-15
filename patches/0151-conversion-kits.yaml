@@ -1,0 +1,213 @@
+attribution: flipcommons-catalog
+description: Conversion-kit claims for tagged games with no specific donor.
+claims:
+  # A software mini-game that runs on the Lexy Lightspeed: Escape from Earth
+  # playfield module, which we already catalog.
+  - model.lexy-lightspeed-secret-agent-showdown:
+      cite:
+        ref: ipdb:6453
+        quote: designed to work with the LL-EE upper playfield module installed in the P3 machine
+      model_relationship:
+        - target_machine: lexy-lightspeed-escape-from-earth
+          relationship_type: conversion_kit
+          license_status: unknown
+  # The source names many possible donor machines rather than one, so we
+  # describe them in words.
+  - model.sky-warrior:
+      cite:
+        ref: ipdb:3905
+        quote: Conversion kit for many solid state Gottlieb games of the late 1970's.
+      model_relationship:
+        - target_label: many late 1970s solid state Gottliebs
+          relationship_type: conversion_kit
+          license_status: unknown
+  # A modern Multimorphic P3 game that runs on the whole platform rather than a
+  # single machine.
+  - model.bird-watcher:
+      cite:
+        - ref: https://ianharrowergames.com/BirdWatcher/
+          quote: a new software add-on game for Multimorphic's P3 Pinball Platform
+        - ref: https://ianharrowergames.com/BirdWatcher/
+          quote: Bird Watcher is designed to work on all production P3 modules as of Sept 2024.
+      model_relationship:
+        - target_label: the Multimorphic P3 platform
+          relationship_type: conversion_kit
+          license_status: unknown
+
+  # ─── Older solid-state machines sold as kits ───
+  # A kit whose donor the source names and we already catalog: White Shark was
+  # built from Europlay's Jaws.
+  - model.white-shark:
+      cite:
+        ref: ipdb:3555
+        quote: "This game is a conversion kit of Europlay's 'Jaws'."
+      model_relationship:
+        - target_machine: jaws
+          relationship_type: conversion_kit
+          license_status: unknown
+  # Kits the source says fit a whole class of machines, described in words.
+  - model.301bullseye:
+      cite:
+        ref: ipdb:403
+        quote: "'301/Bulls Eye' was a conversion kit for all the Bally electronic 4-player games of the period (excludes 'The Six Million Dollar Man' and widebody games)."
+      model_relationship:
+        - target_label: many Bally electronic 4-player games of the period
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.world-defender:
+      cite:
+        ref: ipdb:3519
+        quote: "Conversion kit for unspecified Bally machine(s) which included playfield, backglass and artwork panels for the cabinet."
+      model_relationship:
+        - target_label: unknown Bally donor machines
+          relationship_type: conversion_kit
+          license_status: unknown
+  # Kits with no donor the sources pin down.
+  - model.cosmodrome:
+      cite:
+        ref: ipdb:3696
+        quote: "This game is a conversion kit."
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.the-hunter:
+      cite:
+        ref: ipdb:3733
+        quote: "The flyer indicates this conversion kit was for export from Italy."
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.king:
+      cite:
+        ref: "https://www.tilt.it/bell.htm"
+        quote: 'Their first kit called "THE KING" was produced in 1978.'
+      model_relationship:
+        - target_label: unknown donor
+          relationship_type: conversion_kit
+          license_status: unknown
+  # Tiger Woman is a mash-up copy: its playfield comes from Gottlieb's Jungle
+  # Princess and its cabinet art from Williams' Hyperball. It is not itself a kit —
+  # the IPDB note about a conversion kit describes a kit made for Tiger Woman
+  # (Tiger Woman being the machine converted), not the other way round.
+  - model.tiger-woman:
+      changesets:
+        - cite:
+            ref: ipdb:3904
+            quote: "The playfield layout is the same as Gottlieb's 1977 'Jungle Princess'"
+          model_relationship:
+            - target_machine: jungle-princess
+              relationship_type: copy
+              license_status: unknown
+        - cite:
+            ref: ipdb:3904
+            quote: "cabinet art was copied from Williams' 1981 'Hyperball'"
+          model_relationship:
+            - target_machine: hyperball
+              relationship_type: copy
+              license_status: unknown
+  # Tagged a kit, but the sources describe something else: New Wave reproduced
+  # the design of Bally's Black Pyramid.
+  - model.new-wave:
+      cite:
+        - ref: "https://www.tilt.it/bell.htm"
+          quote: 'was a copy of Bally''s "Black Pyramid" (1984)'
+        - ref: ipdb:3482
+          quote: "Same playfield layout as Bally Midway's 1984 'Black Pyramid'"
+      model_relationship:
+        - target_machine: black-pyramid
+          relationship_type: copy
+          license_status: unknown
+
+  # ─── Modern Multimorphic P3 games ───
+  # Each of these is built for one specific playfield module we already catalog.
+  - model.hoopin-it-up:
+      cite:
+        ref: "https://www.multimorphic.com/news/hoopin-it-up-free-download-and-4-way-simultaneous-play-on-cosmic-cart-racing"
+        quote: "Hoopin' It Up (HIU) is a basketball-themed game that operates on the Lexy Lightspeed playfield module."
+      model_relationship:
+        - target_machine: lexy-lightspeed-escape-from-earth
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.grand-slam-rally:
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/grand-slam-rally"
+        quote: "The 5 shot lanes of the Cannon Lagoon playfield module present up to 5 scoring opportunities on every pitch."
+      model_relationship:
+        - target_machine: cannon-lagoon
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.sorcerers-apprentice:
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/sorcerers-apprentice"
+        quote: "add-on gaming experience for the P3 pinball platform and the Cosmic Cart Racing playfield module"
+      model_relationship:
+        - target_machine: cosmic-cart-racing
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.ranger-in-the-ruins:
+      cite:
+        - ref: "https://pinside.com/pinball/forum/topic/p3-game-ranger-in-the-ruins"
+          quote: "It will use the CCR playfield module."
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/silver-falls"
+          quote: "designer of Ranger In The Ruins for the Cosmic Cart Racing game kit"
+      model_relationship:
+        - target_machine: cosmic-cart-racing
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.silver-falls:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/p3-game-silver-falls"
+        quote: "It uses the Heist playfield module, and is a very different style of game."
+      model_relationship:
+        - target_machine: heist
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.blood-bank-billiards:
+      cite:
+        - ref: "https://ianharrowergames.com/BloodBankBilliards"
+          quote: "a new software add-on game for the Drained playfield module from For Amusement Only Games for Multimorphic's P3 Pinball Platform"
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/blood-bank-billiards"
+          quote: "This is further realized with integration of the Drained module physical bell and knocker."
+      model_relationship:
+        - target_machine: drained
+          relationship_type: conversion_kit
+          license_status: unknown
+  # A game the source says fits either of two seeded modules.
+  - model.dungeon-door-defender:
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/dungeon-door-defender"
+        quote: "This game is designed exclusively for the Heist and/or The Princess Bride playfield modules (each sold separately)."
+      model_relationship:
+        - target_machine: heist
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: the-princess-bride
+          relationship_type: conversion_kit
+          license_status: unknown
+  # Games that run on the P3 platform generally rather than one named module.
+  - model.drained:
+      cite:
+        ref: "https://foramusementonlygames.com/drained.html"
+        quote: "our exclusive, critically acclaimed vampire-themed original P3 playfield module"
+      model_relationship:
+        - target_label: the Multimorphic P3 platform
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.drained-bite-sized:
+      cite:
+        ref: "https://foramusementonlygames.com/othergames.html"
+        quote: "These For Amusement Only Games Original digital add-on games utilize the P3 modules you already own to give you entirely new gameplay experiences at a fraction of the cost."
+      model_relationship:
+        - target_label: the Multimorphic P3 platform
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.flipper-foxtrot-rhythm-explosion:
+      cite:
+        ref: "https://foramusementonlygames.com/othergames.html"
+        quote: "These For Amusement Only Games Original digital add-on games utilize the P3 modules you already own to give you entirely new gameplay experiences at a fraction of the cost."
+      model_relationship:
+        - target_label: the Multimorphic P3 platform
+          relationship_type: conversion_kit
+          license_status: unknown

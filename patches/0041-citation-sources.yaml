@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >-
-  Seed website roots for upcoming patches.
+  Citation source roots for upcoming patches.
 sources:
   - name: "Eremeka — a foreigners' guide to eremeka arcades"
     source_type: web
@@ -324,6 +324,18 @@ sources:
       - {
           url: "https://www.pinball-magazine.com/",
           label: Pinball Magazine,
+          link_type: homepage,
+        }
+  - name: Chicago Gaming Company
+    source_type: web
+    description: >-
+      Manufacturer site of Chicago Gaming Company, a US maker of officially
+      licensed pinball remakes (Medieval Madness, Attack from Mars, Cactus
+      Canyon).
+    links:
+      - {
+          url: "https://www.chicago-gaming.com/",
+          label: Chicago Gaming Company,
           link_type: homepage,
         }
 claims: []

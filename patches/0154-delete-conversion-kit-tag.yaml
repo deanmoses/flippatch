@@ -1,0 +1,9 @@
+attribution: flipcommons-catalog
+description: >-
+  Retire the conversion-kit tag (2/2): soft-delete the tag row.
+claims:
+  - tag.conversion-kit:
+      delete: true
+      note: >
+        Replaced by relationship_type: conversion_kit edges
+        (docs/plans/catalog_data_model/ModelRelationships.md, step 9).

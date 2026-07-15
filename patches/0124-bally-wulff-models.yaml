@@ -215,7 +215,7 @@ claims:
             (model:hardbody-bally-wulff) — offered after operators objected to the
             body-builder artwork — which is itself the licensed German build of
             Bally Midway's Hardbody (model:hardbody); so this is recorded as a
-            licensed build of the US Hardbody and carries the licensed-build tag,
+            licensed build of the US Hardbody,
             with the variant_of link above capturing its direct sibling relation to
             the Bally Wulff Hardbody. It keeps its own Super Sport title, since the
             renamed edition is a distinct name rather than a same-name build.
@@ -348,11 +348,12 @@ claims:
       changesets:
         - retract: [variant_of]
           note: >
-            Replace the variant_of link with the licensed_build_of below: this is
             Bally Wulff's licensed German edition of Bally Midway's 1986 Special
             Force (model:special-force), re-backglassed and renamed for the German
-            market. It keeps its distinct Special Force Girls name and already
-            shares the special-force title.
+            market: a licensed copy of the US machine, not merely a variant of it,
+            so the earlier variant relationship is retracted here. It keeps its
+            distinct Special Force Girls name and already shares the special-force
+            title.
         - cite:
             ref: ipdb:3270
             quote: "'Special Force Girls' is the same game as Bally Midway's 1986 'Special Force' but with a different backglass."

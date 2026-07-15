@@ -1,9 +1,8 @@
 attribution: flipcommons-catalog
-description: Delete titles orphaned by the Maresa bootleg title merges.
+description: Delete titles orphaned by the Maresa title merges.
 claims:
-  # Each title below held only its single Maresa bootleg, which patch 0140
+  # Each title below held only its single Maresa model, which a previous patch
   # re-homed onto the Gottlieb original's title. Each is now empty and retired.
-  # A delete must be the only entry touching the entity it removes.
   - title.big-brave-2:
       delete: true
       note: "Orphaned after its sole model (big-brave-maresa) was merged into the big-indian-big-brave title."

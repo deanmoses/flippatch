@@ -1,0 +1,68 @@
+attribution: flipcommons-catalog
+description: Cactus Canyon production statuses and the Lyman Upgrade relationship fix.
+claims:
+  # Production status for the Cactus Canyon models. The seed leaves ordinary
+  # produced machines null and records only the exceptions (unreleased,
+  # aftermarket, one-off, announced) — Cactus Canyon Continued already carries
+  # aftermarket (0031). The four models below were all manufactured and sold, so
+  # assert produced explicitly, which also stops the title page from surfacing
+  # the aftermarket child as if it were the whole title's status.
+
+  # The original 1998 Bally machine. Bally built 903 units before cutting the run
+  # short to move production to the Pinball 2000 platform.
+  - model.cactus-canyon:
+      cite:
+        ref: ipdb:4445
+        quote: 'Production stopped short to begin "Pinball 2000" production.'
+      production_status: produced
+
+  # Chicago Gaming's 2021 licensed remake, Limited Edition.
+  - model.cactus-canyon-remake-limited-edition:
+      cite:
+        - ref: https://www.chicago-gaming.com/coinop/cactus-canyon/upgrade
+          quote: "After licensing the rights to reproduce Cactus Canyon, Chicago Gaming set out to enhance and produce this timeless classic."
+        - ref: https://www.chicago-gaming.com/coinop/cactus-canyon/upgrade
+          quote: "14000-LE Cactus Canyon Limited Edition"
+      production_status: produced
+
+  # Chicago Gaming's 2021 licensed remake, Special Edition.
+  - model.cactus-canyon-remake-special-edition:
+      cite:
+        - ref: https://www.chicago-gaming.com/coinop/cactus-canyon/upgrade
+          quote: "After licensing the rights to reproduce Cactus Canyon, Chicago Gaming set out to enhance and produce this timeless classic."
+        - ref: https://www.chicago-gaming.com/coinop/cactus-canyon/upgrade
+          quote: "14000-SE Cactus Canyon Special Edition"
+      production_status: produced
+
+  # The Lyman Sheats Complete Upgrade: a 2025 conversion kit Chicago Gaming
+  # completed and shipped, plus a fix to its erroneous variant_of.
+  - model.cactus-canyon-lyman-upgrade:
+      changesets:
+        # The Lyman Sheats Complete Upgrade is filed as variant_of the Cactus
+        # Canyon Remake Special Edition, but variant_of is for cosmetic/packaging
+        # variants that share the machine's gameplay. This upgrade rewrites the
+        # rule set and adds a physical mechanism, so it isn't gameplay-identical
+        # to the SE — it's a conversion kit, which the machine already carries as
+        # a conversion_kit model_relationship to the SE. Retract the
+        # contradictory variant_of.
+        - retract: [variant_of]
+          note: >-
+            Retract the erroneous variant_of on the Cactus Canyon Lyman Upgrade.
+            variant_of is reserved for cosmetic/packaging variants that share a
+            machine's gameplay. The Lyman Sheats Complete Upgrade changes
+            gameplay — a larger rule set and an added mechanism — so it is a
+            conversion kit, not a variant, and the model already carries a
+            conversion_kit model_relationship to the Special Edition. Chicago
+            Gaming's own page for the upgrade
+            (https://www.chicago-gaming.com/coinop/cactus-canyon/upgrade)
+            describes it this way: "While deep into the project, Lyman envisioned
+            a larger rule set and an additional mechanism that he felt would
+            propel Cactus Canyon to true pinball greatness." (No cite: here — a
+            retraction deactivates a claim rather than asserting one, so there is
+            no asserted field for a citation to attach to; the source is recorded
+            in this note instead.)
+        - production_status: produced
+          note: "Chicago Gaming completed and released the upgrade as a shipping product in 2025."
+          cite:
+            ref: https://www.chicago-gaming.com/coinop/cactus-canyon/upgrade
+            quote: "The Lyman Sheats Complete Upgrade is our best effort to execute Lyman Sheats' larger vision for this game."

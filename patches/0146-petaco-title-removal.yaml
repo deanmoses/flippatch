@@ -1,11 +1,8 @@
 attribution: flipcommons-catalog
-description: Delete titles orphaned by the Petaco bootleg title merges.
+description: Delete titles orphaned by the Petaco title merges.
 claims:
-  # Each title below held only its single Petaco bootleg, which patch 0145
+  # Each title below held only its single Petaco model, which patch 0145
   # re-homed onto the Gottlieb original's title. Each is now empty and retired.
-  # A delete must be the only entry touching the entity it removes.
-  # (grand-slam-7 and spin-a-card-2 already shared their original's title, so
-  # no title was orphaned for them.)
   - title.aquarius-2:
       delete: true
       note: "Orphaned after its sole model (aquarius-petaco) was merged into the aquarius title."

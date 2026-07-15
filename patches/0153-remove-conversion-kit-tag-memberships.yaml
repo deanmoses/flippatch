@@ -1,0 +1,334 @@
+attribution: opdb
+description: >-
+  Retire the conversion-kit tag (1/2): remove its memberships.
+claims:
+  - model.301bullseye:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.amazon-hunt-iii:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.big-dryvers:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.bird-watcher:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.blood-bank-billiards:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.bride-of-pinbot-20:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.buck-rogers:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.cactus-canyon-lyman-upgrade:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.challenger:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.challenger-ii:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.challenger-iii:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.challenger-iv:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.challenger-v:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.cleopatra-play-pool:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.coney-island:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.cosmodrome:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.dark-rider:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.drained:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.drained-bite-sized:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.dungeon-door-defender:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.fantasy:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.flesh-and-blood:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.flipper-foxtrot-rhythm-explosion:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.fly-high:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.funhouse-20-rudys-nightmare:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.gamatron-2:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.grand-slam-rally:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.hoopin-it-up:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.horror:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.ice-mania:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.king:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.la-retata:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.lady-death:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.le-grande-8:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.lexy-lightspeed-secret-agent-showdown:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.lhexagone:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.lovers:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.mac-jungle:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.new-wave:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.pin-ball-pool:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.pinball:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.race-stars:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.ranger-in-the-ruins:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.road-racer:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.sahara-love:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.saturn-2:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.sexy-girl:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.sexy-girl-delux:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.silver-falls:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.sisters:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.sky-warrior:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.sorcerers-apprentice:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.space-hawks:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.space-rider:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.space-wars:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.spider:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.stellar-airship:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.super-bowl:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.take-a-card:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.the-hunter:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.tiger-rag:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.tiger-woman:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.whirlwind-20:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.white-shark:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.wild-schutz:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.
+  - model.world-defender:
+      remove:
+        tag: [conversion-kit]
+      note: >-
+        Conversion-kit-ness now lives on the ModelRelationship conversion_kit edge, so the conversion-kit tag duplicates it and is being retired.

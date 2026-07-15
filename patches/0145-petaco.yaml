@@ -57,11 +57,11 @@ claims:
               quote: "A copy of Gottlieb's 1970 'Aquarius'"
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: aquarius
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Aquarius" (1971), réplica del pinball homónimo de 1970/10.'
@@ -75,11 +75,11 @@ claims:
               quote: "This is a copy of Gottlieb's 1970 'Flip a Card'."
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: flip-a-card
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Flip a Card" (1971), réplica del pinball homónimo de 1970/03.'
@@ -93,11 +93,11 @@ claims:
           quote: "This game is a copy of Gottlieb's 1972 'Grand Slam'"
         - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
           quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+      note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       model_relationship:
         - target_machine: grand-slam-5
           relationship_type: copy
           license_status: unknown
-      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.mibs-2:
       changesets:
         - slug: mibs-petaco
@@ -107,11 +107,11 @@ claims:
               quote: "A copy of Gottlieb's 1969 'Mibs'"
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: mibs
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Mibs" (1969), réplica del pinball homónimo de 1969/10.'
@@ -125,11 +125,11 @@ claims:
               quote: "This is a 1-player copy of the 2-player Gottlieb's 1970 'Mini Cycle'"
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: mini-cycle
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Mini Cycle" (1971), réplica del pinball homónimo de Gottlieb 1970/02.'
@@ -142,11 +142,11 @@ claims:
           quote: "A copy of Gottlieb's 1962 'Olympics'."
         - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
           quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+      note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       model_relationship:
         - target_machine: olympics-3
           relationship_type: copy
           license_status: unknown
-      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.spin-a-card-2:
       # Already shares the spin-a-card-hearts-and-spades title with the original,
       # so no title move is needed; only the slug rename.
@@ -156,11 +156,11 @@ claims:
           quote: "A copy of Gottlieb's 1969 'Spin-A-Card'."
         - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
           quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+      note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       model_relationship:
         - target_machine: spin-a-card
           relationship_type: copy
           license_status: unknown
-      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.drop-a-card-2:
       changesets:
         - slug: drop-a-card-petaco
@@ -170,11 +170,11 @@ claims:
               quote: '"Drop a Card" (1972), réplica del pinball homónimo de 1971/11.'
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: drop-a-card
               relationship_type: copy
               license_status: unknown
-          note: 'license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco''s own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none its authorization; a lone blog''s licence claim was weighed and rejected. (IPDB only says "Also see" Gottlieb''s Drop-A-Card; the blog establishes the copy.)'
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Drop a Card" (1972), réplica del pinball homónimo de 1971/11.'
@@ -188,11 +188,11 @@ claims:
               quote: '"Sky Jump" (1974), réplica del pinball homónimo de Gottlieb 1974/05.'
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: sky-jump
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Sky Jump" (1974), réplica del pinball homónimo de Gottlieb 1974/05.'
@@ -205,11 +205,11 @@ claims:
           quote: "A copy of Gottlieb's 1963 'Sweet Hearts'."
         - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
           quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+      note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       model_relationship:
         - target_machine: sweet-hearts
           relationship_type: copy
           license_status: unknown
-      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.esmeralda-ball:
       changesets:
         - cite:
@@ -217,11 +217,11 @@ claims:
               quote: "This game is a 1-player copy of the 4-player Gottlieb's 1968 'Spin Wheel'."
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: spin-wheel
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Esmeralda Ball" (1968), réplica del pinball "Spin Wheel" de 1968/03.'
@@ -233,11 +233,11 @@ claims:
               quote: "This is a copy of Gottlieb's 1968 'Royal Guard'."
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: royal-guard
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Gran Parada" (1968), réplica del pinball "Royal Guard" de 1968/01.'
@@ -248,30 +248,24 @@ claims:
           quote: "A copy of Gottlieb's 1973 'High Hand'."
         - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
           quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+      note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       model_relationship:
         - target_machine: high-hand-2
           relationship_type: copy
           license_status: unknown
-      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.new-city-2:
       cite:
         - ref: ipdb:6225
           quote: "A copy of Gottlieb's 1965 'Kings & Queens'."
         - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
           quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+      note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       model_relationship:
         - target_machine: kings-queens
           relationship_type: copy
           license_status: unknown
-      note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
   - model.rey-de-diamantes:
-      note: >
-        Already shares the king-of-diamonds title with the original (OPDB groups
-        the two); a renamed copy, so its own name is kept and only the copy
-        relationship is added. license_status unknown, not unlicensed: sources
-        (incl. Pinball News, written with Petaco's own chief designer Eulogio
-        Pingarrón) establish the copy of Gottlieb but none its authorization; a
-        lone blog's licence claim was weighed and rejected.
+      note: 'Already shares the king-of-diamonds title with the original (OPDB groups the two); a renamed copy, so its own name is kept. Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       cite:
         - ref: ipdb:4368
           quote: "A modified copy of Gottlieb's 1967 'King of Diamonds'."
@@ -288,24 +282,17 @@ claims:
               quote: "This 2-player game is a copy of the 2-player Gottlieb's 1972 'Outer Space'"
             - ref: https://www.pinballnews.com/learn/spanishpinball/index.html
               quote: "Petaco and Maresa both created replicas of Gottlieb's models"
+          note: 'Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
           model_relationship:
             - target_machine: outer-space
               relationship_type: copy
               license_status: unknown
-          note: "license_status unknown, not unlicensed: sources (incl. Pinball News, written with Petaco's own chief designer Eulogio Pingarrón) establish the copy of Gottlieb but none establish its authorization; a lone blog's licence claim was weighed and rejected."
         - cite:
             ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
             quote: '"Orbit" (1972), réplica del pinball "Outer Space" de 1972/02.'
           year: 1972
   - model.paraiso:
-      note: >
-        license_status unknown, not unlicensed: sources establish the copy of
-        Gottlieb but none its authorization (Pinball News, written with Petaco's
-        own chief designer Eulogio Pingarrón, names no licence; a lone blog's
-        licence claim was weighed and rejected). Evidence for THIS copy is
-        thinner than the others: IPDB has seen only a backglass (a copy of
-        Paradise's), while the blog lists Paraíso among Petaco's full Gottlieb
-        replicas.
+      note: 'Evidence for this copy is thinner than the others: IPDB has seen only a backglass (a copy of Paradise''s), while the blog lists Paraíso among Petaco''s Gottlieb replicas. Licensing is disputed and thus we''re marking it as unknown. A Pinball News article, written with Petaco''s own chief designer Eulogio Pingarrón, neglects to mention licensing, which strongly suggests it was NOT under license. The blog "Pinball con Ñ" DOES say it was licensed, but that''s not compelling enough to counter the Pingarrón interview.'
       cite:
         - ref: https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html
           quote: '"Paraíso" (1967), réplica del pinball "Paradise" de 1965/11.'

@@ -3,17 +3,17 @@ description: Lineage of foreign under-license editions of US/Spanish games.
 claims:
   # ==========================================================================
   # Foreign under-license editions — a licensee/subsidiary built a complete copy
-  # of another maker's design UNDER LICENSE for its own market. Each row is one
-  # model_relationship edge: relationship_type: copy, license_status: licensed,
-  # target the named original. The licence is sourced on every row — each IPDB
-  # note says "under license" / "under licence" verbatim (quoted in the cite).
+  # of another maker's design UNDER LICENSE for its own market.
+  #
+  # The licence is sourced on every row; each IPDB note says "under license" /
+  # "under licence" verbatim (quoted in the cite).
+  #
   # Contrast 0140 Maresa / 0145 Petaco / 0148 RMG, copies with NO authorization
   # source (license_status: unknown).
   #
-  # Same-name builds are merged under the original's title with the slug renamed
-  # to end in the maker (arena-vifico, dracula-lai …). Builds disambiguate by
-  # slug alone; the original keeps its bare name, and the UI distinguishes the
-  # two same-title machines by maker.
+  # Models having the same name as the model of which it is a copy are merged
+  # under the original's title.  Also, the slug is renamed to end in the maker
+  # (arena-vifico, dracula-lai …) to make for clearer URLs and wikilinks.
   # ==========================================================================
 
   # ------------------------------------------------------------------------

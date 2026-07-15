@@ -171,7 +171,7 @@ claims:
           relationship_type: conversion
           license_status: unknown
   - model.star:
-      note: 'IPDB records the donor as unidentified; it suggests, unconfirmed (from "a very small" playfield photo), that it may be Gottlieb''s 1964 "Ship-Mates", so no target_machine is asserted.'
+      note: 'IPDB records the donor as unidentified; it suggests, unconfirmed (from "a very small" playfield photo), that it may be Gottlieb''s 1964 "Ship-Mates", but that is not asserted as the donor.'
       cite:
         ref: ipdb:6321
         quote: "'Star' is a conversion of an unidentified 4-player replay game."

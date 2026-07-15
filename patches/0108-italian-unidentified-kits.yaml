@@ -8,12 +8,9 @@ claims:
   # kits" section. license_status is unknown throughout (no source addresses
   # authorization; Italy had no import ban to imply one). The donor is recorded at
   # whatever resolution the source supports:
-  #   - a named, seeded donor -> target_machine (Harmony/Troubadour kits carry two
-  #     edges, one per compatible donor);
-  #   - a described-but-unseeded/generic donor -> target_label ("electromechanical
-  #     machines");
-  #   - no donor stated at all -> target_label "unknown donor" (the kit itself is
-  #     sourced; the donor simply is not).
+  #   - a named, seeded donor -> target_machine (Harmony/Troubadour kits carry two donors);
+  #   - a described-but-unseeded/generic donor -> target_label ("electromechanical machines");
+  #   - no donor stated at all -> target_label "unknown donor" (the kit itself is sourced; the donor simply is not).
   # ==========================================================================
   - person.de-angelis:
       create: true

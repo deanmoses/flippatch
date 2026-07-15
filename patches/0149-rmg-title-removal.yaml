@@ -1,9 +1,8 @@
 attribution: flipcommons-catalog
-description: Delete titles orphaned by the R.M.G. bootleg title merges.
+description: Delete titles orphaned by the R.M.G. model title merges.
 claims:
-  # Each title below held only its single R.M.G. bootleg, which patch 0148
+  # Each title below held only its single R.M.G. model, which patch 0148
   # re-homed onto the original's title. Each is now empty and retired.
-  # A delete must be the only entry touching the entity it removes.
   - title.big-valley-2:
       delete: true
       note: "Orphaned after its sole model (big-valley-rmg) was merged into the big-valley title."
