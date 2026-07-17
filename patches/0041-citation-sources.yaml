@@ -338,4 +338,41 @@ sources:
           label: Chicago Gaming Company,
           link_type: homepage,
         }
+  - name: Pacific Pinball Museum
+    source_type: web
+    description: >-
+      Site of the Pacific Pinball Museum, a nonprofit pinball history museum in
+      Alameda, California.
+    links:
+      - {
+          url: "https://www.pacificpinball.org/",
+          label: Pacific Pinball Museum,
+          link_type: homepage,
+        }
+    domains:
+      - pacificpinball.org
+  - name: They Create Worlds
+    source_type: web
+    description: >-
+      Video-game and coin-op history research blog by the historian Alexander
+      Smith.
+    links:
+      - {
+          url: "https://videogamehistorian.wordpress.com/",
+          label: They Create Worlds,
+          link_type: homepage,
+        }
+  - name: Bingo Pinballs
+    source_type: web
+    description: >-
+      Reference site documenting bingo-style coin-op amusement machines and
+      their makers.
+    links:
+      - {
+          url: "https://bingo.cdyn.com/",
+          label: Bingo Pinballs,
+          link_type: homepage,
+        }
+    domains:
+      - danny.cdyn.com
 claims: []

@@ -1,40 +1,6 @@
 attribution: flipcommons-catalog
 description: Copy/conversion lineage for R.M.G. (license status unknown — see header).
 claims:
-  # ==========================================================================
-  # R.M.G. (Renato Montanari Giochi), Italy, built copies of US and Italian
-  # pinball designs — mostly Gottlieb, plus one Bally and one Bensa — for the
-  # Italian market, several as add-a-ball versions. Each IPDB note names the
-  # original verbatim as "a copy of <maker>'s <year> '<title>'", so the copy
-  # relationship + target is unambiguous: relationship_type: copy, target the
-  # named original, cited to that IPDB note.
-  #
-  # license_status: unknown on every row. No source establishes authorization
-  # either way — the IPDB "copy of" wording speaks only to derivation, not to a
-  # licence, and (unlike Franco-era Spain or Brazil's Reserva de Mercado) Italy
-  # had no import ban to imply unauthorized copying. So we deliberately do NOT
-  # launder an unsourced "unlicensed"/bootleg here (contrast 0150-ltd-do-brasil,
-  # where "unlicensed" IS sourced to Augusto Campos). If a period licence or an
-  # explicit "unauthorized" source ever surfaces, set license_status accordingly.
-  #
-  # Same-name copies (below): the derivative carries the original's name, so
-  # per the campaign slug convention its disambiguation-numbered slug is renamed
-  # to end in -rmg and it is merged under the original's title (the emptied
-  # R.M.G. title is retired in 0149). The copy and the original keep their bare
-  # shared name; the UI tells them apart by maker. Renamed copies (different
-  # name from the original) keep their own slug/title. The one conversion *kit*
-  # (the-best-wizard) takes
-  # relationship_type: conversion_kit (IPDB: "Conversion kit for …").
-  #
-  # Duplicate consolidation: space-orbit-2 (ipdb:4783) and space-orbit-3
-  # (ipdb:5458) were two IPDB listings of the SAME R.M.G. "Space Orbit!" — same
-  # maker, name, year (1972) and player count. 5458 carries the fuller record
-  # (a superset feature list, 26 images vs 6, a detailed provenance note) and
-  # 4783 has nothing unique at the catalog level. With no model-merge operation,
-  # 4783 is soft-deleted as a duplicate (below) and the surviving 5458 is
-  # same-name-merged onto the Gottlieb original like the other copies.
-  # ==========================================================================
-
   # ---- Same-name copies: slug rename + title merge
   - model.big-valley-2:
       slug: big-valley-rmg

@@ -107,9 +107,10 @@ claims:
             - target_machine: hyperball
               relationship_type: copy
               license_status: unknown
-  # Tagged a kit, but the sources describe something else: New Wave reproduced
-  # the design of Bally's Black Pyramid.
+  # OPDB tags New Wave as a conversion kit; classify its Black Pyramid
+  # relationship as conversion_kit accordingly.
   - model.new-wave:
+      note: "OPDB tags this model as a conversion kit, so we're setting the Black Pyramid relationship to 'conversion kit' rather than 'copy', which we might have otherwise done."
       cite:
         - ref: "https://www.tilt.it/bell.htm"
           quote: 'was a copy of Bally''s "Black Pyramid" (1984)'
@@ -117,7 +118,7 @@ claims:
           quote: "Same playfield layout as Bally Midway's 1984 'Black Pyramid'"
       model_relationship:
         - target_machine: black-pyramid
-          relationship_type: copy
+          relationship_type: conversion_kit
           license_status: unknown
 
   # ─── Modern Multimorphic P3 games ───

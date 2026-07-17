@@ -1,0 +1,55 @@
+attribution: flipcommons-catalog
+description: >-
+  Classify the catalog's rolldown machines.
+claims:
+  # Machines whose own IPDB record names them a rolldown.
+  - model.bumper-bowling:
+      cite:
+        ref: "ipdb:3670"
+        quote: This might be the first rolldown game.
+      game_format: rolldown
+  - model.tally-roll:
+      cite:
+        ref: "ipdb:5435"
+        quote: "The first Billboard ad from the manufacturer for this rolldown game is dated 07/06/1946 p161 and shows a picture of 'Tally Roll' already manufactured."
+      game_format: rolldown
+  - model.box-score-3:
+      cite:
+        ref: "ipdb:3742"
+        quote: Several Williams documents consistently indicate a date of 1948 for Model 13 and identify it as a rolldown game.
+      game_format: rolldown
+  - model.bubbles-rolldown:
+      cite:
+        ref: "ipdb:4355"
+        quote: According to Genco data, 245 units of this rolldown game were made.
+      game_format: rolldown
+  - model.hi-score-pool-3:
+      cite:
+        ref: "ipdb:6381"
+        quote: "'Hi-Score Pool' is a rolldown game that uses a cue stick instead of the player manually rolling the ball."
+      game_format: rolldown
+  - model.jolly-joker:
+      cite:
+        ref: "ipdb:1310"
+        quote: Rolldown play to score poker hands.
+      game_format: rolldown
+  - model.baseball-11:
+      cite:
+        ref: "ipdb:4968"
+        quote: 'where it stated, "Roll Down Baseball Game, like Genco Playball, perfect, like new, real bargain at $50.00"'
+      game_format: rolldown
+
+  # Cross-references: the model's own IPDB record is silent on format; another
+  # Genco record names it a rolldown. Cite the record that carries the statement.
+  - model.total-roll:
+      cite:
+        ref: "ipdb:2374"
+        quote: it was actually their fourth post-war effort, following their rolldown game Total Roll and two vertical counter games Whizz and Pee-Wee.
+      note: The model's own IPDB notes don't state the format; Genco's 'Step-Up' record cross-references it as a rolldown.
+      game_format: rolldown
+  - model.play-ball-9:
+      cite:
+        ref: "ipdb:4968"
+        quote: "it has been associated with another rolldown game, Genco's 1942 'Play Ball'."
+      note: The model's own IPDB notes don't state the format; Genco's 'Baseball' record cross-references it as a rolldown.
+      game_format: rolldown

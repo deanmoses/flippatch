@@ -1,52 +1,6 @@
 attribution: flipcommons-catalog
 description: Petaco copy lineage and model-year fills.
 claims:
-  # ==========================================================================
-  # Petaco, Madrid, Spain. Under Franco-era Spain's ban on importing US pinball,
-  # Petaco built copies of Gottlieb designs. Each entry records a copy
-  # relationship (relationship_type: copy) to the seeded model, with
-  # license_status: unknown (see the classification note below), cited to the
-  # IPDB note establishing the copy plus a general Pinball News corroboration.
-  #
-  # --------------------------------------------------------------------------
-  # Classification note — license_status: unknown (research 2026-07-13)
-  #
-  # Recorded as relationship_type: copy + license_status: unknown. The COPY is
-  # well sourced; the AUTHORIZATION is not — no source establishes it either
-  # way, so unknown (NOT unlicensed, NOT licensed). What the sources say:
-  #   - COPY / REPLICA of Gottlieb designs — the independent consensus:
-  #       * IPDB — "A copy of Gottlieb's ..." on every Petaco note (and note
-  #         IPDB *does* say "under license" for VIFICO, so its silence here is
-  #         meaningful).
-  #       * Pinball News, "Pinballs Made in Spain" (2014, Waldemar Banasik),
-  #         co-written with Eulogio Pingarrón — Petaco's OWN chief designer —
-  #         calls them "copy"/"replica" and never once says "license". Cached:
-  #         https://www.pinballnews.com/learn/spanishpinball/index.html
-  #       * Wikipedia's Maresa article says "copies", citing only Pinball News.
-  #       * Kineticist — "copy" / "inspired design".
-  #   - LICENSED by Gottlieb (a 1964-74 "acuerdo", Spanish factory) — claimed by
-  #     exactly ONE source, the Spanish blog "Pinball con Ñ"
-  #     (https://blogpinball.blogspot.com/2017/03/petaco-sa-procedimientos.html;
-  #     the same source cited for the model-year fills below). Uncorroborated:
-  #     every Spanish page repeating it echoes its wording, no period flyer/ad
-  #     saying "bajo licencia" surfaced, and it over-reaches (claims Maresa was
-  #     licensed too, which nothing supports). NOT adopted.
-  #   - UNAUTHORIZED / unlicensed — stated explicitly by no source. That is
-  #     precisely why license_status is *unknown*, not *unlicensed*: unlicensed
-  #     must be sourced (cf. LTD do Brasil 0150, where Augusto Campos's "copiar
-  #     impunemente" sources it); Petaco has no such source. Contrast VIFICO
-  #     (0127), a documented Gottlieb licence (flippers.be/vifico.html). If a
-  #     period licence document ever surfaces, flip license_status to licensed.
-  # --------------------------------------------------------------------------
-  #
-  # Same-name copies (below): the derivative carries the original's name, so
-  # per the campaign slug convention its disambiguation-numbered slug is renamed
-  # to end in -petaco and it is merged under the original's title (the emptied
-  # Petaco title is retired in 0146). The copy and the original keep their bare
-  # shared name; the UI tells them apart by maker.
-  # Renamed copies (different name from the original) keep their own slug/title.
-  # ==========================================================================
-
   # ---- Same-name copies: slug rename + title merge
   - model.aquarius-2:
       changesets:

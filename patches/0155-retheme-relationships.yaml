@@ -1,0 +1,320 @@
+attribution: flipcommons-catalog
+description: Add re-theme relationships for the models tagged as re-themes.
+claims:
+  - model.actros-magic-tour-2013:
+      cite:
+        ref: ipdb:6884
+        quote: "So far, we have seen two examples of this re-themed game. It used to be Gottlieb's 1981 'Volcano' and Gottlieb's 1981 'Mars God of War'."
+      model_relationship:
+        - target_machine: volcano
+          relationship_type: retheme
+          license_status: unknown
+        - target_machine: mars-god-of-war
+          relationship_type: retheme
+          license_status: unknown
+
+  - model.alabama-crimson-tide:
+      cite:
+        ref: ipdb:4998
+        quote: "This is a re-themed game. It used to be Gottlieb's 1976 'Target Alpha'."
+      model_relationship:
+        - target_machine: target-alpha
+          relationship_type: retheme
+          license_status: unknown
+  - model.aloha-5:
+      cite:
+        ref: ipdb:6314
+        quote: "This is a re-themed game. It used to be Williams' 1948 'Rainbow'."
+      model_relationship:
+        - target_machine: rainbow-2
+          relationship_type: retheme
+          license_status: unknown
+  - model.asterix:
+      cite:
+        ref: ipdb:5584
+        quote: "This is a re-themed game. It used to be Gottlieb's 1977 'Jungle Queen'."
+      model_relationship:
+        - target_machine: jungle-queen
+          relationship_type: retheme
+          license_status: unknown
+  - model.big-dick:
+      cite:
+        ref: ipdb:4539
+        quote: "This is a re-themed game. It used to be Williams' 1963 'Big Deal'."
+      model_relationship:
+        - target_machine: big-deal
+          relationship_type: retheme
+          license_status: unknown
+  - model.big-healey:
+      cite:
+        ref: ipdb:5213
+        quote: "This is a re-themed game. It used to be Williams' 1975 'Pat Hand'."
+      model_relationship:
+        - target_machine: pat-hand
+          relationship_type: retheme
+          license_status: unknown
+  - model.boston-red-sox:
+      cite:
+        ref: ipdb:5534
+        quote: "This is a re-themed game. It used to be Williams' 1970 'Straight Flush'."
+      model_relationship:
+        - target_machine: straight-flush-2
+          relationship_type: retheme
+          license_status: unknown
+  - model.budapest:
+      cite:
+        ref: ipdb:6622
+        quote: "This is a re-themed game. It used to be Stern's 1977 'Rawhide'."
+      model_relationship:
+        - target_machine: rawhide-2
+          relationship_type: retheme
+          license_status: unknown
+  - model.chingy:
+      cite:
+        ref: ipdb:5595
+        quote: "This is a re-themed game. It used to be Bally Midway's 1986 'Black Belt'."
+      model_relationship:
+        - target_machine: black-belt
+          relationship_type: retheme
+          license_status: unknown
+  - model.energie-iv:
+      cite:
+        ref: ipdb:6004
+        quote: "This is a re-themed game. It used to be Bally's 1971 'Mariner'."
+      model_relationship:
+        - target_machine: mariner
+          relationship_type: retheme
+          license_status: unknown
+  - model.fraggle-rock:
+      cite:
+        - ref: ipdb:5594
+          quote: "This is a re-themed game. It used to be Williams' 1994 'The Flintstones'."
+        - ref: ipdb:5594
+          quote: "The backglass carries the Bally logo but former employees from Bally and Bally/Williams confirm this glass was not made by Bally, nor did Bally seek a license for it."
+      model_relationship:
+        - target_machine: the-flintstones
+          relationship_type: retheme
+          license_status: unlicensed
+  - model.funtime-frankie:
+      cite:
+        ref: ipdb:5540
+        quote: "This is a re-themed game. It used to be Bally's 1967 'The Wiggler'."
+      model_relationship:
+        - target_machine: the-wiggler
+          relationship_type: retheme
+          license_status: unknown
+  - model.gas-attack:
+      cite:
+        ref: ipdb:5111
+        quote: "This is a re-themed game. It used to be Capcom's 1996 'Breakshot'."
+      model_relationship:
+        - target_machine: breakshot
+          relationship_type: retheme
+          license_status: unknown
+  - model.go-girl:
+      cite:
+        ref: ipdb:5005
+        quote: "This is a re-themed game. It used to be Williams' 1989 'Earthshaker'."
+      model_relationship:
+        - target_machine: earthshaker
+          relationship_type: retheme
+          license_status: unknown
+  - model.grand-theft-auto-vice-city:
+      cite:
+        ref: ipdb:6426
+        quote: "This is a re-themed game. It used to be Premier's 1986 'Hollywood Heat'."
+      model_relationship:
+        - target_machine: hollywood-heat
+          relationship_type: retheme
+          license_status: unknown
+  - model.grosse-pointe:
+      cite:
+        ref: ipdb:5596
+        quote: "This is a re-themed game. It used to be Williams' 1988 'Swords of Fury'."
+      model_relationship:
+        - target_machine: swords-of-fury
+          relationship_type: retheme
+          license_status: unknown
+  - model.iron-maiden-2:
+      cite:
+        ref: ipdb:5190
+        quote: "This is a re-themed game. It used to be Williams' 1979 'Gorgar'."
+      model_relationship:
+        - target_machine: gorgar
+          relationship_type: retheme
+          license_status: unknown
+  - model.iron-maiden-ii:
+      cite:
+        ref: ipdb:5557
+        quote: "This is a re-themed game. The playfield used to be Williams' 1987 'F-14 Tomcat'."
+      model_relationship:
+        - target_machine: f-14-tomcat
+          relationship_type: retheme
+          license_status: unknown
+  - model.last-supper:
+      cite:
+        ref: ipdb:4562
+        quote: "This is a re-themed game. It used to be Williams' 1968 'Cabaret'."
+      model_relationship:
+        - target_machine: cabaret
+          relationship_type: retheme
+          license_status: unknown
+  - model.lucky-luke:
+      cite:
+        ref: ipdb:6605
+        quote: "This is a re-themed game. It used to be Gottlieb's 1975 'Fast Draw'."
+      model_relationship:
+        - target_machine: fast-draw
+          relationship_type: retheme
+          license_status: unknown
+  - model.metallica-retheme:
+      cite:
+        ref: ipdb:5478
+        quote: "This is a re-themed game. It used to be Williams' 1989 'Earthshaker'."
+      model_relationship:
+        - target_machine: earthshaker
+          relationship_type: retheme
+          license_status: unknown
+  - model.mini-cooper-s:
+      cite:
+        ref: ipdb:5538
+        quote: "This is a re-themed game. It used to be Williams' 1976 'Grand Prix'."
+      model_relationship:
+        - target_machine: grand-prix
+          relationship_type: retheme
+          license_status: unknown
+  - model.muscle-car-cafe:
+      cite:
+        ref: ipdb:5560
+        quote: "This is a re-themed game. It used to be Bally's 1980 'Nitro Ground Shaker'."
+      model_relationship:
+        - target_machine: nitro-ground-shaker
+          relationship_type: retheme
+          license_status: unknown
+  - model.naruto:
+      cite:
+        ref: ipdb:5698
+        quote: "This is a re-themed game. It used to be Gottlieb's 1981 'Force II'."
+      model_relationship:
+        - target_machine: force-ii
+          relationship_type: retheme
+          license_status: unknown
+  - model.night-club-3:
+      cite:
+        ref: ipdb:5116
+        quote: "This is a re-themed game. It used to be Bally's 1968 'Dogies'."
+      model_relationship:
+        - target_machine: dogies
+          relationship_type: retheme
+          license_status: unknown
+  - model.pittsburgh-penguins:
+      cite:
+        ref: ipdb:6017
+        quote: "This is a re-themed game. It used to be Interflip's 1977 'Dragon'."
+      model_relationship:
+        - target_machine: dragon-2
+          relationship_type: retheme
+          license_status: unknown
+  - model.queen:
+      note: >-
+        The donor resolves on maker and title: Bally made one Flash Gordon, which we catalog as 1980 against the quote's 1981.
+      cite:
+        ref: ipdb:6816
+        quote: "This is a re-themed game. It used to be Bally's 1981 'Flash Gordon'."
+      model_relationship:
+        - target_machine: flash-gordon
+          relationship_type: retheme
+          license_status: unknown
+  - model.school-girl-reaper:
+      cite:
+        ref: ipdb:6900
+        quote: "This is a re-themed game. It used to be Bally's 1976 'Flip Flop'."
+      model_relationship:
+        - target_machine: flip-flop
+          relationship_type: retheme
+          license_status: unknown
+  - model.sea-nymph-2:
+      cite:
+        ref: ipdb:6505
+        quote: "This is a re-themed game. It used to be Williams' 1950 'Georgia'."
+      model_relationship:
+        - target_machine: georgia
+          relationship_type: retheme
+          license_status: unknown
+  - model.shrek:
+      note: A re-theme within the same manufacturer is tautologically licensed, asserting that without a quote or citation.
+      cite:
+        ref: ipdb:5301
+        quote: "Stern reportedly used the existing Family Guy pinball game design, but re-themed it with all new artwork and software."
+      model_relationship:
+        - target_machine: family-guy
+          relationship_type: retheme
+          license_status: licensed
+  - model.slamdunk:
+      cite:
+        ref: ipdb:4965
+        quote: "This is a re-themed game. It used to be Bally's 1980 'Space Invaders'."
+      model_relationship:
+        - target_machine: space-invaders
+          relationship_type: retheme
+          license_status: unknown
+  - model.sunset-riders:
+      cite:
+        ref: ipdb:6304
+        quote: "This is a re-themed game. It used to be Bally's 1977 'Eight Ball'."
+      model_relationship:
+        - target_machine: eight-ball
+          relationship_type: retheme
+          license_status: unknown
+  - model.the-french-connection:
+      note: >-
+        The donor resolves on maker and title: Game Plan made one Super Nova, which we catalog as 1982 against the quote's 1980.
+      cite:
+        ref: ipdb:5627
+        quote: "This is a re-themed game. It used to be Game Plan's 1980 'Super Nova'."
+      model_relationship:
+        - target_machine: super-nova
+          relationship_type: retheme
+          license_status: unknown
+  - model.the-hellacopters:
+      cite:
+        ref: ipdb:5464
+        quote: "This is a re-themed game. It used to be Gottlieb's 1973 'King Pin'."
+      model_relationship:
+        - target_machine: king-pin-2
+          relationship_type: retheme
+          license_status: unknown
+  - model.trumps-secret-service:
+      cite:
+        ref: ipdb:6666
+        quote: "This is a re-themed game. It used to be Data East's 1988 'Secret Service' and retains the same sounds and music."
+      model_relationship:
+        - target_machine: secret-service
+          relationship_type: retheme
+          license_status: unknown
+  - model.udo-lindenberg:
+      note: >-
+        The donor resolves on maker and title: Bally made one Harlem Globetrotters On Tour, which we catalog as 1978 against the quote's 1979.
+      cite:
+        ref: ipdb:5715
+        quote: "This is a re-themed game. It used to be Bally's 1979 'Harlem Globetrotters On Tour'."
+      model_relationship:
+        - target_machine: harlem-globetrotters-on-tour
+          relationship_type: retheme
+          license_status: unknown
+  - model.verspiel-dein-wasser-nicht:
+      cite:
+        ref: ipdb:4689
+        quote: "This is a re-themed game. It used to be Bally's 1978 'Strikes and Spares'."
+      model_relationship:
+        - target_machine: strikes-and-spares
+          relationship_type: retheme
+          license_status: unknown
+  - model.wonder-woman-2:
+      cite:
+        ref: ipdb:6634
+        quote: "This is a re-themed game. It use to be Stern's 1978 'Lectronamo'."
+      model_relationship:
+        - target_machine: lectronamo
+          relationship_type: retheme
+          license_status: unknown

@@ -1,0 +1,27 @@
+attribution: flipcommons-catalog
+description: Model lineage for Ripepi.
+claims:
+  - model.arrow-3:
+      cite:
+        ref: ipdb:6454
+        quote: "A copy of Gottlieb's 1977 'Golden Arrow' with the backglass image reversed to show the warrior facing left."
+      model_relationship:
+        - target_machine: golden-arrow
+          relationship_type: copy
+          license_status: unknown
+  - model.big-sakem:
+      cite:
+        ref: ipdb:5622
+        quote: "This is a 1-player copy of Gottlieb's 1974 'Big Indian'."
+      model_relationship:
+        - target_machine: big-indian
+          relationship_type: copy
+          license_status: unknown
+  - model.gold-star-5:
+      cite:
+        ref: ipdb:4127
+        quote: "This is a single player copy of Gottlieb's Fast Draw"
+      model_relationship:
+        - target_machine: fast-draw
+          relationship_type: copy
+          license_status: unknown

@@ -1,0 +1,54 @@
+attribution: flipcommons-catalog
+description: Model lineage for Europlay.
+claims:
+  # ---- Copies of Gottlieb originals.
+  - model.red-arrow-3:
+      cite:
+        ref: ipdb:4078
+        quote: "This game is a copy of Gottlieb's 1977 'Golden Arrow'."
+      model_relationship:
+        - target_machine: golden-arrow
+          relationship_type: copy
+          license_status: unknown
+  - model.sky-fly:
+      cite:
+        ref: ipdb:5255
+        quote: "A copy of Gottlieb's 1977 'Jet Spin' but with drop targets instead of a roto-target."
+      model_relationship:
+        - target_machine: jet-spin
+          relationship_type: copy
+          license_status: unknown
+  - model.sky-star:
+      cite:
+        ref: ipdb:5050
+        quote: "A copy of Gottlieb's 1974 'Sky Dive'."
+      model_relationship:
+        - target_machine: sky-dive
+          relationship_type: copy
+          license_status: unknown
+  - model.vole:
+      cite:
+        ref: ipdb:5449
+        quote: "This game is a copy of Gottlieb's 1976 'Volley'."
+      model_relationship:
+        - target_machine: volley
+          relationship_type: copy
+          license_status: unknown
+  # ---- Conversions.
+  - model.fast-draw-2:
+      cite:
+        ref: ipdb:5441
+        quote: "A conversion of Gottlieb's 1983 'Amazon Hunt'."
+      model_relationship:
+        - target_machine: amazon-hunt
+          relationship_type: conversion
+          license_status: unknown
+  - model.jaws:
+      cite:
+        ref: ipdb:5080
+        quote: "This Europlay game is a converted electromechanical Gottlieb game with a digital display and sound card added."
+      note: "The source does not identify which Gottlieb machine was converted. Its mention that the backglass artwork is in part a copy of another Gottlieb game, and that the playfield design borrows from a Bally game, describes reuse of artwork and layout rather than the donor machine, so neither is recorded as a relationship."
+      model_relationship:
+        - target_label: an electromechanical Gottlieb game
+          relationship_type: conversion
+          license_status: unknown

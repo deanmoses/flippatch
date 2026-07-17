@@ -1,0 +1,304 @@
+attribution: flipcommons-catalog
+description: Model lineage for 30 copies, conversions, and kits across many makers.
+claims:
+  # ------------------------------------------------------------------------
+  # Segasa (Spain)
+  # ------------------------------------------------------------------------
+  - model.astro-flite:
+      cite:
+        ref: ipdb:100
+        quote: "Copy of Williams' 1974 'Strato-Flite'."
+      model_relationship:
+        - target_machine: strato-flite
+          relationship_type: copy
+          license_status: unknown
+  - model.high-ace-2:
+      cite:
+        ref: ipdb:5424
+        quote: "Same design as Williams' 1973 'Dealer's Choice'. Same design and coloring as Williams' 1974 'Lucky Ace'. 'High Ace' was made by Segasa under license from Williams."
+      note: "Targets are the Williams originals (the catalog's 'dealers-choice' is the Segasa build). IPDB dates Dealer's Choice to 1973; the seeded Williams record (dealers-choice-2) is 1974 — same game, a source-date difference."
+      model_relationship:
+        - target_machine: dealers-choice-2
+          relationship_type: copy
+          license_status: licensed
+        - target_machine: lucky-ace
+          relationship_type: copy
+          license_status: licensed
+  # ------------------------------------------------------------------------
+  # Block Marble Company (USA)
+  # ------------------------------------------------------------------------
+  - model.crown-jewels:
+      cite:
+        ref: ipdb:3940
+        quote: "'Crown Jewels' was a conversion of Gottlieb's 1947 'Humpty Dumpty'."
+      model_relationship:
+        - target_machine: humpty-dumpty
+          relationship_type: conversion
+          license_status: unknown
+  - model.bebop:
+      cite:
+        ref: ipdb:3941
+        quote: "'Bebop' was a conversion kit for Genco's 1948 'Screwball'."
+      model_relationship:
+        - target_machine: screwball
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.snowhite:
+      cite:
+        ref: ipdb:4329
+        quote: "'Snowhite' was a conversion kit for Gottlieb's 1948 'Cinderella' and consisted of a backglass, bumper caps, and score cards."
+      model_relationship:
+        - target_machine: cinderella
+          relationship_type: conversion_kit
+          license_status: unknown
+  # ------------------------------------------------------------------------
+  # Leisure & Allied Industries (LAI, Australia)
+  # ------------------------------------------------------------------------
+  - model.cosmic-princess:
+      cite:
+        ref: ipdb:3967
+        quote: "This game was manufactured in Australia by Leisure & Allied Industries (LAI) under license from Stern Electronics. [...] It used the same game ROMs as Stern's 1979 'Magic'."
+      model_relationship:
+        - target_machine: magic-2
+          relationship_type: copy
+          license_status: licensed
+  # ------------------------------------------------------------------------
+  # Komplett-Flipper
+  # ------------------------------------------------------------------------
+  - model.bloody-china:
+      cite:
+        ref: ipdb:3969
+        quote: "A conversion kit for Bally's 1978 'Strikes and Spares'."
+      model_relationship:
+        - target_machine: strikes-and-spares
+          relationship_type: conversion_kit
+          license_status: unknown
+  # ------------------------------------------------------------------------
+  # Mondialmatic (Italy)
+  # ------------------------------------------------------------------------
+  - model.jolly-joker-3:
+      cite:
+        ref: ipdb:4113
+        quote: "The undated manufacturer ad shown here indicates that this game is a conversion kit for Gottlieb's 1973 'Ten-Up'."
+      model_relationship:
+        - target_machine: ten-up
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.the-best-jump:
+      cite:
+        ref: ipdb:4114
+        quote: "The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1973 'Top Hand'."
+      model_relationship:
+        - target_machine: top-hand-2
+          relationship_type: conversion
+          license_status: unknown
+  # ------------------------------------------------------------------------
+  # Elettrocoin (Firenze, Italy) — a conversion-kit house; tilt.it's maker
+  # page lists its games as "kit for <American game>".
+  # ------------------------------------------------------------------------
+  - model.good-year:
+      cite:
+        - ref: ipdb:4071
+          quote: "The undated magazine ad shown here indicates that 'Good Year' is a conversion of these games: Williams' 1967 'Lunar Shot' Williams' 1967 'Blast Off' Williams' 1967 'Apollo'"
+        - ref: "https://www.tilt.it/flipper_pinball/ipdb/elettronolo"
+          quote: "Good Year (kit for Williams' Lunar Shot)"
+      note: "IPDB describes 'Good Year' as a conversion of three Williams 1967 games; tilt.it's Elettrocoin maker page lists it (and its siblings) as a 'kit for' those donors, establishing the conversion_kit type. All three named donors are seeded Williams 1967 EM games."
+      model_relationship:
+        - target_machine: lunar-shot
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: blast-off
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: apollo
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.mexico-3:
+      cite:
+        - ref: ipdb:4074
+          quote: "'Mexico' is a conversion of Bally's 1967 'Rocket III'."
+        - ref: "https://www.tilt.it/flipper_pinball/ipdb/elettronolo"
+          quote: "Mexico (kit for Bally's Rocket III)"
+      note: "Targets rocket-iii-italy, the Add-a-ball version of Bally's 'Rocket III' made for export to Italy, not the US replay original (rocket-iii). Elettrocoin was a Florence kit house, so the donor physically available to convert in Italy was the Italy-market machine — whose reward type had already been changed to add-a-ball for compliance with Italian anti-gambling regulations."
+      model_relationship:
+        - target_machine: rocket-iii-italy
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.derby-3:
+      cite:
+        - ref: ipdb:4075
+          quote: "The undated magazine ad shown here indicates that this game is a conversion of Bally's 1966 'Gold Rush'."
+        - ref: "https://www.tilt.it/flipper_pinball/ipdb/elettronolo"
+          quote: "Derby (kit for Bally's Gold Rush)"
+      note: "Targets Bally's 'Gold Rush' Add-a-ball version made for export to Italy (currently slugged gold-rush-6, reslugged gold-rush-italy below), not the US replay original (gold-rush). Elettrocoin was a Florence kit house, so the donor physically available to convert in Italy was the Italy-market machine — whose reward type had already been changed to add-a-ball for compliance with Italian anti-gambling regulations."
+      model_relationship:
+        - target_machine: gold-rush-6
+          relationship_type: conversion_kit
+          license_status: unknown
+  # gold-rush's Italy-export sibling is still numeric (gold-rush-6); reslug it to
+  # gold-rush-italy — market-disambiguated like rocket-iii-italy. The derby-3 edge
+  # above targets it by its current slug (target resolution runs against the
+  # pre-patch catalog); this rename then follows the model, carrying the edge with
+  # it. Model slug only: gold-rush-6 shares the 'gold-rush' title with the US
+  # original, so the title and the name are left unchanged.
+  - model.gold-rush-6:
+      slug: gold-rush-italy
+      note: "Disambiguate the slug from Bally's US 'Gold Rush' (gold-rush) by market rather than a numeric suffix, matching rocket-iii-italy. This is the Add-a-ball version (Model 777-A) made for export to Italy."
+  # ------------------------------------------------------------------------
+  # J. Esteban Pinball (Brazil)
+  # ------------------------------------------------------------------------
+  - model.airborne-2:
+      cite:
+        ref: ipdb:5133
+        quote: "A copy of the EM version of Gottlieb's 1978 'Charlie's Angels'."
+      model_relationship:
+        - target_machine: charlies-angels-2
+          relationship_type: copy
+          license_status: unknown
+  # ------------------------------------------------------------------------
+  # Victory Games (USA)
+  # ------------------------------------------------------------------------
+  - model.miss-america-45:
+      cite:
+        ref: ipdb:6290
+        quote: '"Miss America ''45" is a conversion of Chicago Coin''s 1940 ''All American''.'
+      model_relationship:
+        - target_machine: all-american
+          relationship_type: conversion_kit
+          license_status: unknown
+  # ------------------------------------------------------------------------
+  # Headsup Pinball (USA) — Wizard, made both as a full converted game
+  # (wizard-3) and as a conversion kit (wizard-4), both of Gottlieb 'Team One'.
+  # ------------------------------------------------------------------------
+  - model.wizard-3:
+      cite:
+        ref: ipdb:6994
+        quote: "This is a licensed conversion of Gottlieb's 1977 'Team One', an add-a-ball game."
+      model_relationship:
+        - target_machine: team-one
+          relationship_type: conversion
+          license_status: licensed
+  - model.wizard-4:
+      cite:
+        ref: ipdb:7010
+        quote: "This is a licensed conversion kit for Gottlieb's 1977 'Team One', an add-a-ball game."
+      model_relationship:
+        - target_machine: team-one
+          relationship_type: conversion_kit
+          license_status: licensed
+  # ------------------------------------------------------------------------
+  # Unknown manufacturer — IPDB "Unknown Manufacturer" games (no maker seeded).
+  # ------------------------------------------------------------------------
+  - model.reviera:
+      cite:
+        ref: ipdb:5126
+        quote: "Conversion of Chicago Coin's 1938 'Snappy'."
+      model_relationship:
+        - target_machine: snappy-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.royal-skittle:
+      cite:
+        ref: ipdb:5145
+        quote: "This is a conversion of Willy Michiels' 'Miss Bowling'."
+      model_relationship:
+        - target_machine: miss-bowling
+          relationship_type: conversion
+          license_status: unknown
+  - model.mega-golf-ball-frenzy:
+      cite:
+        ref: ipdb:5170
+        quote: "Conversion of Williams' 1997 'No Good Gofers'."
+      model_relationship:
+        - target_machine: no-good-gofers
+          relationship_type: conversion
+          license_status: unknown
+  - model.the-circus-tiger:
+      cite:
+        ref: ipdb:5215
+        quote: "This is a copy of Gottlieb's 1975 'Tiger'."
+      model_relationship:
+        - target_machine: tiger
+          relationship_type: copy
+          license_status: unknown
+  - model.super-zeus:
+      cite:
+        ref: ipdb:5251
+        quote: "This game is a copy of Williams' 1978 'Flash' but without the playfield flash lamps."
+      note: "IPDB dates Williams' 'Flash' to 1978; the seeded Williams 'Flash' (flash-2) is dated 1979. Same game — announced 1978, shipped early 1979 — so the one-year gap is a source-date difference."
+      model_relationship:
+        - target_machine: flash-2
+          relationship_type: copy
+          license_status: unknown
+  - model.wild-texas:
+      cite:
+        ref: ipdb:5500
+        quote: "A conversion of Williams' 1983 'Firepower II'."
+      model_relationship:
+        - target_machine: firepower-ii
+          relationship_type: conversion
+          license_status: unknown
+  - model.magik-carpet:
+      cite:
+        ref: ipdb:5768
+        quote: "'Magik Carpet' is a conversion of United's 1947 'Hawaii', a flipperless game."
+      model_relationship:
+        - target_machine: hawaii
+          relationship_type: conversion
+          license_status: unknown
+  - model.the-card:
+      cite:
+        ref: ipdb:5964
+        quote: "This game is a near copy of Gottlieb's 1977 'Lucky Card' which was a game made for export to Italy."
+      model_relationship:
+        - target_machine: lucky-card
+          relationship_type: copy
+          license_status: unknown
+  - model.42nd-and-broadway:
+      cite:
+        ref: ipdb:5991
+        quote: "This is a conversion of Bally's 1951 'Spot-Lite'."
+      model_relationship:
+        - target_machine: spot-lite-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.ultimate-golf-ball-frenzy:
+      cite:
+        ref: ipdb:6173
+        quote: "Conversion of Williams' 1997 'No Good Gofers'."
+      model_relationship:
+        - target_machine: no-good-gofers
+          relationship_type: conversion
+          license_status: unknown
+  - model.hit-or-miss-2:
+      cite:
+        ref: ipdb:6181
+        quote: "A conversion of Bally's 1933 'Rocket' based on the side cabinet art."
+      model_relationship:
+        - target_machine: rocket-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.the-royal:
+      cite:
+        ref: ipdb:6422
+        quote: "A copy of Gottlieb's 1974 'Royal Pair'."
+      model_relationship:
+        - target_machine: royal-pair
+          relationship_type: copy
+          license_status: unknown
+  - model.speedway-4:
+      cite:
+        ref: ipdb:6583
+        quote: "a game 'Speedway', for which we have no other information, was a conversion of Bally's 1941 'Entry'"
+      model_relationship:
+        - target_machine: entry
+          relationship_type: conversion
+          license_status: unknown
+  - model.frisco-fair:
+      cite:
+        ref: ipdb:6877
+        quote: "A French conversion of Gottlieb's 1969 'Wild Wild West', reusing its instruction card."
+      model_relationship:
+        - target_machine: wild-wild-west
+          relationship_type: conversion
+          license_status: unknown

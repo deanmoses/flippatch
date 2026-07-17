@@ -1,0 +1,14 @@
+attribution: flipcommons-catalog
+description: >-
+  Retire the re-theme tags, patch 2: delete the tag definitions themselves.
+claims:
+  - tag.unofficial-retheme:
+      delete: true
+      note: >-
+        Replaced by the 'retheme' Model Relationship type, which record the donor
+        machine.
+  - tag.manufacturer-retheme:
+      delete: true
+      note: >-
+        Replaced by the 'retheme' Model Relationship type, which record the donor
+        machine.

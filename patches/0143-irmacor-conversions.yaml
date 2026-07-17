@@ -1,27 +1,6 @@
 attribution: flipcommons-catalog
 description: Irmacor conversion lineage on Recel/Playmatic/INDER donors.
 claims:
-  # ==========================================================================
-  # Irmacor (Porto, Portugal) sold Spanish-made pinballs into 1970s Portugal by
-  # re-badging them — a backglass swap, Portuguese playfield text, its logo — and
-  # claiming Portuguese manufacture to skirt gambling-import laws. Each IPDB note
-  # names the donor game verbatim as "a conversion of <maker>'s <year> '<title>'".
-  #
-  # Each row is one model_relationship edge with relationship_type: conversion —
-  # a complete converted machine built FROM a donor, not a conversion_kit ("built
-  # from" vs "compatible with"; contrast 0142-geiger, which are kits). Its
-  # license_status is unknown: no source addresses authorization either way.
-  #
-  # One of the eight worklist rows stays held back, NOT authored here:
-  #   s-joao (ipdb:5738): IPDB itself flags the conversion unconfirmed ("It has
-  #     been reported ... We will need ... pictures ... to confirm this"), and the
-  #     4-player S. Joao vs 2-player Carnival player-count differs. This is an
-  #     evidence doubt, not a model-representation limit, so it stays withheld.
-  #
-  # playtime (ipdb:6838) — previously held back because the single-FK
-  # converted_from could not express its two-donor note — is now authored below
-  # as two conversion edges (see its entry).
-  # ==========================================================================
   - model.conquistador:
       cite:
         ref: ipdb:5739

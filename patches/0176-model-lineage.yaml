@@ -1,0 +1,324 @@
+attribution: flipcommons-catalog
+description: >
+  Model lineage edges for models whose IPDB note states the relationship.
+claims:
+  - model.ajax:
+      cite:
+        ref: "ipdb:6725"
+        quote: A conversion of Gottlieb's 1940 'Score Card'.
+      model_relationship:
+        - target_machine: score-card
+          relationship_type: conversion
+          license_status: unknown
+  - model.anti-aircraft:
+      cite:
+        ref: "ipdb:3856"
+        quote: "'Anti-Aircraft' was a conversion kit for Bally's 1938 'Bally Reserve'."
+      model_relationship:
+        - target_machine: bally-reserve
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.bera-ball:
+      cite:
+        ref: "ipdb:6240"
+        quote: A copy of Tura Automatenfabrik Gmbh's 1933 'Tura-Ball'.
+      model_relationship:
+        - target_machine: tura-ball
+          relationship_type: copy
+          license_status: unknown
+  - model.bingo-bango:
+      cite:
+        ref: "ipdb:297"
+        quote: "'Bingo Bango' was a conversion of Gottlieb's 1950 'Just 21'."
+      model_relationship:
+        - target_machine: just-21
+          relationship_type: conversion
+          license_status: unknown
+  - model.bomb-the-axis-rats:
+      cite:
+        ref: "ipdb:3641"
+        quote: "'Bomb The Axis Rats' is a conversion of Chicago Coin's 1941 'Star Attraction'."
+      model_relationship:
+        - target_machine: star-attraction
+          relationship_type: conversion
+          license_status: unknown
+  - model.burlesk:
+      cite:
+        ref: "ipdb:5063"
+        quote: "'Burlesk' was a conversion of Genco's 1939 'Follies of 1940'."
+      model_relationship:
+        - target_machine: follies-of-1940
+          relationship_type: conversion
+          license_status: unknown
+  - model.casablanca:
+      cite:
+        ref: "ipdb:3874"
+        quote: "'Casablanca' was a conversion of Bally's 1940 'Glamour'."
+      model_relationship:
+        - target_machine: glamour
+          relationship_type: conversion
+          license_status: unknown
+  - model.dive-bomber:
+      cite:
+        ref: "ipdb:3849"
+        quote: "'Dive Bomber' was a conversion of Genco's 1940 'Formation'."
+      model_relationship:
+        - target_machine: formation
+          relationship_type: conversion
+          license_status: unknown
+  - model.dust-whirls:
+      cite:
+        ref: "ipdb:746"
+        quote: "`Dust Whirls' was a conversion of Bally's 1-Ball `Club Trophy' and was a Free Play game."
+      model_relationship:
+        - target_machine: club-trophy
+          relationship_type: conversion
+          license_status: unknown
+  - model.elmer:
+      cite:
+        ref: "ipdb:781"
+        quote: "'Elmer' is a conversion of the flipperless game Chicago Coin's 1947 'Kilroy'."
+      model_relationship:
+        - target_machine: kilroy
+          relationship_type: conversion
+          license_status: unknown
+  - model.fan-dancer:
+      cite:
+        ref: "ipdb:3860"
+        quote: "'Fan Dancer' was a converted game for Chicago Coin's 1940 'Roxy'."
+      model_relationship:
+        - target_machine: roxy
+          relationship_type: conversion
+          license_status: unknown
+  - model.follies-of-46:
+      cite:
+        ref: "ipdb:3106"
+        quote: '"Follies of ''46" is a conversion of Genco''s 1941 ''Hi-Hat''.'
+      model_relationship:
+        - target_machine: hi-hat
+          relationship_type: conversion
+          license_status: unknown
+  - model.foreign-colors:
+      cite:
+        ref: "ipdb:3108"
+        quote: "'Foreign Colors' was a conversion of Mills' 1941 'Owl'."
+      model_relationship:
+        - target_machine: owl
+          relationship_type: conversion
+          license_status: unknown
+  - model.girls-ahoy:
+      cite:
+        ref: "ipdb:3119"
+        quote: "'Girls Ahoy' is a conversion of Gottlieb's 1941 'Sea Hawk'."
+      model_relationship:
+        - target_machine: sea-hawk
+          relationship_type: conversion
+          license_status: unknown
+  - model.glamor-girls:
+      cite:
+        ref: "ipdb:3120"
+        quote: "'Glamor Girls' was a conversion of Chicago Coin's 1940 'Sport-Parade'."
+      model_relationship:
+        - target_machine: sport-parade
+          relationship_type: conversion
+          license_status: unknown
+  - model.iceland:
+      cite:
+        ref: "ipdb:5066"
+        quote: "'Iceland' was a conversion of Chicago Coin's 1939 'Nippy'."
+      model_relationship:
+        - target_machine: nippy
+          relationship_type: conversion
+          license_status: unknown
+  - model.idaho:
+      cite:
+        ref: "ipdb:1264"
+        quote: "'Idaho' was a World War II conversion of Exhibit's 1940 'Zombie'."
+      model_relationship:
+        - target_machine: zombie
+          relationship_type: conversion
+          license_status: unknown
+  - model.ivanhoe:
+      cite:
+        ref: "ipdb:3172"
+        quote: "'Ivanhoe' is a conversion of Gottlieb's 1947 'Humpty Dumpty'."
+      model_relationship:
+        - target_machine: humpty-dumpty
+          relationship_type: conversion
+          license_status: unknown
+  - model.lucky-strike-7:
+      cite:
+        ref: "ipdb:5268"
+        quote: An apparent copy of Peo's 1933 'Mat-Cha-Skor'.
+      model_relationship:
+        - target_machine: mat-cha-skor
+          relationship_type: copy
+          license_status: unknown
+  - model.midway-2:
+      cite:
+        ref: "ipdb:1594"
+        quote: World War II conversion of Exhibit's 1940 'Zombie'.
+      model_relationship:
+        - target_machine: zombie
+          relationship_type: conversion
+          license_status: unknown
+  - model.over-the-top:
+      cite:
+        ref: "ipdb:3863"
+        quote: "'Over-the-Top' was a converted game for Genco's 1940 'Power House'."
+      model_relationship:
+        - target_machine: power-house
+          relationship_type: conversion
+          license_status: unknown
+  - model.pals:
+      cite:
+        ref: "ipdb:5068"
+        quote: "'Pals' was a conversion of Bally's 1940 'Mascot'."
+      model_relationship:
+        - target_machine: mascot
+          relationship_type: conversion
+          license_status: unknown
+  - model.parade-leader:
+      cite:
+        ref: "ipdb:3864"
+        quote: "'Parade Leader' was a converted game for Gottlieb's 1940 'Drum Major'."
+      model_relationship:
+        - target_machine: drum-major
+          relationship_type: conversion
+          license_status: unknown
+  - model.paratroops:
+      cite:
+        ref: "ipdb:3836"
+        quote: "'Paratroops' was a conversion of Genco's 1940 'Power House'."
+      model_relationship:
+        - target_machine: power-house
+          relationship_type: conversion
+          license_status: unknown
+  - model.rock-encore:
+      cite:
+        ref: "ipdb:1979"
+        quote: 'Premier advertised for sale a "Booster-Pack" as a fifteen minute art & sound conversion kit for any Rock pinball game.'
+      model_relationship:
+        - target_machine: rock
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.roll-call:
+      cite:
+        ref: "ipdb:4789"
+        quote: "`Roll Call' was a conversion of Bally's 1940 'Vacation'."
+      model_relationship:
+        - target_machine: vacation
+          relationship_type: conversion
+          license_status: unknown
+  - model.santa-fe:
+      cite:
+        ref: "ipdb:2051"
+        quote: "'Santa Fe' was a World War II conversion of Exhibit's 1941 'West Wind'."
+      model_relationship:
+        - target_machine: west-wind
+          relationship_type: conversion
+          license_status: unknown
+  - model.scandals-of-42:
+      cite:
+        ref: "ipdb:3837"
+        quote: "'Scandals of '42' was a converted game for Genco's 1939 'Follies of 1940'."
+      model_relationship:
+        - target_machine: follies-of-1940
+          relationship_type: conversion
+          license_status: unknown
+  - model.shoot-your-way-to-tokio:
+      cite:
+        ref: "ipdb:6942"
+        quote: 'This is a conversion of Keeney''s 1940 "Air Raider" gun game, itself a remake of Keeney''s 1939 "Air Raider" gun game.'
+      model_relationship:
+        - target_machine: air-raider
+          relationship_type: conversion
+          license_status: unknown
+  - model.solar-ride-3:
+      cite:
+        ref: "ipdb:5696"
+        quote: A copy of Gottlieb's 1979 'Solar Ride'.
+      model_relationship:
+        - target_machine: solar-ride
+          relationship_type: copy
+          license_status: unknown
+  - model.speed-test:
+      cite:
+        ref: "ipdb:4589"
+        quote: This is a copy of Bally's 1982 'Vector'.
+      model_relationship:
+        - target_machine: vector
+          relationship_type: copy
+          license_status: unknown
+  - model.the-brain:
+      cite:
+        ref: "ipdb:5233"
+        quote: This is a special conversion of Stern's 2003 'The Simpsons Pinball Party'.
+      model_relationship:
+        - target_machine: the-simpsons-pinball-party
+          relationship_type: conversion
+          license_status: unknown
+  - model.tropic:
+      cite:
+        ref: "ipdb:3871"
+        quote: "'Tropic' was a converted game for Exhibit's 1940 'Zombie'."
+      model_relationship:
+        - target_machine: zombie
+          relationship_type: conversion
+          license_status: unknown
+  - model.two-bells:
+      cite:
+        ref: "ipdb:2695"
+        quote: World War II conversion of Mill's 'Owl'.
+      model_relationship:
+        - target_machine: owl
+          relationship_type: conversion
+          license_status: unknown
+  - model.victorious-1943:
+      cite:
+        ref: "ipdb:2729"
+        quote: World War II conversion of Stoner's 1936 'Turf Champs'.
+      model_relationship:
+        - target_machine: turf-champs
+          relationship_type: conversion
+          license_status: unknown
+  - model.victorious-1944:
+      cite:
+        ref: "ipdb:2730"
+        quote: World War II conversion of Stoner's 1936 'Turf Champs'.
+      model_relationship:
+        - target_machine: turf-champs
+          relationship_type: conversion
+          license_status: unknown
+  - model.victorious-1945:
+      cite:
+        ref: "ipdb:3299"
+        quote: World War II conversion of Stoner's 1936 'Turf Champs'.
+      model_relationship:
+        - target_machine: turf-champs
+          relationship_type: conversion
+          license_status: unknown
+  - model.wagon-train-2:
+      cite:
+        ref: "ipdb:3319"
+        quote: Made under license from Gottlieb for Gottlieb's 1960 'Wagon Train'.
+      model_relationship:
+        - target_machine: wagon-train
+          relationship_type: copy
+          license_status: licensed
+  - model.wagon-wheels:
+      cite:
+        ref: "ipdb:2747"
+        quote: "'Wagon Wheels' was a conversion of Exhibit's 1940 'Duplex'."
+      model_relationship:
+        - target_machine: duplex
+          relationship_type: conversion
+          license_status: unknown
+  - model.yankee-doodle:
+      cite:
+        ref: "ipdb:2826"
+        quote: World War II conversion of Chicago Coin's 1940 'Sport-Parade'.
+      model_relationship:
+        - target_machine: sport-parade
+          relationship_type: conversion
+          license_status: unknown

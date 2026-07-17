@@ -1,0 +1,41 @@
+attribution: flipcommons-catalog
+description: Disambiguate some models and titles by manufacturer rather than numeric suffix.
+claims:
+  # ---- Three unrelated "Congo" games: Esco 1940, Williams 1995, Bally 1936.
+  #      Each game's title record holds exactly one model, so the model and
+  #      its title slug are renamed together.
+  - title.congo:
+      slug: congo-williams
+      note: "Disambiguate slug from other 'congo` titles by manufacturer (Williams) rather than numeric suffix."
+  - model.congo-2:
+      slug: congo-williams
+      note: "Disambiguate slug from other 'congo` models by manufacturer (Williams) rather than numeric suffix."
+  - title.congo-2:
+      slug: congo-esco
+      note: "Disambiguate slug from other 'congo` titles by manufacturer (Esco) rather than numeric suffix."
+  - model.congo:
+      slug: congo-esco
+      note: "Disambiguate slug from other 'congo` models by manufacturer (Esco) rather than numeric suffix."
+  - title.congo-3:
+      slug: congo-bally
+      note: "Disambiguate slug from other 'congo` titles by manufacturer (Bally) rather than numeric suffix."
+  - model.congo-3:
+      slug: congo-bally
+      note: "Disambiguate slug from other 'congo` models by manufacturer (Bally) rather than numeric suffix."
+
+  # ---- Three unrelated "Star Trek" games: Bally 1979, Gottlieb 1971, Data East 1991.
+  #      The Bally and Gottlieb titles are shared conversion-family groupings
+  #      (star-trek-bally, 4-square-astro) and stay put; only the Data East game has
+  #      its own single-model title, reslugged here alongside its model.
+  - model.star-trek:
+      slug: star-trek-bally
+      note: "Disambiguate slug from other 'star-trek` models by manufacturer (Bally) rather than numeric suffix."
+  - model.star-trek-2:
+      slug: star-trek-gottlieb
+      note: "Disambiguate slug from other 'star-trek` models by manufacturer (Gottlieb) rather than numeric suffix."
+  - title.star-trek:
+      slug: star-trek-data-east
+      note: "Disambiguate slug from other 'star-trek` titles by manufacturer (Data East) rather than the ambiguous bare name."
+  - model.star-trek-3:
+      slug: star-trek-data-east
+      note: "Disambiguate slug from other 'star-trek` models by manufacturer (Data East) rather than numeric suffix."

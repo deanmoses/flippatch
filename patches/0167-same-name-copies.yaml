@@ -1,0 +1,68 @@
+attribution: flipcommons-catalog
+description: Same-name copy lineage — slug rename + title merge for six cross-maker copies.
+claims:
+  # ---- Already co-titled with the original: slug rename only, no title move.
+  - model.spanish-eyes-2:
+      # Already shares the spanish-eyes title with the Williams original, so no
+      # title move is needed; only the slug rename.
+      slug: spanish-eyes-segasa
+      cite:
+        ref: ipdb:3265
+        quote: "This game is a near copy of Williams' 1971 'Spanish Eyes', with different cabinet colors, different playfield plastics, and a different backglass."
+      model_relationship:
+        - target_machine: spanish-eyes
+          relationship_type: copy
+          license_status: unknown
+  - model.totem-3:
+      # Already shares the totem title with the Gottlieb original, so no title
+      # move is needed; only the slug rename.
+      slug: totem-electromatic-brasil
+      cite:
+        ref: ipdb:5695
+        quote: "A copy of Gottlieb's 1979 'Totem'."
+      model_relationship:
+        - target_machine: totem-2
+          relationship_type: copy
+          license_status: unknown
+
+  # ---- Same-name copies: slug rename + title merge onto the original's title.
+  - model.ding-dong-2:
+      slug: ding-dong-mam
+      title: ding-dong-smarty
+      cite:
+        ref: ipdb:6652
+        quote: "This is a copy of Williams' 1968 'Ding Dong'."
+      model_relationship:
+        - target_machine: ding-dong
+          relationship_type: copy
+          license_status: unknown
+  - model.amazon-hunt-2:
+      slug: amazon-hunt-nsm
+      title: amazon-hunt
+      cite:
+        ref: ipdb:5691
+        quote: "Copy of Gottlieb's 1983 'Amazon Hunt'."
+      model_relationship:
+        - target_machine: amazon-hunt
+          relationship_type: copy
+          license_status: unknown
+  - model.card-king-3:
+      slug: card-king-emmepi
+      title: drop-a-card-pop-a-card
+      cite:
+        ref: ipdb:6423
+        quote: "A copy of Gottlieb's 1971 'Card King'."
+      model_relationship:
+        - target_machine: card-king
+          relationship_type: copy
+          license_status: unknown
+  - model.jive-time-2:
+      slug: jive-time-martel
+      title: jive-time-rock-n-roll
+      cite:
+        ref: ipdb:6699
+        quote: "A copy of Williams' 1970 'Jive Time'."
+      model_relationship:
+        - target_machine: jive-time
+          relationship_type: copy
+          license_status: unknown

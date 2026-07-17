@@ -1,0 +1,145 @@
+attribution: flipcommons-catalog
+description: >-
+  Classify the catalog's one-ball payout machines.
+claims:
+  # Machines whose own IPDB record states one ball per play (the single-ball
+  # horse-race / odds payout genre IPDB catalogs as pinball).
+  - model.ace-2:
+      cite:
+        ref: "ipdb:5"
+        quote: "1 ball for 5 cents. Trap holes (17). Automatic cash payout is from 10 cents to $1.50 per game."
+      game_format: one-ball
+  - model.bally-bonus:
+      cite:
+        ref: "ipdb:146"
+        quote: "1 ball for 5 cents. Free Play holes (2). The playfield holes are marked with numbers representing instant cash payout even though the instruction card refers to these awards as 'points'."
+      game_format: one-ball
+  - model.king-fish:
+      cite:
+        ref: "ipdb:1370"
+        quote: "This is the only one-ball payout game ever produced by Genco."
+      game_format: one-ball
+  - model.grand-prize:
+      cite:
+        ref: "ipdb:1073"
+        quote: "One ball per play."
+      game_format: one-ball
+  - model.center-smash:
+      cite:
+        ref: "ipdb:479"
+        quote: "1 ball for 5 cents. Trap holes (14)."
+      game_format: one-ball
+  - model.velvet:
+      cite:
+        ref: "ipdb:2727"
+        quote: "One ball per game."
+      game_format: one-ball
+  - model.stable-mate:
+      cite:
+        ref: "ipdb:2332"
+        quote: "One ball for 5 cents. Trap holes (19), Spring bumpers (3)."
+      game_format: one-ball
+  - model.deauville:
+      cite:
+        ref: "ipdb:650"
+        quote: "One ball play. No outholes. Backbox animation (slot machine reels)."
+      game_format: one-ball
+  - model.new-deal:
+      cite:
+        ref: "ipdb:1669"
+        quote: "One ball play. No outholes. Backbox animation (slot machine reels)."
+      game_format: one-ball
+  - model.mazuma:
+      cite:
+        ref: "ipdb:1563"
+        quote: "One ball per game. Spring bumpers (12)."
+      game_format: one-ball
+  - model.pamco-ballot:
+      cite:
+        ref: "ipdb:142"
+        quote: "One nickel per play. One ball per play. Light strip in lower playfield lights holes alternately back and forth, awarding payout when ball falls a lit hole."
+      game_format: one-ball
+  - model.horse-shoes-3:
+      cite:
+        ref: "ipdb:3157"
+        quote: "One ball play. 6-coin multiple game. Twin jackpots. Console cabinet."
+      game_format: one-ball
+  - model.mardi-gras-3:
+      cite:
+        ref: "ipdb:3390"
+        quote: "A one-coin one-ball payout game."
+      game_format: one-ball
+  - model.new-daily-races:
+      cite:
+        ref: "ipdb:629"
+        quote: "According to Bueschel's Pinball 1, this one-ball game was convertible to five-ball play and available in cash payout or replay models."
+      game_format: one-ball
+  - model.across-the-board-2:
+      cite:
+        ref: "ipdb:13"
+        quote: "The Operator Adjustments Sheet in this listing depicts this game as a horserace game and a distributor ad in Billboard Feb-23-1952 page 93 lists this game as a One Ball."
+      game_format: one-ball
+  - model.jumbo-2:
+      cite:
+        ref: "ipdb:4170"
+        quote: "One-ball payout using a 1-inch nickel-plated brass ball."
+      game_format: one-ball
+  - model.jumbo:
+      cite:
+        ref: "ipdb:1325"
+        quote: "One-ball payout using a 1-inch nickel-plated brass ball."
+      game_format: one-ball
+  - model.sunshine-park:
+      cite:
+        ref: "ipdb:2426"
+        quote: "'Sunshine Park' was the last one-ball horserace game produced by Bally."
+      game_format: one-ball
+  - model.multiple:
+      cite:
+        ref: "ipdb:1641"
+        quote: "Although this game has only one ball per play, the ad shown in this listing explains how up to 4 players can participate in each game."
+      game_format: one-ball
+  - model.plus-or-minus-2:
+      cite:
+        ref: "ipdb:5129"
+        quote: "It is a one ball cash payout machine."
+      game_format: one-ball
+  - model.monopolee:
+      note: "Monopolee's default is the one-ball payout game; the two-ball model was made only for territories that barred one-ball payout."
+      cite:
+        ref: "ipdb:1618"
+        quote: "In territories where one-ball payout is not permissible Chicago Coin has produced Monopolee in a clever two-ball model."
+      game_format: one-ball
+
+  # Cross-references: the record ties the model to the one-ball genre — its
+  # payout twin, its non-payout replay form, or the games it was converted from.
+  - model.long-shot:
+      note: "The payout one-ball; its non-payout twin is Bally's 1940 'Dark Horse'."
+      cite:
+        ref: "ipdb:1471"
+        quote: "One ball per play. Trap holes (29). Two outholes."
+      game_format: one-ball
+  - model.big-shot-1-ball:
+      note: "The one-ball payout version; its 5-ball non-payout twin is 'Big Shot (5-Ball)'."
+      cite:
+        ref: "ipdb:273"
+        quote: "One ball for 5 cents."
+      game_format: one-ball
+  - model.blue-grass:
+      note: "The replay (non-payout) form of the one-ball horse-race genre, cross-referenced to its one-ball payout twin 'Kentucky'."
+      cite:
+        ref: "ipdb:326"
+        quote: "This is the replay version of the one-ball payout game Bally's 1941 'Kentucky'."
+      game_format: one-ball
+  - model.gold-cup-2:
+      note: "The non-payout replay form of the one-ball horse-race genre; also sold as a one-ball console."
+      cite:
+        ref: "ipdb:1028"
+        quote: "This is the non-payout replay model which Bally also sold in a console model as one-ball play only."
+      game_format: one-ball
+  - model.whirlaway-2:
+      note: "A wartime conversion of Bally one-ball horse-race games (Sport Event, Dark Horse, Blue Grass, et al.)."
+      cite:
+        ref: "ipdb:3848"
+        quote: "advertised to convert Bally one-ball free play games just like Roy McGinnis was doing"
+      game_format: one-ball

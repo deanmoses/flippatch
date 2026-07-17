@@ -1,0 +1,27 @@
+attribution: flipcommons-catalog
+description: Model lineage for TACO.
+claims:
+  - model.bikini-2:
+      cite:
+        ref: ipdb:5481
+        quote: "Conversion of the flipperless game United's 1947 'Mexico'."
+      model_relationship:
+        - target_machine: mexico
+          relationship_type: conversion
+          license_status: unknown
+  - model.chorus-gal:
+      cite:
+        ref: ipdb:5480
+        quote: "Conversion of the flipperless game United's 1948 'Manhattan'."
+      model_relationship:
+        - target_machine: manhattan
+          relationship_type: conversion
+          license_status: unknown
+  - model.new-yorker-2:
+      cite:
+        ref: ipdb:5799
+        quote: "Conversion of the flipperless game United's 1948 'Tropicana'."
+      model_relationship:
+        - target_machine: tropicana
+          relationship_type: conversion
+          license_status: unknown

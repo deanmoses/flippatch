@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >-
-  Retire the conversion-kit tag (2/2): soft-delete the tag row.
+  Retire the conversion-kit tag (2/2): delete the tag itself.
 claims:
   - tag.conversion-kit:
       delete: true

@@ -1,0 +1,194 @@
+attribution: flipcommons-catalog
+description: >-
+  Retire the re-theme tags, patch 1: remove their memberships.
+claims:
+  - model.actros-magic-tour-2013:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.alabama-crimson-tide:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.aloha-5:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.asterix:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.big-dick:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.big-healey:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.boston-red-sox:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.budapest:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.chingy:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.energie-iv:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.fraggle-rock:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.funtime-frankie:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.gas-attack:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.go-girl:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.grand-theft-auto-vice-city:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.grosse-pointe:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.iron-maiden-2:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.iron-maiden-ii:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.last-supper:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.lucky-luke:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.metallica-retheme:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.mini-cooper-s:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.muscle-car-cafe:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.naruto:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.night-club-3:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.pittsburgh-penguins:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.queen:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.school-girl-reaper:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.sea-nymph-2:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.shrek:
+      remove:
+        tag: [manufacturer-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.slamdunk:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.sunset-riders:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.the-french-connection:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.the-hellacopters:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.trumps-secret-service:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.udo-lindenberg:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.verspiel-dein-wasser-nicht:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.
+  - model.wonder-woman-2:
+      remove:
+        tag: [unofficial-retheme]
+      note: >-
+        Re-themes are now represented as Model Relationships of type 'retheme', which also records the donor machine. The re-theme tags are being retired.

@@ -1,36 +1,6 @@
 attribution: flipcommons-catalog
 description: J. Martina conversion lineage on 1960s Gottlieb donors.
 claims:
-  # ==========================================================================
-  # J. Martina (France) rebuilt used 1960s Gottlieb machines into complete,
-  # re-themed games — new backglass/playfield art (often by Jean Amiot), reusing
-  # the original Gottlieb cabinet and mechanics. Each IPDB note names the donor
-  # verbatim as "a conversion of Gottlieb's <year> '<title>'", so the target is
-  # unambiguous and the note's stated year matches the seeded donor.
-  #
-  # Each row is one model_relationship edge with relationship_type: conversion —
-  # a complete converted machine built FROM a donor, not a conversion_kit ("built
-  # from" vs "compatible with"; contrast 0142-geiger, which are kits). Its
-  # license_status is unknown: no source addresses authorization either way
-  # (conversions CAN be licensed — cf. headsup's "licensed conversion kit for
-  # Team One" — but nothing here says so, so we do not assert licensed/unlicensed).
-  # Every conversion carries its own re-theme name distinct from the donor, so
-  # there is no same-name merge, title, or slug work — just the edge + cite.
-  #
-  # The last three entries exercise the model's richer target forms — cases the
-  # single-FK converted_from could not express:
-  #   the-happy-musketeers (ipdb:5285): TWO conversion edges — "Gottlieb's 1967
-  #     'Hi-Score' and Gottlieb's 1967 'Super Score'" (hi-score + super-score-3).
-  #   wine-grower (ipdb:5537): a target_label — the donor is "an unknown 1960's
-  #     era Gottlieb game". The maker is known but the specific machine is not,
-  #     and target_manufacturer is intentionally not modeled, so the maker rides
-  #     the label text.
-  #   star (ipdb:6321): a target_label — "an unidentified 4-player replay game".
-  #     IPDB *suggests*, unconfirmed (from "a very small" photo), the donor may be
-  #     Ship-Mates; that hedge stays in the note, not asserted as target_machine.
-  # (unknown-25 (ipdb:6594) shares only a *layout* with Quick Draw; the note
-  # never calls it a conversion, so it is not a candidate at all.)
-  # ==========================================================================
   - model.big-eagle:
       cite:
         ref: ipdb:5035

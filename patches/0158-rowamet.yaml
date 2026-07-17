@@ -1,0 +1,35 @@
+attribution: flipcommons-catalog
+description: Copy lineage for Rowamet (license status unknown — see header).
+claims:
+  - model.diana:
+      cite:
+        ref: ipdb:5488
+        quote: "A copy of Gottlieb's 1977 'Jungle Princess'."
+      model_relationship:
+        - target_machine: jungle-princess
+          relationship_type: copy
+          license_status: unknown
+  - model.jet-surf:
+      cite:
+        ref: ipdb:5490
+        quote: "Copy of Gottlieb's 1977 'Super Spin'."
+      model_relationship:
+        - target_machine: super-spin
+          relationship_type: copy
+          license_status: unknown
+  - model.sherokee:
+      cite:
+        ref: ipdb:6707
+        quote: "A copy of Gottlieb's 1974 'Big Indian'."
+      model_relationship:
+        - target_machine: big-indian
+          relationship_type: copy
+          license_status: unknown
+  - model.vulcan-iv:
+      cite:
+        ref: ipdb:5169
+        quote: "This is a copy of the EM game Gottlieb's 1977 'Vulcan'"
+      model_relationship:
+        - target_machine: vulcan
+          relationship_type: copy
+          license_status: unknown

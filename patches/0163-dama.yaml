@@ -1,0 +1,61 @@
+attribution: flipcommons-catalog
+description: Model lineage for Dama S.R.L.
+claims:
+  # ---- Conversion kits for a single named donor.
+  - model.angels:
+      cite:
+        ref: ipdb:4396
+        quote: "Conversion kit for Gottlieb's 1966 'Rancho'."
+      model_relationship:
+        - target_machine: rancho-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.frogmen:
+      cite:
+        ref: ipdb:4399
+        quote: "Conversion kit for Bally's 1966 'Bazaar'."
+      model_relationship:
+        - target_machine: bazaar-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.las-vegas-3:
+      cite:
+        ref: ipdb:4068
+        quote: "A conversion kit for Gottlieb's 1965 'Electra-Pool'."
+      model_relationship:
+        - target_machine: electra-pool
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.mondial-bank:
+      cite:
+        ref: ipdb:4069
+        quote:
+          "A conversion kit for Gottlieb's 1967 'Harmony' and possibly also for Gottlieb's 1967
+          'Troubadour'."
+      note:
+        "The source names Harmony as the donor outright, and raises Gottlieb's 1967 'Troubadour' only as a
+        possibility. Troubadour is therefore not recorded as a second donor here, pending a source that
+        establishes it."
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.world-star:
+      cite:
+        ref: ipdb:4405
+        quote: "Conversion kit for Williams' 1967 'Magic Town'."
+      model_relationship:
+        - target_machine: magic-town
+          relationship_type: conversion_kit
+          license_status: unknown
+  # ---- A complete converted machine rather than a kit.
+  - model.rally:
+      cite:
+        ref: ipdb:4067
+        quote:
+          "The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1968
+          'Elite Guard'."
+      model_relationship:
+        - target_machine: elite-guard
+          relationship_type: conversion
+          license_status: unknown

@@ -1,0 +1,62 @@
+attribution: flipcommons-catalog
+description: Lineage for five conversions plus a same-name copy (re-slug + merge).
+claims:
+  - model.arabic-power:
+      cite:
+        ref: ipdb:5636
+        quote: "This is a conversion kit of an unknown Gottlieb game."
+      model_relationship:
+        - target_label: unknown Gottlieb game
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.euro-star:
+      cite:
+        ref: ipdb:6281
+        quote: "'Euro Star' is a conversion of an unknown bingo machine made by WIMI whose logo can be seen on the coin door."
+      model_relationship:
+        - target_label: unknown WIMI bingo machine
+          relationship_type: conversion
+          license_status: unknown
+  - model.rondo-auto-flipper:
+      cite:
+        ref: ipdb:6698
+        quote: 'this company advertised to receive any working 2-player or 4-player "American" pinball machine and after about 3 weeks they would send back a "fully converted" Rondo Auto Flipper game.'
+      model_relationship:
+        - target_label: any working 2- or 4-player American pinball machine
+          relationship_type: conversion
+          license_status: unknown
+  - model.race-day:
+      cite:
+        ref: ipdb:5365
+        quote: "Conversion kit for Gottlieb's 1967 Italian games Hit-A-Card and Solitaire."
+      model_relationship:
+        - target_machine: hit-a-card
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: solitaire
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.electric-road:
+      cite:
+        ref: ipdb:5364
+        quote: "Conversion kit for Gottlieb's 1967 Italian games Hit-A-Card and Solitaire."
+      model_relationship:
+        - target_machine: hit-a-card
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: solitaire
+          relationship_type: conversion_kit
+          license_status: unknown
+  # ---- Same-name copy: the kit's playfield reproduces the Gottlieb original's
+  # design (identical layout), so it is a copy despite the re-themed backglass.
+  # Same name as the original -> slug rename + merge onto the original's title.
+  - model.jungle-queen-2:
+      slug: jungle-queen-pinball-shop
+      title: jungle-queenprincess
+      cite:
+        ref: ipdb:4943
+        quote: "Playfield is a copy of Gottlieb's 1977 'Jungle Queen'."
+      model_relationship:
+        - target_machine: jungle-queen
+          relationship_type: copy
+          license_status: unknown

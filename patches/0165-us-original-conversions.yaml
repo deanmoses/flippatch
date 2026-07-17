@@ -1,0 +1,65 @@
+attribution: flipcommons-catalog
+description: Model lineage for US-original conversions (Bally, Gottlieb, Williams).
+claims:
+  # ---- Bally in-house and third-party conversions of Bally games.
+  - model.bamboo:
+      cite:
+        ref: ipdb:4027
+        quote: "This is a conversion of Bally's 1967 'Orient'."
+      model_relationship:
+        - target_machine: orient
+          relationship_type: conversion
+          license_status: unknown
+  - model.single-coin-3:
+      cite:
+        ref: ipdb:4982
+        quote: "This game is a conversion of Bally's 1962 'Shoot-A-Line'."
+      model_relationship:
+        - target_machine: shoot-a-line
+          relationship_type: conversion
+          license_status: unknown
+  - model.bowl-a-line-2:
+      cite:
+        ref: ipdb:5090
+        quote: "Conversion of Bally's 1954 'Variety', not done by manufacturer."
+      note: "The conversion of Bally's 'Variety' was performed by a third party rather than Bally itself."
+      model_relationship:
+        - target_machine: variety-2
+          relationship_type: conversion
+          license_status: unknown
+  # ---- Gottlieb conversions of Gottlieb games.
+  - model.amazon-hunt-ii:
+      cite:
+        ref: ipdb:3975
+        quote: "A conversion kit for Gottlieb's 1983 'Amazon Hunt' sold only in Europe."
+      model_relationship:
+        - target_machine: amazon-hunt
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.star-trek-2:
+      cite:
+        ref: ipdb:2354
+        quote: "Conversion of Gottlieb's 1971 'Astro' made for export to Italy."
+      model_relationship:
+        - target_machine: astro
+          relationship_type: conversion
+          license_status: unknown
+  # ---- Williams conversion kits.
+  - model.star-wars-episode-i:
+      cite:
+        ref: ipdb:4458
+        quote: "Was also available as a conversion kit for Revenge From Mars."
+      model_relationship:
+        - target_machine: revenge-from-mars
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.congo-2:
+      cite:
+        ref: ipdb:3780
+        quote:
+          "'Congo' was produced both as a complete game and as a conversion kit for narrow body WPC
+          Security games."
+      model_relationship:
+        - target_label: narrow body WPC Security games
+          relationship_type: conversion_kit
+          license_status: unknown

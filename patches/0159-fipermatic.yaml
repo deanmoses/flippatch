@@ -1,0 +1,57 @@
+attribution: flipcommons-catalog
+description: Model lineage for Fipermatic.
+claims:
+  # ---- Gottlieb originals that exist as same-year EM/SS twins. Every Fipermatic
+  # machine is electromechanical, so each reproduces the EM twin, not the SS one.
+  - model.charlies-angels-3:
+      cite:
+        ref: ipdb:5883
+        quote: "A copy of Gottlieb's 1979 'Charlie's Angels'"
+      note: "Gottlieb built both SS and EM versions of this game. This Fipermatic copy is EM, so it reproduces the EM one; the source dates that version to February 1979, matching the 1979 the source gives here."
+      model_relationship:
+        - target_machine: charlies-angels-2
+          relationship_type: copy
+          license_status: unknown
+  - model.close-encounters:
+      cite:
+        ref: ipdb:5699
+        quote: "A copy of Gottlieb's 1978 'Close Encounters of the Third Kind'"
+      note: "Gottlieb built both SS and EM versions of this game, both in 1978. This Fipermatic copy is EM, so it reproduces the EM one."
+      model_relationship:
+        - target_machine: close-encounters-of-the-third-kind-2
+          relationship_type: copy
+          license_status: unknown
+  - model.dragon-5:
+      cite:
+        ref: ipdb:5884
+        quote: "A copy of Gottlieb's 1978 'Dragon'"
+      note: "Gottlieb built both SS and EM versions of this game, both in 1978. This Fipermatic copy is EM, so it reproduces the EM one."
+      model_relationship:
+        - target_machine: dragon-3
+          relationship_type: copy
+          license_status: unknown
+  # ---- Originals with a single seeded version.
+  - model.jane:
+      cite:
+        ref: ipdb:5489
+        quote: "Copy of Gottlieb's 1977 'Jungle Queen'."
+      model_relationship:
+        - target_machine: jungle-queen
+          relationship_type: copy
+          license_status: unknown
+  - model.space-walk-2:
+      cite:
+        ref: ipdb:6603
+        quote: "A copy of Gottlieb's 1979 'Space Walk'."
+      model_relationship:
+        - target_machine: space-walk
+          relationship_type: copy
+          license_status: unknown
+  - model.zarza-2:
+      cite:
+        ref: ipdb:5922
+        quote: "A copy of Bally's 1980 'Xenon'"
+      model_relationship:
+        - target_machine: xenon
+          relationship_type: copy
+          license_status: unknown

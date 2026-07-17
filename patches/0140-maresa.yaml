@@ -1,32 +1,6 @@
 attribution: flipcommons-catalog
 description: Lineage for Maresa's Gottlieb copies.
 claims:
-  # ==========================================================================
-  # Maquinas Recreativas S.A. (Maresa), Madrid, Spain. Under Spain's 1960s-70s
-  # ban on importing US pinball, Maresa built copies of Gottlieb designs. Each
-  # IPDB note names the original verbatim as "a copy of Gottlieb's <year>
-  # '<title>'", so the copy relationship + target is unambiguous:
-  # relationship_type: copy, target the named original, cited to that IPDB note.
-  #
-  # license_status: unknown on every row. The COPY is well sourced (IPDB "a copy
-  # of Gottlieb's ..."); the AUTHORIZATION is not — no source establishes it
-  # either way. So we deliberately do NOT launder an unsourced "unlicensed"/
-  # bootleg here: the Spanish import ban explains WHY the copies exist but is not
-  # itself a statement that Gottlieb withheld authorization (contrast
-  # 0150-ltd-do-brasil, where "unlicensed" IS sourced to Augusto Campos, and
-  # 0127 VIFICO, a documented Gottlieb licence). Big Brave (ipdb:4634) makes the
-  # point explicit — IPDB there literally says "whether ... a licensed copy or
-  # not is unknown". If a period licence or an explicit "unauthorized" source
-  # ever surfaces, set license_status accordingly.
-  #
-  # Same-name copies (below): the derivative carries the original's name, so
-  # per the campaign slug convention its disambiguation-numbered slug is renamed
-  # to end in -maresa and it is merged under the original's title (the emptied
-  # Maresa title is retired in 0141). The copy and the original keep their bare
-  # shared name; the UI tells them apart by maker.
-  # Renamed copies (different name from the original) keep their own slug/title.
-  # ==========================================================================
-
   # ---- Same-name copies: slug rename + title merge
   - model.big-brave-3:
       slug: big-brave-maresa

@@ -1,0 +1,6 @@
+attribution: flipcommons-catalog
+description: Delete the title orphaned by the jungle-queen-2 same-name merge in 0169.
+claims:
+  - title.jungle-queen:
+      delete: true
+      note: "Orphaned after its sole model (jungle-queen-pinball-shop) was merged into the jungle-queenprincess title. This is the title record slugged jungle-queen, distinct from the live Gottlieb model of the same slug — titles and models are separate namespaces."

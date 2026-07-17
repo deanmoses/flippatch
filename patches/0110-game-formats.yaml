@@ -1,0 +1,19 @@
+attribution: flipcommons-catalog
+description: >-
+  Create some new game formats.
+claims:
+  - game-format.bingo-pinball:
+      create: true
+      name: Bingo Pinball
+      display_order: 8
+  - game-format.rolldown:
+      create: true
+      name: Rolldown
+      display_order: 9
+  - game-format.one-ball:
+      create: true
+      name: One-Ball
+      display_order: 10
+  - game-format.miscellaneous:
+      note: Bumped so it stays last.
+      display_order: 11

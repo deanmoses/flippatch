@@ -1,0 +1,108 @@
+attribution: flipcommons-catalog
+description: Model lineage for 13 renamed copies and conversions.
+claims:
+  - model.bank-a-mam:
+      cite:
+        ref: ipdb:6767
+        quote: "A copy of Gottlieb's 1965 'Bank-A-Ball'."
+      model_relationship:
+        - target_machine: bank-a-ball
+          relationship_type: copy
+          license_status: unknown
+  - model.black-rider:
+      cite:
+        ref: ipdb:4085
+        quote: "A copy of Williams' 1980 'Black Knight'."
+      model_relationship:
+        - target_machine: black-knight
+          relationship_type: copy
+          license_status: unknown
+  - model.foot-baller:
+      cite:
+        ref: ipdb:4975
+        quote: "A 1-player copy of Gottlieb's 1975 'Soccer' but without the kick-out holes, the right outlane ball return gate, and the mechanical backbox animation."
+      model_relationship:
+        - target_machine: soccer-2
+          relationship_type: copy
+          license_status: unknown
+  - model.royal-play:
+      cite:
+        ref: ipdb:5227
+        quote: "A copy of Gottlieb's 1974 'Royal Pair'."
+      model_relationship:
+        - target_machine: royal-pair
+          relationship_type: copy
+          license_status: unknown
+  - model.la-tour-de-paris:
+      cite:
+        ref: ipdb:5947
+        quote: "A copy of Rock-ola's 1933 'World's Fair Jig-Saw', the upper playfield shows the Eiffel Tower."
+      model_relationship:
+        - target_machine: worlds-fair-jig-saw
+          relationship_type: copy
+          license_status: unknown
+  - model.olympics-4:
+      cite:
+        ref: ipdb:6345
+        quote: "A copy of Bally's 1974 'Champ'."
+      model_relationship:
+        - target_machine: champ
+          relationship_type: copy
+          license_status: unknown
+  - model.boing-boing:
+      cite:
+        ref: ipdb:4608
+        quote: "A copy of Williams' 1971 'Doodle Bug'."
+      model_relationship:
+        - target_machine: doodle-bug
+          relationship_type: copy
+          license_status: unknown
+  - model.jumbo-3:
+      cite:
+        ref: ipdb:4332
+        quote: "`Jumbo' was a conversion of Genco's `Triple Action'"
+      model_relationship:
+        - target_machine: triple-action-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.hippye:
+      cite:
+        ref: ipdb:4706
+        quote: "This game is a conversion of Bally's 1966 'Capersville'."
+      model_relationship:
+        - target_machine: capersville
+          relationship_type: conversion
+          license_status: unknown
+  - model.furie:
+      cite:
+        ref: ipdb:5599
+        quote: "Conversion of Williams' 1978 'Flash'."
+      note: "The IPDB note dates Williams' 'Flash' to 1978; the seeded Williams 'Flash' (flash-2) is dated 1979. Same game — Williams announced it in 1978 and shipped it in early 1979 — so the one-year gap is a source-date difference, not a different machine."
+      model_relationship:
+        - target_machine: flash-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.vemco-special-2:
+      cite:
+        ref: ipdb:6006
+        quote: "This is a conversion of Bally's 1938 'Bally Reserve'."
+      model_relationship:
+        - target_machine: bally-reserve
+          relationship_type: conversion
+          license_status: unknown
+  - model.orgie:
+      cite:
+        ref: ipdb:6063
+        quote: "This is a conversion of Williams' 1973 'Jubilee'."
+      model_relationship:
+        - target_machine: jubilee-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.trickle-ball:
+      cite:
+        ref: ipdb:6633
+        quote: "This game is a conversion of Chester-Pollard Amusement Co., Inc.'s 'Play Golf' done by Trimount Coin Machine Company who was normally a distributor."
+      model_relationship:
+        - target_machine: play-golf
+          relationship_type: conversion
+          license_status: unknown

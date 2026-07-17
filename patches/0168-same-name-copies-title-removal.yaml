@@ -1,0 +1,17 @@
+attribution: flipcommons-catalog
+description: Delete titles orphaned by the same-name copy title merges in 0167.
+claims:
+  # Each title below held only its single copy, which patch 0167 re-homed onto
+  # the original's title. Each is now empty and retired.
+  - title.ding-dong:
+      delete: true
+      note: "Orphaned after its sole model (ding-dong-mam) was merged into the ding-dong-smarty title."
+  - title.amazon-hunt-2:
+      delete: true
+      note: "Orphaned after its sole model (amazon-hunt-nsm) was merged into the amazon-hunt title."
+  - title.card-king-2:
+      delete: true
+      note: "Orphaned after its sole model (card-king-emmepi) was merged into the drop-a-card-pop-a-card title."
+  - title.jive-time:
+      delete: true
+      note: "Orphaned after its sole model (jive-time-martel) was merged into the jive-time-rock-n-roll title."

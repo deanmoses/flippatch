@@ -1,0 +1,36 @@
+attribution: flipcommons-ai-desc-game-format
+description: >-
+  Descriptions for some game formats.
+claims:
+  - game-format.bingo-pinball:
+      description: |
+        The bingo machine is pinball's gambling cousin: the player shoots five balls onto a field of holes, trying to light numbers into a line on a 5×5 card printed across the backglass.[[cite:1]] It arrived in 1951 with [[manufacturer:bally]]'s *[[title:bright-lights]]*, the first "in-line" machine, whose playfield layout became the pattern every later bingo followed.[[cite:2]] The play is elemental — a coin buys a card, five balls go up the shooter, and three or more numbers in a line wins.[[cite:3]] In its classic form the machine carries no [[gameplay-feature:flippers]] at all: once a ball is loose, only careful nudging of the cabinet can influence it.[[cite:4]]
+
+        Bingos exist because of a law. The federal Johnson Act of 1950 banned interstate shipment of gambling devices — the slot machines and single-shot "one-ball" games [[manufacturer:bally]] had dominated — and the in-line bingo was the trade's workaround, a new kind of pin game to take their place.[[cite:5]] For all its amusement styling the result was frankly a gambling machine: a player fed extra coins before the shot to lengthen the payout odds, and a winning card was settled by the location in free games or cash.[[cite:6]]
+
+        The format's on-and-off relationship with the flipper grows from that same legal tangle. Because courts in many places treated flipper games as machines of skill, exempt from the gambling bans, a common workaround was to fit flippers to a bingo to lend it a veneer of skill — something [[manufacturer:bally]] itself never did, but that operators and later makers took up.[[cite:8]] Squeezed out of its home market, the genre also emigrated: long after the American firms had abandoned it, makers in [[location:italy]], [[location:spain]] and [[location:belgium]] kept the electronic bingo in production for export,[[cite:7]] among them the Belgian houses [[manufacturer:sirmo-games-sa]] and [[manufacturer:splin-sa]], whose flippered cabinets carried the once-American genre into the solid-state era.
+      cites:
+        "1":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: bingo games had no flippers and their playfields were arranged with holes that corresponded to a bingo card on the backglass
+        "2":
+          ref: http://bingo.cdyn.com/machines/bally/bright_lights/
+          quote: Bally's first in-line bingo machine [...] Bally's playfield layout became the standard for bingo's
+        "3":
+          ref: http://bingo.cdyn.com/machines/bally/bright_lights/
+          quote: Deposit one coin/credit per card, and shoot the five balls. If you get three or more in a line, you win
+        "4":
+          ref: https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball
+          quote: There were no flippers on any bingo pinball produced
+        "5":
+          ref: https://bingo.cdyn.com/history/gamblingpins/johnson.html
+          quote: 'banned inter-state shipment of [...] the first "in-line" or "bingo" type pingames came into being'
+        "6":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: award them either free plays or cash [...] a player could add more coins at the start of play to increase the payout odds on certain combinations
+        "7":
+          ref: http://danny.cdyn.com/Section15.htm
+          quote: electronic Bingos from Europe [...] solid-state machines from Italy, Spain, and Belgium
+        "8":
+          ref: https://bingo.cdyn.com/oddities/flippers/
+          quote: flipper pins were skill machines, so the winning of free games on those was ok [...] stick flippers on a bingo

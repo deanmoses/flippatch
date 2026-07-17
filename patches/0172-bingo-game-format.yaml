@@ -1,0 +1,1049 @@
+attribution: flipcommons-catalog
+description: >
+  Classify the catalog's bingo-pinball machines.
+claims:
+  - model.3-4-5:
+      cite:
+        ref: "ipdb:2538"
+        quote: First United Bingo game with conventional playfield
+      game_format: bingo-pinball
+  - model.3-in-line:
+      cite:
+        ref: "ipdb:2549"
+        quote: Bingo card in both backglass and playfield lights corresponding number earned during play.
+      game_format: bingo-pinball
+  - model.42nd-and-broadway:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.5-star:
+      cite:
+        ref: "ipdb:864"
+        quote: The center star hole lights all stars on the (purchased) backglass bingo cards.
+      game_format: bingo-pinball
+  - model.acapulco:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.acapulco-2:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.apollo-ball:
+      cite:
+        ref: "ipdb:3648"
+        quote: 'had a release (to production) date of 9-25-69 as a "6 card bingo"'
+      game_format: bingo-pinball
+  - model.apollo-ball-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.artemis:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.atlantic-city:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bahama-beach:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.ballerina:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bally-beauty:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bamboo:
+      note: "Marking this model as a bingo because it is a conversion of Orient, a bingo."
+      game_format: bingo-pinball
+  - model.barrel-o-fun:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.barrel-o-fun-61:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.barrel-o-fun-62:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.beach-beauty:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.beach-club-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.beach-time:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.beauty-beach:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.best-ball:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.big-show-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.big-time-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.big-wheel:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bikini:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bing-o-reno:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bingo-continental-one-ball-euro:
+      cite:
+        ref: "ipdb:6083"
+        quote: "Three types of games: [...] Bingo Game"
+      game_format: bingo-pinball
+  - model.bingo-vacation:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.black-pearl:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.blue-chip-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.blue-diamond:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.bonanza-4:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bongo:
+      cite:
+        ref: "ipdb:349"
+        quote: Bingo card in both backglass and playfield lights corresponding number earned during play.
+      game_format: bingo-pinball
+  - model.bonus-7:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.border-beauty:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bounty-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bowl-a-line-2:
+      note: "Marking this model as a bingo because it is a conversion of Variety, a bingo."
+      game_format: bingo-pinball
+  - model.brazil:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bright-lights:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.bright-spot:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.broadway-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.broadway-3:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.brooklyn:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.cabana:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.california:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.campidoglio:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.can-can:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.caravan:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.carnival-queen:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.carrousel:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.charleston-turbo:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.cherry-picker:
+      cite:
+        ref: "ipdb:4857"
+        quote: "several modified features, which are described in Jeffrey Lawton's book Bingo Pinball Machines on page 62."
+      game_format: bingo-pinball
+  - model.circus-10-2:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.circus-13:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.circus-388:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.circus-5:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.circus-queen:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.columbia:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.commodore-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.concorde:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.coney-island-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.coney-island-4:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.contest:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.continental:
+      cite:
+        ref: "ipdb:4028"
+        quote: this solid state Continental classifies as Bally's last full production bingo game.
+      game_format: bingo-pinball
+  - model.continental-2:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.continental-3:
+      note: "Marking this model as a bingo because its 18 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.continental-4:
+      note: "Marking this model as a bingo because it is a TSCC machine, and TSCC's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.continental-circus:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.continental-lucky-7:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.continental-magic-game:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.continental-one-ball:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.continental-one-ball-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.continental-super-7:
+      cite:
+        ref: "ipdb:6204"
+        quote: indicating GAA made a bingo game with the same name
+      game_format: bingo-pinball
+  - model.continental-top-game:
+      note: "Marking this model as a bingo because it is a G.A.A. machine, and G.A.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.copacabana-beach:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.county-fair-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.croce-doro:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.crosswords:
+      note: "Bally letter-bingo - a bingo playfield scoring words instead of numbers; classified bingo-pinball."
+      cite:
+        ref: "ipdb:606"
+        quote: for placement in locations that would not accept traditional bingo machines
+      game_format: bingo-pinball
+  - model.cypress-gardens:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.dallas-2:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.dauphin:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.daytona-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.daytona-3:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.daytona-beach:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.deadville-one-ball:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.diamond-flipper:
+      cite:
+        ref: "ipdb:5869"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      game_format: bingo-pinball
+  - model.diamond-flipper-di-lusso:
+      cite:
+        ref: "ipdb:5872"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      game_format: bingo-pinball
+  - model.disk-jockey:
+      note: "Record describes a combination bingo machine and pinball; classified bingo-pinball."
+      cite:
+        ref: "ipdb:689"
+        quote: Combination bingo machine and pinball.
+      game_format: bingo-pinball
+  - model.dixieland-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.dixieland-3:
+      cite:
+        ref: "ipdb:5847"
+        quote: "Two different games: [...] Bingo Game"
+      game_format: bingo-pinball
+  - model.domino-one-ball:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.domino-one-ball-large-display:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.domino-roulette:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.double-crown:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.double-header-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.double-up-3:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.dude-ranch-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.eldorado-2:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.euro-continental-star:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.euro-star:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.extra-six-cards:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.flipper-bingo:
+      cite:
+        ref: "ipdb:6164"
+        quote: Scoring any number 1 through 9 on the playfield lights up the number on the backglass bingo card.
+      game_format: bingo-pinball
+  - model.flipperino:
+      cite:
+        ref: "ipdb:5871"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      game_format: bingo-pinball
+  - model.folies-bergeres:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.four-corners:
+      note: "Record describes a combination bingo machine and pinball; classified bingo-pinball."
+      cite:
+        ref: "ipdb:931"
+        quote: Combines elements of a bingo machine with flipper pinball.
+      game_format: bingo-pinball
+  - model.french-can-can:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.frolics:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.fun-spot:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.fun-spot-61:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.fun-spot-62:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.fun-spot-63:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.galaxy-2:
+      cite:
+        ref: "ipdb:3115"
+        quote: This is the only 24-hole bingo built by Bally.
+      game_format: bingo-pinball
+  - model.gay-time:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.gayety:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.golden-continental-joker:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.golden-continental-turbo:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.golden-flipper:
+      cite:
+        ref: "ipdb:5866"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      game_format: bingo-pinball
+  - model.golden-florida-turbo:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.golden-game:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.golden-gate-3:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.golden-gate-3-game:
+      cite:
+        ref: "ipdb:6261"
+        quote: between the 1st and 4th bingo cards there is no large window
+      game_format: bingo-pinball
+  - model.golden-gate-388:
+      cite:
+        ref: "ipdb:5840"
+        quote: "Three types of games: [...] Bingo Game"
+      game_format: bingo-pinball
+  - model.golden-gate-4-game:
+      cite:
+        ref: "ipdb:6081"
+        quote: between the 1st and 4th bingo cards this game has a large window
+      game_format: bingo-pinball
+  - model.golden-gate-75:
+      cite:
+        ref: "ipdb:3126"
+        quote: 'lists Model 1017 as a bingo named "Golden Gate 75"'
+      game_format: bingo-pinball
+  - model.golden-gate-euro:
+      cite:
+        ref: "ipdb:6082"
+        quote: "Four types of games: [...] Bingo Game"
+      game_format: bingo-pinball
+  - model.golden-turf:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.green-diamond:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.havana-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.having-fun:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.hawaii-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.hawaii-3:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.hi-fi:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.high-flyer:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.holiday:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.ice-frolics:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.jokers-ladders-one-ball:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:5849"
+        quote: This is a one-ball game with a small bingo-type playfield in an upright cabinet.
+      game_format: bingo-pinball
+  - model.key-west:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.laguna-beach:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.le-grand-carrousel:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.leader-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.lido:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.london:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.long-beach-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.louisiana:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.louisiana-2001:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.lucky-7:
+      cite:
+        ref: "ipdb:3223"
+        quote: had a release (to production) date of 6-29-70 as a bingo
+      game_format: bingo-pinball
+  - model.lucky-joker:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.magic-circus:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.magic-continental-bounty:
+      note: "Marking this model as a bingo because it is a TSCC machine, and TSCC's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.magic-dixieland:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.magic-house:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.magic-ring:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.magic-screen:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.magic-tombola:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.malibu-beach:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.manhattan-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.manhattan-3:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.master-continental:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.master-view-pyramids-legend:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.medieval:
+      cite:
+        ref: "ipdb:6876"
+        quote: "Unusually, this bingo machine has flippers but they may have been retrofitted."
+      game_format: bingo-pinball
+  - model.mexico-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miami-beach-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miami-beach-3:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.michigan:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.millenium:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-america-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-america-75:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-america-deluxe:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-america-deluxe-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-americana:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-americana-triple-bonus:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-belgium-turbo:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-bonus:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-bowling:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-bowling-golden:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-bowling-turbo:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-disco-2-card:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-disco-7-card:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-florida:
+      note: "Marking this model as a bingo because it is a SG machine, and SG's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-florida-2:
+      cite:
+        ref: "ipdb:6119"
+        quote: The manual owner advised us that this game is a bingo machine.
+      game_format: bingo-pinball
+  - model.miss-queen:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-reno:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.miss-super-bonus:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.miss-universe:
+      note: "Marking this model as a bingo because its 18 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.mississippi-showboat:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.mistral:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.monaco:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.mondial:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.montana:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.montana-2000:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.montana-baby-usa:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.montana-de-luxe:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.montana-de-luxe-baby:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.montana-de-luxe-double-screen:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.montana-de-luxe-extreme:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.montana-v:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.moulin-rouge-2:
+      note: "Marking this model as a bingo because it is a G.A.A. machine, and G.A.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.moulin-rouge-2-2:
+      note: "Marking this model as a bingo because it is a G.A.A. machine, and G.A.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.multiplier:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.mystic-gate:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.nashville:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.nevada:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.new-city-3:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.new-continental:
+      note: "Marking this model as a bingo because it is a G.A.A. machine, and G.A.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.new-continental-golden:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.new-dixie-bonus:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.new-dixieland-2000:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.new-florida:
+      note: "Marking this model as a bingo because it is a SG machine, and SG's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.new-orleans:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.night-club:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.ol-south:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.one-ball-bonus-multiplier:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:6091"
+        quote: This is a one-ball game with a small bingo-type playfield in an upright cabinet.
+      game_format: bingo-pinball
+  - model.one-ball-circus:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:5845"
+        quote: The name of this bingo indicates one-ball play
+      game_format: bingo-pinball
+  - model.one-ball-conti:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:6090"
+        quote: This is a one-ball game with a small bingo-type playfield in an upright cabinet.
+      game_format: bingo-pinball
+  - model.orient:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.outer-space-2:
+      cite:
+        ref: "ipdb:6529"
+        quote: has a release (to production) date of 6-27-80 as a 6-card electronic bingo
+      game_format: bingo-pinball
+  - model.outer-space-remote:
+      cite:
+        ref: "ipdb:6530"
+        quote: has a release (to production) date of 6-27-80 as a 6-card electronic bingo
+      game_format: bingo-pinball
+  - model.palm-beach:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.palm-beach-club:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.palm-beach-deluxe:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.palm-beach-turbo:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.palm-springs:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.parade:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.paragon-3:
+      note: "Marking this model as a bingo because it is a Splin S.A. machine, and Splin S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.party-games:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:5828"
+        quote: This is a one-ball game with a small bingo-type playfield in an upright cabinet
+      game_format: bingo-pinball
+  - model.penalty-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.penalty-one-ball:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:5848"
+        quote: This bingo is listed on the manufacturer's website as a one ball game.
+      game_format: bingo-pinball
+  - model.penalty-one-ball-euro:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.penalty-une-bille:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:5837"
+        quote: This bingo is listed on the manufacturer's website as a one ball game.
+      game_format: bingo-pinball
+  - model.piccadilly-3:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.pixies:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.playtime-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.playtime-4:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.president:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.president-one-ball:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:6262"
+        quote: clearly shows the artful red logo design of the manufacturer TSCC above the 5th bingo card.
+      game_format: bingo-pinball
+  - model.provence-daytona:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.pyramids-legend:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.rainbow-4:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.rio:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.rodeo-1-card:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.rodeo-3-card:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.roller-derby:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.route-66-2:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.royal-bingo:
+      cite:
+        ref: "ipdb:5246"
+        quote: "Three modes of play: Party, Bingo, or bet Red/Black."
+      game_format: bingo-pinball
+  - model.royal-golf-azur-2000:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.royal-one-ball:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.royal-seven:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.royal-skittle:
+      note: "Marking this model as a bingo because it is a conversion of Miss Bowling, a bingo."
+      game_format: bingo-pinball
+  - model.safari-2:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.sea-fair:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.sea-island:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.serenade-5:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.shoot-a-line:
+      note: "Marking this model as a bingo because its 28 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.shoot-a-line-63:
+      note: "Marking this model as a bingo because its 28 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.show-time:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.silver-sails:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.single-coin-3:
+      note: "Marking this model as a bingo because it is a conversion of Shoot-A-Line, a bingo."
+      game_format: bingo-pinball
+  - model.six-balls:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.skill-ball-4:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.south-seas-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.space-game-1-card:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.space-game-1-card-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.space-game-7-card:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.space-game-7-card-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.spelling-bee-2:
+      note: "Bally letter-bingo - a bingo playfield scoring words instead of numbers; classified bingo-pinball."
+      cite:
+        ref: "ipdb:5791"
+        quote: for placement in locations that would not accept traditional bingo machines
+      game_format: bingo-pinball
+  - model.spot-em:
+      cite:
+        ref: "ipdb:4856"
+        quote: 5 balls for 10 cents for one bingo card.
+      game_format: bingo-pinball
+  - model.spot-lite-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.star-continental-2000:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.star-flipp:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.star-flipp-evasion:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.star-new-turbo-2000:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.starlet:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.stars-3:
+      cite:
+        ref: "ipdb:2365"
+        quote: First United Bingo game with conventional cabinet
+      game_format: bingo-pinball
+  - model.sun-valley-3:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.super-7:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.super-ball:
+      cite:
+        ref: "ipdb:6080"
+        quote: "Four different games: [...] Bingo Game"
+      game_format: bingo-pinball
+  - model.super-circus-2:
+      cite:
+        ref: "ipdb:5838"
+        quote: "Four different games: [...] Bingo Game"
+      game_format: bingo-pinball
+  - model.super-continental:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.super-dixieland:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.super-flipper-2:
+      cite:
+        ref: "ipdb:5870"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      game_format: bingo-pinball
+  - model.super-flipper-deluxe:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.super-golf-azur-3000:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.surf-club:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.tahiti-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.tahiti-3:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.tahiti-4:
+      cite:
+        ref: "ipdb:3409"
+        quote: 'identifies this Model 1030 game as a "3 Card-6 Ball Bingo"'
+      game_format: bingo-pinball
+  - model.tahiti-7:
+      cite:
+        ref: "ipdb:6528"
+        quote: 'Bally documentation lists Model 1189-E as an "electronic bingo"'
+      game_format: bingo-pinball
+  - model.texas:
+      note: "Marking this model as a bingo because it is a SG machine, and SG's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.ticker-tape:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.titan-bingo:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.touchdown-4:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.transcontinental:
+      note: "Marking this model as a bingo because it is a SG machine, and SG's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.transcontinental-deluxe:
+      note: "Marking this model as a bingo because it is a SG machine, and SG's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.trinacria:
+      note: "Marking this model as a bingo because it is a SIRMO Games S.A. machine, and SIRMO Games S.A.'s catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.triple-joker-2:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:6089"
+        quote: This is a one-ball game with a small bingo-type playfield in an upright cabinet.
+      game_format: bingo-pinball
+  - model.triple-play:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.triple-seven:
+      note: "Marking this model as a bingo because it is a WIMI Games machine, and WIMI Games's catalog is entirely in-line bingo machines (multi-card gambling pinballs built for export)."
+      game_format: bingo-pinball
+  - model.tropicana-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.tropics:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.up-n-down-one-ball:
+      note: "One-ball game built on the bingo platform (bingo cards, hole grid); a member of the bingo family, classified bingo-pinball."
+      cite:
+        ref: "ipdb:6092"
+        quote: This is a one-ball game with a small bingo-type playfield in an upright cabinet.
+      game_format: bingo-pinball
+  - model.variety-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.venice:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.venus-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.venus-3:
+      cite:
+        ref: "ipdb:3883"
+        quote: indicates model 819 'Venus' was a bingo machine not made
+      game_format: bingo-pinball
+  - model.wall-street-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.wall-street-special-spain:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.yacht-club-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.yukon-2:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.zingo:
+      note: "Marking this model as a bingo because its 25 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
+  - model.zodiac-2:
+      note: "Marking this model as a bingo because its 20 trap holes form the in-line bingo playfield: balls landing in the hole grid light numbers on the backglass card, scored in a line."
+      game_format: bingo-pinball
