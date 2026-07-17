@@ -8,13 +8,15 @@ Read [DomainModel.md](../../../../flipcommons/docs/DomainModel.md) (Bootlegs / L
 
 ## What this campaign does
 
-Three lineage relationships link a derivative machine to the design it reproduces:
+> **Model changed (ModelRelationships shipped).** Lineage now lives in the `catalog_modelrelationship` join table, not the retired `bootleg_of` / `licensed_build_of` / `converted_from` columns, and the `bootleg` / `licensed-build` / `conversion-kit` tags are gone. The Worklist's three buckets are historical labels for the same space: `licensed` ≈ copy+licensed, `bootleg` ≈ copy+unlicensed, `conversion` ≈ conversion / conversion_kit.
 
-- **`licensed_build_of` + tag `licensed-build`** — an authorized twin: a complete machine a licensee/foreign subsidiary built under license for another market (e.g. VIFICO building Gottlieb/Premier in Spain). Keeps normal `produced` status. This is the pattern established by the Bally Wulff patch [0124-bally-wulff-models.yaml](../../0124-bally-wulff-models.yaml).
-- **`bootleg_of` + tag `bootleg`** — an unauthorized copy of another maker's design (e.g. Maresa copying Gottlieb). Same shape as licensed builds; the only difference is authorization.
-- **`converted_from`** — a conversion kit / re-themed machine built on another game's existing hardware (playfield + backglass swap on donor boards), e.g. the Italian conversion houses on Bally/Williams donors.
+A lineage edge — a **`ModelRelationship`** — links a derivative machine to the design it reproduces. Read [DataPatches.md → Model relationships](../../../../flipcommons/docs/DataPatches.md) and [DomainModel.md](../../../../flipcommons/docs/DomainModel.md) before authoring. Each edge carries:
 
-**The key structural fact that makes this cheap:** every foreign machine is _already seeded_ as its own model record (slug + corporate entity), and so is the US original it reproduces. Unlike the Italian sweep (which created models from tilt.it), this campaign mostly just **adds a relationship + tag to an existing seeded model** and cites the IPDB note. No model creation, no title surgery in the common case.
+- a **`relationship_type`**: `copy` (reproduces another maker's design on newly built hardware), `conversion` (a complete machine built by reusing another machine's hardware with a new playfield/theme), or `conversion_kit` (a set of parts sold to convert a compatible donor — its target is often plural or unnamed, so a text label).
+- a **`license_status`**: `licensed`, `unlicensed`, or `unknown`. "Bootleg" and "licensed build" are no longer fields or tags — they are `copy` + `unlicensed` / `copy` + `licensed`. Write `unknown` when the source establishes the copy/conversion but says nothing about authorization.
+- a **target**: `target_machine` (a resolvable model slug) **XOR** `target_label` (plain text for a plural or unseeded target). A model may carry **several** machine-target edges and at most one label edge.
+
+**The key structural fact that makes this cheap:** every foreign machine is _already seeded_ as its own model record (slug + corporate entity), and so is the US original it reproduces. Unlike the Italian sweep (which created models from tilt.it), this campaign mostly just **adds a `model_relationship` edge to an existing seeded model** and cites the source. No model creation, no title surgery in the common case.
 
 ## How the candidates were found
 
@@ -23,7 +25,7 @@ A one-time mine (since-removed script, in git history) built the Worklist from `
 - `→ target slug` is best-effort — most are right, but a handful resolve to the wrong game when the note's first quoted title isn't the original (e.g. LAI `cosmic-princess`); always confirm the target before writing `*_of:`.
 - Rows marked **TODO** in the target column need manual resolution.
 - Re-read the full IPDB note (and prefer a web-cache source where one exists) for the verbatim `cite` quote.
-- In the conversion section, a few "makers" are the US originals themselves (`bally-manufacturing-corporation`, `williams-electronics-incorporated`, `d-gottlieb-company`, `premier-technology`). These are in-house or same-lineage conversions, or reverse-direction note matches — vet each one hard; some may not be `converted_from` candidates at all.
+- In the conversion section, a few "makers" are the US originals themselves (`bally-manufacturing-corporation`, `williams-electronics-incorporated`, `d-gottlieb-company`, `premier-technology`). These are in-house or same-lineage conversions, or reverse-direction note matches — vet each one hard; some may not be conversion candidates at all.
 
 ## Decisions made
 
@@ -34,8 +36,10 @@ A one-time mine (since-removed script, in git history) built the Worklist from `
 
 ## Progress
 
-- **[0127-licensed-builds.yaml](../../0127-licensed-builds.yaml) + [0128-licensed-build-title-removal.yaml](../../0128-licensed-build-title-removal.yaml) — done.** 27 licensed builds (IPDB note says "under license"): VIFICO ×13 (Gottlieb/Premier), LAI ×7 (Stern), Segasa ×4 (Williams), plus Taito do Brasil `meteor-2`, Automáticos MonteCarlo `lortium-2`, American Home Entertainment `the-getaway-high-speed-ii-2`. Same-name builds merged under the original's title (0127), emptied titles retired (0128); applied and verified 27/27 against a fresh db.pre-0039 snapshot. Three rows **held back** — flagged as ⚠ callouts in [Worklist.md](Worklist.md). _Retrofit:_ the 13 VIFICO builds and their Gottlieb originals were later name-suffixed `(VIFICO)` / `(Gottlieb)`; the other 0127 makers (LAI, Segasa, Taito, Automáticos, American Home Entertainment) still need the same suffixing.
-- **[0140-maresa-bootlegs.yaml](../../0140-maresa-bootlegs.yaml) + [0141-maresa-bootleg-title-removal.yaml](../../0141-maresa-bootleg-title-removal.yaml) — authored, snapshot apply-verify still to run.** Maresa's 20 unlicensed Gottlieb copies. The 12 same-name builds got the full treatment (slug → `-maresa`, title merge, `(Maresa)` / `(Gottlieb)` names, orphaned title deleted in 0141); the 8 renamed copies kept their own slug/title. Structural + editorial lint + `make verify-quotes` pass. Big Brave (ipdb:4634) is the one judgment call — IPDB says "whether licensed or not is unknown"; tagged `bootleg` with a note.
+- **[0127-licensed-builds.yaml](../../0127-licensed-builds.yaml) + [0128-licensed-build-title-removal.yaml](../../0128-licensed-build-title-removal.yaml) — done.** 27 licensed builds (IPDB note says "under license"): VIFICO ×13 (Gottlieb/Premier), LAI ×7 (Stern), Segasa ×4 (Williams), plus Taito do Brasil `meteor-2`, Automáticos MonteCarlo `lortium-2`, American Home Entertainment `the-getaway-high-speed-ii-2`. Same-name builds merged under the original's title (0127), emptied titles retired (0128); applied and verified 27/27 against a fresh db.pre-0039 snapshot. Three rows **held back** — flagged as ⚠ callouts in [Worklist.md](Worklist.md). (The 13 VIFICO builds were briefly name-suffixed `(VIFICO)` / `(Gottlieb)` under the since-retired naming convention; those names are bare again and no suffixing is owed to the other 0127 makers — see [Names](#names-leave-them-alone).)
+- **[0140-maresa-bootlegs.yaml](../../0140-maresa-bootlegs.yaml) + [0141-maresa-bootleg-title-removal.yaml](../../0141-maresa-bootleg-title-removal.yaml) — authored, snapshot apply-verify still to run.** Maresa's 20 unlicensed Gottlieb copies. The 12 same-name builds got the full treatment (slug → `-maresa`, title merge, orphaned title deleted in 0141); the 8 renamed copies kept their own slug/title. (These also carried `(Maresa)` / `(Gottlieb)` names under the since-retired naming convention; those are bare again — see [Names](#names-leave-them-alone).) Structural + editorial lint + `make verify-quotes` pass. Big Brave (ipdb:4634) is the one judgment call — IPDB says "whether licensed or not is unknown"; tagged `bootleg` with a note.
+
+- **[0159-fipermatic.yaml](../../0159-fipermatic.yaml) + [0160-europlay.yaml](../../0160-europlay.yaml) — authored, applied and verified against a fresh db.pre-0039 replay.** The first two makers driven through the post-redesign [corpus sweep](sweep/SESSION-BRIEF.md), one maker per run (6 rows each, sub-cent). Edges only — neither maker has a same-name build, so no slug/title/name work. Fipermatic ×6 copies of Gottlieb (and one of Bally's Xenon); Europlay ×4 copies + 2 conversions, one of them a **label**-target conversion (`jaws`, donor unnamed by the source). Three Europlay edge claims were rejected on review — see the run notes in [sweep/TOOL-NOTES.md](sweep/TOOL-NOTES.md), including DEFECT 7 (artwork reuse misjudged as a machine copy).
 
 ## The dev DB
 
@@ -60,11 +64,15 @@ Then `make validate` in flippatch — the structural + editorial lint and `make 
 Two read-only scripts (in this dir) reconcile the Worklist against the freshly-rebuilt [dev DB](#the-dev-db), keyed on the stable `ipdb` number rather than the Worklist's frozen slugs. **Run both after every rebuild** (the dev DB is ground truth; both this file and the Worklist go stale):
 
 ```bash
-python3 check_status.py --write        # (re)generate STATUS.md: per-bucket/per-maker done vs remaining, + target-guess discrepancies to vet
-python3 reconcile_worklist.py          # stamp ✅ onto Worklist rows already applied in the DB, so nobody re-authors them (idempotent)
+uv run python3 check_status.py --write        # (re)generate STATUS.md: per-bucket/per-maker done vs remaining, + target-guess discrepancies to vet
+uv run python3 reconcile_worklist.py          # stamp ✅ onto Worklist rows already applied in the DB, so nobody re-authors them (idempotent)
 ```
 
+(Both resolve the dev DB via `scripts/common/related_projects.py` — no hard-coded path; override with `FLIPCOMMONS_DIR`. Run under `uv` so that resolver's deps are present.)
+
 - **[STATUS.md](STATUS.md)** is the generated source of truth for progress — read it, don't hand-maintain it.
+
+The campaign is also wired onto the **AI corpus sweep** (`make sweep` — see [docs/corpus_sweep/CorpusSweepOperating.md](../../../docs/corpus_sweep/CorpusSweepOperating.md)): `uv run python3 emit_candidates.py` regenerates [sweep/candidates.jsonl](sweep/candidates.jsonl) from the Worklist (the Worklist's target guesses ride along as audited-not-inherited `hint`s), then `make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --no-ai"` reconciles for free and the same command without `--no-ai` judges every note on the trusted tier, emitting `sweep/REVIEW.md` + `sweep/results.json`. Note the sweep's exact target compare flags re-slugging-era discrepancies `check_status.py`'s loose compare tolerates — adjudicate those from the note, not from either script. **A session picking up this campaign should start from [sweep/SESSION-BRIEF.md](sweep/SESSION-BRIEF.md)** — the orientation order, the run loop, and the tool-hardening duties live there.
 - A row in the discrepancy table means the DB's relationship target ≠ the Worklist's guess; open the IPDB note (pinexplore DuckDB `ipdb_machines.Notes`) and decide which is right before trusting either.
 - After stamping, re-align the Worklist tables with `npx prettier@3.8.1 --write Worklist.md` (this dir is excluded from the commit-time markdown hooks, so it won't auto-format).
 
@@ -74,11 +82,26 @@ Several Italian (and a few German) conversion/bootleg houses in the worklist wer
 
 `renato-montanari-giochi`, `skillgame-dba-renato-montanari-giochi`, `bell-games`, `nuova-bell-games`, `bell-coin-matics`, `l-v-mambelli`, `dama-srl`, `europlay`, `elettrocoin`, `idi`, `emmepi`, `ripepi`, `ditta-ripepi-spa`, `giuliano-lodola`, `nordamatic`, `pinball-shop`, `lori`.
 
-## Authoring recipe (mirror [0124-bally-wulff-models.yaml](../../0124-bally-wulff-models.yaml))
+## Authoring recipe
 
-For each model: a `cite` with `ref: ipdb:NNNN` and a **verbatim** quote from the note establishing the relationship, then set `licensed_build_of:` / `bootleg_of:` / `converted_from:` to the target slug and `tag: [licensed-build|bootleg]`.
+For each model, author a `model_relationship` under its changeset: a `cite` with `ref: ipdb:NNNN` (or a web-cache URL) and a **verbatim** quote establishing the relationship, then one or more list members, each with `relationship_type`, `license_status`, and exactly one of `target_machine: <slug>` / `target_label: <text>`:
 
-A **same-name build** — a copy carrying the original's exact name — gets the full treatment: merge it under the original's **title**, rename its **slug** ([Slug convention](#slug-convention-applies-to-licensed-bootleg-and-conversion-patches)), and suffix both **names** ([Naming convention](#naming-convention-same-name-merges)). Merge the title **only when it doesn't contradict how OPDB groups the two machines** — check their OPDB groups (`opdb_id` on each model, or their opdb.org pages). If OPDB already groups them together, or has no separate record of the copy, one Title is consistent; if OPDB keeps them in separate groups, that is a conflict: 🛑 **STOP and ask the user**, don't force the merge. A **renamed** copy (a different name) keeps its own title and slug — title placement is independent of the lineage link.
+```yaml
+attribution: flipcommons-catalog
+claims:
+  - model.spin-out-maresa:
+      cite:
+        ref: ipdb:NNNN
+        quote: "This is an unauthorized copy of Gottlieb's 1975 'Spin Out'."
+      model_relationship:
+        - target_machine: spin-out-gottlieb
+          relationship_type: copy
+          license_status: unlicensed
+```
+
+(A conversion kit fitting several donors uses `target_label:` instead — see [DataPatches.md](../../../../flipcommons/docs/DataPatches.md). Newer patches [0140-maresa.yaml](../../0140-maresa.yaml), [0142-geiger-conversions.yaml](../../0142-geiger-conversions.yaml) onward mirror this shape.)
+
+A **same-name build** — a copy carrying the original's exact name — is merged under the original's **title** and gets its **slug** renamed ([Slug convention](#slug-convention-applies-to-licensed-bootleg-and-conversion-patches)); its `name` is left alone ([Names](#names-leave-them-alone)). Merge the title **only when it doesn't contradict how OPDB groups the two machines** — check their OPDB groups (`opdb_id` on each model, or their opdb.org pages). If OPDB already groups them together, or has no separate record of the copy, one Title is consistent; if OPDB keeps them in separate groups, that is a conflict: 🛑 **STOP and ask the user**, don't force the merge. A **renamed** copy (a different name) keeps its own title and slug — title placement is independent of the lineage link.
 
 Validate against the [dev DB](#the-dev-db), then `make validate` here.
 
@@ -97,10 +120,8 @@ WHERE m.slug = '<model-slug>';
 
 Every case the old trade-name/strip-the-legal-name heuristic fussed over is resolved by this lookup: `maquinas-recreativas-sociedad-anonima` → `maresa`, `vifico-sa` → `vifico`, `leisure-allied-industries` → `lai`, `fipermatic-…-ltda` → `fipermatic`, both R.M.G. corporate entities → `rmg`, `bally-manufacturing-corporation` → `bally`. **Do not** reconstruct the brand by trimming a corporate-entity slug (Premier Technology's brand is `gottlieb`, not `premier`) or from an IPDB `[Trade Name: …]` string — those only approximate a token the Manufacturer record stores exactly. One brand spans many corporate entities (Gottlieb ← both `d-gottlieb-company` and `premier-technology`), so two rows with different corporate entities can correctly share a suffix. If a model's Manufacturer is missing or its slug is genuinely unsuitable, that's a catalog gap to fix or flag — not a token to hand-derive. Check the result against existing slugs for collisions before writing.
 
-## Naming convention (same-name merges)
+## Names: leave them alone
 
-When a same-name copy is merged under the original's title, the two models share a title _and_ a display `name`. Suffix each with its maker in parentheses to tell them apart — the copy `<Name> (<Maker>)`, the original `<Name> (<Original maker>)`, e.g. _Spin Out (Maresa)_ and _Spin Out (Gottlieb)_ (patch [0140-maresa-bootlegs.yaml](../../0140-maresa-bootlegs.yaml)). The label is the Manufacturer **name** — the same record whose `slug` is the slug suffix above (`name` here, `slug` there), never the corporate-entity's legal name.
+A same-name copy and its original **keep their identical bare names** — _Spin Out_ and _Spin Out_. Do not suffix a model's `name` with its maker to tell the two apart. The UI shows the manufacturer everywhere a model appears, so the name never has to carry it, and the [slug](#slug-convention-applies-to-licensed-bootleg-and-conversion-patches) is what disambiguates the records.
 
-Mechanically, the copy's `name` rides its existing lineage change set (the one carrying the slug rename, title merge, `*_of:` and tag). The original's rename is a _separate_ editorial `name`-only entry with a `note:` explaining the disambiguation and **no** `cite:` — the evidence is the catalog's own two-same-named-models-in-one-title state, which needs no citation.
-
-This applies **only** to same-name merges; renamed copies keep their distinct name. Before renaming the original, confirm its base name collides with exactly one model in the merged title — add-a-ball twins and other siblings usually have distinct names and must be left alone. (The licensed batch 0127 predates this convention and left names bare, disambiguating by slug alone; new patches should suffix names.)
+(An earlier convention here did suffix both names — `<Name> (<Maker>)`, e.g. _Spin Out (Maresa)_ / _Spin Out (Gottlieb)_ — and a few patches applied it. It is **retired**: those names have been reverted in the catalog, and no new patch should reintroduce one. Parentheticals that are not maker suffixes — `Dragon (EM)`, `AC/DC (Pro)` — are a different thing entirely and stay.)

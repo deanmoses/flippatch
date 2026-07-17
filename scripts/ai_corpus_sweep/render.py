@@ -25,6 +25,7 @@ _REVIEW_ORDER = (
     gate.SET_BUT_UNSUPPORTED,
     gate.FACTS_MISMATCH,
     gate.SAME_MAKER,
+    gate.LABEL_TARGET_INVALID,
     gate.QUOTE_UNSUPPORTED,
     gate.MULTI_TARGET,
     gate.HINT_MISMATCH,
@@ -43,17 +44,45 @@ def _md(text: str) -> str:
     return text.replace("|", "\\|").replace("\n", " ")
 
 
+def _target_desc(row: SweepRow) -> str:
+    """The row's target as a short token: a resolved slug, a label, or the
+    stated title."""
+    if row.resolved_slug:
+        return f"`{row.resolved_slug}`"
+    if row.target_label:
+        return f"“{row.target_label}”"
+    if row.target_title:
+        return row.target_title
+    return "—"
+
+
+def _edge_desc(row: SweepRow) -> str:
+    """The relationship edge as ``copy/unlicensed → aquarius`` (best effort)."""
+    kind = "/".join(x for x in (row.relationship_type, row.license_status) if x)
+    target = _target_desc(row)
+    return f"{kind} → {target}" if kind else target
+
+
 def _row_label(row: SweepRow) -> str:
     slug = f"`{row.model_slug}`" if row.model_slug else "(no model)"
-    return f"ipdb:{row.ipdb_id} {slug} {row.field}"
+    return f"ipdb:{row.ipdb_id} {slug}"
 
 
-def progress_line(done: int, total: int, row: SweepRow) -> str:
-    """One console line per judged row — the run narrates itself."""
-    outcome = row.disposition
-    if row.resolved_slug:
-        outcome += f" → {row.resolved_slug}"
-    return f"[{done}/{total}] {_row_label(row)}: {outcome}"
+def progress_line(done: int, total: int, rows: Sequence[SweepRow]) -> str:
+    """One console line per judged model — the run narrates itself."""
+    first = rows[0]
+    slug = f"`{first.model_slug}`" if first.model_slug else "(no model)"
+    head = f"[{done}/{total}] ipdb:{first.ipdb_id} {slug}"
+    if len(rows) == 1:
+        row = rows[0]
+        outcome = row.disposition + (
+            f" → {row.resolved_slug}" if row.resolved_slug else ""
+        )
+        return f"{head}: {outcome}"
+    parts = ", ".join(
+        f"{d} {n}" for d, n in Counter(r.disposition for r in rows).most_common()
+    )
+    return f"{head}: {len(rows)} edges ({parts})"
 
 
 def _counts_table(rows: Sequence[SweepRow]) -> list[str]:
@@ -75,9 +104,9 @@ def _review_detail(row: SweepRow) -> list[str]:
     lines = [f"### {_row_label(row)} — {row.disposition}", ""]
     facts = [
         ("model", f"`{row.model_slug}` ({row.model_name})" if row.model_slug else "—"),
-        ("catalog now", f"`{row.catalog_now}`" if row.catalog_now else "(empty)"),
-        ("prior guess", f"`{row.hint}`" if row.hint else "—"),
-        ("verdict", row.verdict or "—"),
+        ("relationship", _edge_desc(row)),
+        ("catalog now", f"{row.catalog_now}" if row.catalog_now else "(none)"),
+        ("prior guess", ", ".join(f"`{h}`" for h in row.hint) if row.hint else "—"),
     ]
     if row.target_title:
         stated = row.target_title
@@ -87,8 +116,6 @@ def _review_detail(row: SweepRow) -> list[str]:
         facts.append(
             ("note states target", f"{stated} ({extras})" if extras else stated)
         )
-    if row.resolved_slug:
-        facts.append(("resolved", f"`{row.resolved_slug}`"))
     if row.resolution_how:
         facts.append(("resolution", row.resolution_how))
     lines.extend(f"- **{key}:** {value}" for key, value in facts)
@@ -111,8 +138,7 @@ def _fill_line(row: SweepRow) -> str:
     mark = "✓" if row.quote_verified else "✗"
     ref = row.quote_ref or (row.evidence[0][0] if row.evidence else "?")
     return (
-        f"- {_row_label(row)} → `{row.resolved_slug}` — quote {mark} ({ref}): "
-        f"“{row.quote}”"
+        f"- {_row_label(row)} → {_edge_desc(row)} — quote {mark} ({ref}): “{row.quote}”"
     )
 
 
@@ -204,7 +230,7 @@ def render_review(rows: Sequence[SweepRow]) -> str:
             f"value ({len(agrees)})",
             "",
             *(
-                f"- {_row_label(row)}: `{row.catalog_now}`"
+                f"- {_row_label(row)}: {_edge_desc(row)}"
                 + (f" — {row.reasons[0]}" if row.reasons else "")
                 for row in agrees
             ),
@@ -231,13 +257,16 @@ def render_status(rows: Sequence[SweepRow], total_candidates: int) -> str:
 
     Readable at any time, by anyone, without touching the running process:
     the artifact on disk IS the status. (The operator is usually a human
-    behind an AI session; stderr never reaches them.)
+    behind an AI session; stderr never reaches them.) ``total_candidates`` is
+    a model count; a judged model contributes several rows, so completion is
+    tracked by the distinct models seen, not the row total.
     """
     counts = Counter(row.disposition for row in rows)
     review = sum(1 for row in rows if row.needs_review)
-    pending = max(0, total_candidates - len(rows))
+    judged_models = len({row.ipdb_id for row in rows})
+    pending = max(0, total_candidates - judged_models)
     lines = [
-        f"judged {len(rows)}/{total_candidates} candidates"
+        f"judged {judged_models}/{total_candidates} models ({len(rows)} edge rows)"
         + (f" — {pending} pending" if pending else " — run complete"),
         f"needs review: {review}",
         "dispositions: "
@@ -253,7 +282,7 @@ def render_status(rows: Sequence[SweepRow], total_candidates: int) -> str:
 def render_reconcile(rows: Iterable[SweepRow]) -> str:
     """The free, no-AI preview: what the catalog already settles.
 
-    Buckets every candidate against the live catalog only — no judgment of the
+    Buckets every model against the live catalog only — no judgment of the
     notes. Its job is (a) a wiring check before spending, and (b) coverage at
     a glance.
     """
@@ -278,20 +307,25 @@ def render_reconcile(rows: Iterable[SweepRow]) -> str:
         f"| **total** | **{len(listed)}** |",
         "",
     ]
+    # A set row whose prior guess appears NOWHERE in its current edges — the
+    # catalog and the prior guess disagree, so a sweep would adjudicate it.
     mismatches = [
         row
         for row in listed
-        if row.catalog_now and row.hint and row.catalog_now != row.hint
+        if row.hint
+        and row.catalog_now
+        and not any(h in row.catalog_now for h in row.hint)
     ]
     if mismatches:
         out += [
-            "## Set rows whose catalog target ≠ the prior guess — a sweep "
+            "## Set rows whose catalog edges omit the prior guess — a sweep "
             "would adjudicate these",
             "",
             "| row | catalog now | prior guess |",
             "| --- | --- | --- |",
             *(
-                f"| {_row_label(row)} | `{row.catalog_now}` | `{row.hint}` |"
+                f"| {_row_label(row)} | {_md(row.catalog_now or '')} "
+                f"| {', '.join(f'`{h}`' for h in row.hint)} |"
                 for row in mismatches
             ),
             "",
@@ -301,7 +335,7 @@ def render_reconcile(rows: Iterable[SweepRow]) -> str:
         out += [
             "## Candidates with no catalog model (ipdb_id not found)",
             "",
-            *(f"- ipdb:{row.ipdb_id} ({row.field})" for row in missing),
+            *(f"- ipdb:{row.ipdb_id}" for row in missing),
             "",
         ]
     return "\n".join(out)

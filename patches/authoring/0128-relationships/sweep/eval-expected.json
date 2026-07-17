@@ -1,0 +1,1046 @@
+{
+ "note": "Frozen expectations from the 2026-07-17 full run + triage. `expect_relationship_type` is checked only where set. See TOOL-NOTES.md. Labels marked GENUINE/DEFECT were human-reviewed to varying depth — audit before trusting as ground truth.",
+ "rows": {
+  "6692:arena": {
+   "model": "arena-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6695:bad-girls": {
+   "model": "bad-girls-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6685:chicago-cubs-triple-play": {
+   "model": "chicago-cubs-triple-play-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6694:diamond-lady": {
+   "model": "diamond-lady-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6696:excalibur": {
+   "model": "excalibur-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6688:genesis": {
+   "model": "genesis-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6689:gold-wings": {
+   "model": "gold-wings-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6687:hollywood-heat": {
+   "model": "hollywood-heat-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6697:hot-shots": {
+   "model": "hot-shots-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6690:monte-carlo-gottlieb": {
+   "model": "monte-carlo-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6686:raven": {
+   "model": "raven-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6691:spring-break": {
+   "model": "spring-break-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6693:victory-3": {
+   "model": "victory-vifico",
+   "maker": "vifico",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6325:dracula": {
+   "model": "dracula-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "6318:galaxy-stern": {
+   "model": "galaxy-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6471:hot-hand": {
+   "model": "hot-hand-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6434:magic-2": {
+   "model": "magic-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6207:meteor": {
+   "model": "meteor-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6460:nugent-stern": {
+   "model": "nugent-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "6443:trident": {
+   "model": "trident-lai",
+   "maker": "lai",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "228:big-ben-williams-1975": {
+   "model": "big-ben-segasa",
+   "maker": "segasa",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "1484:lucky-ace": {
+   "model": "lucky-ace-segasa",
+   "maker": "segasa",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "2637:travel-time": {
+   "model": "travel-time-segasa",
+   "maker": "segasa",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "5181:the-getaway-high-speed-ii": {
+   "model": "the-getaway-high-speed-ii-american-home-entertainment",
+   "maker": "american-home-entertainment",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "5952:lortium": {
+   "model": "lortium-automaticos-montecarlo",
+   "maker": "automaticos-montecarlo",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "5486:4-square": {
+   "model": "4x4-2",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5320:baseball-2": {
+   "model": "beisbol",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4634:big-brave": {
+   "model": "big-brave-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4367:ice-revue": {
+   "model": "boxing",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4637:domino-2": {
+   "model": "domino-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4643:jacks-open": {
+   "model": "jacks-open-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4365:rack-a-ball": {
+   "model": "king-ball-2",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5917:king-pin-2": {
+   "model": "king-pin-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5805:sing-along": {
+   "model": "music-hall",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4366:central-park": {
+   "model": "picnic-2",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5155:pro-football": {
+   "model": "pro-football-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5317:road-race": {
+   "model": "road-race-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5914:roller-coaster": {
+   "model": "roller-coaster-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5801:spin-out": {
+   "model": "spin-out-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5762:surf-champ": {
+   "model": "surf-champ-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5305:surfer": {
+   "model": "surfer-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5807:tropic-isle": {
+   "model": "tahiti-6",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5318:target-pool": {
+   "model": "target-pool-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5817:top-card": {
+   "model": "top-card-maresa",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4645:skyline-2": {
+   "model": "ye-ye-club",
+   "maker": "maresa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6015:aquarius": {
+   "model": "aquarius-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5969:sweet-hearts": {
+   "model": "escalera-de-color",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5899:spin-wheel": {
+   "model": "esmeralda-ball",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5900:flip-a-card": {
+   "model": "flip-a-card-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4996:royal-guard": {
+   "model": "gran-parada",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4389:grand-slam-5": {
+   "model": "grand-slam-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4390:high-hand-2": {
+   "model": "king-game",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5319:mibs": {
+   "model": "mibs-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6227:mini-cycle": {
+   "model": "mini-cycle-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6225:kings-queens": {
+   "model": "new-city-2",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6403:olympics-3": {
+   "model": "olympics-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4368:king-of-diamonds": {
+   "model": "rey-de-diamantes",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4121:spin-a-card": {
+   "model": "spin-a-card-petaco",
+   "maker": "petaco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4779:big-valley": {
+   "model": "big-valley-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5214:card-king": {
+   "model": "card-king-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4786:flying-carpet": {
+   "model": "flying-carpet-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4780:jungle-king": {
+   "model": "jungle-king-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4781:hi-lo-2": {
+   "model": "miss-theresine",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4782:star-trek-2": {
+   "model": "only-star",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5458:space-orbit": {
+   "model": "space-orbit-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4784:ten-up": {
+   "model": "strike-4",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4785:top-hand-2": {
+   "model": "top-hand-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6702:galaxie": {
+   "model": "univerx",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4078:golden-arrow": {
+   "model": "red-arrow-3",
+   "maker": "europlay",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5255:jet-spin": {
+   "model": "sky-fly",
+   "maker": "europlay",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5050:sky-dive": {
+   "model": "sky-star",
+   "maker": "europlay",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5449:volley": {
+   "model": "vole",
+   "maker": "europlay",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5441:amazon-hunt": {
+   "model": "fast-draw-2",
+   "maker": "europlay",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5080:electromechanical Gottlieb game": {
+   "model": "jaws",
+   "maker": "europlay",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5883:charlies-angels-2": {
+   "model": "charlies-angels-3",
+   "maker": "fipermatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5699:close-encounters-of-the-third-kind-2": {
+   "model": "close-encounters",
+   "maker": "fipermatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5884:dragon-3": {
+   "model": "dragon-5",
+   "maker": "fipermatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5489:jungle-queen": {
+   "model": "jane",
+   "maker": "fipermatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6603:space-walk": {
+   "model": "space-walk-2",
+   "maker": "fipermatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5922:xenon": {
+   "model": "zarza-2",
+   "maker": "fipermatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5488:jungle-princess": {
+   "model": "diana",
+   "maker": "rowamet",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5490:super-spin": {
+   "model": "jet-surf",
+   "maker": "rowamet",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6707:big-indian": {
+   "model": "sherokee",
+   "maker": "rowamet",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5169:vulcan": {
+   "model": "vulcan-iv",
+   "maker": "rowamet",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5176:speakeasy-2": {
+   "model": "al-capone",
+   "maker": "ltd-do-brasil",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 11: license rests on a maker-level authorization cite the sweep must be given."
+  },
+  "5132:eight-ball-deluxe": {
+   "model": "cowboy-eight-ball",
+   "maker": "ltd-do-brasil",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 11: license rests on a maker-level authorization cite the sweep must be given."
+  },
+  "5704:haunted-house": {
+   "model": "haunted-hotel",
+   "maker": "ltd-do-brasil",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 11: license rests on a maker-level authorization cite the sweep must be given."
+  },
+  "4592:xenon": {
+   "model": "zephy",
+   "maker": "ltd-do-brasil",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 11: license rests on a maker-level authorization cite the sweep must be given."
+  },
+  "4920:galaxie": {
+   "model": "galaxie-rmg",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6133:space-time-2": {
+   "model": "the-best-space-time",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4919:wizard": {
+   "model": "the-best-wizard",
+   "maker": "rmg",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4571:meteor": {
+   "model": "meteor-taito-do-brasil",
+   "maker": "taito-do-brasil",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6454:golden-arrow": {
+   "model": "arrow-3",
+   "maker": "ripepi",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5622:big-indian": {
+   "model": "big-sakem",
+   "maker": "ripepi",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4127:fast-draw": {
+   "model": "gold-star-5",
+   "maker": "ripepi",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5035:ship-mates": {
+   "model": "big-eagle",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5096:happy-clown": {
+   "model": "chivalery",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5079:liberty-belle": {
+   "model": "cosmos-2",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4376:oklahoma-2": {
+   "model": "faukland",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5656:oklahoma-2": {
+   "model": "first-bolide",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6507:swing-along": {
+   "model": "gulf",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5667:gaucho": {
+   "model": "khalifa",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6316:liberty-belle": {
+   "model": "nuclear",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5017:ship-mates": {
+   "model": "robin-hood-4",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4555:ship-mates": {
+   "model": "sindbad",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6321:unidentified 4-player replay game": {
+   "model": "star",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4967:gaucho": {
+   "model": "sub-marine",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5285:hi-score": {
+   "model": "the-happy-musketeers",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5285:super-score-3": {
+   "model": "the-happy-musketeers",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5438:dodge-city": {
+   "model": "the-jungle",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6317:oklahoma-2": {
+   "model": "tropical-2",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3951:liberty-belle": {
+   "model": "venus-4",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5027:fashion-show": {
+   "model": "viking-4",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5537:an unknown 1960's era Gottlieb game": {
+   "model": "wine-grower",
+   "maker": "j-martina",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4404:": {
+   "model": "spider",
+   "maker": "dama",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3968:star-trek": {
+   "model": "dark-rider",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4493:firepower": {
+   "model": "dino-turbo",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3974:supersonic": {
+   "model": "fly-high",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4440:high-speed": {
+   "model": "la-retata",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3972:mata-hari": {
+   "model": "lady-death",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5606:eight-ball": {
+   "model": "magic-eight",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3970:kiss": {
+   "model": "miss-world",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4015:evel-knievel-em": {
+   "model": "race-stars",
+   "maker": "komplett-flipper",
+   "expect_disposition": "set-but-unsupported",
+   "why": "GENUINE seed error, independently re-confirmed. Must keep flagging."
+  },
+  "3971:evel-knievel-em": {
+   "model": "road-racer",
+   "maker": "komplett-flipper",
+   "expect_disposition": "set-but-unsupported",
+   "why": "GENUINE seed error, independently re-confirmed. Must keep flagging."
+  },
+  "4018:harlem-globetrotters-on-tour": {
+   "model": "space-rider",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3973:eight-ball": {
+   "model": "space-wars",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4016:eight-ball": {
+   "model": "stellar-airship",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "4017:strikes-and-spares": {
+   "model": "wild-schutz",
+   "maker": "komplett-flipper",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4110:space-orbit": {
+   "model": "big-dryvers",
+   "maker": "mondialmatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4111:play-pool": {
+   "model": "cleopatra-play-pool",
+   "maker": "mondialmatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4112:sky-dive": {
+   "model": "lovers",
+   "maker": "mondialmatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4108:royal-pair": {
+   "model": "sisters",
+   "maker": "mondialmatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4109:texas-ranger": {
+   "model": "take-a-card",
+   "maker": "mondialmatic",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5736:party": {
+   "model": "dona-elvira",
+   "maker": "irmacor",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6517:chance": {
+   "model": "feitico",
+   "maker": "irmacor",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6437:space-gambler": {
+   "model": "flash-baseball-2",
+   "maker": "irmacor",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "6518:zira": {
+   "model": "zira-2",
+   "maker": "irmacor",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3091:centaur": {
+   "model": "fantasy",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3310:eight-ball-deluxe": {
+   "model": "pin-ball-pool",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3542:spy-hunter": {
+   "model": "saturn-2",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3399:xs-os": {
+   "model": "super-bowl",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3501:kings-of-steel": {
+   "model": "tiger-rag",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3621:cybernaut": {
+   "model": "space-hawks",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3519:unspecified Bally machines with AS-2518-": {
+   "model": "world-defender",
+   "maker": "bell-games",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3922:eight-ball": {
+   "model": "challenger",
+   "maker": "professional-pinball",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "4987:evel-knievel": {
+   "model": "challenger-ii",
+   "maker": "professional-pinball",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "4985:strikes-and-spares": {
+   "model": "challenger-iv",
+   "maker": "professional-pinball",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "4984:star-trek": {
+   "model": "challenger-v",
+   "maker": "professional-pinball",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3880:lady-robin-hood": {
+   "model": "coney-island",
+   "maker": "block-marble-company",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3911:ice-fever": {
+   "model": "ice-mania",
+   "maker": "idi",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3905:many solid state Gottlieb games of the l": {
+   "model": "sky-warrior",
+   "maker": "idi",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3904:jungle-princess": {
+   "model": "tiger-woman",
+   "maker": "idi",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 10: a licensed build is copy+licensed, not a retheme. Catalog is correct (0127-verified).",
+   "expect_relationship_type": "copy"
+  },
+  "3916:panthera": {
+   "model": "le-grande-8",
+   "maker": "christian-tabart",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3903:genie": {
+   "model": "lhexagone",
+   "maker": "christian-tabart",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3587:sinbad": {
+   "model": "sahara-love",
+   "maker": "christian-tabart",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5157:pinball-champ-82": {
+   "model": "flesh-and-blood",
+   "maker": "pinball-shop",
+   "expect_disposition": "set-but-unsupported",
+   "why": "GENUINE seed error, independently re-confirmed. Must keep flagging."
+  },
+  "5118:space-shuttle": {
+   "model": "horror",
+   "maker": "pinball-shop",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5481:mexico": {
+   "model": "bikini-2",
+   "maker": "taco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5480:manhattan": {
+   "model": "chorus-gal",
+   "maker": "taco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5799:tropicana": {
+   "model": "new-yorker-2",
+   "maker": "taco",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "3696:compatible donor cabinets (e.g. water-da": {
+   "model": "cosmodrome",
+   "maker": "bell-coin-matics",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3555:jaws": {
+   "model": "white-shark",
+   "maker": "bell-coin-matics",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "4999:tiger": {
+   "model": "buck-rogers",
+   "maker": "mambelli",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "403:Bally electronic 4-player games of the p": {
+   "model": "301bullseye",
+   "maker": "grand-products",
+   "expect_disposition": "agrees",
+   "why": "DEFECT 13: note names a kit below its lead sentence. Catalog conversion_kit is correct.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "3187:macs-galaxy": {
+   "model": "mac-jungle",
+   "maker": "mac-sa",
+   "expect_disposition": "agrees",
+   "why": "catalog edge independently confirmed by the note; baseline — a guidance change must not break these"
+  },
+  "5265:the-games": {
+   "model": "mythology",
+   "maker": null,
+   "expect_disposition": "fill",
+   "why": "DEFECT 13 false-green risk: note contains kit language; type must be conversion_kit, not conversion.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "6994:team-one": {
+   "model": "wizard-3",
+   "maker": "headsup-pinball",
+   "expect_disposition": "fill",
+   "why": "DEFECT 13 false-green risk: note contains kit language; type must be conversion_kit, not conversion.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "7010:team-one": {
+   "model": "wizard-4",
+   "maker": "headsup-pinball",
+   "expect_disposition": "fill",
+   "why": "DEFECT 13 false-green risk: note contains kit language; type must be conversion_kit, not conversion.",
+   "expect_relationship_type": "conversion_kit"
+  },
+  "6290:all-american": {
+   "model": "miss-america-45",
+   "maker": "victory-games",
+   "expect_disposition": "fill",
+   "why": "DEFECT 13 false-green risk: note contains kit language; type must be conversion_kit, not conversion.",
+   "expect_relationship_type": "conversion_kit"
+  }
+ }
+}

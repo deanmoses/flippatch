@@ -82,7 +82,7 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument(
         "candidates",
         type=Path,
-        help="candidates JSONL file (one {ipdb_id, field, hint?, evidence?} per line)",
+        help="candidates JSONL file (one {ipdb_id, hint?, evidence?} per model)",
     )
     parser.add_argument(
         "--out",
@@ -223,11 +223,14 @@ def main(argv: list[str] | None = None) -> int:
         regated = regate_rows(previous, catalog=catalog, index=index)
         _write_results(results_path, regated)
         (out_dir / REVIEW_NAME).write_text(render_review(regated) + "\n")
-        changed = sum(
-            1
-            for old, new in zip(previous, regated, strict=True)
-            if old.disposition != new.disposition
-        )
+        # A model can re-gate to a different row count (one note now yields a
+        # fill plus a set-but-unsupported edge), so compare disposition
+        # multisets rather than a positional zip.
+        from collections import Counter
+
+        before = Counter(row.disposition for row in previous)
+        after = Counter(row.disposition for row in regated)
+        changed = sum((after - before).values())
         print(
             f"regate: {len(regated)} rows re-gated (no AI calls), "
             f"{changed} changed disposition",
@@ -342,14 +345,14 @@ def main(argv: list[str] | None = None) -> int:
         stream = sweep_candidates(
             pending, catalog=catalog, index=index, evidence_for=evidence_for, ai=ai
         )
-        for done, row in enumerate(stream, start=1):
-            rows.append(row)
+        for done, batch in enumerate(stream, start=1):
+            rows.extend(batch)
             _write_results(results_path, rows)
             (out_dir / REVIEW_NAME).write_text(render_review(rows) + "\n")
             review_count = sum(1 for r in rows if r.needs_review)
             eta_min = (len(pending) - done) * (time.monotonic() - started) / done / 60
             print(
-                f"{progress_line(done, len(pending), row)} "
+                f"{progress_line(done, len(pending), batch)} "
                 f"| review {review_count} | ~{eta_min:.0f}m left",
                 file=sys.stderr,
             )

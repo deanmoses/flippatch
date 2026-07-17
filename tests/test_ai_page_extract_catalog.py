@@ -96,7 +96,7 @@ def _make_db(path: Path) -> None:
             (id INTEGER PRIMARY KEY, slug TEXT, name TEXT, description TEXT, display_order INTEGER);
         INSERT INTO catalog_tag VALUES
             (1, 'widebody', 'Widebody', 'A wider cabinet.', 1),
-            (2, 'bootleg', 'Bootleg', 'An unauthorized copy.', 2);
+            (2, 'remake', 'Remake', 'A newly manufactured recreation.', 2);
 
         CREATE TABLE catalog_machinemodel
             (id INTEGER PRIMARY KEY, slug TEXT, name TEXT, ipdb_id INTEGER, opdb_id TEXT);
@@ -217,7 +217,7 @@ def test_tag_slice_excludes_lineage_paired_tags(tmp_path: Path):
     assert isinstance(inner, dict)
     enum = inner["properties"]["value"]["enum"]
     assert "widebody" in enum
-    assert "bootleg" not in enum  # decided by the lineage slice instead
+    assert "remake" not in enum  # decided by the lineage slice instead
 
 
 def test_build_slices_without_catalog_uses_fallback_field_set():

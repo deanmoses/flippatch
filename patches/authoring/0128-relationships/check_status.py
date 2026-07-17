@@ -5,14 +5,21 @@ The Worklist's slug columns are a frozen pre-re-slugging snapshot and its
 hand-maintained DONE markers drift, so this is the campaign's live source of
 truth for what is already applied. It keys on the one stable identifier every
 row carries — the IPDB number (`catalog_machinemodel.ipdb_id`) — and reports,
-per bucket and per maker, which rows already have their lineage relationship
-(and, for licensed/bootleg, the tag) set, which remain, and which already-set
-rows point at a different target than the Worklist guessed (vet those).
+per bucket and per maker, which models already carry a `ModelRelationship`
+edge, which remain, and which already-set models point at a different target
+than the Worklist guessed (vet those).
 
-Run after rebuilding the dev DB (see README "The dev DB"):
+Since ModelRelationships shipped, lineage lives in the `catalog_modelrelationship`
+join table (`relationship_type` + `license_status` + target_machine XOR
+target_label), not the retired `bootleg_of` / `licensed_build_of` /
+`converted_from` columns. The Worklist's three buckets are now historical
+labels: `licensed` ≈ copy+licensed, `bootleg` ≈ copy+unlicensed, `conversion` ≈
+conversion / conversion_kit. "Set" here means the model holds ≥1 edge.
 
-    python3 patches/authoring/0128-relationships/check_status.py            # console report
-    python3 patches/authoring/0128-relationships/check_status.py --write    # also (re)generate STATUS.md
+Run after rebuilding the dev DB (see README "The dev DB"), under `uv run`:
+
+    uv run python3 patches/authoring/0128-relationships/check_status.py          # console report
+    uv run python3 patches/authoring/0128-relationships/check_status.py --write  # also (re)generate STATUS.md
 
 Read-only against the DB.
 """
@@ -26,18 +33,17 @@ import sys
 from collections import defaultdict
 from pathlib import Path
 
+# Reuse the repo's sibling-path resolver (dev DB path, env-overridable via
+# FLIPCOMMONS_DIR) instead of hard-coding it. This file lives outside scripts/,
+# so put scripts/ on the path first; run under `uv run` so the resolver's deps
+# are present.
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "scripts"))
+from common.related_projects import FLIPCOMMONS_DB  # noqa: E402
+
 HERE = Path(__file__).resolve().parent
 WORKLIST = HERE / "Worklist.md"
 STATUS_OUT = HERE / "STATUS.md"
-# The dev DB lives in the sibling flipcommons checkout.
-DB = Path("/Users/moses/dev/flipcommons/backend/db.sqlite3")
-
-REL_COL = {
-    "licensed": "licensed_build_of_id",
-    "bootleg": "bootleg_of_id",
-    "conversion": "converted_from_id",
-}
-REL_TAG = {"licensed": "licensed-build", "bootleg": "bootleg", "conversion": None}
+DB = FLIPCOMMONS_DB
 
 # Tolerate the leading ✅ that reconcile_worklist.py stamps onto applied rows.
 ROW_RE = re.compile(
@@ -69,25 +75,22 @@ class DB_:
         self.con = sqlite3.connect(path)
         self.cur = self.con.cursor()
 
-    def model(self, ipdb: int, rel: str):
+    def model(self, ipdb: int) -> tuple[int, str] | None:
         self.cur.execute(
-            f"SELECT id, slug, {REL_COL[rel]} FROM catalog_machinemodel WHERE ipdb_id=?",
-            (ipdb,),
+            "SELECT id, slug FROM catalog_machinemodel WHERE ipdb_id=?", (ipdb,)
         )
         return self.cur.fetchone()
 
-    def slug_of(self, mid: int) -> str:
-        self.cur.execute("SELECT slug FROM catalog_machinemodel WHERE id=?", (mid,))
-        r = self.cur.fetchone()
-        return r[0] if r else "?"
-
-    def tags(self, mid: int) -> set[str]:
+    def edges(self, mid: int) -> list[tuple[str, str, str | None, str]]:
+        """(relationship_type, license_status, target_slug|None, target_label)."""
         self.cur.execute(
-            "SELECT t.slug FROM catalog_machinemodel_tags mt "
-            "JOIN catalog_tag t ON mt.tag_id=t.id WHERE mt.machinemodel_id=?",
+            "SELECT r.relationship_type, r.license_status, t.slug, r.target_label "
+            "FROM catalog_modelrelationship r "
+            "LEFT JOIN catalog_machinemodel t ON r.target_machine_id = t.id "
+            "WHERE r.machine_model_id = ?",
             (mid,),
         )
-        return {r[0] for r in self.cur.fetchall()}
+        return [(rt, ls, ts, lbl or "") for rt, ls, ts, lbl in self.cur.fetchall()]
 
     def maker(self, mid: int) -> str:
         self.cur.execute(
@@ -100,44 +103,52 @@ class DB_:
         return r[0] if r else "?"
 
 
+def _edge_desc(edge: tuple[str, str, str | None, str]) -> str:
+    rt, ls, ts, lbl = edge
+    target = f"`{ts}`" if ts else f"“{lbl}”"
+    return f"{rt}/{ls} → {target}"
+
+
 def build_report():
     if not DB.exists():
         sys.exit(f"dev DB not found at {DB} — rebuild it first (see README).")
     db = DB_(DB)
     rows = parse_worklist()
 
-    done = defaultdict(list)       # (rel, maker) -> [(ipdb, slug, tgt)]
+    done = defaultdict(list)  # (rel, maker) -> [(ipdb, slug, edges)]
     remaining = defaultdict(list)  # (rel, maker) -> [(ipdb, slug, wl_tgt, is_todo)]
-    no_model = []                  # (rel, ipdb, wl_slug)
-    tag_gaps = []                  # (rel, ipdb, slug) rel set but tag missing
-    discrepancies = []             # (rel, ipdb, slug, wl_tgt, db_tgt)
+    no_model = []  # (rel, ipdb, wl_slug)
+    discrepancies = []  # (rel, ipdb, slug, wl_tgt, edges_desc)
 
     for rel, wl_slug, ipdb, wl_tgt in rows:
-        r = db.model(ipdb, rel)
-        if r is None:
+        m = db.model(ipdb)
+        if m is None:
             no_model.append((rel, ipdb, wl_slug))
             continue
-        mid, cur_slug, rel_target_id = r
+        mid, cur_slug = m
         mk = db.maker(mid)
-        if rel_target_id is None:
+        edges = db.edges(mid)
+        if not edges:
             remaining[(rel, mk)].append((ipdb, cur_slug, wl_tgt, wl_tgt == "TODO"))
             continue
-        db_tgt = db.slug_of(rel_target_id)
-        done[(rel, mk)].append((ipdb, cur_slug, db_tgt))
-        tag_needed = REL_TAG[rel]
-        if tag_needed and tag_needed not in db.tags(mid):
-            tag_gaps.append((rel, ipdb, cur_slug))
-        if wl_tgt not in ("", "TODO") and norm(db_tgt) != norm(wl_tgt) and db_tgt != wl_tgt:
-            discrepancies.append((rel, ipdb, cur_slug, wl_tgt, db_tgt))
+        done[(rel, mk)].append((ipdb, cur_slug, edges))
+        edge_slugs = {norm(ts) for _, _, ts, _ in edges if ts}
+        if wl_tgt not in ("", "TODO") and norm(wl_tgt) not in edge_slugs:
+            edges_desc = "; ".join(_edge_desc(e) for e in edges)
+            discrepancies.append((rel, ipdb, cur_slug, wl_tgt, edges_desc))
 
-    return rows, done, remaining, no_model, tag_gaps, discrepancies
+    return rows, done, remaining, no_model, discrepancies
 
 
-def render(rows, done, remaining, no_model, tag_gaps, discrepancies) -> str:
+def render(rows, done, remaining, no_model, discrepancies) -> str:
     out = []
     w = out.append
     w("# Campaign status — Worklist vs live dev DB\n")
-    w("_Generated by `check_status.py`. Keyed on `ipdb_id` (stable); the Worklist slug columns are a frozen snapshot. Regenerate after each dev-DB rebuild._\n")
+    w(
+        "_Generated by `check_status.py`. Keyed on `ipdb_id` (stable); the Worklist "
+        "slug columns are a frozen snapshot. Lineage is read from the "
+        "`catalog_modelrelationship` join table. Regenerate after each dev-DB rebuild._\n"
+    )
 
     w("## Totals\n")
     w("| bucket | worklist rows | relationship set | remaining |")
@@ -147,20 +158,17 @@ def render(rows, done, remaining, no_model, tag_gaps, discrepancies) -> str:
         d = sum(len(v) for k, v in done.items() if k[0] == rel)
         rem = sum(len(v) for k, v in remaining.items() if k[0] == rel)
         w(f"| {rel} | {n} | {d} | {rem} |")
-    w(f"| **total** | **{len(rows)}** | **{sum(len(v) for v in done.values())}** | **{sum(len(v) for v in remaining.values())}** |\n")
+    w(
+        f"| **total** | **{len(rows)}** | **{sum(len(v) for v in done.values())}** "
+        f"| **{sum(len(v) for v in remaining.values())}** |\n"
+    )
 
     if discrepancies:
-        w("## ⚠ Already-set rows whose DB target ≠ Worklist guess — vet these\n")
-        w("| rel | ipdb | model | Worklist guess | DB target |")
+        w("## ⚠ Already-set models whose edges omit the Worklist guess — vet these\n")
+        w("| rel | ipdb | model | Worklist guess | DB edges |")
         w("| --- | --- | --- | --- | --- |")
-        for rel, ipdb, slug, wl_tgt, db_tgt in discrepancies:
-            w(f"| {rel} | {ipdb} | `{slug}` | `{wl_tgt}` | `{db_tgt}` |")
-        w("")
-
-    if tag_gaps:
-        w("## ⚠ Relationship set but tag missing\n")
-        for rel, ipdb, slug in tag_gaps:
-            w(f"- {rel} ipdb:{ipdb} `{slug}` — missing `{REL_TAG[rel]}` tag")
+        for rel, ipdb, slug, wl_tgt, edges_desc in discrepancies:
+            w(f"| {rel} | {ipdb} | `{slug}` | `{wl_tgt}` | {edges_desc} |")
         w("")
 
     if no_model:
@@ -204,7 +212,10 @@ def main():
     print(report)
     if args.write:
         STATUS_OUT.write_text(report)
-        print(f"\n[wrote {STATUS_OUT.relative_to(HERE.parent.parent.parent)}]", file=sys.stderr)
+        print(
+            f"\n[wrote {STATUS_OUT.relative_to(HERE.parent.parent.parent)}]",
+            file=sys.stderr,
+        )
 
 
 if __name__ == "__main__":

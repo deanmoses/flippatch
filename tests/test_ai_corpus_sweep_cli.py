@@ -16,10 +16,7 @@ from tests.test_ai_corpus_sweep import db_path  # noqa: F401  # fixture reuse
 @pytest.fixture
 def candidates_file(tmp_path):
     path = tmp_path / "candidates.jsonl"
-    path.write_text(
-        '{"ipdb_id": 5555, "field": "converted_from", "hint": "hurdy-gurdy"}\n'
-        '{"ipdb_id": 7777, "field": "converted_from"}\n'
-    )
+    path.write_text('{"ipdb_id": 5555, "hint": "hurdy-gurdy"}\n{"ipdb_id": 7777}\n')
     return path
 
 
@@ -73,11 +70,12 @@ def test_status_reads_the_artifact_without_db_or_ai(capsys, candidates_file):
 
     _seed_results(
         candidates_file.parent,
-        [SweepRow(ipdb_id=5555, field="converted_from", disposition=gate.CONFLICT)],
+        [SweepRow(ipdb_id=5555, disposition=gate.CONFLICT)],
     )
     assert cli.main([str(candidates_file), "--status"]) == 0
     out = capsys.readouterr().out
-    assert "judged 1/2 candidates — 1 pending" in out
+    assert "judged 1/2 models" in out
+    assert "1 pending" in out
     assert "needs review: 1" in out
     assert "conflict 1" in out
 
@@ -99,8 +97,8 @@ def test_regate_rebuckets_stored_rows_offline(
     monkeypatch.setattr(cli, "FLIPCOMMONS_DB", db_path)
     stale = SweepRow(
         ipdb_id=109,
-        field="converted_from",
         disposition=gate.UNRESOLVED,
+        relationship_type="conversion_kit",
         verdict="yes",
         quote="Conversion kit for Bally's 1979 'Supersonic'.",
         target_title="Supersonic",

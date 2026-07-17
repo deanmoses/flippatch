@@ -172,7 +172,7 @@ GAMEPLAY_FEATURE = Slice(
 
 
 # ── Judgment / candidate — lineage ───────────────────────────────────────────
-_LINEAGE_KINDS = ["bootleg", "remake", "conversion", "variant"]
+_LINEAGE_KINDS = ["copy", "remake", "conversion", "variant"]
 
 LINEAGE_SCHEMA: JsonSchema = {
     "type": "object",
@@ -200,8 +200,9 @@ _LINEAGE_INSTRUCTIONS = (
     "ONE narrow task from the source page below.\n"
     "Task: surface every candidate lineage relationship for this machine. The "
     "kinds:\n"
-    "- bootleg — an unauthorized, built-from-scratch copy of another maker's "
-    "game.\n"
+    "- copy — a reproduction of another maker's design on newly built hardware "
+    "(a copy, clone, or bootleg; licensed or not — the license is judged "
+    "downstream).\n"
     "- remake — a newly manufactured recreation of an earlier title with new "
     "technology.\n"
     "- conversion — reuses another machine's physical cabinet but puts a "
@@ -596,9 +597,11 @@ DISPLAY_PAIR_GUIDANCE = (
     "are n-a."
 )
 
-# Tags that pair with a lineage relationship are decided by the lineage slice, per
-# the extraction checklist — keep them out of the plain tag slice.
-_LINEAGE_PAIRED_TAGS = frozenset({"bootleg", "remake", "conversion-kit"})
+# Tags/relationships handled by the lineage slice, per the extraction checklist —
+# keep them out of the plain tag slice. `bootleg` / `licensed-build` were retired
+# (copies are the `copy` model relationship now), and `conversion-kit` is a
+# relationship_type being retired as a tag; `remake` is still a tag.
+_LINEAGE_PAIRED_TAGS = frozenset({"remake", "conversion-kit"})
 
 # The full model-info field set the extractor aims to cover — INCLUDING fields no
 # slice builds yet. The core pre-seeds every one as `not-checked`, so each packet
