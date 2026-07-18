@@ -1,4 +1,4 @@
-.PHONY: validate verify-quotes lint-descriptions verify-citations extract-page sweep push agent-docs lint typecheck test check
+.PHONY: validate verify-quotes lint-descriptions verify-citations extract-page sweep analyze push agent-docs lint typecheck test check
 
 # Validate data patches against the patch schema (structural gate) plus the
 # editorial authoring lint. Run this before push.
@@ -51,6 +51,28 @@ extract-page:
 #   make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --limit 10"
 sweep:
 	@PYTHONPATH=scripts uv run python3 -m ai_corpus_sweep.cli $(ARGS)
+
+# ── DuckDB catalog analysis ────────────────────────
+# Read-only analysis over the LIVE flipcommons catalog, reusing flipcommons'
+# shared DuckDB layer VERBATIM: the foundation (scripts/analysis/catalog.sql, pulled
+# in by the plan's `.read`) AND its runner (scripts/analysis/analysis). The default path
+# delegates to that runner, which prints the analysis_context watermark and
+# <PREFIX>_summary, then GATES on <PREFIX>_checks (nonzero exit on any row) — so a
+# run can't skip its checks. flippatch plans live here but must run from the
+# flipcommons checkout (override with FLIPCOMMONS_DIR) so the plan's `.read` and
+# the foundation's `ATTACH backend/db.sqlite3` resolve; we abspath PLAN and cd
+# there. duckdb must be on PATH. Nothing is written; not a commit gate.
+#
+#   make analyze PLAN=patches/authoring/0172-bingo-game-format/bingo.sql PREFIX=bingo
+#   make analyze PLAN=.../bingo.sql PREFIX=bingo ARGS=--markdown
+#   make analyze CMD=ui PLAN=.../bingo.sql                 # live GUI at localhost:4213
+#   make analyze PLAN=.../bingo.sql Q="FROM bingo_review;" # ad-hoc query (bypasses the runner)
+analyze:
+	@test -n "$(PLAN)" || { echo 'usage: make analyze PLAN=<plan.sql> PREFIX=<name> [CMD=run|ui|snapshot] [ARGS=...] [Q="..."]'; exit 2; }
+	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.related_projects import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
+	PLAN="$(abspath $(PLAN))"; cd "$$FC" && \
+	if [ -n '$(Q)' ]; then duckdb -init "$$PLAN" :memory: "$(Q)"; \
+	else scripts/analysis/analysis $(or $(CMD),run) "$$PLAN" $(PREFIX) $(ARGS); fi
 
 # Lint + format-check the Python tooling (same ruff config pre-commit uses).
 lint:
