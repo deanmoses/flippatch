@@ -30,7 +30,7 @@
 
 | rel         | model slug        | ipdb | → target slug  | yr   | IPDB note (verbatim, vet before use)                                                                                                                                       |
 | ----------- | ----------------- | ---- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| licensed    | `cosmic-princess` | 3967 | `magic-2`      | 1979 | According to The Complete Pinball Book, the optional photo unit mounted on the top of the backbox would take instant pictures of players whenever the high score was beate |
+| ✅ licensed    | `cosmic-princess` | 3967 | `magic-2`      | 1979 | According to The Complete Pinball Book, the optional photo unit mounted on the top of the backbox would take instant pictures of players whenever the high score was beate |
 | ✅ licensed | `dracula-2`       | 6325 | `dracula`      | 1979 | This is the same game as Stern's 1979 'Dracula' but manufactured in Australia under license, using knock-down games shipped from Stern.                                    |
 | ✅ licensed | `galaxy-4`        | 6318 | `galaxy-stern` | 1980 | This is the same game as Stern's 1980 'Galaxy' but manufactured in Australia under license.                                                                                |
 | ✅ licensed | `hot-hand-2`      | 6471 | `hot-hand`     | 1979 | This is the same game as Stern's 1979 'Hot Hand' but manufactured in Australia under license.                                                                              |
@@ -45,11 +45,11 @@
 
 | rel         | model slug       | ipdb | → target slug   | yr   | IPDB note (verbatim, vet before use)                                                                                                               |
 | ----------- | ---------------- | ---- | --------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| bootleg     | `astro-flite`    | 100  | **TODO** ?      | 1974 | Copy of Williams' 1974 'Strato-Flite'.                                                                                                             |
-| bootleg     | `spanish-eyes-2` | 3265 | **TODO** ?      | 1973 | This game is a near copy of Williams' 1971 'Spanish Eyes', with different cabinet colors, different playfield plastics, and a different backglass. |
+| ✅ bootleg     | `astro-flite`    | 100  | **TODO** ?      | 1974 | Copy of Williams' 1974 'Strato-Flite'.                                                                                                             |
+| ✅ bootleg     | `spanish-eyes-2` | 3265 | **TODO** ?      | 1973 | This game is a near copy of Williams' 1971 'Spanish Eyes', with different cabinet colors, different playfield plastics, and a different backglass. |
 | ✅ licensed | `big-ben`        | 228  | `big-ben-italy` | 1975 | This is the same replay game as Williams' 1975 'Big Ben' but made under license.                                                                   |
 | ✅ licensed | `big-ben-italy`  | 6196 | `big-ben`       | 1975 | This is the add-a-ball version of Segasa's 1975 'Big Ben' made for export to Italy.                                                                |
-| licensed    | `high-ace-2`     | 5424 | **TODO** ?      | 1974 | Same design as Williams' 1973 'Dealer's Choice'.                                                                                                   |
+| ✅ licensed    | `high-ace-2`     | 5424 | **TODO** ?      | 1974 | Same design as Williams' 1973 'Dealer's Choice'.                                                                                                   |
 | ✅ licensed | `lucky-ace-2`    | 1484 | **TODO** ?      | 1975 | A version of Williams' 1974 'Lucky Ace' manufactured under license from Williams.                                                                  |
 | ✅ licensed | `travel-time-2`  | 2637 | **TODO** ?      | 1973 | Same game as Williams' 1972 'Travel Time'.                                                                                                         |
 
@@ -134,18 +134,18 @@
 | ✅ bootleg    | `strike-4`        | 4784 | `ten-up`        | 1973 | A copy of Gottlieb's 1973 'Ten-Up'.                                                                                                                                        |
 | ✅ bootleg    | `top-hand-3`      | 4785 | `top-hand-2`    | 1973 | A copy of Gottlieb's 1973 'Top Hand'.                                                                                                                                      |
 | ✅ bootleg    | `univerx`         | 6702 | `galaxie`       | ?    | This is a copy of Gottlieb's 1971 'Galaxie', an add-a-ball game also intended for the Italian market, but its playfield plastics have the same art as the USA add-a-ball v |
-| conversion | `race-day`        | 5365 | **TODO** ?      | ?    | Conversion kit for Gottlieb's 1967 Italian games Hit-A-Card and Solitaire.                                                                                                 |
+| ✅ conversion | `race-day`        | 5365 | **TODO** ?      | ?    | Conversion kit for Gottlieb's 1967 Italian games Hit-A-Card and Solitaire.                                                                                                 |
 
 ### `europlay` — Italy (BOOTLEG=4 CONVERSION=2)
 
 | rel        | model slug    | ipdb | → target slug  | yr   | IPDB note (verbatim, vet before use)                                                                           |
 | ---------- | ------------- | ---- | -------------- | ---- | -------------------------------------------------------------------------------------------------------------- |
-| bootleg    | `red-arrow-3` | 4078 | `golden-arrow` | 1978 | This game is a copy of Gottlieb's 1977 'Golden Arrow'.                                                         |
-| bootleg    | `sky-fly`     | 5255 | `jet-spin`     | 1978 | A copy of Gottlieb's 1977 'Jet Spin' but with drop targets instead of a roto-target.                           |
-| bootleg    | `sky-star`    | 5050 | `sky-dive`     | 1974 | A copy of Gottlieb's 1974 'Sky Dive'.                                                                          |
-| bootleg    | `vole`        | 5449 | `volley`       | 1977 | This game is a copy of Gottlieb's 1976 'Volley'.                                                               |
-| conversion | `fast-draw-2` | 5441 | `amazon-hunt`  | ?    | A conversion of Gottlieb's 1983 'Amazon Hunt'.                                                                 |
-| conversion | `jaws`        | 5080 | `playboy`      | ?    | This Europlay game is a converted electromechanical Gottlieb game with a digital display and sound card added. |
+| ✅ bootleg    | `red-arrow-3` | 4078 | `golden-arrow` | 1978 | This game is a copy of Gottlieb's 1977 'Golden Arrow'.                                                         |
+| ✅ bootleg    | `sky-fly`     | 5255 | `jet-spin`     | 1978 | A copy of Gottlieb's 1977 'Jet Spin' but with drop targets instead of a roto-target.                           |
+| ✅ bootleg    | `sky-star`    | 5050 | `sky-dive`     | 1974 | A copy of Gottlieb's 1974 'Sky Dive'.                                                                          |
+| ✅ bootleg    | `vole`        | 5449 | `volley`       | 1977 | This game is a copy of Gottlieb's 1976 'Volley'.                                                               |
+| ✅ conversion | `fast-draw-2` | 5441 | `amazon-hunt`  | ?    | A conversion of Gottlieb's 1983 'Amazon Hunt'.                                                                 |
+| ✅ conversion | `jaws`        | 5080 | `playboy`      | ?    | This Europlay game is a converted electromechanical Gottlieb game with a digital display and sound card added. |
 
 ### `fipermatic-industria-comercio-importacao-e-exportacao-ltda` — Brazil (BOOTLEG=6)
 
@@ -153,31 +153,31 @@
 
 | rel     | model slug          | ipdb | → target slug                              | yr  | IPDB note (verbatim, vet before use)                                                                                |
 | ------- | ------------------- | ---- | ------------------------------------------ | --- | ------------------------------------------------------------------------------------------------------------------- |
-| bootleg | `charlies-angels-3` | 5883 | **TODO** A copy of Gottlieb 1979 'Charlie' | ?   | A copy of Gottlieb's 1979 'Charlie's Angels', this game is an example of Gottlieb Made In Brazil.                   |
-| bootleg | `close-encounters`  | 5699 | `close-encounters-of-the-third-kind`       | ?   | A copy of Gottlieb's 1978 'Close Encounters of the Third Kind', this game is an example of Gottlieb Made In Brazil. |
-| bootleg | `dragon-5`          | 5884 | `dragon`                                   | ?   | A copy of Gottlieb's 1978 'Dragon', this game is an example of Gottlieb Made In Brazil.                             |
-| bootleg | `jane`              | 5489 | `jungle-queen`                             | ?   | Copy of Gottlieb's 1977 'Jungle Queen'.                                                                             |
-| bootleg | `space-walk-2`      | 6603 | `space-walk`                               | ?   | A copy of Gottlieb's 1979 'Space Walk'.                                                                             |
-| bootleg | `zarza-2`           | 5922 | `xenon`                                    | ?   | A copy of Bally's 1980 'Xenon', this game is an example of Gottlieb Made In Brazil.                                 |
+| ✅ bootleg | `charlies-angels-3` | 5883 | **TODO** A copy of Gottlieb 1979 'Charlie' | ?   | A copy of Gottlieb's 1979 'Charlie's Angels', this game is an example of Gottlieb Made In Brazil.                   |
+| ✅ bootleg | `close-encounters`  | 5699 | `close-encounters-of-the-third-kind`       | ?   | A copy of Gottlieb's 1978 'Close Encounters of the Third Kind', this game is an example of Gottlieb Made In Brazil. |
+| ✅ bootleg | `dragon-5`          | 5884 | `dragon`                                   | ?   | A copy of Gottlieb's 1978 'Dragon', this game is an example of Gottlieb Made In Brazil.                             |
+| ✅ bootleg | `jane`              | 5489 | `jungle-queen`                             | ?   | Copy of Gottlieb's 1977 'Jungle Queen'.                                                                             |
+| ✅ bootleg | `space-walk-2`      | 6603 | `space-walk`                               | ?   | A copy of Gottlieb's 1979 'Space Walk'.                                                                             |
+| ✅ bootleg | `zarza-2`           | 5922 | `xenon`                                    | ?   | A copy of Bally's 1980 'Xenon', this game is an example of Gottlieb Made In Brazil.                                 |
 
 ### `rowamet-industria-eletrometalurgica-ltda` — Brazil (CONVERSION=1 BOOTLEG=4)
 
 | rel        | model slug  | ipdb | → target slug     | yr   | IPDB note (verbatim, vet before use)                                                                                                  |
 | ---------- | ----------- | ---- | ----------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------- |
-| bootleg    | `diana`     | 5488 | `jungle-princess` | 1982 | A copy of Gottlieb's 1977 'Jungle Princess'.                                                                                          |
-| bootleg    | `jet-surf`  | 5490 | `super-spin`      | ?    | Copy of Gottlieb's 1977 'Super Spin'.                                                                                                 |
-| bootleg    | `sherokee`  | 6707 | `big-indian`      | 1978 | A copy of Gottlieb's 1974 'Big Indian'.                                                                                               |
-| bootleg    | `vulcan-iv` | 5169 | `vulcan`          | 1982 | This is a copy of the EM game Gottlieb's 1977 'Vulcan' except the backglass depicts a woman instead of Vulcan, the Roman god of fire. |
+| ✅ bootleg    | `diana`     | 5488 | `jungle-princess` | 1982 | A copy of Gottlieb's 1977 'Jungle Princess'.                                                                                          |
+| ✅ bootleg    | `jet-surf`  | 5490 | `super-spin`      | ?    | Copy of Gottlieb's 1977 'Super Spin'.                                                                                                 |
+| ✅ bootleg    | `sherokee`  | 6707 | `big-indian`      | 1978 | A copy of Gottlieb's 1974 'Big Indian'.                                                                                               |
+| ✅ bootleg    | `vulcan-iv` | 5169 | `vulcan`          | 1982 | This is a copy of the EM game Gottlieb's 1977 'Vulcan' except the backglass depicts a woman instead of Vulcan, the Roman god of fire. |
 | conversion | `conan`     | 4580 | `rolling-stones`  | 1983 | Possible conversion of Bally's 1980 'Rolling Stones'.                                                                                 |
 
 ### `ltd-do-brasil-diversoes-eletronicas-ltda` — Brazil (BOOTLEG=4)
 
 | rel     | model slug          | ipdb | → target slug       | yr   | IPDB note (verbatim, vet before use)             |
 | ------- | ------------------- | ---- | ------------------- | ---- | ------------------------------------------------ |
-| bootleg | `al-capone`         | 5176 | `speakeasy-2`       | ?    | This game is a copy of Bally's 1982 'Speakeasy'. |
-| bootleg | `cowboy-eight-ball` | 5132 | `eight-ball-deluxe` | 1981 | A copy of Bally's 1981 'Eight Ball Deluxe'.      |
-| bootleg | `haunted-hotel`     | 5704 | `haunted-house`     | ?    | A copy of Gottlieb's 1982 'Haunted House'.       |
-| bootleg | `zephy`             | 4592 | `xenon`             | 1982 | This is a copy of Bally's 1980 'Xenon'.          |
+| ✅ bootleg | `al-capone`         | 5176 | `speakeasy-2`       | ?    | This game is a copy of Bally's 1982 'Speakeasy'. |
+| ✅ bootleg | `cowboy-eight-ball` | 5132 | `eight-ball-deluxe` | 1981 | A copy of Bally's 1981 'Eight Ball Deluxe'.      |
+| ✅ bootleg | `haunted-hotel`     | 5704 | `haunted-house`     | ?    | A copy of Gottlieb's 1982 'Haunted House'.       |
+| ✅ bootleg | `zephy`             | 4592 | `xenon`             | 1982 | This is a copy of Bally's 1980 'Xenon'.          |
 
 ### `skillgame-dba-renato-montanari-giochi` — Italy (BOOTLEG=3 CONVERSION=1)
 
@@ -200,28 +200,28 @@
 
 | rel     | model slug  | ipdb | → target slug  | yr   | IPDB note (verbatim, vet before use)                                                                        |
 | ------- | ----------- | ---- | -------------- | ---- | ----------------------------------------------------------------------------------------------------------- |
-| bootleg | `arrow-3`   | 6454 | `golden-arrow` | ?    | A copy of Gottlieb's 1977 'Golden Arrow' with the backglass image reversed to show the warrior facing left. |
-| bootleg | `big-sakem` | 5622 | `big-indian`   | 1974 | This is a 1-player copy of Gottlieb's 1974 'Big Indian'.                                                    |
+| ✅ bootleg | `arrow-3`   | 6454 | `golden-arrow` | ?    | A copy of Gottlieb's 1977 'Golden Arrow' with the backglass image reversed to show the warrior facing left. |
+| ✅ bootleg | `big-sakem` | 5622 | `big-indian`   | 1974 | This is a 1-player copy of Gottlieb's 1974 'Big Indian'.                                                    |
 
 ### `electromatic-brasil` — ? (BOOTLEG=2)
 
 | rel     | model slug     | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)    |
 | ------- | -------------- | ---- | ------------- | ---- | --------------------------------------- |
 | bootleg | `solar-ride-3` | 5696 | `solar-ride`  | 1979 | A copy of Gottlieb's 1979 'Solar Ride'. |
-| bootleg | `totem-3`      | 5695 | `totem-2`     | 1979 | A copy of Gottlieb's 1979 'Totem'.      |
+| ✅ bootleg | `totem-3`      | 5695 | `totem-2`     | 1979 | A copy of Gottlieb's 1979 'Totem'.      |
 
 ### `manufacturas-automaticas-americanas` — Spain (BOOTLEG=2)
 
 | rel     | model slug    | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)          |
 | ------- | ------------- | ---- | ------------- | --- | --------------------------------------------- |
-| bootleg | `bank-a-mam`  | 6767 | `bank-a-ball` | ?   | A copy of Gottlieb's 1965 'Bank-A-Ball'.      |
-| bootleg | `ding-dong-2` | 6652 | **TODO** ?    | ?   | This is a copy of Williams' 1968 'Ding Dong'. |
+| ✅ bootleg | `bank-a-mam`  | 6767 | `bank-a-ball` | ?   | A copy of Gottlieb's 1965 'Bank-A-Ball'.      |
+| ✅ bootleg | `ding-dong-2` | 6652 | **TODO** ?    | ?   | This is a copy of Williams' 1968 'Ding Dong'. |
 
 ### `giuliano-lodola` — Italy (BOOTLEG=1)
 
 | rel     | model slug    | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)     |
 | ------- | ------------- | ---- | ------------- | ---- | ---------------------------------------- |
-| bootleg | `black-rider` | 4085 | **TODO** ?    | 1981 | A copy of Williams' 1980 'Black Knight'. |
+| ✅ bootleg | `black-rider` | 4085 | **TODO** ?    | 1981 | A copy of Williams' 1980 'Black Knight'. |
 
 ### `joctronic-juegos-electronicos-sa` — Spain (BOOTLEG=1)
 
@@ -233,7 +233,7 @@
 
 | rel     | model slug    | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                 |
 | ------- | ------------- | ---- | ------------- | ---- | ---------------------------------------------------- |
-| bootleg | `gold-star-5` | 4127 | **TODO** ?    | 1976 | This is a single player copy of Gottlieb's Fast Draw |
+| ✅ bootleg | `gold-star-5` | 4127 | **TODO** ?    | 1976 | This is a single player copy of Gottlieb's Fast Draw |
 
 ### `joseph-schneider-incorporated` — USA (BOOTLEG=1)
 
@@ -245,19 +245,19 @@
 
 | rel     | model slug    | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)                                                                                                                  |
 | ------- | ------------- | ---- | ------------- | --- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| bootleg | `foot-baller` | 4975 | `soccer-2`    | ?   | A 1-player copy of Gottlieb's 1975 'Soccer' but without the kick-out holes, the right outlane ball return gate, and the mechanical backbox animation. |
+| ✅ bootleg | `foot-baller` | 4975 | `soccer-2`    | ?   | A 1-player copy of Gottlieb's 1975 'Soccer' but without the kick-out holes, the right outlane ball return gate, and the mechanical backbox animation. |
 
 ### `royal-play` — ? (BOOTLEG=1)
 
 | rel     | model slug   | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)    |
 | ------- | ------------ | ---- | ------------- | --- | --------------------------------------- |
-| bootleg | `royal-play` | 5227 | `royal-pair`  | ?   | A copy of Gottlieb's 1974 'Royal Pair'. |
+| ✅ bootleg | `royal-play` | 5227 | `royal-pair`  | ?   | A copy of Gottlieb's 1974 'Royal Pair'. |
 
 ### `nsmlowen` — Germany (BOOTLEG=1)
 
 | rel     | model slug      | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)   |
 | ------- | --------------- | ---- | ------------- | ---- | -------------------------------------- |
-| bootleg | `amazon-hunt-2` | 5691 | `amazon-hunt` | 1985 | Copy of Gottlieb's 1983 'Amazon Hunt'. |
+| ✅ bootleg | `amazon-hunt-2` | 5691 | `amazon-hunt` | 1985 | Copy of Gottlieb's 1983 'Amazon Hunt'. |
 
 ### `explomatic` — Spain (BOOTLEG=1)
 
@@ -269,25 +269,25 @@
 
 | rel     | model slug         | ipdb | → target slug                            | yr  | IPDB note (verbatim, vet before use)                                                          |
 | ------- | ------------------ | ---- | ---------------------------------------- | --- | --------------------------------------------------------------------------------------------- |
-| bootleg | `la-tour-de-paris` | 5947 | **TODO** A copy of Rock-ola 1933 'World' | ?   | A copy of Rock-ola's 1933 'World's Fair Jig-Saw', the upper playfield shows the Eiffel Tower. |
+| ✅ bootleg | `la-tour-de-paris` | 5947 | **TODO** A copy of Rock-ola 1933 'World' | ?   | A copy of Rock-ola's 1933 'World's Fair Jig-Saw', the upper playfield shows the Eiffel Tower. |
 
 ### `diversoes-eletronicas-industria-e-comercio-ltda` — Brazil (BOOTLEG=1)
 
 | rel     | model slug   | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use) |
 | ------- | ------------ | ---- | ------------- | --- | ------------------------------------ |
-| bootleg | `olympics-4` | 6345 | `champ`       | ?   | A copy of Bally's 1974 'Champ'.      |
+| ✅ bootleg | `olympics-4` | 6345 | `champ`       | ?   | A copy of Bally's 1974 'Champ'.      |
 
 ### `emmepi` — ? (BOOTLEG=1)
 
 | rel     | model slug    | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)   |
 | ------- | ------------- | ---- | ------------- | --- | -------------------------------------- |
-| bootleg | `card-king-3` | 6423 | `card-king`   | ?   | A copy of Gottlieb's 1971 'Card King'. |
+| ✅ bootleg | `card-king-3` | 6423 | `card-king`   | ?   | A copy of Gottlieb's 1971 'Card King'. |
 
 ### `martel` — Spain (BOOTLEG=1)
 
 | rel     | model slug    | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)  |
 | ------- | ------------- | ---- | ------------- | --- | ------------------------------------- |
-| bootleg | `jive-time-2` | 6699 | **TODO** ?    | ?   | A copy of Williams' 1970 'Jive Time'. |
+| ✅ bootleg | `jive-time-2` | 6699 | **TODO** ?    | ?   | A copy of Williams' 1970 'Jive Time'. |
 
 ## Conversion — 43 makers / 177 models (converted_from)
 
@@ -297,38 +297,38 @@
 | ---------- | --------------------------------------- | ---- | ---------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | bootleg    | `golden-arrow-4`                        | 6424 | `golden-arrow`   | ?    | A copy of Gottlieb's 1977 'Golden Arrow'.                                                                                                                                  |
 | bootleg    | `jungle-life-2`                         | 5266 | `jungle-life`    | ?    | This is a copy of Gottlieb's 1972 'Jungle Life'.                                                                                                                           |
-| bootleg    | `super-zeus`                            | 5251 | **TODO** ?       | 1979 | This game is a copy of Williams' 1978 'Flash' but without the playfield flash lamps.                                                                                       |
+| ✅ bootleg    | `super-zeus`                            | 5251 | **TODO** ?       | 1979 | This game is a copy of Williams' 1978 'Flash' but without the playfield flash lamps.                                                                                       |
 | bootleg    | `surf-champ-2`                          | 5308 | `surf-champ`     | ?    | A copy of the 4-player Gottlieb's 1976 'Surf Champ'.                                                                                                                       |
 | bootleg    | `surf-champ-3`                          | 5689 | `surf-champ`     | ?    | A copy of the 4-player Gottlieb's 1976 'Surf Champ'.                                                                                                                       |
-| bootleg    | `the-card`                              | 5964 | `lucky-card`     | 1977 | This game is a near copy of Gottlieb's 1977 'Lucky Card' which was a game made for export to Italy.                                                                        |
-| bootleg    | `the-circus-tiger`                      | 5215 | `tiger`          | ?    | This is a copy of Gottlieb's 1975 'Tiger'.                                                                                                                                 |
-| bootleg    | `the-royal`                             | 6422 | `royal-pair`     | ?    | A copy of Gottlieb's 1974 'Royal Pair'.                                                                                                                                    |
+| ✅ bootleg    | `the-card`                              | 5964 | `lucky-card`     | 1977 | This game is a near copy of Gottlieb's 1977 'Lucky Card' which was a game made for export to Italy.                                                                        |
+| ✅ bootleg    | `the-circus-tiger`                      | 5215 | `tiger`          | ?    | This is a copy of Gottlieb's 1975 'Tiger'.                                                                                                                                 |
+| ✅ bootleg    | `the-royal`                             | 6422 | `royal-pair`     | ?    | A copy of Gottlieb's 1974 'Royal Pair'.                                                                                                                                    |
 | conversion | `1963-a-l-twins`                        | 4386 | **TODO** ?       | ?    | This is a conversion of Williams '1963 Major League', made by altering the name on the backglass.                                                                          |
-| conversion | `42nd-and-broadway`                     | 5991 | `spot-lite-2`    | ?    | This is a conversion of Bally's 1951 'Spot-Lite'.                                                                                                                          |
-| conversion | `arabic-power`                          | 5636 | **TODO** ?       | ?    | This is a conversion kit of an unknown Gottlieb game.                                                                                                                      |
+| ✅ conversion | `42nd-and-broadway`                     | 5991 | `spot-lite-2`    | ?    | This is a conversion of Bally's 1951 'Spot-Lite'.                                                                                                                          |
+| ✅ conversion | `arabic-power`                          | 5636 | **TODO** ?       | ?    | This is a conversion kit of an unknown Gottlieb game.                                                                                                                      |
 | conversion | `corsair`                               | 6873 | `flag-ship`      | ?    | All we have seen of this game is the backbox.                                                                                                                              |
-| conversion | `frisco-fair`                           | 6877 | `wild-wild-west` | ?    | A French conversion of Gottlieb's 1969 'Wild Wild West', reusing its instruction card.                                                                                     |
-| conversion | `grand-slam-10`                         | 6996 | `ice-show-italy` | ?    | This is a conversion of Gottlieb's 1966 'Ice Show (Italy)'.                                                                                                                |
+| ✅ conversion | `frisco-fair`                           | 6877 | `wild-wild-west` | ?    | A French conversion of Gottlieb's 1969 'Wild Wild West', reusing its instruction card.                                                                                     |
+| ✅ conversion | `grand-slam-10`                         | 6996 | `ice-show-italy` | ?    | This is a conversion of Gottlieb's 1966 'Ice Show (Italy)'.                                                                                                                |
 | conversion | `handicap-5`                            | 6238 | `world-fair`     | ?    | This is a conversion of an unknown game.                                                                                                                                   |
-| conversion | `hit-or-miss-2`                         | 6181 | `rocket-3`       | ?    | A conversion of Bally's 1933 'Rocket' based on the side cabinet art.                                                                                                       |
+| ✅ conversion | `hit-or-miss-2`                         | 6181 | `rocket-3`       | ?    | A conversion of Bally's 1933 'Rocket' based on the side cabinet art.                                                                                                       |
 | conversion | `hold-your-horses`                      | 6743 | `victory-derby`  | ?    | Bally documentation has no game identified as "Hold Your Horses".                                                                                                          |
 | conversion | `jupiter`                               | 5159 | `fire-queen`     | 1978 | The backglass depicts the Roman god Jupiter flexing his muscles while standing over a supine, naked woman.                                                                 |
 | conversion | `last-round`                            | 5379 | **TODO** ?       | ?    | This was described to us as a conversion kit for a Gottlieb game.                                                                                                          |
 | conversion | `lucky-double`                          | 4812 | `gold-cup`       | ?    | This listing shows pictures of a backglass and frame without the rest of the game, then pictures of an entire game from a different owner.                                 |
-| conversion | `magik-carpet`                          | 5768 | `hawaii`         | ?    | 'Magik Carpet' is a conversion of United's 1947 'Hawaii', a flipperless game.                                                                                              |
-| conversion | `mega-golf-ball-frenzy`                 | 5170 | **TODO** ?       | 2006 | Conversion of Williams' 1997 'No Good Gofers'.                                                                                                                             |
+| ✅ conversion | `magik-carpet`                          | 5768 | `hawaii`         | ?    | 'Magik Carpet' is a conversion of United's 1947 'Hawaii', a flipperless game.                                                                                              |
+| ✅ conversion | `mega-golf-ball-frenzy`                 | 5170 | **TODO** ?       | 2006 | Conversion of Williams' 1997 'No Good Gofers'.                                                                                                                             |
 | conversion | `merry-old-king`                        | 4357 | **TODO** ?       | ?    | `Merry Old King' may be a flipper conversion of Gottlieb's 1945 Stage Door Canteen or a later version of that game which is 1947's Miss America which uses the same playfi |
 | conversion | `moderne`                               | 6752 | **TODO** ?       | ?    | Conversion of an unknown game.                                                                                                                                             |
 | conversion | `mythology`                             | 5265 | `the-games`      | ?    | European conversion of the narrow-body Mylstar's 1984 'The Games'.                                                                                                         |
 | conversion | `racing`                                | 6291 | **TODO** ?       | ?    | This is a flipperless pin table.                                                                                                                                           |
-| conversion | `reviera`                               | 5126 | `snappy-3`       | ?    | Conversion of Chicago Coin's 1938 'Snappy'.                                                                                                                                |
-| conversion | `royal-skittle`                         | 5145 | **TODO** ?       | ?    | This is a conversion of Willy Michiels' 'Miss Bowling'.                                                                                                                    |
+| ✅ conversion | `reviera`                               | 5126 | `snappy-3`       | ?    | Conversion of Chicago Coin's 1938 'Snappy'.                                                                                                                                |
+| ✅ conversion | `royal-skittle`                         | 5145 | **TODO** ?       | ?    | This is a conversion of Willy Michiels' 'Miss Bowling'.                                                                                                                    |
 | conversion | `sok-m-in`                              | 5204 | `screwy`         | ?    | Manufacturer and date are uncertain.                                                                                                                                       |
 | conversion | `southside-johnny-and-the-asbury-jukes` | 5033 | `star-trek`      | 1979 | Shown here is an article from a 1979 German music magazine called "Top-Biz".                                                                                               |
-| conversion | `speedway-4`                            | 6583 | `entry`          | ?    | According to a list of Revamps (converted games) published in Cash Box, Jan-13-1947 page 31, a game 'Speedway', for which we have no other information, was a conversion o |
+| ✅ conversion | `speedway-4`                            | 6583 | `entry`          | ?    | According to a list of Revamps (converted games) published in Cash Box, Jan-13-1947 page 31, a game 'Speedway', for which we have no other information, was a conversion o |
 | conversion | `tommy`                                 | 5150 | `chubbie`        | ?    | This looks like a conversion of a Stoner game, possibly Stoner's 1938 'Chubbie'.                                                                                           |
-| conversion | `ultimate-golf-ball-frenzy`             | 6173 | **TODO** ?       | 2007 | Conversion of Williams' 1997 'No Good Gofers'.                                                                                                                             |
-| conversion | `wild-texas`                            | 5500 | **TODO** ?       | ?    | A conversion of Williams' 1983 'Firepower II'.                                                                                                                             |
+| ✅ conversion | `ultimate-golf-ball-frenzy`             | 6173 | **TODO** ?       | 2007 | Conversion of Williams' 1997 'No Good Gofers'.                                                                                                                             |
+| ✅ conversion | `wild-texas`                            | 5500 | **TODO** ?       | ?    | A conversion of Williams' 1983 'Firepower II'.                                                                                                                             |
 
 ### `renov-automatic-jolux` — France (CONVERSION=19)
 
@@ -344,34 +344,34 @@
 | ✅ conversion | `nuclear`              | 6316 | `liberty-belle` | ?    | This is a conversion of Gottlieb's 1962 'Liberty Belle'.                                                                                                                   |
 | ✅ conversion | `robin-hood-4`         | 5017 | `ship-mates`    | 1969 | This is a conversion of Gottlieb's 1964 'Ship-Mates'.                                                                                                                      |
 | ✅ conversion | `sindbad`              | 4555 | `ship-mates`    | ?    | Conversion of Gottlieb's 1964 'Ship-Mates'.                                                                                                                                |
-| conversion | `star`                 | 6321 | `ship-mates`    | ?    | 'Star' is a conversion of an unidentified 4-player replay game.                                                                                                            |
+| ✅ conversion | `star`                 | 6321 | `ship-mates`    | ?    | 'Star' is a conversion of an unidentified 4-player replay game.                                                                                                            |
 | ✅ conversion | `sub-marine`           | 4967 | `gaucho`        | 1968 | This is a conversion of Gottlieb's 1963 'Gaucho'.                                                                                                                          |
-| conversion | `the-happy-musketeers` | 5285 | `hi-score`      | 1970 | Conversion of Gottlieb's 1967 'Hi-Score' and Gottlieb's 1967 'Super Score' where the captive ball spinner has been made flush with the playfield.                          |
+| ✅ conversion | `the-happy-musketeers` | 5285 | `hi-score`      | 1970 | Conversion of Gottlieb's 1967 'Hi-Score' and Gottlieb's 1967 'Super Score' where the captive ball spinner has been made flush with the playfield.                          |
 | ✅ conversion | `the-jungle`           | 5438 | `dodge-city`    | ?    | This is a conversion of Gottlieb's 1965 'Dodge City'.                                                                                                                      |
 | ✅ conversion | `tropical-2`           | 6317 | `oklahoma-2`    | ?    | This is a conversion of Gottlieb's 1961 'Oklahoma'.                                                                                                                        |
 | conversion | `unknown-25`           | 6594 | `quick-draw`    | 1984 | This playfield has the same layout as the 2-player Gottlieb's 1975 'Quick Draw' and the 4-player Gottlieb's 1975 'Fast Draw'.                                              |
 | ✅ conversion | `venus-4`              | 3951 | `liberty-belle` | 1969 | This is a conversion of Gottlieb's 1962 'Liberty Belle'.                                                                                                                   |
 | ✅ conversion | `viking-4`             | 5027 | `fashion-show`  | 1968 | This is a conversion of Gottlieb's 1962 'Fashion Show'.                                                                                                                    |
-| conversion | `wine-grower`          | 5537 | **TODO** ?      | ?    | A conversion of an unknown 1960's era Gottlieb game.                                                                                                                       |
+| ✅ conversion | `wine-grower`          | 5537 | **TODO** ?      | ?    | A conversion of an unknown 1960's era Gottlieb game.                                                                                                                       |
 
 ### `dama-srl` — Italy (CONVERSION=14)
 
 | rel           | model slug     | ipdb | → target slug       | yr   | IPDB note (verbatim, vet before use)                                                                                                                                       |
 | ------------- | -------------- | ---- | ------------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| conversion    | `angels`       | 4396 | `rancho-2`          | 1970 | Conversion kit for Gottlieb's 1966 'Rancho'.                                                                                                                               |
+| ✅ conversion    | `angels`       | 4396 | `rancho-2`          | 1970 | Conversion kit for Gottlieb's 1966 'Rancho'.                                                                                                                               |
 | conversion    | `bookmakers`   | 4397 | **TODO** ?          | 1970 | Conversion kit for Bazaar                                                                                                                                                  |
 | conversion    | `devils`       | 4398 | `rocket-iii`        | 1970 | Conversion kit for Bally's 1967 'Rocket III'.                                                                                                                              |
-| conversion    | `frogmen`      | 4399 | `bazaar-2`          | 1970 | Conversion kit for Bally's 1966 'Bazaar'.                                                                                                                                  |
+| ✅ conversion    | `frogmen`      | 4399 | `bazaar-2`          | 1970 | Conversion kit for Bally's 1966 'Bazaar'.                                                                                                                                  |
 | conversion    | `hippy`        | 4400 | **TODO** ?          | 1970 | Conversion kit for Ice Show                                                                                                                                                |
-| conversion    | `las-vegas-3`  | 4068 | `electra-pool`      | 1970 | A conversion kit for Gottlieb's 1965 'Electra-Pool'.                                                                                                                       |
-| conversion    | `mondial-bank` | 4069 | `harmony`           | 1970 | A conversion kit for Gottlieb's 1967 'Harmony' and possibly also for Gottlieb's 1967 'Troubadour'.                                                                         |
-| conversion    | `new-city`     | 4401 | **TODO** ?          | 1970 | We had indicated that this game was a conversion kit for Williams' 1967 'Lunar Shot' but the backglass lamp placement and score reel placement along with the playfield la |
+| ✅ conversion    | `las-vegas-3`  | 4068 | `electra-pool`      | 1970 | A conversion kit for Gottlieb's 1965 'Electra-Pool'.                                                                                                                       |
+| ✅ conversion    | `mondial-bank` | 4069 | `harmony`           | 1970 | A conversion kit for Gottlieb's 1967 'Harmony' and possibly also for Gottlieb's 1967 'Troubadour'.                                                                         |
+| ✅ conversion    | `new-city`     | 4401 | **TODO** ?          | 1970 | We had indicated that this game was a conversion kit for Williams' 1967 'Lunar Shot' but the backglass lamp placement and score reel placement along with the playfield la |
 | conversion    | `play-time-2`  | 4402 | `ice-show`          | 1970 | Conversion kit for Gottlieb's 1966 'Ice Show' Italian version.                                                                                                             |
-| conversion    | `rally`        | 4067 | `elite-guard`       | 1970 | The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1968 'Elite Guard'.                                                              |
+| ✅ conversion    | `rally`        | 4067 | `elite-guard`       | 1970 | The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1968 'Elite Guard'.                                                              |
 | conversion    | `road`         | 4403 | **TODO** ?          | 1970 | Conversion kit for Rancho                                                                                                                                                  |
 | ✅ conversion | `spider`       | 4404 | `hurdy-gurdy-italy` | 1970 | Conversion kit for Gottlieb's 1966 'Hurdy Gurdy (Italy)'.                                                                                                                  |
 | conversion    | `western-2`    | 4066 | `subway-2`          | 1970 | The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1966 'Subway' or perhaps also Gottlieb's 1966 'Subway (Italy)'.                  |
-| conversion    | `world-star`   | 4405 | **TODO** ?          | 1970 | Conversion kit for Williams' 1967 'Magic Town'.                                                                                                                            |
+| ✅ conversion    | `world-star`   | 4405 | **TODO** ?          | 1970 | Conversion kit for Williams' 1967 'Magic Town'.                                                                                                                            |
 
 ### `geiger-automatenbau-gmbh` — Germany (CONVERSION=13)
 
@@ -398,11 +398,11 @@
 | ✅ conversion | `big-dryvers`         | 4110 | `space-orbit`  | 1979 | Conversion kit for Gottlieb's 1972 'Space Orbit'.                                                                 |
 | ✅ conversion | `cleopatra-play-pool` | 4111 | `play-pool`    | 1979 | Conversion kit for Gottlieb's 1972 'Play Pool'.                                                                   |
 | conversion    | `hells-queen`         | 5467 | `totem-2`      | 1980 | This game is a conversion with a repainted cabinet.                                                               |
-| conversion    | `jolly-joker-3`       | 4113 | `ten-up`       | 1979 | The undated manufacturer ad shown here indicates that this game is a conversion kit for Gottlieb's 1973 'Ten-Up'. |
+| ✅ conversion    | `jolly-joker-3`       | 4113 | `ten-up`       | 1979 | The undated manufacturer ad shown here indicates that this game is a conversion kit for Gottlieb's 1973 'Ten-Up'. |
 | ✅ conversion | `lovers`              | 4112 | `sky-dive`     | 1979 | This game is a conversion kit for Gottlieb's 1974 'Sky Dive'.                                                     |
 | ✅ conversion | `sisters`             | 4108 | `royal-pair`   | 1979 | The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1974 'Royal Pair'.      |
 | ✅ conversion | `take-a-card`         | 4109 | `texas-ranger` | 1979 | Conversion kit for Gottlieb's 1972 'Texas Ranger'.                                                                |
-| conversion    | `the-best-jump`       | 4114 | `top-hand-2`   | 1979 | The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1973 'Top Hand'.        |
+| ✅ conversion    | `the-best-jump`       | 4114 | `top-hand-2`   | 1979 | The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1973 'Top Hand'.        |
 
 ### `irmacor` — Portugal (CONVERSION=8)
 
@@ -412,7 +412,7 @@
 | ✅ conversion | `dona-elvira`      | 5736 | `party`         | ?   | This game is a conversion of Playmatic's 1979 'Party' and reportedly could run off the same ROMs as that game.                                                             |
 | ✅ conversion | `feitico`          | 6517 | `chance`        | ?   | This game is a conversion of Playmatic's 1978 'Chance' consisting of a change of backglass with Irmacor's logo on it, the language on the playfield was changed from Engli |
 | ✅ conversion | `flash-baseball-2` | 6437 | `space-gambler` | ?   | This game is a conversion of Playmatic's 1978 'Space Gambler' consisting of only a change of backglass.                                                                    |
-| conversion    | `playtime-5`       | 6838 | `fair-fight`    | ?   | This game is a conversion of Recel's 1978 'Fair Fight' or maybe Petaco's 'Fair Fight'.                                                                                     |
+| ✅ conversion    | `playtime-5`       | 6838 | `fair-fight`    | ?   | This game is a conversion of Recel's 1978 'Fair Fight' or maybe Petaco's 'Fair Fight'.                                                                                     |
 | conversion    | `s-joao`           | 5738 | `carnival-3`    | ?   | It has been reported that this 4-player "S.                                                                                                                                |
 | ✅ conversion | `sol-do-algarve`   | 5737 | `hot-cold-2`    | ?   | This is a conversion of the EM game, INDER's 1978 'Hot & Cold'.                                                                                                            |
 | ✅ conversion | `zira-2`           | 6518 | `zira`          | ?   | This game is a conversion of Playmatic's 1980 'Zira'.                                                                                                                      |
@@ -421,12 +421,12 @@
 
 | rel        | model slug      | ipdb | → target slug  | yr  | IPDB note (verbatim, vet before use)                                                                                                                      |
 | ---------- | --------------- | ---- | -------------- | --- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| conversion | `bamboo`        | 4027 | `orient`       | ?   | This is a conversion of Bally's 1967 'Orient'.                                                                                                            |
-| conversion | `bowl-a-line-2` | 5090 | `variety-2`    | ?   | Conversion of Bally's 1954 'Variety', not done by manufacturer.                                                                                           |
+| ✅ conversion | `bamboo`        | 4027 | `orient`       | ?   | This is a conversion of Bally's 1967 'Orient'.                                                                                                            |
+| ✅ conversion | `bowl-a-line-2` | 5090 | `variety-2`    | ?   | Conversion of Bally's 1954 'Variety', not done by manufacturer.                                                                                           |
 | conversion | `coal-town`     | 5098 | `citation`     | ?   | This is a backglass conversion of either Bally's 1948 'Citation' or Bally's 1948 'Lexington', depending on if its cabinet has the payout mechanism in it. |
 | conversion | `jumbo`         | 1325 | **TODO** ?     | ?   | Game was available with a check separator at additional cost.                                                                                             |
 | conversion | `single-coin-2` | 4853 | `barrel-o-fun` | ?   | This game is a conversion of Bally's 1960 'Barrel O� Fun' having a cabinet serial number of B1195.                                                        |
-| conversion | `single-coin-3` | 4982 | `shoot-a-line` | ?   | This game is a conversion of Bally's 1962 'Shoot-A-Line'.                                                                                                 |
+| ✅ conversion | `single-coin-3` | 4982 | `shoot-a-line` | ?   | This game is a conversion of Bally's 1962 'Shoot-A-Line'.                                                                                                 |
 | conversion | `tanforan`      | 5115 | `champion-2`   | ?   | This game has no payout mechanism and is a conversion of Bally's 1949 'Champion'.                                                                         |
 
 ### `bell-games` — Italy (CONVERSION=5)
@@ -447,7 +447,7 @@
 | conversion    | `skill-flight`   | 3230 | `skill-flight-2` | 1986 | The cockpit instrument panel resembles that of a Boeing 707.                                                                                                               |
 | ✅ conversion | `space-hawks`    | 3621 | `cybernaut`      | 1986 | This is a conversion of Bally Midway's 1985 'Cybernaut'.                                                                                                                   |
 | conversion    | `top-pin`        | 3471 | **TODO** ?       | 1988 | We previously indicated this game was a conversion kit for Williams' 1986 'PIN�BOT' using metal side panels.                                                               |
-| conversion    | `world-defender` | 3519 | `black-hole`     | 1985 | Conversion kit for unspecified Bally machine(s) which included playfield, backglass and artwork panels for the cabinet.                                                    |
+| ✅ conversion    | `world-defender` | 3519 | `black-hole`     | 1985 | Conversion kit for unspecified Bally machine(s) which included playfield, backglass and artwork panels for the cabinet.                                                    |
 
 ### `professional-pinball` — Canada (CONVERSION=5)
 
@@ -466,31 +466,31 @@
 | bootleg | `scala-reale` | 4076 | `card-trix`   | 1970 | A copy of Gottlieb's 1970 'Card Trix'. |
 
 'Scala Reale' translates to English as 'Royal Flush'. |
-| conversion | `derby-3` | 4075 | `gold-rush` | 1970 | Backglass measures approximately 55 cm by 60 cm. |
-| conversion | `good-year` | 4071 | **TODO** ? | 1969 | The undated magazine ad shown here indicates that 'Good Year' is a conversion of these games:
+| ✅ conversion | `derby-3` | 4075 | `gold-rush` | 1970 | Backglass measures approximately 55 cm by 60 cm. |
+| ✅ conversion | `good-year` | 4071 | **TODO** ? | 1969 | The undated magazine ad shown here indicates that 'Good Year' is a conversion of these games:
 Williams' 1967 'Lunar Shot'
 Williams' 1967 'Blast Off'
 Williams' 1967 'Ap |
-| conversion | `mexico-3` | 4074 | `rocket-iii` | 1970 | 'Mexico' is a conversion of Bally's 1967 'Rocket III'. |
+| ✅ conversion | `mexico-3` | 4074 | `rocket-iii` | 1970 | 'Mexico' is a conversion of Bally's 1967 'Rocket III'. |
 | conversion | `summer-time-4` | 4072 | `hit-a-card` | 1970 | The undated manufacturer ad shown here indicates that this game is a conversion of both Gottlieb's 1967 'Hit-A-Card' and Gottlieb's 1967 'Solitaire'. |
 
 ### `block-marble-company` — USA (CONVERSION=4)
 
 | rel           | model slug     | ipdb | → target slug   | yr  | IPDB note (verbatim, vet before use)                                                                                         |
 | ------------- | -------------- | ---- | --------------- | --- | ---------------------------------------------------------------------------------------------------------------------------- |
-| conversion    | `bebop`        | 3941 | `screwball`     | ?   | 'Bebop' was a conversion kit for Genco's 1948 'Screwball'.                                                                   |
+| ✅ conversion    | `bebop`        | 3941 | `screwball`     | ?   | 'Bebop' was a conversion kit for Genco's 1948 'Screwball'.                                                                   |
 | ✅ conversion | `coney-island` | 3880 | **TODO** ?      | ?   | `Coney Island' was a conversion of Gottlieb's`Lady Robin Hood'.                                                              |
-| conversion    | `crown-jewels` | 3940 | `humpty-dumpty` | ?   | 'Crown Jewels' was a conversion of Gottlieb's 1947 'Humpty Dumpty'.                                                          |
-| conversion    | `snowhite`     | 4329 | `cinderella`    | ?   | 'Snowhite' was a conversion kit for Gottlieb's 1948 'Cinderella' and consisted of a backglass, bumper caps, and score cards. |
+| ✅ conversion    | `crown-jewels` | 3940 | `humpty-dumpty` | ?   | 'Crown Jewels' was a conversion of Gottlieb's 1947 'Humpty Dumpty'.                                                          |
+| ✅ conversion    | `snowhite`     | 4329 | `cinderella`    | ?   | 'Snowhite' was a conversion kit for Gottlieb's 1948 'Cinderella' and consisted of a backglass, bumper caps, and score cards. |
 
 ### `idi` — Italy (CONVERSION=3 BOOTLEG=1)
 
 | rel        | model slug      | ipdb | → target slug     | yr  | IPDB note (verbatim, vet before use)                                                                                                                                       |
 | ---------- | --------------- | ---- | ----------------- | --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| bootleg    | `ice-mania`     | 3911 | `ice-fever`       | ?   | A copy of Premier's 1985 'Ice Fever'.                                                                                                                                      |
+| ✅ bootleg    | `ice-mania`     | 3911 | `ice-fever`       | ?   | A copy of Premier's 1985 'Ice Fever'.                                                                                                                                      |
 | conversion | `movie-masters` | 3910 | `black-pyramid`   | ?   | This is a conversion kit with the same playfield layout as Bally Midway's 1984 'Black Pyramid' except for the moving target in the middle of the playfield. 'Movie Masters |
-| conversion | `sky-warrior`   | 3905 | `fast-draw`       | ?   | Conversion kit for many solid state Gottlieb games of the late 1970's.                                                                                                     |
-| conversion | `tiger-woman`   | 3904 | `jungle-princess` | ?   | The playfield layout is the same as Gottlieb's 1977 'Jungle Princess' except the center playfield inserts are arranged differently.                                        |
+| ✅ conversion | `sky-warrior`   | 3905 | `fast-draw`       | ?   | Conversion kit for many solid state Gottlieb games of the late 1970's.                                                                                                     |
+| ✅ conversion | `tiger-woman`   | 3904 | `jungle-princess` | ?   | The playfield layout is the same as Gottlieb's 1977 'Jungle Princess' except the center playfield inserts are arranged differently.                                        |
 
 ### `christian-automatic` — France (CONVERSION=3)
 
@@ -506,15 +506,15 @@ Williams' 1967 'Ap |
 | ------------- | ----------------- | ---- | --------------- | ---- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | ✅ conversion | `flesh-and-blood` | 5157 | `pinball-champ` | ?    | Undated conversion kit for Zaccaria's 1983 'Pinball Champ'.                                                                                                                |
 | ✅ conversion | `horror`          | 5118 | `space-shuttle` | ?    | This is a conversion kit for Zaccaria's 1980 'Space Shuttle' consisting of a new playfield, backglass, metal side panels that screw onto the cabinet, and a replacement EP |
-| conversion    | `jungle-queen-2`  | 4943 | `jungle-queen`  | 1985 | This conversion kit includes backglass, playfield, and metal sheets to cover the wood cabinet and backbox.                                                                 |
+| ✅ conversion    | `jungle-queen-2`  | 4943 | `jungle-queen`  | 1985 | This conversion kit includes backglass, playfield, and metal sheets to cover the wood cabinet and backbox.                                                                 |
 
 ### `thames-mfg-co` — Connecticut (CONVERSION=3)
 
 | rel        | model slug     | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)                          |
 | ---------- | -------------- | ---- | ------------- | --- | ------------------------------------------------------------- |
-| conversion | `bikini-2`     | 5481 | `mexico`      | ?   | Conversion of the flipperless game United's 1947 'Mexico'.    |
-| conversion | `chorus-gal`   | 5480 | `manhattan`   | ?   | Conversion of the flipperless game United's 1948 'Manhattan'. |
-| conversion | `new-yorker-2` | 5799 | `tropicana`   | ?   | Conversion of the flipperless game United's 1948 'Tropicana'. |
+| ✅ conversion | `bikini-2`     | 5481 | `mexico`      | ?   | Conversion of the flipperless game United's 1947 'Mexico'.    |
+| ✅ conversion | `chorus-gal`   | 5480 | `manhattan`   | ?   | Conversion of the flipperless game United's 1948 'Manhattan'. |
+| ✅ conversion | `new-yorker-2` | 5799 | `tropicana`   | ?   | Conversion of the flipperless game United's 1948 'Tropicana'. |
 
 ### `williams-electronics-incorporated` — ? (CONVERSION=2)
 
@@ -528,13 +528,13 @@ Williams' 1967 'Ap |
 | rel        | model slug    | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                                                                                                                                      |
 | ---------- | ------------- | ---- | ------------- | ---- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | conversion | `new-york`    | 1673 | `pioneer`     | 1976 | 'New York' is a special add-a-ball version of the 2-player Gottlieb's 1976 'Pioneer' that was made in celebration of the 1976 lifting of the laws that had banned pinball |
-| conversion | `star-trek-2` | 2354 | `astro`       | 1971 | Conversion of Gottlieb's 1971 'Astro' made for export to Italy.                                                                                                           |
+| ✅ conversion | `star-trek-2` | 2354 | `astro`       | 1971 | Conversion of Gottlieb's 1971 'Astro' made for export to Italy.                                                                                                           |
 
 ### `premier-technology` — ? (CONVERSION=2)
 
 | rel        | model slug       | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                                                                                   |
 | ---------- | ---------------- | ---- | ------------- | ---- | ---------------------------------------------------------------------------------------------------------------------- |
-| conversion | `amazon-hunt-ii` | 3975 | `amazon-hunt` | 1987 | A conversion kit for Gottlieb's 1983 'Amazon Hunt' sold only in Europe.                                                |
+| ✅ conversion | `amazon-hunt-ii` | 3975 | `amazon-hunt` | 1987 | A conversion kit for Gottlieb's 1983 'Amazon Hunt' sold only in Europe.                                                |
 | conversion | `rock-encore`    | 1979 | **TODO** ?    | 1986 | Premier advertised for sale a "Booster-Pack" as a fifteen minute art & sound conversion kit for any Rock pinball game. |
 
 ### `arkon-automaten-gmbh` — Germany (CONVERSION=2)
@@ -548,21 +548,21 @@ Williams' 1967 'Ap |
 
 | rel        | model slug    | ipdb | → target slug     | yr   | IPDB note (verbatim, vet before use)                                      |
 | ---------- | ------------- | ---- | ----------------- | ---- | ------------------------------------------------------------------------- |
-| conversion | `cosmodrome`  | 3696 | `evel-knievel-em` | 1980 | The playfield layout is the same as Bell Coin Matics' 1979 'White Shark'. |
-| conversion | `white-shark` | 3555 | `jaws`            | 1979 | This game is a conversion kit of Europlay's 'Jaws'.                       |
+| ✅ conversion | `cosmodrome`  | 3696 | `evel-knievel-em` | 1980 | The playfield layout is the same as Bell Coin Matics' 1979 'White Shark'. |
+| ✅ conversion | `white-shark` | 3555 | `jaws`            | 1979 | This game is a conversion kit of Europlay's 'Jaws'.                       |
 
 ### `williams-electronics-games-incorporated-a-subsidiary-of-wms-industries-incorporated` — ? (CONVERSION=2)
 
 | rel        | model slug            | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                                                                     |
 | ---------- | --------------------- | ---- | ------------- | ---- | -------------------------------------------------------------------------------------------------------- |
-| conversion | `congo-2`             | 3780 | **TODO** ?    | 1995 | 'Congo' was produced both as a complete game and as a conversion kit for narrow body WPC Security games. |
-| conversion | `star-wars-episode-i` | 4458 | **TODO** ?    | 1999 | 2nd game produced using the Pinball 2000 (PB2K) platform.                                                |
+| ✅ conversion | `congo-2`             | 3780 | **TODO** ?    | 1995 | 'Congo' was produced both as a complete game and as a conversion kit for narrow body WPC Security games. |
+| ✅ conversion | `star-wars-episode-i` | 4458 | **TODO** ?    | 1999 | 2nd game produced using the Pinball 2000 (PB2K) platform.                                                |
 
 ### `talleres-del-llobregat-sa-automaticos` — Spain (CONVERSION=1 BOOTLEG=1)
 
 | rel        | model slug    | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                                                                                        |
 | ---------- | ------------- | ---- | ------------- | ---- | --------------------------------------------------------------------------------------------------------------------------- |
-| bootleg    | `boing-boing` | 4608 | **TODO** ?    | ?    | A copy of Williams' 1971 'Doodle Bug'.                                                                                      |
+| ✅ bootleg    | `boing-boing` | 4608 | **TODO** ?    | ?    | A copy of Williams' 1971 'Doodle Bug'.                                                                                      |
 | conversion | `fantasy-4`   | 4434 | **TODO** ?    | 1970 | We previously listed this game as manufactured by FAER as a Spanish conversion kit for an unidentified Gottlieb wedge head. |
 
 ### `l-v-mambelli` — Italy (CONVERSION=2)
@@ -576,21 +576,21 @@ Williams' 1967 'Ap |
 
 | rel           | model slug   | ipdb | → target slug                                                | yr   | IPDB note (verbatim, vet before use)                            |
 | ------------- | ------------ | ---- | ------------------------------------------------------------ | ---- | --------------------------------------------------------------- |
-| bootleg       | `airborne-2` | 5133 | **TODO** A copy of the EM version of Gottlieb 1978 'Charlie' | ?    | A copy of the EM version of Gottlieb's 1978 'Charlie's Angels'. |
+| ✅ bootleg       | `airborne-2` | 5133 | **TODO** A copy of the EM version of Gottlieb 1978 'Charlie' | ?    | A copy of the EM version of Gottlieb's 1978 'Charlie's Angels'. |
 | ✅ conversion | `city-ship`  | 5130 | `super-spin`                                                 | 1978 | A copy or conversion of Gottlieb's 1977 'Super Spin'.           |
 
 ### `headsup-pinball` — Texas (CONVERSION=2)
 
 | rel        | model slug | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                                                  |
 | ---------- | ---------- | ---- | ------------- | ---- | ------------------------------------------------------------------------------------- |
-| conversion | `wizard-3` | 6994 | `team-one`    | 2022 | This is a licensed conversion of Gottlieb's 1977 'Team One', an add-a-ball game.      |
-| conversion | `wizard-4` | 7010 | `team-one`    | 2022 | This is a licensed conversion kit for Gottlieb's 1977 'Team One', an add-a-ball game. |
+| ✅ conversion | `wizard-3` | 6994 | `team-one`    | 2022 | This is a licensed conversion of Gottlieb's 1977 'Team One', an add-a-ball game.      |
+| ✅ conversion | `wizard-4` | 7010 | `team-one`    | 2022 | This is a licensed conversion kit for Gottlieb's 1977 'Team One', an add-a-ball game. |
 
 ### `grand-products-incorporated` — USA (CONVERSION=1)
 
 | rel        | model slug    | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                                                                                                                       |
 | ---------- | ------------- | ---- | ------------- | ---- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| conversion | `301bullseye` | 403  | **TODO** ?    | 1986 | '301/Bulls Eye' was a conversion kit for all the Bally electronic 4-player games of the period (excludes 'The Six Million Dollar Man' and widebody games). |
+| ✅ conversion | `301bullseye` | 403  | **TODO** ?    | 1986 | '301/Bulls Eye' was a conversion kit for all the Bally electronic 4-player games of the period (excludes 'The Six Million Dollar Man' and widebody games). |
 
 ### `maquinas-automaticas-computerizadas-sa` — Spain (CONVERSION=1)
 
@@ -602,19 +602,19 @@ Williams' 1967 'Ap |
 
 | rel        | model slug     | ipdb | → target slug        | yr   | IPDB note (verbatim, vet before use)                    |
 | ---------- | -------------- | ---- | -------------------- | ---- | ------------------------------------------------------- |
-| conversion | `bloody-china` | 3969 | `strikes-and-spares` | 1985 | A conversion kit for Bally's 1978 'Strikes and Spares'. |
+| ✅ conversion | `bloody-china` | 3969 | `strikes-and-spares` | 1985 | A conversion kit for Bally's 1978 'Strikes and Spares'. |
 
 ### `nate-schneller-incorporated` — ? (CONVERSION=1)
 
 | rel        | model slug | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)               |
 | ---------- | ---------- | ---- | ------------- | --- | -------------------------------------------------- |
-| conversion | `jumbo-3`  | 4332 | **TODO** ?    | ?   | `Jumbo' was a conversion of Genco's`Triple Action' |
+| ✅ conversion | `jumbo-3`  | 4332 | **TODO** ?    | ?   | `Jumbo' was a conversion of Genco's`Triple Action' |
 
 ### `european-automaten-service` — Germany (CONVERSION=1)
 
 | rel        | model slug | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)                     |
 | ---------- | ---------- | ---- | ------------- | ---- | -------------------------------------------------------- |
-| conversion | `hippye`   | 4706 | `capersville` | 1970 | This game is a conversion of Bally's 1966 'Capersville'. |
+| ✅ conversion | `hippye`   | 4706 | `capersville` | 1970 | This game is a conversion of Bally's 1966 'Capersville'. |
 
 ### `lori` — Italy (CONVERSION=1)
 
@@ -626,13 +626,13 @@ Williams' 1967 'Ap |
 
 | rel        | model slug      | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)                                       |
 | ---------- | --------------- | ---- | ------------- | --- | -------------------------------------------------------------------------- |
-| conversion | `electric-road` | 5364 | `new-city`    | ?   | Conversion kit for Gottlieb's 1967 Italian games Hit-A-Card and Solitaire. |
+| ✅ conversion | `electric-road` | 5364 | `new-city`    | ?   | Conversion kit for Gottlieb's 1967 Italian games Hit-A-Card and Solitaire. |
 
 ### `hy-c-enterprises` — ? (CONVERSION=1)
 
 | rel        | model slug | ipdb | → target slug | yr   | IPDB note (verbatim, vet before use)  |
 | ---------- | ---------- | ---- | ------------- | ---- | ------------------------------------- |
-| conversion | `furie`    | 5599 | **TODO** ?    | 1981 | Conversion of Williams' 1978 'Flash'. |
+| ✅ conversion | `furie`    | 5599 | **TODO** ?    | 1981 | Conversion of Williams' 1978 'Flash'. |
 
 ### `eagle` — Italy (CONVERSION=1)
 
@@ -644,25 +644,25 @@ Williams' 1967 'Ap |
 
 | rel        | model slug        | ipdb | → target slug   | yr  | IPDB note (verbatim, vet before use)                  |
 | ---------- | ----------------- | ---- | --------------- | --- | ----------------------------------------------------- |
-| conversion | `vemco-special-2` | 6006 | `bally-reserve` | ?   | This is a conversion of Bally's 1938 'Bally Reserve'. |
+| ✅ conversion | `vemco-special-2` | 6006 | `bally-reserve` | ?   | This is a conversion of Bally's 1938 'Bally Reserve'. |
 
 ### `adp-automaten-gmbh` — Germany (CONVERSION=1)
 
 | rel        | model slug | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)              |
 | ---------- | ---------- | ---- | ------------- | --- | ------------------------------------------------- |
-| conversion | `orgie`    | 6063 | **TODO** ?    | ?   | This is a conversion of Williams' 1973 'Jubilee'. |
+| ✅ conversion | `orgie`    | 6063 | **TODO** ?    | ?   | This is a conversion of Williams' 1973 'Jubilee'. |
 
 ### `collins-entertainment-inc` — SouthCarolina (CONVERSION=1)
 
 | rel        | model slug  | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)                                                                          |
 | ---------- | ----------- | ---- | ------------- | --- | ------------------------------------------------------------------------------------------------------------- |
-| conversion | `euro-star` | 6281 | **TODO** ?    | ?   | 'Euro Star' is a conversion of an unknown bingo machine made by WIMI whose logo can be seen on the coin door. |
+| ✅ conversion | `euro-star` | 6281 | **TODO** ?    | ?   | 'Euro Star' is a conversion of an unknown bingo machine made by WIMI whose logo can be seen on the coin door. |
 
 ### `victory-games` — ? (CONVERSION=1)
 
 | rel        | model slug        | ipdb | → target slug  | yr  | IPDB note (verbatim, vet before use)                                      |
 | ---------- | ----------------- | ---- | -------------- | --- | ------------------------------------------------------------------------- |
-| conversion | `miss-america-45` | 6290 | `all-american` | ?   | "Miss America '45" is a conversion of Chicago Coin's 1940 'All American'. |
+| ✅ conversion | `miss-america-45` | 6290 | `all-american` | ?   | "Miss America '45" is a conversion of Chicago Coin's 1940 'All American'. |
 
 ### `coin-device-mfg-co-inc` — New York (CONVERSION=1)
 
@@ -674,13 +674,13 @@ Williams' 1967 'Ap |
 
 | rel        | model slug     | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)                                                                                                                 |
 | ---------- | -------------- | ---- | ------------- | --- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| conversion | `trickle-ball` | 6633 | `play-golf`   | ?   | This game is a conversion of Chester-Pollard Amusement Co., Inc.'s 'Play Golf' done by Trimount Coin Machine Company who was normally a distributor. |
+| ✅ conversion | `trickle-ball` | 6633 | `play-golf`   | ?   | This game is a conversion of Chester-Pollard Amusement Co., Inc.'s 'Play Golf' done by Trimount Coin Machine Company who was normally a distributor. |
 
 ### `werbeplan-gmbh` — Germany (CONVERSION=1)
 
 | rel        | model slug           | ipdb | → target slug | yr  | IPDB note (verbatim, vet before use)                                                                                                                         |
 | ---------- | -------------------- | ---- | ------------- | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| conversion | `rondo-auto-flipper` | 6698 | **TODO** ?    | ?   | This game is Not A Pinball but is a car race game converted from pinball machines as pictured in the undated flyer so we list it for clarification purposes. |
+| ✅ conversion | `rondo-auto-flipper` | 6698 | **TODO** ?    | ?   | This game is Not A Pinball but is a car race game converted from pinball machines as pictured in the undated flyer so we list it for clarification purposes. |
 
 ### `games-incorporated` — Illinois (CONVERSION=1)
 
