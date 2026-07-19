@@ -25,22 +25,28 @@
     },
     "schemeIdentifier": {
       "type": "string",
-      "pattern": "^[a-z][a-z0-9]*:(?!//).{1,200}$",
-      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme prefix is not enumerated here on purpose — the authoritative scheme list lives in the flipcommons registry (apps/citation/citation_types/registry.py) and drifts as schemes are added; ingest validates the actual key. This is a structural shape check only. The one shape excluded is '//' right after the colon: a scheme://… string is a URL, not a scheme identifier, and only http(s) URLs are legal cite refs."
+      "pattern": "^(?!isbn:)[a-z][a-z0-9]*:(?!//).{1,200}$",
+      "description": "Evidence keyed by a known scheme: ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY. The scheme prefix is not enumerated here on purpose — the authoritative scheme list lives in the flipcommons registry (apps/citation/citation_types/registry.py) and drifts as schemes are added; ingest validates the actual key. This is a structural shape check only. Two shapes are excluded: '//' right after the colon (a scheme://… string is a URL, not a scheme identifier, and only http(s) URLs are legal cite refs), and the 'isbn:' prefix, which is not a scheme and is shape-checked by isbnRef instead."
     },
     "httpUrl": {
       "type": "string",
       "maxLength": 2000,
       "pattern": "^https?://.+$"
     },
+    "isbnRef": {
+      "type": "string",
+      "pattern": "^isbn:(?:97[89][- ]?(?:[0-9][- ]?){9}[0-9]|(?:[0-9][- ]?){9}[0-9Xx])$",
+      "description": "Evidence in an authored work — a book edition — keyed by the ISBN the record itself carries: isbn:9781889933023, isbn:978-1-889933-02-3, isbn:0887404316. Not a scheme: a scheme's root mints children from URLs, while a book is its own record, so this form never creates a source — ingest_patches resolves it to the already-seeded work and errors when none carries that ISBN. Shape-checked here (10 or 13 digits, optional hyphens, an X check digit allowed on an ISBN-10); the check digit itself, the ISBN-10 → ISBN-13 canonicalization and the cite-the-edition-not-the-work rule are ingest_patches'."
+    },
     "citeRef": {
       "type": "string",
       "maxLength": 2000,
       "anyOf": [
         { "$ref": "#/definitions/schemeIdentifier" },
+        { "$ref": "#/definitions/isbnRef" },
         { "$ref": "#/definitions/httpUrl" }
       ],
-      "description": "A reference to the cited source, either as scheme:identifier (ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY) or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form."
+      "description": "A reference to the cited source: scheme:identifier (ipdb:4443, opdb:GRhX5, youtube:O-2BXTXLXIY), isbn:<isbn> for a seeded book edition, or an http(s):// URL (a standalone or domain-nested web source). Capped at 2000 chars to mirror the link column. A URL matching a known scheme's record pattern is rejected by ingest_patches in favor of the scheme:identifier form."
     },
     "citeSpec": {
       "oneOf": [
@@ -103,14 +109,13 @@
             { "type": "string" },
             {
               "type": "object",
-              "minProperties": 1,
               "maxProperties": 1,
               "additionalProperties": { "type": "string" }
             }
           ]
         }
       },
-      "description": "Relationship members to remove: a mapping of relationship namespace to a list of member values — FK public_ids (e.g. {location: [germany]}), bare strings for aliases/abbreviations (e.g. {manufacturer_alias: [Stern Inc]}), or one-key 'key: value' mappings for multi-key relationships (e.g. {credit: [{john-youssi: art}]} — person public_id -> role public_id)."
+      "description": "Relationship members to remove: a mapping of relationship namespace to a list of member values — FK public_ids (e.g. {location: [germany]}), bare strings for aliases/abbreviations (e.g. {manufacturer_alias: [Stern Inc]}), explicit-key mappings naming the member's identity slot (e.g. {export_market: [{target_market_location: italy}]}), or one-key 'key: value' mappings for multi-key relationships (e.g. {credit: [{john-youssi: art}]} — person public_id -> role public_id). The EMPTY mapping is legal: for a namespace whose target is optional it is the identity of the all-slots-absent row ({export_market: [{}]} removes the unknown-market row). Which namespaces that is true of is not encoded here — it drifts with the flipcommons spec, and ingest_patches rejects a {} member for the namespaces where it is meaningless."
     }
   },
   "properties": {

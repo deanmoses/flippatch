@@ -217,6 +217,62 @@ def test_malformed_cite_rejected(schema_validator, cite):
     assert _has_error(schema_validator, data)
 
 
+@pytest.mark.parametrize(
+    "cite",
+    [
+        "isbn:9781889933023",  # 13-digit
+        "isbn:978-1-889933-02-3",  # hyphenated
+        "isbn:0887404316",  # 10-digit
+        "isbn:080442957X",  # 10-digit with an X check digit
+    ],
+)
+def test_isbn_cite_forms_accepted(schema_validator, cite):
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"corporate-entity.foo": {"year_start": 1990, "cite": cite}}],
+    }
+    assert not _has_error(schema_validator, data)
+
+
+@pytest.mark.parametrize(
+    "cite",
+    [
+        "isbn:97818899330",  # too few digits
+        "isbn:97818899330231",  # too many digits
+        "isbn:not-an-isbn",  # not digits at all
+        "isbn:",  # empty
+    ],
+)
+def test_malformed_isbn_cite_rejected(schema_validator, cite):
+    # The isbn form is shape-checked here (unlike a scheme identifier, whose
+    # grammar lives in the flipcommons registry); the check digit itself is
+    # ingest_patches' job.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"corporate-entity.foo": {"year_start": 1990, "cite": cite}}],
+    }
+    assert _has_error(schema_validator, data)
+
+
+def test_isbn_cite_with_locator_accepted(schema_validator):
+    # The driving shape: the proximate source quotes, the book locates.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [
+            {
+                "corporate-entity.foo": {
+                    "year_start": 1990,
+                    "cite": [
+                        {"ref": "ipdb:3905", "quote": "According to the Encyclopedia"},
+                        {"ref": "isbn:9781889933023", "locator": "Vol. 2, p. 107"},
+                    ],
+                }
+            }
+        ],
+    }
+    assert not _has_error(schema_validator, data)
+
+
 def test_unknown_scheme_accepted_structurally(schema_validator):
     # Deliberate: the schema doesn't enumerate scheme prefixes (the
     # authoritative list lives in the flipcommons registry and drifts), so an
@@ -487,11 +543,24 @@ def test_remove_credit_dict_member_valid(schema_validator):
     assert not _has_error(schema_validator, data)
 
 
+def test_remove_empty_mapping_member_valid(schema_validator):
+    # The empty mapping is the identity of a row whose every target slot is
+    # absent — the `export_market` unknown-market row (flipcommons'
+    # DataPatches.md -> Export editions and markets). It is the ONLY way to
+    # remove that row, so the schema must not require a non-empty member.
+    # Namespaces where `{}` is meaningless (credit's one-key person: role form)
+    # reject it in ingest_patches, which is where that semantics lives.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.dragon": {"remove": {"export_market": [{}]}}}],
+    }
+    assert not _has_error(schema_validator, data)
+
+
 @pytest.mark.parametrize(
     "member",
     [
         {"john-youssi": "art", "brian-eddy": "design"},  # >1 key
-        {},  # 0 keys
         {"john-youssi": ["art"]},  # non-string value
     ],
 )
