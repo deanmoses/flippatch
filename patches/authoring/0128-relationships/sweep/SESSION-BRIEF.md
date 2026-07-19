@@ -10,9 +10,10 @@ You are continuing the 0128-relationships campaign ([../README.md](../README.md)
 
 ## What already exists in this dir
 
-- [../emit_candidates.py](../emit_candidates.py) — regenerates `candidates.jsonl` here from [../Worklist.md](../Worklist.md) (298 rows, one per worklist row; the Worklist's target guesses ride as `hint`, which the sweep audits but **never shows to the model**). Run with `uv run python3 emit_candidates.py`.
-- `candidates.jsonl` + `RECONCILE.md` — already generated once. **Regenerate both after every dev-DB rebuild** (the DB is ground truth and moves).
-- [../check_status.py](../check_status.py) / [../STATUS.md](../STATUS.md) / [../reconcile_worklist.py](../reconcile_worklist.py) — the older per-campaign status tooling, still valid; the sweep supersedes its judgment role, not its bookkeeping.
+- [../relationships.sql](../relationships.sql) — the **discovery layer**: a reproducible DuckDB analysis over the live catalog that derives the candidate set and reads existing edges from `model_edges`, so `relationship_review` is always exactly the remaining work. Run it via `make analyze` (see [../README.md](../README.md) → How the candidates are found).
+- [../emit_candidates.py](../emit_candidates.py) — regenerates `candidates.jsonl` here from that plan's `relationship_sweep_candidates` view (383 rows today; resolved target guesses ride as `hint`, which the sweep audits but **never shows to the model**). Run with `uv run python3 emit_candidates.py`.
+- `candidates.jsonl` + `RECONCILE.md` — **regenerate both after every dev-DB rebuild** (the DB is ground truth and moves).
+- The old frozen bookkeeping — `Worklist.md`, `STATUS.md`, `check_status.py`, `reconcile_worklist.py` — is **retired** (in git history). `has_rel_edge` replaced all of it; there is nothing left to reconcile.
 
 ## The loop
 
@@ -28,7 +29,7 @@ You are continuing the 0128-relationships campaign ([../README.md](../README.md)
    - `make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --status"` — progress/dispositions, free, safe anytime.
    - `results.json` and `REVIEW.md` are rewritten after **every** row, so Ctrl-C/kill loses at most the row in flight and `--resume` continues; you can start reading `REVIEW.md` escalations while the run is still going.
    - After a gate/tool fix or a dev-DB rebuild, `--regate` re-buckets all stored answers in seconds with **zero** AI spend — never re-run the AI over rows already judged.
-5. Work `REVIEW.md` top-down: `conflict` and `set-but-unsupported` first (these are candidate **wrong existing values** — exactly what the tool was built for), then `hint-mismatch` (the sweep disagrees with the Worklist's old guess — decide from the verbatim quote and full note, prefer web-cache corroboration per README), then `ambiguous` / `unresolved` / `uncertain`. `fill` rows are pre-greened candidates, not verified facts: still spot-check a sample against the full IPDB note before authoring.
+5. Work `REVIEW.md` top-down: `conflict` and `set-but-unsupported` first (these are candidate **wrong existing values** — exactly what the tool was built for), then `hint-mismatch` (the sweep disagrees with the plan's resolved target guess — decide from the verbatim quote and full note, prefer web-cache corroboration per README), then `ambiguous` / `unresolved` / `uncertain`. `fill` rows are pre-greened candidates, not verified facts: still spot-check a sample against the full IPDB note before authoring.
 6. Author patches from confirmed rows per the README recipe — per-maker patches, the slug/naming conventions, and the OPDB-group check before any title merge (the README's 🛑 rules apply unchanged). Then the snapshot apply-verify loop, `make validate`, `make verify-quotes`.
 
 ## Hardening duty
@@ -46,5 +47,5 @@ Don't patch `scripts/ai_corpus_sweep/` yourself unless something blocks you; not
 ## Hard rules
 
 - Never `git commit`, never `make push` — both are the user's call, always.
-- Don't edit Worklist.md except via `reconcile_worklist.py` stamping.
+- Don't hand-edit `candidates.jsonl` — regenerate it with `emit_candidates.py`. Record a human verdict (a held-back row, a maker-level doubt) in `relationships.sql`'s Reference section, not in prose, so it rides the candidate row and gets staleness-checked.
 - Treat every IPDB note as a recall aid to vet against the full source, not authority.

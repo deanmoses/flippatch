@@ -1,33 +1,43 @@
 #!/usr/bin/env python3
-"""Emit this campaign's Worklist rows as an ai_corpus_sweep candidates file.
+"""Emit the relationship campaign's candidates as an ai_corpus_sweep candidates file.
 
-The campaign-specific adapter onto the sweep's parts-kit contract. Since the
-sweep judges a model's whole relationship set in one call, this emits **one
-candidate per model** (keyed on the stable ``ipdb`` number), collapsing the
-Worklist's licensed / bootleg / conversion buckets — which all map to the
-single ``model_relationship`` field now. Each Worklist target guess rides along
-as a ``hint`` (a list when a model appears under several buckets); the sweep
-never shows a hint to the model, it only diffs it against its own resolution,
-which is exactly how the old guesses get audited instead of inherited.
+The campaign-specific adapter onto the sweep's parts-kit contract. Discovery is
+now REPRODUCIBLE: the candidate set comes from ``relationships.sql``'s
+``relationship_sweep_candidates`` view (every model with copy/conversion free-text
+language and no typed edge yet), read live from the flipcommons catalog — not from
+the frozen ``Worklist.md`` this script used to parse. "What's already done" is the
+view's ``has_rel_edge`` filter, so a re-run after authoring simply drops the newly
+edged models; there is nothing to reconcile.
+
+Each row carries the view's resolved target guess(es) as a ``hint`` (a list); the
+sweep never shows a hint to the model, it only diffs it against its own resolution,
+which is how the guesses get audited instead of inherited. A few makers also get a
+maker-level authorization source attached as ``evidence`` (see below).
 
     uv run python3 emit_candidates.py     # writes sweep/candidates.jsonl
     make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --no-ai"
 
-Read-only over Worklist.md; rerunnable any time (the Worklist is the input of
-record, the sweep's results.json is keyed on ipdb so regenerating this file
-never invalidates judged models).
+Read-only over the catalog; rerunnable any time (the sweep's results.json is keyed
+on ipdb, so regenerating this file never invalidates already-judged models).
 """
 
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
+import subprocess
 import sys
 from pathlib import Path
-
-from check_status import DB, parse_worklist
+from typing import Any
 
 HERE = Path(__file__).resolve().parent
+REPO_ROOT = HERE.parents[2]  # 0128-relationships -> authoring -> patches -> repo root
+sys.path.insert(0, str(REPO_ROOT / "scripts"))  # common.related_projects
+
+from common.related_projects import FLIPCOMMONS_DB, FLIPCOMMONS_DIR, load_env  # noqa: E402
+
+RELATIONSHIPS_SQL = HERE / "relationships.sql"
 OUT = HERE / "sweep" / "candidates.jsonl"
 
 # ── Maker-level authorization sources (TOOL-NOTES DEFECT 11) ────────────────
@@ -65,6 +75,25 @@ MAKER_AUTHORIZATION: dict[str, list[str]] = {
 }
 
 
+def load_candidates() -> list[dict[str, Any]]:
+    """Read relationships.sql's ``relationship_sweep_candidates`` view as JSON.
+
+    Runs the duckdb CLI with cwd = the flipcommons checkout, so the view's
+    ``.read scripts/analysis/catalog.sql`` and the foundation's ``ATTACH
+    backend/db.sqlite3`` both resolve there (same idiom as 0172's gen.py)."""
+    load_env()
+    fc = os.environ.get("FLIPCOMMONS_DIR") or str(FLIPCOMMONS_DIR)
+    proc = subprocess.run(
+        [
+            "duckdb", "-init", str(RELATIONSHIPS_SQL), ":memory:",
+            "COPY (FROM relationship_sweep_candidates) TO '/dev/stdout' (FORMAT json, ARRAY true);",
+        ],
+        cwd=fc, capture_output=True, text=True, check=True,
+    )
+    rows: list[dict[str, Any]] = json.loads(proc.stdout)
+    return rows
+
+
 def maker_of(con: sqlite3.Connection, ipdb_id: int) -> str | None:
     """The model's Manufacturer slug — the key MAKER_AUTHORIZATION is keyed on."""
     row = con.execute(
@@ -78,20 +107,16 @@ def maker_of(con: sqlite3.Connection, ipdb_id: int) -> str | None:
 
 
 def main() -> int:
-    rows = parse_worklist()
+    rows = load_candidates()
     OUT.parent.mkdir(exist_ok=True)
-    # One candidate per model; collect its Worklist target guesses as hints
-    # (deduped, order-preserving), across whatever buckets the model appears in.
-    by_ipdb: dict[int, list[str]] = {}
-    for _rel, _slug, ipdb, wl_tgt in rows:
-        hints = by_ipdb.setdefault(ipdb, [])
-        if wl_tgt and wl_tgt != "TODO" and wl_tgt not in hints:
-            hints.append(wl_tgt)
-    con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
+    con = sqlite3.connect(f"file:{FLIPCOMMONS_DB}?mode=ro", uri=True)
     lines = []
     attached = 0
-    for ipdb, hints in by_ipdb.items():
+    for row in sorted(rows, key=lambda r: r["ipdb_id"]):
+        ipdb = row["ipdb_id"]
         candidate: dict[str, object] = {"ipdb_id": ipdb}
+        # The view's resolved target guess(es); omit an empty list.
+        hints = [h for h in (row.get("hint") or []) if h]
         if hints:
             candidate["hint"] = hints
         refs = MAKER_AUTHORIZATION.get(maker_of(con, ipdb) or "")

@@ -2,7 +2,7 @@
 
 This doc coordinates a data-patch campaign to improve the lineage relationships between models.
 
-The candidate models live in [Worklist.md](Worklist.md), a checklist originally machine-mined from pinexplore's DuckDB snapshot of IPDB's free text; maker-specific doubts and held-back rows are flagged inline there as ⚠ callouts. Its slug columns are a frozen pre-re-slugging snapshot, so re-resolve every slug against the live [dev DB](#the-dev-db) before authoring.
+The candidate models are derived live by [relationships.sql](relationships.sql), a reproducible DuckDB analysis over the current catalog — see [How the candidates are found](#how-the-candidates-are-found). It replaces the retired `Worklist.md`, a one-time regex mine frozen into a checklist (still in git history). Because the plan reads existing edges straight from the catalog, slugs are always current and "what's already done" is a column, not a snapshot to reconcile.
 
 Read [DomainModel.md](../../../../flipcommons/docs/DomainModel.md) (Bootlegs / Licensed builds / Conversions) and [DataPatchAuthoring.md](../../../../flipcommons/docs/DataPatchAuthoring.md) before authoring. Treat every IPDB note in the worklist as a _recall aid to vet against the full page_, not as authority.
 
@@ -18,14 +18,65 @@ A lineage edge — a **`ModelRelationship`** — links a derivative machine to t
 
 **The key structural fact that makes this cheap:** every foreign machine is _already seeded_ as its own model record (slug + corporate entity), and so is the US original it reproduces. Unlike the Italian sweep (which created models from tilt.it), this campaign mostly just **adds a `model_relationship` edge to an existing seeded model** and cites the source. No model creation, no title surgery in the common case.
 
-## How the candidates were found
+## How the candidates are found
 
-A one-time mine (since-removed script, in git history) built the Worklist from `pinexplore/explore.duckdb`: `ipdb_machines.Notes` joined to seeded `models` on `ipdb_id`, self-description regexes classifying each note — license language (`under licen…`) → licensed, copy language (`(this is) a copy of…`) → bootleg, conversion language (`conversion kit for…`) → conversion — and the note's `Maker's YEAR 'Name'` reference parsed back to a seeded slug for the target. The classification is fallible, hence these caveats:
+[relationships.sql](relationships.sql) is a plan-local DuckDB analysis that reuses flipcommons' shared foundation (`scripts/analysis/catalog.sql`) **verbatim** via a `.read` — the same pattern as [0172-bingo-game-format](../0172-bingo-game-format/README.md). Run it through `make analyze`, which sets cwd to the flipcommons checkout, prints the `analysis_context` watermark + `relationships_summary`, and **gates on `relationships_checks`**:
 
-- `→ target slug` is best-effort — most are right, but a handful resolve to the wrong game when the note's first quoted title isn't the original (e.g. LAI `cosmic-princess`); always confirm the target before writing `*_of:`.
-- Rows marked **TODO** in the target column need manual resolution.
+```bash
+P=patches/authoring/0128-relationships/relationships.sql
+make analyze PLAN=$P PREFIX=relationships                        # summary, gated on checks
+make analyze PLAN=$P Q="FROM relationship_review LIMIT 40;"      # the actionable queue
+make analyze PLAN=$P Q="FROM relationship_open_questions;"       # recorded human judgement
+make analyze PLAN=$P Q="FROM relationship_edged_audit;"          # possible WRONG existing edges
+```
+
+Membership is the union of two free-text detectors over `ipdb_notes` / `ipdb_notable_features` / `description`: **`by_copy`** (copy / clone / bootleg / "under licence" / licensed build) and **`by_conv`** (conversion / conversion kit / converted game / repaint / re-theme). The type and license **split is not decided here** — that is the sweep's per-note judgement; detection only finds the model and surfaces the note.
+
+Enrichment reads existing edges from the foundation's `model_edges`, so `has_rel_edge` is the "already done" signal and `relationship_review` shows only what remains. A quoted `'Game Name'` in the prose that resolves to a live model rides along as a best-effort **`target_guess`** — a hint the sweep audits, never authority. Caveats that still apply:
+
+- `target_guess` is best-effort — a handful resolve to the wrong game when the note's first quoted title isn't the original (e.g. LAI `cosmic-princess`); always confirm the target before writing an edge.
+- Both detectors over-count: a note that merely *mentions* a conversion kit isn't a lineage claim (Big Chief's "Extra Ball Conversion Kit"). Every row wants source review before it becomes a claim.
 - Re-read the full IPDB note (and prefer a web-cache source where one exists) for the verbatim `cite` quote.
-- In the conversion section, a few "makers" are the US originals themselves (`bally-manufacturing-corporation`, `williams-electronics-incorporated`, `d-gottlieb-company`, `premier-technology`). These are in-house or same-lineage conversions, or reverse-direction note matches — vet each one hard; some may not be conversion candidates at all.
+- Some conversion candidates are the US originals themselves (`bally`, `williams`, `gottlieb`, `premier-technology`). These are in-house or same-lineage conversions, or reverse-direction note matches — vet each hard; some may not be conversion candidates at all.
+
+**Known blind spot:** the detectors only see catalog free text, so edges authored from the pinexplore web cache or other off-catalog sources are not reproducible here. The `edged_models_missed` metric quantifies it (41 of 359 today) — it is a measured gap, not a silent one.
+
+## The certain tier — author-ready rows with a first-cut quote
+
+`relationship_green` is the high-confidence queue: not-edged rows with **exactly one** resolved target, no recorded open question, and a **verbatim quote extracted from the note itself** rather than hand-typed. `relationship_type` is read off the phrase; `license_status` defaults to `unknown` and claims `licensed`/`unlicensed` only when the quote itself carries the words — a bare "copy of" never becomes an authorization claim.
+
+```bash
+make analyze PLAN=$P Q="FROM relationship_green;"            # author-ready, quote included
+make analyze PLAN=$P Q="FROM relationship_green_rejected;"   # disqualified, with reason
+```
+
+The extracted quote is a **proposal, not a verified quote** — `make verify-quotes` is the independent gate that proves each one verbatim against pinexplore's `ipdb_machines` corpus (the same IPDB pull the catalog's notes came from, so an exact substring of one is an exact substring of the other). Never ship an extracted quote that hasn't passed it.
+
+Rows are disqualified into `relationship_green_rejected` with a `reject_reason`, each a false-positive class seen in the real output. They are **not a discard pile** — most are genuine relationships that just aren't the one a naive read would author:
+
+| reason | why it's held out |
+| --- | --- |
+| `component-copy` | the note says a **component** is a copy ("the backglass is a near copy of"), not the machine — TOOL-NOTES DEFECT 7 |
+| `hedged` | the note hedges ("a near copy of", "probably a copy of"); a hedged source can't support a flat assertion |
+| `reverse-direction` | the note is on the **original**, describing who copied *it* — the edge belongs on the other model, pointing back |
+| `book-source` | the note attributes to a book — see below |
+| `mojibake` | the span carries a `?` replacement character; usually wants the `[...]` omission marker |
+
+### Held out: notes that attribute to a book
+
+Some notes cite a book as the original authority — "According to the Encyclopedia of Pinball Vol 2 page 107, this game is a copy of …". Such a claim wants **two** citations: the `ipdb:` cite carrying the quote (the proximate source) plus a quoteless cite to the book itself with a `locator` of "Vol. 2, p. 107".
+
+The multi-cite part already works (`cite:` takes a list) and a quoteless cite already works (`quote` is optional), but **the book ref cannot be expressed**: `cite:`'s grammar is only `scheme:identifier` (no book scheme is registered) or an `http(s)` URL under a seeded *website* root. The books *are* seeded as CitationSources — only the ref form is missing. Until flipcommons closes that gap, `mentions_book_source` holds these rows (22 candidates, 3 of them otherwise-green) out of the certain tier, rather than shipping a claim cited only to its proximate source. The detector is deliberately over-inclusive — a false positive costs one human read; a false negative ships an under-cited claim.
+
+## Recorded human judgement
+
+A query re-derives candidates but not a reviewer's verdict, so the campaign's open decisions are encoded as Reference lookups in the plan (`_rel_open_question`, `_rel_maker_question`) and **carried on the candidate row** as `open_question` / `maker_question` — they surface wherever the row is reviewed, and flagged rows sort to the top of `relationship_review`. `relationship_checks` catches an entry that has gone stale.
+
+```bash
+make analyze PLAN=$P Q="FROM relationship_open_questions;"
+```
+
+This holds the three rows held back from 0127 (`cosmic-princess`, `high-ace-2`, `star-flite`) and the two maker-level licensed-vs-unlicensed questions (Petaco, Fipermatic), each shown against its **current** edge state. A held-back row that now carries an edge means the question was resolved *or* authored past — verify which; don't assume.
 
 ## Decisions made
 
@@ -36,14 +87,14 @@ A one-time mine (since-removed script, in git history) built the Worklist from `
 
 ## Progress
 
-- **[0127-licensed-builds.yaml](../../0127-licensed-builds.yaml) + [0128-licensed-build-title-removal.yaml](../../0128-licensed-build-title-removal.yaml) — done.** 27 licensed builds (IPDB note says "under license"): VIFICO ×13 (Gottlieb/Premier), LAI ×7 (Stern), Segasa ×4 (Williams), plus Taito do Brasil `meteor-2`, Automáticos MonteCarlo `lortium-2`, American Home Entertainment `the-getaway-high-speed-ii-2`. Same-name builds merged under the original's title (0127), emptied titles retired (0128); applied and verified 27/27 against a fresh db.pre-0039 snapshot. Three rows **held back** — flagged as ⚠ callouts in [Worklist.md](Worklist.md). (The 13 VIFICO builds were briefly name-suffixed `(VIFICO)` / `(Gottlieb)` under the since-retired naming convention; those names are bare again and no suffixing is owed to the other 0127 makers — see [Names](#names-leave-them-alone).)
+- **[0127-licensed-builds.yaml](../../0127-licensed-builds.yaml) + [0128-licensed-build-title-removal.yaml](../../0128-licensed-build-title-removal.yaml) — done.** 27 licensed builds (IPDB note says "under license"): VIFICO ×13 (Gottlieb/Premier), LAI ×7 (Stern), Segasa ×4 (Williams), plus Taito do Brasil `meteor-2`, Automáticos MonteCarlo `lortium-2`, American Home Entertainment `the-getaway-high-speed-ii-2`. Same-name builds merged under the original's title (0127), emptied titles retired (0128); applied and verified 27/27 against a fresh db.pre-0039 snapshot. Three rows **held back** — now recorded in the plan and visible via `relationship_open_questions` (see [Recorded human judgement](#recorded-human-judgement)). (The 13 VIFICO builds were briefly name-suffixed `(VIFICO)` / `(Gottlieb)` under the since-retired naming convention; those names are bare again and no suffixing is owed to the other 0127 makers — see [Names](#names-leave-them-alone).)
 - **[0140-maresa-bootlegs.yaml](../../0140-maresa-bootlegs.yaml) + [0141-maresa-bootleg-title-removal.yaml](../../0141-maresa-bootleg-title-removal.yaml) — authored, snapshot apply-verify still to run.** Maresa's 20 unlicensed Gottlieb copies. The 12 same-name builds got the full treatment (slug → `-maresa`, title merge, orphaned title deleted in 0141); the 8 renamed copies kept their own slug/title. (These also carried `(Maresa)` / `(Gottlieb)` names under the since-retired naming convention; those are bare again — see [Names](#names-leave-them-alone).) Structural + editorial lint + `make verify-quotes` pass. Big Brave (ipdb:4634) is the one judgment call — IPDB says "whether licensed or not is unknown"; tagged `bootleg` with a note.
 
 - **[0159-fipermatic.yaml](../../0159-fipermatic.yaml) + [0160-europlay.yaml](../../0160-europlay.yaml) — authored, applied and verified against a fresh db.pre-0039 replay.** The first two makers driven through the post-redesign [corpus sweep](sweep/SESSION-BRIEF.md), one maker per run (6 rows each, sub-cent). Edges only — neither maker has a same-name build, so no slug/title/name work. Fipermatic ×6 copies of Gottlieb (and one of Bally's Xenon); Europlay ×4 copies + 2 conversions, one of them a **label**-target conversion (`jaws`, donor unnamed by the source). Three Europlay edge claims were rejected on review — see the run notes in [sweep/TOOL-NOTES.md](sweep/TOOL-NOTES.md), including DEFECT 7 (artwork reuse misjudged as a machine copy).
 
 ## The dev DB
 
-Verify every fact about the current catalog against the **Flipcommons localhost SQLite dev DB** (`../flipcommons/backend/db.sqlite3`) — a model's slug, its title, its Manufacturer, whether a maker's models are already tagged or duplicated. This doc and the Worklist go stale; the dev DB is ground truth.
+Verify every fact about the current catalog against the **Flipcommons localhost SQLite dev DB** (`../flipcommons/backend/db.sqlite3`) — a model's slug, its title, its Manufacturer, whether a maker's models are already tagged or duplicated. This doc goes stale; the dev DB is ground truth, and [relationships.sql](relationships.sql) reads it live.
 
 Prod has ingested patches only through **`0038-model-game-formats`**, so **any patch numbered 0039 or higher can be rewritten in place** — that is why the VIFICO rows in 0127 could be edited after the fact.
 
@@ -59,22 +110,31 @@ uv run python manage.py ingest_patches --patches-dir /Users/moses/dev/flippatch/
 
 Then `make validate` in flippatch — the structural + editorial lint and `make verify-quotes` run independently of ingest, so they pass even when the ingest loop can't. Committing and `make push` are the user's call, never automatic.
 
-## Status tooling — what's done vs remaining
+## Status — what's done vs remaining
 
-Two read-only scripts (in this dir) reconcile the Worklist against the freshly-rebuilt [dev DB](#the-dev-db), keyed on the stable `ipdb` number rather than the Worklist's frozen slugs. **Run both after every rebuild** (the dev DB is ground truth; both this file and the Worklist go stale):
+There is no status file to regenerate and nothing to reconcile: progress is a query. `relationships_summary` reports `edged` vs `not_edged` live, and `relationship_review` **is** the remaining work — a model drops out of it the moment its edge is applied.
 
 ```bash
-uv run python3 check_status.py --write        # (re)generate STATUS.md: per-bucket/per-maker done vs remaining, + target-guess discrepancies to vet
-uv run python3 reconcile_worklist.py          # stamp ✅ onto Worklist rows already applied in the DB, so nobody re-authors them (idempotent)
+make analyze PLAN=$P PREFIX=relationships      # edged / not_edged / coverage, gated on checks
 ```
 
-(Both resolve the dev DB via `scripts/common/related_projects.py` — no hard-coded path; override with `FLIPCOMMONS_DIR`. Run under `uv` so that resolver's deps are present.)
+(The plan resolves the dev DB through flipcommons' foundation — no hard-coded path; override with `FLIPCOMMONS_DIR`.)
 
-- **[STATUS.md](STATUS.md)** is the generated source of truth for progress — read it, don't hand-maintain it.
+The campaign is wired onto the **AI corpus sweep** (`make sweep` — see [docs/corpus_sweep/CorpusSweepOperating.md](../../../docs/corpus_sweep/CorpusSweepOperating.md)), which does the per-note **judgement** the SQL deliberately doesn't. `uv run python3 emit_candidates.py` regenerates [sweep/candidates.jsonl](sweep/candidates.jsonl) from the plan's `relationship_sweep_candidates` view (target guesses ride along as audited-not-inherited `hint`s), then:
 
-The campaign is also wired onto the **AI corpus sweep** (`make sweep` — see [docs/corpus_sweep/CorpusSweepOperating.md](../../../docs/corpus_sweep/CorpusSweepOperating.md)): `uv run python3 emit_candidates.py` regenerates [sweep/candidates.jsonl](sweep/candidates.jsonl) from the Worklist (the Worklist's target guesses ride along as audited-not-inherited `hint`s), then `make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --no-ai"` reconciles for free and the same command without `--no-ai` judges every note on the trusted tier, emitting `sweep/REVIEW.md` + `sweep/results.json`. Note the sweep's exact target compare flags re-slugging-era discrepancies `check_status.py`'s loose compare tolerates — adjudicate those from the note, not from either script. **A session picking up this campaign should start from [sweep/SESSION-BRIEF.md](sweep/SESSION-BRIEF.md)** — the orientation order, the run loop, and the tool-hardening duties live there.
-- A row in the discrepancy table means the DB's relationship target ≠ the Worklist's guess; open the IPDB note (pinexplore DuckDB `ipdb_machines.Notes`) and decide which is right before trusting either.
-- After stamping, re-align the Worklist tables with `npx prettier@3.8.1 --write Worklist.md` (this dir is excluded from the commit-time markdown hooks, so it won't auto-format).
+```bash
+uv run python3 emit_candidates.py                                                                   # refresh the feed
+make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --no-ai"               # free reconcile
+make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --resume"              # trusted-tier judging
+```
+
+emitting `sweep/REVIEW.md` + `sweep/results.json`. Regenerate the feed after every dev-DB rebuild; `results.json` is keyed on `ipdb`, so regenerating never invalidates already-judged models. **A session picking up this campaign should start from [sweep/SESSION-BRIEF.md](sweep/SESSION-BRIEF.md)** — the orientation order, the run loop, and the tool-hardening duties live there.
+
+The division of labour is the point: **the plan discovers reproducibly, the sweep judges each note, you author.** Where they disagree — a `hint-mismatch`, or a row in `relationship_edged_audit` — adjudicate from the verbatim quote and the full note, not from either tool.
+
+## Export-campaign overlap
+
+Export editions are a **separate** relationship — the `MachineModel.export_edition_of` FK and the `ModelExportMarket` join table, not a `ModelRelationship` type — and they get their own campaign and their own analysis in [0177-exports](../0177-exports/README.md). A model can carry both: an export edition of another maker's game is often also a `copy`. The two are independent edges, so author each from its own evidence, but check a model against `export_candidate_lineage` there before writing a lineage edge here — 18 of its 221 candidates already carry one.
 
 ## Italian-sweep overlap — check these makers before authoring
 
