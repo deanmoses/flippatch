@@ -249,6 +249,76 @@ def test_entry_relationships_and_remove() -> None:
     assert "retract: [year]" in e
 
 
+def test_entry_model_relationship_emits_block_list() -> None:
+    """A typed lineage edge is a list of MAPPINGS, not scalars — it needs a block
+    list, which neither `fields` (scalars) nor `relationships` (flow list of
+    strings) can express."""
+    e = entry(
+        "model.spin-out-maresa",
+        cite={
+            "ref": "ipdb:5801",
+            "quote": "This is a copy of Gottlieb's 1975 'Spin Out'.",
+        },
+        model_relationship=[
+            {
+                "target_machine": "spin-out-gottlieb",
+                "relationship_type": "copy",
+                "license_status": "unlicensed",
+            }
+        ],
+    )
+    parsed = yaml.safe_load("claims:\n" + e)
+    edges = parsed["claims"][0]["model.spin-out-maresa"]["model_relationship"]
+    assert edges == [
+        {
+            "target_machine": "spin-out-gottlieb",
+            "relationship_type": "copy",
+            "license_status": "unlicensed",
+        }
+    ]
+
+
+def test_entry_model_relationship_supports_label_target_and_multiple_edges() -> None:
+    """A conversion kit's donor may be plural/unnamed — a `target_label` free-text
+    target instead of a slug — and a model may carry several edges."""
+    e = entry(
+        "model.sky-warrior",
+        model_relationship=[
+            {
+                "target_machine": "fast-draw",
+                "relationship_type": "copy",
+                "license_status": "unknown",
+            },
+            {
+                "target_label": "many late 1970s solid state Gottliebs",
+                "relationship_type": "conversion_kit",
+                "license_status": "unknown",
+            },
+        ],
+    )
+    edges = yaml.safe_load("claims:\n" + e)["claims"][0]["model.sky-warrior"][
+        "model_relationship"
+    ]
+    assert len(edges) == 2
+    assert edges[1]["target_label"] == "many late 1970s solid state Gottliebs"
+
+
+def test_entry_model_relationship_escapes_apostrophes_in_label() -> None:
+    e = entry(
+        "model.x",
+        model_relationship=[
+            {
+                "target_label": "an unidentified O'Brien game",
+                "relationship_type": "conversion",
+            }
+        ],
+    )
+    edges = yaml.safe_load("claims:\n" + e)["claims"][0]["model.x"][
+        "model_relationship"
+    ]
+    assert edges[0]["target_label"] == "an unidentified O'Brien game"
+
+
 def test_entry_commented_prefixes_every_line() -> None:
     e = entry("model.x", fields={"year": 1990}, commented=True)
     assert all(line.startswith("  #") for line in e.splitlines())

@@ -339,6 +339,7 @@ def entry(
     tags: Sequence[str] | None = None,
     credits: Sequence[tuple[str, str]] | None = None,
     relationships: Mapping[str, Sequence[str]] | None = None,
+    model_relationship: Sequence[Mapping[str, str]] | None = None,
     remove: Mapping[str, Sequence[str]] | None = None,
     retract: Sequence[str] | None = None,
     comment: str | None = None,
@@ -416,6 +417,21 @@ def entry(
     for namespace, members in (relationships or {}).items():
         inner = ", ".join(_scalar(m) for m in members)
         lines.append(f"{sub}{namespace}: [{inner}]")
+    if model_relationship:
+        # A typed lineage edge (DataPatches.md -> Model relationships) is a list of
+        # MAPPINGS -- relationship_type, license_status, and a target_machine slug
+        # XOR a free-text target_label -- so it needs a BLOCK list. `fields` emits
+        # scalars and `relationships` a flow list of strings; neither can carry a
+        # per-edge payload. Values go through _scalar, so an apostrophe in a
+        # target_label ("an unidentified O'Brien game") can't break the YAML.
+        lines.append(f"{sub}model_relationship:")
+        for edge in model_relationship:
+            items = list(edge.items())
+            if not items:
+                raise ValueError(f"{ref}: empty model_relationship edge")
+            k, v = items[0]
+            lines.append(f"{sub}  - {k}: {_scalar(v)}")
+            lines.extend(f"{sub}    {k}: {_scalar(v)}" for k, v in items[1:])
     if changesets:
         lines.append(f"{sub}changesets:")
         for cs in changesets:
