@@ -89,7 +89,9 @@ repos:
 
       # Patch YAML — normalise formatting with Prettier so hand/AI/generator
       # authoring and the IDE's format-on-save all converge on one style (the
-      # .vscode [yaml] formatter is pinned to Prettier to match). Auto-fixes and
+      # .vscode [yaml] formatter is pinned to Prettier to match; patchkit emits
+      # this style directly, so on a generated patch this hook is a no-op —
+      # see its "Prettier-compatible flow emission" section). Auto-fixes and
       # re-stages, like the agent-docs hook below. Scoped to the transported
       # top-level patches only (authoring/ is a frozen audit trail). This is a
       # cosmetic reformat: it never alters parsed values, so it can't change

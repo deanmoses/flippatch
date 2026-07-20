@@ -15,9 +15,9 @@ From the live 0173 analysis: the 30 `format_review` keyword candidates for `prop
 Reproduce the raw queues:
 
 ```bash
-P=patches/authoring/0173-nonpinball-formats/formats.sql
-make analyze PLAN=$P Q="SELECT id,label,maker,year,reward_types FROM format_review WHERE proposed_format='one-ball';"
-make analyze PLAN=$P Q="SELECT id,label,maker,year,reward_types FROM format_review_payout;"
+F=patches/authoring/0173-nonpinball-formats/formats.sql
+make analyze FILE=$F Q="SELECT id,label,maker,year,reward_types FROM format_review WHERE proposed_format='one-ball';"
+make analyze FILE=$F Q="SELECT id,label,maker,year,reward_types FROM format_review_payout;"
 ```
 
 ## Vetting outcome — 26 assigned, 11 held/excluded

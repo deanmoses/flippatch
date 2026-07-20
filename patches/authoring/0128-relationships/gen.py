@@ -39,9 +39,6 @@ Run from the flippatch repo root::
 
 from __future__ import annotations
 
-import json
-import os
-import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -51,10 +48,8 @@ HERE = Path(__file__).resolve().parent
 AUTHORING = HERE.parent  # patches/authoring/
 REPO_ROOT = AUTHORING.parent.parent  # -> repo root
 sys.path.insert(0, str(AUTHORING))  # patchkit
-sys.path.insert(0, str(REPO_ROOT / "scripts"))  # common.related_projects
 
 import patchkit as pk  # noqa: E402
-from common.related_projects import FLIPCOMMONS_DIR, load_env  # noqa: E402
 
 PATCH_PATH = REPO_ROOT / "patches" / "0176-model-lineage.yaml"
 RELATIONSHIPS_SQL = HERE / "relationships.sql"
@@ -66,23 +61,9 @@ RELATIONSHIPS_SQL = HERE / "relationships.sql"
 DESCRIPTION = "Model lineage edges for models whose IPDB note states the relationship."
 
 
-def load_rows() -> list[dict[str, Any]]:
-    """Read relationships.sql's ``relationship_green`` view as JSON."""
-    load_env()
-    fc = os.environ.get("FLIPCOMMONS_DIR") or str(FLIPCOMMONS_DIR)
-    proc = subprocess.run(
-        [
-            "duckdb", "-init", str(RELATIONSHIPS_SQL), ":memory:",
-            "COPY (FROM relationship_green) TO '/dev/stdout' (FORMAT json, ARRAY true);",
-        ],
-        cwd=fc, capture_output=True, text=True, check=True,
-    )
-    rows: list[dict[str, Any]] = json.loads(proc.stdout)
-    return rows
-
 
 def main() -> int:
-    rows = load_rows()
+    rows = pk.read_view(RELATIONSHIPS_SQL, "relationship_green", prefix="relationships")
     if not rows:
         raise SystemExit("relationship_green returned no rows — nothing to emit")
     entries: list[str] = []

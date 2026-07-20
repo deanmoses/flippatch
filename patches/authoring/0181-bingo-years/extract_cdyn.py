@@ -8,7 +8,11 @@ with no year at all.
 
 This reads the page from **pinexplore's web scrape cache**, never from the network,
 so the extracted rows and the quotes the patch cites come from the same durable blob
-``make verify-quotes`` checks against. Fetch it there first if it is missing::
+``make verify-quotes`` checks against. The cache is located through this repo's own
+``common.related_projects.WEB_CACHE_DB`` and read as plain SQLite — the same store
+``scripts/analysis/evidence.sql`` attaches as ``ev``, which is what lets ``years.sql``
+check this file back against the live page (see its drift and quote checks). Fetch the
+page there first if it is missing::
 
     cd ../pinexplore
     uv run python3 scripts/web_scrape/web_fetch.py \\
@@ -27,6 +31,7 @@ catalog already has for Bally come from IPDB, and no source numbers the European
 
 from __future__ import annotations
 
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -34,7 +39,7 @@ HERE = Path(__file__).resolve().parent
 REPO_ROOT = HERE.parents[2]
 sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
-from common.related_projects import PINEXPLORE_DIR, load_env  # noqa: E402
+from common.related_projects import WEB_CACHE_DB, load_env  # noqa: E402
 
 URL = "https://bingo.cdyn.com/machines/index.html"
 OUT = HERE / "cdyn_machines.tsv"
@@ -63,18 +68,35 @@ def rows_from_page(text: str) -> list[tuple[str, str, str, str, str]]:
     return out
 
 
+def cached_text(url: str) -> str | None:
+    """The cached extracted text for ``url``, or ``None`` if it isn't cached.
+
+    Reads ``pages`` straight out of the cache SQLite rather than importing
+    pinexplore's ``web_cache`` module, so this campaign depends on the store's shape —
+    which ``evidence.sql`` already attaches — and not on a sibling repo's internal
+    Python layout. ``pages.url`` holds the NORMALIZED url, so the constant above must
+    be written in normalized form; a mismatch surfaces as "not in the cache" rather
+    than as wrong rows.
+    """
+    if not WEB_CACHE_DB.is_file():
+        raise SystemExit(f"pinexplore's web cache is missing at {WEB_CACHE_DB}")
+    con = sqlite3.connect(f"file:{WEB_CACHE_DB}?mode=ro", uri=True)
+    try:
+        row = con.execute("SELECT text FROM pages WHERE url = ?", (url,)).fetchone()
+    finally:
+        con.close()
+    return row[0] if row and row[0] else None
+
+
 def main() -> int:
     load_env()
-    sys.path.insert(0, str(PINEXPLORE_DIR / "scripts" / "web_scrape"))
-    import web_cache  # type: ignore[import-not-found]
-
-    page = web_cache.get(URL)
-    if not page or not page.get("text"):
+    text = cached_text(URL)
+    if not text:
         raise SystemExit(
             f"{URL} is not in pinexplore's web cache — fetch it first (see this module's docstring)"
         )
 
-    rows = rows_from_page(str(page["text"]))
+    rows = rows_from_page(text)
     if not rows:
         raise SystemExit("parsed zero rows — the page layout changed; fix the parser")
 

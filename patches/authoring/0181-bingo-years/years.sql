@@ -20,22 +20,28 @@
 -- Number column, by contrast, is the literal string "unknown" for every maker except
 -- Bally, so this campaign takes YEARS from it and nothing else.
 --
--- PLAN-LOCAL LAYER. The generic catalog decode is FLIPCOMMONS' shared foundation,
+-- ANALYSIS-LOCAL LAYER. The generic catalog decode is FLIPCOMMONS' shared foundation,
 -- reused VERBATIM via the `.read` below. Same pattern as ../0177-exports/exports.sql.
 --
 -- HOW TO RUN. cwd must be the flipcommons checkout; `make analyze` handles that:
 --
 --     P=patches/authoring/0181-bingo-years/years.sql
---     make analyze PLAN=$P PREFIX=year                        # summary, gated on checks
---     make analyze PLAN=$P Q="FROM year_patch_rows;"          # what gen.py emits
---     make analyze PLAN=$P Q="FROM year_rejected;"            # what the gate held back
---     make analyze PLAN=$P Q="FROM model_number_collisions;"  # foundation: maker+number clashes
+--     make analyze FILE=$F PREFIX=year                        # summary, gated on checks
+--     make analyze FILE=$F Q="FROM year_patch_rows;"          # what gen.py emits
+--     make analyze FILE=$F Q="FROM year_rejected;"            # what the gate held back
+--     make analyze FILE=$F Q="FROM model_number_collisions;"  # foundation: maker+number clashes
 --
--- STRUCTURE — the four sections every plan file has (flipcommons'
+-- STRUCTURE — the four sections every analysis file has (flipcommons'
 -- scripts/analysis/README.md): 1 FOUNDATION, 2 REFERENCE, 3 ANALYSIS, 4 SUMMARY & CHECKS.
 
 -- ── 1 · FOUNDATION ─────────────────────────────────────────────────────────
 .read scripts/analysis/catalog.sql
+-- flippatch's evidence bridge — pinexplore's web scrape cache as `ev`, so the source
+-- text this campaign rests on is queryable next to the catalog rows it emits. That is
+-- what lets the checks below verify each cite quote against the live cached page, and
+-- notice when cdyn_machines.tsv has drifted from it. Both paths resolve from the
+-- flipcommons root; see the header of evidence.sql.
+.read ../flippatch/scripts/analysis/evidence.sql
 
 -- ── 2 · REFERENCE ──────────────────────────────────────────────────────────
 
@@ -75,7 +81,7 @@ CREATE OR REPLACE VIEW _maker_map AS
 
 -- Number keys, EXACT and LOOSE — and the distinction is load-bearing.
 --
--- This stays PLAN-LOCAL by design. The foundation's `model_number_collisions` makes
+-- This stays ANALYSIS-LOCAL by design. The foundation's `model_number_collisions` makes
 -- the point: a maker's suffix convention is a fact about THAT MAKER, not about the
 -- column, so a shared stem macro would answer confidently for makers it was never
 -- calibrated on. The rule below is calibrated on Bally and holds for Bally.
@@ -249,6 +255,27 @@ CREATE OR REPLACE VIEW year_rejected AS
 -- match) and carries `n_titles`, which is the discriminator between a legitimate
 -- within-Title split and a duplicate worth a look.
 
+-- THE LIVE SOURCE PAGE, from the evidence bridge. `cdyn` above is the checked-in TSV
+-- — an audit artifact frozen at extraction time; this is the page as currently cached.
+-- Holding both lets the checks below answer the question a frozen artifact cannot:
+-- does the evidence still say what the TSV says it said?
+CREATE OR REPLACE VIEW _cdyn_page AS
+  SELECT * FROM evidence_pages
+  WHERE url = 'https://bingo.cdyn.com/machines/index.html';
+
+-- The page's machine rows, parsed in SQL — the same shape extract_cdyn.py's parser
+-- takes (a four-cell pipe row that is not the repeated header). Deliberately a COUNT
+-- probe rather than a second extractor: parsing stays in extract_cdyn.py, and this
+-- only needs enough structure to notice the page changed underneath the TSV.
+CREATE OR REPLACE VIEW _cdyn_page_rows AS
+  SELECT trim(line) AS line
+  FROM (SELECT unnest(string_split(text, chr(10))) AS line FROM _cdyn_page)
+  WHERE starts_with(trim(line), '|')
+    -- New-style lambda deliberately: the deprecated `->` spelling emits a DuckDB
+    -- warning on stderr, which the analysis runner's view discovery parses as output.
+    AND len(list_filter(string_split(trim(trim(line), '|'), '|'), lambda x: trim(x) <> '')) = 4
+    AND NOT starts_with(trim(line), '| Game Name');
+
 -- ── 4 · SUMMARY & CHECKS ───────────────────────────────────────────────────
 
 CREATE OR REPLACE VIEW year_summary AS
@@ -266,6 +293,7 @@ CREATE OR REPLACE VIEW year_summary AS
   UNION ALL SELECT 'source_makers_unmapped',
     (SELECT count(DISTINCT maker) FROM cdyn WHERE maker NOT IN (SELECT cdyn_maker FROM _maker_map))
   UNION ALL SELECT 'number_collisions', (SELECT count(*) FROM model_number_collisions)
+  UNION ALL SELECT 'source_page_rows_live', (SELECT count(*) FROM _cdyn_page_rows)
   ORDER BY metric;
 
 -- Empty when healthy.
@@ -334,4 +362,33 @@ CREATE OR REPLACE VIEW year_checks AS
   UNION ALL
   SELECT 'anchor_guard_slug_stale', NULL::BIGINT, g.slug || ' is no longer a model slug'
   FROM (VALUES ('broadway-2'), ('tahiti-4'), ('tahiti-7'), ('acapulco-2')) AS g(slug)
-  WHERE NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = g.slug);
+  WHERE NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = g.slug)
+  UNION ALL
+  -- Evidence: the cited page must actually be in the cache. Every quote this campaign
+  -- emits cites this one URL, so if it is absent `make verify-quotes` fails on all of
+  -- them — better to learn that here, before generating a patch, than after.
+  SELECT 'source_page_not_cached', NULL::BIGINT,
+         'https://bingo.cdyn.com/machines/index.html is not in pinexplore''s web cache'
+  WHERE NOT EXISTS (SELECT 1 FROM _cdyn_page)
+  UNION ALL
+  -- Evidence: every emitted quote must be verbatim in the cached page. This is the
+  -- gate `make verify-quotes` applies, pulled forward to the point where the rows are
+  -- built — the normalization is `evidence_norm`, the SQL twin of that tool's own. A
+  -- row failing here would ship a quote a reviewer could not ctrl-F.
+  SELECT 'quote_not_verbatim_in_source', r.id, r.quote
+  FROM year_patch_rows r
+  WHERE EXISTS (SELECT 1 FROM _cdyn_page)
+    AND NOT EXISTS (
+      SELECT 1 FROM _cdyn_page p
+      WHERE contains(p.text_norm, evidence_norm(r.quote)))
+  UNION ALL
+  -- Drift: cdyn_machines.tsv is frozen at extraction time, and nothing else notices
+  -- when the page moves underneath it. A count mismatch means the page changed and the
+  -- TSV is stale — rerun extract_cdyn.py and diff it, which is what the artifact is
+  -- for. A count is a weak equality test on purpose: it catches added/removed machines
+  -- without re-implementing the parser here.
+  SELECT 'tsv_stale_vs_cached_page', NULL::BIGINT,
+         'TSV has ' || (SELECT count(*) FROM cdyn) || ' rows, cached page now parses '
+           || (SELECT count(*) FROM _cdyn_page_rows) || ' — rerun extract_cdyn.py'
+  WHERE EXISTS (SELECT 1 FROM _cdyn_page)
+    AND (SELECT count(*) FROM cdyn) IS DISTINCT FROM (SELECT count(*) FROM _cdyn_page_rows);

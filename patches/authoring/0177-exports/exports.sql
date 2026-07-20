@@ -7,7 +7,7 @@
 -- Flippatch owns this analysis — flipcommons' Exports.md, which specifies the two
 -- catalog structures, links here rather than carrying a copy.
 --
--- PLAN-LOCAL LAYER. The generic catalog decode (models/countries/rewards/title_size
+-- ANALYSIS-LOCAL LAYER. The generic catalog decode (models/countries/rewards/title_size
 -- and the read-only connection) is FLIPCOMMONS' shared foundation, reused VERBATIM
 -- via the `.read` below — flippatch keeps no copy. Same pattern as
 -- ../0128-relationships/relationships.sql and ../0172-bingo-game-format/bingo.sql.
@@ -19,13 +19,13 @@
 -- run this file directly:
 --
 --     P=patches/authoring/0177-exports/exports.sql
---     make analyze PLAN=$P PREFIX=export                              # summary, gated on checks
---     make analyze PLAN=$P Q="FROM export_twin_pairs;"                # deterministic export_edition_of
---     make analyze PLAN=$P Q="FROM export_titlemate_review;"          # likely target sits in the same Title
---     make analyze PLAN=$P Q="FROM export_orphan_review;"             # candidates still needing a target
---     make analyze PLAN=$P Q="FROM export_namesake_review;"           # same name, separate Title
---     make analyze PLAN=$P Q="FROM export_market_review;"             # the ModelExportMarket shape per candidate
---     make analyze PLAN=$P CMD=ui                                     # live GUI at localhost:4213
+--     make analyze FILE=$F PREFIX=export                              # summary, gated on checks
+--     make analyze FILE=$F Q="FROM export_twin_pairs;"                # deterministic export_edition_of
+--     make analyze FILE=$F Q="FROM export_titlemate_review;"          # likely target sits in the same Title
+--     make analyze FILE=$F Q="FROM export_orphan_review;"             # candidates still needing a target
+--     make analyze FILE=$F Q="FROM export_namesake_review;"           # same name, separate Title
+--     make analyze FILE=$F Q="FROM export_market_review;"             # the ModelExportMarket shape per candidate
+--     make analyze FILE=$F CMD=ui                                     # live GUI at localhost:4213
 --
 -- Nothing is persisted; there is no build artifact. Counts are a snapshot of
 -- current DB state — re-run as candidates get reviewed. `export_summary` emits
@@ -34,10 +34,10 @@
 -- The notes detectors are freetext heuristics: they over- and under-count and
 -- every row needs source review before it becomes a claim (see README.md).
 --
--- STRUCTURE — a plan file has four sections (see flipcommons' scripts/analysis/README.md).
+-- STRUCTURE — a analysis file has four sections (see flipcommons' scripts/analysis/README.md).
 -- Three are the same in every analysis; only section 3 is shaped by the question:
 --   1 · FOUNDATION       .read the shared decode layer
---   2 · REFERENCE        plan-local hand-maintained lookups (often empty)
+--   2 · REFERENCE        analysis-local hand-maintained lookups (often empty)
 --   3 · ANALYSIS         the actual work — this file's shape is detect ->
 --                        assemble -> enrich -> review; yours may differ
 --   4 · SUMMARY & CHECKS the tail that keeps the prose honest — always keep it
@@ -1524,7 +1524,7 @@ CREATE OR REPLACE VIEW export_opdb_review AS
   ORDER BY c.manufacturer_name, c.label;
 
 -- ── 4 · SUMMARY & CHECKS ───────────────────────────────────────────────────
--- The honest-prose tail. Every plan file keeps these two views.
+-- The honest-prose tail. Every analysis file keeps these two views.
 
 -- export_summary — the headline numbers README.md quotes, sourced from the views
 -- rather than hand-counted. Regenerate the Summary section from this; if a number
@@ -1742,7 +1742,7 @@ CREATE OR REPLACE VIEW export_checks AS
   FROM export_market_phrase_review p
   WHERE EXISTS (SELECT 1 FROM export_candidates c WHERE c.id = p.id)
   UNION ALL
-  -- Anchor: the (Country) suffix detector still catches the plan's own example.
+  -- Anchor: the (Country) suffix detector still catches the analysis's own example.
   SELECT 'anchor_suffix_dark', NULL::BIGINT, 'Big Ben (Italy) no longer hits by_suffix'
   WHERE NOT EXISTS (SELECT 1 FROM export_candidates WHERE by_suffix AND name = 'Big Ben (Italy)')
   UNION ALL

@@ -26,9 +26,6 @@ Run from the flippatch repo root::
 
 from __future__ import annotations
 
-import json
-import os
-import subprocess
 import sys
 from pathlib import Path
 
@@ -36,10 +33,8 @@ HERE = Path(__file__).resolve().parent
 AUTHORING = HERE.parent  # patches/authoring/
 REPO_ROOT = AUTHORING.parent.parent  # -> repo root
 sys.path.insert(0, str(AUTHORING))  # patchkit
-sys.path.insert(0, str(REPO_ROOT / "scripts"))  # common.related_projects
 
 import patchkit as pk  # noqa: E402
-from common.related_projects import FLIPCOMMONS_DIR, load_env  # noqa: E402
 
 PATCH_PATH = REPO_ROOT / "patches" / "0172-bingo-game-format.yaml"
 BINGO_SQL = HERE / "bingo.sql"
@@ -167,22 +162,9 @@ def maker_note(maker: str) -> str:
     )
 
 
-def load_rows() -> list[dict]:
-    """Read bingo.sql's ``bingo_patch_rows`` view as JSON, from the flipcommons checkout."""
-    load_env()
-    fc = os.environ.get("FLIPCOMMONS_DIR") or str(FLIPCOMMONS_DIR)
-    proc = subprocess.run(
-        [
-            "duckdb", "-init", str(BINGO_SQL), ":memory:",
-            "COPY (FROM bingo_patch_rows) TO '/dev/stdout' (FORMAT json, ARRAY true);",
-        ],
-        cwd=fc, capture_output=True, text=True, check=True,
-    )
-    return json.loads(proc.stdout)
-
 
 def main() -> None:
-    rows = load_rows()
+    rows = pk.read_view(BINGO_SQL, "bingo_patch_rows", prefix="bingo")
     entries: list[str] = []
     missing: list[str] = []
     for r in sorted(rows, key=lambda r: r["slug"]):

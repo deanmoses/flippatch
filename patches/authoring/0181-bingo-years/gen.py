@@ -33,9 +33,6 @@ Run from the flippatch repo root::
 
 from __future__ import annotations
 
-import json
-import os
-import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -45,10 +42,8 @@ HERE = Path(__file__).resolve().parent
 AUTHORING = HERE.parent
 REPO_ROOT = AUTHORING.parent.parent
 sys.path.insert(0, str(AUTHORING))
-sys.path.insert(0, str(REPO_ROOT / "scripts"))
 
 import patchkit as pk  # noqa: E402
-from common.related_projects import FLIPCOMMONS_DIR, load_env  # noqa: E402
 
 PATCH_PATH = REPO_ROOT / "patches" / "0181-bingo-years.yaml"
 YEARS_SQL = HERE / "years.sql"
@@ -59,27 +54,9 @@ CDYN_URL = "https://bingo.cdyn.com/machines/index.html"
 DESCRIPTION = "Production years for year-less bingo machines, from bingo.cdyn.com."
 
 
-def load_rows() -> list[dict[str, Any]]:
-    """Read years.sql's ``year_patch_rows`` view as JSON."""
-    load_env()
-    fc = os.environ.get("FLIPCOMMONS_DIR") or str(FLIPCOMMONS_DIR)
-    env = dict(os.environ)
-    # years.sql locates its TSV artifact through this; set it so the generator does
-    # not depend on the caller's shell having exported it.
-    env["FLIPPATCH_DIR"] = str(REPO_ROOT)
-    proc = subprocess.run(
-        [
-            "duckdb", "-init", str(YEARS_SQL), ":memory:",
-            "COPY (FROM year_patch_rows) TO '/dev/stdout' (FORMAT json, ARRAY true);",
-        ],
-        cwd=fc, env=env, capture_output=True, text=True, check=True,
-    )
-    rows: list[dict[str, Any]] = json.loads(proc.stdout)
-    return rows
-
 
 def main() -> int:
-    rows = load_rows()
+    rows = pk.read_view(YEARS_SQL, "year_patch_rows", prefix="year")
     if not rows:
         raise SystemExit("year_patch_rows returned no rows — nothing to emit")
 

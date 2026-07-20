@@ -52,6 +52,7 @@ uv run pre-commit install   # enable the commit-time quality gates
 ## Development Commands
 
 ```bash
+make analyze      # Query the live catalog through flipcommons' DuckDB foundation
 make validate     # Validate data patches: structural gate + editorial lint
 make lint         # ruff check + format-check the Python tooling
 make typecheck    # strict mypy over the Python tooling
@@ -70,8 +71,44 @@ patches/          Data patches — NNNN-slug.yaml claim corrections for downstre
   authoring/      patchkit generator + one dir per generated patch set (audit trail)
 schema/           patch.schema.json — structural validation
 scripts/          Python tooling (validate, lint, R2 push, agent-docs build)
+  analysis/       evidence.sql — the web-scrape cache as a queryable layer
 docs/             Documentation source files
 ```
+
+## Querying the catalog
+
+Every question about catalog data — what the catalog holds, what is missing, what looks wrong — goes through the **DuckDB analytics foundation** that lives in flipcommons, via `make analyze`. It reads the live localhost dev catalog read-only, writes nothing, and leaves no artifact.
+
+```bash
+make analyze Q="SELECT count(*) AS yearless FROM models WHERE year IS NULL;"  # ad-hoc question
+make analyze CMD=describe                                                     # every view, described
+make analyze CMD=describe ARGS=models                                         # one view + its columns
+```
+
+**Query the foundation, not `../flipcommons/backend/db.sqlite3`.** The foundation is not a convenience wrapper over that file — it is what makes the obvious query the correct one:
+
+- Catalog records are **soft-deleted**, and `models` excludes them. Raw SQL counts deleted rows as live.
+- A model's maker sits three joins away in the physical schema (model → corporate entity → manufacturer). The foundation puts `manufacturer_name` / `manufacturer_slug` on the row.
+- Source free text — `ipdb_notes`, `ipdb_notable_features`, `opdb_features` — arrives as **plain columns**, so mining it needs no `json_extract` over `extra_data`. A raw field you want that isn't a column yet is a foundation change, not a hand-rolled extract in your query.
+
+`describe` is the view reference: every public view carries its own one-line description, and the reasoning a one-liner can't hold sits in comments beside the SELECT in `catalog.sql`. Read those before guessing at a column name. The authority on **using** the layer is [`../flipcommons/scripts/analysis/README.md`](../../flipcommons/scripts/analysis/README.md); on **changing** it, `EDITING.md` beside it.
+
+Where flipcommons sits on disk is resolved by `scripts/common/related_projects.py` — a sibling checkout by convention, overridable with `FLIPCOMMONS_DIR` in `.env`.
+
+### Joining catalog rows to the evidence behind them
+
+`scripts/analysis/evidence.sql` (this repo) attaches pinexplore's web-scrape cache as `ev` and exposes `evidence_pages`, so an analysis can test the rows it is about to emit against the cached source text they rest on — under the same normalization `make verify-quotes` applies. An analysis file reads it after the foundation:
+
+```sql
+.read scripts/analysis/catalog.sql
+.read ../flippatch/scripts/analysis/evidence.sql
+```
+
+Both paths resolve from the flipcommons checkout, which is where the runner works; the file's own header explains why. It serves campaigns citing `https:` URLs — an `ipdb:` cite resolves its evidence through `scripts/quote_verify` instead.
+
+### pinexplore's DuckDB
+
+pinexplore's `explore.duckdb` is a **fallback, not a peer**. It holds IPDB/OPDB/Fandom source dumps and does not contain the flipcommons catalog, so a catalog question answered there is answered from something that cannot see the source of truth — and the result looks perfectly reasonable. Source questions mostly belong to the foundation too, since the un-integrated source data and its original verbatim free text ride along in `extra_data` on entities like `MachineModel` and surface as foundation columns. Reach for pinexplore only when the foundation genuinely cannot answer.
 
 ## Data Patches
 
@@ -86,8 +123,8 @@ The thin local reference is [docs/Patches.md](Patches.md); the authoritative for
 Real patch authoring spans four repos, checked out as siblings (`../pindata`, `../flipcommons`, `../pinexplore`):
 
 - **flippatch** (here) — where patches and their `patches/authoring/` generators live, and where you run `make validate` and `make push`.
-- **flipcommons** (`../flipcommons`) — the live catalog (Django + the SQLite dev DB at `backend/db.sqlite3`), the `ingest_patches` apply engine, and the **canonical patch documentation**.
-- **pinexplore** (`../pinexplore`) — where you research the verbatim source text behind a `note:`/`cite:`. Two evidence stores: the **web scrape cache** (a searchable, durable cache of fetched web pages — now the primary evidence source, since most new catalog data comes from the web rather than IPDB/OPDB) and the **DuckDB analysis DB** (IPDB/OPDB/Fandom dumps, cross-source checks). See `../pinexplore/docs/WebCache.md` for the cache and `../pinexplore/CLAUDE.md` for the rest.
+- **flipcommons** (`../flipcommons`) — the source of truth. The live catalog, the **DuckDB analytics foundation** you query it through ([Querying the catalog](#querying-the-catalog)), the `ingest_patches` apply engine, and the **canonical patch documentation**.
+- **pinexplore** (`../pinexplore`) — where you research the verbatim source text behind a `cite:`. The **web scrape cache** is the primary evidence store, since most new catalog data comes from the web; see `../pinexplore/docs/WebCache.md`. Its `explore.duckdb` holds source dumps and is a fallback for questions the foundation can't answer — see `../pinexplore/CLAUDE.md`.
 - **pindata** (`../pindata`) — the immutable baseline seed catalog (markdown entity files) the patch claims target. This is basically retired, we're switching to database dumps to bootstrap new databases.
 
 ### Read the linked docs before authoring a patch
@@ -109,10 +146,27 @@ For the concepts a patch rests on, read these two when a claim or citation quest
 ### The authoring loop
 
 1. **Read** the canonical docs above for the operation you need.
-2. **Research the evidence** in pinexplore — the source text for the `note:` quote and the `cite:`. Usually the web scrape cache (per `WebCache.md`): `web_fetch.py <url> --query "..."` fetches a page once into the cache, then `web_cache.search()` / `web_cache.quote()` find pages and pull the verbatim quote; the `cite:` is the page URL (its website root must be seeded in an earlier patch). For IPDB/OPDB-keyed claims, the DuckDB analysis DB instead, citing `scheme:identifier`.
-3. **Author** the patch: hand-write native YAML for a handful of targeted corrections, or generate with `patchkit` for a classified population (`patches/authoring/<patch>/gen.py`) — copy the shape of an existing `patches/authoring/` dir. Generators read the live flipcommons DB to resolve refs (e.g. slug from `ipdb_id`) in `gen.py`.
+2. **Scope the population and research the evidence.** Ask the catalog what is actually there with `make analyze` ([Querying the catalog](#querying-the-catalog)). For a claim resting on a web page, the source text comes from pinexplore's web scrape cache (per `WebCache.md`): `web_fetch.py <url> --query "..."` fetches a page once into the cache, then `web_cache.search()` / `web_cache.quote()` find pages and pull the verbatim quote; the `cite:` is the page URL, whose website root must be seeded in the same or an earlier patch. An IPDB/OPDB-keyed claim cites `scheme:identifier` and quotes the source text the foundation carries as a column.
+3. **Author** the patch: hand-write native YAML for a handful of targeted corrections, or generate for a classified population — see [Generating a patch](#generating-a-patch).
 4. **Validate against flipcommons** behind a SQLite snapshot — **ask the user which snapshot to reset from; never pick one yourself and never make your own** — then restore it, `migrate`, apply the patches, and inspect the result. Leave them applied. An applied patch is immutable (the ledger fingerprints its content and keys on the patch id, so re-ingesting an edited one fails no matter what directory you ingest from); to revise, restore the snapshot and replay. The loop is in DataPatchAuthoring.md → Validate via snapshot.
 5. **`make validate`** here (the [structural gate](#validation)) — where the authoring loop ends, on localhost. Hand off: **committing and `make push` are both the user's call — never automatic, never something you do yourself.** `make push` publishes the patches to R2 (whence other environments pull them via `make pull-patches && make ingest-patches`); it is a deliberate command the user issues, on the same footing as `git commit`/`git push`, never a step the loop takes on its own. Tell the user the patch is validated and ready, and let them decide when to commit and when to publish.
+
+### Generating a patch
+
+A generated patch set is **two files** in `patches/authoring/<patch>/`, and the split is the whole design:
+
+- **`<name>.sql`** — the campaign's analysis file. Detection, classification, the false-positive gate and quote extraction all live here, layered on the foundation (and on `evidence.sql` when the claims cite web pages). It ends in the `<prefix>_summary` / `<prefix>_checks` pair the runner gates on. Iterate on it with `make analyze FILE=<...> PREFIX=<...>`.
+- **`gen.py`** — a pure emitter. It reads one view through `patchkit.read_view` and turns each row into a `patchkit.entry`. It holds no detection logic and no catalog queries of its own.
+
+```python
+rows = pk.read_view(YEARS_SQL, "year_patch_rows", prefix="year")
+```
+
+`read_view` runs the analysis's checks before it yields a row, so a generator cannot emit a patch from an analysis whose detectors have gone dark — a patch built on a broken detector is still perfectly well-formed YAML, and nothing downstream can tell. `prefix` names the checks pair explicitly because it often differs from the filename (`exports.sql` gates on `export_checks`).
+
+Everything else `patchkit` offers is emission: `entry` for one correctly-escaped claims block, `write_patch` for the file, `source_note` / `clean_quote` for typography. **Escaping is solved — never `yaml.dump`, never hand-roll it.** The authoritative guidance is [DataPatchKit.md](../../flipcommons/docs/DataPatchKit.md); the worked examples to copy are `0177-exports`, `0178-gameplay-features` and `0181-bingo-years`, each with a `README.md` narrating its signal, its gate and its dead ends.
+
+**Treat every patch already in `patches/` as immutable.** Localhost may be far ahead of production, and holding a series locally to tune it is deliberate practice — but nothing in this repo or the dev DB records what production has ingested, and only the user knows. If an existing patch looks worth altering, say so and let them decide; never regenerate one on your own initiative.
 
 ### Extracting a model's data from an unstructured web page
 

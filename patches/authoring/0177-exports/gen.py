@@ -5,9 +5,8 @@ markets, for the models whose source states the fact outright.
 Candidate detection, the false-positive gate and the first-cut quote all live in
 ``exports.sql`` (this dir); this script is just the emitter. It reads that file's
 ``export_patch_rows`` view — the tiers safe to author without a per-row source read —
-from the live flipcommons catalog via the duckdb CLI (run with cwd = the flipcommons
-checkout, so the view's ``.read scripts/analysis/catalog.sql`` and its ``ATTACH``
-resolve).
+through ``patchkit.read_view``, which gates on ``export_checks`` (and every other
+public ``*_checks`` view the analysis pulls in) before a single row is emitted.
 
 Two INDEPENDENT facts ride each entry (flipcommons' DataPatchAuthoring.md → Export
 editions and markets), and most rows carry only the second:
@@ -59,9 +58,6 @@ Run from the flippatch repo root::
 
 from __future__ import annotations
 
-import json
-import os
-import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -71,10 +67,8 @@ HERE = Path(__file__).resolve().parent
 AUTHORING = HERE.parent  # patches/authoring/
 REPO_ROOT = AUTHORING.parent.parent  # -> repo root
 sys.path.insert(0, str(AUTHORING))  # patchkit
-sys.path.insert(0, str(REPO_ROOT / "scripts"))  # common.related_projects
 
 import patchkit as pk  # noqa: E402
-from common.related_projects import FLIPCOMMONS_DIR, load_env  # noqa: E402
 
 PATCH_PATH = REPO_ROOT / "patches" / "0177-exports.yaml"
 EXPORTS_SQL = HERE / "exports.sql"
@@ -98,21 +92,6 @@ def suffix_note(country: str) -> str:
         f"name carries a '({country})' market suffix, distinguishing it from the "
         f"same maker's domestic edition of the same game."
     )
-
-
-def load_rows() -> list[dict[str, Any]]:
-    """Read exports.sql's ``export_patch_rows`` view as JSON."""
-    load_env()
-    fc = os.environ.get("FLIPCOMMONS_DIR") or str(FLIPCOMMONS_DIR)
-    proc = subprocess.run(
-        [
-            "duckdb", "-init", str(EXPORTS_SQL), ":memory:",
-            "COPY (FROM export_patch_rows) TO '/dev/stdout' (FORMAT json, ARRAY true);",
-        ],
-        cwd=fc, capture_output=True, text=True, check=True,
-    )
-    rows: list[dict[str, Any]] = json.loads(proc.stdout)
-    return rows
 
 
 def market_rows(row: dict[str, Any]) -> list[dict[str, str]]:
@@ -177,7 +156,7 @@ def build_cites(row: dict[str, Any]) -> list[dict[str, str]]:
 
 
 def main() -> int:
-    rows = load_rows()
+    rows = pk.read_view(EXPORTS_SQL, "export_patch_rows", prefix="export")
     if not rows:
         raise SystemExit("export_patch_rows returned no rows — nothing to emit")
     entries: list[str] = []

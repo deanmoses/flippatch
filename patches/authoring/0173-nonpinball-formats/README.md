@@ -13,13 +13,13 @@ The seed was the six grid-reuse machines 0172 hand-flagged "not a bingo, but not
 A DuckDB analysis over the live flipcommons catalog, built on its shared [analysis foundation](../../../../flipcommons/scripts/analysis/README.md) — read that for how `make analyze` resolves paths, prints the `analysis_context` watermark, and gates on the `_checks` view. Needs the `duckdb` CLI and the flipcommons dev DB.
 
 ```bash
-P=patches/authoring/0173-nonpinball-formats/formats.sql
-make analyze PLAN=$P PREFIX=format                                            # summary, gated on checks
-make analyze PLAN=$P Q="FROM format_review WHERE proposed_format='one-ball';" # per-format queue
-make analyze PLAN=$P Q="FROM format_candidates ORDER BY proposed_format;"     # full candidate list
-make analyze PLAN=$P Q="FROM format_review_payout;"                           # keyword-invisible payout machines
-make analyze PLAN=$P Q="FROM format_review_pinmech;"                          # what pin_mech held out
-make analyze PLAN=$P Q="FROM format_excluded_review;"                         # confirmed false positives
+F=patches/authoring/0173-nonpinball-formats/formats.sql
+make analyze FILE=$F PREFIX=format                                            # summary, gated on checks
+make analyze FILE=$F Q="FROM format_review WHERE proposed_format='one-ball';" # per-format queue
+make analyze FILE=$F Q="FROM format_candidates ORDER BY proposed_format;"     # full candidate list
+make analyze FILE=$F Q="FROM format_review_payout;"                           # keyword-invisible payout machines
+make analyze FILE=$F Q="FROM format_review_pinmech;"                          # what pin_mech held out
+make analyze FILE=$F Q="FROM format_excluded_review;"                         # confirmed false positives
 ```
 
 ## How candidates are detected
@@ -36,7 +36,7 @@ Proposed formats split two ways: **new vocab** this probe scouts (`rolldown`, `o
 
 ## The vetting
 
-Human review is encoded as id-keyed lookups in the plan's reference section, so re-running re-derives the vetted list and `format_checks` flags any lookup gone stale:
+Human review is encoded as id-keyed lookups in the analysis's reference section, so re-running re-derives the vetted list and `format_checks` flags any lookup gone stale:
 
 - **`_format_excluded`** — confirmed false positives, with the reason (e.g. _Pool Alley_, which IPDB says "looks like a puck/ball bowler but it is neither").
 - **`_grid_reuse`** — the five still-untyped grid-reuse non-bingos from 0172, each tagged with the format its exclusion reasoning implies. The only channel that finds the keyword-invisible consoles.

@@ -4,7 +4,7 @@
 -- `bingo-pinball` format, so the campaign can author the patches. This is the
 -- "detect + vet the candidate list" step; patch authoring is downstream.
 --
--- PLAN-LOCAL LAYER. The generic catalog decode (the `models` view, the read-only
+-- ANALYSIS-LOCAL LAYER. The generic catalog decode (the `models` view, the read-only
 -- connection, etc.) is FLIPCOMMONS' shared foundation, reused VERBATIM via the
 -- `.read` below — flippatch keeps no copy of it. See this dir's README.md.
 --
@@ -16,9 +16,9 @@
 -- bingo_checks. Do not run this file directly:
 --
 --     P=patches/authoring/0172-bingo-game-format/bingo.sql
---     make analyze PLAN=$P PREFIX=bingo                          # summary, gated on checks
---     make analyze PLAN=$P Q="FROM bingo_candidates ORDER BY maker, name;"   # ad-hoc query
---     make analyze PLAN=$P CMD=ui                                # live GUI at localhost:4213
+--     make analyze FILE=$F PREFIX=bingo                          # summary, gated on checks
+--     make analyze FILE=$F Q="FROM bingo_candidates ORDER BY maker, name;"   # ad-hoc query
+--     make analyze FILE=$F CMD=ui                                # live GUI at localhost:4213
 --
 -- Nothing is persisted; every count is a live snapshot of the dev DB. Re-run as
 -- the catalog changes. `bingo_summary` emits the headline numbers; `bingo_checks`

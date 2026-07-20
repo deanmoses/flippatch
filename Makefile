@@ -53,26 +53,32 @@ sweep:
 	@PYTHONPATH=scripts uv run python3 -m ai_corpus_sweep.cli $(ARGS)
 
 # ── DuckDB catalog analysis ────────────────────────
-# Read-only analysis over the LIVE flipcommons catalog, reusing flipcommons'
-# shared DuckDB layer VERBATIM: the foundation (scripts/analysis/catalog.sql, pulled
-# in by the plan's `.read`) AND its runner (scripts/analysis/analysis). The default path
-# delegates to that runner, which prints the analysis_context watermark and
-# <PREFIX>_summary, then GATES on <PREFIX>_checks (nonzero exit on any row) — so a
-# run can't skip its checks. flippatch plans live here but must run from the
-# flipcommons checkout (override with FLIPCOMMONS_DIR) so the plan's `.read` and
-# the foundation's `ATTACH backend/db.sqlite3` resolve; we abspath PLAN and cd
-# there. duckdb must be on PATH. Nothing is written; not a commit gate.
+# Read-only analysis over the LIVE flipcommons catalog — the way to ask the catalog
+# anything, ad-hoc or as a patch campaign. Reuses flipcommons' shared DuckDB layer
+# VERBATIM: the foundation (scripts/analysis/catalog.sql) and its runner
+# (scripts/analysis/analysis). See flipcommons' scripts/analysis/README.md.
 #
-#   make analyze PLAN=patches/authoring/0172-bingo-game-format/bingo.sql PREFIX=bingo
-#   make analyze PLAN=.../bingo.sql PREFIX=bingo ARGS=--markdown
-#   make analyze CMD=ui PLAN=.../bingo.sql                 # live GUI at localhost:4213
-#   make analyze PLAN=.../bingo.sql Q="FROM bingo_review;" # ad-hoc query (bypasses the runner)
+# FILE names a campaign's analysis file; omit it to query the foundation alone.
+# Everything runs from the flipcommons checkout (override with FLIPCOMMONS_DIR) so an
+# analysis file's `.read` and the foundation's `ATTACH backend/db.sqlite3` resolve — a
+# FILE is abspath'd first, since it is given relative to YOUR cwd. duckdb must be on
+# PATH. Nothing is written; not a commit gate.
+#
+#   make analyze Q="SELECT count(*) FROM models WHERE year IS NULL;"   # ad-hoc
+#   make analyze CMD=describe                                         # the view reference
+#   make analyze CMD=describe ARGS=models                             # one view + columns
+#   make analyze FILE=patches/authoring/0172-bingo-game-format/bingo.sql PREFIX=bingo
+#   make analyze FILE=.../bingo.sql PREFIX=bingo ARGS=--markdown
+#   make analyze FILE=.../bingo.sql CMD=ui                 # live GUI at localhost:4213
+#   make analyze FILE=.../bingo.sql Q="FROM bingo_review;" # one view from the analysis
 analyze:
-	@test -n "$(PLAN)" || { echo 'usage: make analyze PLAN=<plan.sql> PREFIX=<name> [CMD=run|ui|snapshot] [ARGS=...] [Q="..."]'; exit 2; }
 	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.related_projects import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
-	PLAN="$(abspath $(PLAN))"; cd "$$FC" && \
-	if [ -n '$(Q)' ]; then duckdb -init "$$PLAN" :memory: "$(Q)"; \
-	else scripts/analysis/analysis $(or $(CMD),run) "$$PLAN" $(PREFIX) $(ARGS); fi
+	if [ -n '$(FILE)' ]; then AN="$(abspath $(FILE))"; else AN="$$FC/scripts/analysis/catalog.sql"; fi; \
+	cd "$$FC" && \
+	if [ -n '$(Q)' ]; then scripts/analysis/analysis query "$$AN" "$(Q)" $(ARGS); \
+	elif [ '$(CMD)' = describe ]; then scripts/analysis/analysis describe "$$AN" $(ARGS); \
+	else test -n "$(PREFIX)" -o -n '$(CMD)' || { echo 'usage: make analyze [FILE=<analysis.sql>] PREFIX=<name> | Q="<sql>" | CMD=describe|ui|snapshot [ARGS=...]'; exit 2; }; \
+	  scripts/analysis/analysis $(or $(CMD),run) "$$AN" $(PREFIX) $(ARGS); fi
 
 # Lint + format-check the Python tooling (same ruff config pre-commit uses).
 lint:

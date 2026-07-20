@@ -10,21 +10,21 @@ Export status is recorded inconsistently — an `(Country)` suffix baked into th
 
 ## How the candidates are found: [exports.sql](exports.sql)
 
-[exports.sql](exports.sql) is a plan-local DuckDB analysis that reuses flipcommons' shared foundation (`scripts/analysis/catalog.sql`) **verbatim** via a `.read` — the same pattern as [0128-relationships](../0128-relationships/README.md) and [0172-bingo-game-format](../0172-bingo-game-format/README.md). Run it through `make analyze`, which sets cwd to the flipcommons checkout, prints the `analysis_context` watermark + `export_summary`, and **gates on `export_checks`**:
+[exports.sql](exports.sql) is a analysis-local DuckDB analysis that reuses flipcommons' shared foundation (`scripts/analysis/catalog.sql`) **verbatim** via a `.read` — the same pattern as [0128-relationships](../0128-relationships/README.md) and [0172-bingo-game-format](../0172-bingo-game-format/README.md). Run it through `make analyze`, which sets cwd to the flipcommons checkout, prints the `analysis_context` watermark + `export_summary`, and **gates on `export_checks`**:
 
 ```bash
-P=patches/authoring/0177-exports/exports.sql
-make analyze PLAN=$P PREFIX=export                       # summary, gated on checks
-make analyze PLAN=$P Q="FROM export_twin_pairs;"         # deterministic export_edition_of
-make analyze PLAN=$P Q="FROM export_titlemate_review;"   # likely target sits in the same Title
-make analyze PLAN=$P Q="FROM export_orphan_review;"      # candidates still needing a target
-make analyze PLAN=$P Q="FROM export_namesake_review;"    # same name, separate Title (edge + Title merge)
-make analyze PLAN=$P Q="FROM export_market_review;"      # the ModelExportMarket shape per candidate
-make analyze PLAN=$P Q="FROM export_patch_rows;"         # what gen.py emits
-make analyze PLAN=$P Q="FROM export_patch_rejected;"     # what the notes gate held back, and why
-make analyze PLAN=$P Q="FROM export_opdb_review;"        # the OPDB-flagged models, held out
-make analyze PLAN=$P Q="FROM _reciprocal;"               # the edge as stated by the original's record
-make analyze PLAN=$P CMD=ui                              # live GUI at localhost:4213
+F=patches/authoring/0177-exports/exports.sql
+make analyze FILE=$F PREFIX=export                       # summary, gated on checks
+make analyze FILE=$F Q="FROM export_twin_pairs;"         # deterministic export_edition_of
+make analyze FILE=$F Q="FROM export_titlemate_review;"   # likely target sits in the same Title
+make analyze FILE=$F Q="FROM export_orphan_review;"      # candidates still needing a target
+make analyze FILE=$F Q="FROM export_namesake_review;"    # same name, separate Title (edge + Title merge)
+make analyze FILE=$F Q="FROM export_market_review;"      # the ModelExportMarket shape per candidate
+make analyze FILE=$F Q="FROM export_patch_rows;"         # what gen.py emits
+make analyze FILE=$F Q="FROM export_patch_rejected;"     # what the notes gate held back, and why
+make analyze FILE=$F Q="FROM export_opdb_review;"        # the OPDB-flagged models, held out
+make analyze FILE=$F Q="FROM _reciprocal;"               # the edge as stated by the original's record
+make analyze FILE=$F CMD=ui                              # live GUI at localhost:4213
 ```
 
 Nothing is persisted and no count is frozen into this doc: progress is a query, re-derived on each run against the live catalog. Requirements are the `duckdb` CLI on `PATH` and the flipcommons dev DB (`../flipcommons/backend/db.sqlite3`, overridable with `FLIPCOMMONS_DIR`).
@@ -173,7 +173,7 @@ All 34 OPDB "Export edition" models are Brazilian, Spanish, Italian or Japanese 
 
 **The write path has landed and the first patch is authored.** [patches/0177-exports.yaml](../../0177-exports.yaml) validates, every quote passes `make verify-quotes`, and it applies clean to a rebuilt dev DB.
 
-The generator is expected to keep evolving — the numbers below are a query (`make analyze PLAN=$P PREFIX=export`), not a frozen count, and re-running `gen.py` rewrites the patch in place. The patch is **not** shipped; committing and `make push` are the user's call.
+The generator is expected to keep evolving — the numbers below are a query (`make analyze FILE=$F PREFIX=export`), not a frozen count, and re-running `gen.py` rewrites the patch in place. The patch is **not** shipped; committing and `make push` are the user's call.
 
 Still open, in rough order of value:
 

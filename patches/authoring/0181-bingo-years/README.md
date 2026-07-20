@@ -14,6 +14,8 @@ Its **Game Number column is not**: it is the literal string `unknown` for every 
 
 The page is read from **pinexplore's web scrape cache**, never the network, so the rows extracted here and the quotes the patch cites come from the same durable blob `make verify-quotes` checks against. [extract_cdyn.py](extract_cdyn.py) parses it into [cdyn_machines.tsv](cdyn_machines.tsv), a checked-in audit artifact a reviewer can diff when the page changes.
 
+`years.sql` also `.read`s flippatch's [evidence bridge](../../../scripts/analysis/evidence.sql), which attaches that same cache as `ev` — so the analysis can see the *live* page next to the frozen TSV. That buys three checks a frozen artifact cannot provide on its own: the cited page is actually cached (otherwise every quote in the patch fails `make verify-quotes` later), every emitted quote is verbatim in it under the same normalization that tool applies, and the TSV still agrees with the page's row count — the only thing that notices when cdyn edits the listing underneath a checked-in extract.
+
 ## Matching: two keys, and why the number wins
 
 [years.sql](years.sql) matches a year-less model to a cdyn row on the strongest key its maker offers.
@@ -36,11 +38,11 @@ A year is emitted only when the match is unambiguous **in both directions** and 
 | `year not a number` / `year out of range` | a malformed source value |
 
 ```bash
-P=patches/authoring/0181-bingo-years/years.sql
-make analyze PLAN=$P PREFIX=year                        # summary, gated on checks
-make analyze PLAN=$P Q="FROM year_patch_rows;"          # what gen.py emits
-make analyze PLAN=$P Q="FROM year_rejected;"            # what the gate held back
-make analyze PLAN=$P Q="FROM year_number_collisions;"   # same maker+number, two models
+F=patches/authoring/0181-bingo-years/years.sql
+make analyze FILE=$F PREFIX=year                        # summary, gated on checks
+make analyze FILE=$F Q="FROM year_patch_rows;"          # what gen.py emits
+make analyze FILE=$F Q="FROM year_rejected;"            # what the gate held back
+make analyze FILE=$F Q="FROM model_number_collisions;"  # foundation: same maker+number, two models
 ```
 
 ## The patch
@@ -71,9 +73,11 @@ cdyn does not list a Splin *Acapulco*, so that model stays year-less and the pai
 
 So dating a maker's *other* models is worth as much here as dating the model itself, and the follow-up belongs in [0177-exports](../0177-exports/README.md): a maker-era fallback in `export_namesake_review` for pairs where one side has no year of its own.
 
-## Also surfaced: `year_number_collisions`
+## Also surfaced: `model_number_collisions`
 
-Two live models sharing one maker + game number. Not this campaign's business to fix, but the number is about to become a load-bearing key, so the collisions are worth a look — some are legitimate reward-variant pairs (*Skill Derby (Replay Model)* / *(Non-replay Model)*), others are duplicates (*Bow and Arrow* twice on Bally #1033), one game under two names (*Gator* / *Alligator* on #838), or a placeholder value used across six unrelated games (Game Plan #110).
+Two or more live models sharing one maker + game number — **40 of them** as of the last run. This campaign kept its own copy of the query until the foundation absorbed it; use the foundation's `model_number_collisions` directly, which is exact-number-only (no stem match) and carries `n_titles`.
+
+Not this campaign's business to fix, but the number is about to become a load-bearing key here, so the collisions are worth a look. `n_titles` is the discriminator: 17 collisions sit **within one Title** (the same game recorded twice, like *Gator* / *Alligator* on Bally #838) and 23 span **several Titles** — some legitimate reward-variant pairs (*Skill Derby (Replay Model)* / *(Non-replay Model)*, Bally #656), some genuine duplicates (*Bow and Arrow* twice on Bally #1033, dated 1974 and 1975), and one placeholder value reused across six unrelated games (Game Plan #110).
 
 ## The dev DB
 

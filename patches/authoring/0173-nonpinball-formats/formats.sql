@@ -12,7 +12,7 @@
 -- (its own 307-model campaign, 0172); rolldown, one-ball payout and the
 -- poker/keno consoles still have no home. This probe hunts that blind spot.
 --
--- PLAN-LOCAL LAYER. The generic catalog decode (the `models` view, the read-only
+-- ANALYSIS-LOCAL LAYER. The generic catalog decode (the `models` view, the read-only
 -- connection, etc.) is FLIPCOMMONS' shared foundation, reused VERBATIM via the
 -- `.read` below — flippatch keeps no copy of it. See this dir's README.md.
 --
@@ -23,11 +23,11 @@
 -- format_summary and gates on format_checks. Do not run this file directly:
 --
 --     P=patches/authoring/0173-nonpinball-formats/formats.sql
---     make analyze PLAN=$P PREFIX=format                             # summary, gated on checks
---     make analyze PLAN=$P Q="FROM format_candidates ORDER BY proposed_format, maker, name;"
---     make analyze PLAN=$P Q="FROM format_review WHERE proposed_format='rolldown';"  # per-format queue
---     make analyze PLAN=$P Q="FROM format_excluded_review;"          # the false positives, auditable
---     make analyze PLAN=$P CMD=ui                                    # live GUI at localhost:4213
+--     make analyze FILE=$F PREFIX=format                             # summary, gated on checks
+--     make analyze FILE=$F Q="FROM format_candidates ORDER BY proposed_format, maker, name;"
+--     make analyze FILE=$F Q="FROM format_review WHERE proposed_format='rolldown';"  # per-format queue
+--     make analyze FILE=$F Q="FROM format_excluded_review;"          # the false positives, auditable
+--     make analyze FILE=$F CMD=ui                                    # live GUI at localhost:4213
 --
 -- Nothing is persisted; every count is a live snapshot of the dev DB. The SQL is
 -- the source of truth for the candidate list, re-derived on each run.

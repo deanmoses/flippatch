@@ -16,7 +16,7 @@
 -- only the feed into them changes — `relationship_sweep_candidates` is the new
 -- candidates.jsonl source, replacing the Worklist read in emit_candidates.py.
 --
--- PLAN-LOCAL LAYER. The generic catalog decode (models, model_edges, the read-only
+-- ANALYSIS-LOCAL LAYER. The generic catalog decode (models, model_edges, the read-only
 -- connection) is FLIPCOMMONS' shared foundation, reused VERBATIM via the `.read`
 -- below — flippatch keeps no copy. Same pattern as ../0172-bingo-game-format/bingo.sql.
 --
@@ -27,11 +27,11 @@
 -- relationships_checks. Do not run this file directly:
 --
 --     P=patches/authoring/0128-relationships/relationships.sql
---     make analyze PLAN=$P PREFIX=relationships                       # summary, gated on checks
---     make analyze PLAN=$P Q="FROM relationship_review LIMIT 40;"     # the actionable queue
---     make analyze PLAN=$P Q="FROM relationship_edged_audit;"         # possible wrong existing edges
---     make analyze PLAN=$P Q="FROM relationship_sweep_candidates;" ARGS=--format json   # the sweep feed
---     make analyze PLAN=$P CMD=ui                                     # live GUI at localhost:4213
+--     make analyze FILE=$F PREFIX=relationships                       # summary, gated on checks
+--     make analyze FILE=$F Q="FROM relationship_review LIMIT 40;"     # the actionable queue
+--     make analyze FILE=$F Q="FROM relationship_edged_audit;"         # possible wrong existing edges
+--     make analyze FILE=$F Q="FROM relationship_sweep_candidates;" ARGS=--format json   # the sweep feed
+--     make analyze FILE=$F CMD=ui                                     # live GUI at localhost:4213
 --
 -- Nothing is persisted; every count is a live snapshot. Re-run as the catalog moves.
 --

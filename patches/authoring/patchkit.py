@@ -2,19 +2,31 @@
 
 Pure Python (NO Django import) so it imports anywhere and is unit-testable.
 
-Why this exists: prior patch-authoring sessions each re-derived YAML escaping,
-the missing-ref assert and the review-doc scaffolding - each slightly
-differently, some subtly wrong. This centralizes the parts that kept getting
-reinvented so a new session writes classification data, not scaffolding.
+Why this exists: the scaffolding around a generated patch — YAML escaping, the
+guards, reading the campaign's analysis file — gets re-derived by every authoring
+session that lacks a shared home for it, each time slightly differently and
+sometimes subtly wrong. Centralizing it means a session writes classification
+data, not scaffolding.
 
-See DataPatches.md for the patch file format this emits.
+Two halves, matching the two halves of a campaign:
+
+- ``read_view`` reads the campaign's ``<name>.sql`` analysis file, where the
+  detection, gating and quote extraction live (flipcommons'
+  ``scripts/analysis/README.md``).
+- ``entry`` / ``write_patch`` and the text helpers emit the patch YAML from
+  those rows. See DataPatches.md for the file format.
 """
 
 from __future__ import annotations
 
+import json
+import os
 import re
+import subprocess
+import sys
 import textwrap
 from collections.abc import Iterable, Mapping, Sequence
+from dataclasses import dataclass
 from pathlib import Path
 
 # --------------------------------------------------------------------------- #
@@ -60,14 +72,19 @@ def clean_quote(s: str) -> str:
 
 
 def yamlq(s: str) -> str:
-    """Render `s` as a single-quoted YAML scalar (the only note escaping needed).
+    """Render `s` as a quoted YAML scalar, choosing the quote style Prettier does.
 
-    A single-quoted YAML scalar is literal except `'`, which is doubled. This
-    safely carries both the double quotes in `... says "<verbatim>"` and the
-    apostrophes in the verbatim text - no backslashes, unlike json.dumps. Always
-    pass clean_text()ed text.
+    Prettier's default is a double-quoted scalar, but a double-quoted YAML scalar
+    escapes `"` and `\\` with backslashes, so any text containing either switches
+    to single quotes instead - literal except `'`, which is doubled. That is what
+    keeps `... says "<verbatim>"` notes single-quoted and everything else double.
+    Emitting the same choice here is what makes a generated patch already
+    Prettier-formatted (see the flow-emission section). Always pass clean_text()ed
+    text.
     """
-    return "'" + s.replace("'", "''") + "'"
+    if '"' in s or "\\" in s:
+        return "'" + s.replace("'", "''") + "'"
+    return '"' + s + '"'
 
 
 def source_note(source: str, verbatim: str, tail: str = "") -> str:
@@ -109,13 +126,13 @@ def _fold(text: str, width: int = 92) -> list[str]:
 
 
 # --------------------------------------------------------------------------- #
-# source-text extraction (classify.py side)                                   #
+# source free-text hygiene                                                    #
 # --------------------------------------------------------------------------- #
 #
-# These run on the pinexplore side, against DuckDB free text - patchkit is pure
-# stdlib, so a classify.py can `import patchkit` too (add the authoring dir to
-# sys.path, as gen.py does). They were re-derived in every classify.py; pull the
-# next one's from here instead.
+# For quoting IPDB's free-text fields, whose typography and framing need
+# normalizing before a span is fit to cite. The catalog carries that text as
+# plain columns on the foundation's `models` view (`ipdb_notes`,
+# `ipdb_notable_features`), so an analysis file cuts the span and these tidy it.
 
 _IPD_HEADER = re.compile(r"^\s*\d+\s*/[^.]*?\bPlayers?\b\s*")
 
@@ -162,6 +179,102 @@ def clean_ipdb_quote(text: str, limit: int = 240) -> str:
     if len(text) > limit:
         text = text[:limit].rsplit(" ", 1)[0].rstrip(",;:") + " [...]"
     return text
+
+
+# --------------------------------------------------------------------------- #
+# reading a campaign's analysis file                                          #
+# --------------------------------------------------------------------------- #
+#
+# A campaign's detection, gating and quote extraction live in its `<name>.sql`
+# plan, layered on flipcommons' shared analysis foundation; `gen.py` is a pure
+# emitter over one of that plan's views. `read_view` is the bridge — the single
+# supported way to get those rows into Python.
+
+
+# A bare SQL identifier — what a view name and a checks prefix are allowed to be.
+_IDENTIFIER = re.compile(r"^[A-Za-z_][A-Za-z0-9_]*$")
+
+
+def _flipcommons_dir() -> Path:
+    """The flipcommons checkout — ``FLIPCOMMONS_DIR``, this repo's ``.env``, or the
+    sibling default.
+
+    The import is deliberately lazy: patchkit's module import stays stdlib-only
+    (``common.related_projects`` pulls in python-dotenv), so a generator that
+    never reads a plan keeps importing anywhere. ``load_env()`` runs before the
+    environment is read, because ``FLIPCOMMONS_DIR`` is resolved at that module's
+    import time and an override living only in ``.env`` would otherwise be missed.
+    """
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+    from common.related_projects import FLIPCOMMONS_DIR, load_env
+
+    load_env()
+    return Path(os.environ.get("FLIPCOMMONS_DIR") or FLIPCOMMONS_DIR)
+
+
+def read_view(
+    analysis: str | Path, view: str, *, prefix: str, check: bool = True
+) -> list[dict[str, object]]:
+    """Rows of one view from a campaign analysis file, via flipcommons' runner.
+
+    Runs ``analysis query … --check <prefix>``, so the gate described in
+    flipcommons' ``scripts/analysis/README.md`` runs before a single row is
+    emitted. That is the reason to come through here rather than invoke DuckDB:
+    a patch built on a detector that has gone dark is still well-formed YAML, and
+    nothing downstream of the generator can tell the difference.
+
+    ``prefix`` names the analysis's own summary/checks pair — ``export`` for
+    ``export_checks``. It is explicit rather than inferred from the filename
+    because the two routinely differ: ``exports.sql`` gates on ``export_checks``
+    and ``features.sql`` on ``gpf_checks``.
+
+    Pass ``check=False`` only while building an analysis whose checks aren't
+    written yet; a committed generator should never carry it.
+
+    Returns ``[]`` for an empty view rather than raising — a campaign whose patch
+    has already been applied legitimately reads back nothing, and deciding that is
+    fatal belongs to the generator ("nothing to emit"), not here.
+    """
+    # `view` lands inside a SQL statement and `prefix` inside a view name the
+    # runner interpolates in turn, so both are constrained to bare identifiers
+    # here. A campaign controls these strings, so this is a typo guard far more
+    # than a security one — but it is also what makes the subprocess call below
+    # provably free of untrusted input, and it turns a fat-fingered view name
+    # into one clear error instead of a DuckDB parse failure.
+    for label, value in (("view", view), ("prefix", prefix)):
+        if not _IDENTIFIER.match(value):
+            raise ValueError(f"{label} must be a bare SQL identifier, got {value!r}")
+    analysis_path = Path(analysis)
+    if not analysis_path.is_file():
+        raise FileNotFoundError(f"no such analysis file: {analysis_path}")
+
+    runner = _flipcommons_dir() / "scripts" / "analysis" / "analysis"
+    cmd = [
+        str(runner),
+        "query",
+        str(analysis_path),
+        f"FROM {view};",
+        "--format",
+        "json",
+    ]
+    if check:
+        cmd += ["--check", prefix]
+    # FLIPPATCH_DIR locates this repo for a plan reading a checked-in authoring
+    # artifact (a TSV extract, a reference list). Set here rather than left to the
+    # caller's shell: the analysis's own fallback is the sibling layout, so an unset
+    # var doesn't fail — it silently reads a DIFFERENT checkout's artifact.
+    env = {**os.environ, "FLIPPATCH_DIR": str(Path(__file__).resolve().parents[2])}
+    # The runner is location-independent (it finds its own root and cd's there),
+    # so no cwd contract is left for the caller to get right. Gate diagnostics and
+    # DuckDB's own chatter go to stderr; stdout is pure JSON.
+    # S603: every argument is either a literal, a path this process derived, or a
+    # string validated as an identifier above — there is no untrusted input, and
+    # no shell.
+    proc = subprocess.run(  # noqa: S603
+        cmd, capture_output=True, text=True, check=True, env=env
+    )
+    rows: list[dict[str, object]] = json.loads(proc.stdout)
+    return rows
 
 
 # --------------------------------------------------------------------------- #
@@ -223,10 +336,14 @@ type CiteSpec = str | Mapping[str, str]
 _CITE_SPEC_KEYS = frozenset({"ref", "archive", "locator", "quote"})
 
 
+def _cite_spec_node(spec: Mapping[str, str]) -> _Map:
+    """A short cite-spec mapping as a flow node (the printer decides its shape)."""
+    return _Map([(k, _scalar(v)) for k, v in spec.items()])
+
+
 def _cite_spec_flow(spec: Mapping[str, str]) -> str:
     """Render a short cite-spec mapping as a one-line flow map."""
-    inner = ", ".join(f"{k}: {_scalar(v)}" for k, v in spec.items())
-    return f"{{ {inner} }}"
+    return _inline(_cite_spec_node(spec))
 
 
 def _check_cites(
@@ -278,6 +395,108 @@ def _check_cites(
 
 
 # --------------------------------------------------------------------------- #
+# Prettier-compatible flow emission                                           #
+# --------------------------------------------------------------------------- #
+#
+# patches/*.yaml is reformatted by Prettier at commit time (.pre-commit-config)
+# and by the IDE on save, so anything emitted in a different-but-equivalent style
+# comes straight back as diff noise on every generated patch. These helpers
+# reproduce Prettier 3.x's YAML defaults for FLOW collections - printWidth 80,
+# bracketSpacing on - so a generated file is already formatted. (Quote style is
+# yamlq's job; folded `>` block bodies Prettier never reflows, so _fold's width is
+# free to stay wider.)
+#
+# A flow value is modelled as a tree of already-escaped scalars so the printer can
+# measure it before deciding how to break it.
+
+
+@dataclass(frozen=True)
+class _Seq:
+    """A flow sequence: `[a, b]`."""
+
+    items: Sequence[_Node]
+
+
+@dataclass(frozen=True)
+class _Map:
+    """A flow mapping: `{ k: v }` (`{}` when empty)."""
+
+    pairs: Sequence[tuple[str, _Node]]
+
+
+type _Node = str | _Seq | _Map
+
+_PRINT_WIDTH = 80
+
+
+def _inline(node: _Node) -> str:
+    """The one-line rendering of `node`, however long it comes out."""
+    if isinstance(node, str):
+        return node
+    if isinstance(node, _Seq):
+        return "[" + ", ".join(_inline(i) for i in node.items) + "]"
+    if not node.pairs:
+        return "{}"
+    return "{ " + ", ".join(f"{k}: {_inline(v)}" for k, v in node.pairs) + " }"
+
+
+def _explode(node: _Seq | _Map, bracket: str) -> list[str]:
+    """Break `node` open: one member per line, trailing comma on every member.
+
+    Prettier never *fills* a flow collection - once it breaks, every member gets
+    its own line. `bracket` is the indent the brackets sit at; members go one
+    level (two spaces) deeper.
+    """
+    open_ch, close_ch = ("[", "]") if isinstance(node, _Seq) else ("{", "}")
+    inner = bracket + "  "
+    members = (
+        [_value_lines(inner, item) for item in node.items]
+        if isinstance(node, _Seq)
+        else [_value_lines(inner, v, key=k) for k, v in node.pairs]
+    )
+    lines = [f"{bracket}{open_ch}"]
+    for member in members:
+        member[-1] += ","
+        lines.extend(member)
+    lines.append(f"{bracket}{close_ch}")
+    return lines
+
+
+def _value_lines(indent: str, node: _Node, key: str | None = None) -> list[str]:
+    """Lines for `node` at `indent`, as `key: <value>` when `key` is given.
+
+    The Prettier cascade: keep it on one line if it fits; else (for a keyed value)
+    drop it to its own line, indented one level, still inline; else explode it.
+    A scalar is unbreakable, so it stays on its line at any length.
+    """
+    prefix = f"{indent}{key}: " if key is not None else indent
+    inline = _inline(node)
+    if isinstance(node, str) or len(prefix) + len(inline) <= _PRINT_WIDTH:
+        return [prefix + inline]
+    if key is None:
+        return _explode(node, indent)
+    if len(indent) + 2 + len(inline) <= _PRINT_WIDTH:
+        return [f"{indent}{key}:", f"{indent}  {inline}"]
+    return [f"{indent}{key}:", *_explode(node, indent + "  ")]
+
+
+def _item_lines(indent: str, node: _Node) -> list[str]:
+    """Lines for `node` as a block-sequence item: `- [a, b]`.
+
+    A block-sequence item can't move its value to the next line the way a mapping
+    value can, so an over-long collection breaks with the bracket still hugging
+    the dash.
+    """
+    dash = f"{indent}- "
+    inline = _inline(node)
+    if isinstance(node, str) or len(dash) + len(inline) <= _PRINT_WIDTH:
+        return [dash + inline]
+    lines = _explode(node, " " * len(dash))
+    lines[0] = dash + lines[0].lstrip()
+    return lines
+
+
+# --------------------------------------------------------------------------- #
 # YAML entry / patch emission                                                 #
 # --------------------------------------------------------------------------- #
 
@@ -315,6 +534,32 @@ def _cite_lines(
     return lines
 
 
+def _rel_member(ref: Ref, namespace: str, member: object) -> _Node:
+    """One member of a relationship list: a bare public_id, or a COUNTED member.
+
+    ``gameplay_feature`` is the one namespace whose members can carry a count --
+    "4 ramps", "6 bingo cards" (DataPatches.md -> Counted members). The count is
+    authored as a one-key ``{public_id: count}`` mapping in place of the bare
+    slug, and the two forms mix freely in one list. The count is validated here
+    rather than at apply time: it must be a positive integer, since `0` and
+    non-ints are rejected by the backend.
+    """
+    if not isinstance(member, Mapping):
+        return _scalar(member)
+    items = list(member.items())
+    if len(items) != 1:
+        raise ValueError(
+            f"{ref}: a counted {namespace} member needs exactly one key, got {member!r}"
+        )
+    public_id, count = items[0]
+    if isinstance(count, bool) or not isinstance(count, int) or count < 1:
+        raise ValueError(
+            f"{ref}: {namespace} count for {public_id!r} must be a positive integer, "
+            f"got {count!r}"
+        )
+    return _Map([(_scalar(public_id), str(count))])
+
+
 def _credit_lines(credits: Sequence[tuple[str, str]], indent: str) -> list[str]:
     """Emit `credit:` as a block list of single-key `person: role` mappings —
     the catalog's one multi-key relationship (DataPatches.md → Credits). Flow
@@ -324,6 +569,46 @@ def _credit_lines(credits: Sequence[tuple[str, str]], indent: str) -> list[str]:
     for person, role in credits:
         lines.append(f"{indent}  - {_scalar(person)}: {_scalar(role)}")
     return lines
+
+
+_MARKET_TARGETS = ("target_market_location", "target_market_label")
+
+
+def _check_export_market(ref: Ref, rows: Sequence[Mapping[str, str | None]]) -> None:
+    """Enforce the export-market rules ingest can't or won't (DataPatches.md).
+
+    Two of the three are hard apply-time errors worth catching before a snapshot
+    restore; the third — "a null-location row must be the model's only row" — is
+    NOT validated by ingest at all and applies silently as an illegal mix, so this
+    is the only gate it has.
+    """
+    for row in rows:
+        present = [k for k in _MARKET_TARGETS if k in row]
+        if len(present) > 1:
+            raise ValueError(
+                f"{ref}: export_market member has both target keys "
+                f"({', '.join(present)}); at most one is allowed"
+            )
+        for k in present:
+            if row[k] is None or str(row[k]).strip() == "":
+                raise ValueError(
+                    f"{ref}: export_market member has an empty {k}; "
+                    f"omit the key instead to mean 'unknown destination'"
+                )
+    # The cross-row shape rule: a targetless row can only stand alone.
+    if len(rows) > 1 and any(
+        not [k for k in _MARKET_TARGETS if k in row] for row in rows
+    ):
+        raise ValueError(
+            f"{ref}: an export_market row with no target must be the model's only row; "
+            f"got {len(rows)} rows mixing shapes"
+        )
+    labels = [row for row in rows if "target_market_label" in row]
+    if len(rows) > 1 and labels:
+        raise ValueError(
+            f"{ref}: a target_market_label row must be the model's only row; "
+            f"got {len(rows)} rows mixing shapes"
+        )
 
 
 def entry(
@@ -338,8 +623,9 @@ def entry(
     changesets: Sequence[Mapping[str, object]] | None = None,
     tags: Sequence[str] | None = None,
     credits: Sequence[tuple[str, str]] | None = None,
-    relationships: Mapping[str, Sequence[str]] | None = None,
+    relationships: Mapping[str, Sequence[str | Mapping[str, int]]] | None = None,
     model_relationship: Sequence[Mapping[str, str]] | None = None,
+    export_market: Sequence[Mapping[str, str | None]] | None = None,
     remove: Mapping[str, Sequence[str]] | None = None,
     retract: Sequence[str] | None = None,
     comment: str | None = None,
@@ -369,6 +655,14 @@ def entry(
         public_ids (`theme: [medieval]`) or string members for aliases /
         abbreviations (`manufacturer_alias: [Stern Pinball, Stern Inc]`). Each
         member is escaped, so free-text alias strings with commas/colons are safe.
+    export_market: ModelExportMarket rows — a block list of explicit-key mappings,
+        each with AT MOST ONE of `target_market_location` (a country public_id) or
+        `target_market_label` (a multi-country region). `{}` is the legal
+        unknown-destination row. Guards what ingest does not: at most one target key
+        per member, no explicit nulls, and the "a null-location row must be the
+        model's only row" convention (DataPatches.md calls that author discipline —
+        the illegal mix applies SILENTLY, so this is the only place it is caught).
+        `export_edition_of` is a plain scalar FK; pass it in `fields`.
     remove: namespace -> members to drop, emits `remove: { ns: [...] }` (the
         relationship counterpart of `retract`).
     commented: prefix every line with '# ' (FLAGGED rows kept in-file for a human call).
@@ -401,22 +695,23 @@ def entry(
     if cites:
         lines.append(f"{sub}cites:")
         for handle, spec in cites.items():
+            key = yamlq(str(handle))
             if isinstance(spec, Mapping) and "quote" in spec:
                 # A quote is prose — a one-line flow map would be unreadable, so
-                # emit a block map with each field single-quote escaped.
-                lines.append(f"{sub}  '{handle}':")
+                # emit a block map with each field escaped.
+                lines.append(f"{sub}  {key}:")
                 lines.extend(f"{sub}    {k}: {_scalar(v)}" for k, v in spec.items())
             elif isinstance(spec, Mapping):
-                lines.append(f"{sub}  '{handle}': {_cite_spec_flow(spec)}")
+                lines.extend(_value_lines(f"{sub}  ", _cite_spec_node(spec), key=key))
             else:
-                lines.append(f"{sub}  '{handle}': {_scalar(spec)}")
+                lines.append(f"{sub}  {key}: {_scalar(spec)}")
     if tags:
-        lines.append(f"{sub}tag: [{', '.join(tags)}]")
+        lines.extend(_value_lines(sub, _Seq(list(tags)), key="tag"))
     if credits:
         lines.extend(_credit_lines(credits, sub))
     for namespace, members in (relationships or {}).items():
-        inner = ", ".join(_scalar(m) for m in members)
-        lines.append(f"{sub}{namespace}: [{inner}]")
+        rel_node = _Seq([_rel_member(ref, namespace, m) for m in members])
+        lines.extend(_value_lines(sub, rel_node, key=namespace))
     if model_relationship:
         # A typed lineage edge (DataPatches.md -> Model relationships) is a list of
         # MAPPINGS -- relationship_type, license_status, and a target_machine slug
@@ -432,6 +727,20 @@ def entry(
             k, v = items[0]
             lines.append(f"{sub}  - {k}: {_scalar(v)}")
             lines.extend(f"{sub}    {k}: {_scalar(v)}" for k, v in items[1:])
+    if export_market:
+        _check_export_market(ref, export_market)
+        # Like model_relationship, a list of MAPPINGS -- but with an OPTIONAL target,
+        # so the empty mapping is a legal member and must survive as `- {}` rather
+        # than collapsing to a null list item.
+        lines.append(f"{sub}export_market:")
+        for row in export_market:
+            market_items = list(row.items())
+            if not market_items:
+                lines.extend(_item_lines(f"{sub}  ", _Map([])))
+                continue
+            mk, mv = market_items[0]
+            lines.append(f"{sub}  - {mk}: {_scalar(mv)}")
+            lines.extend(f"{sub}    {mk}: {_scalar(mv)}" for mk, mv in market_items[1:])
     if changesets:
         lines.append(f"{sub}changesets:")
         for cs in changesets:
@@ -447,9 +756,16 @@ def entry(
                 item.extend(f"{k}: {_scalar(v)}" for k, v in cs_fields.items())
             cs_rels = cs.get("relationships")
             if isinstance(cs_rels, Mapping):
+                # Rendered at the final indent (a changeset member sits four
+                # columns in from `sub`) so the width decisions are measured
+                # against where the lines actually land, then dedented back.
+                cs_indent = f"{sub}    "
                 for namespace, members in cs_rels.items():
-                    inner = ", ".join(_scalar(m) for m in members)
-                    item.append(f"{namespace}: [{inner}]")
+                    cs_node = _Seq([_scalar(m) for m in members])
+                    item.extend(
+                        ln[len(cs_indent) :]
+                        for ln in _value_lines(cs_indent, cs_node, key=namespace)
+                    )
             cs_credits = cs.get("credits")
             if isinstance(cs_credits, Sequence):
                 item.extend(ln[len(sub) :] for ln in _credit_lines(cs_credits, sub))
@@ -458,13 +774,15 @@ def entry(
             lines.append(f"{sub}  - {item[0]}")
             lines.extend(f"{sub}    {ln}" for ln in item[1:])
     if remove:
-        inner = ", ".join(
-            f"{ns}: [{', '.join(_scalar(m) for m in members)}]"
-            for ns, members in remove.items()
+        remove_node = _Map(
+            [
+                (ns, _Seq([_scalar(m) for m in members]))
+                for ns, members in remove.items()
+            ]
         )
-        lines.append(f"{sub}remove: {{ {inner} }}")
+        lines.extend(_value_lines(sub, remove_node, key="remove"))
     if retract:
-        lines.append(f"{sub}retract: [{', '.join(retract)}]")
+        lines.extend(_value_lines(sub, _Seq(list(retract)), key="retract"))
     return "\n".join(lines)
 
 
@@ -495,10 +813,39 @@ def source_root(
         out += [f"      {line}" for line in _fold(clean_text(description))]
     out.append("    links:")
     for url, label, link_type in links:
-        out.append(
-            f"      - {{ url: {_scalar(url)}, label: {_scalar(label)}, link_type: {link_type} }}"
+        link = _Map(
+            [
+                ("url", _scalar(url)),
+                ("label", _scalar(label)),
+                ("link_type", link_type),
+            ]
         )
+        out.extend(_item_lines("      ", link))
     return "\n".join(out)
+
+
+def render_patch(
+    *,
+    attribution: str,
+    description: str,
+    entries: Sequence[str],
+    sources: Sequence[str] = (),
+) -> str:
+    """The complete patch file as text (header + folded description + sources + claims).
+
+    Split out of write_patch so a generator can regenerate an ALREADY-APPLIED patch
+    and byte-compare it without touching the file. An applied patch is immutable
+    (the ledger fingerprints it), so a generator whose inputs keep growing needs a
+    way to prove it would still emit the same bytes -- see gen.py's `emit`.
+    """
+    out = [f"attribution: {attribution}", "description: >"]
+    out += [f"  {line}" for line in _fold(description)]
+    if sources:
+        out.append("sources:")
+        out += list(sources)
+    out.append("claims:")
+    out += list(entries)
+    return "\n".join(out) + "\n"
 
 
 def write_patch(
@@ -514,15 +861,15 @@ def write_patch(
     `sources` is a sequence of source_root() blocks, emitted before `claims:` so a
     `cite:` URL below can nest under a root created here.
     """
-    out = [f"attribution: {attribution}", "description: >"]
-    out += [f"  {line}" for line in _fold(description)]
-    if sources:
-        out.append("sources:")
-        out += list(sources)
-    out.append("claims:")
-    out += list(entries)
     p = Path(path)
-    p.write_text("\n".join(out) + "\n")
+    p.write_text(
+        render_patch(
+            attribution=attribution,
+            description=description,
+            entries=entries,
+            sources=sources,
+        )
+    )
     return p
 
 

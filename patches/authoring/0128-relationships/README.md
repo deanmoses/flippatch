@@ -20,14 +20,14 @@ A lineage edge — a **`ModelRelationship`** — links a derivative machine to t
 
 ## How the candidates are found
 
-[relationships.sql](relationships.sql) is a plan-local DuckDB analysis that reuses flipcommons' shared foundation (`scripts/analysis/catalog.sql`) **verbatim** via a `.read` — the same pattern as [0172-bingo-game-format](../0172-bingo-game-format/README.md). Run it through `make analyze`, which sets cwd to the flipcommons checkout, prints the `analysis_context` watermark + `relationships_summary`, and **gates on `relationships_checks`**:
+[relationships.sql](relationships.sql) is a analysis-local DuckDB analysis that reuses flipcommons' shared foundation (`scripts/analysis/catalog.sql`) **verbatim** via a `.read` — the same pattern as [0172-bingo-game-format](../0172-bingo-game-format/README.md). Run it through `make analyze`, which sets cwd to the flipcommons checkout, prints the `analysis_context` watermark + `relationships_summary`, and **gates on `relationships_checks`**:
 
 ```bash
-P=patches/authoring/0128-relationships/relationships.sql
-make analyze PLAN=$P PREFIX=relationships                        # summary, gated on checks
-make analyze PLAN=$P Q="FROM relationship_review LIMIT 40;"      # the actionable queue
-make analyze PLAN=$P Q="FROM relationship_open_questions;"       # recorded human judgement
-make analyze PLAN=$P Q="FROM relationship_edged_audit;"          # possible WRONG existing edges
+F=patches/authoring/0128-relationships/relationships.sql
+make analyze FILE=$F PREFIX=relationships                        # summary, gated on checks
+make analyze FILE=$F Q="FROM relationship_review LIMIT 40;"      # the actionable queue
+make analyze FILE=$F Q="FROM relationship_open_questions;"       # recorded human judgement
+make analyze FILE=$F Q="FROM relationship_edged_audit;"          # possible WRONG existing edges
 ```
 
 Membership is the union of two free-text detectors over `ipdb_notes` / `ipdb_notable_features` / `description`: **`by_copy`** (copy / clone / bootleg / "under licence" / licensed build) and **`by_conv`** (conversion / conversion kit / converted game / repaint / re-theme). The type and license **split is not decided here** — that is the sweep's per-note judgement; detection only finds the model and surfaces the note.
@@ -46,8 +46,8 @@ Enrichment reads existing edges from the foundation's `model_edges`, so `has_rel
 `relationship_green` is the high-confidence queue: not-edged rows with **exactly one** resolved target, no recorded open question, and a **verbatim quote extracted from the note itself** rather than hand-typed. `relationship_type` is read off the phrase; `license_status` defaults to `unknown` and claims `licensed`/`unlicensed` only when the quote itself carries the words — a bare "copy of" never becomes an authorization claim.
 
 ```bash
-make analyze PLAN=$P Q="FROM relationship_green;"            # author-ready, quote included
-make analyze PLAN=$P Q="FROM relationship_green_rejected;"   # disqualified, with reason
+make analyze FILE=$F Q="FROM relationship_green;"            # author-ready, quote included
+make analyze FILE=$F Q="FROM relationship_green_rejected;"   # disqualified, with reason
 ```
 
 The extracted quote is a **proposal, not a verified quote** — `make verify-quotes` is the independent gate that proves each one verbatim against pinexplore's `ipdb_machines` corpus (the same IPDB pull the catalog's notes came from, so an exact substring of one is an exact substring of the other). Never ship an extracted quote that hasn't passed it.
@@ -73,7 +73,7 @@ The multi-cite part already works (`cite:` takes a list) and a quoteless cite al
 A query re-derives candidates but not a reviewer's verdict, so the campaign's open decisions are encoded as Reference lookups in the plan (`_rel_open_question`, `_rel_maker_question`) and **carried on the candidate row** as `open_question` / `maker_question` — they surface wherever the row is reviewed, and flagged rows sort to the top of `relationship_review`. `relationship_checks` catches an entry that has gone stale.
 
 ```bash
-make analyze PLAN=$P Q="FROM relationship_open_questions;"
+make analyze FILE=$F Q="FROM relationship_open_questions;"
 ```
 
 This holds the three rows held back from 0127 (`cosmic-princess`, `high-ace-2`, `star-flite`) and the two maker-level licensed-vs-unlicensed questions (Petaco, Fipermatic), each shown against its **current** edge state. A held-back row that now carries an edge means the question was resolved *or* authored past — verify which; don't assume.
@@ -115,10 +115,10 @@ Then `make validate` in flippatch — the structural + editorial lint and `make 
 There is no status file to regenerate and nothing to reconcile: progress is a query. `relationships_summary` reports `edged` vs `not_edged` live, and `relationship_review` **is** the remaining work — a model drops out of it the moment its edge is applied.
 
 ```bash
-make analyze PLAN=$P PREFIX=relationships      # edged / not_edged / coverage, gated on checks
+make analyze FILE=$F PREFIX=relationships      # edged / not_edged / coverage, gated on checks
 ```
 
-(The plan resolves the dev DB through flipcommons' foundation — no hard-coded path; override with `FLIPCOMMONS_DIR`.)
+(The analysis resolves the dev DB through flipcommons' foundation — no hard-coded path; override with `FLIPCOMMONS_DIR`.)
 
 The campaign is wired onto the **AI corpus sweep** (`make sweep` — see [docs/corpus_sweep/CorpusSweepOperating.md](../../../docs/corpus_sweep/CorpusSweepOperating.md)), which does the per-note **judgement** the SQL deliberately doesn't. `uv run python3 emit_candidates.py` regenerates [sweep/candidates.jsonl](sweep/candidates.jsonl) from the plan's `relationship_sweep_candidates` view (target guesses ride along as audited-not-inherited `hint`s), then:
 
@@ -130,7 +130,7 @@ make sweep ARGS="patches/authoring/0128-relationships/sweep/candidates.jsonl --r
 
 emitting `sweep/REVIEW.md` + `sweep/results.json`. Regenerate the feed after every dev-DB rebuild; `results.json` is keyed on `ipdb`, so regenerating never invalidates already-judged models. **A session picking up this campaign should start from [sweep/SESSION-BRIEF.md](sweep/SESSION-BRIEF.md)** — the orientation order, the run loop, and the tool-hardening duties live there.
 
-The division of labour is the point: **the plan discovers reproducibly, the sweep judges each note, you author.** Where they disagree — a `hint-mismatch`, or a row in `relationship_edged_audit` — adjudicate from the verbatim quote and the full note, not from either tool.
+The division of labour is the point: **the analysis discovers reproducibly, the sweep judges each note, you author.** Where they disagree — a `hint-mismatch`, or a row in `relationship_edged_audit` — adjudicate from the verbatim quote and the full note, not from either tool.
 
 ## Export-campaign overlap
 
