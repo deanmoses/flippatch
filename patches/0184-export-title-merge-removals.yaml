@@ -1,0 +1,175 @@
+attribution: flipcommons-catalog
+description: Hand over the freed title slugs and retire the emptied titles.
+claims:
+  # ---- Slug handover: each surviving title takes the plain slug the emptied
+  #      title gave up when it was reslugged out of the way. A patch cannot
+  #      both free a slug and claim it, so the claim lands here.
+  - title.cavalier-2:
+      note: >
+        The surviving Cavalier title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain cavalier slug, freed
+        when the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: cavalier
+  - title.crazy-race-2:
+      note: >
+        The surviving Crazy Race title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain crazy-race slug, freed
+        when the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: crazy-race
+  - title.criterium-2000-2:
+      note: >
+        The surviving Criterium 2000 title, now holding both the Petaco
+        original and Recel's export edition. Takes the plain criterium-2000
+        slug, freed when the emptied title was reslugged out of the way; it
+        replaces the placeholder minted when the two sat in separate titles.
+      slug: criterium-2000
+  - title.fair-fight-2:
+      note: >
+        The surviving Fair Fight title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain fair-fight slug, freed
+        when the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: fair-fight
+  - title.master-stroke-2:
+      note: >
+        The surviving Master Stroke title, now holding both the Petaco
+        original and Recel's export edition. Takes the plain master-stroke
+        slug, freed when the emptied title was reslugged out of the way; it
+        replaces the placeholder minted when the two sat in separate titles.
+      slug: master-stroke
+  - title.mr-doom-2:
+      note: >
+        The surviving Mr. Doom title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain mr-doom slug, freed when
+        the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: mr-doom
+  - title.mr-evil-2:
+      note: >
+        The surviving Mr. Evil title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain mr-evil slug, freed when
+        the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: mr-evil
+  - title.sea-scare-2:
+      note: >
+        The surviving Sea Scare title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain sea-scare slug, freed
+        when the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: sea-scare
+  - title.space-game-1-card-2:
+      note: >
+        The surviving Space Game (1 card) title, now holding both the Petaco
+        original and Recel's export edition. Takes the plain
+        space-game-1-card slug, freed when the emptied title was reslugged
+        out of the way; it replaces the placeholder minted when the two sat
+        in separate titles.
+      slug: space-game-1-card
+  - title.space-game-7-card-2:
+      note: >
+        The surviving Space Game (7 card) title, now holding both the Petaco
+        original and Recel's export edition. Takes the plain
+        space-game-7-card slug, freed when the emptied title was reslugged
+        out of the way; it replaces the placeholder minted when the two sat
+        in separate titles.
+      slug: space-game-7-card
+  - title.swashbuckler-2:
+      note: >
+        The surviving Swashbuckler title, now holding both the Petaco
+        original and Recel's export edition. Takes the plain swashbuckler
+        slug, freed when the emptied title was reslugged out of the way; it
+        replaces the placeholder minted when the two sat in separate titles.
+      slug: swashbuckler
+  - title.the-flipper-game-2:
+      note: >
+        The surviving The Flipper Game title, now holding both the Petaco
+        original and Recel's export edition. Takes the plain
+        the-flipper-game slug, freed when the emptied title was reslugged
+        out of the way; it replaces the placeholder minted when the two sat
+        in separate titles.
+      slug: the-flipper-game
+  - title.torneo-2:
+      note: >
+        The surviving Torneo title, now holding both the Petaco original and
+        Recel's export edition. Takes the plain torneo slug, freed when the
+        emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: torneo
+  - title.twin-gain-2:
+      note: >
+        The surviving Twin-Gain title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain twin-gain slug, freed
+        when the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: twin-gain
+  - title.underwater-2:
+      note: >
+        The surviving Underwater title, now holding both the Petaco original
+        and Recel's export edition. Takes the plain underwater slug, freed
+        when the emptied title was reslugged out of the way; it replaces the
+        placeholder minted when the two sat in separate titles.
+      slug: underwater
+
+  # Each title below held only the export edition that the previous patch
+  # re-homed onto its original's title. Each is now empty and retired. The ones
+  # reslugged to "-duplicate" gave up their plain slug to the surviving title.
+  - title.cavalier-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Cavalier, was merged into the surviving Cavalier title."
+  - title.crazy-race-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Crazy Race, was merged into the surviving Crazy Race title."
+  - title.criterium-2000-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Criterium 2000, was merged into the surviving Criterium 2000 title."
+  - title.fair-fight-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Fair Fight, was merged into the surviving Fair Fight title."
+  - title.hula-hula-italy:
+      delete: true
+      note: "Orphaned after its sole model, Chicago Coin's export edition Hula-Hula (Italy), was merged into the surviving Hula-Hula title."
+  - title.master-stroke-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Master Stroke, was merged into the surviving Master Stroke title."
+  - title.mr-doom-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Mr. Doom, was merged into the surviving Mr. Doom title."
+  - title.mr-evil-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Mr. Evil, was merged into the surviving Mr. Evil title."
+  - title.red-arrow-payout-model:
+      delete: true
+      note: "Orphaned after its sole model, Keeney's export edition Red Arrow (payout model), was merged into the surviving Red Arrow title."
+  - title.rocket-iii-italy:
+      delete: true
+      note: "Orphaned after its sole model, Bally's export edition Rocket III (Italy), was merged into the surviving Rocket III title."
+  - title.sea-scare-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Sea Scare, was merged into the surviving Sea Scare title."
+  - title.space-game-1-card-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Space Game (1 card), was merged into the surviving Space Game (1 card) title."
+  - title.space-game-7-card-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Space Game (7 card), was merged into the surviving Space Game (7 card) title."
+  - title.swashbuckler-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Swashbuckler, was merged into the surviving Swashbuckler title."
+  - title.the-flipper-game-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition The Flipper Game, was merged into the surviving The Flipper Game title."
+  - title.the-godfather-2:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition The Godfather, was merged into the surviving Petaco The Godfather title."
+  - title.torneo-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Torneo, was merged into the surviving Torneo title."
+  - title.twin-gain-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Twin-Gain, was merged into the surviving Twin-Gain title."
+  - title.underwater-duplicate:
+      delete: true
+      note: "Orphaned after its sole model, Recel's export edition Underwater, was merged into the surviving Underwater title."

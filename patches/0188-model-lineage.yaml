@@ -1,0 +1,564 @@
+attribution: flipcommons-catalog
+description: >
+  Model lineage - mostly conversions and copies.
+claims:
+  - model.action-2:
+      cite:
+        ref: "ipdb:3839"
+        quote: "'Action' was a conversion of Exhibit's 1941 'Stars'."
+      model_relationship:
+        - target_machine: stars-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.alert:
+      cite:
+        ref: "ipdb:3830"
+        quote: This game is a conversion of Exhibit's 1941 'Stars'.
+      model_relationship:
+        - target_machine: stars-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.aloha-2:
+      cite:
+        ref: "ipdb:2871"
+        quote: "'Aloha' is a conversion of the flipperless game United's 1947 'Hawaii'."
+      model_relationship:
+        - target_machine: hawaii
+          relationship_type: conversion
+          license_status: unknown
+  - model.arizona:
+      cite:
+        ref: "ipdb:86"
+        quote: "'Arizona' is a conversion of Exhibit's 1941 'Sun Beam'."
+      model_relationship:
+        - target_machine: sun-beam
+          relationship_type: conversion
+          license_status: unknown
+  - model.auto-roll:
+      cite:
+        ref: "ipdb:5446"
+        quote: Conversion of Genco's 1946 'Advance Roll'.
+      model_relationship:
+        - target_machine: advance-roll
+          relationship_type: conversion
+          license_status: unknown
+  - model.baby-doll:
+      cite:
+        ref: "ipdb:121"
+        quote: This is a licensed version of Williams' 1975 'Satin Doll'.
+      model_relationship:
+        - target_machine: satin-doll
+          relationship_type: copy
+          license_status: licensed
+  - model.ball-pool:
+      cite:
+        ref: "ipdb:5468"
+        quote: "'Ball Pool' is a copy of Gottlieb's 1972 'Play Pool'."
+      model_relationship:
+        - target_machine: play-pool
+          relationship_type: copy
+          license_status: unknown
+  - model.battle-2:
+      cite:
+        ref: "ipdb:3841"
+        quote: "'Battle' was a conversion of Exhibit's 1940 'Zombie'."
+      model_relationship:
+        - target_machine: zombie
+          relationship_type: conversion
+          license_status: unknown
+  - model.bazaar-3:
+      cite:
+        ref: "ipdb:2849"
+        quote: "'Bazaar' was a conversion of the flipperless game United's 1947 'Mexico'."
+      model_relationship:
+        - target_machine: mexico
+          relationship_type: conversion
+          license_status: unknown
+  - model.beach-club:
+      cite:
+        ref: "ipdb:204"
+        quote: "'Beach Club' is a conversion of the flipperless Gottlieb's 1947 'Lucky Star'."
+      model_relationship:
+        - target_machine: lucky-star-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.big-top-5:
+      cite:
+        ref: "ipdb:5062"
+        quote: "'Big Top' was a conversion of Gottlieb's 1940 'Big Show'."
+      model_relationship:
+        - target_machine: big-show-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.bingo-cards:
+      cite:
+        ref: "ipdb:5910"
+        quote: An apparent copy of PAMCO's 1934 'Lite-A-Line'.
+      model_relationship:
+        - target_machine: lite-a-line-2
+          relationship_type: copy
+          license_status: unknown
+  - model.bombardier-3:
+      cite:
+        ref: "ipdb:3872"
+        quote: "'Bombardier' was a conversion of Genco's 1939 'Follies of 1940'."
+      model_relationship:
+        - target_machine: follies-of-1940
+          relationship_type: conversion
+          license_status: unknown
+  - model.brazil-2:
+      cite:
+        ref: "ipdb:373"
+        quote: "'Brazil' was a conversion of Exhibit's 1941 'Do-Re-Mi'."
+      model_relationship:
+        - target_machine: do-re-mi
+          relationship_type: conversion
+          license_status: unknown
+  - model.cannon-fire-standard:
+      cite:
+        ref: "ipdb:430"
+        quote: Licensed version of Shyvers Coin Automatic Machine Company's 1934 'Cannon Fire'.
+      model_relationship:
+        - target_machine: cannon-fire
+          relationship_type: copy
+          license_status: licensed
+  - model.cape-may:
+      cite:
+        ref: "ipdb:4855"
+        quote: This is a conversion of Bally's 1955 'Broadway'.
+      model_relationship:
+        - target_machine: broadway-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.catalina:
+      cite:
+        ref: "ipdb:470"
+        quote: "`Catalina' was a conversion of Chcago Coin's 'Sport Parade'."
+      model_relationship:
+        - target_machine: sport-parade
+          relationship_type: conversion
+          license_status: unknown
+  - model.center-field:
+      cite:
+        ref: "ipdb:4327"
+        quote: "'Center Field' was a conversion of Chicago Coin's 1947 'Play Boy'."
+      model_relationship:
+        - target_machine: play-boy-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.cleopatra-3:
+      cite:
+        ref: "ipdb:4328"
+        quote: "'Cleopatra' was a conversion of the flipperless game United's 1948 'Tropicana' but we don't yet know if the conversion added flippers."
+      model_relationship:
+        - target_machine: tropicana
+          relationship_type: conversion
+          license_status: unknown
+  - model.comet-2:
+      cite:
+        ref: "ipdb:4132"
+        quote: This is a customized version of Williams' 1985 'Comet'.
+      model_relationship:
+        - target_machine: comet
+          relationship_type: copy
+          license_status: unknown
+  - model.corsair:
+      cite:
+        ref: "ipdb:6873"
+        quote: It is a conversion of Gottlieb's 1957 'Flag-Ship'.
+      model_relationship:
+        - target_machine: flag-ship
+          relationship_type: conversion
+          license_status: unknown
+  - model.coupe-dargent:
+      cite:
+        ref: "ipdb:4924"
+        quote: This is a copy of the internationally successful Genco's 1933 'Silver Cup'.
+      model_relationship:
+        - target_machine: silver-cup
+          relationship_type: copy
+          license_status: unknown
+  - model.destroyer:
+      cite:
+        ref: "ipdb:3831"
+        quote: "'Destroyer' was a conversion of Genco's 1940 'Cadillac'."
+      model_relationship:
+        - target_machine: cadillac
+          relationship_type: conversion
+          license_status: unknown
+  - model.devils:
+      cite:
+        ref: "ipdb:4398"
+        quote: Conversion kit for Bally's 1967 'Rocket III'.
+      model_relationship:
+        - target_machine: rocket-iii
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.favorite-3:
+      cite:
+        ref: "ipdb:5240"
+        quote: An apparent copy of Buckley Manufacturing Company's 1932 'Favorite'.
+      model_relationship:
+        - target_machine: favorite-2
+          relationship_type: copy
+          license_status: unknown
+  - model.fightin-phils:
+      cite:
+        ref: "ipdb:3095"
+        quote: This game is a conversion of Williams' 1948 'Yanks'.
+      model_relationship:
+        - target_machine: yanks
+          relationship_type: conversion
+          license_status: unknown
+  - model.golden-arrow-3:
+      cite:
+        ref: "ipdb:4082"
+        quote: Game is a customized version of Gottlieb's 1977 'Golden Arrow' for Italy.
+      model_relationship:
+        - target_machine: golden-arrow
+          relationship_type: copy
+          license_status: unknown
+  - model.golden-arrow-4:
+      cite:
+        ref: "ipdb:6424"
+        quote: A copy of Gottlieb's 1977 'Golden Arrow'.
+      model_relationship:
+        - target_machine: golden-arrow
+          relationship_type: copy
+          license_status: unknown
+  - model.grand-canyon:
+      cite:
+        ref: "ipdb:1065"
+        quote: "'Grand Canyon' was a World War II conversion of Exhibit's 1941 'Double Play'."
+      model_relationship:
+        - target_machine: double-play-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.great-circus:
+      cite:
+        ref: "ipdb:3129"
+        quote: This game is a copy of Gottlieb's 1957 'Super Circus'.
+      model_relationship:
+        - target_machine: super-circus
+          relationship_type: copy
+          license_status: unknown
+  - model.hi-babe:
+      cite:
+        ref: "ipdb:5064"
+        quote: "'Hi Babe' was a conversion of Genco's 1940 'Blondie'."
+      model_relationship:
+        - target_machine: blondie-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.kiss-3:
+      cite:
+        ref: "ipdb:5143"
+        quote: "This conversion kit included a playfield and backglass to fit inside a Bally cabinet, converting it to be like Bally's 1979 'KISS'."
+      model_relationship:
+        - target_machine: kiss
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.liberty-2:
+      cite:
+        ref: "ipdb:3881"
+        quote: "'Liberty' was a conversion of Bally's 1941 'Flicker'."
+      model_relationship:
+        - target_machine: flicker-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.majorette:
+      cite:
+        ref: "ipdb:5067"
+        quote: "'Majorette' was a conversion of Genco's 1940 'Band Wagon'."
+      model_relationship:
+        - target_machine: band-wagon-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.marines-at-play-1st-edition:
+      cite:
+        ref: "ipdb:5382"
+        quote: "'Marines At Play' was a conversion of Bally's 1941 'Flicker'."
+      model_relationship:
+        - target_machine: flicker-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.marines-at-play-2nd-edition:
+      cite:
+        ref: "ipdb:3393"
+        quote: "'Marines At Play' was a conversion of Bally's 1941 'Flicker'."
+      model_relationship:
+        - target_machine: flicker-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.movie-masters:
+      cite:
+        ref: "ipdb:3910"
+        quote: This is a conversion kit with the same playfield layout as Bally Midway's 1984 'Black Pyramid' except for the moving target in the middle of the playfield.
+      model_relationship:
+        - target_machine: black-pyramid
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.mythology:
+      cite:
+        ref: "ipdb:5265"
+        quote: European conversion of the narrow-body Mylstar's 1984 'The Games'.
+      model_relationship:
+        - target_machine: the-games
+          relationship_type: conversion
+          license_status: unknown
+  - model.neptune-2:
+      cite:
+        ref: "ipdb:5177"
+        quote: A modification of Gottlieb's 1978 'Neptune'.
+      model_relationship:
+        - target_machine: neptune
+          relationship_type: copy
+          license_status: unknown
+  - model.oklahoma-3:
+      cite:
+        ref: "ipdb:1703"
+        quote: "'Oklahoma' was a conversion of Exhibit's 1940 'Leader'."
+      model_relationship:
+        - target_machine: leader
+          relationship_type: conversion
+          license_status: unknown
+  - model.pla-mor-2:
+      cite:
+        ref: "ipdb:5069"
+        quote: "'Pla-Mor' was a conversion of Chicago Coin's 1940 'Sporty'."
+      model_relationship:
+        - target_machine: sporty
+          relationship_type: conversion
+          license_status: unknown
+  - model.play-time-2:
+      cite:
+        ref: "ipdb:4402"
+        quote: Conversion kit for Gottlieb's 1966 'Ice Show' Italian version.
+      model_relationship:
+        - target_machine: ice-show
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.play-time-3:
+      cite:
+        ref: "ipdb:4793"
+        quote: "'Play Time' was a conversion of Gottlieb's 1940 'Gold Star'."
+      model_relationship:
+        - target_machine: gold-star-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.polo-3:
+      cite:
+        ref: "ipdb:5070"
+        quote: "'Polo' was a conversion of Genco's 1939 'Punch'."
+      model_relationship:
+        - target_machine: punch
+          relationship_type: conversion
+          license_status: unknown
+  - model.re-vue:
+      cite:
+        ref: "ipdb:5071"
+        quote: "'Re-Vue' was a conversion of Bally's 1939 'Headliner'."
+      model_relationship:
+        - target_machine: headliner
+          relationship_type: conversion
+          license_status: unknown
+  - model.rebound-junior:
+      cite:
+        ref: "ipdb:1927"
+        quote: "A licensed version of California Games, Incorporated's 1934 'Rebound'."
+      model_relationship:
+        - target_machine: rebound
+          relationship_type: copy
+          license_status: licensed
+  - model.riviera:
+      cite:
+        ref: "ipdb:1967"
+        quote: "'Riviera' was a World War II conversion of Exhibit's 1941 'Big Parade'."
+      model_relationship:
+        - target_machine: big-parade
+          relationship_type: conversion
+          license_status: unknown
+  - model.riviera-3:
+      cite:
+        ref: "ipdb:4469"
+        quote: This is a conversion of Gottlieb's 1958 'Picnic'.
+      model_relationship:
+        - target_machine: picnic
+          relationship_type: conversion
+          license_status: unknown
+  - model.sailing:
+      cite:
+        ref: "ipdb:5072"
+        quote: "'Sailing' was a conversion of Bally's 1939 'White Sails'."
+      model_relationship:
+        - target_machine: white-sails
+          relationship_type: conversion
+          license_status: unknown
+  - model.scala-reale:
+      cite:
+        ref: "ipdb:4076"
+        quote: A copy of Gottlieb's 1970 'Card Trix'.
+      model_relationship:
+        - target_machine: card-trix
+          relationship_type: copy
+          license_status: unknown
+  - model.sentry:
+      cite:
+        ref: "ipdb:3844"
+        quote: "'Sentry' was a conversion of Exhibit's 1940 'Leader'."
+      model_relationship:
+        - target_machine: leader
+          relationship_type: conversion
+          license_status: unknown
+  - model.serenade-4:
+      cite:
+        ref: "ipdb:4470"
+        quote: Same game as Gottlieb's 1958 'Gondolier' but some artwork was redrawn.
+      model_relationship:
+        - target_machine: gondolier
+          relationship_type: copy
+          license_status: unknown
+  - model.sho-me:
+      cite:
+        ref: "ipdb:3877"
+        quote: "'Sho Me' was a conversion of Chicago Coin's 1940 'Roxy'."
+      model_relationship:
+        - target_machine: roxy
+          relationship_type: conversion
+          license_status: unknown
+  - model.sinbad-3:
+      cite:
+        ref: "ipdb:4938"
+        quote: Same design as Gottlieb's 1978 'Sinbad'.
+      model_relationship:
+        - target_machine: sinbad
+          relationship_type: copy
+          license_status: unknown
+  - model.south-seas:
+      cite:
+        ref: "ipdb:2246"
+        quote: "'South Seas' was a conversion of Exhibit's 1941 'Knockout'."
+      model_relationship:
+        - target_machine: knockout-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.streamliner:
+      cite:
+        ref: "ipdb:2402"
+        quote: "'Streamliner' was a World War II conversion of Exhibit's 1941 'Stars'."
+      model_relationship:
+        - target_machine: stars-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.sun-valley-2:
+      cite:
+        ref: "ipdb:2418"
+        quote: World War II conversion of Exhibit's 1941 'Sun Beam'.
+      model_relationship:
+        - target_machine: sun-beam
+          relationship_type: conversion
+          license_status: unknown
+  - model.super-jumping:
+      cite:
+        ref: "ipdb:4467"
+        quote: A copy of Gottlieb's 1954 'Super Jumbo'.
+      model_relationship:
+        - target_machine: super-jumbo
+          relationship_type: copy
+          license_status: unknown
+  - model.sure-shot-5:
+      cite:
+        ref: "ipdb:6724"
+        quote: This is an Italian-made add-a-ball copy of the USA replay Gottlieb's 1976 'Sure Shot'.
+      model_relationship:
+        - target_machine: sure-shot-2
+          relationship_type: copy
+          license_status: unknown
+  - model.surf-champ-2:
+      cite:
+        ref: "ipdb:5308"
+        quote: A copy of the 4-player Gottlieb's 1976 'Surf Champ'.
+      model_relationship:
+        - target_machine: surf-champ
+          relationship_type: copy
+          license_status: unknown
+  - model.surf-champ-3:
+      cite:
+        ref: "ipdb:5689"
+        quote: A copy of the 4-player Gottlieb's 1976 'Surf Champ'.
+      model_relationship:
+        - target_machine: surf-champ
+          relationship_type: copy
+          license_status: unknown
+  - model.sweet-sue:
+      cite:
+        ref: "ipdb:2476"
+        quote: Conversion of the flipperless game United's 1947 'Havana'.
+      model_relationship:
+        - target_machine: havana
+          relationship_type: conversion
+          license_status: unknown
+  - model.texas-2:
+      cite:
+        ref: "ipdb:5816"
+        quote: "'Texas' is a 1-player copy of the 2-player game Gottlieb's 1969 'Wild Wild West'."
+      model_relationship:
+        - target_machine: wild-wild-west
+          relationship_type: copy
+          license_status: unknown
+  - model.time-out-2:
+      cite:
+        ref: "ipdb:5075"
+        quote: "'Time Out' was a conversion of Bally's 1940 'Vacation'."
+      model_relationship:
+        - target_machine: vacation
+          relationship_type: conversion
+          license_status: unknown
+  - model.trade-winds-2:
+      cite:
+        ref: "ipdb:2620"
+        quote: "'Trade Winds' was a conversion of Exhibit's 1941 'Sky Blazer'."
+      model_relationship:
+        - target_machine: sky-blazer
+          relationship_type: conversion
+          license_status: unknown
+  - model.tropical:
+      cite:
+        ref: "ipdb:5511"
+        quote: "'Tropical' is a copy of Williams' 1973 'Tropic Fun'."
+      model_relationship:
+        - target_machine: tropic-fun
+          relationship_type: copy
+          license_status: unknown
+  - model.tru-form:
+      cite:
+        ref: "ipdb:5076"
+        quote: "'Tru-Form' was a conversion of Bally's 1939 'Champion'."
+      model_relationship:
+        - target_machine: champion-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.volley-2:
+      cite:
+        ref: "ipdb:5494"
+        quote: A copy of Williams' 1978 'World Cup' and with a different sports theme.
+      model_relationship:
+        - target_machine: world-cup
+          relationship_type: copy
+          license_status: unknown
+  - model.white-sails-2:
+      cite:
+        ref: "ipdb:6715"
+        quote: This is a conversion of Baker Novelty and Manufacturing Company's 1941 'Silver Spray'.
+      model_relationship:
+        - target_machine: silver-spray
+          relationship_type: conversion
+          license_status: unknown
+  - model.yankee-aggot-tell:
+      cite:
+        ref: "ipdb:6805"
+        quote: "This game is identical to Automatic Industries, Incorporated's 1931 'Whiffle Board'."
+      model_relationship:
+        - target_machine: whiffle-board
+          relationship_type: copy
+          license_status: unknown

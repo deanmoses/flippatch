@@ -1,0 +1,275 @@
+attribution: flipcommons-catalog
+description: Merge the split titles of export editions onto their originals' titles.
+claims:
+  # ---------------------------------------------------------------------------
+  # Each pair below is already joined by an export_edition_of edge — the claim
+  # that the two records are one game — yet each model still sits alone in its
+  # own title. The edge decided the title placement, so nothing here needs new
+  # source research: the export edition is re-homed onto the original's title
+  # and the emptied title is retired in the next patch (a soft-delete refuses
+  # while a referrer is still attached, and the referrer check reads live DB
+  # state, so the re-home cannot share a patch with the delete).
+  #
+  # Most pairs are Recel/Petaco: one Spanish operation running an export brand
+  # (Recel) and a domestic one (Petaco). The domestic original's title survives.
+  #
+  # Where the doomed title holds the plain slug and the survivor holds a bare
+  # numeric placeholder, the slug is handed over: a soft-delete does not
+  # release a slug, so the doomed title is reslugged out of the way here and
+  # the survivor claims the freed slug in a later patch (one patch cannot both
+  # free a slug and claim it). Pairs whose survivor already holds a good slug,
+  # or whose plain slug belongs to an unrelated live title, get only the
+  # re-home.
+  # ---------------------------------------------------------------------------
+
+  # ---- Cavalier (Recel 1979 → Petaco 1979)
+  - model.cavalier:
+      note: >
+        Recorded as the export edition of Petaco's Cavalier, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: cavalier-2
+  - title.cavalier:
+      note: >
+        Reslugged to free the cavalier slug for the surviving Cavalier title,
+        which claims it in a later patch. This title held only Recel's export edition, now
+        re-homed onto the original's title, and is retired next.
+      slug: cavalier-duplicate
+
+  # ---- Crazy Race (Recel 1978 → Petaco 1978)
+  - model.crazy-race:
+      note: >
+        Recorded as the export edition of Petaco's Crazy Race, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: crazy-race-2
+  - title.crazy-race:
+      note: >
+        Reslugged to free the crazy-race slug for the surviving Crazy Race
+        title, which claims it in a later patch. This title held only Recel's export
+        edition, now re-homed onto the original's title, and is retired next.
+      slug: crazy-race-duplicate
+
+  # ---- Criterium 2000 (Recel 1975 → Petaco 1975)
+  - model.criterium-2000:
+      note: >
+        Recorded as the export edition of Petaco's Criterium 2000, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: criterium-2000-2
+  - title.criterium-2000:
+      note: >
+        Reslugged to free the criterium-2000 slug for the surviving Criterium
+        2000 title, which claims it in a later patch. This title held only Recel's export
+        edition, now re-homed onto the original's title, and is retired next.
+      slug: criterium-2000-duplicate
+
+  # ---- Fair Fight (Recel 1978 → Petaco 1978)
+  - model.fair-fight:
+      note: >
+        Recorded as the export edition of Petaco's Fair Fight, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: fair-fight-2
+  - title.fair-fight:
+      note: >
+        Reslugged to free the fair-fight slug for the surviving Fair Fight
+        title, which claims it in a later patch. This title held only Recel's export
+        edition, now re-homed onto the original's title, and is retired next.
+      slug: fair-fight-duplicate
+
+  # ---- Hula-Hula (Chicago Coin 1966) — the Italy export joins the original.
+  #      The plain hula-hula slug belongs to an unrelated live title, so the
+  #      survivor keeps its own slug and only the re-home is needed.
+  - model.hula-hula-italy:
+      note: >
+        Recorded as the export edition of Chicago Coin's Hula-Hula, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: hula-hula-2
+
+  # ---- Master Stroke (Recel 1977 → Petaco 1977)
+  - model.master-stroke:
+      note: >
+        Recorded as the export edition of Petaco's Master Stroke, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: master-stroke-2
+  - title.master-stroke:
+      note: >
+        Reslugged to free the master-stroke slug for the surviving Master
+        Stroke title, which claims it in a later patch. This title held only Recel's export
+        edition, now re-homed onto the original's title, and is retired next.
+      slug: master-stroke-duplicate
+
+  # ---- Mr. Doom (Recel 1979 → Petaco 1979)
+  - model.mr-doom:
+      note: >
+        Recorded as the export edition of Petaco's Mr. Doom, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: mr-doom-2
+  - title.mr-doom:
+      note: >
+        Reslugged to free the mr-doom slug for the surviving Mr. Doom title,
+        which claims it in a later patch. This title held only Recel's export edition, now
+        re-homed onto the original's title, and is retired next.
+      slug: mr-doom-duplicate
+
+  # ---- Mr. Evil (Recel 1978 → Petaco 1978)
+  - model.mr-evil:
+      note: >
+        Recorded as the export edition of Petaco's Mr. Evil, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: mr-evil-2
+  - title.mr-evil:
+      note: >
+        Reslugged to free the mr-evil slug for the surviving Mr. Evil title,
+        which claims it in a later patch. This title held only Recel's export edition, now
+        re-homed onto the original's title, and is retired next.
+      slug: mr-evil-duplicate
+
+  # ---- Red Arrow (Keeney) — the payout model joins the original. Its own
+  #      title slug is descriptive rather than a placeholder the survivor wants,
+  #      and the plain red-arrow slug belongs to an unrelated live title.
+  - model.red-arrow-payout-model:
+      note: >
+        Recorded as the export edition of Keeney's Red Arrow, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: red-arrow-3
+
+  # ---- Rocket III (Bally 1967) — the Italy export joins the original, whose
+  #      title already holds the plain slug.
+  - model.rocket-iii-italy:
+      note: >
+        Recorded as the export edition of Bally's Rocket III, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: rocket-iii
+
+  # ---- Sea Scare (Recel 1978 → Petaco 1975)
+  - model.sea-scare:
+      note: >
+        Recorded as the export edition of Petaco's Sea Scare, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: sea-scare-2
+  - title.sea-scare:
+      note: >
+        Reslugged to free the sea-scare slug for the surviving Sea Scare title,
+        which claims it in a later patch. This title held only Recel's export edition, now
+        re-homed onto the original's title, and is retired next.
+      slug: sea-scare-duplicate
+
+  # ---- Space Game (1 card) (Recel 1979 → Petaco)
+  - model.space-game-1-card:
+      note: >
+        Recorded as the export edition of Petaco's Space Game (1 card), so the
+        two records are one game; re-homed from its own single-model title onto
+        the original's title.
+      title: space-game-1-card-2
+  - title.space-game-1-card:
+      note: >
+        Reslugged to free the space-game-1-card slug for the surviving Space
+        Game (1 card) title, which claims it in a later patch. This title held only Recel's
+        export edition, now re-homed onto the original's title, and is retired
+        next.
+      slug: space-game-1-card-duplicate
+
+  # ---- Space Game (7 card) (Recel 1979 → Petaco)
+  - model.space-game-7-card:
+      note: >
+        Recorded as the export edition of Petaco's Space Game (7 card), so the
+        two records are one game; re-homed from its own single-model title onto
+        the original's title.
+      title: space-game-7-card-2
+  - title.space-game-7-card:
+      note: >
+        Reslugged to free the space-game-7-card slug for the surviving Space
+        Game (7 card) title, which claims it in a later patch. This title held only Recel's
+        export edition, now re-homed onto the original's title, and is retired
+        next.
+      slug: space-game-7-card-duplicate
+
+  # ---- Swashbuckler (Recel 1979 → Petaco 1979)
+  - model.swashbuckler:
+      note: >
+        Recorded as the export edition of Petaco's Swashbuckler, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: swashbuckler-2
+  - title.swashbuckler:
+      note: >
+        Reslugged to free the swashbuckler slug for the surviving Swashbuckler
+        title, which claims it in a later patch. This title held only Recel's export
+        edition, now re-homed onto the original's title, and is retired next.
+      slug: swashbuckler-duplicate
+
+  # ---- The Flipper Game (Recel 1980 → Petaco 1980)
+  - model.the-flipper-game:
+      note: >
+        Recorded as the export edition of Petaco's The Flipper Game, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: the-flipper-game-2
+  - title.the-flipper-game:
+      note: >
+        Reslugged to free the the-flipper-game slug for the surviving The
+        Flipper Game title, which claims it in a later patch. This title held only Recel's
+        export edition, now re-homed onto the original's title, and is retired
+        next.
+      slug: the-flipper-game-duplicate
+
+  # ---- The Godfather (Recel 1974 → Petaco) — the plain the-godfather slug
+  #      belongs to the unrelated Stern title, so the survivor keeps its own
+  #      placeholder rather than trading one placeholder for another.
+  - model.the-godfather:
+      note: >
+        Recorded as the export edition of Petaco's The Godfather, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: the-godfather-3
+
+  # ---- Torneo (Recel 1978 → Petaco 1978)
+  - model.torneo:
+      note: >
+        Recorded as the export edition of Petaco's Torneo, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: torneo-2
+  - title.torneo:
+      note: >
+        Reslugged to free the torneo slug for the surviving Torneo title, which
+        claims it in a later patch. This title held only Recel's export edition, now
+        re-homed onto the original's title, and is retired next.
+      slug: torneo-duplicate
+
+  # ---- Twin-Gain (Recel 1977 → Petaco 1977)
+  - model.twin-gain:
+      note: >
+        Recorded as the export edition of Petaco's Twin-Gain, so the two records
+        are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: twin-gain-2
+  - title.twin-gain:
+      note: >
+        Reslugged to free the twin-gain slug for the surviving Twin-Gain title,
+        which claims it in a later patch. This title held only Recel's export edition, now
+        re-homed onto the original's title, and is retired next.
+      slug: twin-gain-duplicate
+
+  # ---- Underwater (Recel 1976 → Petaco 1976)
+  - model.underwater:
+      note: >
+        Recorded as the export edition of Petaco's Underwater, so the two
+        records are one game; re-homed from its own single-model title onto the
+        original's title.
+      title: underwater-2
+  - title.underwater:
+      note: >
+        Reslugged to free the underwater slug for the surviving Underwater
+        title, which claims it in a later patch. This title held only Recel's export
+        edition, now re-homed onto the original's title, and is retired next.
+      slug: underwater-duplicate

@@ -1,0 +1,728 @@
+attribution: flipcommons-catalog
+description: >
+  Export editions and destination markets stated outright by the source.
+claims:
+  - model.acapulco-2:
+      cite:
+        ref: "ipdb:5864"
+        quote: This game was made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.alaska:
+      cite:
+        ref: "ipdb:3888"
+        quote: The same company made the domestic version as Recreativos Franco's 'Alaska'.
+      export_edition_of: alaska-2
+      export_market:
+        - {}
+  - model.alaska-3:
+      cite:
+        ref: "ipdb:6604"
+        quote: The same company made a domestic 1-player version as Recreativos Franco's 'Alaska'.
+      export_edition_of: alaska-2
+      export_market:
+        - {}
+  - model.beatniks-2:
+      cite:
+        ref: "ipdb:4745"
+        quote: This is the 2-player 'kick-up' (add-a-ball) version for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.big-ben-segasa-italy:
+      cite:
+        - ref: "ipdb:6196"
+          quote: This is the add-a-ball version of Segasa's 1975 'Big Ben' made for export to Italy.
+        - ref: "ipdb:228"
+          quote: The add-a-ball version for export to Italy is Segasa's 1975 'Big Ben (Italy)'.
+      export_edition_of: big-ben-segasa
+      export_market:
+        - target_market_location: italy
+  - model.big-jack:
+      cite:
+        - ref: "ipdb:258"
+          quote: A version of Paul Bunyan made for export to Italy.
+        - ref: "ipdb:1768"
+          quote: The Italian version is Gottlieb's 1968 'Big Jack'.
+      export_edition_of: paul-bunyan
+      export_market:
+        - target_market_location: italy
+  - model.black-magic:
+      cite:
+        ref: "ipdb:5566"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Black Magic'."
+      export_edition_of: black-magic-2
+      export_market:
+        - {}
+  - model.black-magic-4:
+      cite:
+        ref: "ipdb:3626"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic 4-player version as Petaco's 'Black Magic'."
+      export_edition_of: black-magic-2
+      export_market:
+        - {}
+  - model.bronco-2:
+      cite:
+        ref: "ipdb:388"
+        quote: A special version of this 4-player Model 396 game was made for export to Germany only.
+      export_market:
+        - target_market_location: germany
+  - model.bumper-pool:
+      cite:
+        - ref: "ipdb:406"
+          quote: A version of Gottlieb's 1969 'Mini Pool' made for export to Italy.
+        - ref: "ipdb:1605"
+          quote: It was exported to Italy as Gottlieb's 1969 'Bumper Pool'.
+        - ref: "ipdb:2502"
+          quote: The add-a-ball version of this game is Gottlieb's 1969 'Mini Pool' which was exported to Italy as Gottlieb's 1969 'Bumper Pool'.
+      export_edition_of: mini-pool
+      export_market:
+        - target_market_location: italy
+  - model.campidoglio:
+      cite:
+        ref: "ipdb:5873"
+        quote: This game was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.card-king:
+      cite:
+        ref: "ipdb:445"
+        quote: This is a version of Gottlieb's 1972 'Pop-A-Card' made for export to Italy.
+      export_edition_of: pop-a-card
+      export_market:
+        - target_market_location: italy
+  - model.card-trix-italy:
+      cite:
+        ref: "ipdb:3748"
+        quote: This is a version of Gottlieb's 1970 'Card Trix' made for export to Italy.
+      export_edition_of: card-trix
+      export_market:
+        - target_market_location: italy
+  - model.carrousel:
+      cite:
+        ref: "ipdb:5832"
+        quote: Made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.cavalier:
+      cite:
+        ref: "ipdb:474"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Cavalier'."
+      export_edition_of: cavalier-2
+      export_market:
+        - {}
+  - model.cherokee:
+      cite:
+        ref: "ipdb:4099"
+        quote: "Interflip is the name used for export games. [...] The same company made a domestic version as Recreativos Franco's 1976 'Cherokee'."
+      export_edition_of: cherokee-2
+      export_market:
+        - {}
+  - model.circus-10-2:
+      cite:
+        ref: "ipdb:5841"
+        quote: Made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.circus-13:
+      cite:
+        ref: "ipdb:5833"
+        quote: Made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.circus-388:
+      cite:
+        ref: "ipdb:5839"
+        quote: Made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.continental-circus:
+      cite:
+        ref: "ipdb:5834"
+        quote: Made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.crazy-race:
+      cite:
+        ref: "ipdb:587"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Crazy Race'."
+      export_edition_of: crazy-race-2
+      export_market:
+        - {}
+  - model.criterium-2000:
+      cite:
+        ref: "ipdb:594"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Criterium 2000'."
+      export_edition_of: criterium-2000-2
+      export_market:
+        - {}
+  - model.criterium-75:
+      cite:
+        ref: "ipdb:595"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic SS version as Petaco's 'Criterium 75'."
+      export_edition_of: criterium-75-3
+      export_market:
+        - {}
+  - model.criterium-80:
+      cite:
+        ref: "ipdb:597"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 1975 'Criterium 80'."
+      export_edition_of: criterium-80-2
+      export_market:
+        - {}
+  - model.croce-doro:
+      cite:
+        ref: "ipdb:5865"
+        quote: This game was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.d-quijote:
+      cite:
+        ref: "ipdb:4126"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'D."
+      export_market:
+        - {}
+  - model.diamond-flipper:
+      cite:
+        ref: "ipdb:5869"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.diamond-flipper-di-lusso:
+      cite:
+        ref: "ipdb:5872"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.dragon-2:
+      cite:
+        ref: "ipdb:3887"
+        quote: "Interflip is the name used for export games. [...] The same company made a 1-player domestic version as Recreativos Franco's 1977 'Dragoon'."
+      export_edition_of: dragoon
+      export_market:
+        - {}
+  - model.elite-guard:
+      cite:
+        ref: "ipdb:780"
+        quote: "A version of `Palace Guard' made for export to Italy."
+      export_edition_of: palace-guard
+      export_market:
+        - target_market_location: italy
+  - model.fair-fight:
+      cite:
+        ref: "ipdb:808"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Fair Fight'."
+      export_edition_of: fair-fight-2
+      export_market:
+        - {}
+  - model.flipperino:
+      cite:
+        ref: "ipdb:5871"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.full:
+      cite:
+        ref: "ipdb:4375"
+        quote: "Interflip is the name used for export games. [...] The same company made a domestic version as Recreativos Franco's 1977 'Full'."
+      export_edition_of: full-2
+      export_market:
+        - {}
+  - model.galaxie:
+      cite:
+        ref: "ipdb:978"
+        quote: This is a version of Gottlieb's 1971 'Dimension' made for export to Brazil then Italy.
+      export_edition_of: dimension
+      export_market:
+        - target_market_location: brazil
+        - target_market_location: italy
+  - model.golden-flipper:
+      cite:
+        ref: "ipdb:5866"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.gun-smoke-2:
+      cite:
+        ref: "ipdb:4808"
+        quote: This is the 2-player Add-a-ball version of Chicago Coin's 1968 'Gun Smoke' for export to Italy.
+      export_edition_of: gun-smoke
+      export_market:
+        - target_market_location: italy
+  - model.harmony:
+      cite:
+        ref: "ipdb:1127"
+        quote: "'Harmony' and Gottlieb's 1967 'Troubadour' are versions of Gottlieb's 1967 'Melody' made for export to Italy."
+      export_market:
+        - target_market_location: italy
+  - model.high-seas:
+      cite:
+        - ref: "ipdb:1175"
+          quote: This game is the version of Gottlieb's 1976 'Ship Ahoy' made for export to Italy.
+        - ref: "ipdb:391"
+          quote: The Add-a-ball version of this game is Gottlieb's 1976 'Ship Ahoy' which was exported to Italy as Gottlieb's 1976 'High Seas'.
+        - ref: "ipdb:2119"
+          quote: The Add-a-ball version for export to Italy is Gottlieb's 1976 'High Seas'.
+      export_edition_of: ship-ahoy-2
+      export_market:
+        - target_market_location: italy
+  - model.hook:
+      cite:
+        ref: "ipdb:1233"
+        quote: The prototype game shown here has serial number 48243 and was built for export to Belgium.
+      export_market:
+        - target_market_location: belgium
+  - model.hula-hula-italy:
+      cite:
+        - ref: "ipdb:6448"
+          quote: This is a version of the USA add-a-ball game Chicago Coin's 1966 'Hula-Hula' for export to Italy.
+        - ref: "ipdb:6324"
+          quote: The add-a-ball version for export to Italy is Chicago Coin's 1966 'Hula-Hula (Italy)'.
+      export_edition_of: hula-hula-2
+      export_market:
+        - target_market_location: italy
+  - model.hurdy-gurdy-italy:
+      note: "Recording this model as built for export to Italy because the catalog name carries a '(Italy)' market suffix, distinguishing it from the same maker's domestic edition of the same game."
+      export_market:
+        - target_market_location: italy
+  - model.hyde-park-italy:
+      cite:
+        - ref: "ipdb:5678"
+          quote: This is the Italian export version of Gottlieb's 1966 'Hyde Park'.
+        - ref: "ipdb:1258"
+          quote: A version made for export to Italy is Gottlieb's 1966 'Hyde Park (Italy)' and does have Italian language on the backglass.
+      export_edition_of: hyde-park
+      export_market:
+        - target_market_location: italy
+  - model.ice-show-italy:
+      note: "Recording this model as built for export to Italy because the catalog name carries a '(Italy)' market suffix, distinguishing it from the same maker's domestic edition of the same game."
+      export_market:
+        - target_market_location: italy
+  - model.jackpot:
+      cite:
+        - ref: "ipdb:1279"
+          quote: Same game as the 4-player Williams' 1971 'Gold Rush' but made for export.
+        - ref: "ipdb:1036"
+          quote: Also produced as a 4-player Williams' 1971 'Jackpot' made for export.
+      export_edition_of: gold-rush-2
+      export_market:
+        - {}
+  - model.jake-mate:
+      cite:
+        ref: "ipdb:1283"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Jake Mate'."
+      export_edition_of: jake-mate-2
+      export_market:
+        - {}
+  - model.jokers-ladders-one-ball:
+      cite:
+        ref: "ipdb:5849"
+        quote: Made for export to Germany.
+      export_market:
+        - target_market_location: germany
+  - model.jungle-life:
+      cite:
+        ref: "ipdb:1337"
+        quote: This add-a-ball game was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.kicker-2:
+      cite:
+        - ref: "ipdb:1364"
+          quote: This game is the version of Gottlieb's 1977 'Team One' made for export to Italy.
+        - ref: "ipdb:2"
+          quote: "The Add-a-ball version of this game is Gottlieb's 1977 'Team One' which was exported to Italy as Gottlieb's 1977 'Kicker', both with different artwork."
+        - ref: "ipdb:2507"
+          quote: The Add-a-ball version for export to Italy is Gottlieb's 1977 'Kicker'.
+      export_edition_of: team-one
+      export_market:
+        - target_market_location: italy
+  - model.kicker-italy:
+      cite:
+        - ref: "ipdb:6296"
+          quote: This is the add-a-ball version of Chicago Coin's 1966 'Kicker' made for export to Italy.
+        - ref: "ipdb:1363"
+          quote: Also made as AAB for export to Italy as Chicago Coin's 'Kicker (Italy)'.
+        - ref: "ipdb:6946"
+          quote: Also made as AAB for export to Italy as Chicago Coin's 'Kicker (Italy)'.
+      export_market:
+        - target_market_location: italy
+  - model.le-grand-carrousel:
+      cite:
+        ref: "ipdb:5836"
+        quote: Made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.louisiana-2001:
+      cite:
+        ref: "ipdb:4532"
+        quote: Made for export to the United States.
+      export_market:
+        - target_market_location: usa
+  - model.lucky-card:
+      cite:
+        - ref: "ipdb:1485"
+          quote: This game is the version of Gottlieb's 1977 'Lucky Hand' made for export to Italy.
+        - ref: "ipdb:1281"
+          quote: The Add-a-ball version of this game is Gottlieb's 1977 'Lucky Hand' which was exported to Italy as Gottlieb's 1977 'Lucky Card'.
+        - ref: "ipdb:1488"
+          quote: The Add-a-ball version for export to Italy is Gottlieb's 1977 'Lucky Card'.
+      export_edition_of: lucky-hand
+      export_market:
+        - target_market_location: italy
+  - model.master-stroke:
+      cite:
+        ref: "ipdb:1555"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Master Stroke'."
+      export_edition_of: master-stroke-2
+      export_market:
+        - {}
+  - model.montana-2000:
+      cite:
+        ref: "ipdb:5476"
+        quote: This game was made for export to the USA and has no payout hopper option.
+      export_market:
+        - target_market_location: usa
+  - model.montana-baby-usa:
+      cite:
+        ref: "ipdb:5875"
+        quote: This game was made for export to the USA.
+      export_market:
+        - target_market_location: usa
+  - model.mr-doom:
+      cite:
+        ref: "ipdb:1637"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Mr. Doom'."
+      export_edition_of: mr-doom-2
+      export_market:
+        - {}
+  - model.mr-evil:
+      cite:
+        ref: "ipdb:1638"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Mr. Evil'."
+      export_edition_of: mr-evil-2
+      export_market:
+        - {}
+  - model.on-beam-italy:
+      note: "Recording this model as built for export to Italy because the catalog name carries a '(Italy)' market suffix, distinguishing it from the same maker's domestic edition of the same game."
+      export_market:
+        - target_market_location: italy
+  - model.one-ball-circus:
+      cite:
+        ref: "ipdb:5845"
+        quote: Made for export to Spain.
+      export_market:
+        - target_market_location: spain
+  - model.palm-beach-club:
+      cite:
+        ref: "ipdb:5868"
+        quote: This game was made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.palm-beach-deluxe:
+      cite:
+        ref: "ipdb:5867"
+        quote: This game was made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.paragon-3:
+      cite:
+        ref: "ipdb:5874"
+        quote: This game was made for export to Holland.
+      export_market:
+        - target_market_location: netherlands
+  - model.party-games:
+      cite:
+        ref: "ipdb:5828"
+        quote: Made for export to the United States.
+      export_market:
+        - target_market_location: usa
+  - model.penalty-one-ball:
+      cite:
+        ref: "ipdb:5848"
+        quote: Made for export to Germany.
+      export_market:
+        - target_market_location: germany
+  - model.penalty-une-bille:
+      cite:
+        ref: "ipdb:5837"
+        quote: Made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.piccadilly-3:
+      cite:
+        ref: "ipdb:5846"
+        quote: Made for export to the United Kingdom.
+      export_market:
+        - target_market_location: uk
+  - model.play-pool:
+      cite:
+        - ref: "ipdb:1819"
+          quote: Game is a version of Gottlieb's 1973 'Pro Pool' made for export to Italy.
+        - ref: "ipdb:1866"
+          quote: This game was exported to Italy as Gottlieb's 1972 'Play Pool'.
+      export_edition_of: pro-pool
+      export_market:
+        - target_market_location: italy
+  - model.poker-plus-2:
+      cite:
+        ref: "ipdb:5128"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Poker Plus'."
+      export_edition_of: poker-plus-3
+      export_market:
+        - {}
+  - model.poseidon:
+      cite:
+        - ref: "ipdb:1852"
+          quote: This game is the version of Gottlieb's 1978 'Neptune' made for export to Italy.
+        - ref: "ipdb:1201"
+          quote: The Add-a-ball version of this game is Gottlieb's 1978 'Neptune' which was exported to Italy as Gottlieb's 1978 'Poseidon'.
+        - ref: "ipdb:1662"
+          quote: The Add-a-ball version for export to Italy is Gottlieb's 1978 'Poseidon'.
+      export_edition_of: neptune
+      export_market:
+        - target_market_location: italy
+  - model.provence-daytona:
+      cite:
+        ref: "ipdb:5835"
+        quote: Made for export to France.
+      export_market:
+        - target_market_location: france
+  - model.red-arrow-payout-model:
+      cite:
+        - ref: "ipdb:7023"
+          quote: This is the model made for export.
+        - ref: "ipdb:6960"
+          quote: The payout model made for export is Keeney's 'Red Arrow (payout model)' and has a different backglass.
+      export_edition_of: red-arrow-4
+      export_market:
+        - {}
+  - model.rock-star:
+      cite:
+        ref: "ipdb:1983"
+        quote: This was the last game made by Gottlieb for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.rocket-iii-italy:
+      note: "Recording this model as built for export to Italy because the catalog name carries a '(Italy)' market suffix, distinguishing it from the same maker's domestic edition of the same game."
+      cite:
+        ref: "ipdb:1989"
+        quote: The Italian add-a-ball version is Bally's 1967 'Rocket III (Italy)'.
+      export_edition_of: rocket-iii
+      export_market:
+        - target_market_location: italy
+  - model.royal-pair:
+      cite:
+        ref: "ipdb:2038"
+        quote: "'Royal Pair' was a version of Gottlieb's 1974 'Top Card' made for export to Italy."
+      export_edition_of: top-card
+      export_market:
+        - target_market_location: italy
+  - model.sea-scare:
+      cite:
+        ref: "ipdb:3312"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Sea Scare'."
+      export_edition_of: sea-scare-2
+      export_market:
+        - {}
+  - model.sky-dive:
+      cite:
+        - ref: "ipdb:2192"
+          quote: This game is the version of Gottlieb's 1974 'Free Fall' made for export to Italy.
+        - ref: "ipdb:949"
+          quote: The Add-a-ball version for export to Italy is Gottlieb's 1974 'Sky Dive'.
+        - ref: "ipdb:2195"
+          quote: The Add-a-ball version of this game is Gottlieb's 1974 'Free Fall' which was exported to Italy as Gottlieb's 1974 'Sky Dive'.
+      export_edition_of: free-fall
+      export_market:
+        - target_market_location: italy
+  - model.sky-jump-2:
+      cite:
+        ref: "ipdb:3275"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Sky Jump'."
+      export_edition_of: sky-jump-petaco
+      export_market:
+        - {}
+  - model.solitaire:
+      cite:
+        - ref: "ipdb:676"
+          quote: The add-a-ball version for export to Italy was Gottlieb's 1967 'Solitaire'.
+        - ref: "ipdb:1372"
+          quote: The add-a-ball version for export to Italy was Gottlieb's 1967 'Solitaire'.
+      export_market:
+        - target_market_location: italy
+  - model.space-game-1-card:
+      cite:
+        ref: "ipdb:5979"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Space Game (1 card)'."
+      export_edition_of: space-game-1-card-2
+      export_market:
+        - {}
+  - model.space-game-7-card:
+      cite:
+        ref: "ipdb:2251"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Space Game (7 card)'."
+      export_edition_of: space-game-7-card-2
+      export_market:
+        - {}
+  - model.space-orbit:
+      cite:
+        ref: "ipdb:2255"
+        quote: This game was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.speakeasy-4:
+      cite:
+        ref: "ipdb:2270"
+        quote: The 4-player version of this game made for export is Bally's 1982 'Speakeasy 4'.
+      export_edition_of: speakeasy-2
+      export_market:
+        - {}
+  - model.spot-pool-2:
+      cite:
+        - ref: "ipdb:2316"
+          quote: This game is the version of Gottlieb's 1976 'Bank Shot' made for export to Italy.
+        - ref: "ipdb:169"
+          quote: The Add-a-ball version for export to Italy is Gottlieb's 1976 'Spot Pool'.
+        - ref: "ipdb:2457"
+          quote: The Add-a-ball version of this game is Gottlieb's 1976 'Bank Shot' which was exported to Italy as Gottlieb's 1976 'Spot Pool'.
+      export_edition_of: bank-shot
+      export_market:
+        - target_market_location: italy
+  - model.star-trek-gottlieb:
+      cite:
+        ref: "ipdb:2354"
+        quote: Conversion of Gottlieb's 1971 'Astro' made for export to Italy.
+      export_edition_of: astro
+      export_market:
+        - target_market_location: italy
+  - model.super-bowl-2:
+      cite:
+        ref: "ipdb:2428"
+        quote: Made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.super-duo:
+      cite:
+        ref: "ipdb:2431"
+        quote: An add-a-ball version of Gottlieb's 1967 'Super Score' made for export to Italy.
+      export_edition_of: super-score-3
+      export_market:
+        - target_market_location: italy
+  - model.super-flipper-2:
+      cite:
+        ref: "ipdb:5870"
+        quote: This is a bingo machine equipped by the manufacturer with flippers and was made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.surfers-2:
+      cite:
+        ref: "ipdb:2466"
+        quote: The add-a-ball only version made for export is Bally's 1967 'Surfers'.
+      export_edition_of: surfers
+      export_market:
+        - {}
+  - model.swashbuckler:
+      cite:
+        ref: "ipdb:2472"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 1979 'Swashbuckler'."
+      export_edition_of: swashbuckler-2
+      export_market:
+        - {}
+  - model.ten-up:
+      cite:
+        - ref: "ipdb:2521"
+          quote: This game is the Add-a-ball version of Gottlieb's 1973 'King Pin' made for export to Italy.
+        - ref: "ipdb:1374"
+          quote: "The Add-a-ball version of this game is Gottlieb's 1975 'Pin-Up', and the Add-a-ball version for export to Italy is Gottlieb's 1973 'Ten-Up'."
+      export_edition_of: king-pin-2
+      export_market:
+        - target_market_location: italy
+  - model.texas-ranger:
+      cite:
+        ref: "ipdb:4636"
+        quote: A single-player Italian export is Gottlieb's 1972 'Texas Ranger'.
+      export_market:
+        - target_market_location: italy
+  - model.the-flipper-game:
+      cite:
+        ref: "ipdb:3103"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 1980 'The Flipper Game'."
+      export_edition_of: the-flipper-game-2
+      export_market:
+        - {}
+  - model.the-godfather:
+      cite:
+        ref: "ipdb:4598"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'The Godfather'."
+      export_edition_of: the-godfather-2
+      export_market:
+        - {}
+  - model.top-hand-2:
+      cite:
+        - ref: "ipdb:2582"
+          quote: This is a version of Gottlieb's 1974 'Capt. Card' made for export to Italy.
+        - ref: "ipdb:433"
+          quote: The replay version of this game is Gottlieb's 1973 'High Hand' and the Italian version is Gottlieb's 1973 'Top Hand'.
+        - ref: "ipdb:1173"
+          quote: The Add-a-ball version of this game is Gottlieb's 1974 'Capt. Card' and the Italian version is Gottlieb's 1973 'Top Hand'.
+      export_edition_of: capt-card
+      export_market:
+        - target_market_location: italy
+  - model.torneo:
+      cite:
+        ref: "ipdb:2599"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Torneo'."
+      export_edition_of: torneo-2
+      export_market:
+        - {}
+  - model.torpedo-2:
+      cite:
+        ref: "ipdb:2601"
+        quote: "The same company made the domestic version as Petaco's 1976 'Torpedo!!'."
+      export_market:
+        - {}
+  - model.trinacria:
+      cite:
+        ref: "ipdb:5844"
+        quote: Made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.troubadour:
+      cite:
+        ref: "ipdb:2666"
+        quote: Same game as Gottlieb's 1967 'Harmony' with art changes made for export to Italy.
+      export_market:
+        - target_market_location: italy
+  - model.twin-gain:
+      cite:
+        ref: "ipdb:2686"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 1977 'Twin-Gain'."
+      export_edition_of: twin-gain-2
+      export_market:
+        - {}
+  - model.underwater:
+      cite:
+        ref: "ipdb:2702"
+        quote: "Recel is the name used for export games. [...] The same company made a domestic version as Petaco's 'Underwater'."
+      export_edition_of: underwater-2
+      export_market:
+        - {}
+  - model.wall-street-spain:
+      note: "Recording this model as built for export to Spain because the catalog name carries a '(Spain)' market suffix, distinguishing it from the same maker's domestic edition of the same game."
+      export_market:
+        - target_market_location: spain
+  - model.wall-street-special-spain:
+      note: "Recording this model as built for export to Spain because the catalog name carries a '(Spain)' market suffix, distinguishing it from the same maker's domestic edition of the same game."
+      cite:
+        ref: "ipdb:3323"
+        quote: A solid state version for export to Spain is Bally's 1977 'Wall Street Special (Spain)'.
+      export_edition_of: wall-street-2
+      export_market:
+        - target_market_location: spain
+  - model.western:
+      cite:
+        ref: "ipdb:1412"
+        quote: The add-a-ball version for export to Italy is Gottlieb's 1969 'Western'.
+      export_edition_of: lariat-2
+      export_market:
+        - target_market_location: italy

@@ -1,0 +1,286 @@
+attribution: flipcommons-catalog
+description: >
+  Gameplay-feature vocabulary from IPDB notable features.
+claims:
+  - gameplay-feature.action-rings:
+      create: true
+      name: Action Rings
+  - gameplay-feature.backbox-animations:
+      create: true
+      name: Backbox Animations
+      gameplay_feature_alias: [Backglass Animation]
+  - gameplay-feature.backbox-light-animations:
+      create: true
+      name: Backbox Light Animations
+      gameplay_feature_parent: [backbox-animations]
+      gameplay_feature_alias: [Backglass Light Animation]
+  - gameplay-feature.ball-cannons:
+      create: true
+      name: Ball Cannons
+  - gameplay-feature.ball-elevators:
+      create: true
+      name: Ball Elevators
+  - gameplay-feature.bally-hole:
+      create: true
+      name: Bally Hole
+      gameplay_feature_alias: [Ballyhole]
+  - gameplay-feature.bingo-cards:
+      create: true
+      name: Bingo Cards
+  - gameplay-feature.bounce-back-outlanes:
+      create: true
+      name: Bounce-Back Outlanes
+      gameplay_feature_parent: [outlanes]
+  - gameplay-feature.captive-ball-spinners:
+      create: true
+      name: Captive Ball Spinners
+      gameplay_feature_parent: [captive-ball, spinners]
+  - gameplay-feature.captive-ball-walkers:
+      create: true
+      name: Captive Ball Walkers
+      gameplay_feature_parent: [captive-ball]
+  - gameplay-feature.center-drop-targets:
+      create: true
+      name: Center Drop Targets
+      gameplay_feature_parent: [drop-targets]
+      gameplay_feature_alias: [Drop Target Between Flippers]
+  - gameplay-feature.stationary-posts:
+      create: true
+      name: Stationary Posts
+  - gameplay-feature.center-stationary-posts:
+      create: true
+      name: Center Stationary Posts
+      gameplay_feature_parent: [stationary-posts]
+      gameplay_feature_alias:
+        [Mini-Post Screw Between Flippers, Stationary Post Between Flippers]
+  - gameplay-feature.center-up-posts:
+      create: true
+      name: Center Up-Posts
+      gameplay_feature_parent: [up-posts]
+      gameplay_feature_alias: [Up-Post Between Flippers]
+  - gameplay-feature.crossover-return-lanes:
+      create: true
+      name: Crossover Return Lanes
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.detour-gates:
+      create: true
+      name: Detour Gates
+      gameplay_feature_parent: [ball-return-gates]
+  - gameplay-feature.drop-lanes:
+      create: true
+      name: Drop Lanes
+      gameplay_feature_parent: [lanes]
+  - gameplay-feature.dual-inlanes:
+      create: true
+      name: Dual Inlanes
+      gameplay_feature_parent: [inlanes]
+  - gameplay-feature.dual-outlanes:
+      create: true
+      name: Dual Outlanes
+      gameplay_feature_parent: [outlanes]
+  - gameplay-feature.elevated-shooter-lanes:
+      create: true
+      name: Elevated Shooter Lanes
+      gameplay_feature_parent: [shooter-lanes]
+      gameplay_feature_alias: [Elevated Ball Shooter Lane]
+  - gameplay-feature.free-ball-gates:
+      create: true
+      name: Free Ball Gates
+      gameplay_feature_parent: [ball-return-gates]
+  - gameplay-feature.free-ball-return-lanes:
+      create: true
+      name: Free Ball Return Lanes
+      gameplay_feature_parent: [lanes]
+      gameplay_feature_alias: [Free Ball Return Lane Behind Flipper]
+  - gameplay-feature.graduated-skill-shots:
+      create: true
+      name: Graduated Skill Shots
+      gameplay_feature_parent: [skill-shot]
+  - gameplay-feature.lane-change:
+      create: true
+      name: Lane Change
+  - gameplay-feature.left-drop-lanes:
+      create: true
+      name: Left Drop Lanes
+      gameplay_feature_parent: [drop-lanes]
+  - gameplay-feature.left-dual-inlanes:
+      create: true
+      name: Left Dual Inlanes
+      gameplay_feature_parent: [dual-inlanes]
+      gameplay_feature_alias: [Dual Left Inlanes, Left-Side Dual Inlanes]
+  - gameplay-feature.left-kickback-lanes:
+      create: true
+      name: Left Kickback Lanes
+      gameplay_feature_parent: [kickback-lanes]
+      gameplay_feature_alias: [Left-Side Kickback Lane]
+  - gameplay-feature.left-kicker-lanes:
+      create: true
+      name: Left Kicker Lanes
+      gameplay_feature_parent: [kicker-lanes]
+      gameplay_feature_alias: [Left-Side Kicker Lane]
+  - gameplay-feature.left-outlane-kickbacks:
+      create: true
+      name: Left Outlane Kickbacks
+      gameplay_feature_parent: [kickback]
+      gameplay_feature_alias: [Left Kickback Outlane]
+  - gameplay-feature.lockdown-bar-buttons:
+      create: true
+      name: Lockdown Bar Buttons
+      gameplay_feature_alias: [Action Button]
+  - gameplay-feature.looping-shooter-lanes:
+      create: true
+      name: Looping Shooter Lanes
+      gameplay_feature_parent: [shooter-lanes]
+  - gameplay-feature.magic-lines:
+      create: true
+      name: Magic Lines
+  - gameplay-feature.magic-screen:
+      create: true
+      name: Magic Screen
+  - gameplay-feature.magic-squares:
+      create: true
+      name: Magic Squares
+  - gameplay-feature.mechanical-backbox-animations:
+      create: true
+      name: Mechanical Backbox Animations
+      gameplay_feature_parent: [backbox-animations]
+  - gameplay-feature.mini-playfields:
+      create: true
+      name: Mini-Playfields
+      gameplay_feature_alias: [Mini Playfields, Mini-Bagatelle]
+  - gameplay-feature.mystic-lines:
+      create: true
+      name: Mystic Lines
+  - gameplay-feature.open-elbow-inlanes:
+      create: true
+      name: Open-Elbow Inlanes
+      gameplay_feature_parent: [inlanes]
+  - gameplay-feature.outholes:
+      create: true
+      name: Outholes
+  - gameplay-feature.player-controlled-diverter-ramps:
+      create: true
+      name: Player-Controlled Diverter Ramps
+      gameplay_feature_parent: [diverter-ramps]
+      gameplay_feature_alias: [Player-Controllable Diverter Ramp]
+  - gameplay-feature.playfield-animations:
+      create: true
+      name: Playfield Animations
+  - gameplay-feature.plunger-skill-shots:
+      create: true
+      name: Plunger Skill Shots
+      gameplay_feature_parent: [skill-shot]
+  - gameplay-feature.projection-roto-units:
+      create: true
+      name: Projection Roto Units
+      gameplay_feature_parent: [roto-targets]
+  - gameplay-feature.ramp-skill-shots:
+      create: true
+      name: Ramp Skill Shots
+      gameplay_feature_parent: [skill-shot]
+  - gameplay-feature.rebound-rubbers:
+      create: true
+      name: Rebound Rubbers
+  - gameplay-feature.right-ball-return-rollunders:
+      create: true
+      name: Right Ball Return Rollunders
+      gameplay_feature_parent: [rollunders]
+  - gameplay-feature.right-dual-inlanes:
+      create: true
+      name: Right Dual Inlanes
+      gameplay_feature_parent: [dual-inlanes]
+      gameplay_feature_alias:
+        [Dual Right Inlanes, Right-Side Dual Inlanes, Right Side Dual Inlanes]
+  - gameplay-feature.right-kickback-lanes:
+      create: true
+      name: Right Kickback Lanes
+      gameplay_feature_parent: [kickback-lanes]
+  - gameplay-feature.right-kicker-lanes:
+      create: true
+      name: Right Kicker Lanes
+      gameplay_feature_parent: [kicker-lanes]
+  - gameplay-feature.right-open-elbow-inlanes:
+      create: true
+      name: Right Open-Elbow Inlanes
+      gameplay_feature_parent: [open-elbow-inlanes]
+  - gameplay-feature.right-outlane-ball-return-gates:
+      create: true
+      name: Right Outlane Ball Return Gates
+      gameplay_feature_parent: [right-side-ball-return-gates]
+  - gameplay-feature.right-outlane-free-ball-gates:
+      create: true
+      name: Right Outlane Free Ball Gates
+      gameplay_feature_parent: [free-ball-gates]
+  - gameplay-feature.right-outlane-stationary-posts:
+      create: true
+      name: Right Outlane Stationary Posts
+      gameplay_feature_parent: [stationary-posts]
+  - gameplay-feature.roulette-wheels:
+      create: true
+      name: Roulette Wheels
+  - gameplay-feature.serial-rollover-lanes:
+      create: true
+      name: Serial Rollover Lanes
+      gameplay_feature_parent: [lanes, rollovers]
+  - gameplay-feature.shaker-motors:
+      create: true
+      name: Shaker Motors
+  - gameplay-feature.super-cards:
+      create: true
+      name: Super Cards
+      gameplay_feature_parent: [bingo-cards]
+  - gameplay-feature.tilting-playfields:
+      create: true
+      name: Tilting Playfields
+  - gameplay-feature.time-clocks:
+      create: true
+      name: Time Clocks
+  - gameplay-feature.triple-outlanes:
+      create: true
+      name: Triple Outlanes
+      gameplay_feature_parent: [outlanes]
+  - gameplay-feature.turret-shooters:
+      create: true
+      name: Turret Shooters
+      gameplay_feature_parent: [ball-shooters]
+  - gameplay-feature.upper-ball-return-gates:
+      create: true
+      name: Upper Ball Return Gates
+      gameplay_feature_parent: [ball-return-gates]
+  - gameplay-feature.upper-left-kickback-lanes:
+      create: true
+      name: Upper Left Kickback Lanes
+      gameplay_feature_parent: [left-kickback-lanes]
+  - gameplay-feature.upper-left-kicker-lanes:
+      create: true
+      name: Upper Left Kicker Lanes
+      gameplay_feature_parent: [left-kicker-lanes]
+  - gameplay-feature.upper-right-ball-return-gates:
+      create: true
+      name: Upper Right Ball Return Gates
+      gameplay_feature_parent:
+        [upper-ball-return-gates, right-side-ball-return-gates]
+  - gameplay-feature.upper-right-ball-return-rollunders:
+      create: true
+      name: Upper Right Ball Return Rollunders
+      gameplay_feature_parent: [right-ball-return-rollunders]
+      gameplay_feature_alias: [Upper Right Return Ball Rollunder]
+  - gameplay-feature.upper-right-kickback-lanes:
+      create: true
+      name: Upper Right Kickback Lanes
+      gameplay_feature_parent: [right-kickback-lanes]
+  - gameplay-feature.upper-right-kicker-lanes:
+      create: true
+      name: Upper Right Kicker Lanes
+      gameplay_feature_parent: [right-kicker-lanes]
+  - gameplay-feature.video-modes:
+      create: true
+      name: Video Modes
+  - gameplay-feature.auto-launch:
+      gameplay_feature_alias: [Automatic Plunger, Autoplunger]
+  - gameplay-feature.bumpers:
+      gameplay_feature_alias: [Multi-Bumper]
+  - gameplay-feature.right-side-ball-return-gates:
+      gameplay_feature_alias: [Right Ball Return Gate]
+  - gameplay-feature.spinners:
+      gameplay_feature_alias: [Playfield Spinner]

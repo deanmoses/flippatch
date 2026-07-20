@@ -34,14 +34,6 @@ claims:
         - target_machine: just-21
           relationship_type: conversion
           license_status: unknown
-  - model.bomb-the-axis-rats:
-      cite:
-        ref: "ipdb:3641"
-        quote: "'Bomb The Axis Rats' is a conversion of Chicago Coin's 1941 'Star Attraction'."
-      model_relationship:
-        - target_machine: star-attraction
-          relationship_type: conversion
-          license_status: unknown
   - model.burlesk:
       cite:
         ref: "ipdb:5063"
@@ -90,36 +82,12 @@ claims:
         - target_machine: roxy
           relationship_type: conversion
           license_status: unknown
-  - model.follies-of-46:
-      cite:
-        ref: "ipdb:3106"
-        quote: '"Follies of ''46" is a conversion of Genco''s 1941 ''Hi-Hat''.'
-      model_relationship:
-        - target_machine: hi-hat
-          relationship_type: conversion
-          license_status: unknown
   - model.foreign-colors:
       cite:
         ref: "ipdb:3108"
         quote: "'Foreign Colors' was a conversion of Mills' 1941 'Owl'."
       model_relationship:
         - target_machine: owl
-          relationship_type: conversion
-          license_status: unknown
-  - model.girls-ahoy:
-      cite:
-        ref: "ipdb:3119"
-        quote: "'Girls Ahoy' is a conversion of Gottlieb's 1941 'Sea Hawk'."
-      model_relationship:
-        - target_machine: sea-hawk
-          relationship_type: conversion
-          license_status: unknown
-  - model.glamor-girls:
-      cite:
-        ref: "ipdb:3120"
-        quote: "'Glamor Girls' was a conversion of Chicago Coin's 1940 'Sport-Parade'."
-      model_relationship:
-        - target_machine: sport-parade
           relationship_type: conversion
           license_status: unknown
   - model.iceland:

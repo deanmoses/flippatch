@@ -1,0 +1,321 @@
+attribution: flipcommons-catalog
+description: Set remake_of lineage on modern remakes of older machines.
+claims:
+  # ---------------------------------------------------------------------------
+  # Each model below recreates an older machine with new technology, and each
+  # already sits in the original's title -- someone judged them the same game --
+  # yet the lineage FK was never set. The scope is the four makers whose output
+  # is largely remakes: Chicago Gaming, Pinball Brothers, Haggis and Retro
+  # Pinball. Stern is deliberately absent: it mostly builds originals, so a
+  # maker-wide sweep there would be a guess, not a finding.
+  #
+  # Title membership alone does not pick the target. Bally's Fathom shares a
+  # title with Taito do Brasil's Hawkman, itself a Brazilian copy of Fathom, and
+  # Retro Pinball's King of Diamonds shares one with four other 1967 card games.
+  # Every target below is pinned by a source naming the original's maker or year.
+  #
+  # variant_of is a separate question -- which edition is the base of each family
+  # -- and needs its own evidence per row, so it is not touched here.
+  # ---------------------------------------------------------------------------
+
+  # ---- Attack From Mars (Chicago Gaming 2017 -> Bally 1995)
+  - model.attack-from-mars-remake:
+      note: >
+        Chicago Gaming's recreation of the Bally original, the second title in
+        their remake series.
+      cite:
+        - ref: https://www.pinballnews.com/site/2021/08/21/cactus-canyon-remake-confirmed
+          quote:
+            "The Cactus Canyon remake will be Chicago Gaming fourth 'remake'
+            title, following Medieval Madness, Attack from Mars and Monster
+            Bash."
+        - ref: https://en.wikipedia.org/wiki/Attack_from_Mars
+          quote:
+            "Attack from Mars is a 1995 pinball game designed by Brian Eddy, and
+            released by Midway (under the Bally label)."
+      remake_of: attack-from-mars
+  - model.attack-from-mars-remake-limited-edition:
+      note: >
+        One of the three 2017 Chicago Gaming editions, all recreating the Bally
+        original.
+      cite:
+        - ref: https://en.wikipedia.org/wiki/Attack_from_Mars
+          quote:
+            "In 2017, the Chicago Gaming Company released three new versions:
+            Attack From Mars Classic, Attack From Mars Special Edition, and
+            Attack From Mars Limited Edition."
+        - ref: https://en.wikipedia.org/wiki/Attack_from_Mars
+          quote:
+            "Attack from Mars is a 1995 pinball game designed by Brian Eddy, and
+            released by Midway (under the Bally label)."
+      remake_of: attack-from-mars
+  - model.attack-from-mars-remake-special-edition:
+      note: >
+        One of the three 2017 Chicago Gaming editions, all recreating the Bally
+        original.
+      cite:
+        - ref: https://en.wikipedia.org/wiki/Attack_from_Mars
+          quote:
+            "In 2017, the Chicago Gaming Company released three new versions:
+            Attack From Mars Classic, Attack From Mars Special Edition, and
+            Attack From Mars Limited Edition."
+        - ref: https://en.wikipedia.org/wiki/Attack_from_Mars
+          quote:
+            "Attack from Mars is a 1995 pinball game designed by Brian Eddy, and
+            released by Midway (under the Bally label)."
+      remake_of: attack-from-mars
+
+  # ---- Medieval Madness (Chicago Gaming 2015-2025 -> Williams 1997)
+  - model.medieval-madness-remake:
+      note: >
+        Chicago Gaming's recreation of the Williams original, the first title in
+        their remake series.
+      cite:
+        - ref: https://www.pinballnews.com/site/2016/02/10/medieval-madness-remake-in-depth-review
+          quote: "Produced a little over eighteen years after the original, this
+            remake of Medieval Madness hardly compares to the forty-five years
+            between the two Gottlieb machines."
+        - ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote: "Medieval Madness is a Williams pinball machine released in June 1997."
+      remake_of: medieval-madness
+  - model.medieval-madness-remake-limited-edition:
+      note: >
+        The 1,000-unit edition that opened Chicago Gaming's remake of the
+        Williams original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2016/02/10/medieval-madness-remake-in-depth-review
+          quote:
+            "There would be 1,000 Limited Edition models produced, with delivery
+            expected in spring 2014."
+        - ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote:
+            "Various remake versions were released from 2015 onwards by Chicago
+            Gaming under license from Planetary Pinball who hold the rights for
+            manufacturing Williams pinball machines and parts."
+      remake_of: medieval-madness
+  - model.medieval-madness-remake-royal-edition:
+      note: >
+        The top edition of Chicago Gaming's remake of the Williams original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2020/01/18/2019-review-of-the-year
+          quote: "the company was just getting ready to show their new Medieval
+            Madness remake which is an update on their original Medieval Madness
+            remake"
+        - ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote:
+            "Various remake versions were released from 2015 onwards by Chicago
+            Gaming under license from Planetary Pinball who hold the rights for
+            manufacturing Williams pinball machines and parts."
+      remake_of: medieval-madness
+  - model.medieval-madness-remake-special-edition:
+      note: >
+        One of Chicago Gaming's editions recreating the Williams original.
+      cite:
+        - ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote:
+            "Various remake versions were released from 2015 onwards by Chicago
+            Gaming under license from Planetary Pinball who hold the rights for
+            manufacturing Williams pinball machines and parts."
+        - ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote: "Medieval Madness is a Williams pinball machine released in June 1997."
+      remake_of: medieval-madness
+  - model.medieval-madness-remake-merlin-edition:
+      note: >
+        The 2025 re-run of Chicago Gaming's remake of the Williams original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2025/04/02/march-2025-pincast
+          quote:
+            "Chicago Gaming finally announced their re-run of Medieval Madness
+            Remake games. But these Merlin Edition models offer far more than
+            earlier Remakes."
+        - ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote:
+            "In 2025 there was a further re-release, The Merlin edition, with
+            similar upgrades as the Royal edition, including the King of Payne
+            topper."
+      remake_of: medieval-madness
+
+  # ---- Monster Bash (Chicago Gaming 2018 -> Williams 1998)
+  - model.monster-bash-remake-classic-edition:
+      note: >
+        Chicago Gaming's recreation of the Williams original, the third title in
+        their remake series.
+      cite:
+        - ref: https://www.pinballnews.com/site/2018/07/24/monster-bash-confirmed
+          quote:
+            "Chicago Gaming today confirmed what had been widely expected, that
+            Monster Bash would be their third 'remake' title, following on from
+            Medieval Madness and Attack from Mars."
+        - ref: https://en.wikipedia.org/wiki/Monster_Bash_(pinball)
+          quote: "Monster Bash is a pinball machine produced by Williams."
+      remake_of: monster-bash
+  - model.monster-bash-remake-limited-edition:
+      note: >
+        One of the three 2018 Chicago Gaming editions, all recreating the
+        Williams original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2018/07/24/monster-bash-confirmed
+          quote: "So, we can see that there will again be three variants of the
+            Monster Bash Remake – a Classic Edition (CE), a Special Edition (SE)
+            and a Limited Edition (LE), copying the range of models available for
+            Attack from Mars."
+        - ref: https://en.wikipedia.org/wiki/Monster_Bash_(pinball)
+          quote: "Monster Bash is a pinball machine produced by Williams."
+      remake_of: monster-bash
+  - model.monster-bash-remake-special-edition:
+      note: >
+        One of the three 2018 Chicago Gaming editions, all recreating the
+        Williams original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2018/07/24/monster-bash-confirmed
+          quote: "So, we can see that there will again be three variants of the
+            Monster Bash Remake – a Classic Edition (CE), a Special Edition (SE)
+            and a Limited Edition (LE), copying the range of models available for
+            Attack from Mars."
+        - ref: https://en.wikipedia.org/wiki/Monster_Bash_(pinball)
+          quote: "Monster Bash is a pinball machine produced by Williams."
+      remake_of: monster-bash
+
+  # ---- Alien (Pinball Brothers 2021-2023 -> Heighway Pinball 2017)
+  #      Pinball Brothers had bought Heighway components and the Alien licence
+  #      before Heighway ceased trading, then re-manufactured the game with
+  #      revised hardware. The press calls it a remake; the maker's own site
+  #      never mentions Heighway.
+  - model.alien-remake:
+      note: >
+        Pinball Brothers' re-manufacture of the Heighway game, using the Alien
+        licence and component stock they had already bought from Heighway.
+      cite:
+        - ref: https://www.pinballnews.com/site/2020/12/18/alien-remake-announced
+          quote:
+            "After years of rumours and weeks of teasing, the company Pinball
+            Brothers has finally confirmed they will be producing a remake of the
+            Heighway Pinball game, Alien."
+      remake_of: alien-standard-edition
+  - model.alien-remake-limited-edition:
+      note: >
+        The limited version of Pinball Brothers' re-manufacture of the Heighway
+        game, capped at 500 units.
+      cite:
+        - ref: https://www.pinballnews.com/site/2020/12/18/alien-remake-announced
+          quote:
+            "The Standard Version (shown above) is priced at $7,777 while the
+            Limited Version (maximum 500 units) will be $9,999."
+        - ref: https://www.pinballnews.com/site/2020/12/18/alien-remake-announced
+          quote:
+            "After years of rumours and weeks of teasing, the company Pinball
+            Brothers has finally confirmed they will be producing a remake of the
+            Heighway Pinball game, Alien."
+      remake_of: alien-standard-edition
+  - model.alien-ellen-ripley:
+      note: >
+        Reasoned in two steps rather than stated outright by any one source: the
+        sources establish this as a later version of Pinball Brothers' Alien, and
+        separately establish that machine as the remake of the Heighway game, so
+        the lineage carries through to the Heighway original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2023/10/27/pinball-expo-2023
+          quote: "One Alien was the new Ellen Ripley version"
+        - ref: https://www.pinballnews.com/site/2020/12/18/alien-remake-announced
+          quote:
+            "After years of rumours and weeks of teasing, the company Pinball
+            Brothers has finally confirmed they will be producing a remake of the
+            Heighway Pinball game, Alien."
+      remake_of: alien-standard-edition
+
+  # ---- Fathom (Haggis 2022 -> Bally 1981)
+  #      Not Taito do Brasil's Hawkman, which shares the title: the licence runs
+  #      through Planetary Pinball, who hold the Bally/Williams rights.
+  - model.fathom-revisited:
+      note: >
+        Haggis' recreation of the Bally original under the Planetary Pinball
+        licence, the first of their Haggis Classics series.
+      cite:
+        - ref: https://www.pinballnews.com/site/2021/04/26/fathom-revisited-announced
+          quote:
+            "Melbourne-based Haggis Pinball today announced that their second
+            title will be a remake of the classic Bally title Fathom, produced in
+            association with Planetary Pinball."
+        - ref: https://www.pinballnews.com/site/2021/04/26/fathom-revisited-announced
+          quote: "Haggis Pinball, makers of the Celts pinball machine, in
+            collaboration with Planetary Pinball Supply, Inc, introduces the
+            first Haggis Classics machine, Fathom Revisited, the original
+            released by Bally in 1981."
+      remake_of: fathom
+  - model.fathom-mermaid:
+      note: >
+        The second of the two announced editions of Haggis' Fathom recreation,
+        so it recreates the same Bally original.
+      cite:
+        - ref: https://www.pinballnews.com/site/2021/04/26/fathom-revisited-announced
+          quote:
+            "Haggis Pinball have announced two versions of Fathom Revisited –
+            Classic Edition and Mermaid Edition."
+        - ref: https://www.pinballnews.com/site/2021/04/26/fathom-revisited-announced
+          quote: "Haggis Pinball, makers of the Celts pinball machine, in
+            collaboration with Planetary Pinball Supply, Inc, introduces the
+            first Haggis Classics machine, Fathom Revisited, the original
+            released by Bally in 1981."
+      remake_of: fathom
+
+  # ---- Retro Pinball (2008-2010 -> Gottlieb 1965 and 1967)
+  - model.king-of-diamonds-2:
+      note: >
+        Retro Pinball's licensed recreation of the Gottlieb original. The second
+        quote names the original's designer, which distinguishes it from the four
+        other 1967 card-themed games sharing the title.
+      cite:
+        - ref: https://www.pinballnews.com/games/kingofdiamonds/index2.html
+          quote: "the Retro Pinball product is unashamedly, and in fact quite
+            deliberately, a reproduction of the classic 1967 Gottlieb machine."
+        - ref: https://www.pinballnews.com/games/kingofdiamonds/index2.html
+          quote:
+            "Their King of Diamonds is a well-crafted recreation of Ed Krynski's
+            1967 design"
+      remake_of: king-of-diamonds
+  - model.king-of-diamonds-2:
+      note: >
+        Commercially produced and sold, in small numbers, before the run ended.
+      cite:
+        - ref: ipdb:5239
+          quote:
+            "Production ended in 2012 after 5 sample production games and 50
+            regular production games were built."
+      production_status: produced
+  - model.bank-a-ball-6:
+      note: >
+        Retro Pinball's recreation of the 1965 Gottlieb machine, which is the one
+        of the several same-named Bank-A-Ball records the source points at. Also
+        re-homed onto that machine's title: the two records are one game, so the
+        remake belongs with its original rather than alone in its own title. The
+        1932 Linck, 1933 United and 1950 Gottlieb games of the same name are
+        unrelated and keep their own titles.
+      cite:
+        - ref: ipdb:6435
+          quote: "Pictured here is a prototype of a woodrail version of the
+            metal-railed wedge head Gottlieb's 1965 'Bank-A-Ball'."
+      remake_of: bank-a-ball
+      title: bank-a-ball-flipper-pool
+  - model.bank-a-ball-6:
+      note: >
+        The year the sole prototype was built. There is no date of manufacture to
+        record, since the game was never manufactured.
+      cite:
+        - ref: ipdb:6435
+          quote: "This prototype is entirely electromechanical operation and was
+            hand-built in 2008 by Herb Silvers and his technician while his shop
+            personnel applied the cabinet art."
+      year: 2008
+  - model.bank-a-ball-6:
+      note: >
+        Licensed and intended as a production title but cancelled, leaving a
+        single hand-built unit.
+      cite:
+        - ref: ipdb:6435
+          quote:
+            "This game was licensed by Gottlieb LLC to be Retro Pinball's second
+            production game, following Retro Pinball LLC's 2010 'King of
+            Diamonds'. It did not go into production and this prototype was the
+            only one made."
+      production_status: unreleased
+      tag: [prototype]

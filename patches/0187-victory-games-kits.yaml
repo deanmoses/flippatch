@@ -1,0 +1,188 @@
+attribution: flipcommons-catalog
+description: >
+  Lineage for models by Victory Games.
+claims:
+  - model.army-navy-2:
+      cite:
+        ref: "ipdb:3654"
+        quote: "'Army & Navy' is a conversion kit for Exhibit's 1941 'Knockout'."
+      model_relationship:
+        - target_machine: knockout-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.artists-and-models:
+      cite:
+        ref: "ipdb:3656"
+        quote: "'Artists and Models' was a conversion for Chicago Coin's 1941 'Star Attraction'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 09/29/1945 p83."
+      model_relationship:
+        - target_machine: star-attraction
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.baseball-13:
+      cite:
+        ref: "ipdb:5440"
+        quote: "'Baseball' is a conversion of Genco's 1941 'Sluggers'. [...] The earliest ad we have found for this conversion kit is Victory Game's ad in the Coin Machine Digest Jul-21-1945 p50."
+      model_relationship:
+        - target_machine: sluggers
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.baseball-7:
+      cite:
+        ref: "ipdb:2901"
+        quote: "'Baseball' is a conversion of Genco's 1941 'Seven Up'. [...] The earliest ad we have found for this conversion kit is Victory Game's ad in the Coin Machine Digest Jul-21-1945 p50."
+      model_relationship:
+        - target_machine: seven-up
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.bomb-the-axis-rats:
+      cite:
+        ref: "ipdb:3641"
+        quote: "'Bomb The Axis Rats' is a conversion of Chicago Coin's 1941 'Star Attraction'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 09/11/1943 p73."
+      model_relationship:
+        - target_machine: star-attraction
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.bombardier:
+      cite:
+        ref: "ipdb:3647"
+        quote: "'Bombardier' was a conversion of Genco's 1941 'Victory'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 10/02/1943 p72."
+      model_relationship:
+        - target_machine: victory
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.follies-of-45:
+      cite:
+        ref: "ipdb:5439"
+        quote: '"Follies of ''45" was a conversion for Genco''s 1941 ''Hi-Hat''. [...] The earliest ad we have found for this conversion kit is Victory Game''s ad in the Coin Machine Digest Jul-21-1945 p49.'
+      model_relationship:
+        - target_machine: hi-hat
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.follies-of-46:
+      cite:
+        ref: "ipdb:3106"
+        quote: '"Follies of ''46" is a conversion of Genco''s 1941 ''Hi-Hat''. [...] The earliest mention we have found for this conversion kit is in Victory Game''s ad in Billboard 04/13/1946 p105.'
+      model_relationship:
+        - target_machine: hi-hat
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.g-i-joe:
+      cite:
+        ref: "ipdb:3861"
+        quote: "'G I - Joe' was a conversion for Genco's 1941 'Jungle'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 07/01/1944 p72."
+      model_relationship:
+        - target_machine: jungle-4
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.girls-ahoy:
+      cite:
+        ref: "ipdb:3119"
+        quote: "'Girls Ahoy' is a conversion of Gottlieb's 1941 'Sea Hawk'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 11/25/1944 p60."
+      model_relationship:
+        - target_machine: sea-hawk
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.glamor-girls:
+      cite:
+        ref: "ipdb:3120"
+        quote: "'Glamor Girls' was a conversion of Chicago Coin's 1940 'Sport-Parade'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 12/23/1944 p77."
+      model_relationship:
+        - target_machine: sport-parade
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.hit-the-japs:
+      cite:
+        ref: "ipdb:1202"
+        quote: "'Hit The Japs' was a conversion of Gottlieb's 1940 'Gold Star'. [...] The earliest mention we have found for this conversion kit by name is in Victory Game's ad in Billboard 04/10/1943 p112."
+      model_relationship:
+        - target_machine: gold-star-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.knock-out-the-japs:
+      cite:
+        ref: "ipdb:3201"
+        quote: "'Knock Out The Japs' was a conversion of Exhibit's 1941 'Knockout'. [...] The earliest mention we have found for this conversion kit by name is in Victory Game's ad in Billboard 01/23/1943 p77."
+      model_relationship:
+        - target_machine: knockout-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.miss-america-44:
+      cite:
+        ref: "ipdb:3410"
+        quote: '"Miss America ''44" is a conversion of Chicago Coin''s 1940 ''All American''. [...] The earliest mention we have found for this conversion kit is in Victory Game''s ad in Billboard 12/11/1943 p79.'
+      model_relationship:
+        - target_machine: all-american
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.on-deck-2:
+      cite:
+        ref: "ipdb:3260"
+        quote: "'On Deck' is a conversion of Chicago Coin's 1941 'Snappy'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 06/17/1944 p76."
+      model_relationship:
+        - target_machine: snappy
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.sea-raider:
+      cite:
+        ref: "ipdb:3362"
+        quote: "'Sea Raider' was a conversion of Genco's 1941 'Captain Kidd'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 01/20/1945 p68."
+      model_relationship:
+        - target_machine: captain-kidd-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.sky-raider:
+      cite:
+        ref: "ipdb:3277"
+        quote: "'Sky Raider' was a conversion of Exhibit's 1941 'Big Parade'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 11/11/1944 p61."
+      model_relationship:
+        - target_machine: big-parade
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.slap-the-japs:
+      cite:
+        ref: "ipdb:3279"
+        quote: "'Slap the Japs' was a conversion for Chicago Coin's 1940 'Strat-O-Liner'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 10/03/1942 p79."
+      model_relationship:
+        - target_machine: strat-o-liner
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.smack-the-japs:
+      cite:
+        ref: "ipdb:2214"
+        quote: "'Smack The Japs' was a conversion kit for Genco's 1941 'Ten-Spot'."
+      model_relationship:
+        - target_machine: ten-spot
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.tail-gunner:
+      cite:
+        ref: "ipdb:3407"
+        quote: "'Tail Gunner' is a conversion of Genco's 1941 'Ten-Spot'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 11/11/1944 p61."
+      model_relationship:
+        - target_machine: ten-spot
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.twin-six-2:
+      cite:
+        ref: "ipdb:3355"
+        quote: "'Twin Six' was a conversion of Gottlieb's 1940 'Gold Star'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 10/12/1946 p123."
+      model_relationship:
+        - target_machine: gold-star-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.world-series-1943:
+      cite:
+        ref: "ipdb:5180"
+        quote: "'World Series 1943' is a conversion of Genco's 1941 'Seven Up'. [...] The earliest mention we have found for this conversion kit is in Victory Games' ad in Billboard 10/30/1943 p61 where it held the headlined position in the ad."
+      model_relationship:
+        - target_machine: seven-up
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.world-series-2:
+      cite:
+        ref: "ipdb:3852"
+        quote: "'World Series' was a conversion of Genco's 1941 'Seven Up'. [...] The last Billboard ad for this kit was 02/10/1945 p74."
+      model_relationship:
+        - target_machine: seven-up
+          relationship_type: conversion_kit
+          license_status: unknown

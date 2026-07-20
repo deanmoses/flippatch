@@ -1,0 +1,12 @@
+attribution: flipcommons-catalog
+description: Retire the emptied Retro Pinball Bank-A-Ball title.
+claims:
+  # Retro Pinball's Bank-A-Ball was re-homed onto the 1965 Gottlieb machine's
+  # title in the previous patch, emptying this one. A soft-delete refuses while a
+  # referrer is still attached and the referrer check reads live DB state, so the
+  # re-home could not share a patch with this delete.
+  - title.bank-a-ball-5:
+      note: >
+        Held only Retro Pinball's Bank-A-Ball, now re-homed onto the title of the
+        1965 Gottlieb machine it recreates.
+      delete: true

@@ -1,0 +1,594 @@
+attribution: flipcommons-catalog
+description: >
+  Production years for year-less bingo machines, from bingo.cdyn.com.
+claims:
+  - model.acapulco:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Acapulco | 669 | magic numbers | 1961 |"
+      year: 1961
+  - model.apollo-ball:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Apollo Ball | 860 | six-card | 1969 |"
+      year: 1969
+  - model.bahama-beach:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bahama Beach | 781 | mystic lines | 1966 |"
+      year: 1966
+  - model.bali:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bali | 1025 | three-card | 1974 |"
+      year: 1974
+  - model.ballerina:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Ballerina | 628 | magic screen | 1959 |"
+      year: 1959
+  - model.bally-beauty:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bally Beauty | 546 | three-card | 1952 |"
+      year: 1952
+  - model.beach-beauty:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Beach Beauty | 572 | one-card | 1955 |"
+      year: 1955
+  - model.beach-club-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Beach Club | 548 | one-card | 1953 |"
+      year: 1953
+  - model.beach-time:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Beach Time | 611 | magic squares | 1958 |"
+      year: 1958
+  - model.beauty-beach:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Beauty Beach | 762 | mystic lines | 1965 |"
+      year: 1965
+  - model.best-ball:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Best Ball | unknown | one-ball | 1999 |"
+      year: 1999
+  - model.big-show-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Big Show | 585 | magic squares | 1956 |"
+      year: 1956
+  - model.big-time-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Big Time | 563 | magic lines | 1954 |"
+      year: 1954
+  - model.big-wheel:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Big Wheel | 822 | wheel | 1968 |"
+      year: 1968
+  - model.bikini:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bikini | 674 | magic screen | 1961 |"
+      year: 1961
+  - model.blue-chip-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Blue Chip | 1063 | six-card | 1974 |"
+      year: 1974
+  - model.bonanza-4:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bonanza | 1085 | magic squares | 1976 |"
+      year: 1976
+  - model.bonus-7:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bonus 7 | 909 | mystic lines | 1970 |"
+      year: 1970
+  - model.border-beauty:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Border Beauty | 758 | mystic lines | 1965 |"
+      year: 1965
+  - model.bounty-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bounty | 737 | magic screen | 1963 |"
+      year: 1963
+  - model.bright-lights:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bright Lights | 533 | six-card | 1951 |"
+      year: 1951
+  - model.bright-spot:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bright Spot | 538 | six-card | 1952 |"
+      year: 1952
+  - model.broadway-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Broadway | 576 | magic squares | 1955 |"
+      year: 1955
+  - model.brooklyn:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Brooklyn | unknown | magic lines | 1996 |"
+      year: 1996
+  - model.bull-market:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Bull Market | 1082 | six-card | 1976 |"
+      year: 1976
+  - model.can-can:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Can Can | 675 | magic screen | 1961 |"
+      year: 1961
+  - model.carnival-queen:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Carnival Queen | 615 | magic screen | 1958 |"
+      year: 1958
+  - model.circus-10-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Circus 10 | unknown | six-card | 1997 |"
+      year: 1997
+  - model.circus-queen:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Circus Queen | 667 | magic screen | 1960 |"
+      year: 1960
+  - model.columbia:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Columbia | unknown | six-card | 1990 |"
+      year: 1990
+  - model.coney-island-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Coney Island | 536 | three-card | 1951 |"
+      year: 1951
+  - model.coney-island-4:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Coney Island | unknown | magic lines | 1992 |"
+      year: 1992
+  - model.county-fair-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| County Fair | 639 | magic screen | 1959 |"
+      year: 1959
+  - model.croce-doro:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Croce d'oro | unknown | six-card | 2000 |"
+      year: 2000
+  - model.crosswords:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Crosswords | 575 | unknown/other | 1955 |"
+      year: 1955
+  - model.cypress-gardens:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Cypress Gardens | 608 | magic squares | 1958 |"
+      year: 1958
+  - model.dixieland-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Dixieland | 1171 | six-card | 1978 |"
+      year: 1978
+  - model.double-crown:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Double Crown | unknown | two-card | 1990 |"
+      year: 1990
+  - model.double-header-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Double Header | 582 | magic squares | 1956 |"
+      year: 1956
+  - model.double-up-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Double Up | 924 | mystic lines | 1971 |"
+      year: 1971
+  - model.dude-ranch-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Dude Ranch | 552 | two-card | 1953 |"
+      year: 1953
+  - model.eldorado-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Eldorado | unknown | six-card | 2001 |"
+      year: 2001
+  - model.euro-continental-star:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Euro Continental Star | unknown | six-card | 1982 |"
+      year: 1982
+  - model.extra-six-cards:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Extra Six Cards | unknown | six-card | 1982 |"
+      year: 1982
+  - model.folies-bergeres:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Folies Bergeres | 771 | mystic lines | 1965 |"
+      year: 1965
+  - model.frolics:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Frolics | 544 | six-card | 1952 |"
+      year: 1952
+  - model.fun-spot:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Fun Spot | 652 | six-card | 1960 |"
+      year: 1960
+  - model.fun-spot-63:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Fun Spot '63 | 699 | six-card | 1962 |"
+      year: 1962
+  - model.fun-way:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Fun Way | 634 | six-card | 1959 |"
+      year: 1959
+  - model.gay-time:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Gay Time | 568 | magic lines | 1955 |"
+      year: 1955
+  - model.gayety:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Gayety | 566 | magic lines | 1955 |"
+      year: 1955
+  - model.golden-game:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Golden Game | unknown | six-card | 2002 |"
+      year: 2002
+  - model.golden-gate-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Golden Gate | 698 | magic screen | 1962 |"
+      year: 1962
+  - model.hawaii-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Hawaii | 970 | mystic lines | 1973 |"
+      year: 1973
+  - model.hi-fi:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Hi-Fi | 559 | one-card | 1954 |"
+      year: 1954
+  - model.high-flyer:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| High Flyer | 1131 | six-card | 1977 |"
+      year: 1977
+  - model.hole-in-one:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Hole In One | 912 | six-card | 1971 |"
+      year: 1971
+  - model.honolulu:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Honolulu | unknown | six-card | 1985 |"
+      year: 1985
+  - model.ice-frolics:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Ice Frolics | 554 | three-card | 1953 |"
+      year: 1953
+  - model.key-west:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Key West | 588 | magic squares | 1956 |"
+      year: 1956
+  - model.laguna-beach:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Laguna Beach | 648 | magic screen | 1960 |"
+      year: 1960
+  - model.lido:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Lido | 680 | magic screen | 1961 |"
+      year: 1961
+  - model.lite-a-line:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Lite-A-Line | 668 | six-card | 1961 |"
+      year: 1961
+  - model.london:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| London | 853 | mystic lines | 1969 |"
+      year: 1969
+  - model.lotta-fun:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Lotta Fun | 634-A | six-card | 1959 |"
+      year: 1959
+  - model.louisiana-2001:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Louisiana 2001 | unknown | six-card | 2001 |"
+      year: 2001
+  - model.magic-ring:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Magic Ring | 839 | wheel | 1968 |"
+      year: 1968
+  - model.magic-screen:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Magic Screen | unknown | six-card | 2003 |"
+      year: 2003
+  - model.malibu-beach:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Malibu Beach | 1169 | magic screen | 1980 |"
+      year: 1980
+  - model.miami-beach-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miami Beach | 571 | magic curtain | 1955 |"
+      year: 1955
+  - model.michigan:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Michigan | unknown | six-card | 2001 |"
+      year: 2001
+  - model.millenium:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Millenium | unknown | six-card | 2001 |"
+      year: 2001
+  - model.miss-america-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss America | 603 | magic lines | 1957 |"
+      year: 1957
+  - model.miss-america-75:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss America '75 | 1036 | magic lines | 1974 |"
+      year: 1974
+  - model.miss-america-supreme:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss America Supreme | 1107 | magic lines | 1976 |"
+      year: 1976
+  - model.miss-americana-triple-bonus:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss Americana Triple Bonus | unknown | magic lines | 1984 |"
+      year: 1984
+  - model.miss-belgium-turbo:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss Belgium Turbo | unknown | magic lines | 1990 |"
+      year: 1990
+  - model.miss-bowling:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss Bowling | unknown | magic lines | 1990 |"
+      year: 1990
+  - model.miss-bowling-golden:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss Bowling Golden | unknown | magic lines | 1990 |"
+      year: 1990
+  - model.miss-universe:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Miss Universe | 1061 | one-card | 1975 |"
+      year: 1975
+  - model.mississippi-showboat:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Mississippi Showboat | 1258 | six-card | 1981 |"
+      year: 1981
+  - model.mondial:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Mondial | unknown | six-card | 1997 |"
+      year: 1997
+  - model.montana:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Montana | unknown | six-card | 2000 |"
+      year: 2000
+  - model.montana-v:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Montana V | unknown | six-card | 2003 |"
+      year: 2003
+  - model.nashville:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Nashville | 1153 | six-card | 1978 |"
+      year: 1978
+  - model.new-continental:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| New Continental | unknown | six-card | 1990 |"
+      year: 1990
+  - model.new-continental-golden:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| New Continental Golden | unknown | six-card | 1990 |"
+      year: 1990
+  - model.new-dixieland-2000:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| New Dixieland 2000 | unknown | six-card | 1992 |"
+      year: 1992
+  - model.night-club:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Night Club | 577 | magic squares | 1956 |"
+      year: 1956
+  - model.one-ball-conti:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| One Ball Conti | unknown | one-ball | 1997 |"
+      year: 1997
+  - model.orient:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Orient | 805 | mystic lines | 1967 |"
+      year: 1967
+  - model.palm-beach:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Palm Beach | 543 | one-card | 1952 |"
+      year: 1952
+  - model.palm-springs:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Palm Springs | 553 | one-card | 1953 |"
+      year: 1953
+  - model.parade:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Parade | 581 | magic squares | 1956 |"
+      year: 1956
+  - model.rodeo-1-card:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Rodeo | unknown | three-card | 1953 |"
+      year: 1953
+  - model.roller-derby:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Roller Derby | 654 | magic screen | 1960 |"
+      year: 1960
+  - model.safari-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Safari | 868 | mystic lines | 1969 |"
+      year: 1969
+  - model.sea-island:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Sea Island | 623 | magic screen | 1959 |"
+      year: 1959
+  - model.serenade-5:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Serenade | unknown | two-card | 1956 |"
+      year: 1956
+  - model.show-time:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Show-Time | 590 | magic squares | 1957 |"
+      year: 1957
+  - model.silver-sails:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Silver Sails | 707 | magic screen | 1962 |"
+      year: 1962
+  - model.spot-lite-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Spot Lite | 539 | one-card | 1951 |"
+      year: 1951
+  - model.star-continental-2000:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Star Continental 2000 | unknown | six-card | 1997 |"
+      year: 1997
+  - model.stock-market-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Stock Market | 913 | six-card | 1971 |"
+      year: 1971
+  - model.sun-valley-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Sun Valley | 592 | magic squares | 1957 |"
+      year: 1957
+  - model.super-7:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Super 7 | 893 | mystic lines | 1970 |"
+      year: 1970
+  - model.super-ball:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Super Ball | unknown | six-card | 2003 |"
+      year: 2003
+  - model.surf-club:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Surf Club | 556 | one-card | 1954 |"
+      year: 1954
+  - model.tahiti-3:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Tahiti | 1163 | mystic lines | 1979 |"
+      year: 1979
+  - model.ticker-tape:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Ticker Tape | 938 | six-card | 1972 |"
+      year: 1972
+  - model.touchdown-4:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Touchdown | 659 | magic numbers | 1960 |"
+      year: 1960
+  - model.transcontinental-deluxe:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Transcontinental Deluxe | unknown | six-card | 1990 |"
+      year: 1990
+  - model.triple-joker-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Triple Joker | unknown | one-ball | 1997 |"
+      year: 1997
+  - model.variety-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Variety | 561 | magic lines | 1954 |"
+      year: 1954
+  - model.venice:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Venice | 841 | mystic lines | 1968 |"
+      year: 1968
+  - model.wall-street-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Wall Street | 1011 | six-card | 1974 |"
+      year: 1974
+  - model.yacht-club-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Yacht Club | 549 | overlapping cards | 1953 |"
+      year: 1953
+  - model.zodiac-2:
+      cite:
+        ref: "https://bingo.cdyn.com/machines/index.html"
+        quote: "| Zodiac | 798 | mystic lines | 1966 |"
+      year: 1966

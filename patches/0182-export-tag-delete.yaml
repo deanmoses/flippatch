@@ -1,0 +1,10 @@
+attribution: flipcommons-catalog
+description: >-
+  Retire the unused export tag: delete the tag definition.
+claims:
+  - tag.export:
+      delete: true
+      note: >-
+        Never applied to any model. Export editions are now represented on the model
+        itself by 'export_edition_of' (the domestic original) and 'export_market'
+        (the destination market), which carry more information than a flat tag.
