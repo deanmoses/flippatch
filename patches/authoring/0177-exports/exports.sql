@@ -536,6 +536,15 @@ CREATE OR REPLACE VIEW _maker_era AS
 CREATE OR REPLACE MACRO _span_gap(a_start, a_end, b_start, b_end) AS
   greatest(0, greatest(a_start - b_end, b_start - a_end));
 
+-- The maker reference IPDB writes for another machine: "<Maker>'s <year> '<Name>'".
+-- `'s?` because the possessive loses its s on a maker whose name ends in one —
+-- "Gottlieb's 1968 'Big Jack'" but "Williams' 1971 'Jackpot'". Groups: 1 maker,
+-- 2 year, 3 name. Defined here rather than beside the reciprocal parse because the
+-- MERGE gate needs it too: resolving a quote's reference on name+maker+YEAR is the
+-- only thing that separates same-named models, which is this view's whole population.
+CREATE OR REPLACE MACRO _maker_ref_pat() AS
+  '([A-Z][A-Za-z0-9.&-]*(?: [A-Z][A-Za-z0-9.&-]*)*)''s? (?:([0-9]{4}) )?''([^'']+)''';
+
 -- BINGO SUB-GENRE — a second, independent discriminator for same-named bingos.
 --
 -- `game_format_slug` is 'bingo-pinball' for the whole corpus, so it cannot separate
@@ -743,20 +752,55 @@ CREATE OR REPLACE TABLE _merge_evidence AS
 -- survivor, and a row without one does not appear.
 -- Scored ONCE, materialized, and read by both the emit view and the blocked view —
 -- so the gate has exactly one definition and the two can never drift apart.
+--
+-- The reference in the quote is RESOLVED on name + maker + YEAR, not merely searched
+-- for by name. That is the whole gate, because this view's population is same-NAMED
+-- models: a name-containment test passes against every one of them. It was not
+-- hypothetical — with a name test, 'Hula-Hula (Italy)' cited "Chicago Coin's 1966
+-- 'Hula-Hula'" and was matched to the 1965 model, and the 1966 'Hula-Hula' cited a
+-- sentence naming ITSELF. Two of three emitted rows were wrong. Same discipline as
+-- `_origin_ref` further down, and for the same reason.
 CREATE OR REPLACE TABLE _merge_scored AS
+  WITH parsed AS (
+    SELECT
+      p.*, e.sentence,
+      NULLIF(regexp_extract(COALESCE(e.sentence, ''), _maker_ref_pat(), 1), '') AS ref_maker,
+      NULLIF(regexp_extract(COALESCE(e.sentence, ''), _maker_ref_pat(), 2), '') AS ref_year,
+      NULLIF(regexp_extract(COALESCE(e.sentence, ''), _maker_ref_pat(), 3), '') AS ref_name
+    FROM _merge_pair p
+    LEFT JOIN _merge_evidence e ON e.id = p.id
+  ),
+  resolved AS (
+    SELECT
+      q.*,
+      -- exactly one live model matching name + maker (+ year when the quote gives one)
+      (SELECT list(m.id) FROM models m
+        WHERE m.name = q.ref_name
+          AND m.manufacturer_name = q.ref_maker
+          AND (q.ref_year IS NULL OR m.year IS NOT DISTINCT FROM TRY_CAST(q.ref_year AS BIGINT))
+      ) AS ref_ids
+    FROM parsed q
+  )
   SELECT
-    p.*, e.sentence,
+    r.* EXCLUDE (ref_ids),
+    CASE WHEN len(r.ref_ids) = 1 THEN r.ref_ids[1] END AS ref_model_id,
     CASE
-      WHEN p.mover_ipdb_id IS NULL              THEN 'mover has no ipdb id to cite'
-      WHEN COALESCE(e.sentence, '') = ''        THEN 'no lineage sentence in the mover''s note'
-      -- the sentence must name the SURVIVOR, not merely carry a lineage phrase
-      WHEN NOT (e.sentence ILIKE '%' || p.survivor_name || '%')
-        THEN 'lineage sentence does not name the target'
-      WHEN length(e.sentence) NOT BETWEEN 20 AND 240 THEN 'sentence out of bounds'
-      WHEN e.sentence LIKE '%' || chr(65533) || '%'  THEN 'mojibake'
+      WHEN r.mover_ipdb_id IS NULL              THEN 'mover has no ipdb id to cite'
+      WHEN COALESCE(r.sentence, '') = ''        THEN 'no lineage sentence in the mover''s note'
+      WHEN length(r.sentence) NOT BETWEEN 20 AND 240 THEN 'sentence out of bounds'
+      WHEN r.sentence LIKE '%' || chr(65533) || '%'  THEN 'mojibake'
+      WHEN r.ref_name IS NULL                   THEN 'lineage sentence names no model'
+      WHEN len(r.ref_ids) = 0                   THEN 'quoted reference resolves to no model'
+      WHEN len(r.ref_ids) > 1                   THEN 'quoted reference is ambiguous'
+      -- the source describes the mover in terms of ITSELF (an IPDB self-reference);
+      -- it establishes nothing about any other model
+      WHEN r.ref_ids[1] = r.id                  THEN 'quote is self-referential'
+      -- the source names a real model, just not the one this pairing assumed. NOT an
+      -- error in the source — a lead pointing somewhere else, which the blocked view
+      -- surfaces so the true target can be picked up by hand.
+      WHEN r.ref_ids[1] <> r.namesake_id        THEN 'quote names a different model'
     END AS blocked_reason
-  FROM _merge_pair p
-  LEFT JOIN _merge_evidence e ON e.id = p.id;
+  FROM resolved r;
 
 CREATE OR REPLACE VIEW export_merge_rows AS
   SELECT
@@ -766,14 +810,22 @@ CREATE OR REPLACE VIEW export_merge_rows AS
     -- PATCH A — re-home the model. The disambiguating slug takes the MAKER suffix
     -- (0140/0148's convention: big-valley-rmg, not big-valley-2), because a numeric
     -- suffix says only "another one" while the maker says which one.
-    -- name_NORM, not name_key: the trailing parenthetical is exactly the
-    -- disambiguator here. Stripping it collided 'Hula-Hula' and 'Hula-Hula (Italy)'
-    -- — both Chicago Coin, both merging into `hula-hula` — onto one slug, which is a
-    -- UNIQUE violation at apply. `merge_new_slug_collision` below guards it.
-    regexp_replace(name_norm(s.mover_name), ' ', '-', 'g') || '-' || s.mover_maker_slug AS new_slug,
-    (s.mover_slug IS DISTINCT FROM
-       regexp_replace(name_norm(s.mover_name), ' ', '-', 'g') || '-' || s.mover_maker_slug)
-      AS slug_changes,
+    -- The maker suffix (0140/0148: big-valley-rmg) disambiguates a CROSS-MAKER copy —
+    -- it names whose build this is. On a same-maker export edition the maker is the one
+    -- thing the two models SHARE, so the suffix says nothing: 'hula-hula-chicago-coin'
+    -- distinguishes it from no one, all three Hula-Hulas being Chicago Coin.
+    -- So: rename only cross-maker, and otherwise keep the existing slug — which for
+    -- these already carries the real disambiguator in the name (`hula-hula-italy`,
+    -- `on-beam-italy`). NULL means "no slug change in the patch".
+    -- name_NORM, not name_key: the trailing parenthetical IS the disambiguator, and
+    -- stripping it collided 'Hula-Hula' with 'Hula-Hula (Italy)' onto one slug.
+    CASE WHEN NOT s.same_maker
+         THEN regexp_replace(name_norm(s.mover_name), ' ', '-', 'g') || '-' || s.mover_maker_slug
+    END AS new_slug,
+    -- A bare numeric slug survives a same-maker merge unchanged and stays unhelpful.
+    -- Flagged, never auto-renamed: the right disambiguator (reward type, year, market)
+    -- is a judgement the source has to support, not one to synthesise here.
+    (s.same_maker AND regexp_matches(s.mover_slug, '-[0-9]+$')) AS slug_needs_review,
     s.survivor_title AS new_title,
     -- the edge: same maker -> an export edition; a different maker's build is a copy
     CASE WHEN s.same_maker THEN 'export_edition_of' ELSE 'copy' END AS edge_kind,
@@ -782,9 +834,11 @@ CREATE OR REPLACE VIEW export_merge_rows AS
     -- the retired Title is legible as retired and cannot shadow a live slug.
     s.mover_title AS doomed_title,
     s.mover_title || '-deleted' AS doomed_title_new_slug,
-    'Orphaned after its sole model (' || regexp_replace(name_norm(s.mover_name), ' ', '-', 'g')
-      || '-' || s.mover_maker_slug || ') was merged into the ' || s.survivor_title || ' title.'
-      AS delete_note,
+    'Orphaned after its sole model ('
+      || CASE WHEN NOT s.same_maker
+              THEN regexp_replace(name_norm(s.mover_name), ' ', '-', 'g') || '-' || s.mover_maker_slug
+              ELSE s.mover_slug END
+      || ') was merged into the ' || s.survivor_title || ' title.' AS delete_note,
     s.survivor_title_is_suffixed,
     s.candidate_notes
   FROM _merge_scored s
@@ -796,6 +850,7 @@ CREATE OR REPLACE VIEW export_merge_rows AS
 -- reading the note (or finding a source) can promote it.
 CREATE OR REPLACE VIEW export_merge_blocked AS
   SELECT blocked_reason, id, mover_slug, candidate AS mover, namesake AS survivor,
+         (SELECT label FROM models m WHERE m.id = _merge_scored.ref_model_id) AS quote_names,
          lead, year_gap, era_gap, gap_basis, sentence, candidate_notes
   FROM _merge_scored WHERE blocked_reason IS NOT NULL
   ORDER BY blocked_reason, mover_slug;
@@ -1199,13 +1254,7 @@ CREATE OR REPLACE VIEW _origin_ref AS
 -- country), so case-insensitivity is SCOPED to the literal words with `(?i:...)` while
 -- `[A-Z]` stays case-sensitive. The same rule applies in `_origin_ref` above.
 
--- The maker reference IPDB writes for another machine: "<Maker>'s <year> '<Name>'".
--- `'s?` because the possessive loses its s on a maker whose name ends in one —
--- "Gottlieb's 1968 'Big Jack'" but "Williams' 1971 'Jackpot'". Groups: 1 maker,
--- 2 year, 3 name. Defined ONCE and shared by all three forms, each of which needs it
--- three times over (regexp_extract returns one group per call).
-CREATE OR REPLACE MACRO _maker_ref_pat() AS
-  '([A-Z][A-Za-z0-9.&-]*(?: [A-Z][A-Za-z0-9.&-]*)*)''s? (?:([0-9]{4}) )?''([^'']+)''';
+-- (`_maker_ref_pat()` is defined near the top, with the shared macros.)
 
 -- Form 1 — "<export-designating subject> is/was <ref>". The predicate must DESIGNATE an
 -- export, and the ref must follow it IMMEDIATELY: that is what picks 'Top Hand' and
@@ -1793,9 +1842,11 @@ CREATE OR REPLACE VIEW export_checks AS
   SELECT 'merge_quote_missing', r.id, r.mover_slug
   FROM export_merge_rows r WHERE r.quote IS NULL OR r.quote = ''
   UNION ALL
-  SELECT 'merge_quote_unnamed', r.id, r.mover_slug
-  FROM export_merge_rows r JOIN models t ON t.id = r.survivor_id
-  WHERE NOT (r.quote ILIKE '%' || t.name || '%')
+  -- Restated on the RESOLVED reference rather than a name search: every emitted row's
+  -- quote must resolve, on name+maker+year, to exactly the survivor.
+  SELECT 'merge_quote_resolves_elsewhere', r.id, r.mover_slug
+  FROM _merge_scored r
+  WHERE r.blocked_reason IS NULL AND r.ref_model_id IS DISTINCT FROM r.namesake_id
   UNION ALL
   -- Correctness: an `export_edition_of` edge requires a shared maker; a different
   -- maker's build is a `copy`. Same rule as `patch_fk_cross_maker`, restated for the
