@@ -34,7 +34,7 @@ from common.ai.client import (
     AiUnavailableError,
     require_ai_client,
 )
-from common.related_projects import (
+from common.paths import (
     EXPLORE_DUCKDB,
     FLIPCOMMONS_DB,
     WEB_CACHE_DB,

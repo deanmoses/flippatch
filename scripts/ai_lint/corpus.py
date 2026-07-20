@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Protocol
 
-from common.related_projects import EXPLORE_DUCKDB, WEB_CACHE_DB
+from common.paths import EXPLORE_DUCKDB, WEB_CACHE_DB
 
 if TYPE_CHECKING:
     from quote_verify.verify_quotes import _Sources

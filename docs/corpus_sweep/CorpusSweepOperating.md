@@ -34,7 +34,7 @@ Requirements: the flipcommons dev DB (rebuild it first — it is ground truth), 
 
 ```bash
 # 0. (campaign-specific) emit candidates, e.g. for 0128:
-uv run python3 patches/authoring/0128-relationships/emit_candidates.py
+uv run python3 campaigns/0128-relationships/emit_candidates.py
 
 # 1. free wiring + coverage check — no AI, no spend
 make sweep ARGS="path/to/candidates.jsonl --no-ai"

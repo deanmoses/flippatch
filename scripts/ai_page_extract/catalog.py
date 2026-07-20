@@ -114,7 +114,7 @@ class ModelRef:
 class CatalogDb:
     """Read-only introspection over flipcommons' dev SQLite.
 
-    Constructed from the DB path (default ``common.related_projects.FLIPCOMMONS_DB``);
+    Constructed from the DB path (default ``common.paths.FLIPCOMMONS_DB``);
     unit-tested against a temp fixture DB, so it never needs a sibling checkout.
     """
 

@@ -9,8 +9,8 @@ listing the bucket.
 
 The bucket is shared with the catalog (pindata, under ``pindata/``) and
 pinexplore ingest sources (root); the ``flippatch/`` prefix keeps patches
-isolated. Patches are NOT walked recursively: ``patches/authoring/`` holds
-scratch tooling (generators, worksheets, caches) that must never ship.
+isolated. Every ``*.yaml`` in ``patches/`` ships: the directory holds nothing
+else, since campaign authoring artifacts live in ``campaigns/``.
 
 The manifest sha256 is for download integrity only. It is unrelated to the
 apply-time immutability hash, which flipcommons computes from normalized
@@ -75,11 +75,10 @@ def _collect_patch_files(
 ) -> list[CollectedEntry]:
     """Collect top-level data patch files (``NNNN-slug.yaml``) only.
 
-    The ``patches/`` tree is NOT walked recursively: subdirectories such as
-    ``authoring/`` hold scratch tooling (generators, worksheets, caches) that
-    must never be shipped to downstream consumers. Each entry carries a
-    transient ``_local`` absolute path (stripped before the manifest is
-    written).
+    ``patches/`` contains only transported patches, so this is a flat glob —
+    the campaign artifacts that must never ship live in ``campaigns/``. Each
+    entry carries a transient ``_local`` absolute path (stripped before the
+    manifest is written).
     """
     entries: list[CollectedEntry] = []
     for full in src.glob("*.yaml"):

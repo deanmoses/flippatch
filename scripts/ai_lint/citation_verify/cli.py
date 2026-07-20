@@ -29,7 +29,7 @@ from common.ai.client import (
     require_ai_client,
 )
 from common.catalog.entity_index import EntityIndex
-from common.related_projects import FLIPCOMMONS_DB, REPO_ROOT, load_env
+from common.paths import FLIPCOMMONS_DB, REPO_ROOT, load_env
 
 from ai_lint.citation_verify.verify import collect_pairs, verify_pair
 from ai_lint.cli_common import emit, oversize_error, scope_error

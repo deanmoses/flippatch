@@ -1,6 +1,6 @@
 # Common AI Layer
 
-This doc is the plan for the shared foundation that AI-driven tools sit on. The code now lives under `scripts/common/`: `scripts/common/ai/` (`common.ai`) for model-call and candidate primitives, `scripts/common/catalog/` (`common.catalog`) for deterministic catalog lookup, and `scripts/common/related_projects.py` for sibling checkout paths.
+This doc is the plan for the shared foundation that AI-driven tools sit on. The code now lives under `scripts/common/`: `scripts/common/ai/` (`common.ai`) for model-call and candidate primitives, `scripts/common/catalog/` (`common.catalog`) for deterministic catalog lookup, and `scripts/common/paths.py` for sibling checkout paths.
 
 ## The problem
 
@@ -69,7 +69,7 @@ Written down once, so every future slice and rule inherits it instead of re-argu
 ## What stays out
 
 - **`check_quote` / `_Sources` / `ipdb_row_text`** stay in `scripts/quote_verify/verify_quotes.py` — already correctly placed and reused by `make verify-quotes`. The tools import them directly; they do not move. This keeps one definition of "verbatim" across extraction, sweep, lint, and the shipped-patch gate.
-- **`patchkit`** stays at `patches/authoring/patchkit.py` — claim emission, imported when a tool's confirmed results become a patch.
+- **`patchkit`** stays at `campaigns/patchkit.py` — claim emission, imported when a tool's confirmed results become a patch.
 - **Tool-specific logic** stays in each tool's own package: AiLint's rules (`overlap.py`, `description_check/`, `citation_verify/`), the extraction tool's slice definitions and per-record cache assembly, the sweep's SQL prefilter and field pipeline.
 
 ## What each tool imports
@@ -84,7 +84,7 @@ Written down once, so every future slice and rule inherits it instead of re-argu
 
 AiLint's session got ahead of the review and wrote a working first draft (`scripts/ai_lint/`, uncommitted). That code is the **quarry**, not a deliverable to finish in place:
 
-- `ai_client.py`, `config.py` (key/model/sibling-path handling), and `entity_index.py` were the seeds of primitives 1–2 and have been split into `common.ai.client`, `common.related_projects`, and `common.catalog.entity_index`.
+- `ai_client.py`, `config.py` (key/model/sibling-path handling), and `entity_index.py` were the seeds of primitives 1–2 and have been split into `common.ai.client`, `common.paths`, and `common.catalog.entity_index`.
 - The lint rules, CLIs, and report shapes stay in `ai_lint` and import from those shared packages.
 - The client grows the caching, batch, request-cap, and retry/timeout surface the lint didn't need but the other two tools do.
 
@@ -106,7 +106,7 @@ This adds the repo's first `anthropic` SDK dependency, an `ANTHROPIC_API_KEY` in
 
 ## Build order
 
-1. **Done.** Lift `ai_client.py` + `config.py` + `entity_index.py` out of `ai_lint` into `common.ai.client`, `common.related_projects`, and `common.catalog.entity_index`, behind the existing `Protocol`; add `resolve(name)` and caller-supplied type profiles to the index; keep AiLint green by importing from the new home. Client refactored to explicit-model-per-call (no default; `CHEAP_MODEL` / `TRUSTED_MODEL` constants), per-run request-count cap, end-of-run token total, and local `jsonschema` validation of the tool output. `quote-supports-claim` now binds `TRUSTED_MODEL`.
+1. **Done.** Lift `ai_client.py` + `config.py` + `entity_index.py` out of `ai_lint` into `common.ai.client`, `common.paths`, and `common.catalog.entity_index`, behind the existing `Protocol`; add `resolve(name)` and caller-supplied type profiles to the index; keep AiLint green by importing from the new home. Client refactored to explicit-model-per-call (no default; `CHEAP_MODEL` / `TRUSTED_MODEL` constants), per-run request-count cap, end-of-run token total, and local `jsonschema` validation of the tool output. `quote-supports-claim` now binds `TRUSTED_MODEL`.
 2. **Partly done.** Shipped: the request-count cap, token total, `Usage`, `EvidenceQuote`, and `Candidate`. **Deferred to their first consumer** (build-ahead-of-need discipline): retry/timeout and any shared prompt-assembly helper beyond the discipline already embodied in `ai_page_extract.framework` / `ai_page_extract.fields`.
 3. Add the prompt-caching surface to the client — `cache_control` placement + `usage` reporting — for the page extractor's cost-effective fan-out. The extraction tool owns the prime-then-fan-out orchestration on top.
 4. Add Batch submission when [AiCorpusSweep.md](AiCorpusSweep.md) is built.

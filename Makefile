@@ -72,7 +72,7 @@ sweep:
 #   make analyze FILE=.../bingo.sql CMD=ui                 # live GUI at localhost:4213
 #   make analyze FILE=.../bingo.sql Q="FROM bingo_review;" # one view from the analysis
 analyze:
-	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.related_projects import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
+	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.paths import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
 	if [ -n '$(FILE)' ]; then AN="$(abspath $(FILE))"; else AN="$$FC/scripts/analysis/catalog.sql"; fi; \
 	cd "$$FC" && \
 	if [ -n '$(Q)' ]; then scripts/analysis/analysis query "$$AN" "$(Q)" $(ARGS); \

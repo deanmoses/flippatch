@@ -13,7 +13,7 @@ Flippatch is the authoring home and transport for **data patches** — small YAM
 **What lives here:**
 
 - **Data patches**: change sets applied on top of the baseline seed catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file.
-- **Authoring artifacts**: the `patchkit` generator and one directory per generated patch set (audit trail) under `patches/authoring/`.
+- **Authoring artifacts**: the `patchkit` generator and one directory per generated patch set (audit trail) under `campaigns/`.
 
 Supporting stuff:
 
@@ -82,7 +82,7 @@ make analyze CMD=describe ARGS=models                                         # 
 
 `describe` is the view reference: every public view carries its own one-line description, and the reasoning a one-liner can't hold sits in comments beside the SELECT in `catalog.sql`. Read those before guessing at a column name. The authority on **using** the layer is [`../flipcommons/scripts/analysis/README.md`](../../flipcommons/scripts/analysis/README.md); on **changing** it, `EDITING.md` beside it.
 
-Where flipcommons sits on disk is resolved by `scripts/common/related_projects.py` — a sibling checkout by convention, overridable with `FLIPCOMMONS_DIR` in `.env`.
+Where flipcommons sits on disk is resolved by `scripts/common/paths.py` — a sibling checkout by convention, overridable with `FLIPCOMMONS_DIR` in `.env`.
 
 ### Joining catalog rows to the evidence behind them
 
@@ -103,7 +103,7 @@ pinexplore's `explore.duckdb` is a **fallback, not a peer**. It holds IPDB/OPDB/
 
 `patches/` holds **data patches** — small, source-attributed YAML files named `NNNN-slug.yaml` that correct or extend catalog data in already-seeded downstream databases **without a full re-ingest**. The catalog seed (in the sibling [pindata](https://github.com/deanmoses/pindata) repo) is an immutable baseline; patches are an append-only, numbered log replayed on top of it in every environment.
 
-**Flippatch is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in `patches/authoring/`, they are validated _structurally_ here, and `make push` ships them verbatim to R2 under the `flippatch/` prefix (files at `flippatch/patches/`, plus a `flippatch/manifest.json`). The authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here. `scripts/patch_validation/validate_patches.py` and `scripts/patch_validation/lint_patches.py` (run by `make validate`) are fast **structural and editorial** gates only — see [Validation](#validation).
+**Flippatch is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in `campaigns/`, they are validated _structurally_ here, and `make push` ships them verbatim to R2 under the `flippatch/` prefix (files at `flippatch/patches/`, plus a `flippatch/manifest.json`). The authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here. `scripts/patch_validation/validate_patches.py` and `scripts/patch_validation/lint_patches.py` (run by `make validate`) are fast **structural and editorial** gates only — see [Validation](#validation).
 
 The thin local reference is [docs/Patches.md](Patches.md); the authoritative format and authoring guidance live in flipcommons (below). **Do not author a patch from flippatch's docs alone.**
 
@@ -111,7 +111,7 @@ The thin local reference is [docs/Patches.md](Patches.md); the authoritative for
 
 Real patch authoring spans four repos, checked out as siblings (`../pindata`, `../flipcommons`, `../pinexplore`):
 
-- **flippatch** (here) — where patches and their `patches/authoring/` generators live, and where you run `make validate` and `make push`.
+- **flippatch** (here) — where patches and their `campaigns/` generators live, and where you run `make validate` and `make push`.
 - **flipcommons** (`../flipcommons`) — the source of truth. The live catalog, the **DuckDB analytics foundation** you query it through ([Querying the catalog](#querying-the-catalog)), the `ingest_patches` apply engine, and the **canonical patch documentation**.
 - **pinexplore** (`../pinexplore`) — where you research the verbatim source text behind a `cite:`. The **web scrape cache** is the primary evidence store, since most new catalog data comes from the web; see `../pinexplore/docs/WebCache.md`. Its `explore.duckdb` holds source dumps and is a fallback for questions the foundation can't answer — see `../pinexplore/CLAUDE.md`.
 - **pindata** (`../pindata`) — the immutable baseline seed catalog (markdown entity files) the patch claims target. This is basically retired, we're switching to database dumps to bootstrap new databases.
@@ -123,7 +123,7 @@ The authoritative, current patch docs live in flipcommons. Flippatch's local doc
 - **Data.md** — the index for working with catalog data (seed vs patches, explore vs correct); start here to orient.
 - **DataPatches.md** — the patch file format and the full apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations. The source of truth for what a patch _is_.
 - **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
-- **DataPatchKit.md** — when and how to generate large curated patches with the shared `patchkit` helper (which lives here at `patches/authoring/patchkit.py`).
+- **DataPatchKit.md** — when and how to generate large curated patches with the shared `patchkit` helper (which lives here at `campaigns/patchkit.py`).
 - **DataPatchReviewing.md** — the patch review checklist.
 - **DomainModel.md** — the catalog entity hierarchy the claims target.
 
@@ -142,7 +142,7 @@ For the concepts a patch rests on, read these two when a claim or citation quest
 
 ### Generating a patch
 
-A generated patch set is **two files** in `patches/authoring/<patch>/`, and the split is the whole design:
+A generated patch set is **two files** in `campaigns/<patch>/`, and the split is the whole design:
 
 - **`<name>.sql`** — the campaign's analysis file. Detection, classification, the false-positive gate and quote extraction all live here, layered on the foundation (and on `evidence.sql` when the claims cite web pages). It ends in the `<prefix>_summary` / `<prefix>_checks` pair the runner gates on. Iterate on it with `make analyze FILE=<...> PREFIX=<...>`.
 - **`gen.py`** — a pure emitter. It reads one view through `patchkit.read_view` and turns each row into a `patchkit.entry`. It holds no detection logic and no catalog queries of its own.

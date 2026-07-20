@@ -1,6 +1,6 @@
 """Tests for patchkit — the shared patch-authoring helpers.
 
-patchkit lives at patches/authoring/patchkit.py (excluded from the R2 upload) and
+patchkit lives at campaigns/patchkit.py (excluded from the R2 upload) and
 is on the pytest pythonpath via pyproject. Its whole purpose is to centralize the
 escaping / guard / emission logic that kept being re-derived (subtly wrong) in each
 authoring session, so it earns real coverage. These tests are the authoritative
@@ -881,7 +881,7 @@ def test_read_view_exports_flippatch_dir(plan: Path, runner: _FakeRunner) -> Non
     rather than trusting the caller's shell.
     """
     read_view(plan, "year_patch_rows", prefix="year")
-    expected = str(Path(patchkit.__file__).resolve().parents[2])
+    expected = str(patchkit.REPO_ROOT)
     assert runner.calls[0]["env"]["FLIPPATCH_DIR"] == expected
 
 

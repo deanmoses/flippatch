@@ -12,7 +12,7 @@ dependencies = [
 ]
 
 [tool.pytest.ini_options]
-pythonpath = ["scripts", "patches/authoring"]
+pythonpath = ["scripts"]
 testpaths = ["tests"]
 
 [dependency-groups]
@@ -39,11 +39,10 @@ exclude = [
     ".pytest_cache",
     ".mypy_cache",
     ".ruff_cache",
-    # Frozen per-patch generators under patches/authoring/NNNN-*/ are one-shot
-    # audit artifacts that reproduce already-shipped patches — already formatted
-    # to house style, but not lint-gated. The shared, maintained patchkit.py is
-    # NOT excluded.
-    "patches/authoring/[0-9][0-9][0-9][0-9]-*",
+    # Campaign dirs are one-shot audit artifacts reproducing already-shipped
+    # patches — formatted to house style, but not lint-gated. The maintained
+    # tooling they share lives in scripts/, which is gated.
+    "campaigns/",
 ]
 
 [tool.ruff.lint]
@@ -92,7 +91,7 @@ ignore = [
 "tests/*.py" = ["S101", "S106", "S603", "S607", "S506", "ANN", "PT011", "TC"]  # asserts, test creds, subprocess, project strict-loader, untyped tests, broad raises, runtime type imports
 "tests/conftest.py" = ["S101", "ANN"]
 "scripts/**/*.py" = ["T201"]  # CLI scripts legitimately print
-"patches/authoring/**/*.py" = ["T201"]  # patch generators legitimately print
+"campaigns/**/*.py" = ["T201"]  # patch generators legitimately print
 
 [tool.ruff.lint.isort]
 section-order = ["future", "standard-library", "third-party", "first-party", "local-folder"]
@@ -105,10 +104,10 @@ line-ending = "lf"
 [tool.mypy]
 python_version = "3.14"
 strict = true
-# Resolve the script subpackages (scripts/<group>/*.py, patches/authoring/*.py)
+# Resolve the script subpackages (scripts/*.py, scripts/<group>/*.py)
 # the same way pytest's `pythonpath` does, so `mypy .` sees the same module
 # names tests import (e.g. `patch_validation.validate_patches`).
-mypy_path = ["scripts", "patches/authoring"]
+mypy_path = ["scripts"]
 explicit_package_bases = true
 # Beyond `strict` — flipcommons stops at strict=true; these are the aggressive
 # flags strict deliberately leaves off (mirrors pinexplore).
@@ -130,8 +129,8 @@ enable_error_code = [
 ]
 exclude = [
     "\\.venv/",
-    # Frozen per-patch generators (see the ruff lint.exclude note above).
-    "patches/authoring/[0-9]{4}-",
+    # Campaign dirs (see the ruff lint.exclude note above).
+    "campaigns/",
 ]
 
 [[tool.mypy.overrides]]

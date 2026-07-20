@@ -2,7 +2,7 @@
 
 Flippatch is the authoring home for **data patches** — small YAML files that correct or extend catalog data in already-seeded downstream databases.
 
-This repo holds the patch files (`patches/`), their generator artifacts (`patches/authoring/`), the patch JSON schema, structural validation, and the tooling to publish the patches to Cloudflare R2.
+This repo holds the patch files (`patches/`), their generator artifacts (`campaigns/`), the patch JSON schema, structural validation, and the tooling to publish the patches to Cloudflare R2.
 
 **Flippatch is not the apply engine.** Patches are validated _structurally_ here and shipped verbatim to R2. The authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`).
 

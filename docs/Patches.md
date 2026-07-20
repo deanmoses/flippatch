@@ -2,7 +2,7 @@
 
 A **data patch** is a small YAML files that corrects or extends the pinball catalog data in already-seeded downstream databases. Patches are the schema-migration model applied to data: the catalog seed is an immutable baseline, and patches are an append-only, numbered log replayed on top of it in every environment.
 
-**This repo is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in [`patches/authoring/`](../patches/authoring/), they are validated _structurally_ here, and `make push` ships them to R2. However, the authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here.
+**This repo is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in [`campaigns/`](../campaigns/), they are validated _structurally_ here, and `make push` ships them to R2. However, the authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here.
 
 The baseline seed catalog these patches target lives in a separate repo, [pindata](https://github.com/deanmoses/pindata) (`../pindata`).
 
@@ -12,7 +12,7 @@ This file is a thin local pointer. The authoritative, current patch documentatio
 
 - **DataPatches.md** — the full patch file format and apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations.
 - **DataPatchAuthoring.md** — authoring a _good_ patch: attribution, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
-- **DataPatchKit.md** — generating large curated patches with the shared `patchkit` helper (which lives here at [`patches/authoring/patchkit.py`](../patches/authoring/patchkit.py)).
+- **DataPatchKit.md** — generating large curated patches with the shared `patchkit` helper (which lives here at [`campaigns/patchkit.py`](../campaigns/patchkit.py)).
 - **DataPatchReviewing.md** — the patch review checklist.
 - **DomainModel.md** — the catalog entity hierarchy claims target.
 

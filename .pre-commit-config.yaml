@@ -93,7 +93,7 @@ repos:
       # this style directly, so on a generated patch this hook is a no-op —
       # see its "Prettier-compatible flow emission" section). Auto-fixes and
       # re-stages, like the agent-docs hook below. Scoped to the transported
-      # top-level patches only (authoring/ is a frozen audit trail). This is a
+      # patches, which is now all of patches/. This is a
       # cosmetic reformat: it never alters parsed values, so it can't change
       # flipcommons' ingest immutability fingerprint (canonical-JSON based).
       - id: prettier-yaml-patches
@@ -109,13 +109,13 @@ repos:
         entry: npx prettier@3.8.1 --check
         language: system
         types: [markdown]
-        exclude: ^(CLAUDE|AGENTS)\.md$|^\.(agents|claude)/|^patches/authoring/
+        exclude: ^(CLAUDE|AGENTS)\.md$|^\.(agents|claude)/|^campaigns/
       - id: markdownlint-cli2
         name: markdownlint-cli2
         entry: npx markdownlint-cli2@0.21.0
         language: system
         types: [markdown]
-        exclude: ^(CLAUDE|AGENTS)\.md$|^\.(agents|claude)/|^patches/authoring/
+        exclude: ^(CLAUDE|AGENTS)\.md$|^\.(agents|claude)/|^campaigns/
 
       # Auto-regenerate agent docs when source or build script changes
       - id: agent-docs-regen
