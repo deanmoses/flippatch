@@ -19,6 +19,12 @@ make analyze FILE=$F Q="FROM export_twin_pairs;"         # deterministic export_
 make analyze FILE=$F Q="FROM export_titlemate_review;"   # likely target sits in the same Title
 make analyze FILE=$F Q="FROM export_orphan_review;"      # candidates still needing a target
 make analyze FILE=$F Q="FROM export_namesake_review;"    # same name, separate Title (edge + Title merge)
+make analyze FILE=$F Q="FROM export_paired_brands;"      # two maker names, one operation — derived
+make analyze FILE=$F Q="FROM export_name_cluster;"       # every same-name family + its state
+make analyze FILE=$F Q="FROM export_cluster_pairs;"      # the pair grain — filter by lead
+make analyze FILE=$F Q="FROM export_merge_backlog;"      # edge done, Title still split
+make analyze FILE=$F Q="FROM export_duplicate_smell;"    # two records of one machine
+make analyze FILE=$F Q="FROM export_slug_deficit;"       # bare -2 slugs + what they should say
 make analyze FILE=$F Q="FROM export_market_review;"      # the ModelExportMarket shape per candidate
 make analyze FILE=$F Q="FROM export_patch_rows;"         # what gen.py emits
 make analyze FILE=$F Q="FROM export_patch_rejected;"     # what the notes gate held back, and why
@@ -92,6 +98,118 @@ Name matching strips **one** trailing parenthetical, which is what lets the camp
 
 A merge is two patches, never one — `delete:`'s referrer check reads live DB state, so a model reassigned earlier in the *same* patch isn't yet visible (DataPatches.md). The precedent is [0148-rmg.yaml](../../0148-rmg.yaml) → [0149-rmg-title-removal.yaml](../../0149-rmg-title-removal.yaml): the first re-homes the model (`title:` onto the survivor, a disambiguating `slug:` if the names collide, and the `model_relationship` edge with its cite), the second retires the emptied Title with `delete: true` and a `note:` naming the model that left. The Title is **soft-deleted**, not retracted — `status` is not directly assertable. Reslugging the doomed Title first ([0137](../../0137-nugent-consolidation.yaml) used `-duplicate`) is needed only when the survivor has to claim its slug.
 
+## Name clusters — the catalog-wide grain
+
+Everything above is rooted in `export_candidates`: a model is visible only if a detector fired on its free text, its name suffix or an OPDB flag. That is the right root for authoring a claim and the wrong one for asking a question about the corpus, because a same-named pair where **neither** side has usable prose is structurally invisible — no detector, no candidate, no namesake row. *Cavalier* (Recel 1979) / *Cavalier* (Petaco 1979) only reached `export_namesake_review` because IPDB happened to write a twin sentence about it.
+
+`export_name_cluster` and `export_cluster_pairs` drop that root and cluster the whole live catalog by `name_key`: **1,106 clusters over 3,087 models, 930 of them split across more than one Title**. Far too many to read, which is what `pair_state` and `lead` are for — the first retires what is finished, the second sorts the rest by what the pair is evidence *for*.
+
+| view | grain | what it is |
+| --- | --- | --- |
+| `export_paired_brands` | maker pair | two maker names that are one operation, **derived** |
+| `export_name_cluster` | name cluster | orientation — makers, era, `cluster_state` |
+| `export_cluster_pairs` | model pair | the worklist; filter by `lead` |
+| `export_merge_backlog` | model pair | edge already claimed, Title still split |
+| `export_duplicate_smell` | model pair | two catalog records of one machine |
+| `export_slug_deficit` | model | a bare `-2` slug, and what it should say instead |
+
+### Paired brands, derived rather than declared
+
+The Spanish makers ran paired brands, one domestic and one export: Recel/Petaco, Interflip/Recreativos Franco. This campaign found those only through IPDB's formulaic twin sentence, and every tier downstream then had to be told, one by one, that cross-maker does not mean `copy` here.
+
+The catalog cannot answer it structurally, and `corporate_entity_slug` — the obvious place to look — is the wrong **level**, not merely unpopulated. DomainModel.md declares `Manufacturer ||--o{ CorporateEntity : incarnations`: a corporate entity is one legal incarnation *of* a maker, so it sits **below** the brand and partitions it across eras. Bally's models split into three (Bally Manufacturing 1932–82, Bally Midway 1983–88, Midway/WMS 1988–99); Gottlieb and Williams span four each.
+
+So corporate entity divides one brand over time — it can never group two brands into one operation, and no level above Manufacturer exists to do so. That is why the paired-brand relationship has to be inferred from name-collision statistics rather than read off a foreign key.
+
+What does separate a paired brand from two unrelated makers is the ratio of **contemporaneous** shared names to shared names. Bally and Gottlieb share 64 model names and exactly **one** within a year — generic nouns independently reused over four decades. Petaco and Recel share 30 and **22** are within a year, because they are the same games under two labels in the same season. The absolute count ranks Bally/Gottlieb first; the ratio inverts them. No maker name is hardcoded anywhere.
+
+**`same_home` is not a verdict.** Recel/Petaco is one Spanish operation selling a domestic and an export label; Ace Novelty / Colonial Specialties (both USA, both 1932, five shared names) is a domestic rebadge with no export in it at all. So rather than guess, each cohort is calibrated on the edges a human has **already authored inside it** — `cohort_edge`. An unworked pair inherits the verdict its own cohort earned; a cohort nobody has judged inherits nothing and gets `'same-home partner, unjudged cohort'`, a review lead and explicitly not an export claim. A check fails the run if the export tier ever fires on an unjudged cohort.
+
+What it finds, ranked by `n_unworked` (contemporaneous pairs carrying no edge):
+
+| partner pair | kind | `cohort_edge` | close | unworked |
+| --- | --- | --- | --- | --- |
+| A. M. Amusement / Century Mfg | same-home | — | 8 | 8 |
+| Mills Novelty / Shyvers | same-home | — | 6 | 6 |
+| Ace Novelty / Colonial Specialties | same-home | — | 5 | 5 |
+| Automatic Amusements / Bally | same-home | — | 5 | 5 |
+| Bingo Novelty / Gottlieb | same-home | — | 5 | 5 |
+| Europlay / Gottlieb | cross-border | — | 5 | 5 |
+| Petaco / Recel | same-home | `export_edition_of` | 22 | 4 |
+| Segasa / Williams | cross-border | `copy` | 9 | 4 |
+| Bally / Bally Wulff | cross-border | `copy` | 10 | 1 |
+
+The unjudged cohorts are the frontier: nine maker pairs nobody has opened, none of them reachable from any detector in this file.
+
+### Two kinds of noise the clustering had to be taught
+
+Both were found by reading the output, and both are measured rather than listed:
+
+- **Placeholder names.** 37 live models are named `Unknown`, or `Unknown ("Three Bell")` where a cabinet marking is all anyone has. `name_key` strips the parenthetical and collapsed all 37 into one cluster spanning 12 makers and 1889–1984 — **579 pairs**, more noise than every real lead in the file combined. Two models being equally un-named is not a shared name; `_is_real_name` excludes them from all four grains.
+- **Generic names.** *Baseball* is 19 models by 16 makers across 1931–1970; *Circus* is 16 by 12 across 1932–1980. A cluster with ≥6 makers spanning ≥20 years is a shared noun, and `'likely coincidence (generic name)'` demotes 749 pairs. The tier sits **below** every structural one — one operation, one maker, one border crossing — so it can never demote a partner pair: *Cavalier* is two makers in one year and is untouched by it.
+
+### The merge backlog
+
+`export_merge_backlog` promotes a number the README used to quote into a worklist: **36 pairs already joined by an edge and still sitting in two Titles** (24 `export_edition_of`, 21 of them where both Titles hold only the one model). Nothing here needs research — the edge is already the claim that the two are one game, so the Title split is a placement that claim decided. The work is the two-patch merge below. *Cavalier*, *Crazy Race*, *Criterium 2000*, *Fair Fight*, *Master Stroke*, *Mr. Doom*, *Mr. Evil* are all Recel/Petaco pairs in exactly this state.
+
+### Duplicate records
+
+`export_duplicate_smell` — same maker, same **exact** name, same year, same Title, no edge: 41 pairs, 5 of them touching an export candidate. Not an export finding, kept separate because it **blocks** export work when it lands on a target. *Kicker (Italy)* cites "Chicago Coin's 1966 'Kicker'" and abstains on its FK because the catalog holds two of those; Recel holds two 1975 *Criterium 75* records. Matching is `name_norm`, not `name_key` — here the parenthetical is the disambiguator, and stripping it would report A. M. Amusement's *Forward Pass (Junior)* and *(Marvel)*, two correctly distinct 1934 machines, as duplicates.
+
+### Country resolution reads the catalog's aliases
+
+`_country_lookup` unions three sources: the catalog's country **names**, the catalog's registered **aliases** (`country_aliases`), and this file's country **adjectives**. The split is the judgment/mechanic line the foundation's name macros are built on — an alternate name for a country belongs to the catalog, while "for the *German* market" is a parsing strategy that belongs here.
+
+This file used to hand-copy the alternate names too, and knew 4 of the catalog's 11. A `country_lookup_ambiguous` check now fails the run if a token ever resolves two ways, since every consumer joins on `token` and a duplicate would multiply rows silently.
+
+Worth recording honestly: **the swap changed no rows.** The seven aliases this file was missing (`England`, `Britain`, `West Germany`, `The Netherlands`, `U.K.`, `US`, `R.O.C.`) do not appear in the syntactic frames the market detectors require (`export to X`, `for the X market`, `X export`). The value is that the file is no longer a stale copy, not that it found anything today. `manufacturer_aliases` was tested the same way and likewise resolves nothing this campaign's maker-ref parse can't already reach.
+
+### A gap the alias work surfaced: `exported to`
+
+`_by_notes` matches `export to `, so the past-tense inflection misses entirely — 27 models say "exported to" and 23 are not candidates. Most are **reverse-direction** ("*Buccaneer*'s add-a-ball version is *Ship Ahoy* which was exported to Italy as *High Seas*"), and 8 of 9 spot-checked targets are already captured from the other end by `_reciprocal` — so widening the gate would mostly re-derive what the reciprocal parse already has.
+
+The genuinely new self-claims are about six, and they are a different shape from the rest of the campaign: *"Games exported to the UK had three skill posts"*, *"the version exported to Germany has an additional EMC cage"*. Those are production variations shipped to a market, not separate export-edition models — a real `ModelExportMarket` fact, but a scope decision rather than an obvious inclusion. Left open deliberately; loosening `_by_notes` is exactly what the guard anchors exist to police.
+
+### Bare numeric slugs — unfinished disambiguation
+
+`alaska-2` says only "the second thing called Alaska". It is a placeholder minted at seed time because a name collided, and it survives long after the catalog learned *why* the two differ. Where the reason is known the slug should carry it, and the catalog already uses that convention — `hula-hula-italy`, `big-ben-segasa-italy`, `harley-davidson-bally`. A bare suffix is not cosmetic: it is disambiguation left unfinished, and this campaign is the work that supplies the missing fact.
+
+So Alaska, Black Magic, Cherokee and Criterium 80 are **not** done just because their edges are. `export_slug_deficit` proposes what each slug should say:
+
+| slug | name | proposed | basis |
+| --- | --- | --- | --- |
+| `alaska-2` | Alaska (Recreativos Franco) | `alaska-recreativos-franco` | maker |
+| `alaska-3` | Alaska (EM) (Interflip) | — (`name_paren_raw` = `EM`) | *mint client-side* |
+| `black-magic-2` | Black Magic (Petaco) | `black-magic-petaco` | maker |
+| `cavalier-2` | Cavalier (Petaco) | `cavalier-petaco` | maker |
+| `cherokee-2` | Cherokee (Recreativos Franco) | `cherokee-recreativos-franco` | maker |
+| `criterium-80-2` | Criterium 80 (Petaco) | `criterium-80-petaco` | maker |
+| `circus-10-2` | Circus 10 (SIRMO) | `circus-10-italy` | export destination |
+| `criterium-75-2` | Criterium 75 (Recel) | — | *duplicate, merge instead* |
+
+**1,485 live models carry a bare placeholder; 1,265 have an actionable proposal** (11 by export destination, 1,039 by maker, 215 by year). The destination comes from `model_export_markets` — what 0177 actually wrote into the catalog — not from this file's own parse, so a market corrected in review can't go on naming a slug from the parse that lost.
+
+### The view composes slugs; it never mints them
+
+Every proposal is an **existing** slug (`base_slug`, `manufacturer_slug`, a country slug) or an integer year, joined by a hyphen — slug-safe by construction and idempotent under the real slugifier. Turning free **text** into a slug is a different operation that does not belong in SQL: the catalog's slugs were minted client-side by standalone Python calling Django's `slugify`, whose `NFKD` + `ascii-ignore` pass is Unicode-table-driven and has no honest DuckDB equivalent.
+
+That boundary was learned, not assumed. A `name parenthetical` basis lived here briefly, slugifying the trailing `(…)` with `name_norm` + `replace(' ','-')`, and produced `target-machine-type-ターケットマシン-タイフ１` — non-ASCII, **and** with the dakuten eaten by `strip_accents` (ゲ→ケ, プ→フ), the precise misuse `name_norm`'s own comment warns against. It also emitted `forward-pass-junior-junior`, the base slug already carrying the parenthetical. A `proposed_slug_not_slug_safe` check now guards the class.
+
+The parenthetical survives **raw** as `name_paren_raw`, because it is a real distinguisher and often the best one — `alaska-3` is *Alaska (EM)*, and `alaska-em` is the right slug. The view surfaces the fact and leaves the minting to the authoring side, where Django's slugify is what every existing slug already went through.
+
+Detection is structural rather than a re-implementation of Django's `slugify` (which differs on apostrophes and `&`, mis-sorting ~440 rows). A trailing number is a placeholder only when it is neither of the two things it might legitimately be:
+
+- **the name itself** — `black-magic-4` is *Black Magic 4*, `criterium-2000` is *Criterium 2000*
+- **a year already applied** — `big-ben-williams-1954` and `big-ben-williams-1975` are the exact shape this view wants the catalog to reach
+
+Both were caught by checks after the first version reported them as deficits and proposed renaming them to the slugs they already held.
+
+The four bases are tried in order and **fall through** when a preferred one is taken. Gottlieb's *Kicker* exports to Italy, but Chicago Coin's *Kicker (Italy)* already holds `kicker-italy`, so the destination basis yields and the maker basis supplies `kicker-gottlieb`. Dead-ending on the first choice lost 3 otherwise-actionable rows. `proposal_resolves` tests uniqueness on the distinguishing **fact**, not on the string — `alaska-3` cannot take `alaska-interflip` because `alaska` is Interflip too, which is why it falls to its own parenthetical.
+
+**204 rows get no proposal, and that is the honest answer.** Two records with the same name, maker and year are not two machines needing better slugs — they are the `export_duplicate_smell` population, and the fix is a merge. *Criterium 75* (two Recel 1975 records) and *Kicker* (two Chicago Coin 1966 records) both land here; the latter is the same duplicate blocking `kicker-italy`'s FK.
+
+One judgement call worth knowing: where a model has *both* a destination and a name parenthetical, destination wins. That affects exactly one row today — `beatniks-2` (*Beatniks (AAB)*, exported to Italy) proposes `beatniks-italy` where `beatniks-aab` is arguable.
+
 ## From candidates to claims: [gen.py](gen.py)
 
 The buckets above are worklists for a **human**. The patch itself is generated from a much narrower gate, because `by_notes` membership is a keyword match and a keyword match is not a claim. [gen.py](gen.py) is a pure emitter over one view, `export_patch_rows`; all detection, gating and quote extraction live in [exports.sql](exports.sql). Regenerate with:
@@ -132,6 +250,16 @@ Three further gates, each earned by a false positive found in the data:
 - **An export edition shares its original's maker.** A different maker's build is a `copy`, not an export, so a cross-maker note can evidence the export *fact* but never the *origin* — this is what stops Gottlieb's *Texas Ranger* being recorded as an export edition of Maresa's *Dakota*. The `twin` tier is the deliberate and only exception: its sentence says "the **same company** made…", one company running two brands (Recel/Petaco, Interflip/Recreativos Franco).
 - **A relative clause re-anchors the subject.** "…is Gottlieb's 1977 'Team One' **which was** exported to Italy as Gottlieb's 1977 'Kicker'" — Kicker's original is Team One, not the model whose note this is. Those rows keep the export fact and drop the origin.
 - **Two sources naming different origins abstain** — *Kicker (Italy)* is claimed by both Chicago Coin *Kicker* records, *Top Hand* by both *Capt. Card* and *High Hand*.
+
+### Two hazards in the evidence itself
+
+**A corroborating cite must identify the origin.** An entry-level `cite:` rides *every* claim the entry asserts (DataPatches.md), so a cite attached to an entry asserting both `export_edition_of` and `export_market` is claimed as evidence for both. A reciprocal cite therefore has to support the FK, not merely mention this model. Two shapes qualify — the cite's **ref is the origin's record** (the classic reciprocal, whose sentence subject is implicit and supplied by the record it sits on), or the **quote names the origin** (a third model's record describing the whole family: *"The Add-a-ball version of this game is … 'Ship Ahoy' which was exported to Italy as … 'High Seas'"*).
+
+What that excludes is a cite whose subject is implicit *and* is someone else. *Ten-Up* was citing Pin-Up's note — *"The Add-a-ball version for export to Italy is Gottlieb's 1973 'Ten-Up'"* — whose implicit subject is **Pin-Up**, and which never names King Pin. Read alone it asserts a different original than the row claims (King Pin and Ten-Up are both 1973; Pin-Up is 1975 and cannot be the original). Corroboration from the wrong end is contradiction. `recip_cite_origin_unidentified` guards it.
+
+**A title abbreviation severs a quote, and `verify-quotes` cannot see it.** Every sentence extractor here bounds a sentence with `[^.]*\.`, which breaks on the period inside `Mr.` or `Capt.`. It shipped *"…as Petaco's 'Mr."* — the game name cut mid-word, the opening quote never closed. A truncated span is **still a verbatim substring of the source**, so it verifies clean; only reading the quote reveals it. `_abbrev_guard` swaps the period for a sentinel before extraction and back after, so the emitted quote stays byte-identical, and `quote_truncated_at_abbreviation` fails the run if one reappears.
+
+The guard recovered a claim, not just a quote. *Top Hand* had been abstaining with `- {}` because its own note — *"This is a version of Gottlieb's 1974 'Capt. Card' made for export to Italy"* — was being severed at `'Capt.`, so the export sentence never matched. With the full sentence it resolves `export_edition_of: capt-card` and an Italy market, corroborated by Capt. Card's own record. Guarded titles are `Mr Mrs Ms Dr St Capt Sgt` and only before a capitalized word; `Inc.`, `Co.`, `Ltd.`, `No.` and `Mfg.` are deliberately **not** guarded, since those genuinely do end sentences here and merging two would be its own defect.
 
 ### A regex hazard worth knowing
 
@@ -177,6 +305,9 @@ The generator is expected to keep evolving — the numbers below are a query (`m
 
 Still open, in rough order of value:
 
+- the **merge backlog** (36 pairs, 24 of them `export_edition_of`) — decisions already made, waiting on a two-patch Title merge; the cheapest work on this list
+- the **unjudged paired-brand cohorts** — nine maker pairs (A. M. Amusement/Century, Mills/Shyvers, Ace Novelty/Colonial, Automatic Amusements/Bally, Bingo Novelty/Gottlieb, Europlay/Gottlieb, PAMCO/Stoner, Giuliano Lodola/Gottlieb, Unidesa/Williams) that no detector in this file can reach; judging one pair in a cohort calibrates the rest
+- the `export_cluster_pairs` rows at `lead = 'export edition (paired brand)'` and `pair_state = 'edge missing'` — co-titled Recel/Petaco pairs still carrying no edge (*Don Quijote*, *Torpedo*)
 - the **title-mate** bucket (95 candidates) — the largest source of further `export_edition_of` targets, needing a per-row source read
 - the **namesake** bucket — `lead = 'export edition'` first (a parsed-quality `export_edition_of` the notes never stated), then the `foreign build (copy)` rows as 0128 work, then the `title_merge_lead` merges, including the `namesake_merge_backlog` pairs already joined by an edge
 - the reciprocal rows that abstained on an origin because two sources disagreed (*Kicker (Italy)*, *Top Hand*)

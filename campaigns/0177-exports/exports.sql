@@ -48,29 +48,37 @@
 -- ── 2 · REFERENCE ──────────────────────────────────────────────────────────
 -- Hand-maintained lookups specific to this analysis. Not derived from the DB.
 
--- Country resolution for the detectors. The catalog owns the country vocabulary
--- (`countries`); this maps the free-text TOKENS the detectors pull from notes and
--- names to a catalog country SLUG, so markets are stored as slugs that align with
--- each model's maker-home `country_slug`. Three token kinds aren't a catalog name and
--- need an alias: the IPDB US spellings, the acronyms/alternate names ("UK", "Holland"),
--- and the adjectives in "for the German market". Everything else resolves by name.
--- Slugs are never hardcoded — `countries` supplies them, so a country rename can't
--- silently desync this lookup. (A destination country that isn't in `countries` at all,
--- e.g. Israel, resolves the moment it's created as a Location — no alias needed.)
-CREATE OR REPLACE VIEW _country_alias AS
+-- Country ADJECTIVES — 'a German version', 'for the Italian market'. The one token kind
+-- the catalog does not and should not carry: `country_aliases` holds alternate NAMES
+-- for a country ("West Germany", "Holland", "England"), while an adjective is a parsing
+-- strategy this analysis applies to prose. That is the same judgment/mechanic split the
+-- foundation's own name macros are built on, so the two halves stay on their own sides.
+--
+-- This list USED to carry the alternate names too — 'USA', 'United States', 'UK',
+-- 'Holland' — hand-copied, and wrong by omission: the catalog knows 11 country aliases
+-- and this file knew 4. The seven it missed included 'England', which is why
+-- 'Adventures of Rocky and Bullwinkle' ("the black cabinet games exported to England")
+-- resolved no market at all. `country_aliases` now supplies that half.
+--
+-- Country NAMES are never hardcoded here — `countries` supplies them, so a country
+-- rename can't silently desync the lookup.
+CREATE OR REPLACE VIEW _country_adjective AS
   SELECT * FROM (VALUES
-    ('USA','United States of America'), ('United States','United States of America'),
-    ('UK','United Kingdom'), ('Holland','Netherlands'),
     ('Italian','Italy'), ('Spanish','Spain'), ('French','France'), ('German','Germany'),
     ('Portuguese','Portugal'), ('Japanese','Japan'), ('Brazilian','Brazil'),
     ('Belgian','Belgium'), ('British','United Kingdom'), ('American','United States of America')
   ) AS t(token, country_name);
 
--- token -> country slug: catalog names resolve directly, the aliases above via name.
+-- token -> country slug, from three sources: the catalog's country names, the catalog's
+-- registered aliases, and this analysis's adjectives. Checked to be collision-free —
+-- `country_lookup_ambiguous` below fails the run if a token ever resolves two ways,
+-- since every consumer joins on `token` and a duplicate would multiply rows silently.
 CREATE OR REPLACE VIEW _country_lookup AS
   SELECT name AS token, slug FROM countries
   UNION ALL
-  SELECT a.token, c.slug FROM _country_alias a JOIN countries c ON c.name = a.country_name;
+  SELECT alias AS token, country_slug AS slug FROM country_aliases
+  UNION ALL
+  SELECT a.token, c.slug FROM _country_adjective a JOIN countries c ON c.name = a.country_name;
 
 -- Region labels for the `target_market_label` case (flipcommons' Exports.md): a market
 -- that is a multi-country region, not a catalog country. Unlike countries these have NO catalog
@@ -132,7 +140,7 @@ CREATE OR REPLACE VIEW _by_notes AS
 --             the whole run (tokens chained by " and "/" then ") and split it, so the
 --             tail country isn't dropped.
 --   acronym   "export to the USA", "export to the UK" — the token charset allows
---             all-caps runs (USA/UK), resolved via `_country_alias`.
+--             all-caps runs (USA/UK), resolved via `_country_lookup`.
 -- The country charset deliberately over-captures (any capitalized run); a token that
 -- isn't a country simply drops at the `_country_lookup` join. A leading "the " on a
 -- list tail (". . . and the UK") is stripped before lookup.
@@ -536,6 +544,25 @@ CREATE OR REPLACE VIEW _maker_era AS
 CREATE OR REPLACE MACRO _span_gap(a_start, a_end, b_start, b_end) AS
   greatest(0, greatest(a_start - b_end, b_start - a_end));
 
+-- ABBREVIATION GUARD — every sentence extractor in this file bounds a sentence with a
+-- run of non-period characters (`[^.]*\.`), which breaks on the period inside a TITLE
+-- ABBREVIATION. It shipped two truncated quotes: Recel's twin sentence for 'Mr. Doom'
+-- and 'Mr. Evil' was cut at "as Petaco's 'Mr." — the game name severed mid-word, the
+-- opening quote never closed.
+--
+-- `make verify-quotes` cannot catch this. A truncated span is still a verbatim
+-- substring of the source, so it passes; only reading the quote reveals it.
+--
+-- The guard swaps the period for a sentinel before extraction and swaps it back after,
+-- so the emitted quote stays byte-identical to the source. Scoped tightly: only these
+-- titles, and only when a CAPITALIZED word follows, which is the mid-name shape. Not
+-- guarded are 'Inc.', 'Co.', 'Ltd.', 'No.' and 'Mfg.' — those genuinely do end
+-- sentences in this corpus ("...manufactured by Williams Electronics, Inc."), and
+-- merging two sentences into one quote would be its own defect.
+CREATE OR REPLACE MACRO _abbrev_guard(txt) AS
+  regexp_replace(COALESCE(txt, ''), '\b(Mr|Mrs|Ms|Dr|St|Capt|Sgt)\.(\s+[A-Z])', '\1' || chr(1) || '\2', 'g');
+CREATE OR REPLACE MACRO _abbrev_unguard(txt) AS replace(COALESCE(txt, ''), chr(1), '.');
+
 -- The maker reference IPDB writes for another machine: "<Maker>'s <year> '<Name>'".
 -- `'s?` because the possessive loses its s on a maker whose name ends in one —
 -- "Gottlieb's 1968 'Big Jack'" but "Williams' 1971 'Jackpot'". Groups: 1 maker,
@@ -738,8 +765,8 @@ CREATE OR REPLACE TABLE _merge_pair AS
 CREATE OR REPLACE TABLE _merge_evidence AS
   SELECT
     p.id,
-    trim(regexp_extract(nn.note_norm,
-      '([^.]*(?:copy of|version of|conversion of|made for export|exported to)[^.]*\.)', 1)) AS sentence,
+    _abbrev_unguard(trim(regexp_extract(_abbrev_guard(nn.note_norm),
+      '([^.]*(?:copy of|version of|conversion of|made for export|exported to)[^.]*\.)', 1))) AS sentence,
     nn.note_norm
   FROM _merge_pair p,
        LATERAL (SELECT regexp_replace(
@@ -975,18 +1002,18 @@ CREATE OR REPLACE VIEW export_market_review AS
 CREATE OR REPLACE VIEW _export_evidence AS
   SELECT
     c.id,
-    trim(regexp_extract(
-      regexp_replace(nn.note_norm, '(?i)quantity produced for export', '', 'g'),
+    _abbrev_unguard(trim(regexp_extract(
+      regexp_replace(_abbrev_guard(nn.note_norm), '(?i)quantity produced for export', '', 'g'),
       '([^.]*(for export|export to |export edition|export version|export model)[^.]*\.)',
-      1)) AS export_sentence,
-    trim(regexp_extract(nn.note_norm, '([^.]*same company made [^.]*\.)', 1)) AS twin_sentence,
+      1))) AS export_sentence,
+    _abbrev_unguard(trim(regexp_extract(_abbrev_guard(nn.note_norm), '([^.]*same company made [^.]*\.)', 1))) AS twin_sentence,
     -- The independent "Recel is the name used for export games." sentence. The twin
     -- sentence names the counterpart (so it carries `export_edition_of`) but only
     -- IMPLIES this model's own role; this one states it outright, which is what the
     -- `- {}` "built for export" row actually rests on. Present on 27 of 30 twins;
     -- `export_checks` already guarantees the two never contradict each other.
-    trim(regexp_extract(nn.note_norm,
-      '([^.]*is the name used for (export|domestic) games[^.]*\.)', 1)) AS role_sentence
+    _abbrev_unguard(trim(regexp_extract(_abbrev_guard(nn.note_norm),
+      '([^.]*is the name used for (export|domestic) games[^.]*\.)', 1))) AS role_sentence
   FROM export_candidates c,
        LATERAL (SELECT regexp_replace(
          replace(replace(replace(replace(COALESCE(c.notes, ''), '“', '"'), '”', '"'),
@@ -1293,8 +1320,8 @@ CREATE OR REPLACE TABLE _reciprocal AS
     WHERE m.ipdb_id IS NOT NULL
   ),
   sents AS (
-    SELECT norm.* EXCLUDE (n), trim(sent) AS sent
-    FROM norm, UNNEST(regexp_extract_all(norm.n, '[^.]*\.', 0)) AS d(sent)
+    SELECT norm.* EXCLUDE (n), _abbrev_unguard(trim(sent)) AS sent
+    FROM norm, UNNEST(regexp_extract_all(_abbrev_guard(norm.n), '[^.]*\.', 0)) AS d(sent)
     WHERE sent ILIKE '%export%'
        OR regexp_matches(sent,
             '(?i:(italian|spanish|french|german|portuguese|japanese|brazilian|belgian|british|american)[a-z -]* version)')
@@ -1459,19 +1486,27 @@ CREATE OR REPLACE TABLE export_patch_rows AS
     WHERE m.id IN (SELECT target_id FROM _reciprocal)
       AND m.id NOT IN (SELECT id FROM parsed)
   ),
-  unioned AS (SELECT * FROM parsed UNION ALL SELECT * FROM recip_only)
+  unioned AS (SELECT * FROM parsed UNION ALL SELECT * FROM recip_only),
+  -- The FK is resolved in its OWN step because `recip_cites` below has to filter on it,
+  -- and a SELECT cannot reference a column it is computing.
+  resolved AS (
+    SELECT
+      b.* EXCLUDE (export_edition_of, origin_how),
+      -- A reciprocal note can also supply the origin a row's own source never named.
+      -- That is how 'Jackpot' gets Gold Rush back: its own note says only "Same game as
+      -- ... 'Gold Rush' but made for export", which `_origin_ref` refuses (a sibling
+      -- phrasing), while Gold Rush's note states the export outright.
+      COALESCE(b.export_edition_of,
+               (SELECT ro.origin_slug FROM _recip_origin ro WHERE ro.target_id = b.id)) AS export_edition_of,
+      COALESCE(
+        b.origin_how,
+        CASE WHEN EXISTS (SELECT 1 FROM _recip_origin ro WHERE ro.target_id = b.id)
+             THEN 'reciprocal' END) AS origin_how
+    FROM unioned b
+  )
   SELECT
     b.id, b.slug, b.label, b.ipdb_id, b.opdb_id, b.kind, b.quote, b.role_quote,
-    -- A reciprocal note can also supply the origin a row's own source never named.
-    -- That is how 'Jackpot' gets Gold Rush back: its own note says only "Same game as
-    -- ... 'Gold Rush' but made for export", which `_origin_ref` refuses (a sibling
-    -- phrasing), while Gold Rush's note states the export outright.
-    COALESCE(b.export_edition_of,
-             (SELECT ro.origin_slug FROM _recip_origin ro WHERE ro.target_id = b.id)) AS export_edition_of,
-    COALESCE(
-      b.origin_how,
-      CASE WHEN EXISTS (SELECT 1 FROM _recip_origin ro WHERE ro.target_id = b.id)
-           THEN 'reciprocal' END) AS origin_how,
+    b.export_edition_of, b.origin_how,
     CASE WHEN b.kind = 'suffix' THEN list_sort(list_distinct(b.suffix_markets))
          ELSE b.quoted_markets END AS market_countries,
     CASE WHEN b.kind = 'suffix' THEN NULL
@@ -1480,13 +1515,46 @@ CREATE OR REPLACE TABLE export_patch_rows AS
     -- Corroborating statements from the OTHER end, as extra cites on this same entry.
     -- A reciprocal source is a different model, so its ipdb_id can never collide with
     -- this row's own cite (DataPatches.md rejects a duplicated ref+locator+quote).
+    --
+    -- The ORIGIN MUST BE IDENTIFIED, by the ref or by the quote. An entry-level cite
+    -- rides EVERY claim the entry asserts (DataPatches.md), so a corroborating cite has
+    -- to support the FK too — not merely mention this model. Two shapes qualify:
+    --
+    --   the ref IS the origin   the classic reciprocal. The sentence's subject is
+    --                           implicit ("The Add-a-ball version for export to Italy
+    --                           is ... 'High Seas'") and the record it sits on supplies
+    --                           it, so ref + quote together state the edge.
+    --   the quote NAMES it      a third model's record describing the whole family:
+    --                           "The Add-a-ball version of this game is ... 'Ship Ahoy'
+    --                           which was exported to Italy as ... 'High Seas'." Not a
+    --                           reciprocal at all, but it states this exact edge
+    --                           explicitly, so it is real corroboration.
+    --
+    -- What both exclude is a cite whose subject is implicit AND is someone else. 'Ten-Up'
+    -- was citing Pin-Up's note, "The Add-a-ball version for export to Italy is Gottlieb's
+    -- 1973 'Ten-Up'" — implicit subject PIN-UP, never naming King Pin. Read alone it
+    -- asserts a different original than this row claims (King Pin and Ten-Up are both
+    -- 1973; Pin-Up is 1975 and cannot be the original). Corroboration from the wrong end
+    -- is contradiction.
+    --
+    -- The name test is deliberately weak — plain containment of the origin's name. It is
+    -- only ever used to ADMIT evidence for an FK already established by the gates above,
+    -- never to derive one, so it does not need the name+maker+year discipline `_origin_ref`
+    -- carries.
+    --
+    -- Where the row asserts no FK the statement corroborates the export FACT alone, and
+    -- any record stating it flatly is admissible.
     COALESCE((
       SELECT list({'ipdb_id': r.source_ipdb_id, 'quote': r.quote} ORDER BY r.source_ipdb_id, r.quote)
       FROM _reciprocal r
-      WHERE r.target_id = b.id AND r.source_ipdb_id IS DISTINCT FROM b.ipdb_id
+      WHERE r.target_id = b.id
+        AND r.source_ipdb_id IS DISTINCT FROM b.ipdb_id
+        AND (b.export_edition_of IS NULL
+             OR r.source_id = (SELECT o.id FROM models o WHERE o.slug = b.export_edition_of)
+             OR r.quote LIKE '%' || (SELECT o.name FROM models o WHERE o.slug = b.export_edition_of) || '%')
     ), []) AS recip_cites,
     b.notes
-  FROM unioned b
+  FROM resolved b
   ORDER BY b.slug;
 
 -- The disqualified notes rows, with the reason — auditable, and a real review queue
@@ -1522,6 +1590,598 @@ CREATE OR REPLACE VIEW export_opdb_review AS
   WHERE c.by_opdb
     AND NOT EXISTS (SELECT 1 FROM export_patch_rows r WHERE r.id = c.id)
   ORDER BY c.manufacturer_name, c.label;
+
+-- ── NAME CLUSTERS: the catalog-wide grain ──────────────────────────────────
+-- Everything above this line is rooted in `export_candidates` — a model is visible
+-- only if a detector fired on its free text, its name suffix or an OPDB flag. That is
+-- the right root for authoring a claim and the wrong one for ASKING A QUESTION about
+-- the corpus, because a same-named pair where NEITHER side has usable prose is
+-- structurally invisible to every view above: no detector fires, so no candidate, so no
+-- namesake row. 'Cavalier' (Recel 1979) / 'Cavalier' (Petaco 1979) is only in
+-- `export_namesake_review` because IPDB happened to write a twin sentence about it.
+--
+-- These views drop that root and cluster the WHOLE live catalog by name: 1,106 clusters
+-- covering 3,087 models, 930 of them split across more than one Title. That is far too
+-- many to read, which is what the tiering is for — `pair_state` retires the settled
+-- pairs and `lead` sorts the rest by what the pair is evidence FOR.
+--
+-- Clustering is on `name_key` (one trailing parenthetical stripped), the same key the
+-- namesake view uses, so 'On Beam (Italy)' lands with 'On Beam'. `name_match` records
+-- whether a pair needed the strip, because the strip also collapses genuinely different
+-- games: A. M. Amusement's 'Forward Pass (Junior)' and 'Forward Pass (Marvel)' are two
+-- machines, not one. Where that distinction is load-bearing the view below uses
+-- `name_norm` instead and says so.
+--
+-- PLACEHOLDER NAMES are excluded from the whole grain. 37 live models are named
+-- 'Unknown', or 'Unknown ("Three Bell")' where a cabinet marking is all anyone has.
+-- That is the ABSENCE of a name, and `name_key` — which strips the parenthetical —
+-- collapses all 37 into a single cluster spanning 12 makers and 1889-1984, which then
+-- produced 579 pairs of pure noise, more than every real lead in this file combined.
+-- Two models being equally un-named is not a shared name.
+CREATE OR REPLACE MACRO _is_real_name(nm) AS
+  name_key(nm) <> '' AND NOT regexp_matches(name_norm(nm), '^unknown');
+
+-- PAIRED BRANDS — two maker names that are one operation, derived rather than declared.
+--
+-- The Spanish makers ran paired brands, one domestic and one export: Recel/Petaco,
+-- Interflip/Recreativos Franco. This campaign found those pairs only through IPDB's
+-- formulaic twin sentence (`_by_twin`), and everything downstream of that discovery
+-- then had to be told, tier by tier, that cross-maker does NOT mean `copy` here.
+--
+-- The catalog cannot answer it structurally, and `corporate_entity_slug` — the obvious
+-- place to look — is the wrong LEVEL, not merely unpopulated. DomainModel.md declares
+-- `Manufacturer ||--o{ CorporateEntity : incarnations`: a corporate entity is one legal
+-- incarnation OF a maker, so it sits BELOW the brand and partitions it across eras.
+-- Bally's 762 models split into three (Bally Manufacturing 1932-82, Bally Midway
+-- 1983-88, Midway/WMS 1988-99); Gottlieb and Williams span four each.
+--
+-- So corporate entity divides one brand over time — it can never group two brands into
+-- one operation, and no level above Manufacturer exists to do so. That is why the
+-- paired-brand relationship has to be inferred from name-collision statistics here
+-- rather than read off a foreign key.
+--
+-- What DOES separate a paired brand from two unrelated makers is the ratio of
+-- CONTEMPORANEOUS shared names to shared names. Bally and Gottlieb share 64 model names
+-- and exactly ONE of them within a year — generic nouns, independently reused over four
+-- decades. Petaco and Recel share 30 and 22 are within a year, because they are the same
+-- games shipped under two labels in the same season. The absolute count alone would rank
+-- Bally/Gottlieb first; it is the ratio that inverts them.
+--
+-- `same_home` splits the two phenomena the ratio finds, and the split is the whole
+-- payoff:
+--   same home country   one operation, two labels -> `export_edition_of` (Recel/Petaco)
+--   different home      a licensed or unlicensed foreign build -> `copy`, the 0128
+--                       campaign's edge (Segasa/Williams, Bally/Bally Wulff, Maresa/
+--                       Gottlieb). NEVER an export edition, per the maker-relative rule.
+--
+-- Purely derived — no maker names are hardcoded anywhere in this file. A pair that falls
+-- below threshold silently disappears, which is exactly what the anchor checks below
+-- exist to catch for the pairs this campaign depends on.
+--
+-- MATERIALIZED: read by two review views, the summary and the checks.
+CREATE OR REPLACE TABLE _paired_brand AS
+  WITH nm AS (
+    SELECT id, name_key(name) AS k, manufacturer_id AS mfr, manufacturer_name AS mfr_name,
+           year, country_slug AS home
+    FROM models
+    WHERE _is_real_name(name) AND manufacturer_id IS NOT NULL
+  ),
+  pairs AS (
+    SELECT
+      a.mfr AS a_id, a.mfr_name AS a_maker, a.home AS a_home,
+      b.mfr AS b_id, b.mfr_name AS b_maker, b.home AS b_home,
+      count(*) AS n_shared,
+      -- Contemporaneous: both sides dated and within a year. Undated models are NOT
+      -- counted as close — the modern European bingo cohort is entirely undated, and
+      -- treating "unknown" as "same season" would manufacture pairs out of nothing.
+      count(*) FILTER (
+        WHERE a.year IS NOT NULL AND b.year IS NOT NULL AND abs(a.year - b.year) <= 1
+      ) AS n_close,
+      -- How much of the cohort is already worked, so a reviewer can see at a glance
+      -- whether a pair is a finished job or an untouched one. Counted over the CLOSE
+      -- pairs, not all shared names: `n_close - n_close_edged` is then a real remainder.
+      -- (Counting over n_shared made it negative — Interflip/Recreativos Franco carries
+      -- 4 edges of which only 3 are contemporaneous.)
+      count(*) FILTER (
+        WHERE a.year IS NOT NULL AND b.year IS NOT NULL AND abs(a.year - b.year) <= 1
+          AND EXISTS (SELECT 1 FROM model_edges_bidir e
+                       WHERE e.model_id = a.id AND e.target_id = b.id)
+      ) AS n_close_edged,
+      count(*) FILTER (
+        WHERE EXISTS (SELECT 1 FROM model_edges_bidir e
+                       WHERE e.model_id = a.id AND e.target_id = b.id)
+      ) AS n_edged,
+      -- WHAT the cohort's existing edges SAY. This is what stops `same_home` being read
+      -- as "export edition", which it is not: Recel/Petaco is one Spanish operation
+      -- selling a domestic and an export label, but Ace Novelty / Colonial Specialties
+      -- (both USA, both 1932, five shared names) is a domestic rebadge with no export
+      -- in it at all. Rather than guess, the cohort is calibrated on the edges a human
+      -- has already authored inside it — so an unworked pair inherits the verdict its
+      -- own cohort earned, and a cohort nobody has judged inherits nothing.
+      count(*) FILTER (
+        WHERE EXISTS (SELECT 1 FROM model_edges_bidir e
+                       WHERE e.model_id = a.id AND e.target_id = b.id
+                         AND e.relationship_type = 'export_edition_of')) AS n_export_edges,
+      count(*) FILTER (
+        WHERE EXISTS (SELECT 1 FROM model_edges_bidir e
+                       WHERE e.model_id = a.id AND e.target_id = b.id
+                         AND e.relationship_type = 'copy')) AS n_copy_edges
+    FROM nm a
+    JOIN nm b ON b.k = a.k AND b.mfr > a.mfr
+    GROUP BY ALL
+  )
+  SELECT
+    *,
+    (a_home IS NOT DISTINCT FROM b_home AND a_home IS NOT NULL) AS same_home,
+    round(n_close::DOUBLE / n_shared, 2) AS close_ratio,
+    CASE WHEN a_home IS NOT DISTINCT FROM b_home AND a_home IS NOT NULL
+         THEN 'same-home partner'     -- one market: export label, rebadge or duplicate
+         ELSE 'cross-border partner'  -- a build across a border -> copy (0128)
+    END AS partner_kind,
+    -- The cohort's own verdict, or NULL when nobody has judged it yet. NULL is the
+    -- honest answer and the lead tiers below treat it as one: an unjudged cohort gets a
+    -- review lead, never an export claim.
+    CASE WHEN n_export_edges > 0 AND n_export_edges >= n_copy_edges THEN 'export_edition_of'
+         WHEN n_copy_edges > 0                                     THEN 'copy'
+    END AS cohort_edge
+  FROM pairs
+  -- Both arms are needed. The count alone admits Bally/Genco (3 close of 28 shared);
+  -- the ratio alone admits any maker pair that shares two names and both are dated the
+  -- same year, which is coincidence at n=2.
+  WHERE n_close >= 3 AND n_close::DOUBLE / n_shared >= 0.4;
+
+-- The derived partner table, for reading. `n_unworked` is the worklist signal — the
+-- contemporaneous same-named pairs inside one operation that carry no edge yet — and
+-- `cohort_edge` says what the pairs someone already judged in that cohort turned out
+-- to be. A cohort with n_unworked high and cohort_edge NULL has never been opened.
+CREATE OR REPLACE VIEW export_paired_brands AS
+  SELECT a_maker, b_maker, a_home, b_home, same_home, partner_kind, cohort_edge,
+         n_shared, n_close, close_ratio, n_edged, n_export_edges, n_copy_edges,
+         (n_close - n_close_edged) AS n_unworked
+  FROM _paired_brand
+  ORDER BY n_unworked DESC, n_close DESC;
+
+-- One row per same-name CLUSTER — the orientation view. Read this to find a family
+-- worth opening, then `export_cluster_pairs` for the decisions inside it.
+--
+-- `cluster_state` is the headline, and it keeps the campaign's two decisions apart
+-- exactly as `export_namesake_review` does: an edge is a claim about what was copied,
+-- a Title is an editorial placement, and a cluster can be finished on one axis and
+-- untouched on the other. The 'edges complete, Titles split' state is the one that
+-- looks done in a patch diff and is not.
+CREATE OR REPLACE VIEW export_name_cluster AS
+  WITH members AS (
+    SELECT name_key(name) AS name_key, id, name, manufacturer_name, title_id, year
+    FROM models WHERE _is_real_name(name)
+  ),
+  agg AS (
+    SELECT
+      name_key,
+      count(*)                                  AS n_models,
+      count(DISTINCT title_id)                  AS n_titles,
+      count(DISTINCT manufacturer_name)         AS n_makers,
+      min(year)                                 AS year_min,
+      max(year)                                 AS year_max,
+      list_sort(list_distinct(list(manufacturer_name))) AS makers
+    FROM members GROUP BY name_key
+  ),
+  edges AS (
+    SELECT a.name_key,
+           count(*) AS n_pairs,
+           count(*) FILTER (
+             WHERE EXISTS (SELECT 1 FROM model_edges_bidir e
+                            WHERE e.model_id = a.id AND e.target_id = b.id)) AS n_pairs_edged
+    FROM members a JOIN members b ON b.name_key = a.name_key AND b.id > a.id
+    GROUP BY a.name_key
+  )
+  SELECT
+    g.name_key,
+    (SELECT name FROM members WHERE name_key = g.name_key LIMIT 1) AS display_name,
+    g.n_models, g.n_titles, g.n_makers, g.makers, g.year_min, g.year_max,
+    e.n_pairs, e.n_pairs_edged,
+    (e.n_pairs - e.n_pairs_edged) AS n_pairs_unedged,
+    EXISTS (SELECT 1 FROM _paired_brand p
+             WHERE list_contains(g.makers, p.a_maker) AND list_contains(g.makers, p.b_maker)
+        ) AS has_paired_brand,
+    CASE
+      WHEN e.n_pairs_edged = e.n_pairs AND g.n_titles = 1 THEN 'settled'
+      WHEN e.n_pairs_edged = e.n_pairs                    THEN 'edges complete, Titles split'
+      WHEN e.n_pairs_edged > 0        AND g.n_titles = 1  THEN 'partly edged, one Title'
+      WHEN e.n_pairs_edged > 0                            THEN 'partly edged, Titles split'
+      WHEN g.n_titles = 1                                 THEN 'no edges, one Title'
+      ELSE                                                     'untouched'
+    END AS cluster_state
+  FROM agg g JOIN edges e USING (name_key)
+  WHERE g.n_models > 1
+  ORDER BY has_paired_brand DESC, n_pairs_unedged DESC, g.n_models DESC;
+
+-- The pair grain inside a cluster — 4,476 unordered pairs catalog-wide, one per
+-- (model, same-named model). This is the worklist; filter it by `lead`.
+--
+-- `a` is the EARLIER side (its own year, else its maker's era start), because in a
+-- lineage pair the older model is usually the original. That is an ordering convenience
+-- for reading, NOT a claim: the direction of an `export_edition_of` still comes from a
+-- source, never from which row sorted first.
+--
+-- The gap falls back to the maker's era when a model is undated, exactly as
+-- `export_namesake_review` does, and `gap_basis` records which measurement was used —
+-- a model's own year is evidence, its maker's era is an inference from its siblings.
+CREATE OR REPLACE VIEW export_cluster_pairs AS
+  -- GENERIC NAMES — a name so many unrelated makers reached for that sharing it says
+  -- nothing. 'Baseball' is 19 models by 16 makers across 1931-1970; 'Circus' is 16 by
+  -- 12 across 1932-1980. Measured, not listed: many makers AND a long span, which is
+  -- what separates a shared noun from a shared game. Recel/Petaco's 'Cavalier' is two
+  -- makers in one year and is untouched by this.
+  WITH generic AS (
+    SELECT name_key(name) AS name_key
+    FROM models WHERE _is_real_name(name)
+    GROUP BY 1
+    HAVING count(DISTINCT manufacturer_id) >= 6 AND (max(year) - min(year)) >= 20
+  ),
+  mm AS (
+    SELECT m.id, m.slug, m.name, m.label, m.title_id, m.title_slug, m.title_size,
+           m.manufacturer_id, m.manufacturer_name, m.year, m.game_format_slug,
+           m.country_slug AS maker_home, name_key(m.name) AS name_key,
+           COALESCE(m.year, e.era_start) AS lo, COALESCE(m.year, e.era_end) AS hi
+    FROM models m
+    LEFT JOIN _maker_era e ON e.manufacturer_id = m.manufacturer_id
+    WHERE _is_real_name(m.name)
+  ),
+  -- Orientation is decided on ids alone and the columns are joined back afterwards, so
+  -- the pair is built once and every column below reads from a plain `mm` row.
+  oriented AS (
+    SELECT
+      CASE WHEN x_first THEN xid ELSE yid END AS a_id,
+      CASE WHEN x_first THEN yid ELSE xid END AS b_id
+    FROM (
+      SELECT x.id AS xid, y.id AS yid,
+             (COALESCE(x.year, x.lo, 9999) <= COALESCE(y.year, y.lo, 9999)) AS x_first
+      FROM mm x JOIN mm y ON y.name_key = x.name_key AND y.id > x.id
+    )
+  ),
+  p AS (
+    SELECT
+      a.name_key,
+      a.id AS a_id, a.slug AS a_slug, a.name AS a_name, a.label AS a_label,
+      a.title_id AS a_title_id, a.title_slug AS a_title, a.title_size AS a_title_size,
+      a.manufacturer_id AS a_mfr, a.manufacturer_name AS a_maker,
+      a.maker_home AS a_maker_home, a.year AS a_year,
+      a.game_format_slug AS a_fmt, a.lo AS a_lo, a.hi AS a_hi,
+      b.id AS b_id, b.slug AS b_slug, b.name AS b_name, b.label AS b_label,
+      b.title_id AS b_title_id, b.title_slug AS b_title, b.title_size AS b_title_size,
+      b.manufacturer_id AS b_mfr, b.manufacturer_name AS b_maker,
+      b.maker_home AS b_maker_home, b.year AS b_year,
+      b.game_format_slug AS b_fmt, b.lo AS b_lo, b.hi AS b_hi,
+      -- The edge joining exactly this pair, in either direction, as STATED. A pair can
+      -- legitimately carry more than one type, so this is a list, not a scalar.
+      (SELECT list_sort(list_distinct(list(e.relationship_type)))
+         FROM model_edges_bidir e
+        WHERE e.model_id = a.id AND e.target_id = b.id) AS edge_types,
+      -- Only ever SEPARATES, per the note on `_bingo_subgenre`: both sides must carry
+      -- markers and share none. An absent marker set is unknown, not different.
+      (ca.marks IS NOT NULL AND cb.marks IS NOT NULL
+         AND len(list_intersect(ca.marks, cb.marks)) = 0) AS subgenre_differs,
+      (SELECT pb.partner_kind FROM _paired_brand pb
+        WHERE (pb.a_id = a.manufacturer_id AND pb.b_id = b.manufacturer_id)
+           OR (pb.a_id = b.manufacturer_id AND pb.b_id = a.manufacturer_id)) AS partner_kind,
+      (SELECT pb.cohort_edge FROM _paired_brand pb
+        WHERE (pb.a_id = a.manufacturer_id AND pb.b_id = b.manufacturer_id)
+           OR (pb.a_id = b.manufacturer_id AND pb.b_id = a.manufacturer_id)) AS cohort_edge
+    FROM oriented o
+    JOIN mm a ON a.id = o.a_id
+    JOIN mm b ON b.id = o.b_id
+    LEFT JOIN _bingo_subgenre ca ON ca.model_id = a.id
+    LEFT JOIN _bingo_subgenre cb ON cb.model_id = b.id
+  ),
+  scored AS (
+    SELECT
+      p.*,
+      (p.a_mfr = p.b_mfr) AS same_maker,
+      (p.a_fmt IS NOT DISTINCT FROM p.b_fmt AND NOT p.subgenre_differs) AS same_format,
+      (p.a_title_id = p.b_title_id) AS same_title,
+      (p.a_name = p.b_name) AS exact_name,
+      CASE WHEN p.a_year IS NOT NULL AND p.b_year IS NOT NULL
+           THEN abs(p.a_year - p.b_year) END AS year_gap,
+      _span_gap(p.a_lo, p.a_hi, p.b_lo, p.b_hi) AS era_gap,
+      (p.partner_kind = 'same-home partner') AS same_home_partner,
+      (p.partner_kind = 'cross-border partner') AS foreign_partner,
+      EXISTS (SELECT 1 FROM generic g WHERE g.name_key = p.name_key) AS generic_name,
+      len(COALESCE(p.edge_types, [])) > 0 AS has_edge
+    FROM p
+  )
+  SELECT
+    s.name_key,
+    s.a_slug, s.a_label AS a, s.a_title,
+    s.b_slug, s.b_label AS b, s.b_title,
+    CASE WHEN s.exact_name THEN 'exact' ELSE 'suffix-stripped' END AS name_match,
+    s.same_maker, s.same_format, s.same_title, s.partner_kind, s.cohort_edge, s.generic_name,
+    s.year_gap, s.era_gap,
+    CASE WHEN s.year_gap IS NOT NULL THEN 'model years'
+         WHEN s.era_gap IS NOT NULL  THEN 'maker era'
+         ELSE 'unknown' END AS gap_basis,
+    s.edge_types,
+    -- pair_state — is there anything LEFT to do? This is the column that makes a
+    -- catalog-wide view readable: it retires the ~1,900 pairs already joined and
+    -- co-titled, leaving the two open shapes plus the unjudged remainder.
+    CASE
+      WHEN s.has_edge AND s.same_title       THEN 'settled'
+      WHEN s.has_edge                        THEN 'title split'   -- edge done, Title not
+      WHEN s.same_title                      THEN 'edge missing'  -- co-titled, unjoined
+      ELSE                                        'open'
+    END AS pair_state,
+    -- lead — what the pair is EVIDENCE FOR, before anyone reads a source. Same contract
+    -- as `export_namesake_review.lead`: every tier still wants the note read before it
+    -- becomes a claim. The paired-brand tiers are the ones this view exists to add.
+    CASE
+      WHEN s.has_edge                                        THEN 'already related'
+      -- Same maker, same name, same year, same Title, no edge: two records of one
+      -- machine. Requires an EXACT name — the parenthetical strip collapses
+      -- 'Forward Pass (Junior)' onto '(Marvel)', which are two different games.
+      WHEN s.same_maker AND s.exact_name AND s.same_title
+           AND s.a_year IS NOT DISTINCT FROM s.b_year        THEN 'duplicate record?'
+      -- THE NEW TIERS. Two makers of one operation shipping the same game in the same
+      -- season — the shape this campaign found only through IPDB's twin sentence, now
+      -- reached from structure. What the pair IS comes from the cohort's own judged
+      -- edges, never from `same_home` alone: Recel/Petaco is an export label
+      -- (cohort_edge = export_edition_of), Ace Novelty / Colonial Specialties is a 1932
+      -- domestic rebadge with no export in it. Direction still comes from a source.
+      WHEN s.same_home_partner AND s.same_format
+           AND COALESCE(s.year_gap, s.era_gap, 0) <= 2
+           AND s.cohort_edge = 'export_edition_of'            THEN 'export edition (paired brand)'
+      -- Same operation, same season, but nobody has judged this cohort yet — a real
+      -- lead and explicitly NOT an export claim. Read a source before it becomes one.
+      WHEN s.same_home_partner AND s.same_format
+           AND COALESCE(s.year_gap, s.era_gap, 0) <= 2        THEN 'same-home partner, unjudged cohort'
+      WHEN s.same_maker AND s.same_format
+           AND COALESCE(s.year_gap, s.era_gap, 0) <= 2        THEN 'same maker, contemporaneous'
+      -- A build across a border is a `copy` for 0128, never an export edition.
+      WHEN s.foreign_partner AND s.same_format
+           AND COALESCE(s.year_gap, s.era_gap, 0) <= 5        THEN 'foreign build (copy)'
+      -- Below the tiers that carry a structural reason to connect the pair (one
+      -- operation, one maker, one border crossing), a generic name is the ONLY thing
+      -- left, and it is not evidence. Placed here, not higher, so it can never demote a
+      -- partner or same-maker pair: 'Circus' is generic, but Recel's and Petaco's
+      -- 'Cavalier' would be too if the tier order were wrong.
+      WHEN s.generic_name                                    THEN 'likely coincidence (generic name)'
+      WHEN s.same_format
+           AND COALESCE(s.year_gap, s.era_gap, 0) <= 5       THEN 'cross-maker, contemporaneous'
+      WHEN s.subgenre_differs                                THEN 'likely coincidence (bingo sub-genre differs)'
+      WHEN COALESCE(s.year_gap, s.era_gap) >= 16             THEN 'likely coincidence (years apart)'
+      WHEN NOT s.same_format                                 THEN 'likely coincidence (format differs)'
+      ELSE                                                        'needs a source read'
+    END AS lead,
+    s.a_maker, s.b_maker, s.a_maker_home, s.b_maker_home,
+    s.a_title_size, s.b_title_size, s.a_id, s.b_id
+  FROM scored s
+  ORDER BY s.name_key, s.a_slug;
+
+-- THE MERGE BACKLOG — pairs this project has ALREADY joined with an edge and left
+-- sitting in two Titles. README.md quoted this as a number; it is a worklist.
+--
+-- Nothing here needs research: the edge is the claim that the two are one game, so the
+-- Title split is a placement the edge already decided. The work is the two-patch merge
+-- (re-home + reslug, then delete the emptied Title) described above `_merge_pair`.
+-- `both_alone_in_title` marks the simple case where the doomed Title holds only the
+-- mover; where it does not, the other members need a decision of their own first.
+CREATE OR REPLACE VIEW export_merge_backlog AS
+  SELECT
+    p.name_key, p.a, p.a_slug, p.a_title, p.b, p.b_slug, p.b_title,
+    p.edge_types, p.a_maker, p.b_maker, p.partner_kind,
+    (p.a_title_size = 1 AND p.b_title_size = 1) AS both_alone_in_title,
+    p.a_title_size, p.b_title_size
+  FROM export_cluster_pairs p
+  WHERE p.pair_state = 'title split'
+  ORDER BY list_contains(p.edge_types, 'export_edition_of') DESC, p.name_key;
+
+-- DUPLICATE RECORDS — same maker, same EXACT name, same year, same Title, no edge.
+--
+-- Not an export finding, and deliberately kept as its own view rather than folded into
+-- a lead: it is a data-quality signal that turned up while clustering, and it BLOCKS
+-- export work when it lands on a target. 'Kicker (Italy)' cites "Chicago Coin's 1966
+-- 'Kicker'" and abstains on its FK because the catalog holds two of those; that pair
+-- is a row here. Same for Recel's two 1975 'Criterium 75' records.
+--
+-- `name_norm` matching, not `name_key`: the parenthetical is the DISAMBIGUATOR in this
+-- population, and stripping it would report A. M. Amusement's 'Forward Pass (Junior)'
+-- and 'Forward Pass (Marvel)' — two 1934 machines, correctly distinct — as duplicates.
+CREATE OR REPLACE VIEW export_duplicate_smell AS
+  SELECT
+    a.slug AS a_slug, a.label AS a, b.slug AS b_slug, b.label AS b,
+    a.manufacturer_name AS maker, a.year, a.title_slug AS title,
+    a.ipdb_id AS a_ipdb_id, b.ipdb_id AS b_ipdb_id,
+    (a.ipdb_id IS NOT DISTINCT FROM b.ipdb_id) AS same_ipdb_id,
+    -- Blocks an export FK: a same-named target this campaign cannot resolve uniquely.
+    EXISTS (SELECT 1 FROM export_candidates c WHERE c.id IN (a.id, b.id)) AS touches_a_candidate
+  FROM models a
+  JOIN models b
+    ON name_norm(b.name) = name_norm(a.name)
+   AND b.id > a.id
+   AND b.manufacturer_id = a.manufacturer_id
+   AND b.title_id = a.title_id
+   AND b.year IS NOT DISTINCT FROM a.year
+  WHERE _is_real_name(a.name)
+    AND NOT EXISTS (SELECT 1 FROM model_edges_bidir e
+                     WHERE e.model_id = a.id AND e.target_id = b.id)
+  ORDER BY touches_a_candidate DESC, maker, a.name;
+
+-- BARE NUMERIC SLUGS — a slug that admits the catalog could not tell two records apart.
+--
+-- `alaska-2` says only "the second thing called Alaska". It is a placeholder minted at
+-- seed time because a name collided, and it survives long after the catalog learned WHY
+-- the two differ. Where the reason is known the slug should carry it, and the catalog
+-- already uses that convention: `hula-hula-italy`, `big-ben-segasa-italy`,
+-- `harley-davidson-bally`. So a bare suffix is not cosmetic — it is unfinished
+-- disambiguation, and this campaign is exactly the work that supplies the missing fact.
+--
+-- DETECTING it needs care, because a trailing number is often the NAME:
+--   black-magic-4   'Black Magic 4'   the 4 IS the game -> legitimate, leave alone
+--   black-magic-2   'Black Magic'     Petaco's build     -> bare placeholder
+--   criterium-2000  'Criterium 2000'  legitimate         criterium-75-2  bare
+-- The test is structural rather than a re-implementation of Django's slugify (which
+-- differs on apostrophes and '&', so reconstructing the slug from the name mis-sorts
+-- ~440 rows): the slug's trailing number must not also end the name. 1,489 live models
+-- are bare placeholders; 159 trailing numbers are genuinely part of the name.
+CREATE OR REPLACE TABLE _bare_slug AS
+  SELECT
+    m.id, m.slug, m.name, m.label, m.title_slug, m.year,
+    m.manufacturer_id, m.manufacturer_name, m.manufacturer_slug, m.country_slug,
+    regexp_replace(m.slug, '-[0-9]+$', '') AS base_slug
+  FROM models m
+  WHERE regexp_matches(m.slug, '-[0-9]+$')
+    AND NOT regexp_matches(name_norm(m.name), regexp_extract(m.slug, '-([0-9]+)$', 1) || '$')
+    -- ...and the trailing number must not be the model's own YEAR, which is a
+    -- disambiguator ALREADY APPLIED rather than a placeholder. `big-ben-williams-1954`
+    -- and `big-ben-williams-1975` are exactly the shape this view wants the catalog to
+    -- reach; without this they were reported as deficits and proposed renames to the
+    -- slugs they already hold.
+    AND regexp_extract(m.slug, '-([0-9]+)$', 1) IS DISTINCT FROM m.year::VARCHAR;
+
+-- What the slug SHOULD say, proposed from the fact that actually separates the record
+-- from the others sharing its base. The order is the user-facing rule:
+--   1. an export edition with ONE known destination  -> the country   (hula-hula-italy)
+--   2. a sibling by a different maker                -> the maker     (harley-davidson-bally)
+--   3. same maker, different year                    -> the year
+--   4. nothing distinguishes them                    -> no proposal
+--
+-- THIS VIEW COMPOSES SLUGS; IT NEVER MINTS THEM. Every proposal is an existing slug
+-- (`base_slug`, `manufacturer_slug`, a country slug) or an integer year, joined by a
+-- hyphen — so the result is slug-safe by construction and idempotent under the real
+-- slugifier. Turning free TEXT into a slug is a different operation and does not belong
+-- in SQL: the catalog's slugs were minted client-side by standalone Python calling
+-- Django's `slugify`, whose NFKD + ascii-ignore pass is Unicode-table-driven and has no
+-- honest DuckDB equivalent.
+--
+-- That is not a theoretical boundary. A `name parenthetical` basis lived here briefly,
+-- slugifying the trailing '(…)' with name_norm + replace(' ','-'), and it produced
+-- 'target-machine-type-ターケットマシン-タイフ１' — non-ASCII, AND with the dakuten eaten by
+-- strip_accents (ゲ->ケ, プ->フ), which is the exact misuse name_norm's own comment warns
+-- against. It also emitted 'forward-pass-junior-junior', because the base slug already
+-- carried the parenthetical. The raw parenthetical survives as `name_paren_raw`: it IS
+-- a real distinguisher and often the best one, so a reviewer can mint 'alaska-em'
+-- properly on the authoring side rather than have this file guess at it.
+--
+-- Tier 4 is the honest outcome, not a gap to paper over. Two records with the same name,
+-- maker AND year are not two machines needing better slugs — they are the
+-- `export_duplicate_smell` population, and the fix is a merge, not a rename.
+--
+-- A proposal is only offered when it actually WORKS: `proposal_resolves` requires that
+-- no other sibling would land on the same slug, and `proposed_slug_free` that no live
+-- model already holds it. Renaming `alaska-2` to a slug another model owns trades a
+-- vague slug for a broken one.
+CREATE OR REPLACE VIEW export_slug_deficit AS
+  -- THE FAMILY: every live model whose slug is the base, or the base plus a numeric
+  -- suffix. Membership is matched AGAINST the base, never by stripping digits off each
+  -- candidate — 'criterium-80' strips to 'criterium', so a computed-base join silently
+  -- dropped the very sibling that makes 'criterium-80-2' ambiguous.
+  WITH fam AS (
+    SELECT
+      b.id AS bare_id, b.base_slug,
+      s.id AS member_id, s.slug AS member_slug, s.name AS member_name,
+      s.manufacturer_id AS member_mfr, s.year AS member_year
+    FROM (SELECT DISTINCT base_slug, id FROM _bare_slug) b
+    -- Written as EQUALITIES on a precomputed strip, not `regexp_matches(s.slug,
+    -- '^' || b.base_slug || '-[0-9]+$')`. The two are exactly equivalent — a slug is
+    -- base-plus-digits iff stripping its trailing digits yields the base — but the
+    -- regex form builds a pattern per row pair and cost ~10M evaluations, taking the
+    -- whole analysis past two minutes. The equality form hash-joins.
+    JOIN (SELECT id, slug, name, manufacturer_id, year,
+                 regexp_replace(slug, '-[0-9]+$', '') AS stripped
+          FROM models) s
+      ON s.slug = b.base_slug OR s.stripped = b.base_slug
+  ),
+  -- The destination country as the CATALOG holds it — `model_export_markets`, which
+  -- 0177 has already written 104 rows into. Read from the applied catalog rather than
+  -- re-derived from this file's own parse: the slug should reflect what the record
+  -- says, and a candidate whose market row was rejected or corrected in review must not
+  -- go on naming a slug from the parse that lost.
+  --
+  -- Exactly one COUNTRY is required. A model exported to two markets has no single
+  -- country to be named after, and a free-text `target_label` region ('Europe') is not
+  -- a slug component.
+  mkt AS (
+    SELECT model_id AS id, any_value(target_country_slug) AS country
+    FROM model_export_markets
+    WHERE target_country_slug IS NOT NULL
+    GROUP BY model_id
+    HAVING count(*) = 1
+  ),
+  scored AS (
+    SELECT
+      b.*,
+      k.country AS export_country,
+      -- The trailing parenthetical a human already wrote to tell these apart:
+      -- 'Alaska (EM)', 'Fireball (Home Model)'. Carried RAW and never turned into a
+      -- slug here — see the note above the view on why this analysis composes slugs
+      -- but never mints them.
+      NULLIF(regexp_extract(b.name, '\(([^)]+)\)$', 1), '') AS name_paren_raw,
+      (SELECT count(*) FROM fam f WHERE f.bare_id = b.id AND f.member_id <> b.id) AS n_siblings,
+      (SELECT list_sort(list(f.member_slug)) FROM fam f
+        WHERE f.bare_id = b.id AND f.member_id <> b.id) AS sibling_slugs,
+      -- UNIQUENESS, tested on the FACT rather than on the string a proposal would
+      -- build. 'alaska-2' (Recreativos Franco) is uniquely identified by its maker;
+      -- 'alaska-3' is NOT, because 'alaska' is Interflip too — so the maker basis has
+      -- to decline there rather than mint a second alaska-interflip.
+      NOT EXISTS (SELECT 1 FROM fam f WHERE f.bare_id = b.id AND f.member_id <> b.id
+                    AND f.member_mfr IS NOT DISTINCT FROM b.manufacturer_id) AS maker_unique,
+      NOT EXISTS (SELECT 1 FROM fam f WHERE f.bare_id = b.id AND f.member_id <> b.id
+                    AND f.member_year IS NOT DISTINCT FROM b.year) AS year_unique,
+      -- Nobody holds the clean base — so one of these records can simply take it, and
+      -- the family may need no invented suffix at all.
+      NOT EXISTS (SELECT 1 FROM models m2 WHERE m2.slug = b.base_slug) AS base_slug_free
+    FROM _bare_slug b
+    LEFT JOIN mkt k ON k.id = b.id
+  ),
+  -- The four candidate slugs, each NULL when its basis has nothing to say.
+  cand AS (
+    SELECT
+      s.*,
+      CASE WHEN s.export_country IS NOT NULL THEN s.base_slug || '-' || s.export_country END AS s_export,
+      CASE WHEN s.maker_unique               THEN s.base_slug || '-' || s.manufacturer_slug END AS s_maker,
+      CASE WHEN s.year_unique AND s.year IS NOT NULL
+           THEN s.base_slug || '-' || s.year::VARCHAR END AS s_year
+    FROM scored s
+  ),
+  -- Each candidate vetted against live slugs INDEPENDENTLY, so the preference order can
+  -- FALL THROUGH instead of dead-ending. Gottlieb's 'Kicker' (kicker-2) exports to
+  -- Italy, but Chicago Coin's 'Kicker (Italy)' already holds `kicker-italy`; the
+  -- destination basis yields there and the maker basis supplies `kicker-gottlieb`.
+  -- Dead-ending on the first choice lost 3 otherwise-actionable rows.
+  vetted AS (
+    SELECT
+      c.*,
+      (c.s_export IS NOT NULL AND NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = c.s_export)) AS f_export,
+      (c.s_maker  IS NOT NULL AND NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = c.s_maker))  AS f_maker,
+      (c.s_year   IS NOT NULL AND NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = c.s_year))   AS f_year
+    FROM cand c
+  ),
+  proposed AS (
+    SELECT
+      v.*,
+      CASE WHEN v.f_export THEN 'export destination'
+           WHEN v.f_maker  THEN 'maker'
+           WHEN v.f_year   THEN 'year' END AS proposal_basis,
+      CASE WHEN v.f_export THEN v.s_export
+           WHEN v.f_maker  THEN v.s_maker
+           WHEN v.f_year   THEN v.s_year END AS proposed_slug
+    FROM vetted v
+  )
+  SELECT
+    p.id, p.slug, p.proposed_slug, p.proposal_basis,
+    p.name, p.label, p.manufacturer_name, p.year, p.title_slug,
+    p.base_slug, p.base_slug_free, p.n_siblings, p.sibling_slugs,
+    p.maker_unique, p.year_unique, p.export_country, p.name_paren_raw,
+    -- The proposal must not collide with a live model...
+    (p.proposed_slug IS NOT NULL
+       AND NOT EXISTS (SELECT 1 FROM models m2 WHERE m2.slug = p.proposed_slug)) AS proposed_slug_free,
+    -- ...and must not be a slug a SIBLING would equally claim, which is what would
+    -- happen for Recel's two 1975 'Criterium 75' records: same maker, so the maker
+    -- suffix separates nothing and the real answer is a merge.
+    (p.proposed_slug IS NOT NULL AND NOT EXISTS (
+       SELECT 1 FROM proposed q
+        WHERE q.base_slug = p.base_slug AND q.id <> p.id
+          AND q.proposed_slug = p.proposed_slug)) AS proposal_resolves
+  FROM proposed p
+  ORDER BY p.proposal_basis IS NULL, p.base_slug, p.slug;
 
 -- ── 4 · SUMMARY & CHECKS ───────────────────────────────────────────────────
 -- The honest-prose tail. Every analysis file keeps these two views.
@@ -1654,6 +2314,47 @@ CREATE OR REPLACE VIEW export_summary AS
   -- Held back: the notes gate's rejects, and the OPDB flag bucket.
   UNION ALL SELECT 'patch_rejected',    (SELECT count(*) FROM export_patch_rejected)
   UNION ALL SELECT 'patch_opdb_review', (SELECT count(*) FROM export_opdb_review)
+  -- NAME CLUSTERS — the catalog-wide grain, independent of detector membership.
+  UNION ALL SELECT 'cluster_count',     (SELECT count(*) FROM export_name_cluster)
+  UNION ALL SELECT 'cluster_models',    (SELECT sum(n_models) FROM export_name_cluster)
+  UNION ALL SELECT 'cluster_settled',   (SELECT count(*) FROM export_name_cluster WHERE cluster_state = 'settled')
+  UNION ALL SELECT 'cluster_untouched', (SELECT count(*) FROM export_name_cluster WHERE cluster_state = 'untouched')
+  UNION ALL SELECT 'cluster_with_paired_brand', (SELECT count(*) FROM export_name_cluster WHERE has_paired_brand)
+  -- Paired brands: how many maker pairs the ratio detector finds, and how much of what
+  -- it finds is still unworked. `paired_brand_unworked` is the campaign-shaped number —
+  -- contemporaneous same-named pairs inside one operation, carrying no edge.
+  UNION ALL SELECT 'paired_brand_pairs',        (SELECT count(*) FROM _paired_brand)
+  UNION ALL SELECT 'paired_brand_same_home',    (SELECT count(*) FROM _paired_brand WHERE same_home)
+  UNION ALL SELECT 'paired_brand_foreign',      (SELECT count(*) FROM _paired_brand WHERE NOT same_home)
+  -- Cohorts nobody has judged yet: the honest frontier of this detector.
+  UNION ALL SELECT 'paired_brand_unjudged',     (SELECT count(*) FROM _paired_brand WHERE cohort_edge IS NULL)
+  UNION ALL SELECT 'paired_brand_unworked',     (SELECT COALESCE(sum(n_close - n_close_edged), 0) FROM _paired_brand)
+  -- The pair grain and what is left to decide on it.
+  UNION ALL SELECT 'cluster_pairs',             (SELECT count(*) FROM export_cluster_pairs)
+  UNION ALL SELECT 'cluster_pairs_settled',     (SELECT count(*) FROM export_cluster_pairs WHERE pair_state = 'settled')
+  UNION ALL SELECT 'cluster_pairs_title_split', (SELECT count(*) FROM export_cluster_pairs WHERE pair_state = 'title split')
+  UNION ALL SELECT 'cluster_pairs_edge_missing',(SELECT count(*) FROM export_cluster_pairs WHERE pair_state = 'edge missing')
+  UNION ALL SELECT 'lead_export_edition_paired',(SELECT count(*) FROM export_cluster_pairs WHERE lead = 'export edition (paired brand)')
+  UNION ALL SELECT 'lead_same_home_unjudged',   (SELECT count(*) FROM export_cluster_pairs WHERE lead = 'same-home partner, unjudged cohort')
+  UNION ALL SELECT 'lead_foreign_build_copy',   (SELECT count(*) FROM export_cluster_pairs WHERE lead = 'foreign build (copy)')
+  UNION ALL SELECT 'lead_duplicate_record',     (SELECT count(*) FROM export_cluster_pairs WHERE lead = 'duplicate record?')
+  -- The finished-edge / unfinished-Title backlog, split by which edge was claimed.
+  UNION ALL SELECT 'merge_backlog',             (SELECT count(*) FROM export_merge_backlog)
+  UNION ALL SELECT 'merge_backlog_export',      (SELECT count(*) FROM export_merge_backlog WHERE list_contains(edge_types, 'export_edition_of'))
+  UNION ALL SELECT 'merge_backlog_both_alone',  (SELECT count(*) FROM export_merge_backlog WHERE both_alone_in_title)
+  UNION ALL SELECT 'duplicate_smell',           (SELECT count(*) FROM export_duplicate_smell)
+  UNION ALL SELECT 'duplicate_smell_on_candidate', (SELECT count(*) FROM export_duplicate_smell WHERE touches_a_candidate)
+  -- BARE NUMERIC SLUGS — unfinished disambiguation, and what the catalog now knows to
+  -- finish it with. `slug_deficit_actionable` is the emit-ready number: a proposal that
+  -- both resolves its family and collides with nothing live.
+  UNION ALL SELECT 'slug_deficit',            (SELECT count(*) FROM export_slug_deficit)
+  UNION ALL SELECT 'slug_deficit_by_export',  (SELECT count(*) FROM export_slug_deficit WHERE proposal_basis = 'export destination')
+  UNION ALL SELECT 'slug_deficit_has_paren',  (SELECT count(*) FROM export_slug_deficit WHERE name_paren_raw IS NOT NULL)
+  UNION ALL SELECT 'slug_deficit_by_maker',   (SELECT count(*) FROM export_slug_deficit WHERE proposal_basis = 'maker')
+  UNION ALL SELECT 'slug_deficit_by_year',    (SELECT count(*) FROM export_slug_deficit WHERE proposal_basis = 'year')
+  UNION ALL SELECT 'slug_deficit_no_basis',   (SELECT count(*) FROM export_slug_deficit WHERE proposal_basis IS NULL)
+  UNION ALL SELECT 'slug_deficit_actionable', (SELECT count(*) FROM export_slug_deficit WHERE proposal_resolves AND proposed_slug_free)
+  UNION ALL SELECT 'slug_deficit_base_free',  (SELECT count(*) FROM export_slug_deficit WHERE base_slug_free)
   ORDER BY metric;
 
 -- export_checks — invariants that should always hold. Empty result = healthy; any
@@ -1674,6 +2375,35 @@ CREATE OR REPLACE VIEW export_checks AS
   SELECT 'suffix_without_market', c.id, c.name
   FROM export_candidates c
   WHERE c.by_suffix AND len(c.markets) = 0
+  UNION ALL
+  -- Structural: no quote may end mid-name at a title abbreviation. `make verify-quotes`
+  -- cannot see this — a truncated span is still a verbatim substring of the source, so
+  -- it passes — which is exactly why it needs a check of its own.
+  SELECT 'quote_truncated_at_abbreviation', r.id, r.slug || ': ' || q
+  FROM export_patch_rows r,
+       UNNEST([r.quote, r.role_quote] || list_transform(r.recip_cites, lambda c: c.quote)) AS t(q)
+  WHERE q IS NOT NULL
+    AND regexp_matches(q, '''(Mr|Mrs|Ms|Dr|St|Capt|Sgt)\.$')
+  UNION ALL
+  -- Structural: every corroborating cite must IDENTIFY the origin — the ref is the
+  -- origin's record, or the quote names it. An entry-level cite rides EVERY claim the
+  -- entry asserts, so a cite that does neither attaches to `export_edition_of` while
+  -- supporting a different one — how 'Ten-Up' came to cite Pin-Up's note for a King
+  -- Pin edge.
+  SELECT 'recip_cite_origin_unidentified', r.id,
+         r.slug || ' cites ipdb:' || c.ipdb_id || ', which neither IS nor names ' || r.export_edition_of
+  FROM export_patch_rows r, UNNEST(r.recip_cites) AS t(c)
+  WHERE r.export_edition_of IS NOT NULL
+    AND c.ipdb_id IS DISTINCT FROM (SELECT o.ipdb_id FROM models o WHERE o.slug = r.export_edition_of)
+    AND c.quote NOT LIKE '%' || (SELECT o.name FROM models o WHERE o.slug = r.export_edition_of) || '%'
+  UNION ALL
+  -- Structural: `_country_lookup` unions three sources (catalog names, catalog aliases,
+  -- this file's adjectives) and every consumer joins it on `token`. A token resolving
+  -- two ways would multiply rows in the market parse rather than error, so the
+  -- collision-free property the union relies on is asserted rather than assumed.
+  SELECT 'country_lookup_ambiguous', NULL::BIGINT,
+         token || ' -> ' || string_agg(DISTINCT slug, ', ')
+  FROM _country_lookup GROUP BY token HAVING count(DISTINCT slug) > 1
   UNION ALL
   -- Vocabulary: every parsed market slug must be a known country slug.
   SELECT 'market_not_a_country', c.id, mkt
@@ -2036,4 +2766,123 @@ CREATE OR REPLACE VIEW export_checks AS
     ('m-79-ambush'), ('dimension'), ('wall-street-2'), ('extra-inning'), ('hyde-park'),
     ('gold-rush-2'), ('big-ben-segasa-italy'), ('dakota'), ('lariat-2'), ('speakeasy-2')
   ) AS g(slug)
-  WHERE NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = g.slug);
+  WHERE NOT EXISTS (SELECT 1 FROM models m WHERE m.slug = g.slug)
+  UNION ALL
+  -- ── name clusters ────────────────────────────────────────────────────────
+  -- Anchor: the paired-brand detector still finds the pairs this campaign was BUILT on.
+  -- Both were discovered through IPDB's twin sentence; the detector must reach them from
+  -- structure alone, or its whole claim to generalize beyond that sentence is void.
+  SELECT 'anchor_paired_brand_dark', NULL::BIGINT,
+         a || ' / ' || b || ' is no longer detected as a paired brand'
+  FROM (VALUES ('Recel', 'Petaco'), ('Interflip', 'Recreativos Franco')) AS g(a, b)
+  WHERE NOT EXISTS (
+    SELECT 1 FROM _paired_brand p
+     WHERE (p.a_maker = g.a AND p.b_maker = g.b) OR (p.a_maker = g.b AND p.b_maker = g.a))
+  UNION ALL
+  -- Guard: the detector must NOT admit two unrelated makers who merely reused generic
+  -- nouns for forty years. Bally and Gottlieb share 64 model names and one of them
+  -- contemporaneously; if they appear here the ratio arm has stopped biting and every
+  -- 'export edition (paired brand)' lead below is suspect.
+  SELECT 'guard_paired_brand_overreach', NULL::BIGINT,
+         p.a_maker || ' / ' || p.b_maker || ' admitted at close_ratio ' || p.close_ratio
+  FROM _paired_brand p
+  WHERE (p.a_maker, p.b_maker) IN (('Bally', 'Gottlieb'), ('Bally', 'Williams'),
+                                   ('Gottlieb', 'Williams'), ('Bally', 'Genco'))
+     OR (p.b_maker, p.a_maker) IN (('Bally', 'Gottlieb'), ('Bally', 'Williams'),
+                                   ('Gottlieb', 'Williams'), ('Bally', 'Genco'))
+  UNION ALL
+  -- Structural: a paired-brand maker pair must always be same-home OR cross-border,
+  -- never neither — `partner_kind` has to partition the table, since the two kinds mean
+  -- opposite edges (export_edition_of vs copy).
+  SELECT 'partner_kind_disagrees', NULL::BIGINT, p.a_maker || ' / ' || p.b_maker
+  FROM _paired_brand p
+  WHERE p.partner_kind NOT IN ('same-home partner', 'cross-border partner')
+     OR (p.partner_kind = 'same-home partner') <> p.same_home
+     OR p.cohort_edge IS NOT NULL AND p.cohort_edge NOT IN ('export_edition_of', 'copy')
+  UNION ALL
+  -- Anchor: the cohort calibration still reads Recel/Petaco as an EXPORT cohort. This
+  -- is what licenses the 'export edition (paired brand)' tier; if it goes NULL or flips
+  -- to 'copy', that tier empties and the detector has lost its one confirmed example.
+  SELECT 'anchor_export_cohort_dark', NULL::BIGINT,
+         'the Recel/Petaco cohort no longer calibrates as export_edition_of'
+  WHERE NOT EXISTS (
+    SELECT 1 FROM _paired_brand p
+     WHERE p.a_maker IN ('Recel', 'Petaco') AND p.b_maker IN ('Recel', 'Petaco')
+       AND p.cohort_edge = 'export_edition_of')
+  UNION ALL
+  -- Guard: the export tier may NEVER fire on a cohort no human has judged. That tier
+  -- asserts the export shape from structure alone, and its only warrant is the cohort's
+  -- own authored edges — a row here means an unjudged 1930s rebadge is being presented
+  -- as an export lead.
+  SELECT 'export_tier_on_unjudged_cohort', p.a_id, p.a_slug || ' / ' || p.b_slug
+  FROM export_cluster_pairs p
+  WHERE p.lead = 'export edition (paired brand)' AND p.cohort_edge IS DISTINCT FROM 'export_edition_of'
+  UNION ALL
+  -- Structural: `pair_state` must partition the pair grain — a pair is settled, or
+  -- missing an edge, or missing a Title decision, or open. Nothing else.
+  SELECT 'pair_state_unknown', p.a_id, p.a_slug || ' / ' || p.b_slug || ': ' || p.pair_state
+  FROM export_cluster_pairs p
+  WHERE p.pair_state NOT IN ('settled', 'title split', 'edge missing', 'open')
+  UNION ALL
+  -- Structural: the merge backlog is exactly the title-split pairs, so every row must
+  -- carry an edge. A row without one means `pair_state` and the backlog have drifted.
+  SELECT 'merge_backlog_without_edge', NULL::BIGINT, m.a_slug || ' / ' || m.b_slug
+  FROM export_merge_backlog m
+  WHERE len(COALESCE(m.edge_types, [])) = 0
+  UNION ALL
+  -- Anchor: the merge backlog still sees the worked example. Recel's 'Cavalier' and
+  -- Petaco's 'Cavalier' carry an `export_edition_of` edge and sit in two singleton
+  -- Titles — the finished-edge / unfinished-Title shape this view exists to surface.
+  -- Expected to FIRE once that merge is authored; retire the anchor with the merge.
+  SELECT 'anchor_merge_backlog_dark', NULL::BIGINT,
+         'cavalier / cavalier-2 no longer appears in export_merge_backlog'
+  WHERE EXISTS (SELECT 1 FROM models WHERE slug = 'cavalier-2')
+    AND NOT EXISTS (SELECT 1 FROM export_merge_backlog
+                     WHERE 'cavalier-2' IN (a_slug, b_slug))
+  UNION ALL
+  -- ── bare numeric slugs ───────────────────────────────────────────────────
+  -- Guard: a trailing number that is NOT a placeholder must never be called one. Two
+  -- shapes qualify and both were observed being mis-detected while this view was built:
+  -- the number is the game's NAME ('Black Magic 4', 'Criterium 2000'), or it is a year
+  -- disambiguator ALREADY APPLIED ('big-ben-williams-1954'). Proposing a rename for
+  -- either destroys information rather than adding it.
+  SELECT 'slug_deficit_ate_a_real_name', b.id, b.slug || ' (' || b.name || ')'
+  FROM _bare_slug b WHERE b.slug IN ('black-magic-4', 'criterium-2000',
+                                    'big-ben-williams-1954', 'big-ben-daval-1936')
+  UNION ALL
+  -- Anchor: the detector still fires on the known placeholders. If it goes dark the
+  -- whole view empties and reads as "nothing to fix".
+  SELECT 'slug_deficit_dark', NULL::BIGINT, g.slug || ' is no longer detected as a bare slug'
+  FROM (VALUES ('alaska-2'), ('cherokee-2'), ('criterium-80-2')) AS g(slug)
+  WHERE EXISTS (SELECT 1 FROM models m WHERE m.slug = g.slug)
+    AND NOT EXISTS (SELECT 1 FROM _bare_slug b WHERE b.slug = g.slug)
+  UNION ALL
+  -- Structural: a proposed slug must BE a slug — lowercase alphanumerics and single
+  -- hyphens, nothing else. This is the guard that catches SQL trying to mint one out of
+  -- free text: it fires on the non-ASCII 'target-machine-type-ターケットマシン-タイフ１' the
+  -- withdrawn parenthetical basis produced, and on any future attempt to reintroduce it.
+  SELECT 'proposed_slug_not_slug_safe', d.id, d.proposed_slug
+  FROM export_slug_deficit d
+  WHERE d.proposed_slug IS NOT NULL
+    AND NOT regexp_matches(d.proposed_slug, '^[a-z0-9]+(-[a-z0-9]+)*$')
+  UNION ALL
+  -- Vocabulary: the proposal basis is a closed set.
+  SELECT 'slug_proposal_basis_unknown', d.id, d.proposal_basis
+  FROM export_slug_deficit d
+  WHERE d.proposal_basis IS NOT NULL
+    AND d.proposal_basis NOT IN ('export destination', 'maker', 'year')
+  UNION ALL
+  -- Structural: two records must never be proposed the same slug. The uniqueness test
+  -- runs on the distinguishing FACT, so a collision here means that test is wrong —
+  -- and a rename that collides is worse than the vague slug it replaces.
+  SELECT 'slug_proposal_collision', min(d.id), d.proposed_slug
+  FROM export_slug_deficit d
+  WHERE d.proposed_slug IS NOT NULL AND d.proposal_resolves
+  GROUP BY d.proposed_slug HAVING count(*) > 1
+  UNION ALL
+  -- Structural: a proposal must never re-mint a slug a live model already holds. This
+  -- is what would have happened to 'alaska-3', whose maker (Interflip) is also
+  -- 'alaska'\'s — caught only because uniqueness reads the family, not the bare rows.
+  SELECT 'slug_proposal_taken', d.id, d.proposed_slug
+  FROM export_slug_deficit d
+  WHERE d.proposal_resolves AND NOT d.proposed_slug_free;
