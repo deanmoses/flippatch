@@ -25,17 +25,19 @@ A lineage edge — a **`ModelRelationship`** — links a derivative machine to t
 ```bash
 F=campaigns/0128-relationships/relationships.sql
 make analyze FILE=$F PREFIX=relationships                        # summary, gated on checks
+make analyze FILE=$F CMD=describe ARGS=$F                        # the view reference
 make analyze FILE=$F Q="FROM relationship_review LIMIT 40;"      # the actionable queue
 make analyze FILE=$F Q="FROM relationship_open_questions;"       # recorded human judgement
 make analyze FILE=$F Q="FROM relationship_edged_audit;"          # possible WRONG existing edges
+make analyze FILE=$F Q="FROM relationship_uncited_edges;"        # existing edges with NO evidence
 ```
 
 Membership is the union of two free-text detectors over `ipdb_notes` / `ipdb_notable_features` / `description`: **`by_copy`** (copy / clone / bootleg / "under licence" / licensed build) and **`by_conv`** (conversion / conversion kit / converted game / repaint / re-theme). The type and license **split is not decided here** — that is the sweep's per-note judgement; detection only finds the model and surfaces the note.
 
-Enrichment reads existing edges from the foundation's `model_edges`, so `has_rel_edge` is the "already done" signal and `relationship_review` shows only what remains. A quoted `'Game Name'` in the prose that resolves to a live model rides along as a best-effort **`target_guess`** — a hint the sweep audits, never authority. Caveats that still apply:
+Enrichment reads existing edges from the foundation's `model_relationships`, so `has_rel_edge` is the "already done" signal and `relationship_review` shows only what remains. That signal is deliberately **outbound only** — the campaign's job is to make a model state its own origin — but the inbound direction is read separately from `model_edges_bidir` and carried as `has_inbound_edge`, because a model that something else already points at is usually the original being described rather than a derivative to author. It feeds the `reverse-direction` disqualifier structurally, instead of relying on the note using the "also produced" formula. A quoted `'Game Name'` in the prose that resolves to a live model rides along as a best-effort **`target_guess`** — a hint the sweep audits, never authority. Caveats that still apply:
 
 - `target_guess` is best-effort — a handful resolve to the wrong game when the note's first quoted title isn't the original (e.g. LAI `cosmic-princess`); always confirm the target before writing an edge.
-- Both detectors over-count: a note that merely *mentions* a conversion kit isn't a lineage claim (Big Chief's "Extra Ball Conversion Kit"). Every row wants source review before it becomes a claim.
+- Both detectors over-count: a note that merely _mentions_ a conversion kit isn't a lineage claim (Big Chief's "Extra Ball Conversion Kit"). Every row wants source review before it becomes a claim.
 - Re-read the full IPDB note (and prefer a web-cache source where one exists) for the verbatim `cite` quote.
 - Some conversion candidates are the US originals themselves (`bally`, `williams`, `gottlieb`, `premier-technology`). These are in-house or same-lineage conversions, or reverse-direction note matches — vet each hard; some may not be conversion candidates at all.
 
@@ -54,19 +56,21 @@ The extracted quote is a **proposal, not a verified quote** — `make verify-quo
 
 Rows are disqualified into `relationship_green_rejected` with a `reject_reason`, each a false-positive class seen in the real output. They are **not a discard pile** — most are genuine relationships that just aren't the one a naive read would author:
 
-| reason | why it's held out |
-| --- | --- |
-| `component-copy` | the note says a **component** is a copy ("the backglass is a near copy of"), not the machine — TOOL-NOTES DEFECT 7 |
-| `hedged` | the note hedges ("a near copy of", "probably a copy of"); a hedged source can't support a flat assertion |
-| `reverse-direction` | the note is on the **original**, describing who copied *it* — the edge belongs on the other model, pointing back |
-| `book-source` | the note attributes to a book — see below |
-| `mojibake` | the span carries a `?` replacement character; usually wants the `[...]` omission marker |
+| reason              | why it's held out                                                                                                  |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| `component-copy`    | the note says a **component** is a copy ("the backglass is a near copy of"), not the machine — TOOL-NOTES DEFECT 7 |
+| `hedged`            | the note hedges ("a near copy of", "probably a copy of"); a hedged source can't support a flat assertion           |
+| `reverse-direction` | the note is on the **original**, describing who copied _it_ — the edge belongs on the other model, pointing back   |
+| `book-source`       | the note attributes to a book — see below                                                                          |
+| `mojibake`          | the span carries a `?` replacement character; usually wants the `[...]` omission marker                            |
 
 ### Held out: notes that attribute to a book
 
 Some notes cite a book as the original authority — "According to the Encyclopedia of Pinball Vol 2 page 107, this game is a copy of …". Such a claim wants **two** citations: the `ipdb:` cite carrying the quote (the proximate source) plus a quoteless cite to the book itself with a `locator` of "Vol. 2, p. 107".
 
-The multi-cite part already works (`cite:` takes a list) and a quoteless cite already works (`quote` is optional), but **the book ref cannot be expressed**: `cite:`'s grammar is only `scheme:identifier` (no book scheme is registered) or an `http(s)` URL under a seeded *website* root. The books *are* seeded as CitationSources — only the ref form is missing. Until flipcommons closes that gap, `mentions_book_source` holds these rows (22 candidates, 3 of them otherwise-green) out of the certain tier, rather than shipping a claim cited only to its proximate source. The detector is deliberately over-inclusive — a false positive costs one human read; a false negative ships an under-cited claim.
+The multi-cite part already works (`cite:` takes a list) and a quoteless cite already works (`quote` is optional), but **the book ref cannot be expressed**: `cite:`'s grammar is only `scheme:identifier` (no book scheme is registered) or an `http(s)` URL under a seeded _website_ root. The books _are_ seeded as CitationSources — only the ref form is missing. Until flipcommons closes that gap, `mentions_book_source` holds these rows out of the certain tier, rather than shipping a claim cited only to its proximate source. The detector is deliberately over-inclusive — a false positive costs one human read; a false negative ships an under-cited claim.
+
+The blocker is now measured rather than described: `relationships_summary` reports `book_roots_seeded`, `book_roots_matchable` and `book_root_cited_claims` straight off `citation_roots`, so the day flipcommons registers a book ref form the last of those moves off zero without anyone remembering to re-check by hand. The matchable titles are **derived** from `citation_roots` too — the detector previously hardcoded four and silently missed the rest, so a note attributing to _Pinball Snapshots_ sailed into the certain tier under-cited. Titles too generic to hunt for as free text (_Pinball!_, _Pinball Machines_) are excepted on the record in `_rel_generic_book`, and `unmatched_book_title` fails if a newly seeded book is neither matchable nor excepted.
 
 ## Recorded human judgement
 
@@ -76,7 +80,7 @@ A query re-derives candidates but not a reviewer's verdict, so the campaign's op
 make analyze FILE=$F Q="FROM relationship_open_questions;"
 ```
 
-This holds the three rows held back from 0127 (`cosmic-princess`, `high-ace-2`, `star-flite`) and the two maker-level licensed-vs-unlicensed questions (Petaco, Fipermatic), each shown against its **current** edge state. A held-back row that now carries an edge means the question was resolved *or* authored past — verify which; don't assume.
+This holds the three rows held back from 0127 (`cosmic-princess`, `high-ace-2`, `star-flite`) and the two maker-level licensed-vs-unlicensed questions (Petaco, Fipermatic), each shown against its **current** edge state. A held-back row that now carries an edge means the question was resolved _or_ authored past — verify which; don't assume.
 
 ## Decisions made
 
@@ -88,7 +92,7 @@ This holds the three rows held back from 0127 (`cosmic-princess`, `high-ace-2`, 
 ## Progress
 
 - **[0127-licensed-builds.yaml](../../0127-licensed-builds.yaml) + [0128-licensed-build-title-removal.yaml](../../0128-licensed-build-title-removal.yaml) — done.** 27 licensed builds (IPDB note says "under license"): VIFICO ×13 (Gottlieb/Premier), LAI ×7 (Stern), Segasa ×4 (Williams), plus Taito do Brasil `meteor-2`, Automáticos MonteCarlo `lortium-2`, American Home Entertainment `the-getaway-high-speed-ii-2`. Same-name builds merged under the original's title (0127), emptied titles retired (0128); applied and verified 27/27 against a fresh db.pre-0039 snapshot. Three rows **held back** — now recorded in the plan and visible via `relationship_open_questions` (see [Recorded human judgement](#recorded-human-judgement)). (The 13 VIFICO builds were briefly name-suffixed `(VIFICO)` / `(Gottlieb)` under the since-retired naming convention; those names are bare again and no suffixing is owed to the other 0127 makers — see [Names](#names-leave-them-alone).)
-- **[0140-maresa-bootlegs.yaml](../../0140-maresa-bootlegs.yaml) + [0141-maresa-bootleg-title-removal.yaml](../../0141-maresa-bootleg-title-removal.yaml) — authored, snapshot apply-verify still to run.** Maresa's 20 unlicensed Gottlieb copies. The 12 same-name builds got the full treatment (slug → `-maresa`, title merge, orphaned title deleted in 0141); the 8 renamed copies kept their own slug/title. (These also carried `(Maresa)` / `(Gottlieb)` names under the since-retired naming convention; those are bare again — see [Names](#names-leave-them-alone).) Structural + editorial lint + `make verify-quotes` pass. Big Brave (ipdb:4634) is the one judgment call — IPDB says "whether licensed or not is unknown"; tagged `bootleg` with a note.
+- **[0140-maresa-bootlegs.yaml](../../0140-maresa-bootlegs.yaml) + [0141-maresa-bootleg-title-removal.yaml](../../0141-maresa-bootleg-title-removal.yaml) — applied.** (`ingest_runs` records both as `success`, 44 and 12 claims asserted, 0 rejected — check it there rather than trusting this line.) Maresa's 20 unlicensed Gottlieb copies. The 12 same-name builds got the full treatment (slug → `-maresa`, title merge, orphaned title deleted in 0141); the 8 renamed copies kept their own slug/title. (These also carried `(Maresa)` / `(Gottlieb)` names under the since-retired naming convention; those are bare again — see [Names](#names-leave-them-alone).) Structural + editorial lint + `make verify-quotes` pass. Big Brave (ipdb:4634) is the one judgment call — IPDB says "whether licensed or not is unknown"; tagged `bootleg` with a note.
 
 - **[0159-fipermatic.yaml](../../0159-fipermatic.yaml) + [0160-europlay.yaml](../../0160-europlay.yaml) — authored, applied and verified against a fresh db.pre-0039 replay.** The first two makers driven through the post-redesign [corpus sweep](sweep/SESSION-BRIEF.md), one maker per run (6 rows each, sub-cent). Edges only — neither maker has a same-name build, so no slug/title/name work. Fipermatic ×6 copies of Gottlieb (and one of Bally's Xenon); Europlay ×4 copies + 2 conversions, one of them a **label**-target conversion (`jaws`, donor unnamed by the source). Three Europlay edge claims were rejected on review — see the run notes in [sweep/TOOL-NOTES.md](sweep/TOOL-NOTES.md), including DEFECT 7 (artwork reuse misjudged as a machine copy).
 
@@ -117,6 +121,12 @@ There is no status file to regenerate and nothing to reconcile: progress is a qu
 ```bash
 make analyze FILE=$F PREFIX=relationships      # edged / not_edged / coverage, gated on checks
 ```
+
+### Provenance of the edges already in the catalog
+
+Progress is not the only thing a query answers. `relationship_edged_audit` — the "possible wrong existing edge" queue — now carries the **provenance** of each edge it flags: `edge_sources` / `edge_patches` name who asserted it and in which patch, `n_uncited` says whether anything backs it, `n_interactive` counts hand-edits made outside any patch, `license_disagreement` catches two eligible sources contradicting each other on authorization, and `n_tombstoned` / `n_ineligible` surface the two claim states the resolved catalog structurally cannot show. Judging a suspect edge without these means judging it blind: an edge authored in 0127 against a verbatim IPDB quote and a hand-edit with no evidence at all look identical once resolved.
+
+`relationship_uncited_edges` is the queue that follows from it — live relationship edges carrying no external evidence at all. It is _uncited_, never _unsourced_: every row still has an ingest source, what it lacks is a citation. Authorization claims sort first, because a `licensed` / `unlicensed` edge asserts exactly the thing the campaign's standing discipline says a note cannot establish. Four such rows exist, all from `0124-bally-wulff-models` and all predating that rule; they are recorded in `_rel_uncited_licensed_known` so `uncited_licensed_edge` gates every **new** one without gating the run on the backlog, and `stale_uncited_licensed` fires when one is finally cited or removed.
 
 (The analysis resolves the dev DB through flipcommons' foundation — no hard-coded path; override with `FLIPCOMMONS_DIR`.)
 

@@ -17,6 +17,11 @@ maker-level authorization source attached as ``evidence`` (see below).
     uv run python3 emit_candidates.py     # writes sweep/candidates.jsonl
     make sweep ARGS="campaigns/0128-relationships/sweep/candidates.jsonl --no-ai"
 
+The view is read through ``patchkit.read_view``, which runs the analysis's
+``relationships_checks`` gate first — the same gate ``gen.py`` emits patches behind.
+A feed built on a detector that has gone dark is still well-formed JSONL, and the
+paid sweep it drives has no way to notice.
+
 Read-only over the catalog; rerunnable any time (the sweep's results.json is keyed
 on ipdb, so regenerating this file never invalidates already-judged models).
 """
@@ -24,17 +29,17 @@ on ipdb, so regenerating this file never invalidates already-judged models).
 from __future__ import annotations
 
 import json
-import os
-import sqlite3
-import subprocess
 import sys
 from pathlib import Path
-from typing import Any
 
 HERE = Path(__file__).resolve().parent
-REPO_ROOT = HERE.parents[2]  # 0128-relationships -> authoring -> patches -> repo root
+# Repo root by marker, never by counting parents, so a campaign dir stays movable.
+# (The retired `patches/authoring/` layout made parents[2] the root; under
+# `campaigns/` the same expression resolves outside the repo entirely.)
+ROOT = next(p for p in HERE.parents if (p / "pyproject.toml").is_file())
+sys.path.insert(0, str(ROOT / "scripts"))  # patchkit + common
 
-from common.paths import FLIPCOMMONS_DB, FLIPCOMMONS_DIR, load_env  # noqa: E402
+import patchkit as pk  # noqa: E402
 
 RELATIONSHIPS_SQL = HERE / "relationships.sql"
 OUT = HERE / "sweep" / "candidates.jsonl"
@@ -74,51 +79,30 @@ MAKER_AUTHORIZATION: dict[str, list[str]] = {
 }
 
 
-def load_candidates() -> list[dict[str, Any]]:
-    """Read relationships.sql's ``relationship_sweep_candidates`` view as JSON.
-
-    Runs the duckdb CLI with cwd = the flipcommons checkout, so the view's
-    ``.read scripts/analysis/catalog.sql`` and the foundation's ``ATTACH
-    backend/db.sqlite3`` both resolve there (same idiom as 0172's gen.py)."""
-    load_env()
-    fc = os.environ.get("FLIPCOMMONS_DIR") or str(FLIPCOMMONS_DIR)
-    proc = subprocess.run(
-        [
-            "duckdb", "-init", str(RELATIONSHIPS_SQL), ":memory:",
-            "COPY (FROM relationship_sweep_candidates) TO '/dev/stdout' (FORMAT json, ARRAY true);",
-        ],
-        cwd=fc, capture_output=True, text=True, check=True,
-    )
-    rows: list[dict[str, Any]] = json.loads(proc.stdout)
-    return rows
-
-
-def maker_of(con: sqlite3.Connection, ipdb_id: int) -> str | None:
-    """The model's Manufacturer slug — the key MAKER_AUTHORIZATION is keyed on."""
-    row = con.execute(
-        "SELECT mf.slug FROM catalog_machinemodel m "
-        "JOIN catalog_corporateentity ce ON m.corporate_entity_id = ce.id "
-        "JOIN catalog_manufacturer mf ON ce.manufacturer_id = mf.id "
-        "WHERE m.ipdb_id = ?",
-        (ipdb_id,),
-    ).fetchone()
-    return row[0] if row else None
-
-
 def main() -> int:
-    rows = load_candidates()
+    # Through patchkit, so `analysis query --check relationships` gates the read: a
+    # feed drawn from an analysis whose detectors have gone dark is still well-formed
+    # JSONL, and nothing downstream — least of all the paid AI sweep it drives — can
+    # tell. The runner also owns the cwd/path resolution the raw duckdb call used to
+    # hand-roll here.
+    rows = pk.read_view(
+        RELATIONSHIPS_SQL, "relationship_sweep_candidates", prefix="relationships"
+    )
+    if not rows:
+        raise SystemExit("relationship_sweep_candidates returned no rows — nothing to emit")
     OUT.parent.mkdir(exist_ok=True)
-    con = sqlite3.connect(f"file:{FLIPCOMMONS_DB}?mode=ro", uri=True)
     lines = []
     attached = 0
-    for row in sorted(rows, key=lambda r: r["ipdb_id"]):
+    for row in sorted(rows, key=lambda r: int(str(r["ipdb_id"]))):
         ipdb = row["ipdb_id"]
         candidate: dict[str, object] = {"ipdb_id": ipdb}
         # The view's resolved target guess(es); omit an empty list.
         hints = [h for h in (row.get("hint") or []) if h]
         if hints:
             candidate["hint"] = hints
-        refs = MAKER_AUTHORIZATION.get(maker_of(con, ipdb) or "")
+        # maker_slug comes off the view (models.manufacturer_slug), so it is
+        # live-filtered and needs no second connection to the catalog.
+        refs = MAKER_AUTHORIZATION.get(str(row.get("maker_slug") or ""))
         if refs:
             # An explicit `evidence` REPLACES the default, so the model's own
             # note has to be named alongside the maker source — it is still the
@@ -126,7 +110,6 @@ def main() -> int:
             candidate["evidence"] = [f"ipdb:{ipdb}", *refs]
             attached += 1
         lines.append(json.dumps(candidate, ensure_ascii=False))
-    con.close()
     OUT.write_text("\n".join(lines) + "\n")
     print(
         f"wrote {len(lines)} candidates to {OUT.relative_to(HERE)} "
