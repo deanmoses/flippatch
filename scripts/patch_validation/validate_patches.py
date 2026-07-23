@@ -36,7 +36,7 @@ class _StrictLoader(yaml.SafeLoader):
 
     Mirrors flipcommons' patch loader so pindata catches the same problems
     *before* publishing. The canonical implementation lives in flipcommons at
-    ``backend/apps/catalog/ingestion/patches.py``; this is a hand-maintained
+    ``backend/apps/claim_ingest/patches/parsing.py``; this is a hand-maintained
     copy. **Keep the two in sync** — if flipcommons tightens or loosens what it
     accepts, update this loader (and the schema) to match, or the gate goes
     stale. ``tests/test_validate_patches.py`` pins the shared rules (duplicate

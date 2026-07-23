@@ -155,7 +155,11 @@ rows = pk.read_view(YEARS_SQL, "year_patch_rows", prefix="year")
 
 Everything else `patchkit` offers is emission: `entry` for one correctly-escaped claims block, `write_patch` for the file, `source_note` / `clean_quote` for typography. **Escaping is solved — never `yaml.dump`, never hand-roll it.** The authoritative guidance is [DataPatchKit.md](../../flipcommons/docs/DataPatchKit.md); the worked examples to copy are `0177-exports`, `0178-gameplay-features` and `0181-bingo-years`, each with a `README.md` narrating its signal, its gate and its dead ends.
 
-**Treat every patch already in `patches/` as immutable.** Localhost may be far ahead of production, and holding a series locally to tune it is deliberate practice — but nothing in this repo or the dev DB records what production has ingested, and only the user knows. If an existing patch looks worth altering, say so and let them decide; never regenerate one on your own initiative.
+### Treat every patch already in `patches/` as immutable
+
+Localhost may be far ahead of production -- we often hold a series locally to tune them — but nothing in the dev DB records what production has ingested. Only the user knows. Sometimes the user will write that knowledge into a specific campaign, which is a point in time doc.
+
+If an existing patch looks worth altering, say so and let the user decide; never regenerate one on your own initiative.
 
 ### Extracting a model's data from an unstructured web page
 
