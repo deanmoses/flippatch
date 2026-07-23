@@ -220,6 +220,52 @@ def test_malformed_cite_rejected(schema_validator, cite):
 @pytest.mark.parametrize(
     "cite",
     [
+        "billboard:1945-09-29",  # ISO-dated issue (also schemeIdentifier-shaped)
+        "gameroom-magazine:vol-2",  # hyphenated left segment — the slug-only shape
+    ],
+)
+def test_authored_source_cite_forms_accepted(schema_validator, cite):
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"corporate-entity.foo": {"year_start": 1990, "cite": cite}}],
+    }
+    assert not _has_error(schema_validator, data)
+
+
+@pytest.mark.parametrize(
+    "cite",
+    [
+        "Billboard:1945-09-29",  # uppercase — not the slug grammar
+        "billboard:",  # empty child segment
+        # Over-long segments in both spellings: hyphenated (only
+        # authoredSourceRef could match) and plain (schemeIdentifier's prefix
+        # is capped at the identifier_key column's 50, so it can't leak these
+        # through the anyOf either).
+        f"{'a-' * 100}a:vol-2",  # 201-char hyphenated root segment
+        f"{'a' * 201}:vol-2",  # 201-char plain root segment
+        f"billboard:{'a-' * 100}a",  # 201-char hyphenated child segment
+        f"billboard:{'a' * 201}",  # 201-char plain child segment
+        # A >50-char root with a NON-slug right segment matches neither form:
+        # too long for a scheme key, not slug-shaped for an authored ref.
+        f"{'a' * 60}:GRhX5",
+        # NOT here: billboard:1945_09_29 and other bad-right-segment shapes
+        # under a short root — schemeIdentifier deliberately shape-accepts any
+        # plausible-key:free-form pair (the scheme list lives in the
+        # flipcommons registry), so those pass local validation and fail at
+        # ingest.
+    ],
+)
+def test_malformed_authored_source_cite_rejected(schema_validator, cite):
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"corporate-entity.foo": {"year_start": 1990, "cite": cite}}],
+    }
+    assert _has_error(schema_validator, data)
+
+
+@pytest.mark.parametrize(
+    "cite",
+    [
         "isbn:9781889933023",  # 13-digit
         "isbn:978-1-889933-02-3",  # hyphenated
         "isbn:0887404316",  # 10-digit
@@ -501,11 +547,53 @@ def test_patch_without_claims_or_sources_rejected(schema_validator):
             "source_type": "web",
             "links": [{"link_type": "homepage"}],
         },
+        {  # slug not in the slug grammar
+            "name": "X",
+            "source_type": "magazine",
+            "slug": "Game_Room",
+        },
+        {  # slug past the 200-char column limit
+            "name": "X",
+            "source_type": "magazine",
+            "slug": "a" * 201,
+        },
+        {  # parent past the 200-char column limit
+            "name": "X",
+            "source_type": "magazine",
+            "slug": "x",
+            "parent": "a" * 201,
+        },
     ],
 )
 def test_malformed_source_rejected(schema_validator, source):
     data = {"attribution": "flipcommons-catalog", "sources": [source]}
     assert _has_error(schema_validator, data)
+
+
+def test_magazine_issue_sources_valid(schema_validator):
+    # The slug/parent verbs: a magazine root plus an issue nested by parent:.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "sources": [
+            {"slug": "billboard", "name": "Billboard", "source_type": "magazine"},
+            {
+                "parent": "billboard",
+                "slug": "1945-09-29",
+                "name": "September 29, 1945",
+                "source_type": "magazine",
+                "year": 1945,
+                "month": 9,
+                "day": 29,
+                "links": [
+                    {
+                        "url": "https://books.google.com/books?id=x",
+                        "link_type": "archive",
+                    }
+                ],
+            },
+        ],
+    }
+    assert not _has_error(schema_validator, data)
 
 
 # --- Schema: delete / remove directives -------------------------------------
