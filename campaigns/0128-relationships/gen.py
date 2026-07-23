@@ -1,6 +1,22 @@
 #!/usr/bin/env python3
-"""Generate ``patches/0176-model-lineage.yaml`` — typed lineage edges for the models
+"""Generate ``patches/0188-model-lineage.yaml`` — typed lineage edges for the models
 whose IPDB note states the relationship outright.
+
+TRANCHES. This generator emits one patch per RUN, not one patch for all time. Its
+input view is ``relationship_green``, which is scoped to models that carry no
+relationship edge YET, so every row an earlier tranche authored drops out of it the
+moment that patch is applied — the view is self-limiting, and a run always emits
+exactly the remaining work. Each run therefore takes a FRESH patch number and this
+constant moves with it; an applied patch is immutable (the ledger fingerprints its
+content and keys on the patch id), so re-pointing this at an old number would produce
+a file that cannot ingest. ``0176-model-lineage.yaml`` was the first tranche (40 rows,
+applied); this is the second, opened by the widened phrasebook and its same-maker
+guard. Rows deliberately held out of a tranche are recorded in the analysis's
+``_rel_open_question`` — never by editing this file's output.
+
+A maker authored as its own patch is EXCLUDED here, so the two emitters partition the
+tier between them and no model can be authored twice — see ``EXCLUDED_MAKERS`` below.
+That is patch organization only; what each row claims is decided in the analysis.
 
 Candidate detection, vetting and the first-cut quote all live in ``relationships.sql``
 (this dir); this script is just the emitter. It reads that file's
@@ -51,21 +67,34 @@ sys.path.insert(0, str(ROOT / "scripts"))  # patchkit + common
 
 import patchkit as pk  # noqa: E402
 
-PATCH_PATH = pk.PATCHES_DIR / "0176-model-lineage.yaml"
+PATCH_PATH = pk.PATCHES_DIR / "0188-model-lineage.yaml"
 RELATIONSHIPS_SQL = HERE / "relationships.sql"
 
 # The `description:` is Admin-only and lint-capped at 80 chars — a single short
 # summary. The campaign's rationale (why license_status defaults to unknown, how the
 # certain tier is gated) lives in this module's docstring and the dir README, and the
 # per-row evidence lives in each entry's cite quote.
-DESCRIPTION = "Model lineage edges for models whose IPDB note states the relationship."
+# Filename and wording are the user's, applied to the patch by hand — kept here so a
+# regeneration reproduces the shipped file rather than reverting it.
+DESCRIPTION = "Model lineage - mostly conversions and copies."
+
+# Makers authored as their own patch (the campaign's one-patch-per-maker convention),
+# excluded here so the two emitters cannot author the same model. Keep in step with
+# gen_victory_games.py's MAKER_SLUG.
+EXCLUDED_MAKERS = {"victory-games"}
 
 
 
 def main() -> int:
-    rows = pk.read_view(RELATIONSHIPS_SQL, "relationship_green", prefix="relationships")
+    rows = [
+        r
+        for r in pk.read_view(
+            RELATIONSHIPS_SQL, "relationship_green", prefix="relationships"
+        )
+        if str(r["maker_slug"]) not in EXCLUDED_MAKERS
+    ]
     if not rows:
-        raise SystemExit("relationship_green returned no rows — nothing to emit")
+        raise SystemExit("relationship_green had no rows outside EXCLUDED_MAKERS")
     entries: list[str] = []
     for r in sorted(rows, key=lambda r: str(r["slug"])):
         quote = pk.clean_ipdb_quote(str(r["quote"]))

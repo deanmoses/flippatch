@@ -98,6 +98,8 @@ Name matching strips **one** trailing parenthetical, which is what lets the camp
 
 A merge is two patches, never one — `delete:`'s referrer check reads live DB state, so a model reassigned earlier in the *same* patch isn't yet visible (DataPatches.md). The precedent is [0148-rmg.yaml](../../0148-rmg.yaml) → [0149-rmg-title-removal.yaml](../../0149-rmg-title-removal.yaml): the first re-homes the model (`title:` onto the survivor, a disambiguating `slug:` if the names collide, and the `model_relationship` edge with its cite), the second retires the emptied Title with `delete: true` and a `note:` naming the model that left. The Title is **soft-deleted**, not retracted — `status` is not directly assertable. Reslugging the doomed Title first ([0137](../../0137-nugent-consolidation.yaml) used `-duplicate`) is needed only when the survivor has to claim its slug.
 
+**A slug handover is a second cross-patch boundary, distinct from the delete's.** Freeing a slug and claiming it cannot share a patch: 0183 tried to reslug `title.cavalier` → `cavalier-duplicate` and then `title.cavalier-2` → `cavalier` in file order, and the apply failed with `UNIQUE constraint failed: catalog_title.slug` — the engine does not write claims one entry at a time in a way that makes the freed slug visible to a later entry. (0137 avoided it without naming it, deferring the claim to a later patch.) So the shape is: **patch A** re-homes the movers and reslugs each doomed Title out of the way; **patch B** hands the freed slug to each survivor *and* retires the emptied Titles — the delete's referrer check is already satisfied by A, and the handover and the deletes touch different records, so both fit in one patch.
+
 ## Name clusters — the catalog-wide grain
 
 Everything above is rooted in `export_candidates`: a model is visible only if a detector fired on its free text, its name suffix or an OPDB flag. That is the right root for authoring a claim and the wrong one for asking a question about the corpus, because a same-named pair where **neither** side has usable prose is structurally invisible — no detector, no candidate, no namesake row. *Cavalier* (Recel 1979) / *Cavalier* (Petaco 1979) only reached `export_namesake_review` because IPDB happened to write a twin sentence about it.
@@ -150,7 +152,13 @@ Both were found by reading the output, and both are measured rather than listed:
 
 ### The merge backlog
 
-`export_merge_backlog` promotes a number the README used to quote into a worklist: **36 pairs already joined by an edge and still sitting in two Titles** (24 `export_edition_of`, 21 of them where both Titles hold only the one model). Nothing here needs research — the edge is already the claim that the two are one game, so the Title split is a placement that claim decided. The work is the two-patch merge below. *Cavalier*, *Crazy Race*, *Criterium 2000*, *Fair Fight*, *Master Stroke*, *Mr. Doom*, *Mr. Evil* are all Recel/Petaco pairs in exactly this state.
+`export_merge_backlog` promotes a number the README used to quote into a worklist: pairs already joined by an edge and still sitting in two Titles. Nothing here needs research — the edge is already the claim that the two are one game, so the Title split is a placement that claim decided. The work is the two-patch merge below.
+
+The **singleton tranche is done**: [0183-export-title-merges.yaml](../../0183-export-title-merges.yaml) → [0184-export-title-merge-removals.yaml](../../0184-export-title-merge-removals.yaml) merged the 19 pairs carrying an `export_edition_of` edge where the doomed Title held only the mover, taking the backlog from 36 pairs to 17. What remains is the pairs whose doomed Title holds other models too — each of those members wants its own decision first — plus the `copy`/`conversion` rows, which are 0128 work.
+
+**Which side moves is not readable off the slugs.** The `-2` placeholder sits on the *Petaco* record, but IPDB's twin sentence says *"Recel is the name used for export games"*, so the **Recel** model is the export edition and the **Petaco** original's Title survives. Every mover in the tranche was verified against its own `export_edition_of` edge rather than inferred from the pair's shape.
+
+A consequence worth knowing: because the doomed Title carried the plain slug (`cavalier`) while the survivor carried the placeholder (`cavalier-2`), the merge also had to hand the slug over, or the canonical slug would have stayed parked on a soft-deleted Title forever.
 
 ### Duplicate records
 
@@ -305,7 +313,7 @@ The generator is expected to keep evolving — the numbers below are a query (`m
 
 Still open, in rough order of value:
 
-- the **merge backlog** (36 pairs, 24 of them `export_edition_of`) — decisions already made, waiting on a two-patch Title merge; the cheapest work on this list
+- the **merge backlog**, singleton tranche done (36 pairs → 17) — what is left are pairs whose doomed Title holds other models, so each of those members needs its own decision first, plus `copy`/`conversion` rows belonging to 0128
 - the **unjudged paired-brand cohorts** — nine maker pairs (A. M. Amusement/Century, Mills/Shyvers, Ace Novelty/Colonial, Automatic Amusements/Bally, Bingo Novelty/Gottlieb, Europlay/Gottlieb, PAMCO/Stoner, Giuliano Lodola/Gottlieb, Unidesa/Williams) that no detector in this file can reach; judging one pair in a cohort calibrates the rest
 - the `export_cluster_pairs` rows at `lead = 'export edition (paired brand)'` and `pair_state = 'edge missing'` — co-titled Recel/Petaco pairs still carrying no edge (*Don Quijote*, *Torpedo*)
 - the **title-mate** bucket (95 candidates) — the largest source of further `export_edition_of` targets, needing a per-row source read

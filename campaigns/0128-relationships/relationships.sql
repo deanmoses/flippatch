@@ -75,18 +75,48 @@
 -- the review views and checks, per scripts/analysis/README.md → "Making manual
 -- judgment checkable". relationships_checks flags any entry that has gone stale.
 
--- Per-model open decisions: rows deliberately HELD BACK from an earlier patch
--- because the note doesn't determine a single target. Keyed on the stable ipdb
--- number. `relationship_open_questions` shows each against its CURRENT edge state —
--- read it before authoring one of these, and note that a held-back row that now
--- carries an edge means someone resolved it (or authored past the hold): verify
--- which, don't assume.
+-- Per-model open decisions: rows deliberately HELD BACK from a patch. `kind` names
+-- WHY, because the reasons differ — the 0127 rows were held because the note doesn't
+-- determine a single target, the same-name builds because the edge is settled but the
+-- slug/title work around it is not. Keyed on the stable ipdb number.
+-- `relationship_open_questions` shows each against its CURRENT edge state — read it
+-- before authoring one of these, and note that a held-back row that now carries an
+-- edge means someone resolved it (or authored past the hold): verify which, don't
+-- assume.
+--
+-- A held row leaves the certain tier entirely (see `_green_scored`'s
+-- `open_question IS NULL`), so this is also the only supported way to keep a row out
+-- of a generated patch: gen.py is a pure emitter and hand-editing its output would be
+-- undone by the next run.
 CREATE OR REPLACE VIEW _rel_open_question AS
   SELECT * FROM (VALUES
     (3967, 'cosmic-princess', 'held-back-0127',
      'Note says "manufactured in Australia by LAI under license from Stern Electronics", but the only "Cosmic Princess" in IPDB/the catalog IS this LAI record — there is no seeded Stern original to point at. The machine-mined guess of magic-2 was judged a MIS-RESOLUTION. Decide whether to create the Stern original first, or treat this as the primary record and carry no copy edge.'),
     (5424, 'high-ace-2', 'held-back-0127',
      'Note names TWO Williams originals — "Same design as Williams'' 1973 ''Dealer''s Choice''. Same design and coloring as Williams'' 1974 ''Lucky Ace''." Pick the one it actually reproduces (dealers-choice-2 vs lucky-ace), or establish that both edges are correct.'),
+    -- SAME-NAME BUILDS. Both notes plainly support the edge — "Same game as Bally's
+    -- 1981 'Fireball II' except there is no captive ball in center playfield", "Same
+    -- game as Williams' 1972 'Gulfstream'" — and both quotes verify verbatim. What is
+    -- unsettled is the work AROUND the edge: a copy carrying the original's exact name
+    -- wants its slug renamed to the maker and its title merged under the original's,
+    -- which needs an OPDB-grouping check first (README -> Authoring recipe). Gulfstream
+    -- is the awkward one: the Segasa copy holds the bare `gulfstream` slug while the
+    -- Williams original sits at `gulfstream-2`, so the convention implies moving a slug
+    -- the campaign has never moved. Held so the edge tranche can ship without deciding
+    -- it; the edge itself remains authorable the moment the slug question is answered.
+    (3704, 'fireball-ii-2', 'deferred-same-name-build',
+     'Edge is sound (Bell Games copy of Bally''s 1981 ''Fireball II''), but this is a same-name build: the slug/title convention wants slug -> -bell-games and a title merge under the original, gated on an OPDB-grouping check. Author the slug/title work and the edge together.'),
+    (1093, 'gulfstream', 'deferred-same-name-build',
+     'Edge is sound (Segasa copy of Williams'' 1972 ''Gulfstream''), but the SEGASA record holds the bare `gulfstream` slug while the Williams ORIGINAL is `gulfstream-2` — the reverse of every other same-name build the campaign has handled. Decide whether the original takes the bare slug before authoring, then ship the edge with the slug/title work.'),
+    -- WRONG TARGET the resolver cannot yet see. The note says "a conversion of
+    -- Bally's 1949 'Champion'", and the year qualifier narrowed the catalog's two
+    -- Champions to the one whose YEAR matches — Chicago Coin's 1949 (ipdb 487) —
+    -- while the note names BALLY. Bally's seeded Champion is 1939 (ipdb 488), so
+    -- either the note's year or the catalog's is wrong, and the maker the note gives
+    -- is the qualifier that would settle it. Resolution reads the year and not yet
+    -- the maker; until it does, this row must not be authored from the guess.
+    (5115, 'tanforan', 'wrong-target-maker-vs-year',
+     'Note says "a conversion of Bally''s 1949 ''Champion''". Year narrowing picks chicago-coin''s 1949 Champion; the note says Bally, whose seeded Champion is 1939. Establish which Champion this converts (and whether a year is wrong) before authoring. Resolution uses the year qualifier but not the maker one — see _rel_year_qualified.'),
     (4979, 'star-flite', 'held-back-0127',
      'Note names "the 2-player Williams'' 1974 ''Super-Flite'' and the 4-player Williams'' 1974 ''Strato-Flite''" (super-flite vs strato-flite). Pick one, or reconsider how a two-original export build should be linked.')
   ) AS t(ipdb_id, slug, kind, question);
@@ -137,6 +167,14 @@ CREATE OR REPLACE VIEW _rel_uncited_licensed_known AS
   ) AS t(slug, target_slug);
 
 -- == 3 · ANALYSIS ============================================================
+-- The private `_`-prefixed helpers are MATERIALIZED (CREATE TABLE, the same pattern
+-- 0177-exports uses), the public views stay views. The regex work here is heavy — the
+-- whole phrasebook applied to every model's prose — and the view graph re-enters it
+-- from several directions: the quote extractor, the donor-span resolver and the green
+-- scorer all read the same signal. As plain views that cost was paid once per reader
+-- per run and the analysis took over a quarter of an hour; materialized, it is paid
+-- once. Nothing is written to the catalog either way — these live in DuckDB's own
+-- in-memory catalog, and the SQLite attach stays read-only.
 -- A candidate hunt: detect -> assemble+enrich -> review. Membership is the union of
 -- the two phrase detectors; enrichment reads existing edges from the foundation's
 -- `model_edges` (the "already done" signal) and resolves the quoted target guess.
@@ -191,7 +229,14 @@ CREATE OR REPLACE MACRO _copy_phrase_re() AS
   || '|licen[cs]ed (build|copy|version|reproduction) of|reproduction of'
   -- the vocabulary the namesake sweep surfaced
   || '|identical to|customi[sz]ed version of|a modification of'
-  || '|an adaptation of|adapted from|same design as';
+  || '|an adaptation of|adapted from|same design as'
+  -- "same game as" — IPDB's plainest machine-level lineage sentence ("This is the
+  -- same game as Williams' 1954 'Star Pool' but without the Star Feature"). 59
+  -- models carry it and 47 were invisible to the phrasebook. Note it is heavily
+  -- SAME-MAKER — a maker restating its own game under a new name is a variant or a
+  -- reissue, not a copy — so it is only safe to detect alongside the same-maker
+  -- guard in _green_scored; see that view's `same-maker-target` reject reason.
+  || '|same game as';
 
 CREATE OR REPLACE MACRO _conv_phrase_re() AS
   'conversion of|conversion kit|converted (game )?(for|from)|conversion for'
@@ -203,7 +248,7 @@ CREATE OR REPLACE MACRO _conv_phrase_re() AS
 -- description) so a phrase in any of them fires the detector. quoted_names collects
 -- distinct 'Quoted Titles' for the target guess (the permissive quote class handles
 -- IPDB's mixed backtick/straight/curly quotes, per exports.sql).
-CREATE OR REPLACE VIEW _rel_signal AS
+CREATE OR REPLACE TABLE _rel_signal AS
   WITH t AS (
     SELECT
       m.id, m.ipdb_id, m.slug, m.name, m.manufacturer_name AS maker,
@@ -243,9 +288,23 @@ CREATE OR REPLACE VIEW _rel_signal AS
      OR EXISTS (SELECT 1 FROM _rel_book_phrase b WHERE txt LIKE '%' || b.phrase || '%')
     ) AS mentions_book_source,
     -- quoted titles anywhere in the prose, for the target guess (review aid only).
+    -- The trailing `([^A-Za-z0-9]|$)` is what keeps a POSSESSIVE from passing as the
+    -- closing quote. IPDB writes titles in straight quotes, so 'Star's Phoenix' has an
+    -- apostrophe the closing class happily accepts, and the guess became "Star" — a
+    -- real model by a DIFFERENT maker, which reached the certain tier as a copy of a
+    -- game the note never names. A real closing quote is followed by a space or
+    -- punctuation, never a letter or digit; requiring that removed 38 resolving
+    -- guesses across the corpus, every one of them a truncation ('Dealer's Choice' ->
+    -- Dealer, 'Queen's Castle' -> Queen, 'Fun Spot '61' -> Fun Spot, 'Rock 'N Roll' ->
+    -- Rock), and cost none. It also recovers a title the old scan consumed past:
+    -- INDER'S 'Miss Universo' used to key on the possessive and lose the real title.
+    -- (Residue: a NESTED quoted phrase, 'Chicago Cubs "Triple Play"', now yields the
+    -- inner span as an extra guess — harmless, since a second guess drops the row from
+    -- the certain tier rather than into it.) Anchored by
+    -- quoted_title_possessive_truncation below.
     list_distinct(regexp_extract_all(
       concat_ws(' ', coalesce(notes, ''), coalesce(notable_features, ''), coalesce(description, '')),
-      '[`''‘“"]([A-Z][^`''’“”"]{1,40})[''’”"]', 1)) AS quoted_names
+      '[`''‘“"]([A-Z][^`''’“”"]{1,40})[''’”"]([^A-Za-z0-9]|$)', 1)) AS quoted_names
   FROM t;
 
 -- _quoted_resolved — one row per (candidate, resolved target model). A quoted name
@@ -282,17 +341,161 @@ CREATE OR REPLACE VIEW _rel_signal AS
 -- genuinely different models (README -> Names).
 CREATE OR REPLACE MACRO _title_key(s) AS replace(name_norm(s), ' ', '');
 
-CREATE OR REPLACE VIEW _quoted_resolved AS
+-- quote --
+-- A first-cut VERBATIM cite quote, extracted from the note rather than hand-typed.
+--
+-- `note_norm` is the note put through exactly the normalization
+-- scripts/quote_verify/verify_quotes.py applies to the SOURCE side: the four smart
+-- quotes straightened and whitespace runs collapsed (the quote itself must already
+-- be in that form). Backticks are deliberately NOT straightened — IPDB writes
+-- `Title' and verify_quotes doesn't touch them either, so straightening here would
+-- break the match. Pinexplore's ipdb_machines corpus (what verify_quotes actually
+-- checks against) and the catalog's ipdb.notes come from the same IPDB pull, so an
+-- exact substring of one is an exact substring of the other.
+--
+-- `lineage_sentence` is the single sentence carrying the lineage claim: a run of
+-- non-period characters spanning a lineage phrase, up to its terminating period. The
+-- non-period run is what bounds it to ONE sentence; the cost is that an abbreviation
+-- inside the sentence (A.M.I.) truncates it, which the green tier below catches by
+-- requiring the target's name to survive inside the extracted span.
+--
+-- This is a PROPOSAL, not a verified quote: `make verify-quotes` is the independent
+-- gate that proves each one verbatim against pinexplore's corpus. Never ship an
+-- extracted quote that hasn't passed it.
+-- The extractor reads NOTABLE FEATURES then NOTES, joined by a newline — exactly the
+-- slice and the order `ipdb_notes_text()` in scripts/quote_verify/verify_quotes.py
+-- builds for an `ipdb:` ref, so an extracted span is a substring of the very text the
+-- gate will check it against. `description` is deliberately NOT read even though the
+-- detectors fire on it: it is flipcommons-authored prose, not IPDB's, so a span taken
+-- from it could never verify under an `ipdb:` cite. A candidate detected only there
+-- is disqualified explicitly (see the `description-only` reject reason) rather than
+-- falling out of the tier through an empty quote.
+--
+-- The regex is CASE-INSENSITIVE. A large share of this corpus opens the note with the
+-- phrase — "Copy of Williams' 1974 'Strato-Flite'." — and a case-sensitive class
+-- silently extracts nothing from every one of them (anchor_quote_sentence_initial).
+CREATE OR REPLACE TABLE _rel_quote AS
+  SELECT
+    s.id,
+    -- A sentence never crosses the NOTABLE FEATURES / NOTES boundary. The two fields
+    -- are joined by a newline and neither reliably ends in a period, so a run of
+    -- non-period characters happily spans the seam: g-i-joe's lineage quote came out
+    -- as "Sound: 1 bell 'G I - Joe' was a conversion for Genco's 1941 'Jungle'." That
+    -- verifies — verify_quotes collapses the same whitespace — and is still wrong to
+    -- publish. Excluding the newline from the sentence class fixes it at the source,
+    -- which is why note_norm below collapses horizontal whitespace only.
+    trim(regexp_extract(nn.note_norm,
+      '(?i)([^.\n]*(' || _copy_phrase_re() || '|' || _conv_phrase_re() || ')[^.\n]*\.)', 1)) AS lineage_sentence,
+    -- kit_sentence — the sentence that calls the SUBJECT'S conversion a kit, which in
+    -- this corpus always sits AFTER the lineage claim ("...for this conversion kit is
+    -- in Victory Game's ad in Billboard 10/03/1942 p79."). It is the second span of
+    -- the composed quote for a kit row, so the cite carries the kit evidence itself
+    -- rather than leaving the reader to trust the classifier. Bounded to one sentence
+    -- the same way lineage_sentence is.
+    trim(regexp_extract(nn.note_norm,
+      '(?i)([^.\n]*(this|the) (conversion )?kit\b[^.\n]*\.)', 1)) AS kit_sentence,
+    nn.note_norm
+  FROM _rel_signal s,
+       LATERAL (SELECT regexp_replace(
+         replace(replace(replace(replace(
+           concat_ws(chr(10), nullif(s.notable_features, ''), nullif(s.notes, '')),
+           '“', '"'), '”', '"'), '‘', ''''), '’', ''''),
+         -- horizontal whitespace only: the field-joining newline must survive as the
+         -- sentence boundary above. An emitted span never contains one, so it is
+         -- identical under verify_quotes' own \s+ collapse.
+         '[^\S\n]+', ' ', 'g') AS note_norm) nn;
+
+-- _rel_donor_span — the part of the lineage sentence AFTER the lineage phrase, which
+-- is where the donor is named. IPDB opens a note with the subject's own title in the
+-- same quotes it uses for the donor — "'Twin Six' was a conversion of Gottlieb's 1940
+-- 'Gold Star'" — so a resolver reading every quoted title in the prose resolved the
+-- subject's own name too, hit the catalog's OTHER Twin Six, and returned two targets
+-- for a note that names exactly one. Whole cohorts left the tier that way. Titles
+-- quoted BEFORE the phrase are the subject; titles after it are the donor.
+--
+-- Note what this deliberately does NOT do: it does not exclude a target that shares
+-- the subject's name. A same-name build — Segasa's Gulfstream copying Williams'
+-- Gulfstream — is the case this campaign exists for, and there both titles key alike.
+-- Position separates them where a name comparison would destroy them.
+CREATE OR REPLACE TABLE _rel_donor_span AS
+  SELECT
+    q.id AS model_id,
+    regexp_replace(q.lineage_sentence,
+      '(?i)^.*?(' || _copy_phrase_re() || '|' || _conv_phrase_re() || ')', '') AS span
+  FROM _rel_quote q
+  WHERE q.lineage_sentence <> '';
+
+-- _rel_year_qualified — the YEAR IPDB writes immediately before a quoted title, which
+-- is the qualifier that makes the title unambiguous. IPDB's formula is
+-- "<Maker>'s <year> '<Title>'", so "Gottlieb's 1940 'Gold Star'" names exactly one of
+-- the catalog's seven Gold Stars. Without this the resolver returned all seven and the
+-- row left the shortlist through the exactly-one-target gate — silently, with no
+-- reject reason, which is how a whole cohort of 1940s conversion kits stayed
+-- invisible. Matching on name + year is the foundation's own prescription (its README:
+-- "a name alone is often ambiguous").
+CREATE OR REPLACE TABLE _rel_year_qualified AS
+  WITH spans AS (
+    SELECT s.id AS model_id,
+           unnest(regexp_extract_all(
+             concat_ws(' ', coalesce(s.notes, ''), coalesce(s.notable_features, ''),
+                            coalesce(s.description, '')),
+             '[12][0-9]{3} *[`''‘“"][A-Z][^`''’“”"]{1,40}[''’”"]([^A-Za-z0-9]|$)')) AS span
+    FROM _rel_signal s
+    WHERE s.by_copy OR s.by_conv
+  )
+  SELECT
+    model_id,
+    CAST(regexp_extract(span, '([12][0-9]{3})', 1) AS INTEGER) AS qyear,
+    _title_key(regexp_extract(span, '[`''‘“"]([A-Z][^`''’“”"]{1,40})[''’”"]', 1)) AS qkey
+  FROM spans;
+
+-- The year NARROWS, it never eliminates. If a title carries a year qualifier and some
+-- name match has that year, only those survive; if the year matches nothing (the note
+-- and the catalog disagree, which happens), every name match is kept and the row is
+-- exactly as ambiguous as it was before. So this can only ever turn "seven guesses"
+-- into "one" — it cannot introduce a target that was not already a candidate, and it
+-- cannot drop a row that used to resolve.
+CREATE OR REPLACE TABLE _quoted_resolved AS
   WITH q AS (
     SELECT s.id AS model_id, _title_key(qn) AS qkey
     FROM _rel_signal s, UNNEST(s.quoted_names) AS u(qn)
     WHERE (s.by_copy OR s.by_conv) AND length(qn) > 1
   )
+  , d AS (
+    -- titles quoted in the donor span, keyed the same way
+    SELECT ds.model_id, _title_key(dn) AS qkey
+    FROM _rel_donor_span ds,
+         UNNEST(regexp_extract_all(ds.span,
+           '[`''‘“"]([A-Z][^`''’“”"]{1,40})[''’”"]([^A-Za-z0-9]|$)', 1)) AS u(dn)
+    WHERE length(dn) > 1
+  )
   SELECT DISTINCT q.model_id, m.slug AS target_slug, m.label AS target_label
   FROM q
   JOIN models m ON _title_key(m.name) = q.qkey
               AND m.id <> q.model_id
-  WHERE q.qkey <> '';
+  WHERE q.qkey <> ''
+    -- Donor-span narrowing, same "narrow, never eliminate" contract as the year rule
+    -- below: if any title quoted after the lineage phrase resolves, only those count;
+    -- if none does (the donor is named unquoted, or the sentence was truncated), every
+    -- quoted title in the prose is kept and the row is no worse off than before.
+    AND (
+      q.qkey IN (SELECT qkey FROM d WHERE d.model_id = q.model_id)
+      OR NOT EXISTS (
+        SELECT 1 FROM d
+        JOIN models m3 ON _title_key(m3.name) = d.qkey AND m3.id <> d.model_id
+        WHERE d.model_id = q.model_id)
+    )
+    AND (
+      -- this title's year qualifier picks this model...
+      EXISTS (SELECT 1 FROM _rel_year_qualified y
+              WHERE y.model_id = q.model_id AND y.qkey = q.qkey AND y.qyear = m.year)
+      -- ...or no year qualifier resolves anything for it, so nothing is narrowed
+      OR NOT EXISTS (
+        SELECT 1 FROM _rel_year_qualified y
+        JOIN models m2 ON _title_key(m2.name) = q.qkey AND m2.year = y.qyear
+                      AND m2.id <> q.model_id
+        WHERE y.model_id = q.model_id AND y.qkey = q.qkey)
+    );
 
 -- assemble + enrich --
 -- One row per candidate (union of the two detectors), joined to its existing edge
@@ -419,7 +622,7 @@ CREATE OR REPLACE VIEW relationship_namesake_review AS
 -- actor), which is a different thing from ranking last; and `member_exists = false`
 -- is a TOMBSTONE — an actor asserting the edge is ABSENT — which the resolved
 -- `model_relationships` view cannot show at all. Both are surfaced, not filtered.
-CREATE OR REPLACE VIEW _rel_edge_claim AS
+CREATE OR REPLACE TABLE _rel_edge_claim AS
   SELECT
     c.model_id,
     c.claim_id,
@@ -439,7 +642,7 @@ CREATE OR REPLACE VIEW _rel_edge_claim AS
 -- _rel_edge_provenance — the per-MODEL rollup of the above, so it can ride on a
 -- review row without breaking its one-row-per-model grain. Counting stays here;
 -- drill into _rel_edge_claim for the per-edge detail.
-CREATE OR REPLACE VIEW _rel_edge_provenance AS
+CREATE OR REPLACE TABLE _rel_edge_provenance AS
   SELECT
     model_id,
     list_sort(list_distinct(list(ingest_source_slug)))             AS edge_sources,
@@ -582,51 +785,6 @@ CREATE OR REPLACE VIEW relationship_open_questions AS
   FROM _rel_maker_question mq
   ORDER BY scope, subject;
 
--- quote --
--- A first-cut VERBATIM cite quote, extracted from the note rather than hand-typed.
---
--- `note_norm` is the note put through exactly the normalization
--- scripts/quote_verify/verify_quotes.py applies to the SOURCE side: the four smart
--- quotes straightened and whitespace runs collapsed (the quote itself must already
--- be in that form). Backticks are deliberately NOT straightened — IPDB writes
--- `Title' and verify_quotes doesn't touch them either, so straightening here would
--- break the match. Pinexplore's ipdb_machines corpus (what verify_quotes actually
--- checks against) and the catalog's ipdb.notes come from the same IPDB pull, so an
--- exact substring of one is an exact substring of the other.
---
--- `lineage_sentence` is the single sentence carrying the lineage claim: a run of
--- non-period characters spanning a lineage phrase, up to its terminating period. The
--- non-period run is what bounds it to ONE sentence; the cost is that an abbreviation
--- inside the sentence (A.M.I.) truncates it, which the green tier below catches by
--- requiring the target's name to survive inside the extracted span.
---
--- This is a PROPOSAL, not a verified quote: `make verify-quotes` is the independent
--- gate that proves each one verbatim against pinexplore's corpus. Never ship an
--- extracted quote that hasn't passed it.
--- The extractor reads NOTABLE FEATURES then NOTES, joined by a newline — exactly the
--- slice and the order `ipdb_notes_text()` in scripts/quote_verify/verify_quotes.py
--- builds for an `ipdb:` ref, so an extracted span is a substring of the very text the
--- gate will check it against. `description` is deliberately NOT read even though the
--- detectors fire on it: it is flipcommons-authored prose, not IPDB's, so a span taken
--- from it could never verify under an `ipdb:` cite. A candidate detected only there
--- is disqualified explicitly (see the `description-only` reject reason) rather than
--- falling out of the tier through an empty quote.
---
--- The regex is CASE-INSENSITIVE. A large share of this corpus opens the note with the
--- phrase — "Copy of Williams' 1974 'Strato-Flite'." — and a case-sensitive class
--- silently extracts nothing from every one of them (anchor_quote_sentence_initial).
-CREATE OR REPLACE VIEW _rel_quote AS
-  SELECT
-    s.id,
-    trim(regexp_extract(nn.note_norm,
-      '(?i)([^.]*(' || _copy_phrase_re() || '|' || _conv_phrase_re() || ')[^.]*\.)', 1)) AS lineage_sentence,
-    nn.note_norm
-  FROM _rel_signal s,
-       LATERAL (SELECT regexp_replace(
-         replace(replace(replace(replace(
-           concat_ws(chr(10), nullif(s.notable_features, ''), nullif(s.notes, '')),
-           '“', '"'), '”', '"'), '‘', ''''), '’', ''''),
-         '\s+', ' ', 'g') AS note_norm) nn;
 
 -- The CERTAIN tier: rows safe to author with minimal per-row reading.
 --
@@ -672,17 +830,41 @@ CREATE OR REPLACE VIEW _rel_quote AS
 --                   would still verify (pinexplore's corpus has the same damage from
 --                   the same IPDB pull), but shipping a visible `?` in a public quote
 --                   is a human call — usually the `[...]` omission marker instead.
-CREATE OR REPLACE VIEW _green_scored AS
+CREATE OR REPLACE TABLE _green_scored AS
   SELECT
     c.id, c.ipdb_id, c.slug, c.label, c.maker,
     c.target_guess[1] AS target_machine,
+    -- kit_corroborated — the note calls the SUBJECT's conversion a kit, in a sentence
+    -- that follows the lineage claim. This, not the preposition, is what separates a
+    -- conversion kit from a converted machine: a note reads "'Hit The Japs' was a
+    -- conversion OF Gottlieb's 1940 'Gold Star'" and then "The earliest mention we have
+    -- found for this conversion kit is...", so the sentence naming the donor is not the
+    -- sentence that says what was sold. An earlier pass trusted the of/for preposition
+    -- instead and typed kits `conversion`. Only consulted for rows already in the
+    -- conversion family
+    -- (see relationship_type below): a COPY row whose note happens to mention a kit —
+    -- Unidesa's comet-2, "Williams supplied some of the Comet parts in a kit form" —
+    -- must not be retyped by it.
+    (q.kit_sentence <> ''
+     AND position(q.kit_sentence IN q.note_norm) > position(q.lineage_sentence IN q.note_norm)
+    ) AS kit_corroborated,
+    -- both makers ride on the row: the same-maker guard below reads them, and a
+    -- reviewer reading relationship_green can see cross-maker at a glance instead of
+    -- re-joining for it.
+    c.maker_slug, t.manufacturer_slug AS target_maker,
     CASE
       WHEN regexp_matches(q.lineage_sentence, '(?i)conversion kit')            THEN 'conversion_kit'
-      -- "conversion FOR X" is IPDB's 1940s phrasing and means the same as
-      -- "conversion OF X". It was in the membership detector but not here, so three
-      -- plainly-stated conversions were typed `copy` by the ELSE branch.
+      -- THE NOTE DECIDES, NOT THE PREPOSITION. Within the conversion family, a row is
+      -- a KIT when the note says so about the subject (kit_corroborated above). The
+      -- of/for preposition looks like it should carry this and does not: the same
+      -- maker's notes use both prepositions for the same kind of thing. Reading `for`
+      -- as the kit signal got a few rows right for the wrong reason and left the
+      -- `of`-phrased ones — hit-the-japs, twin-six-2 — typed `conversion`.
       WHEN regexp_matches(q.lineage_sentence,
-             '(?i)conversion of|conversion for|converted (game )?(for|from)') THEN 'conversion'
+             '(?i)conversion (of|for)|converted (game )?(for|from)')
+           AND kit_corroborated                                                THEN 'conversion_kit'
+      WHEN regexp_matches(q.lineage_sentence,
+             '(?i)conversion (of|for)|converted (game )?(for|from)')           THEN 'conversion'
       WHEN regexp_matches(q.lineage_sentence, '(?i)repaint of')                THEN 'retheme'
       ELSE 'copy'
     END AS relationship_type,
@@ -695,7 +877,19 @@ CREATE OR REPLACE VIEW _green_scored AS
         THEN 'licensed'
       ELSE 'unknown'
     END AS license_status,
-    q.lineage_sentence AS quote,
+    -- The quote. For a kit row it is TWO spans joined by the ` [...] ` omission
+    -- marker: the lineage sentence, then the sentence that names the kit. Both are
+    -- verbatim and in source order, which is exactly what verify_quotes.py's
+    -- multi-span check requires, so the cite proves BOTH halves of the claim —
+    -- the donor and the kit-ness — instead of asking a reader to trust the
+    -- classifier for the half the first sentence doesn't say.
+    CASE
+      WHEN relationship_type = 'conversion_kit'
+           AND kit_corroborated
+           AND NOT regexp_matches(q.lineage_sentence, '(?i)conversion kit')
+        THEN q.lineage_sentence || ' [...] ' || q.kit_sentence
+      ELSE q.lineage_sentence
+    END AS quote,
     CASE
       -- component-copy: the note says a COMPONENT resembles another game, not the
       -- machine. The asset noun must PRECEDE the verb — an asset noun after it is
@@ -712,6 +906,41 @@ CREATE OR REPLACE VIEW _green_scored AS
       WHEN regexp_matches(q.lineage_sentence,
              '(?i)not identical|not a copy|not a conversion|isn''t|is not (a |an )?(copy|conversion)')
         THEN 'negated'
+      -- SAME-MAKER TARGET: the row would claim a model is a COPY of a game by its
+      -- OWN maker. A copy reproduces ANOTHER maker's design, so this is never the
+      -- edge to author — it is a variant, a reissue, or a chain link the note names
+      -- on the way to the real original (INDER's flip-vi and mundial-90 each say
+      -- they are "the same game as" the other; Williams' cue-tee says it of Williams'
+      -- star-pool). This is TOOL-NOTES DEFECT 3, where the absence of the rule
+      -- produced a confident false accusation against correct catalog data; the AI
+      -- sweep gained a `same-maker-target` disposition for it and the SQL tier had
+      -- no equivalent until now.
+      --
+      -- TYPE-SPECIFIC, mirroring flipcommons' RELATIONSHIP_TYPE_BEHAVIOR and the
+      -- sweep's `_OTHER_MAKER_TYPES` rather than inventing a rule: only `copy`
+      -- demands a different maker. An in-house `conversion` / `conversion_kit` is
+      -- real work, and a `retheme` is routinely a maker re-skinning its own machine.
+      --
+      -- Compared with `=`, not IS NOT DISTINCT FROM: two models with an UNKNOWN maker
+      -- are not thereby the same maker, so a NULL on either side falls through and
+      -- the row is judged on its prose instead of rejected on a non-fact.
+      --
+      -- Ordered ahead of the prose-quality reasons and of `reciprocal-pair`: those
+      -- describe how the sentence reads, while this says the row's TYPE is wrong
+      -- whatever the sentence says, which is the more actionable diagnosis. (The
+      -- INDER pair is both same-maker and reciprocal; "not a copy, a variant" tells
+      -- the reviewer more than "which came first".)
+      WHEN relationship_type = 'copy' AND t.manufacturer_slug = c.maker_slug
+        THEN 'same-maker-target'
+      -- ...and the mirror image: an asset noun the phrase reaches through "of the".
+      -- "It is a copy of the backglass for Gottlieb's 1975 'El Dorado'" puts the noun
+      -- AFTER the verb, where the rule below cannot see it, and the row read as a
+      -- machine copy. Anchored by anchor_component_after_phrase.
+      WHEN regexp_matches(q.lineage_sentence,
+             '(?i)(copy|version|reproduction|conversion|modification|adaptation) of the '
+             || '(backglass|artwork|art work|playfield|cabinet|layout|score ?card'
+             || '|plastics|backdrop)')
+        THEN 'component-copy'
       WHEN regexp_matches(q.lineage_sentence,
              '(?i)(backglass|artwork|art work|playfield|cabinet|layout|score ?card|plastics'
              || '|glass|flipper|backdrop|advert|\bad\b)'
@@ -724,7 +953,16 @@ CREATE OR REPLACE VIEW _green_scored AS
              -- the new phrasings attract their own hedges: IPDB writes "appears
              -- identical to" and "looks identical to" as readily as "appears to be".
              || '|appears (to|identical)|looks identical|very similar|seems to|may be|might be'
-             || '|likely|reportedly|believed|thought to be|said to be')
+             || '|likely|reportedly|believed|thought to be|said to be'
+             -- the hedges "same game as" attracts. IPDB writes "essentially the same
+             -- game as Automat" and "was advertised as being the same game as
+             -- Rock-ola's 1938 'Three Up'" — the second is a period ADVERTISING claim,
+             -- which is evidence of what the maker said, not of what the machine is,
+             -- and a quote reading "was advertised as" visibly undercuts the flat edge
+             -- it would be cited for. Every live specimen today is also same-maker, so
+             -- these fire only for a future cross-maker row; they are here so that row
+             -- gets a human read rather than an author-blind pass.
+             || '|essentially|basically|virtually|advertised as')
         THEN 'hedged'
       -- reverse-direction: the prose test, plus the STRUCTURAL one. A model that is
       -- already the target of somebody's edge is very likely the original being
@@ -748,6 +986,55 @@ CREATE OR REPLACE VIEW _green_scored AS
              JOIN models m2 ON m2.id = qr.model_id
              WHERE m2.slug = c.target_guess[1] AND qr.target_slug = c.slug)
         THEN 'reciprocal-pair'
+      -- KIT OR CONVERSION, undecided. The "for" preposition types a row
+      -- `conversion_kit`, but only where the note corroborates it. Two shapes fail
+      -- that and are held for a human read rather than typed on the preposition:
+      --   * no kit language anywhere in the note (Siegfried Schumacher's
+      --     wer-zahlt-die-runde: "a conversion for ... 'Turf' and ... 'Clipper'",
+      --     then only "This conversion could come with or without pop bumpers") —
+      --     nothing establishes whether a machine or a kit was sold.
+      --   * the note says the MAKER PERFORMED the conversion and later sold a kit
+      --     (Glickman ×17: "Initially, Glickman would perform the conversion for the
+      --     operator ... By June of 1943, they advertised it only as a conversion
+      --     kit"). Both are true of different periods, and picking one is a judgement
+      --     about which the catalog should record, not a phrase match.
+      WHEN regexp_matches(q.lineage_sentence, '(?i)conversion (of|for)|converted (game )?(for|from)')
+           AND (
+             -- "a conversion FOR X" is the kit preposition, so a `for` row with no kit
+             -- sentence to corroborate it is unresolved, not a plain conversion.
+             (regexp_matches(q.lineage_sentence, '(?i)conversion for|converted (game )?for')
+              AND NOT kit_corroborated)
+             -- the maker PERFORMED the conversion and later sold a kit — both true of
+             -- different periods, and picking one is a judgement, not a phrase match.
+             OR regexp_matches(q.note_norm, '(?i)(perform|performing|performed) the conversion'))
+        THEN 'kit-or-conversion-unclear'
+      -- SUBJECT NOT THIS MODEL. The claim in the sentence attaches to another machine
+      -- the note names on the way past: "They started with Moon Shot in January 1963,
+      -- a blatant copy of Gottlieb's 1962 'Tropic Isle'" is about Moon Shot, and
+      -- "Note the similarity to Genco's 1932 'Jiggers (Jr)', itself a copy of Bally's
+      -- 1932 'Goofy (Junior)'" is about Jiggers. Both produce a verbatim quote for a
+      -- claim the subject never made, which no amount of quote-checking would catch.
+      --
+      -- The test is the run-up: how much sentence sits BEFORE the lineage phrase. A
+      -- note describing ITSELF gets there in a few words — "This is a", "A", "Same
+      -- game as", "'Grand Canyon' was a World War II" — while a note that has to
+      -- introduce another machine first cannot. Over 40 characters of run-up means
+      -- something else is being talked about, UNLESS the run-up names this model,
+      -- which is how a long self-referential opener stays in. A blunt instrument, but
+      -- it is measuring the right thing and it errs toward a human read.
+      WHEN length(regexp_replace(q.lineage_sentence,
+                    '(?i)(' || _copy_phrase_re() || '|' || _conv_phrase_re() || ').*$', '')) > 40
+           AND _title_key(regexp_replace(q.lineage_sentence,
+                 '(?i)(' || _copy_phrase_re() || '|' || _conv_phrase_re() || ').*$', ''))
+               NOT LIKE '%' || _title_key(c.name) || '%'
+           -- ...nor says, in words, that it means THIS game. A long run-up is usually
+           -- another machine being introduced, but it can also be an attribution
+           -- clause: "According to the Encyclopedia of Pinball Vol 2 page 107, this
+           -- game is a copy of ..." is 56 characters of run-up about itself, and it
+           -- belongs to `book-source` below, not here.
+           AND NOT regexp_matches(q.lineage_sentence,
+                 '(?i)^[^.]{0,120}\b(this game|this is|this machine|it is)\b')
+        THEN 'subject-not-this-model'
       WHEN c.mentions_book_source
         THEN 'book-source'
       WHEN q.lineage_sentence LIKE '%' || chr(65533) || '%'
@@ -869,6 +1156,13 @@ CREATE OR REPLACE VIEW relationships_summary AS
   UNION ALL SELECT 'green_rej_no_quote',        count(*) FILTER (WHERE reject_reason = 'no-quote-extracted') FROM relationship_green_rejected
   UNION ALL SELECT 'green_rej_negated',         count(*) FILTER (WHERE reject_reason = 'negated')            FROM relationship_green_rejected
   UNION ALL SELECT 'green_rej_reciprocal',      count(*) FILTER (WHERE reject_reason = 'reciprocal-pair')    FROM relationship_green_rejected
+  -- Would-be COPY edges pointing at the subject's OWN maker — a category error, not a
+  -- weak row. Mostly "same game as" notes, where a maker restating its own game under
+  -- a new name is the dominant use of the phrase.
+  -- "conversion for X" rows the note does not settle as kit or converted machine.
+  UNION ALL SELECT 'green_rej_kit_unclear',       count(*) FILTER (WHERE reject_reason = 'kit-or-conversion-unclear') FROM relationship_green_rejected
+  UNION ALL SELECT 'green_rej_other_subject',   count(*) FILTER (WHERE reject_reason = 'subject-not-this-model') FROM relationship_green_rejected
+  UNION ALL SELECT 'green_rej_same_maker',       count(*) FILTER (WHERE reject_reason = 'same-maker-target')  FROM relationship_green_rejected
   -- The structural (prose-free) queue, and the share of it the phrasebook cannot see.
   -- A rising `namesake_unseen_by_text` is the signal that the phrasebook has another
   -- gap worth reading for.
@@ -934,6 +1228,72 @@ CREATE OR REPLACE VIEW relationships_checks AS
   UNION ALL SELECT 'title_key_accent_significant', NULL::BIGINT,
                    'Competicion / Competición no longer key alike'
             WHERE _title_key('Competicion Penalty') <> _title_key('Competición Penalty')
+  -- Domain: the lineage sentence must be ABOUT this model. A note that mentions
+  -- another machine and then makes the claim about THAT one ("Note the similarity to
+  -- Genco's 1932 'Jiggers (Jr)', itself a copy of Bally's 1932 'Goofy (Junior)'")
+  -- yields a perfectly verbatim quote for a claim the subject never made.
+  UNION ALL SELECT 'anchor_subject_not_this_model', NULL::BIGINT,
+                   'bounty-2 is no longer held as subject-not-this-model'
+            FROM _green_scored g
+            WHERE g.slug = 'bounty-2'
+              AND g.reject_reason IS DISTINCT FROM 'subject-not-this-model'
+  -- Domain: an asset noun AFTER the verb is still a component claim when the phrase
+  -- reaches it through "of the" — "a copy of the backglass for Gottlieb's 1975 'El
+  -- Dorado'" is a backglass, not a machine. The original component filter only looked
+  -- for the noun BEFORE the verb.
+  UNION ALL SELECT 'anchor_component_after_phrase', NULL::BIGINT,
+                   'turfe is no longer held as component-copy'
+            FROM _green_scored g
+            WHERE g.slug = 'turfe' AND g.reject_reason IS DISTINCT FROM 'component-copy'
+  -- Resolution: the YEAR IPDB writes before a quoted title must disambiguate it.
+  -- "'Hit The Japs' was a conversion of Gottlieb's 1940 'Gold Star'" names one machine,
+  -- but the catalog has seven Gold Stars, so a name-only resolver returned seven
+  -- guesses and the row left the shortlist through the exactly-one-target gate —
+  -- invisible, with no reject reason to show for it. The foundation's own matching
+  -- guidance is name + maker + year for exactly this reason.
+  UNION ALL SELECT 'anchor_year_qualified_target', NULL::BIGINT,
+                   'hit-the-japs does not resolve to the single 1940 Gold Star'
+            FROM relationship_candidates c
+            WHERE c.slug = 'hit-the-japs' AND c.target_guess <> ['gold-star-2']
+  -- Domain: IPDB's 1940s "was a conversion FOR X" is a KIT, not a converted machine.
+  -- The preposition carries it — a kit is sold FOR a donor, a machine is a conversion
+  -- OF one — and every one of the 22 notes in this cohort says so outright in the
+  -- sentence AFTER the lineage claim ("The earliest mention we have found for this
+  -- conversion kit is..."). The classifier reads only the extracted sentence, so that
+  -- corroboration sat just outside its view and three kits shipped typed
+  -- `conversion`. Anchored on the specimen, conditioned on it still being a shortlist
+  -- row so authoring its edge doesn't fire this.
+  UNION ALL SELECT 'anchor_conversion_for_is_kit', NULL::BIGINT,
+                   'slap-the-japs no longer types as conversion_kit'
+            FROM _green_scored g
+            WHERE g.slug = 'slap-the-japs' AND g.relationship_type <> 'conversion_kit'
+  -- Vocabulary: a POSSESSIVE inside a quoted title must not truncate it. IPDB writes
+  -- 'Star''s Phoenix' with straight quotes, and a closing-quote class that accepts the
+  -- possessive apostrophe reads it as the title "Star" — which resolves to a DIFFERENT
+  -- maker's real model and shipped into the certain tier as a cross-maker copy of a
+  -- game the note never mentions. (The true referent, Zaccaria''s own Star''s Phoenix,
+  -- is same-maker and would have been held out.) The same shape truncated 'Dealer''s
+  -- Choice' to Dealer, 'Queen''s Castle' to Queen and 'Joker''s Wild' to Joker.
+  UNION ALL SELECT 'quoted_title_possessive_truncation', NULL::BIGINT,
+                   'new-stars-phoenix resolves the truncated title Star'
+            WHERE EXISTS (
+              SELECT 1 FROM _quoted_resolved qr JOIN models m ON m.id = qr.model_id
+              WHERE m.slug = 'new-stars-phoenix' AND qr.target_slug = 'star')
+  -- Domain: no green row claims a model is a COPY of its own maker's game. A copy
+  -- reproduces ANOTHER maker's design (flipcommons' RELATIONSHIP_TYPE_BEHAVIOR; the
+  -- sweep's _OTHER_MAKER_TYPES), so a same-maker "copy" is a category error — the row
+  -- is a variant, a reissue, or a chain link the note mentions on the way to the real
+  -- original. The campaign already paid for this once as TOOL-NOTES DEFECT 3, a false
+  -- accusation against correct catalog data; the sweep gained a `same-maker-target`
+  -- disposition and this is the SQL tier's equivalent. Conversion / conversion_kit /
+  -- retheme are deliberately NOT tested: an in-house conversion is real, and a maker
+  -- re-skinning its own machine is normal.
+  UNION ALL SELECT 'green_same_maker_copy', g.id, g.slug || ' -> ' || g.target_machine
+            FROM relationship_green g
+            JOIN models s ON s.id = g.id
+            JOIN models t ON t.slug = g.target_machine
+            WHERE g.relationship_type = 'copy'
+              AND t.manufacturer_slug = s.manufacturer_slug
   -- Discipline: no NEW uncited authorization claim. A licensed/unlicensed edge
   -- asserts something a bare "copy of" note cannot establish, so it must carry
   -- evidence. The four pre-rule rows are held in _rel_uncited_licensed_known so this
@@ -986,13 +1346,27 @@ CREATE OR REPLACE VIEW relationships_checks AS
                    ('customized_version','customi[sz]ed version of'),
                    ('modification_of',   'a modification of'),
                    ('adaptation_of',     'an adaptation of|adapted from'),
-                   ('same_design_as',    'same design as')
+                   ('same_design_as',    'same design as'),
+                   ('same_game_as',      'same game as')
                  ) AS p(name, re)
             WHERE NOT EXISTS (
               SELECT 1 FROM _rel_signal s
               WHERE regexp_matches(lower(concat_ws(' ', coalesce(s.notes, ''),
                                                         coalesce(s.notable_features, ''),
                                                         coalesce(s.description, ''))), p.re))
+  -- Anchor: the same-maker guard still fires on the specimen that motivated it —
+  -- INDER's Flip-VI, whose note says it is "the same game as INDER's 1990 'Mundial
+  -- 90'". The invariant above proves no same-maker copy REACHES the green tier, which
+  -- a guard that had silently stopped firing would also satisfy if nothing else in the
+  -- corpus tripped it; this proves the guard itself is alive. Conditioned on the
+  -- specimen still being an unedged shortlist row, because authoring its edge (or
+  -- retyping it as the variant it actually is) legitimately removes it.
+  UNION ALL SELECT 'anchor_same_maker_guard', NULL::BIGINT,
+                   'flip-vi is no longer disqualified as same-maker-target'
+            WHERE EXISTS (SELECT 1 FROM _green_scored WHERE slug = 'flip-vi')
+              AND NOT EXISTS (
+                SELECT 1 FROM _green_scored
+                WHERE slug = 'flip-vi' AND reject_reason = 'same-maker-target')
   -- Calibration: the namesake window must keep tracking reality. If cross-country
   -- namesake pairs at a 1-3 year gap ever stop being meaningfully more linked than
   -- distant ones, the window is no longer evidence of anything and the view is

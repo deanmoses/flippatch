@@ -2830,15 +2830,17 @@ CREATE OR REPLACE VIEW export_checks AS
   FROM export_merge_backlog m
   WHERE len(COALESCE(m.edge_types, [])) = 0
   UNION ALL
-  -- Anchor: the merge backlog still sees the worked example. Recel's 'Cavalier' and
-  -- Petaco's 'Cavalier' carry an `export_edition_of` edge and sit in two singleton
-  -- Titles — the finished-edge / unfinished-Title shape this view exists to surface.
-  -- Expected to FIRE once that merge is authored; retire the anchor with the merge.
+  -- Anchor: the merge backlog still sees a worked example. Petaco's 'Criterium 75' and
+  -- Recel's carry an `export_edition_of` edge and sit in two Titles — the
+  -- finished-edge / unfinished-Title shape this view exists to surface. It succeeds
+  -- 'Cavalier', whose merge is authored (the doomed Title holds a second model here,
+  -- so this pair is not the simple case and outlives the singleton tranche).
+  -- Expected to FIRE once that merge is authored; re-anchor or retire with it.
   SELECT 'anchor_merge_backlog_dark', NULL::BIGINT,
-         'cavalier / cavalier-2 no longer appears in export_merge_backlog'
-  WHERE EXISTS (SELECT 1 FROM models WHERE slug = 'cavalier-2')
+         'criterium-75-3 / criterium-75 no longer appears in export_merge_backlog'
+  WHERE EXISTS (SELECT 1 FROM models WHERE slug = 'criterium-75-3')
     AND NOT EXISTS (SELECT 1 FROM export_merge_backlog
-                     WHERE 'cavalier-2' IN (a_slug, b_slug))
+                     WHERE 'criterium-75-3' IN (a_slug, b_slug))
   UNION ALL
   -- ── bare numeric slugs ───────────────────────────────────────────────────
   -- Guard: a trailing number that is NOT a placeholder must never be called one. Two
