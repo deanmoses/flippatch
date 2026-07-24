@@ -32,3 +32,8 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+
+# DuckDB (analysis scratch/browse databases)
+*.duckdb
+*.duckdb.wal
+*.duckdb.tmp/
