@@ -46,19 +46,19 @@ SELECT * FROM (VALUES
   -- property in 2022…" is a physical sign at a factory. Nothing here excludes it, and
   -- nothing needs to: a sign has no issue date beside it, so it cannot resolve an issue
   -- and cannot become a citation. The identity requirement is the guard, not the alias.
-  ('Billboard',                 'magazine', '(?:The )?Billboard|\bBB [0-9]'),
-  ('Cash Box',                  'magazine', '(?:The )?Cash Box'),
-  ('Automatic Age',             'magazine', 'Automatic Age'),
-  ('Coin Machine Digest',       'magazine', 'Coin Machine Digest'),
-  ('Coin Machine Journal',      'magazine', '(?:The )?Coin Machine Journal'),
-  ('Automatic World',           'magazine', 'Automatic World'),
-  ('Coin Machine Review',       'magazine', 'Coin Machine Review'),
-  ('Coin Machine Herald',       'magazine', 'Coin Machine Herald'),
-  ('Vending Times',             'magazine', 'Vending Times'),
-  ('Amusement Business',        'magazine', 'Amusement Business'),
-  ('Automatic Merchandiser',    'magazine', 'Automatic Merchandiser'),
-  ('Loose Change',              'magazine', 'Loose Change'),
-  ('Play Meter',                'magazine', 'Play ?Meter'),
+  ('Billboard',                 'periodical', '(?:The )?Billboard|\bBB [0-9]'),
+  ('Cash Box',                  'periodical', '(?:The )?Cash Box'),
+  ('Automatic Age',             'periodical', 'Automatic Age'),
+  ('Coin Machine Digest',       'periodical', 'Coin Machine Digest'),
+  ('Coin Machine Journal',      'periodical', '(?:The )?Coin Machine Journal'),
+  ('Automatic World',           'periodical', 'Automatic World'),
+  ('Coin Machine Review',       'periodical', 'Coin Machine Review'),
+  ('Coin Machine Herald',       'periodical', 'Coin Machine Herald'),
+  ('Vending Times',             'periodical', 'Vending Times'),
+  ('Amusement Business',        'periodical', 'Amusement Business'),
+  ('Automatic Merchandiser',    'periodical', 'Automatic Merchandiser'),
+  ('Loose Change',              'periodical', 'Loose Change'),
+  ('Play Meter',                'periodical', 'Play ?Meter'),
   -- Case-sensitivity protects 'RePlay' the magazine from 'replay' the gameplay noun,
   -- and it also rejected 'Replay Magazine' — the correct title, differently cased. The
   -- alias carries both spellings, but the second REQUIRES the word "magazine": a bare
@@ -66,16 +66,16 @@ SELECT * FROM (VALUES
   -- "Replay and Regular (Novelty Play) models" and "Replay version is Williams' 1966
   -- 'Full House'" are the capitalised gameplay noun. They all landed in the drop pile,
   -- so nothing downstream broke — which is precisely why it would have gone unnoticed.
-  ('RePlay',                    'magazine', 'RePlay|Replay [Mm]agazine'),
-  ('Coin Slot',                 'magazine', '(?:The )?Coin Slot'),
-  ('GameRoom Magazine',         'magazine', 'Game ?Room(?: [Mm]agazine)?'),
-  ('PinGame Journal',           'magazine', 'PinGame Journal'),
-  ('Pinball Trader Newsletter', 'magazine', 'Pinball Trader'),
-  ('Pinhead Classified',        'magazine', 'Pinhead Classified'),
-  ('Coin Drop International',   'magazine', 'Coin Drop International'),
-  ('Canadian Coin Box',         'magazine', 'Canadian Coin Box'),
-  ('Coin-Op Newsletter',        'magazine', 'Coin-?Op Newsletter'),
-  ('Pinball Magazine',          'magazine', 'Pinball Magazine'),
+  ('RePlay',                    'periodical', 'RePlay|Replay [Mm]agazine'),
+  ('Coin Slot',                 'periodical', '(?:The )?Coin Slot'),
+  ('GameRoom Magazine',         'periodical', 'Game ?Room(?: [Mm]agazine)?'),
+  ('PinGame Journal',           'periodical', 'PinGame Journal'),
+  ('Pinball Trader Newsletter', 'periodical', 'Pinball Trader'),
+  ('Pinhead Classified',        'periodical', 'Pinhead Classified'),
+  ('Coin Drop International',   'periodical', 'Coin Drop International'),
+  ('Canadian Coin Box',         'periodical', 'Canadian Coin Box'),
+  ('Coin-Op Newsletter',        'periodical', 'Coin-?Op Newsletter'),
+  ('Pinball Magazine',          'periodical', 'Pinball Magazine'),
   -- ── books ──
   -- 'EOP' is IPDB's own abbreviation for the Encyclopedia.
   ('The Encyclopedia of Pinball',    'book', '(?:The )?Ency[cl]+opedia of Pinball|\bEOP\b'),
@@ -285,30 +285,41 @@ SELECT * FROM (VALUES
 -- title, so an exact join reports half the seeded book shelf as missing and would send
 -- an author to create duplicate roots for works already there.
 --
--- Every attribute is taken from ONE row via `argMin`, not from independent `any_value`
--- calls. That earlier form let a work's name come from one seeded record and its ISBN
--- from another: "The Pinball Compendium" resolved to the name of the 1982 volume paired
--- with the ISBN of the 1930s–1960s one. `n_roots > 1` still flags the ambiguity, but the
--- row it shows is now at least internally consistent.
+-- Every attribute is co-drawn from ONE row, via a single `argMin` over a STRUCT — not
+-- three independent `argMin`s. The independent form was still wrong: `arg_min(arg, val)`
+-- ignores rows whose VALUE argument is NULL, independently per call, so `argMin(name, id)`
+-- and `argMin(isbn, id)` could resolve to different roots. "The Pinball Compendium" showed
+-- the name of the 1982 volume (the min-id root) beside the ISBN of the 1930s–1960s one,
+-- because the 1982 root carries a NULL isbn and the isbn call skipped it. A struct is a
+-- non-NULL value as long as its row exists, so all three fields come from the same min-id
+-- root — genuinely consistent, which is what the old comment only claimed. `n_roots > 1`
+-- still flags that the row is one of several; downstream trusts `root_isbn` only at
+-- `n_roots = 1`, so a NULL isbn on a multi-root min row is correct, not a regression.
 --
 -- Reads citation_sources (filtered to roots) rather than citation_roots, because the
 -- authored `slug` — the left half of a `<root>:<issue>` cite — lives only on the former.
 CREATE OR REPLACE VIEW citation_seeded AS
-SELECT
-  v.work,
-  v.work_type,
-  count(DISTINCT r.citation_source_id)                                     AS n_roots,
-  argMin(r.citation_source_name, r.citation_source_id)                     AS seeded_as,
-  argMin(r.slug,                 r.citation_source_id)                     AS root_slug,
-  argMin(r.isbn,                 r.citation_source_id)                     AS root_isbn
-FROM pub_vocab v
-LEFT JOIN citation_sources r
-  ON r.is_root
-  AND r.citation_source_type = v.work_type
-  AND (r.citation_source_name = v.work
-       OR starts_with(r.citation_source_name, v.work || ':')
-       OR starts_with(r.citation_source_name, v.work || ','))
-GROUP BY v.work, v.work_type;
+WITH agg AS (
+  SELECT
+    v.work,
+    v.work_type,
+    count(DISTINCT r.citation_source_id) AS n_roots,
+    argMin({'name': r.citation_source_name, 'slug': r.slug, 'isbn': r.isbn},
+           r.citation_source_id)         AS root
+  FROM pub_vocab v
+  LEFT JOIN citation_sources r
+    ON r.is_root
+    AND r.citation_source_type = v.work_type
+    AND (r.citation_source_name = v.work
+         OR starts_with(r.citation_source_name, v.work || ':')
+         OR starts_with(r.citation_source_name, v.work || ','))
+  GROUP BY v.work, v.work_type
+)
+SELECT work, work_type, n_roots,
+  root.name AS seeded_as,
+  root.slug AS root_slug,
+  root.isbn AS root_isbn
+FROM agg;
 
 -- ── Self-test ────────────────────────────────────────────────────────────────
 -- Empty when healthy. The first group is data-independent; the last two read the corpus

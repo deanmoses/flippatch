@@ -34,7 +34,7 @@ For testing this, blow the localhost dev db away, replace with `/Users/moses/dev
 Recent enhancements make this possible now:
 
 - **Multi-cite support**. One `cite:` can take a **list**, and every citation in it attaches to every claim the entry asserts.
-- **Magazine roots are seeded**. `0041-citation-sources.yaml` declares every magazine root we think is in IPDB: Billboard, Cash Box etc, each with the `slug:` that the cite form addresses.
+- **Periodical roots are seeded**. `0041-citation-sources.yaml` declares every periodical root we think is in IPDB: Billboard, Cash Box etc, each with the `slug:` that the cite form addresses.
 - **Book roots are seeded**. Every book that we think IPDB cites already has a root — Encyclopedia of Pinball Vol 1 & 2, the Compendium volumes, etc. Watch for the edition trap below.
 - **Better analytics**. We have a DuckDB-based analytics layer now. See [analysis](#analysis) for the custom views already built to support this particular campaign.
 
@@ -45,13 +45,13 @@ If we find that we need to add new root citation sources, put them in `0041-cita
 **The campaign is a small fraction of the corpus, and conflating the two is the easiest way to mis-plan this work.** Three views answer three different questions, in descending size:
 
 ```bash
-make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_rows;"        # every citable print reference
+make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_rows;"        # every emittable print reference
 make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_candidates;"  # the worklist
 ```
 
 | view                      | question                                                                            |
 | ------------------------- | ----------------------------------------------------------------------------------- |
-| `citation_rows`           | every citable print reference in `ipdb_notes`, whether or not anything can carry it |
+| `citation_rows`           | every emittable print reference in `ipdb_notes`, whether or not anything can carry it |
 | `citation_orphans`        | those no rewritable patch entry can carry — the [follow-up campaign](#follow-ups)   |
 | **`citation_candidates`** | **the worklist**: patch entries whose own recorded quote contains the reference     |
 
@@ -106,9 +106,11 @@ make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_
 | view                                 | what it answers                                                                                     |
 | ------------------------------------ | --------------------------------------------------------------------------------------------------- |
 | `citation_candidates`                | **the worklist** — patch entries whose own quote contains a print reference                         |
+| `citation_pending_candidates`        | the worklist **minus entries a re-ingest already fixed** — the idempotent worklist to author from   |
 | `citation_orphans`                   | emittable citations no rewritable entry can carry ([follow-ups](#follow-ups))                       |
 | `citation_rows`                      | every emittable citation in the corpus, one row per cite, with a verbatim quote                     |
-| `citation_issues`                    | the distinct magazine issues to declare — **one row per `sources:` node**, slugged, named and dated |
+| `citation_issues`                    | the distinct periodical issues to declare — **one row per `sources:` node**, slugged, named and dated |
+| `citation_candidate_sources`         | just the `sources:` nodes **the worklist needs**, with the earliest patch that should declare each  |
 | `citation_summary`                   | one row per work: is it seeded, root slug, ISBN, how many mentions are emittable                    |
 | `citation_dropped`                   | the drop pile **with a reason** — read this before trusting the emittable count                     |
 | `citation_vocab_gaps`                | citation-shaped phrases the vocabulary misses and nobody has ruled on                               |
@@ -122,7 +124,7 @@ Declarative tables hold every pattern and every judgment: `pub_vocab` (which wor
 
 Several tables are materialized rather than left as views (`pub_notes_src`, `pub_mentions`, `pub_mention_shapes`, `mention_resolved`, `pub_candidates`); a run costs tens of seconds because of it. That is deliberate — every answer reads the mention grain repeatedly, and as views each re-ran the whole corpus scan.
 
-**Source text is canonicalized once**, in `pub_notes_src` via `text_norm`. Every whitespace run becomes a single character: a space, or a newline where the run contained a blank line. So `\n` means "paragraph break" and nothing else, and no run is ever longer than one character — which is what makes the sentence regexes single-character affairs instead of variable-length classes that can be consumed partially. The blank line is kept rather than flattened because it is the only thing bounding a colon-led list, which has no sentence punctuation at all. Quotes stay verifiable because `verify_quotes.normalize` collapses whitespace on both sides before comparing, and no emitted quote contains a newline.
+**Source text is canonicalized once**, in `pub_notes_src` via `text_norm`. Every whitespace run becomes a single character: a space, or a newline where the run contained a blank line. So `\n` means "paragraph break" and nothing else, and no run is ever longer than one character — which is what makes the sentence regexes single-character affairs instead of variable-length classes that can be consumed partially. The blank line is kept rather than flattened because it is the only thing bounding a colon-led list, which has no sentence punctuation at all. Quotes stay verifiable because `verify_quotes.normalize` collapses whitespace on both sides before comparing — including the paragraph newline a quote retains when it legitimately spans a colon-led list into the following line (so a quote _can_ contain one; `gridiron` does). What the length-1 guarantee rules out is not a newline in a quote but a whitespace _run_ being consumed partially — the 917-character runaway.
 
 **One drop ladder, in one place.** `mention_resolved.drop_reason` is the single emittability predicate; `NULL` means emittable. An earlier build repeated that predicate across four views and the gate, where they agreed by luck rather than construction.
 
@@ -148,6 +150,8 @@ Every `*_checks` view is about **machinery health, not data opinions**: each fai
 - **A bare year is not an issue.** Billboard was a weekly; `billboard:1940` addresses nothing a reader could check. Every such row turned out to be a parse failure with the real date sitting in the same sentence.
 - **Two-digit years are deliberately unsupported.** IPDB does write `BB 4/17/43 pg 67`, but `mm/dd/yy` appears in 183 models and nearly all are manufacture dates in ordinary prose (`made on 02/20/50`). A rule would harvest those into citations and would have to invent a century to do it. That one row drops as `no parsable date` — the safe failure.
 - **Datelines are too noisy to validate against — measured and rejected.** Billboard and Cash Box were Saturday-dated weeklies, but the corpus runs ~9% off-dateline, so a weekday rule would drop tens of probably-good rows to catch one known-bad one.
+- **A date beside a publication name can be a search boundary, not a citation.** IPDB records its own negative findings in the same prose shape as its positive ones: "We searched Billboard through May 1962 but found no picture ads after March" names an issue that does *not* contain the fact. Rare — a couple of rows in the whole corpus — but they read exactly like citations, and they are worth an eye when authoring from `citation_orphans`. Deliberately not detected: the obvious regex flags far more good rows than bad, because a positive citation often carries an unrelated caveat ("is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted"), and `framing` cannot see it either — a negative finding has no assert verb, so it lands in `unclassified`.
+- **A month-precision issue is a real issue, not a defect.** "The Billboard article shown here from December 1951" yields `billboard:1951-12`, which for a weekly names several issues. That is the precision of the evidence, and recording it is right for the same reason a page-less cite is: IPDB knew the month. Do not add a publication-frequency rule to filter these — frequency is time-varying (Billboard was a monthly until 1900), which is why Wikidata models it only with time-qualified statements, and it would buy nothing here.
 - **Print scans are not reachable programmatically.** worldradiohistory and ipdb.org both refuse automated fetches, and archive.org's Cash Box collection has no 1962 issues indexed — so resolving a citation against the page itself needs a human with archive access.
 
 ### Judgement calls left open
@@ -157,7 +161,7 @@ Every `*_checks` view is about **machinery health, not data opinions**: each fai
 
 ### The drop pile
 
-`citation_dropped` is one row per drop reason with a count and an example. Read it before trusting any emittable figure — the largest reasons by far are mentions with no locator at all, which is a property of IPDB's prose rather than of the detectors.
+`citation_dropped` is one row per drop reason with a count and an example. Read it before trusting any emittable figure — the largest reasons by far are mentions with no locator at all. That is _partly_ a property of IPDB's prose, but not wholly of it: the forward-only window cannot see a date that sits _before_ the publication name ("the August 1940 issue of Automatic Age"), so scores of periodical mentions with a perfectly good preceding issue date drop, most of them as "no parsable date". (Size it live rather than trusting a number here — count `mention_resolved` rows with a drop reason where `loc_issue_slug(...)` over `lead` resolves; it drifts as the corpus and vocabulary change.) Those are detector misses, not prose gaps — recoverable only by the positional-binding rewrite noted in Traps, and the reason `citation_rows` holds the _emittable_ set, not _every citable_ reference.
 
 ## Open decisions
 
@@ -182,20 +186,20 @@ We are wondering whether we might need script support for the writing. Like an u
 Both magazines and books are fully documented:
 
 - [DataPatches.md → Notes & citations](../../../flipcommons/docs/DataPatches.md) for the grammar.
-- [DataPatchAuthoring.md → Magazine issues](../../../flipcommons/docs/DataPatchAuthoring.md) for the conventions.
+- [DataPatchAuthoring.md → Periodical issues](../../../flipcommons/docs/DataPatchAuthoring.md) for the conventions.
 
 The short version:
 
-### A magazine issue
+### A periodical issue
 
-A magazine is the one **slug-addressed** type: no ISBN, no domain, no scheme key, so its nodes carry an authored `slug`. An issue is its own `sources:` node whose `parent:` names the magazine's slug. Declaring it is required — the cite form **never creates**, and an undeclared pair fails at dry-run.
+A periodical is the one **slug-addressed** type: no ISBN, no domain, no scheme key, so its nodes carry an authored `slug`. An issue is its own `sources:` node whose `parent:` names the periodical's slug. Declaring it is required — the cite form **never creates**, and an undeclared pair fails at dry-run.
 
 ```yaml
 sources:
-  - parent: billboard # the magazine root, already seeded in 0041
+  - parent: billboard # the periodical root, already seeded in 0041
     slug: 1945-09-29
     name: September 29, 1945
-    source_type: magazine
+    source_type: periodical
     year: 1945
     month: 9
     day: 29
@@ -245,7 +249,7 @@ cite:
 
 ### Mining new claims from print-attributed prose
 
-**`citation_orphans` — every citable print reference that no rewritable patch entry can carry.** IPDB notes holding a print-attributed fact that no patch has ever claimed. That is a different campaign from this one — this one adds evidence to claims we already made; that one would mine claims we never made — and it is more than an order of magnitude larger.
+**`citation_orphans` — every emittable print reference that no rewritable patch entry carries.** IPDB notes holding a print-attributed fact that no patch has ever claimed. That is a different campaign from this one — this one adds evidence to claims we already made; that one would mine claims we never made — and it is more than an order of magnitude larger.
 
 The analysis already supports it, deliberately. `citation_rows` is the whole corpus at one row per citation, each with a verbatim quote and a resolved `cite_ref`; `citation_orphans` is that minus anything this campaign will touch. Neither needs the patch layer. A follow-up should read those and **not re-derive the vocabulary, the locator grammar or the quote extraction** — that machinery is in `works.sql`, `locators.sql` and `text.sql`, and is vocabulary-agnostic where it can be.
 

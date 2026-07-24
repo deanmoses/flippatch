@@ -126,7 +126,7 @@ SELECT s.*,
 FROM shaped s;
 
 -- ═══ 3. IDENTITY ═════════════════════════════════════════════════════════════
--- A magazine mention resolves to an ISSUE; a book mention resolves to an EDITION. They
+-- A periodical mention resolves to an ISSUE; a book mention resolves to an EDITION. They
 -- are different resolutions and an earlier build ran both through the issue path, which
 -- was this campaign's worst bug: it required a parsed date of every book row, so 23
 -- perfectly citable book mentions were dropped for "no parsable date" (a book has no
@@ -157,7 +157,7 @@ SELECT *,
   -- A BOOK is exempt: its citation is an ISBN and a page, and the date parsed near the
   -- mention is prose about the game, never part of the reference. Applying the test to
   -- books anyway dropped 8 sound Encyclopedia citations.
-  CASE WHEN work_type <> 'magazine' THEN false
+  CASE WHEN work_type <> 'periodical' THEN false
        WHEN date_shape = 'none' OR page_shape = 'none' THEN false
        WHEN instr(snip, date_value) = 0 OR instr(snip, page_value) = 0 THEN false
        ELSE abs(instr(snip, page_value) - instr(snip, date_value)) > 25
@@ -201,7 +201,10 @@ WITH resolved AS (
   LEFT JOIN LATERAL (
     SELECT b.edition_isbn, b.edition_label FROM book_editions b
     WHERE b.work = s.work AND regexp_matches(s.snip, b.edition_re) LIMIT 1) be ON true
-)
+),
+-- The quote, cite_ref and locator are built here; the drop ladder is computed in the OUTER
+-- select below so it can read `sentence` — the date-in-quote rung needs the built quote.
+built AS (
 SELECT * EXCLUDE (notes),
   -- THE QUOTE. Built here, not with the windows, because it needs the parsed locator:
   -- IPDB splits a citation across sentences often enough to matter ("…were in Cash Box,
@@ -215,7 +218,7 @@ SELECT * EXCLUDE (notes),
          THEN pos + instr(snip, page_value) + len(page_value) - 2
          ELSE pos END
   ) AS sentence,
-  CASE WHEN work_type = 'magazine' AND root_slug IS NOT NULL AND issue_slug IS NOT NULL
+  CASE WHEN work_type = 'periodical' AND root_slug IS NOT NULL AND issue_slug IS NOT NULL
          THEN root_slug || ':' || issue_slug
        WHEN work_type = 'book' AND book_isbn IS NOT NULL
          THEN 'isbn:' || book_isbn
@@ -227,8 +230,11 @@ SELECT * EXCLUDE (notes),
   CASE WHEN page_locator IS NULL THEN NULL
        WHEN work_type = 'book' AND vol_value IS NOT NULL
          THEN regexp_replace(vol_value, '^Vol(?:ume)?\.? ?', 'Vol. ') || ', ' || page_locator
-       ELSE page_locator END AS locator,
-  -- ONE drop ladder, most-specific first. NULL means emittable.
+       ELSE page_locator END AS locator
+  FROM resolved
+)
+-- ONE drop ladder, most-specific first. NULL means emittable.
+SELECT *,
   CASE
     WHEN ambiguous                                     THEN 'two works in window'
     WHEN seeded_as IS NULL                             THEN 'work has no seeded root'
@@ -248,7 +254,7 @@ SELECT * EXCLUDE (notes),
     WHEN work_type = 'book' AND book_isbn IS NULL AND work_has_editions
                                                        THEN 'book volume not named in the mention'
     WHEN work_type = 'book' AND book_isbn IS NULL      THEN 'book has no citable edition seeded'
-    WHEN work_type = 'magazine' AND root_slug IS NULL  THEN 'magazine root has no slug'
+    WHEN work_type = 'periodical' AND root_slug IS NULL  THEN 'periodical root has no slug'
     -- A BARE YEAR IS USUALLY NOT THIS PUBLICATION'S YEAR AT ALL. `bare-year` is the
     -- catch-all date rule and it matches any 4-digit year anywhere in the window, so it
     -- routinely harvests one out of adjacent prose about something else entirely:
@@ -258,14 +264,23 @@ SELECT * EXCLUDE (notes),
     -- citations lacking a month. `bare-year` can never produce an emittable row (a year
     -- alone names no issue), so its only job is telling this reason from 'no parsable
     -- date'.
-    WHEN work_type = 'magazine' AND issue_slug IS NULL AND date_shape = 'bare-year'
+    WHEN work_type = 'periodical' AND issue_slug IS NULL AND date_shape = 'bare-year'
                                                        THEN 'bare year only, no issue date'
-    WHEN work_type = 'magazine' AND issue_slug IS NULL AND date_shape <> 'none'
+    WHEN work_type = 'periodical' AND issue_slug IS NULL AND date_shape <> 'none'
                                                        THEN 'impossible date in source'
-    WHEN work_type = 'magazine' AND issue_slug IS NULL THEN 'no parsable date'
+    WHEN work_type = 'periodical' AND issue_slug IS NULL THEN 'no parsable date'
     WHEN date_page_split                               THEN 'date and page in different clauses'
+    -- The date that minted the issue must survive into the quote a reader checks, or the
+    -- cite addresses an issue its own evidence cannot support. The forward-only window can
+    -- pair a mention with a date from a NEIGHBOURING clause (a movie release date a
+    -- paragraph away), and `sentence_span` reaches only through the page — so a page-less
+    -- periodical row can resolve to an issue whose date sits outside the extracted sentence.
+    -- Drop rather than emit it; recovering these is the positional-binding rewrite, not a
+    -- window tweak. The `sentence_missing_date` gate check is the twin of this rung.
+    WHEN work_type = 'periodical' AND date_value IS NOT NULL AND NOT contains(sentence, date_value)
+                                                       THEN 'issue date not in extractable quote'
   END AS drop_reason
-FROM resolved;
+FROM built;
 
 -- ── THE FRAMING — what does the print source actually attest? ───────────────
 -- A cite attaches to EVERY claim its entry asserts, so before adding one you must know
@@ -335,7 +350,10 @@ CREATE OR REPLACE VIEW citation_scope AS SELECT 38 AS last_ingested_on_prod;
 CREATE OR REPLACE VIEW citation_candidates AS
 SELECT
   pe.patch_id,
+  pe.patch_number,
   pe.changeset_id,
+  pe.subject_type,
+  pe.subject_id,
   pe.model_slug,
   m.ipdb_id,
   pe.fields            AS claim_fields,
@@ -362,17 +380,47 @@ WHERE pe.patch_number > (SELECT last_ingested_on_prod FROM citation_scope)
   AND (m.page_value IS NULL OR contains(pe.quote, m.page_value))
 ORDER BY pe.patch_id, pe.model_slug;
 
--- The orphan population: an emittable print reference on a model that NO patch entry has
--- evidence for. Not this campaign — a rewrite needs an entry to rewrite — but a large,
--- real backlog of print-attributed facts nothing has claimed yet. See the README's
--- Follow-ups section.
+-- EVERY emittable citation in the corpus, ONE ROW PER CITATION — not per mention. A note
+-- can reach the same issue and page from two sentences ("...(Cash Box, Oct-15-1949, page
+-- 20)." and "An article in Cash Box, Oct-15-1949, page 20, states..."), and a generator
+-- reading the mention grain would emit that cite twice. The shortest sentence wins because
+-- it is the tightest quote for the same fact; `n_sentences` says when there was a choice,
+-- so an author can look for a better one. Defined HERE, ahead of `citation_orphans`, because
+-- the orphan population is literally this set minus what a patch entry already carries — one
+-- dedup, in one place, so the two views cannot drift to different grains.
+CREATE OR REPLACE VIEW citation_rows AS
+SELECT
+  slug AS model_slug, ipdb_id, work, work_type, cite_ref, locator,
+  argMin(framing,  length(sentence))          AS framing,
+  argMin(date_shape, length(sentence))        AS date_shape,
+  argMin(page_shape, length(sentence))        AS page_shape,
+  argMin(sentence, length(sentence))          AS sentence,
+  count(*)                                    AS n_sentences
+FROM mention_framing
+WHERE drop_reason IS NULL
+GROUP BY slug, ipdb_id, work, work_type, cite_ref, locator
+ORDER BY work, cite_ref, model_slug;
+
+-- The orphan population: an emittable print reference that NO rewritable patch entry
+-- carries. Not this campaign — a rewrite needs an entry to rewrite — but a large, real
+-- backlog of print-attributed facts nothing has claimed yet. See the README's Follow-ups.
+--
+-- Anti-joined at CITATION grain (model + cite_ref + null-safe locator), NOT model grain.
+-- The model-grain form was wrong twice over: a model carrying one candidate lost EVERY
+-- other reference on it from the backlog (invisible in both views), and reading the mention
+-- grain re-duplicated cites `citation_rows` had already folded. Building on `citation_rows`
+-- and subtracting the exact (model, cite_ref, locator) triples a candidate carries fixes
+-- both — and the `emittable_partitioned` check now guarantees the two views tile.
 CREATE OR REPLACE VIEW citation_orphans AS
-SELECT m.slug AS model_slug, m.ipdb_id, m.work, m.work_type, m.cite_ref, m.locator,
-       m.framing, m.sentence
-FROM mention_framing m
-WHERE m.drop_reason IS NULL
-  AND NOT EXISTS (SELECT 1 FROM citation_candidates c WHERE c.model_slug = m.slug)
-ORDER BY m.work, m.cite_ref, m.slug;
+SELECT r.model_slug, r.ipdb_id, r.work, r.work_type, r.cite_ref, r.locator,
+       r.framing, r.sentence
+FROM citation_rows r
+WHERE NOT EXISTS (
+  SELECT 1 FROM citation_candidates c
+  WHERE c.model_slug = r.model_slug
+    AND c.print_ref = r.cite_ref
+    AND c.print_locator IS NOT DISTINCT FROM r.locator)
+ORDER BY r.work, r.cite_ref, r.model_slug;
 
 -- ═══ 6. ANSWERS ══════════════════════════════════════════════════════════════
 
@@ -388,7 +436,10 @@ SELECT
   sd.work, sd.work_type, sd.seeded_as, sd.root_slug, sd.root_isbn, sd.n_roots,
   count(s.slug)                                        AS mentions,
   count(DISTINCT s.slug)                               AS models,
-  count(*) FILTER (WHERE s.drop_reason IS NULL)        AS emittable
+  -- count(s.slug), NOT count(*): over the LEFT JOIN a zero-mention work yields one
+  -- synthetic all-NULL row whose `drop_reason IS NULL` is vacuously true, and count(*)
+  -- would score it as an emittable citation. Counting the non-NULL slug drops the phantom.
+  count(s.slug) FILTER (WHERE s.drop_reason IS NULL)   AS emittable
 FROM citation_seeded sd
 LEFT JOIN mention_resolved s ON s.work = sd.work
 GROUP BY ALL
@@ -408,7 +459,7 @@ CREATE OR REPLACE VIEW citation_issues AS
 SELECT
   root_slug                                    AS parent,
   issue_slug                                   AS slug,
-  work                                         AS magazine,
+  work                                         AS periodical,
   CASE WHEN iss_season IS NOT NULL
          THEN upper(iss_season[1]) || iss_season[2:] || ' ' || CAST(iss_year AS VARCHAR)
        WHEN iss_day IS NOT NULL
@@ -421,29 +472,12 @@ SELECT
   any_value(iss_day)                           AS day,
   count(DISTINCT slug)                         AS n_models
 FROM mention_resolved
-WHERE drop_reason IS NULL AND work_type = 'magazine'
+WHERE drop_reason IS NULL AND work_type = 'periodical'
 GROUP BY root_slug, issue_slug, work, iss_season, iss_year, iss_month, iss_day
 ORDER BY root_slug, issue_slug;
 
--- D. The emittable per-model rows: every citable print reference in the corpus,
---    regardless of whether a patch entry can carry it. ONE ROW PER CITATION, not per
---    mention — a note can reach the same issue and page from two sentences ("...(Cash
---    Box, Oct-15-1949, page 20)." and "An article in Cash Box, Oct-15-1949, page 20,
---    states..."), and a generator reading the mention grain would emit that cite twice.
---    The shortest sentence wins because it is the tightest quote for the same fact;
---    `n_sentences` says when there was a choice, so an author can look for a better one.
-CREATE OR REPLACE VIEW citation_rows AS
-SELECT
-  slug AS model_slug, ipdb_id, work, work_type, cite_ref, locator,
-  argMin(framing,  length(sentence))          AS framing,
-  argMin(date_shape, length(sentence))        AS date_shape,
-  argMin(page_shape, length(sentence))        AS page_shape,
-  argMin(sentence, length(sentence))          AS sentence,
-  count(*)                                    AS n_sentences
-FROM mention_framing
-WHERE drop_reason IS NULL
-GROUP BY slug, ipdb_id, work, work_type, cite_ref, locator
-ORDER BY work, cite_ref, model_slug;
+-- D. citation_rows — every emittable citation, one row per cite. Defined up in section 5,
+--    ahead of `citation_orphans`, which is built on it (orphans = rows − carried cites).
 
 -- E. The DROP PILE, and why. Nothing here is emittable; the reason is the point.
 --    'two works in window' is the interesting one — a second publication in the window
@@ -476,6 +510,73 @@ SELECT framing, count(*) AS n, count(DISTINCT model_slug) AS models,
        any_value(sentence) AS example
 FROM citation_rows GROUP BY framing ORDER BY n DESC;
 
+-- H. THE `sources:` NODES THE WORKLIST NEEDS — the candidate-scoped slice of
+--    `citation_issues`. `citation_issues` is corpus-wide: every emittable periodical issue,
+--    overwhelmingly ones only orphans rest on — far more than the handful the rewrite
+--    worklist cites (compare `count(*)` of the two). Declare from THIS, not from
+--    `citation_issues`, or you over-seed `0041` by an order of magnitude.
+--
+--    `source_type` and the y/m/d are the `sources:` node fields; `already_seeded` says which
+--    issues are declared already — never re-declare one, the cite form does not create — and
+--    `seeded_name` surfaces a name/date conflict against what is already there. `earliest_patch`
+--    is the lowest-numbered candidate patch resting on the issue: the node must be declared
+--    there or earlier, and `0041-citation-sources.yaml` is the usual home. Books are absent
+--    by design — an `isbn:` cite names an already-seeded edition and needs no node.
+CREATE OR REPLACE VIEW citation_candidate_sources AS
+SELECT
+  i.parent, i.slug, i.periodical,
+  'periodical'                       AS source_type,
+  i.name, i.year, i.month, i.day,
+  count(DISTINCT c.model_slug)       AS n_models,
+  min(c.patch_number)                AS earliest_patch_number,
+  argMin(c.patch_id, c.patch_number) AS earliest_patch,
+  EXISTS (SELECT 1 FROM citation_sources s
+          WHERE s.root_citation_source_slug = i.parent AND s.slug = i.slug) AS already_seeded,
+  (SELECT any_value(s.citation_source_name) FROM citation_sources s
+   WHERE s.root_citation_source_slug = i.parent AND s.slug = i.slug)        AS seeded_name
+FROM citation_candidates c
+JOIN citation_issues i
+  ON i.parent = split_part(c.print_ref, ':', 1)
+ AND i.slug   = split_part(c.print_ref, ':', 2)
+WHERE c.work_type = 'periodical'
+GROUP BY i.parent, i.slug, i.periodical, i.name, i.year, i.month, i.day
+ORDER BY i.parent, i.slug;
+
+-- I. THE WORKLIST, MINUS WHAT A RE-INGEST HAS ALREADY APPLIED. `citation_candidates` keys
+--    off the entry's IPDB cite, and that cite SURVIVES the rewrite — so once a rewritten
+--    patch is re-ingested the candidate reappears though it is done, and the reset/re-ingest
+--    tuning loop keeps re-suggesting finished work. This subtracts any entry already carrying
+--    the EXACT print cite this campaign would add.
+--
+--    Matched by identity, not by root. The completed cite's source is reached by joining
+--    `patch_entry_cites.citation_source_id` to `citation_sources` — which does carry the
+--    child `slug` and the `isbn`, so the match is exact:
+--      * periodical — the child issue source's root slug + issue slug equal the two halves
+--        of `print_ref`, and the locator agrees. Root-only would wrongly retire a Billboard
+--        candidate the moment the entry cited ANY other Billboard issue.
+--      * book — `citation_sources.isbn` equals `print_ref`'s isbn half, locator agreeing.
+--        A book's identifier_key is EMPTY (the ISBN lives in the `isbn` column), so the
+--        earlier `root_identifier_key = 'isbn'` test never fired and every completed book
+--        rewrite stayed pending forever.
+--    Identical to `citation_candidates` until the first rewrite lands; that is the point.
+CREATE OR REPLACE VIEW citation_pending_candidates AS
+SELECT c.*
+FROM citation_candidates c
+WHERE NOT EXISTS (
+  SELECT 1
+  FROM patch_entry_cites done
+  JOIN citation_sources src ON src.citation_source_id = done.citation_source_id
+  WHERE done.changeset_id = c.changeset_id
+    AND done.subject_type = c.subject_type
+    AND done.subject_id   = c.subject_id
+    AND done.locator IS NOT DISTINCT FROM c.print_locator
+    AND ( (c.work_type = 'periodical'
+             AND src.root_citation_source_slug = split_part(c.print_ref, ':', 1)
+             AND src.slug                      = split_part(c.print_ref, ':', 2))
+       OR (c.work_type = 'book'
+             AND src.isbn = split_part(c.print_ref, ':', 2)) ))
+ORDER BY c.patch_id, c.model_slug;
+
 -- ═══ 7. THE GATE ═════════════════════════════════════════════════════════════
 -- What must hold for this analysis to be trustworthy. These are detector-health checks,
 -- not data-quality opinions: each fails when the MACHINERY has broken, which is the
@@ -493,11 +594,11 @@ FROM (SELECT work, count(*) AS n FROM mention_resolved
       GROUP BY work)
 
 UNION ALL
--- A magazine root with no slug cannot be addressed by the `<root>:<issue>` cite form.
-SELECT 'magazine_root_needs_slug', true,
+-- A periodical root with no slug cannot be addressed by the `<root>:<issue>` cite form.
+SELECT 'periodical_root_needs_slug', true,
   work || ' is seeded as ' || seeded_as || ' but carries no slug'
 FROM citation_summary
-WHERE work_type = 'magazine' AND mentions > 0 AND seeded_as IS NOT NULL AND root_slug IS NULL
+WHERE work_type = 'periodical' AND mentions > 0 AND seeded_as IS NOT NULL AND root_slug IS NULL
 
 UNION ALL
 -- A book citation on a multi-root work that named no edition. It cannot be right: with
@@ -538,6 +639,56 @@ SELECT 'sentence_missing_locator', true,
   slug || '/' || work || ': sentence omits the parsed page "' || page_value || '"'
 FROM mention_resolved
 WHERE drop_reason IS NULL AND page_value IS NOT NULL AND NOT contains(sentence, page_value)
+
+UNION ALL
+-- CROSS-VIEW PARTITION. Every emittable citation must be reachable as EITHER a rewrite
+-- candidate or an orphan, and the two must not overlap. The bug this pins: an earlier
+-- `citation_orphans` anti-joined at MODEL grain, so a second reference on a model that
+-- already had one candidate vanished from both populations — neither in the worklist nor
+-- in the follow-up backlog. Keyed on (model, cite_ref, locator), the grain `citation_rows`
+-- dedups to. Detector-health, not opinion: it fails only when the views stop tiling.
+SELECT 'emittable_partitioned', true,
+  count(*) || ' emittable citation(s) in neither citation_candidates nor citation_orphans'
+FROM citation_rows r
+WHERE NOT EXISTS (
+        SELECT 1 FROM citation_candidates c
+        WHERE c.model_slug = r.model_slug AND c.print_ref = r.cite_ref
+          AND c.print_locator IS NOT DISTINCT FROM r.locator)
+  AND NOT EXISTS (
+        SELECT 1 FROM citation_orphans o
+        WHERE o.model_slug = r.model_slug AND o.cite_ref = r.cite_ref
+          AND o.locator IS NOT DISTINCT FROM r.locator)
+HAVING count(*) > 0
+
+UNION ALL
+-- `citation_orphans` must be ONE ROW per (model, cite_ref, locator): a generator reads it
+-- straight, so a duplicate is a double-emitted cite. The earlier view read the MENTION
+-- grain and reproduced the exact multi-sentence duplication `citation_rows` exists to fold.
+SELECT 'orphans_duplicated', true,
+  count(*) || ' duplicate (model, cite_ref, locator) group(s) in citation_orphans'
+FROM (SELECT 1 FROM citation_orphans
+      GROUP BY model_slug, cite_ref, locator HAVING count(*) > 1)
+HAVING count(*) > 0
+
+UNION ALL
+-- A work cannot have more emittable citations than it has mentions. `emittable > mentions`
+-- means the count is tallying a phantom: `count(*) FILTER (drop_reason IS NULL)` over the
+-- LEFT JOIN scores the synthetic all-NULL row of a zero-mention work as emittable.
+SELECT 'summary_emittable_exceeds_mentions', true,
+  work || ': emittable ' || emittable || ' > mentions ' || mentions
+FROM citation_summary WHERE emittable > mentions
+
+UNION ALL
+-- The date twin of `sentence_missing_locator`. An emittable periodical cite mints its issue
+-- from a parsed date; if that date is not in the quote a reader checks, the quote cannot
+-- support the issue it addresses. This is how a forward window that reached a NEIGHBOURING
+-- clause's date (a movie release date in the next paragraph) minted a plausible wrong issue
+-- that verbatim-verified anyway, because the old gate checked only the page.
+SELECT 'sentence_missing_date', true,
+  slug || '/' || work || ': quote omits the parsed issue date "' || date_value || '"'
+FROM mention_resolved
+WHERE drop_reason IS NULL AND work_type = 'periodical'
+  AND date_value IS NOT NULL AND NOT contains(sentence, date_value)
 
 UNION ALL
 -- THE DETECTOR FLOOR, on the grain the campaign acts on. A silently-broken alias regex
