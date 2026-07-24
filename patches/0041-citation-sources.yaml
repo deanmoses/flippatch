@@ -377,7 +377,7 @@ sources:
       - danny.cdyn.com
   - name: Billboard
     slug: billboard
-    source_type: magazine
+    source_type: periodical
     description: >-
       American entertainment trade weekly published since 1894. Its coin-machine
       section carried manufacturer advertising and release announcements through
@@ -385,38 +385,38 @@ sources:
     year: 1894
   - name: Cash Box
     slug: cash-box
-    source_type: magazine
+    source_type: periodical
     description: >-
       American coin-machine and music trade weekly published from 1942, covering
       amusement-game releases, distribution and manufacturer advertising.
     year: 1942
   - name: Automatic Age
     slug: automatic-age
-    source_type: magazine
+    source_type: periodical
     description: >-
       American coin-operated machine trade magazine of the 1920s and 1930s,
       covering vending, music and pin-game manufacturing.
   - name: Coin Machine Journal
     slug: coin-machine-journal
-    source_type: magazine
+    source_type: periodical
     description: >-
       American coin-machine trade magazine covering pin-game manufacturing,
       distribution and advertising.
   - name: Coin Machine Digest
     slug: coin-machine-digest
-    source_type: magazine
+    source_type: periodical
     description: >-
       American coin-machine trade magazine of the 1940s, covering pin-game and
       conversion-kit manufacturing and advertising.
   - name: Automatic World
     slug: automatic-world
-    source_type: magazine
+    source_type: periodical
     description: >-
       American coin-operated machine trade magazine covering pin-game
       manufacturing and distribution.
   - name: Loose Change
     slug: loose-change
-    source_type: magazine
+    source_type: periodical
     description: >-
       American magazine covering coin-operated machine collecting and history.
 claims: []

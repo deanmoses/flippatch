@@ -780,13 +780,13 @@ def source_root(
 ) -> str:
     """Emit one `sources:` block entry: a citation-source root (header + links).
 
-    Seeds the website/book/magazine root a later `cite:` URL nests under (a web
+    Seeds the website/book/periodical root a later `cite:` URL nests under (a web
     `cite:` errors unless its domain matches a seeded homepage link — DataPatches.md).
     Same escaping safety as entry(): name/label/url go through _scalar so a stray
     apostrophe or colon in a description or label can't break the YAML.
 
     name:        source name; identity is (name, source_type), so keep it stable.
-    source_type: 'web' | 'book' | 'magazine'.
+    source_type: 'web' | 'book' | 'periodical'.
     description: optional folded `>` blurb.
     links:       (url, label, link_type) tuples; link_type is 'homepage' for the
                  root's domain link (what later cites domain-match against),

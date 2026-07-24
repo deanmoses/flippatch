@@ -549,17 +549,17 @@ def test_patch_without_claims_or_sources_rejected(schema_validator):
         },
         {  # slug not in the slug grammar
             "name": "X",
-            "source_type": "magazine",
+            "source_type": "periodical",
             "slug": "Game_Room",
         },
         {  # slug past the 200-char column limit
             "name": "X",
-            "source_type": "magazine",
+            "source_type": "periodical",
             "slug": "a" * 201,
         },
         {  # parent past the 200-char column limit
             "name": "X",
-            "source_type": "magazine",
+            "source_type": "periodical",
             "slug": "x",
             "parent": "a" * 201,
         },
@@ -570,17 +570,17 @@ def test_malformed_source_rejected(schema_validator, source):
     assert _has_error(schema_validator, data)
 
 
-def test_magazine_issue_sources_valid(schema_validator):
-    # The slug/parent verbs: a magazine root plus an issue nested by parent:.
+def test_periodical_issue_sources_valid(schema_validator):
+    # The slug/parent verbs: a periodical root plus an issue nested by parent:.
     data = {
         "attribution": "flipcommons-catalog",
         "sources": [
-            {"slug": "billboard", "name": "Billboard", "source_type": "magazine"},
+            {"slug": "billboard", "name": "Billboard", "source_type": "periodical"},
             {
                 "parent": "billboard",
                 "slug": "1945-09-29",
                 "name": "September 29, 1945",
-                "source_type": "magazine",
+                "source_type": "periodical",
                 "year": 1945,
                 "month": 9,
                 "day": 29,
