@@ -59,6 +59,11 @@ SELECT
   v.work_type,
   p.occurrence,
   p.pos,
+  -- The matched alias text itself. Its LENGTH is the mention's own span [pos, pos+len(hit)),
+  -- which the overlap resolution below needs to tell a nested title ("Pinball Machines"
+  -- inside "Bingo Pinball Machines") from a genuine second work, and which the candidate
+  -- containment uses as the exact publication anchor rather than a first-two-words guess.
+  p.hit            AS hit,
   p.txt            AS notes,
   -- The alias plus the 90 chars after it: long enough to hold any date+page tail IPDB
   -- writes, short enough that the next sentence's numbers cannot leak in and fake a
@@ -71,11 +76,7 @@ SELECT
   -- page" while the page sat three characters past the edge. A truncated window does not
   -- announce itself; it just quietly produces a smaller corpus. The clause gate below is
   -- what makes the wider window safe.
-  substr(p.txt, p.pos, CAST(len(p.hit) + 90 AS BIGINT))          AS snip,
-  -- The 90 chars preceding, for the framing hint only. Kept OUT of the locator window
-  -- deliberately: widening the shape window backwards would let the previous sentence's
-  -- numbers pose as this citation's locator.
-  substr(p.txt, greatest(1, p.pos - 90), least(90, p.pos - 1))   AS lead
+  substr(p.txt, p.pos, CAST(len(p.hit) + 90 AS BIGINT))          AS snip
 FROM mention_positions('pub_notes_src', 'pub_vocab_src') p
 JOIN pub_vocab v ON v.work = p.term
 JOIN models m    ON m.slug = p.key;
@@ -98,6 +99,18 @@ WITH shaped AS (
   FROM pub_mentions m
 )
 SELECT s.*,
+  -- OVERLAP RESOLUTION — longest match wins. "Pinball Machines" occurs both as its own
+  -- work and NESTED inside "Bingo Pinball Machines"; RE2 has no lookbehind, so the short
+  -- alias cannot exclude the long title in the regex. Here it is positional: a mention
+  -- whose span is wholly contained by a longer mention's span on the same model is the
+  -- nested one, and it is dropped. Symmetric — unlike the forward-only ambiguity gate, this
+  -- sees the dominating title even when it sits BEHIND the nested match.
+  EXISTS (
+    SELECT 1 FROM pub_mentions o
+    WHERE o.slug = s.slug AND o.work <> s.work
+      AND o.pos <= s.pos
+      AND o.pos + len(o.hit) >= s.pos + len(s.hit)
+      AND len(o.hit) > len(s.hit))                          AS dominated,
   -- FALSE-POSITIVE GATE. IPDB often names two publications in one breath ("...in
   -- Billboard or Cash Box, Mar-31-1956, page 45"). When a second work is named in the
   -- window, the date and page we parsed may belong to that one, not this.
@@ -109,16 +122,23 @@ SELECT s.*,
   -- extra 20 characters bought back real locators and would otherwise have spent them
   -- on false ambiguity.
   --
+  -- And only if it lies OUTSIDE this mention's own alias span: "Pinball Machines" sitting
+  -- inside "Bingo Pinball Machines" is this title's own tail, not a rival, so the `> len(hit)`
+  -- guard is what lets the genuine "Bingo Pinball Machines" citation survive instead of
+  -- self-condemning. (The nested match itself is dropped as `dominated`, above.)
+  --
   -- With no locator parsed at all there is nothing to be positioned against, so any
   -- second work in the window still condemns the row.
   CASE
     WHEN s.date_value IS NULL AND s.page_value IS NULL THEN EXISTS (
       SELECT 1 FROM pub_vocab v2
-      WHERE v2.work <> s.work AND regexp_matches(s.snip, v2.alias_re))
+      WHERE v2.work <> s.work AND regexp_matches(s.snip, v2.alias_re)
+        AND instr(s.snip, regexp_extract(s.snip, v2.alias_re)) > len(s.hit))
     ELSE EXISTS (
       SELECT 1 FROM pub_vocab v2
       WHERE v2.work <> s.work
         AND regexp_matches(s.snip, v2.alias_re)
+        AND instr(s.snip, regexp_extract(s.snip, v2.alias_re)) > len(s.hit)
         AND instr(s.snip, regexp_extract(s.snip, v2.alias_re)) <
             least(coalesce(nullif(instr(s.snip, s.date_value), 0), 1000000),
                   coalesce(nullif(instr(s.snip, s.page_value), 0), 1000000)))
@@ -176,7 +196,7 @@ WITH resolved AS (
   SELECT
     s.*,
     sd.n_roots, sd.seeded_as, sd.root_slug, sd.root_isbn,
-    be.edition_isbn, be.edition_label,
+    be.edition_isbn, be.edition_label, be.edition_hit,
     -- A MATCHED EDITION ALWAYS WINS, and `root_isbn` is only trusted for a work with a
     -- single seeded root. The reverse precedence was a real bug: `citation_seeded` picks
     -- `root_isbn` with argMin, which is arbitrary among a work's roots, so every one of
@@ -199,7 +219,11 @@ WITH resolved AS (
   FROM mention_issue_slug s
   JOIN citation_seeded sd USING (work, work_type)
   LEFT JOIN LATERAL (
-    SELECT b.edition_isbn, b.edition_label FROM book_editions b
+    -- `edition_hit` is the raw wording that selected the ISBN ("Vol 2", "1970-1981"). The
+    -- book candidate test requires it to appear in the patch entry's own quote, so the
+    -- entry actually evidences WHICH edition — the ISBN encodes a volume the reader must see.
+    SELECT b.edition_isbn, b.edition_label, regexp_extract(s.snip, b.edition_re) AS edition_hit
+    FROM book_editions b
     WHERE b.work = s.work AND regexp_matches(s.snip, b.edition_re) LIMIT 1) be ON true
 ),
 -- The quote, cite_ref and locator are built here; the drop ladder is computed in the OUTER
@@ -236,6 +260,9 @@ SELECT * EXCLUDE (notes),
 -- ONE drop ladder, most-specific first. NULL means emittable.
 SELECT *,
   CASE
+    -- A nested match of a longer title ("Pinball Machines" inside "Bingo Pinball
+    -- Machines") is not a citation of this work at all — the longer title owns the span.
+    WHEN dominated                                     THEN 'nested in a longer title'
     WHEN ambiguous                                     THEN 'two works in window'
     WHEN seeded_as IS NULL                             THEN 'work has no seeded root'
     -- NO PAGE REQUIREMENT. Citability is "can we name the source", not "can we name a
@@ -282,42 +309,6 @@ SELECT *,
   END AS drop_reason
 FROM built;
 
--- ── THE FRAMING — what does the print source actually attest? ───────────────
--- A cite attaches to EVERY claim its entry asserts, so before adding one you must know
--- what the print source supports. IPDB frames these attributions several ways and only
--- some assert the fact:
---
---   asserts  — "Cash Box, page 85, states 'Made for the British Market'"
---   release  — "Billboard ... announced this game as a new release"
---   earliest — "The earliest mention we have found ... is in Billboard 09/29/1945 p83"
---              Both attest EXISTENCE BY A DATE and nothing more.
---   image    — "The Automatic Age ad of September 1933, page 54, shows an NRA logo"
---
--- READ THIS BEFORE TRUSTING IT. A triage hint over the drop pile and the orphans, and
--- nothing more: it reads verbs in a window that crosses a sentence boundary 45% of the
--- time, so a neighbouring sentence routinely decides the class. It is NOT what makes a
--- citation safe to attach — section 5 is.
-CREATE OR REPLACE VIEW mention_framing AS
-SELECT *,
-  CASE
-    WHEN regexp_matches(lead || ' ' || snip, '(?i)earliest (mention|ad|advertisement)|first (mention|ad)\b')
-      THEN 'earliest'
-    -- Verb stems carry an explicit inflection group rather than a trailing \b: a stem
-    -- like 'announc' is never followed by a word boundary, so 'announc\b' can match
-    -- nothing at all while looking perfectly reasonable.
-    WHEN regexp_matches(lead || ' ' || snip,
-         '(?i)\b(?:stat|indicat)(?:e|es|ed|ing)\b|\b(?:says|said|reports?|reported|noted|quoted)\b|according to')
-      THEN 'asserts'
-    WHEN regexp_matches(lead || ' ' || snip,
-         '(?i)\b(?:announc|introduc|advertis|releas)(?:e|es|ed|ing)\b|\b(?:listed|lists|listing)\b')
-      THEN 'release'
-    WHEN regexp_matches(lead || ' ' || snip,
-         '(?i)\b(?:show|shows|showed|shown|showing|pictur(?:e|es|ed|ing)|image[sd]?|photo)\b')
-      THEN 'image'
-    ELSE 'unclassified'
-  END AS framing
-FROM mention_resolved;
-
 -- ═══ 5. THE REWRITE GRAIN — which patch entry could carry this? ══════════════
 -- The campaign's actual worklist, and the view to read first.
 --
@@ -362,22 +353,39 @@ SELECT
   m.work_type,
   m.cite_ref           AS print_ref,
   m.locator            AS print_locator,
-  m.framing            AS framing_hint,
   pe.quote             AS patch_quote,
-  m.sentence           AS ipdb_sentence
+  m.sentence           AS ipdb_sentence,
+  -- The FULL note the print reference was mined from, for a human read: `ipdb_sentence`
+  -- is only the extracted span, and the whole point of an eyeball pass is to see whether
+  -- the reference actually backs the entry's claim or sits in an unrelated sentence three
+  -- over. `pub_notes_src.txt` is the normalized note (the text every window and quote here
+  -- is measured against), keyed by model slug. LEFT JOIN so a candidate can never vanish
+  -- if a note row is somehow absent.
+  n.txt                AS ipdb_notes
 FROM patch_entry_cites pe
-JOIN mention_framing m
+JOIN mention_resolved m
   ON m.slug = pe.model_slug
  AND m.drop_reason IS NULL
+LEFT JOIN pub_notes_src n ON n.key = pe.model_slug
 WHERE pe.patch_number > (SELECT last_ingested_on_prod FROM citation_scope)
   -- The stable handle on the citing work, NOT `citation_source_type = 'web'`: the type is
   -- a shape rather than an identity, so that proxy also admits every other web-rooted
   -- work and leans on the containment tests below to stay honest.
   AND pe.root_identifier_key = 'ipdb'
-  -- the print reference, in pieces, inside the entry's own recorded quote
-  AND contains(pe.quote, regexp_extract(m.snip, '^[^ ]+(?: [^ ]+)?'))
-  AND (m.date_value IS NULL OR contains(pe.quote, m.date_value))
+  -- The print reference must sit inside the entry's OWN recorded quote — but what makes a
+  -- reference identifiable is type-specific, so the containment is too.
+  --
+  -- Both types: the exact publication name (the matched alias `hit`, not a first-two-words
+  -- guess) and the page, when parsed, must be present.
+  AND contains(pe.quote, m.hit)
   AND (m.page_value IS NULL OR contains(pe.quote, m.page_value))
+  -- PERIODICAL: the issue date identifies the source, so it must be in the quote.
+  AND (m.work_type <> 'periodical' OR m.date_value IS NULL OR contains(pe.quote, m.date_value))
+  -- BOOK: a date parsed near a book mention is prose ABOUT THE GAME, not the reference, so
+  -- it is NOT required. What IS required, when the book resolved by an edition match, is the
+  -- wording that SELECTED the ISBN ("Vol 2") — else the quote does not evidence which volume
+  -- the cite names. A single-edition book (edition_label NULL) needs no such wording.
+  AND (m.work_type <> 'book' OR m.edition_label IS NULL OR contains(pe.quote, m.edition_hit))
 ORDER BY pe.patch_id, pe.model_slug;
 
 -- EVERY emittable citation in the corpus, ONE ROW PER CITATION — not per mention. A note
@@ -391,12 +399,11 @@ ORDER BY pe.patch_id, pe.model_slug;
 CREATE OR REPLACE VIEW citation_rows AS
 SELECT
   slug AS model_slug, ipdb_id, work, work_type, cite_ref, locator,
-  argMin(framing,  length(sentence))          AS framing,
   argMin(date_shape, length(sentence))        AS date_shape,
   argMin(page_shape, length(sentence))        AS page_shape,
   argMin(sentence, length(sentence))          AS sentence,
   count(*)                                    AS n_sentences
-FROM mention_framing
+FROM mention_resolved
 WHERE drop_reason IS NULL
 GROUP BY slug, ipdb_id, work, work_type, cite_ref, locator
 ORDER BY work, cite_ref, model_slug;
@@ -413,7 +420,7 @@ ORDER BY work, cite_ref, model_slug;
 -- both — and the `emittable_partitioned` check now guarantees the two views tile.
 CREATE OR REPLACE VIEW citation_orphans AS
 SELECT r.model_slug, r.ipdb_id, r.work, r.work_type, r.cite_ref, r.locator,
-       r.framing, r.sentence
+       r.sentence
 FROM citation_rows r
 WHERE NOT EXISTS (
   SELECT 1 FROM citation_candidates c
@@ -503,13 +510,6 @@ FROM shape_rules r
 LEFT JOIN fired f ON f.axis = r.axis AND f.shape = r.shape
 GROUP BY ALL ORDER BY r.axis, r.prio;
 
--- G. How the emittable rows split by what their source attests. Scoping only — see the
---    warning on `mention_framing`.
-CREATE OR REPLACE VIEW citation_framing AS
-SELECT framing, count(*) AS n, count(DISTINCT model_slug) AS models,
-       any_value(sentence) AS example
-FROM citation_rows GROUP BY framing ORDER BY n DESC;
-
 -- H. THE `sources:` NODES THE WORKLIST NEEDS — the candidate-scoped slice of
 --    `citation_issues`. `citation_issues` is corpus-wide: every emittable periodical issue,
 --    overwhelmingly ones only orphans rest on — far more than the handful the rewrite
@@ -569,7 +569,11 @@ WHERE NOT EXISTS (
   WHERE done.changeset_id = c.changeset_id
     AND done.subject_type = c.subject_type
     AND done.subject_id   = c.subject_id
-    AND done.locator IS NOT DISTINCT FROM c.print_locator
+    -- A page-less cite persists its locator as '' (CitationInstance.locator is NOT NULL,
+    -- default ''), while `print_locator` is NULL for one — so a bare `IS NOT DISTINCT FROM`
+    -- reads '' <> NULL and a page-less cite (the MAJORITY shape) would never retire its
+    -- candidate. NULLIF folds the stored '' back to NULL before comparing.
+    AND NULLIF(done.locator, '') IS NOT DISTINCT FROM c.print_locator
     AND ( (c.work_type = 'periodical'
              AND src.root_citation_source_slug = split_part(c.print_ref, ':', 1)
              AND src.slug                      = split_part(c.print_ref, ':', 2))

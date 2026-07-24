@@ -53,7 +53,6 @@ SELECT * FROM (VALUES
   ('Coin Machine Journal',      'periodical', '(?:The )?Coin Machine Journal'),
   ('Automatic World',           'periodical', 'Automatic World'),
   ('Coin Machine Review',       'periodical', 'Coin Machine Review'),
-  ('Coin Machine Herald',       'periodical', 'Coin Machine Herald'),
   ('Vending Times',             'periodical', 'Vending Times'),
   ('Amusement Business',        'periodical', 'Amusement Business'),
   ('Automatic Merchandiser',    'periodical', 'Automatic Merchandiser'),
@@ -81,13 +80,15 @@ SELECT * FROM (VALUES
   ('The Encyclopedia of Pinball',    'book', '(?:The )?Ency[cl]+opedia of Pinball|\bEOP\b'),
   ('The Pinball Compendium',         'book', '(?:The )?Pinball Compendium'),
   ('Pinball Machines',               'book', 'Pinball Machines'),
-  -- Lawton's bingo book, and a deliberate collision: its title CONTAINS Bueschel's
-  -- "Pinball Machines", and RE2 has no lookbehind to exclude the longer title from the
-  -- shorter alias. Declaring it as its own work is what makes the overlap visible —
+  -- Lawton's bingo book — seeded (0041) as its full title "Bally Bingo Pinball Machines",
+  -- which is the work label here so citation_seeded resolves it; the alias stays IPDB's
+  -- shorthand "Bingo Pinball Machines". A deliberate collision: that alias CONTAINS
+  -- Bueschel's "Pinball Machines", and RE2 has no lookbehind to exclude the longer title
+  -- from the shorter alias. Declaring it as its own work is what makes the overlap visible —
   -- "Jeffrey Lawton's book Bingo Pinball Machines on page 62" now matches two works and
   -- is dropped as ambiguous, instead of being silently attributed to Bueschel and
   -- emitting the wrong ISBN the moment a Pinball Machines edition is mapped.
-  ('Bingo Pinball Machines',         'book', 'Bingo Pinball Machines'),
+  ('Bally Bingo Pinball Machines',   'book', 'Bingo Pinball Machines'),
   ('The Complete Pinball Book',      'book', '(?:The )?Complete Pinball Book'),
   ('Pinball Snapshots',              'book', 'Pinball Snapshots'),
   ('Pinball Memories',               'book', 'Pinball Memories'),

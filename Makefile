@@ -71,11 +71,16 @@ sweep:
 #   make analyze FILE=.../bingo.sql PREFIX=bingo ARGS=--markdown
 #   make analyze FILE=.../bingo.sql CMD=ui                 # live GUI at localhost:4213
 #   make analyze FILE=.../bingo.sql Q="FROM bingo_review;" # one view from the analysis
+# Q is exported so the recipe reads it as a shell variable ("$$Q"), not by Make
+# text-interpolation ('$(Q)'). Interpolation pasted the query into a single-quoted
+# guard, so any ' in the SQL (a 'string' literal, an IN ('a','b') list) closed the
+# quote and broke the shell. Via the environment the value is never re-tokenized.
+export Q
 analyze:
 	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.paths import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
 	if [ -n '$(FILE)' ]; then AN="$(abspath $(FILE))"; else AN="$$FC/scripts/analysis/catalog.sql"; fi; \
 	cd "$$FC" && \
-	if [ -n '$(Q)' ]; then scripts/analysis/analysis query "$$AN" "$(Q)" $(ARGS); \
+	if [ -n "$$Q" ]; then scripts/analysis/analysis query "$$AN" "$$Q" $(ARGS); \
 	elif [ '$(CMD)' = describe ]; then scripts/analysis/analysis describe "$$AN" $(ARGS); \
 	else test -n "$(PREFIX)" -o -n '$(CMD)' || { echo 'usage: make analyze [FILE=<analysis.sql>] PREFIX=<name> | Q="<sql>" | CMD=describe|ui|snapshot [ARGS=...]'; exit 2; }; \
 	  scripts/analysis/analysis $(or $(CMD),run) "$$AN" $(PREFIX) $(ARGS); fi

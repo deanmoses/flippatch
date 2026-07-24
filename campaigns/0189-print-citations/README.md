@@ -61,24 +61,11 @@ make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_
 
 ## What the print source actually supports
 
-**A cite attaches to every claim its entry asserts, and the IPDB reference does not tell you which claim the print source backs.** IPDB frames these attributions several ways, and only some assert the fact:
+**The safety test is quote-containment, and nothing more: a print cite may be added to an entry only when the reference sits inside that entry's own recorded quote.** `citation_candidates` enforces exactly this — the publication name, the page (when parsed), and the issue date (for a periodical) must all be present in the quote the entry already recorded. That is what makes the reference _this entry's_ evidence rather than a stray mention three sentences away in the same note.
 
-- **`asserts`** — "Cash Box, page 85, states 'Made for the British Market'". The source asserts the proposition. Safe to attach to that claim.
-- **`release` / `earliest`** — "…announced this game as a new release"; "The earliest mention we have found is in Victory Game's ad in Billboard 09/29/1945 p83". Both attest **existence by a date, and nothing more.**
-- **`image`** — "…page 54, shows an NRA logo". Visual evidence; supports physical attributes.
+Attaching is honest even for an atomic `model_relationship` claim (which bundles the relationship _type_ and the _target_), because **the print cite carries only a locator, no quote.** It says "IPDB read this in Billboard 09/29/1945 p83", not "I verified that Billboard identifies the donor game". The verbatim text stays on the IPDB cite — the proximate source, which asserts the whole relationship — and the print cite is the original authority IPDB names for it. A reader who pulls the issue finds the conversion-kit ad, corroborating that the game _is_ a conversion kit, with the specific target still resting on IPDB's word. That is exactly what the two-cite pair represents, and it is why the reference belonging to the entry's own quote is the whole of the test.
 
-The trap is concrete, and the conversion-kit patches are full of it — `0187-victory-games-kits` is nearly the whole candidate list. Take this note:
-
-> 'Artists and Models' was a conversion for Chicago Coin's 1941 'Star Attraction'. [...] The earliest mention we have found for this conversion kit is in Victory Game's ad in Billboard 09/29/1945 p83.
-
-Two sentences. The first asserts the relationship — that is IPDB's own research, unsourced. The second says only where the earliest **mention** appears. The entry asserts `model_relationship`, so attaching the Billboard cite there claims the 1945 ad identifies Star Attraction as the donor. It might; kit ads sometimes did. **You cannot tell from the IPDB text** — which is exactly the point. Note the patch's quote elides both sentences together with `[...]`, so the reference genuinely is in the entry's evidence; that is what makes it a candidate and what makes it dangerous.
-
-So do not append the print cite to every entry by reflex. Some potential approaches:
-
-- Attach only where the framing directly asserts the entry's claim (cheap and safe, but skips much of the conversion-kit population).
-- Split with `changesets:` so the relationship keeps its IPDB-only cite while a separate changeset carries the datable fact with both cites.
-
-`citation_framing` sizes each class and `citation_rows` carries a per-row `framing`. Treat it as a **routing hint, not a verdict** — it reads verbs in a window that crosses a sentence boundary 45% of the time, so a neighbouring sentence routinely decides the class. It is not what makes a citation safe to attach; matching the reference to the entry's own quote is.
+An earlier build carried a second layer on top of this — a "framing" classifier (`mention_framing` / `citation_framing` / `citation_field_safety`) that read the verbs around each mention, sorted them into `asserts` / `release` / `earliest` / `image`, mapped each to what it supposedly attested, and routed candidates to attach / split / verify. **It was removed, because it was noise.** It routed all 23 candidates to split/verify and every one was attached anyway. Its mistake was treating a phrasing like "the earliest ad for this conversion kit" as attesting merely a date — when an ad _for the conversion kit_ is precisely evidence that the game is a conversion kit, the fact the entry claims. Phrasing is not attestation, and quote-containment already carries the whole load.
 
 ## Analysis
 
@@ -88,7 +75,7 @@ Four SQL files. `citations.sql` is the entry point and the only one that `.read`
 make analyze FILE=campaigns/0189-print-citations/citations.sql PREFIX=citation
 ```
 
-Read any view with `Q=` (note the runner's `Q=` mis-parses quoted `IN (...)` lists — put a complex query in a scratch `.sql` that `.read`s this one):
+Read any view with `Q=` — quoted string literals and `IN (...)` lists are fine (a multi-statement or genuinely large query is still cleaner as a scratch `.sql` that `.read`s this one):
 
 ```bash
 make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_candidates;"
@@ -116,7 +103,6 @@ make analyze FILE=campaigns/0189-print-citations/citations.sql Q="FROM citation_
 | `citation_vocab_gaps`                | citation-shaped phrases the vocabulary misses and nobody has ruled on                               |
 | `citation_vocab_backlog`             | works we know we cannot cite yet, and what seeding each would unlock                                |
 | `citation_shapes` / `citation_rules` | the formulations, and which patterns earn their place                                               |
-| `citation_framing`                   | how emittable rows split by what the source attests — triage only                                   |
 
 ### How it's built
 
@@ -124,7 +110,7 @@ Declarative tables hold every pattern and every judgment: `pub_vocab` (which wor
 
 Several tables are materialized rather than left as views (`pub_notes_src`, `pub_mentions`, `pub_mention_shapes`, `mention_resolved`, `pub_candidates`); a run costs tens of seconds because of it. That is deliberate — every answer reads the mention grain repeatedly, and as views each re-ran the whole corpus scan.
 
-**Source text is canonicalized once**, in `pub_notes_src` via `text_norm`. Every whitespace run becomes a single character: a space, or a newline where the run contained a blank line. So `\n` means "paragraph break" and nothing else, and no run is ever longer than one character — which is what makes the sentence regexes single-character affairs instead of variable-length classes that can be consumed partially. The blank line is kept rather than flattened because it is the only thing bounding a colon-led list, which has no sentence punctuation at all. Quotes stay verifiable because `verify_quotes.normalize` collapses whitespace on both sides before comparing — including the paragraph newline a quote retains when it legitimately spans a colon-led list into the following line (so a quote _can_ contain one; `gridiron` does). What the length-1 guarantee rules out is not a newline in a quote but a whitespace _run_ being consumed partially — the 917-character runaway.
+**Source text is canonicalized once**, in `pub_notes_src` via `text_norm`. Every whitespace run becomes a single character: a space, or a newline where the run contained a blank line. So `\n` means "paragraph break" and nothing else, and no run is ever longer than one character — which is what makes the sentence regexes single-character affairs instead of variable-length classes that can be consumed partially. The blank line is kept rather than flattened because it is the only thing bounding a colon-led list, which has no sentence punctuation at all. Quotes stay verifiable because `verify_quotes.normalize` collapses whitespace on both sides before comparing — including the paragraph newline a quote retains when it legitimately spans a colon-led list into the following line (so a quote _can_ contain one; `gridiron` does). What the length-1 guarantee rules out is not a newline in a quote but a whitespace _run_ being consumed partially — the runaway quote a partial split once produced.
 
 **One drop ladder, in one place.** `mention_resolved.drop_reason` is the single emittability predicate; `NULL` means emittable. An earlier build repeated that predicate across four views and the gate, where they agreed by luck rather than construction.
 
@@ -136,7 +122,7 @@ Every `*_checks` view is about **machinery health, not data opinions**: each fai
 
 ### Fixtures are the regression suite
 
-`locator_checks` and `text_checks` assert against **literals**, not the corpus, so they cannot be quieted by data changing underneath them. Every one records a bug this campaign actually shipped — a full month name degrading to a bare year, `pp 132, 161` truncating to `p. 132`, `Jun-39-1962` minting an issue that never existed, a quote running 917 characters through three paragraphs (a variable-length whitespace class being consumed partially — now unrepresentable rather than guarded against). If a fixture looks arbitrary, read the rule comment above it before deleting it.
+`locator_checks` and `text_checks` assert against **literals**, not the corpus, so they cannot be quieted by data changing underneath them. Every one records a bug this campaign actually shipped — a full month name degrading to a bare year, `pp 132, 161` truncating to `p. 132`, `Jun-39-1962` minting an issue that never existed, a quote running through several following paragraphs (a variable-length whitespace class being consumed partially — now unrepresentable rather than guarded against). If a fixture looks arbitrary, read the rule comment above it before deleting it.
 
 **If you edit any of these files, read the comments at the site you are editing.** Nearly every regex has a silent-undermatch failure mode — a mis-grouped alias, a stem with a trailing `\b`, a month pattern that matches any capitalised word — and each produces plausible wrong output rather than an error.
 
@@ -148,9 +134,9 @@ Every `*_checks` view is about **machinery health, not data opinions**: each fai
 - **Page lists are not ranges.** `pages 78 and 83` is two pages; folding it to `78-83` claims the pages between them as evidence. There are comma forms too (`pages 1, 38, and 42`, `pp 132, 161`) that truncate to their first page unless every number is extracted.
 - **The corpus contains impossible dates.** IPDB has at least one `Jun-39-1962`. Validity is treated as part of issue identity, so such a row yields no slug and lands in the drop pile — it must never mint a `sources:` node for an issue that never existed.
 - **A bare year is not an issue.** Billboard was a weekly; `billboard:1940` addresses nothing a reader could check. Every such row turned out to be a parse failure with the real date sitting in the same sentence.
-- **Two-digit years are deliberately unsupported.** IPDB does write `BB 4/17/43 pg 67`, but `mm/dd/yy` appears in 183 models and nearly all are manufacture dates in ordinary prose (`made on 02/20/50`). A rule would harvest those into citations and would have to invent a century to do it. That one row drops as `no parsable date` — the safe failure.
-- **Datelines are too noisy to validate against — measured and rejected.** Billboard and Cash Box were Saturday-dated weeklies, but the corpus runs ~9% off-dateline, so a weekday rule would drop tens of probably-good rows to catch one known-bad one.
-- **A date beside a publication name can be a search boundary, not a citation.** IPDB records its own negative findings in the same prose shape as its positive ones: "We searched Billboard through May 1962 but found no picture ads after March" names an issue that does *not* contain the fact. Rare — a couple of rows in the whole corpus — but they read exactly like citations, and they are worth an eye when authoring from `citation_orphans`. Deliberately not detected: the obvious regex flags far more good rows than bad, because a positive citation often carries an unrelated caveat ("is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted"), and `framing` cannot see it either — a negative finding has no assert verb, so it lands in `unclassified`.
+- **Two-digit years are deliberately unsupported.** IPDB does write `BB 4/17/43 pg 67`, but `mm/dd/yy` appears in many models and nearly all are manufacture dates in ordinary prose (`made on 02/20/50`). A rule would harvest those into citations and would have to invent a century to do it. Such a row drops as `no parsable date` — the safe failure.
+- **Datelines are too noisy to validate against — measured and rejected.** Billboard and Cash Box were Saturday-dated weeklies, but a meaningful fraction of the corpus runs off-dateline, so a weekday rule would drop many probably-good rows to catch a rare known-bad one.
+- **A date beside a publication name can be a search boundary, not a citation.** IPDB records its own negative findings in the same prose shape as its positive ones: "We searched Billboard through May 1962 but found no picture ads after March" names an issue that does *not* contain the fact. Rare, but they read exactly like citations, and they are worth an eye when authoring from `citation_orphans`. Deliberately not detected: the obvious regex flags far more good rows than bad, because a positive citation often carries an unrelated caveat ("is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted").
 - **A month-precision issue is a real issue, not a defect.** "The Billboard article shown here from December 1951" yields `billboard:1951-12`, which for a weekly names several issues. That is the precision of the evidence, and recording it is right for the same reason a page-less cite is: IPDB knew the month. Do not add a publication-frequency rule to filter these — frequency is time-varying (Billboard was a monthly until 1900), which is why Wikidata models it only with time-qualified statements, and it would buy nothing here.
 - **Print scans are not reachable programmatically.** worldradiohistory and ipdb.org both refuse automated fetches, and archive.org's Cash Box collection has no 1962 issues indexed — so resolving a citation against the page itself needs a human with archive access.
 
@@ -169,9 +155,9 @@ Every `*_checks` view is about **machinery health, not data opinions**: each fai
 
 `citation_vocab_backlog` lists works the corpus cites that the catalog cannot address. Each becomes citable the moment a root is declared in `0041-citation-sources.yaml`.
 
-**Rank it by `citable`, not by `observed`.** A mention only earns a root if the surrounding text identifies an issue — for a magazine, a parsable date. Read the surrounding sentences before deciding: a phrase alone is not enough to tell a periodical from a book, or from a magazine the game was merely _named after_. Two entries were misread exactly that way before anyone looked at the sentences.
+**Rank it by `citable`, not by `observed`.** A mention only earns a root if the surrounding text identifies an issue — for a magazine, a parsable date. Read the surrounding sentences before deciding: a phrase alone is not enough to tell a periodical from a book, or from a magazine the game was merely _named after_. Entries were misread exactly that way before anyone looked at the sentences.
 
-Several need domain judgment before seeding — a manufacturer house organ may or may not be a citable periodical — and two are newspapers, which would be the first newspaper roots. The European trade press is the biggest single seam, and the catalog is full of Italian and German makers whose dating evidence sits in their own trade papers, not Billboard.
+Several need domain judgment before seeding — a manufacturer house organ may or may not be a citable periodical — and some are newspapers, which would be the first newspaper roots. The European trade press is the biggest single seam, and the catalog is full of Italian and German makers whose dating evidence sits in their own trade papers, not Billboard.
 
 Recording a verdict in `vocab_review` is how you quiet the gap check — never by narrowing a frame, which is how a coverage check stops covering.
 
@@ -235,7 +221,7 @@ cite:
 
 ### Conventions that are easy to get wrong
 
-- **A citation with no page is still a citation, and must still be emitted.** If the IPDB note names a magazine issue or a book without giving a page, add the cite with no `locator:` rather than dropping it — dropping it destroys information we have. A monthly house organ has no unit finer than its issue ("the January 1953 issue of Bally-Who, a monthly newsletter from Bally"), and a book cited by ISBN already names its volume. The catalog agrees: the overwhelming majority of its existing citation instances carry an empty locator. An earlier build required a page and silently discarded ~300 sound citations, most of them books; if you find yourself reintroducing that rule, this is why not.
+- **A citation with no page is still a citation, and must still be emitted.** If the IPDB note names a magazine issue or a book without giving a page, add the cite with no `locator:` rather than dropping it — dropping it destroys information we have. A monthly house organ has no unit finer than its issue ("the January 1953 issue of Bally-Who, a monthly newsletter from Bally"), and a book cited by ISBN already names its volume. The catalog agrees: the overwhelming majority of its existing citation instances carry an empty locator. An earlier build required a page and silently discarded many sound citations, most of them books; if you find yourself reintroducing that rule, this is why not.
 - **The print cite carries no `quote:`.** We have not read Billboard 1945 — IPDB has. The honest claim is "IPDB says Billboard p83 says X", so the verbatim text stays on the IPDB cite and the print cite carries only a `locator:`. A quote here would be unverifiable by `make verify-quotes`, which has no resolver for print.
 - **Locators dedup by exact text.** `p83` and `p. 83` mint two CitationInstances for one page. The convention is lowercase `p.`, a space, the number — `p. 83`, `pp. 83-84` for a range, `pp. 132, 161` for a list. The analysis normalizes to this.
 - **The issue slug is an address, not data.** ISO date when dated (`1945-09-29`), year-month when the day is unknown (`1994-03`), `year-season` for a quarterly (`1986-fall`), slugified name otherwise. The `year`/`month`/`day` columns carry the date; nothing parses the slug back.
@@ -253,12 +239,12 @@ cite:
 
 The analysis already supports it, deliberately. `citation_rows` is the whole corpus at one row per citation, each with a verbatim quote and a resolved `cite_ref`; `citation_orphans` is that minus anything this campaign will touch. Neither needs the patch layer. A follow-up should read those and **not re-derive the vocabulary, the locator grammar or the quote extraction** — that machinery is in `works.sql`, `locators.sql` and `text.sql`, and is vocabulary-agnostic where it can be.
 
-Sizing it before starting: `citation_framing` splits by what the source actually attests. The `asserts` slice is the only one supporting a fact rather than a date, and it is a minority — so the honest scope is well below the raw orphan count.
+Sizing it before starting: `citation_orphans`' raw count is the ceiling, not the scope — many orphan references only attest that a game existed by a date, which is not a fact worth minting a new claim from. An earlier build sized the mineable slice with a verb-based `framing` classifier; it was removed as noise (see [What the print source actually supports](#what-the-print-source-actually-supports)), so honest sizing now means reading the orphan sentences rather than trusting a split.
 
 ### Promoting `text.sql`
 
-`text.sql` is campaign-agnostic and self-tested but sits in this campaign on purpose: one consumer is not a pattern. If the orphan campaign — or any free-text campaign — copies it and its fixtures still pass against a different vocabulary, that is the evidence to move it to `scripts/analysis/` alongside `evidence.sql` The fixtures are what would justify promotion, not the genericness: writing them is what proved two of its functions wrong.
+`text.sql` is campaign-agnostic and self-tested but sits in this campaign on purpose: one consumer is not a pattern. If the orphan campaign — or any free-text campaign — copies it and its fixtures still pass against a different vocabulary, that is the evidence to move it to `scripts/analysis/` alongside `evidence.sql` The fixtures are what would justify promotion, not the genericness: writing them is what exposed real bugs in it.
 
 ### Not covered by this analysis
 
-`ipdb_notable_features` — a different column with its own idiom. Measured: only **16 models** mention a publication there, so the exclusion is cheap.
+`ipdb_notable_features` — a different column with its own idiom. Measured and small: only a handful of models mention a publication there, so the exclusion is cheap.
