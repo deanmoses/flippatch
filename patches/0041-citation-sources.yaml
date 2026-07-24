@@ -379,44 +379,244 @@ sources:
     slug: billboard
     source_type: periodical
     description: >-
-      American entertainment trade weekly published since 1894. Its coin-machine
-      section carried manufacturer advertising and release announcements through
-      the pin-game era.
+      American entertainment trade weekly. Its coin-machine section carried
+      manufacturer advertising and release announcements through the pin-game era.
     year: 1894
+    month: 11
+    day: 1
+    date_note: Published since November 1894
+  - parent: billboard
+    slug: 1942-10-03
+    name: October 3, 1942
+    source_type: periodical
+    year: 1942
+    month: 10
+    day: 3
+  - parent: billboard
+    slug: 1943-01-23
+    name: January 23, 1943
+    source_type: periodical
+    year: 1943
+    month: 1
+    day: 23
+  - parent: billboard
+    slug: 1943-04-10
+    name: April 10, 1943
+    source_type: periodical
+    year: 1943
+    month: 4
+    day: 10
+  - parent: billboard
+    slug: 1943-09-11
+    name: September 11, 1943
+    source_type: periodical
+    year: 1943
+    month: 9
+    day: 11
+  - parent: billboard
+    slug: 1943-10-02
+    name: October 2, 1943
+    source_type: periodical
+    year: 1943
+    month: 10
+    day: 2
+  - parent: billboard
+    slug: 1943-10-30
+    name: October 30, 1943
+    source_type: periodical
+    year: 1943
+    month: 10
+    day: 30
+  - parent: billboard
+    slug: 1943-12-11
+    name: December 11, 1943
+    source_type: periodical
+    year: 1943
+    month: 12
+    day: 11
+  - parent: billboard
+    slug: 1944-06-17
+    name: June 17, 1944
+    source_type: periodical
+    year: 1944
+    month: 6
+    day: 17
+  - parent: billboard
+    slug: 1944-07-01
+    name: July 1, 1944
+    source_type: periodical
+    year: 1944
+    month: 7
+    day: 1
+  - parent: billboard
+    slug: 1944-11-11
+    name: November 11, 1944
+    source_type: periodical
+    year: 1944
+    month: 11
+    day: 11
+  - parent: billboard
+    slug: 1944-11-25
+    name: November 25, 1944
+    source_type: periodical
+    year: 1944
+    month: 11
+    day: 25
+  - parent: billboard
+    slug: 1944-12-23
+    name: December 23, 1944
+    source_type: periodical
+    year: 1944
+    month: 12
+    day: 23
+  - parent: billboard
+    slug: 1945-01-20
+    name: January 20, 1945
+    source_type: periodical
+    year: 1945
+    month: 1
+    day: 20
+  - parent: billboard
+    slug: 1945-02-10
+    name: February 10, 1945
+    source_type: periodical
+    year: 1945
+    month: 2
+    day: 10
+  - parent: billboard
+    slug: 1945-09-29
+    name: September 29, 1945
+    source_type: periodical
+    year: 1945
+    month: 9
+    day: 29
+  - parent: billboard
+    slug: 1946-04-13
+    name: April 13, 1946
+    source_type: periodical
+    year: 1946
+    month: 4
+    day: 13
+  - parent: billboard
+    slug: 1946-07-06
+    name: July 6, 1946
+    source_type: periodical
+    year: 1946
+    month: 7
+    day: 6
+  - parent: billboard
+    slug: 1946-10-12
+    name: October 12, 1946
+    source_type: periodical
+    year: 1946
+    month: 10
+    day: 12
+  - parent: billboard
+    slug: 1952-02-23
+    name: February 23, 1952
+    source_type: periodical
+    year: 1952
+    month: 2
+    day: 23
   - name: Cash Box
     slug: cash-box
     source_type: periodical
     description: >-
-      American coin-machine and music trade weekly published from 1942, covering
-      amusement-game releases, distribution and manufacturer advertising.
+      American coin-machine and music trade weekly, covering amusement-game
+      releases, distribution and manufacturer advertising.
     year: 1942
+    month: 7
+    date_note: Published July 1942 – November 1996
   - name: Automatic Age
     slug: automatic-age
     source_type: periodical
     description: >-
-      American coin-operated machine trade magazine of the 1920s and 1930s,
-      covering vending, music and pin-game manufacturing.
+      American coin-operated machine trade magazine covering vending, music and
+      pin-game manufacturing.
+    year: 1925
+    month: 8
+    date_note: Published August 1925 – February 1945
   - name: Coin Machine Journal
     slug: coin-machine-journal
     source_type: periodical
     description: >-
       American coin-machine trade magazine covering pin-game manufacturing,
       distribution and advertising.
+    date_note: Known issues span 1931–1962
   - name: Coin Machine Digest
     slug: coin-machine-digest
     source_type: periodical
     description: >-
-      American coin-machine trade magazine of the 1940s, covering pin-game and
-      conversion-kit manufacturing and advertising.
+      American coin-machine trade magazine covering pin-game and conversion-kit
+      manufacturing and advertising.
+    date_note: Active in the 1940s
+  - parent: coin-machine-digest
+    slug: 1945-07-21
+    name: July 21, 1945
+    source_type: periodical
+    year: 1945
+    month: 7
+    day: 21
   - name: Automatic World
     slug: automatic-world
     source_type: periodical
     description: >-
       American coin-operated machine trade magazine covering pin-game
       manufacturing and distribution.
+    date_note: Known issues span April 1930 – March 1933
   - name: Loose Change
     slug: loose-change
     source_type: periodical
     description: >-
       American magazine covering coin-operated machine collecting and history.
+    year: 1977
+    month: 9
+    date_note: Published September 1977 – June 1998
+  - name: Amusement Business
+    slug: amusement-business
+    source_type: periodical
+    description: >-
+      American outdoor- and live-entertainment trade weekly, spun off from
+      Billboard in 1961 to cover fairs, carnivals, amusement and theme parks,
+      and concert touring. Best known in later decades for box-office charts and
+      theme-park attendance estimates.
+    year: 1961
+    date_note: Published 1961–2006
+  - name: Automatic Merchandiser
+    slug: automatic-merchandiser
+    source_type: periodical
+    description: >-
+      American trade magazine for the vending, micro-market and office-coffee
+      industries. Covers automatic-retailing equipment and operations rather
+      than coin-operated amusement games.
+    year: 1958
+    date_note: Founded 1958, still active
+  - name: Coin Machine Review
+    slug: coin-machine-review
+    source_type: periodical
+    description: >-
+      American (Los Angeles) monthly coin-machine trade magazine edited and
+      published by Paul W. Blackford, serving the West Coast amusement- and
+      music-machine trade. Grew out of the earlier Pacific Coin Machine Review.
+    date_note: Known issues span June 1934 – January 1953
+  - name: Vending Times
+    slug: vending-times
+    source_type: periodical
+    description: >-
+      American vending-industry trade publication of Rockville Centre, New York,
+      covering full-line, bulk and specialty vending and office coffee service.
+      Absorbed the earlier magazine Vend (founded 1946) around 1971.
+    year: 1961
+    date_note: Published since 1961
+  - name: Bally Bingo Pinball Machines
+    source_type: book
+    author: Jeffrey Lawton
+    publisher: Schiffer Publishing
+    year: 1999
+    isbn: "9780764308741"
+    description: >-
+      Collector's photographic history of Bally's bingo-style pinball machines
+      of the 1950s and 1960s, by bingo historian Jeffrey Lawton. Traces the
+      evolution of the bingo pinball hobby through 290+ photographs of machines,
+      original promotional brochures and period advertisements.
 claims: []

@@ -76,8 +76,10 @@ claims:
       game_format: one-ball
   - model.across-the-board-2:
       cite:
-        ref: "ipdb:13"
-        quote: "The Operator Adjustments Sheet in this listing depicts this game as a horserace game and a distributor ad in Billboard Feb-23-1952 page 93 lists this game as a One Ball."
+        - ref: "ipdb:13"
+          quote: "The Operator Adjustments Sheet in this listing depicts this game as a horserace game and a distributor ad in Billboard Feb-23-1952 page 93 lists this game as a One Ball."
+        - ref: "billboard:1952-02-23"
+          locator: "p. 93"
       game_format: one-ball
   - model.jumbo-2:
       cite:

@@ -10,8 +10,10 @@ claims:
       game_format: rolldown
   - model.tally-roll:
       cite:
-        ref: "ipdb:5435"
-        quote: "The first Billboard ad from the manufacturer for this rolldown game is dated 07/06/1946 p161 and shows a picture of 'Tally Roll' already manufactured."
+        - ref: "ipdb:5435"
+          quote: "The first Billboard ad from the manufacturer for this rolldown game is dated 07/06/1946 p161 and shows a picture of 'Tally Roll' already manufactured."
+        - ref: "billboard:1946-07-06"
+          locator: "p. 161"
       game_format: rolldown
   - model.box-score-3:
       cite:
