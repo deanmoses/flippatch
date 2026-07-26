@@ -1,0 +1,37 @@
+attribution: flipcommons-catalog
+description: Manufacturer names and locations
+sources:
+  - name: Wikipedia
+    source_type: web
+    domains:
+      - pt.wikipedia.org
+claims:
+  - manufacturer.mecatronics-aka-taito-brazil-a-division-of-taito:
+      note: >-
+        This Space Shuttle flyer shows the marque as the company
+        wrote it: the header graphic is the single word below, with Taito
+        nowhere on the sheet, and other pinball sites put these two machines
+        under the Mecatronics name.
+      cite:
+        ref: https://www.ipdb.org/images/4583/image-3.jpg
+        locator: Header graphic
+        quote: "MECATRONICS"
+      slug: mecatronics
+      name: Mecatronics
+  - corporate-entity.mecatronics-aka-taito-brazil-a-division-of-taito:
+      note: >-
+        This Space Shuttle flyer shows their address in Vila Olimpia, in the
+        city of Sao Paulo, and CEP 04548 is a Sao Paulo postal code.
+      cite:
+        ref: https://www.ipdb.org/images/4583/image-3.jpg
+        locator: Flyer footer
+        quote: "MECATRONICS INDÚSTRIA E COMÉRCIO LTDA. Av. Cardoso de Mello, 671 - Vl. Olimpia CEP 04548"
+      location: [brazil/sp/sao-paulo]
+      remove: { location: [japan] }
+  - corporate-entity.taito-do-brasil-a-division-of-taito-japan:
+      note: >-
+        Portuguese Wikipedia places the company in the city of Sao Paulo.
+      cite:
+        ref: https://pt.wikipedia.org/wiki/Taito_do_Brasil
+        quote: "A Taito do Brasil foi uma fabricante de pinball e fliperama localizada na cidade de São Paulo, Brasil."
+      location: [brazil/sp/sao-paulo]
