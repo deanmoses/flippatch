@@ -537,7 +537,8 @@ CREATE OR REPLACE VIEW export_name_family AS
 -- below that threshold yields no era and the pair simply keeps an unknown gap, which
 -- is the honest answer rather than a guess.
 CREATE OR REPLACE VIEW _maker_era AS
-  SELECT id AS manufacturer_id, era_start, era_end, n_dated
+  SELECT id AS manufacturer_id,
+         year_of_first_model AS era_start, year_of_last_model AS era_end, n_dated
   FROM manufacturers WHERE n_dated >= 3;
 
 -- Distance in years between two [start, end] spans; 0 when they overlap.
