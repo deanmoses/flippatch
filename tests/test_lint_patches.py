@@ -146,6 +146,40 @@ def test_scheme_cite_clean():
     assert not has(e, "scheme:identifier")
 
 
+def test_opdb_machine_url_cite_flagged():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "note": "n",
+                    "year": 1990,
+                    "cite": "https://opdb.org/machines/G4q3L-MKN50",
+                }
+            }
+        ]
+    )
+    assert has(e, "use the scheme:identifier form")
+
+
+def test_ipdb_non_record_url_cite_clean():
+    # Only a MACHINE RECORD has a scheme form. An image page (a flyer scan) is
+    # an ordinary page on the site, matching no scheme URL shape — flipcommons
+    # classifies it SiteOf, not SchemeRecord — so there is no ipdb:<id> to
+    # rewrite it to, and demanding one would make the page uncitable.
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "note": "n",
+                    "year": 1990,
+                    "cite": "https://www.ipdb.org/showpic.pl?id=4583&picno=6433",
+                }
+            }
+        ]
+    )
+    assert not has(e, "scheme:identifier")
+
+
 # --- 7: description attribution ---------------------------------------------
 
 

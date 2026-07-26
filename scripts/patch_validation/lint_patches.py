@@ -23,8 +23,12 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   apply.
 - ``alias-length`` — Alias members ≤ 200 chars, abbreviation members ≤ 50 —
   flipcommons rejects over-long members at build.
-- ``cite-scheme-form`` — An IPDB/OPDB record cited by URL must use the
-  ``scheme:identifier`` form — flipcommons rejects a scheme-pattern URL.
+- ``cite-scheme-form`` — An IPDB/OPDB **record** cited by URL must use the
+  ``scheme:identifier`` form — flipcommons rejects a scheme-pattern URL. Keyed on
+  the record paths the schemes declare (``ipdb.org/machine.cgi``,
+  ``opdb.org/machines/``), not the bare domain: another page on those sites (an
+  image page holding a flyer scan) has no scheme form to be rewritten to, and is
+  cited by URL like any other web page.
 - ``description-attribution`` — A ``description:`` field must be attributed to
   ``flipcommons-ai-desc-<type>`` matching the entity type, not the generic
   ``flipcommons-catalog``.
@@ -173,8 +177,16 @@ DESCRIPTION_CITE_EXEMPT_TYPES = {
 PATCH_NUM_RE = re.compile(r"\b0\d{3}\b")
 # Smart quotes and the ellipsis character (copy-paste typography to straighten).
 SMART_RE = re.compile(r"[“”‘’…]")
-# An IPDB/OPDB URL cite that should instead be scheme:identifier.
-SCHEME_DOMAIN_RE = re.compile(r"https?://(?:www\.)?(?:ipdb|opdb)\.org", re.IGNORECASE)
+# An IPDB/OPDB URL cite that should instead be scheme:identifier. Matched on the
+# RECORD path, not the bare domain: these mirror the url_shapes flipcommons'
+# schemes declare (ipdb `/machine.cgi?id=`, opdb `/machines/<id>`), and only a
+# URL a scheme can represent has a scheme form to be rewritten to. Other pages on
+# those sites — an image page such as `/showpic.pl?id=…&picno=…` holding a flyer
+# scan — classify as ordinary web children of the root, so demanding
+# `scheme:identifier` for one would leave it with no citable form at all.
+SCHEME_DOMAIN_RE = re.compile(
+    r"https?://(?:www\.)?(?:ipdb\.org/machine\.cgi|opdb\.org/machines/)", re.IGNORECASE
+)
 INLINE_CITE = "[[cite:"
 # The key inside an inline footnote, e.g. the "2" in [[cite:2]].
 INLINE_CITE_KEY_RE = re.compile(r"\[\[cite:([^\]]+)\]\]")
