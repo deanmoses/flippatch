@@ -1,10 +1,18 @@
-.PHONY: validate verify-quotes lint-descriptions verify-citations extract-page sweep analyze push agent-docs lint typecheck test check
+.PHONY: validate lint-patches-all verify-quotes lint-descriptions verify-citations extract-page sweep analyze push agent-docs lint typecheck test check
 
 # Validate data patches against the patch schema (structural gate) plus the
 # editorial authoring lint. Run this before push.
 validate:
 	uv run python3 scripts/patch_validation/validate_patches.py
 	uv run python3 scripts/patch_validation/lint_patches.py
+
+# Review mode: run the editorial lint over EVERY patch under EVERY rule,
+# ignoring RULE_SINCE grandfathering — for seeing what a new rule would have
+# caught in immutable history. Expect old-rule noise from pre-0039 patches;
+# filter to the prose word-choice findings with:
+#   make lint-patches-all 2>&1 | grep -E "uses '|cross-reference"
+lint-patches-all:
+	uv run python3 scripts/patch_validation/lint_patches.py --all
 
 # ── Citation quote verifier ────────────────────────
 # Verify every cite: quote is verbatim against its cached source text.

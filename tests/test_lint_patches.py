@@ -747,3 +747,216 @@ def test_cite_list_with_quote_satisfies_note_requirement():
         ]
     )
     assert not has(e, "needs a note")
+
+
+# --- prose word-choice rules (introduced at 0189) ----------------------------
+# Three prose corpora: the top-level patch description:, unit note:, and the
+# record description: field. Scopes differ per rule because some words have a
+# legitimate physical/trade sense in record descriptions ("the cabinet's
+# edges", "seeded dozens of manufacturers", "SIRMO's catalog of bingo games").
+
+
+def perrs(claims, filename="0189-x.yaml"):
+    return lp.lint_patch(
+        filename, {"attribution": "flipcommons-catalog", "claims": claims}
+    )
+
+
+def note_unit(note):
+    return [{"manufacturer.x": {"note": note, "name": "X"}}]
+
+
+def desc_unit(description):
+    return [{"manufacturer.x": {"description": description}}]
+
+
+def desc_errs(text, filename="0189-x.yaml"):
+    return lp.lint_patch(
+        filename,
+        {"attribution": "flipcommons-catalog", "description": text, "claims": []},
+    )
+
+
+def test_seed_in_note_flagged():
+    e = perrs(note_unit("The seed derived this month from OPDB's date."))
+    assert has(e, "'seed'")
+
+
+def test_seed_in_patch_description_flagged():
+    e = desc_errs("Seed the remaining video platform roots.")
+    assert has(e, "'Seed'")
+
+
+def test_seed_in_record_description_allowed():
+    # The horticultural/figurative sense is legitimate prose in a public
+    # record description ("seeded dozens of small local manufacturers").
+    e = perrs(desc_unit("Prize laws seeded dozens of small local manufacturers."))
+    assert not has(e, "seed")
+
+
+def test_node_in_record_description_flagged():
+    e = perrs(desc_unit("This node sits under the parent theme."))
+    assert has(e, "'node'")
+
+
+def test_edge_in_note_flagged():
+    e = perrs(note_unit("The fact now lives on the conversion kit edge."))
+    assert has(e, "'edge'")
+
+
+def test_edge_in_record_description_allowed():
+    # Physical sense: rails run along the cabinet's edges.
+    e = perrs(desc_unit("Rails run along the cabinet's edges outside the lanes."))
+    assert not has(e, "'edge")
+
+
+def test_snake_case_identifier_flagged():
+    e = perrs(note_unit("The conversion_kit relationship duplicates the tag."))
+    assert has(e, "'conversion_kit'")
+
+
+def test_camelcase_internal_name_flagged():
+    e = perrs(note_unit("The fact now lives on the ModelRelationship."))
+    assert has(e, "'ModelRelationship'")
+
+
+def test_brand_camelcase_clean():
+    # CamelCase brand names are real names, not code identifiers.
+    e = perrs(note_unit("Built by TiltBob and WhizBang under the MarsaPlay badge."))
+    assert e == []
+
+
+def test_slug_allowed():
+    # Contributors edit slugs in the site's own UI — it's vocabulary they know.
+    e = perrs(note_unit("Merged under the lady-luck title with the slug renamed."))
+    assert e == []
+
+
+def test_bare_entity_flagged():
+    e = perrs(note_unit("This game is reattributed to the canonical entity."))
+    assert has(e, "'entity'")
+
+
+def test_corporate_entity_allowed():
+    e = perrs(note_unit("The corporate entity below it keeps the full name."))
+    assert not has(e, "entity")
+
+
+def test_corporate_entity_markup_allowed():
+    e = perrs(desc_unit("Trading as [[corporate-entity:id:449]], it built tables."))
+    assert not has(e, "entity")
+
+
+def test_determiner_record_flagged():
+    e = perrs(note_unit("The duplicate gold-star-5 is merged into this record."))
+    assert has(e, "'this record'")
+
+
+def test_record_as_verb_clean():
+    e = perrs(note_unit("German Wikipedia records that the firm was founded in 1950."))
+    assert e == []
+
+
+def test_the_catalog_flagged():
+    # Self-reference: the reader can't know 'the catalog' means this site.
+    e = perrs(
+        note_unit("The machine had not shipped, so the catalog dates it to 2026.")
+    )
+    assert has(e, "'the catalog'")
+    assert has(e, "name the site")
+
+
+def test_named_catalog_flagged():
+    # Referring to another site as "the <name> catalog" is the same referent
+    # problem — name the site or its domain instead.
+    e = perrs(note_unit("The eremeka catalog dates this baseball game to 1974."))
+    assert has(e, "'The eremeka catalog'")
+    assert has(e, "name the site")
+
+
+def test_possessive_catalog_clean():
+    # A maker's product line is the legitimate trade sense.
+    e = perrs(
+        note_unit("SIRMO Games S.A.'s catalog is entirely in-line bingo machines.")
+    )
+    assert e == []
+
+
+def test_flipcommons_catalog_slug_clean():
+    # The hyphen-joined attribution slug is not the word 'catalog'.
+    e = desc_errs("Retract flipcommons-catalog's OPDB-derived bad January months.")
+    assert not has(e, "catalog")
+
+
+def test_bare_plural_catalogs_flagged():
+    # Plural noun without determiner: the referent is clear, the register is
+    # the problem — these are just sites.
+    e = perrs(desc_unit("Catalogs list them beside pinball for the shared cabinet."))
+    assert has(e, "'Catalogs'")
+    assert has(e, "pedantic")
+
+
+def test_catalogues_as_verb_flagged():
+    # The verb is the same register problem, and gets the same plain-words
+    # guidance — NOT the name-the-site guidance, which would misdirect the fix.
+    e = perrs(
+        note_unit("The pinball community catalogues these two machines as Mecatronics.")
+    )
+    assert has(e, "'catalogues'")
+    assert has(e, "pedantic")
+    assert not has(e, "name the site")
+
+
+def test_pinball_record_phrase_flagged():
+    e = perrs(desc_unit("It is known in the pinball record for its artwork."))
+    assert has(e, "'the pinball record'")
+
+
+def test_link_density_flagged():
+    links = " ".join(f"[[theme:id:{i}]]" for i in range(9))
+    e = perrs(desc_unit(f"A machine of many themes: {links}."))
+    assert has(e, "cross-reference links")
+
+
+def test_link_density_cite_links_not_counted():
+    body = " ".join(f"[[cite:{i}]]" for i in range(12))
+    e = perrs(desc_unit(f"A well-footnoted machine. {body}"))
+    assert not has(e, "cross-reference links")
+
+
+def test_link_density_at_limit_clean():
+    links = " ".join(f"[[theme:id:{i}]]" for i in range(8))
+    e = perrs(desc_unit(f"A machine of many themes: {links}."))
+    assert not has(e, "cross-reference links")
+
+
+def test_prose_rules_grandfathered_before_0189():
+    e = perrs(note_unit("The seed derived this month."), filename="0188-x.yaml")
+    assert e == []
+
+
+def test_rule_since_registry_has_prose_rules():
+    for rule in (
+        "prose-seed",
+        "prose-node",
+        "prose-edge",
+        "prose-code-identifier",
+        "prose-bare-entity",
+        "prose-the-record",
+        "prose-the-catalog",
+        "prose-catalogs",
+        "prose-pinball-record",
+        "description-link-density",
+    ):
+        assert lp.RULE_SINCE[rule] == 189, rule
+
+
+def test_ignore_grandfather_runs_rules_on_old_patches():
+    # The review escape hatch: lint an old patch as if every rule applied.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "claims": note_unit("The seed derived this month."),
+    }
+    assert not lp.lint_patch("0002-x.yaml", data)
+    e = lp.lint_patch("0002-x.yaml", data, ignore_grandfather=True)
+    assert has(e, "'seed'")
