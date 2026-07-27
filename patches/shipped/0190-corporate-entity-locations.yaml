@@ -1,0 +1,70 @@
+attribution: flipcommons-catalog
+description: Locations for five corporate entities that had none.
+claims:
+  - location.usa/il/melrose-park:
+      create: true
+      name: Melrose Park
+      slug: melrose-park
+      parent: usa/il
+      location_type: city
+  - location.usa/il/arlington-heights:
+      create: true
+      name: Arlington Heights
+      slug: arlington-heights
+      parent: usa/il
+      location_type: city
+  - corporate-entity.data-east-pinball-incorporated:
+      note: >-
+        All of Data East Pinball's game manuals, from Time Machine in
+        1988 to The Who's Tommy in 1994, prints the same address on its cover,
+        a plant on Janice Avenue in the Chicago suburb of Melrose Park.
+      cite:
+        ref: https://www.ipdb.org/files/1343/Data_East_1993_Jurassic_Park_Manual.pdf
+        locator: Front cover
+        quote: "1990 Janice Avenue Melrose Park, IL 60160"
+      location: [usa/il/melrose-park]
+  - corporate-entity.atari-incorporated:
+      note: >-
+        Atari was founded in Sunnyvale and moved into new headquarters there in
+        the autumn of 1976, as the two-year development of its first pinball
+        machine, The Atarians, was finishing. Design and manufacture both sat at
+        that site, so the pinball work raises no question of a second home.
+      cite:
+        ref: https://en.wikipedia.org/wiki/Atari,_Inc.
+        quote: "Atari had established its new headquarters in the Moffett Park area in Sunnyvale, California"
+      location: [usa/ca/sunnyvale]
+  - corporate-entity.alvin-g-and-company:
+      note: >-
+        The company was founded by Alvin Gottlieb, son of D. Gottlieb and
+        Company's founder, in the same Chicago suburb where Data East Pinball
+        built its machines.
+      cite:
+        ref: https://www.kineticist.com/manufacturers/alvin-g-and-company
+        quote: "Alvin G. and Company was a pinball manufacturer founded in 1991 in Melrose Park, Illinois, by Alvin Gottlieb and his son Michael Gottlieb."
+      location: [usa/il/melrose-park]
+  - corporate-entity.capcom-coin-op-incorporated:
+      note: >-
+        Sunnyvale is the address of the California parent, Capcom USA, while the pinball
+        business itself was the Illinois plant, which Capcom went on running for
+        its other arcade products after the pinball machines stopped. Every game
+        this firm made came out of Arlington Heights, so that is the home
+        recorded here.
+      cite:
+        - ref: https://en.wikipedia.org/wiki/Capcom_Coin-Op
+          quote: "A factory was set up in Arlington Heights, Illinois."
+        - ref: https://en.wikipedia.org/wiki/Capcom_Coin-Op
+          quote: "Based in Sunnyvale, California, and Arlington Heights, Illinois"
+      location: [usa/il/arlington-heights]
+  - corporate-entity.pinball-brothers:
+      note: >-
+        The company draws its
+        head office and its production apart, and its own site says so: the
+        machines are built in Italy under contract, while the company itself is
+        Swedish. German Wikipedia's survey of European makers gives the street
+        address, in Orebro, west of Stockholm.
+      cite:
+        - ref: https://www.pinballbrothers.com/about-us
+          quote: "The pinball machines are handcrafted in Italy, with the head office and warehouse located in Sweden"
+        - ref: https://de.wikipedia.org/wiki/Flipperautomat
+          quote: "Pinball Brothers Skjutbanevägen 11, 703 69, Örebro"
+      location: [sweden/orebro]

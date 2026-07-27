@@ -23,8 +23,12 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   apply.
 - ``alias-length`` — Alias members ≤ 200 chars, abbreviation members ≤ 50 —
   flipcommons rejects over-long members at build.
-- ``cite-scheme-form`` — An IPDB/OPDB record cited by URL must use the
-  ``scheme:identifier`` form — flipcommons rejects a scheme-pattern URL.
+- ``cite-scheme-form`` — An IPDB/OPDB **record** cited by URL must use the
+  ``scheme:identifier`` form — flipcommons rejects a scheme-pattern URL. Keyed on
+  the record paths the schemes declare (``ipdb.org/machine.cgi``,
+  ``opdb.org/machines/``), not the bare domain: another page on those sites (an
+  image page holding a flyer scan) has no scheme form to be rewritten to, and is
+  cited by URL like any other web page.
 - ``description-attribution`` — A ``description:`` field must be attributed to
   ``flipcommons-ai-desc-<type>`` matching the entity type, not the generic
   ``flipcommons-catalog``.
@@ -65,9 +69,35 @@ Checks (each is tagged at its implementation site with a matching ``# name`` com
   flipcommons' apply engine now accepts-but-ignores. Older patches keep it
   (grandfathered); it is rejected going forward so AI sessions stop copying it out
   of recent patches.
+- ``prose-*`` (word-choice family, introduced at 0189) — prose written for the
+  site's nontechnical readers must not use internal programming vocabulary.
+  Three prose corpora are checked — the top-level patch ``description:``, unit
+  ``note:``, and the record ``description:`` field — with per-rule scopes,
+  because some words carry a legitimate physical/trade sense in record
+  descriptions ("the cabinet's edges", "seeded dozens of manufacturers",
+  "SIRMO's catalog is entirely bingo machines"):
+  ``prose-seed`` (say "an earlier ingest"; allowed in record descriptions),
+  ``prose-node``, ``prose-edge`` (allowed in record descriptions),
+  ``prose-code-identifier`` (snake_case tokens and internal CamelCase names),
+  ``prose-bare-entity`` ("entity" is fine only right after
+  "corporate"/"legal"), ``prose-the-record`` (a determiner directly before
+  "record(s)" is always the database sense; "IPDB records 1 unit" and "the
+  pinball record" don't match), ``prose-the-catalog`` (determiner + singular
+  "catalog" — "the catalog", "the eremeka catalog" — leaves the reader unable
+  to resolve the referent: name the site instead; possessive "SIRMO's catalog"
+  and the ``flipcommons-catalog`` slug are spared), ``prose-catalogs`` (bare
+  plural or verb — "catalogs like IPDB", "the community catalogues these
+  machines" — is clear but pedantic: write plain words, 'sites like IPDB',
+  'other pinball sites put it under that name'), and ``prose-pinball-record``
+  (the phrase "the pinball record").
+- ``description-link-density`` — A record ``description:`` may carry at most
+  ``DESCRIPTION_LINK_MAX`` non-citation ``[[…]]`` cross-reference links —
+  link only where load-bearing. ``[[cite:N]]`` footnotes don't count.
 
 Each rule is enforced from the patch number at which it was introduced
-(``RULE_SINCE``); patches below that are grandfathered for it.
+(``RULE_SINCE``); patches below that are grandfathered for it. Run with
+``--all`` to lint every patch under every rule regardless of ``RULE_SINCE`` —
+the review mode for seeing what a new rule would have caught in history.
 """
 
 from __future__ import annotations
@@ -115,6 +145,16 @@ RULE_SINCE: dict[str, int] = {
     "alias-length": 39,
     "patch-description-length": 39,
     "expect-obsolete": 130,
+    "prose-seed": 189,
+    "prose-node": 189,
+    "prose-edge": 189,
+    "prose-code-identifier": 189,
+    "prose-bare-entity": 189,
+    "prose-the-record": 189,
+    "prose-the-catalog": 189,
+    "prose-catalogs": 189,
+    "prose-pinball-record": 189,
+    "description-link-density": 189,
 }
 _PREFIX_RE = re.compile(r"^(\d{4})-")
 
@@ -173,8 +213,16 @@ DESCRIPTION_CITE_EXEMPT_TYPES = {
 PATCH_NUM_RE = re.compile(r"\b0\d{3}\b")
 # Smart quotes and the ellipsis character (copy-paste typography to straighten).
 SMART_RE = re.compile(r"[“”‘’…]")
-# An IPDB/OPDB URL cite that should instead be scheme:identifier.
-SCHEME_DOMAIN_RE = re.compile(r"https?://(?:www\.)?(?:ipdb|opdb)\.org", re.IGNORECASE)
+# An IPDB/OPDB URL cite that should instead be scheme:identifier. Matched on the
+# RECORD path, not the bare domain: these mirror the url_shapes flipcommons'
+# schemes declare (ipdb `/machine.cgi?id=`, opdb `/machines/<id>`), and only a
+# URL a scheme can represent has a scheme form to be rewritten to. Other pages on
+# those sites — an image page such as `/showpic.pl?id=…&picno=…` holding a flyer
+# scan — classify as ordinary web children of the root, so demanding
+# `scheme:identifier` for one would leave it with no citable form at all.
+SCHEME_DOMAIN_RE = re.compile(
+    r"https?://(?:www\.)?(?:ipdb\.org/machine\.cgi|opdb\.org/machines/)", re.IGNORECASE
+)
 INLINE_CITE = "[[cite:"
 # The key inside an inline footnote, e.g. the "2" in [[cite:2]].
 INLINE_CITE_KEY_RE = re.compile(r"\[\[cite:([^\]]+)\]\]")
@@ -192,6 +240,130 @@ ALIAS_MAX, ABBREV_MAX = 200, 50
 # The top-level patch description maps to the Admin-only IngestRun note; keep it
 # to a commit-title-style summary rather than a paragraph of changeset detail.
 PATCH_DESC_MAX = 80
+
+# --- prose word-choice rules (see the docstring's prose-* section) -----------
+# The three prose corpora a rule can apply to. Record descriptions are public
+# encyclopedia text where several of these words have a legitimate
+# physical/trade sense, so some rules exclude them.
+PATCH_DESC, NOTE, RECORD_DESC = "patch description", "note", "description"
+_ALL_PROSE = frozenset({PATCH_DESC, NOTE, RECORD_DESC})
+_AUTHORING_PROSE = frozenset({PATCH_DESC, NOTE})
+
+# Internal CamelCase model names. A general CamelCase pattern can't work —
+# TiltBob, WhizBang, MarsaPlay and other brand names are legitimate CamelCase —
+# so code names are denylisted explicitly.
+_INTERNAL_CAMEL = (
+    "ChangeSet",
+    "CitationSource",
+    "CorporateEntity",
+    "DateOfManufacture",
+    "IngestRun",
+    "MachineModel",
+    "ModelRelationship",
+    "ProductionStatus",
+)
+
+# (rule, corpora it applies to, pattern, guidance). Each match is reported with
+# the offending token, so guidance stays generic.
+PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
+    (
+        "prose-seed",
+        _AUTHORING_PROSE,
+        re.compile(r"\bseed(?:s|ed|ing)?\b", re.IGNORECASE),
+        "contributors don't know the seed — say 'an earlier ingest'",
+    ),
+    (
+        "prose-node",
+        _ALL_PROSE,
+        re.compile(r"\bnodes?\b", re.IGNORECASE),
+        "internal term — describe the record in plain words",
+    ),
+    (
+        "prose-edge",
+        _AUTHORING_PROSE,
+        re.compile(r"\bedges?\b", re.IGNORECASE),
+        "internal term — describe the relationship in plain words",
+    ),
+    (
+        "prose-code-identifier",
+        _ALL_PROSE,
+        re.compile(
+            r"\b[a-z][a-z0-9]*(?:_[a-z0-9]+)+\b"
+            r"|\b(?:" + "|".join(_INTERNAL_CAMEL) + r")s?\b"
+        ),
+        "code identifier — write it in plain words ('conversion kit', "
+        "'relationship type')",
+    ),
+    (
+        "prose-bare-entity",
+        _ALL_PROSE,
+        re.compile(
+            r"(?<!corporate )(?<!corporate-)(?<!legal )(?<!legal-)"
+            r"\bentit(?:y|ies)\b",
+            re.IGNORECASE,
+        ),
+        "internal jargon — name the thing (the firm, the maker, the record) "
+        "or write 'corporate entity' in full",
+    ),
+    (
+        "prose-the-record",
+        _ALL_PROSE,
+        re.compile(
+            r"\b(?:the|this|that|these|those|each|every|its|their|both|all|per)"
+            r"\s+records?\b",
+            re.IGNORECASE,
+        ),
+        "database phrasing — name what it is (the machine, the maker, the entry)",
+    ),
+    # 'catalog' is two different problems, so two rules with different fixes.
+    # Determiner + singular ("the catalog", "this catalog", "the eremeka
+    # catalog"): the READER CAN'T RESOLVE THE REFERENT — they don't know
+    # "catalog" means a website, this one or another. The fix is to name the
+    # site. Possessives ("SIRMO's catalog", a maker's product line) are
+    # legitimate trade English and don't match.
+    (
+        "prose-the-catalog",
+        _ALL_PROSE,
+        re.compile(
+            r"\b(?:the|this|our)\s+(?:\w+\s+)?catalog(?:ue)?\b",
+            re.IGNORECASE,
+        ),
+        "the reader can't tell what site 'catalog' refers to — name the site: "
+        "this one by name, another by its name or domain ('eremeka.net dates "
+        "this to 1974')",
+    ),
+    # Bare plural or verb ("Catalogs list them", "the community catalogues
+    # these machines"): the referent is clear — the problem is the PEDANTIC
+    # REGISTER. The fix is plain wording, not naming a site.
+    (
+        "prose-catalogs",
+        _ALL_PROSE,
+        re.compile(r"(?<!-)\bcatalog(?:ue)?s\b", re.IGNORECASE),
+        "pedantic — these are sites and lists: write 'sites like IPDB', "
+        "'IPDB lists it', 'other pinball sites put it under that name'",
+    ),
+    (
+        "prose-pinball-record",
+        _ALL_PROSE,
+        re.compile(r"\bthe pinball record\b", re.IGNORECASE),
+        "drop the phrase — 'known in the pinball record for X' is just 'known for X'",
+    ),
+)
+
+# A record description may cross-reference other entries, but only where
+# load-bearing; [[cite:N]] footnotes are evidence, not cross-references, and
+# don't count.
+NONCITE_LINK_RE = re.compile(r"\[\[(?!cite:)")
+DESCRIPTION_LINK_MAX = 8
+
+
+def _prose_errors(corpus: str, text: str, patch_num: int) -> Iterator[str]:
+    """Word-choice findings for one prose field, without the location prefix."""
+    for rule, corpora, pattern, guidance in PROSE_RULES:
+        if corpus not in corpora or not _active(rule, patch_num):
+            continue
+        for token in dict.fromkeys(m.group(0) for m in pattern.finditer(text)):
+            yield f"{corpus} uses {token!r} — {guidance}"
 
 
 def _cite_root(cite: str) -> str | None:
@@ -351,6 +523,8 @@ def _check_unit(
                 f"put the verbatim excerpt in quote: on the cite: mapping and "
                 f"keep the note for rationale"
             )
+        # prose-*: word choice — notes are public
+        errors.extend(f"{where}: {e}" for e in _prose_errors(NOTE, note, patch_num))
 
     # quote-typography: every quote on the unit (entry-level cite and inline cites)
     for quote_label, quote in unit_quotes:
@@ -383,6 +557,20 @@ def _check_unit(
 
     # description-attribution + description-needs-inline-cite + description-no-entry-cite
     if has_description:
+        # prose-*: word choice — record descriptions are the site's public text
+        if isinstance(description, str):
+            errors.extend(
+                f"{where}: {e}"
+                for e in _prose_errors(RECORD_DESC, description, patch_num)
+            )
+            # description-link-density: cross-reference only where load-bearing
+            n_links = len(NONCITE_LINK_RE.findall(description))
+            if n_links > DESCRIPTION_LINK_MAX and on("description-link-density"):
+                errors.append(
+                    f"{where}: description carries {n_links} cross-reference "
+                    f"links (max {DESCRIPTION_LINK_MAX}) — link only where "
+                    f"load-bearing"
+                )
         want = f"flipcommons-ai-desc-{ref_type}"
         if attribution != want and on("description-attribution"):
             errors.append(
@@ -460,14 +648,21 @@ def _check_unit(
     return errors
 
 
-def lint_patch(filename: str, data: object) -> list[str]:
-    """Lint one parsed patch; return a list of ``filename: …`` error strings."""
+def lint_patch(
+    filename: str, data: object, *, ignore_grandfather: bool = False
+) -> list[str]:
+    """Lint one parsed patch; return a list of ``filename: …`` error strings.
+
+    ``ignore_grandfather`` lints the patch under every rule regardless of
+    ``RULE_SINCE`` — the ``--all`` review mode for seeing what a rule would
+    have caught in immutable history.
+    """
     if not is_mapping(data):
         return []
     attribution = data.get("attribution", "")
     if not isinstance(attribution, str):
         attribution = ""
-    patch_num = _patch_number(filename)
+    patch_num = 10**9 if ignore_grandfather else _patch_number(filename)
     errors: list[str] = []
 
     # patch-description-length: the whole-patch description (→ IngestRun.note) is
@@ -483,6 +678,9 @@ def lint_patch(filename: str, data: object) -> list[str]:
                 f"{PATCH_DESC_MAX}) — keep it to a single short summary; per-change "
                 f"detail belongs in note: fields, not the Admin-only description:"
             )
+    # prose-*: word choice on the patch description
+    if isinstance(description, str):
+        errors.extend(_prose_errors(PATCH_DESC, description, patch_num))
 
     claims = data.get("claims")
     if isinstance(claims, list):
@@ -500,7 +698,9 @@ def lint_patch(filename: str, data: object) -> list[str]:
     return [f"{filename}: {e}" for e in errors]
 
 
-def main() -> int:
+def main(argv: list[str] | None = None) -> int:
+    args = sys.argv[1:] if argv is None else argv
+    ignore_grandfather = "--all" in args
     if not PATCHES_DIR.is_dir():
         print("No patches/ directory; nothing to lint.")
         return 0
@@ -508,12 +708,15 @@ def main() -> int:
     errors: list[str] = []
     for path in sorted(PATCHES_DIR.glob("*.yaml")):
         # Every patch is linted; each rule grandfathers patches below its own
-        # introduction number (see RULE_SINCE), so immutable history stays clean.
+        # introduction number (see RULE_SINCE), so immutable history stays clean
+        # — unless --all, the review mode that lints everything under every rule.
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
         except yaml.YAMLError:
             continue  # parse/structural validity is validate_patches.py's job
-        errors.extend(lint_patch(path.name, data))
+        errors.extend(
+            lint_patch(path.name, data, ignore_grandfather=ignore_grandfather)
+        )
 
     if errors:
         print(f"{len(errors)} patch lint error(s):", file=sys.stderr)
