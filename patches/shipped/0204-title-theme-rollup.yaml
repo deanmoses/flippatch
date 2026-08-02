@@ -1,0 +1,85 @@
+attribution: flipcommons-catalog
+description: >
+  Give same-named machines under one title the same set of themes.
+claims:
+  - model.dungeons-and-dragons-the-tyrants-eye-limited-edition:
+      note: "Every machine under the title 'Dungeons & Dragons: The Tyrant's Eye' carries that same name, so they are the same game. 'Fantasy' and 'Licensed' are recorded on Dungeons & Dragons: The Tyrant's Eye (Premium), and describe this one too."
+      theme: [fantasy, licensed]
+  - model.dungeons-dragons-the-tyrants-eye-pro:
+      note: "Every machine under the title 'Dungeons & Dragons: The Tyrant's Eye' carries that same name, so they are the same game. 'Fantasy' and 'Licensed' are recorded on Dungeons & Dragons: The Tyrant's Eye (Premium), and describe this one too."
+      theme: [fantasy, licensed]
+  - model.galactic-tank-force-deluxe:
+      note: "Every machine under the title 'Galactic Tank Force' carries that same name, so they are the same game. 'Outer Space' and 'Science Fiction' are recorded on Galactic Tank Force (Classic), and describe this one too."
+      theme: [outer-space, science-fiction]
+  - model.galactic-tank-force-limited-edition:
+      note: "Every machine under the title 'Galactic Tank Force' carries that same name, so they are the same game. 'Outer Space' and 'Science Fiction' are recorded on Galactic Tank Force (Classic), and describe this one too."
+      theme: [outer-space, science-fiction]
+  - model.galactic-tank-force-signature:
+      note: "Every machine under the title 'Galactic Tank Force' carries that same name, so they are the same game. 'Outer Space' and 'Science Fiction' are recorded on Galactic Tank Force (Classic), and describe this one too."
+      theme: [outer-space, science-fiction]
+  - model.halloween-blood-sucker-edition:
+      note: "Every machine under the title 'Halloween' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Movies' are recorded on Halloween (Standard Edition), and describe this one too."
+      theme: [horror, licensed, movies]
+  - model.halloween-collectors-edition:
+      note: "Every machine under the title 'Halloween' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Movies' are recorded on Halloween (Standard Edition), and describe this one too."
+      theme: [horror, licensed, movies]
+  - model.harry-potter-arcade-edition:
+      note: "Every machine under the title 'Harry Potter' carries that same name, so they are the same game. 'Fantasy' and 'Magic' are recorded on Harry Potter (Wizard Edition), and describe this one too."
+      theme: [fantasy, magic]
+  - model.harry-potter-collectors-edition:
+      note: "Every machine under the title 'Harry Potter' carries that same name, so they are the same game. 'Fantasy' and 'Magic' are recorded on Harry Potter (Wizard Edition), and describe this one too."
+      theme: [fantasy, magic]
+  - model.metallica-pro-led:
+      note: "The machines named 'Metallica' under that title are the same game. 'Heavy Metal' is recorded on Metallica (Premium), Metallica (Pro), Metallica Master of Puppets (Limited Edition) and Metallica Monsters (Premium), and describes this one too."
+      theme: [heavy-metal]
+  - model.ninja-eclipse-first-edition:
+      note: "Every machine under the title 'Ninja Eclipse' carries that same name, so they are the same game. 'Martial Arts' is recorded on Ninja Eclipse (Arcade Edition), and describes this one too."
+      theme: [martial-arts]
+  - model.pokemon-limited-edition:
+      note: "Every machine under the title 'Pokémon' carries that same name, so they are the same game. 'Licensed' is recorded on Pokémon (Premium), and describes this one too."
+      theme: [licensed]
+  - model.pokemon-pro:
+      note: "Every machine under the title 'Pokémon' carries that same name, so they are the same game. 'Licensed' is recorded on Pokémon (Premium), and describes this one too."
+      theme: [licensed]
+  - model.portal-standard:
+      note: "Every machine under the title 'Portal' carries that same name, so they are the same game. 'Licensed', 'Science Fiction' and 'Video Games' are recorded on Portal (Extended), and describe this one too."
+      theme: [licensed, science-fiction, video-games]
+  - model.punny-factory-engraved:
+      note: "Every machine under the title 'Punny Factory' carries that same name, so they are the same game. 'Comedy' and 'Humor' are recorded on Punny Factory, and describe this one too."
+      theme: [comedy, humor]
+  - model.queen-limited-edition:
+      note: "Every machine under the title 'Queen' carries that same name, so they are the same game. 'Licensed' and 'Rock Music' are recorded on Queen (Collector's Edition), and describe this one too."
+      theme: [licensed, rock-music]
+  - model.the-texas-chainsaw-massacre-blood-sucker-edition:
+      note: "Every machine under the title 'The Texas Chainsaw Massacre' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Movies' are recorded on The Texas Chainsaw Massacre (Standard Edition), and describe this one too."
+      theme: [horror, licensed, movies]
+  - model.the-texas-chainsaw-massacre-collectors-edition:
+      note: "Every machine under the title 'The Texas Chainsaw Massacre' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Movies' are recorded on The Texas Chainsaw Massacre (Standard Edition), and describe this one too."
+      theme: [horror, licensed, movies]
+  - model.the-uncanny-x-men-limited-edition:
+      note: "Every machine under the title 'The Uncanny X-Men' carries that same name, so they are the same game. 'Action Movies', 'Licensed' and 'Superheroes' are recorded on The Uncanny X-Men (Premium), and describe this one too."
+      theme: [action-movies, licensed, superheroes]
+  - model.the-uncanny-x-men-pro:
+      note: "Every machine under the title 'The Uncanny X-Men' carries that same name, so they are the same game. 'Action Movies', 'Licensed' and 'Superheroes' are recorded on The Uncanny X-Men (Premium), and describe this one too."
+      theme: [action-movies, licensed, superheroes]
+  - model.the-walking-dead-remastered-limited-edition:
+      note: "Every machine under the title 'The Walking Dead Remastered' carries that same name, so they are the same game. 'Licensed', 'Television Shows' and 'Zombies' are recorded on The Walking Dead Remastered (Premium), and describe this one too."
+      theme: [licensed, television-shows, zombies]
+  - model.ultraman-kaiju-rumble-blood-sucker-edition:
+      note: "Every machine under the title 'Ultraman: Kaiju Rumble' carries that same name, so they are the same game. 'Licensed' and 'Monsters' are recorded on Ultraman: Kaiju Rumble (Standard Edition), and describe this one too."
+      theme: [licensed, monsters]
+  - model.ultraman-kaiju-rumble-collectors-edition:
+      note: "Every machine under the title 'Ultraman: Kaiju Rumble' carries that same name, so they are the same game. 'Licensed' and 'Monsters' are recorded on Ultraman: Kaiju Rumble (Standard Edition), and describe this one too."
+      theme: [licensed, monsters]
+  - model.venom-limited-edition:
+      note: "Every machine under the title 'Venom' carries that same name, so they are the same game. 'Action Movies', 'Licensed' and 'Superheroes' are recorded on Venom (Premium), and describe this one too."
+      theme: [action-movies, licensed, superheroes]
+  - model.venom-pro:
+      note: "Every machine under the title 'Venom' carries that same name, so they are the same game. 'Action Movies', 'Licensed' and 'Superheroes' are recorded on Venom (Premium), and describe this one too."
+      theme: [action-movies, licensed, superheroes]
+  - model.weird-als-museum-of-natural-hilarity-limited-edition:
+      note: "Every machine under the title 'Weird Al's Museum of Natural Hilarity' carries that same name, so they are the same game. 'Celebrities', 'Licensed' and 'Pop Music' are recorded on Weird Al's Museum of Natural Hilarity, and describe this one too."
+      theme: [celebrities, licensed, pop-music]
+  - model.x-men-limited-edition:
+      note: "The machines named 'X-Men' under that title are the same game. 'Comics', 'Fantasy' and 'Licensed' are recorded on X-Men (Pro), X-Men Magneto (Limited Edition) and X-Men Wolverine (Limited Edition), and describe this one too."
+      theme: [comics, fantasy, licensed]
