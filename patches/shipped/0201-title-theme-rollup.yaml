@@ -1,0 +1,175 @@
+attribution: flipcommons-catalog
+description: >
+  Give same-named machines under one title the same set of themes.
+claims:
+  - model.alaska-2:
+      note: "Every machine under the title 'Alaska' carries that same name, so they are the same game. 'American Places' is recorded on Alaska (EM) and the 1978 Interflip machine, and describes this one too."
+      theme: [american-places]
+  - model.alien-ellen-ripley:
+      note: "Every machine under the title 'Alien' carries that same name, so they are the same game. 'Licensed' and 'Science Fiction' are recorded on Alien (Pro), and describe this one too."
+      theme: [licensed, science-fiction]
+  - model.alien-limited-edition:
+      note: "Every machine under the title 'Alien' carries that same name, so they are the same game. 'Licensed' and 'Science Fiction' are recorded on Alien (Pro), and describe this one too."
+      theme: [licensed, science-fiction]
+  - model.alien-remake:
+      note: "Every machine under the title 'Alien' carries that same name, so they are the same game. 'Licensed' and 'Science Fiction' are recorded on Alien (Pro), and describe this one too."
+      theme: [licensed, science-fiction]
+  - model.alien-remake-limited-edition:
+      note: "Every machine under the title 'Alien' carries that same name, so they are the same game. 'Licensed' and 'Science Fiction' are recorded on Alien (Pro), and describe this one too."
+      theme: [licensed, science-fiction]
+  - model.attack-from-mars-remake:
+      note: "Every machine under the title 'Attack from Mars' carries that same name, so they are the same game. 'Aliens', 'Fantasy' and 'Martians' are recorded on Attack From Mars (Remake Limited Edition), Attack From Mars (Remake Special Edition) and Attack from Mars, and describe this one too."
+      theme: [aliens, fantasy, martians]
+  - model.batman-66-catwoman-signature-edition:
+      note: "Every machine under the title 'Batman 66' carries that same name, so they are the same game. 'Comics', 'Licensed' and 'Superheroes' are recorded on Batman 66 (Limited Edition), Batman 66 (Premium) and Batman 66 (Super Limited Edition), and describe this one too."
+      theme: [comics, licensed, superheroes]
+  - model.beat-the-clock-2:
+      note: "Every machine under the title 'Beat the Clock' carries that same name, so they are the same game. 'Competition' and 'Sports' are recorded on the 1985 Bally Wulff machine, and describe this one too."
+      theme: [competition, sports]
+  - model.big-guns-2:
+      note: "Every machine under the title 'Big Guns' carries that same name, so they are the same game. 'Medieval' and 'Space' are recorded on the 1987 Williams machine, and describe this one too."
+      theme: [medieval, space]
+  - model.big-valley-rmg:
+      note: "Every machine under the title 'Big Valley' carries that same name, so they are the same game. 'American West' is recorded on the 1970 Bally machine, and describes this one too."
+      theme: [american-west]
+  - model.buckaroo-3:
+      note: "Every machine under the title 'Buckaroo' carries that same name, so they are the same game. 'American West' is recorded on the 1939 Chicago Coin machine, and describes this one too."
+      theme: [american-west]
+  - model.captain-fantastic-the-brown-dirt-cowboy:
+      note: "Every machine under the title 'Captain Fantastic and the Brown Dirt Cowboy' carries that same name, so they are the same game. 'Music' is recorded on Captain Fantastic and the Brown Dirt Cowboy, and describes this one too."
+      theme: [music]
+  - model.celts-highland:
+      note: "Every machine under the title 'Celts' carries that same name, so they are the same game. 'Foreign Peoples' is recorded on Celts, and describes this one too."
+      theme: [foreign-peoples]
+  - model.circus-9:
+      note: "Every machine under the title 'Circus' carries that same name, so they are the same game. 'Trapeze' is recorded on the other machines of the same name, and describes this one too."
+      theme: [trapeze]
+  - model.cosmic-flash-2:
+      note: "Every machine under the title 'Cosmic Flash' carries that same name, so they are the same game. 'Fantasy' and 'Space' are recorded on the 1985 NSM machine, and describe this one too."
+      theme: [fantasy, space]
+  - model.dracula-lai:
+      note: "Every machine under the title 'Dracula' carries that same name, so they are the same game. 'Monsters' is recorded on the 1979 Stern Electronics machine, and describes this one too."
+      theme: [monsters]
+  - model.elviras-house-of-horrors-40th-anniversary:
+      note: "Every machine under the title 'Elvira's House of Horrors' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Supernatural' are recorded on Elvira's House of Horrors (Limited Edition), Elvira's House of Horrors (Premium) and Elvira's House of Horrors (Signature Edition), and describe this one too."
+      theme: [horror, licensed, supernatural]
+  - model.elviras-house-of-horrors-blood-red-kiss:
+      note: "Every machine under the title 'Elvira's House of Horrors' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Supernatural' are recorded on Elvira's House of Horrors (Limited Edition), Elvira's House of Horrors (Premium) and Elvira's House of Horrors (Signature Edition), and describe this one too."
+      theme: [horror, licensed, supernatural]
+  - model.flash-gordon-2:
+      note: "Every machine under the title 'Flash Gordon' carries that same name, so they are the same game. 'Fictional Characters' is recorded on the 1980 Bally machine, and describes this one too."
+      theme: [fictional-characters]
+  - model.frontier-2:
+      note: "Every machine under the title 'Frontier' carries that same name, so they are the same game. 'American West' is recorded on the 1980 Bally machine, and describes this one too."
+      theme: [american-west]
+  - model.full:
+      note: "Every machine under the title 'Full' carries that same name, so they are the same game. 'Bowling' and 'Sports' are recorded on the 1977 Recreativos Franco machine, and describe this one too."
+      theme: [bowling, sports]
+  - model.geisha:
+      note: "Every machine under the title 'Geisha' carries that same name, so they are the same game. 'World Cultures' is recorded on the 1973 Playmatic machine, and describes this one too."
+      theme: [world-cultures]
+  - model.godzilla-70th-anniversary:
+      note: "Every machine under the title 'Godzilla' carries that same name, so they are the same game. 'Licensed', 'Monsters' and 'Science Fiction' are recorded on Godzilla (Limited Edition), Godzilla (Premium) and Godzilla (Pro), and describe this one too."
+      theme: [licensed, monsters, science-fiction]
+  - model.granada-3:
+      note: "Every machine under the title 'Granada' carries that same name, so they are the same game. 'Dancing', 'Music', 'Women' and 'World Places' are recorded on the 1972 Williams machine, and describe this one too."
+      theme: [dancing, music, women, world-places]
+  - model.hardbody-bally-wulff:
+      note: "Every machine under the title 'Hardbody' carries that same name, so they are the same game. 'Body Building' and 'Exercise' are recorded on the 1987 Bally machine, and describe this one too."
+      theme: [body-building, exercise]
+  - model.houdini-master-of-mystery-deluxe:
+      note: "Every machine under the title 'Houdini: Master of Mystery' carries that same name, so they are the same game. 'Historical Characters', 'Magic' and 'Wizards' are recorded on Houdini: Master of Mystery, and describe this one too."
+      theme: [historical-characters, magic, wizards]
+  - model.jurassic-park-30th-anniversary:
+      note: "Every machine under the title 'Jurassic Park' carries that same name, so they are the same game. 'Dinosaurs' and 'Licensed' are recorded on Jurassic Park (Limited Edition), Jurassic Park (Premium) and Jurassic Park (Pro), and describe this one too."
+      theme: [dinosaurs, licensed]
+  - model.jurassic-park-premium:
+      note: "Every machine under the title 'Jurassic Park' carries that same name, so they are the same game. 'Dinosaurs' is recorded on Jurassic Park (Limited Edition) and Jurassic Park (Pro), and describes this one too."
+      theme: [dinosaurs]
+  - model.lucky-star-3:
+      note: "Every machine under the title 'Lucky Star' carries that same name, so they are the same game. 'Football' and 'Sports' are recorded on the 1932 Lucky Star Manufacturing Company machine, and describe this one too."
+      theme: [football, sports]
+  - model.majors-2:
+      note: "Every machine under the title 'Majors' carries that same name, so they are the same game. 'Baseball' and 'Sports' are recorded on the 1939 Chicago Coin machine, and describe this one too."
+      theme: [baseball, sports]
+  - model.meteor-taito-do-brasil:
+      note: "Every machine under the title 'Meteor' carries that same name, so they are the same game. 'Licensed' is recorded on the 1979 LAI machine and the 1979 Stern Electronics machine, and describes this one too."
+      theme: [licensed]
+  - model.monster-bash-remake-classic-edition:
+      note: "Every machine under the title 'Monster Bash' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Monsters' are recorded on Monster Bash, and describe this one too."
+      theme: [horror, licensed, monsters]
+  - model.monster-bash-remake-limited-edition:
+      note: "Every machine under the title 'Monster Bash' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Monsters' are recorded on Monster Bash, and describe this one too."
+      theme: [horror, licensed, monsters]
+  - model.monster-bash-remake-special-edition:
+      note: "Every machine under the title 'Monster Bash' carries that same name, so they are the same game. 'Horror', 'Licensed' and 'Monsters' are recorded on Monster Bash, and describe this one too."
+      theme: [horror, licensed, monsters]
+  - model.pirates-of-the-caribbean-limited-edition:
+      note: "Every machine under the title 'Pirates of the Caribbean' carries that same name, so they are the same game. 'Movies' is recorded on Pirates of the Caribbean (Collector's Edition) and Pirates of the Caribbean (Standard Edition), and describes this one too."
+      theme: [movies]
+  - model.red-arrow-4:
+      note: "Every machine under the title 'Red Arrow' carries that same name, so they are the same game. 'Archery' and 'Sports' are recorded on Red Arrow (payout model), and describe this one too."
+      theme: [archery, sports]
+  - model.roller-coaster:
+      note: "Every machine under the title 'Roller Coaster' carries that same name, so they are the same game. 'Amusement Parks', 'Carnival' and 'Roller Coasters' are recorded on the 1973 Maresa machine, and describe this one too."
+      theme: [amusement-parks, carnival, roller-coasters]
+  - model.sharp-shooter:
+      note: "Every machine under the title 'Sharp Shooter' carries that same name, so they are the same game. 'Gambling' is recorded on the 1935 ESCO machine, and describes this one too."
+      theme: [gambling]
+  - model.solar-ride:
+      note: "Every machine under the title 'Solar Ride' carries that same name, so they are the same game. 'Fantasy' and 'Space' are recorded on the 1979 Electromatic Brasil machine, and describe this one too."
+      theme: [fantasy, space]
+  - model.solar-ride-2:
+      note: "Every machine under the title 'Solar Ride' carries that same name, so they are the same game. 'Fantasy' and 'Space' are recorded on the 1979 Electromatic Brasil machine, and describe this one too."
+      theme: [fantasy, space]
+  - model.spanish-eyes-segasa:
+      note: "Every machine under the title 'Spanish Eyes' carries that same name, so they are the same game. 'Dancing', 'Music', 'Women' and 'World Places' are recorded on the 1972 Williams machine, and describe this one too."
+      theme: [dancing, music, women, world-places]
+  - model.spider-man-vault-edition:
+      note: "Every machine under the title 'Spider-Man' carries that same name, so they are the same game. 'Movies' is recorded on Spider-Man and Spider-Man (Black Suited Limited Edition), and describes this one too."
+      theme: [movies]
+  - model.star-trek-premium-vault:
+      note: "Every machine under the title 'Star Trek' carries that same name, so they are the same game. 'Fantasy', 'Licensed', 'Outer Space', 'Science Fiction' and 'Space' are recorded on Star Trek (Limited Edition), Star Trek (Premium) and Star Trek (Pro), and describe this one too."
+      theme: [fantasy, licensed, outer-space, science-fiction, space]
+  - model.star-trek-vault:
+      note: "Every machine under the title 'Star Trek' carries that same name, so they are the same game. 'Fantasy', 'Licensed', 'Outer Space', 'Science Fiction' and 'Space' are recorded on Star Trek (Limited Edition), Star Trek (Premium) and Star Trek (Pro), and describe this one too."
+      theme: [fantasy, licensed, outer-space, science-fiction, space]
+  - model.strike:
+      note: "Every machine under the title 'Strike' carries that same name, so they are the same game. 'Sports' is recorded on the 1974 Zaccaria machine, and describes this one too."
+      theme: [sports]
+  - model.tag-team-pinball-2:
+      note: "Every machine under the title 'Tag-Team Pinball' carries that same name, so they are the same game. 'Wrestling' is recorded on the 1985 Gottlieb machine, and describes this one too."
+      theme: [wrestling]
+  - model.the-godfather:
+      note: "Every machine under the title 'The Godfather' carries that same name, so they are the same game. 'Cops And Robbers' and 'Gangsters' are recorded on the Petaco machine, and describe this one too."
+      theme: [cops-and-robbers, gangsters]
+  - model.the-hobbit-black-arrow-special-edition:
+      note: "Every machine under the title 'The Hobbit' carries that same name, so they are the same game. 'Movies' is recorded on The Hobbit (Standard Edition), and describes this one too."
+      theme: [movies]
+  - model.the-hobbit-limited-edition:
+      note: "Every machine under the title 'The Hobbit' carries that same name, so they are the same game. 'Fantasy', 'Licensed', 'Magic', 'Movies' and 'Wizards' are recorded on The Hobbit (Black Arrow), The Hobbit (Motion Picture Trilogy), The Hobbit (Smaug Gold) and The Hobbit (Standard Edition), and describe this one too."
+      theme: [fantasy, licensed, magic, movies, wizards]
+  - model.the-hobbit-motion-picture-trilogy-limited-edition:
+      note: "Every machine under the title 'The Hobbit' carries that same name, so they are the same game. 'Movies' is recorded on The Hobbit (Standard Edition), and describes this one too."
+      theme: [movies]
+  - model.the-hobbit-smaug-gold-special-edition:
+      note: "Every machine under the title 'The Hobbit' carries that same name, so they are the same game. 'Movies' is recorded on The Hobbit (Standard Edition), and describes this one too."
+      theme: [movies]
+  - model.the-wizard-of-oz-75th-anniversary-edition:
+      note: "Every machine under the title 'The Wizard of Oz' carries that same name, so they are the same game. 'Movies' is recorded on The Wizard of Oz (Standard Edition), and describes this one too."
+      theme: [movies]
+  - model.the-wizard-of-oz-emerald-city:
+      note: "Every machine under the title 'The Wizard of Oz' carries that same name, so they are the same game. 'Fantasy', 'Licensed', 'Magic', 'Movies' and 'Wizards' are recorded on The Wizard of Oz (75th Anniversary) and The Wizard of Oz (Standard Edition), and describe this one too."
+      theme: [fantasy, licensed, magic, movies, wizards]
+  - model.the-wizard-of-oz-limited-edition:
+      note: "Every machine under the title 'The Wizard of Oz' carries that same name, so they are the same game. 'Fantasy', 'Licensed', 'Magic', 'Movies' and 'Wizards' are recorded on The Wizard of Oz (75th Anniversary) and The Wizard of Oz (Standard Edition), and describe this one too."
+      theme: [fantasy, licensed, magic, movies, wizards]
+  - model.the-wizard-of-oz-yellow-brick-road:
+      note: "Every machine under the title 'The Wizard of Oz' carries that same name, so they are the same game. 'Fantasy', 'Licensed', 'Magic', 'Movies' and 'Wizards' are recorded on The Wizard of Oz (75th Anniversary) and The Wizard of Oz (Standard Edition), and describe this one too."
+      theme: [fantasy, licensed, magic, movies, wizards]
+  - model.total-nuclear-annihilation-collectors-edition:
+      note: "Every machine under the title 'Total Nuclear Annihilation' carries that same name, so they are the same game. 'War' is recorded on Total Nuclear Annihilation, and describes this one too."
+      theme: [war]
+  - model.victory-3:
+      note: "Every machine under the title 'Victory' carries that same name, so they are the same game. 'Sports' is recorded on the VIFICO machine, and describes this one too."
+      theme: [sports]
