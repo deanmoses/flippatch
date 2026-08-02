@@ -1,0 +1,61 @@
+attribution: flipcommons-catalog
+description: >
+  Give same-named machines under one title the same set of themes.
+claims:
+  - model.abba-limited-edition:
+      note: "Every machine under the title 'ABBA' carries that same name, so they are the same game. 'Licensed' and 'Pop Music' are recorded on ABBA (Collector's Edition), and describe this one too."
+      theme: [licensed, pop-music]
+  - model.avatar-the-battle-for-pandora-collectors-edition:
+      note: "Every machine under the title 'Avatar: The Battle for Pandora' carries that same name, so they are the same game. 'Licensed' and 'Sci-fi Movies' are recorded on Avatar: The Battle for Pandora (Limited Edition), and describe this one too."
+      theme: [licensed, sci-fi-movies]
+  - model.elton-john-collectors-edition:
+      note: "Every machine under the title 'Elton John' carries that same name, so they are the same game. 'Celebrities', 'Licensed' and 'Music' are recorded on Elton John (Platinum Edition), and describe this one too."
+      theme: [celebrities, licensed, music]
+  - model.foo-fighters-limited-edition:
+      note: "Every machine under the title 'Foo Fighters' carries that same name, so they are the same game. 'Hard Rock' and 'Licensed' are recorded on Foo Fighters (Premium), and describe this one too."
+      theme: [hard-rock, licensed]
+  - model.foo-fighters-pro:
+      note: "Every machine under the title 'Foo Fighters' carries that same name, so they are the same game. 'Hard Rock' and 'Licensed' are recorded on Foo Fighters (Premium), and describe this one too."
+      theme: [hard-rock, licensed]
+  - model.john-wick-limited-edition:
+      note: "Every machine under the title 'John Wick' carries that same name, so they are the same game. 'Action Movies', 'Celebrities' and 'Licensed' are recorded on John Wick (Premium), and describe this one too."
+      theme: [action-movies, celebrities, licensed]
+  - model.john-wick-pro:
+      note: "Every machine under the title 'John Wick' carries that same name, so they are the same game. 'Action Movies', 'Celebrities' and 'Licensed' are recorded on John Wick (Premium), and describe this one too."
+      theme: [action-movies, celebrities, licensed]
+  - model.king-kong-myth-of-terror-island-limited-edition:
+      note: "Every machine under the title 'King Kong: Myth of Terror Island' carries that same name, so they are the same game. 'Licensed', 'Monsters' and 'Movies' are recorded on King Kong: Myth of Terror Island (Premium), and describe this one too."
+      theme: [licensed, monsters, movies]
+  - model.king-kong-myth-of-terror-island-pro:
+      note: "Every machine under the title 'King Kong: Myth of Terror Island' carries that same name, so they are the same game. 'Licensed', 'Monsters' and 'Movies' are recorded on King Kong: Myth of Terror Island (Premium), and describe this one too."
+      theme: [licensed, monsters, movies]
+  - model.looney-tunes-blood-sucker-edition:
+      note: "Every machine under the title 'Looney Tunes' carries that same name, so they are the same game. 'Cartoons', 'Licensed' and 'Television Shows' are recorded on Looney Tunes (Standard Edition), and describe this one too."
+      theme: [cartoons, licensed, television-shows]
+  - model.looney-tunes-collectors-edition:
+      note: "Every machine under the title 'Looney Tunes' carries that same name, so they are the same game. 'Cartoons', 'Licensed' and 'Television Shows' are recorded on Looney Tunes (Standard Edition), and describe this one too."
+      theme: [cartoons, licensed, television-shows]
+  - model.merlins-arcade-legendary-edition:
+      note: "Every machine under the title 'Merlin's Arcade' carries that same name, so they are the same game. 'Wizards' is recorded on Merlin's Arcade (Arcade Edition), and describes this one too."
+      theme: [wizards]
+  - model.metallica-remastered-limited-edition:
+      note: "Every machine under the title 'Metallica Remastered' carries that same name, so they are the same game. 'Heavy Metal' and 'Licensed' are recorded on Metallica Remastered (Premium), and describe this one too."
+      theme: [heavy-metal, licensed]
+  - model.pulp-fiction-limited-edition:
+      note: "Every machine under the title 'Pulp Fiction' carries that same name, so they are the same game. 'Licensed' and 'Movies' are recorded on Pulp Fiction (Special Edition), and describe this one too."
+      theme: [licensed, movies]
+  - model.star-wars-fall-of-the-empire-limited-edition:
+      note: "Every machine under the title 'Star Wars: Fall of the Empire' carries that same name, so they are the same game. 'Licensed' and 'Sci-fi Movies' are recorded on Star Wars: Fall of the Empire (Premium), and describe this one too."
+      theme: [licensed, sci-fi-movies]
+  - model.star-wars-fall-of-the-empire-pro:
+      note: "Every machine under the title 'Star Wars: Fall of the Empire' carries that same name, so they are the same game. 'Licensed' and 'Sci-fi Movies' are recorded on Star Wars: Fall of the Empire (Premium), and describe this one too."
+      theme: [licensed, sci-fi-movies]
+  - model.the-godfather-collectors-edition:
+      note: "Every machine under the title 'The Godfather' carries that same name, so they are the same game. 'Licensed' and 'Movies' are recorded on The Godfather (Limited Edition), and describe this one too."
+      theme: [licensed, movies]
+  - model.the-princess-bride-collectors-edition:
+      note: "Every machine under the title 'The Princess Bride' carries that same name, so they are the same game. 'Licensed' and 'Movies' are recorded on The Princess Bride, and describe this one too."
+      theme: [licensed, movies]
+  - model.the-princess-bride-limited-edition:
+      note: "Every machine under the title 'The Princess Bride' carries that same name, so they are the same game. 'Licensed' and 'Movies' are recorded on The Princess Bride, and describe this one too."
+      theme: [licensed, movies]
