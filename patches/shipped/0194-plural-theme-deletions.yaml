@@ -1,0 +1,70 @@
+attribution: flipcommons-catalog
+description: >
+  Delete duplicate theme spellings now that no machine uses them.
+claims:
+  - theme.amusement-park:
+      note: "Duplicate spelling of 'Amusement Parks'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.beaches:
+      note: "Duplicate spelling of 'Beach'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.board-game:
+      note: "Duplicate spelling of 'Board Games'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.car-rally:
+      note: "Duplicate spelling of 'Car Rallies'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.cartoon:
+      note: "Duplicate spelling of 'Cartoons'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.celebrity:
+      note: "Duplicate spelling of 'Celebrities'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.comic:
+      note: "Duplicate spelling of 'Comics'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.disaster:
+      note: "Duplicate spelling of 'Disasters'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.fashion-show:
+      note: "Duplicate spelling of 'Fashion Shows'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.foreign-people:
+      note: "Duplicate spelling of 'Foreign Peoples'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.game-show:
+      note: "Duplicate spelling of 'Game Shows'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.haunted-cemetery:
+      note: "Duplicate spelling of 'Haunted Cemeteries'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.marine:
+      note: "Duplicate spelling of 'Marines'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.movie:
+      note: "Duplicate spelling of 'Movies'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.riverboat:
+      note: "Duplicate spelling of 'Riverboats'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.sci-fi-movie:
+      note: "Duplicate spelling of 'Sci-fi Movies'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.sport:
+      note: "Duplicate spelling of 'Sports'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.superhero:
+      note: "Duplicate spelling of 'Superheroes'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.television-show:
+      note: "Duplicate spelling of 'Television Shows'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.theaters:
+      note: "Duplicate spelling of 'Theater'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.ufo:
+      note: "Duplicate spelling of 'UFOs'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.vampire:
+      note: "Duplicate spelling of 'Vampires'; every machine that carried it now carries that theme instead."
+      delete: true

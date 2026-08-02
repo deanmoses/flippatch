@@ -1,0 +1,274 @@
+attribution: ipdb
+description: >
+  Detach duplicate theme spellings asserted by IPDB.
+claims:
+  - model.24:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.aces-high:
+      note: "'Riverboat' duplicates 'Riverboats', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [riverboat] }
+  - model.aces-top:
+      note: "'Riverboat' duplicates 'Riverboats', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [riverboat] }
+  - model.agents-777:
+      note: "'Cartoon' duplicates 'Cartoons', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [cartoon] }
+  - model.apollo-13:
+      note: "'Disaster' duplicates 'Disasters', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [disaster] }
+  - model.aqualand:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.asterix:
+      note: "'Cartoon' duplicates 'Cartoons', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [cartoon] }
+  - model.atlantic-city:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.barrel-o-fun:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.barrel-o-fun-61:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.barrel-o-fun-62:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.batman-66-limited-edition:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.batman-66-premium:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.batman-66-super-limited-edition:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.batman-standard-model:
+      note: "'Movie' duplicates 'Movies'; 'Superhero' duplicates 'Superheroes'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [movie, superhero] }
+  - model.batman-the-dark-knight:
+      note: "'Movie' duplicates 'Movies'; 'Superhero' duplicates 'Superheroes'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [movie, superhero] }
+  - model.bazaar:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.big-bank-nite:
+      note: "'Theaters' duplicates 'Theater', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [theaters] }
+  - model.big-wheel:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.bobby-orrs-power-play:
+      note: "'Celebrity' duplicates 'Celebrities', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [celebrity] }
+  - model.bulls-eye-drop-ball-rebound-model:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.bulls-eye-drop-ball-upright-model:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.carnival-2:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.carrusel:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.catalina-2:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.click:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.coney-island-rifle:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.costa-brava:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.family-guy:
+      note: "'Cartoon' duplicates 'Cartoons', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [cartoon] }
+  - model.fashion-show:
+      note: "'Fashion Show' duplicates 'Fashion Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [fashion-show] }
+  - model.fly-high:
+      note: "'Movie' duplicates 'Movies', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [movie] }
+  - model.fun-land:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.fun-spot:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.fun-spot-61:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.fun-spot-62:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.fun-spot-63:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.gipsy:
+      note: "'Foreign People' duplicates 'Foreign Peoples', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [foreign-people] }
+  - model.hawaii-3:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.hi-ride:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.indiana-jones:
+      note: "'Movie' duplicates 'Movies', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [movie] }
+  - model.jolly-ride:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.jolly-ride-2:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.le-grande-8:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.lucky-luke:
+      note: "'Cartoon' duplicates 'Cartoons', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [cartoon] }
+  - model.luna-park-2:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.luna-park-3:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.monopoly:
+      note: "'Board Game' duplicates 'Board Games', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [board-game] }
+  - model.nba-fastbreak:
+      note: "'Sport' duplicates 'Sports', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [sport] }
+  - model.netflix-stranger-things-pro:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.nosferatu:
+      note: "'Vampire' duplicates 'Vampires', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [vampire] }
+  - model.ocean-park:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.ocean-park-2:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.oktoberfest:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.palm-beach-turbo:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.pleasure-island:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.rally:
+      note: "'Car Rally' duplicates 'Car Rallies', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [car-rally] }
+  - model.rally-2:
+      note: "'Car Rally' duplicates 'Car Rallies', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [car-rally] }
+  - model.regatta:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.rick-and-morty-blood-sucker-edition:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.rick-and-morty-standard-edition:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.roller-coaster-maresa:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.rompeolas:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.sea-shore:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.sea-wolf:
+      note: "'Marine' duplicates 'Marines', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [marine] }
+  - model.shoot-the-chutes:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.snooks-2:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.sol-do-algarve:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.south-pacific-2:
+      note: "'Beaches' duplicates 'Beach', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [beaches] }
+  - model.south-park:
+      note: "'Cartoon' duplicates 'Cartoons', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [cartoon] }
+  - model.spooksville:
+      note: "'Haunted Cemetery' duplicates 'Haunted Cemeteries', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [haunted-cemetery] }
+  - model.spooky:
+      note: "'Haunted Cemetery' duplicates 'Haunted Cemeteries', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [haunted-cemetery] }
+  - model.starship-troopers:
+      note: "'Sci Fi Movie' duplicates 'Sci-fi Movies', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [sci-fi-movie] }
+  - model.stranger-things-limited-edition:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.stranger-things-premium:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.surf-n-safari:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }
+  - model.teenage-mutant-ninja-turtles-limited-edition:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.teenage-mutant-ninja-turtles-premium:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.teenage-mutant-ninja-turtles-pro:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.the-bally-game-show:
+      note: "'Game Show' duplicates 'Game Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [game-show] }
+  - model.the-jetsons-regular-edition:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.the-jetsons-special-edition:
+      note: "'Cartoon' duplicates 'Cartoons'; 'Television Show' duplicates 'Television Shows'. This machine already carries each of those, so the duplicate spellings are being retired in favor of them."
+      remove: { theme: [cartoon, television-show] }
+  - model.the-munsters-limited-edition:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.the-munsters-premium:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.the-munsters-pro:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.the-simpsons-pinball-party:
+      note: "'Comic' duplicates 'Comics', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [comic] }
+  - model.the-six-million-dollar-man:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.thunderbirds:
+      note: "'Television Show' duplicates 'Television Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [television-show] }
+  - model.ufo-electronic-pinball:
+      note: "'UFO' duplicates 'UFOs', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [ufo] }
+  - model.wheel-of-fortune-2:
+      note: "'Game Show' duplicates 'Game Shows', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [game-show] }
+  - model.zip:
+      note: "'Amusement Park' duplicates 'Amusement Parks', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [amusement-park] }

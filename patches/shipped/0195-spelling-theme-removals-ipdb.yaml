@@ -1,0 +1,43 @@
+attribution: ipdb
+description: >
+  Detach misspelt and mis-hyphenated theme names from IPDB.
+claims:
+  - model.big-bank-nite:
+      note: "'Night Life' duplicates 'Nightlife', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [night-life] }
+  - model.bloody-roller:
+      note: "'Rollerskating' duplicates 'Roller Skating', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [rollerskating] }
+  - model.comet:
+      note: "'Rollercoasters' duplicates 'Roller Coasters', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [rollercoasters] }
+  - model.cypress-gardens:
+      note: "'Water Skiiing' duplicates 'Water Skiing', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [water-skiiing] }
+  - model.double-shuffle:
+      note: "'Shuffle Board' duplicates 'Shuffleboard', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [shuffle-board] }
+  - model.fortune:
+      note: "'Night Life' duplicates 'Nightlife', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [night-life] }
+  - model.merry-widow:
+      note: "'Dacing' duplicates 'Dancing', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [dacing] }
+  - model.roller-disco:
+      note: "'Rollerskating' duplicates 'Roller Skating', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [rollerskating] }
+  - model.rollercoaster-tycoon:
+      note: "'Rollercoasters' duplicates 'Roller Coasters', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [rollercoasters] }
+  - model.shoot-the-chutes:
+      note: "'Rollercoasters' duplicates 'Roller Coasters', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [rollercoasters] }
+  - model.sky-devils:
+      note: "'Sky Diving' duplicates 'Skydiving', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [sky-diving] }
+  - model.sky-divers:
+      note: "'Sky Diving' duplicates 'Skydiving', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [sky-diving] }
+  - model.sky-show:
+      note: "'Sky Diving' duplicates 'Skydiving', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [sky-diving] }

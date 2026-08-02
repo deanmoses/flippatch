@@ -1,0 +1,13 @@
+attribution: flipcommons-catalog
+description: >
+  Detach duplicate theme spellings asserted by this site.
+claims:
+  - model.elf:
+      note: "'Movie' duplicates 'Movies', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [movie] }
+  - model.super-flipper:
+      note: "'UFO' duplicates 'UFOs', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [ufo] }
+  - model.ufo-electronic-pinball:
+      note: "'UFO' duplicates 'UFOs', which this machine already carries. Retiring the duplicate spelling in favor of it."
+      remove: { theme: [ufo] }

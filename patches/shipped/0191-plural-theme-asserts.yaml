@@ -1,0 +1,18 @@
+attribution: flipcommons-catalog
+description: >
+  Add replacement themes before their duplicate spellings are retired.
+claims:
+  - theme.ufo:
+      note: "Releasing the alternate names so they can move to 'UFOs', which replaces this one. An alternate name can only sit on one theme at a time."
+      remove: { theme_alias: [UFO, Ufo's] }
+  - theme.ufos:
+      note: "Carrying curation across from the duplicate spelling being retired in favor of this one: renaming it 'UFOs', taking over the parent, taking over the alternate names."
+      name: UFOs
+      theme_parent: [aliens]
+      theme_alias: [UFO, Ufo's]
+  - model.elf:
+      note: "Adding 'Movies' before the duplicate spelling 'Movie' is retired. This machine carries only the spelling being retired, so it would otherwise lose the theme entirely."
+      theme: [movies]
+  - model.ufo-electronic-pinball:
+      note: "Adding 'UFOs' before the duplicate spelling 'UFO' is retired. This machine carries only the spelling being retired, so it would otherwise lose the theme entirely."
+      theme: [ufos]

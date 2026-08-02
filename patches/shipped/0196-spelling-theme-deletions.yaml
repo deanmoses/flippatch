@@ -1,0 +1,25 @@
+attribution: flipcommons-catalog
+description: >
+  Delete misspelt theme names now that no machine uses them.
+claims:
+  - theme.dacing:
+      note: "Duplicate spelling of 'Dancing'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.night-life:
+      note: "Duplicate spelling of 'Nightlife'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.rollercoasters:
+      note: "Duplicate spelling of 'Roller Coasters'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.rollerskating:
+      note: "Duplicate spelling of 'Roller Skating'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.shuffle-board:
+      note: "Duplicate spelling of 'Shuffleboard'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.sky-diving:
+      note: "Duplicate spelling of 'Skydiving'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.water-skiiing:
+      note: "Duplicate spelling of 'Water Skiing'; every machine that carried it now carries that theme instead."
+      delete: true
