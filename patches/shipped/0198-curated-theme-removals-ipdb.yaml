@@ -1,0 +1,1399 @@
+attribution: ipdb
+description: >
+  Detach retired theme names asserted by IPDB.
+claims:
+  - model.21-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.24:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.3-jokers:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.4-aces:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.abra-ca-dabra:
+      note: "'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [wizardmagic] }
+  - model.ac-dc-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ac-dc-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-let-there-be-rock-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-luci-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-luci-vault-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-premium-vault-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-pro-led:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.acdc-pro-vault-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ace-high-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.ace-high-extended-play-prototype:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.ace-is-high:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.aces-kings:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.al-capone:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.ali:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.alice-coopers-nightmare-castle:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.alien-limited-edition-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.alien-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.alien-standard-version:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.alpha-2001:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.andromeda-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.antares:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.austin-powers:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.avengers-infinity-quest-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.avengers-infinity-quest-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.avengers-the-pin:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.back-to-the-future:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.banzai-run:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.batman:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.batman-forever:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.batman-standard-model:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.batman-the-dark-knight:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.baywatch:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.big-buck-hunter-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.big-deal:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.big-deal-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.black-hole-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.black-hole-4:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.black-jack:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.black-jack-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.black-jack-3:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.black-jack-4:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.black-velvet:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.blackout:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.blackwater-100:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.bonanza-2:
+      note: "'Tv Show' duplicates 'Television Shows', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [tv-show] }
+  - model.bonanza-4:
+      note: "'Tv Show' duplicates 'Television Shows', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [tv-show] }
+  - model.bram-stokers-dracula:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.brave-team:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.bugs-bunnys-birthday-ball:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.bumper-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.calif-express:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.camel-lights:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.canada-dry:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.capt-fantastic-and-the-brown-dirt-cowboy:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.captain-fantastic-the-brown-dirt-cowboy:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.card-castle:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.card-whiz:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.card-whiz-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.casino:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.casino-6:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.cerberus-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.charlies-angels:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.charlies-angels-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.chicago-express:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.chief:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }
+  - model.click-2:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.close-encounters:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.close-encounters-of-the-third-kind:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.close-encounters-of-the-third-kind-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.club-house:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.cosmic-cart-racing:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.cosmic-flash:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.cosmic-venus:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.country-club:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.creature-from-the-black-lagoon:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.cross-roads:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.csi:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.deadpool-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.deadpool-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.deadpool-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.dealer:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.dealers-choice-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.demolition-man:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.diamond-jack:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.diamond-lady:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.diamond-lady-vifico:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.dig-a-star:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.dirty-harry:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.disney-tron-legacy-3rd-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.disney-tron-legacy-4th-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.disney-tron-legacy-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.doctor-who:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.dominos-spectacular-pinball-adventure-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.dominos-spectacular-pinball-adventure-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.dr-no-james-bond-007-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.drop-a-card-petaco:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.dyn-o-mite:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.easy-aces:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.elviras-house-of-horrors-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.elviras-house-of-horrors-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.elviras-house-of-horrors-signature-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.elvis:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.elvis-gold-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.faeton:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.fairway:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.fairway-2:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.flush:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.flying-aces:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.flying-saucers:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.force:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.foxy-lady:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.freddy-a-nightmare-on-elm-street:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.full-house:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.galax:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.galaxy:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.game-of-thrones-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.game-of-thrones-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.game-of-thrones-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ghostbusters-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ghostbusters-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ghostbusters-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.gilligans-island:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.gin-rummy:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.girls-ahoy:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.glamor-girls:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.godzilla:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.godzilla-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.godzilla-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.godzilla-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.goldeneye:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.good-morning-america:
+      note: "'Tv Show' duplicates 'Television Shows', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [tv-show] }
+  - model.grand-central:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.guardians-of-the-galaxy-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.guardians-of-the-galaxy-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.guardians-of-the-galaxy-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.guns-n-roses-collectors-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.guns-n-roses-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.guns-n-roses-not-in-this-lifetime-team-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.guns-n-roses-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.gypsy-queen:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.harlem-globetrotters-on-tour:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.harley-davidson:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.harley-davidson-1st-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.harley-davidson-2nd-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.harley-davidson-2nd-production-run:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.harley-davidson-3rd-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.harley-davidson-bally:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.hearts-and-spades:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hearts-gain:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.heavy-metal-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.hi-ball-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.hi-hat:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.hi-lo-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hi-lo-ace:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hi-lo-junior:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hi-lo-senior:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.high-ace:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.high-ace-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hit-a-card:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.honey-3:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.hook:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.hot-hand:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hot-hand-lai:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.hot-wheels-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.indiana-jones:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.indiana-jones-the-pinball-adventure:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.io-moon:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.iron-maiden-legacy-of-the-beast-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.iron-maiden-legacy-of-the-beast-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.iron-maiden-legacy-of-the-beast-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.iron-man:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.iron-man-classic:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.iron-man-pro-vault-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.irons-and-woods:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.jacks-open:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.jacks-open-maresa:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.james-bond-007:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.james-bond-007-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.james-bond-007-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.james-camerons-avatar:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.james-camerons-avatar-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.johnny-mnemonic:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.joker-poker:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.joker-poker-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.jokers-wild-3:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.jokerz:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.judge-dredd:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.judy:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.jurassic-park:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.jurassic-park-home-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.jurassic-park-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.jurassic-park-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.jurassic-park-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.just-21:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.karom-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.kew-pin-golf-table:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.king-of-diamonds:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.king-of-diamonds-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.kings-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.kings-queens:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.kiss:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.kiss-fiberglass-prototype:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.krull:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.lady-luck-4:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.last-action-hero:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.laura:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.led-zeppelin-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.led-zeppelin-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.led-zeppelin-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.lethal-weapon-3:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.little-pro-2:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.locomotion:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }
+  - model.lord-of-the-rings-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.lortium:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.lortium-automaticos-montecarlo:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.lost:
+      note: "'Tv Show' duplicates 'Television Shows', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [tv-show] }
+  - model.lucky-ace:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.lucky-ace-segasa:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.lucky-draw:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.mars:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.marvel-heroes-vs-villains:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.marvel-super-heroes:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.maverick-the-movie:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately; 'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant themes."
+      remove: { theme: [cardsgambling, licensed-theme] }
+  - model.mega-golf-ball-frenzy:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.merlins-magic:
+      note: "'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [wizardmagic] }
+  - model.metallica-master-of-puppets-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.metallica-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.metallica-premium-monsters:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.metallica-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.metallica-pro-led:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.meteor:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.meteor-lai:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.mexican-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.midnight-marauders:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.mini-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.mini-golf-new-york-model:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.miss-theresine:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.monopoly:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.monster-bash:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.monte-carlo-3:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.moto-cross:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.motordome:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.motordome-bally-wulff:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.mustang-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.mustang-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.mustang-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.mystic-star:
+      note: "'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [wizardmagic] }
+  - model.nascar:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.nba:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.nba-fastbreak:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.netflix-stranger-things-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.new-city-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.no-fear-dangerous-sports:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.odds-evens:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.oh-boy:
+      note: "'Girlswomen' stands for 'Girls' and 'Women', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [girlswomen] }
+  - model.olympics:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.olympics-3:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.olympics-4:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.olympics-petaco:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.papillon-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.par-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.par-golf-3:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.pat-hand:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.pirates-of-the-caribbean:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.pirates-of-the-caribbean-at-worlds-end:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.pirates-of-the-caribbean-collectors-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.pirates-of-the-caribbean-dead-mans-chest:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.pirates-of-the-caribbean-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.pirates-of-the-caribbean-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.pistol-poker:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.play-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.playboy:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.playboy-3:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.poker-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-4:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-eno:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-face:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-game:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-plus:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-plus-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.poker-plus-3:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.pokerino:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.popeye-saves-the-earth:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.primus:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.queen-of-hearts:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.railroad:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.real:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.red-line-fever:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.rey-de-diamantes:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.rick-and-morty-blood-sucker-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.rick-and-morty-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ripleys-believe-it-or-not:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.river-boat:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.riviera-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.road-runner:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.rocky:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.rollercoaster-tycoon:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.rollergames:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.royal-flush:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.royal-flush-2:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.royal-flush-4:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.royal-flush-deluxe:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.royal-flush-extended-play-prototype:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.royal-pair:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.royal-play:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.rush-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.rush-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.rush-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.sapporo:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.scared-stiff:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.scramble:
+      note: "'Motorcyclesmotocross' stands for 'Motocross' and 'Motorcycles', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [motorcyclesmotocross] }
+  - model.shaq-attaq:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.shrek:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.signal-jr:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.signal-sr:
+      note: "'Railroads' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroads] }
+  - model.silver-streak-2:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }
+  - model.solar-fire:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.solar-ride-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.solitaire:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.space-city:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-1-card:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-1-card-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-7-card:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-7-card-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-jam:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.space-panther:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-patrol:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-queen:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-walk:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-walk-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-war:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.speakeasy:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.speed-king:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }
+  - model.spin-a-card:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.spin-a-card-petaco:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.spongebob-squarepants-soccer-shot-pinball:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.sprint-girl:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.star-battle-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-battle-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-explorer:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-trek-bally:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-trek-data-east:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-trek-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.star-trek-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.star-trek-starfleet-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.star-trek-starfleet-pro-vault-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.star-trek-the-next-generation:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-trek-vengeance-premium-vault-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.star-wars-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-wars-comic-art-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-comic-art-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-episode-i:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-original-home-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.star-wars-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-the-mandalorian-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.star-wars-yellow-stripe-home-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, space-fantasy] }
+  - model.starfighter:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.starship-troopers:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.stranger-things-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.stranger-things-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.streamline:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }
+  - model.super-mario-bros:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.super-par-golf:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.super-star-2:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.superman:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.swords-of-fury:
+      note: "'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [wizardmagic] }
+  - model.tales-from-the-crypt:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.target-alpha:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.teenage-mutant-ninja-turtles-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.teenage-mutant-ninja-turtles-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.teenage-mutant-ninja-turtles-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.terminator-2-judgment-day:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.terminator-3-rise-of-the-machines:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-30s:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.the-addams-family:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-addams-family-special-collectors-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-amazing-spider-man:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-avengers-hulk-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-avengers-infinity-quest-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-avengers-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-avengers-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-avengers-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-beatles-diamond-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-beatles-gold-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-beatles-platinum-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-big-lebowski-pinball-first-model:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-big-lebowski-pinball-second-model:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-crocodile-hunter-outback-adventure:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-empire-strikes-back:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-flintstones:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-flintstones-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-games:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.the-games-2:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.the-hobbit-black-arrow-special-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.the-hobbit-motion-picture-trilogy-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.the-hobbit-smaug-gold-special-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.the-hobbit-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.the-incredible-hulk:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-incredible-hulk-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-jetsons-regular-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-jetsons-special-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-lord-of-the-rings:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-mandalorian-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-mandalorian-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-munsters-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-munsters-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-munsters-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-pabst-can-crusher:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-rolling-stones:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-rolling-stones-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-shadow:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-simpsons:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-simpsons-pinball-party:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-six-million-dollar-man:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-sopranos:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-walking-dead-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-walking-dead-premium:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-walking-dead-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-whos-tommy-pinball-wizard:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.the-wizard-of-oz-75th-anniversary-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.the-wizard-of-oz-emerald-city-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.the-wizard-of-oz-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.time-tunnel:
+      note: "'Tv Show' duplicates 'Television Shows', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [tv-show] }
+  - model.tiro-olimpic:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.top-card:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.top-em:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.top-hand:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.torch:
+      note: "'Olympic Games' duplicates 'Olympics', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [olympic-games] }
+  - model.toy-story-4-collectors-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.toy-story-4-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.transformers-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.transformers-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.transformers-the-pin:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.trickle-ball:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.tron-legacy:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.twilight-zone:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.ultimate-golf-ball-frenzy:
+      note: "'Golfing' duplicates 'Golf', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [golfing] }
+  - model.waterworld:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.wheel-of-fortune-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.wild-card:
+      note: "'Cardsgambling' stands for 'Cards' and 'Gambling', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [cardsgambling] }
+  - model.willy-wonka-and-the-chocolate-factory-collectors-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.willy-wonka-and-the-chocolate-factory-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.willy-wonka-standard-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.wizard-2:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.wizard-3:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.wizard-4:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.wizard-of-oz-rescue-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.wizard-of-oz-yellow-brick-road-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries; 'Wizardmagic' stands for 'Magic' and 'Wizards', which this machine now carries separately. Detaching the redundant themes."
+      remove: { theme: [licensed-theme, wizardmagic] }
+  - model.world-poker-tour:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.x-men-magneto-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.x-men-pro:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.x-men-wolverine-limited-edition:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.zephyr:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }
+  - model.zephyr-junior:
+      note: "'Railroad' duplicates 'Trains', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [railroad] }

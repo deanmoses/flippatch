@@ -1,0 +1,928 @@
+attribution: flipcommons-catalog
+description: >
+  Add replacement themes before the themes they replace are retired.
+claims:
+  - theme.licensed:
+      note: "Recording 'Licensed Theme' as an alternate name for 'Licensed', which replaces it, so the retired name still finds this theme."
+      theme_alias: [Licensed Theme]
+  - model.24:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.abra-ca-dabra:
+      note: "'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [magic]
+  - model.ac-dc-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.ac-dc-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-let-there-be-rock-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-luci-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-luci-vault-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-premium-vault-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-pro-led:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.acdc-pro-vault-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.ali:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.alice-coopers-nightmare-castle:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.alien-limited-edition-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.alien-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.alien-standard-version:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.alpha-2001:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.andromeda-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.antares:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.austin-powers:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.avengers-infinity-quest-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.avengers-infinity-quest-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.avengers-the-pin:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.back-to-the-future:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.batman:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.batman-forever:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.batman-standard-model:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.batman-the-dark-knight:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.baywatch:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.big-buck-hunter-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.black-hole-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.black-hole-4:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.black-velvet:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.blackout:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.bram-stokers-dracula:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.bugs-bunnys-birthday-ball:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.bumper-3:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.camel-lights:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.canada-dry:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.capt-fantastic-and-the-brown-dirt-cowboy:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.captain-fantastic-the-brown-dirt-cowboy:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.cerberus-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.charlies-angels:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.charlies-angels-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.close-encounters:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.close-encounters-of-the-third-kind:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.close-encounters-of-the-third-kind-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.cosmic-cart-racing:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.cosmic-flash:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.cosmic-venus:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.creature-from-the-black-lagoon:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.csi:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.deadpool-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.deadpool-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.deadpool-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.demolition-man:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.dig-a-star:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.dirty-harry:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.disney-tron-legacy-3rd-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.disney-tron-legacy-4th-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.disney-tron-legacy-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.doctor-who:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.dominos-spectacular-pinball-adventure-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.dominos-spectacular-pinball-adventure-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.dr-no-james-bond-007-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.dyn-o-mite:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.elviras-house-of-horrors-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.elviras-house-of-horrors-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.elviras-house-of-horrors-signature-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.elvis:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.elvis-gold-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.faeton:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.flying-saucers:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.force:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.foxy-lady:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.freddy-a-nightmare-on-elm-street:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.galax:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.galaxy:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.game-of-thrones-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.game-of-thrones-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.game-of-thrones-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.ghostbusters-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.ghostbusters-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.ghostbusters-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.gilligans-island:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.godzilla:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.godzilla-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.godzilla-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.godzilla-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.goldeneye:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guardians-of-the-galaxy-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guardians-of-the-galaxy-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guardians-of-the-galaxy-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guns-n-roses-collectors-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guns-n-roses-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guns-n-roses-not-in-this-lifetime-team-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.guns-n-roses-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.harlem-globetrotters-on-tour:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.harley-davidson:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.harley-davidson-1st-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.harley-davidson-2nd-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.harley-davidson-3rd-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.heavy-metal-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.hi-ball-3:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.hook:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.hot-wheels-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.independence-day:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.indiana-jones:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.indiana-jones-the-pinball-adventure:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.io-moon:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.iron-maiden-legacy-of-the-beast-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.iron-maiden-legacy-of-the-beast-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.iron-maiden-legacy-of-the-beast-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.iron-man:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.iron-man-classic:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.iron-man-pro-vault-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.james-bond-007:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.james-bond-007-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.james-bond-007-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.james-camerons-avatar:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.james-camerons-avatar-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.johnny-mnemonic:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.judge-dredd:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.jurassic-park:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.jurassic-park-home-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.jurassic-park-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.jurassic-park-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.jurassic-park-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.kiss:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.kiss-fiberglass-prototype:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.krull:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.last-action-hero:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.led-zeppelin-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.led-zeppelin-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.led-zeppelin-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.lethal-weapon-3:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.lord-of-the-rings-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.lortium:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.lortium-automaticos-montecarlo:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.mars:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.marvel-heroes-vs-villains:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.marvel-super-heroes:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.maverick-the-movie:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.merlins-magic:
+      note: "'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [magic]
+  - model.metallica-master-of-puppets-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.metallica-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.metallica-premium-monsters:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.metallica-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.metallica-pro-led:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.meteor:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.meteor-lai:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.midnight-marauders:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.monopoly:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.monster-bash:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.mustang-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.mustang-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.mustang-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.mystic-star:
+      note: "'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [magic]
+  - model.nascar:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.nba:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.nba-fastbreak:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.netflix-stranger-things-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.no-fear-dangerous-sports:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.papillon-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.pirates-of-the-caribbean:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.pirates-of-the-caribbean-at-worlds-end:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.pirates-of-the-caribbean-collectors-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.pirates-of-the-caribbean-dead-mans-chest:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.pirates-of-the-caribbean-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.pirates-of-the-caribbean-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.playboy:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.playboy-3:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.popeye-saves-the-earth:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.primus:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.real:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rick-and-morty-blood-sucker-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rick-and-morty-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.ripleys-believe-it-or-not:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.road-runner:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rocky:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rollercoaster-tycoon:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rollergames:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rush-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rush-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.rush-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.scared-stiff:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.shaq-attaq:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.shrek:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.solar-fire:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.solar-ride-3:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-city:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-game-1-card:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-game-1-card-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-game-7-card:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-game-7-card-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-jam:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.space-panther:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-patrol:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-queen:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-walk:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-walk-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.space-war:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.spongebob-squarepants-soccer-shot-pinball:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-battle-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.star-battle-3:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.star-explorer:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.star-trek-bally:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-trek-data-east:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-trek-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.star-trek-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.star-trek-starfleet-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.star-trek-starfleet-pro-vault-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.star-trek-the-next-generation:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-trek-vengeance-premium-vault-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.star-wars-2:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.star-wars-comic-art-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-comic-art-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-episode-i:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-original-home-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.star-wars-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-the-mandalorian-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.star-wars-yellow-stripe-home-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, licensed, space]
+  - model.starfighter:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.starship-troopers:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.stranger-things-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.stranger-things-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.super-mario-bros:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.superman:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.swords-of-fury:
+      note: "'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [magic]
+  - model.tales-from-the-crypt:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.target-alpha:
+      note: "'Space Fantasy' blends two themes that already exist on their own, and is clearer recorded as both. Adding 'Fantasy' and 'Space' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [fantasy, space]
+  - model.teenage-mutant-ninja-turtles-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.teenage-mutant-ninja-turtles-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.teenage-mutant-ninja-turtles-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.terminator-2-judgment-day:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.terminator-3-rise-of-the-machines:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-addams-family:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-addams-family-special-collectors-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-amazing-spider-man:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-avengers-hulk-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-avengers-infinity-quest-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-avengers-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-avengers-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-avengers-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-beatles-diamond-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-beatles-gold-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-beatles-platinum-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-big-lebowski-pinball-first-model:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-big-lebowski-pinball-second-model:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-crocodile-hunter-outback-adventure:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-empire-strikes-back:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-flintstones:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-flintstones-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-hobbit-black-arrow-special-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.the-hobbit-motion-picture-trilogy-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.the-hobbit-smaug-gold-special-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.the-hobbit-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.the-incredible-hulk:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-incredible-hulk-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-jetsons-regular-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-jetsons-special-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-lord-of-the-rings:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-mandalorian-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-mandalorian-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-munsters-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-munsters-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-munsters-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-pabst-can-crusher:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-rolling-stones:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-rolling-stones-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-shadow:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-simpsons:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-simpsons-pinball-party:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-six-million-dollar-man:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-sopranos:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-walking-dead-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-walking-dead-premium:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-walking-dead-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-whos-tommy-pinball-wizard:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.the-wizard-of-oz-75th-anniversary-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.the-wizard-of-oz-emerald-city-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.the-wizard-of-oz-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.toy-story-4-collectors-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.toy-story-4-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.transformers-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.transformers-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.transformers-the-pin:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.tron-legacy:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.twilight-zone:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.waterworld:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.wheel-of-fortune-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.willy-wonka-and-the-chocolate-factory-collectors-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.willy-wonka-and-the-chocolate-factory-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.willy-wonka-standard-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.wizard-2:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.wizard-3:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.wizard-4:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.wizard-of-oz-rescue-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.wizard-of-oz-yellow-brick-road-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached. 'Wizardmagic' is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. Adding 'Magic' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed, magic]
+  - model.world-poker-tour:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.x-men-magneto-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.x-men-pro:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]
+  - model.x-men-wolverine-limited-edition:
+      note: "'Licensed Theme' is another name for a theme that already exists. Adding 'Licensed' ahead of its retirement, so this machine keeps the theme when the old one is detached."
+      theme: [licensed]

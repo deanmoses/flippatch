@@ -1,0 +1,37 @@
+attribution: flipcommons-catalog
+description: >
+  Delete retired themes now that no machine uses them.
+claims:
+  - theme.cardsgambling:
+      note: "This theme is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. It stood for 'Cards' and 'Gambling', and every machine that carried it now carries both instead."
+      delete: true
+  - theme.girlswomen:
+      note: "This theme is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. It stood for 'Girls' and 'Women', and every machine that carried it now carries both instead."
+      delete: true
+  - theme.golfing:
+      note: "This theme duplicates 'Golf'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.licensed-theme:
+      note: "This theme duplicates 'Licensed'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.motorcyclesmotocross:
+      note: "This theme is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. It stood for 'Motocross' and 'Motorcycles', and every machine that carried it now carries both instead."
+      delete: true
+  - theme.olympic-games:
+      note: "This theme duplicates 'Olympics'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.railroad:
+      note: "This theme duplicates 'Trains'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.railroads:
+      note: "This theme duplicates 'Trains'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.space-fantasy:
+      note: "This theme blends two themes that already exist on their own, and is clearer recorded as both. It stood for 'Fantasy' and 'Space', and every machine that carried it now carries both instead."
+      delete: true
+  - theme.tv-show:
+      note: "This theme duplicates 'Television Shows'; every machine that carried it now carries that theme instead."
+      delete: true
+  - theme.wizardmagic:
+      note: "This theme is a mangled OPDB keyword: the separator between its two halves was lost during an earlier ingest. It stood for 'Magic' and 'Wizards', and every machine that carried it now carries both instead."
+      delete: true

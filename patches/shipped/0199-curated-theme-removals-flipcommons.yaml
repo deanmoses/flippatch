@@ -1,0 +1,157 @@
+attribution: flipcommons-catalog
+description: >
+  Detach retired theme names asserted by this site.
+claims:
+  - model.alpha-2001:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.andromeda-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.antares:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.black-hole-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.black-hole-4:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.blackout:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.bumper-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.cerberus-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.cosmic-cart-racing:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.cosmic-flash:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.cosmic-venus:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.dig-a-star:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.faeton:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.flying-saucers:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.force:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.galax:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.galaxy:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.hi-ball-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.independence-day:
+      note: "'Licensed Theme' duplicates 'Licensed', which this machine already carries. Detaching the redundant theme."
+      remove: { theme: [licensed-theme] }
+  - model.io-moon:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.lortium:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.lortium-automaticos-montecarlo:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.mars:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.midnight-marauders:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.papillon-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.solar-fire:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.solar-ride-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-city:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-1-card:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-1-card-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-7-card:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-game-7-card-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-panther:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-patrol:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-queen:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-walk:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-walk-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.space-war:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-battle-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-battle-3:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-explorer:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-trek-limited-edition:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-trek-premium:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-trek-starfleet-pro:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-trek-starfleet-pro-vault-edition:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-trek-vengeance-premium-vault-edition:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-wars-2:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-wars-original-home-edition:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.star-wars-yellow-stripe-home-edition:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.starfighter:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
+  - model.target-alpha:
+      note: "'Space Fantasy' stands for 'Fantasy' and 'Space', which this machine now carries separately. Detaching the redundant theme."
+      remove: { theme: [space-fantasy] }
