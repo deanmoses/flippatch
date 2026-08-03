@@ -1,0 +1,55 @@
+attribution: flipcommons-catalog
+description: >
+  Records the original each OPDB alias model was built from.
+claims:
+  - model.cavaleiro-negro:
+      note: "OPDB files this model as an alias (GrO7w-M9R03-AO6Be) of 'Black Knight' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: black-knight
+          relationship_type: copy
+          license_status: unknown
+  - model.d-quijote:
+      note: "OPDB files this model as an alias (G5WP2-MjBZB-AOEDx) of 'Don Quijote' (Petaco). Recording as an export edition to match Flipcommons' other Recel model derived from a Petaco original."
+      export_edition_of: d-quijote-2
+  - model.drakor:
+      note: "OPDB files this model as an alias (G5zd6-MJVo4-ARN3r) of 'Gorgar' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: gorgar
+          relationship_type: copy
+          license_status: unknown
+  - model.fire-action:
+      note: "OPDB files this model as an alias (G5VDd-MJpqO-A1WVv) of 'Firepower' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: firepower
+          relationship_type: copy
+          license_status: unknown
+  - model.fire-action-de-luxe:
+      note: "OPDB files this model as an alias (GRWYk-Mb5OV-ARXp5) of 'Firepower II' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: firepower-ii
+          relationship_type: copy
+          license_status: unknown
+  - model.football-6:
+      note: "OPDB files this model as an alias (GrNqO-MRjzl-A9pwZ) of 'World Cup' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: world-cup
+          relationship_type: copy
+          license_status: unknown
+  - model.lunelle:
+      note: "OPDB files this model as an alias (G4yen-MD12Y-AOEew) of 'Alien Poker' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: alien-poker
+          relationship_type: copy
+          license_status: unknown
+  - model.shock:
+      note: "OPDB files this model as an alias (Grypn-MQdbe-A947p) of 'Flash' (Williams). Recording as a copy to match Flipcommons' other Taito do Brasil model derived from a Williams original."
+      model_relationship:
+        - target_machine: flash-2
+          relationship_type: copy
+          license_status: unknown
+  - model.wimbledon:
+      note: "OPDB files this model as an alias (G5Q19-MLeEN-A18jJ) of 'Volley' (Gottlieb). Recording as a copy to match Flipcommons' other Electromatic Brasil models derived from Gottlieb originals."
+      model_relationship:
+        - target_machine: volley
+          relationship_type: copy
+          license_status: unknown
