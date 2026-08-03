@@ -1,0 +1,155 @@
+attribution: flipcommons-catalog
+description: >
+  Marks Taito do Brasil's copies of foreign machines as unlicensed.
+sources:
+  - name: Mega Arquivo
+    source_type: web
+    description: >
+      Brazilian retro-computing and arcade history blog.
+    links:
+      - {
+          url: "https://megaarquivo.wordpress.com/",
+          label: Mega Arquivo,
+          link_type: homepage,
+        }
+claims:
+  - model.cavaleiro-negro:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to bootleg foreign machines. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "Copiando e adaptando modelos de marcas internacionais, a Taito do Brasil produziu modelos de pinball que quem entrou nos fliperamas da época certamente lembra, como as clássicas Cavaleiro Negro (com seu sintetizador de voz com forte sotaque americano), Oba Oba (homenagem à casa de shows do Sargentelli), Zarza, Rally, Vortex e muitas outras."
+      model_relationship:
+        - target_machine: black-knight
+          relationship_type: copy
+          license_status: unlicensed
+  - model.drakor:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: gorgar
+          relationship_type: copy
+          license_status: unlicensed
+  - model.fire-action:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: firepower
+          relationship_type: copy
+          license_status: unlicensed
+  - model.fire-action-de-luxe:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: firepower-ii
+          relationship_type: copy
+          license_status: unlicensed
+  - model.football-6:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: world-cup
+          relationship_type: copy
+          license_status: unlicensed
+  - model.lunelle:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: alien-poker
+          relationship_type: copy
+          license_status: unlicensed
+  - model.oba-oba:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "Copiando e adaptando modelos de marcas internacionais, a Taito do Brasil produziu modelos de pinball que quem entrou nos fliperamas da época certamente lembra, como as clássicas Cavaleiro Negro (com seu sintetizador de voz com forte sotaque americano), Oba Oba (homenagem à casa de shows do Sargentelli), Zarza, Rally, Vortex e muitas outras."
+      model_relationship:
+        - target_machine: playboy
+          relationship_type: copy
+          license_status: unlicensed
+  - model.shock:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: flash-2
+          relationship_type: copy
+          license_status: unlicensed
+  - model.speed-test:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: vector
+          relationship_type: copy
+          license_status: unlicensed
+  - model.sure-shot:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: eight-ball-deluxe
+          relationship_type: copy
+          license_status: unlicensed
+  - model.volley-2:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+      model_relationship:
+        - target_machine: world-cup
+          relationship_type: copy
+          license_status: unlicensed
+  - model.zarza:
+      note: "Taito do Brasil used Brazil's Reserva de Mercado import restrictions to reproduce foreign machines without authorization. No Taito do Brasil pinball other than its Meteor is recorded as acknowledging a licence."
+      cite:
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "A Taito era a única marca internacional atuando nesse negócio por aqui naquele período, mas certamente não era a única empresa a usar a Reserva de Mercado como escudo para copiar impunemente a tecnologia e a jogabilidade dos pinballs do exterior: a LTD, sediada em Campinas, fazia o mesmo, usando as CPUs 6802 e 6803, da Motorola."
+        - ref: "ipdb:4571"
+          quote: "According to a pinball club in Brazil, Meteor is the only game from Taito do Brasil that acknowledges licensing."
+        - ref: "https://augustocampos.net/taito-brasil"
+          quote: "Copiando e adaptando modelos de marcas internacionais, a Taito do Brasil produziu modelos de pinball que quem entrou nos fliperamas da época certamente lembra, como as clássicas Cavaleiro Negro (com seu sintetizador de voz com forte sotaque americano), Oba Oba (homenagem à casa de shows do Sargentelli), Zarza, Rally, Vortex e muitas outras."
+        - ref: "https://megaarquivo.wordpress.com/2011/05/08/3104-mega-memoria-games-a-taito-do-brasil-e-o-fliperama"
+          quote: "O curioso é que como ambas copiavam modelos do mesmo fabricante, surgiram cópias do mesmo modelo da Taito e da LTD, como a clássica Bally Xenon, que serviu de inspiração para a Taito Zarza e também para a LTD Zephy."
+      model_relationship:
+        - target_machine: xenon
+          relationship_type: copy
+          license_status: unlicensed

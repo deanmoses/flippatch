@@ -1,0 +1,26 @@
+attribution: flipcommons-catalog
+description: >
+  Retires variant links between models by different makers.
+claims:
+  - model.oba-oba:
+      note: "OPDB files this model as an alias of 'Playboy' (Bally). In Flipcommons, cross-manufacturer relationships are instead copies."
+      model_relationship:
+        - target_machine: playboy
+          relationship_type: copy
+          license_status: unknown
+  - model.serenade-4:
+      note: "Since Alben is a different manufacturer, the relationship should be copy, not variant. The copy relationship already on this model is the accurate one."
+      retract: [variant_of]
+  - model.sure-shot:
+      note: "Since Taito do Brasil is a different manufacturer, the relationship should be copy, not variant."
+      model_relationship:
+        - target_machine: eight-ball-deluxe
+          relationship_type: copy
+          license_status: unknown
+      retract: [variant_of]
+  - model.zarza:
+      note: "OPDB files this model as an alias of the machine record for 'Xenon' (Bally). In Flipcommons, cross-manufacturer relationships are instead copies."
+      model_relationship:
+        - target_machine: xenon
+          relationship_type: copy
+          license_status: unknown

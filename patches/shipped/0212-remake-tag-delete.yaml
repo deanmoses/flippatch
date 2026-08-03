@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >
+  Delete the retired Remake tag.
+claims:
+  - tag.remake:
+      note: "This tag marked a machine as a new recreation of an earlier one, but never said which one. That belongs to the relationship between the two machines, which names the original, and every machine that carried this tag already records it. Retiring the tag."
+      delete: true

@@ -1,0 +1,64 @@
+attribution: opdb
+description: >
+  Detach the retired Remake tag.
+claims:
+  - model.alien-remake:
+      note: "This machine is already shown as a remake of Heighway Pinball's 2017 'Alien (Pro)', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.attack-from-mars-remake:
+      note: "This machine is already shown as a remake of Bally's 1995 'Attack from Mars', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.attack-from-mars-remake-limited-edition:
+      note: "This machine is already shown as a remake of Bally's 1995 'Attack from Mars', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.attack-from-mars-remake-special-edition:
+      note: "This machine is already shown as a remake of Bally's 1995 'Attack from Mars', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.cactus-canyon-remake-limited-edition:
+      note: "This machine is already shown as a remake of Bally's 1998 'Cactus Canyon', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.cactus-canyon-remake-special-edition:
+      note: "This machine is already shown as a remake of Bally's 1998 'Cactus Canyon', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.fathom-revisited:
+      note: "This machine is already shown as a remake of Bally's 1981 'Fathom', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.freak-out:
+      note: "This machine is a retheme of Williams' 1968 'Doozie', the same machine redecorated rather than a new recreation of it, and is already shown as such. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.funhouse-remake-collectors-edition:
+      note: "This machine is already shown as a remake of Williams' 1990 'Funhouse', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.funhouse-remake-limited-edition:
+      note: "This machine is already shown as a remake of Williams' 1990 'Funhouse', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.medieval-madness-remake:
+      note: "This machine is already shown as a remake of Williams' 1997 'Medieval Madness', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.medieval-madness-remake-limited-edition:
+      note: "This machine is already shown as a remake of Williams' 1997 'Medieval Madness', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.medieval-madness-remake-royal-edition:
+      note: "This machine is already shown as a remake of Williams' 1997 'Medieval Madness', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.medieval-madness-remake-special-edition:
+      note: "This machine is already shown as a remake of Williams' 1997 'Medieval Madness', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.metallica-remastered-limited-edition:
+      note: "This machine is already shown as a remake of Stern's 2013 'Metallica (Premium)', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.metallica-remastered-premium:
+      note: "This machine is already shown as a remake of Stern's 2013 'Metallica (Premium)', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.monster-bash-remake-classic-edition:
+      note: "This machine is already shown as a remake of Williams' 1998 'Monster Bash', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.monster-bash-remake-limited-edition:
+      note: "This machine is already shown as a remake of Williams' 1998 'Monster Bash', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.monster-bash-remake-special-edition:
+      note: "This machine is already shown as a remake of Williams' 1998 'Monster Bash', which names the original where the tag does not. Detaching the tag."
+      remove: { tag: [remake] }
+  - model.total-nuclear-annihilation-collectors-edition:
+      note: "This machine is an edition of Spooky Pinball's 2017 'Total Nuclear Annihilation' rather than a recreation of an earlier machine, and is already shown as such. Detaching the tag."
+      remove: { tag: [remake] }
