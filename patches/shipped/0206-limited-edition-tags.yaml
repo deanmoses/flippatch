@@ -1,0 +1,529 @@
+attribution: flipcommons-catalog
+description: >
+  Limited edition models.
+claims:
+  - model.abba-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.ac-dc-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.acdc-let-there-be-rock-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      tag: [limited-edition]
+  - model.aerosmith-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6372"
+        quote: A limited run of 500 units was produced.
+      tag: [limited-edition]
+  - model.alice-coopers-nightmare-castle:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6445"
+        quote: Spooky Pinball advertised and made a quantity of 500 games.
+      tag: [limited-edition]
+  - model.alien-ellen-ripley:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.alien-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.alien-limited-edition-2:
+      note: "This machine's name identifies it as a limited edition."
+      tag: [limited-edition]
+  - model.alien-remake-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.americas-most-haunted:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6161"
+        quote: The manufacturer advertised a total production run of 150 units.
+      tag: [limited-edition]
+  - model.attack-from-mars-remake-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.avatar-the-battle-for-pandora-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.avatar-the-battle-for-pandora-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.avengers-infinity-quest-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6756"
+        quote: Stern manufactured a limited quantity of 500 games.
+      tag: [limited-edition]
+  - model.barry-os-barbecue-challenge-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.batman-66-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6355"
+        quote: A limited run of 240 units was produced.
+      tag: [limited-edition]
+  - model.batman-66-super-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      cite:
+        ref: "ipdb:6356"
+        quote: A limited run of 80 units was produced.
+      tag: [limited-edition]
+  - model.black-knight-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.black-knight-sword-of-rage-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6569"
+        quote: A limited production run of 600 was advertised and made.
+      tag: [limited-edition]
+  - model.cactus-canyon-remake-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.dale-jr:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.deadpool-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6560"
+        quote: Stern advertised and made a limited quantity of 500 games.
+      tag: [limited-edition]
+  - model.dialed-in-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.dialed-in-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6351"
+        quote: This model is advertised as having a limited production run of 2500 units.
+      tag: [limited-edition]
+  - model.disney-tron-legacy-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.dominos-spectacular-pinball-adventure-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      tag: [limited-edition]
+  - model.dungeons-and-dragons-the-tyrants-eye-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.eight-ball-deluxe-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.elton-john-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.elton-john-platinum-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.elviras-house-of-horrors-40th-anniversary:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.elviras-house-of-horrors-blood-red-kiss:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.elviras-house-of-horrors-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6597"
+        quote: A limited production run of 400 was advertised and made.
+      tag: [limited-edition]
+  - model.elviras-house-of-horrors-signature-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6598"
+        quote: Stern advertised a limited quantity of 50 units of this game would be made.
+      tag: [limited-edition]
+  - model.evil-dead-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.fathom-mermaid:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.foo-fighters-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.full-throttle-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      cite:
+        ref: "ipdb:6368"
+        quote: 'This model was advertised as a limited run of 250 units with serial numbers allocated to customers on a "first come, first served" basis, with the numbered plaque affixed to the game.'
+      tag: [limited-edition]
+  - model.funhouse-remake-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.galactic-tank-force-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.galactic-tank-force-signature:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.game-of-thrones-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.ghostbusters-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6334"
+        quote: A limited run of 500 units was produced.
+      tag: [limited-edition]
+  - model.godzilla-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6843"
+        quote: Stern manufactured a limited quantity of 1000 games.
+      tag: [limited-edition]
+  - model.guardians-of-the-galaxy-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6476"
+        quote: A limited run of 600 units was produced.
+      tag: [limited-edition]
+  - model.guns-n-roses-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6766"
+        quote: This model was advertised as having a production run limited to 500 individually-numbered units.
+      tag: [limited-edition]
+  - model.guns-n-roses-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6765"
+        quote: This model was advertised as having a production run limited to 5000 individually-numbered units.
+      tag: [limited-edition]
+  - model.halloween-blood-sucker-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.halloween-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.iron-maiden-legacy-of-the-beast-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6557"
+        quote: A limited run of 500 units was produced.
+      tag: [limited-edition]
+  - model.james-bond-007-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6898"
+        quote: Stern advertised a limited quantity of 1000 games.
+      tag: [limited-edition]
+  - model.james-camerons-avatar-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.jaws-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.john-wick-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.jurassic-park-30th-anniversary:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.jurassic-park-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6575"
+        quote: A limited production run of 500 was advertised and made.
+      tag: [limited-edition]
+  - model.king-kong-myth-of-terror-island-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.kiss-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.led-zeppelin-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6762"
+        quote: Stern manufactured a limited quantity of 500 games.
+      tag: [limited-edition]
+  - model.legends-of-valhalla-deluxe-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.legends-of-wrestlemania-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6216"
+        quote: A limited run of 400 units was produced.
+      tag: [limited-edition]
+  - model.looney-tunes-blood-sucker-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.looney-tunes-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.lord-of-the-rings-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.medieval-madness-remake-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.metallica-master-of-puppets-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.metallica-remastered-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.monster-bash-remake-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.mustang-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.ninja-eclipse-first-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.pirates-of-the-caribbean-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6494"
+        quote: This model is advertised as having a limited production run of 200 units.
+      tag: [limited-edition]
+  - model.pirates-of-the-caribbean-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.pokemon-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.primus:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.pulp-fiction-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.punny-factory:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.punny-factory-engraved:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.queen-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.rick-and-morty-blood-sucker-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.road-trip:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.rob-zombies-spookshow-international-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.rob-zombies-spookshow-international-standard-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.rush-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6846"
+        quote: Stern advertised a limited quantity of 1000 games would be made.
+      tag: [limited-edition]
+  - model.scooby-doo-blood-sucker-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.scooby-doo-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.spider-man-black-suited-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:5650"
+        quote: A production quantity of 500 games was confirmed by Stern.
+      tag: [limited-edition]
+  - model.star-trek-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6046"
+        quote: This model is advertised on the backbox plaque as a limited run of 799 and a representative from Stern later concurred with that quantity.
+      tag: [limited-edition]
+  - model.star-wars-fall-of-the-empire-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.star-wars-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6430"
+        quote: A limited run of 800 units was produced.
+      tag: [limited-edition]
+  - model.stranger-things-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6644"
+        quote: A limited production run of 500 was advertised and made.
+      tag: [limited-edition]
+  - model.supreme:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.teenage-mutant-ninja-turtles-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6732"
+        quote: Stern manufactured a limited quantity of 500 games.
+      tag: [limited-edition]
+  - model.the-addams-family-special-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-avengers-hulk-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      cite:
+        ref: "ipdb:5941"
+        quote: A limited run of 250 units was produced.
+      tag: [limited-edition]
+  - model.the-avengers-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:5940"
+        quote: A limited run of 250 units was produced.
+      tag: [limited-edition]
+  - model.the-beatles-diamond-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6563"
+        quote: Stern advertised this Diamond Edition as having a limited production run of 100 units and a uniquely numbered metal plaque is affixed to the lower playfield apron.
+      tag: [limited-edition]
+  - model.the-beatles-platinum-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6562"
+        quote: Stern advertised this Platinum Edition as having a limited production run of 250 units and a uniquely numbered metal plaque is affixed to the lower playfield apron.
+      tag: [limited-edition]
+  - model.the-godfather-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-godfather-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-hobbit-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-hobbit-motion-picture-trilogy-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-mandalorian-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6830"
+        quote: Stern manufactured a limited quantity of 750 games.
+      tag: [limited-edition]
+  - model.the-munsters-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-princess-bride-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-princess-bride-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-rolling-stones-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-texas-chainsaw-massacre-blood-sucker-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-texas-chainsaw-massacre-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-uncanny-x-men-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-walking-dead-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-walking-dead-remastered-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-wizard-of-oz-75th-anniversary-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6221"
+        quote: This model is advertised as having a limited production run of 1500 units.
+      tag: [limited-edition]
+  - model.the-wizard-of-oz-emerald-city:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-wizard-of-oz-emerald-city-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      cite:
+        ref: "ipdb:5967"
+        quote: "This model was produced as a limited run of 1000, now out of production."
+      tag: [limited-edition]
+  - model.the-wizard-of-oz-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.the-wizard-of-oz-yellow-brick-road:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.total-nuclear-annihilation-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.toy-story-4-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6951"
+        quote: The manufacturer advertised a quantity of 1000 Collector's Edition games would be built.
+      tag: [limited-edition]
+  - model.toy-story-4-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6950"
+        quote: This Limited Edition model was advertised as having a production run limited to 5000 units.
+      tag: [limited-edition]
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      tag: [limited-edition]
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      tag: [limited-edition]
+  - model.transformers-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.ultraman-kaiju-rumble-blood-sucker-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.venom-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.weird-als-museum-of-natural-hilarity-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.willy-wonka-and-the-chocolate-factory-collectors-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6649"
+        quote: This model was advertised as having a production run limited to 500 units.
+      tag: [limited-edition]
+  - model.willy-wonka-and-the-chocolate-factory-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      cite:
+        ref: "ipdb:6648"
+        quote: This model was advertised as having a production run limited to 5000 units.
+      tag: [limited-edition]
+  - model.wizard-of-oz-yellow-brick-road-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      tag: [limited-edition]
+  - model.x-men-limited-edition:
+      note: "OPDB tags this machine as a limited edition."
+      tag: [limited-edition]
+  - model.x-men-magneto-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      cite:
+        ref: "ipdb:5823"
+        quote: This model was advertised as a limited run of 250 and a representative from Stern later concurred with that quantity.
+      tag: [limited-edition]
+  - model.x-men-wolverine-limited-edition:
+      note: "This machine's name identifies it as a limited edition."
+      cite:
+        ref: "ipdb:5824"
+        quote: This model was advertised as a limited run of 300 and a representative from Stern later concurred with that quantity.
+      tag: [limited-edition]

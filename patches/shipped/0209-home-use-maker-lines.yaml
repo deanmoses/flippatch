@@ -1,0 +1,52 @@
+attribution: flipcommons-catalog
+description: >
+  Home-use tag for the Briarwood, Sentinel and Brunswick home lines.
+claims:
+  - model.aspen-2:  # briarwood_line
+      note: "Part of Briarwood's late-1970s line, built for sale to the home rather than for coin-operated arcade routes."
+      tag: [home-use]
+  - model.circus-11:  # brunswick_line
+      note: "Part of Brunswick's 1978-1980 line, built for sale to the home rather than for coin-operated arcade routes."
+      tag: [home-use]
+  - model.circus-15:  # brunswick_line
+      note: "Part of Brunswick's 1978-1980 line, built for sale to the home rather than for coin-operated arcade routes."
+      tag: [home-use]
+  - model.cosmic-pinball-2:  # briarwood_home_manual
+      note: "One of the six Briarwood solid state home machines that shipped with a single shared owners manual."
+      cite:
+        ref: "ipdb:5015"
+        quote: "the same generic owners manual was included with the manufacturer's solid state home models for Skate King, Super Star, Rodeo, Demolition Classic, Cosmic Pinball, and Circus."
+      tag: [home-use]
+  - model.rodeo-5:  # briarwood_home_manual
+      note: "One of the six Briarwood solid state home machines that shipped with a single shared owners manual."
+      cite:
+        ref: "ipdb:4947"
+        quote: "the same generic owners manual was included with the manufacturer's solid state home models for Skate King, Super Star, Rodeo, Demolition Classic, Cosmic Pinball, and Circus."
+      tag: [home-use]
+  - model.skate-king:  # briarwood_home_manual
+      note: "One of the six Briarwood solid state home machines that shipped with a single shared owners manual."
+      cite:
+        ref: "ipdb:5466"
+        quote: "the same generic owners manual was included with the manufacturer's solid state home models for Skate King, Super Star, Rodeo, Demolition Classic, Cosmic Pinball, and Circus."
+      tag: [home-use]
+  - model.super-star-3:  # briarwood_home_manual
+      note: "One of the six Briarwood solid state home machines that shipped with a single shared owners manual."
+      cite:
+        ref: "ipdb:2448"
+        quote: "the same generic owners manual was included with the manufacturer's solid state home models for Skate King, Super Star, Rodeo, Demolition Classic, Cosmic Pinball, and Circus."
+      tag: [home-use]
+  - model.super-star-4:  # briarwood_line
+      note: "Part of Briarwood's late-1970s line, built for sale to the home rather than for coin-operated arcade routes."
+      tag: [home-use]
+  - model.wonder-wizard-cb-charlie:  # sentinel_twin
+      note: "The same machine as Sentinel's Star Explorer and Flying Aces under different artwork, both of them built for the home."
+      cite:
+        ref: "ipdb:5642"
+        quote: Sentinel Inc.'s 'Flying Aces' Sentinel Inc.'s 1977 'Star Explorer' but with different artwork. Same exterior cabinet.
+      tag: [home-use]
+  - model.wonder-wizard-demolition-derby:  # sentinel_twin
+      note: "The same machine as Sentinel's Star Explorer and Flying Aces under different artwork, both of them built for the home."
+      cite:
+        ref: "ipdb:4891"
+        quote: Sentinel Inc.'s 'Flying Aces' Sentinel Inc.'s 1977 'Star Explorer' but with different artwork. Same exterior cabinet.
+      tag: [home-use]

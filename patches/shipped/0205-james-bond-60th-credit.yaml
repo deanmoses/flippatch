@@ -1,0 +1,9 @@
+attribution: flipcommons-catalog
+description: Design credit for Stern's James Bond 60th Anniversary machine.
+claims:
+  - model.james-bond-007-60th-anniversary-limited-edition:
+      cite:
+        ref: https://www.pinballnews.com/site/2023/01/03/james-bond-60th-anniversary
+        quote: "The 60th Anniversary edition is a completely new design by Keith Elwin"
+      credit:
+        - keith-elwin: design

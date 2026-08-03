@@ -1,0 +1,23 @@
+attribution: flipcommons-catalog
+description: >
+  Production caps and naming for Pinball Brothers' Queen and ABBA.
+claims:
+  - model.abba-collectors-edition:
+      cite:
+        ref: "https://www.pinballnews.com/site/2024/04/04/pinball-brothers-reveals-abba"
+        quote: "The game comes in two versions – Arrival Limited Edition (maximum 500 units) and Voyage Collector Edition (maximum 300 units)."
+      production_quantity: "300"
+      tag: [limited-edition]
+  - model.abba-limited-edition:
+      cite:
+        ref: "https://www.pinballnews.com/site/2024/04/04/pinball-brothers-reveals-abba"
+        quote: "The game comes in two versions – Arrival Limited Edition (maximum 500 units) and Voyage Collector Edition (maximum 300 units)."
+      production_quantity: "500"
+  - model.queen-limited-edition:
+      cite:
+        ref: "https://www.pinballbrothers.com/queen-pinball"
+        quote: "The Rhapsody Edition is limited to 1,000 numbered units."
+      production_quantity: "1000"
+  - model.queen-collectors-edition:
+      name: Queen (Champions Edition)
+      slug: queen-champions-edition

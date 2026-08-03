@@ -1,0 +1,67 @@
+attribution: opdb
+description: >
+  Home-use models.
+claims:
+  - model.alive:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.aspen:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.big-top-4:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.circus-9:
+      note: "OPDB tags this machine as a home edition."
+      cite:
+        ref: "ipdb:3021"
+        quote: "the same generic owners manual was included with the manufacturer's solid state home models for Skate King, Super Star, Rodeo, Demolition Classic, Cosmic Pinball, and Circus."
+      tag: [home-use]
+  - model.cosmic-pinball:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.demolition-classic:
+      note: "OPDB tags this machine as a home edition."
+      cite:
+        ref: "ipdb:3054"
+        quote: "the same generic owners manual was included with the manufacturer's solid state home models for Skate King, Super Star, Rodeo, Demolition Classic, Cosmic Pinball, and Circus."
+      tag: [home-use]
+  - model.diamond-jim:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.flying-aces-2:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.galaxy-ranger:
+      note: "OPDB tags this machine as a home edition."
+      cite:
+        ref: "ipdb:981"
+        quote: The Bally Brain of the Fireball/Galaxy Ranger/Evel Knievel/Captain Fantastic home professional series
+      tag: [home-use]
+  - model.iron-man-classic:
+      note: "OPDB tags this machine as a home edition."
+      cite:
+        ref: "ipdb:5652"
+        quote: Coinless version of Stern's 2010 'Iron Man'.
+      tag: [home-use]
+  - model.las-vegas-2:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.star-explorer:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.super-mario-bros-mushroom-world:
+      note: "OPDB tags this machine as a home edition."
+      tag: [home-use]
+  - model.transformers-the-pin:
+      note: "OPDB tags this machine as a home edition."
+      cite:
+        ref: "ipdb:5861"
+        quote: "The SPIKE system was first used on the consumer game versions 'Transformers, The Pin' and 'Avengers, The Pin'."
+      tag: [home-use]
+  - model.vacation-america:
+      note: "OPDB tags this machine as a home edition."
+      cite:
+        ref: "ipdb:4848"
+        quote: Vacation America was designed to provide consumers with a reliable state of the art pinball machine for the home.
+      tag: [home-use]
