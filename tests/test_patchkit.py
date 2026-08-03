@@ -1,7 +1,7 @@
 """Tests for patchkit — the shared patch-authoring helpers.
 
-patchkit lives at campaigns/patchkit.py (excluded from the R2 upload) and
-is on the pytest pythonpath via pyproject. Its whole purpose is to centralize the
+patchkit lives at scripts/patchkit.py and is on the pytest pythonpath via
+pyproject (`pythonpath = ["scripts"]`). Its whole purpose is to centralize the
 escaping / guard / emission logic that kept being re-derived (subtly wrong) in each
 authoring session, so it earns real coverage. These tests are the authoritative
 checks; the module's __main__ block is now just a runnable demo.
@@ -29,7 +29,6 @@ from patchkit import (
     render_patch,
     sentence_with,
     sentences,
-    source_note,
     source_root,
     write_patch,
     yamlq,
@@ -89,17 +88,6 @@ def test_yamlq_falls_back_to_single_quotes_when_double_would_escape() -> None:
 )
 def test_clean_text(raw: str, expected: str) -> None:
     assert clean_text(raw) == expected
-
-
-def test_source_note_wraps_verbatim_and_normalizes() -> None:
-    note = source_note("IPDB", 'exists only as a "prototype" machine')
-    assert note == 'IPDB says "exists only as a "prototype" machine"'
-
-
-def test_source_note_tail() -> None:
-    assert (
-        source_note("IPDB", "x", tail=" (translated)") == 'IPDB says "x" (translated)'
-    )
 
 
 @pytest.mark.parametrize(
@@ -181,14 +169,13 @@ def test_check_resolved() -> None:
 def test_entry_assert_block() -> None:
     e = entry(
         "model.mazatron",
-        note=source_note("IPDB", 'exists only as a "prototype" machine'),
-        cite="ipdb:4443",
+        cite={"ref": "ipdb:4443", "quote": 'exists only as a "prototype" machine'},
         fields={"production_status": "unreleased"},
         tags=["prototype"],
     )
     assert "- model.mazatron:" in e
-    assert """note: 'IPDB says "exists only as a "prototype" machine"\'""" in e
-    assert "cite: ipdb:4443" in e
+    assert 'ref: "ipdb:4443"' in e
+    assert """quote: 'exists only as a "prototype" machine'""" in e
     assert "production_status: unreleased" in e
     assert "tag: [prototype]" in e
 

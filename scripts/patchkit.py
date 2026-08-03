@@ -78,7 +78,8 @@ def yamlq(s: str) -> str:
     Prettier's default is a double-quoted scalar, but a double-quoted YAML scalar
     escapes `"` and `\\` with backslashes, so any text containing either switches
     to single quotes instead - literal except `'`, which is doubled. That is what
-    keeps `... says "<verbatim>"` notes single-quoted and everything else double.
+    keeps a `quote:` carrying the source's own quotation marks single-quoted and
+    everything else double.
     Emitting the same choice here is what makes a generated patch already
     Prettier-formatted (see the flow-emission section). Always pass clean_text()ed
     text.
@@ -86,16 +87,6 @@ def yamlq(s: str) -> str:
     if '"' in s or "\\" in s:
         return "'" + s.replace("'", "''") + "'"
     return '"' + s + '"'
-
-
-def source_note(source: str, verbatim: str, tail: str = "") -> str:
-    """The canonical evidence note: `<Source> says "<verbatim>"<tail>`.
-
-    Quote the source verbatim; mark your own omissions inside `verbatim` with
-    ` [...] `. Normalizes typography but preserves the source's own letters
-    (umlauts, accents). Feed the return value straight to entry(note=...).
-    """
-    return clean_text(f'{source} says "{verbatim.strip()}"{tail}')
 
 
 _SAFE_SCALAR = re.compile(r"^[A-Za-z0-9][A-Za-z0-9 _./()&'-]*$")
@@ -620,8 +611,13 @@ def entry(
 
     ref:    '<entity_type>.<public_id>'  e.g. 'model.mazatron', 'game-format.slot-machine'.
     create: emit `create: true` (new entity).
-    note:   free text -> single-quoted scalar (use source_note() to build it).
-    cite:   'scheme:id' e.g. 'ipdb:4443'.
+    note:   the edit summary — rationale beyond the evidence, used sparingly:
+        uncertainty, cleanup or merge explanations, a paraphrase of what the
+        source states and why the value follows. A verbatim excerpt does NOT
+        belong here — it goes in `quote:` on the cite spec, which already names
+        the source; a cite carrying a quote usually needs no note at all.
+    cite:   'scheme:id' e.g. 'ipdb:4443', or a `{ref, archive, locator, quote}`
+        mapping, or a list of either when several sources back the same claims.
     fields: scalar/FK claims; value used as-is for scalars, target public_id for FKs.
     description: folded `>` block (for vocab creation).
     cites:  inline-citation map for new cites referenced from `description`/`fields`
@@ -869,8 +865,10 @@ if __name__ == "__main__":
     print(
         entry(
             "model.mazatron",
-            note=source_note("IPDB", 'exists only as a "prototype" machine'),
-            cite="ipdb:4443",
+            cite={
+                "ref": "ipdb:4443",
+                "quote": 'exists only as a "prototype" machine',
+            },
             fields={"production_status": "unreleased"},
             tags=["prototype"],
         )

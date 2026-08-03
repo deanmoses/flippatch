@@ -11,8 +11,8 @@ The baseline seed catalog these patches target lives in a separate repo, [pindat
 This file is a thin local pointer. The authoritative, current patch documentation lives in **flipcommons** and cross-links itself — **do not author a patch from flippatch's docs alone.** In `../flipcommons/docs/`:
 
 - **DataPatches.md** — the full patch file format and apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations.
-- **DataPatchAuthoring.md** — authoring a _good_ patch: attribution, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
-- **DataPatchKit.md** — generating large curated patches with the shared `patchkit` helper (which lives here at [`campaigns/patchkit.py`](../campaigns/patchkit.py)).
+- **DataPatchAuthoring.md** — authoring a _good_ patch: attribution, verbatim `quote:` on the cite, record descriptions, and the localhost snapshot-validate loop.
+- **DataPatchKit.md** — generating large curated patches with the shared `patchkit` helper (which lives here at [`scripts/patchkit.py`](../scripts/patchkit.py)).
 - **DataPatchReviewing.md** — the patch review checklist.
 - **DomainModel.md** — the catalog entity hierarchy claims target.
 

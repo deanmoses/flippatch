@@ -13,7 +13,7 @@ Flippatch is the authoring home and transport for **data patches** — small YAM
 **What lives here:**
 
 - **Data patches**: change sets applied on top of the baseline seed catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file.
-- **Authoring artifacts**: the `patchkit` generator and one directory per generated patch set (audit trail) under `campaigns/`.
+- **Authoring artifacts**: the shared `patchkit` emitter (`scripts/patchkit.py`) and one directory per generated patch set (audit trail) under `campaigns/`.
 
 Supporting stuff:
 
@@ -56,8 +56,8 @@ Commits are gated by [pre-commit](https://pre-commit.com/) (`.pre-commit-config.
 ## Project Structure
 
 ```text
+campaigns/        Assets involved in authoring specific data patches, like generator scripts
 patches/          Data patches — NNNN-slug.yaml claim corrections for downstream
-  authoring/      patchkit generator + one dir per generated patch set (audit trail)
 schema/           patch.schema.json — structural validation
 scripts/          Python tooling (validate, lint, R2 push, agent-docs build)
   analysis/       evidence.sql — the web-scrape cache as a queryable layer
@@ -122,10 +122,10 @@ The authoritative, current patch docs live in flipcommons. Flippatch's local doc
 
 - **Data.md** — the index for working with catalog data (seed vs patches, explore vs correct); start here to orient.
 - **DataPatches.md** — the patch file format and the full apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations. The source of truth for what a patch _is_.
-- **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, verbatim `note:`, record descriptions, and the localhost snapshot-validate loop.
-- **DataPatchKit.md** — when and how to generate large curated patches with the shared `patchkit` helper (which lives here at `campaigns/patchkit.py`).
-- **DataPatchReviewing.md** — the patch review checklist.
+- **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, verbatim `quote:` on the cite, record descriptions, and the localhost snapshot-validate loop.
 - **DomainModel.md** — the catalog entity hierarchy the claims target.
+- **DataPatchKit.md** — when and how to generate large curated patches with the shared `patchkit` helper (which lives here at `scripts/patchkit.py`).
+- **DataPatchReviewing.md** — the patch review checklist.
 
 For the concepts a patch rests on, read these two when a claim or citation question gets subtle:
 
@@ -142,18 +142,7 @@ For the concepts a patch rests on, read these two when a claim or citation quest
 
 ### Generating a patch
 
-A generated patch set is **two files** in `campaigns/<patch>/`, and the split is the whole design:
-
-- **`<name>.sql`** — the campaign's analysis file. Detection, classification, the false-positive gate and quote extraction all live here, layered on the foundation (and on `evidence.sql` when the claims cite web pages). It ends in the `<prefix>_summary` / `<prefix>_checks` pair the runner gates on. Iterate on it with `make analyze FILE=<...> PREFIX=<...>`.
-- **`gen.py`** — a pure emitter. It reads one view through `patchkit.read_view` and turns each row into a `patchkit.entry`. It holds no detection logic and no catalog queries of its own.
-
-```python
-rows = pk.read_view(YEARS_SQL, "year_patch_rows", prefix="year")
-```
-
-`read_view` runs the analysis's checks before it yields a row, so a generator cannot emit a patch from an analysis whose detectors have gone dark — a patch built on a broken detector is still perfectly well-formed YAML, and nothing downstream can tell. `prefix` names the checks pair explicitly because it often differs from the filename (`exports.sql` gates on `export_checks`).
-
-Everything else `patchkit` offers is emission: `entry` for one correctly-escaped claims block, `write_patch` for the file, `source_note` / `clean_quote` for typography. **Escaping is solved — never `yaml.dump`, never hand-roll it.** The authoritative guidance is [DataPatchKit.md](../../flipcommons/docs/DataPatchKit.md); the worked examples to copy are `0177-exports`, `0178-gameplay-features` and `0181-bingo-years`, each with a `README.md` narrating its signal, its gate and its dead ends.
+When creating a script to generate a patch -- such as going from analytics data to a patch -- use the tools in [DataPatchKit.md](../../flipcommons/docs/DataPatchKit.md). In particular escaping YAML is a hard problem, that DataPatchKit solves. Never hand-roll YAML escaping.
 
 ### Treat every patch already in `patches/` as immutable
 
