@@ -45,7 +45,15 @@ class ClaimQuote:
 
 
 def collect_pairs(filename: str, data: object) -> Iterator[ClaimQuote]:
-    """Every ``(claim, quote)`` pair in a patch — scalar cites and footnotes."""
+    """Every ``(claim, quote)`` pair in a patch — scalar cites and footnotes.
+
+    Both loops skip quote-less cites — a deliberately quote-less cite (the
+    pixel-fact rule: ref + locator + note, evidence on the rendered page)
+    asserts no textual evidence for this rule to weigh, so it is not judged
+    and costs no model call. The scalar guard is easy to miss: it lives in
+    ``iter_scalar_claim_cites``, which yields only quote-bearing cites; the
+    footnote loop's is the ``strip()`` check inline below.
+    """
     for claim in iter_scalar_claim_cites(filename, data):
         yield ClaimQuote(
             patch=claim.patch,
