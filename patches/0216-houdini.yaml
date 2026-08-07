@@ -1,0 +1,51 @@
+attribution: flipcommons-catalog
+description: >
+  Houdini 100th Anniversary details
+claims:
+  - gameplay-feature.toppers:
+      create: true
+      name: Toppers
+  - gameplay-feature.knockers:
+      create: true
+      name: Knockers
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: "Now, American Pinball is proud to celebrate the legendary escape artist's enduring legacy with the release of the Houdini 100th Anniversary Edition."
+      production_status: produced
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: Introducing the Houdini 100th Anniversary Pinball Machine
+      game_format: pinball
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: stunning new cabinet artwork by acclaimed artist Christopher Franchi
+      credit:
+        - christopher-franchi: art
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: "Each game includes a custom topper, Magic Glass, shaker motor, knocker, and mirrored art blades as standard equipment."
+      gameplay_feature: [toppers, knockers, shaker-motors]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: Three Magnets to Control Houdini's Magic
+      gameplay_feature: [{ magnets: 3 }]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 5 Multiballs
+      gameplay_feature: [multiball]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 1 Video Mode
+      gameplay_feature: [{ video-modes: 1 }]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: Steampunk Flippers
+      gameplay_feature: [flippers]

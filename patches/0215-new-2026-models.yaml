@@ -1,0 +1,244 @@
+attribution: flipcommons-catalog
+description: >
+  New models for 2026
+sources:
+  - name: American Pinball
+    source_type: web
+    links:
+      - {
+          url: "https://www.american-pinball.com/",
+          label: American Pinball,
+          link_type: homepage,
+        }
+      - {
+          url: "https://americanpinball.com/",
+          label: American Pinball,
+          link_type: homepage,
+        }
+claims:
+  - manufacturer.cardona-pinball-designs:
+      create: true
+      name: Cardona Pinball Designs
+  - corporate-entity.cardona-pinball-designs:
+      create: true
+      name: Cardona Pinball Designs
+      manufacturer: cardona-pinball-designs
+  - manufacturer.up-pinball:
+      create: true
+      name: UP Pinball
+  - corporate-entity.up-pinball:
+      create: true
+      name: UP Pinball
+      manufacturer: up-pinball
+  - manufacturer.world-pinball:
+      create: true
+      name: World Pinball
+  - corporate-entity.world-pinball:
+      create: true
+      name: World Pinball
+      manufacturer: world-pinball
+  - franchise.bon-jovi:
+      create: true
+      name: Bon Jovi
+  - franchise.sonic-the-hedgehog:
+      create: true
+      name: Sonic the Hedgehog
+  - franchise.dungeon-crawler-carl:
+      create: true
+      name: Dungeon Crawler Carl
+  - franchise.enders-game:
+      create: true
+      name: Ender's Game
+  - franchise.resident-evil:
+      create: true
+      name: Resident Evil
+  - title.bon-jovi:
+      create: true
+      name: Bon Jovi
+      franchise: bon-jovi
+  - title.fish-tales-ultimate-fishing-challenge:
+      create: true
+      name: "Fish Tales: Ultimate Fishing Challenge"
+  - title.the-3-musketeers:
+      create: true
+      name: The 3 Musketeers
+  - title.sonic-the-hedgehog:
+      create: true
+      name: Sonic the Hedgehog
+      franchise: sonic-the-hedgehog
+  - title.dungeon-crawler-carl:
+      create: true
+      name: Dungeon Crawler Carl
+      franchise: dungeon-crawler-carl
+  - title.enders-game:
+      create: true
+      name: Ender's Game
+      franchise: enders-game
+  - title.monster-league-hockey:
+      create: true
+      name: Monster League Hockey
+  - title.transformers-more-than-meets-the-eye:
+      create: true
+      name: "Transformers: More Than Meets the Eye"
+      franchise: transformers
+  - title.yukon-yeti:
+      create: true
+      name: Yukon Yeti
+  - title.the-fiery-end-of-obsidian-high:
+      create: true
+      name: The Fiery End of Obsidian High
+  - title.resident-evil:
+      create: true
+      name: Resident Evil
+      franchise: resident-evil
+  - model.cirqus-voltaire-remake:
+      create: true
+      name: Cirqus Voltaire (Remake)
+      title: cirqus-voltaire
+      corporate_entity: american-pinball-inc
+      year: 2026
+      theme: [carnivals, circus]
+  - model.galactic-tank-force-victory-edition:
+      create: true
+      name: Galactic Tank Force (Victory Edition)
+      title: galactic-tank-force
+      corporate_entity: american-pinball-inc
+      year: 2026
+      theme: [outer-space, science-fiction]
+  - model.houdini-100th-anniversary:
+      create: true
+      name: Houdini 100th Anniversary
+      title: houdini
+      corporate_entity: american-pinball-inc
+      year: 2026
+      theme: [historical-characters, magic]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: This limited production run of just 100 machines worldwide commemorates 100 years since Harry Houdini's passing
+      production_quantity: 100
+      tag: [limited-edition]
+  - model.bon-jovi:
+      create: true
+      name: Bon Jovi
+      title: bon-jovi
+      corporate_entity: barrels-of-fun
+      year: 2026
+      theme: [licensed, hard-rock]
+  - model.fish-tales-ultimate-fishing-challenge-kit:
+      create: true
+      name: "Fish Tales: Ultimate Fishing Challenge (Kit)"
+      title: fish-tales-ultimate-fishing-challenge
+      corporate_entity: cardona-pinball-designs
+      year: 2026
+      theme: [fishing, sports]
+  - model.the-3-musketeers:
+      create: true
+      name: The 3 Musketeers
+      title: the-3-musketeers
+      corporate_entity: hexa-pinball
+      year: 2026
+      theme: [adventure, fictional-characters, literature]
+  - model.the-3-musketeers-elegance-edition:
+      create: true
+      name: The 3 Musketeers (Elegance Edition)
+      title: the-3-musketeers
+      corporate_entity: hexa-pinball
+      year: 2026
+      theme: [adventure, fictional-characters, literature]
+  - model.sonic-the-hedgehog-arcade-edition:
+      create: true
+      name: Sonic the Hedgehog (Arcade Edition)
+      title: sonic-the-hedgehog
+      corporate_entity: jersey-jack-pinball-inc-lakewood-nj
+      year: 2026
+      theme: [licensed, video-games, cartoons]
+  - model.sonic-the-hedgehog-collectors-edition:
+      create: true
+      name: Sonic the Hedgehog (Collector's Edition)
+      title: sonic-the-hedgehog
+      corporate_entity: jersey-jack-pinball-inc-lakewood-nj
+      year: 2026
+      theme: [licensed, video-games, cartoons]
+  - model.sonic-the-hedgehog-special-edition:
+      create: true
+      name: Sonic the Hedgehog (Special Edition)
+      title: sonic-the-hedgehog
+      corporate_entity: jersey-jack-pinball-inc-lakewood-nj
+      year: 2026
+      theme: [licensed, video-games, cartoons]
+  - model.dungeon-crawler-carl:
+      create: true
+      name: Dungeon Crawler Carl
+      title: dungeon-crawler-carl
+      corporate_entity: multimorphic-inc
+      year: 2026
+      theme: [licensed, literature, fantasy]
+  - model.enders-game:
+      create: true
+      name: Ender's Game
+      title: enders-game
+      corporate_entity: multimorphic-inc
+      year: 2026
+      theme: [licensed, literature, science-fiction]
+  - model.tales-of-the-arabian-nights-30th-anniversary-remake:
+      create: true
+      name: Tales of the Arabian Nights (30th Anniversary Remake)
+      title: tales-of-the-arabian-nights
+      corporate_entity: pedretti-gaming
+      year: 2026
+      theme: [fantasy, literature, myth-and-legend, mythology]
+  - model.tales-of-the-arabian-nights-legacy-edition-remake:
+      create: true
+      name: Tales of the Arabian Nights (Legacy Edition Remake)
+      title: tales-of-the-arabian-nights
+      corporate_entity: pedretti-gaming
+      year: 2026
+      theme: [fantasy, literature, myth-and-legend, mythology]
+  - model.monster-league-hockey:
+      create: true
+      name: Monster League Hockey
+      title: monster-league-hockey
+      corporate_entity: ramps-pinball
+      theme: [monsters, hockey]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      create: true
+      name: "Transformers: More Than Meets the Eye (Limited Edition)"
+      title: transformers-more-than-meets-the-eye
+      corporate_entity: stern-pinball-incorporated
+      year: 2026
+      theme: [licensed, robots, science-fiction, cartoons, movies]
+  - model.transformers-more-than-meets-the-eye-premium:
+      create: true
+      name: "Transformers: More Than Meets the Eye (Premium)"
+      title: transformers-more-than-meets-the-eye
+      corporate_entity: stern-pinball-incorporated
+      year: 2026
+      theme: [licensed, robots, science-fiction, cartoons, movies]
+  - model.transformers-more-than-meets-the-eye-pro:
+      create: true
+      name: "Transformers: More Than Meets the Eye (Pro)"
+      title: transformers-more-than-meets-the-eye
+      corporate_entity: stern-pinball-incorporated
+      year: 2026
+      theme: [licensed, robots, science-fiction, cartoons, movies]
+  - model.yukon-yeti:
+      create: true
+      name: Yukon Yeti
+      title: yukon-yeti
+      corporate_entity: turner-pinball
+      year: 2026
+      theme: [monsters, snow]
+  - model.the-fiery-end-of-obsidian-high:
+      create: true
+      name: The Fiery End of Obsidian High
+      title: the-fiery-end-of-obsidian-high
+      corporate_entity: up-pinball
+      year: 2026
+  - model.resident-evil:
+      create: true
+      name: Resident Evil
+      title: resident-evil
+      corporate_entity: world-pinball
+      year: 2026
+      theme: [licensed, horror, video-games]
