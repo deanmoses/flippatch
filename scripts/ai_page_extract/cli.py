@@ -145,8 +145,9 @@ def _resolve_page(source_ref: str) -> ResolvedPage | None:
         return None
     # The input adapter (AiPageDataExtractor.md): resolves an http(s)/opdb/youtube/
     # ipdb ref to its unstructured source text. free_text_for keeps IPDB's
-    # structured fields out of the fan-out — an ipdb: ref yields its Notes prose
-    # alone. Constructing it also puts pinexplore's web_cache module on the path.
+    # structured fields out of the fan-out — an ipdb: ref yields its labeled
+    # machine prose (Notable Features / Toys / Notes / Marketing Slogans) alone.
+    # Constructing it also puts pinexplore's web_cache module on the path.
     from quote_verify.verify_quotes import _Sources
 
     sources = _Sources(WEB_CACHE_DB, EXPLORE_DUCKDB)

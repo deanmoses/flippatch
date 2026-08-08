@@ -34,7 +34,7 @@ The `source-ref` is an `http(s)` URL, or an `ipdb:<id>` / `opdb:<id>` / `youtube
 
 ## The IPDB sub-corpus
 
-An `ipdb:<id>` ref's free-text Notes are a primary source of unstructured prose, so the sub-corpus spreads across nine decades (1937–2022) and both note sizes — a **large** note is a rich recall test, a **small** note is a precision test. All resolve out of `explore.duckdb`; the AI-extractable text is the free-text Notable Features + Notes prose (`ipdb_notes_text`, via `_Sources.free_text_for`). IPDB's structured fields — Manufacturer, Type, Players, Theme, and `DateOfManufacture` — are deterministic data resolved directly from the columns, so they are scored outside this recall corpus. These cases probe tech-generation tells and other signals as they surface in the prose across eras.
+An `ipdb:<id>` ref's free-text Notes are a primary source of unstructured prose, so the sub-corpus spreads across nine decades (1937–2022) and both note sizes — a **large** note is a rich recall test, a **small** note is a precision test. All resolve out of `explore.duckdb`; the AI-extractable text is the editor-authored machine prose — Notable Features, Toys, Notes and Marketing Slogans, each under the IPDB page's own `Label:` (`ipdb_notes_text`, via `_Sources.free_text_for`). IPDB's structured fields — Manufacturer, Type, Players, Theme, and `DateOfManufacture` — are deterministic data resolved directly from the columns, so they are scored outside this recall corpus, as are IPDB's `Source:` / `Photos in:` rows, which describe IPDB's own paperwork rather than the machine. These cases probe tech-generation tells and other signals as they surface in the prose across eras.
 
 What the Notes prose actually stresses is the slices the structured columns can't feed: **gameplay features** (every note lists them), **credits named in prose**, **conversion / remake lineage**, **reward type**, and occasionally **player_count** or a **tech-generation tell** inferred from the described mechanisms. The `What it exercises` column below reflects the prose, not the structured record.
 
@@ -142,7 +142,7 @@ The precision case — assert only the three or four facts the ~480-char page st
 
 ### `medieval-madness` — `ipdb:4032` (IPDB Notes prose)
 
-The credits-recall yardstick. Scored against the **free-text Notes only** (`free_text_for`): the AI never sees `Manufacturer`/`Type`/`Players`/`Theme`/year — those are structured columns, resolved deterministically, out of scope here.
+The credits-recall yardstick. Scored against the **machine prose only** (`free_text_for`): the AI never sees `Manufacturer`/`Type`/`Players`/`Theme`/year — those are structured columns, resolved deterministically, out of scope here.
 
 | Field                | Ground truth (Notes prose only)                                                                                                   | Basis                                                                                               |
 | -------------------- | --------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- |

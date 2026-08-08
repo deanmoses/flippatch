@@ -57,7 +57,7 @@ from pathlib import Path
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from collections.abc import Iterator
+    from collections.abc import Container, Iterator, Mapping
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 PATCHES_DIR = REPO_ROOT / "patches"
@@ -75,70 +75,105 @@ def normalize(text: str) -> str:
     return re.sub(r"\s+", " ", text)
 
 
-def ipdb_row_text(
-    *,
-    title: str | None,
-    manufacturer: str | None,
-    type_: str | None,
-    players: object | None,
-    theme: str | None,
-    model_number: str | None = None,
-    mpu: str | None = None,
-    design_by: str | None = None,
-    art_by: str | None = None,
-    dots_animation_by: str | None = None,
-    mechanics_by: str | None = None,
-    music_by: str | None = None,
-    sound_by: str | None = None,
-    software_by: str | None = None,
-    notable_features: str | None,
-    notes: str | None,
-) -> str:
-    """The quotable text of one IPDB machine row.
+# One IPDB machine row as the page prints it: ``(column, page label)`` pairs. A
+# ``None`` label renders the value bare, as the page does for the title and the
+# "IPD No. 20 / March, 1992 / 4 Players" subtitle beneath it.
+#
+# Membership rule: **the stored value must be the page's literal string.** A
+# field the page reformats would manufacture a false pass, so it stays out —
+# ``ProductionNumber`` is ``20270`` here against the page's "20,270 units",
+# ``DateOfManufacture`` an ISO timestamp against "March, 1992". Nothing is lost;
+# ``AdditionalDetails`` carries the page's own date and player rendering. By that
+# rule the ``Players`` row is itself redundant and wrong, but shipped quotes may
+# rest on it, so dropping it is a deliberate call.
+#
+# Order and label spellings are inferred from the key order of pinexplore's
+# ``ingest_sources/ipdb_xantari.json`` dump — IPDB resists scraping, so no cached
+# page verifies them. Getting one wrong costs a false FAIL, never a false pass;
+# the membership rule is what carries the gate's honesty.
+_IPDB_ROW_FIELDS: tuple[tuple[str, str | None], ...] = (
+    ("Title", None),
+    ("Players", "Players"),
+    ("AdditionalDetails", None),
+    ("Manufacturer", "Manufacturer"),
+    ("CommonAbbreviations", "Common Abbreviations"),
+    ("Type", "Type"),
+    ("MPU", "MPU"),
+    ("ModelNumber", "Model Number"),
+    ("Theme", "Theme"),
+    ("NotableFeatures", "Notable Features"),
+    ("Toys", "Toys"),
+    ("DesignBy", "Design by"),
+    ("ArtBy", "Art by"),
+    ("DotsAnimationBy", "Dots/Animation by"),
+    ("MechanicsBy", "Mechanics by"),
+    ("MusicBy", "Music by"),
+    ("SoundBy", "Sound by"),
+    ("SoftwareBy", "Software by"),
+    ("Notes", "Notes"),
+    ("MarketingSlogans", "Marketing Slogans"),
+    ("PhotosIn", "Photos in"),
+    ("Source", "Source"),
+)
 
-    Mirrors what the IPDB page renders so a quote stays ctrl-F honest there:
-    the title as a bare heading, the structured fields as ``Label: value``
-    rows — hardware and the person-credit rows included, so a credit claim
-    can quote its ``Design by:`` line — then the Notable Features and Notes
-    prose. Empty fields are omitted.
+# The row narrowed to editor-authored prose about the machine — what
+# ``ipdb_notes_text`` feeds an AI. ``Source`` ("flyer", "Bally documentation")
+# and ``PhotosIn`` record IPDB's own paperwork, so feeding them invites a model
+# to mistake IPDB's sourcing for a fact about the machine.
+_IPDB_PROSE_COLUMNS = frozenset(
+    {"NotableFeatures", "Toys", "Notes", "MarketingSlogans"}
+)
+
+
+def _ipdb_lines(
+    row: Mapping[str, object], columns: Container[str] | None = None
+) -> str:
+    """Render *row*'s fields in page order, narrowed to *columns* if given.
+
+    A blank value is omitted rather than rendered as a bare ``Label:`` — text
+    the page never shows, which a quote of the label alone could verify against.
     """
     lines = []
-    if title:
-        lines.append(html.unescape(title))
-    for label, value in (
-        ("Manufacturer", manufacturer),
-        ("Type", type_),
-        ("Players", players),
-        ("Theme", theme),
-        ("Model Number", model_number),
-        ("MPU", mpu),
-        ("Design by", design_by),
-        ("Art by", art_by),
-        ("Dots/Animation by", dots_animation_by),
-        ("Mechanics by", mechanics_by),
-        ("Music by", music_by),
-        ("Sound by", sound_by),
-        ("Software by", software_by),
-    ):
-        if value:
-            lines.append(f"{label}: {html.unescape(str(value))}")
-    lines.extend(html.unescape(prose) for prose in (notable_features, notes) if prose)
+    for column, label in _IPDB_ROW_FIELDS:
+        if columns is not None and column not in columns:
+            continue
+        value = row.get(column)
+        if value is None:
+            continue
+        text = html.unescape(str(value))
+        if not text.strip():
+            continue
+        lines.append(f"{label}: {text}" if label else text)
     return "\n".join(lines)
 
 
-def ipdb_notes_text(*, notable_features: str | None, notes: str | None) -> str:
-    """The free-text prose of one IPDB machine row — Notable Features and Notes.
+def ipdb_row_text(row: Mapping[str, object]) -> str:
+    """The quotable text of one IPDB machine row, keyed by DuckDB column name.
 
-    This is the AI-consumable slice of an IPDB row. IPDB's structured fields
-    (Manufacturer, Type, Players, Theme, year) are deterministic data, read
-    directly from the columns — never re-extracted by a model, which would
-    forfeit their determinism and precision. So AI extraction sees only the
-    editor-authored prose here, not the structured rows ``ipdb_row_text``
-    renders for the verify-quotes verbatim gate.
+    Reconstructs what the IPDB page renders so a quote stays ctrl-F honest
+    there: the title as a bare heading, then each populated field as the page's
+    own ``Label: value`` row. :data:`_IPDB_ROW_FIELDS` holds the order and the
+    rule deciding membership. AI extraction wants :func:`ipdb_notes_text`, the
+    same rendering narrowed to machine prose.
     """
-    return "\n".join(
-        html.unescape(prose) for prose in (notable_features, notes) if prose
-    )
+    return _ipdb_lines(row)
+
+
+def ipdb_notes_text(row: Mapping[str, object]) -> str:
+    """The editor-authored prose of one IPDB machine row — the AI-readable slice.
+
+    IPDB's structured fields are deterministic data read straight from the
+    columns, never re-extracted by a model; :data:`_IPDB_PROSE_COLUMNS` says
+    what else this drops and why.
+
+    Sharing :func:`ipdb_row_text`'s renderer is load bearing. The extractor
+    checks a model's quote against this text and ``verify-quotes`` re-checks the
+    shipped patch against the full row, so a delimiter in one and not the other
+    is a quote that passes extraction and fails at ship time — hence the page's
+    own ``Toys:`` rather than a synthetic markdown heading. Carrying labels at
+    all is what lets a model tell a Note from ad copy in Marketing Slogans.
+    """
+    return _ipdb_lines(row, _IPDB_PROSE_COLUMNS)
 
 
 def check_quote(quote: str, source: str) -> str | None:
@@ -191,8 +226,8 @@ class _Sources:
 
     Two views of the same sources, for two callers:
     :meth:`text_for` returns the full text (IPDB's structured rows included) for
-    the verbatim quote gate; :meth:`free_text_for` returns unstructured prose
-    only, for AI extraction.
+    the verbatim quote gate; :meth:`free_text_for` narrows an IPDB row to its
+    machine prose, for AI extraction.
     """
 
     def __init__(self, cache_db: Path, duck_db: Path) -> None:
@@ -201,17 +236,15 @@ class _Sources:
 
         self._web_cache = web_cache
         self._duck_db = duck_db
-        self._ipdb: dict[str, str] | None = None
-        self._ipdb_notes: dict[str, str] | None = None
+        self._rows: dict[str, dict[str, object]] | None = None
 
     def free_text_for(self, ref: str) -> str | None:
-        """Source text for AI extraction — unstructured free text only.
+        """Source text for AI extraction — editor-authored prose only.
 
         The input adapter for the page extractor. Web / opdb / youtube refs
         already resolve to unstructured readable text, so it passes them
-        through :meth:`text_for`; an ``ipdb:`` ref resolves to its free-text
-        Notes / Notable-Features prose alone, so IPDB's structured fields stay
-        out of the model's context (they are deterministic data, read directly).
+        through :meth:`text_for`; an ``ipdb:`` ref narrows to
+        :func:`ipdb_notes_text`.
         """
         if ref.startswith("ipdb:"):
             return self._ipdb_notes_text(ref.partition(":")[2])
@@ -221,11 +254,9 @@ class _Sources:
         """The full quotable source text for a ref — the verbatim-gate view.
 
         Used by ``make verify-quotes`` to confirm a ``cite:`` quote is verbatim
-        in its source. For ``ipdb:`` this is the whole rendered row (title, the
-        structured Manufacturer/Type/Players/Theme rows, then Notable Features
-        and Notes), so a quote may legitimately cite a structured field. AI
-        extraction wants :meth:`free_text_for` instead, which drops those
-        structured rows.
+        in its source. For ``ipdb:`` this is the whole rendered row
+        (:func:`ipdb_row_text`), so a quote may legitimately cite a structured
+        field. AI extraction wants :meth:`free_text_for` instead.
         """
         if ref.startswith(("http://", "https://")):
             return self._page_text(ref)
@@ -268,55 +299,33 @@ class _Sources:
         text = (page or {}).get("text") or ""
         return text if text.strip() else None
 
-    def _ipdb_text(self, identifier: str) -> str | None:
-        if self._ipdb is None:
+    def _ipdb_rows(self) -> dict[str, dict[str, object]]:
+        """Every IPDB row as a column-keyed mapping, read and cached once.
+
+        Selects exactly the columns the renderer knows, so adding a quotable
+        field is one edit to :data:`_IPDB_ROW_FIELDS`.
+        """
+        if self._rows is None:
             import duckdb
 
+            columns = ["IpdbId", *(column for column, _ in _IPDB_ROW_FIELDS)]
             con = duckdb.connect(str(self._duck_db), read_only=True)
             rows = con.execute(
-                "SELECT IpdbId, Title, Manufacturer, Type, Players, Theme,"
-                " ModelNumber, MPU, DesignBy, ArtBy, DotsAnimationBy,"
-                " MechanicsBy, MusicBy, SoundBy, SoftwareBy,"
-                " NotableFeatures, Notes FROM ipdb_machines"
+                f"SELECT {', '.join(columns)} FROM ipdb_machines"  # noqa: S608 — column names are this module's own literals
             ).fetchall()
             con.close()
-            self._ipdb = {
-                str(row[0]): ipdb_row_text(
-                    title=row[1],
-                    manufacturer=row[2],
-                    type_=row[3],
-                    players=row[4],
-                    theme=row[5],
-                    model_number=row[6],
-                    mpu=row[7],
-                    design_by=row[8],
-                    art_by=row[9],
-                    dots_animation_by=row[10],
-                    mechanics_by=row[11],
-                    music_by=row[12],
-                    sound_by=row[13],
-                    software_by=row[14],
-                    notable_features=row[15],
-                    notes=row[16],
-                )
-                for row in rows
+            self._rows = {
+                str(row[0]): dict(zip(columns, row, strict=True)) for row in rows
             }
-        return self._ipdb.get(identifier)
+        return self._rows
+
+    def _ipdb_text(self, identifier: str) -> str | None:
+        row = self._ipdb_rows().get(identifier)
+        return ipdb_row_text(row) if row else None
 
     def _ipdb_notes_text(self, identifier: str) -> str | None:
-        if self._ipdb_notes is None:
-            import duckdb
-
-            con = duckdb.connect(str(self._duck_db), read_only=True)
-            rows = con.execute(
-                "SELECT IpdbId, NotableFeatures, Notes FROM ipdb_machines"
-            ).fetchall()
-            con.close()
-            self._ipdb_notes = {
-                str(ipdb_id): ipdb_notes_text(notable_features=features, notes=notes)
-                for ipdb_id, features, notes in rows
-            }
-        text = self._ipdb_notes.get(identifier)
+        row = self._ipdb_rows().get(identifier)
+        text = ipdb_notes_text(row) if row else None
         return text if text and text.strip() else None
 
 

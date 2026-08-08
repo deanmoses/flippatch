@@ -1,9 +1,10 @@
 """Unit tests for the pure verification logic in quote_verify.verify_quotes.
 
 The pinexplore-backed source lookup needs a sibling checkout and its caches,
-so these tests cover the pure functions (normalize, check_quote,
-_quote_units) — the part that decides whether a quote is verbatim and which
-quotes get verified — plus ``_Sources`` ref routing against a stubbed cache.
+so these tests cover the pure functions (normalize, check_quote, _quote_units,
+and the ipdb_row_text / ipdb_notes_text renderers) — the part that decides what
+counts as a source and whether a quote is verbatim in it — plus ``_Sources``
+ref routing against a stubbed cache.
 """
 
 from quote_verify.verify_quotes import (
@@ -55,26 +56,30 @@ def test_non_ascii_verbatim_verifies():
     assert check_quote("サッカーエース (Soccer Ace) by 日本展望娯楽社", SOURCE) is None
 
 
-def test_ipdb_row_text_serializes_labeled_fields_then_prose():
+def test_ipdb_row_text_serializes_labeled_fields_in_page_order():
     from quote_verify.verify_quotes import ipdb_row_text
 
     text = ipdb_row_text(
-        title="Fishing Tengu (&#12388;&#12426;&#22825;&#29399;)",
-        manufacturer="Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan",
-        type_="Electro-mechanical (EM)",
-        players=1,
-        theme="Sports - Fishing - Mythology",
-        notable_features="Red knob on the cabinet.",
-        notes="A tengu is a mythical creature.",
+        {
+            "Title": "Fishing Tengu (&#12388;&#12426;&#22825;&#29399;)",
+            "Players": 1,
+            "AdditionalDetails": "IPD No. 3862 / June, 1974 / 1 Player",
+            "Manufacturer": "Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan",
+            "Type": "Electro-mechanical (EM)",
+            "Theme": "Sports - Fishing - Mythology",
+            "NotableFeatures": "Red knob on the cabinet.",
+            "Notes": "A tengu is a mythical creature.",
+        }
     )
     assert text == (
         "Fishing Tengu (つり天狗)\n"
+        "Players: 1\n"
+        "IPD No. 3862 / June, 1974 / 1 Player\n"
         "Manufacturer: Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan\n"
         "Type: Electro-mechanical (EM)\n"
-        "Players: 1\n"
         "Theme: Sports - Fishing - Mythology\n"
-        "Red knob on the cabinet.\n"
-        "A tengu is a mythical creature."
+        "Notable Features: Red knob on the cabinet.\n"
+        "Notes: A tengu is a mythical creature."
     )
 
 
@@ -82,13 +87,7 @@ def test_ipdb_row_text_skips_empty_fields():
     from quote_verify.verify_quotes import ipdb_row_text
 
     assert ipdb_row_text(
-        title="Asteroid Killer",
-        manufacturer=None,
-        type_="Solid State Electronic (SS)",
-        players=None,
-        theme=None,
-        notable_features=None,
-        notes=None,
+        {"Title": "Asteroid Killer", "Type": "Solid State Electronic (SS)"}
     ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
 
 
@@ -99,31 +98,32 @@ def test_ipdb_row_text_renders_hardware_and_credit_fields():
     from quote_verify.verify_quotes import ipdb_row_text
 
     text = ipdb_row_text(
-        title="Houdini: Master of Mystery",
-        manufacturer="American Pinball, Incorporated",
-        type_="Solid State Electronic (SS)",
-        players=4,
-        theme="Magic - Illusions",
-        model_number="GAM0001",
-        mpu="Multimorphic P3-ROC",
-        design_by="Joe Balcer",
-        art_by="Jeff Busch, Matt Riesterer",
-        dots_animation_by="Ish Raneses",
-        mechanics_by="Joe Balcer",
-        music_by="Matt Kern",
-        sound_by="Matt Kern",
-        software_by="Josh Kugler",
-        notable_features=None,
-        notes="MSRP when new: $6,995",
+        {
+            "Title": "Houdini: Master of Mystery",
+            "Manufacturer": "American Pinball, Incorporated",
+            "Type": "Solid State Electronic (SS)",
+            "Players": 4,
+            "Theme": "Magic - Illusions",
+            "ModelNumber": "GAM0001",
+            "MPU": "Multimorphic P3-ROC",
+            "DesignBy": "Joe Balcer",
+            "ArtBy": "Jeff Busch, Matt Riesterer",
+            "DotsAnimationBy": "Ish Raneses",
+            "MechanicsBy": "Joe Balcer",
+            "MusicBy": "Matt Kern",
+            "SoundBy": "Matt Kern",
+            "SoftwareBy": "Josh Kugler",
+            "Notes": "MSRP when new: $6,995",
+        }
     )
     assert text == (
         "Houdini: Master of Mystery\n"
+        "Players: 4\n"
         "Manufacturer: American Pinball, Incorporated\n"
         "Type: Solid State Electronic (SS)\n"
-        "Players: 4\n"
-        "Theme: Magic - Illusions\n"
-        "Model Number: GAM0001\n"
         "MPU: Multimorphic P3-ROC\n"
+        "Model Number: GAM0001\n"
+        "Theme: Magic - Illusions\n"
         "Design by: Joe Balcer\n"
         "Art by: Jeff Busch, Matt Riesterer\n"
         "Dots/Animation by: Ish Raneses\n"
@@ -131,40 +131,149 @@ def test_ipdb_row_text_renders_hardware_and_credit_fields():
         "Music by: Matt Kern\n"
         "Sound by: Matt Kern\n"
         "Software by: Josh Kugler\n"
-        "MSRP when new: $6,995"
+        "Notes: MSRP when new: $6,995"
     )
 
 
-def test_ipdb_row_text_omits_absent_hardware_and_credit_fields():
+def test_ipdb_row_text_renders_toys_and_marketing_slogans():
+    # Both are editor-authored prose the IPDB page prints as labeled rows, so a
+    # `toys` claim citing ipdb:NNNN can quote the Toys line ctrl-F honestly.
+    from quote_verify.verify_quotes import ipdb_row_text
+
+    text = ipdb_row_text(
+        {
+            "Title": "The Addams Family",
+            "Toys": "'Thing' hand - ball capture device.\r\n'Electric chair'",
+            "MarketingSlogans": '"A pinball experience for the whole family!"',
+        }
+    )
+    assert text == (
+        "The Addams Family\n"
+        "Toys: 'Thing' hand - ball capture device.\r\n'Electric chair'\n"
+        'Marketing Slogans: "A pinball experience for the whole family!"'
+    )
+
+
+def test_ipdb_row_text_renders_ipdbs_own_sourcing_rows():
+    # Source and Photos In are about IPDB's paperwork, not the machine — on the
+    # page, so quotable; excluded from the AI slice by ipdb_notes_text.
+    from quote_verify.verify_quotes import ipdb_row_text
+
+    text = ipdb_row_text(
+        {
+            "Title": "Ballyhoo",
+            "CommonAbbreviations": "TAF",
+            "PhotosIn": "Pinball Memories, page 18",
+            "Source": "Bally documentation",
+        }
+    )
+    assert text == (
+        "Ballyhoo\n"
+        "Common Abbreviations: TAF\n"
+        "Photos in: Pinball Memories, page 18\n"
+        "Source: Bally documentation"
+    )
+
+
+def test_ipdb_row_text_omits_values_the_page_renders_differently():
+    # A quote of "20270" would verify here and be un-findable on IPDB. The
+    # page's own date and player rendering rides along in AdditionalDetails.
+    from quote_verify.verify_quotes import ipdb_row_text
+
+    text = ipdb_row_text(
+        {
+            "Title": "The Addams Family",
+            "DateOfManufacture": "1992-03-01T00:00:00",
+            "ProductionNumber": 20270,
+            "AverageFunRating": 8.3,
+            "AdditionalDetails": "IPD No. 20 / March, 1992 / 4 Players",
+        }
+    )
+    assert text == ("The Addams Family\nIPD No. 20 / March, 1992 / 4 Players")
+
+
+def test_ipdb_row_text_omits_blank_values_rather_than_a_bare_label():
+    # Real rows carry blank prose, and a bare "Notes:" is text the page never
+    # shows — a quote of the label alone would verify against nothing.
     from quote_verify.verify_quotes import ipdb_row_text
 
     assert ipdb_row_text(
-        title="Asteroid Killer",
-        manufacturer=None,
-        type_="Solid State Electronic (SS)",
-        players=None,
-        theme=None,
-        notable_features=None,
-        notes=None,
-    ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
+        {
+            "Title": "Ballyhoo",
+            "Notes": "   ",
+            "Toys": "",
+            "NotableFeatures": "Two flippers.",
+        }
+    ) == ("Ballyhoo\nNotable Features: Two flippers.")
+
+
+def test_ipdb_row_text_ignores_join_keys_and_array_columns():
+    from quote_verify.verify_quotes import ipdb_row_text
+
+    assert (
+        ipdb_row_text(
+            {
+                "Title": "Ballyhoo",
+                "IpdbId": 1,
+                "ManufacturerId": 42,
+                "ManufacturerShortName": "Bally",
+                "TypeShortName": "EM",
+                "ImageFiles": [{"Url": "x", "Name": "y"}],
+            }
+        )
+        == "Ballyhoo"
+    )
 
 
 def test_ipdb_notes_text_is_free_text_prose_only():
     from quote_verify.verify_quotes import ipdb_notes_text
 
-    # AI extraction reads only the editor-authored prose; IPDB's structured
-    # fields are deterministic data resolved directly, never re-read by a model.
+    # Structured fields are deterministic data resolved directly, never re-read
+    # by a model; Source and Photos In are not about the machine at all.
     text = ipdb_notes_text(
-        notable_features="Red knob on the cabinet.",
-        notes="A tengu is a mythical creature.",
+        {
+            "Title": "Fishing Tengu",
+            "Manufacturer": "Sankyo",
+            "Players": 1,
+            "NotableFeatures": "Red knob on the cabinet.",
+            "Toys": "Dancing tengu",
+            "Notes": "A tengu is a mythical creature.",
+            "MarketingSlogans": '"Reel in the fun!"',
+            "Source": "flyer",
+            "PhotosIn": "Pinball Memories, page 18",
+            "CommonAbbreviations": "FT",
+        }
     )
-    assert text == "Red knob on the cabinet.\nA tengu is a mythical creature."
+    assert text == (
+        "Notable Features: Red knob on the cabinet.\n"
+        "Toys: Dancing tengu\n"
+        "Notes: A tengu is a mythical creature.\n"
+        'Marketing Slogans: "Reel in the fun!"'
+    )
+
+
+def test_ipdb_notes_text_labels_match_ipdb_row_text_verbatim():
+    # A model's quote is checked against the notes text at extraction and
+    # against the row text at ship time, so a delimiter in one and not the
+    # other is a quote that passes the first gate and fails the second.
+    from quote_verify.verify_quotes import check_quote, ipdb_notes_text, ipdb_row_text
+
+    row = {
+        "Title": "The Addams Family",
+        "Manufacturer": "Bally",
+        "NotableFeatures": "Two-level playfield.",
+        "Toys": "'Thing' hand - ball capture device.",
+        "Notes": "The best-selling pinball machine of all time.",
+        "MarketingSlogans": '"A pinball experience for the whole family!"',
+    }
+    for line in ipdb_notes_text(row).split("\n"):
+        assert check_quote(line, ipdb_row_text(row)) is None
 
 
 def test_ipdb_notes_text_empty_prose_is_empty_string():
     from quote_verify.verify_quotes import ipdb_notes_text
 
-    assert ipdb_notes_text(notable_features=None, notes=None) == ""
+    assert ipdb_notes_text({"Title": "Ballyhoo", "Manufacturer": "Bally"}) == ""
 
 
 class _FakeWebCache:
@@ -222,13 +331,20 @@ def test_youtube_ref_resolves_via_cached_watch_page_transcript():
     assert fake.requested == ["https://www.youtube.com/watch?v=O-2BXTXLXIY"]
 
 
-def test_free_text_for_ipdb_returns_notes_prose_only():
-    # The AI extractor's input adapter: an ipdb: ref resolves to its free-text
-    # Notes / Notable-Features prose alone.
+def test_free_text_for_ipdb_returns_machine_prose_only():
+    # The AI extractor's input adapter: an ipdb: ref resolves to the row's
+    # machine prose alone.
     sources, _ = _sources_with({})
-    sources._ipdb_notes = {"5632": "Converted from an earlier Gottlieb model."}
+    sources._rows = {
+        "5632": {
+            "Title": "Dogs Race",
+            "Manufacturer": "Chicago Coin",
+            "Notes": "Converted from an earlier Gottlieb model.",
+            "Source": "flyer",
+        }
+    }
     assert sources.free_text_for("ipdb:5632") == (
-        "Converted from an earlier Gottlieb model."
+        "Notes: Converted from an earlier Gottlieb model."
     )
 
 
