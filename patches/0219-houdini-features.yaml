@@ -1,0 +1,244 @@
+attribution: flipcommons-catalog
+description: >
+  Houdini family presentation and mech features
+claims:
+  - gameplay-feature.balls:
+      create: true
+      name: Balls
+      gameplay_feature_alias: [Ball Complement]
+  - gameplay-feature.subways:
+      create: true
+      name: Subways
+      gameplay_feature_alias: [Hidden Ball Subway System, Ball Subway]
+  - gameplay-feature.stages:
+      create: true
+      name: Stages
+      gameplay_feature_alias: [Theater Stage, Magic Stage]
+  - gameplay-feature.stage-curtains:
+      create: true
+      name: Stage Curtains
+      gameplay_feature_parent: [stages]
+      gameplay_feature_alias: [Automated Main Stage Curtain]
+  - gameplay-feature.trunks:
+      create: true
+      name: Trunks
+      gameplay_feature_alias: [Mechanical Trunk, Steamer Trunk]
+  - gameplay-feature.marquees:
+      create: true
+      name: Marquees
+      gameplay_feature_alias: [Theater Marquee, Theatre Marquee]
+  - gameplay-feature.spirit-planchettes:
+      create: true
+      name: Spirit Planchettes
+      gameplay_feature_alias: [Planchette]
+  - gameplay-feature.milk-cans:
+      create: true
+      name: Milk Cans
+  - gameplay-feature.bumper-tops:
+      create: true
+      name: Bumper Tops
+      gameplay_feature_alias: [Custom Bumper Tops]
+  - gameplay-feature.rgb-playfield-inserts:
+      create: true
+      name: RGB Playfield Inserts
+      gameplay_feature_alias: [RGB Controlled Playfield Inserts]
+  - gameplay-feature.led-general-illumination:
+      create: true
+      name: LED General Illumination
+      gameplay_feature_alias: [All LED General Illumination]
+  - gameplay-feature.cabinet-armor:
+      create: true
+      name: Cabinet Armor
+      gameplay_feature_alias: [Powder Coated Cabinet Armor, Cabinet Armour]
+  - gameplay-feature.playfield-lcds:
+      create: true
+      name: Playfield LCDs
+      gameplay_feature_alias: [Playfield LCD]
+  - gameplay-feature.mylar-playfield-protection:
+      create: true
+      name: Mylar Playfield Protection
+      gameplay_feature_alias: [Factory Mylar]
+  - gameplay-feature.flipper-toppers:
+      create: true
+      name: Flipper Toppers
+      gameplay_feature_alias:
+        [Custom Laser Cut Flipper Toppers, Game-Specific Flipper Toppers]
+  - gameplay-feature.steampunk-flippers:
+      create: true
+      name: Steampunk Flippers
+      gameplay_feature_parent: [flippers]
+  - gameplay-feature.interior-side-art:
+      create: true
+      name: Interior Side Art
+      gameplay_feature_parent: [art-blades]
+  - gameplay-feature.mirrored-art-blades:
+      create: true
+      name: Mirrored Art Blades
+      gameplay_feature_parent: [art-blades, mirror-blades]
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 'API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] Over 20" Launch into Houdini''s Steamer Trunk [...] Real Wood Laser Engraved Planchette [...] Animated & Interactive Theatre Marquee [...] 6 Balls'
+      gameplay_feature:
+        [
+          stages,
+          bumper-tops,
+          trunks,
+          spirit-planchettes,
+          marquees,
+          { balls: 6 },
+        ]
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: "4 Stereo Speakers [...] Custom Powder Coated Cabinet Armour"
+      gameplay_feature: [{ speakers: 4 }, stereo-sound, cabinet-armor]
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "ipdb:6470"
+        quote: "Theater spotlights (2) [...] Game-specific flipper toppers. Factory mylar in high-wear areas. [...] Playfield has a 4.3 inch LCD. [...] Glare-reduced playfield glass."
+      gameplay_feature:
+        [
+          { theater-spotlights: 2 },
+          flipper-toppers,
+          mylar-playfield-protection,
+          playfield-lcds,
+          anti-reflection-playfield-glass,
+        ]
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
+        archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
+        locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Automated Main Stage Curtain! [...] Custom Milk Can!"
+      gameplay_feature:
+        [
+          ball-locks,
+          subways,
+          rgb-playfield-inserts,
+          led-general-illumination,
+          stage-curtains,
+          milk-cans,
+        ]
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 5 Multiballs
+      gameplay_feature: [{ multiball: 5 }]
+  - model.houdini-master-of-mystery-deluxe:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 'API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] Over 20" Launch into Houdini''s Steamer Trunk [...] Real Wood Laser Engraved Planchette [...] Animated & Interactive Theatre Marquee [...] 6 Balls'
+      gameplay_feature:
+        [
+          stages,
+          bumper-tops,
+          trunks,
+          spirit-planchettes,
+          marquees,
+          { balls: 6 },
+        ]
+  - model.houdini-master-of-mystery-deluxe:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: "4 Stereo Speakers [...] Custom Powder Coated Cabinet Armour"
+      gameplay_feature: [{ speakers: 4 }, stereo-sound, cabinet-armor]
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Theater spotlights (2) [...] Game-specific flipper toppers. Factory mylar in high-wear areas. [...] Playfield has a 4.3 inch LCD."
+      gameplay_feature:
+        [
+          { theater-spotlights: 2 },
+          flipper-toppers,
+          mylar-playfield-protection,
+          playfield-lcds,
+        ]
+  - model.houdini-master-of-mystery-deluxe:
+      note: "The 2017 flyer documents the base machine; this model is a variant of it (same game design), so the playfield mechs carry."
+      cite:
+        ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
+        archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
+        locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Automated Main Stage Curtain! [...] Custom Milk Can!"
+      gameplay_feature:
+        [
+          ball-locks,
+          subways,
+          rgb-playfield-inserts,
+          led-general-illumination,
+          stage-curtains,
+          milk-cans,
+        ]
+  - model.houdini-master-of-mystery-deluxe:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 5 Multiballs
+      gameplay_feature: [{ multiball: 5 }]
+  - model.houdini-master-of-mystery-deluxe:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: "Deluxe Features [...] Interior Side Art [...] Magic Glass [...] Steampunk Flippers"
+      gameplay_feature: [interior-side-art, magic-glass, steampunk-flippers]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 'API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] Over 20" Launch into Houdini''s Steamer Trunk [...] Real Wood Laser Engraved Planchette [...] Animated & Interactive Theatre Marquee [...] 6 Balls'
+      gameplay_feature:
+        [
+          stages,
+          bumper-tops,
+          trunks,
+          spirit-planchettes,
+          marquees,
+          { balls: 6 },
+        ]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: "4 Stereo Speakers [...] Custom Powder Coated Cabinet Armour"
+      gameplay_feature: [{ speakers: 4 }, stereo-sound, cabinet-armor]
+  - model.houdini-100th-anniversary:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Theater spotlights (2) [...] Game-specific flipper toppers. Factory mylar in high-wear areas. [...] Playfield has a 4.3 inch LCD."
+      gameplay_feature:
+        [
+          { theater-spotlights: 2 },
+          flipper-toppers,
+          mylar-playfield-protection,
+          playfield-lcds,
+        ]
+  - model.houdini-100th-anniversary:
+      note: "The 2017 flyer documents the base machine; this model is a variant of it (same game design), so the playfield mechs carry."
+      cite:
+        ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
+        archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
+        locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Automated Main Stage Curtain! [...] Custom Milk Can!"
+      gameplay_feature:
+        [
+          ball-locks,
+          subways,
+          rgb-playfield-inserts,
+          led-general-illumination,
+          stage-curtains,
+          milk-cans,
+        ]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 5 Multiballs
+      gameplay_feature: [{ multiball: 5 }]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: "Each game includes a custom topper, Magic Glass, shaker motor, knocker, and mirrored art blades as standard equipment."
+      gameplay_feature: [magic-glass, mirrored-art-blades]
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: Steampunk Flippers
+      gameplay_feature: [steampunk-flippers]

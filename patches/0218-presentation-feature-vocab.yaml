@@ -1,0 +1,125 @@
+attribution: flipcommons-catalog
+description: >
+  Vocabulary: gameplay features that don't affect gameplay
+claims:
+  # Sound
+  - gameplay-feature.bells:
+      create: true
+      name: Bells
+  - gameplay-feature.chimes:
+      create: true
+      name: Chimes
+  - gameplay-feature.speech:
+      create: true
+      name: Speech
+  - gameplay-feature.speakers:
+      create: true
+      name: Speakers
+  - gameplay-feature.stereo-sound:
+      create: true
+      name: Stereo Sound
+
+  # Lighting
+  - gameplay-feature.flash-lamps:
+      create: true
+      name: Flash Lamps
+  - gameplay-feature.blacklighting:
+      create: true
+      name: Blacklighting
+  - gameplay-feature.spotlights:
+      create: true
+      name: Spotlights
+  - gameplay-feature.theater-spotlights:
+      create: true
+      name: Theater Spotlights
+      gameplay_feature_parent: [spotlights]
+  - gameplay-feature.stage-spotlights:
+      create: true
+      name: Stage Spotlights
+      gameplay_feature_parent: [spotlights]
+  - gameplay-feature.beacons:
+      create: true
+      name: Beacons
+  - gameplay-feature.strobe-lights:
+      create: true
+      name: Strobe Lights
+
+  # Installed trim and equipment
+  - gameplay-feature.side-armor:
+      create: true
+      name: Side Armor
+  - gameplay-feature.playfield-side-wall-blades:
+      create: true
+      name: Playfield Side Wall Blades
+      gameplay_feature_alias:
+        - Blades
+        - Playfield Blades
+        - Side Blades
+        - Side Wall Blades
+        - Inside Blades
+        - Cabinet Blades
+  - gameplay-feature.art-blades:
+      create: true
+      name: Art Blades
+      gameplay_feature_parent: [playfield-side-wall-blades]
+      gameplay_feature_alias:
+        - Playfield Art Blades
+        - Playfield Side Wall Art Blades
+        - Side Wall Art Blades
+        - Side Art Blades
+        - Inside Art Blades
+        - Cabinet Art Blades
+  - gameplay-feature.mirror-blades:
+      create: true
+      name: Mirror Blades
+      gameplay_feature_parent: [playfield-side-wall-blades]
+      gameplay_feature_alias:
+        - Playfield Mirror Blades
+        - Mirrored Blades
+        - Side Wall Mirror Blades
+        - Inside Mirror Blades
+        - Cabinet Mirror Blades
+  - gameplay-feature.illuminated-blades:
+      create: true
+      name: Illuminated Blades
+      gameplay_feature_parent: [playfield-side-wall-blades]
+      gameplay_feature_alias:
+        - Playfield Illuminated Blades
+        - Lighted Blades
+        - Side Wall Illuminated Blades
+        - Inside Illuminated Blades
+        - Cabinet Illuminated Blades
+  - gameplay-feature.el-blades:
+      create: true
+      name: EL Blades
+      gameplay_feature_parent: [illuminated-blades]
+      gameplay_feature_alias:
+        - EL (Electroluminescence) Blades
+        - Electroluminescence Blades
+        - Electroluminescent Blades
+        - Illuminated EL Blades
+  - gameplay-feature.led-illuminated-art-blades:
+      create: true
+      name: LED-Illuminated Art Blades
+      gameplay_feature_parent: [art-blades, illuminated-blades]
+      gameplay_feature_alias:
+        - LED-Illuminated Playfield Art Blades
+        - LED Illuminated Art Blades
+        - LED-Illuminated Side Wall Art Blades
+        - LED Art Blades
+  - gameplay-feature.anti-reflection-playfield-glass:
+      create: true
+      name: Anti-Reflection Playfield Glass
+      gameplay_feature_alias:
+        - Non-Reflective Playfield Glass
+        - Glare-Reduced Playfield Glass
+  - gameplay-feature.invisiglass:
+      create: true
+      name: InvisiGlass
+      gameplay_feature_parent: [anti-reflection-playfield-glass]
+      gameplay_feature_alias:
+        - InvisiGlass Playfield Glass
+  - gameplay-feature.magic-glass:
+      create: true
+      name: Magic Glass
+      gameplay_feature_parent: [anti-reflection-playfield-glass]

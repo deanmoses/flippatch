@@ -82,6 +82,15 @@ def ipdb_row_text(
     type_: str | None,
     players: object | None,
     theme: str | None,
+    model_number: str | None = None,
+    mpu: str | None = None,
+    design_by: str | None = None,
+    art_by: str | None = None,
+    dots_animation_by: str | None = None,
+    mechanics_by: str | None = None,
+    music_by: str | None = None,
+    sound_by: str | None = None,
+    software_by: str | None = None,
     notable_features: str | None,
     notes: str | None,
 ) -> str:
@@ -89,7 +98,9 @@ def ipdb_row_text(
 
     Mirrors what the IPDB page renders so a quote stays ctrl-F honest there:
     the title as a bare heading, the structured fields as ``Label: value``
-    rows, then the Notable Features and Notes prose. Empty fields are omitted.
+    rows — hardware and the person-credit rows included, so a credit claim
+    can quote its ``Design by:`` line — then the Notable Features and Notes
+    prose. Empty fields are omitted.
     """
     lines = []
     if title:
@@ -99,6 +110,15 @@ def ipdb_row_text(
         ("Type", type_),
         ("Players", players),
         ("Theme", theme),
+        ("Model Number", model_number),
+        ("MPU", mpu),
+        ("Design by", design_by),
+        ("Art by", art_by),
+        ("Dots/Animation by", dots_animation_by),
+        ("Mechanics by", mechanics_by),
+        ("Music by", music_by),
+        ("Sound by", sound_by),
+        ("Software by", software_by),
     ):
         if value:
             lines.append(f"{label}: {html.unescape(str(value))}")
@@ -255,20 +275,31 @@ class _Sources:
             con = duckdb.connect(str(self._duck_db), read_only=True)
             rows = con.execute(
                 "SELECT IpdbId, Title, Manufacturer, Type, Players, Theme,"
+                " ModelNumber, MPU, DesignBy, ArtBy, DotsAnimationBy,"
+                " MechanicsBy, MusicBy, SoundBy, SoftwareBy,"
                 " NotableFeatures, Notes FROM ipdb_machines"
             ).fetchall()
             con.close()
             self._ipdb = {
-                str(ipdb_id): ipdb_row_text(
-                    title=title,
-                    manufacturer=manufacturer,
-                    type_=type_,
-                    players=players,
-                    theme=theme,
-                    notable_features=features,
-                    notes=notes,
+                str(row[0]): ipdb_row_text(
+                    title=row[1],
+                    manufacturer=row[2],
+                    type_=row[3],
+                    players=row[4],
+                    theme=row[5],
+                    model_number=row[6],
+                    mpu=row[7],
+                    design_by=row[8],
+                    art_by=row[9],
+                    dots_animation_by=row[10],
+                    mechanics_by=row[11],
+                    music_by=row[12],
+                    sound_by=row[13],
+                    software_by=row[14],
+                    notable_features=row[15],
+                    notes=row[16],
                 )
-                for ipdb_id, title, manufacturer, type_, players, theme, features, notes in rows
+                for row in rows
             }
         return self._ipdb.get(identifier)
 
@@ -289,12 +320,15 @@ class _Sources:
         return text if text and text.strip() else None
 
 
-def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str]]:
-    """Every (ref, quote) pair in an entry: the header plus changesets items.
+def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str | None, str]]:
+    """Every (ref, archive, quote) triple in an entry: header plus changesets.
 
     Walks the entry-level ``cite:`` mapping and each inline ``cites:`` entry
     carrying a quote, so inline footnote quotes are verified against their
-    source exactly like entry-level ones.
+    source exactly like entry-level ones. ``archive`` is the cite's Wayback
+    snapshot URL when present, else None — for a dead original, the document
+    is cached under the snapshot URL while ``ref`` stays the publisher's, so
+    the caller resolves via ref first and falls back to the archive.
     """
     changesets = body.get("changesets")
     units: list[object] = [body]
@@ -307,12 +341,22 @@ def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str]]:
         specs = cite if isinstance(cite, list) else [cite]
         for spec in specs:
             if isinstance(spec, dict) and spec.get("quote"):
-                yield str(spec["ref"]), str(spec["quote"])
+                archive = spec.get("archive")
+                yield (
+                    str(spec["ref"]),
+                    str(archive) if archive else None,
+                    str(spec["quote"]),
+                )
         cites = unit.get("cites")
         if isinstance(cites, dict):
             for value in cites.values():
                 if isinstance(value, dict) and value.get("quote"):
-                    yield str(value["ref"]), str(value["quote"])
+                    archive = value.get("archive")
+                    yield (
+                        str(value["ref"]),
+                        str(archive) if archive else None,
+                        str(value["quote"]),
+                    )
 
 
 def main() -> int:
@@ -324,14 +368,20 @@ def main() -> int:
         doc = yaml.safe_load(patch.read_text())
         for claim in doc.get("claims", []):
             ((entity, body),) = claim.items()
-            for ref, quote in _quote_units(body):
+            for ref, archive, quote in _quote_units(body):
+                # A dead original is cached under its Wayback snapshot URL
+                # while the cite's ref stays the publisher's — resolve via the
+                # ref first, then the archive.
+                addresses = [ref] + ([archive] if archive else [])
                 # A PDF quote is the author's own check, not this gate's. Name
                 # each one so the run never reads as covering what it did not.
-                if sources.is_pdf(ref):
+                if any(sources.is_pdf(a) for a in addresses):
                     skipped += 1
                     print(f"SKIP-PDF  {patch.name} {entity} — {ref[:70]}")
                     continue
-                source = sources.text_for(ref)
+                source = next(
+                    (t for a in addresses if (t := sources.text_for(a))), None
+                )
                 if source is None:
                     failed += 1
                     print(

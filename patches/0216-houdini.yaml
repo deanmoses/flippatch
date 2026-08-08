@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  Houdini 100th Anniversary details
+  Houdini family details: Master of Mystery, Deluxe, 100th Anniversary
 claims:
   - gameplay-feature.toppers:
       create: true
@@ -8,6 +8,95 @@ claims:
   - gameplay-feature.knockers:
       create: true
       name: Knockers
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "ipdb:6470"
+        quote: The manufacturer's website stated the first game shipped 12/30/2017.
+      production_status: produced
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "ipdb:6470"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
+      game_format: pinball
+  - model.houdini-master-of-mystery:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 1 Video Mode
+      gameplay_feature: [{ video-modes: 1 }]
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Design by: Joe Balcer [...] Art by: Jeff Busch, Matt Riesterer [...] Dots/Animation by: Ish Raneses [...] Mechanics by: Joe Balcer [...] Music by: Matt Kern [...] Sound by: Matt Kern [...] Software by: Josh Kugler"
+      credit:
+        - joe-balcer: design
+        - joe-balcer: mechanics
+        - jeff-busch: art
+        - matt-riesterer: art
+        - ish-raneses: animation
+        - matt-kern: music
+        - matt-kern: sound
+        - josh-kugler: software
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: The manufacturer's website stated the first game shipped 12/30/2017.
+      production_status: produced
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
+      game_format: pinball
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Type: Solid State Electronic (SS)"
+      technology_generation: solid-state
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "MPU: Multimorphic P3-ROC"
+      system: multimorphic-p3-roc
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: Backbox has 15.6 inch color LCD monitor.
+      display_type: lcd
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Players: 4"
+      player_count: "4"
+  - model.houdini-master-of-mystery-deluxe:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
+      gameplay_feature:
+        [
+          { flippers: 2 },
+          { pop-bumpers: 3 },
+          { slingshots: 2 },
+          { magnets: 3 },
+          { catapults: 2 },
+          multiball,
+        ]
+  - model.houdini-master-of-mystery-deluxe:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: "Deluxe Features [...] Shaker [...] Topper [...] Knocker"
+      gameplay_feature: [shaker-motors, toppers, knockers]
+  - model.houdini-master-of-mystery-deluxe:
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 1 Video Mode
+      gameplay_feature: [{ video-modes: 1 }]
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
@@ -21,24 +110,47 @@ claims:
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
+        quote: one of the most exclusive versions of the game ever produced
+      variant_of: houdini-master-of-mystery
+  - model.houdini-100th-anniversary:
+      cite:
+        ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
         quote: stunning new cabinet artwork by acclaimed artist Christopher Franchi
       credit:
         - christopher-franchi: art
+  - model.houdini-100th-anniversary:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Design by: Joe Balcer [...] Art by: Jeff Busch, Matt Riesterer [...] Dots/Animation by: Ish Raneses [...] Mechanics by: Joe Balcer [...] Music by: Matt Kern [...] Sound by: Matt Kern [...] Software by: Josh Kugler"
+      credit:
+        - joe-balcer: design
+        - joe-balcer: mechanics
+        - jeff-busch: art
+        - matt-riesterer: art
+        - ish-raneses: animation
+        - matt-kern: music
+        - matt-kern: sound
+        - josh-kugler: software
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
         quote: "Each game includes a custom topper, Magic Glass, shaker motor, knocker, and mirrored art blades as standard equipment."
       gameplay_feature: [toppers, knockers, shaker-motors]
   - model.houdini-100th-anniversary:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
       cite:
-        ref: "https://americanpinball.com/houdini/"
-        quote: Three Magnets to Control Houdini's Magic
-      gameplay_feature: [{ magnets: 3 }]
-  - model.houdini-100th-anniversary:
-      cite:
-        ref: "https://americanpinball.com/houdini/"
-        quote: 5 Multiballs
-      gameplay_feature: [multiball]
+        ref: "ipdb:6470"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
+      gameplay_feature:
+        [
+          { flippers: 2 },
+          { pop-bumpers: 3 },
+          { slingshots: 2 },
+          { magnets: 3 },
+          { catapults: 2 },
+          multiball,
+        ]
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -47,5 +159,23 @@ claims:
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini/"
-        quote: Steampunk Flippers
-      gameplay_feature: [flippers]
+        quote: '15.6" Full Color LCD'
+      display_type: lcd
+  - model.houdini-100th-anniversary:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "MPU: Multimorphic P3-ROC"
+      system: multimorphic-p3-roc
+  - model.houdini-100th-anniversary:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Type: Solid State Electronic (SS)"
+      technology_generation: solid-state
+  - model.houdini-100th-anniversary:
+      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      cite:
+        ref: "ipdb:6470"
+        quote: "Players: 4"
+      player_count: "4"

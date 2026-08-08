@@ -92,6 +92,63 @@ def test_ipdb_row_text_skips_empty_fields():
     ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
 
 
+def test_ipdb_row_text_renders_hardware_and_credit_fields():
+    # The IPDB page renders Model Number, MPU and the person-credit rows as
+    # "Label: value" lines; the quotable slice must carry them so a credit
+    # claim citing ipdb:NNNN can quote them ctrl-F honestly.
+    from quote_verify.verify_quotes import ipdb_row_text
+
+    text = ipdb_row_text(
+        title="Houdini: Master of Mystery",
+        manufacturer="American Pinball, Incorporated",
+        type_="Solid State Electronic (SS)",
+        players=4,
+        theme="Magic - Illusions",
+        model_number="GAM0001",
+        mpu="Multimorphic P3-ROC",
+        design_by="Joe Balcer",
+        art_by="Jeff Busch, Matt Riesterer",
+        dots_animation_by="Ish Raneses",
+        mechanics_by="Joe Balcer",
+        music_by="Matt Kern",
+        sound_by="Matt Kern",
+        software_by="Josh Kugler",
+        notable_features=None,
+        notes="MSRP when new: $6,995",
+    )
+    assert text == (
+        "Houdini: Master of Mystery\n"
+        "Manufacturer: American Pinball, Incorporated\n"
+        "Type: Solid State Electronic (SS)\n"
+        "Players: 4\n"
+        "Theme: Magic - Illusions\n"
+        "Model Number: GAM0001\n"
+        "MPU: Multimorphic P3-ROC\n"
+        "Design by: Joe Balcer\n"
+        "Art by: Jeff Busch, Matt Riesterer\n"
+        "Dots/Animation by: Ish Raneses\n"
+        "Mechanics by: Joe Balcer\n"
+        "Music by: Matt Kern\n"
+        "Sound by: Matt Kern\n"
+        "Software by: Josh Kugler\n"
+        "MSRP when new: $6,995"
+    )
+
+
+def test_ipdb_row_text_omits_absent_hardware_and_credit_fields():
+    from quote_verify.verify_quotes import ipdb_row_text
+
+    assert ipdb_row_text(
+        title="Asteroid Killer",
+        manufacturer=None,
+        type_="Solid State Electronic (SS)",
+        players=None,
+        theme=None,
+        notable_features=None,
+        notes=None,
+    ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
+
+
 def test_ipdb_notes_text_is_free_text_prose_only():
     from quote_verify.verify_quotes import ipdb_notes_text
 
@@ -195,9 +252,29 @@ def test_quote_units_walks_entry_inline_and_changesets_quotes():
         ],
     }
     assert list(_quote_units(body)) == [
-        ("ipdb:1", "entry quote"),
-        ("https://a.test/p", "inline quote"),
-        ("ipdb:3", "changeset quote"),
+        ("ipdb:1", None, "entry quote"),
+        ("https://a.test/p", None, "inline quote"),
+        ("ipdb:3", None, "changeset quote"),
+    ]
+
+
+def test_quote_units_carries_the_archive_url():
+    # A cite for a dead original names the Wayback snapshot in `archive:`; the
+    # gate resolves the source text via ref first, then the archive. The unit
+    # must surface the archive so the caller can fall back to it.
+    body = {
+        "cite": {
+            "ref": "http://maker.test/flyer.pdf",
+            "archive": "http://web.archive.org/web/20250325113004id_/http://maker.test/flyer.pdf",
+            "quote": "transcribed span",
+        },
+    }
+    assert list(_quote_units(body)) == [
+        (
+            "http://maker.test/flyer.pdf",
+            "http://web.archive.org/web/20250325113004id_/http://maker.test/flyer.pdf",
+            "transcribed span",
+        ),
     ]
 
 
@@ -215,9 +292,9 @@ def test_quote_units_walks_cite_lists():
         ],
     }
     assert list(_quote_units(body)) == [
-        ("https://a.test/p", "first source"),
-        ("ipdb:2", "second source"),
-        ("ipdb:3", "changeset list quote"),
+        ("https://a.test/p", None, "first source"),
+        ("ipdb:2", None, "second source"),
+        ("ipdb:3", None, "changeset list quote"),
     ]
 
 
