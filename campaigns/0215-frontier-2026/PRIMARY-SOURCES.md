@@ -10,17 +10,19 @@ The superseded draft (`draft-evidence-aggregator.csv`) sources **166 of its 181 
 
 Three document classes, in descending order of density per page:
 
-| class                                             | fills                                                                        | citability                                               |
-| ------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------- |
-| **feature matrix** (Stern)                        | gameplay features _per edition_, production count, system, display, designer | text layer — quotable                                    |
-| **flyer** (Barrels of Fun, JJP compare sheet)     | gameplay features with counts, display, art credit, dimensions, theme copy   | usually **vector outlines** — OCR only, quote-less cites |
-| **service manual** (Stern, JJP, American Pinball) | dimensions, weight, electrical, flipper/coil counts, playfield inventory     | text layer — quotable; tables need a render              |
+| class                                             | fills                                                                        | how you read it                                                      |
+| ------------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **feature matrix** (Stern)                        | gameplay features _per edition_, production count, system, display, designer | text layer readable; the grid itself needs a render                  |
+| **flyer** (Barrels of Fun, JJP compare sheet)     | gameplay features with counts, display, art credit, dimensions, theme copy   | usually **vector outlines** — no text layer, so render and transcribe |
+| **service manual** (Stern, JJP, American Pinball) | dimensions, weight, electrical, flipper/coil counts, playfield inventory     | text layer readable; tables need a render                            |
+
+**All three are quotable.** Whether a document has a text layer decides how you _read_ it, never whether you may quote it: render the sheet, read the words, transcribe them. Only a **mark** — a checkmark in a column, a diagram arrow — has nothing to transcribe and stays a quote-less cite. `make verify-quotes` skips PDF quotes entirely (`SKIP-PDF`), so they are the author's own check; see ENRICHMENT-PLAN.md → Citing PDF evidence.
 
 Manuals are the _weakest_ source for the field that draft most wants: Stern's MTMTE manual names no person at all (`Eismin`, `Kyzivat`, `designer` → 0 matches across 66 pages). People credits live in the flyer and the matrix, not the manual.
 
-## Verified first-party claims — quotable today
+## Verified first-party claims — machine-confirmed from the text layer
 
-All three verbatim from Stern's own `Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf`, confirmed through `web_cache.py quote`:
+These happen to sit in the text layer, so `web_cache.py quote` confirmed them mechanically. That makes them convenient, not privileged: a span transcribed off a rendered sheet is equally citable, and `verify-quotes` checks neither, since it skips PDFs. All three verbatim from Stern's own `Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf`:
 
 - `"Individually Autographed by Game Designer Elliot Eismin."` → **design credit**, replacing the draft's Pinside cite
 - `"Production limited to 750 machines."` → **production count**, LE only — a field 0215 does not currently carry at all
@@ -30,15 +32,15 @@ From JJP's Sonic manual, PDF sheet 5 (printed folio `V`):
 
 - `"Hall of Fame game designer Steve Ritchie is known for his fast-flowing games. He and his design team have created Sonic pinball."` → **design credit**, first-party, replacing Pinside
 
-Sonic manual sheet 7 (printed folio `VII`) is a specification table — 325 lbs with topper, 87 × 29 × 57 in., 120/230 VAC. Readable only by rendering the sheet; the text layer flattens the table into unattached cells.
+Sonic manual sheet 7 (printed folio `VII`) is a specification table — 325 lbs with topper, 87 × 29 × 57 in., 120/230 VAC. The text layer flattens the table into unattached cells, so read it by rendering the sheet — and then those figures are quotable off the render like any other words.
 
 ## The per-edition problem, and the honest cite
 
-The Transformers matrix is the single densest source in the campaign: ~55 feature rows × 3 edition columns. But the **checkmarks are vector art**, and the text tier flattens the grid — the column headers extract as a floating `PRO GAME FEATURES LE ONLY` and a trailing `PREM LE`, attached to nothing.
+The Transformers matrix is the single densest source in the campaign: ~55 feature rows × 3 edition columns. Per-edition features are the one case here that genuinely **cannot** carry a quote, and the reason is not the text layer — it is that **a checkmark is a mark, not text.** Rendering the sheet shows you which column is ticked; it does not hand you words to transcribe, because there are none.
 
-So per-edition features follow WebCache.md's quote-less rule: `ref` the matrix URL, `locator` naming the sheet and the row, `note` recording what was seen in which column. Quoting the row label to establish a column is the column-splice forgery the rule exists to stop.
+So per-edition features stay quote-less: `ref` the matrix URL, `locator` naming the sheet and the row, `note` recording what was seen in which column. Quoting the row label to establish a column is the column-splice forgery the rule exists to stop, and reading that label off the render rather than the text layer changes nothing about it.
 
-What _is_ quotable from the matrix is anything confined to a labelled block — the three claims above, plus the `MAIN ATTRACTIONS` prose that supports theme and description work.
+Everything else on the matrix is quotable — the three claims above, the `MAIN ATTRACTIONS` prose behind theme and description work, and any wording you render and read. The grid's own column headers are a fair warning about the text tier, though: they extract as a floating `PRO GAME FEATURES LE ONLY` and a trailing `PREM LE`, attached to nothing, so do not reconstruct a column relationship from extracted text — that is what the render is for.
 
 ## Inventory, by maker
 

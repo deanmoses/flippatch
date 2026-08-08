@@ -1,0 +1,43 @@
+attribution: flipcommons-catalog
+description: >
+  Citation roots for 2026 models
+sources:
+  # Matched to the EXISTING "American Pinball" root by its homepage host, so
+  # this only backfills the two document hosts onto it. Deliberately NOT a new
+  # root: American Pinball's manuals and its product pages must nest under one
+  # source, or the same company's evidence splits in two.
+  #
+  # Both hosts are safe because each is specific to AP's own HubSpot portal
+  # rather than shared tenancy:
+  #   48804760.fs1.hubspotusercontent-na1.net  the portal id 48804760 is IN the
+  #     host, so a suffix match can only ever reach AP's files.
+  #   my.orbitgames.fun  a HubSpot custom domain mapped to that same portal —
+  #     it serves <title>Internal Knowledgebase for AP</title>, and the GTF
+  #     release notes it serves are byte-identical (sha 67176723…) to the copy
+  #     on the fs1 host above. A custom domain maps to one portal.
+  #
+  # No description here: this node is a get-or-create match, and only links and
+  # recognition hosts are backfilled onto an existing row.
+  - name: American Pinball
+    source_type: web
+    links:
+      - {
+          url: "https://americanpinball.com/",
+          label: American Pinball,
+          link_type: homepage,
+        }
+    domains:
+      - 48804760.fs1.hubspotusercontent-na1.net
+      - my.orbitgames.fun
+
+  # New root. The licensed home of Williams/Bally material, which is what the
+  # pre-2000 halves of several model families rest on.
+  - name: Planetary Pinball
+    source_type: web
+    description: Licensed Williams/Bally parts supplier, hosting their technical support documentation and game gallery.
+    links:
+      - {
+          url: "https://www.planetarypinball.com/",
+          label: Planetary Pinball,
+          link_type: homepage,
+        }
