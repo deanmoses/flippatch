@@ -111,21 +111,31 @@ def test_ipdb_notes_text_empty_prose_is_empty_string():
 
 
 class _FakeWebCache:
-    """Stands in for pinexplore's web_cache module in text_for tests."""
+    """Stands in for pinexplore's web_cache module in text_for tests.
 
-    def __init__(self, pages: dict[str, str]) -> None:
+    ``pdf_urls`` marks which stubbed pages the cache holds as PDFs, mirroring
+    the real row's ``content_type`` — the fact ``is_pdf`` reads.
+    """
+
+    def __init__(self, pages: dict[str, str], pdf_urls: set[str] | None = None) -> None:
         self.pages = pages
+        self.pdf_urls = pdf_urls or set()
         self.requested: list[str] = []
 
     def get(self, url: str) -> dict[str, str] | None:
         self.requested.append(url)
         text = self.pages.get(url)
-        return {"text": text} if text is not None else None
+        if text is None:
+            return None
+        content_type = "application/pdf" if url in self.pdf_urls else "text/html"
+        return {"text": text, "content_type": content_type}
 
 
-def _sources_with(pages: dict[str, str]) -> tuple[_Sources, _FakeWebCache]:
+def _sources_with(
+    pages: dict[str, str], pdf_urls: set[str] | None = None
+) -> tuple[_Sources, _FakeWebCache]:
     sources = object.__new__(_Sources)
-    fake = _FakeWebCache(pages)
+    fake = _FakeWebCache(pages, pdf_urls)
     sources._web_cache = fake
     return sources, fake
 
@@ -209,3 +219,52 @@ def test_quote_units_walks_cite_lists():
         ("ipdb:2", "second source"),
         ("ipdb:3", "changeset list quote"),
     ]
+
+
+# ── is_pdf: the ungated document class ───────────────────────────────────────
+# A PDF quote is not machine-checkable. Text extraction reads a sheet in
+# reading order, so a table becomes a column of unattached cells, and words
+# drawn as artwork never reach the text layer at all — a correct quote a
+# session read off the rendered sheet routinely is not a substring of what
+# was extracted. Measured on this corpus, an exact check against the OCR tier
+# rejects a quarter of correct spans, so there is no threshold that makes the
+# check honest. PDF quotes are therefore an author self-check, and the gate
+# says so rather than failing them. The discriminator is a fact the CACHE owns
+# about the document (its content_type), never anything recorded in a patch.
+
+
+def test_cached_pdf_ref_is_pdf():
+    sources, _ = _sources_with(
+        {"https://a.test/manual.pdf": "flattened text"},
+        pdf_urls={"https://a.test/manual.pdf"},
+    )
+    assert sources.is_pdf("https://a.test/manual.pdf") is True
+
+
+def test_cached_html_ref_is_not_pdf():
+    sources, _ = _sources_with({"https://a.test/p": "page text"})
+    assert sources.is_pdf("https://a.test/p") is False
+
+
+def test_uncached_ref_is_not_pdf():
+    # An uncached document is a NO-SOURCE failure, not a skip: a session that
+    # cannot produce the source cannot have read it. Never let a missing
+    # document masquerade as an ungated one.
+    sources, _ = _sources_with({})
+    assert sources.is_pdf("https://a.test/missing.pdf") is False
+
+
+def test_scheme_refs_are_not_pdf():
+    # ipdb/opdb/youtube resolve to structured rows and transcripts, which stay
+    # fully gated. Only an http(s) ref can name a PDF.
+    sources, _ = _sources_with({"https://opdb.org/machines/2155": "Cactus Canyon"})
+    assert sources.is_pdf("ipdb:5632") is False
+    assert sources.is_pdf("opdb:2155") is False
+    assert sources.is_pdf("youtube:O-2BXTXLXIY") is False
+
+
+def test_pdf_extension_alone_does_not_skip_the_gate():
+    # The URL's spelling is not the signal — an HTML page served at a .pdf
+    # path stays gated. Only the cache's content_type exempts a document.
+    sources, _ = _sources_with({"https://a.test/notreally.pdf": "html masquerading"})
+    assert sources.is_pdf("https://a.test/notreally.pdf") is False

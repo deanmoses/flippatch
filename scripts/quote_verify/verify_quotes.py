@@ -16,9 +16,33 @@ hard-wraps prose that renders as spaces) — applied to the SOURCE side; the
 quote itself must already be in normalized form (straight quotes, ``[...]``
 ellipses).
 
+**PDFs are not gated.** A PDF quote is reported ``SKIP-PDF`` and left to the
+author. Extraction reads a sheet in reading order, so a table arrives as a
+column of unattached cells and words drawn as artwork never reach the text
+layer at all — a correct quote read off the rendered sheet routinely is not a
+substring of what was extracted. Checking the OCR tier instead does not
+rescue it: measured against text layers across this corpus, an exact match
+rejects ~25% of correct spans and an ordered-word match ~14%, so no threshold
+makes the check honest, and a fuzzy one would only trade false rejections for
+false confidence. Words a session read off the rendered sheet are good
+evidence and belong in ``quote:``; this gate simply is not what establishes
+them. Nothing in the patch marks which quotes are gated — the discriminator is
+the cache row's ``content_type``, a fact about the document, because the patch
+is the record and a second place to say so is a second source of truth.
+
+What this does **not** change is what counts as a quote. The test is whether
+the evidence is *text*, not whether extraction caught it: outlined flyer type
+and a manual with no text layer are words on the sheet and are quotable once
+read, while a checkmark in a feature-matrix column is a mark and never becomes
+text by being looked at — it stays a quote-less cite (``ref`` + ``locator`` +
+``note``). Quoting a feature's row label to establish an edition column
+remains the forgery both rules exist to stop.
+
 Run via ``make verify-quotes``. Exits non-zero on any non-verbatim quote or
 any quote whose source is missing from the cache (an unverifiable quote is
-not a verified one — ``make pull`` in pinexplore refreshes the cache).
+not a verified one — ``make pull`` in pinexplore refreshes the cache). A
+missing document is a failure, never a skip: a PDF the cache does not hold is
+one a session could not have read.
 Pinexplore is expected as a sibling checkout (``../pinexplore``); override
 with the ``PINEXPLORE_DIR`` environment variable.
 """
@@ -198,6 +222,27 @@ class _Sources:
             return self._page_text(f"https://www.youtube.com/watch?v={identifier}")
         return None
 
+    def is_pdf(self, ref: str) -> bool:
+        """Whether *ref* names a cached PDF — the document class this gate skips.
+
+        A PDF quote is not machine-checkable, so it is an author self-check
+        rather than a gated one (see the module docstring). The signal is the
+        cache row's ``content_type``, a fact about the **document**: the patch
+        never records whether its own quote is verifiable, because the patch is
+        the record and a second place to say so is a second source of truth.
+
+        Deliberately narrow. Only an ``http(s)`` ref can name a PDF — scheme
+        refs resolve to IPDB rows, OPDB pages and caption transcripts, which
+        stay fully gated. A ref the cache does not hold is **not** a PDF: that
+        is a NO-SOURCE failure, and a missing document must never pass as an
+        ungated one. The URL's spelling is not consulted, so an HTML page served
+        at a ``.pdf`` path stays gated.
+        """
+        if not ref.startswith(("http://", "https://")):
+            return False
+        page = self._web_cache.get(ref) or {}
+        return str(page.get("content_type") or "").startswith("application/pdf")
+
     def _page_text(self, url: str) -> str | None:
         page = self._web_cache.get(url)
         text = (page or {}).get("text") or ""
@@ -274,12 +319,18 @@ def main() -> int:
     import yaml
 
     sources = _Sources(*_require_pinexplore())
-    ok = failed = 0
+    ok = failed = skipped = 0
     for patch in sorted(PATCHES_DIR.glob("[0-9]*.yaml")):
         doc = yaml.safe_load(patch.read_text())
         for claim in doc.get("claims", []):
             ((entity, body),) = claim.items()
             for ref, quote in _quote_units(body):
+                # A PDF quote is the author's own check, not this gate's. Name
+                # each one so the run never reads as covering what it did not.
+                if sources.is_pdf(ref):
+                    skipped += 1
+                    print(f"SKIP-PDF  {patch.name} {entity} — {ref[:70]}")
+                    continue
                 source = sources.text_for(ref)
                 if source is None:
                     failed += 1
@@ -294,7 +345,8 @@ def main() -> int:
                 else:
                     failed += 1
                     print(f"FAIL      {patch.name} {entity} — {problem}")
-    print(f"\nverify-quotes: {ok} verified, {failed} failed")
+    tail = f", {skipped} skipped (PDF — author-checked)" if skipped else ""
+    print(f"\nverify-quotes: {ok} verified, {failed} failed{tail}")
     return 1 if failed else 0
 
 
