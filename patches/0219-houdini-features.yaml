@@ -10,30 +10,33 @@ claims:
       create: true
       name: Subways
       gameplay_feature_alias: [Hidden Ball Subway System, Ball Subway]
+  - gameplay-feature.toys:
+      create: true
+      name: Toys
   - gameplay-feature.stages:
       create: true
       name: Stages
+      gameplay_feature_parent: [toys]
       gameplay_feature_alias: [Theater Stage, Magic Stage]
-  - gameplay-feature.stage-curtains:
-      create: true
-      name: Stage Curtains
-      gameplay_feature_parent: [stages]
-      gameplay_feature_alias: [Automated Main Stage Curtain]
   - gameplay-feature.trunks:
       create: true
       name: Trunks
+      gameplay_feature_parent: [toys]
       gameplay_feature_alias: [Mechanical Trunk, Steamer Trunk]
   - gameplay-feature.marquees:
       create: true
       name: Marquees
+      gameplay_feature_parent: [toys]
       gameplay_feature_alias: [Theater Marquee, Theatre Marquee]
   - gameplay-feature.spirit-planchettes:
       create: true
       name: Spirit Planchettes
+      gameplay_feature_parent: [toys]
       gameplay_feature_alias: [Planchette]
   - gameplay-feature.milk-cans:
       create: true
       name: Milk Cans
+      gameplay_feature_parent: [toys]
   - gameplay-feature.bumper-tops:
       create: true
       name: Bumper Tops
@@ -110,14 +113,13 @@ claims:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
-        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Automated Main Stage Curtain! [...] Custom Milk Can!"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Custom Milk Can!"
       gameplay_feature:
         [
           ball-locks,
           subways,
           rgb-playfield-inserts,
           led-general-illumination,
-          stage-curtains,
           milk-cans,
         ]
   - model.houdini-master-of-mystery:
@@ -161,14 +163,13 @@ claims:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
-        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Automated Main Stage Curtain! [...] Custom Milk Can!"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Custom Milk Can!"
       gameplay_feature:
         [
           ball-locks,
           subways,
           rgb-playfield-inserts,
           led-general-illumination,
-          stage-curtains,
           milk-cans,
         ]
   - model.houdini-master-of-mystery-deluxe:
@@ -217,14 +218,13 @@ claims:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
-        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Automated Main Stage Curtain! [...] Custom Milk Can!"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Custom Milk Can!"
       gameplay_feature:
         [
           ball-locks,
           subways,
           rgb-playfield-inserts,
           led-general-illumination,
-          stage-curtains,
           milk-cans,
         ]
   - model.houdini-100th-anniversary:

@@ -73,3 +73,12 @@ After `0218-presentation-feature-vocab` (represent ALL features, gameplay-affect
 - **Multiball count (user-approved 2026-08-08):** "5 Multiballs" is five multiball **modes** — the site's rules list counts modes ("10 Stage Modes incl. Straight Jacket Multiball") and the 6-ball complement is stated separately — so `{multiball: 5}` rides on all three models in 0219, citing the site. On the base model this is an approved modification outranking the count-less ipdb seed claim; on the editions it supersedes 0216's count-less assertion at apply time.
 
 Tooling enabler (TDD'd this session): `verify_quotes` now resolves a cite via its `archive:` URL when the `ref` itself isn't in the cache — the flyer is the first archived-document cite, cached under the Wayback `id_` snapshot URL while the cite's `ref` stays the dead publisher URL. Its transcribed quotes report `SKIP-PDF`, as designed.
+
+## Decided (user, 2026-08-08, later) — toys rationalization of 0219
+
+The first 0219 was judged **too granular and model-specific** against [0218](../../../../patches/0218-presentation-feature-vocab.yaml)'s standard, and the toys question was settled corpus-wide in [campaigns/features-corpus/CHARTER.md](../../../../campaigns/features-corpus/CHARTER.md): toys are vocab nodes under a new `toys` interior parent (chosen over a `model.toys` text field for encyclopedia entries on iconic toys and per-title edition comparison). 0219 regenerated accordingly:
+
+- **New `toys` node**, created here (parentless interior node; is-a holds — a trunk IS a toy).
+- **Re-parented under `toys`**: `stages`, `trunks`, `marquees`, `spirit-planchettes`, `milk-cans`. Aliases unchanged.
+- **`stage-curtains` deleted** — a curtain is *part of* the stage toy, not a kind of stage (the parent link is is-a only; this was the recorded violation). The "Automated Main Stage Curtain!" flyer span and its assignments are dropped; the automated curtain belongs in the `stages` node's eventual description (0074-style descriptions patch, still owed).
+- Unchanged: the generic mechs (`subways`, `balls`, `bumper-tops`, `rgb-playfield-inserts`, `led-general-illumination`, `cabinet-armor`, `playfield-lcds`, `mylar-playfield-protection`), the 0218-style children (`steampunk-flippers`, `interior-side-art`, `mirrored-art-blades`, `flipper-toppers`), and every count.

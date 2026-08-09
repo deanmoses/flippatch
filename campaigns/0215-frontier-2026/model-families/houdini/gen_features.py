@@ -9,6 +9,13 @@ mirror-blades; interior-side-art child of art-blades; steampunk-flippers child
 of flippers; flipper-toppers its own node (NOT under cabinet toppers); plus a
 full vocabulary sweep for the flyer/site/IPDB features 0216 had to drop.
 
+Toys rationalization (user decision, 2026-08-08, campaigns/features-corpus/
+CHARTER.md): toys are vocab nodes under a `toys` interior parent — created
+here — so stages, trunks, marquees, spirit-planchettes and milk-cans are
+re-parented under it. stage-curtains is GONE: a curtain is part of the stage
+toy, not a kind of stage (is-a violation); the automated curtain belongs in
+the stages node's eventual description, so its flyer span is dropped.
+
 MUST APPLY AFTER 0218: this patch attaches magic-glass, theater-spotlights,
 speakers, anti-reflection-playfield-glass and the blade nodes, all created
 there. Patches apply in numeric-prefix order, so 0219 is the earliest slot.
@@ -151,15 +158,13 @@ IPDB_FEATURES_MOM = [*IPDB_FEATURES, "anti-reflection-playfield-glass"]
 FLYER_QUOTE = (
     "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] "
     "Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] "
-    "All LED General Illumination [...] Automated Main Stage Curtain! [...] "
-    "Custom Milk Can!"
+    "All LED General Illumination [...] Custom Milk Can!"
 )
 FLYER_FEATURES: list[str | dict[str, int]] = [
     "ball-locks",
     "subways",
     "rgb-playfield-inserts",
     "led-general-illumination",
-    "stage-curtains",
     "milk-cans",
 ]
 
@@ -212,17 +217,15 @@ def main() -> None:
         # facts to an existing vocab entity stays a user call.
         vocab("balls", "Balls", aliases=["Ball Complement"]),
         vocab("subways", "Subways", aliases=["Hidden Ball Subway System", "Ball Subway"]),
-        vocab("stages", "Stages", aliases=["Theater Stage", "Magic Stage"]),
-        vocab(
-            "stage-curtains",
-            "Stage Curtains",
-            parents=["stages"],
-            aliases=["Automated Main Stage Curtain"],
-        ),
-        vocab("trunks", "Trunks", aliases=["Mechanical Trunk", "Steamer Trunk"]),
-        vocab("marquees", "Marquees", aliases=["Theater Marquee", "Theatre Marquee"]),
-        vocab("spirit-planchettes", "Spirit Planchettes", aliases=["Planchette"]),
-        vocab("milk-cans", "Milk Cans"),
+        # The toys parent (features-corpus/CHARTER.md): bespoke and recurring
+        # toy types hang under it; is-a holds (a trunk IS a toy). Emitted
+        # before its children — creates resolve top-down within a patch.
+        vocab("toys", "Toys"),
+        vocab("stages", "Stages", parents=["toys"], aliases=["Theater Stage", "Magic Stage"]),
+        vocab("trunks", "Trunks", parents=["toys"], aliases=["Mechanical Trunk", "Steamer Trunk"]),
+        vocab("marquees", "Marquees", parents=["toys"], aliases=["Theater Marquee", "Theatre Marquee"]),
+        vocab("spirit-planchettes", "Spirit Planchettes", parents=["toys"], aliases=["Planchette"]),
+        vocab("milk-cans", "Milk Cans", parents=["toys"]),
         vocab("bumper-tops", "Bumper Tops", aliases=["Custom Bumper Tops"]),
         vocab(
             "rgb-playfield-inserts",

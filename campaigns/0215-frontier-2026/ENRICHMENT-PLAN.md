@@ -8,8 +8,8 @@ We now want to fully flesh them out, as described in `/Users/moses/dev/flipcommo
 
 Each separate model family will be done by separate AI sessions in its own sub-campaign folder in campaigns/0215-frontier-2026/model-families. **Folder names carry no patch number** — a session claims the next free `patches/` number when its work starts and does not write it into the folder name. (The original reserved-number scheme died when 0218 went to the feature vocab and 0219 to Houdini's second patch.)
 
-- [houdini](model-families/houdini) from American Pinball: 100th Anniversary **+ 2 older**: Master of Mystery, Master of Mystery (Deluxe) — **DONE** (0216 + 0219, snapshot-validated, unshipped). The worked example: its `Houdini.md` records the process, decisions and traps.
-- [transformers](model-families/transformers) from Stern: MTMTE Pro / Premium / LE **+ 5 older**: Transformers Pro & LE (2011), Autobot Crimson LE, Decepticon Violet LE, The Pin (2012)
+- ✅ DONE: [houdini](model-families/houdini) from American Pinball: 100th Anniversary **+ 2 older**: Master of Mystery, Master of Mystery (Deluxe) — **DONE** (0216 + 0219, snapshot-validated, unshipped). The worked example: its `Houdini.md` records the process, decisions and traps.
+- ✅ DONE: [transformers](model-families/transformers) from Stern: MTMTE Pro / Premium / LE **+ 5 older**: Transformers Pro & LE (2011), Autobot Crimson LE, Decepticon Violet LE, The Pin (2012) — **DONE** (0220, snapshot-validated, unshipped). `Transformers.md` records the evidence, traps and decisions; the Wayback `id_` route onto Stern's dead 2011 game pages was the family's key move.
 - [sonic-hedgehog](model-families/sonic-hedgehog) from Jersey Jack: Collector's / Special / Arcade Edition
 - [galactic-tank-force](model-families/galactic-tank-force) from American Pinball: Victory Edition **+ 4 older** (2023): Classic, Deluxe, Limited Edition, Signature
 - [cirqus-voltaire](model-families/cirqus-voltaire) from American Pinball: Remake **+ 1 older**: Cirqus Voltaire (Bally, 1997)

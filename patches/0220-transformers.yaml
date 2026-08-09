@@ -1,0 +1,555 @@
+attribution: flipcommons-catalog
+description: >
+  Transformers family details across the 2011, 2012 and 2026 Stern models
+claims:
+  - gameplay-feature.animatronic-toys:
+      create: true
+      name: Animatronic Toys
+      gameplay_feature_parent: [toys]
+      gameplay_feature_alias: [Animatronic Robot Toy]
+  - gameplay-feature.bash-toys:
+      create: true
+      name: Bash Toys
+      gameplay_feature_parent: [toys]
+      gameplay_feature_alias: [Robot Bash Toy]
+  - gameplay-feature.optical-spinners:
+      create: true
+      name: Optical Spinners
+      gameplay_feature_parent: [spinners]
+      gameplay_feature_alias: [Optical Spinner]
+  - gameplay-feature.cabinet-expression-lighting:
+      create: true
+      name: Cabinet Expression Lighting
+      gameplay_feature_alias:
+        [
+          Expression Lighting System,
+          Interactive Cabinet Expression Lighting System,
+        ]
+  - gameplay-feature.speaker-expression-lighting:
+      create: true
+      name: Speaker Expression Lighting
+      gameplay_feature_alias: [Speaker Expression Lighting System]
+  - gameplay-feature.mirrored-backglasses:
+      create: true
+      name: Mirrored Backglasses
+      gameplay_feature_alias: [Mirrored Backglass]
+  - gameplay-feature.numbered-plaques:
+      create: true
+      name: Numbered Plaques
+      gameplay_feature_alias: [Numbered Plaque, Numbered Plate]
+  - gameplay-feature.designer-autographs:
+      create: true
+      name: Designer Autographs
+      gameplay_feature_alias: [Designer Signature, Game Designer Signature]
+  - system.stern-spike-3:
+      create: true
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+        quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      name: Stern SPIKE 3
+      manufacturer: stern-pinball
+      technology_subgeneration: ss-pc
+  - person.elizabeth-gieske:
+      create: true
+      note: "Lead software developer on Transformers: More Than Meets the Eye, her first credit here. Spelling per Kineticist and Arcade Heroes; the reveal video's auto-captions render it 'Geski'."
+      cite:
+        ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+        locator: in the Design Team section
+        quote: "Lead Programmer: Elizabeth Gieske"
+      name: Elizabeth Gieske
+  - model.transformers-more-than-meets-the-eye-pro:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: "TRANSFORMERS: More Than Meets the Eye by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        - ref: "https://www.sternpinball.com/2026/08/04/stern-of-the-union-address-august-2026"
+          quote: "TRANSFORMERS: More Than Meets The Eye pinball machines are rolling out worldwide"
+      production_status: produced
+  - model.transformers-more-than-meets-the-eye-pro:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: revealed and released a new adrenaline-fueled pinball experience
+      game_format: pinball
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows. The matrix row is checked in all three edition columns, including PRO."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+        quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      technology_generation: solid-state
+      system: stern-spike-3
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: 'On the feature matrix sheet, the PRO column carries a checkmark for the rows: Custom animations on larger, 18.5" full HD display'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      display_type: lcd
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "The reveal video's auto-captions misspell both names ('Eisman', 'Geski'); the quote is verbatim ASR. The spellings Eismin and Gieske follow the feature matrix ('Game Designer Elliot Eismin') and the Kineticist and Arcade Heroes coverage."
+      cite:
+        - ref: "youtube:zLx93Iiy5yw"
+          quote: "Hi, I'm Elliot Eisman, lead game designer for Transformers more than meets the eye. [...] Hi, I'm Elizabeth Geski, lead software [...] developer for Transformers: More Than Meets the Eye."
+        - ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+          locator: in the Design Team section
+          quote: "Design: Elliot Eismin [...] Lead Programmer: Elizabeth Gieske"
+      credit:
+        - elliot-eismin: design
+        - elizabeth-gieske: software
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "Kineticist's Design Team block is the only non-crowdsourced source naming these four; corroborating first-party sources were sought at authoring time and none found (the manual carries no credits). 'Lead LCD Artist' maps to the animation role and 'Audio' to sound."
+      cite:
+        ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+        locator: in the Design Team section
+        quote: "Lead Mechanical: Rob Blakeman [...] Code: Mike Kyzivat [...] Audio: Jerry Thompson [...] Lead LCD Artist: Tom Kyzivat"
+      credit:
+        - rob-blakeman: mechanics
+        - mike-kyzivat: software
+        - jerry-thompson: sound
+        - tom-kyzivat: animation
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: 'On the feature matrix sheet, the PRO column carries a checkmark for the rows: Custom sculpted Optimus Prime robot bash toy; Optimus Prime V.U.K. (leads to Soundwave for ball locks, starts Transformers Multiball); Energon optical spinner; Right Ramp With Laser Cut Decepticon Logo; 3 Bank Drop Targets; Complete Grimlock targets; Left Ramp With Laser Cut Autobot Logo; Bumblebee Captive Ball; Physical "Add a Ball" Ball Lock Post; 3 Flippers (2 Standard + 1 Upper Flipper); 2 Slingshots (2 Lower + 1 Upper Left); Full-spectrum RGB LED playfield arrow inserts The slingshot row''s headline count (2) and its own enumeration (2 Lower + 1 Upper Left) disagree, so slingshots attach without a count; the flipper row appears twice on the sheet and attaches once.'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature:
+        [
+          bash-toys,
+          vertical-up-kickers,
+          multiball,
+          ball-locks,
+          up-posts,
+          optical-spinners,
+          ramps,
+          3-bank-drop-targets,
+          targets,
+          captive-ball,
+          { flippers: 3 },
+          slingshots,
+          rgb-playfield-inserts,
+        ]
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Powder-coated black wrinkle finish hand guard side armor, hinges, front lockdown molding and legs; Multifunction Action Button on lockdown bar"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [side-armor, lockdown-bar-buttons]
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: 6 pinballs; Stereo sound system with 3-channel amplifier"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [{ balls: 6 }, stereo-sound]
+  - model.transformers-more-than-meets-the-eye-pro:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: "for the first time, includes a head-to-head experience that allows two players to compete simultaneously in real time"
+      gameplay_feature: [head-to-head]
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Static Megatron robot toy starts missions featuring specific episodes from the TV series with custom recorded speech by Frank Welker"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [toys]
+  - model.transformers-more-than-meets-the-eye-pro:
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/07/Transformers_MTMTE_Pro_web.pdf"
+        locator: "PDF document page 1; the sheet carries no printed folio"
+        quote: "TRANSFORMERS: MORE THAN MEETS THE EYE PRO #500-55AA-01"
+      manufacturer_model_identifier: 500-55AA-01
+  - model.transformers-more-than-meets-the-eye-premium:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: "TRANSFORMERS: More Than Meets the Eye by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        - ref: "https://www.sternpinball.com/2026/08/04/stern-of-the-union-address-august-2026"
+          quote: "TRANSFORMERS: More Than Meets The Eye pinball machines are rolling out worldwide"
+      production_status: produced
+  - model.transformers-more-than-meets-the-eye-premium:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: revealed and released a new adrenaline-fueled pinball experience
+      game_format: pinball
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows. The matrix row is checked in all three edition columns, including PREM."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+        quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      technology_generation: solid-state
+      system: stern-spike-3
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: 'On the feature matrix sheet, the PREM column carries a checkmark for the rows: Custom animations on larger, 18.5" full HD display'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      display_type: lcd
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "The reveal video's auto-captions misspell both names ('Eisman', 'Geski'); the quote is verbatim ASR. The spellings Eismin and Gieske follow the feature matrix ('Game Designer Elliot Eismin') and the Kineticist and Arcade Heroes coverage."
+      cite:
+        - ref: "youtube:zLx93Iiy5yw"
+          quote: "Hi, I'm Elliot Eisman, lead game designer for Transformers more than meets the eye. [...] Hi, I'm Elizabeth Geski, lead software [...] developer for Transformers: More Than Meets the Eye."
+        - ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+          locator: in the Design Team section
+          quote: "Design: Elliot Eismin [...] Lead Programmer: Elizabeth Gieske"
+      credit:
+        - elliot-eismin: design
+        - elizabeth-gieske: software
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "Kineticist's Design Team block is the only non-crowdsourced source naming these four; corroborating first-party sources were sought at authoring time and none found (the manual carries no credits). 'Lead LCD Artist' maps to the animation role and 'Audio' to sound."
+      cite:
+        ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+        locator: in the Design Team section
+        quote: "Lead Mechanical: Rob Blakeman [...] Code: Mike Kyzivat [...] Audio: Jerry Thompson [...] Lead LCD Artist: Tom Kyzivat"
+      credit:
+        - rob-blakeman: mechanics
+        - mike-kyzivat: software
+        - jerry-thompson: sound
+        - tom-kyzivat: animation
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: 'On the feature matrix sheet, the PREM column carries a checkmark for the rows: Custom sculpted Optimus Prime robot bash toy; Optimus Prime V.U.K. (leads to Soundwave for ball locks, starts Transformers Multiball); Energon optical spinner; Right Ramp With Laser Cut Decepticon Logo; 3 Bank Drop Targets; Complete Grimlock targets; Left Ramp With Laser Cut Autobot Logo; Bumblebee Captive Ball; Physical "Add a Ball" Ball Lock Post; 3 Flippers (2 Standard + 1 Upper Flipper); 2 Slingshots (2 Lower + 1 Upper Left); Full-spectrum RGB LED playfield arrow inserts The slingshot row''s headline count (2) and its own enumeration (2 Lower + 1 Upper Left) disagree, so slingshots attach without a count; the flipper row appears twice on the sheet and attaches once.'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature:
+        [
+          bash-toys,
+          vertical-up-kickers,
+          multiball,
+          ball-locks,
+          up-posts,
+          optical-spinners,
+          ramps,
+          3-bank-drop-targets,
+          targets,
+          captive-ball,
+          { flippers: 3 },
+          slingshots,
+          rgb-playfield-inserts,
+        ]
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Powder-coated black wrinkle finish hand guard side armor, hinges, front lockdown molding and legs; Multifunction Action Button on lockdown bar"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [side-armor, lockdown-bar-buttons]
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: 6 pinballs; Stereo sound system with 3-channel amplifier"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [{ balls: 6 }, stereo-sound]
+  - model.transformers-more-than-meets-the-eye-premium:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: "for the first time, includes a head-to-head experience that allows two players to compete simultaneously in real time"
+      gameplay_feature: [head-to-head]
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; Soundwave toy with physical Cassette Tape ball locks and ball ejection; Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion Cannon)"
+      cite:
+        - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: pushes mechanical innovation to new heights with a fully animatronic Megatron robot toy with an articulated fusion cannon that rotates and fires pinballs back at players. Soundwave's cassette deck locks pinballs before launching them into high-intensity action while a custom sculpted Optimus Prime robot bash toy stands ready for battle
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+          locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [animatronic-toys, ball-cannons, toys, ramp-diverters]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: "TRANSFORMERS: More Than Meets the Eye by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        - ref: "https://www.sternpinball.com/2026/08/04/stern-of-the-union-address-august-2026"
+          quote: "TRANSFORMERS: More Than Meets The Eye pinball machines are rolling out worldwide"
+      production_status: produced
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: revealed and released a new adrenaline-fueled pinball experience
+      game_format: pinball
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows. The matrix row is checked in all three edition columns, including LE."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+        quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      technology_generation: solid-state
+      system: stern-spike-3
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: 'On the feature matrix sheet, the LE column carries a checkmark for the rows: Custom animations on larger, 18.5" full HD display'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      display_type: lcd
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "The reveal video's auto-captions misspell both names ('Eisman', 'Geski'); the quote is verbatim ASR. The spellings Eismin and Gieske follow the feature matrix ('Game Designer Elliot Eismin') and the Kineticist and Arcade Heroes coverage."
+      cite:
+        - ref: "youtube:zLx93Iiy5yw"
+          quote: "Hi, I'm Elliot Eisman, lead game designer for Transformers more than meets the eye. [...] Hi, I'm Elizabeth Geski, lead software [...] developer for Transformers: More Than Meets the Eye."
+        - ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+          locator: in the Design Team section
+          quote: "Design: Elliot Eismin [...] Lead Programmer: Elizabeth Gieske"
+      credit:
+        - elliot-eismin: design
+        - elizabeth-gieske: software
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "Kineticist's Design Team block is the only non-crowdsourced source naming these four; corroborating first-party sources were sought at authoring time and none found (the manual carries no credits). 'Lead LCD Artist' maps to the animation role and 'Audio' to sound."
+      cite:
+        ref: "https://www.kineticist.com/news/stern-transformers-reveal"
+        locator: in the Design Team section
+        quote: "Lead Mechanical: Rob Blakeman [...] Code: Mike Kyzivat [...] Audio: Jerry Thompson [...] Lead LCD Artist: Tom Kyzivat"
+      credit:
+        - rob-blakeman: mechanics
+        - mike-kyzivat: software
+        - jerry-thompson: sound
+        - tom-kyzivat: animation
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: 'On the feature matrix sheet, the LE column carries a checkmark for the rows: Custom sculpted Optimus Prime robot bash toy; Optimus Prime V.U.K. (leads to Soundwave for ball locks, starts Transformers Multiball); Energon optical spinner; Right Ramp With Laser Cut Decepticon Logo; 3 Bank Drop Targets; Complete Grimlock targets; Left Ramp With Laser Cut Autobot Logo; Bumblebee Captive Ball; Physical "Add a Ball" Ball Lock Post; 3 Flippers (2 Standard + 1 Upper Flipper); 2 Slingshots (2 Lower + 1 Upper Left); Full-spectrum RGB LED playfield arrow inserts The slingshot row''s headline count (2) and its own enumeration (2 Lower + 1 Upper Left) disagree, so slingshots attach without a count; the flipper row appears twice on the sheet and attaches once.'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature:
+        [
+          bash-toys,
+          vertical-up-kickers,
+          multiball,
+          ball-locks,
+          up-posts,
+          optical-spinners,
+          ramps,
+          3-bank-drop-targets,
+          targets,
+          captive-ball,
+          { flippers: 3 },
+          slingshots,
+          rgb-playfield-inserts,
+        ]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Multifunction Action Button on lockdown bar"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [lockdown-bar-buttons]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: 6 pinballs; Stereo sound system with 3-channel amplifier"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [{ balls: 6 }, stereo-sound]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: "for the first time, includes a head-to-head experience that allows two players to compete simultaneously in real time"
+      gameplay_feature: [head-to-head]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; Soundwave toy with physical Cassette Tape ball locks and ball ejection; Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion Cannon)"
+      cite:
+        - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: pushes mechanical innovation to new heights with a fully animatronic Megatron robot toy with an articulated fusion cannon that rotates and fires pinballs back at players. Soundwave's cassette deck locks pinballs before launching them into high-intensity action while a custom sculpted Optimus Prime robot bash toy stands ready for battle
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+          locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [animatronic-toys, ball-cannons, toys, ramp-diverters]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "Stern's modern Limited Edition models are variants of their Premium models, and the feature matrix's PREM and LE columns carry identical game-feature checks - the LE differs only in its limited-edition equipment tier."
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: "TRANSFORMERS: More Than Meets the Eye by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+      variant_of: transformers-more-than-meets-the-eye-premium
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: Limited to 750 games globally
+      production_quantity: 750
+      tag: [limited-edition]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+        quote: "Limited to 750 games globally, the highly collectible Limited Edition model includes the updated Expression Lighting System™ and Speaker Expression Lighting System with TRANSFORMERS-themed game effects, a full-color mirrored backglass, full-color high-definition cabinet decals, exclusive custom pinball armor, a custom designer-autographed bottom arch, upgraded audio system, anti-reflection pinball playfield glass, shaker motor, a sequentially numbered plaque, a signed Certificate of Authenticity, and a digital Insider Connected LE owner's badge on registration."
+      gameplay_feature:
+        [
+          cabinet-expression-lighting,
+          speaker-expression-lighting,
+          mirrored-backglasses,
+          cabinet-armor,
+          designer-autographs,
+          anti-reflection-playfield-glass,
+          shaker-motors,
+          numbered-plaques,
+        ]
+  - model.transformers-pro:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-pro.aspx"
+        archive: "http://web.archive.org/web/20110928030152id_/http://www.sternpinball.com/Games/transformers-pro.aspx"
+        quote: In Production
+      production_status: produced
+  - model.transformers-pro:
+      cite:
+        ref: "ipdb:5709"
+        quote: "Flippers (2), Pop bumpers (3), Kick-out hole (1), Spinning target (1), Captive ball (1)."
+      game_format: pinball
+  - model.transformers-pro:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-pro.aspx"
+        archive: "http://web.archive.org/web/20110928030152id_/http://www.sternpinball.com/Games/transformers-pro.aspx"
+        quote: '"Megatron Vehicle Form" Rapid Fire Multiball with "Cyber" Ball Lock and Illuminated Eyes [...] "Optimus Prime" Target with "M.T.M.T.E." (More Than Meets The Eye) Elevating Ramp to hit target [...] "Decepticon" Laser-Cut Steel Ramp [...] "Cybertron Zenith Orbit Shot" with electronically-controlled gate'
+      gameplay_feature:
+        [multiball, ball-locks, moving-ramps, ramps, orbits, electric-gates]
+  - model.transformers-limited-edition:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: In Production
+      production_status: produced
+  - model.transformers-limited-edition:
+      cite:
+        ref: "ipdb:5753"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2). VUK four-ball multiball rapid-fire ejector."
+      game_format: pinball
+  - model.transformers-limited-edition:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: '"Megatron Robot Form" rapid fire multiball cannon with "Cyber" ball lock. [...] "Ironhide" Transformer with "Chromium Cyber Sphere" player-controlled upper playfield. [...] "Starscream Strike" rotating action figure target. [...] "Cybertron Zenith and Nadir" orbit shots via second electronically-controlled gate. [...] "All Spark Cube" eject hole. [...] "Megatron Cyber Lock Guard" drop target. [...] "Quake Maker" shaker motor. [...] Elevating ramp to hit "Optimus Prime" target. [...] "Bumblebee Captive" Camaro target [...] "Full Spectrum Color Chroma" LED general illumination [...] "Ironhide" metal ramp.'
+      gameplay_feature:
+        [
+          ball-cannons,
+          ball-locks,
+          mini-playfields,
+          rotating-targets,
+          orbits,
+          electric-gates,
+          kick-out-holes,
+          solitary-drop-targets,
+          shaker-motors,
+          moving-ramps,
+          captive-ball,
+          led-general-illumination,
+          ramps,
+        ]
+  - model.transformers-limited-edition:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: 'Game Designer George Gomez'' signature (#1-35). [...] 1-500 Numbered plaque and certificate of authenticity. [...] "Decepticon Violet" side armor legs, hinge (left side).'
+      gameplay_feature: [designer-autographs, numbered-plaques, side-armor]
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "The archived LE page's edition blocks cover this model (its Autobot Crimson and Decepticon Violet features lists sit beside the badge)."
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: In Production
+      production_status: produced
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value."
+      cite:
+        ref: "ipdb:5753"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2). VUK four-ball multiball rapid-fire ejector."
+      game_format: pinball
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "The 2011 service manual documents the design shared by every 2011 Transformers edition; this model is a variant of the Limited Edition, so the display carries. Transcribed off the rendered sheet (OCR-only document)."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2018/11/Transformers-Manual.pdf"
+        locator: "printed page p 3, PDF document page 42"
+        quote: 128 X 32 Dot Matrix Display PCB
+      display_type: dot-matrix
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value."
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: '"Megatron Robot Form" rapid fire multiball cannon with "Cyber" ball lock. [...] "Ironhide" Transformer with "Chromium Cyber Sphere" player-controlled upper playfield. [...] "Starscream Strike" rotating action figure target. [...] "Cybertron Zenith and Nadir" orbit shots via second electronically-controlled gate. [...] "All Spark Cube" eject hole. [...] "Megatron Cyber Lock Guard" drop target. [...] "Quake Maker" shaker motor. [...] Elevating ramp to hit "Optimus Prime" target. [...] "Bumblebee Captive" Camaro target [...] "Full Spectrum Color Chroma" LED general illumination [...] "Ironhide" metal ramp. [...] "Decepticon Violet" side armor legs, hinge (left side).'
+      gameplay_feature:
+        [
+          ball-cannons,
+          ball-locks,
+          mini-playfields,
+          rotating-targets,
+          orbits,
+          electric-gates,
+          kick-out-holes,
+          solitary-drop-targets,
+          shaker-motors,
+          moving-ramps,
+          captive-ball,
+          led-general-illumination,
+          ramps,
+          side-armor,
+        ]
+  - model.transformers-autobot-crimson-limited-edition:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: 'Autobot Crimson LIMITED EDITION Features: [...] Unique "Autobot" backglass art. [...] Game Designer George Gomez'' signature. [...] 1-125 Numbered plaque and certificate of authenticity.'
+      gameplay_feature: [designer-autographs, numbered-plaques]
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "The archived LE page's edition blocks cover this model (its Autobot Crimson and Decepticon Violet features lists sit beside the badge)."
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: In Production
+      production_status: produced
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value."
+      cite:
+        ref: "ipdb:5753"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2). VUK four-ball multiball rapid-fire ejector."
+      game_format: pinball
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "The 2011 service manual documents the design shared by every 2011 Transformers edition; this model is a variant of the Limited Edition, so the display carries. Transcribed off the rendered sheet (OCR-only document)."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2018/11/Transformers-Manual.pdf"
+        locator: "printed page p 3, PDF document page 42"
+        quote: 128 X 32 Dot Matrix Display PCB
+      display_type: dot-matrix
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value."
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: '"Megatron Robot Form" rapid fire multiball cannon with "Cyber" ball lock. [...] "Ironhide" Transformer with "Chromium Cyber Sphere" player-controlled upper playfield. [...] "Starscream Strike" rotating action figure target. [...] "Cybertron Zenith and Nadir" orbit shots via second electronically-controlled gate. [...] "All Spark Cube" eject hole. [...] "Megatron Cyber Lock Guard" drop target. [...] "Quake Maker" shaker motor. [...] Elevating ramp to hit "Optimus Prime" target. [...] "Bumblebee Captive" Camaro target [...] "Full Spectrum Color Chroma" LED general illumination [...] "Ironhide" metal ramp. [...] "Decepticon Violet" side armor legs, hinge (left side).'
+      gameplay_feature:
+        [
+          ball-cannons,
+          ball-locks,
+          mini-playfields,
+          rotating-targets,
+          orbits,
+          electric-gates,
+          kick-out-holes,
+          solitary-drop-targets,
+          shaker-motors,
+          moving-ramps,
+          captive-ball,
+          led-general-illumination,
+          ramps,
+          side-armor,
+        ]
+  - model.transformers-decepticon-violet-limited-edition:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
+        archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+        quote: 'Decepticon Violet LIMITED EDITION Features: [...] Unique "Decepticon" backglass art. [...] Game Designer George Gomez'' signature. [...] 1-125 Numbered plaque and certificate of authenticity.'
+      gameplay_feature: [designer-autographs, numbered-plaques]
+  - model.transformers-the-pin:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-pin.aspx"
+        archive: "http://web.archive.org/web/20121207090811id_/http://www.sternpinball.com/Games/transformers-pin.aspx"
+        quote: In Production
+      production_status: produced
+  - model.transformers-the-pin:
+      note: "The prior value of 4 arrived uncited via an earlier ingest and appears propagated from OPDB. The machine has exactly two score displays: the flyer's product photo shows the speaker panel's two displays labeled PLAYER 1 and PLAYER 2 (transcribed off the rendered sheet), matching IPDB's player count."
+      cite:
+        - ref: "ipdb:5861"
+          quote: "Players: 2 [...] Two 8-digit LED score displays."
+        - ref: "http://sternpinball.com/upload/Games/PinTransformers-Flyer-1012-01c.pdf"
+          archive: "http://web.archive.org/web/20130211085308id_/http://sternpinball.com/upload/Games/PinTransformers-Flyer-1012-01c.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "PLAYER 1 [...] PLAYER 2"
+      player_count: "2"
+  - model.transformers-the-pin:
+      cite:
+        ref: "ipdb:5861"
+        quote: "Flippers (2), Pop bumpers (3) Slingshots (2)."
+      game_format: pinball
+      gameplay_feature: [{ slingshots: 2 }]
+  - model.transformers-the-pin:
+      cite:
+        ref: "http://www.sternpinball.com/Games/transformers-pin.aspx"
+        archive: "http://web.archive.org/web/20121207090811id_/http://www.sternpinball.com/Games/transformers-pin.aspx"
+        quote: "Genuine Stern Pinball Flippers, Slingshots, and Plunger [...] All LED lighting to provide optimal color and lighting performance [...] Licensed Transformers Art, Music, Speech, and Sound Effects"
+      gameplay_feature: [plungers, led-general-illumination, speech]
