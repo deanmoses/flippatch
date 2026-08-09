@@ -1,6 +1,6 @@
 """Tests for the shared AI-lint CLI guards (scope + per-invocation ceiling).
 
-Both AI-spending lint CLIs (verify-citations, lint-descriptions) route through
+Both AI-spending lint CLIs (verify-quote-support, lint-descriptions) route through
 these: a run must name patch ids, and a scoped run's known call count must not
 exceed the hard per-invocation ceiling — either refusal lands before the client is
 built, so it costs nothing.

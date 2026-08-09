@@ -28,7 +28,6 @@ from common.ai.client import (
     require_ai_client,
 )
 from common.paths import (
-    EXPLORE_DUCKDB,
     FLIPCOMMONS_DB,
     WEB_CACHE_DB,
     load_env,
@@ -148,9 +147,9 @@ def _resolve_page(source_ref: str) -> ResolvedPage | None:
     # structured fields out of the fan-out — an ipdb: ref yields its labeled
     # machine prose (Notable Features / Toys / Notes / Marketing Slogans) alone.
     # Constructing it also puts pinexplore's web_cache module on the path.
-    from quote_verify.verify_quotes import _Sources
+    from quotes.sources import Sources
 
-    sources = _Sources(WEB_CACHE_DB, EXPLORE_DUCKDB)
+    sources = Sources()
     text = sources.free_text_for(source_ref)
     if text is None:
         return None

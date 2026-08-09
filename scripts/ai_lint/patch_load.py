@@ -8,7 +8,7 @@ units into the carriers the two entrypoints consume.
 Only the ``cites:`` map (new inline footnotes declared in this patch, keyed by a
 numeric handle) carries a ``ref``/``quote`` here; an existing-slug marker
 (``[[cite:<slug>]]``) points at a citation already in flipcommons and is left to
-the deterministic ``verify-quotes`` and the live catalog — the AI tools focus on
+the deterministic ``verify-quote-verbatim`` and the live catalog — the AI tools focus on
 the new evidence a patch introduces.
 """
 
@@ -40,6 +40,7 @@ class CiteRef:
     ref: str
     quote: str = ""
     locator: str = ""
+    archive: str = ""  # Wayback snapshot, when the cite names one
 
 
 @dataclass(frozen=True, slots=True)
@@ -117,11 +118,13 @@ def _cites_of(unit: PatchUnit) -> dict[str, CiteRef]:
         elif is_cite_map(spec):
             quote = spec.get("quote")
             locator = spec.get("locator")
+            archive = spec.get("archive")
             out[key] = CiteRef(
                 handle=key,
                 ref=spec["ref"],
                 quote=quote if isinstance(quote, str) else "",
                 locator=locator if isinstance(locator, str) else "",
+                archive=archive if isinstance(archive, str) else "",
             )
     return out
 
@@ -168,15 +171,21 @@ def iter_scalar_claim_cites(filename: str, data: object) -> Iterator[ScalarClaim
                 continue
             cite = unit.get("cite")
             # cite: may be one spec or a list of them (both schema-legal, as
-            # verify_quotes handles) — check every quote-bearing spec.
+            # quotes.verbatim handles) — check every quote-bearing spec.
             specs = cite if isinstance(cite, list) else [cite]
             for spec in specs:
                 if is_cite_map(spec):
                     quote = spec.get("quote")
+                    archive = spec.get("archive")
                     if isinstance(quote, str) and quote.strip():
                         yield ScalarClaim(
                             patch=filename,
                             entity_ref=entity_ref,
                             claim_text=claim_text,
-                            cite=CiteRef(handle="cite", ref=spec["ref"], quote=quote),
+                            cite=CiteRef(
+                                handle="cite",
+                                ref=spec["ref"],
+                                quote=quote,
+                                archive=archive if isinstance(archive, str) else "",
+                            ),
                         )

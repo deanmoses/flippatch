@@ -1,10 +1,10 @@
-"""CLI entrypoint for the citation verifier.
+"""CLI entrypoint for the quote-support checker.
 
-Run via the opt-in ``make verify-citations`` target (which sets
+Run via the opt-in ``make verify-quote-support`` target (which sets
 ``PYTHONPATH=scripts``):
 
-    make verify-citations ARGS="0059"        # scoped to one patch
-    make verify-citations ARGS="0059 0114"   # a few patches
+    make verify-quote-support ARGS="0059"        # scoped to one patch
+    make verify-quote-support ARGS="0059 0114"   # a few patches
 
 **A run must name patch ids.** This tool makes one paid AI call per cite on the
 trusted (expensive) model, so a bare invocation is refused rather than silently
@@ -28,22 +28,21 @@ from common.ai.client import (
     AiUnavailableError,
     require_ai_client,
 )
-from common.catalog.entity_index import EntityIndex
-from common.paths import FLIPCOMMONS_DB, REPO_ROOT, load_env
+from common.paths import REPO_ROOT, load_env
 
-from ai_lint.citation_verify.verify import collect_pairs, verify_pair
 from ai_lint.cli_common import emit, oversize_error, scope_error
 from ai_lint.corpus import Corpus
 from ai_lint.patch_load import load_patches
+from ai_lint.quote_support.verify import collect_pairs, verify_pair
 from ai_lint.report import Severity
 
 
 def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        prog="verify-citations",
+        prog="verify-quote-support",
         description=(
             "AI check that each cite's quote supports its claim (requires "
-            "ANTHROPIC_API_KEY). Builds on `make verify-quotes`."
+            "ANTHROPIC_API_KEY). Builds on `make verify-quote-verbatim`."
         ),
     )
     parser.add_argument(
@@ -89,7 +88,7 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: {error}", file=sys.stderr)
         return 2
     print(
-        f"verify-citations: {len(pairs)} cite(s) across {len(patches)} patch(es) in "
+        f"verify-quote-support: {len(pairs)} cite(s) across {len(patches)} patch(es) in "
         f"scope — at most {len(pairs)} trusted-model call(s)",
         file=sys.stderr,
     )
@@ -110,22 +109,11 @@ def main(argv: list[str] | None = None) -> int:
         )
         return 2
 
-    index: EntityIndex | None = None
-    if FLIPCOMMONS_DB.is_file():
-        index = EntityIndex.build(FLIPCOMMONS_DB, types=("model", "title"))
-    else:
-        print(
-            "warning: flipcommons DB not found — skipping deterministic "
-            "quote-attribution; support is judged by the model alone "
-            "(set FLIPCOMMONS_DIR)",
-            file=sys.stderr,
-        )
-
     findings = []
     try:
         for pair in pairs:
             try:
-                finding = verify_pair(pair, corpus, ai, index)
+                finding = verify_pair(pair, corpus, ai)
                 if finding is not None:
                     findings.append(finding)
             except AiError as exc:
@@ -139,7 +127,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     finally:
         print(
-            f"verify-citations: {ai.request_count} AI calls, "
+            f"verify-quote-support: {ai.request_count} AI calls, "
             f"{ai.usage.total_tokens} tokens",
             file=sys.stderr,
         )

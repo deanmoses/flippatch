@@ -16,7 +16,7 @@ unit of work — one model:
   the model** — only diffed deterministically against the sweep's own
   resolution, so an earlier AI's opinion is audited rather than inherited.
 - ``evidence`` (optional) — source refs to judge from, in any scheme
-  ``quote_verify``'s ``free_text_for`` resolves (``ipdb:NNNN``, an ``http(s)``
+  ``quotes.sources``'s ``free_text_for`` resolves (``ipdb:NNNN``, an ``http(s)``
   web-cache URL). Defaults to the row's own IPDB note.
 """
 

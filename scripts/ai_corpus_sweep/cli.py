@@ -164,12 +164,12 @@ def _write_results(results_path: Path, rows: Sequence[SweepRow]) -> None:
 
 
 def _evidence_fn() -> EvidenceFn | None:
-    """quote_verify's source adapter over pinexplore's stores, or None if absent."""
+    """the quotes package's source adapter over pinexplore's stores, or None if absent."""
     if not WEB_CACHE_DB.is_file() or not EXPLORE_DUCKDB.is_file():
         return None
-    from quote_verify.verify_quotes import _Sources
+    from quotes.sources import Sources
 
-    sources = _Sources(WEB_CACHE_DB, EXPLORE_DUCKDB)
+    sources = Sources()
     return sources.free_text_for
 
 

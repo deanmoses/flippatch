@@ -13,6 +13,6 @@ states, and quote verification. It still deliberately has no prompt caching,
 extraction-record persistence, or entity-discovery target resolution.
 
 It consumes ``common.ai`` (client + candidate model), ``common.catalog``
-(catalog vocabulary / lookup), and ``quote_verify`` (source text +
+(catalog vocabulary / lookup), and ``quotes`` (source text +
 ``check_quote``) rather than reinventing them.
 """

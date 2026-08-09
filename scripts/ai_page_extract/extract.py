@@ -3,7 +3,7 @@
 A pure function (``extract``) — no disk, no network of its own, no sibling
 checkout. It takes already-resolved page text and an ``AiClient`` (the offline
 mock seam), runs each slice, unions repeated samples, runs every returned quote
-through ``quote_verify.check_quote``, and returns a ``Packet``. Source-ref
+through ``quotes.verbatim.check_quote``, and returns a ``Packet``. Source-ref
 resolution, page-metadata lookup, and usage reporting live in the CLI shell
 (``cli.py``), keeping this core as offline-testable as the rest of the tooling.
 
@@ -31,7 +31,7 @@ from typing import TYPE_CHECKING, TypedDict, cast
 
 from common.ai.candidates import Candidate, EvidenceQuote
 from common.ai.client import CHEAP_MODEL, AiError
-from quote_verify.verify_quotes import check_quote
+from quotes.verbatim import check_quote
 
 if TYPE_CHECKING:
     from collections.abc import Mapping, Sequence

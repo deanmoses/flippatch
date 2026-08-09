@@ -1,15 +1,11 @@
-"""Tests for the citation verifier (quote-supports-claim)."""
+"""Tests for the quote-support checker (quote-supports-claim)."""
 
 from __future__ import annotations
 
-import sqlite3
-from pathlib import Path
-
-import pytest
-from ai_lint.citation_verify.verify import ClaimQuote, collect_pairs, verify_pair
 from ai_lint.corpus import Corpus
+from ai_lint.quote_support.verify import ClaimQuote, collect_pairs, verify_pair
 from ai_lint.report import Severity
-from common.catalog.entity_index import EntityIndex
+from quotes.sources import CiteSource, SourceStatus
 
 
 class FakeAiClient:
@@ -23,17 +19,31 @@ class FakeAiClient:
 
 
 class FakeResolver:
-    def __init__(self, mapping: dict[str, str]) -> None:
+    """Address → text, plus a PDF set. Must track ``Sources``' resolution rules."""
+
+    def __init__(
+        self, mapping: dict[str, str], pdf_refs: set[str] | None = None
+    ) -> None:
         self.mapping = mapping
+        self.pdf_refs = pdf_refs or set()
 
     def text_for(self, ref: str) -> str | None:
         return self.mapping.get(ref)
+
+    def resolve_cite(self, ref: str, archive: str | None = None) -> CiteSource:
+        addresses = [ref, *([archive] if archive else [])]
+        if any(a in self.pdf_refs for a in addresses):
+            return CiteSource(SourceStatus.PDF)
+        text = next((t for a in addresses if (t := self.mapping.get(a))), None)
+        if text is None:
+            return CiteSource(SourceStatus.MISSING)
+        return CiteSource(SourceStatus.RESOLVED, text)
 
 
 def test_cli_main_refuses_bare_run_without_spending(capsys):
     # End-to-end guard: main([]) returns non-zero and never reaches the client —
     # the refusal lands before require_ai_client / the corpus / any network.
-    from ai_lint.citation_verify.cli import main
+    from ai_lint.quote_support.cli import main
 
     assert main([]) == 2
     err = capsys.readouterr().err
@@ -239,96 +249,80 @@ def test_non_verbatim_quote_is_its_own_error_without_asking_the_model():
     assert ai.calls == []  # never reaches the model
 
 
-# --- deterministic attribution on positional (multi-entity) sources ----------
-# On a maker-index page each machine is one line; the model reads *which* machine
-# a quote belongs to unreliably, but the quote's line resolves to a catalog model
-# deterministically. A quote whose line names a different entity is failed with no
-# model call. The source below is such a page: three lines, one machine each.
-_INDEX_PAGE = (
-    "Manilamatic (Roma, Italy)\n"
-    "Joker (copia del Gottlieb's Monte Carlo)\n"
-    "Out Law (copia di Williams' Tag Team)"
+# --- cite resolution: the archive snapshot and the PDF class -----------------
+
+_DEAD = "http://maker.test/games/le.aspx"
+_SNAPSHOT = (
+    "http://web.archive.org/web/20111203043615id_/http://maker.test/games/le.aspx"
 )
 
 
-@pytest.fixture
-def catalog_index(tmp_path: Path) -> EntityIndex:
-    db = tmp_path / "db.sqlite3"
-    con = sqlite3.connect(db)
-    con.executescript(
-        "CREATE TABLE catalog_machinemodel "
-        "(id INTEGER PRIMARY KEY, slug TEXT, name TEXT);"
-    )
-    con.execute(
-        "INSERT INTO catalog_machinemodel VALUES (1, 'joker-manilamatic', 'Joker')"
-    )
-    con.execute("INSERT INTO catalog_machinemodel VALUES (2, 'out-law', 'Out Law')")
-    con.commit()
-    con.close()
-    return EntityIndex.build(db, types=("model", "title"))
+def _claim(ref: str, quote: str, archive: str = "") -> ClaimQuote:
+    cite = {"ref": ref, "quote": quote}
+    if archive:
+        cite["archive"] = archive
+    data = {"claims": [{"model.bar": {"year": 2011, "cite": cite}}]}
+    (pair,) = list(collect_pairs("0220-x.yaml", data))
+    return pair
 
 
-def _joker_claim(quote: str) -> ClaimQuote:
+def test_collect_pairs_carries_the_archive_snapshot():
+    # Drop either address and the source becomes unreachable.
+    pair = _claim(_DEAD, "released in 2011", archive=_SNAPSHOT)
+    assert pair.ref == _DEAD
+    assert pair.archive == _SNAPSHOT
+
+
+def test_collect_pairs_carries_the_archive_snapshot_on_footnotes():
     data = {
         "claims": [
             {
-                "model.joker-manilamatic": {
-                    "game_format": "pinball",
-                    "cite": {"ref": "https://x.example/a", "quote": quote},
+                "franchise.foo": {
+                    "description": "Foo debuted in 2011.[[cite:1]]",
+                    "cites": {
+                        1: {
+                            "ref": _DEAD,
+                            "archive": _SNAPSHOT,
+                            "quote": "debuted in 2011",
+                        }
+                    },
                 }
             }
         ]
     }
-    (pair,) = list(collect_pairs("0079-x.yaml", data))
-    return pair
+    (pair,) = list(collect_pairs("0220-x.yaml", data))
+    assert pair.archive == _SNAPSHOT
 
 
-def test_quote_from_a_sibling_line_is_a_different_entity_without_asking_model(
-    catalog_index: EntityIndex,
-):
-    # The quote sits on Out Law's line — the deterministic step names Out Law, not
-    # the subject Joker, and fails it without a model call (the quote itself need
-    # not contain the sibling's name; the line does).
-    pair = _joker_claim("copia di Williams' Tag Team")
-    corpus = Corpus(FakeResolver({"https://x.example/a": _INDEX_PAGE}))
-    ai = FakeAiClient({"supported": True, "reason": "must not be asked"})
-    finding = verify_pair(pair, corpus, ai, catalog_index)
-    assert finding is not None
-    assert finding.severity is Severity.WARNING
-    assert "different entity" in finding.message
-    assert "out-law" in finding.message
-    assert ai.calls == []  # deterministic — the model was never consulted
-
-
-def test_quote_from_the_subject_line_proceeds_to_the_semantic_check(
-    catalog_index: EntityIndex,
-):
-    # The quote is on Joker's own line, so attribution is clean and the semantic
-    # (model) check runs as usual.
-    pair = _joker_claim("copia del Gottlieb's Monte Carlo")
-    corpus = Corpus(FakeResolver({"https://x.example/a": _INDEX_PAGE}))
-    ai = FakeAiClient({"supported": True, "reason": "on the subject's line"})
-    assert verify_pair(pair, corpus, ai, catalog_index) is None
-    assert len(ai.calls) == 1  # deferred to the model, which accepted it
-
-
-def test_quote_from_a_line_naming_no_model_defers_to_the_semantic_check(
-    catalog_index: EntityIndex,
-):
-    # The maker-header line names no catalog *model*, so there is nothing to
-    # attribute against — defer to the model rather than guess.
-    pair = _joker_claim("Roma, Italy")
-    corpus = Corpus(FakeResolver({"https://x.example/a": _INDEX_PAGE}))
-    ai = FakeAiClient({"supported": True, "reason": "deferred"})
-    assert verify_pair(pair, corpus, ai, catalog_index) is None
-    assert len(ai.calls) == 1
-
-
-def test_without_an_index_attribution_is_skipped(catalog_index: EntityIndex):
-    # Same sibling-line quote, but no index passed: the deterministic step can't
-    # run, so the model decides (today's behavior, preserved).
-    pair = _joker_claim("copia di Williams' Tag Team")
-    corpus = Corpus(FakeResolver({"https://x.example/a": _INDEX_PAGE}))
-    ai = FakeAiClient({"supported": True, "reason": "no index → model decides"})
+def test_archive_backed_cite_is_judged_not_reported_unavailable():
+    # The publisher's page is gone; the cache holds it under the snapshot URL.
+    pair = _claim(_DEAD, "released in 2011", archive=_SNAPSHOT)
+    source = "The LE was released in 2011 in an edition of 500."
+    corpus = Corpus(FakeResolver({_SNAPSHOT: source}))
+    ai = FakeAiClient({"supported": True, "reason": "the source states the year"})
     assert verify_pair(pair, corpus, ai) is None
-    assert len(ai.calls) == 1
+    assert source in str(ai.calls[0]["user"])  # the snapshot's text reached the model
+
+
+def test_pdf_cite_is_an_info_skip_not_a_cannot_verify_warning():
+    # INFO, not WARNING: the patch is not at fault for what a PDF extracts to.
+    pair = _claim("https://maker.test/manual.pdf", "a quoted span")
+    corpus = Corpus(FakeResolver({}, pdf_refs={"https://maker.test/manual.pdf"}))
+    ai = FakeAiClient({"supported": True, "reason": "must not be asked"})
+    finding = verify_pair(pair, corpus, ai)
+    assert finding is not None
+    assert finding.severity is Severity.INFO  # reports, does not fail the run
+    assert "PDF" in finding.message
+    assert "cannot verify" not in finding.message
+    assert ai.calls == []
+
+
+def test_pdf_reached_through_its_archive_is_also_skipped():
+    archived = "http://web.archive.org/web/2025id_/http://maker.test/flyer.pdf"
+    pair = _claim("http://maker.test/flyer.pdf", "a quoted span", archive=archived)
+    corpus = Corpus(FakeResolver({}, pdf_refs={archived}))
+    ai = FakeAiClient({"supported": True, "reason": "must not be asked"})
+    finding = verify_pair(pair, corpus, ai)
+    assert finding is not None
+    assert finding.severity is Severity.INFO
+    assert ai.calls == []

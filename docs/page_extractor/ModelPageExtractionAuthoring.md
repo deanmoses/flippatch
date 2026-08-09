@@ -69,7 +69,7 @@ Before authoring, **resolve the target and read its current values from the flip
 
 ## 6. Out of scope — handled elsewhere
 
-- **Does the quote _support_ the claim?** The extractor proves a quote is _verbatim_, not that it _establishes_ the value. That judgment is `ai_lint`'s `quote-supports-claim` rule — run `make verify-citations` on the authored patch.
+- **Does the quote _support_ the claim?** The extractor proves a quote is _verbatim_, not that it _establishes_ the value. That judgment is `ai_lint`'s `quote-supports-claim` rule — run `make verify-quote-support` on the authored patch.
 - **Siblings, other makers, other people the page names** (entity discovery); **description-enrichment** material (anecdotes, era context); and **outbound source leads** — these axes are **not built yet**. Today's packet is model-info fields only. Note such material for later; don't expect the tool to surface it.
 
 ## 7. Then — vet field-by-field with the checklist

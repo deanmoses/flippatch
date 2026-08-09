@@ -1,11 +1,9 @@
-"""Resolve a cite ``ref`` to its cached source text (pinexplore, no network).
+"""Resolve a cite to its cached source text (pinexplore, no network).
 
-Reuses ``quote_verify.verify_quotes._Sources`` — which already routes
-``ipdb:<id>`` to ``explore.duckdb``'s ``ipdb_machines`` table and
-``opdb:``/``youtube:``/``http(s)`` refs to pinexplore's web-cache SQLite. When
-pinexplore isn't checked out (or its caches aren't built), the corpus is
-*unavailable* and the plagiarism / spine rules fall back to the verbatim
-``quote:`` carried in the patch itself.
+The AI rules' adapter over ``quotes.sources.Sources``, so they resolve a cite by
+exactly the rules the verbatim gate applies. When pinexplore isn't checked out
+(or its caches aren't built), the corpus is *unavailable* and the plagiarism /
+spine rules fall back to the verbatim ``quote:`` carried in the patch itself.
 """
 
 from __future__ import annotations
@@ -13,15 +11,18 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Protocol
 
 from common.paths import EXPLORE_DUCKDB, WEB_CACHE_DB
+from quotes.sources import CiteSource, SourceStatus
 
 if TYPE_CHECKING:
-    from quote_verify.verify_quotes import _Sources
+    from quotes.sources import Sources
 
 
 class SourceResolver(Protocol):
-    """The one method the corpus needs — ``ref`` → source text, or ``None``."""
+    """The slice of ``Sources`` the rules use — the seam a test fake stands in at."""
 
     def text_for(self, ref: str) -> str | None: ...
+
+    def resolve_cite(self, ref: str, archive: str | None = None) -> CiteSource: ...
 
 
 class Corpus:
@@ -38,9 +39,9 @@ class Corpus:
         missing the corpus is unavailable (quote-only fallback).
         """
         if WEB_CACHE_DB.is_file() and EXPLORE_DUCKDB.is_file():
-            from quote_verify.verify_quotes import _Sources
+            from quotes.sources import Sources
 
-            resolver: _Sources = _Sources(WEB_CACHE_DB, EXPLORE_DUCKDB)
+            resolver: Sources = Sources()
             return cls(resolver)
         return cls(None)
 
@@ -50,7 +51,13 @@ class Corpus:
         return self._resolver is not None
 
     def text_for(self, ref: str) -> str | None:
-        """The cached source text for ``ref``, or ``None`` if unresolvable."""
+        """The cached source text for one address, or ``None`` if unresolvable."""
         if self._resolver is None:
             return None
         return self._resolver.text_for(ref)
+
+    def resolve_cite(self, ref: str, archive: str | None = None) -> CiteSource:
+        """See :meth:`quotes.sources.Sources.resolve_cite`."""
+        if self._resolver is None:
+            return CiteSource(SourceStatus.MISSING)
+        return self._resolver.resolve_cite(ref, archive)

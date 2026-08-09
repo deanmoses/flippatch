@@ -1,4 +1,4 @@
-.PHONY: validate lint-patches-all verify-quotes lint-descriptions verify-citations extract-page sweep analyze push agent-docs lint typecheck test check
+.PHONY: validate lint-patches-all verify-quote-verbatim lint-descriptions verify-quote-support extract-page sweep analyze push agent-docs lint typecheck test check
 
 # Validate data patches against the patch schema (structural gate) plus the
 # editorial authoring lint. Run this before push.
@@ -14,13 +14,13 @@ validate:
 lint-patches-all:
 	uv run python3 scripts/patch_validation/lint_patches.py --all
 
-# ── Citation quote verifier ────────────────────────
+# ── Quote verbatim check ────────────────────────
 # Verify every cite: quote is verbatim against its cached source text.
 # Needs the sister pinexplore repo as a sibling checkout (override with
 # PINEXPLORE_DIR) with its web cache pulled and explore.duckdb built.
 # Not part of the `make validate` commit gate.
-verify-quotes:
-	uv run python3 scripts/quote_verify/verify_quotes.py
+verify-quote-verbatim:
+	PYTHONPATH=scripts uv run python3 -m quotes.verbatim
 
 # ── AI description linter ────────────────────────
 # Needs ANTHROPIC_API_KEY, the flipcommons dev DB,  pinexplore caches.
@@ -31,14 +31,14 @@ verify-quotes:
 lint-descriptions:
 	PYTHONPATH=scripts uv run python3 -m ai_lint.description_check.cli $(ARGS)
 
-# ── AI citation verifier ────────────────────────
+# ── AI quote support check ────────────────────────
 # Validate that the quote actually backs up the claim.
 # Needs ANTHROPIC_API_KEY, the flipcommons dev DB,  pinexplore caches.
 # Not part of the `make validate` commit gate.
 #
-#   make verify-citations  ARGS="0059 0114"   # must name at least one patch id
-verify-citations:
-	PYTHONPATH=scripts uv run python3 -m ai_lint.citation_verify.cli $(ARGS)
+#   make verify-quote-support ARGS="0059 0114"  # must name at least one patch id
+verify-quote-support:
+	PYTHONPATH=scripts uv run python3 -m ai_lint.quote_support.cli $(ARGS)
 
 # ── AI page-data extractor ────────────────────────
 # Extracts a packet of candidate claims with quote-checked evidence.

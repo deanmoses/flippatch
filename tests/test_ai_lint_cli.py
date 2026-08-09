@@ -44,7 +44,7 @@ def test_description_cli_fatal_without_key(monkeypatch, tmp_path):
 
 def test_citation_cli_fatal_without_key(monkeypatch, tmp_path):
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
-    from ai_lint.citation_verify import cli
+    from ai_lint.quote_support import cli
 
     monkeypatch.setattr(cli, "load_env", lambda: None)
     assert cli.main(["--patches-dir", str(tmp_path)]) == 2

@@ -38,7 +38,7 @@ def load_env() -> None:
 
     Call it as the first line of a script's ``main()`` — never at import time —
     so tool commands (``make extract-page`` / ``make lint-descriptions`` /
-    ``make verify-citations``) pick up ``ANTHROPIC_API_KEY`` (and the sibling-dir
+    ``make verify-quote-support``) pick up ``ANTHROPIC_API_KEY`` (and the sibling-dir
     overrides) from ``.env`` without the caller having to ``source`` it first.
 
     Kept out of import so importing this module never mutates the process

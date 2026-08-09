@@ -86,14 +86,14 @@ Where flipcommons sits on disk is resolved by `scripts/common/paths.py` — a si
 
 ### Joining catalog rows to the evidence behind them
 
-`scripts/analysis/evidence.sql` (this repo) attaches pinexplore's web-scrape cache as `ev` and exposes `evidence_pages`, so an analysis can test the rows it is about to emit against the cached source text they rest on — under the same normalization `make verify-quotes` applies. An analysis file reads it after the foundation:
+`scripts/analysis/evidence.sql` (this repo) attaches pinexplore's web-scrape cache as `ev` and exposes `evidence_pages`, so an analysis can test the rows it is about to emit against the cached source text they rest on — under the same normalization `make verify-quote-verbatim` applies. An analysis file reads it after the foundation:
 
 ```sql
 .read scripts/analysis/catalog.sql
 .read ../flippatch/scripts/analysis/evidence.sql
 ```
 
-Both paths resolve from the flipcommons checkout, which is where the runner works; the file's own header explains why. It serves campaigns citing `https:` URLs — an `ipdb:` cite resolves its evidence through `scripts/quote_verify` instead.
+Both paths resolve from the flipcommons checkout, which is where the runner works; the file's own header explains why. It serves campaigns citing `https:` URLs — an `ipdb:` cite resolves its evidence through `scripts/quotes` instead.
 
 ### pinexplore's DuckDB
 

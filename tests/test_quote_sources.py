@@ -1,64 +1,15 @@
-"""Unit tests for the pure verification logic in quote_verify.verify_quotes.
+"""Unit tests for cite → source-text resolution (quotes.sources).
 
-The pinexplore-backed source lookup needs a sibling checkout and its caches,
-so these tests cover the pure functions (normalize, check_quote, _quote_units,
-and the ipdb_row_text / ipdb_notes_text renderers) — the part that decides what
-counts as a source and whether a quote is verbatim in it — plus ``_Sources``
-ref routing against a stubbed cache.
+The pinexplore-backed lookup needs a sibling checkout and its caches, so these
+cover the pure renderers (ipdb_row_text / ipdb_notes_text) and ``Sources`` ref
+routing against a stubbed cache.
 """
 
-from quote_verify.verify_quotes import (
-    _quote_units,
-    _Sources,
-    check_quote,
-    normalize,
-)
-
-SOURCE = (
-    "The new company, which debuted at this year’s Pinball Expo in Chicago,\n"
-    "says it’s on a mission “to bring the joy of real mechanical pinball\n"
-    "machines to home arcades.”\n"
-    "Company:\n"
-    "1969 Socker Ace - サッカーエース (Soccer Ace) by 日本展望娯楽社\n"
-)
-
-
-def test_normalize_straightens_smart_quotes_and_collapses_whitespace():
-    assert normalize("a “b”\n  c’s") == 'a "b" c\'s'
-
-
-def test_verbatim_span_verifies():
-    assert check_quote("debuted at this year's Pinball Expo", SOURCE) is None
-
-
-def test_span_across_extraction_linebreak_verifies():
-    # Hard-wrapped prose renders as spaces; whitespace-collapse bridges it.
-    assert check_quote('on a mission "to bring the joy', SOURCE) is None
-
-
-def test_multi_span_in_source_order_verifies():
-    assert check_quote("The new company [...] Socker Ace", SOURCE) is None
-
-
-def test_paraphrase_fails():
-    problem = check_quote("1969 Socker Ace by Nihon Tenbo", SOURCE)
-    assert problem is not None
-    assert "not verbatim" in problem
-
-
-def test_spans_out_of_source_order_fail():
-    problem = check_quote("Socker Ace [...] The new company", SOURCE)
-    assert problem is not None
-    assert "out of source order" in problem
-
-
-def test_non_ascii_verbatim_verifies():
-    assert check_quote("サッカーエース (Soccer Ace) by 日本展望娯楽社", SOURCE) is None
+from quotes.sources import Sources, SourceStatus, ipdb_notes_text, ipdb_row_text
+from quotes.verbatim import check_quote
 
 
 def test_ipdb_row_text_serializes_labeled_fields_in_page_order():
-    from quote_verify.verify_quotes import ipdb_row_text
-
     text = ipdb_row_text(
         {
             "Title": "Fishing Tengu (&#12388;&#12426;&#22825;&#29399;)",
@@ -84,8 +35,6 @@ def test_ipdb_row_text_serializes_labeled_fields_in_page_order():
 
 
 def test_ipdb_row_text_skips_empty_fields():
-    from quote_verify.verify_quotes import ipdb_row_text
-
     assert ipdb_row_text(
         {"Title": "Asteroid Killer", "Type": "Solid State Electronic (SS)"}
     ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
@@ -95,8 +44,6 @@ def test_ipdb_row_text_renders_hardware_and_credit_fields():
     # The IPDB page renders Model Number, MPU and the person-credit rows as
     # "Label: value" lines; the quotable slice must carry them so a credit
     # claim citing ipdb:NNNN can quote them ctrl-F honestly.
-    from quote_verify.verify_quotes import ipdb_row_text
-
     text = ipdb_row_text(
         {
             "Title": "Houdini: Master of Mystery",
@@ -138,8 +85,6 @@ def test_ipdb_row_text_renders_hardware_and_credit_fields():
 def test_ipdb_row_text_renders_toys_and_marketing_slogans():
     # Both are editor-authored prose the IPDB page prints as labeled rows, so a
     # `toys` claim citing ipdb:NNNN can quote the Toys line ctrl-F honestly.
-    from quote_verify.verify_quotes import ipdb_row_text
-
     text = ipdb_row_text(
         {
             "Title": "The Addams Family",
@@ -157,8 +102,6 @@ def test_ipdb_row_text_renders_toys_and_marketing_slogans():
 def test_ipdb_row_text_renders_ipdbs_own_sourcing_rows():
     # Source and Photos In are about IPDB's paperwork, not the machine — on the
     # page, so quotable; excluded from the AI slice by ipdb_notes_text.
-    from quote_verify.verify_quotes import ipdb_row_text
-
     text = ipdb_row_text(
         {
             "Title": "Ballyhoo",
@@ -178,8 +121,6 @@ def test_ipdb_row_text_renders_ipdbs_own_sourcing_rows():
 def test_ipdb_row_text_omits_values_the_page_renders_differently():
     # A quote of "20270" would verify here and be un-findable on IPDB. The
     # page's own date and player rendering rides along in AdditionalDetails.
-    from quote_verify.verify_quotes import ipdb_row_text
-
     text = ipdb_row_text(
         {
             "Title": "The Addams Family",
@@ -195,8 +136,6 @@ def test_ipdb_row_text_omits_values_the_page_renders_differently():
 def test_ipdb_row_text_omits_blank_values_rather_than_a_bare_label():
     # Real rows carry blank prose, and a bare "Notes:" is text the page never
     # shows — a quote of the label alone would verify against nothing.
-    from quote_verify.verify_quotes import ipdb_row_text
-
     assert ipdb_row_text(
         {
             "Title": "Ballyhoo",
@@ -208,8 +147,6 @@ def test_ipdb_row_text_omits_blank_values_rather_than_a_bare_label():
 
 
 def test_ipdb_row_text_ignores_join_keys_and_array_columns():
-    from quote_verify.verify_quotes import ipdb_row_text
-
     assert (
         ipdb_row_text(
             {
@@ -226,8 +163,6 @@ def test_ipdb_row_text_ignores_join_keys_and_array_columns():
 
 
 def test_ipdb_notes_text_is_free_text_prose_only():
-    from quote_verify.verify_quotes import ipdb_notes_text
-
     # Structured fields are deterministic data resolved directly, never re-read
     # by a model; Source and Photos In are not about the machine at all.
     text = ipdb_notes_text(
@@ -256,8 +191,6 @@ def test_ipdb_notes_text_labels_match_ipdb_row_text_verbatim():
     # A model's quote is checked against the notes text at extraction and
     # against the row text at ship time, so a delimiter in one and not the
     # other is a quote that passes the first gate and fails the second.
-    from quote_verify.verify_quotes import check_quote, ipdb_notes_text, ipdb_row_text
-
     row = {
         "Title": "The Addams Family",
         "Manufacturer": "Bally",
@@ -271,8 +204,6 @@ def test_ipdb_notes_text_labels_match_ipdb_row_text_verbatim():
 
 
 def test_ipdb_notes_text_empty_prose_is_empty_string():
-    from quote_verify.verify_quotes import ipdb_notes_text
-
     assert ipdb_notes_text({"Title": "Ballyhoo", "Manufacturer": "Bally"}) == ""
 
 
@@ -299,8 +230,8 @@ class _FakeWebCache:
 
 def _sources_with(
     pages: dict[str, str], pdf_urls: set[str] | None = None
-) -> tuple[_Sources, _FakeWebCache]:
-    sources = object.__new__(_Sources)
+) -> tuple[Sources, _FakeWebCache]:
+    sources = object.__new__(Sources)
     fake = _FakeWebCache(pages, pdf_urls)
     sources._web_cache = fake
     return sources, fake
@@ -355,75 +286,87 @@ def test_free_text_for_web_ref_matches_text_for():
     assert sources.free_text_for("https://a.test/p") == "readable page text"
 
 
-def test_quote_units_walks_entry_inline_and_changesets_quotes():
-    body = {
-        "cite": {"ref": "ipdb:1", "quote": "entry quote"},
-        "description": "x[[cite:1]] y[[cite:2]]",
-        "cites": {
-            "1": {"ref": "https://a.test/p", "quote": "inline quote"},
-            "2": "ipdb:2",  # bare ref, no quote — skipped
-        },
-        "changesets": [
-            {"cite": {"ref": "ipdb:3", "quote": "changeset quote"}},
-        ],
-    }
-    assert list(_quote_units(body)) == [
-        ("ipdb:1", None, "entry quote"),
-        ("https://a.test/p", None, "inline quote"),
-        ("ipdb:3", None, "changeset quote"),
-    ]
+# ── resolve_cite: the whole cite, not one address ────────────────────────────
+# Every quote checker resolves through here, so the ref → archive fallback and
+# the PDF outcome are decided once and cannot drift between them.
+
+_DEAD = "http://maker.test/games/le.aspx"
+_SNAPSHOT = (
+    "http://web.archive.org/web/20111203043615id_/http://maker.test/games/le.aspx"
+)
 
 
-def test_quote_units_carries_the_archive_url():
-    # A cite for a dead original names the Wayback snapshot in `archive:`; the
-    # gate resolves the source text via ref first, then the archive. The unit
-    # must surface the archive so the caller can fall back to it.
-    body = {
-        "cite": {
-            "ref": "http://maker.test/flyer.pdf",
-            "archive": "http://web.archive.org/web/20250325113004id_/http://maker.test/flyer.pdf",
-            "quote": "transcribed span",
-        },
-    }
-    assert list(_quote_units(body)) == [
-        (
-            "http://maker.test/flyer.pdf",
-            "http://web.archive.org/web/20250325113004id_/http://maker.test/flyer.pdf",
-            "transcribed span",
-        ),
-    ]
+def test_resolve_cite_prefers_the_publishers_ref():
+    sources, _ = _sources_with({_DEAD: "live page", _SNAPSHOT: "stale snapshot"})
+    resolved = sources.resolve_cite(_DEAD, _SNAPSHOT)
+    assert resolved.status is SourceStatus.RESOLVED
+    assert resolved.text == "live page"
 
 
-def test_quote_units_walks_cite_lists():
-    # cite: takes a list of specs (multi-source evidence); every quote-bearing
-    # element must be verified, wherever it sits in the list.
-    body = {
-        "cite": [
-            "ipdb:1",  # bare ref, no quote — skipped
-            {"ref": "https://a.test/p", "quote": "first source"},
-            {"ref": "ipdb:2", "quote": "second source"},
-        ],
-        "changesets": [
-            {"cite": [{"ref": "ipdb:3", "quote": "changeset list quote"}]},
-        ],
-    }
-    assert list(_quote_units(body)) == [
-        ("https://a.test/p", None, "first source"),
-        ("ipdb:2", None, "second source"),
-        ("ipdb:3", None, "changeset list quote"),
-    ]
+def test_resolve_cite_falls_back_to_the_archive_snapshot():
+    # The original is dead, so the document is cached under the snapshot URL
+    # while the cite's ref stays the publisher's.
+    sources, _ = _sources_with({_SNAPSHOT: "archived page text"})
+    resolved = sources.resolve_cite(_DEAD, _SNAPSHOT)
+    assert resolved.status is SourceStatus.RESOLVED
+    assert resolved.text == "archived page text"
 
 
-# ── is_pdf: the ungated document class ───────────────────────────────────────
-# A PDF quote is not machine-checkable. Text extraction reads a sheet in
-# reading order, so a table becomes a column of unattached cells, and words
-# drawn as artwork never reach the text layer at all — a correct quote a
-# session read off the rendered sheet routinely is not a substring of what
-# was extracted. Measured on this corpus, an exact check against the OCR tier
-# rejects a quarter of correct spans, so there is no threshold that makes the
-# check honest. PDF quotes are therefore an author self-check, and the gate
-# says so rather than failing them. The discriminator is a fact the CACHE owns
-# about the document (its content_type), never anything recorded in a patch.
+def test_resolve_cite_without_an_archive_is_missing():
+    sources, _ = _sources_with({})
+    assert sources.resolve_cite(_DEAD).status is SourceStatus.MISSING
+
+
+def test_resolve_cite_treats_an_empty_archive_as_none():
+    # A cite with no `archive:` reaches here as "" (the patch carriers hold str,
+    # not str | None), which must mean "no snapshot", not "look up the empty URL".
+    sources, _ = _sources_with({_DEAD: "live page"})
+    resolved = sources.resolve_cite(_DEAD, "")
+    assert resolved.status is SourceStatus.RESOLVED
+    assert resolved.text == "live page"
+
+
+def test_resolve_cite_with_neither_address_cached_is_missing():
+    sources, _ = _sources_with({})
+    assert sources.resolve_cite(_DEAD, _SNAPSHOT).status is SourceStatus.MISSING
+
+
+def test_resolve_cite_of_a_pdf_is_its_own_outcome():
+    sources, _ = _sources_with(
+        {"https://a.test/manual.pdf": "flattened text"},
+        pdf_urls={"https://a.test/manual.pdf"},
+    )
+    resolved = sources.resolve_cite("https://a.test/manual.pdf")
+    assert resolved.status is SourceStatus.PDF
+    assert resolved.text is None
+
+
+def test_a_readable_ref_wins_over_a_pdf_archive():
+    # The addresses are ranked, not pooled: the publisher's page is the document
+    # a reader follows, so a snapshot that went to PDF must not cost the gate a
+    # source it can actually check.
+    sources, _ = _sources_with(
+        {_DEAD: "live page text", _SNAPSHOT: ""}, pdf_urls={_SNAPSHOT}
+    )
+    resolved = sources.resolve_cite(_DEAD, _SNAPSHOT)
+    assert resolved.status is SourceStatus.RESOLVED
+    assert resolved.text == "live page text"
+
+
+def test_resolve_cite_of_a_pdf_reached_through_its_archive_is_still_a_pdf():
+    # A dead PDF is cached under the snapshot URL; the document class is the
+    # same whichever address reaches it.
+    archived = (
+        "http://web.archive.org/web/20250325113004id_/http://maker.test/flyer.pdf"
+    )
+    sources, _ = _sources_with({archived: ""}, pdf_urls={archived})
+    resolved = sources.resolve_cite("http://maker.test/flyer.pdf", archived)
+    assert resolved.status is SourceStatus.PDF
+
+
+# ── is_pdf: the unjudgeable document class (why: SourceStatus.PDF) ───────────
+# The discriminator is a fact the CACHE owns about the document (its
+# content_type), never anything recorded in a patch.
 
 
 def test_cached_pdf_ref_is_pdf():

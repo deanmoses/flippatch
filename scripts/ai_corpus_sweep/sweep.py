@@ -19,7 +19,7 @@ from dataclasses import field as dataclass_field
 from typing import TYPE_CHECKING
 
 from common.ai.client import TRUSTED_MODEL, AiError
-from quote_verify.verify_quotes import check_quote
+from quotes.verbatim import check_quote
 
 from ai_corpus_sweep import gate
 from ai_corpus_sweep.fields import (
@@ -41,8 +41,8 @@ if TYPE_CHECKING:
     from ai_corpus_sweep.catalog import CatalogEdge, ModelFacts, SweepCatalog
     from ai_corpus_sweep.judge import SourceText
 
-# Resolves one evidence ref to its free text (or None): quote_verify's
-# ``_Sources.free_text_for`` in real runs, a dict lookup in tests.
+# Resolves one evidence ref to its free text (or None): ``quotes.sources``'
+# ``Sources.free_text_for`` in real runs, a dict lookup in tests.
 type EvidenceFn = Callable[[str], str | None]
 
 
@@ -224,7 +224,7 @@ def check_support(
 
     Reuses ai_lint's quote-supports-claim rule verbatim — same system prompt,
     same schema, same trusted tier — so a fill that passes here meets the same
-    standard ``make verify-citations`` will later hold the authored patch to.
+    standard ``make verify-quote-support`` will later hold the authored patch to.
     `check_quote` proves a quote *exists*; only this closes the *supports* gap
     (AiCommon §3) before a fill's quote becomes a shipped ``cite:``.
     """

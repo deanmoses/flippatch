@@ -16,7 +16,7 @@ from dataclasses import dataclass
 class EvidenceQuote:
     """A quote, the source it was drawn from, and whether it verified verbatim.
 
-    ``quote_verified`` is the result of ``quote_verify.check_quote`` — it proves
+    ``quote_verified`` is the result of ``quotes.verbatim.check_quote`` — it proves
     the quote *exists* verbatim in the source, never that it *supports* the
     claim it backs. That gap is closed downstream (AiCommon.md §3), never here.
     """
