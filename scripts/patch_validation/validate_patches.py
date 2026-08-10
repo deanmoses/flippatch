@@ -23,7 +23,8 @@ from pathlib import Path
 from typing import Any
 
 import yaml
-from jsonschema import Draft7Validator
+from jsonschema import Draft7Validator, ValidationError
+from jsonschema.exceptions import best_match
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 PATCHES_DIR = REPO_ROOT / "patches"
@@ -130,6 +131,37 @@ def _construct_finite_float(loader: _StrictLoader, node: yaml.ScalarNode) -> flo
 _StrictLoader.add_constructor("tag:yaml.org,2002:float", _construct_finite_float)
 
 
+def _error_text(err: ValidationError) -> str:
+    """One error's message, with a size limit stated rather than the value quoted.
+
+    jsonschema reports a length violation by quoting the whole offending value,
+    so a 2000-character cap prints 2000 characters back at the author to explain
+    that they wrote too many. The size and the limit are both on the error;
+    those are the two numbers worth printing.
+    """
+    if err.validator == "maxLength" and isinstance(err.instance, str):
+        return f"{len(err.instance)} characters, over the {err.validator_value} limit"
+    if err.validator == "minLength" and isinstance(err.instance, str):
+        return (
+            f"{len(err.instance)} characters, under the {err.validator_value} minimum"
+        )
+    return err.message
+
+
+def _describe(err: ValidationError) -> str:
+    """Where an error is and what it says, resolved to the branch that failed.
+
+    A ``cite`` is a ``oneOf``, so a violation inside one — an over-long ``quote``
+    — arrives as a wrapper error located at the cite, whose message embeds the
+    whole cite object. ``best_match`` walks the branch context to the leaf that
+    actually failed, which carries both the field's own path and the only
+    message worth printing.
+    """
+    leaf = best_match([err]) or err
+    location = "/".join(str(part) for part in leaf.absolute_path) or "<root>"
+    return f"{location}: {_error_text(leaf)}"
+
+
 def main() -> int:
     if not PATCHES_DIR.is_dir():
         print("No patches/ directory; nothing to validate.")
@@ -160,11 +192,12 @@ def main() -> int:
             errors.append(f"{path.name}: invalid YAML: {exc}")
             continue
 
-        for err in sorted(
-            validator.iter_errors(data), key=lambda e: [str(p) for p in e.path]
-        ):
-            loc = "/".join(str(p) for p in err.path) or "<root>"
-            errors.append(f"{path.name}: {loc}: {err.message}")
+        errors.extend(
+            f"{path.name}: {_describe(err)}"
+            for err in sorted(
+                validator.iter_errors(data), key=lambda e: [str(p) for p in e.path]
+            )
+        )
 
     if errors:
         print(f"{len(errors)} error(s):", file=sys.stderr)

@@ -754,6 +754,65 @@ def test_grouped_item_reuses_shared_subschemas(schema_validator, item):
     assert _has_error(schema_validator, data)
 
 
+# --- Error rendering: size limits ------------------------------------------
+
+
+def _errors_for(schema_validator, doc: dict[str, object]) -> list[str]:
+    return [vp._describe(err) for err in schema_validator.iter_errors(doc)]
+
+
+def _cite_doc(cite: object) -> dict[str, object]:
+    return {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.a": {"year": 1994, "cite": cite}}],
+    }
+
+
+def test_over_length_note_reports_its_size_and_the_limit(schema_validator):
+    # jsonschema says "<the whole 1200-char value>' is too long", which prints the
+    # note back at the author to explain that the note is long. Both numbers are on
+    # the error object; report those and leave the value out.
+    doc = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.a": {"note": "z" * 1200, "year": 1994}}],
+    }
+    (message,) = [m for m in _errors_for(schema_validator, doc) if "1000" in m]
+    assert message == "claims/0/model.a/note: 1200 characters, over the 1000 limit"
+    assert "z" * 40 not in message
+
+
+def test_over_length_quote_inside_a_cite_names_the_inner_field(schema_validator):
+    # A cite is a oneOf, so a violation inside one surfaces as a wrapper error
+    # whose message embeds the entire cite — the length error is a branch below.
+    (message,) = _errors_for(
+        schema_validator, _cite_doc({"ref": "ipdb:1", "quote": "z" * 2500})
+    )
+    assert (
+        message == "claims/0/model.a/cite/quote: 2500 characters, over the 2000 limit"
+    )
+
+
+def test_over_length_locator_inside_a_cite_names_the_inner_field(schema_validator):
+    doc = _cite_doc({"ref": "ipdb:1", "quote": "ok", "locator": "p" * 2500})
+    (message,) = _errors_for(schema_validator, doc)
+    assert message.startswith(
+        "claims/0/model.a/cite/locator: 2500 characters, over the "
+    )
+    assert "p" * 40 not in message
+
+
+def test_under_length_value_reports_the_minimum(schema_validator):
+    doc = {"attribution": "", "claims": [{"model.a": {"year": 1994}}]}
+    (message,) = [m for m in _errors_for(schema_validator, doc) if "0 character" in m]
+    assert message == "attribution: 0 characters, under the 1 minimum"
+
+
+def test_other_schema_errors_keep_jsonschemas_own_wording(schema_validator):
+    doc = {"attribution": "flipcommons-catalog", "claims": "not-a-list"}
+    (message,) = _errors_for(schema_validator, doc)
+    assert message == "claims: 'not-a-list' is not of type 'array'"
+
+
 # --- The shipped patches validate cleanly ----------------------------------
 
 
