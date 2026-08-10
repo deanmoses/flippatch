@@ -24,14 +24,21 @@ or any quote whose source is missing from the cache (an unverifiable quote is
 not a verified one — ``make pull`` in pinexplore refreshes the cache). A missing
 document is a failure, never a skip: a PDF the cache does not hold is one a
 session could not have read.
+
+A run may be scoped to patch ids (``make verify-quote-verbatim ARGS="0223"``);
+the summary stamps the scope, so a partial run cannot read as a clean full pass.
+:mod:`quotes.show` is the same resolution aimed at one ref, for previewing a
+source or settling a draft quote before it is written into a patch.
 """
 
 from __future__ import annotations
 
+import argparse
 import re
 import sys
 from typing import TYPE_CHECKING
 
+from common.patch_files import patch_paths, unmatched_scope_error
 from common.paths import PATCHES_DIR
 
 from quotes.sources import Sources, SourceStatus, require_pinexplore
@@ -53,11 +60,16 @@ def check_quote(quote: str, source: str) -> str | None:
     """Why *quote* fails to verify against *source*, or None if it verifies.
 
     Each ``[...]``-separated span must appear verbatim in the normalized
-    source, and spans must appear in source order.
+    source, and spans must appear in source order. A quote leaving no spans at
+    all fails: every span would verify vacuously, so ellipses alone would carry
+    a claim while resting on nothing.
     """
+    spans = [s.strip() for s in quote.split("[...]") if s.strip()]
+    if not spans:
+        return f"quote has no text to verify: {quote[:60]!r}"
     src = normalize(source)
     pos = 0
-    for span in [s.strip() for s in quote.split("[...]") if s.strip()]:
+    for span in spans:
         found = src.find(normalize(span), pos)
         if found == -1:
             if src.find(normalize(span)) != -1:
@@ -103,13 +115,36 @@ def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str | None, str
                     )
 
 
-def main() -> int:
+def _parse_args(argv: list[str] | None) -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        prog="verify-quote-verbatim",
+        description=(
+            "Verify every cite: quote in the patches is verbatim in its cached "
+            "source text. Bare covers every patch; patch ids scope the run."
+        ),
+    )
+    parser.add_argument(
+        "patch_ids",
+        nargs="*",
+        help="patch numbers/stems to verify (default: every patch)",
+    )
+    return parser.parse_args(argv)
+
+
+def main(argv: list[str] | None = None) -> int:
     import yaml
+
+    args = _parse_args(argv)
+    error = unmatched_scope_error(PATCHES_DIR, args.patch_ids)
+    if error is not None:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
+    patches = patch_paths(PATCHES_DIR, args.patch_ids)
 
     require_pinexplore()
     sources = Sources()
     ok = failed = skipped = 0
-    for patch in sorted(PATCHES_DIR.glob("[0-9]*.yaml")):
+    for patch in patches:
         doc = yaml.safe_load(patch.read_text())
         for claim in doc.get("claims", []):
             ((entity, body),) = claim.items()
@@ -134,7 +169,8 @@ def main() -> int:
                     failed += 1
                     print(f"FAIL      {patch.name} {entity} — {problem}")
     tail = f", {skipped} skipped (PDF — author-checked)" if skipped else ""
-    print(f"\nverify-quote-verbatim: {ok} verified, {failed} failed{tail}")
+    scope = f" (scope: {' '.join(args.patch_ids)})" if args.patch_ids else ""
+    print(f"\nverify-quote-verbatim{scope}: {ok} verified, {failed} failed{tail}")
     return 1 if failed else 0
 
 

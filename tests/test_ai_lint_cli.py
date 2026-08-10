@@ -48,3 +48,26 @@ def test_citation_cli_fatal_without_key(monkeypatch, tmp_path):
 
     monkeypatch.setattr(cli, "load_env", lambda: None)
     assert cli.main(["--patches-dir", str(tmp_path)]) == 2
+
+
+@pytest.mark.parametrize(
+    ("module", "announcement"),
+    [
+        ("ai_lint.quote_support.cli", "claim(s)"),
+        ("ai_lint.description_check.cli", "description(s)"),
+    ],
+)
+def test_cli_refuses_a_scope_naming_a_missing_patch(
+    monkeypatch, tmp_path, capsys, module, announcement
+):
+    # The refusal lands before the run announcement, so nothing was billed.
+    import importlib
+
+    (tmp_path / "0114-real.yaml").write_text("claims: []\n")
+    cli = importlib.import_module(module)
+    monkeypatch.setattr(cli, "load_env", lambda: None)
+
+    assert cli.main(["0114", "0999", "--patches-dir", str(tmp_path)]) == 2
+    err = capsys.readouterr().err
+    assert "no patch matches 0999" in err
+    assert announcement not in err

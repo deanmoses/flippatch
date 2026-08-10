@@ -11,7 +11,9 @@ trusted (expensive) model, so a bare invocation is refused rather than silently
 billing the whole corpus. There is no run-everything option: the corpus exceeds the
 per-invocation ceiling (:data:`~common.ai.client.MAX_REQUESTS`), so a run must be
 scoped small enough to fit — a scope whose claim count would exceed the ceiling is
-refused too, telling the caller to narrow it.
+refused too, telling the caller to narrow it. An id naming no patch refuses the
+run rather than being dropped from it — a partial run must not bill and report as
+the scope that was asked for.
 
 Requires ``ANTHROPIC_API_KEY`` — exits with a clear error if unset.
 """
@@ -28,6 +30,7 @@ from common.ai.client import (
     AiUnavailableError,
     require_ai_client,
 )
+from common.patch_files import unmatched_scope_error
 from common.paths import REPO_ROOT, load_env
 
 from ai_lint.cli_common import emit, oversize_error, scope_error
@@ -75,11 +78,17 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: {error}", file=sys.stderr)
         return 2
 
+    patches_dir = Path(args.patches_dir)
+    error = unmatched_scope_error(patches_dir, args.patch_ids)
+    if error is not None:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
+
     # Count the in-scope claims up front (loading patches is cheap and needs no API
     # key). verify_claim makes at most ONE trusted-model call per claim, so the claim
     # count is the run's call count — refuse before spending if it exceeds the
     # per-invocation ceiling, telling the caller to scope to fewer patches.
-    patches = list(load_patches(Path(args.patches_dir), tuple(args.patch_ids)))
+    patches = list(load_patches(patches_dir, tuple(args.patch_ids)))
     claims = [
         claim for filename, data in patches for claim in collect_claims(filename, data)
     ]

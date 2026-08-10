@@ -1,4 +1,4 @@
-.PHONY: validate lint-patches-all verify-quote-verbatim lint-descriptions verify-quote-support extract-page sweep analyze push agent-docs lint typecheck test check
+.PHONY: validate lint-patches-all verify-quote-verbatim show-source lint-descriptions verify-quote-support extract-page sweep analyze push agent-docs lint typecheck test check
 
 # Validate data patches against the patch schema (structural gate) plus the
 # editorial authoring lint. Run this before push.
@@ -19,8 +19,23 @@ lint-patches-all:
 # Needs the sister pinexplore repo as a sibling checkout (override with
 # PINEXPLORE_DIR) with its web cache pulled and explore.duckdb built.
 # Not part of the `make validate` commit gate.
+#
+#   make verify-quote-verbatim               # every patch — the ship check
+#   make verify-quote-verbatim ARGS="0223"   # one patch, while iterating
 verify-quote-verbatim:
-	PYTHONPATH=scripts uv run python3 -m quotes.verbatim
+	PYTHONPATH=scripts uv run python3 -m quotes.verbatim $(ARGS)
+
+# ── Cite source preview ────────────────────────
+# Print the source text a cite: ref resolves to — the same document
+# verify-quote-verbatim matches against, including the reconstructed IPDB row
+# that exists nowhere on disk to open — or check a draft quote against it
+# before writing it into a patch. Same pinexplore stores as the gate.
+#
+#   make show-source ARGS="ipdb:4059"
+#   make show-source ARGS="ipdb:4059" | grep -i ramp      # stdout is the text alone
+#   make show-source ARGS="opdb:2155 --check 'a two-ball multiball'"
+show-source:
+	@PYTHONPATH=scripts uv run python3 -m quotes.show $(ARGS)
 
 # ── AI description linter ────────────────────────
 # Needs ANTHROPIC_API_KEY, the flipcommons dev DB,  pinexplore caches.

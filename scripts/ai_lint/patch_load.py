@@ -18,6 +18,7 @@ from dataclasses import dataclass, field
 from typing import TYPE_CHECKING
 
 import yaml
+from common.patch_files import patch_paths
 from patch_validation.lint_patches import (
     ALIAS_KEYS,
     RESERVED,
@@ -76,14 +77,11 @@ def load_patches(
 ) -> Iterator[tuple[str, object]]:
     """Yield ``(filename, parsed_yaml)`` for each ``NNNN-*.yaml`` patch.
 
-    ``patch_ids`` (bare numbers or stems) restricts the set; empty means all.
+    ``patch_ids`` (bare numbers or stems) restricts the set; empty means all —
+    selection is :func:`~common.patch_files.patch_paths`.
     Parse errors are skipped — structural validity is ``validate_patches.py``'s job.
     """
-    wanted = {pid.removesuffix(".yaml") for pid in patch_ids}
-    for path in sorted(patches_dir.glob("[0-9]*.yaml")):
-        stem = path.stem
-        if wanted and stem not in wanted and stem.split("-", 1)[0] not in wanted:
-            continue
+    for path in patch_paths(patches_dir, patch_ids):
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
         except yaml.YAMLError:

@@ -5,6 +5,9 @@ Run via the opt-in ``make lint-descriptions`` target (which sets
 
     make lint-descriptions ARGS="0059 --rules plagiarism,single-source-spine"
 
+**A run must name patch ids**, and each must name a real patch: an unmatched id
+refuses the run rather than being dropped from it.
+
 Requires ``ANTHROPIC_API_KEY`` — exits with a clear error if unset.
 """
 
@@ -16,6 +19,7 @@ from pathlib import Path
 
 from common.ai.client import AiBudgetError, AiUnavailableError, require_ai_client
 from common.catalog.entity_index import DEFAULT_TYPES, EntityIndex
+from common.patch_files import unmatched_scope_error
 from common.paths import FLIPCOMMONS_DB, REPO_ROOT, load_env
 
 from ai_lint.cli_common import emit, oversize_error, scope_error, select_rules
@@ -77,10 +81,16 @@ def main(argv: list[str] | None = None) -> int:
         print(f"error: {error}", file=sys.stderr)
         return 2
 
+    patches_dir = Path(args.patches_dir)
+    error = unmatched_scope_error(patches_dir, args.patch_ids)
+    if error is not None:
+        print(f"error: {error}", file=sys.stderr)
+        return 2
+
     # Count the in-scope work up front (cheap, no API key): each enabled rule makes
     # at most one call per description unit, so units x rules is the run's call
     # ceiling — refuse before spending if it exceeds the per-invocation ceiling.
-    patches = list(load_patches(Path(args.patches_dir), tuple(args.patch_ids)))
+    patches = list(load_patches(patches_dir, tuple(args.patch_ids)))
     units = [
         unit
         for filename, data in patches
