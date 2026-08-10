@@ -6,11 +6,11 @@ Run via the opt-in ``make verify-quote-support`` target (which sets
     make verify-quote-support ARGS="0059"        # scoped to one patch
     make verify-quote-support ARGS="0059 0114"   # a few patches
 
-**A run must name patch ids.** This tool makes one paid AI call per cite on the
+**A run must name patch ids.** This tool makes one paid AI call per claim on the
 trusted (expensive) model, so a bare invocation is refused rather than silently
 billing the whole corpus. There is no run-everything option: the corpus exceeds the
 per-invocation ceiling (:data:`~common.ai.client.MAX_REQUESTS`), so a run must be
-scoped small enough to fit — a scope whose cite count would exceed the ceiling is
+scoped small enough to fit — a scope whose claim count would exceed the ceiling is
 refused too, telling the caller to narrow it.
 
 Requires ``ANTHROPIC_API_KEY`` — exits with a clear error if unset.
@@ -33,7 +33,7 @@ from common.paths import REPO_ROOT, load_env
 from ai_lint.cli_common import emit, oversize_error, scope_error
 from ai_lint.corpus import Corpus
 from ai_lint.patch_load import load_patches
-from ai_lint.quote_support.verify import collect_pairs, verify_pair
+from ai_lint.quote_support.verify import collect_claims, verify_claim
 from ai_lint.report import Severity
 
 
@@ -41,7 +41,7 @@ def _parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog="verify-quote-support",
         description=(
-            "AI check that each cite's quote supports its claim (requires "
+            "AI check that each claim's cited evidence supports it (requires "
             "ANTHROPIC_API_KEY). Builds on `make verify-quote-verbatim`."
         ),
     )
@@ -69,27 +69,27 @@ def main(argv: list[str] | None = None) -> int:
 
     error = scope_error(
         args.patch_ids,
-        cost="this makes one paid AI call per cite on the trusted model",
+        cost="this makes one paid AI call per claim on the trusted model",
     )
     if error is not None:
         print(f"error: {error}", file=sys.stderr)
         return 2
 
-    # Count the in-scope cite pairs up front (loading patches is cheap and needs no
-    # API key). verify_pair makes at most ONE trusted-model call per pair, so the
-    # pair count is the run's call count — refuse before spending if it exceeds the
+    # Count the in-scope claims up front (loading patches is cheap and needs no API
+    # key). verify_claim makes at most ONE trusted-model call per claim, so the claim
+    # count is the run's call count — refuse before spending if it exceeds the
     # per-invocation ceiling, telling the caller to scope to fewer patches.
     patches = list(load_patches(Path(args.patches_dir), tuple(args.patch_ids)))
-    pairs = [
-        pair for filename, data in patches for pair in collect_pairs(filename, data)
+    claims = [
+        claim for filename, data in patches for claim in collect_claims(filename, data)
     ]
-    error = oversize_error(len(pairs))
+    error = oversize_error(len(claims))
     if error is not None:
         print(f"error: {error}", file=sys.stderr)
         return 2
     print(
-        f"verify-quote-support: {len(pairs)} cite(s) across {len(patches)} patch(es) in "
-        f"scope — at most {len(pairs)} trusted-model call(s)",
+        f"verify-quote-support: {len(claims)} claim(s) across {len(patches)} "
+        f"patch(es) in scope — at most {len(claims)} trusted-model call(s)",
         file=sys.stderr,
     )
 
@@ -111,14 +111,14 @@ def main(argv: list[str] | None = None) -> int:
 
     findings = []
     try:
-        for pair in pairs:
+        for claim in claims:
             try:
-                finding = verify_pair(pair, corpus, ai)
+                finding = verify_claim(claim, corpus, ai)
                 if finding is not None:
                     findings.append(finding)
             except AiError as exc:
                 print(
-                    f"  ! {pair.entity_ref}: skipped — AI error: {exc}",
+                    f"  ! {claim.entity_ref}: skipped — AI error: {exc}",
                     file=sys.stderr,
                 )
                 continue

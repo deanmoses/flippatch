@@ -53,21 +53,22 @@ class DescriptionUnit:
     slug: str  # e.g. "battle-dome"
     text: str  # the description markdown, authoring form
     cites: dict[str, CiteRef] = field(default_factory=dict)
+    note: str = ""
 
 
 @dataclass(frozen=True, slots=True)
 class ScalarClaim:
-    """A non-description assertion (field→value cluster) and one supporting cite.
+    """A non-description assertion (field→value cluster) and its whole evidence.
 
-    The citation verifier renders ``claim_text`` for the model; each distinct
-    ``(ref, quote)`` on the unit becomes its own :class:`ScalarClaim` so a
-    quote is judged against exactly the fields its unit asserts.
+    The schema directs authors to put reconciliation in ``note:`` rather than in
+    a quote, so a quote read without it is half the record.
     """
 
     patch: str
     entity_ref: str
     claim_text: str  # e.g. "game_format = pinball; year = 1994"
-    cite: CiteRef
+    cites: tuple[CiteRef, ...]
+    note: str = ""
 
 
 def load_patches(
@@ -143,6 +144,7 @@ def iter_description_units(filename: str, data: object) -> Iterator[DescriptionU
                     slug=slug,
                     text=text,
                     cites=_cites_of(unit),
+                    note=_note_of(unit),
                 )
 
 
@@ -156,36 +158,57 @@ def _scalar_claim_text(unit: PatchUnit) -> str:
     return "; ".join(parts)
 
 
-def iter_scalar_claim_cites(filename: str, data: object) -> Iterator[ScalarClaim]:
-    """Yield ``(scalar field cluster, supporting cite)`` pairs for the verifier.
+def _note_of(unit: PatchUnit) -> str:
+    note = unit.get("note")
+    return note if isinstance(note, str) else ""
 
-    Only units that assert a substantive non-description field *and* carry a
-    quote-bearing entry-level ``cite:`` are yielded — a description's inline
-    footnotes are handled separately (sentence ↔ footnote), and an alias-only or
-    quoteless unit has nothing for the support check to weigh.
+
+def _entry_cites_of(unit: PatchUnit) -> tuple[CiteRef, ...]:
+    """The unit's entry-level ``cite:`` specs — one, or a list of them, per schema."""
+    cite = unit.get("cite")
+    specs = cite if isinstance(cite, list) else [cite]
+    out: list[CiteRef] = []
+    for spec in specs:
+        if isinstance(spec, str):  # a bare cite-ref, quote-less by construction
+            out.append(CiteRef(handle="cite", ref=spec))
+            continue
+        if not is_cite_map(spec):
+            continue
+        quote, locator, archive = (
+            spec.get("quote"),
+            spec.get("locator"),
+            spec.get("archive"),
+        )
+        out.append(
+            CiteRef(
+                handle="cite",
+                ref=spec["ref"],
+                quote=quote if isinstance(quote, str) else "",
+                locator=locator if isinstance(locator, str) else "",
+                archive=archive if isinstance(archive, str) else "",
+            )
+        )
+    return tuple(out)
+
+
+def iter_scalar_claims(filename: str, data: object) -> Iterator[ScalarClaim]:
+    """Yield one claim per non-description unit, with all of its evidence.
+
+    A unit whose every cite is a quote-less mark is not yielded: its only
+    readable evidence would be the note, and weighing an author's reasoning
+    against their own claim decides nothing.
     """
     for entity_ref, body in _entries(data):
         for _label, unit in _units(body):
             claim_text = _scalar_claim_text(unit)
             if not claim_text:
                 continue
-            cite = unit.get("cite")
-            # cite: may be one spec or a list of them (both schema-legal, as
-            # quotes.verbatim handles) — check every quote-bearing spec.
-            specs = cite if isinstance(cite, list) else [cite]
-            for spec in specs:
-                if is_cite_map(spec):
-                    quote = spec.get("quote")
-                    archive = spec.get("archive")
-                    if isinstance(quote, str) and quote.strip():
-                        yield ScalarClaim(
-                            patch=filename,
-                            entity_ref=entity_ref,
-                            claim_text=claim_text,
-                            cite=CiteRef(
-                                handle="cite",
-                                ref=spec["ref"],
-                                quote=quote,
-                                archive=archive if isinstance(archive, str) else "",
-                            ),
-                        )
+            cites = _entry_cites_of(unit)
+            if any(cite.quote.strip() for cite in cites):
+                yield ScalarClaim(
+                    patch=filename,
+                    entity_ref=entity_ref,
+                    claim_text=claim_text,
+                    cites=cites,
+                    note=_note_of(unit),
+                )

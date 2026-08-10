@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from ai_lint.patch_load import iter_description_units, iter_scalar_claim_cites
+from ai_lint.patch_load import iter_description_units, iter_scalar_claims
 
 
 def test_iter_description_units_reads_text_and_cites():
@@ -29,7 +29,7 @@ def test_iter_description_units_reads_text_and_cites():
     assert unit.cites["1"].quote == "a ball game"
 
 
-def test_iter_scalar_claim_cites_renders_claim_and_quote():
+def test_iter_scalar_claims_renders_claim_and_quote():
     data = {
         "claims": [
             {
@@ -44,11 +44,12 @@ def test_iter_scalar_claim_cites_renders_claim_and_quote():
             }
         ]
     }
-    (claim,) = list(iter_scalar_claim_cites("0059-x.yaml", data))
+    (claim,) = list(iter_scalar_claims("0059-x.yaml", data))
     assert "year = 1995" in claim.claim_text
     assert "game_format = 'pinball'" in claim.claim_text
-    assert claim.cite.ref == "ipdb:6069"
-    assert claim.cite.quote == "Released by Sun Wise in 1995."
+    (cite,) = claim.cites
+    assert cite.ref == "ipdb:6069"
+    assert cite.quote == "Released by Sun Wise in 1995."
 
 
 def test_alias_only_unit_yields_no_scalar_claim():
@@ -57,4 +58,4 @@ def test_alias_only_unit_yields_no_scalar_claim():
             {"manufacturer.sunwise": {"manufacturer_alias": ["Sun Wise"], "note": "x"}}
         ]
     }
-    assert list(iter_scalar_claim_cites("0059-x.yaml", data)) == []
+    assert list(iter_scalar_claims("0059-x.yaml", data)) == []

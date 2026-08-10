@@ -16,13 +16,13 @@ Three document classes, in descending order of density per page:
 | **flyer** (Barrels of Fun, JJP compare sheet)     | gameplay features with counts, display, art credit, dimensions, theme copy   | usually **vector outlines** — no text layer, so render and transcribe |
 | **service manual** (Stern, JJP, American Pinball) | dimensions, weight, electrical, flipper/coil counts, playfield inventory     | text layer readable; tables need a render                            |
 
-**All three are quotable.** Whether a document has a text layer decides how you _read_ it, never whether you may quote it: render the sheet, read the words, transcribe them. Only a **mark** — a checkmark in a column, a diagram arrow — has nothing to transcribe and stays a quote-less cite. `make verify-quotes` skips PDF quotes entirely (`SKIP-PDF`), so they are the author's own check; see ENRICHMENT-PLAN.md → Citing PDF evidence.
+**All three are quotable.** Whether a document has a text layer decides how you _read_ it, never whether you may quote it: render the sheet, read the words, transcribe them. Only a **mark** — a checkmark in a column, a diagram arrow — has nothing to transcribe and stays a quote-less cite. `make verify-quote-verbatim` skips PDF quotes entirely (`SKIP-PDF`), so they are the author's own check; see ENRICHMENT-PLAN.md → Citing PDF evidence.
 
 Manuals are the _weakest_ source for the field that draft most wants: Stern's MTMTE manual names no person at all (`Eismin`, `Kyzivat`, `designer` → 0 matches across 66 pages). People credits live in the flyer and the matrix, not the manual.
 
 ## Verified first-party claims — machine-confirmed from the text layer
 
-These happen to sit in the text layer, so `web_cache.py quote` confirmed them mechanically. That makes them convenient, not privileged: a span transcribed off a rendered sheet is equally citable, and `verify-quotes` checks neither, since it skips PDFs. All three verbatim from Stern's own `Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf`:
+These happen to sit in the text layer, so `web_cache.py quote` confirmed them mechanically. That makes them convenient, not privileged: a span transcribed off a rendered sheet is equally citable, and `verify-quote-verbatim` checks neither, since it skips PDFs. All three verbatim from Stern's own `Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf`:
 
 - `"Individually Autographed by Game Designer Elliot Eismin."` → **design credit**, replacing the draft's Pinside cite
 - `"Production limited to 750 machines."` → **production count**, LE only — a field 0215 does not currently carry at all

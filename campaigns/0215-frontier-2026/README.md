@@ -28,7 +28,7 @@ Citation coverage in the live catalog draws the line, not taste:
 | game_format                                            | 647          | 59%    | deferred             |
 | production_status                                      | 184          | 91%    | deferred             |
 
-`production_status` is deferred despite being known, for a concrete reason: **it is not quotable today.** Pinside's HTML contains `In production`, but trafilatura drops it from the extracted text, and `make verify-quotes` checks the extracted text. Citability is uneven even for `year` — the Musketeers archive page yields a clean `"...is a pinball machine from March 2026, manufactured by HEXA Pinball"`, while Bon Jovi's page extracts 661 characters of marketing copy and no date at all.
+`production_status` is deferred despite being known, for a concrete reason: **it is not quotable today.** Pinside's HTML contains `In production`, but trafilatura drops it from the extracted text, and `make verify-quote-verbatim` checks the extracted text. Citability is uneven even for `year` — the Musketeers archive page yields a clean `"...is a pinball machine from March 2026, manufactured by HEXA Pinball"`, while Bon Jovi's page extracts 661 characters of marketing copy and no date at all.
 
 Also absent: **lineage** (every remake/variant/conversion-kit edge needs a source — the `variant_of` first proposed here was derived from a name match, exactly the guess a citation exists to prevent) and **record descriptions** (the lint requires inline cites and _two_ sources each).
 
