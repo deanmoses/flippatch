@@ -5,16 +5,19 @@ ALL features, gameplay-affecting or not) and the verbatim-wording policy (use
 the manufacturer's wording unless it's extremely clearly a synonym; when in
 doubt, create a child feature). Houdini.md beside this file records the user
 decisions (2026-08-08): mirrored-art-blades child of both art-blades and
-mirror-blades; interior-side-art child of art-blades; steampunk-flippers child
-of flippers; flipper-toppers its own node (NOT under cabinet toppers); plus a
-full vocabulary sweep for the flyer/site/IPDB features 0216 had to drop.
+mirror-blades; interior-side-art child of art-blades; flipper-toppers its own
+node (NOT under cabinet toppers); plus a vocabulary sweep for the
+flyer/site/IPDB features 0216 had to drop. steampunk-flippers is GONE
+(2026-08-10): a Houdini-only decoration is a unique feature, not vocabulary.
 
-Toys rationalization (user decision, 2026-08-08, campaigns/features-corpus/
-CHARTER.md): toys are vocab nodes under a `toys` interior parent — created
-here — so stages, trunks, marquees, spirit-planchettes and milk-cans are
-re-parented under it. stage-curtains is GONE: a curtain is part of the stage
-toy, not a kind of stage (is-a violation); the automated curtain belongs in
-the stages node's eventual description, so its flyer span is dropped.
+Toys policy (user decision, 2026-08-10, flipcommons docs/plans/
+catalog_data_model/unique_features/UniqueFeatures.md): bespoke toys are NOT
+vocab nodes — a model asserts only the generic toy CLASSIFICATION tree built
+here (toys → static/interactive → bash/animatronic/pop-up/ball-holding), and
+the bespoke identities (Houdini's stage, trunk, planchette, milk can,
+steampunk flippers) wait for the future UniqueFeature entity; Houdini.md
+keeps their worklist. `toys` and `interactive-toys` are grouping nodes and
+are never attached to a model directly.
 
 MUST APPLY AFTER 0218: this patch attaches magic-glass, theater-spotlights,
 speakers, anti-reflection-playfield-glass and the blade nodes, all created
@@ -117,19 +120,24 @@ def vocab(
 # The spec page's Additional Features blocks, common to every edition; spans in
 # page order.
 SPEC_PLAYFIELD_QUOTE = (
-    "API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] "
-    'Over 20" Launch into Houdini\'s Steamer Trunk [...] '
-    "Real Wood Laser Engraved Planchette [...] "
-    "Animated & Interactive Theatre Marquee [...] 6 Balls"
+    "Custom Padlock & Gear Bumper Tops w/ Chains [...] 6 Balls"
 )
 SPEC_PLAYFIELD_FEATURES: list[str | dict[str, int]] = [
-    "stages",
     "bumper-tops",
-    "trunks",
-    "spirit-planchettes",
-    "marquees",
     {"balls": 6},
 ]
+
+# Toy classification from the same page. Only the trunk classifies: it
+# receives launched balls (ball-holding). The stage, curtain, marquee,
+# planchette and milk can are display elements or state no behaviour, so
+# they classify nothing — their identities are UniqueFeature material
+# (Houdini.md → future unique features).
+SPEC_TOYS_QUOTE = 'Over 20" Launch into Houdini\'s Steamer Trunk'
+SPEC_TOYS_FEATURES: list[str | dict[str, int]] = ["ball-holding-toys"]
+SPEC_TOYS_NOTE = (
+    "The steamer trunk toy receives launched balls, so it classifies as a "
+    "ball-holding toy."
+)
 
 SPEC_CABINET_QUOTE = "4 Stereo Speakers [...] Custom Powder Coated Cabinet Armour"
 SPEC_CABINET_FEATURES: list[str | dict[str, int]] = [
@@ -158,14 +166,13 @@ IPDB_FEATURES_MOM = [*IPDB_FEATURES, "anti-reflection-playfield-glass"]
 FLYER_QUOTE = (
     "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] "
     "Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] "
-    "All LED General Illumination [...] Custom Milk Can!"
+    "All LED General Illumination"
 )
 FLYER_FEATURES: list[str | dict[str, int]] = [
     "ball-locks",
     "subways",
     "rgb-playfield-inserts",
     "led-general-illumination",
-    "milk-cans",
 ]
 
 
@@ -176,6 +183,12 @@ def model_entries(model: str, *, base: bool) -> list[str]:
             model,
             cite=cite(SPEC, SPEC_PLAYFIELD_QUOTE),
             relationships={"gameplay_feature": SPEC_PLAYFIELD_FEATURES},
+        ),
+        pk.entry(
+            model,
+            note=SPEC_TOYS_NOTE,
+            cite=cite(SPEC, SPEC_TOYS_QUOTE),
+            relationships={"gameplay_feature": SPEC_TOYS_FEATURES},
         ),
         pk.entry(
             model,
@@ -217,15 +230,27 @@ def main() -> None:
         # facts to an existing vocab entity stays a user call.
         vocab("balls", "Balls", aliases=["Ball Complement"]),
         vocab("subways", "Subways", aliases=["Hidden Ball Subway System", "Ball Subway"]),
-        # The toys parent (features-corpus/CHARTER.md): bespoke and recurring
-        # toy types hang under it; is-a holds (a trunk IS a toy). Emitted
-        # before its children — creates resolve top-down within a patch.
+        # The toy classification tree (UniqueFeatures.md → Toys corollary),
+        # emitted parents-first — creates resolve top-down within a patch.
+        # `toys` and `interactive-toys` are grouping nodes, never attached
+        # to a model directly; models attach the leaves.
         vocab("toys", "Toys"),
-        vocab("stages", "Stages", parents=["toys"], aliases=["Theater Stage", "Magic Stage"]),
-        vocab("trunks", "Trunks", parents=["toys"], aliases=["Mechanical Trunk", "Steamer Trunk"]),
-        vocab("marquees", "Marquees", parents=["toys"], aliases=["Theater Marquee", "Theatre Marquee"]),
-        vocab("spirit-planchettes", "Spirit Planchettes", parents=["toys"], aliases=["Planchette"]),
-        vocab("milk-cans", "Milk Cans", parents=["toys"]),
+        vocab("static-toys", "Static Toys", parents=["toys"]),
+        vocab("interactive-toys", "Interactive Toys", parents=["toys"]),
+        vocab(
+            "bash-toys",
+            "Bash Toys",
+            parents=["interactive-toys"],
+            aliases=["Robot Bash Toy"],
+        ),
+        vocab(
+            "animatronic-toys",
+            "Animatronic Toys",
+            parents=["interactive-toys"],
+            aliases=["Animatronic Robot Toy"],
+        ),
+        vocab("pop-up-toys", "Pop-Up Toys", parents=["interactive-toys"]),
+        vocab("ball-holding-toys", "Ball-Holding Toys", parents=["interactive-toys"]),
         vocab("bumper-tops", "Bumper Tops", aliases=["Custom Bumper Tops"]),
         vocab(
             "rgb-playfield-inserts",
@@ -255,7 +280,6 @@ def main() -> None:
             "Flipper Toppers",
             aliases=["Custom Laser Cut Flipper Toppers", "Game-Specific Flipper Toppers"],
         ),
-        vocab("steampunk-flippers", "Steampunk Flippers", parents=["flippers"]),
         vocab("interior-side-art", "Interior Side Art", parents=["art-blades"]),
         vocab(
             "mirrored-art-blades",
@@ -270,15 +294,10 @@ def main() -> None:
             DELUXE,
             cite=cite(
                 SPEC,
-                "Deluxe Features [...] Interior Side Art [...] Magic Glass "
-                "[...] Steampunk Flippers",
+                "Deluxe Features [...] Interior Side Art [...] Magic Glass",
             ),
             relationships={
-                "gameplay_feature": [
-                    "interior-side-art",
-                    "magic-glass",
-                    "steampunk-flippers",
-                ]
+                "gameplay_feature": ["interior-side-art", "magic-glass"]
             },
         ),
         # ── 100th Anniversary: the family set plus its own tier ─────────
@@ -291,11 +310,6 @@ def main() -> None:
                 "knocker, and mirrored art blades as standard equipment.",
             ),
             relationships={"gameplay_feature": ["magic-glass", "mirrored-art-blades"]},
-        ),
-        pk.entry(
-            ANNIV,
-            cite=cite(SPEC, "Steampunk Flippers"),
-            relationships={"gameplay_feature": ["steampunk-flippers"]},
         ),
     ]
 

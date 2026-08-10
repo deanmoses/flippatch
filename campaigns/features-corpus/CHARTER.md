@@ -19,14 +19,25 @@ The folder carries no patch number — a session claims the next free `patches/`
 - **Prefer detail over conflation** (0178's principle): positional/qualified variants are children, not aliases; only phrasings carrying no distinguishing fact become aliases. Exact-segment matching means "mirrored art blades" can never be assigned as bare `art-blades`.
 - **Nameable-across-titles test**: a new *non-toy* vocab node must be generically nameable across titles (subways, magnets — even if only one title asserts it so far). Single-model phrasings enter as aliases of existing features, or as manufacturer-branded children (the InvisiGlass pattern), never as new top-level vocab.
 
-## Toys (user decision, 2026-08-08)
+## Toys (user decision, 2026-08-10 — SUPERSEDES the 2026-08-08 ruling)
 
-Bespoke toys **are vocab nodes**, all children of a `toys` interior node. Chosen over a `model.toys` text field for: encyclopedia entries on iconic toys (Rudy, the Ringmaster), and comparing toy loadouts between editions within a title. No flipcommons schema change needed.
+Bespoke toys are **NOT vocab nodes**. The authority is flipcommons `docs/plans/catalog_data_model/unique_features/UniqueFeatures.md`: bespoke identities (Rudy, the Ringmaster, the GoT dragons) will become **UniqueFeature** records — a future entity, not yet built. Until it exists, a model asserts only the generic **toy classification tree** (built by 0219):
 
-- **Dual representation**: a toy that does something also asserts its generic mechanism features (Houdini's trunk ⇒ `ball-locks` + `magnets`). Faceting rides the mechanism; identity rides the toy node.
-- **Naming**: prefer the toy's proper/community name ("Rudy", "Iron Throne"); otherwise a short noun phrase, title-prefixed only when slugs would collide across titles. The rich description ("motorized animated interactive dragon") goes in the node's **description** (0074-style descriptions patch), which is where the encyclopedia entry lives.
-- **Gating**: children-of-`toys` are **excluded** from the global resolve-or-collide duplicate gate (a bespoke toy legitimately resolves to nothing). In its place, a **family-scoped collision check**: a new toys-child assigned to a model is compared against toys-children already on that model and its lineage-connected family; overlapping normalized names/aliases flag for review. Sound because toy duplication is family-local by nature; a toy genuinely recurring across unrelated families is *recurring* and belongs in the real vocab under the normal gate.
-- **Evidence**: IPDB's toys field — descriptive prose on 294 models, in `extra_data` at `$.ipdb.toys`, not yet a foundation column — plus manufacturer pages. Mined per-family/batch, not in bulk.
+- `toys` — *grouping node, never attached to a model* (the editorial lint's `feature-grouping-node` rule enforces this)
+  - `static-toys` — decorative; never moves, ball never touches it
+  - `interactive-toys` — *grouping node, never attached*
+    - `bash-toys` — the ball strikes it
+    - `animatronic-toys`
+    - `pop-up-toys` — rises from or drops below the playfield
+    - `ball-holding-toys` — locks, holds or delivers balls
+
+Consequences for this campaign:
+
+- **Classify, don't name.** A toy's evidence supports leaf classifications plus its generic mechanisms (Houdini's trunk ⇒ `ball-holding-toys` + `ball-locks`); the identity and its prose wait for UniqueFeature. A toy whose evidence states no behaviour classifies as `static-toys` only when the source itself reads as decorative; otherwise it classifies nothing.
+- **Keep the worklist.** Each family doc records its future unique features (name + best source) so the UniqueFeature backfill campaign has its inputs.
+- **The 2026-08-08 family-scoped collision gate is dissolved** — with no bespoke nodes there is nothing for it to gate.
+- **Branded names for generic features stay vocabulary** (UniqueFeatures.md → Branded names): InvisiGlass, Magic Glass, Expression Lighting System — brand as child of the generic, dedup gate intact. A maker's brand node is created by the family patch that attaches it, from that maker's own documents, never speculatively.
+- **Evidence**: IPDB's toys field — now a foundation column and quotable via `ipdb:` cites — plus manufacturer pages. Mined per-family/batch, not in bulk.
 
 ## Evidence sources, in order
 
@@ -49,13 +60,8 @@ Not used: `make sweep` (relationship archetype only today; the deterministic pat
 
 Patches per batch: vocab creates and assignments can share one file (creates topologically above references) or split into a pair; vocab must precede any later patch that references it (numeric-prefix apply order).
 
-## Prerequisite: rationalize 0219
+## Prerequisite: rationalize 0219 — DONE 2026-08-10
 
-0219 is applied on dev but unshipped, therefore rewritable via snapshot-restore-replay (recipe in [ENRICHMENT-PLAN.md](../0215-frontier-2026/ENRICHMENT-PLAN.md) → Rebuilding the database). Changes owed:
-
-- Create the `toys` parent node; re-parent the bespoke toys under it: `trunks`, `milk-cans`, `spirit-planchettes`, `marquees`, and likely `stages` (Houdini's stage is a toy; judgment call at fix time).
-- Fix the is-a violation: `stage-curtains` is not a kind of `stages` — fold into the stage toy's description or make it parentless under `toys`; judgment call at fix time.
-- Keep the generic mechs as-is: `subways`, `multiball` counts, `rgb-playfield-inserts`, `mirrored-art-blades`, etc.
-- Re-check every remaining 0219 node against the nameable-across-titles test and 0218 style.
+0219 was rewritten under the superseding Toys ruling above (snapshot-restore-replay; unshipped throughout): the bespoke nodes (`stages`, `stage-curtains`, `trunks`, `marquees`, `spirit-planchettes`, `milk-cans`, `steampunk-flippers`) are gone, the toy classification tree is created there, and the Houdini attaches classify into it. The generic mechs (`subways`, `multiball` counts, `rgb-playfield-inserts`, `mirrored-art-blades`, …) stand. 0220 (Transformers) was reworked the same day: leaf toy classifications only, plus the interactive-lighting DAG (location axis × brand family; Stern's Expression Lighting leaves carry both parents). Houdini.md and Transformers.md carry the future-unique-features worklists.
 
 The fix belongs to the Houdini family campaign (`0215-frontier-2026/model-families/houdini/` — regenerate via its `gen.py`, record decisions in its notes), but this charter's rules govern it.

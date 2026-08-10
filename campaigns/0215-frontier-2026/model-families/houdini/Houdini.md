@@ -82,3 +82,20 @@ The first 0219 was judged **too granular and model-specific** against [0218](../
 - **Re-parented under `toys`**: `stages`, `trunks`, `marquees`, `spirit-planchettes`, `milk-cans`. Aliases unchanged.
 - **`stage-curtains` deleted** — a curtain is *part of* the stage toy, not a kind of stage (the parent link is is-a only; this was the recorded violation). The "Automated Main Stage Curtain!" flyer span and its assignments are dropped; the automated curtain belongs in the `stages` node's eventual description (0074-style descriptions patch, still owed).
 - Unchanged: the generic mechs (`subways`, `balls`, `bumper-tops`, `rgb-playfield-inserts`, `led-general-illumination`, `cabinet-armor`, `playfield-lcds`, `mylar-playfield-protection`), the 0218-style children (`steampunk-flippers`, `interior-side-art`, `mirrored-art-blades`, `flipper-toppers`), and every count.
+
+## Reworked (user decision, 2026-08-10) — unique features leave the vocabulary
+
+The authority is flipcommons `docs/plans/catalog_data_model/unique_features/UniqueFeatures.md` (see also `campaigns/features-corpus/CHARTER.md` → Toys, superseded the same day): bespoke toys are not vocab nodes; models attach only the generic toy classification tree, and bespoke identities wait for the future UniqueFeature entity. 0219 was regenerated accordingly (snapshot-restore-replay; still unshipped):
+
+- **Dropped nodes**: `stages`, `stage-curtains`, `trunks`, `marquees`, `spirit-planchettes`, `milk-cans`, `steampunk-flippers`. Their attaches are replaced by classifications: the steamer trunk (receives launched balls) → `ball-holding-toys`; the stage, curtain, marquee, planchette and milk can are display elements or state no behaviour, so they classify nothing (a display element is not a toy).
+- **Created instead**: the toy classification tree — `toys` → `static-toys` / `interactive-toys` → `bash-toys` / `animatronic-toys` / `pop-up-toys` / `ball-holding-toys`. The grouping nodes (`toys`, `interactive-toys`) are never attached to a model (lint-enforced).
+- **Kept**: every generic node (balls, subways, bumper-tops, rgb-playfield-inserts, led-general-illumination, cabinet-armor, playfield-lcds, mylar-playfield-protection, flipper-toppers, interior-side-art, mirrored-art-blades) and the branded `magic-glass` child.
+
+### Future unique features (UniqueFeature backfill worklist)
+
+- **Magic Stage** (with multiple servos; automated main stage curtain) — flyer sheet 2, site "API Theater Stage"
+- **Steamer Trunk** (mechanical trunk; 20"+ launch into it) — site + flyer
+- **Spirit Planchette** (real wood, laser engraved) — site
+- **Theatre Marquee** (animated & interactive) — site
+- **Custom Milk Can** — flyer sheet 2
+- **Steampunk Flippers** (custom laser-cut flipper toppers ride the generic `flipper-toppers`) — site Deluxe Features + IPDB 6470

@@ -2,33 +2,36 @@ attribution: flipcommons-catalog
 description: >
   Transformers family details across the 2011, 2012 and 2026 Stern models
 claims:
-  - gameplay-feature.animatronic-toys:
-      create: true
-      name: Animatronic Toys
-      gameplay_feature_parent: [toys]
-      gameplay_feature_alias: [Animatronic Robot Toy]
-  - gameplay-feature.bash-toys:
-      create: true
-      name: Bash Toys
-      gameplay_feature_parent: [toys]
-      gameplay_feature_alias: [Robot Bash Toy]
   - gameplay-feature.optical-spinners:
       create: true
       name: Optical Spinners
       gameplay_feature_parent: [spinners]
       gameplay_feature_alias: [Optical Spinner]
+  - gameplay-feature.interactive-lighting:
+      create: true
+      name: Interactive Lighting
+  - gameplay-feature.interactive-cabinet-lighting:
+      create: true
+      name: Interactive Cabinet Lighting
+      gameplay_feature_parent: [interactive-lighting]
+  - gameplay-feature.interactive-speaker-lighting:
+      create: true
+      name: Interactive Speaker Lighting
+      gameplay_feature_parent: [interactive-lighting]
+  - gameplay-feature.expression-lighting-system:
+      create: true
+      name: Expression Lighting System
+      gameplay_feature_parent: [interactive-lighting]
   - gameplay-feature.cabinet-expression-lighting:
       create: true
-      name: Cabinet Expression Lighting
-      gameplay_feature_alias:
-        [
-          Expression Lighting System,
-          Interactive Cabinet Expression Lighting System,
-        ]
+      name: Interactive Cabinet Expression Lighting System
+      gameplay_feature_parent:
+        [interactive-cabinet-lighting, expression-lighting-system]
   - gameplay-feature.speaker-expression-lighting:
       create: true
-      name: Speaker Expression Lighting
-      gameplay_feature_alias: [Speaker Expression Lighting System]
+      name: Speaker Expression Lighting System
+      gameplay_feature_parent:
+        [interactive-speaker-lighting, expression-lighting-system]
   - gameplay-feature.mirrored-backglasses:
       create: true
       name: Mirrored Backglasses
@@ -145,11 +148,11 @@ claims:
         quote: "for the first time, includes a head-to-head experience that allows two players to compete simultaneously in real time"
       gameplay_feature: [head-to-head]
   - model.transformers-more-than-meets-the-eye-pro:
-      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Static Megatron robot toy starts missions featuring specific episodes from the TV series with custom recorded speech by Frank Welker"
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Static Megatron robot toy starts missions featuring specific episodes from the TV series with custom recorded speech by Frank Welker Static is Stern's own word for this edition's Megatron, so it classifies as a static toy."
       cite:
         ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
         locator: "PDF document page 1 of 1; the sheet carries no printed folio"
-      gameplay_feature: [toys]
+      gameplay_feature: [static-toys]
   - model.transformers-more-than-meets-the-eye-pro:
       cite:
         ref: "https://wp.sternpinball.com/wp-content/uploads/2026/07/Transformers_MTMTE_Pro_web.pdf"
@@ -243,13 +246,19 @@ claims:
         quote: "for the first time, includes a head-to-head experience that allows two players to compete simultaneously in real time"
       gameplay_feature: [head-to-head]
   - model.transformers-more-than-meets-the-eye-premium:
-      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; Soundwave toy with physical Cassette Tape ball locks and ball ejection; Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion Cannon)"
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; Soundwave toy with physical Cassette Tape ball locks and ball ejection"
       cite:
         - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
           quote: pushes mechanical innovation to new heights with a fully animatronic Megatron robot toy with an articulated fusion cannon that rotates and fires pinballs back at players. Soundwave's cassette deck locks pinballs before launching them into high-intensity action while a custom sculpted Optimus Prime robot bash toy stands ready for battle
         - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
           locator: "PDF document page 1 of 1; the sheet carries no printed folio"
-      gameplay_feature: [animatronic-toys, ball-cannons, toys, ramp-diverters]
+      gameplay_feature: [animatronic-toys, ball-cannons, ball-holding-toys]
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion Cannon) The sculpted Grimlock toy states no motion or ball interaction, so it classifies as a static toy."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [static-toys, ramp-diverters]
   - model.transformers-more-than-meets-the-eye-limited-edition:
       cite:
         - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
@@ -337,18 +346,24 @@ claims:
         quote: "for the first time, includes a head-to-head experience that allows two players to compete simultaneously in real time"
       gameplay_feature: [head-to-head]
   - model.transformers-more-than-meets-the-eye-limited-edition:
-      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; Soundwave toy with physical Cassette Tape ball locks and ball ejection; Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion Cannon)"
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; Soundwave toy with physical Cassette Tape ball locks and ball ejection"
       cite:
         - ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
           quote: pushes mechanical innovation to new heights with a fully animatronic Megatron robot toy with an articulated fusion cannon that rotates and fires pinballs back at players. Soundwave's cassette deck locks pinballs before launching them into high-intensity action while a custom sculpted Optimus Prime robot bash toy stands ready for battle
         - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
           locator: "PDF document page 1 of 1; the sheet carries no printed folio"
-      gameplay_feature: [animatronic-toys, ball-cannons, toys, ramp-diverters]
+      gameplay_feature: [animatronic-toys, ball-cannons, ball-holding-toys]
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion Cannon) The sculpted Grimlock toy states no motion or ball interaction, so it classifies as a static toy."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
+      gameplay_feature: [static-toys, ramp-diverters]
   - model.transformers-more-than-meets-the-eye-limited-edition:
       note: "Stern's modern Limited Edition models are variants of their Premium models, and the feature matrix's PREM and LE columns carry identical game-feature checks - the LE differs only in its limited-edition equipment tier."
       cite:
-        ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
-        quote: "TRANSFORMERS: More Than Meets the Eye by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf"
+        locator: "PDF document page 1 of 1; the sheet carries no printed folio"
       variant_of: transformers-more-than-meets-the-eye-premium
   - model.transformers-more-than-meets-the-eye-limited-edition:
       cite:
@@ -383,6 +398,15 @@ claims:
         quote: "Flippers (2), Pop bumpers (3), Kick-out hole (1), Spinning target (1), Captive ball (1)."
       game_format: pinball
   - model.transformers-pro:
+      note: "The figure list states no motion or ball interaction, so the figures classify as static toys. The Camaro captive-ball car is driven into a target by the ball, so it is a bash toy."
+      cite:
+        - ref: "ipdb:5709"
+          quote: 'Toys: Megatron vehicle, Optimus Prime figure, Ironhide figure. "Bumblebee Camaro" car in captive ball chamber.'
+        - ref: "http://www.sternpinball.com/Games/transformers-pro.aspx"
+          archive: "http://web.archive.org/web/20110928030152id_/http://www.sternpinball.com/Games/transformers-pro.aspx"
+          quote: '"Bumblebee Captive" Camaro Target--captive ball accelerates car into target'
+      gameplay_feature: [static-toys, bash-toys]
+  - model.transformers-pro:
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-pro.aspx"
         archive: "http://web.archive.org/web/20110928030152id_/http://www.sternpinball.com/Games/transformers-pro.aspx"
@@ -401,6 +425,7 @@ claims:
         quote: "Flippers (2), Pop bumpers (3), Slingshots (2). VUK four-ball multiball rapid-fire ejector."
       game_format: pinball
   - model.transformers-limited-edition:
+      note: "Toy classifications: the Megatron Robot Form toy locks and fires balls, so it is a ball-holding toy; the Starscream Strike rotating action figure is a target the ball strikes, so it is a bash toy."
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
         archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
@@ -409,8 +434,10 @@ claims:
         [
           ball-cannons,
           ball-locks,
+          ball-holding-toys,
           mini-playfields,
           rotating-targets,
+          bash-toys,
           orbits,
           electric-gates,
           kick-out-holes,
@@ -421,6 +448,12 @@ claims:
           led-general-illumination,
           ramps,
         ]
+  - model.transformers-limited-edition:
+      note: "The figure list states no motion or ball interaction, so the figures classify as static toys."
+      cite:
+        ref: "ipdb:5753"
+        quote: "Toys: Starscream figure, Optimus Prime figure, Megatron figure, Allspark cube. Camaro car in captive ball chamber."
+      gameplay_feature: [static-toys]
   - model.transformers-limited-edition:
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
@@ -448,7 +481,7 @@ claims:
         quote: 128 X 32 Dot Matrix Display PCB
       display_type: dot-matrix
   - model.transformers-autobot-crimson-limited-edition:
-      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value."
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value. Toy classifications: the Megatron Robot Form toy locks and fires balls, so it is a ball-holding toy; the Starscream Strike rotating action figure is a target the ball strikes, so it is a bash toy."
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
         archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
@@ -457,8 +490,10 @@ claims:
         [
           ball-cannons,
           ball-locks,
+          ball-holding-toys,
           mini-playfields,
           rotating-targets,
+          bash-toys,
           orbits,
           electric-gates,
           kick-out-holes,
@@ -470,6 +505,12 @@ claims:
           ramps,
           side-armor,
         ]
+  - model.transformers-autobot-crimson-limited-edition:
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value. The figure list states no motion or ball interaction, so the figures classify as static toys."
+      cite:
+        ref: "ipdb:5753"
+        quote: "Toys: Starscream figure, Optimus Prime figure, Megatron figure, Allspark cube. Camaro car in captive ball chamber."
+      gameplay_feature: [static-toys]
   - model.transformers-autobot-crimson-limited-edition:
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
@@ -497,7 +538,7 @@ claims:
         quote: 128 X 32 Dot Matrix Display PCB
       display_type: dot-matrix
   - model.transformers-decepticon-violet-limited-edition:
-      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value."
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value. Toy classifications: the Megatron Robot Form toy locks and fires balls, so it is a ball-holding toy; the Starscream Strike rotating action figure is a target the ball strikes, so it is a bash toy."
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-le.aspx"
         archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
@@ -506,8 +547,10 @@ claims:
         [
           ball-cannons,
           ball-locks,
+          ball-holding-toys,
           mini-playfields,
           rotating-targets,
+          bash-toys,
           orbits,
           electric-gates,
           kick-out-holes,
@@ -519,6 +562,12 @@ claims:
           ramps,
           side-armor,
         ]
+  - model.transformers-decepticon-violet-limited-edition:
+      note: "This model is a cosmetic variant of the 2011 Transformers Limited Edition, so the base edition's shared design supports the value. The figure list states no motion or ball interaction, so the figures classify as static toys."
+      cite:
+        ref: "ipdb:5753"
+        quote: "Toys: Starscream figure, Optimus Prime figure, Megatron figure, Allspark cube. Camaro car in captive ball chamber."
+      gameplay_feature: [static-toys]
   - model.transformers-decepticon-violet-limited-edition:
       cite:
         ref: "http://www.sternpinball.com/Games/transformers-le.aspx"

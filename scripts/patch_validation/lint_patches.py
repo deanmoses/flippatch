@@ -155,7 +155,21 @@ RULE_SINCE: dict[str, int] = {
     "prose-catalogs": 189,
     "prose-pinball-record": 189,
     "description-link-density": 189,
+    "feature-grouping-node": 219,
 }
+
+# Gameplay-feature nodes that exist only to group their children (the toy
+# classification tree and the interactive-lighting DAG); a model attaches the
+# leaves, never these. See flipcommons docs/plans/catalog_data_model/
+# unique_features/UniqueFeatures.md. Grown as taxonomies are added.
+GROUPING_FEATURE_SLUGS = frozenset(
+    {
+        "toys",
+        "interactive-toys",
+        "interactive-lighting",
+        "expression-lighting-system",
+    }
+)
 _PREFIX_RE = re.compile(r"^(\d{4})-")
 
 
@@ -501,6 +515,26 @@ def _check_unit(
     has_description = "description" in authored
     description = unit.get("description") if has_description else None
     inline_cite = isinstance(description, str) and INLINE_CITE in description
+
+    # feature-grouping-node: a model never attaches a grouping vocab node
+    if on("feature-grouping-node"):
+        members = unit.get("gameplay_feature")
+        if isinstance(members, list):
+            for member in members:
+                slug = (
+                    member
+                    if isinstance(member, str)
+                    else next(iter(member), None)
+                    if is_mapping(member) and len(member) == 1
+                    else None
+                )
+                if slug in GROUPING_FEATURE_SLUGS:
+                    errors.append(
+                        f"{where}: gameplay_feature member {slug!r} is a "
+                        f"grouping node — it exists to organize the vocabulary; "
+                        f"attach the specific leaf (e.g. bash-toys, "
+                        f"Speaker Expression Lighting System) instead"
+                    )
 
     # note-patch-number + note-typography: note content
     note = unit.get("note")

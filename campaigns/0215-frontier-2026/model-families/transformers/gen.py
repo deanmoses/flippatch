@@ -25,6 +25,13 @@ note recording the checked rows) — see ENRICHMENT-PLAN.md → Citing PDF
 evidence. Prose that names its own subject (the PR's LE equipment sentence,
 the "GAME FEATURES LE ONLY" block) is quoted normally.
 
+TOYS ARE CLASSIFIED, NOT NAMED (user decision 2026-08-10, flipcommons
+docs/plans/catalog_data_model/unique_features/UniqueFeatures.md): models
+attach only the generic toy classification leaves 0219 creates (static /
+bash / animatronic / ball-holding); the bespoke identities (animatronic
+Megatron, Soundwave's cassette deck, the Grimlock and 2011 figures) wait for
+the future UniqueFeature entity — Transformers.md keeps their worklist.
+
 THE VARIANT RULE (user decision 2026-08-07): a variant carries every credit
 and the shared design's hardware of its base. Applied here to Autobot Crimson
 and Decepticon Violet (variants of the 2011 LE): they carry the LE's playfield
@@ -244,14 +251,24 @@ SLINGSHOT_NOTE = (
 
 ROWS_PREMLE_TOYS = (
     "Animatronic Megatron robot toy; Megatron Pinball Firing Fusion Cannon; "
-    "Soundwave toy with physical Cassette Tape ball locks and ball ejection; "
-    "Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion "
-    "Cannon)"
+    "Soundwave toy with physical Cassette Tape ball locks and ball ejection"
 )
+# The PR prose supports all three: the animatronic Megatron, the cannon that
+# fires pinballs, and Soundwave's ball-locking cassette deck (ball-holding).
 FEATURES_PREMLE_TOYS: list[str | dict[str, int]] = [
     "animatronic-toys",
     "ball-cannons",
-    "toys",
+    "ball-holding-toys",
+]
+# Grimlock and the ramp diverter are matrix-mark-only: the sculpted Grimlock
+# toy states no motion or ball interaction (static), and the diverter row has
+# no PR prose.
+ROWS_PREMLE_MARKS = (
+    "Custom sculpted Grimlock Dinobot toy; Right Ramp Diverter (loads Fusion "
+    "Cannon)"
+)
+FEATURES_PREMLE_MARKS: list[str | dict[str, int]] = [
+    "static-toys",
     "ramp-diverters",
 ]
 
@@ -361,17 +378,27 @@ def mtmte_shared(model: str, column: str) -> list[str]:
     ]
 
 
-def mtmte_prem_le_toys(model: str, column: str) -> str:
-    """The Premium/LE toy tier: PR prose plus the matrix column marks."""
-    return pk.entry(
-        model,
-        note=mark_note(column, ROWS_PREMLE_TOYS),
-        cite=[
-            cite(PR, PR_TOYS),
-            MATRIX_MARK_CITE,
-        ],
-        relationships={"gameplay_feature": FEATURES_PREMLE_TOYS},
-    )
+def mtmte_prem_le_toys(model: str, column: str) -> list[str]:
+    """The Premium/LE toy tier: PR-quoted toys, then the mark-only rows."""
+    return [
+        pk.entry(
+            model,
+            note=mark_note(column, ROWS_PREMLE_TOYS),
+            cite=[
+                cite(PR, PR_TOYS),
+                MATRIX_MARK_CITE,
+            ],
+            relationships={"gameplay_feature": FEATURES_PREMLE_TOYS},
+        ),
+        pk.entry(
+            model,
+            note=mark_note(column, ROWS_PREMLE_MARKS)
+            + " The sculpted Grimlock toy states no motion or ball "
+            "interaction, so it classifies as a static toy.",
+            cite=MATRIX_MARK_CITE,
+            relationships={"gameplay_feature": FEATURES_PREMLE_MARKS},
+        ),
+    ]
 
 
 # The 2011 LE page's explicitly-headed feature blocks (HTML, machine-gated).
@@ -390,8 +417,10 @@ LE11_BLOCK_QUOTE = (
 LE11_BLOCK_FEATURES: list[str | dict[str, int]] = [
     "ball-cannons",
     "ball-locks",
+    "ball-holding-toys",
     "mini-playfields",
     "rotating-targets",
+    "bash-toys",
     "orbits",
     "electric-gates",
     "kick-out-holes",
@@ -402,6 +431,11 @@ LE11_BLOCK_FEATURES: list[str | dict[str, int]] = [
     "led-general-illumination",
     "ramps",
 ]
+LE11_TOY_CLASS_NOTE = (
+    "Toy classifications: the Megatron Robot Form toy locks and fires balls, "
+    "so it is a ball-holding toy; the Starscream Strike rotating action "
+    "figure is a target the ball strikes, so it is a bash toy."
+)
 # The Crimson/Violet variant carry adds the base LE's side-armor span (their
 # own blocks say "Full cabinet trim", which names the color, not the armor).
 LE11_CARRY_QUOTE = LE11_BLOCK_QUOTE + (
@@ -417,39 +451,77 @@ IPDB_LE11_HARDWARE = (
     "Flippers (2), Pop bumpers (3), Slingshots (2). VUK four-ball multiball "
     "rapid-fire ejector."
 )
+# IPDB's Toys lines, quotable since the 2026-08-08 ipdb_row_text expansion.
+# The figure lists state no motion or ball interaction, so they classify as
+# static toys; the Camaro captive-ball car is struck by the ball (bash),
+# per the archived pages' own wording. The Crimson/Violet rows carry no
+# Toys line; the base LE's carries per the variant rule. The Pin has none.
+IPDB_PRO11_TOYS = (
+    "Toys: Megatron vehicle, Optimus Prime figure, Ironhide figure. "
+    '"Bumblebee Camaro" car in captive ball chamber.'
+)
+IPDB_LE11_TOYS = (
+    "Toys: Starscream figure, Optimus Prime figure, Megatron figure, "
+    "Allspark cube. Camaro car in captive ball chamber."
+)
+PAGE11_PRO_CAMARO = (
+    '"Bumblebee Captive" Camaro Target--captive ball accelerates car into '
+    "target"
+)
+STATIC_TOYS_NOTE = (
+    "The figure list states no motion or ball interaction, so the figures "
+    "classify as static toys."
+)
 
 
 def main() -> None:
     entries = [
         # ── Vocabulary (dependency order: parents before children) ──────
-        # NB: `toys` is NOT created here — patch 0219 creates it, and 0220
-        # applies after it, so the children below resolve against that node.
-        # A "Robot Toy" alias on it would be a fact added to an existing
-        # entity — left as a user call (the ball-locks precedent).
-        vocab(
-            "animatronic-toys",
-            "Animatronic Toys",
-            parents=["toys"],
-            aliases=["Animatronic Robot Toy"],
-        ),
-        vocab("bash-toys", "Bash Toys", parents=["toys"], aliases=["Robot Bash Toy"]),
+        # NB: the toy classification tree (toys → static/interactive →
+        # bash/animatronic/pop-up/ball-holding) is NOT created here — patch
+        # 0219 builds it, and 0220 applies after it, so the leaf attaches
+        # below resolve against those nodes.
         vocab(
             "optical-spinners",
             "Optical Spinners",
             parents=["spinners"],
             aliases=["Optical Spinner"],
         ),
-        # Stern's branded cabinet/speaker lighting systems — presentation
-        # nodes on the 0218 footing, distinct from LED general illumination.
+        # The interactive-lighting DAG (user-approved taxonomy, 2026-08-10):
+        # a location axis (cabinet / speaker) crossed with the maker's brand
+        # family, product leaves carrying both parents. Interactive means
+        # synchronized and responsive to game events — distinct from LED
+        # general illumination and from the illuminated-blades family.
+        # `interactive-lighting` and `expression-lighting-system` are
+        # grouping nodes, never attached to a model directly. Other makers'
+        # brand nodes (JJP, Pedretti) are created by their own family
+        # patches, from their own primary documents.
+        vocab("interactive-lighting", "Interactive Lighting"),
+        vocab(
+            "interactive-cabinet-lighting",
+            "Interactive Cabinet Lighting",
+            parents=["interactive-lighting"],
+        ),
+        vocab(
+            "interactive-speaker-lighting",
+            "Interactive Speaker Lighting",
+            parents=["interactive-lighting"],
+        ),
+        # Stern's brand family for its interactive lighting products.
+        vocab(
+            "expression-lighting-system",
+            "Expression Lighting System",
+            parents=["interactive-lighting"],
+        ),
         vocab(
             "cabinet-expression-lighting",
-            "Cabinet Expression Lighting",
-            aliases=["Expression Lighting System", "Interactive Cabinet Expression Lighting System"],
+            "Interactive Cabinet Expression Lighting System",
+            parents=["interactive-cabinet-lighting", "expression-lighting-system"],
         ),
         vocab(
             "speaker-expression-lighting",
-            "Speaker Expression Lighting",
-            aliases=["Speaker Expression Lighting System"],
+            "Speaker Expression Lighting System",
+            parents=["interactive-speaker-lighting", "expression-lighting-system"],
         ),
         vocab("mirrored-backglasses", "Mirrored Backglasses", aliases=["Mirrored Backglass"]),
         vocab(
@@ -500,9 +572,11 @@ def main() -> None:
                 "Static Megatron robot toy starts missions featuring "
                 "specific episodes from the TV series with custom recorded "
                 "speech by Frank Welker",
-            ),
+            )
+            + " Static is Stern's own word for this edition's Megatron, so "
+            "it classifies as a static toy.",
             cite=MATRIX_MARK_CITE,
-            relationships={"gameplay_feature": ["toys"]},
+            relationships={"gameplay_feature": ["static-toys"]},
         ),
         pk.entry(
             M26_PRO,
@@ -515,10 +589,10 @@ def main() -> None:
         ),
         # ── 2026: Transformers MTMTE Premium ────────────────────────────
         *mtmte_shared(M26_PREM, "PREM"),
-        mtmte_prem_le_toys(M26_PREM, "PREM"),
+        *mtmte_prem_le_toys(M26_PREM, "PREM"),
         # ── 2026: Transformers MTMTE Limited Edition ────────────────────
         *mtmte_shared(M26_LE, "LE"),
-        mtmte_prem_le_toys(M26_LE, "LE"),
+        *mtmte_prem_le_toys(M26_LE, "LE"),
         pk.entry(
             M26_LE,
             note=(
@@ -527,7 +601,7 @@ def main() -> None:
                 "carry identical game-feature checks — the LE differs only in "
                 "its limited-edition equipment tier."
             ),
-            cite=cite(PR, PR_AVAILABLE),
+            cite=MATRIX_MARK_CITE,
             fields={"variant_of": "transformers-more-than-meets-the-eye-premium"},
         ),
         pk.entry(
@@ -569,6 +643,17 @@ def main() -> None:
         ),
         pk.entry(
             M11_PRO,
+            note=STATIC_TOYS_NOTE
+            + " The Camaro captive-ball car is driven into a target by the "
+            "ball, so it is a bash toy.",
+            cite=[
+                cite(IPDB_PRO11, IPDB_PRO11_TOYS),
+                page11(PAGE11_PRO, PAGE11_PRO_AR, PAGE11_PRO_CAMARO),
+            ],
+            relationships={"gameplay_feature": ["static-toys", "bash-toys"]},
+        ),
+        pk.entry(
+            M11_PRO,
             cite=page11(
                 PAGE11_PRO,
                 PAGE11_PRO_AR,
@@ -603,8 +688,15 @@ def main() -> None:
         ),
         pk.entry(
             M11_LE,
+            note=LE11_TOY_CLASS_NOTE,
             cite=page11(PAGE11_LE, PAGE11_LE_AR, LE11_BLOCK_QUOTE),
             relationships={"gameplay_feature": LE11_BLOCK_FEATURES},
+        ),
+        pk.entry(
+            M11_LE,
+            note=STATIC_TOYS_NOTE,
+            cite=cite(IPDB_LE11, IPDB_LE11_TOYS),
+            relationships={"gameplay_feature": ["static-toys"]},
         ),
         pk.entry(
             M11_LE,
@@ -671,9 +763,15 @@ def main() -> None:
                 ),
                 pk.entry(
                     model,
-                    note=VARIANT_NOTE_2011,
+                    note=VARIANT_NOTE_2011 + " " + LE11_TOY_CLASS_NOTE,
                     cite=page11(PAGE11_LE, PAGE11_LE_AR, LE11_CARRY_QUOTE),
                     relationships={"gameplay_feature": LE11_CARRY_FEATURES},
+                ),
+                pk.entry(
+                    model,
+                    note=VARIANT_NOTE_2011 + " " + STATIC_TOYS_NOTE,
+                    cite=cite(IPDB_LE11, IPDB_LE11_TOYS),
+                    relationships={"gameplay_feature": ["static-toys"]},
                 ),
                 pk.entry(
                     model,

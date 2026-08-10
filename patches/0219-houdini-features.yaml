@@ -13,30 +13,32 @@ claims:
   - gameplay-feature.toys:
       create: true
       name: Toys
-  - gameplay-feature.stages:
+  - gameplay-feature.static-toys:
       create: true
-      name: Stages
+      name: Static Toys
       gameplay_feature_parent: [toys]
-      gameplay_feature_alias: [Theater Stage, Magic Stage]
-  - gameplay-feature.trunks:
+  - gameplay-feature.interactive-toys:
       create: true
-      name: Trunks
+      name: Interactive Toys
       gameplay_feature_parent: [toys]
-      gameplay_feature_alias: [Mechanical Trunk, Steamer Trunk]
-  - gameplay-feature.marquees:
+  - gameplay-feature.bash-toys:
       create: true
-      name: Marquees
-      gameplay_feature_parent: [toys]
-      gameplay_feature_alias: [Theater Marquee, Theatre Marquee]
-  - gameplay-feature.spirit-planchettes:
+      name: Bash Toys
+      gameplay_feature_parent: [interactive-toys]
+      gameplay_feature_alias: [Robot Bash Toy]
+  - gameplay-feature.animatronic-toys:
       create: true
-      name: Spirit Planchettes
-      gameplay_feature_parent: [toys]
-      gameplay_feature_alias: [Planchette]
-  - gameplay-feature.milk-cans:
+      name: Animatronic Toys
+      gameplay_feature_parent: [interactive-toys]
+      gameplay_feature_alias: [Animatronic Robot Toy]
+  - gameplay-feature.pop-up-toys:
       create: true
-      name: Milk Cans
-      gameplay_feature_parent: [toys]
+      name: Pop-Up Toys
+      gameplay_feature_parent: [interactive-toys]
+  - gameplay-feature.ball-holding-toys:
+      create: true
+      name: Ball-Holding Toys
+      gameplay_feature_parent: [interactive-toys]
   - gameplay-feature.bumper-tops:
       create: true
       name: Bumper Tops
@@ -66,10 +68,6 @@ claims:
       name: Flipper Toppers
       gameplay_feature_alias:
         [Custom Laser Cut Flipper Toppers, Game-Specific Flipper Toppers]
-  - gameplay-feature.steampunk-flippers:
-      create: true
-      name: Steampunk Flippers
-      gameplay_feature_parent: [flippers]
   - gameplay-feature.interior-side-art:
       create: true
       name: Interior Side Art
@@ -81,16 +79,14 @@ claims:
   - model.houdini-master-of-mystery:
       cite:
         ref: "https://americanpinball.com/houdini/"
-        quote: 'API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] Over 20" Launch into Houdini''s Steamer Trunk [...] Real Wood Laser Engraved Planchette [...] Animated & Interactive Theatre Marquee [...] 6 Balls'
-      gameplay_feature:
-        [
-          stages,
-          bumper-tops,
-          trunks,
-          spirit-planchettes,
-          marquees,
-          { balls: 6 },
-        ]
+        quote: "Custom Padlock & Gear Bumper Tops w/ Chains [...] 6 Balls"
+      gameplay_feature: [bumper-tops, { balls: 6 }]
+  - model.houdini-master-of-mystery:
+      note: "The steamer trunk toy receives launched balls, so it classifies as a ball-holding toy."
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 'Over 20" Launch into Houdini''s Steamer Trunk'
+      gameplay_feature: [ball-holding-toys]
   - model.houdini-master-of-mystery:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -113,15 +109,9 @@ claims:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
-        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Custom Milk Can!"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination"
       gameplay_feature:
-        [
-          ball-locks,
-          subways,
-          rgb-playfield-inserts,
-          led-general-illumination,
-          milk-cans,
-        ]
+        [ball-locks, subways, rgb-playfield-inserts, led-general-illumination]
   - model.houdini-master-of-mystery:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -130,16 +120,14 @@ claims:
   - model.houdini-master-of-mystery-deluxe:
       cite:
         ref: "https://americanpinball.com/houdini/"
-        quote: 'API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] Over 20" Launch into Houdini''s Steamer Trunk [...] Real Wood Laser Engraved Planchette [...] Animated & Interactive Theatre Marquee [...] 6 Balls'
-      gameplay_feature:
-        [
-          stages,
-          bumper-tops,
-          trunks,
-          spirit-planchettes,
-          marquees,
-          { balls: 6 },
-        ]
+        quote: "Custom Padlock & Gear Bumper Tops w/ Chains [...] 6 Balls"
+      gameplay_feature: [bumper-tops, { balls: 6 }]
+  - model.houdini-master-of-mystery-deluxe:
+      note: "The steamer trunk toy receives launched balls, so it classifies as a ball-holding toy."
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 'Over 20" Launch into Houdini''s Steamer Trunk'
+      gameplay_feature: [ball-holding-toys]
   - model.houdini-master-of-mystery-deluxe:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -163,15 +151,9 @@ claims:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
-        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Custom Milk Can!"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination"
       gameplay_feature:
-        [
-          ball-locks,
-          subways,
-          rgb-playfield-inserts,
-          led-general-illumination,
-          milk-cans,
-        ]
+        [ball-locks, subways, rgb-playfield-inserts, led-general-illumination]
   - model.houdini-master-of-mystery-deluxe:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -180,21 +162,19 @@ claims:
   - model.houdini-master-of-mystery-deluxe:
       cite:
         ref: "https://americanpinball.com/houdini/"
-        quote: "Deluxe Features [...] Interior Side Art [...] Magic Glass [...] Steampunk Flippers"
-      gameplay_feature: [interior-side-art, magic-glass, steampunk-flippers]
+        quote: "Deluxe Features [...] Interior Side Art [...] Magic Glass"
+      gameplay_feature: [interior-side-art, magic-glass]
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini/"
-        quote: 'API Theater Stage [...] Custom Padlock & Gear Bumper Tops w/ Chains [...] Over 20" Launch into Houdini''s Steamer Trunk [...] Real Wood Laser Engraved Planchette [...] Animated & Interactive Theatre Marquee [...] 6 Balls'
-      gameplay_feature:
-        [
-          stages,
-          bumper-tops,
-          trunks,
-          spirit-planchettes,
-          marquees,
-          { balls: 6 },
-        ]
+        quote: "Custom Padlock & Gear Bumper Tops w/ Chains [...] 6 Balls"
+      gameplay_feature: [bumper-tops, { balls: 6 }]
+  - model.houdini-100th-anniversary:
+      note: "The steamer trunk toy receives launched balls, so it classifies as a ball-holding toy."
+      cite:
+        ref: "https://americanpinball.com/houdini/"
+        quote: 'Over 20" Launch into Houdini''s Steamer Trunk'
+      gameplay_feature: [ball-holding-toys]
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -218,15 +198,9 @@ claims:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
-        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination [...] Custom Milk Can!"
+        quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination"
       gameplay_feature:
-        [
-          ball-locks,
-          subways,
-          rgb-playfield-inserts,
-          led-general-illumination,
-          milk-cans,
-        ]
+        [ball-locks, subways, rgb-playfield-inserts, led-general-illumination]
   - model.houdini-100th-anniversary:
       cite:
         ref: "https://americanpinball.com/houdini/"
@@ -237,8 +211,3 @@ claims:
         ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
         quote: "Each game includes a custom topper, Magic Glass, shaker motor, knocker, and mirrored art blades as standard equipment."
       gameplay_feature: [magic-glass, mirrored-art-blades]
-  - model.houdini-100th-anniversary:
-      cite:
-        ref: "https://americanpinball.com/houdini/"
-        quote: Steampunk Flippers
-      gameplay_feature: [steampunk-flippers]

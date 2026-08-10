@@ -960,3 +960,85 @@ def test_ignore_grandfather_runs_rules_on_old_patches():
     assert not lp.lint_patch("0002-x.yaml", data)
     e = lp.lint_patch("0002-x.yaml", data, ignore_grandfather=True)
     assert has(e, "'seed'")
+
+
+# --- grouping gameplay-feature nodes are never attached to models -----------
+
+
+def test_grouping_feature_attach_flagged():
+    e = errs(
+        [
+            {
+                "model.some-machine": {
+                    "note": "why",
+                    "gameplay_feature": ["toys", "flippers"],
+                }
+            }
+        ],
+        filename="0220-x.yaml",
+    )
+    assert has(e, "grouping node")
+    assert has(e, "'toys'")
+
+
+def test_grouping_feature_counted_member_flagged():
+    e = errs(
+        [
+            {
+                "model.some-machine": {
+                    "note": "why",
+                    "gameplay_feature": [{"interactive-toys": 2}],
+                }
+            }
+        ],
+        filename="0220-x.yaml",
+    )
+    assert has(e, "grouping node")
+
+
+def test_grouping_feature_leaf_attach_clean():
+    e = errs(
+        [
+            {
+                "model.some-machine": {
+                    "note": "why",
+                    "gameplay_feature": ["bash-toys", {"flippers": 3}],
+                }
+            }
+        ],
+        filename="0220-x.yaml",
+    )
+    assert not has(e, "grouping node")
+
+
+def test_grouping_feature_parent_reference_clean():
+    # Parenting a new node under a grouping node is the tree's whole point;
+    # only model attaches are barred.
+    e = errs(
+        [
+            {
+                "gameplay-feature.pop-up-toys": {
+                    "create": True,
+                    "name": "Pop-Up Toys",
+                    "gameplay_feature_parent": ["interactive-toys"],
+                }
+            }
+        ],
+        filename="0220-x.yaml",
+    )
+    assert not has(e, "grouping node")
+
+
+def test_grouping_feature_grandfathered_before_0219():
+    e = errs(
+        [
+            {
+                "model.some-machine": {
+                    "note": "why",
+                    "gameplay_feature": ["toys"],
+                }
+            }
+        ],
+        filename="0100-x.yaml",
+    )
+    assert not has(e, "grouping node")

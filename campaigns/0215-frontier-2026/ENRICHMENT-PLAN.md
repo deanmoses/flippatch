@@ -60,7 +60,16 @@ Find as many primary documents for a model family as exist -- see `~/dev/flipcom
 
 **Check the feature vocabulary before creating terms** — 0218 (presentation features) and 0219 (Houdini's mechs/toys: subways, stages, trunks, marquees, balls, flipper-toppers, cabinet-armor, mylar…) added many nodes, and the seed has surprises (`ball-locks` already existed; Houdini's first apply failed on the duplicate create). Query `gameplay_feature_vocab` for your exact slugs — and don't `tail` the output.
 
-**The variant rule (user decision, 2026-08-07):** a variant carries every credit of its base, and the shared design's hardware is a fact about every edition. Cite the base's evidence (e.g. the base IPDB row) with a `note:` saying why the value carries. **Feature wording (user decision, 2026-08-08):** represent ALL features in `gameplay_feature`, presentation or not (0218's charter); use the manufacturer's wording verbatim unless it's extremely clearly a synonym; when in doubt, create a child feature. Watch false synonyms — flipper toppers are not cabinet `toppers`.
+**The variant rule (user decision, 2026-08-07):** a variant carries every credit of its base, and the shared design's hardware is a fact about every edition. Cite the base's evidence (e.g. the base IPDB row) with a `note:` saying why the value carries.
+
+**Features: generic only (user decision, 2026-08-10 — supersedes the 2026-08-08 wording rule).** The authority is flipcommons `docs/plans/catalog_data_model/unique_features/UniqueFeatures.md`; the working rules are in [campaigns/features-corpus/CHARTER.md](../features-corpus/CHARTER.md) → Toys:
+
+- **A new vocab node must be generic** — an unrelated title from another manufacturer could plausibly attach it. Presentation features included (0218's charter stands). Manufacturer wording verbatim unless extremely clearly a synonym; branded names for generic features are children of the generic (InvisiGlass pattern), created only by the family patch that attaches them.
+- **Unique features (one-off toys, bespoke mechs, model-specific decorations) are NOT vocabulary.** Classify them into the generic taxonomy — the toys tree (0219) and any applicable mechanisms — and record the identity in the family doc's **future unique features** list for the coming UniqueFeature entity. The verbatim wording is already preserved in the cite `quote:`.
+- **Never attach a grouping node** (`toys`, `interactive-toys`, `interactive-lighting`, `expression-lighting-system`) to a model — attach leaves. The editorial lint's `feature-grouping-node` rule enforces this; new grouping nodes join its list in `lint_patches.py`.
+- The interactive-lighting DAG (0220) is the pattern for maker-branded systems: a location axis crossed with the maker's brand family, product leaves carrying both parents.
+
+Watch false synonyms — flipper toppers are not cabinet `toppers`.
 
 We have an AI-based tool for extracting all the information from a model: [ModelPageExtractionAuthoring.md](../../docs/page_extractor/ModelPageExtractionAuthoring.md). It's never worked very well, and Houdini didn't need it (three models, hand-vetted). A bigger family (Transformers' ~55×3 matrix) might; investigate there.
 
