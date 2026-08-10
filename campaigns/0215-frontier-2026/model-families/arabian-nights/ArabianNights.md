@@ -1,4 +1,4 @@
-# Tales of the Arabian Nights — 0230
+# Tales of the Arabian Nights
 
 ## Models
 

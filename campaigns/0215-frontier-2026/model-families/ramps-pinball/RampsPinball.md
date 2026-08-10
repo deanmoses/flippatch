@@ -1,4 +1,4 @@
-# Ramp's Pinball — 0238
+# Ramp's Pinball
 
 ## Models
 

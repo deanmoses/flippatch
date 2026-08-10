@@ -1,82 +1,61 @@
-# 0215 — recent 2026 model sweep
+# Acquiring the 2026 models and enriching their families
 
-Swept 2026-08-03. The catalog held **6 models dated 2026**; this campaign found the 21 that were missing and emits the foundation rows for them.
+Patch `0215-new-2026-models.yaml` created names and themes for some new-for-2026 models, but nothing else: no credits, gameplay features, `production_status`, `game_format`, cabinet, display or system. We now want to fully flesh them out, as described in `~/dev/flipcommons/docs/DataPatchAuthoring.md`#`Fill every field you can — grounded in DomainModel.md`.
 
-## The signal
+## Model families
 
-Unlike every prior campaign here, the signal is **not in the catalog**. There is no query over `models` that finds a machine the catalog has never heard of. The candidate set is external, so it arrives as a checked-in CSV (`candidates.csv`) and the SQL does the one thing that does belong in SQL: the reconciliation back to the live catalog.
+Each family is independent work, done by a separate AI session in its own folder under `model-families/`.
 
-Three sources, all cached in the pinexplore web cache, all already seeded citation roots:
+- **✅ 0216, 0219 · [houdini](model-families/houdini)** (American Pinball) — 100th Anniversary **+ 2 older**: Master of Mystery, Master of Mystery (Deluxe)
+- **✅ 0220 · [transformers](model-families/transformers)** (Stern) — MTMTE Pro / Premium / LE **+ 5 older**: Transformers Pro & LE (2011), Autobot Crimson LE, Decepticon Violet LE, The Pin (2012)
+- **✅ 0221 · [sonic-hedgehog](model-families/sonic-hedgehog)** (Jersey Jack) — Collector's / Special / Arcade Edition
+- **open · [galactic-tank-force](model-families/galactic-tank-force)** (American Pinball) — Victory Edition **+ 4 older** (2023): Classic, Deluxe, Limited Edition, Signature
+- **open · [cirqus-voltaire](model-families/cirqus-voltaire)** (American Pinball) — Remake **+ 1 older**: Cirqus Voltaire (Bally, 1997)
+- **open · [bon-jovi](model-families/bon-jovi)** (Barrels of Fun) — Bon Jovi
+- **open · [fish-tales](model-families/fish-tales)** (Cardona) — Ultimate Fishing Challenge (Kit) **+ 1 older**: Fish Tales (Williams, 1992). Needs the Cardona citation root in its own patch — see [RULEBOOK.md](RULEBOOK.md#citation-roots).
+- **open · [arabian-nights](model-families/arabian-nights)** (Pedretti) — Tales of the Arabian Nights 30th Anniversary + Legacy Edition **+ 1 older**: TOTAN (Williams, 1996)
+- **open · [musketeers](model-families/musketeers)** (HEXA) — The 3 Musketeers base + Elegance Edition
+- **open · [p3-modules](model-families/p3-modules)** (Multimorphic) — Dungeon Crawler Carl, Ender's Game
+- **open · [yukon-yeti](model-families/yukon-yeti)** (Turner) — Yukon Yeti
+- **open · [ramps-pinball](model-families/ramps-pinball)** (Ramp's) — Monster League Hockey **+ 2 siblings**: Road Trip, Little Shop of Horrors
+- **open · [resident-evil](model-families/resident-evil)** (World Pinball) — Resident Evil. Mostly **corporate-entity** work: the maker's site is password-gated, and everything about the machine itself traces to one unconfirmed post. Read `ResidentEvil.md` before spending time on it.
+- **open · [obsidian-high](model-families/obsidian-high)** (UP Pinball) — The Fiery End of Obsidian High
+- **open · [pokemon](model-families/pokemon)** (Stern) — Pokémon Pro / Premium / Limited Edition. **Not created by 0215** — all three editions were already in the catalog, and are just as bare as the rest. Runs SPIKE 3: the `stern-spike-3` System already exists (created in 0220) — reference it, never re-create. Its cached manuals are `Pokemon_Pro_web.pdf` + `Pokemon_LE_Pre_web.pdf`, the second covering LE **and** Premium in one document.
 
-| source                | cached URL                                                                         | what it gave                                         |
-| --------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| Pinside, newest-first | `https://pinside.com/pinball/machine?sort_by=machine_manufactured&sort_order=DESC` | names, makers, years, production status              |
-| Kineticist game index | `https://www.kineticist.com/games/pinball`                                         | independent corroboration + years                    |
-| Kineticist upcoming   | `https://www.kineticist.com/news/upcoming-pinball-machines`                        | confirmation dates; separates confirmed from rumored |
-| hexa-pinball.com      | `https://www.hexa-pinball.com/`                                                    | settled the Musketeers licensing question            |
+## Campaign rules
 
-`corroboration` records evidence strength — `both` or `kineticist` — as a column, not a filter. Kits, one-offs, homebrews and prototypes are catalog machines like any other, so every row is in scope.
+**Patch numbering**: a session claims the next free `patches/` number when it starts. The file pattern is `patches/NNNN-<family-slug>.yaml`.
 
-## What the patch carries, and what it deliberately does not
+**Complete the family's older siblings.** Each per-family campaign fleshes out missing data for the whole family, not just its 2026 member(s) — a family's primary documents mostly describe the older machines too, so it is context-efficient to do at once.
 
-Citation coverage in the live catalog draws the line, not taste:
+**Don't overwrite data on existing models.** Only assert missing facts. If you think an existing fact is wrong, get user approval before correcting it.
 
-| field                                                  | claims       | cited  |                      |
-| ------------------------------------------------------ | ------------ | ------ | -------------------- |
-| name / slug / theme / year / month / title / franchise | 20,552 … 243 | 0.2–2% | **in 0215, uncited** |
-| tag                                                    | 608          | 27%    | deferred             |
-| game_format                                            | 647          | 59%    | deferred             |
-| production_status                                      | 184          | 91%    | deferred             |
+**We ship all patches at the end.** The done families are snapshot-validated and committed, but not shipped to prod. They are thus still mutable, so that if improving our technique on a later family shows an earlier one needs changing, we can.
 
-`production_status` is deferred despite being known, for a concrete reason: **it is not quotable today.** Pinside's HTML contains `In production`, but trafilatura drops it from the extracted text, and `make verify-quote-verbatim` checks the extracted text. Citability is uneven even for `year` — the Musketeers archive page yields a clean `"...is a pinball machine from March 2026, manufactured by HEXA Pinball"`, while Bon Jovi's page extracts 661 characters of marketing copy and no date at all.
+## The loop
 
-Also absent: **lineage** (every remake/variant/conversion-kit edge needs a source — the `variant_of` first proposed here was derived from a name match, exactly the guess a citation exists to prevent) and **record descriptions** (the lint requires inline cites and _two_ sources each).
+[RULEBOOK.md](RULEBOOK.md) governs this loop — sources, PDF citing, citation roots, feature vocabulary, the gates.
 
-## The gate
+1. **Baseline survey — every field the patch might touch.** Table the catalog's current state per model: fields, credits, features, themes, lineage, `production_quantity`, `tag`, month. Houdini's first pass skipped `production_quantity`/`tag` and re-asserted what 0215 already set. Only assert what is missing, and duplicate-scan against `model_claims` from other actors, not `patch_claims` — the apply silently swallows an exact duplicate along with its citation.
+2. **Research and fetch the primary documents.** Find as many as exist and cache all of them, even ones you aren't sure are citable — [RULEBOOK.md](RULEBOOK.md#finding-and-fetching-documents) has the discovery moves and the per-maker floor.
+3. **Evidence inventory into the family's own `<Family>.md`** — what's cached, what each document actually carries, traps — before extracting claims. Afterwards the same file records what was **sought and not found** and what was **deliberately not asserted**, each with its reason, so every omission reads as a decision rather than a miss. Transformers' "Sought and not found" and Sonic's "Not asserted" sections are the pattern.
+4. **Emit from a `gen.py`**, facts inline, via patchkit. [transformers/gen.py](model-families/transformers/gen.py) is the best template so far, consider copying it. Record user decisions in the family notes.
+5. **Iterate against the quote gates freely** — an uncommitted patch is cheap to regenerate. `make verify-quote-verbatim`, fix spans, re-emit; then `make verify-quote-support ARGS="<NNNN>"` and triage. Read [RULEBOOK.md](RULEBOOK.md#operating-the-quote-gates) before triaging: a clean pass is not the goal and re-running to chase one costs ~300k tokens a time.
+6. **Snapshot loop freely** ([Rebuilding the database](RULEBOOK.md#rebuilding-the-database)) and verify resolution through `make analyze` — `patch_entry_cites` shows each claim with its quote and note.
+7. **At family completion, promote.** Move anything generalizable into RULEBOOK.md under the heading it belongs to, and fix stale guidance there. Don't append run histories to either file; your `<Family>.md` keeps the family record — evidence inventory, decisions, sought-and-not-found, the future-unique-features worklist, gate-run history.
 
-`frontier_checks` caught four bugs in its own analysis and generator:
+**Give feedback**: throughout the loop, if you see anything that is not ergonomic or could otherwise be improved about the tooling, say so. These campaigns are the initial consumers of the improved search, OCR and PDF handling in [Pinexplore's web cache](~/dev/pinexplore/docs/WebCache.md) as well as citation verification improvements.
 
-1. **`name_key` is not an identity function.** It is `name_norm(name_strip_paren(...))` — it deliberately collapses an edition onto its family. Using it for the "already present?" join made all four 2023 Galactic Tank Force rows an exact match for the Victory Edition. Identity uses `name_norm`; family uses `name_key`.
-2. **A standing-red check is not a gate.** An early draft asserted an entire tier as a permanent failure, which would have blocked `read_view` forever and trained the operator to ignore the gate.
-3. **Theme redundancy is transitive.** `theme_vocab` carries a parent/child DAG; the check walks its full ancestor closure, so `robots` resolving to `[outer-space, science-fiction]` is caught two levels up. It found `music`/`hard-rock`, `science-fiction`/`robots`, `outer-space`/`science-fiction` and `sports`/`fishing`.
-4. **A Title can be real and still unreachable by name.** Title creation is driven by `title_exists`, not by `title_action`: the 100th Anniversary belongs to the existing `houdini` Title, which its own name does not match, and `create: true` against a live title fails the apply as a duplicate.
+Consider opening a done family when you are in one of these situations:
 
-**Inherited themes outrank the redundancy rule.** A theme copied verbatim from an existing related model is never pruned for being implied, because pruning it would silently diverge the new row from the rows it came from. `inherited_themes` marks them and the check exempts exactly those; the exemption is load-bearing (five pairs would otherwise fire) and does not weaken the rule for anything derived fresh.
+- **[Transformers.md](model-families/transformers/Transformers.md)** — your evidence is a per-edition feature matrix; the maker's old product pages are 404 and you need Wayback; your older siblings have IPDB rows.
+- **[SonicHedgehog.md](model-families/sonic-hedgehog/SonicHedgehog.md)** — you are triaging `verify-quote-support` warnings and want to see which ones were kept and why; you are hunting a maker's file host or a Shopify-backed store; you need the shape of a "Not asserted (and why)" section.
+- **[Houdini.md](model-families/houdini/Houdini.md)** — you are creating feature vocabulary or classifying toys (0219 was written, judged too granular, and reworked twice — the rulings are recorded); two primary sources disagree and you need the precedent for which one won.
 
-## The Houdini error — and the gate that now prevents it
+## Open follow-ups
 
-The first draft of this patch **renamed `houdini-master-mystery` into the 100th Anniversary edition**, reasoning from a name match: same maker, "Houdini", `unreleased`, no year. That was wrong, and it shipped to the dev DB before being caught.
+### Theme redundancy on existing rows
 
-`houdini-master-mystery` is IPDB 6469 — the never-built John Popadiuk / Matt Andrews design. Its own `ipdb_notes` say so outright:
+Surfaced by 0215's `_theme_ancestor` check and not yet touched: Stern _Transformers_ 2011 (5 rows, `science-fiction` under `robots`), _Galactic Tank Force_ 2023 (4 rows), _Fish Tales_ 1992, Metallica (several, `music` under `heavy-metal` — Guns N' Roses gets it right), and _Tales of the Arabian Nights_ 1996 missing `literature`.
 
-> "This game was not produced and was replaced by American Pinball Inc.'s 2017 'Houdini Master of Mystery' with a playfield from a different designer, and different backbox and artwork."
-
-That evidence was in the catalog the whole time, one column away from the query that proposed the rename. The row was found by reading American Pinball's maker line and then **not** read any further.
-
-Fixed by restoring the snapshot and replaying: the 100th Anniversary is now a plain create joining the existing `houdini` Title, and `houdini-master-mystery` is untouched (0 claims from this patch).
-
-The gate is `unreleased_lookalike_unacknowledged`. `_lookalike` finds every same-maker `unreleased` model sharing a word of four or more characters with a candidate, and each pair must be acknowledged **by slug** in `candidates.csv` before the patch can emit. Similarity becomes a review trigger that has to be dispositioned, never a merge signal. It is load-bearing: it fires on exactly the Houdini pair.
-
-**Galactic Tank Force (Victory Edition)** — a new edition of the 2023 GTF family. Emitted as a plain model; the `variant_of` edge waits for a source.
-
-## Dead ends
-
-- **OPDB contributes nothing.** Its export is at parity: of 2,354 machines the 43 absent from the catalog are all group-level rollups (`Rush (Premium/LE)`) where the catalog correctly splits Premium and LE. Its 2026 coverage is 4 machines — fewer than the catalog already had.
-- **`opdb.org/changelog` is not a new-machine feed.** All 44 lifetime entries are `move` (38) and `delete` (6) — an ID-reconciliation feed. Useful for keeping the catalog's 2,311 stored `opdb_id`s from going stale; useless for discovery.
-- **A separate DuckDB file was considered and rejected.** It would not contain the catalog, so every reconciliation would be answered by something that cannot see the source of truth — the trap `CLAUDE.md` flags for pinexplore's `explore.duckdb`. The CSV is read _inside_ the foundation session instead.
-- **An AI-generated "new for 2026" list was checked and not used.** It misdated _Star Wars: Fall of the Empire_ and _The Walking Dead Remastered_ to 2026 (both 2025, both already correct) and missed five of the sixteen corroborated rows, including all three Sonic editions.
-- **The 3 Musketeers is not from a franchise.** hexa-pinball.com: _"Ce flipper s'inspire du célèbre roman Les Trois Mousquetaires d'Alexandre Dumas."_ The 1844 novel — public domain. No franchise and no `licensed` theme, matching the three existing Musketeer Titles.
-
-## Follow-up the sweep surfaced but did not touch
-
-The theme-redundancy rule indicts existing rows too, all mechanically detectable via `_theme_ancestor`: Stern _Transformers_ 2011 (5 rows, `science-fiction` under `robots`), _Galactic Tank Force_ 2023 (4 rows), _Fish Tales_ 1992, Metallica (several, `music` under `heavy-metal` — Guns N' Roses gets it right), and _Tales of the Arabian Nights_ 1996 missing `literature`.
-
-## Running it
-
-```bash
-make analyze FILE=../flippatch/campaigns/0215-frontier-2026/frontier.sql PREFIX=frontier
-uv run python campaigns/0215-frontier-2026/gen.py
-make validate
-```
-
-Re-run the analysis after every edit to `candidates.csv` — the checks are what stop a stale or mistyped candidate list from being emitted. `read_view` runs them before it yields a row, so the generator cannot emit from an analysis whose detectors have gone dark.
+These are **seed rows, not 0215's** — 0215 created only the 2026 models, so there is nothing in it to edit. Pruning a redundant theme means retracting an existing claim, which needs user approval per the don't-overwrite rule; adding TOTAN's missing `literature` is an ordinary assert. All but Metallica sit inside a family on the board (transformers, galactic-tank-force, fish-tales, arabian-nights), so that family's session can raise them; Metallica belongs to no family here and needs a home.

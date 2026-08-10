@@ -1,0 +1,381 @@
+attribution: flipcommons-catalog
+description: >
+  Sonic the Hedgehog family details across JJP's 2026 editions
+claims:
+  - gameplay-feature.spring-targets:
+      create: true
+      name: Spring Targets
+      gameplay_feature_parent: [targets]
+      gameplay_feature_alias: [Spring Target]
+  - gameplay-feature.player-cameras:
+      create: true
+      name: Player Cameras
+      gameplay_feature_alias: [High-Score Player Camera, Player Camera]
+  - gameplay-feature.wifi-connectivity:
+      create: true
+      name: Wi-Fi Connectivity
+      gameplay_feature_alias: [Wi-Fi]
+  - gameplay-feature.bluetooth-audio:
+      create: true
+      name: Bluetooth Audio
+  - gameplay-feature.subwoofers:
+      create: true
+      name: Subwoofers
+      gameplay_feature_parent: [speakers]
+      gameplay_feature_alias: [Subwoofer]
+  - gameplay-feature.custom-shooter-knobs:
+      create: true
+      name: Custom Shooter Knobs
+      gameplay_feature_alias: [Custom Shooter Knob]
+  - model.sonic-the-hedgehog-special-edition:
+      note: "The maker sells the game now and ships it from stock - its delivery terms turn on production schedules and inventory availability - so the machine is in production, not merely announced."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "Yes, the Sonic the Hedgehog Pinball Machine is available for purchase directly from Jersey Jack Pinball."
+        - ref: "https://jerseyjackpinball.com/products/sonic-special-edition"
+          locator: in the DELIVERY section
+          quote: "Delivery timelines vary based on production schedules, inventory availability, and your selected delivery method. If your game is in stock and you select White Glove delivery, estimated delivery is 1-2 weeks."
+      production_status: produced
+  - model.sonic-the-hedgehog-special-edition:
+      cite:
+        ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+        locator: "in the GOTTA GO FAST! section"
+        quote: "Sonic the Hedgehog Pinball by Jersey Jack Pinball brings the legendary speed, color, music, and energy of Sonic to life in a fast-flowing pinball adventure built for fans and players across generations."
+      game_format: pinball
+  - model.sonic-the-hedgehog-special-edition:
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: 'Industry-Leading 27" LCD Display'
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Backglass section
+          quote: 'The 27" high-definition backglass display brings Sonic''s world to life'
+      display_type: lcd
+  - model.sonic-the-hedgehog-special-edition:
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "The game was designed by Steve Ritchie — widely regarded as one of the greatest pinball designers in history with a career spanning over 40 years."
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Game Designer: Steve Ritchie"
+        - ref: "https://marketing.jerseyjackpinball.com/sonic/Sonic_Manual_10_July_2026.pdf"
+          locator: "printed folio V, PDF document page 5"
+          quote: Hall of Fame game designer Steve Ritchie is known for his fast-flowing games. He and his design team have created Sonic pinball.
+      credit:
+        - steve-ritchie: design
+  - model.sonic-the-hedgehog-special-edition:
+      note: "Slash contributed the soundtrack's exclusive guitar solos, so he credits as music."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Highlights section
+          quote: amplified with exclusive guitar solos from Slash for a high-voltage edge
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Open Your Heart (Guitar Solo by Slash) [...] It Doesn't Matter (Guitar Solo by Slash)"
+      credit:
+        - saul-slash-hudson: music
+  - model.sonic-the-hedgehog-special-edition:
+      note: "Classifications: the Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target, so it attaches as a solitary drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield attaches as a mini-playfield, the term in use for upper playfields; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it attaches as a thrust magnet, and the Battle Zone! magnet states no direction, so it attaches as the generic magnet."
+      cite:
+        ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+        locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+        quote: "4 Full-Sized Flippers [...] 9 Stand-Up Targets [...] 2 Spring Targets [...] 1 Spinner [...] 2 Up-Posts to Catch the Ball [...] Total-Control Inline 3-Bank Drop Target Lock [...] Upper Playfield Entry Drop Target [...] Bash Dash Captive Ball Lock [...] 6-Ball Multiball [...] Polycarbonate Upper Playfield [...] Stainless Steel Ramps [...] Magnetic Accelerator Loop Ramp [...] 'Superconducting' Battle Zone! Magnet"
+      gameplay_feature:
+        [
+          { flippers: 4 },
+          { standup-targets: 9 },
+          { spring-targets: 2 },
+          { spinners: 1 },
+          { up-posts: 2 },
+          3-in-line-drop-targets,
+          ball-locks,
+          solitary-drop-targets,
+          captive-ball,
+          6-ball-multiball,
+          mini-playfields,
+          ramps,
+          thrust-magnets,
+          magnets,
+        ]
+  - model.sonic-the-hedgehog-special-edition:
+      note: "Toy classifications: JJP's own wording calls the Dr. Eggman toy both interactive bash toy and animatronic, so it attaches as bash and animatronic; the Sonic and Amy Rose sculptures state no motion or ball interaction, so they classify as static toys."
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Interactive Dr. Eggman Bash Toy [...] Custom Sculptures of Sonic, Amy Rose & Dr. Eggman [...] Voice Callouts by Official Sonic Cast"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Playfield section
+          quote: Dr. Eggman Animatronic Bash Toy
+      gameplay_feature: [bash-toys, animatronic-toys, static-toys, speech]
+  - model.sonic-the-hedgehog-special-edition:
+      note: "The collection page's playfield list states the Chaos Emerald inserts are RGB; the 2,000+ individually controlled RGB LEDs attach as LED general illumination."
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Wi-Fi Connectivity [...] Bluetooth Audio [...] Audio Equalizer and 8-inch Subwoofer [...] JJP Exclusive High-Score Player Camera [...] 2,000+ individually controlled RGB LEDs [...] Custom Chaos Emerald Inserts"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Playfield section
+          quote: Custom RGB Chaos Emerald Inserts
+      gameplay_feature:
+        [
+          wifi-connectivity,
+          bluetooth-audio,
+          subwoofers,
+          player-cameras,
+          led-general-illumination,
+          rgb-playfield-inserts,
+        ]
+  - model.sonic-the-hedgehog-special-edition:
+      cite:
+        - ref: "https://jerseyjackpinball.com/products/sonic-special-edition"
+          quote: "'Sonic Blue' Powder Coated Armor [...] Battle Topper with Dual-Layer Acrylic LEDs [...] Shaker Motor with Haptic Feedback [...] Industry Leading JJP Invisiglass™ [...] 'Special Edition' Numbered Plaque"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Highlights section
+          quote: "SHAKER MOTOR WITH HAPTIC FEEDBACK (CE & SE ONLY) [...] Available on the Collector's and Special Editions"
+      gameplay_feature:
+        [cabinet-armor, toppers, shaker-motors, invisiglass, numbered-plaques]
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "The maker sells the game now and ships it from stock - its delivery terms turn on production schedules and inventory availability - so the machine is in production, not merely announced."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "Yes, the Sonic the Hedgehog Pinball Machine is available for purchase directly from Jersey Jack Pinball."
+        - ref: "https://jerseyjackpinball.com/products/sonic-collectors-edition"
+          locator: in the DELIVERY section
+          quote: "Delivery timelines vary based on production schedules, inventory availability, and your selected delivery method. If your game is in stock and you select White Glove delivery, estimated delivery is 1-2 weeks."
+      production_status: produced
+  - model.sonic-the-hedgehog-collectors-edition:
+      cite:
+        ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+        locator: "in the GOTTA GO FAST! section"
+        quote: "Sonic the Hedgehog Pinball by Jersey Jack Pinball brings the legendary speed, color, music, and energy of Sonic to life in a fast-flowing pinball adventure built for fans and players across generations."
+      game_format: pinball
+  - model.sonic-the-hedgehog-collectors-edition:
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: 'Industry-Leading 27" LCD Display'
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Backglass section
+          quote: 'The 27" high-definition backglass display brings Sonic''s world to life'
+      display_type: lcd
+  - model.sonic-the-hedgehog-collectors-edition:
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "The game was designed by Steve Ritchie — widely regarded as one of the greatest pinball designers in history with a career spanning over 40 years."
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Game Designer: Steve Ritchie"
+        - ref: "https://marketing.jerseyjackpinball.com/sonic/Sonic_Manual_10_July_2026.pdf"
+          locator: "printed folio V, PDF document page 5"
+          quote: Hall of Fame game designer Steve Ritchie is known for his fast-flowing games. He and his design team have created Sonic pinball.
+      credit:
+        - steve-ritchie: design
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "Slash contributed the soundtrack's exclusive guitar solos, so he credits as music."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Highlights section
+          quote: amplified with exclusive guitar solos from Slash for a high-voltage edge
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Open Your Heart (Guitar Solo by Slash) [...] It Doesn't Matter (Guitar Solo by Slash)"
+      credit:
+        - saul-slash-hudson: music
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "Classifications: the Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target, so it attaches as a solitary drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield attaches as a mini-playfield, the term in use for upper playfields; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it attaches as a thrust magnet, and the Battle Zone! magnet states no direction, so it attaches as the generic magnet."
+      cite:
+        ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+        locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+        quote: "4 Full-Sized Flippers [...] 9 Stand-Up Targets [...] 2 Spring Targets [...] 1 Spinner [...] 2 Up-Posts to Catch the Ball [...] Total-Control Inline 3-Bank Drop Target Lock [...] Upper Playfield Entry Drop Target [...] Bash Dash Captive Ball Lock [...] 6-Ball Multiball [...] Polycarbonate Upper Playfield [...] Stainless Steel Ramps [...] Magnetic Accelerator Loop Ramp [...] 'Superconducting' Battle Zone! Magnet"
+      gameplay_feature:
+        [
+          { flippers: 4 },
+          { standup-targets: 9 },
+          { spring-targets: 2 },
+          { spinners: 1 },
+          { up-posts: 2 },
+          3-in-line-drop-targets,
+          ball-locks,
+          solitary-drop-targets,
+          captive-ball,
+          6-ball-multiball,
+          mini-playfields,
+          ramps,
+          thrust-magnets,
+          magnets,
+        ]
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "Toy classifications: JJP's own wording calls the Dr. Eggman toy both interactive bash toy and animatronic, so it attaches as bash and animatronic; the Sonic and Amy Rose sculptures state no motion or ball interaction, so they classify as static toys."
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Interactive Dr. Eggman Bash Toy [...] Custom Sculptures of Sonic, Amy Rose & Dr. Eggman [...] Voice Callouts by Official Sonic Cast"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Playfield section
+          quote: Dr. Eggman Animatronic Bash Toy
+      gameplay_feature: [bash-toys, animatronic-toys, static-toys, speech]
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "The collection page's playfield list states the Chaos Emerald inserts are RGB; the 2,000+ individually controlled RGB LEDs attach as LED general illumination."
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Wi-Fi Connectivity [...] Bluetooth Audio [...] Audio Equalizer and 8-inch Subwoofer [...] JJP Exclusive High-Score Player Camera [...] 2,000+ individually controlled RGB LEDs [...] Custom Chaos Emerald Inserts"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Playfield section
+          quote: Custom RGB Chaos Emerald Inserts
+      gameplay_feature:
+        [
+          wifi-connectivity,
+          bluetooth-audio,
+          subwoofers,
+          player-cameras,
+          led-general-illumination,
+          rgb-playfield-inserts,
+        ]
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "Jersey Jack sells the family as one game in three trim tiers around the Special Edition, the same shape as its other multi-edition families - Harry Potter's Arcade and Collector's Editions are likewise variants of that family's mid-tier Wizard Edition."
+      cite:
+        ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+        locator: in the Frequently Asked Questions section
+        quote: "There are three pinball machines for Sonic: the Collector's Edition ($15,000), the Special Edition ($12,000), and the Arcade Edition ($9,999)."
+      variant_of: sonic-the-hedgehog-special-edition
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "Classifications: the Mechanical Battle Topper attaches as a topper; Gold Wireform Ramps attach as habitrails (wireform); the Gold Ring Shooter Knob is a custom shooter knob; the External LED Lighting Package reacts to gameplay per the collection page's cabinet caption, so it attaches as interactive cabinet lighting; the Guarnieri & Ritchie Signature Card attaches as designer autographs."
+      cite:
+        - ref: "https://jerseyjackpinball.com/products/sonic-collectors-edition"
+          quote: "Sonic Vs. Dr. Eggman Mechanical Battle Topper with Super-Wide LCD Screen [...] 'Knuckles Red' Metallic Laser-Cut Armor [...] Gold Wireform Ramps [...] Gold Ring Shooter Knob [...] External LED Lighting Package [...] Shaker Motor with Haptic Feedback [...] Industry Leading JJP Invisiglass™ [...] 'Collector's Edition' Numbered Plaque [...] 'Jersey Jack' Guarnieri & Steve Ritchie Signature Card"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Cabinet section
+          quote: "external lighting surrounds the cabinet in a bold, reactive glow"
+      gameplay_feature:
+        [
+          toppers,
+          cabinet-armor,
+          habitrails,
+          custom-shooter-knobs,
+          interactive-cabinet-lighting,
+          shaker-motors,
+          invisiglass,
+          numbered-plaques,
+          designer-autographs,
+        ]
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "The maker sells the game now and ships it from stock - its delivery terms turn on production schedules and inventory availability - so the machine is in production, not merely announced."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "Yes, the Sonic the Hedgehog Pinball Machine is available for purchase directly from Jersey Jack Pinball."
+        - ref: "https://jerseyjackpinball.com/products/sonic-arcade-edition"
+          locator: in the DELIVERY section
+          quote: "Delivery timelines vary based on production schedules, inventory availability, and your selected delivery method. If your game is in stock and you select White Glove delivery, estimated delivery is 1-2 weeks."
+      production_status: produced
+  - model.sonic-the-hedgehog-arcade-edition:
+      cite:
+        ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+        locator: "in the GOTTA GO FAST! section"
+        quote: "Sonic the Hedgehog Pinball by Jersey Jack Pinball brings the legendary speed, color, music, and energy of Sonic to life in a fast-flowing pinball adventure built for fans and players across generations."
+      game_format: pinball
+  - model.sonic-the-hedgehog-arcade-edition:
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: 'Industry-Leading 27" LCD Display'
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Backglass section
+          quote: 'The 27" high-definition backglass display brings Sonic''s world to life'
+      display_type: lcd
+  - model.sonic-the-hedgehog-arcade-edition:
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "The game was designed by Steve Ritchie — widely regarded as one of the greatest pinball designers in history with a career spanning over 40 years."
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Game Designer: Steve Ritchie"
+        - ref: "https://marketing.jerseyjackpinball.com/sonic/Sonic_Manual_10_July_2026.pdf"
+          locator: "printed folio V, PDF document page 5"
+          quote: Hall of Fame game designer Steve Ritchie is known for his fast-flowing games. He and his design team have created Sonic pinball.
+      credit:
+        - steve-ritchie: design
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "Slash contributed the soundtrack's exclusive guitar solos, so he credits as music."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Highlights section
+          quote: amplified with exclusive guitar solos from Slash for a high-voltage edge
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Open Your Heart (Guitar Solo by Slash) [...] It Doesn't Matter (Guitar Solo by Slash)"
+      credit:
+        - saul-slash-hudson: music
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "Classifications: the Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target, so it attaches as a solitary drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield attaches as a mini-playfield, the term in use for upper playfields; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it attaches as a thrust magnet, and the Battle Zone! magnet states no direction, so it attaches as the generic magnet."
+      cite:
+        ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+        locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+        quote: "4 Full-Sized Flippers [...] 9 Stand-Up Targets [...] 2 Spring Targets [...] 1 Spinner [...] 2 Up-Posts to Catch the Ball [...] Total-Control Inline 3-Bank Drop Target Lock [...] Upper Playfield Entry Drop Target [...] Bash Dash Captive Ball Lock [...] 6-Ball Multiball [...] Polycarbonate Upper Playfield [...] Stainless Steel Ramps [...] Magnetic Accelerator Loop Ramp [...] 'Superconducting' Battle Zone! Magnet"
+      gameplay_feature:
+        [
+          { flippers: 4 },
+          { standup-targets: 9 },
+          { spring-targets: 2 },
+          { spinners: 1 },
+          { up-posts: 2 },
+          3-in-line-drop-targets,
+          ball-locks,
+          solitary-drop-targets,
+          captive-ball,
+          6-ball-multiball,
+          mini-playfields,
+          ramps,
+          thrust-magnets,
+          magnets,
+        ]
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "Toy classifications: JJP's own wording calls the Dr. Eggman toy both interactive bash toy and animatronic, so it attaches as bash and animatronic; the Sonic and Amy Rose sculptures state no motion or ball interaction, so they classify as static toys."
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Interactive Dr. Eggman Bash Toy [...] Custom Sculptures of Sonic, Amy Rose & Dr. Eggman [...] Voice Callouts by Official Sonic Cast"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Playfield section
+          quote: Dr. Eggman Animatronic Bash Toy
+      gameplay_feature: [bash-toys, animatronic-toys, static-toys, speech]
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "The collection page's playfield list states the Chaos Emerald inserts are RGB; the 2,000+ individually controlled RGB LEDs attach as LED general illumination."
+      cite:
+        - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "Wi-Fi Connectivity [...] Bluetooth Audio [...] Audio Equalizer and 8-inch Subwoofer [...] JJP Exclusive High-Score Player Camera [...] 2,000+ individually controlled RGB LEDs [...] Custom Chaos Emerald Inserts"
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in The Playfield section
+          quote: Custom RGB Chaos Emerald Inserts
+      gameplay_feature:
+        [
+          wifi-connectivity,
+          bluetooth-audio,
+          subwoofers,
+          player-cameras,
+          led-general-illumination,
+          rgb-playfield-inserts,
+        ]
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "Jersey Jack sells the family as one game in three trim tiers around the Special Edition, the same shape as its other multi-edition families - Harry Potter's Arcade and Collector's Editions are likewise variants of that family's mid-tier Wizard Edition."
+      cite:
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "There are three pinball machines for Sonic: the Collector's Edition ($15,000), the Special Edition ($12,000), and the Arcade Edition ($9,999)."
+        - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          locator: in the Frequently Asked Questions section
+          quote: "And the Arcade Edition delivers the same layout, the same shots, and the same speed at an entry-level price"
+      variant_of: sonic-the-hedgehog-special-edition
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "Armor is cabinet trim; the feature vocabulary includes presentation equipment, so the Black Armor attaches as cabinet armor."
+      cite:
+        ref: "https://jerseyjackpinball.com/products/sonic-arcade-edition"
+        quote: Black Armor
+      gameplay_feature: [cabinet-armor]

@@ -1,6 +1,6 @@
 """Emit patch 0216 — the Houdini family: 100th Anniversary and its 2017 siblings.
 
-See ../0215-frontier-2026/ENRICHMENT-PLAN.md for the family split and Houdini.md
+See ../../README.md for the family split and Houdini.md
 beside this file for the evidence inventory, the catalog baseline, and the user
 decisions this generator encodes (2026-08-07).
 

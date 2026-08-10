@@ -1,0 +1,214 @@
+# 2026 model enrichment — method
+
+This is the rulebook for the campaign: what counts as a source, how evidence is cited, what may become vocabulary, how the gates behave. We are fleshing this out as we go through the campaigns, and once it's been hardened, much of it will eventually end up in Flipcommons docs like `DataPatchAuthoring.md`.
+
+When you learn something durable, add it here. But don't put your run history here; that stays in the family's own `<Family>.md`.
+
+## Surveying the catalog
+
+**Enumerate a family by model slug, never `title_slug`.** Transformers The Pin has its own Title, so a title-keyed query silently misses it.
+
+**Duplicate-scan against `model_claims` from other actors, not `patch_claims`.** The apply **silently swallows** an exact duplicate (same actor + claim key + value): no claim row, and its citation is dropped with it — so what your patch wrote is not what it asserted. (A flippatch session is reviewing whether that swallow should stay.)
+
+## Primary and secondary sources
+
+The authority on primary sources is `~/dev/flipcommons/docs/DataPatchAuthoring.md`#`Prefer primary sources`. Here we're noodling on a more detailed list, in rough order of what source is most authoritative:
+
+### Best first party
+
+- **The maker's own website**, and specifically its support, downloads, service and product pages — these are where flyers, feature matrices, manuals, quick-reference guides, service bulletins and release notes live.
+
+### Other first party
+
+- **The maker's YouTube channel**: the cache ingests transcripts, and reveal and gameplay videos are first-party.
+- **Distributor and archive** copies where the maker's own copy is gone: archive.org, distributor sites, Planetary Pinball for Williams/Bally titles.
+- For a **remake or a kit**, the _original_ machine's documents too — they are what the new one is derived from.
+- For a **homebrew**, the builder's own build thread on a 3rd party site.
+- **press releases**: the maker's own words reprinted verbatim by a publication, datelined and attributed
+
+### Journalism
+
+- **journalism**: a named outlet's own reporting — Pinball News, Arcade Heroes, Kineticist _news articles_.
+
+Acceptable where nothing above states the fact; prefer multiple independent outlets.
+
+### Crowdsourced
+
+User-submitted database rows — Pinside game archive, Kineticist _game index_.
+
+Do not use for any model that has a manufacturer PDF\*\*. Elsewhere, never the sole support for a claim.
+
+Where a family's sources are thin, the reason differs per family and determines what to do — each is recorded in that family's own notes. Where nothing is available, the model gets **nothing beyond what 0215 already created**.
+
+### Conflicts
+
+**Conflicts between primary sources are a user decision.** Houdini's current site says 4 speakers where its flyer and IPDB say 6; JJP's site says 5,000+ callouts where the article it reprints says 6,000+. Surface the conflict and record the ruling in the family doc (Houdini's ruling: the maker's current site won).
+
+## Finding and fetching documents
+
+Put every primary document you find in the [web cache](~/dev/pinexplore/docs/WebCache.md), even ones you aren't sure carry a citable fact. It makes the document searchable and available to every later session; a document you looked at and did not fetch will just be re-looked-at by somebody else.
+
+- **`web_cache.py links <url> --ext pdf` is the discovery step.** Across 60 cached maker pages it yielded 172 distinct PDF URLs, each with its anchor text — `Pokémon Pro Manual Download File` tells you what a document is without spending a fetch on it.
+
+  ```bash
+  uv run python scripts/web_scrape/web_cache.py links <maker-support-page> --ext pdf --limit 0 \
+    | cut -f1 | uv run python scripts/web_scrape/web_cache.py have --from-file -
+  ```
+
+  **`--limit 0` matters when piping**: the default caps output at 100 rows. It warns on stderr, which a pipe still shows — but a redirect that swallows stderr loses the warning along with 32 of Stern's 132 manuals.
+
+- **Anchor text is only as good as the source markup.** American Pinball's HubSpot-driven support pages return all 14 Houdini documents with **empty** anchors; there the filename is the only label.
+- **Probe maker document hosts for open directory listings.** `marketing.jerseyjackpinball.com/distributors/Sonic/` indexed per-edition flyers, an all-models feature matrix, photography and the rules flowchart — none of it linked from any product page. `curl -s <dir>/` on a maker's file host costs nothing and can be the family's best find.
+- **A maker's YouTube channel is a parallel document set**, ingested as transcripts. Cardona's release notes link six official videos — splash announcement, launch, gameplay UI, kit installation, two walkthroughs — for a model whose only other evidence is Pinside.
+- **Maker software changelogs are evidence, and plain text caches.** JJP's `sonic_changelog.txt` dates every release build — corroborating launch timing and active support — and is fetchable, quotable and citable like any page.
+- **A maker document that 404s is often recoverable from Wayback** — check the CDX index before declaring a maker's old documents lost. Fetch the snapshot with the `id_` modifier (`/web/<timestamp>id_/<url>`) or you cache the HTML wrapper instead of the document; it reports a clean `200` either way. Citing it is [Citation roots](#citation-roots) → archive.
+- **A maker's manual lineup can promise more per-edition evidence than it holds.** Stern serves the 2011 Transformers manual under two filenames, byte-identical — `content_sha` is the tell, check it before treating two documents as two sources. Pokémon's `Pokemon_LE_Pre_web.pdf` is the other shape: one distinct manual explicitly covering two editions (LE **and** Premium). Either way, a per-edition filename is not per-edition evidence — verify what the document actually covers.
+
+### What a manufacturer PDF carries
+
+Three document classes, in descending density per page:
+
+| class                                             | fills                                                                        | how you read it                                                       |
+| ------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| **feature matrix** (Stern)                        | gameplay features _per edition_, production count, system, display, designer | text layer readable; the grid itself needs a render                   |
+| **flyer** (Barrels of Fun, JJP compare sheet)     | gameplay features with counts, display, art credit, dimensions, theme copy   | usually **vector outlines** — no text layer, so render and transcribe |
+| **service manual** (Stern, JJP, American Pinball) | dimensions, weight, electrical, flipper/coil counts, playfield inventory     | text layer readable; tables need a render                             |
+
+Manuals are the _weakest_ source for people credits: Stern's MTMTE manual names no person at all (`Eismin`, `Kyzivat`, `designer` → 0 matches across 66 pages). Credits live in the flyer and the matrix.
+
+### The inventory floor (surveyed 2026-08-06)
+
+**A floor, not a survey** — one afternoon across fifteen families, mostly spent testing tooling rather than hunting documents. Every **0** means _nobody has looked properly yet_, never _nothing exists_. One probe is not a search.
+
+| maker                                               | first-party PDFs held                                                 | gap                                                                  |
+| --------------------------------------------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| Stern                                               | 20 (incl. MTMTE feature matrix + Pro manual) + 2 Pokémon manuals      | Premium/LE manuals unpublished                                       |
+| Jersey Jack                                         | 2 (Sonic manual, Sonic compare flyer)                                 | —                                                                    |
+| Barrels of Fun                                      | 2 (BJ flyer 2026-07, Winchester flyer)                                | —                                                                    |
+| American Pinball                                    | 8 (Houdini manual + QRG, GTF manual + QRG + release notes)            | no 100th Anniversary / GTF Victory / Cirqus Voltaire docs yet        |
+| Cardona                                             | 2 (FT: Ultimate Fishing Challenge release notes, 2026-06 and 2026-07) | —                                                                    |
+| HEXA                                                | 2 (0.911 notice FR/US)                                                | none found yet for The 3 Musketeers; HEXA does publish PDFs, so look |
+| Multimorphic                                        | 0                                                                     | product pages only                                                   |
+| Pedretti, Turner, World Pinball, UP Pinball, Ramp's | 0                                                                     | none found in one pass — unsearched, not absent                      |
+
+Their web presence differs in ways that matter: Pedretti's own domain did not resolve yet its full press release is public, World Pinball's real site is `worldpinball.ch` behind an HTTP 401, Ramp's site is live but silent on its 2026 machine.
+
+### `draft-evidence-aggregator.csv` is not a generator input
+
+It is a **superseded draft**: 166 of its 181 cites are Pinside, not a primary source. Use it as a **research checklist** — it names people and roles worth going to look for in primary documents.
+
+Check whether it holds anything for your family before spending time on it. 88 rows belong to the done families (sonic 63, transformers 18, houdini 7) and are superseded. The rest: p3-modules 56 (Ender's Game 33, Dungeon Crawler Carl 23), yukon-yeti 12, bon-jovi 11, fish-tales 7, galactic-tank-force 4, obsidian-high 2, arabian-nights 1. The p3-modules block is the exception worth knowing about — it carries **all 15 of the file's first-party rows**, drawn from Multimorphic's product pages, and Multimorphic publishes no PDFs.
+
+## Reading a PDF
+
+- **`outline` is a flat page map.** It ignores the embedded bookmark tree. Most PDFs have none or have useless ones, but when you need a real table of contents, read the bookmarks with `pypdf`.
+- **The text layer is a convenience, not the document.** Some PDFs have none at all — the Bon Jovi flyer's type is outlined, and Stern's 2011 `Transformers-Manual.pdf` carries 227K chars of OCR and nothing else. Render the sheet and read it.
+- **Tables and grids need a render even when the text layer is readable.** Extraction flattens them: the Sonic manual's spec table comes out as unattached cells, and the Transformers matrix's column headers extract as a floating `PRO GAME FEATURES LE ONLY` and a trailing `PREM LE`, attached to nothing. Never reconstruct a row/column relationship from extracted text.
+
+## Citing PDF evidence
+
+- **A PDF often has two page numbers**: the index of the sheet (always) and the folio printed on it (sometimes). Name both in the locator: `printed page 7, PDF document page 22`. Get the printed folio by rendering the sheet unless the text makes it unmistakable.
+
+**Quote the words on the sheet — the text layer does not decide what's quotable.** Render the sheet, read the words, transcribe them into `quote:`. A document with no text layer at all still has words on it, and a transcription you made by looking is evidence.
+
+`make verify-quote-verbatim` **does not gate PDF quotes**; it reports them `SKIP-PDF`. That is deliberate: a correct span read off a sheet routinely isn't a substring of the reading-order extraction, and checking the OCR tier instead rejects ~25% of correct spans (measured on this corpus), so no threshold makes it honest. **A PDF quote is your own check** — transcribe it exactly as the next person rendering that sheet would read it. Nothing goes in the patch about which quotes are gated; the patch is the record.
+
+**A mark is not text — that case stays quote-less.** A checkmark in a feature-matrix column, a diagram arrow, a filled cell: looking at it produces no words to transcribe, so there is nothing to quote. The honest cite is `ref` + `locator` naming the sheet + `note` recording what was seen, with no `quote:`. The line is whether the evidence **is** text, not whether extraction caught it.
+
+**Do not quote a row label to establish a column.** `"Megatron Pinball Firing Fusion Cannon."` is verbatim, but it establishes the _row_, not the Premium/LE column, and the AI linter's `RULE_QUOTE_SUPPORTS_CLAIM` will reject it. Reading that label off a render rather than the text layer splices exactly the same way.
+
+**Per-edition panels are positional.** A carousel or comparison layout repeating identical headings cannot be cited by position — only an explicitly-headed block ("Deluxe Features", "Autobot Crimson LIMITED EDITION Features:") establishes its own edition. Same splice rule as matrix columns.
+
+**Worked example — the Transformers matrix**, the densest source in the campaign at ~55 feature rows × 3 edition columns. Its per-edition features are the one case here that genuinely cannot carry a quote, and the reason is the checkmark, not the text layer. Everything else on it is quotable: the design credit, the production count, the display spec, the `MAIN ATTRACTIONS` prose.
+
+## Citation roots
+
+A URL cite fails the apply unless its host resolves to a seeded citation root. Maker subdomains resolve for free by longest-label-boundary suffix (`wp.sternpinball.com` → Stern, `marketing.jerseyjackpinball.com` → Jersey Jack), and a leading `www.` is normalized away, so a root registers bare and both forms resolve. CDN hosts do not resolve.
+
+**The shared roots are already seeded — `patches/0217-enrichment-citation-roots.yaml` does it.** Do not re-declare them and do not invent roots of your own. It attaches American Pinball's two document hosts (`48804760.fs1.hubspotusercontent-na1.net`, `my.orbitgames.fun`) to the **existing** American Pinball root, and creates the **Planetary Pinball** root for the licensed Williams/Bally material several families' pre-2000 halves rest on. It takes 0217 because a roots patch has a hard ordering constraint a family follow-up does not: patches apply in numeric-prefix order, so a root must be numbered below every patch citing it.
+
+A root your family needs that 0217 does not cover is a **single-family** root and belongs in your own family patch — Cardona (`cardonapinball.com`) is the known case, riding in the fish-tales patch whenever that claims its number. The `sources:` block is **additive get-or-create**, matched by recognition host: a node matching an existing root has missing hosts backfilled and existing fields left alone, so a re-declaration is a harmless no-op. **Do not modify 0215 or 0217 and do not renumber.**
+
+```yaml
+sources:
+  - name: Cardona Pinball Designs
+    source_type: web
+    description: Manufacturer's own site. # only on a NEW root; a match ignores it
+    links:
+      - { url: "https://cardonapinball.com/", link_type: homepage }
+```
+
+**Attach a maker's document host to that maker's existing root, never to a new one.** Splitting AP's manuals off from AP's product pages would put one company's evidence under two sources, and nothing in the apply catches it.
+
+Check what already resolves before generating — most makers do:
+
+```sql
+SELECT h.host, coalesce(cr.root_citation_source_name,'NO ROOT')
+FROM (VALUES ('wp.sternpinball.com'), …) h(host)
+LEFT JOIN citation_roots cr ON cr.root_citation_source_id = citation_root_for_host(h.host);
+```
+
+**Shared hosts must never be registered.** `cdn.shopify.com`, `img1.wsimg.com` and `storage.googleapis.com` carry many makers' files with the tenant id in the **path**, and recognition reads only the host — registering any of them would resolve every unrelated URL on that CDN to one maker. There is no host string meaning "this maker's corner of the CDN", which makes these unregisterable rather than merely unregistered. The restraint is documentation, not enforcement: flipcommons hard-refuses "deliverer" hosts (Amazon, Netflix, Google Books) via `deliverers.py`, but no CDN is in that table.
+
+**For a Shopify-backed maker store there is usually a maker-domain URL** — Shopify serves the same file under the store's own domain, so `cdn.shopify.com/s/files/<tenant>/files/X.pdf` is also at `<maker-domain>/cdn/shop/files/X.pdf`. The Sonic compare flyer resolved to the Jersey Jack root that way (0221's worked example). Fetch and cite the maker-domain URL. Where no such URL exists, the document is research-only: findable, not citable.
+
+**`web.archive.org` is deliberately rootless.** A cite carries an `archive:` key for exactly this: `ref` the original publisher URL, `archive:` the snapshot. Registering archive.org would make the archive the source rather than the publisher. This is the route for a maker document gone 404 — American Pinball's Houdini flyer is the worked case, dead on `american-pinball.com` and recoverable from Wayback. Two traps:
+
+1. Fetch the snapshot with Wayback's `id_` modifier (`/web/<timestamp>id_/<url>`) or you cache the HTML wrapper instead of the document — it reports a clean `200` either way.
+2. The cache then holds the document under the _snapshot_ URL while the cite's `ref` is the original. Both quote checks handle this: when the `ref` isn't in the cache they resolve through the cite's `archive:` URL, so an archived document's quotes verify (or report `SKIP-PDF` for a PDF) instead of failing `NO-SOURCE`.
+
+Houdini's 0219 flyer cites and Transformers' 0220 archived Stern game pages are the worked examples — 0220's Wayback recovery of Stern's dead 2011 `/Games/*.aspx` pages turned the family's worst-documented models into gated-HTML-cited ones. **Check the CDX index before declaring a maker's old documents lost.**
+
+**`ipdb:` cites can quote the structured row, credits and Toys included.** The quotable slice (`ipdb_row_text` in `scripts/quotes/sources.py`) renders every quotable page field — `Model Number:`, `MPU:`, the person-credit lines (`Design by:`, `Art by:`, `Dots/Animation by:`, `Mechanics by:`, `Music by:`, `Sound by:`, `Software by:`), `Toys:` and the other labeled fields — exactly as the IPDB page shows them. The analytics foundation carries toys and marketing features as plain columns too, and `make analyze CMD=describe` searches, so don't truncate its output. This is how a variant's replicated credits get gated evidence, and it matters for every family with IPDB-rowed older siblings (Transformers 2011, Fish Tales, TOTAN).
+
+## Asserting claims
+
+**`production_status` has no `retired` value.** The vocabulary is announced / produced / unreleased / one-off / aftermarket, so a maker's RETIRED badge answers no catalog field — a retired machine stays `produced`.
+
+**The variant rule (user decision, 2026-08-07).** A variant carries every credit of its base, and the shared design's hardware is a fact about every edition. Cite the base's evidence (e.g. the base IPDB row) with a `note:` saying why the value carries. Convention survey so far: every modern Stern LE is `variant_of` its Premium (40+ catalog precedents; 0220), and JJP's multi-edition families point at the mid-tier base — the Harry Potter shape; 0221's CE and AE → Special Edition, user-approved 2026-08-10.
+
+**`cite_kind` is recorded, never inferred later.** The emitter writes the two kinds differently: a `quote` cite carries a transcribed span, a `mark` cite carries a visual observation in a `note` with no `quote:`. Which one a row is depends on whether the evidence is text or a mark (see [Citing PDF evidence](#citing-pdf-evidence)). This is a fact about the **evidence**, recorded in the generator's own input so the emitter can branch — never a claim in the patch about whether a quote is verifiable.
+
+## Feature vocabulary
+
+**Generic only (user decision, 2026-08-10 — supersedes the 2026-08-08 wording rule).** The authority is flipcommons `docs/plans/catalog_data_model/unique_features/UniqueFeatures.md`; the working rules are in [campaigns/features-corpus/CHARTER.md](../features-corpus/CHARTER.md) → Toys.
+
+- **A new vocab node must be generic** — an unrelated title from another manufacturer could plausibly attach it. Presentation features included (0218's charter stands). Manufacturer wording verbatim unless extremely clearly a synonym; branded names for generic features are children of the generic (the InvisiGlass pattern), created only by the family patch that attaches them.
+- **Unique features (one-off toys, bespoke mechs, model-specific decorations) are NOT vocabulary.** Classify them into the generic taxonomy — the toys tree (0219) and any applicable mechanisms — and record the identity in the family doc's **future unique features** list for the coming UniqueFeature entity. The verbatim wording is already preserved in the cite `quote:`.
+- **Never attach a grouping node** (`toys`, `interactive-toys`, `interactive-lighting`, `expression-lighting-system`) to a model — attach leaves. The editorial lint's `feature-grouping-node` rule enforces this; new grouping nodes join its list in `lint_patches.py`.
+- The interactive-lighting DAG (0220) is the pattern for maker-branded systems: a location axis crossed with the maker's brand family, product leaves carrying both parents.
+
+**Check the vocabulary before creating terms.** 0218 (presentation features), 0219 (Houdini's generic mechs plus the toy classification tree), 0220 (optical spinners, LE staples, the interactive-lighting DAG) and 0221 (generic equipment) added many nodes, and the seed has surprises — `ball-locks` already existed, and Houdini's first apply failed on the duplicate create. Query `gameplay_feature_vocab` for your exact slugs, and don't `tail` the output.
+
+Watch false synonyms — flipper toppers are not cabinet `toppers`.
+
+## Patch generator
+
+Each family gets a `gen.py` emitting via patchkit ([DataPatchKit.md](../../../flipcommons/docs/DataPatchKit.md)); never hand-roll YAML escaping. The best template so far is [transformers/gen.py](model-families/transformers/gen.py) — start by copying it.
+
+**Keep the facts inline in `gen.py`** at family scale; a handful of models doesn't need 0215's CSV architecture. Record user decisions in the family notes.
+
+The AI page extractor ([ModelPageExtractionAuthoring.md](../../docs/page_extractor/ModelPageExtractionAuthoring.md)) has never worked very well. Houdini didn't need it (three models, hand-vetted). A bigger family might; investigate there rather than assuming.
+
+## Operating the quote gates
+
+An uncommitted patch is cheap to regenerate, so iterate freely: emit → `make verify-quote-verbatim` → fix spans → re-emit. Transformers shipped 93/0 that way.
+
+Then run the AI support check scoped to your patch — `make verify-quote-support ARGS="<NNNN>"` — and triage. It reads the changeset `note:` alongside the cite, so **state the reasoning for a carried or classified value in the note**; 0221's variant-rule ladder passed on exactly that.
+
+**A note is not a pass guarantee, and a clean pass is not the goal.** Taxonomy-level disagreements warn with or without a note and vary run to run — 0221's `cabinet-armor` "cosmetic, not gameplay" (presentation features are vocabulary by charter) and an occasional "the note is the author's inference" on classification-by-absence like static toys. Triage those against the charter and keep your call. **Do not re-run chasing a clean pass**: each scoped run costs ~300k tokens and samples differently. Genuine catches remain worth folding in — 0221's `production_status: produced` justly warned until the cite said the maker ships from stock rather than merely "available for purchase".
+
+If the patch changed after a snapshot apply, restore and replay before re-verifying — the ledger fingerprints content.
+
+## Rebuilding the database
+
+Standing recipe (user, 2026-08-08) — rebuild as often as you like:
+
+```bash
+cd ../flipcommons/backend
+cp db.prod.patch-0214.2026-08-03.sqlite3 db.sqlite3
+uv run python manage.py migrate
+uv run python manage.py ingest_patches --patches-dir ../../flippatch/patches
+```
+
+If that snapshot file is gone or another campaign has moved the baseline, ask the user before picking a different one.

@@ -6,7 +6,7 @@
 -- read here, and this file's whole job is the JOIN back to the catalog — which is
 -- why it must run inside the foundation session and not in a database of its own.
 --
---   make analyze FILE=../flippatch/campaigns/0215-frontier-2026/frontier.sql PREFIX=frontier
+--   make analyze FILE=../flippatch/campaigns/0215-frontier-2026/model-discovery/frontier.sql PREFIX=frontier
 --
 -- Re-run it after every edit to candidates.csv: the checks are what stop a stale or
 -- mistyped candidate list from being emitted as a patch.
@@ -32,7 +32,7 @@ SELECT
   name_key(maker_name)                       AS maker_key
 -- Dialect stated explicitly rather than sniffed: the themes column is a quoted,
 -- comma-separated list, and the sniffer reads those inner commas as extra delimiters.
-FROM read_csv('../flippatch/campaigns/0215-frontier-2026/candidates.csv', header = true,
+FROM read_csv('../flippatch/campaigns/0215-frontier-2026/model-discovery/candidates.csv', header = true,
               delim = ',', quote = '"', escape = '"',
               columns = {corroboration: 'VARCHAR', candidate_name: 'VARCHAR',
                          proposed_slug: 'VARCHAR',

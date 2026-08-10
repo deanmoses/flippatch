@@ -2,7 +2,9 @@
 
 ## Status
 
-**Reworked 2026-08-10 for the unique-features policy; snapshot-validated; unshipped (committed locally, not pushed).** Patch number **0220** claimed (next free after 0219). One patch for the whole family — vocabulary and assignments ride one file (vocab entries first, per DataPatchKit.md). 76 entries; all gates green: `make validate` clean (incl. the new `feature-grouping-node` lint), `make verify-quote-verbatim` **93 verified / 0 failed / 11 SKIP-PDF** (matrix + manual + flyer transcriptions, author-checked), `make lint`/`typecheck`/`test` clean, and 0219+0220 applied cleanly on the standing snapshot (`db.prod.patch-0214.2026-08-03.sqlite3` → migrate → ingest) with everything resolving as intended — toy attaches are leaf-only across both families. Two `verify-quote-support` catches from 2026-08-09 are folded in: `ramp-diverters` moved off the PR-quoted toys entry onto its own matrix-mark entry, and the LE `variant_of` claim now cites the quote-less matrix mark (the identical PREM/LE columns are the evidence) instead of a PR quote that never stated the relationship.
+> **Superseded as process guidance (consolidated 2026-08-10).** The current loop and gate behavior live in [RULEBOOK.md](../../RULEBOOK.md) — in particular, the support verifier reads changeset notes since 2026-08-10, and the `verify-citations` triage below describes its pre-rename, pre-upgrade form (the archive-fallback gap noted there is closed). This file remains the Transformers **family record** (evidence, traps, decisions, worklists), and its `gen.py` remains the campaign's generator template.
+>
+> **Reworked 2026-08-10 for the unique-features policy; snapshot-validated; unshipped (committed locally, not pushed).** Patch number **0220** claimed (next free after 0219). One patch for the whole family — vocabulary and assignments ride one file (vocab entries first, per DataPatchKit.md). 76 entries; all gates green: `make validate` clean (incl. the new `feature-grouping-node` lint), `make verify-quote-verbatim` **93 verified / 0 failed / 11 SKIP-PDF** (matrix + manual + flyer transcriptions, author-checked), `make lint`/`typecheck`/`test` clean, and 0219+0220 applied cleanly on the standing snapshot (`db.prod.patch-0214.2026-08-03.sqlite3` → migrate → ingest) with everything resolving as intended — toy attaches are leaf-only across both families. Two `verify-quote-support` catches from 2026-08-09 are folded in: `ramp-diverters` moved off the PR-quoted toys entry onto its own matrix-mark entry, and the LE `variant_of` claim now cites the quote-less matrix mark (the identical PREM/LE columns are the evidence) instead of a PR quote that never stated the relationship.
 
 **`make verify-citations ARGS=0220` (AI lint) ran with warnings, no changes made** — triage: (1) every archived-2011-page cite reports "source unavailable" because the AI lint resolves the `ref` only — unlike `verify_quotes`, it has no fallback through the cite's `archive:` URL. Tooling gap, same class as the verify-quotes gap closed 2026-08-08; until it's fixed, archived-document cites will always warn there. (2) Many "quote is about a different entity" warnings listing hundreds of common-word slugs (`model:time`, `title:magic`, `model:winner`…) — the entity matcher hits generic words in the quote's line; noise. (3) The reveal-video credit quote warns because the ASR spells "Eisman"/"Geski" — the entry note explains this and the Kineticist cite on the same changeset carries the correct spellings. All three left for the user's review; none looked like a real citation defect.
 
@@ -21,22 +23,22 @@
 
 Claim-level scan run against `model_claims` from **all actors** (the Houdini lesson — the apply silently swallows exact duplicates, so the scan was done before authoring, not after).
 
-| field | pro 2011 | le 2011 | crimson | violet | the pin | mtmte pro | mtmte prem | mtmte le |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| year / month | 2011/11 | 2011/11 | 2011/1 | 2011/1 | 2012/1 | 2026/— | 2026/— | 2026/— |
-| production_status | — | — | — | — | — | — | — | — |
-| game_format | — | — | — | — | — | — | — | — |
-| tech generation | ss | ss | ss | ss | ss | — | — | — |
-| display_type | dot-matrix | dot-matrix | — | — | alphanumeric | — | — | — |
-| system | stern-sam | stern-sam | stern-sam | stern-sam | stern-spike-1 | — | — | — |
-| model_number | PINBALL I-00C3 | — | — | — | — | — | — | — |
-| players | 4 | 4 | 4 | 4 | 4 (ipdb says 2!) | — | — | — |
-| production_quantity | — | **500 (ipdb)** | **125 (ipdb)** | **125 (ipdb)** | — | — | — | — |
-| tag | — | limited-edition | limited-edition | limited-edition | home-use | — | — | — |
-| lineage | — | — | variant_of→le ✓ | variant_of→le ✓ | — | — | — | — |
-| credits | 7 (no art, no music) | 8 (no art) | 8 (no art) | 8 (no art) | 6 (incl. art) | — | — | — |
-| features | 5 (ipdb) | 4 (ipdb) | **none** | **none** | 2 (ipdb; slingshots dropped) | — | — | — |
-| themes | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ (0215) | ✓ (0215) | ✓ (0215) |
+| field               | pro 2011             | le 2011         | crimson         | violet          | the pin                      | mtmte pro | mtmte prem | mtmte le |
+| ------------------- | -------------------- | --------------- | --------------- | --------------- | ---------------------------- | --------- | ---------- | -------- |
+| year / month        | 2011/11              | 2011/11         | 2011/1          | 2011/1          | 2012/1                       | 2026/—    | 2026/—     | 2026/—   |
+| production_status   | —                    | —               | —               | —               | —                            | —         | —          | —        |
+| game_format         | —                    | —               | —               | —               | —                            | —         | —          | —        |
+| tech generation     | ss                   | ss              | ss              | ss              | ss                           | —         | —          | —        |
+| display_type        | dot-matrix           | dot-matrix      | —               | —               | alphanumeric                 | —         | —          | —        |
+| system              | stern-sam            | stern-sam       | stern-sam       | stern-sam       | stern-spike-1                | —         | —          | —        |
+| model_number        | PINBALL I-00C3       | —               | —               | —               | —                            | —         | —          | —        |
+| players             | 4                    | 4               | 4               | 4               | 4 (ipdb says 2!)             | —         | —          | —        |
+| production_quantity | —                    | **500 (ipdb)**  | **125 (ipdb)**  | **125 (ipdb)**  | —                            | —         | —          | —        |
+| tag                 | —                    | limited-edition | limited-edition | limited-edition | home-use                     | —         | —          | —        |
+| lineage             | —                    | —               | variant_of→le ✓ | variant_of→le ✓ | —                            | —         | —          | —        |
+| credits             | 7 (no art, no music) | 8 (no art)      | 8 (no art)      | 8 (no art)      | 6 (incl. art)                | —         | —          | —        |
+| features            | 5 (ipdb)             | 4 (ipdb)        | **none**        | **none**        | 2 (ipdb; slingshots dropped) | —         | —          | —        |
+| themes              | ✓                    | ✓               | ✓               | ✓               | ✓                            | ✓ (0215)  | ✓ (0215)   | ✓ (0215) |
 
 **Do not re-assert:** production_quantity on the three 2011 LEs (ipdb), tags on 2011 LEs + The Pin, all themes, 2011 credits/features listed above, Crimson/Violet `variant_of`.
 
@@ -45,7 +47,7 @@ Claim-level scan run against `model_claims` from **all actors** (the Houdini les
 ### 2026 MTMTE
 
 - **Stern press release, 2026-05-20** — `https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball` (HTML, gated). The densest 2026 source: "revealed and released", "available now in Pro, Premium, and Limited Edition (LE) models", "Limited to 750 games globally", the full LE equipment sentence (Expression Lighting ×2, mirrored backglass, pinball armor, autographed bottom arch, upgraded audio, anti-reflection glass, shaker, numbered plaque, COA), the three toys (animatronic Megatron + fusion cannon that "fires pinballs back", Soundwave cassette-deck ball locks, Optimus bash toy), MSRPs. No people credits (only voice actors + Stan Bush + Knights of Unicron).
-- **Feature matrix** — `https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf` (1 sheet, text layer + render). The ~44-row × 3-edition grid, fully transcribed 2026-08-08 (renders in scratchpad during authoring; the grid readings are recorded in gen.py's tables). Quotable rows (SKIP-PDF): row labels, LE-only block, GENERAL block, MAIN ATTRACTIONS prose, "Individually Autographed by Game Designer Elliot Eismin." Column membership is a **mark** — quote-less cite with locator + note per column (ENRICHMENT-PLAN → Citing PDF evidence).
+- **Feature matrix** — `https://wp.sternpinball.com/wp-content/uploads/2026/05/Transformers-More-Than-Meets-the-Eye-Feature-Matrix.pdf` (1 sheet, text layer + render). The ~44-row × 3-edition grid, fully transcribed 2026-08-08 (renders in scratchpad during authoring; the grid readings are recorded in gen.py's tables). Quotable rows (SKIP-PDF): row labels, LE-only block, GENERAL block, MAIN ATTRACTIONS prose, "Individually Autographed by Game Designer Elliot Eismin." Column membership is a **mark** — quote-less cite with locator + note per column (RULEBOOK.md → Citing PDF evidence).
 - **Pro manual** — `https://wp.sternpinball.com/wp-content/uploads/2026/07/Transformers_MTMTE_Pro_web.pdf` (66 sheets, real text layer). Sheet 1: `TRANSFORMERS: MORE THAN MEETS THE EYE PRO #500-55AA-01` (the Pro model number) and manual #780-50AA-00. TOC: "SPIKE-3 CPU Node 0". **No people credits anywhere** (Eismin/Gieske/Blakeman/Kyzivat/Thompson/designer → 0 matches). Premium/LE manuals unpublished as of 2026-08-08.
 - **Reveal video** — `youtube:zLx93Iiy5yw` ("TRANSFORMERS: More Than Meets the Eye Presented by Stern Pinball", auto-captions, gated). ASR: "Hi, I'm Elliot Eisman, lead game designer" and "Hi, I'm Elizabeth Geski, lead software developer" — **both names are ASR misspellings**, quoted verbatim per the video-citation rules. Trailer `youtube:3J9JGgUiRlc` carries no credits.
 - **Stern of the Union June + August 2026** (HTML, gated) — August: "TRANSFORMERS: More Than Meets The Eye pinball machines are rolling out worldwide" (production evidence).
@@ -93,7 +95,7 @@ Stern's 2011-era game pages are dead on sternpinball.com but archived; fetched v
 - **MTMTE art credit** — no source (incl. Pinside) credits an artist; the game uses original-animated-series artwork. Left unset.
 - **MTMTE Premium/LE manuals** — unpublished; Premium/LE model numbers unknown, only the Pro's is asserted.
 - **MTMTE player count** — no primary or journalism source states it (the head-to-head mode muddies "4 players" anyway). Left unset; user may wish to add when a manual/spec sheet states it.
-- **MTMTE month** — the PR dates the *release* (May 20), the plan's rule wants the *manufacture* date; August SOTU says machines still "rolling out". Left unset.
+- **MTMTE month** — the PR dates the _release_ (May 20), the plan's rule wants the _manufacture_ date; August SOTU says machines still "rolling out". Left unset.
 
 ## Decided
 

@@ -1,6 +1,6 @@
 """Emit patch 0220 — the Transformers family: 2026 MTMTE trio, 2011 editions, The Pin.
 
-See ../0215-frontier-2026/ENRICHMENT-PLAN.md for the family split and
+See ../../README.md for the family split and
 Transformers.md beside this file for the evidence inventory, the catalog
 baseline, the traps and the decisions this generator encodes (2026-08-08).
 
@@ -21,7 +21,7 @@ what each model already holds. Deliberately absent (each recorded there):
 
 THE MATRIX IS MARKS, MOSTLY: a feature row's column membership is a visual
 checkmark, so per-edition attaches cite the matrix quote-less (ref + locator +
-note recording the checked rows) — see ENRICHMENT-PLAN.md → Citing PDF
+note recording the checked rows) — see RULEBOOK.md → Citing PDF
 evidence. Prose that names its own subject (the PR's LE equipment sentence,
 the "GAME FEATURES LE ONLY" block) is quoted normally.
 
@@ -129,7 +129,7 @@ def mark_note(column: str, rows: str) -> str:
     """The entry note for a quote-less matrix mark cite.
 
     A checkmark is a mark, not text — nothing to transcribe, so no quote;
-    the note records the visual observation (ENRICHMENT-PLAN.md → Citing
+    the note records the visual observation (RULEBOOK.md → Citing
     PDF evidence).
     """
     return f"On the feature matrix sheet, the {column} column carries a checkmark for the rows: {rows}"

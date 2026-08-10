@@ -1,4 +1,4 @@
-# Resident Evil — 0240
+# Resident Evil
 
 ## Models
 

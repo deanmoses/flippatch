@@ -19,7 +19,7 @@ slug, title, corporate entity, franchise, theme, year. Deliberately absent:
   description        the lint requires inline cites and TWO sources per record
                      description. Research, not foundation.
 
-Run: uv run python campaigns/0215-frontier-2026/gen.py
+Run: uv run python campaigns/0215-frontier-2026/model-discovery/gen.py
 """
 
 from __future__ import annotations
@@ -27,13 +27,13 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "scripts"))
 
 import patchkit as pk  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 SQL = HERE / "frontier.sql"
-OUT = Path(__file__).resolve().parents[2] / "patches" / "0215-frontier-2026.yaml"
+OUT = Path(__file__).resolve().parents[3] / "patches" / "0215-new-2026-models.yaml"
 
 # The patch description maps to the Admin-only IngestRun note and is capped at 80
 # chars by the lint — the rationale lives in this module's docstring and the campaign

@@ -1,4 +1,4 @@
-# The Fiery End of Obsidian High — 0242
+# The Fiery End of Obsidian High
 
 ## Models
 

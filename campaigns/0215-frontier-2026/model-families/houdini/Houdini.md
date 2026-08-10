@@ -2,6 +2,8 @@
 
 ## Status
 
+> **Superseded as process guidance (consolidated 2026-08-10).** The current loop, gate behavior and campaign rules live in [RULEBOOK.md](../../RULEBOOK.md); tool names below are this era's (`verify-quotes` / `scripts/quote_verify` → today's `verify-quote-verbatim` + `verify-quote-support`, code in `scripts/quotes/`; `verify-citations` → the support check's pre-rename form). This file remains the Houdini **family record**: evidence inventory, decisions with dates, traps, and the unique-features worklist.
+
 **Rewritten and snapshot-validated 2026-08-07 (deduped against 0215 on 2026-08-08); unshipped, awaiting user commit/push.** The first rewrite re-asserted `production_quantity` and `tag: limited-edition` on the 100th, which **patch 0215 already asserts** — the baseline survey checked neither field. A full claim-level scan (every 0216 claim vs every other actor's claims on the same key) found no other overlap; those two are out of the patch and gen.py, and the dev DB was rebuilt clean. Scan lesson: an exact duplicate (same actor + key + value) is **silently swallowed** by the apply and leaves no `patch_claims` row, so scan against `model_claims` from other actors, not against what the patch wrote — the tag dupe was invisible the first way, and production_quantity only surfaced because 0215 asserted the number `100` while the emitter wrote the string `"100"`. The original thin 0216 (8 claims, 100th-only) was replaced outright per the pre-rewrite note here. The rewrite: 28 entries across all three family models, sources = the AP announcement, the AP `/houdini` product page, and `ipdb:6470`; all gates green (`make validate`, `make verify-quotes` 27/27) and applied cleanly on the snapshot below with credits/lineage/fields/features/tag all resolving as intended. `make verify-citations` (AI lint) not run — API credit balance too low at the time.
 
 **Dev-DB rebuild recipe (user, 2026-08-07):** restore from `db.prod.patch-0214.2026-08-03.sqlite3`, run `migrate`, then `ingest_patches --patches-dir ../../flippatch/patches`. Rebuild as often as needed.
@@ -17,20 +19,20 @@
 
 What each model already holds; **only assert what's missing.**
 
-| field | mom 2017 | deluxe 2017 | 100th 2026 |
-| --- | --- | --- | --- |
-| year / month | 2017 / 10 | 2017 / 10 | 2026 / — |
-| production_status | — | — | produced (0216) |
-| game_format | — | — | pinball (0216) |
-| tech generation | solid-state | — | — |
-| display_type | lcd | — | — |
-| system | multimorphic-p3-roc | — | — |
-| model_number | GAM0001 | — | — |
-| players | 4 | — | — |
-| lineage | — | variant_of → mom ✓ | **no edge** |
-| description | empty | empty | empty |
-| credits | full (Balcer design+mech, Busch/Riesterer art, Raneses anim, Kern music+sound, Kugler sw) | **none** | Franchi art only (0216) |
-| gameplay features | catapults 2, flippers 2, magnets 3, multiball, pop-bumpers 3, slingshots 2 | **none** | flippers, knockers, magnets 3, multiball, shaker-motors, toppers, video-modes 1 (0216) |
+| field             | mom 2017                                                                                  | deluxe 2017        | 100th 2026                                                                             |
+| ----------------- | ----------------------------------------------------------------------------------------- | ------------------ | -------------------------------------------------------------------------------------- |
+| year / month      | 2017 / 10                                                                                 | 2017 / 10          | 2026 / —                                                                               |
+| production_status | —                                                                                         | —                  | produced (0216)                                                                        |
+| game_format       | —                                                                                         | —                  | pinball (0216)                                                                         |
+| tech generation   | solid-state                                                                               | —                  | —                                                                                      |
+| display_type      | lcd                                                                                       | —                  | —                                                                                      |
+| system            | multimorphic-p3-roc                                                                       | —                  | —                                                                                      |
+| model_number      | GAM0001                                                                                   | —                  | —                                                                                      |
+| players           | 4                                                                                         | —                  | —                                                                                      |
+| lineage           | —                                                                                         | variant_of → mom ✓ | **no edge**                                                                            |
+| description       | empty                                                                                     | empty              | empty                                                                                  |
+| credits           | full (Balcer design+mech, Busch/Riesterer art, Raneses anim, Kern music+sound, Kugler sw) | **none**           | Franchi art only (0216)                                                                |
+| gameplay features | catapults 2, flippers 2, magnets 3, multiball, pop-bumpers 3, slingshots 2                | **none**           | flippers, knockers, magnets 3, multiball, shaker-motors, toppers, video-modes 1 (0216) |
 
 `production_status` vocabulary is announced/produced/unreleased/one-off/aftermarket — there is **no retired value**, so the site's RETIRED badges on the Classic/Deluxe carousel panels answer no catalog field. All three models are `produced`.
 
@@ -48,7 +50,7 @@ What each model already holds; **only assert what's missing.**
 
 - **The Wayback wrapper is in the cache too.** The bare `20250325113004/...` snapshot cached the HTML viewer ("Wayback Machine", 2 matches); the `id_` snapshot is the real PDF. Use the `id_` one.
 - **Speaker count conflicts across primary sources.** Flyer (2017) and IPDB say **6** stereo speakers; the current website's Additional Features says **4**. Do not assert either without a user decision.
-- **The manual and flyer document the 2017 machine.** Anything asserted about the 100th from them is an assumption, not evidence (the original 0216 gen.py warning stands). The 100th's own facts come from the announcement and the `/houdini` page — which *does* cover the 100th, since its edition carousel includes it and its game-level Additional Features describe the game all three editions are editions of.
+- **The manual and flyer document the 2017 machine.** Anything asserted about the 100th from them is an assumption, not evidence (the original 0216 gen.py warning stands). The 100th's own facts come from the announcement and the `/houdini` page — which _does_ cover the 100th, since its edition carousel includes it and its game-level Additional Features describe the game all three editions are editions of.
 - **Per-edition claims from the carousel are positional.** Classic/Deluxe/100th panels repeat identical headings; only "Deluxe Features" is explicitly labeled. Don't cite a panel by position — same splice problem as a matrix column.
 
 ## Decided (user, 2026-08-07)
@@ -69,7 +71,7 @@ After `0218-presentation-feature-vocab` (represent ALL features, gameplay-affect
 - **`steampunk-flippers`** — new child of `flippers`; on Deluxe + 100th. And **`flipper-toppers`** as its OWN node — flipper caps are NOT cabinet `toppers`; the shared word is exactly the false synonym the verbatim policy catches. IPDB "Game-specific flipper toppers", flyer "Custom Laser Cut Flipper Toppers!".
 - **Full vocab sweep** for the rest (18 new nodes in 0219): balls, subways, stages, stage-curtains (child of stages), trunks, marquees, spirit-planchettes, milk-cans, bumper-tops, rgb-playfield-inserts, led-general-illumination, cabinet-armor, playfield-lcds, mylar-playfield-protection + the four above. **`ball-locks` already existed in the seed vocabulary** — don't create it (the first apply failed on exactly that); its "Ball Staging/Lock Mechanisms" alias would be a fact added to an existing entity, left as a user call.
 - **Speakers resolved per the earlier ruling**: `{speakers: 4}` + `stereo-sound` on all three models, cited to the current site's "4 Stereo Speakers". The glass split: base model gets `anti-reflection-playfield-glass` (IPDB "Glare-reduced playfield glass"), the editions get `magic-glass` (the branded child) from site/announcement.
-- **0219 must follow 0218** (numeric order; it attaches 0218's nodes). Family dirs are unnumbered since 2026-08-08 — a session claims the next free patch number when work starts (see ENRICHMENT-PLAN.md → Model families).
+- **0219 must follow 0218** (numeric order; it attaches 0218's nodes). Family dirs are unnumbered since 2026-08-08 — a session claims the next free patch number when work starts (see ../../README.md → Model families).
 - **Multiball count (user-approved 2026-08-08):** "5 Multiballs" is five multiball **modes** — the site's rules list counts modes ("10 Stage Modes incl. Straight Jacket Multiball") and the 6-ball complement is stated separately — so `{multiball: 5}` rides on all three models in 0219, citing the site. On the base model this is an approved modification outranking the count-less ipdb seed claim; on the editions it supersedes 0216's count-less assertion at apply time.
 
 Tooling enabler (TDD'd this session): `verify_quotes` now resolves a cite via its `archive:` URL when the `ref` itself isn't in the cache — the flyer is the first archived-document cite, cached under the Wayback `id_` snapshot URL while the cite's `ref` stays the dead publisher URL. Its transcribed quotes report `SKIP-PDF`, as designed.
@@ -80,7 +82,7 @@ The first 0219 was judged **too granular and model-specific** against [0218](../
 
 - **New `toys` node**, created here (parentless interior node; is-a holds — a trunk IS a toy).
 - **Re-parented under `toys`**: `stages`, `trunks`, `marquees`, `spirit-planchettes`, `milk-cans`. Aliases unchanged.
-- **`stage-curtains` deleted** — a curtain is *part of* the stage toy, not a kind of stage (the parent link is is-a only; this was the recorded violation). The "Automated Main Stage Curtain!" flyer span and its assignments are dropped; the automated curtain belongs in the `stages` node's eventual description (0074-style descriptions patch, still owed).
+- **`stage-curtains` deleted** — a curtain is _part of_ the stage toy, not a kind of stage (the parent link is is-a only; this was the recorded violation). The "Automated Main Stage Curtain!" flyer span and its assignments are dropped; the automated curtain belongs in the `stages` node's eventual description (0074-style descriptions patch, still owed).
 - Unchanged: the generic mechs (`subways`, `balls`, `bumper-tops`, `rgb-playfield-inserts`, `led-general-illumination`, `cabinet-armor`, `playfield-lcds`, `mylar-playfield-protection`), the 0218-style children (`steampunk-flippers`, `interior-side-art`, `mirrored-art-blades`, `flipper-toppers`), and every count.
 
 ## Reworked (user decision, 2026-08-10) — unique features leave the vocabulary
