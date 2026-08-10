@@ -33,7 +33,7 @@ from common.paths import REPO_ROOT, load_env
 from ai_lint.cli_common import emit, oversize_error, scope_error
 from ai_lint.corpus import Corpus
 from ai_lint.patch_load import load_patches
-from ai_lint.quote_support.verify import collect_claims, verify_claim
+from ai_lint.quote_support.verify import collect_claims, unjudged, verify_claim
 from ai_lint.report import Severity
 
 
@@ -117,10 +117,8 @@ def main(argv: list[str] | None = None) -> int:
                 if finding is not None:
                     findings.append(finding)
             except AiError as exc:
-                print(
-                    f"  ! {claim.entity_ref}: skipped — AI error: {exc}",
-                    file=sys.stderr,
-                )
+                findings.append(unjudged(claim, str(exc)))
+                print(f"  ! {claim.entity_ref}: not judged — {exc}", file=sys.stderr)
                 continue
     except AiBudgetError as exc:
         print(f"error: {exc}", file=sys.stderr)

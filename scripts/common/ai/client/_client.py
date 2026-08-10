@@ -55,12 +55,16 @@ def anthropic_api_key() -> str | None:
     return os.environ.get("ANTHROPIC_API_KEY", "").strip() or None
 
 
+class _SchemaInvalidError(AiError):
+    """A response that failed schema validation — retryable, unlike truncation."""
+
+
 def _validate(data: AiModelResult, schema: JsonSchema) -> AiModelResult:
-    """Return ``data`` if it satisfies ``schema``, else raise :class:`AiError`."""
+    """Return ``data`` if it satisfies ``schema``, else raise :class:`_SchemaInvalidError`."""
     try:
         Draft7Validator(schema).validate(data)
     except SchemaError as exc:
-        raise AiError(
+        raise _SchemaInvalidError(
             f"structured output failed schema validation: {exc.message}"
         ) from exc
     return data
@@ -120,6 +124,31 @@ class AnthropicClient:
         model: AiModelName,
         max_tokens: int = 512,
     ) -> AiModelResult:
+        """One forced tool call, validated against *schema*.
+
+        A response that violates the schema — most often a long justification
+        with the verdict field left off — is a lapse the same request can come
+        back from, so it is asked once more. Truncation is not: an identical
+        request truncates identically, and a retry would only double the bill.
+        """
+        try:
+            return self._ask(
+                system=system, user=user, schema=schema, model=model, mt=max_tokens
+            )
+        except _SchemaInvalidError:
+            return self._ask(
+                system=system, user=user, schema=schema, model=model, mt=max_tokens
+            )
+
+    def _ask(
+        self,
+        *,
+        system: str,
+        user: str,
+        schema: JsonSchema,
+        model: AiModelName,
+        mt: int,
+    ) -> AiModelResult:
         if self._requests >= self._max_requests:
             raise AiBudgetError(
                 f"per-invocation AI-call ceiling reached ({self._max_requests}) — "
@@ -129,7 +158,7 @@ class AnthropicClient:
         self._requests += 1
         response = self._client.messages.create(
             model=model,
-            max_tokens=max_tokens,
+            max_tokens=mt,
             system=system,
             tools=[
                 {
@@ -142,6 +171,15 @@ class AnthropicClient:
             messages=[{"role": "user", "content": user}],
         )
         self._accrue(getattr(response, "usage", None))
+        if getattr(response, "stop_reason", None) == "max_tokens":
+            # The tool call's JSON stops mid-token, so the parsed input is short
+            # of required keys. Validating it would report a missing property and
+            # send the reader hunting for model flakiness in a failure that is
+            # ours, deterministic, and fixed by giving the call more room.
+            raise AiError(
+                f"model output truncated at the {mt}-token cap before the "
+                f"structured result was complete — raise max_tokens for this call"
+            )
         for block in getattr(response, "content", []):
             if getattr(block, "type", None) == "tool_use":
                 payload = getattr(block, "input", None)

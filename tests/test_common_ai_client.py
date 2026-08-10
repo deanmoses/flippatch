@@ -44,9 +44,12 @@ class _Usage:
 
 
 class _Response:
-    def __init__(self, content: list[_Block], usage: _Usage) -> None:
+    def __init__(
+        self, content: list[_Block], usage: _Usage, stop_reason: str = "tool_use"
+    ) -> None:
         self.content = content
         self.usage = usage
+        self.stop_reason = stop_reason
 
 
 class _Messages:
@@ -141,3 +144,69 @@ def test_require_ai_client_fatal_without_key(monkeypatch):
     monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
     with pytest.raises(AiUnavailableError):
         require_ai_client()
+
+
+def test_truncated_output_names_the_cap_not_the_schema():
+    # Hitting max_tokens leaves the tool call's JSON unfinished, so the parsed
+    # input is missing keys. Reported as a schema error it reads as the model
+    # omitting a field, and sends the reader looking for flakiness in a failure
+    # that is ours and perfectly deterministic.
+    def truncated(_: dict[str, object]) -> _Response:
+        return _Response([_Block("tool_use", {})], _Usage(9000, 64), "max_tokens")
+
+    client = _client(truncated)
+    with pytest.raises(AiError, match="truncated") as caught:
+        client.structured(system="s", user="u", schema=SCHEMA, model="m", max_tokens=64)
+    assert "64" in str(caught.value)  # the cap that needs raising
+    assert "schema validation" not in str(caught.value)
+
+
+def test_a_complete_response_is_unaffected_by_the_truncation_check():
+    client = _client(_ok_responder)
+    assert client.structured(system="s", user="u", schema=SCHEMA, model="m") == {
+        "ok": True
+    }
+
+
+def test_schema_invalid_output_is_re_asked_once():
+    # A malformed tool call is a lapse, not a verdict — the model can produce a
+    # valid one from the same input, so it gets a second chance before the claim
+    # is written off.
+    calls: list[int] = []
+
+    def flaky(_: dict[str, object]) -> _Response:
+        calls.append(1)
+        if len(calls) == 1:
+            return _Response([_Block("tool_use", {"why": "no verdict"})], _Usage(1, 1))
+        return _Response([_Block("tool_use", {"ok": True})], _Usage(1, 1))
+
+    client = _client(flaky)
+    assert client.structured(system="s", user="u", schema=SCHEMA, model="m") == {
+        "ok": True
+    }
+    assert len(calls) == 2
+
+
+def test_a_second_malformed_response_raises_rather_than_looping():
+    def always_bad(_: dict[str, object]) -> _Response:
+        return _Response([_Block("tool_use", {"why": "no verdict"})], _Usage(1, 1))
+
+    client = _client(always_bad)
+    with pytest.raises(AiError, match="schema validation"):
+        client.structured(system="s", user="u", schema=SCHEMA, model="m")
+    assert client.request_count == 2
+
+
+def test_truncation_is_not_retried():
+    # Re-sending an identical request gets an identical truncation. Retrying a
+    # deterministic failure only doubles the bill.
+    calls: list[int] = []
+
+    def truncated(_: dict[str, object]) -> _Response:
+        calls.append(1)
+        return _Response([_Block("tool_use", {})], _Usage(9000, 64), "max_tokens")
+
+    client = _client(truncated)
+    with pytest.raises(AiError, match="truncated"):
+        client.structured(system="s", user="u", schema=SCHEMA, model="m")
+    assert len(calls) == 1

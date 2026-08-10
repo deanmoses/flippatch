@@ -79,6 +79,12 @@ def collect_claims(filename: str, data: object) -> Iterator[CitedClaim]:
                 )
 
 
+# Room for a verdict over a claim's whole evidence set. A cap reached is a claim
+# never judged, and unused headroom is not billed, so this is sized for the
+# longest reason a multi-cite claim provokes rather than the typical one.
+_VERDICT_TOKENS = 2048
+
+
 @dataclass(frozen=True, slots=True)
 class _Evidence:
     """One cite as the judgment sees it: what was offered, and what resolved."""
@@ -159,6 +165,7 @@ def verify_claim(claim: CitedClaim, corpus: Corpus, ai: AiClient) -> Finding | N
         user=_context_user(claim, evidence),
         schema=prompts.SUPPORTS_CLAIM_SCHEMA,
         model=TRUSTED_MODEL,
+        max_tokens=_VERDICT_TOKENS,
     )
     if parsing.as_bool(result, "supported"):
         return None
@@ -167,6 +174,22 @@ def verify_claim(claim: CitedClaim, corpus: Corpus, ai: AiClient) -> Finding | N
         Severity.WARNING,
         f"evidence does not support the {claim.kind} claim: {claim.claim_text[:100]!r}",
         parsing.as_str(result, "reason"),
+    )
+
+
+def unjudged(claim: CitedClaim, error: str) -> Finding:
+    """The finding for a claim the run failed to reach a verdict on.
+
+    A claim the model never answered is not a passing claim, so it belongs in
+    the report and in the exit code rather than in a line of stderr the reader
+    scrolls past.
+    """
+    return _finding(
+        claim,
+        Severity.WARNING,
+        f"not judged — the model returned no verdict for the {claim.kind} claim: "
+        f"{claim.claim_text[:80]!r}",
+        error,
     )
 
 

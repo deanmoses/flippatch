@@ -14,7 +14,7 @@ class FakeAiClient:
         self.calls: list[dict[str, object]] = []
 
     def structured(self, *, system, user, schema, model, max_tokens=512):
-        self.calls.append({"user": user, "model": model})
+        self.calls.append({"user": user, "model": model, "max_tokens": max_tokens})
         return self.response
 
 
@@ -616,3 +616,42 @@ def test_a_pdf_quote_beside_a_readable_one_is_labelled_unverified_in_the_prompt(
     assert verify_claim(claim, corpus, ai) is None
     user = str(ai.calls[0]["user"])
     assert "not machine-verified" in user
+
+
+def test_the_judgment_asks_for_more_room_than_the_client_default():
+    # A verdict is a bool plus a paragraph of justification over several sources.
+    # The 512-token default is the one this checker outgrew, and a cap reached is
+    # a claim never judged — headroom costs nothing unless it is used.
+    data = {
+        "claims": [
+            {
+                "model.bar": {
+                    "year": 1994,
+                    "cite": {"ref": "ipdb:1", "quote": "released in 1994"},
+                }
+            }
+        ]
+    }
+    (claim,) = list(collect_claims("0059-x.yaml", data))
+    corpus = Corpus(FakeResolver({"ipdb:1": "It was released in 1994."}))
+    ai = FakeAiClient({"supported": True, "reason": "ok"})
+    verify_claim(claim, corpus, ai)
+    assert int(ai.calls[0]["max_tokens"]) >= 1024
+
+
+def test_a_claim_the_model_never_answered_is_reported_not_dropped():
+    # An AI error leaves a claim with no verdict. Printed to stderr and otherwise
+    # forgotten, the run reports clean on evidence it never actually judged.
+    from ai_lint.quote_support.verify import unjudged
+
+    claim = CitedClaim(
+        patch="0221-x.yaml",
+        entity_ref="model.sonic-the-hedgehog-arcade-edition",
+        kind="scalar",
+        claim_text="variant_of = 'sonic-the-hedgehog-special-edition'",
+        cites=(),
+    )
+    finding = unjudged(claim, "model output truncated at the 512-token cap")
+    assert finding.severity is Severity.WARNING
+    assert finding.entity_ref == "model.sonic-the-hedgehog-arcade-edition"
+    assert "truncated" in finding.reason
