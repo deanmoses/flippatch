@@ -25,6 +25,7 @@ The authority on primary sources is `~/dev/flipcommons/docs/DataPatchAuthoring.m
 - **Distributor and archive** copies where the maker's own copy is gone: archive.org, distributor sites, Planetary Pinball for Williams/Bally titles.
 - For a **remake or a kit**, the _original_ machine's documents too — they are what the new one is derived from.
 - For a **homebrew**, the builder's own build thread on a 3rd party site.
+- **The licensor's own store**, where the maker releases "in partnership with" one. PPS sells the TOTAN remake deposits itself, with per-edition bullet copy _cleaner_ than the maker's own pages and sometimes decisive wording: its "Infinite mirror side blades" identified as playfield blades what the maker ambiguously called "Side Rails", and "No second run planned." settled which edition count is a hard cap.
 - **press releases**: the maker's own words reprinted verbatim by a publication, datelined and attributed. **A maker's own reveal post can be an abridged press release** — BoF's Bon Jovi post carries the credits and the limited-release paragraph but not the Game Attractions / Game Features spec blocks, which exist only in Pinball News's verbatim reprint (and on the flyer). Check the reprints before declaring a spec unsourced, and cite each fact to the document that actually carries it.
 
 ### Journalism
@@ -41,7 +42,7 @@ For an **announced** machine whose maker has published nothing beyond a teaser, 
 
 User-submitted database rows — Pinside game archive, Kineticist _game index_.
 
-Do not use for any model that has a manufacturer PDF\*\*. Elsewhere, never the sole support for a claim.
+Do not use for any model that has a manufacturer PDF. Elsewhere, never the sole support for a claim.
 
 Where a family's sources are thin, the reason differs per family and determines what to do — each is recorded in that family's own notes. Where nothing is available, the model gets **nothing beyond what 0215 already created**.
 
@@ -69,6 +70,7 @@ Put every primary document you find in the [web cache](~/dev/pinexplore/docs/Web
 - **A maker document that 404s is often recoverable from Wayback** — check the CDX index before declaring a maker's old documents lost. Fetch the snapshot with the `id_` modifier (`/web/<timestamp>id_/<url>`) or you cache the HTML wrapper instead of the document; it reports a clean `200` either way. Citing it is [Citation roots](#citation-roots) → archive.
 - **A maker's news archive is a credits gold mine.** The GTF manual names nobody, but AP's old-domain news posts named the entire creative team in one sentence ("Slam Tilt Podcast interviews the Galactic Tank Force team") plus the display cast in another. When the manual and product pages are credit-silent, pull the Wayback CDX listing of `/news/` and fetch the team/interview/cast announcement posts — they are first-party.
 - **A rebuilt maker site can silently merge editions.** AP's 2026 WordPress rebuild collapsed GTF's Limited and Signature editions into one "Limited" panel (its add-ons block is still headed "Signature Add Ons"). Per-edition facts for retired editions come from era-appropriate archived pages, not the live page's panels — the live page evidences only what it explicitly heads.
+- **A maker's real domain may not carry its name.** Before declaring a maker web-less, follow the redirect from every domain variant its email and branding suggest — Pedretti publishes at `pinballremakes.com`, not at any `pedretti*` domain. Then read the site footer: street address, registry number (Italy: REA/P.IVA) and email domain are first-party identity and **location** evidence.
 - **A maker's manual lineup can promise more per-edition evidence than it holds.** Stern serves the 2011 Transformers manual under two filenames, byte-identical — `content_sha` is the tell, check it before treating two documents as two sources. Pokémon's `Pokemon_LE_Pre_web.pdf` is the other shape: one distinct manual explicitly covering two editions (LE **and** Premium). Either way, a per-edition filename is not per-edition evidence — verify what the document actually covers.
 
 ### Hunting machine photos
@@ -76,7 +78,7 @@ Put every primary document you find in the [web cache](~/dev/pinexplore/docs/Web
 On-machine print — a credits panel, an apron card, a spec plate — is the most primary source there is (see [Primary and secondary sources](#primary-and-secondary-sources)), and photos of it are hunted by **document class first, recovery route second**:
 
 1. **Maker PDF containing the photo.** Wins on every axis at once: stable URL on a rootable host; flyers and brochures are produced from print-resolution source assets rather than web-compressed derivatives, so small type survives zooming; and it is the cheapest to gate — a PDF quote is author-checked (`SKIP-PDF`), no transcription import needed. Sweep the maker's PDFs for playfield photography, not just spec text.
-2. **Maker website images.** Rootable and first-party, but with two costs a PDF doesn't have: delivery images are usually downscaled — check pixel dimensions before spending effort, and hunt the original (strip WordPress's `-300x116` thumbnail suffix, ask Shopify for the master, prefer the `/img/` asset over the gallery preview — GTF's archived gallery previews were *smaller* than the flyer embedding the same photo); and an image cite needs the `web_import.py --text-file` transcription before its quotes gate (see [Operating the quote gates](#operating-the-quote-gates)).
+2. **Maker website images.** Rootable and first-party, but with two costs a PDF doesn't have: delivery images are usually downscaled — check pixel dimensions before spending effort, and hunt the original (strip WordPress's `-300x116` thumbnail suffix, ask Shopify for the master, prefer the `/img/` asset over the gallery preview — GTF's archived gallery previews were _smaller_ than the flyer embedding the same photo); and an image cite needs the `web_import.py --text-file` transcription before its quotes gate (see [Operating the quote gates](#operating-the-quote-gates)).
 3. **Wayback is the transport fallback for either tier, not a tier of its own.** Same `id_` and `ref`+`archive:` mechanics as documents. A Wayback-recovered maker PDF outranks a live maker website image — the document class matters more than the liveness. You get only what was crawled at the resolution it was crawled, and it may be the last copy anywhere: GTF's GTK M13 flyer survives solely as one 585 KB JPG snapshot. Today's live maker image is tomorrow's single lossy snapshot — cache it now.
 
 **Legibility is the binding constraint, not availability.** Before transcribing, check whether the print region is actually readable: crop and upscale to inspect, and when a name sits at the letterform-ambiguity floor (GTF's ~8 px cursive credits), cross-reference the reading against corroborating coverage before committing it, recording the aid in the note.
@@ -110,7 +112,7 @@ Manuals are the _weakest_ source for people credits: Stern's MTMTE manual names 
 | Multimorphic                                        | 0                                                                     | product pages only                                                   |
 | Pedretti, Turner, World Pinball, UP Pinball, Ramp's | 0                                                                     | none found in one pass — unsearched, not absent                      |
 
-Their web presence differs in ways that matter: Pedretti's own domain did not resolve yet its full press release is public, World Pinball's real site is `worldpinball.ch` behind an HTTP 401, Ramp's site is live but silent on its 2026 machine.
+Their web presence differs in ways that matter: World Pinball's real site is `worldpinball.ch` behind an HTTP 401, Ramp's site is live but silent on its 2026 machine.
 
 ### `draft-evidence-aggregator.csv` helps you know what to look for
 
@@ -148,7 +150,7 @@ A URL cite fails the apply unless its host resolves to a seeded citation root. M
 
 **The shared roots are already seeded — `patches/0217-enrichment-citation-roots.yaml` does it.** Do not re-declare them and do not invent roots of your own. It attaches American Pinball's two document hosts (`48804760.fs1.hubspotusercontent-na1.net`, `my.orbitgames.fun`) to the **existing** American Pinball root, and creates the **Planetary Pinball** root for the licensed Williams/Bally material several families' pre-2000 halves rest on. It takes 0217 because a roots patch has a hard ordering constraint a family follow-up does not: patches apply in numeric-prefix order, so a root must be numbered below every patch citing it.
 
-A root your family needs that 0217 does not cover is a **single-family** root and belongs in your own family patch — Cardona (`cardonapinball.com`) is the known case, riding in the fish-tales patch whenever that claims its number. The `sources:` block is **additive get-or-create**, matched by recognition host: a node matching an existing root has missing hosts backfilled and existing fields left alone, so a re-declaration is a harmless no-op. **Do not modify 0215 or 0217 and do not renumber.**
+A root your family needs that 0217 does not cover is a **single-family** root and belongs in your own family patch — Cardona (`cardonapinball.com`) is the worked case, created by 0225. The `sources:` block is **additive get-or-create**, matched by recognition host: a node matching an existing root has missing hosts backfilled and existing fields left alone, so a re-declaration is a harmless no-op. **Do not modify 0215 or 0217 and do not renumber.**
 
 ```yaml
 sources:
@@ -157,6 +159,8 @@ sources:
     description: Manufacturer's own site. # only on a NEW root; a match ignores it
     links:
       - { url: "https://cardonapinball.com/", link_type: homepage }
+    domains: # extra recognition hosts; a path scopes a shared CDN (below)
+      - img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3
 ```
 
 **Attach a maker's document host to that maker's existing root, never to a new one.** Splitting AP's manuals off from AP's product pages would put one company's evidence under two sources, and nothing in the apply catches it.
@@ -169,7 +173,7 @@ FROM (VALUES ('wp.sternpinball.com'), …) h(host)
 LEFT JOIN citation_roots cr ON cr.root_citation_source_id = citation_root_for_host(h.host);
 ```
 
-**Shared hosts must never be registered.** `cdn.shopify.com`, `img1.wsimg.com` and `storage.googleapis.com` carry many makers' files with the tenant id in the **path**, and recognition reads only the host — registering any of them would resolve every unrelated URL on that CDN to one maker. There is no host string meaning "this maker's corner of the CDN", which makes these unregisterable rather than merely unregistered. The restraint is documentation, not enforcement: flipcommons hard-refuses "deliverer" hosts (Amazon, Netflix, Google Books) via `deliverers.py`, but no CDN is in that table.
+**Shared hosts must never be registered bare — register the maker's tenant path instead.** `cdn.shopify.com`, `img1.wsimg.com` and `storage.googleapis.com` carry many makers' files with the tenant id in the **path**; registering the bare host would resolve every unrelated URL on that CDN to one maker, and the apply rejects it. Since 2026-08-11 a `domains:` entry may carry a **path**, declaring exactly the maker's tenant slice of a declared shared host — see DataPatches.md → Citation sources and the allowlist in flipcommons `apps/citation/shared_hosts.py`; `patchkit.source_root(domains=[...])` emits it. The worked example is 0225's Cardona root: the maker's whole document set (release notes, instruction cards) lives only on GoDaddy's `img1.wsimg.com`, with no maker-domain mirror, and `img1.wsimg.com/blobby/go/<tenant-id>` resolves its files to the Cardona root while other tenants' stay unresolved. A shared host **not yet in the allowlist** is still unregisterable — extending the allowlist is a flipcommons change, not a patch.
 
 **For a Shopify-backed maker store there is usually a maker-domain URL** — Shopify serves the same file under the store's own domain, so `cdn.shopify.com/s/files/<tenant>/files/X.pdf` is also at `<maker-domain>/cdn/shop/files/X.pdf`. The Sonic compare flyer resolved to the Jersey Jack root that way (0221's worked example). Fetch and cite the maker-domain URL. Where no such URL exists, the document is research-only: findable, not citable.
 
@@ -188,7 +192,15 @@ Houdini's 0219 flyer cites and Transformers' 0220 archived Stern game pages are 
 
 **The remake credit rule (user decision, 2026-08-10).** All creative credits — design, art, animation, music, sound — carry from an original to its remake, cited to the original's evidence with a note; mechanics and software do not (a remake is re-engineered). Matches the seed's Medieval Madness Remake rows. When the remake replaces a creative element (cirqus-voltaire's Ringmaster Edition has a new Brian Allen art package), that slot's original credit does not carry to the model that replaced it. Remake editions are named the seed's way: "Medieval Madness (Remake Limited Edition)", and carry `remake_of` to the original plus `variant_of` to their base remake model.
 
+**A two-peer-edition remake family has a base: the cheaper, less-limited edition (user decision, 2026-08-11).** When a remake launches as two editions with no plain "Remake" base model (TOTAN: Legacy + 30th Anniversary), the cheaper/standard edition is the base and the pricier strictly-limited one is `variant_of` it — the shape the seed already gives Pedretti's own Funhouse remakes (Limited `variant_of` Collector's). Both still carry `remake_of` the original. (Medieval Madness Remake's flat all-`remake_of` shape predates this ruling.)
+
 **The variant rule (user decision, 2026-08-07).** A variant carries every credit of its base, and the shared design's hardware is a fact about every edition. Cite the base's evidence (e.g. the base IPDB row) with a `note:` saying why the value carries. Convention survey so far: every modern Stern LE is `variant_of` its Premium (40+ catalog precedents; 0220), and JJP's multi-edition families point at the mid-tier base — the Harry Potter shape; 0221's CE and AE → Special Edition, user-approved 2026-08-10.
+
+**The conversion-kit rule (fish-tales, 2026-08-11).** A licensed 2.0 kit is neither a variant nor a remake: no credits carry from the donor machine, and the donor's hardware facts (flippers, ramps, player count) stay off the kit model — the donor supplies them, the kit doesn't include them. The kit-to-donor link is a `model_relationship` edge, `relationship_type: conversion_kit` + `license_status`, targeting the donor. Kit-specific facts (its displays, its system, its new modes' features) assert normally. `production_status` follows the DomainModel definitions, not the word "kit": an officially licensed, commercially sold kit is `produced` (`aftermarket` means _not_ an official commercial release).
+
+**Locate the city for every corporate entity.** City, not state. A **state business registry is first-rate evidence**, and when a stable republisher (City-Data.com) is its only citable carrier, root and cite the republisher with the underlying registry named in the note — 0225's Cardona → Pennsville NJ.
+
+**A System create requires a `manufacturer:` FK** — `catalog_system.manufacturer_id` is NOT NULL, and the structural gates don't catch its absence; the apply fails. A platform maker that builds no machines of its own (FAST Pinball) is still created as a manufacturer to hold its system.
 
 **`cite_kind` is recorded, never inferred later.** The emitter writes the two kinds differently: a `quote` cite carries a transcribed span, a `mark` cite carries a visual observation in a `note` with no `quote:`. Which one a row is depends on whether the evidence is text or a mark (see [Citing PDF evidence](#citing-pdf-evidence)). This is a fact about the **evidence**, recorded in the generator's own input so the emitter can branch — never a claim in the patch about whether a quote is verifiable.
 
@@ -222,6 +234,8 @@ Then run the AI support check scoped to your patch — `make verify-quote-suppor
 **A note is not a pass guarantee, and a clean pass is not the goal.** Taxonomy-level disagreements warn with or without a note and vary run to run — 0221's `cabinet-armor` "cosmetic, not gameplay" (presentation features are vocabulary by charter) and an occasional "the note is the author's inference" on classification-by-absence like static toys. Triage those against the charter and keep your call. **Do not re-run chasing a clean pass**: each scoped run costs ~300k tokens and samples differently. Genuine catches remain worth folding in — 0221's `production_status: produced` justly warned until the cite said the maker ships from stock rather than merely "available for purchase".
 
 If the patch changed after a snapshot apply, restore and replay before re-verifying — the ledger fingerprints content.
+
+**A locator says where the words sit, not how good they are.** When a reprinted press release and the outlet's own reporting share one document and read alike, quote the release text rather than the reporter's paragraphs around it, and let the locator draw the line: `in the manufacturer's press release reprinted verbatim in the article`.
 
 **Lift spans from `web_cache.py quote` output verbatim — don't "fix" the source's own text.** Page text sometimes genuinely contains joined words ("Cabinet Armor &Matching Speaker Panel" in PN's Bon Jovi reprint is the HTML's own text, not a scrape artifact); a span lifted as `quote()` returns it matches both the stored text and the page, artifact-looking or not, while a hand-corrected spacing never will. And a multi-span `[...]` quote must list its spans in source order; the gate fails an out-of-order chain even when every span verifies individually.
 

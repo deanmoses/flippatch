@@ -30,7 +30,7 @@ The two remakes hold only what 0215 created: name, slug, title, theme ×4 (fanta
 - **LCD, not DMD.** The press release's "New DMD display animations" describes animation content; both maker product pages and PPS say **21.5" HD LCD**. `display_type: lcd` for both remakes, cited to the product page.
 - **Three MSRPs in the wild**: release text $10,999/$11,999; Pinball News's own summary paragraph $10,995/$11,995; PPS $10,995/$11,995. Price is not a catalog field, so nothing to assert — but don't quote the PN summary thinking it's the release.
 - **Legacy's 500 is soft.** "Initial production limited to 500 units in 2026" / "Initial production run only." — a first-run size, not a total cap. Only the 30th's 399 ("No second run planned") is asserted as `production_quantity`.
-- **IPDB `ProductionNumber` is deliberately un-quotable** — `scripts/quotes/sources.py` excludes it (stored `3128` vs page's "3,128 units"), so the 1996 `production_status: produced` cites Kineticist's "shipped from Williams" line, not IPDB.
+- **1996 `production_status` rests on Kineticist's "shipped from Williams" line**, not on the `ipdb:3824` row. The row also indexes first-party Williams documents this patch did not use — an Operations Manual (May 1996), an Operators Handbook, a parts list, Service Bulletin #91 and both flyer sides.
 - **The location conflict is real but settled by weight of evidence** (pending user ruling — see Decisions): catalog says `italy/pc/podenzano`; maker footer, REA BG 445013, dateline, Facebook, and Kineticist all say Bagnatica (BG). The Podenzano claim survives only on third-party dealer copy, possibly describing the parent Pedretti Group. `italy/bg/bagnatica` already exists in the location tree (id 391).
 
 ## Decisions (all user-ruled 2026-08-11)
