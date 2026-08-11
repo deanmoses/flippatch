@@ -11,7 +11,7 @@ Each family is independent work, done by a separate AI session in its own folder
 - **✅ 0221 · [sonic-hedgehog](model-families/sonic-hedgehog)** (Jersey Jack) — Collector's / Special / Arcade Edition
 - **✅ 0222 · [galactic-tank-force](model-families/galactic-tank-force)** (American Pinball) — Victory Edition **+ 4 older** (2023): Classic, Deluxe, Limited Edition, Signature
 - **✅ 0223 · [cirqus-voltaire](model-families/cirqus-voltaire)** (American Pinball) — Remake / Ringmaster Edition **+ 1 older**: Cirqus Voltaire (Bally, 1997)
-- **open · [bon-jovi](model-families/bon-jovi)** (Barrels of Fun) — Bon Jovi
+- **✅ 0224 · [bon-jovi](model-families/bon-jovi)** (Barrels of Fun) — Bon Jovi
 - **open · [fish-tales](model-families/fish-tales)** (Cardona) — Ultimate Fishing Challenge (Kit) **+ 1 older**: Fish Tales (Williams, 1992). Needs the Cardona citation root in its own patch — see [RULEBOOK.md](RULEBOOK.md#citation-roots).
 - **open · [arabian-nights](model-families/arabian-nights)** (Pedretti) — Tales of the Arabian Nights 30th Anniversary + Legacy Edition **+ 1 older**: TOTAN (Williams, 1996)
 - **open · [musketeers](model-families/musketeers)** (HEXA) — The 3 Musketeers base + Elegance Edition

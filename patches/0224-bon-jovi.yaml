@@ -1,0 +1,252 @@
+attribution: flipcommons-catalog
+description: >
+  Bon Jovi (Barrels of Fun 2026): production, credits, features
+claims:
+  - gameplay-feature.lightning-flippers:
+      create: true
+      name: Lightning Flippers
+      gameplay_feature_parent: [flippers]
+      gameplay_feature_alias: [Lightning Flipper]
+  - gameplay-feature.mini-flippers:
+      create: true
+      name: Mini Flippers
+      gameplay_feature_parent: [flippers]
+      gameplay_feature_alias: [Mini Flipper, Mini-Flipper]
+  - gameplay-feature.jump-ramps:
+      create: true
+      name: Jump Ramps
+      gameplay_feature_parent: [ramps]
+      gameplay_feature_alias: [Jump Ramp]
+  - gameplay-feature.infinity-glass:
+      create: true
+      name: Infinity Glass
+      gameplay_feature_parent: [anti-reflection-playfield-glass]
+  - gameplay-feature.horizon-atmospheric-lighting:
+      create: true
+      name: Horizon Atmospheric Lighting
+      gameplay_feature_parent: [interactive-cabinet-lighting]
+      gameplay_feature_alias: [HAL, Horizon Atmospheric Lighting (HAL)]
+  - person.phil-grimaldi:
+      create: true
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Rules: Phil Grimaldi Jess DeNardo"
+      name: Phil Grimaldi
+  - person.jess-denardo:
+      create: true
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Rules: Phil Grimaldi Jess DeNardo"
+      name: Jess DeNardo
+  - person.jeff-dodson:
+      create: true
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Sound Design: Jeff Dodson"
+      name: Jeff Dodson
+  - person.trent-armstrong:
+      create: true
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Animations: Joshua Clay Trent Armstrong"
+      name: Trent Armstrong
+  - person.luke-underwood:
+      create: true
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Mechanical Engineering: Luke Underwood Paul Sulisz"
+      name: Luke Underwood
+  - person.paul-sulisz:
+      create: true
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Mechanical Engineering: Luke Underwood Paul Sulisz"
+      name: Paul Sulisz
+  - person.david-van-es:
+      note: "The maker credits him as 'David van Es' (lowercase v, the Dutch convention); Pinside spells it 'David Van Es', kept as an alias so both forms resolve."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Game Design: David van Es"
+      name: David van Es
+      person_alias: [David Van Es]
+  - person.josh-clay:
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Animations: Joshua Clay Trent Armstrong"
+      person_alias: [Joshua Clay]
+  - person.parker-dillman:
+      note: "The maker credits him as 'Parker Dillmann' (two n's); Pinside spells it 'Parker Dillman', kept as an alias so both forms resolve."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Electrical Engineering: Parker Dillmann"
+      name: Parker Dillmann
+      person_alias: [Parker Dillman]
+  - model.bon-jovi:
+      note: "The maker states the game is in production and on sale now (its own post's order call-to-action, and the press release's purchase sentence), so the machine is produced rather than merely announced."
+      cite:
+        - ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+          quote: "Order Bon Jovi Pinball from Barrels of Fun!"
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: "Bon Jovi Pinball is currently in production and being manufactured by Barrels of Fun LLC., a luxury pinball manufacturing company based in Houston, TX."
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: The game is available for purchase now at www.barrelsoffun.com and all authorized distributor.
+      production_status: produced
+  - model.bon-jovi:
+      note: "700 is the announced size of the limited worldwide release; the maker reserves a possible Barrels Reserve member overrun and will announce the final edition number after ordering closes, so this figure is the announced floor, not a final census."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "A limited worldwide release of 700 games, plus possible Barrels Reserve member access. If the initial release sells out within the first 7 days, eligible Barrels Reserve direct customers will receive an additional 7-day ordering window. After all orders are received, Barrels of Fun will announce the final edition number."
+      production_quantity: 700
+      tag: [limited-edition]
+  - model.bon-jovi:
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Bon Jovi Pinball brings the sound, lights, videos, concerts, and energy of one of the world's most enduring arena rock bands into a limited worldwide pinball experience."
+      game_format: pinball
+  - model.bon-jovi:
+      note: "The press-release reprint's line breaks split the display sentence; the flyer carries it unbroken (transcribed off the rendered sheet - the flyer has no text layer)."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: '15.6" HD LCD Display flanked by 5-1/4"'
+        - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: '15.6" HD LCD Display flanked by 5-1/4" Full-Range Stereo Speakers with Interactive Full RGBW Illumination'
+      display_type: lcd
+  - model.bon-jovi:
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Game Design: David van Es"
+      credit:
+        - david-van-es: design
+  - model.bon-jovi:
+      note: "'Rules' has no dedicated role in the closed credit-role vocabulary, so the credit maps to the other role; the maker's block label is recorded here."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Rules: Phil Grimaldi Jess DeNardo"
+      credit:
+        - phil-grimaldi: other
+        - jess-denardo: other
+  - model.bon-jovi:
+      note: "The maker's block label for the software credit is 'Coding'."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Coding: Eric Priepke"
+      credit:
+        - eric-priepke: software
+  - model.bon-jovi:
+      note: "The maker's block label for the sound credit is 'Sound Design'."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Sound Design: Jeff Dodson"
+      credit:
+        - jeff-dodson: sound
+  - model.bon-jovi:
+      cite:
+        - ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+          quote: "Artwork: Jonathan Bergeron"
+        - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: Featuring Amped Up Original Art by Jonathan Bergeron
+      credit:
+        - jonathan-bergeron: art
+  - model.bon-jovi:
+      note: "The maker writes 'Joshua Clay'; his earlier credits use 'Josh Clay'. Both forms resolve to the same person via alias."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Animations: Joshua Clay Trent Armstrong"
+      credit:
+        - josh-clay: animation
+        - trent-armstrong: animation
+  - model.bon-jovi:
+      note: "The maker's block label for the mechanics credits is 'Mechanical Engineering'."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Mechanical Engineering: Luke Underwood Paul Sulisz"
+      credit:
+        - luke-underwood: mechanics
+        - paul-sulisz: mechanics
+  - model.bon-jovi:
+      note: "'Electrical Engineering' has no dedicated role in the closed credit-role vocabulary, so the credit maps to the other role; the maker's block label is recorded here."
+      cite:
+        ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
+        quote: "Electrical Engineering: Parker Dillmann"
+      credit:
+        - parker-dillman: other
+  - model.bon-jovi:
+      note: "Counts follow the Game Features block. Ramps attach count-less: 2 plastic ramps, 1 metal ramp and 2 metal jump ramps make any single ramps count ambiguous, so only the jump-ramp subtype carries its own count. The two Physical 3-Ball Locks attach as ball-locks with count 2."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: "2 Lightning Flippers, 2 Mini Flippers, 6 Balls [...] 2 Plastic Ramps, 2 Metal Jump Ramps, 1 Metal Ramp, [...] 4 Chrome Wire Habitrails, 1 Subway, 2 Scoops, [...] 1 Vertical Upkick, 3 Magnets, 2 Spinners, 2 Diverters, [...] 2 Drop Targets, 2 Physical 3-Ball Locks, 1 Captive Ball"
+        - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: "2 Lightning Flippers, 2 Mini Flippers, 6 Balls [...] 2 Plastic Ramps, 2 Metal Jump Ramps, 1 Metal Ramp, 4 Chrome Wire Habitrails, 1 Subway, 2 Scoops, 1 Vertical Upkick, 3 Magnets, 2 Spinners, 2 Diverters, 2 Drop Targets, 2 Physical 3-Ball Locks, 1 Captive Ball"
+      gameplay_feature:
+        [
+          { lightning-flippers: 2 },
+          { mini-flippers: 2 },
+          { balls: 6 },
+          ramps,
+          { jump-ramps: 2 },
+          { habitrails: 4 },
+          { subways: 1 },
+          { scoops: 2 },
+          { vertical-up-kickers: 1 },
+          { magnets: 3 },
+          { spinners: 2 },
+          { diverters: 2 },
+          { drop-targets: 2 },
+          { ball-locks: 2 },
+          { captive-ball: 1 },
+        ]
+  - model.bon-jovi:
+      note: "Classifications: the Steel Horse's hidden magnet that diverts the ball is a diverter magnet; Backstage's magnet catch is a stop magnet; the Crowd Amp-Up Loop's captive ball with a spinner inside is exactly a captive ball spinner. Standup targets attach count-less: the 3 stated are scoped to the Backstage block and the machine total is unstated."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+        locator: in the press release reprinted verbatim in the article
+        quote: 'Bon Jovi Heart & Dagger Magnetic Ball Catch & Diverter: Take a "Shot Through the Heart" with this versatile 3-level diverter & jump ramp that sends the ball along one of three unique paths! [...] Steel Horse 3-Ball Lock: Buck up, Cowboy! A hidden magnet along the back orbit can divert the ball into a vertical upkick that feeds a physical 3-ball lock [...] Crowd Amp-Up Loop Captive Ball & Spinner: This first-ever loop-de-loop captive ball with a spinner inside is designed to pump up the crowd! [...] Backstage Access: Your pass to a variety of shots featuring 3 standup targets, a spinner, an exit ramp, hidden scoop, & magnet catch that diverts the ball to a physical 3-ball lock'
+      gameplay_feature:
+        [diverter-magnets, stop-magnets, captive-ball-spinners, standup-targets]
+  - model.bon-jovi:
+      note: "Toy classifications: the Heart & Dagger sculpt catches and holds the ball (magnetic ball catch), so it is a ball-holding toy; Jon's New Jersey Guitar sculpt states no motion or ball interaction, so it is a static toy."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: "High-Fidelity Sculpts: Bon Jovi Heart & Dagger and Jon's Iconic New Jersey Guitar"
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: Bon Jovi Heart & Dagger Magnetic Ball Catch & Diverter
+      gameplay_feature: [ball-holding-toys, static-toys]
+  - model.bon-jovi:
+      note: "HAL is the maker's branded interactive inner-cabinet lighting product (its own name for the system), attached as the branded leaf under interactive-cabinet-lighting."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+        locator: in the press release reprinted verbatim in the article
+        quote: "Spotlights & Trusses: Custom metal trussing along the left and back of the stage includes 3 functional spotlights [...] Horizon Atmospheric Lighting (HAL): An RGBW LED Low-Profile Inner Cabinet Lighting System for Complete Concert Experience Lighting Effects [...] All-RGBW LED Playfield Insert Lamps & General Illumination Lamps, and Playfield Apron Flood Lights"
+      gameplay_feature:
+        [
+          horizon-atmospheric-lighting,
+          led-general-illumination,
+          { stage-spotlights: 3 },
+        ]
+  - model.bon-jovi:
+      note: "Infinity Glass is the maker's branded anti-reflective playfield glass; 'Thunder From Down Under' is its branding for the shaker motor (recorded as a shaker motor; the branding is preserved in this quote). The press release's armor sentence continues beyond the quoted span; the cabinet armor itself is what the span establishes."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+        locator: in the press release reprinted verbatim in the article
+        quote: "EverGloss High-Gloss Decal Art [...] Infinity Glass (Anti-Reflective Glass) [...] Thunder From Down Under Shaker Motor [...] Factory-Installed Inner Blade Art [...] Polyester Metallic Powder Coated Cabinet Armor"
+      gameplay_feature:
+        [infinity-glass, cabinet-armor, art-blades, shaker-motors]
+  - model.bon-jovi:
+      note: "The reprint's line breaks split the speaker sentence into three fragments; the flyer carries it unbroken. The speakers' Interactive Full RGBW Illumination is recorded as interactive speaker lighting - the maker gives this one no product brand."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
+          locator: in the press release reprinted verbatim in the article
+          quote: 'Full-Range Stereo Speakers with Interactive [...] Full RGBW Illumination [...] 8" Cabinet Subwoofer'
+        - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
+          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          quote: '15.6" HD LCD Display flanked by 5-1/4" Full-Range Stereo Speakers with Interactive Full RGBW Illumination'
+      gameplay_feature: [stereo-sound, subwoofers, interactive-speaker-lighting]

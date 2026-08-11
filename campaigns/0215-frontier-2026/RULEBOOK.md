@@ -25,7 +25,7 @@ The authority on primary sources is `~/dev/flipcommons/docs/DataPatchAuthoring.m
 - **Distributor and archive** copies where the maker's own copy is gone: archive.org, distributor sites, Planetary Pinball for Williams/Bally titles.
 - For a **remake or a kit**, the _original_ machine's documents too — they are what the new one is derived from.
 - For a **homebrew**, the builder's own build thread on a 3rd party site.
-- **press releases**: the maker's own words reprinted verbatim by a publication, datelined and attributed
+- **press releases**: the maker's own words reprinted verbatim by a publication, datelined and attributed. **A maker's own reveal post can be an abridged press release** — BoF's Bon Jovi post carries the credits and the limited-release paragraph but not the Game Attractions / Game Features spec blocks, which exist only in Pinball News's verbatim reprint (and on the flyer). Check the reprints before declaring a spec unsourced, and cite each fact to the document that actually carries it.
 
 ### Journalism
 
@@ -222,6 +222,8 @@ Then run the AI support check scoped to your patch — `make verify-quote-suppor
 **A note is not a pass guarantee, and a clean pass is not the goal.** Taxonomy-level disagreements warn with or without a note and vary run to run — 0221's `cabinet-armor` "cosmetic, not gameplay" (presentation features are vocabulary by charter) and an occasional "the note is the author's inference" on classification-by-absence like static toys. Triage those against the charter and keep your call. **Do not re-run chasing a clean pass**: each scoped run costs ~300k tokens and samples differently. Genuine catches remain worth folding in — 0221's `production_status: produced` justly warned until the cite said the maker ships from stock rather than merely "available for purchase".
 
 If the patch changed after a snapshot apply, restore and replay before re-verifying — the ledger fingerprints content.
+
+**Lift spans from `web_cache.py quote` output verbatim — don't "fix" the source's own text.** Page text sometimes genuinely contains joined words ("Cabinet Armor &Matching Speaker Panel" in PN's Bon Jovi reprint is the HTML's own text, not a scrape artifact); a span lifted as `quote()` returns it matches both the stored text and the page, artifact-looking or not, while a hand-corrected spacing never will. And a multi-span `[...]` quote must list its spans in source order; the gate fails an out-of-order chain even when every span verifies individually.
 
 **A page's meta description is quotable.** The cache's extracted text includes the meta block, so a `<meta name="description">` sentence gates like body text (0223 quotes AP's "American Pinball is remaking Cirqus Voltaire…" from it, with a locator naming the meta description). Useful when the page body is thinner than its own summary.
 
