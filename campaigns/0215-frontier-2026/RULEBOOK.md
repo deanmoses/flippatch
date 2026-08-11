@@ -16,6 +16,7 @@ The authority on primary sources is `~/dev/flipcommons/docs/DataPatchAuthoring.m
 
 ### Best first party
 
+- **A photo of the actual machine**, such as getting some of the people credits printed off the actual playfield.
 - **The maker's own website**, and specifically its support, downloads, service and product pages — these are where flyers, feature matrices, manuals, quick-reference guides, service bulletins and release notes live.
 
 ### Other first party
@@ -32,6 +33,10 @@ The authority on primary sources is `~/dev/flipcommons/docs/DataPatchAuthoring.m
 
 Acceptable where nothing above states the fact; prefer multiple independent outlets.
 
+### Distributor listings
+
+For an **announced** machine whose maker has published nothing beyond a teaser, distributor pre-order listings can be the only public source of edition structure and specs (cirqus-voltaire: SD Amusements carried the Ringmaster Edition's unit count, art credit and feature list while AP's own site had one paragraph). Usable there with a single-family citation root, superseded the moment the maker publishes. **They are volatile — cache one the moment you see it**: of four distributor CV listings surfaced by search on 2026-08-10, three were already deleted (404 in a real browser, gone from the store's own search) and only the cached one remained citable.
+
 ### Crowdsourced
 
 User-submitted database rows — Pinside game archive, Kineticist _game index_.
@@ -42,7 +47,7 @@ Where a family's sources are thin, the reason differs per family and determines 
 
 ### Conflicts
 
-**Conflicts between primary sources are a user decision.** Houdini's current site says 4 speakers where its flyer and IPDB say 6; JJP's site says 5,000+ callouts where the article it reprints says 6,000+. Surface the conflict and record the ruling in the family doc (Houdini's ruling: the maker's current site won).
+**Conflicts between primary sources are a user decision.** Houdini's current site says 4 speakers where its flyer and IPDB say 6; JJP's site says 5,000+ callouts where the article it reprints says 6,000+. Surface the conflict and record the ruling in the family doc (Houdini's ruling: the maker's current site won). For a person-name spelling conflict, record the losing spelling as a `person_alias` so both forms resolve (GTF's ruling: Pollitt per AP's cast announcement, Politt aliased).
 
 ## Finding and fetching documents
 
@@ -62,7 +67,21 @@ Put every primary document you find in the [web cache](~/dev/pinexplore/docs/Web
 - **A maker's YouTube channel is a parallel document set**, ingested as transcripts. Cardona's release notes link six official videos — splash announcement, launch, gameplay UI, kit installation, two walkthroughs — for a model whose only other evidence is Pinside.
 - **Maker software changelogs are evidence, and plain text caches.** JJP's `sonic_changelog.txt` dates every release build — corroborating launch timing and active support — and is fetchable, quotable and citable like any page.
 - **A maker document that 404s is often recoverable from Wayback** — check the CDX index before declaring a maker's old documents lost. Fetch the snapshot with the `id_` modifier (`/web/<timestamp>id_/<url>`) or you cache the HTML wrapper instead of the document; it reports a clean `200` either way. Citing it is [Citation roots](#citation-roots) → archive.
+- **A maker's news archive is a credits gold mine.** The GTF manual names nobody, but AP's old-domain news posts named the entire creative team in one sentence ("Slam Tilt Podcast interviews the Galactic Tank Force team") plus the display cast in another. When the manual and product pages are credit-silent, pull the Wayback CDX listing of `/news/` and fetch the team/interview/cast announcement posts — they are first-party.
+- **A rebuilt maker site can silently merge editions.** AP's 2026 WordPress rebuild collapsed GTF's Limited and Signature editions into one "Limited" panel (its add-ons block is still headed "Signature Add Ons"). Per-edition facts for retired editions come from era-appropriate archived pages, not the live page's panels — the live page evidences only what it explicitly heads.
 - **A maker's manual lineup can promise more per-edition evidence than it holds.** Stern serves the 2011 Transformers manual under two filenames, byte-identical — `content_sha` is the tell, check it before treating two documents as two sources. Pokémon's `Pokemon_LE_Pre_web.pdf` is the other shape: one distinct manual explicitly covering two editions (LE **and** Premium). Either way, a per-edition filename is not per-edition evidence — verify what the document actually covers.
+
+### Hunting machine photos
+
+On-machine print — a credits panel, an apron card, a spec plate — is the most primary source there is (see [Primary and secondary sources](#primary-and-secondary-sources)), and photos of it are hunted by **document class first, recovery route second**:
+
+1. **Maker PDF containing the photo.** Wins on every axis at once: stable URL on a rootable host; flyers and brochures are produced from print-resolution source assets rather than web-compressed derivatives, so small type survives zooming; and it is the cheapest to gate — a PDF quote is author-checked (`SKIP-PDF`), no transcription import needed. Sweep the maker's PDFs for playfield photography, not just spec text.
+2. **Maker website images.** Rootable and first-party, but with two costs a PDF doesn't have: delivery images are usually downscaled — check pixel dimensions before spending effort, and hunt the original (strip WordPress's `-300x116` thumbnail suffix, ask Shopify for the master, prefer the `/img/` asset over the gallery preview — GTF's archived gallery previews were *smaller* than the flyer embedding the same photo); and an image cite needs the `web_import.py --text-file` transcription before its quotes gate (see [Operating the quote gates](#operating-the-quote-gates)).
+3. **Wayback is the transport fallback for either tier, not a tier of its own.** Same `id_` and `ref`+`archive:` mechanics as documents. A Wayback-recovered maker PDF outranks a live maker website image — the document class matters more than the liveness. You get only what was crawled at the resolution it was crawled, and it may be the last copy anywhere: GTF's GTK M13 flyer survives solely as one 585 KB JPG snapshot. Today's live maker image is tomorrow's single lossy snapshot — cache it now.
+
+**Legibility is the binding constraint, not availability.** Before transcribing, check whether the print region is actually readable: crop and upscale to inspect, and when a name sits at the letterform-ambiguity floor (GTF's ~8 px cursive credits), cross-reference the reading against corroborating coverage before committing it, recording the aid in the note.
+
+Discovery moves: probe maker file hosts for open directory listings (JJP's `marketing/` had a photography folder linked from nothing — see above), and **CDX-sweep the maker domain filtered to images** (`matchType=domain&filter=urlkey:.*<slug>.*`, read the mimetypes) — old sites' `/img/` and `/gallery/` trees surface there linked from nothing; that sweep is what found the GTK M13 flyer.
 
 ### What a manufacturer PDF carries
 
@@ -93,11 +112,9 @@ Manuals are the _weakest_ source for people credits: Stern's MTMTE manual names 
 
 Their web presence differs in ways that matter: Pedretti's own domain did not resolve yet its full press release is public, World Pinball's real site is `worldpinball.ch` behind an HTTP 401, Ramp's site is live but silent on its 2026 machine.
 
-### `draft-evidence-aggregator.csv` is not a generator input
+### `draft-evidence-aggregator.csv` helps you know what to look for
 
-It is a **superseded draft**: 166 of its 181 cites are Pinside, not a primary source. Use it as a **research checklist** — it names people and roles worth going to look for in primary documents.
-
-Check whether it holds anything for your family before spending time on it. 88 rows belong to the done families (sonic 63, transformers 18, houdini 7) and are superseded. The rest: p3-modules 56 (Ender's Game 33, Dungeon Crawler Carl 23), yukon-yeti 12, bon-jovi 11, fish-tales 7, galactic-tank-force 4, obsidian-high 2, arabian-nights 1. The p3-modules block is the exception worth knowing about — it carries **all 15 of the file's first-party rows**, drawn from Multimorphic's product pages, and Multimorphic publishes no PDFs.
+[draft-evidence-aggregator.csv](draft-evidence-aggregator.csv) is a per-model list of credits already tracked down: person, slug, role, and the source from which it was taken. It helps you see what data we are missing so that you can search for it in primary documents. **Don't cite it**: most of its rows are an aggregator, Pinside. The p3-modules are an exception; they are **first-party rows**.
 
 ## Reading a PDF
 
@@ -110,6 +127,10 @@ Check whether it holds anything for your family before spending time on it. 88 r
 - **A PDF often has two page numbers**: the index of the sheet (always) and the folio printed on it (sometimes). Name both in the locator: `printed page 7, PDF document page 22`. Get the printed folio by rendering the sheet unless the text makes it unmistakable.
 
 **Quote the words on the sheet — the text layer does not decide what's quotable.** Render the sheet, read the words, transcribe them into `quote:`. A document with no text layer at all still has words on it, and a transcription you made by looking is evidence.
+
+**An image quote stays gated — file a transcription first.** An image's OCR lands in `ocr_text`, findable but never citable; `NO-SOURCE` on an image cite means no transcription has been filed yet, not that images can't be cited. Read the words off the picture and file them through pinexplore's `web_import.py <blob> --url <cached-url> --text-file <transcription> --force` (recorded as `text_source = manual` — a person is answerable for the words; keep the document's line structure); the image's quotes then verify like any text. Worked example: the GTK M13 flyer's transcription (0222) unlocked the machine's printed CREDITS panel visible in its playfield photo — the family's only first-party source naming the code, animation, engineering and audio team. **Zoom before you give up on small print**: crop and upscale the credit lines, and cross-reference hard-to-read cursive names against corroborating coverage before transcribing them.
+
+**A page's meta description is quotable.** The cache indexes page metadata as its own section, so an og:description / meta description verifies like body text — GTF's `game_format` rests on the live page's meta description ("Galactic Tank Force is a sci-fi pinball machine…"), the only place the maker states it.
 
 `make verify-quote-verbatim` **does not gate PDF quotes**; it reports them `SKIP-PDF`. That is deliberate: a correct span read off a sheet routinely isn't a substring of the reading-order extraction, and checking the OCR tier instead rejects ~25% of correct spans (measured on this corpus), so no threshold makes it honest. **A PDF quote is your own check** — transcribe it exactly as the next person rendering that sheet would read it. Nothing goes in the patch about which quotes are gated; the patch is the record.
 
@@ -165,6 +186,8 @@ Houdini's 0219 flyer cites and Transformers' 0220 archived Stern game pages are 
 
 **`production_status` has no `retired` value.** The vocabulary is announced / produced / unreleased / one-off / aftermarket, so a maker's RETIRED badge answers no catalog field — a retired machine stays `produced`.
 
+**The remake credit rule (user decision, 2026-08-10).** All creative credits — design, art, animation, music, sound — carry from an original to its remake, cited to the original's evidence with a note; mechanics and software do not (a remake is re-engineered). Matches the seed's Medieval Madness Remake rows. When the remake replaces a creative element (cirqus-voltaire's Ringmaster Edition has a new Brian Allen art package), that slot's original credit does not carry to the model that replaced it. Remake editions are named the seed's way: "Medieval Madness (Remake Limited Edition)", and carry `remake_of` to the original plus `variant_of` to their base remake model.
+
 **The variant rule (user decision, 2026-08-07).** A variant carries every credit of its base, and the shared design's hardware is a fact about every edition. Cite the base's evidence (e.g. the base IPDB row) with a `note:` saying why the value carries. Convention survey so far: every modern Stern LE is `variant_of` its Premium (40+ catalog precedents; 0220), and JJP's multi-edition families point at the mid-tier base — the Harry Potter shape; 0221's CE and AE → Special Edition, user-approved 2026-08-10.
 
 **`cite_kind` is recorded, never inferred later.** The emitter writes the two kinds differently: a `quote` cite carries a transcribed span, a `mark` cite carries a visual observation in a `note` with no `quote:`. Which one a row is depends on whether the evidence is text or a mark (see [Citing PDF evidence](#citing-pdf-evidence)). This is a fact about the **evidence**, recorded in the generator's own input so the emitter can branch — never a claim in the patch about whether a quote is verifiable.
@@ -199,6 +222,8 @@ Then run the AI support check scoped to your patch — `make verify-quote-suppor
 **A note is not a pass guarantee, and a clean pass is not the goal.** Taxonomy-level disagreements warn with or without a note and vary run to run — 0221's `cabinet-armor` "cosmetic, not gameplay" (presentation features are vocabulary by charter) and an occasional "the note is the author's inference" on classification-by-absence like static toys. Triage those against the charter and keep your call. **Do not re-run chasing a clean pass**: each scoped run costs ~300k tokens and samples differently. Genuine catches remain worth folding in — 0221's `production_status: produced` justly warned until the cite said the maker ships from stock rather than merely "available for purchase".
 
 If the patch changed after a snapshot apply, restore and replay before re-verifying — the ledger fingerprints content.
+
+**A page's meta description is quotable.** The cache's extracted text includes the meta block, so a `<meta name="description">` sentence gates like body text (0223 quotes AP's "American Pinball is remaking Cirqus Voltaire…" from it, with a locator naming the meta description). Useful when the page body is thinner than its own summary.
 
 ## Rebuilding the database
 

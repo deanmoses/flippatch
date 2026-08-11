@@ -348,7 +348,7 @@ SELECT
   pe.model_slug,
   m.ipdb_id,
   pe.fields            AS claim_fields,
-  pe.n_claims_cited    AS n_claims,
+  pe.n_cited_claims    AS n_claims,
   m.work,
   m.work_type,
   m.cite_ref           AS print_ref,

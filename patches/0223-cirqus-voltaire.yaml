@@ -1,0 +1,159 @@
+attribution: flipcommons-catalog
+description: >
+  Cirqus Voltaire family: 1997 Bally original + 2026 AP remake editions
+sources:
+  - name: San Diego Amusements
+    source_type: web
+    description: >
+      Pinball and amusement distributor in San Diego, California. Carries the only live edition
+      listing for American Pinball's Cirqus Voltaire remake.
+    links:
+      - {
+          url: "https://sdamusements.com/",
+          label: San Diego Amusements,
+          link_type: homepage,
+        }
+claims:
+  - model.cirqus-voltaire:
+      note: "The row records production games following the pictured sample game, so the machine was produced."
+      cite:
+        ref: "ipdb:4059"
+        quote: The sample game pictured in this listing has several playfield differences from the production games that followed.
+      production_status: produced
+  - model.cirqus-voltaire:
+      cite:
+        ref: "ipdb:4059"
+        quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stop magnets (3), Standup targets (9), Kick-out holes (2), Spinning targets (2), Speech, Playfield-mounted dot matrix display."
+      game_format: pinball
+      gameplay_feature: [speech]
+  - model.cirqus-voltaire:
+      cite:
+        ref: "https://www.planetarypinball.com/mm5/Williams/games/cirqus/rules.html"
+        quote: "LOCK balls up the HIGHWIRE ramp, then start HW Multiball. [...] Rollover Buttons add VOLTAGE to CHARGE the BOOM BALLOON."
+      gameplay_feature: [ball-locks, ramps, multiball, rollover-buttons]
+  - model.cirqus-voltaire:
+      note: "A ball permanently trapped in a cage that the ball in play strikes is a captive ball."
+      cite:
+        ref: "ipdb:4059"
+        quote: "The menagerie ball, a large plastic ball trapped within a cage above the left slingshot, can be hit by the ball in play and disrupts ball direction."
+      gameplay_feature: [captive-ball]
+  - model.cirqus-voltaire:
+      note: "The player defeats the elevating Ringmaster head by hitting it with the pinball, so it classifies as a bash toy."
+      cite:
+        ref: "ipdb:4059"
+        quote: "The Ringmaster is an animated head that elevates from the underside of the playfield and makes wise cracks at the player, who tries to defeat him by hitting him with the pinball in various modes."
+      gameplay_feature: [bash-toys]
+  - model.cirqus-voltaire:
+      cite:
+        ref: "ipdb:4059"
+        quote: 'The "Boom Balloon" pop bumper (on the lower right side of the playfield) is a disappearing bumper, dropping down until its flat plastic top is level with the playfield.'
+      gameplay_feature: [disappearing-bumpers]
+  - model.cirqus-voltaire-remake:
+      note: "The maker announces the machine and gathers interest; nothing is sold yet (no store listing), so announced."
+      cite:
+        ref: "https://americanpinball.com/cirqus-voltaire-announcement"
+        quote: American Pinball is proud to announce that we are bringing the legendary Cirqus Voltaire back to life for a new generation of players
+      production_status: announced
+  - model.cirqus-voltaire-remake:
+      cite:
+        - ref: "https://americanpinball.com/cirqus-voltaire-announcement"
+          locator: in the page's meta description
+          quote: "American Pinball is remaking Cirqus Voltaire, a pinball combining magic, artistry, and gameplay that made the original a fan favorite"
+        - ref: "https://americanpinball.com/cirqus-voltaire-announcement"
+          quote: American Pinball is proud to announce that we are bringing the legendary Cirqus Voltaire back to life for a new generation of players
+      remake_of: cirqus-voltaire
+  - model.cirqus-voltaire-remake:
+      cite:
+        ref: "https://americanpinball.com/cirqus-voltaire-announcement"
+        locator: in the page's meta description
+        quote: "American Pinball is remaking Cirqus Voltaire, a pinball combining magic, artistry, and gameplay that made the original a fan favorite"
+      game_format: pinball
+  - model.cirqus-voltaire-remake:
+      note: "A remake preserves the original's creative work, so the original's creative credits - design, art, animation, music, sound - carry to the remake, as with Medieval Madness and its Chicago Gaming remake. The maker frames the remake as preserving the original's magic, artistry and gameplay. Mechanics and software credits do not carry: the remake is re-engineered."
+      cite:
+        - ref: "ipdb:4059"
+          quote: "Design by: John Popadiuk, Cameron Silver [...] Art by: Linda Deal (aka Doane) [...] Dots/Animation by: Adam Rhine, Brian Morris [...] Music by: Rob Berry, Dave Zabriskie [...] Sound by: Rob Berry"
+        - ref: "https://americanpinball.com/cirqus-voltaire-announcement"
+          locator: in the page's meta description
+          quote: "American Pinball is remaking Cirqus Voltaire, a pinball combining magic, artistry, and gameplay that made the original a fan favorite"
+      credit:
+        - john-popadiuk: design
+        - cameron-silver: design
+        - linda-deal: art
+        - adam-rhine: animation
+        - brian-morris: animation
+        - dave-zabriskie: music
+        - rob-berry: music
+        - rob-berry: sound
+  - person.brian-allen:
+      create: true
+      note: "Pinball artist; creates the new art package for American Pinball's Cirqus Voltaire remake Ringmaster Edition - his first credit here."
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: "New Brian Allen full Art Package including Playfield, Cabinet, Plastics & Backglass"
+      name: Brian Allen
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      create: true
+      note: "Named the way remake editions are named here, as in Medieval Madness (Remake Limited Edition). No source states a release year, so none is asserted."
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: RINGMASTER EDITION (Limited to 772 units)
+      name: Cirqus Voltaire (Remake Ringmaster Edition)
+      title: cirqus-voltaire
+      corporate_entity: american-pinball-inc
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      note: "An edition is a variant of its base model, and the base is American Pinball's remake of Bally's 1997 Cirqus Voltaire, so both relationships follow."
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: "Circus Voltaire is coming back and being reimagined by American Pinball. Join the interest list today with a $0 deposit and no commitment, and be among the first to receive updates on availability, preorder details, pricing, and release information."
+      variant_of: cirqus-voltaire-remake
+      remake_of: cirqus-voltaire
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      note: "The edition is the same machine as the base remake, so the base's themes carry."
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: "Circus Voltaire is coming back and being reimagined by American Pinball. Join the interest list today with a $0 deposit and no commitment, and be among the first to receive updates on availability, preorder details, pricing, and release information."
+      theme: [carnivals, circus]
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      note: "The distributor pre-sells interest-list deposits with no price, availability or release information, so the machine is announced, not produced."
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: "Circus Voltaire is coming back and being reimagined by American Pinball. Join the interest list today with a $0 deposit and no commitment, and be among the first to receive updates on availability, preorder details, pricing, and release information."
+      production_status: announced
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: RINGMASTER EDITION (Limited to 772 units)
+      production_quantity: 772
+      tag: [limited-edition]
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: LCD Screen
+      display_type: lcd
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      note: "Magic Glass is a branded form of anti-reflection playfield glass. The trade term custom shooter rod names the decorated shooter assembly that custom shooter knobs describes. The scrolls themselves are model-specific decor (recorded in the family notes); the interactive topper attaches as the generic topper."
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: "New Scrolls that light up with Interactive Topper [...] Custom Shooter Rod [...] Magic Glass [...] Shaker & Knocker"
+      gameplay_feature:
+        [toppers, custom-shooter-knobs, magic-glass, shaker-motors, knockers]
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      cite:
+        ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
+        quote: "New Brian Allen full Art Package including Playfield, Cabinet, Plastics & Backglass"
+      credit:
+        - brian-allen: art
+  - model.cirqus-voltaire-remake-ringmaster-edition:
+      note: "A remake preserves the original's creative work, so the original's creative credits - design, art, animation, music, sound - carry to the remake, as with Medieval Madness and its Chicago Gaming remake. The maker frames the remake as preserving the original's magic, artistry and gameplay. Mechanics and software credits do not carry: the remake is re-engineered. The art credit does not carry to this edition: its art package is new (Brian Allen)."
+      cite:
+        ref: "ipdb:4059"
+        quote: "Design by: John Popadiuk, Cameron Silver [...] Dots/Animation by: Adam Rhine, Brian Morris [...] Music by: Rob Berry, Dave Zabriskie [...] Sound by: Rob Berry"
+      credit:
+        - john-popadiuk: design
+        - cameron-silver: design
+        - adam-rhine: animation
+        - brian-morris: animation
+        - dave-zabriskie: music
+        - rob-berry: music
+        - rob-berry: sound

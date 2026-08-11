@@ -1,0 +1,613 @@
+attribution: flipcommons-catalog
+description: >
+  Galactic Tank Force family details across the American Pinball editions
+claims:
+  - gameplay-feature.aura-lighting:
+      create: true
+      name: AURA Lighting
+      gameplay_feature_parent: [interactive-lighting]
+  - gameplay-feature.lenticular-backglasses:
+      create: true
+      name: Lenticular Backglasses
+      gameplay_feature_alias: [Lenticular Backglass, 3D Backglass]
+  - person.jack-haeger:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      name: Jack Haeger
+  - person.steve-bowden:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      name: Steve Bowden
+  - person.kerri-hoskins:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      name: Kerri Hoskins
+  - person.jeff-hoover:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      name: Jeff Hoover
+  - person.mitchell-pollitt:
+      create: true
+      note: "AP's own sources split the surname: the cast announcement and Pinball News' launch article spell Pollitt, the product-page prose Politt. Pollitt per the user ruling 2026-08-10; Politt kept as an alias."
+      cite:
+        ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      name: Mitchell Pollitt
+      person_alias: [Mitchell Politt]
+  - person.clementine-morfoot:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+        quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      name: Clementine Morfoot
+  - person.casey-butler:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Joe Schober, Casey Butler & Steve Bowden ... GAME CODE"
+      name: Casey Butler
+  - person.jessica-durbala:
+      create: true
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART"
+      name: Jessica Durbala
+  - person.bobby-llereza:
+      create: true
+      note: "The panel's cursive print is small; the surname reading is corroborated by coverage of American Pinball's animation team pairing Jessica Durbala with Bobby Llereza."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART"
+      name: Bobby Llereza
+  - person.zofia-bil-ryan:
+      create: true
+      note: "Zofia per the machine's printed credits and Pinball News' launch coverage; the Sofia spelling appears in Pinball News' Expo 2023 report and is kept as an alias."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING
+      name: Zofia Bil Ryan
+      person_alias: [Sofia Bil Ryan]
+  - person.mitesh-pithva:
+      create: true
+      note: "The panel's cursive print is small; the name reading is corroborated by staff listings of American Pinball's engineering team."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: Mitesh Pithva ... ENGINEERING
+      name: Mitesh Pithva
+  - model.galactic-tank-force-classic:
+      note: "The statement covers the game itself rather than one edition, so the value holds for this edition."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force"
+        locator: the page's meta description
+        quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
+      game_format: pinball
+  - model.galactic-tank-force-classic:
+      note: "American Pinball's own team announcement. Role mappings: Art Director maps to the art role; Rules maps to the design role (rules design is game design). The team is stated for the game itself, so every edition carries the credits."
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      credit:
+        - dennis-nordman: design
+        - paul-reno: design
+        - jack-haeger: art
+        - christopher-franchi: art
+        - steve-bowden: design
+  - model.galactic-tank-force-classic:
+      note: "Journalism (Pinball News launch coverage); no first-party statement of the robot voice was found. The voice is in the game every edition shares."
+      cite:
+        ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+        quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
+      credit:
+        - dennis-nordman: voice
+  - model.galactic-tank-force-classic:
+      note: "The four actors perform the game's live-action display characters (Empress Annoya, Professor Plotnik, Duke Moonwalker, Captain Kyan); the credit-role taxonomy has no performer role, so the role is recorded as other (user ruling 2026-08-10). The display cast is in the game every edition shares. AP's own sources split the surname spelling; Pollitt follows AP's cast announcement (user ruling 2026-08-10), with Politt kept as an alias."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/"
+          archive: "https://web.archive.org/web/20230606065409id_/https://www.american-pinball.com/games/galactic-tank-force"
+          quote: "groundbreaking live-action performances from four talented actors: Kerri Hoskins, Jeff Hoover, Mitchell Politt, and Clementine Morfoot"
+        - ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      credit:
+        - kerri-hoskins: other
+        - jeff-hoover: other
+        - mitchell-pollitt: other
+        - clementine-morfoot: other
+  - model.galactic-tank-force-classic:
+      note: "The interactive tank sculpt is the game's central toy on every edition, and American Pinball's Victory upgrade copy states the standard sculpt's signature motorized action - a toy that moves under motor power during gameplay, which is what the animatronic toy classification records (the same classification as Stern's motorized animatronic Megatron). Its bespoke identity (Model 375A battle tank) stays in the family doc's future-unique-features list."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: It retains the signature motorized action while adding 3 embedded interactive LEDs that react during game modes and attacks.
+      gameplay_feature: [animatronic-toys]
+  - model.galactic-tank-force-classic:
+      note: "The core playfield is shared by every edition. The maker's own playfield-callout flyer names both mechanisms; Pinball News' launch photo caption corroborates the player-operated diverter."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: Controlled Diverter Use the third flipper button to divert ramp shots.
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: "UFO Moving Target Stop cows from being abducted!"
+        - ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+          locator: photo caption in the playfield section
+          quote: The player-operated ball diverter
+      gameplay_feature: [diverters, moving-targets]
+  - model.galactic-tank-force-classic:
+      note: "The flyer's playfield photo shows the machine's printed credits panel, transcribed by hand into the evidence cache. Role mappings: GAME CODE maps to software; 2D+VIDEO ART to the animation role; DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics; AUDIO ENGINEER to sound. Steve Bowden thus carries both design (Rules, per the team announcement) and software (GAME CODE). The panel's remaining line, David Fix ... EXECUTIVE VICE PRESIDENT, is a corporate title with no credit role and is recorded in the family doc. The credits are printed on the game every edition shares."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Dennis Nordman & Paul Reno ... GAME DESIGN [...] Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING [...] Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART [...] Joe Schober, Casey Butler & Steve Bowden ... GAME CODE [...] Mitesh Pithva ... ENGINEERING [...] Matt Kern ... AUDIO ENGINEER"
+      credit:
+        - joe-schober: software
+        - casey-butler: software
+        - steve-bowden: software
+        - jessica-durbala: animation
+        - bobby-llereza: animation
+        - zofia-bil-ryan: mechanics
+        - mitesh-pithva: mechanics
+        - matt-kern: sound
+  - model.galactic-tank-force-classic:
+      note: "The manual's rules chapter documents the game every edition shares. Supersedes an earlier ingest's uncounted skill shot and multiball attachments (user-approved 2026-08-10). The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      cite:
+        ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
+        locator: "printed page 44, PDF document page 54"
+        quote: "SKILL SHOTS (2) [...] MULTIBALL MODES (3)"
+      gameplay_feature: [{ skill-shot: 2 }, { multiball: 3 }]
+  - model.galactic-tank-force-deluxe:
+      note: "The statement covers the game itself rather than one edition, so the value holds for this edition."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force"
+        locator: the page's meta description
+        quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
+      game_format: pinball
+  - model.galactic-tank-force-deluxe:
+      note: "American Pinball's own team announcement. Role mappings: Art Director maps to the art role; Rules maps to the design role (rules design is game design). The team is stated for the game itself, so every edition carries the credits."
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      credit:
+        - dennis-nordman: design
+        - paul-reno: design
+        - jack-haeger: art
+        - christopher-franchi: art
+        - steve-bowden: design
+  - model.galactic-tank-force-deluxe:
+      note: "Journalism (Pinball News launch coverage); no first-party statement of the robot voice was found. The voice is in the game every edition shares."
+      cite:
+        ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+        quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
+      credit:
+        - dennis-nordman: voice
+  - model.galactic-tank-force-deluxe:
+      note: "The four actors perform the game's live-action display characters (Empress Annoya, Professor Plotnik, Duke Moonwalker, Captain Kyan); the credit-role taxonomy has no performer role, so the role is recorded as other (user ruling 2026-08-10). The display cast is in the game every edition shares. AP's own sources split the surname spelling; Pollitt follows AP's cast announcement (user ruling 2026-08-10), with Politt kept as an alias."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/"
+          archive: "https://web.archive.org/web/20230606065409id_/https://www.american-pinball.com/games/galactic-tank-force"
+          quote: "groundbreaking live-action performances from four talented actors: Kerri Hoskins, Jeff Hoover, Mitchell Politt, and Clementine Morfoot"
+        - ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      credit:
+        - kerri-hoskins: other
+        - jeff-hoover: other
+        - mitchell-pollitt: other
+        - clementine-morfoot: other
+  - model.galactic-tank-force-deluxe:
+      note: "The interactive tank sculpt is the game's central toy on every edition, and American Pinball's Victory upgrade copy states the standard sculpt's signature motorized action - a toy that moves under motor power during gameplay, which is what the animatronic toy classification records (the same classification as Stern's motorized animatronic Megatron). Its bespoke identity (Model 375A battle tank) stays in the family doc's future-unique-features list."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: It retains the signature motorized action while adding 3 embedded interactive LEDs that react during game modes and attacks.
+      gameplay_feature: [animatronic-toys]
+  - model.galactic-tank-force-deluxe:
+      note: "The core playfield is shared by every edition. The maker's own playfield-callout flyer names both mechanisms; Pinball News' launch photo caption corroborates the player-operated diverter."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: Controlled Diverter Use the third flipper button to divert ramp shots.
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: "UFO Moving Target Stop cows from being abducted!"
+        - ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+          locator: photo caption in the playfield section
+          quote: The player-operated ball diverter
+      gameplay_feature: [diverters, moving-targets]
+  - model.galactic-tank-force-deluxe:
+      note: "The flyer's playfield photo shows the machine's printed credits panel, transcribed by hand into the evidence cache. Role mappings: GAME CODE maps to software; 2D+VIDEO ART to the animation role; DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics; AUDIO ENGINEER to sound. Steve Bowden thus carries both design (Rules, per the team announcement) and software (GAME CODE). The panel's remaining line, David Fix ... EXECUTIVE VICE PRESIDENT, is a corporate title with no credit role and is recorded in the family doc. The credits are printed on the game every edition shares."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Dennis Nordman & Paul Reno ... GAME DESIGN [...] Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING [...] Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART [...] Joe Schober, Casey Butler & Steve Bowden ... GAME CODE [...] Mitesh Pithva ... ENGINEERING [...] Matt Kern ... AUDIO ENGINEER"
+      credit:
+        - joe-schober: software
+        - casey-butler: software
+        - steve-bowden: software
+        - jessica-durbala: animation
+        - bobby-llereza: animation
+        - zofia-bil-ryan: mechanics
+        - mitesh-pithva: mechanics
+        - matt-kern: sound
+  - model.galactic-tank-force-deluxe:
+      note: "The manual's rules chapter documents the game every edition shares. Supersedes an earlier ingest's uncounted skill shot and multiball attachments (user-approved 2026-08-10). The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      cite:
+        ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
+        locator: "printed page 44, PDF document page 54"
+        quote: "SKILL SHOTS (2) [...] MULTIBALL MODES (3)"
+      gameplay_feature: [{ skill-shot: 2 }, { multiball: 3 }]
+  - model.galactic-tank-force-deluxe:
+      note: "American Pinball's RETIRED badge and 'now-retired' wording mean the edition was produced and sold and is no longer made; a retired machine records as produced."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: "The cabinet artwork, translite, and core playfield feature the same setup of the now-retired Deluxe Edition."
+      production_status: produced
+  - model.galactic-tank-force-deluxe:
+      note: "The live product page's explicitly-headed Deluxe Features block. Wording mappings: Interior Side Art attaches as art blades (playfield side wall art); Shaker as shaker motor; Knocker as knocker; AURA Lighting is American Pinball's branded interactive lighting product; Magic Glass is American Pinball's branded anti-reflection playfield glass."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force"
+        locator: the Deluxe Features block
+        quote: "Interior Side Art [...] Shaker [...] AURA Lighting [...] Magic Glass [...] Knocker"
+      gameplay_feature:
+        [art-blades, shaker-motors, aura-lighting, magic-glass, knockers]
+  - model.galactic-tank-force-limited-edition:
+      note: "The statement covers the game itself rather than one edition, so the value holds for this edition."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force"
+        locator: the page's meta description
+        quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
+      game_format: pinball
+  - model.galactic-tank-force-limited-edition:
+      note: "American Pinball's own team announcement. Role mappings: Art Director maps to the art role; Rules maps to the design role (rules design is game design). The team is stated for the game itself, so every edition carries the credits."
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      credit:
+        - dennis-nordman: design
+        - paul-reno: design
+        - jack-haeger: art
+        - christopher-franchi: art
+        - steve-bowden: design
+  - model.galactic-tank-force-limited-edition:
+      note: "Journalism (Pinball News launch coverage); no first-party statement of the robot voice was found. The voice is in the game every edition shares."
+      cite:
+        ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+        quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
+      credit:
+        - dennis-nordman: voice
+  - model.galactic-tank-force-limited-edition:
+      note: "The four actors perform the game's live-action display characters (Empress Annoya, Professor Plotnik, Duke Moonwalker, Captain Kyan); the credit-role taxonomy has no performer role, so the role is recorded as other (user ruling 2026-08-10). The display cast is in the game every edition shares. AP's own sources split the surname spelling; Pollitt follows AP's cast announcement (user ruling 2026-08-10), with Politt kept as an alias."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/"
+          archive: "https://web.archive.org/web/20230606065409id_/https://www.american-pinball.com/games/galactic-tank-force"
+          quote: "groundbreaking live-action performances from four talented actors: Kerri Hoskins, Jeff Hoover, Mitchell Politt, and Clementine Morfoot"
+        - ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      credit:
+        - kerri-hoskins: other
+        - jeff-hoover: other
+        - mitchell-pollitt: other
+        - clementine-morfoot: other
+  - model.galactic-tank-force-limited-edition:
+      note: "The interactive tank sculpt is the game's central toy on every edition, and American Pinball's Victory upgrade copy states the standard sculpt's signature motorized action - a toy that moves under motor power during gameplay, which is what the animatronic toy classification records (the same classification as Stern's motorized animatronic Megatron). Its bespoke identity (Model 375A battle tank) stays in the family doc's future-unique-features list."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: It retains the signature motorized action while adding 3 embedded interactive LEDs that react during game modes and attacks.
+      gameplay_feature: [animatronic-toys]
+  - model.galactic-tank-force-limited-edition:
+      note: "The core playfield is shared by every edition. The maker's own playfield-callout flyer names both mechanisms; Pinball News' launch photo caption corroborates the player-operated diverter."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: Controlled Diverter Use the third flipper button to divert ramp shots.
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: "UFO Moving Target Stop cows from being abducted!"
+        - ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+          locator: photo caption in the playfield section
+          quote: The player-operated ball diverter
+      gameplay_feature: [diverters, moving-targets]
+  - model.galactic-tank-force-limited-edition:
+      note: "The flyer's playfield photo shows the machine's printed credits panel, transcribed by hand into the evidence cache. Role mappings: GAME CODE maps to software; 2D+VIDEO ART to the animation role; DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics; AUDIO ENGINEER to sound. Steve Bowden thus carries both design (Rules, per the team announcement) and software (GAME CODE). The panel's remaining line, David Fix ... EXECUTIVE VICE PRESIDENT, is a corporate title with no credit role and is recorded in the family doc. The credits are printed on the game every edition shares."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Dennis Nordman & Paul Reno ... GAME DESIGN [...] Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING [...] Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART [...] Joe Schober, Casey Butler & Steve Bowden ... GAME CODE [...] Mitesh Pithva ... ENGINEERING [...] Matt Kern ... AUDIO ENGINEER"
+      credit:
+        - joe-schober: software
+        - casey-butler: software
+        - steve-bowden: software
+        - jessica-durbala: animation
+        - bobby-llereza: animation
+        - zofia-bil-ryan: mechanics
+        - mitesh-pithva: mechanics
+        - matt-kern: sound
+  - model.galactic-tank-force-limited-edition:
+      note: "The manual's rules chapter documents the game every edition shares. Supersedes an earlier ingest's uncounted skill shot and multiball attachments (user-approved 2026-08-10). The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      cite:
+        ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
+        locator: "printed page 44, PDF document page 54"
+        quote: "SKILL SHOTS (2) [...] MULTIBALL MODES (3)"
+      gameplay_feature: [{ skill-shot: 2 }, { multiball: 3 }]
+  - model.galactic-tank-force-limited-edition:
+      note: "American Pinball's own news post (September 2023) shows gameplay of the newly released LE, so the edition was produced and sold."
+      cite:
+        ref: "https://www.american-pinball.com/news/galactic-tank-force-le-gameplay-by-flip-n-out-pin"
+        archive: "https://web.archive.org/web/20231002201859id_/https://www.american-pinball.com/news/galactic-tank-force-le-gameplay-by-flip-n-out-pin"
+        quote: Zach shows off gameplay of the newly released Galactic Tank Force LE pinball machine
+      production_status: produced
+  - model.galactic-tank-force-signature:
+      note: "The statement covers the game itself rather than one edition, so the value holds for this edition."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force"
+        locator: the page's meta description
+        quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
+      game_format: pinball
+  - model.galactic-tank-force-signature:
+      note: "American Pinball's own team announcement. Role mappings: Art Director maps to the art role; Rules maps to the design role (rules design is game design). The team is stated for the game itself, so every edition carries the credits."
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      credit:
+        - dennis-nordman: design
+        - paul-reno: design
+        - jack-haeger: art
+        - christopher-franchi: art
+        - steve-bowden: design
+  - model.galactic-tank-force-signature:
+      note: "Journalism (Pinball News launch coverage); no first-party statement of the robot voice was found. The voice is in the game every edition shares."
+      cite:
+        ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+        quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
+      credit:
+        - dennis-nordman: voice
+  - model.galactic-tank-force-signature:
+      note: "The four actors perform the game's live-action display characters (Empress Annoya, Professor Plotnik, Duke Moonwalker, Captain Kyan); the credit-role taxonomy has no performer role, so the role is recorded as other (user ruling 2026-08-10). The display cast is in the game every edition shares. AP's own sources split the surname spelling; Pollitt follows AP's cast announcement (user ruling 2026-08-10), with Politt kept as an alias."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/"
+          archive: "https://web.archive.org/web/20230606065409id_/https://www.american-pinball.com/games/galactic-tank-force"
+          quote: "groundbreaking live-action performances from four talented actors: Kerri Hoskins, Jeff Hoover, Mitchell Politt, and Clementine Morfoot"
+        - ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      credit:
+        - kerri-hoskins: other
+        - jeff-hoover: other
+        - mitchell-pollitt: other
+        - clementine-morfoot: other
+  - model.galactic-tank-force-signature:
+      note: "The interactive tank sculpt is the game's central toy on every edition, and American Pinball's Victory upgrade copy states the standard sculpt's signature motorized action - a toy that moves under motor power during gameplay, which is what the animatronic toy classification records (the same classification as Stern's motorized animatronic Megatron). Its bespoke identity (Model 375A battle tank) stays in the family doc's future-unique-features list."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: It retains the signature motorized action while adding 3 embedded interactive LEDs that react during game modes and attacks.
+      gameplay_feature: [animatronic-toys]
+  - model.galactic-tank-force-signature:
+      note: "The core playfield is shared by every edition. The maker's own playfield-callout flyer names both mechanisms; Pinball News' launch photo caption corroborates the player-operated diverter."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: Controlled Diverter Use the third flipper button to divert ramp shots.
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: "UFO Moving Target Stop cows from being abducted!"
+        - ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+          locator: photo caption in the playfield section
+          quote: The player-operated ball diverter
+      gameplay_feature: [diverters, moving-targets]
+  - model.galactic-tank-force-signature:
+      note: "The flyer's playfield photo shows the machine's printed credits panel, transcribed by hand into the evidence cache. Role mappings: GAME CODE maps to software; 2D+VIDEO ART to the animation role; DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics; AUDIO ENGINEER to sound. Steve Bowden thus carries both design (Rules, per the team announcement) and software (GAME CODE). The panel's remaining line, David Fix ... EXECUTIVE VICE PRESIDENT, is a corporate title with no credit role and is recorded in the family doc. The credits are printed on the game every edition shares."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Dennis Nordman & Paul Reno ... GAME DESIGN [...] Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING [...] Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART [...] Joe Schober, Casey Butler & Steve Bowden ... GAME CODE [...] Mitesh Pithva ... ENGINEERING [...] Matt Kern ... AUDIO ENGINEER"
+      credit:
+        - joe-schober: software
+        - casey-butler: software
+        - steve-bowden: software
+        - jessica-durbala: animation
+        - bobby-llereza: animation
+        - zofia-bil-ryan: mechanics
+        - mitesh-pithva: mechanics
+        - matt-kern: sound
+  - model.galactic-tank-force-signature:
+      note: "The manual's rules chapter documents the game every edition shares. Supersedes an earlier ingest's uncounted skill shot and multiball attachments (user-approved 2026-08-10). The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      cite:
+        ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
+        locator: "printed page 44, PDF document page 54"
+        quote: "SKILL SHOTS (2) [...] MULTIBALL MODES (3)"
+      gameplay_feature: [{ skill-shot: 2 }, { multiball: 3 }]
+  - model.galactic-tank-force-signature:
+      note: "Journalism states Signature Edition shipping began February 2024."
+      cite:
+        ref: "https://arcadeheroes.com/2024/02/19/galactic-tank-force-signature-edition-package-now-available-from-american-pinball"
+        quote: "they have begun shipping the Signature Edition (SE) of their most recent pinball design, Galactic Tank Force"
+      production_status: produced
+  - model.galactic-tank-force-signature:
+      cite:
+        - ref: "https://www.american-pinball.com/news/galactic-tank-force-signature-edition"
+          archive: "https://web.archive.org/web/20240229215015id_/https://www.american-pinball.com/news/galactic-tank-force-signature-edition"
+          quote: With an exclusive production rollout of ONLY 200 units
+        - ref: "https://arcadeheroes.com/2024/02/19/galactic-tank-force-signature-edition-package-now-available-from-american-pinball"
+          quote: There are only 200 of these being made
+      production_quantity: 200
+  - model.galactic-tank-force-signature:
+      note: "Powder coated metal attaches as cabinet armor and the 3-Dimension Lenticular Backglass as a lenticular backglass. The Glow Tech color-shifting toys and TITAN reactive bands are branded finishes recorded in the family doc's future-unique-features list, not vocabulary; the Fold-n-Fight Tank Turret cabinet is a unique feature recorded there too."
+      cite:
+        ref: "https://www.american-pinball.com/news/galactic-tank-force-signature-edition"
+        archive: "https://web.archive.org/web/20240229215015id_/https://www.american-pinball.com/news/galactic-tank-force-signature-edition"
+        quote: "this one-of-a-kind space tank features custom painted 'Glow Tech' toys that shift colors with the playfield lighting, Radiant Rubber Reactive Bands from TITAN, retro green powder coated metal, retro-SciFi Diamond Coated Playfield Artwork by Christopher Franchi, and a 3-Dimension Lenticular Backglass!"
+      gameplay_feature: [cabinet-armor, lenticular-backglasses]
+  - model.galactic-tank-force-victory-edition:
+      note: "The statement covers the game itself rather than one edition, so the value holds for this edition."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force"
+        locator: the page's meta description
+        quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
+      game_format: pinball
+  - model.galactic-tank-force-victory-edition:
+      note: "American Pinball's own team announcement. Role mappings: Art Director maps to the art role; Rules maps to the design role (rules design is game design). The team is stated for the game itself, so every edition carries the credits."
+      cite:
+        ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
+        quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
+      credit:
+        - dennis-nordman: design
+        - paul-reno: design
+        - jack-haeger: art
+        - christopher-franchi: art
+        - steve-bowden: design
+  - model.galactic-tank-force-victory-edition:
+      note: "Journalism (Pinball News launch coverage); no first-party statement of the robot voice was found. The voice is in the game every edition shares."
+      cite:
+        ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+        quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
+      credit:
+        - dennis-nordman: voice
+  - model.galactic-tank-force-victory-edition:
+      note: "The four actors perform the game's live-action display characters (Empress Annoya, Professor Plotnik, Duke Moonwalker, Captain Kyan); the credit-role taxonomy has no performer role, so the role is recorded as other (user ruling 2026-08-10). The display cast is in the game every edition shares. AP's own sources split the surname spelling; Pollitt follows AP's cast announcement (user ruling 2026-08-10), with Politt kept as an alias."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/"
+          archive: "https://web.archive.org/web/20230606065409id_/https://www.american-pinball.com/games/galactic-tank-force"
+          quote: "groundbreaking live-action performances from four talented actors: Kerri Hoskins, Jeff Hoover, Mitchell Politt, and Clementine Morfoot"
+        - ref: "https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          archive: "https://web.archive.org/web/20231129091706id_/https://www.american-pinball.com/news/american-pinball-inc-with-the-stars-of-galactic-t"
+          quote: "the talented cast: (L to R) Kerri Hoskins, Jeff Hoover, Mitchell Pollitt, and Clementine Morfoot"
+      credit:
+        - kerri-hoskins: other
+        - jeff-hoover: other
+        - mitchell-pollitt: other
+        - clementine-morfoot: other
+  - model.galactic-tank-force-victory-edition:
+      note: "The interactive tank sculpt is the game's central toy on every edition, and American Pinball's Victory upgrade copy states the standard sculpt's signature motorized action - a toy that moves under motor power during gameplay, which is what the animatronic toy classification records (the same classification as Stern's motorized animatronic Megatron). Its bespoke identity (Model 375A battle tank) stays in the family doc's future-unique-features list."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: It retains the signature motorized action while adding 3 embedded interactive LEDs that react during game modes and attacks.
+      gameplay_feature: [animatronic-toys]
+  - model.galactic-tank-force-victory-edition:
+      note: "The core playfield is shared by every edition. The maker's own playfield-callout flyer names both mechanisms; Pinball News' launch photo caption corroborates the player-operated diverter."
+      cite:
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: Controlled Diverter Use the third flipper button to divert ramp shots.
+        - ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+          quote: "UFO Moving Target Stop cows from being abducted!"
+        - ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
+          locator: photo caption in the playfield section
+          quote: The player-operated ball diverter
+      gameplay_feature: [diverters, moving-targets]
+  - model.galactic-tank-force-victory-edition:
+      note: "The flyer's playfield photo shows the machine's printed credits panel, transcribed by hand into the evidence cache. Role mappings: GAME CODE maps to software; 2D+VIDEO ART to the animation role; DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics; AUDIO ENGINEER to sound. Steve Bowden thus carries both design (Rules, per the team announcement) and software (GAME CODE). The panel's remaining line, David Fix ... EXECUTIVE VICE PRESIDENT, is a corporate title with no credit role and is recorded in the family doc. The credits are printed on the game every edition shares."
+      cite:
+        ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
+        locator: the CREDITS panel printed beside the shooter lane in the playfield photo
+        quote: "Dennis Nordman & Paul Reno ... GAME DESIGN [...] Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING [...] Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART [...] Joe Schober, Casey Butler & Steve Bowden ... GAME CODE [...] Mitesh Pithva ... ENGINEERING [...] Matt Kern ... AUDIO ENGINEER"
+      credit:
+        - joe-schober: software
+        - casey-butler: software
+        - steve-bowden: software
+        - jessica-durbala: animation
+        - bobby-llereza: animation
+        - zofia-bil-ryan: mechanics
+        - mitesh-pithva: mechanics
+        - matt-kern: sound
+  - model.galactic-tank-force-victory-edition:
+      note: "The manual's rules chapter documents the game every edition shares. Supersedes an earlier ingest's uncounted skill shot and multiball attachments (user-approved 2026-08-10). The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      cite:
+        ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
+        locator: "printed page 44, PDF document page 54"
+        quote: "SKILL SHOTS (2) [...] MULTIBALL MODES (3)"
+      gameplay_feature: [{ skill-shot: 2 }, { multiball: 3 }]
+  - model.galactic-tank-force-victory-edition:
+      note: "The family's 2023 editions point at Classic as their base, but American Pinball states the Victory Edition's cabinet art, translite and core playfield are the Deluxe's, so its base is the Deluxe."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: "The cabinet artwork, translite, and core playfield feature the same setup of the now-retired Deluxe Edition."
+      variant_of: galactic-tank-force-deluxe
+  - model.galactic-tank-force-victory-edition:
+      note: "Announced per the vocabulary (officially announced but not yet shipped) as of authoring, 2026-08-10: the maker states shipping merely begins August 2026 (user ruling 2026-08-10)."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: Shipping Begins August 2026
+      production_status: announced
+  - model.galactic-tank-force-victory-edition:
+      note: "Month records the announcement/launch month, matching the 2023 editions' month 3 (unveiled March 22, 2023): the Victory Edition was announced July 30, 2026."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: Posted 07/30/2026
+      month: 7
+  - model.galactic-tank-force-victory-edition:
+      note: "A 100-unit individually numbered final run is a limited edition; the tag matches the family's LE and Signature editions."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: Just 100 units will be available and each will be individually numbered.
+      production_quantity: 100
+      tag: [limited-edition]
+  - model.galactic-tank-force-victory-edition:
+      note: "American Pinball states the Victory Edition's core playfield is the Deluxe's, and the Deluxe shares the family's common playfield, so the feature set an earlier ingest recorded for the 2023 editions carries with its counts (the variant rule)."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: "The cabinet artwork, translite, and core playfield feature the same setup of the now-retired Deluxe Edition."
+      gameplay_feature:
+        [
+          auto-launch,
+          { ball-locks: 3 },
+          { flippers: 2 },
+          { magnets: 1 },
+          { orbits: 2 },
+          { pop-bumpers: 3 },
+          ramps,
+          rollovers,
+          { slingshots: 2 },
+          { spinners: 2 },
+          standup-targets,
+          { up-posts: 1 },
+          { vertical-up-kickers: 2 },
+        ]
+  - model.galactic-tank-force-victory-edition:
+      note: "Wording mappings: Interior Side Art attaches as art blades (playfield side wall art); Shaker as shaker motor; Knocker as knocker; AURA Lighting is American Pinball's branded interactive lighting product; Magic Glass is American Pinball's branded anti-reflection playfield glass."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: "Standard equipment includes interior side art, a shaker motor, AURA Lighting, Magic Glass, and a physical knocker."
+      gameplay_feature:
+        [art-blades, shaker-motors, aura-lighting, magic-glass, knockers]
+  - model.galactic-tank-force-victory-edition:
+      note: "The armor package attaches as cabinet armor and the lit Captain Kyan topper as a topper; the topper's identity (dual-panel acrylic, Franchi art, numbered apron) stays in the family doc's future-unique-features list."
+      cite:
+        - ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+          quote: "Features an exclusive Galactic Blue armor package, complemented by new custom blue apron and shooter lane decals."
+        - ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+          quote: this dual-panel acrylic topper features Captain Kyan lit by a dedicated LED strip
+      gameplay_feature: [cabinet-armor, toppers]
