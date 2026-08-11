@@ -772,6 +772,7 @@ def source_root(
     *,
     source_type: str = "web",
     description: str | None = None,
+    domains: Sequence[str] = (),
     links: Sequence[tuple[str, str, str]],
 ) -> str:
     """Emit one `sources:` block entry: a citation-source root (header + links).
@@ -784,6 +785,9 @@ def source_root(
     name:        source name; identity is (name, source_type), so keep it stable.
     source_type: 'web' | 'book' | 'periodical'.
     description: optional folded `>` blurb.
+    domains:     extra recognition hosts beyond the homepage; an entry may carry a
+                 path (DataPatches.md → Citation sources). Emitted verbatim — the
+                 apply stores prefixes case-sensitively, so nothing is rounded.
     links:       (url, label, link_type) tuples; link_type is 'homepage' for the
                  root's domain link (what later cites domain-match against),
                  else 'reference' / 'archive'.
@@ -792,6 +796,9 @@ def source_root(
     if description:
         out.append("    description: >")
         out += [f"      {line}" for line in _fold(clean_text(description))]
+    if domains:
+        out.append("    domains:")
+        out += [f"      - {_scalar(d)}" for d in domains]
     out.append("    links:")
     for url, label, link_type in links:
         link = _Map(

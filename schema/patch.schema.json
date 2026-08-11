@@ -265,7 +265,7 @@
           },
           "domains": {
             "type": "array",
-            "description": "Extra recognition hosts for this root, beyond its 'homepage' link — a rebrand's old domain, a .com/.co.uk pair, an asset/CDN host. One publication reachable at several registrable hosts stays one root all of them recognize. Each entry is a bare host or full URL ('oldpin.com' or 'https://oldpin.com/'); stored verbatim (no rounding), gated only against IP literals and bare public suffixes. Web roots only.",
+            "description": "Extra recognition hosts for this root, beyond its 'homepage' link — a rebrand's old domain, a .com/.co.uk pair, an asset/CDN host. One publication reachable at several registrable hosts stays one root all of them recognize. Each entry is a bare host or full URL ('oldpin.com' or 'https://oldpin.com/'); stored verbatim (no rounding), gated against IP literals and bare public suffixes. An entry may also carry a path ('img1.wsimg.com/blobby/go/<tenant-uuid>'), scoping recognition to one tenant's slice of a shared multi-tenant CDN. Required there — a bare registration would attribute every tenant's files to one maker — and rejected on ordinary hosts, which are recognized whole. Shared-host table: flipcommons apps/citation/shared_hosts.py. Web roots only.",
             "items": { "type": "string", "minLength": 1 }
           },
           "links": {

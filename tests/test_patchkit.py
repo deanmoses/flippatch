@@ -655,6 +655,33 @@ def test_source_root_emits_header_and_escaped_links() -> None:
     ) in sr
 
 
+def test_source_root_emits_domains_verbatim() -> None:
+    """A `domains:` entry may carry a path (a path-scoped slice of a shared CDN
+    host — DataPatches.md → Citation sources); prefixes are stored verbatim, so
+    the emitter must not round or escape them into unrecognizability."""
+    sr = source_root(
+        "Cardona Pinball Designs",
+        links=[("https://cardonapinball.com/", "Cardona Pinball", "homepage")],
+        domains=["img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3"],
+    )
+    assert "    domains:" in sr
+    assert "      - img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3" in sr
+    parsed = yaml.safe_load(sr)
+    assert parsed[0]["domains"] == [
+        "img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3"
+    ]
+    # domains sit between the header and links, matching the docs' example order
+    assert sr.index("source_type") < sr.index("domains:") < sr.index("links:")
+
+
+def test_source_root_without_domains_emits_no_domains_key() -> None:
+    sr = source_root(
+        "Arcade Heroes",
+        links=[("https://arcadeheroes.com/", "Arcade Heroes", "homepage")],
+    )
+    assert "domains" not in sr
+
+
 def test_render_patch_returns_exactly_what_write_patch_writes(tmp_path: Path) -> None:
     """Rendering is split from writing so a caller can regenerate a patch and
     BYTE-COMPARE it without touching the file — the freeze check that stops an
