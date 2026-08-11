@@ -29,10 +29,8 @@ if TYPE_CHECKING:
 # One IPDB machine row as the page prints it: ``(column, page label)`` pairs, a
 # ``None`` label for the rows the page renders bare.
 #
-# To add a field: **the stored value must be the page's literal string.**
-# ``ProductionNumber`` holds ``20270`` against the page's "20,270 units", so a
-# quote of it would verify here and be un-findable on IPDB. ``Players`` breaks
-# that rule and stays anyway — shipped quotes rest on it.
+# ``AverageFunRating`` is left out: it is a moving aggregate, so a point-in-time
+# scrape of it evidences nothing the catalog records.
 #
 # Order and labels are inferred from the key order of pinexplore's
 # ``ingest_sources/ipdb_xantari.json`` dump; IPDB resists scraping, so no cached
@@ -46,6 +44,7 @@ _IPDB_ROW_FIELDS: tuple[tuple[str, str | None], ...] = (
     ("Type", "Type"),
     ("MPU", "MPU"),
     ("ModelNumber", "Model Number"),
+    ("ProductionNumber", "Production"),
     ("Theme", "Theme"),
     ("NotableFeatures", "Notable Features"),
     ("Toys", "Toys"),

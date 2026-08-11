@@ -118,19 +118,20 @@ def test_ipdb_row_text_renders_ipdbs_own_sourcing_rows():
     )
 
 
-def test_ipdb_row_text_omits_values_the_page_renders_differently():
-    # A quote of "20270" would verify here and be un-findable on IPDB. The
-    # page's own date and player rendering rides along in AdditionalDetails.
+def test_ipdb_row_text_omits_the_fun_rating():
+    # The rating is a moving aggregate, so a point-in-time scrape of it is not
+    # evidence of anything the catalog records.
     text = ipdb_row_text(
         {
             "Title": "The Addams Family",
-            "DateOfManufacture": "1992-03-01T00:00:00",
             "ProductionNumber": 20270,
             "AverageFunRating": 8.3,
             "AdditionalDetails": "IPD No. 20 / March, 1992 / 4 Players",
         }
     )
-    assert text == ("The Addams Family\nIPD No. 20 / March, 1992 / 4 Players")
+    assert text == (
+        "The Addams Family\nIPD No. 20 / March, 1992 / 4 Players\nProduction: 20270"
+    )
 
 
 def test_ipdb_row_text_omits_blank_values_rather_than_a_bare_label():
