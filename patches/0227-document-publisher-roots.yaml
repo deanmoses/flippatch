@@ -1,0 +1,276 @@
+attribution: flipcommons-catalog
+description: >
+  Document publisher roots for first-party manufacturer docs, plus USPTO
+sources:
+  - name: Williams
+    slug: williams
+    source_type: document
+    description: >
+      First-party game documentation published by Williams.
+  - name: Bally
+    slug: bally
+    source_type: document
+    description: >
+      First-party game documentation published by Bally.
+  - name: Stern Electronics
+    slug: stern-electronics
+    source_type: document
+    description: >
+      First-party game documentation published by Stern Electronics (1977-1985), distinct from the
+      modern Stern Pinball.
+  - name: Stern
+    slug: stern-pinball
+    source_type: document
+    description: >
+      First-party game documentation published by the modern Stern Pinball (1999 to present).
+  - name: Zaccaria
+    slug: zaccaria
+    source_type: document
+    description: >
+      First-party game documentation published by Zaccaria.
+  - name: Data East
+    slug: data-east
+    source_type: document
+    description: >
+      First-party game documentation published by Data East.
+  - name: Chicago Coin
+    slug: chicago-coin
+    source_type: document
+    description: >
+      First-party game documentation published by Chicago Coin.
+  - name: Playmatic
+    slug: playmatic
+    source_type: document
+    description: >
+      First-party game documentation published by Playmatic.
+  - name: Sega
+    slug: sega
+    source_type: document
+    description: >
+      First-party game documentation published by Sega.
+  - name: Game Plan
+    slug: game-plan
+    source_type: document
+    description: >
+      First-party game documentation published by Game Plan.
+  - name: Atari
+    slug: atari
+    source_type: document
+    description: >
+      First-party game documentation published by Atari.
+  - name: Taito do Brasil
+    slug: taito-do-brasil
+    source_type: document
+    description: >
+      First-party game documentation published by Taito do Brasil.
+  - name: Genco
+    slug: genco
+    source_type: document
+    description: >
+      First-party game documentation published by Genco.
+  - name: Recel
+    slug: recel
+    source_type: document
+    description: >
+      First-party game documentation published by Recel.
+  - name: Allied Leisure
+    slug: allied-leisure
+    source_type: document
+    description: >
+      First-party game documentation published by Allied Leisure.
+  - name: Capcom
+    slug: capcom
+    source_type: document
+    description: >
+      First-party game documentation published by Capcom.
+  - name: INDER
+    slug: inder
+    source_type: document
+    description: >
+      First-party game documentation published by INDER.
+  - name: Midway
+    slug: midway
+    source_type: document
+    description: >
+      First-party game documentation published by Midway.
+  - name: Keeney
+    slug: keeney
+    source_type: document
+    description: >
+      First-party game documentation published by Keeney.
+  - name: Sonic
+    slug: sonic
+    source_type: document
+    description: >
+      First-party game documentation published by Sonic.
+  - name: MAC S.A.
+    slug: mac-sa
+    source_type: document
+    description: >
+      First-party game documentation published by MAC S.A.
+  - name: United
+    slug: united
+    source_type: document
+    description: >
+      First-party game documentation published by United.
+  - name: Hankin
+    slug: hankin
+    source_type: document
+    description: >
+      First-party game documentation published by Hankin.
+  - name: Alvin G.
+    slug: alvin-g
+    source_type: document
+    description: >
+      First-party game documentation published by Alvin G.
+  - name: Briarwood
+    slug: briarwood
+    source_type: document
+    description: >
+      First-party game documentation published by Briarwood.
+  - name: O. D. Jennings and Company
+    slug: o-d-jennings-and-company
+    source_type: document
+    description: >
+      First-party game documentation published by O. D. Jennings and Company.
+  - name: ESCO
+    slug: esco
+    source_type: document
+    description: >
+      First-party game documentation published by ESCO.
+  - name: NSM
+    slug: nsm
+    source_type: document
+    description: >
+      First-party game documentation published by NSM.
+  - name: PAMCO
+    slug: pamco
+    source_type: document
+    description: >
+      First-party game documentation published by PAMCO.
+  - name: Rally
+    slug: rally
+    source_type: document
+    description: >
+      First-party game documentation published by Rally.
+  - name: Rock-ola Manufacturing Corporation
+    slug: rock-ola-manufacturing-corporation
+    source_type: document
+    description: >
+      First-party game documentation published by Rock-ola Manufacturing Corporation.
+  - name: Bell Games
+    slug: bell-games
+    source_type: document
+    description: >
+      First-party game documentation published by Bell Games.
+  - name: Brunswick
+    slug: brunswick
+    source_type: document
+    description: >
+      First-party game documentation published by Brunswick.
+  - name: "Fascination Int., Incorporated"
+    slug: fascination-int-incorporated
+    source_type: document
+    description: >
+      First-party game documentation published by Fascination Int., Incorporated.
+  - name: Jersey Jack Pinball
+    slug: jersey-jack
+    source_type: document
+    description: >
+      First-party game documentation published by Jersey Jack Pinball.
+  - name: Segasa
+    slug: segasa
+    source_type: document
+    description: >
+      First-party game documentation published by Segasa.
+  - name: SLEIC
+    slug: sleic
+    source_type: document
+    description: >
+      First-party game documentation published by SLEIC.
+  - name: WeChe
+    slug: weche
+    source_type: document
+    description: >
+      First-party game documentation published by WeChe.
+  - name: Interflip
+    slug: interflip
+    source_type: document
+    description: >
+      First-party game documentation published by Interflip.
+  - name: Juegos Populares
+    slug: juegos-populares
+    source_type: document
+    description: >
+      First-party game documentation published by Juegos Populares.
+  - name: Maresa
+    slug: maresa
+    source_type: document
+    description: >
+      First-party game documentation published by Maresa.
+  - name: Petaco
+    slug: petaco
+    source_type: document
+    description: >
+      First-party game documentation published by Petaco.
+  - name: Tecnoplay
+    slug: tecnoplay
+    source_type: document
+    description: >
+      First-party game documentation published by Tecnoplay.
+  - name: Spinball
+    slug: spinball
+    source_type: document
+    description: >
+      First-party game documentation published by Spinball.
+  - name: Wico
+    slug: wico
+    source_type: document
+    description: >
+      First-party game documentation published by Wico.
+  - name: Astro Games
+    slug: astro-games
+    source_type: document
+    description: >
+      First-party game documentation published by Astro Games.
+  - name: "HanaHo Games, Inc."
+    slug: hanaho-games-inc
+    source_type: document
+    description: >
+      First-party game documentation published by HanaHo Games, Inc.
+  - name: IDSA
+    slug: idsa
+    source_type: document
+    description: >
+      First-party game documentation published by IDSA.
+  - name: Mr. Game
+    slug: mr-game
+    source_type: document
+    description: >
+      First-party game documentation published by Mr. Game.
+  - name: Nasco
+    slug: nasco
+    source_type: document
+    description: >
+      First-party game documentation published by Nasco.
+  - name: Peyper
+    slug: peyper
+    source_type: document
+    description: >
+      First-party game documentation published by Peyper.
+  - name: SIRMO Games S.A.
+    slug: sirmo-games-sa
+    source_type: document
+    description: >
+      First-party game documentation published by SIRMO Games S.A.
+  - name: Gottlieb
+    slug: gottlieb
+    source_type: document
+    description: >
+      First-party game documentation published by Gottlieb.
+  - name: USPTO
+    slug: uspto
+    source_type: document
+    description: >
+      The United States Patent and Trademark Office. Each document is a patent, addressed by its
+      number.
