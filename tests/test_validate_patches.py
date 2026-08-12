@@ -596,6 +596,34 @@ def test_periodical_issue_sources_valid(schema_validator):
     assert not _has_error(schema_validator, data)
 
 
+def test_document_sources_valid(schema_validator):
+    # document mirrors periodical's slug/parent verbs: a publisher root plus a
+    # document nested under it by parent:.
+    data = {
+        "attribution": "flipcommons-catalog",
+        "sources": [
+            {"slug": "williams", "name": "Williams", "source_type": "document"},
+            {
+                "parent": "williams",
+                "slug": "wpc-95-schematic-manual",
+                "name": "Williams WPC-95 Schematic Manual",
+                "source_type": "document",
+                "links": [
+                    {
+                        "url": "https://www.ipdb.org/files/x/manual.pdf",
+                        "link_type": "catalog",
+                    },
+                    {
+                        "url": "https://archive.org/details/x",
+                        "link_type": "archive",
+                    },
+                ],
+            },
+        ],
+    }
+    assert not _has_error(schema_validator, data)
+
+
 # --- Schema: delete / remove directives -------------------------------------
 
 

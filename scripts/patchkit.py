@@ -771,35 +771,55 @@ def source_root(
     name: str,
     *,
     source_type: str = "web",
+    slug: str | None = None,
     description: str | None = None,
     domains: Sequence[str] = (),
-    links: Sequence[tuple[str, str, str]],
+    links: Sequence[tuple[str, str, str]] = (),
 ) -> str:
-    """Emit one `sources:` block entry: a citation-source root (header + links).
+    """Emit one `sources:` block entry: a citation-source root.
 
-    Seeds the website/book/periodical root a later `cite:` URL nests under (a web
-    `cite:` errors unless its domain matches a seeded homepage link — DataPatches.md).
-    Same escaping safety as entry(): name/label/url go through _scalar so a stray
-    apostrophe or colon in a description or label can't break the YAML.
+    Seeds the root a later `cite:` nests under — a web root whose homepage link
+    later URL cites domain-match against, or a slug-addressed (periodical,
+    document) root whose slug is the left segment of `<root>:<child>` cite refs
+    (DataPatches.md → Citation sources). Same escaping safety as entry():
+    name/label/url go through _scalar so a stray apostrophe or colon in a
+    description or label can't break the YAML.
 
-    name:        source name; identity is (name, source_type), so keep it stable.
-    source_type: 'web' | 'book' | 'periodical'.
+    name:        source name; part of the get-or-create identity, so keep it stable.
+    source_type: 'web' | 'book' | 'periodical' | 'document'.
+    slug:        the authored cite handle, required on slug-addressed roots
+                 (periodical, document) and rejected on other types by ingest.
+                 Its grammar is checked here so a bad handle fails in the
+                 generator, not later at the structural gate.
     description: optional folded `>` blurb.
-    domains:     extra recognition hosts beyond the homepage; an entry may carry a
-                 path (DataPatches.md → Citation sources). Emitted verbatim — the
-                 apply stores prefixes case-sensitively, so nothing is rounded.
-    links:       (url, label, link_type) tuples; link_type is 'homepage' for the
-                 root's domain link (what later cites domain-match against),
-                 else 'reference' / 'archive'.
+    domains:     extra recognition hosts beyond the homepage (web roots only); an
+                 entry may carry a path (DataPatches.md → Citation sources).
+                 Emitted verbatim — the apply stores prefixes case-sensitively,
+                 so nothing is rounded.
+    links:       (url, label, link_type) tuples; link_type is 'homepage' for a
+                 web root's domain link, else 'reference' / 'archive'. Empty for
+                 a slug-addressed root, an abstract container with no URL of its
+                 own.
     """
-    out = [f"  - name: {_scalar(name)}", f"    source_type: {source_type}"]
+    if slug is not None and not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", slug):
+        raise ValueError(f"slug {slug!r} is not in the system slug grammar")
+    if source_type == "web" and not any(lt == "homepage" for _, _, lt in links):
+        raise ValueError(
+            f"web root {name!r} has no homepage link — a web root's homepage is "
+            "its recognition host (DataPatches.md -> Citation sources)"
+        )
+    out = [f"  - name: {_scalar(name)}"]
+    if slug is not None:
+        out.append(f"    slug: {slug}")
+    out.append(f"    source_type: {source_type}")
     if description:
         out.append("    description: >")
         out += [f"      {line}" for line in _fold(clean_text(description))]
     if domains:
         out.append("    domains:")
         out += [f"      - {_scalar(d)}" for d in domains]
-    out.append("    links:")
+    if links:
+        out.append("    links:")
     for url, label, link_type in links:
         link = _Map(
             [
@@ -826,13 +846,16 @@ def render_patch(
     (the ledger fingerprints it), so a generator whose inputs keep growing needs a
     way to prove it would still emit the same bytes -- see gen.py's `emit`.
     """
+    if not entries and not sources:
+        raise ValueError("a patch needs at least one claim entry or source node")
     out = [f"attribution: {attribution}", "description: >"]
     out += [f"  {line}" for line in _fold(description)]
     if sources:
         out.append("sources:")
         out += list(sources)
-    out.append("claims:")
-    out += list(entries)
+    if entries:
+        out.append("claims:")
+        out += list(entries)
     return "\n".join(out) + "\n"
 
 

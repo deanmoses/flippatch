@@ -682,6 +682,54 @@ def test_source_root_without_domains_emits_no_domains_key() -> None:
     assert "domains" not in sr
 
 
+def test_source_root_slug_addressed_document_root() -> None:
+    """A document publisher root is slug-addressed and linkless: the slug is the
+    cite handle (williams:...), and the root is an abstract container with no
+    homepage to recognize (DataPatches.md → Citation sources)."""
+    sr = source_root(
+        "Williams",
+        source_type="document",
+        slug="williams",
+        description="First-party manuals, schematics and service bulletins.",
+    )
+    parsed = yaml.safe_load(sr)[0]
+    assert parsed["slug"] == "williams"
+    assert parsed["source_type"] == "document"
+    assert "links" not in parsed
+    assert sr.index("name:") < sr.index("slug:") < sr.index("source_type:")
+
+
+def test_source_root_web_requires_homepage_link() -> None:
+    """A web root's homepage is its recognition host: without one, no URL cite
+    can ever nest under it, and nothing downstream catches the omission."""
+    with pytest.raises(ValueError):
+        source_root("Example")  # web by default, no links at all
+    with pytest.raises(ValueError):
+        source_root(  # links, but none of them a homepage
+            "Example",
+            links=[("https://example.com/about", "About", "reference")],
+        )
+
+
+def test_source_root_rejects_malformed_slug() -> None:
+    with pytest.raises(ValueError):
+        source_root("Williams", source_type="document", slug="Not_A_Slug")
+
+
+def test_render_patch_sources_only_omits_claims_key() -> None:
+    """A roots-only patch carries no claims: key at all — a bare 'claims:'
+    would load as null and fail the schema's minItems arm."""
+    text = render_patch(
+        attribution="flipcommons-catalog",
+        description="Publisher roots.",
+        entries=[],
+        sources=[source_root("Williams", source_type="document", slug="williams")],
+    )
+    data = yaml.safe_load(text)
+    assert "claims" not in data
+    assert data["sources"][0]["slug"] == "williams"
+
+
 def test_render_patch_returns_exactly_what_write_patch_writes(tmp_path: Path) -> None:
     """Rendering is split from writing so a caller can regenerate a patch and
     BYTE-COMPARE it without touching the file — the freeze check that stops an
