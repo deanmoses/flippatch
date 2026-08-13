@@ -15,7 +15,6 @@ sources:
         }
 claims:
   - model.cirqus-voltaire:
-      note: "Production games followed the pictured sample game, so the machine was produced."
       cite:
         ref: "ipdb:4059"
         quote: The sample game pictured in this listing has several playfield differences from the production games that followed.

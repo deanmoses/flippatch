@@ -47,7 +47,6 @@ sources:
 claims:
   - manufacturer.fast-pinball:
       create: true
-      note: "FAST Pinball makes boardsets, not machines of its own."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "He writes the code, designs the games, and has brought in more professional artists and voice actors with each title, while FAST Pinball handles the hardware."
@@ -136,7 +135,6 @@ claims:
         quote: FT 2026 05 05 First Commercial Release
       month: 5
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "The kit installs into a pinball machine and its result is a new pinball game, so the format follows."
       cite:
         ref: "https://www.kineticist.com/news/james-cardona-interview"
         quote: "It's a 2.0 kit, a category of officially licensed products that install into classic Bally/Williams machines and turns them into a new game experience, while keeping the original intact."
@@ -198,7 +196,6 @@ claims:
           quote: Fixed various display issues when caster's club MB was running
       gameplay_feature: [video-modes, multiball]
   - model.fish-tales:
-      note: "A machine made in five figures was commercially produced."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "Fish Tales is a perfect example with over 13,000 made"

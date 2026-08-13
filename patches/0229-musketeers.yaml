@@ -147,7 +147,6 @@ claims:
         quote: "Canon platform Diverter [...] Treville's Mansion courtyard Hidden Diverter [...] Notre Dame's Forest Hidden Diverter [...] Back board Diverter"
       gameplay_feature: [{ diverters: 4 }]
   - model.the-3-musketeers:
-      note: "The Milady de Winter sculpt is a repeatable bash target under the center ramp."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -156,7 +155,6 @@ claims:
           quote: Both appear on the playfield with the latter represented by a bash toy under a lift ramp.
       gameplay_feature: [{ bash-toys: 1 }]
   - model.the-3-musketeers:
-      note: "A swinging ship of the English fleet, timed shots required."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -174,7 +172,6 @@ claims:
           quote: "a physical cannon fires the ball from its own platform, with a dedicated diverter routing shots into it"
       gameplay_feature: [{ ball-cannons: 1 }]
   - model.the-3-musketeers:
-      note: "Treville's Mansion is an explicitly three-level play area on an otherwise single-level playfield."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -194,7 +191,6 @@ claims:
         quote: "INTEGRATED VIDEO MODES [...] Narrative sequences and interactive [...] missions displayed on screen."
       gameplay_feature: [video-modes]
   - model.the-3-musketeers:
-      note: "A 2.1 system is a stereo pair plus subwoofer."
       cite:
         ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
         locator: "back sheet; in the EXPERIENCE FEATURES list"
@@ -298,7 +294,6 @@ claims:
         quote: "Canon platform Diverter [...] Treville's Mansion courtyard Hidden Diverter [...] Notre Dame's Forest Hidden Diverter [...] Back board Diverter"
       gameplay_feature: [{ diverters: 4 }]
   - model.the-3-musketeers-elegance-edition:
-      note: "The Milady de Winter sculpt is a repeatable bash target under the center ramp."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -307,7 +302,6 @@ claims:
           quote: Both appear on the playfield with the latter represented by a bash toy under a lift ramp.
       gameplay_feature: [{ bash-toys: 1 }]
   - model.the-3-musketeers-elegance-edition:
-      note: "A swinging ship of the English fleet, timed shots required."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -325,7 +319,6 @@ claims:
           quote: "a physical cannon fires the ball from its own platform, with a dedicated diverter routing shots into it"
       gameplay_feature: [{ ball-cannons: 1 }]
   - model.the-3-musketeers-elegance-edition:
-      note: "Treville's Mansion is an explicitly three-level play area on an otherwise single-level playfield."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -345,7 +338,6 @@ claims:
         quote: "INTEGRATED VIDEO MODES [...] Narrative sequences and interactive [...] missions displayed on screen."
       gameplay_feature: [video-modes]
   - model.the-3-musketeers-elegance-edition:
-      note: "A 2.1 system is a stereo pair plus subwoofer."
       cite:
         ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
         locator: "back sheet; in the EXPERIENCE FEATURES list"
@@ -369,7 +361,6 @@ claims:
           quote: "Elegance Edition [...] Limited to 200 numbered copies worldwide."
       variant_of: the-3-musketeers
   - model.the-3-musketeers-elegance-edition:
-      note: "A strictly limited, individually numbered run is a limited edition."
       cite:
         ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
         quote: Limited to 200 numbered copies worldwide.

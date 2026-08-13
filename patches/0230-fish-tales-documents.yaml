@@ -72,7 +72,6 @@ claims:
         quote: 57 Left Sling 58 Right Sling
       gameplay_feature: [{ slingshots: 2 }]
   - model.fish-tales:
-      note: "A 55-inch-long, 26-inch-wide, 285-pound machine on legs is a standard floor-standing cabinet."
       cite:
         ref: "williams:fish-tales-operations-manual-1992"
         locator: "in Pinball Game Assembly Instructions, printed page 1-2, PDF document page 17"
