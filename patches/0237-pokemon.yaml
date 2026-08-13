@@ -1,0 +1,498 @@
+attribution: flipcommons-catalog
+description: >
+  Pokémon family details across Stern's Pro, Premium and Limited Edition
+claims:
+  - person.andrew-wilkening:
+      create: true
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      name: Andrew Wilkening
+  - person.josh-henderson:
+      create: true
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      name: Josh Henderson
+      person_alias: [Joshua Henderson]
+  - model.pokemon-pro:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: "Pokémon by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Production Timeline section
+          quote: "Stern is prioritizing on-location Pro models first, with production starting late February through early March."
+      production_status: produced
+  - model.pokemon-pro:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "revealed and released a new pinball machine – Pokémon by Stern Pinball"
+      game_format: pinball
+  - model.pokemon-pro:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      system: stern-spike-3
+  - model.pokemon-pro:
+      cite:
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Individually Autographed by Game Designers Jack Danger and George Gomez.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Design Team section
+          quote: "Design: Jack Danger, George Gomez"
+        - ref: "https://arcadeheroes.com/2026/02/13/gotta-catch-em-all-stern-pinball-officially-unveils-pokemon"
+          quote: this was designed by Jack Danger and George Gomez
+      credit:
+        - jack-danger: design
+  - model.pokemon-pro:
+      cite:
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Individually Autographed by Game Designers Jack Danger and George Gomez.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Design Team section
+          quote: "Design: Jack Danger, George Gomez"
+        - ref: "https://arcadeheroes.com/2026/02/13/gotta-catch-em-all-stern-pinball-officially-unveils-pokemon"
+          quote: this was designed by Jack Danger and George Gomez
+      credit:
+        - george-gomez: design
+  - model.pokemon-pro:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - tanio-klyce: software
+  - model.pokemon-pro:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - andrew-wilkening: software
+  - model.pokemon-pro:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - josh-henderson: software
+  - model.pokemon-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Hit Pokédex captive ball to scan Pokémon; Town themed right scoop starts Rival Battles and other features; Complete B-A-T-T-L-E targets to advance in game and start Team Rocket Multiball; Bulbasaur outer left orbit leads to the back ramp and returns the ball to the right flipper; Right ramp encircles Pikachu toy to advance to Pikachu multiball. Feeds wire ramp back to right flipper; Charmander optical spinning target enters Tall Grass themed pop bumper area of playfield where players can discover Pokémon; 2 flippers; 2 lit pop bumpers; Full-spectrum RGB LED playfield arrow inserts"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature:
+        [
+          captive-ball,
+          scoops,
+          targets,
+          multiball,
+          orbits,
+          ramps,
+          optical-spinners,
+          { flippers: 2 },
+          { pop-bumpers: 2 },
+          rgb-playfield-inserts,
+        ]
+  - model.pokemon-pro:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: The interactive Meowth Balloon toy swoops down onto the battle arena to challenge the Trainer.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          quote: "An interactive Meowth Balloon descends to the playfield arena during battle sequences — Team Rocket's signature Meowth as a physical target to bash."
+      gameplay_feature: [bash-toys]
+  - model.pokemon-pro:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "Bringing the experience to life even further, custom voiceovers for Pikachu and the notorious Team Rocket leader, Giovanni, captures the spirit and humor that fans know and love."
+      gameplay_feature: [speech]
+  - model.pokemon-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Powder-coated black wrinkle finish hand guard side armor, hinges, front lockdown molding and legs; Multifunction Action Button on lockdown bar"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature: [side-armor, lockdown-bar-buttons]
+  - model.pokemon-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: 6 pinballs; Stereo sound system with 3-channel amplifier"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature: [{ balls: 6 }, stereo-sound]
+  - model.pokemon-pro:
+      cite:
+        - ref: "https://www.sternpinball.com/game/pokemon/pro"
+          quote: Pikachu static toy with custom recorded speech.
+        - ref: "https://www.sternpinball.com/game/pokemon/pro"
+          quote: "RGB illuminated static Poké Ball includes ball stop post on left ramp."
+      gameplay_feature: [static-toys]
+  - model.pokemon-pro:
+      note: "On the feature matrix sheet, the PRO column carries a checkmark for the rows: Psyduck stand up target"
+      cite:
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Edition Comparison section
+          quote: "Psyduck: Pro gets a stand up target."
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+      gameplay_feature: [standup-targets]
+  - model.pokemon-pro:
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_Pro_web.pdf"
+        locator: "PDF document page 1, the title sheet"
+        quote: "POKÉMON PRO #500-55AG-01"
+      manufacturer_model_identifier: 500-55AG-01
+  - model.pokemon-pro:
+      note: "The classification to a standard floor cabinet follows from the documented full-size dimensions."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_Pro_web.pdf"
+        locator: "printed page 67, PDF document page 67, in the SPECIFICATIONS, MECHANICAL, GAME SETUP table"
+        quote: "Weight 210 lbs [...] Max dimensions, leg levelers extended (h, w, d) 78 x 27.75 x 57 in"
+      cabinet: floor
+  - model.pokemon-premium:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: "Pokémon by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Production Timeline section
+          quote: "Limited Edition builds follow shortly after, with Premium models scheduled to begin production later in March."
+      production_status: produced
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "revealed and released a new pinball machine – Pokémon by Stern Pinball"
+      game_format: pinball
+  - model.pokemon-premium:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      system: stern-spike-3
+  - model.pokemon-premium:
+      cite:
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Individually Autographed by Game Designers Jack Danger and George Gomez.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Design Team section
+          quote: "Design: Jack Danger, George Gomez"
+        - ref: "https://arcadeheroes.com/2026/02/13/gotta-catch-em-all-stern-pinball-officially-unveils-pokemon"
+          quote: this was designed by Jack Danger and George Gomez
+      credit:
+        - jack-danger: design
+  - model.pokemon-premium:
+      cite:
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Individually Autographed by Game Designers Jack Danger and George Gomez.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Design Team section
+          quote: "Design: Jack Danger, George Gomez"
+        - ref: "https://arcadeheroes.com/2026/02/13/gotta-catch-em-all-stern-pinball-officially-unveils-pokemon"
+          quote: this was designed by Jack Danger and George Gomez
+      credit:
+        - george-gomez: design
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - tanio-klyce: software
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - andrew-wilkening: software
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - josh-henderson: software
+  - model.pokemon-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Hit Pokédex captive ball to scan Pokémon; Town themed right scoop starts Rival Battles and other features; Complete B-A-T-T-L-E targets to advance in game and start Team Rocket Multiball; Bulbasaur outer left orbit leads to the back ramp and returns the ball to the right flipper; Right ramp encircles Pikachu toy to advance to Pikachu multiball. Feeds wire ramp back to right flipper; Charmander optical spinning target enters Tall Grass themed pop bumper area of playfield where players can discover Pokémon; 2 flippers; 2 lit pop bumpers; Full-spectrum RGB LED playfield arrow inserts"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature:
+        [
+          captive-ball,
+          scoops,
+          targets,
+          multiball,
+          orbits,
+          ramps,
+          optical-spinners,
+          { flippers: 2 },
+          { pop-bumpers: 2 },
+          rgb-playfield-inserts,
+        ]
+  - model.pokemon-premium:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: The interactive Meowth Balloon toy swoops down onto the battle arena to challenge the Trainer.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          quote: "An interactive Meowth Balloon descends to the playfield arena during battle sequences — Team Rocket's signature Meowth as a physical target to bash."
+      gameplay_feature: [bash-toys]
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "Bringing the experience to life even further, custom voiceovers for Pikachu and the notorious Team Rocket leader, Giovanni, captures the spirit and humor that fans know and love."
+      gameplay_feature: [speech]
+  - model.pokemon-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Powder-coated black wrinkle finish hand guard side armor, hinges, front lockdown molding and legs; Multifunction Action Button on lockdown bar"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature: [side-armor, lockdown-bar-buttons]
+  - model.pokemon-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: 6 pinballs; Stereo sound system with 3-channel amplifier"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature: [{ balls: 6 }, stereo-sound]
+  - model.pokemon-premium:
+      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows."
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
+      technology_generation: solid-state
+  - model.pokemon-premium:
+      note: 'On the feature matrix sheet, the PREM column carries a checkmark for the rows: Custom animations on larger, 18.5" full HD display'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+        quote: 'Custom animations on larger, 18.5" full HD display.'
+      display_type: lcd
+  - model.pokemon-premium:
+      cite:
+        - ref: "https://www.sternpinball.com/game/pokemon/premium"
+          quote: Pikachu animatronic toy reacts to playfield action with movement and custom recorded speech.
+        - ref: "https://www.sternpinball.com/game/pokemon/premium"
+          quote: "Animatronic Poké Ball ball-lock with RGB illumination at the Left Ramp."
+      gameplay_feature: [animatronic-toys]
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.sternpinball.com/game/pokemon/premium"
+        quote: "Animatronic Poké Ball ball-lock with RGB illumination at the Left Ramp."
+      gameplay_feature: [ball-locks, ball-holding-toys]
+  - model.pokemon-premium:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: Premium and Limited Edition games include an interactive electromagnet that adds chaos to the battle arena.
+      gameplay_feature: [magnets]
+  - model.pokemon-premium:
+      note: "On the feature matrix sheet, the PREM column carries a checkmark for the rows: Left ramp feeds the Squirtle Whirlpool bowl for spinning ball action. When qualified, the Squirtle Whirlpool charges up water energy"
+      cite:
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Edition Comparison section
+          quote: Premium/LE adds the Squirtle Whirlpool spinning bowl that charges water energy.
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+      gameplay_feature: [whirlpools]
+  - model.pokemon-premium:
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_LE_Pre_web.pdf"
+        locator: "PDF document page 1, the title sheet"
+        quote: "POKÉMON PREMIUM #500-55AH-01"
+      manufacturer_model_identifier: 500-55AH-01
+  - model.pokemon-premium:
+      note: "The manual covers the Limited Edition and the Premium in one document - its title sheet lists both model numbers. The classification to a standard floor cabinet follows from the documented full-size dimensions."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_LE_Pre_web.pdf"
+        locator: "printed page 72, PDF document page 72, in the SPECIFICATIONS, MECHANICAL, GAME SETUP table"
+        quote: "Weight 210 lbs [...] Max dimensions, leg levelers extended (h, w, d) 78 x 27.75 x 57 in"
+      cabinet: floor
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: "Pokémon by Stern Pinball is available now in Pro, Premium, and Limited Edition (LE) models."
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Production Timeline section
+          quote: "Limited Edition builds follow shortly after, with Premium models scheduled to begin production later in March."
+      production_status: produced
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "revealed and released a new pinball machine – Pokémon by Stern Pinball"
+      game_format: pinball
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: This one-of-a-kind pinball experience is powered by Stern's next-generation technology with the new SPIKE 3 platform.
+      system: stern-spike-3
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Individually Autographed by Game Designers Jack Danger and George Gomez.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Design Team section
+          quote: "Design: Jack Danger, George Gomez"
+        - ref: "https://arcadeheroes.com/2026/02/13/gotta-catch-em-all-stern-pinball-officially-unveils-pokemon"
+          quote: this was designed by Jack Danger and George Gomez
+      credit:
+        - jack-danger: design
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Individually Autographed by Game Designers Jack Danger and George Gomez.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Design Team section
+          quote: "Design: Jack Danger, George Gomez"
+        - ref: "https://arcadeheroes.com/2026/02/13/gotta-catch-em-all-stern-pinball-officially-unveils-pokemon"
+          quote: this was designed by Jack Danger and George Gomez
+      credit:
+        - george-gomez: design
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - tanio-klyce: software
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - andrew-wilkening: software
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+        locator: in the Design Team section
+        quote: "Code: Tanio Klyce, Andrew Wilkening, Josh Henderson"
+      credit:
+        - josh-henderson: software
+  - model.pokemon-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Hit Pokédex captive ball to scan Pokémon; Town themed right scoop starts Rival Battles and other features; Complete B-A-T-T-L-E targets to advance in game and start Team Rocket Multiball; Bulbasaur outer left orbit leads to the back ramp and returns the ball to the right flipper; Right ramp encircles Pikachu toy to advance to Pikachu multiball. Feeds wire ramp back to right flipper; Charmander optical spinning target enters Tall Grass themed pop bumper area of playfield where players can discover Pokémon; 2 flippers; 2 lit pop bumpers; Full-spectrum RGB LED playfield arrow inserts"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature:
+        [
+          captive-ball,
+          scoops,
+          targets,
+          multiball,
+          orbits,
+          ramps,
+          optical-spinners,
+          { flippers: 2 },
+          { pop-bumpers: 2 },
+          rgb-playfield-inserts,
+        ]
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: The interactive Meowth Balloon toy swoops down onto the battle arena to challenge the Trainer.
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          quote: "An interactive Meowth Balloon descends to the playfield arena during battle sequences — Team Rocket's signature Meowth as a physical target to bash."
+      gameplay_feature: [bash-toys]
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "Bringing the experience to life even further, custom voiceovers for Pikachu and the notorious Team Rocket leader, Giovanni, captures the spirit and humor that fans know and love."
+      gameplay_feature: [speech]
+  - model.pokemon-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: Multifunction Action Button on lockdown bar"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature: [lockdown-bar-buttons]
+  - model.pokemon-limited-edition:
+      note: "On the feature matrix sheet, the LE column carries a checkmark for the rows: 6 pinballs; Stereo sound system with 3-channel amplifier"
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+      gameplay_feature: [{ balls: 6 }, stereo-sound]
+  - model.pokemon-limited-edition:
+      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows."
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
+      technology_generation: solid-state
+  - model.pokemon-limited-edition:
+      note: 'On the feature matrix sheet, the LE column carries a checkmark for the rows: Custom animations on larger, 18.5" full HD display'
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+        locator: PDF document page 1
+        quote: 'Custom animations on larger, 18.5" full HD display.'
+      display_type: lcd
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/game/pokemon/limited-edition"
+          quote: "Animatronic Poké Ball ball-lock with RGB illumination at the Left Ramp."
+        - ref: "https://www.kineticist.com/news/stern-pinball-reveals-pokemon-pinball"
+          locator: in the Edition Comparison section
+          quote: Premium/LE upgrades to a fully animatronic Pikachu with movement and custom speech.
+      gameplay_feature: [animatronic-toys]
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/game/pokemon/limited-edition"
+        quote: "Animatronic Poké Ball ball-lock with RGB illumination at the Left Ramp."
+      gameplay_feature: [ball-locks, ball-holding-toys]
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: Premium and Limited Edition games include an interactive electromagnet that adds chaos to the battle arena.
+        - ref: "https://www.sternpinball.com/game/pokemon/limited-edition"
+          quote: The interactive Meowth Balloon Arena magnet provides kinetic action and excitement.
+      gameplay_feature: [magnets]
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/game/pokemon/limited-edition"
+        quote: Left ramp feeds the Squirtle Whirlpool bowl for spinning ball action.
+      gameplay_feature: [whirlpools]
+  - model.pokemon-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+          quote: limited to 750 games globally
+        - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
+          locator: PDF document page 1
+          quote: Production limited to 750 machines.
+      production_quantity: 750
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
+        quote: "Trainers looking for an elevated experience will be able to enjoy the highly collectible Limited Edition model, limited to 750 games globally, which includes the updated Expression Lighting System™ and Speaker Expression Lighting System with Pokémon-themed game effects, a full-color mirrored backglass, full-color high-definition cabinet decals, a custom LE Pokémon pinball armor, a custom designer-autographed bottom arch, upgraded audio system, anti-reflection pinball playfield glass, shaker motor, a sequentially numbered plaque, a signed Certificate of Authenticity, and a digital Insider Connected LE owner's badge on registration."
+      gameplay_feature:
+        [
+          cabinet-expression-lighting,
+          speaker-expression-lighting,
+          mirrored-backglasses,
+          cabinet-armor,
+          designer-autographs,
+          anti-reflection-playfield-glass,
+          shaker-motors,
+          numbered-plaques,
+        ]
+  - model.pokemon-limited-edition:
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_LE_Pre_web.pdf"
+        locator: "PDF document page 1, the title sheet"
+        quote: "POKÉMON LE #500-55AJ-01"
+      manufacturer_model_identifier: 500-55AJ-01
+  - model.pokemon-limited-edition:
+      note: "The classification to a standard floor cabinet follows from the documented full-size dimensions."
+      cite:
+        ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_LE_Pre_web.pdf"
+        locator: "printed page 72, PDF document page 72, in the SPECIFICATIONS, MECHANICAL, GAME SETUP table"
+        quote: "Weight 210 lbs [...] Max dimensions, leg levelers extended (h, w, d) 78 x 27.75 x 57 in"
+      cabinet: floor
