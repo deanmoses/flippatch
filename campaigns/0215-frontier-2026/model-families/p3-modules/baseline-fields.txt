@@ -1,0 +1,27 @@
+[90m-- Loading resources from /Users/moses/dev/flipcommons/scripts/analysis/catalog.sql
+[00m+------------------------------------------------------+------+-------+--------------+------+------+------+------+------+------+-------------+-----+
+|                         slug                         | year | month | player_count |  st  | fmt  | cab  | disp | dsub | sys  |    tech     | qty |
++------------------------------------------------------+------+-------+--------------+------+------+------+------+------+------+-------------+-----+
+| barnyard                                             | 2017 | 7     | 1            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| cannon-lagoon                                        | 2017 | 7     | 1            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| lexy-lightspeed-escape-from-earth                    | 2017 | 7     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| lexy-lightspeed-secret-agent-showdown                | 2017 | 7     | 1            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| cosmic-cart-racing                                   | 2018 | 10    | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| grand-slam-rally                                     | 2018 | 12    | 1            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| hoopin-it-up                                         | 2019 | 3     | 1            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| heist                                                | 2020 | 3     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| rocs                                                 | 2020 | 7     | 1            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| shoot-n-scoot                                        | 2020 | 12    | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| heads-up                                             | 2021 | 8     | 2            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| sorcerers-apprentice                                 | 2021 | 9     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| weird-als-museum-of-natural-hilarity                 | 2022 | 2     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| weird-als-museum-of-natural-hilarity-limited-edition | 2022 | 2     | NULL         | NULL | NULL | NULL | NULL | NULL | NULL | NULL        |     |
+| final-resistance                                     | 2023 | 5     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| the-princess-bride                                   | 2024 | 2     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| the-princess-bride-collectors-edition                | 2024 | 2     | NULL         | NULL | NULL | NULL | NULL | NULL | NULL | NULL        |     |
+| the-princess-bride-limited-edition                   | 2024 | 2     | NULL         | NULL | NULL | NULL | NULL | NULL | NULL | NULL        |     |
+| portal-extended                                      | 2025 | 3     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| portal-standard                                      | 2025 | 3     | 4            | NULL | NULL | NULL | lcd  | NULL | NULL | solid-state |     |
+| dungeon-crawler-carl                                 | 2026 | NULL  | NULL         | NULL | NULL | NULL | NULL | NULL | NULL | NULL        |     |
+| enders-game                                          | 2026 | NULL  | NULL         | NULL | NULL | NULL | NULL | NULL | NULL | NULL        |     |
++------------------------------------------------------+------+-------+--------------+------+------+------+------+------+------+-------------+-----+

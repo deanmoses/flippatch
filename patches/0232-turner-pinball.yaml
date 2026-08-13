@@ -1,0 +1,707 @@
+attribution: flipcommons-catalog
+description: >
+  Turner Pinball family: Yukon Yeti, Merlin's Arcade, Ninja Eclipse
+sources:
+  - name: Turner Pinball
+    source_type: web
+    domains:
+      - turnerlogic.com
+    links:
+      - {
+          url: "https://turnerpinball.com/",
+          label: Turner Pinball,
+          link_type: homepage,
+        }
+claims:
+  - gameplay-feature.secondary-flipper-buttons:
+      create: true
+      name: Secondary Flipper Buttons
+      gameplay_feature_alias: [Dual Flipper Buttons]
+  - gameplay-feature.finesse-flip:
+      create: true
+      name: Finesse Flip
+      gameplay_feature_parent: [secondary-flipper-buttons]
+      gameplay_feature_alias: [Finesse Feature]
+  - gameplay-feature.removable-glass-frames:
+      create: true
+      name: Removable Glass Frames
+  - gameplay-feature.lumalift:
+      create: true
+      name: LumaLift
+      gameplay_feature_parent: [removable-glass-frames]
+  - person.brad-duke:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Art [...] Brad Duke"
+      name: Brad Duke
+  - person.quinn-johnson:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Story [...] Quinn Johnson"
+      name: Quinn Johnson
+  - person.matthew-brozusky:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Animation [...] Matthew Brozusky"
+      name: Matthew Brozusky
+  - person.chris-turner:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Programming [...] Matthew Brozusky, Chris Turner"
+      name: Chris Turner
+  - person.gabe-hernandez:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Mechanical [...] Gabe Hernandez, Chris Turner, Zofia Ryan"
+      name: Gabe Hernandez
+  - person.zofia-ryan:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Mechanical [...] Gabe Hernandez, Chris Turner, Zofia Ryan"
+      name: Zofia Ryan
+  - person.jeff-dickson:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Animation [...] Jeff Dickson"
+      name: Jeff Dickson
+  - person.bradlee-ching:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "UX Design [...] Bradlee Ching, Brad Duke"
+      name: Bradlee Ching
+  - person.mike-grover:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Credits section
+        quote: "Animation [...] Mike Grover"
+      name: Mike Grover
+  - person.matthew-armstrong:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Credits section
+        quote: "Artists [...] Matthew Armstrong, Kendall Hale, Brad Duke, Johanna Taylor, Jon Snow"
+      name: Matthew Armstrong
+  - person.kendall-hale:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Credits section
+        quote: "Artists [...] Matthew Armstrong, Kendall Hale, Brad Duke, Johanna Taylor, Jon Snow"
+      name: Kendall Hale
+  - person.johanna-taylor:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Credits section
+        quote: "Artists [...] Matthew Armstrong, Kendall Hale, Brad Duke, Johanna Taylor, Jon Snow"
+      name: Johanna Taylor
+  - person.jon-snow:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Credits section
+        quote: "Artists [...] Matthew Armstrong, Kendall Hale, Brad Duke, Johanna Taylor, Jon Snow"
+      name: Jon Snow
+  - person.tyson-van-wagoner:
+      create: true
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Credits section
+        quote: "Toys / Sculpts [...] Tyson Van Wagoner, Gabe Hernandez"
+      name: Tyson Van Wagoner
+  - location.usa/tx/boerne:
+      create: true
+      cite:
+        ref: "https://turnerlogic.com/contact"
+        locator: in the Mailing Address block
+        quote: "215 West Bandera Road Ste. 114-814 Boerne, TX 78006"
+      slug: boerne
+      parent: usa/tx
+      name: Boerne
+  - corporate-entity.turner-pinball:
+      note: "The corporate entity takes the legal name from the maker's own copyright line; the manufacturer keeps the trading name Turner Pinball."
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the page footer
+        quote: "© 2026 Turner Logic, LLC. All rights reserved."
+      name: "Turner Logic, LLC"
+  - corporate-entity.turner-pinball:
+      note: "Turner Pinball's legal name is Turner Logic, LLC - every turnerpinball.com footer carries its copyright - and Turner Logic's own site publishes a Boerne, TX mailing address with the same 210-901-9955 phone number turnerpinball.com's contact page lists, tying the two sites to one company. Kineticist places the manufacturing facility in the San Antonio area, which Boerne is in. The maker's own site states no street address."
+      cite:
+        - ref: "https://turnerlogic.com/contact"
+          locator: in the Mailing Address block
+          quote: "215 West Bandera Road Ste. 114-814 Boerne, TX 78006"
+        - ref: "https://turnerlogic.com/contact"
+          locator: in the Phone block
+          quote: "(210) 901-9955"
+        - ref: "https://turnerpinball.com/contact"
+          locator: in the Call Us block
+          quote: 210-901-9955
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the page footer
+          quote: "© 2026 Turner Logic, LLC. All rights reserved."
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: Turner recently purchased approximately 17 acres near his current location in the San Antonio area
+      location: [usa/tx/boerne]
+  - model.yukon-yeti:
+      note: "The maker sells the machine as Yukon Yeti Legendary Edition - the Legendary Edition is the base game itself, its only edition, and the All-In Package is an upgrades bundle, not an edition - so the model takes the maker's edition name, matching the naming of Merlin's Arcade (Legendary Edition)."
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Ordering Options section
+          quote: "Yukon Yeti™ Legendary Edition includes the core game with premium construction and hand-crafted detail."
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: "Turner is shipping one edition rather than splitting into Pro/Premium/LE tiers — the Legendary Edition at $9,999, capped at 500 units"
+      name: Yukon Yeti (Legendary Edition)
+  - model.yukon-yeti:
+      note: "First shipments are still expected, so the machine is announced."
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the FAQ section
+        quote: "Yukon Yeti™ is currently expected to begin shipping in Summer 2026."
+      production_status: announced
+  - model.yukon-yeti:
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the FAQ section
+          quote: "We will produce 500 Legendary Edition™ Yukon Yeti™ machines before moving on to our next title."
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          quote: Limited to 500 units.
+      production_quantity: 500
+      tag: [limited-edition]
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the page's meta description
+        quote: "Yukon Yeti™ is a gold rush pinball adventure packed with avalanches, rapids, multiballs, hidden locks, and a mischievous mountain beast."
+      game_format: pinball
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Playfield Design [...] Dennis Nordman"
+      credit:
+        - dennis-nordman: design
+  - model.yukon-yeti:
+      note: "Ruleset design, story and UX design are all credited under the other role, so each person carries one such credit covering those duties."
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Credits section
+          quote: "Ruleset Design [...] Brad Duke, Quinn Johnson, Jon Norris [...] Story [...] Quinn Johnson"
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Credits section
+          quote: "UX Design [...] Brad Duke"
+      credit:
+        - brad-duke: other
+        - quinn-johnson: other
+        - jon-norris: other
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Art [...] Brad Duke"
+      credit:
+        - brad-duke: art
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Animation [...] Matthew Brozusky"
+      credit:
+        - matthew-brozusky: animation
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Programming [...] Matthew Brozusky, Chris Turner"
+      credit:
+        - matthew-brozusky: software
+        - chris-turner: software
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the Credits section
+        quote: "Mechanical [...] Gabe Hernandez, Chris Turner, Zofia Ryan"
+      credit:
+        - gabe-hernandez: mechanics
+        - chris-turner: mechanics
+        - zofia-ryan: mechanics
+  - model.yukon-yeti:
+      note: "Announced after the March reveal - the reveal-era press coverage predates this and names no dedicated sound designer, and the page's formal Credits block, which lists no audio roles at all, predates the announcement too; the maker's own announcement is the newest statement and wins on chronology."
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the audio-team announcement section
+        quote: "Chris Granner is joining Yukon Yeti™ to lead its sound direction"
+      credit:
+        - chris-granner: sound
+  - model.yukon-yeti:
+      cite:
+        ref: "https://turnerpinball.com/games/yukon-yeti"
+        locator: in the audio-team announcement section
+        quote: Adam Gubman joins the project as composer and sound designer.
+      credit:
+        - adam-gubman: music
+        - adam-gubman: sound
+  - model.yukon-yeti:
+      note: "Two ball locks: the five-ball stair-step Avalanche lock and the hidden Yeti lock, so ball-locks carries no count; both feed multiballs (Avalanche Multiball on the maker page, the hidden lock's secondary multiball per Kineticist)."
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Playfield Overview section
+          quote: A signature stair-step lock mech that can hold up to five balls and unleash them for Avalanche Multiball.
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Playfield Overview section
+          quote: A hidden lock that adds surprise and depth to the playfield progression.
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: "Behind the upper-right flipper, two optos and a post create a concealed ball lock that can hold two balls for a secondary multiball."
+      gameplay_feature: [ball-locks, multiball]
+  - model.yukon-yeti:
+      note: "Ramps carry no count: the wavy Rapids ramp, the mine cart ramp and the Avalanche ramp leave any single total unstated."
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Playfield Overview section
+          quote: A nostalgic and playful wavy ramp that adds strong visual identity and memorable shot value.
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Playfield Overview section
+          quote: "The upper playfield opens access to multiple routes, including the rapids and mine cart ramps."
+      gameplay_feature: [ramps, mini-playfields]
+  - model.yukon-yeti:
+      cite:
+        ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+        quote: "The game runs four flippers total, including a mid-playfield flipper that wasn't part of the original White Water layout."
+      gameplay_feature: [{ flippers: 4 }]
+  - model.yukon-yeti:
+      note: "The Yeti sculpt is the playfield centerpiece and does not move (the moving Yeti lives in the optional topper), so it classifies as a static toy."
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Playfield Overview section
+          quote: A major playfield centerpiece featuring the Yukon Yeti himself.
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: the Yeti sculpt on the upper playfield doesn't move
+      gameplay_feature: [static-toys]
+  - model.yukon-yeti:
+      note: "Hardware named by Kineticist's rules walkthrough where the maker's own page stays at mode level; the target bank's type is not stated, so the generic targets feature attaches."
+      cite:
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: Shoot Kate's Place spinner to light the Dawson shot for mode start.
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: The Glacier (Newton ball) and drop target also award nuggets when lit
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: "this sends the ball to the pop bumpers, which award nuggets per hit"
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: Completing the target bank cycles through three rewards in order
+        - ref: "https://www.kineticist.com/news/turner-reveals-yukon-yeti"
+          quote: "On the upper playfield, a trapdoor near the Yeti serves two functions."
+      gameplay_feature:
+        [spinners, newton-balls, drop-targets, pop-bumpers, targets, trap-doors]
+  - model.yukon-yeti:
+      cite:
+        - ref: "https://turnerpinball.com/games/yukon-yeti"
+          locator: in the Ordering Options base-game list
+          quote: Removable glass frame with standard-size tempered glass
+        - ref: "https://www.pinballnews.com/site/2026/03/18/yukon-yeti-revealed"
+          quote: The cabinet includes secondary flipper buttons on both sides which operate the Finesse Flip function to perform a tap pass which transfers the ball from one main flipper to the other.
+      gameplay_feature: [removable-glass-frames, finesse-flip]
+  - model.merlins-arcade-legendary-edition:
+      note: "The maker sells the title as one core game in two trims, the Arcade Edition cheaper and unlimited, the Legendary numbered and capped at 500 - so the Arcade Edition is the base and the Legendary Edition its variant (the cheaper, less-limited edition is the base), the same shape Ninja Eclipse's editions already have."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section
+          quote: "Both editions deliver the same core game. Differences are in toys, trim, presentation, and premium features."
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Reservation terms & FAQ section
+          quote: "No more than 500 Legendary Edition™ Merlin's Arcade™ machines will be produced. Each will be numbered and include a signed Certificate of Authenticity. Arcade Edition™ machines are not numbered or limited."
+      variant_of: merlins-arcade-arcade-edition
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          quote: "Legendary Edition™ is available now. Arcade Edition™ is sold out."
+        - ref: "https://turnerpinball.com/about"
+          locator: in the Our Journey timeline
+          quote: "The first customer units for Merlin's Arcade™ started going out in late summer."
+      production_status: produced
+  - model.merlins-arcade-arcade-edition:
+      note: "Sold through and out of production - the edition shipped."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          quote: "Legendary Edition™ is available now. Arcade Edition™ is sold out."
+        - ref: "https://turnerpinball.com/about"
+          locator: in the Our Journey timeline
+          quote: "The first customer units for Merlin's Arcade™ started going out in late summer."
+      production_status: produced
+  - model.merlins-arcade-legendary-edition:
+      note: "500 is the maker's announced production cap ('no more than'), matching Pinball News's 'limited run of up to 500 units'; the numbered, certificated run takes the limited-edition tag."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Reservation terms & FAQ section
+          quote: "No more than 500 Legendary Edition™ Merlin's Arcade™ machines will be produced. Each will be numbered and include a signed Certificate of Authenticity. Arcade Edition™ machines are not numbered or limited."
+        - ref: "https://www.pinballnews.com/site/2025/03/19/merlins-arcade-revealed"
+          quote: "The Legendary Edition is a limited run of up to 500 units, while the Arcade Edition has no restriction on production."
+      production_quantity: 500
+      tag: [limited-edition]
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        quote: battle your way through a lineup of arcade-inspired medieval contests in this uproarious pinball adventure
+      game_format: pinball
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        quote: battle your way through a lineup of arcade-inspired medieval contests in this uproarious pinball adventure
+      game_format: pinball
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Playfield Design [...] Jon Norris"
+        - ref: "https://turnerpinball.com/merlins-arcade"
+          archive: "https://web.archive.org/web/20250318224933id_/https://turnerpinball.com/merlins-arcade"
+          quote: The playfield layout and game ruleset were both designed by renowned pinball designer Jon Norris.
+      credit:
+        - jon-norris: design
+  - model.merlins-arcade-arcade-edition:
+      note: "Ruleset design and story writing are both credited under the other role."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Ruleset Design [...] Jon Norris, Quinn Johnson [...] Story Writer [...] Quinn Johnson"
+      credit:
+        - jon-norris: other
+        - quinn-johnson: other
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Artists [...] Matthew Armstrong, Kendall Hale, Brad Duke, Johanna Taylor, Jon Snow"
+      credit:
+        - matthew-armstrong: art
+        - kendall-hale: art
+        - brad-duke: art
+        - johanna-taylor: art
+        - jon-snow: art
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Animation [...] Mike Grover"
+      credit:
+        - mike-grover: animation
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Programming [...] Matthew Brozusky, Chris Turner"
+      credit:
+        - matthew-brozusky: software
+        - chris-turner: software
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "User Experience Design [...] Brad Duke, Chris Turner"
+      credit:
+        - brad-duke: other
+        - chris-turner: other
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Engineering [...] Gabe Hernandez, Chris Turner"
+      credit:
+        - gabe-hernandez: mechanics
+        - chris-turner: mechanics
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Playfield Design [...] Jon Norris"
+        - ref: "https://turnerpinball.com/merlins-arcade"
+          archive: "https://web.archive.org/web/20250318224933id_/https://turnerpinball.com/merlins-arcade"
+          quote: The playfield layout and game ruleset were both designed by renowned pinball designer Jon Norris.
+      credit:
+        - jon-norris: design
+  - model.merlins-arcade-legendary-edition:
+      note: "Ruleset design and story writing are both credited under the other role."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Ruleset Design [...] Jon Norris, Quinn Johnson [...] Story Writer [...] Quinn Johnson"
+      credit:
+        - jon-norris: other
+        - quinn-johnson: other
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Artists [...] Matthew Armstrong, Kendall Hale, Brad Duke, Johanna Taylor, Jon Snow"
+      credit:
+        - matthew-armstrong: art
+        - kendall-hale: art
+        - brad-duke: art
+        - johanna-taylor: art
+        - jon-snow: art
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Animation [...] Mike Grover"
+      credit:
+        - mike-grover: animation
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Programming [...] Matthew Brozusky, Chris Turner"
+      credit:
+        - matthew-brozusky: software
+        - chris-turner: software
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "User Experience Design [...] Brad Duke, Chris Turner"
+      credit:
+        - brad-duke: other
+        - chris-turner: other
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Engineering [...] Gabe Hernandez, Chris Turner"
+      credit:
+        - gabe-hernandez: mechanics
+        - chris-turner: mechanics
+  - model.merlins-arcade-legendary-edition:
+      note: "Toy and sculpt work is sculptural, so it is credited as art. The credit stays off the Arcade Edition, which ships flat plastics in place of the toys and figures."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Credits section
+          quote: "Toys / Sculpts [...] Tyson Van Wagoner, Gabe Hernandez"
+      credit:
+        - tyson-van-wagoner: art
+        - gabe-hernandez: art
+  - model.merlins-arcade-arcade-edition:
+      note: "The super spinners count 1 + 2: the huge foosball knight spinner plus two additional super spinners, listed in both editions' feature lists. The scoop and multiballs are core-game features shared by both trims."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section
+          quote: "Both editions deliver the same core game. Differences are in toys, trim, presentation, and premium features."
+        - ref: "https://turnerpinball.com/merlins-arcade"
+          archive: "https://web.archive.org/web/20250318224933id_/https://turnerpinball.com/merlins-arcade"
+          quote: "Huge Foosball Knight Super Spinner [...] Two Additional Super Spinners"
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Playfield Overview section
+          quote: Shoot the scoop to start and end battles.
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Playfield Overview section
+          quote: Battle Sir Dagonet in Foosball by hitting the life-sized foosball spinner.
+        - ref: "https://turnerpinball.com/merlins-arcade"
+          archive: "https://web.archive.org/web/20250318224933id_/https://turnerpinball.com/merlins-arcade"
+          quote: "Special Multiball for Each Knight (Light and Dark) [...] Merlin Multiball"
+      gameplay_feature: [{ spinners: 3 }, scoops, multiball]
+  - model.merlins-arcade-legendary-edition:
+      note: "The super spinners count 1 + 2: the huge foosball knight spinner plus two additional super spinners, listed in both editions' feature lists. The scoop and multiballs are core-game features shared by both trims."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section
+          quote: "Both editions deliver the same core game. Differences are in toys, trim, presentation, and premium features."
+        - ref: "https://turnerpinball.com/merlins-arcade"
+          archive: "https://web.archive.org/web/20250318224933id_/https://turnerpinball.com/merlins-arcade"
+          quote: "Huge Foosball Knight Super Spinner [...] Two Additional Super Spinners"
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Playfield Overview section
+          quote: Shoot the scoop to start and end battles.
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Playfield Overview section
+          quote: Battle Sir Dagonet in Foosball by hitting the life-sized foosball spinner.
+        - ref: "https://turnerpinball.com/merlins-arcade"
+          archive: "https://web.archive.org/web/20250318224933id_/https://turnerpinball.com/merlins-arcade"
+          quote: "Special Multiball for Each Knight (Light and Dark) [...] Merlin Multiball"
+      gameplay_feature: [{ spinners: 3 }, scoops, multiball]
+  - model.merlins-arcade-arcade-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section's Common features list
+          quote: Removable glass frame with standard-size tempered glass
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section's Common features list
+          quote: "Dual flipper buttons with Finesse Feature™"
+      gameplay_feature: [removable-glass-frames, finesse-flip]
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section's Common features list
+          quote: Removable glass frame with standard-size tempered glass
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section's Common features list
+          quote: "Dual flipper buttons with Finesse Feature™"
+      gameplay_feature: [removable-glass-frames, finesse-flip]
+  - model.merlins-arcade-legendary-edition:
+      note: "The Merlin figure moves (body and arms), so it is an animatronic toy; the Mordred and Morgan figures (glowing eyes, no stated motion), the light-up arcade machine toy, the pop bumper bobble heads and the sculpted castles state no motion or ball interaction, so they classify as static toys. The barrel ball lock is physical, with a subway."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: "in the Legendary Edition™ features list"
+          quote: "Merlin figure with moving body and arms [...] Mordred and Morgan figures with glowing eyes"
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: "in the Legendary Edition™ features list"
+          quote: "Light-up arcade machine toy [...] Pop bumper bobble head toys [...] Barrel physical ball lock with subway [...] Sculpted castles and more"
+      gameplay_feature:
+        [animatronic-toys, static-toys, ball-locks, subways, pop-bumpers]
+  - model.merlins-arcade-legendary-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: "in the Legendary Edition™ features list"
+        quote: "Anti-reflective glass [...] Illuminated topper"
+      gameplay_feature: [anti-reflection-playfield-glass, { toppers: 1 }]
+  - model.merlins-arcade-legendary-edition:
+      note: "The numbered, certificated Legendary run carries numbered plaques per the maker's FAQ."
+      cite:
+        ref: "https://turnerpinball.com/games/merlins-arcade"
+        locator: in the Reservation terms & FAQ section
+        quote: "No more than 500 Legendary Edition™ Merlin's Arcade™ machines will be produced. Each will be numbered and include a signed Certificate of Authenticity. Arcade Edition™ machines are not numbered or limited."
+      gameplay_feature: [numbered-plaques]
+  - model.merlins-arcade-arcade-edition:
+      note: "The pop bumpers are core-game playfield hardware - the Legendary difference is the bobble-head toys sitting on them, not the bumpers themselves."
+      cite:
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Editions section
+          quote: "Both editions deliver the same core game. Differences are in toys, trim, presentation, and premium features."
+        - ref: "https://turnerpinball.com/games/merlins-arcade"
+          locator: in the Playfield Overview section
+          quote: "A Legendary Edition™ feature with arcade knight bobble head toys on the pop bumpers."
+      gameplay_feature: [pop-bumpers]
+  - model.ninja-eclipse-first-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/ninja-eclipse"
+          locator: in the FAQ section
+          quote: 100. The full First Edition run has been sold.
+        - ref: "https://turnerpinball.com/about"
+          locator: in the Our Journey timeline
+          quote: "We delivered our first units at Chicago Pinball Expo. The show was a huge success, and the First Edition run of Ninja Eclipse™ sold out."
+      production_status: produced
+      production_quantity: 100
+  - model.ninja-eclipse-arcade-edition:
+      note: "Never produced: the First Edition is the only Ninja Eclipse run ever made, and the maker discusses an Arcade Edition only as a future possibility, so the edition is announced rather than produced."
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the FAQ section
+        quote: "We may offer an Arcade Edition™ of Ninja Eclipse™ at some point in the future."
+      production_status: announced
+  - model.ninja-eclipse-first-edition:
+      cite:
+        ref: "https://turnerpinball.com/posts/the-heroes-of-ninja-eclipse"
+        archive: "https://web.archive.org/web/20250318225456id_/https://turnerpinball.com/posts/the-heroes-of-ninja-eclipse"
+        quote: the vibrant world of the Ninja Eclipse pinball game
+      game_format: pinball
+  - model.ninja-eclipse-arcade-edition:
+      cite:
+        ref: "https://turnerpinball.com/posts/the-heroes-of-ninja-eclipse"
+        archive: "https://web.archive.org/web/20250318225456id_/https://turnerpinball.com/posts/the-heroes-of-ninja-eclipse"
+        quote: the vibrant world of the Ninja Eclipse pinball game
+      game_format: pinball
+  - model.ninja-eclipse-first-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Playfield Design [...] Brad Duke"
+      credit:
+        - brad-duke: design
+  - model.ninja-eclipse-first-edition:
+      note: "Ruleset design, story and UX design are all credited under the other role; each person carries one such credit."
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Ruleset Design [...] Brad Duke, Quinn Johnson, Jon Norris [...] Story [...] Quinn Johnson [...] UX Design [...] Bradlee Ching, Brad Duke"
+      credit:
+        - brad-duke: other
+        - quinn-johnson: other
+        - jon-norris: other
+        - bradlee-ching: other
+  - model.ninja-eclipse-first-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Art [...] Brad Duke"
+      credit:
+        - brad-duke: art
+  - model.ninja-eclipse-first-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Animation [...] Jeff Dickson"
+      credit:
+        - jeff-dickson: animation
+  - model.ninja-eclipse-first-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Programming [...] Matthew Brozusky, Chris Turner"
+      credit:
+        - matthew-brozusky: software
+        - chris-turner: software
+  - model.ninja-eclipse-first-edition:
+      cite:
+        ref: "https://turnerpinball.com/games/ninja-eclipse"
+        locator: in the Credits section
+        quote: "Mechanical [...] Gabe Hernandez, Chris Turner"
+      credit:
+        - gabe-hernandez: mechanics
+        - chris-turner: mechanics
+  - model.ninja-eclipse-first-edition:
+      note: "The three-ball physical lock is one lock with three-ball capacity, so ball-locks carries no count; 'Two VUKs/Scoops' is the maker's own joint label for one pair of mechanisms, recorded as scoops. The five custom sculpts are not classified - the sheet states no motion or ball interaction for them."
+      cite:
+        ref: "https://turnerpinball.com/reserve"
+        archive: "https://web.archive.org/web/20231208071132id_/https://turnerpinball.com/reserve"
+        locator: in the PLAYFIELD FEATURES list
+        quote: "Three Ramps [...] Three Flippers [...] Three Ball Physical Lock [...] Two Smart Drop Targets [...] Two Spinners [...] Two Diverters [...] Two Pop Bumpers [...] Two VUKs/Scoops [...] One Spinning Disk [...] One Outlane Kickback [...] One Newton Ball [...] One Magnet"
+      gameplay_feature:
+        [
+          { ramps: 3 },
+          { flippers: 3 },
+          ball-locks,
+          { drop-targets: 2 },
+          { spinners: 2 },
+          { diverters: 2 },
+          { pop-bumpers: 2 },
+          { scoops: 2 },
+          { spinning-discs: 1 },
+          { kickback: 1 },
+          { newton-balls: 1 },
+          { magnets: 1 },
+        ]
+  - model.ninja-eclipse-first-edition:
+      note: "The 2023 sheet lists one multiball; the maker's v0.76 ruleset names Ninja Storm Multiball and Spirit Multiball, so multiball attaches without a count."
+      cite:
+        - ref: "https://turnerpinball.com/reserve"
+          archive: "https://web.archive.org/web/20231208071132id_/https://turnerpinball.com/reserve"
+          locator: in the GAMEPLAY FEATURES list
+          quote: "One Multiball [...] Two Wizard Modes"
+        - ref: "https://turnerpinball.com/rulesets/Ninja_Eclipse_Ruleset_v0.76.pdf"
+          locator: "PDF document page 1, in the table of contents"
+          quote: "NINJA STORM MULTIBALL [...] SPIRIT MULTIBALL"
+      gameplay_feature: [multiball]
+  - model.ninja-eclipse-first-edition:
+      cite:
+        - ref: "https://turnerpinball.com/games/ninja-eclipse"
+          locator: in the First Edition features list
+          quote: "Interior art blades [...] Badged and numbered"
+        - ref: "https://turnerpinball.com/games/ninja-eclipse"
+          locator: in the Editions section's Common features list
+          quote: "LumaLift™ glass frame with standard-size tempered glass"
+      gameplay_feature: [art-blades, numbered-plaques, lumalift]

@@ -1,0 +1,7 @@
+attribution: opdb
+description: >
+  Drop OPDB's stale Road Trip month claim (February, from the 2025 debut).
+claims:
+  - model.road-trip:
+      note: "OPDB dated the machine to its February 2025 world debut at Pinball at the Beach; the machine is unreleased and rampspinball.com states only 'Expected Late 2026'."
+      retract: [month]

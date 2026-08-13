@@ -1,0 +1,221 @@
+attribution: flipcommons-catalog
+description: >
+  Ramp's Pinball family details: Road Trip, Monster League Hockey, LSoH
+sources:
+  - name: Knapp Arcade
+    source_type: web
+    description: >
+      Jason Knapp's arcade and pinball news blog. Its 2021-2025 Wix-era posts (knapparcade.org)
+      are dead since the site relaunched as a community product; cites carry Wayback snapshots.
+    links:
+      - {
+          url: "https://www.knapparcade.org/",
+          label: Knapp Arcade,
+          link_type: homepage,
+        }
+  - name: BASH Pinball
+    source_type: web
+    description: >
+      The BASH Pinball podcast's episode pages.
+    links:
+      - {
+          url: "https://www.bashpinball.com/",
+          label: BASH Pinball,
+          link_type: homepage,
+        }
+  - name: Monster League Hockey Trademark Application (April 2025)
+    slug: monster-league-hockey-trademark-application-2025
+    parent: uspto
+    source_type: document
+    year: 2025
+    month: 4
+    day: 10
+    description: >
+      USPTO trademark application 99129999, MONSTER LEAGUE HOCKEY, standard character mark for
+      pinball machines; filed 2025-04-10 as intent-to-use by Jake Danzig (individual, Maricopa,
+      Arizona).
+    links:
+      - {
+          url: "https://tsdr.uspto.gov/#caseNumber=99129999&caseType=SERIAL_NO&searchType=statusSearch",
+          label: USPTO TSDR status record,
+          link_type: reference,
+        }
+      - {
+          url: "https://uspto.report/TM/99129999",
+          label: USPTO.report record,
+          link_type: catalog,
+        }
+claims:
+  - person.jake-danzig:
+      create: true
+      name: Jake Danzig
+  - person.brad-albright:
+      create: true
+      name: Brad Albright
+  - person.austin-carrigan:
+      create: true
+      name: Austin Carrigan
+  - person.glenn-waechter:
+      create: true
+      name: Glenn Waechter
+  - person.joe-farnsworth:
+      create: true
+      name: Joe Farnsworth
+  - person.antoinette-johnson:
+      create: true
+      name: Antoinette Johnson
+  - person.paul-fusco:
+      create: true
+      name: Paul Fusco
+  - model.road-trip:
+      note: "The resolved 'February 2026' is a chimera: month 2 is OPDB's dating of the February 2025 world debut at Pinball at the Beach, kept when the year was later corrected to 2026. The maker's only release statement is 'Expected Late 2026' (rampspinball.com, fetched 2026-08-13), so no month is assertable. A companion opdb-attributed patch retracts OPDB's copy of the same claim."
+      retract: [month]
+  - model.road-trip:
+      cite:
+        ref: "https://www.knapparcade.org/post/exclusive-new-company-ramps-pinball-manufacturing-to-reveal-first-game-road-trip-this-week-at-p"
+        archive: "http://web.archive.org/web/20250215191243id_/https://www.knapparcade.org/post/exclusive-new-company-ramps-pinball-manufacturing-to-reveal-first-game-road-trip-this-week-at-p"
+        quote: Road Trip production is limited to 500 units.
+      production_quantity: "500"
+  - model.road-trip:
+      cite:
+        ref: "https://www.knapparcade.org/post/exclusive-new-company-ramps-pinball-manufacturing-to-reveal-first-game-road-trip-this-week-at-p"
+        archive: "http://web.archive.org/web/20250215191243id_/https://www.knapparcade.org/post/exclusive-new-company-ramps-pinball-manufacturing-to-reveal-first-game-road-trip-this-week-at-p"
+        quote: the World debut of the brand new pinball machine Road Trip by Ramp's Pinball Manufacturing
+      game_format: pinball
+  - model.road-trip:
+      note: "The 'Cow Tippin'' bash targets attach the generic targets leaf (Knapp's text says bash targets, not drop targets); the Dynamic Playfield's rotating pop bumper/ramp mechanism is a one-off identity recorded in the family notes for future one-off-feature cataloguing, so only its constituent generics attach here."
+      cite:
+        ref: "https://www.knapparcade.org/post/exclusive-new-company-ramps-pinball-manufacturing-to-reveal-first-game-road-trip-this-week-at-p"
+        archive: "http://web.archive.org/web/20250215191243id_/https://www.knapparcade.org/post/exclusive-new-company-ramps-pinball-manufacturing-to-reveal-first-game-road-trip-this-week-at-p"
+        quote: 'A Dynamic Playfield where players hit a target to change the physical game flow. [...] A Drain-Save pop up VUK [...] 4 Flippers [...] Multiple Ramps [...] 4 Pop Bumpers [...] A Car Bash Toy [...] 3 "Cow Tippin'' Bash Targets [...] 2 Mechanical Ball Locks [...] Playfield Screen that acts as Navigation and a Car Radio [...] Invisaglass [...] Knocker [...] Shaker Motor'
+      gameplay_feature:
+        [
+          vertical-up-kickers,
+          { flippers: 4 },
+          ramps,
+          { pop-bumpers: 4 },
+          bash-toys,
+          targets,
+          { ball-locks: 2 },
+          playfield-lcds,
+          invisiglass,
+          knockers,
+          shaker-motors,
+        ]
+  - model.road-trip:
+      cite:
+        ref: "https://www.knapparcade.org/post/exclusive-sneak-peek-at-tiltbob-pinball-s-upcoming-new-pinball-machine-road-trip"
+        archive: "http://web.archive.org/web/20231004150126id_/https://www.knapparcade.org/post/exclusive-sneak-peek-at-tiltbob-pinball-s-upcoming-new-pinball-machine-road-trip"
+        quote: It has an old-school physical ball kickback.
+      gameplay_feature: [kickback]
+  - model.road-trip:
+      note: "TampaTech is team member Paul Fusco's channel (Knapp Arcade's company-reveal post names 'Paul Fusco of the TampaTech YouTube channel' on the TiltBob team); the quote is verbatim ASR from the video's caption track - 'Clippers' is the track's rendering of flippers."
+      cite:
+        ref: "youtube:NK3EhukuXcY"
+        quote: four Clippers magnets as invisiglass car bash toy rotating raccoon
+      gameplay_feature: [magnets]
+  - model.road-trip:
+      note: "Spoken by Paul Fusco on his own TampaTech channel; Knapp Arcade's company-reveal post places Fusco on the team. 'I did the rules' is credited as design (rules design; no closer role exists) and 'Bob is doing the code' as software - Bob Nies's design credit is already recorded. the quote is verbatim ASR from the video's caption track"
+      cite:
+        ref: "youtube:VRnWFKFr-bQ"
+        quote: Joe did the art and I did the rules and Bob is doing the code and he actually did the pinball design the layout
+      credit:
+        - bob-nies: software
+        - paul-fusco: design
+  - model.monster-league-hockey:
+      note: "The manufacturer deal was unannounced for months (the January 2026 Loser Kid interview says only 'we have made a deal'); Arcade Heroes' Texas Pinball Festival coverage is the public statement naming Ramp's, with production targeted at Q4 2026. The year rests on that target plus Jake Danzig's May 2026 post in his own build thread."
+      cite:
+        - ref: "https://arcadeheroes.com/2026/03/22/newsbytes-resident-evil-2-arcade-texas-pinball-festival-konami-more"
+          quote: "It is now set to enter actual production thanks to Ramp's Pinball, a new entrant out of Florida who are also working on their own upcoming game Road Trip, with a view to building both by Q4 2026."
+        - ref: "https://pinside.com/pinball/forum/topic/monster-league-hockey/page/2"
+          locator: "post #93 by Danzig, the game's creator"
+          quote: the games are still coming out this year
+      production_status: announced
+      year: "2026"
+  - model.monster-league-hockey:
+      note: "The trademark record's goods classification states the product category; the captured copy is USPTO.report's republication of the USPTO TSDR record."
+      cite:
+        ref: "uspto:monster-league-hockey-trademark-application-2025"
+        locator: the Mark For line of the record
+        quote: "MONSTER LEAGUE HOCKEY™ trademark registration is intended to cover the categories of pinball machines; Pinball machines."
+      game_format: pinball
+  - model.monster-league-hockey:
+      note: "Arcade Heroes states the production machine's player support; 4 is the supported maximum (one or two players, three or four with split flippers)."
+      cite:
+        ref: "https://arcadeheroes.com/2026/03/22/newsbytes-resident-evil-2-arcade-texas-pinball-festival-konami-more"
+        quote: "Completed by Danzig with his Killdozer Studios team, this is being made to support both one or two players (three or four with split flippers)"
+      player_count: "4"
+  - model.monster-league-hockey:
+      note: "Stated by the build crew at the machine's Pinball Expo 2025 debut (the homebrew the announced production machine is built from); six screens at a 1:1 flipper-to-LCD ratio - two large and four small - are the game's design. the quote is verbatim ASR from the video's caption track"
+      cite:
+        ref: "youtube:2U3aIFxkeKA"
+        quote: "We got six flippers, six LCD screens."
+      display_type: lcd
+      gameplay_feature: [{ flippers: 6 }, playfield-lcds]
+  - model.monster-league-hockey:
+      note: "Head-to-head is the game's defining format (two facing players, simultaneous play); multiball is the designed ball count (the game starts with two balls in play); the drop targets and spinner drive the power-play and fight-mode rules. Video quotes are verbatim ASR."
+      cite:
+        - ref: "https://arcadeheroes.com/2026/03/22/newsbytes-resident-evil-2-arcade-texas-pinball-festival-konami-more"
+          quote: Homebrew head-to-head pinball piece Monster League Hockey
+        - ref: "youtube:JdajgyTpvKk"
+          quote: I also wanted to make it multiball and I always wanted to start the game off with two balls in play
+        - ref: "youtube:2U3aIFxkeKA"
+          quote: You got these drop targets. You clear them three times and it starts a power play.
+        - ref: "youtube:2U3aIFxkeKA"
+          quote: "if you complete enough spins in the bash spinner, it'll fill up your monster meter."
+      gameplay_feature: [head-to-head, multiball, drop-targets, spinners]
+  - model.monster-league-hockey:
+      cite:
+        ref: "https://arcadeheroes.com/2026/03/22/newsbytes-resident-evil-2-arcade-texas-pinball-festival-konami-more"
+        quote: "its creator, Jake Danzig"
+      credit:
+        - jake-danzig: design
+  - model.monster-league-hockey:
+      note: "BASH Pinball's episode page for its Expo 2025 crew interviews names the artist in clean text; Pinball News's TPF 2026 captions corroborate the spelling (the caption tracks render it 'Albbright')."
+      cite:
+        ref: "https://www.bashpinball.com/2025/11/14/s2-expointerviews"
+        quote: "Brad Albright, artist on MLH as well as Winchester Mystery House and Portal."
+      credit:
+        - brad-albright: art
+  - model.monster-league-hockey:
+      note: "Speaker identified in the interview sequence as Austin, the game's coder; the caption track renders the surname 'Carrian'. Spelling per Kineticist's Pinball Expo 2024 coverage of SAW ('Whipped up by Austin Carrigan'), the same crew's previous homebrew. the quote is verbatim ASR from the video's caption track"
+      cite:
+        ref: "youtube:2U3aIFxkeKA"
+        quote: I did the coding for the game.
+      credit:
+        - austin-carrigan: software
+  - model.monster-league-hockey:
+      note: "Glenn did all audio and composed the production music (the licensed playlist is stripped for production; his compositions remain). The caption tracks render the surname 'Wetner'; spelling per the Pinside SAW game-archive design-team block, the only written source carrying it - crowdsourced, used as a spelling aid only. Quotes are verbatim ASR."
+      cite:
+        - ref: "youtube:2U3aIFxkeKA"
+          quote: I did all the audio. I wrote a lot of the call outs.
+        - ref: "youtube:JdajgyTpvKk"
+          quote: "there's not going to be, uh, any music other than what Glenn Rec Glenn Wetner composed."
+      credit:
+        - glenn-waechter: sound
+        - glenn-waechter: music
+  - model.monster-league-hockey:
+      note: "Physical and electrical build is credited as mechanics. Joe speaks in the Pinball Expo interview; Jake Danzig's podcast crew rundown names him in full ('the guys that Bill saw' is the track's rendering of 'built SAW', the crew's previous homebrew), and the Pinside SAW game-archive roster corroborates the spelling. Quotes are verbatim ASR."
+      cite:
+        - ref: "youtube:2U3aIFxkeKA"
+          quote: "My name is Joe. Uh I do uh like the physical build, the electrical build"
+        - ref: "youtube:JdajgyTpvKk"
+          quote: "the Nashville crew is um the guys that Bill saw. That's Glenn Wetner, um Eric Clotsz, Joe Farnsworth"
+      credit:
+        - joe-farnsworth: mechanics
+  - model.monster-league-hockey:
+      note: "Antoinette voiced a large share of the callouts (one of the three callout characters is herself); spelling per Pinball News's TPF 2026 caption naming her an MLH game creator. Her wider creative contributions (ideas, promotion) have no catalog role and are recorded in the family notes. Quotes are verbatim ASR and Pinball News caption text."
+      cite:
+        - ref: "youtube:JdajgyTpvKk"
+          quote: Antuinette did uh did a ton of call outs
+        - ref: "https://www.pinballnews.com/site/2026/03/21/texas-pinball-festival-2026"
+          locator: photo caption in the show-floor gallery
+          quote: "MLH game creators, Antoinette Johnson & Jake Danzig"
+      credit:
+        - antoinette-johnson: voice
+  - model.little-shop-of-horrors:
+      cite:
+        ref: "https://www.knapparcade.org/post/a-little-shop-of-horrors-pinball-machine-is-in-the-works"
+        archive: "http://web.archive.org/web/20240223102257id_/https://www.knapparcade.org/post/a-little-shop-of-horrors-pinball-machine-is-in-the-works"
+        quote: A new pinball company is actively working on developing a pinball machine based on Little Shop of Horrors.
+      game_format: pinball

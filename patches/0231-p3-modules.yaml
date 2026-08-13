@@ -1,0 +1,807 @@
+attribution: flipcommons-catalog
+description: >
+  Multimorphic P3 family: 2026 pair enriched plus platform facts
+claims:
+  - person.ian-harrower:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Creative Director: Stephen Silver and Ian Harrower"
+      name: Ian Harrower
+  - person.wesley-johnson:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Rules: Wesley Johnson"
+      name: Wesley Johnson
+  - person.trey-jones:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Mechanicals; TJ Weaver and Trey Jones"
+      name: Trey Jones
+  - person.jeff-hays:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Voices: Jeff Hays"
+      name: Jeff Hays
+  - person.luciano-fleitas:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Cabinet Artist: Luciano Fleitas"
+      name: Luciano Fleitas
+  - person.brad-albright:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Playfield Artist: Brad Albright"
+      name: Brad Albright
+  - person.davey-price:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+        locator: in the Credits section
+        quote: All the sculpts in the game are produced by Davey Price of Stumblor Pinball Mods.
+      name: Davey Price
+  - person.colin-macalpine:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Rules; Colin MacAlpine"
+      name: Colin MacAlpine
+  - person.steve-shoyer:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Software: Josh Kugler, Steve Shoyer, and Ian Harrower"
+      name: Steve Shoyer
+  - person.aaron-williams:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Music: Aaron Williams and Paul Farrer"
+      name: Aaron Williams
+  - person.paul-farrer:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Music: Aaron Williams and Paul Farrer"
+      name: Paul Farrer
+  - person.glenn-waechter:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Sound Design: Glenn Waechter"
+      name: Glenn Waechter
+  - person.lucas-pepke:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Lucas Pepke
+  - person.sam-tucker:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Sam Tucker
+  - person.aline-allen:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Aline Allen
+  - person.alana-johnson:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Alana Johnson
+  - person.cash-bailey:
+      create: true
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Cash Bailey
+  - person.tyson-silver:
+      create: true
+      note: 'The credit line names them jointly as "Tyson and Eli Silver"; each is a distinct voice performer.'
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Tyson Silver
+  - person.eli-silver:
+      create: true
+      note: 'The credit line names them jointly as "Tyson and Eli Silver"; each is a distinct voice performer.'
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      name: Eli Silver
+  - model.dungeon-crawler-carl:
+      note: "The store sells only non-refundable deposits and production has not begun, so the model is announced rather than produced."
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/dcc-game-kit"
+        quote: Production of this title begins in late 2026.
+      production_status: announced
+  - model.dungeon-crawler-carl:
+      note: "Announcement month: revealed July 27, 2026."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+        quote: "Date: July 27th, 2026"
+      month: 7
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        quote: "Dungeon Crawler Carl is a pinball machine based on the Dungeon Crawler Carl book series, written by Matt Dinniman."
+      game_format: pinball
+  - model.dungeon-crawler-carl:
+      cite:
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/dcc-game-kit"
+          quote: "Enjoy Dungeon Crawler Carl on your P3 Pinball Platform!"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      technology_generation: solid-state
+  - model.dungeon-crawler-carl:
+      cite:
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/dcc-game-kit"
+          quote: "Enjoy Dungeon Crawler Carl on your P3 Pinball Platform!"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc."
+      cabinet: floor
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      display_type: lcd
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Creative Director: Stephen Silver and Ian Harrower"
+      credit:
+        - stephen-silver: design
+        - ian-harrower: design
+  - model.dungeon-crawler-carl:
+      note: "The maker's Creative Director and Rules credits are game-creation leadership and ruleset design work, credited under the design role."
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Rules: Wesley Johnson"
+      credit:
+        - wesley-johnson: design
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Mechanicals; TJ Weaver and Trey Jones"
+      credit:
+        - tj-weaver: mechanics
+        - trey-jones: mechanics
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Voices: Jeff Hays"
+      credit:
+        - jeff-hays: voice
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Music and Sound Design: Matt Kern"
+      credit:
+        - matt-kern: music
+        - matt-kern: sound
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Software: Ian Harrower, Josh Kugler, and Michael Ocean"
+      credit:
+        - ian-harrower: software
+        - josh-kugler: software
+        - michael-ocean: software
+  - model.dungeon-crawler-carl:
+      note: "Cabinet Artist, Playfield Artist and Art Direction are all art-role credits: Fleitas the cabinet, Albright the playfield, Silver the direction."
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Cabinet Artist: Luciano Fleitas Playfield Artist: Brad Albright Art Direction: Stephen Silver and Brad Albright"
+      credit:
+        - luciano-fleitas: art
+        - brad-albright: art
+        - stephen-silver: art
+  - model.dungeon-crawler-carl:
+      note: "The maker credits the sculpting studio; Pinball News names the person behind it. Sculpting is an art-role credit."
+      cite:
+        - ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+          locator: in the Credits section
+          quote: "Sculpts: Stumblor Pinball"
+        - ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+          quote: All the sculpts in the game are produced by Davey Price of Stumblor Pinball Mods.
+      credit:
+        - davey-price: art
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/dungeon-crawler-carl"
+        locator: in the Credits section
+        quote: "Animations: Stephen Silver and Ian Harrower"
+      credit:
+        - stephen-silver: animation
+        - ian-harrower: animation
+  - model.dungeon-crawler-carl:
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/dcc-game-kit"
+        quote: "Dungeon Crawler Carl is designed as a 3-flipper game, including the two lower flippers and the Right Side-Target Flipper Assembly."
+      gameplay_feature: [{ flippers: 3 }]
+  - model.dungeon-crawler-carl:
+      note: "The wireforms are habitrails (wire ball guides); the Safe Room scoop's upkicker is a vertical up-kicker; the lone drop target guarding it classifies as a solitary drop target."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+        quote: "there is a left orbit lane which goes all the way around the back and exits into the right orbit lane. [...] The left ramp feeds onto a wireform which runs down the right side of the playfield, onto the clear plastic ball guide and into the right inlane. [...] In the very centre is a Safe Room scoop with an upkicker which is protected by a drop target and flanked by standup targets. [...] The centre right lane is a shallow ramp with a diverter"
+      gameplay_feature:
+        [
+          orbits,
+          ramps,
+          habitrails,
+          scoops,
+          vertical-up-kickers,
+          solitary-drop-targets,
+          standup-targets,
+          ramp-diverters,
+        ]
+  - model.dungeon-crawler-carl:
+      note: "The disk cannon is a ball cannon; the grab/accelerator and player-controlled disruptor magnets are magnets; the inlane SlingLock blockers and the Mongo Cage lock balls, and the cage doubles as a captive ball while building toward multiball."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+        quote: "a cannon which can be loaded and fired at playfield-level shots [...] both inlanes now incorporate blockers which can be used to lock and release balls. [...] This magnet can grab the ball when certain features, such as the boss battles, begin. [...] six round standup targets with a central player-controlled disruptor magnet [...] the Mongo Cage can also act as a captive ball, or it can become a ball lock when building towards multiball"
+      gameplay_feature:
+        [ball-cannons, ball-locks, magnets, captive-ball, multiball]
+  - model.dungeon-crawler-carl:
+      note: "The character sculpts state no motion or ball interaction, so they classify as static toys; the rotating disk mech and Mongo Cage identities stay in the family worklist as bespoke one-off mechanisms."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+        quote: "There are four character sculpts – Carl, Samantha, Donut and Mongo, along with a giant sculpt for the dungeon."
+      gameplay_feature: [static-toys]
+  - model.enders-game:
+      note: "The store sells only non-refundable deposits and production has not begun, so the model is announced rather than produced."
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/enders-game-game-kit"
+        quote: Production of this title begins in late 2026.
+      production_status: announced
+  - model.enders-game:
+      note: "Month records the announcement month: revealed July 27, 2026."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/enders-game-revealed/"
+        quote: "Date: July 27th, 2026"
+      month: 7
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        quote: Ender's Game is a pinball machine based on the Hugo and Nebula award wining novel Ender's Game.
+      game_format: pinball
+  - model.enders-game:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/enders-game-game-kit"
+          quote: "Enjoy Ender's Game on your P3 Pinball Platform!"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+      technology_generation: solid-state
+  - model.enders-game:
+      note: "The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine. The playfield display is the platform's LCD."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      cabinet: floor
+      display_type: lcd
+  - model.enders-game:
+      note: "The maker's Creative Director and Rules credits are game-creation leadership and ruleset design work, credited under the design role."
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Creative Director: Stephen Silver and Josh Kugler Rules; Colin MacAlpine"
+      credit:
+        - stephen-silver: design
+        - josh-kugler: design
+        - colin-macalpine: design
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Mechanicals; TJ Weaver and Trey Jones"
+      credit:
+        - tj-weaver: mechanics
+        - trey-jones: mechanics
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Music: Aaron Williams and Paul Farrer"
+      credit:
+        - aaron-williams: music
+        - paul-farrer: music
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Sound Design: Glenn Waechter"
+      credit:
+        - glenn-waechter: sound
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Software: Josh Kugler, Steve Shoyer, and Ian Harrower"
+      credit:
+        - josh-kugler: software
+        - steve-shoyer: software
+        - ian-harrower: software
+  - model.enders-game:
+      note: "Artist and Technical Artist are both art-role credits; Brad Albright created the full art package, Rory Cernuda the technical art."
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Artist: Brad Albright Technical Artist: Rory Cernuda"
+      credit:
+        - brad-albright: art
+        - rory-cernuda: art
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Animations: Stephen Silver and Rory Cernuda"
+      credit:
+        - stephen-silver: animation
+        - rory-cernuda: animation
+  - model.enders-game:
+      note: 'The credit line names them jointly as "Tyson and Eli Silver"; each is a distinct voice performer.'
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
+      credit:
+        - glenn-waechter: voice
+        - lucas-pepke: voice
+        - sam-tucker: voice
+        - aline-allen: voice
+        - alana-johnson: voice
+        - cash-bailey: voice
+        - tyson-silver: voice
+        - eli-silver: voice
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        quote: Ender's Game is a 3-flipper game and therefore requires a Right Side-Target Flipper Assembly.
+      gameplay_feature: [{ flippers: 3 }]
+  - model.enders-game:
+      note: "The captive ball balance mechanism is the maker's own naming; the balls held in it classify as captive balls."
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        quote: "you will need to moves balls in the captive ball balance mechanism to be aggressive, compassionate or perfectly balanced"
+      gameplay_feature: [captive-ball]
+  - model.enders-game:
+      note: "The wireforms are habitrails (wire ball guides); the centre scoop's upkicker is a vertical up-kicker; the lone drop target guarding it classifies as a solitary drop target."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/enders-game-revealed/"
+        quote: "there is a left orbit lane which goes all the way around the back and exits into the right orbit lane. [...] The left ramp feeds onto a wireform which runs down the right side of the playfield, onto the clear plastic ball guide and into the right inlane. [...] In the very centre is a scoop with an upkicker which is protected by a drop target and flanked by standup targets. [...] The centre right lane is a shallow ramp which can either feeds the grab magnet on the raised ramp, or a diverter can send the ball back down the right orbit lane"
+      gameplay_feature:
+        [
+          orbits,
+          ramps,
+          habitrails,
+          scoops,
+          vertical-up-kickers,
+          solitary-drop-targets,
+          standup-targets,
+          ramp-diverters,
+        ]
+  - model.enders-game:
+      note: "The disk cannon is a ball cannon; the grab/accelerator and player-controlled disruptor magnets are magnets; the energised-slingshot inlane blocker is a ball lock. The disk mech, Fight Ring and Valentine/Peter ball-stacker identities stay in the family worklist as bespoke one-off mechanisms."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/07/27/enders-game-revealed/"
+        quote: "This magnet can grab the ball when certain battles begin [...] six round standup targets with a central player-controlled disruptor magnet [...] Once a ball is loaded into the cannon, the disk rotates to either allow the game fire the ball towards a required shot or, at other times, allow the player to choose their shot and fire the ball themselves. [...] As long as the slingshot is energised, the ball is held in the inlane. This can be used to hold it during a mode introduction, to help the player align their shots, or longer term as a ball lock."
+      gameplay_feature: [magnets, ball-cannons, ball-locks]
+  - model.lexy-lightspeed-escape-from-earth:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] Lexy Lightspeed – Escape from Earth"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.lexy-lightspeed-escape-from-earth:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+        locator: in the store category listing
+        quote: "Lexy Lightspeed – Escape From Earth $3,000.00 Add to cart"
+      production_status: produced
+  - model.cannon-lagoon:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] Cannon Lagoon"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+  - model.cannon-lagoon:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+        locator: in the store category listing
+        quote: "Cannon Lagoon $1,800.00 Add to cart"
+      production_status: produced
+  - model.cosmic-cart-racing:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] Cosmic Cart Racing"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.cosmic-cart-racing:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+        locator: in the store category listing
+        quote: "Cosmic Cart Racing $3,000.00 Add to cart"
+      production_status: produced
+  - model.heist:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] Heist"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.heist:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+        locator: in the store category listing
+        quote: "Heist $3,250.00 Add to cart"
+      production_status: produced
+  - model.weird-als-museum-of-natural-hilarity:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] Weird Al's Museum of Natural Hilarity"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.weird-als-museum-of-natural-hilarity:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+        locator: in the store category listing
+        quote: "Weird Al's Museum of Natural Hilarity $3,500.00 Add to cart"
+      production_status: produced
+  - model.weird-als-museum-of-natural-hilarity-limited-edition:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine. The Limited Edition is an artwork-and-accessories package over the same machine and game kit, so the shared design's platform facts and production carry from the base model."
+      cite:
+        - ref: "https://www.multimorphic.com/news/weird-als-museum-of-natural-hilarity"
+          quote: "we have created two unique Weird Al's Museum of Natural Hilarity artwork packages to decorate the machine, a Standard Edition package and a Limited Edition package"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+      display_type: lcd
+      technology_generation: solid-state
+  - model.weird-als-museum-of-natural-hilarity-limited-edition:
+      note: "The Limited Edition is an artwork-and-accessories package over the same machine and game kit, so the shared design's platform facts and production carry from the base model."
+      cite:
+        - ref: "https://www.multimorphic.com/news/weird-als-museum-of-natural-hilarity"
+          quote: "we have created two unique Weird Al's Museum of Natural Hilarity artwork packages to decorate the machine, a Standard Edition package and a Limited Edition package"
+        - ref: "https://www.multimorphic.com/news/multimorphic-public-update-june-2026"
+          quote: "our goal is always to fill all orders received from day-one through to the beginning of production within about a year of launch, and we've successfully done that with our last four game launches"
+      production_status: produced
+  - model.weird-als-museum-of-natural-hilarity-limited-edition:
+      cite:
+        ref: "https://www.multimorphic.com/news/weird-als-museum-of-natural-hilarity"
+        quote: "The Limited Edition package, which also includes an interactive and motorized machine topper, a printed translite autographed by Weird Al, and various game-specific accessory items, is limited to 227 copies."
+      production_quantity: 227
+  - model.weird-als-museum-of-natural-hilarity-limited-edition:
+      note: "The base model records a player count of 4, a fact OPDB supplies for the base edition; The Limited Edition is an artwork-and-accessories package over the same machine and game kit, so the shared design's platform facts and production carry from the base model."
+      cite:
+        ref: "https://www.multimorphic.com/news/weird-als-museum-of-natural-hilarity"
+        quote: "we have created two unique Weird Al's Museum of Natural Hilarity artwork packages to decorate the machine, a Standard Edition package and a Limited Edition package"
+      player_count: "4"
+  - model.final-resistance:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] Final Resistance"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.final-resistance:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+        locator: in the store category listing
+        quote: "Final Resistance $3,400.00 Add to cart"
+      production_status: produced
+  - model.the-princess-bride:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Full game kits with playfield modules: [...] The Princess Bride"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.the-princess-bride:
+      note: "The maker's last four game launches before this June 2026 statement are Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), The Princess Bride (2024) and Portal (2025) - all orders filled means all four were produced and shipped."
+      cite:
+        - ref: "https://www.multimorphic.com/news/multimorphic-public-update-june-2026"
+          quote: "our goal is always to fill all orders received from day-one through to the beginning of production within about a year of launch, and we've successfully done that with our last four game launches"
+        - ref: "https://www.kineticist.com/news/multimorphic-launches-portal-pinball"
+          quote: "This follows their last major release, The Princess Bride, last year"
+      production_status: produced
+  - model.the-princess-bride-collectors-edition:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine. This edition is a variant of The Princess Bride: the maker states all editions share the same playfield module and game software, so the shared design's platform facts and production carry from the base."
+      cite:
+        - ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+          quote: All editions include the same playfield module and game software.
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+      display_type: lcd
+      technology_generation: solid-state
+  - model.the-princess-bride-collectors-edition:
+      note: "This edition is a variant of The Princess Bride: the maker states all editions share the same playfield module and game software, so the shared design's platform facts and production carry from the base. The maker's last four game launches before this June 2026 statement are Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), The Princess Bride (2024) and Portal (2025) - all orders filled means all four were produced and shipped."
+      cite:
+        - ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+          quote: All editions include the same playfield module and game software.
+        - ref: "https://www.multimorphic.com/news/multimorphic-public-update-june-2026"
+          quote: "our goal is always to fill all orders received from day-one through to the beginning of production within about a year of launch, and we've successfully done that with our last four game launches"
+      production_status: produced
+  - model.the-princess-bride-collectors-edition:
+      cite:
+        ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+        quote: The Collector's Edition (limited to only 500 units) is the ultimate collectible for a superfan of the film
+      production_quantity: 500
+  - model.the-princess-bride-collectors-edition:
+      note: "The base model records a player count of 4, a fact OPDB supplies for the base edition; This edition is a variant of The Princess Bride: the maker states all editions share the same playfield module and game software, so the shared design's platform facts and production carry from the base."
+      cite:
+        ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+        quote: All editions include the same playfield module and game software.
+      player_count: "4"
+  - model.the-princess-bride-limited-edition:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine. This edition is a variant of The Princess Bride: the maker states all editions share the same playfield module and game software, so the shared design's platform facts and production carry from the base."
+      cite:
+        - ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+          quote: All editions include the same playfield module and game software.
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+      display_type: lcd
+      technology_generation: solid-state
+  - model.the-princess-bride-limited-edition:
+      note: "This edition is a variant of The Princess Bride: the maker states all editions share the same playfield module and game software, so the shared design's platform facts and production carry from the base. The maker's last four game launches before this June 2026 statement are Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), The Princess Bride (2024) and Portal (2025) - all orders filled means all four were produced and shipped."
+      cite:
+        - ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+          quote: All editions include the same playfield module and game software.
+        - ref: "https://www.multimorphic.com/news/multimorphic-public-update-june-2026"
+          quote: "our goal is always to fill all orders received from day-one through to the beginning of production within about a year of launch, and we've successfully done that with our last four game launches"
+      production_status: produced
+  - model.the-princess-bride-limited-edition:
+      note: "The base model records a player count of 4, a fact OPDB supplies for the base edition; This edition is a variant of The Princess Bride: the maker states all editions share the same playfield module and game software, so the shared design's platform facts and production carry from the base."
+      cite:
+        ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
+        quote: All editions include the same playfield module and game software.
+      player_count: "4"
+  - model.portal-standard:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+          locator: in the store category listing
+          quote: "Portal Standard Game Kit (Deposit) $1,000.00"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.portal-standard:
+      cite:
+        ref: "https://www.multimorphic.com/news/multimorphic-public-update-june-2026"
+        quote: "In April, approximately 13 months after launching Portal in March 2025, we finished shipping all 2025 Portal orders."
+      production_status: produced
+  - model.portal-extended:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine."
+      cite:
+        - ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"
+          locator: in the store category listing
+          quote: "Portal Extended Game Kit (Deposit) $1,500.00"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+      system: multimorphic-p3-roc
+      cabinet: floor
+      game_format: pinball
+  - model.portal-extended:
+      note: "Extended is an ordering option of the same Portal launch, not a separate game, so the maker's statement that all 2025 Portal orders shipped covers Extended-configuration orders."
+      cite:
+        - ref: "https://www.multimorphic.com/news/multimorphic-public-update-june-2026"
+          quote: "In April, approximately 13 months after launching Portal in March 2025, we finished shipping all 2025 Portal orders."
+        - ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
+          quote: "Portal's extended option addressed this by introducing a ramp, kickback, diverter, and a player-controlled wall plate and inlane feeds, amongst other features."
+      production_status: produced
+  - model.barnyard:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Add-on Games: [...] Barnyard"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.barnyard:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/add-on-software/multimorphic-add-on-game-software"
+        locator: in the store category listing
+        quote: "Barnyard $149.00 Add to cart"
+      production_status: produced
+  - model.lexy-lightspeed-secret-agent-showdown:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Add-on Games: [...] Lexy Lightspeed – Secret Agent Showdown"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.lexy-lightspeed-secret-agent-showdown:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/add-on-software/multimorphic-add-on-game-software"
+        locator: in the store category listing
+        quote: "Lexy Lightspeed – Secret Agent Showdown $99.00 Add to cart"
+      production_status: produced
+  - model.grand-slam-rally:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state. The maker's store bills the game as pitch-and-bat, so the game format follows the maker's own genre naming."
+      cite:
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/grand-slam-rally"
+          quote: "Pitch-and-Bat on the P3! Grand Slam Rally is a P3 mini-game that works with the Cannon Lagoon playfield module (sold separately)."
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+      game_format: pitch-and-bat
+  - model.grand-slam-rally:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/grand-slam-rally"
+        quote: "$199.00 [...] Add to cart"
+      production_status: produced
+  - model.hoopin-it-up:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Add-on Games: [...] Hoopin' It Up"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.rocs:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Add-on Games: [...] ROCs"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.rocs:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/add-on-software/multimorphic-add-on-game-software"
+        locator: in the store category listing
+        quote: "ROCs $199.00 Add to cart"
+      production_status: produced
+  - model.shoot-n-scoot:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Add-on Games: [...] Shoot 'n Scoot"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.shoot-n-scoot:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/add-on-software/multimorphic-add-on-game-software"
+        locator: in the store category listing
+        quote: "Shoot 'n Scoot $169.00 Add to cart"
+      production_status: produced
+  - model.sorcerers-apprentice:
+      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
+          locator: in the games list
+          quote: "Add-on Games: [...] Sorcerer's Apprentice"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.sorcerers-apprentice:
+      note: "The maker's store sells the game from stock at full price (no deposit, no pre-order), so the game is produced and commercially sold."
+      cite:
+        ref: "https://www.multimorphic.com/category/add-on-software/multimorphic-add-on-game-software"
+        locator: in the store category listing
+        quote: "Sorcerer's Apprentice $499.00 Add to cart"
+      production_status: produced

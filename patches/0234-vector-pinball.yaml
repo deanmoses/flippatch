@@ -1,0 +1,836 @@
+attribution: flipcommons-catalog
+description: >
+  Vector Pinball: two new models and details across the maker's five machines
+sources:
+  - name: AUSRETROGAMER
+    source_type: web
+    description: >
+      Australian retro gaming and pinball news site.
+    links:
+      - {
+          url: "https://ausretrogamer.com/",
+          label: AUSRETROGAMER,
+          link_type: homepage,
+        }
+claims:
+  - person.jason-mcnally:
+      create: true
+      name: Jason McNally
+  - person.peter-hughes:
+      create: true
+      name: Peter Hughes
+  - person.jeremy-ham:
+      create: true
+      name: Jeremy Ham
+  - location.australia/qld:
+      create: true
+      note: "Created to host Brisbane; Brisbane is Queensland's capital."
+      name: Queensland
+      slug: qld
+      parent: australia
+      location_type: state
+  - location.australia/qld/brisbane:
+      create: true
+      cite:
+        ref: "https://vectorpinball.com/contact"
+        quote: "We are based in Brisbane, Australia and ship to the world"
+      name: Brisbane
+      slug: brisbane
+      parent: australia/qld
+      location_type: city
+  - corporate-entity.vector-pinball:
+      note: "The maker's own About and Contact pages give its identity and base: Vector Pinball is the pinball-manufacturing division of Vector Synergy Pty Ltd (ABN 82 660 426 344), Brisbane."
+      cite:
+        ref: "https://vectorpinball.com/about"
+        quote: "Vector Pinball is a division of Vector Synergy Pty Ltd ABN 82 660 426 344. We are based in Brisbane, Australia."
+      location: [australia/qld/brisbane]
+  - model.eight-ball-fury:
+      note: "The maker's About page states quantity production of this title, and the machine is on sale and operating on location."
+      cite:
+        - ref: "https://vectorpinball.com/about"
+          quote: 'In 2023 we decided to move entirely over to new game production and create our first original title, "Eight Ball Fury" and produce these in quantity.'
+        - ref: "https://vectorpinball.com/eight-ball-fury-specs"
+          quote: "Priced at $12,900 inc GST (Buyers outside Australia are exempt from this 10% sales tax)."
+      production_status: produced
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-specs"
+        quote: This limited-Edition Game (50 Units Only)
+      production_quantity: 50
+      tag: [limited-edition]
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: "2 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] Standard Pinball Tilt Bob Mech"
+      game_format: pinball
+  - model.eight-ball-fury:
+      note: "Classified as a floor-standing cabinet from the full-size dimensions on the maker's spec sheet."
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: "Dimensions (Setup) 140cm L (inc shooter) x 73cm W, 204cm H with Topper installed, 186cm High with no Topper fitted"
+      cabinet: floor
+  - model.eight-ball-fury:
+      note: "The spec sheet's 'Static Targets' are stationary standup targets."
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: "2 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Ball shot [...] 9 Static Targets"
+      gameplay_feature:
+        [
+          { flippers: 2 },
+          { slingshots: 2 },
+          { pop-bumpers: 3 },
+          { spinners: 1 },
+          { captive-ball: 1 },
+          { standup-targets: 9 },
+        ]
+  - model.eight-ball-fury:
+      note: "Six individual (solitary) drop targets, software-dropped, played in timed challenge modes."
+      cite:
+        - ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+          quote: "6 Individual Drop Targets, with Auto Drop feature"
+        - ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+          quote: you have 40 seconds to knock down all 6 drop targets
+      gameplay_feature: [{ solitary-drop-targets: 6 }, timed-drop-targets]
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: "2,3 & 4 ball Multi-Ball modes"
+      gameplay_feature: [2-ball-multiball, 3-ball-multiball, 4-ball-multiball]
+  - model.eight-ball-fury:
+      note: "Five lettered upper rollover lanes with lane change."
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: E I G H T upper lanes & B A L L Lower rollover lanes with lane change feature
+      gameplay_feature: [{ top-lanes: 5 }, lane-change]
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: "Skill Shot, Extra Ball, Jackpot & Super Jackpot, Bonus Hold features"
+      gameplay_feature: [skill-shot]
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: Horseshoe shot in playfield centre (alternating shots to add to the challenge)
+      gameplay_feature: [horseshoe-lanes]
+  - model.eight-ball-fury:
+      note: "A ball that drains within the owner-adjustable minimum play time is automatically returned to the player, which is a ball save."
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: "Minimum play time is 10 seconds from the first score on each ball, if the ball drains within that time it will be auto returned to you."
+      gameplay_feature: [ball-save]
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: Standard Pinball Shooter with upgraded Chrome Rod. Auto Shooter built in for use when required
+      gameplay_feature: [plungers, auto-launch]
+  - model.eight-ball-fury:
+      cite:
+        ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+        quote: Cabinet Inner Mirror Blades to spread the light and create an infinity effect around the playfield.
+      gameplay_feature: [mirror-blades]
+  - model.eight-ball-fury:
+      cite:
+        - ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+          quote: "Eight Ball Fury, illuminated 3D Flame Topper included"
+        - ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+          quote: "End of Game lucky Number match, Old School Knocker built in to Alert Match & Replays Awarded"
+      gameplay_feature: [toppers, knockers]
+  - model.eight-ball-fury:
+      cite:
+        - ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+          quote: "100% LED Lighting throughout for long life, keeps game bright and inviting"
+        - ref: "https://vectorpinball.com/eight-ball-fury-rules-features"
+          quote: Quality 3 Speaker Sound system
+      gameplay_feature: [led-general-illumination, { speakers: 3 }]
+  - model.eight-ball-fury:
+      note: "The credits follow Kineticist's Design Team listing for this machine; the maker's own pages and videos carry no credit lines, and its gallery attributes the artwork only to an Australian designer."
+      cite:
+        ref: "https://www.kineticist.com/games/pinball/eight-ball-fury-2024"
+        locator: in the Design Team section
+        quote: "Design [...] Jason McNally [...] Art [...] Jeremy Ham"
+      credit:
+        - jason-mcnally: design
+        - jeremy-ham: art
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "Both Peter Brock models were on retail sale at the Australasian Gaming Expo in August 2024, and the maker's own About page dates its Australian Centric licensed titles to 2024, so the year is 2024 rather than the 2025 recorded elsewhere."
+      cite:
+        - ref: "https://ausretrogamer.com/peter-brock-king-of-the-mountain-pinball-machines"
+          locator: article dateline 20/08/2024
+          quote: 'Leaving a burnout at last week''s AGE – the Australasian Gaming Expo (August 13 to 15), was Vector Pinball''s Peter Brock "King Of The Mountain" pinball machines – which were the talk of the exhibition.'
+        - ref: "https://vectorpinball.com/about"
+          quote: 2024 brought more new titles including some Australian Centric licensed ones.
+      year: 2024
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "Machines were retailing at the Australasian Gaming Expo in August 2024 and both variations remain on sale from the maker."
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-pinball-games"
+          quote: "Priced at $13,900 inc GST (Buyers outside Australia are exempt from this 10% sales tax)."
+        - ref: "https://ausretrogamer.com/peter-brock-king-of-the-mountain-pinball-machines"
+          quote: "Both variations of the King Of The Mountain retail for AU$11,900 (GST inclusive)!"
+      production_status: produced
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "The build plate confirming the build number is a sequentially numbered plaque."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-pinball-games"
+        quote: These pieces of playable art are limited to 105 builds total. They come with a build plate and certificate that confirms the build number and that we manufactured it under licence from Peter Brock & HDT.
+      theme: [licensed]
+      gameplay_feature: [numbered-plaques]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: B R O C K upper lanes & K I N G Lower rollover lanes with lane change feature
+      gameplay_feature: [{ top-lanes: 5 }, lane-change]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: 'Shooting the Mountain (Ramp) on right will light "Ramp" for a period of time'
+      gameplay_feature: [{ ramps: 1 }]
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "The maker publishes one Game Rules, Features & Specs sheet covering both Peter Brock editions."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "3 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Car shot [...] 6 Static Targets"
+      game_format: pinball
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "The maker publishes one Game Rules, Features & Specs sheet covering both Peter Brock editions. The spec sheet's 'Static Targets' are stationary standup targets. The Captive Car shot is a captive ball dressed as a race car."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "3 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Car shot [...] 6 Static Targets"
+      gameplay_feature:
+        [
+          { flippers: 3 },
+          { slingshots: 2 },
+          { pop-bumpers: 3 },
+          { spinners: 1 },
+          { captive-ball: 1 },
+          { standup-targets: 6 },
+        ]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: 6 Drop Targets
+      gameplay_feature: [{ drop-targets: 6 }]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "2,3 & 4 ball Multi Ball modes"
+      gameplay_feature: [2-ball-multiball, 3-ball-multiball, 4-ball-multiball]
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "Five lettered upper rollover lanes with lane change."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "Skill Shot, Extra Ball, Jackpot & Super Jackpot, Bonus Hold features"
+      gameplay_feature: [skill-shot]
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "One saucer lower on the playfield, one at the top."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "Shoot the left saucer for 10,000 points [...] Shoot the top saucer to add a virtual ball"
+      gameplay_feature: [{ kick-out-saucers: 2 }]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: Enable the Kick Back feature and Extra ball when lit
+      gameplay_feature: [kickback]
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "A ball that drains within the owner-adjustable minimum play time is automatically returned to the player, which is a ball save."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "There is a Minimum play time (owner adjustable) from the first score on each ball, if the ball drains within that time it will be auto returned to you."
+      gameplay_feature: [ball-save]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: Standard Ball Shooter with Auto Shooter built in for use when required
+      gameplay_feature: [plungers, auto-launch]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: Cabinet Inner art Blades around the playfield to help create a world under glass
+      gameplay_feature: [art-blades]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Topper included
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Shaker Motor Included for extra effect
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: "End of Game lucky Number match, Old School Knocker built in to Alert Match & Replays Awarded"
+      gameplay_feature: [toppers, shaker-motors, knockers]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: "100% LED Lighting throughout for long life, keeps game bright and inviting"
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Quality 3 Speaker Sound system
+      gameplay_feature: [led-general-illumination, { speakers: 3 }]
+  - model.peter-brock-king-of-the-mountain-torana:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "32 Digit Alpha/Numeric Score/Information display mounted close to playfield so we can maximize the backglass art and make it easy for you to keep your eye on the ball !"
+      display_type: alphanumeric
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "Individually addressable RGB LED strings driven by field-upgradeable game software make this a computerized, solid-state game."
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: "2 LED strings, Each RGB LED is individually addressable for incredible light shows, 57 LEDs Under the Playfield and 82 on Top, Total 139"
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Software is upgradeable as improvements and features are added
+      technology_generation: solid-state
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "Classified as a floor-standing cabinet from the full-size dimensions on the maker's spec sheet."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "Dimensions (Setup) 140cm L (inc shooter) x 73cm W, 210cm H with Topper installed, 190cm High with no Topper fitted"
+      cabinet: floor
+  - model.peter-brock-king-of-the-mountain-torana:
+      note: "The credits follow Kineticist's Design Team listing for this machine; the maker's own pages and videos carry no credit lines, and its gallery attributes the artwork only to an Australian designer."
+      cite:
+        ref: "https://www.kineticist.com/games/pinball/peter-brock-holden"
+        locator: in the Design Team section
+        quote: "Design [...] Jason McNally [...] Art [...] Peter Hughes, Jeremy Ham"
+      credit:
+        - jason-mcnally: design
+        - peter-hughes: art
+        - jeremy-ham: art
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "Both Peter Brock models were on retail sale at the Australasian Gaming Expo in August 2024, and the maker's own About page dates its Australian Centric licensed titles to 2024, so the year is 2024 rather than the 2025 recorded elsewhere."
+      cite:
+        - ref: "https://ausretrogamer.com/peter-brock-king-of-the-mountain-pinball-machines"
+          locator: article dateline 20/08/2024
+          quote: 'Leaving a burnout at last week''s AGE – the Australasian Gaming Expo (August 13 to 15), was Vector Pinball''s Peter Brock "King Of The Mountain" pinball machines – which were the talk of the exhibition.'
+        - ref: "https://vectorpinball.com/about"
+          quote: 2024 brought more new titles including some Australian Centric licensed ones.
+      year: 2024
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "Machines were retailing at the Australasian Gaming Expo in August 2024 and both variations remain on sale from the maker."
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-pinball-games"
+          quote: "Priced at $13,900 inc GST (Buyers outside Australia are exempt from this 10% sales tax)."
+        - ref: "https://ausretrogamer.com/peter-brock-king-of-the-mountain-pinball-machines"
+          quote: "Both variations of the King Of The Mountain retail for AU$11,900 (GST inclusive)!"
+      production_status: produced
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "The build plate confirming the build number is a sequentially numbered plaque."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-pinball-games"
+        quote: These pieces of playable art are limited to 105 builds total. They come with a build plate and certificate that confirms the build number and that we manufactured it under licence from Peter Brock & HDT.
+      theme: [licensed]
+      gameplay_feature: [numbered-plaques]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: B R O C K upper lanes & K I N G Lower rollover lanes with lane change feature
+      gameplay_feature: [{ top-lanes: 5 }, lane-change]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: 'Shooting the Mountain (Ramp) on right will light "Ramp" for a period of time'
+      gameplay_feature: [{ ramps: 1 }]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "The maker publishes one Game Rules, Features & Specs sheet covering both Peter Brock editions."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "3 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Car shot [...] 6 Static Targets"
+      game_format: pinball
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "The maker publishes one Game Rules, Features & Specs sheet covering both Peter Brock editions. The spec sheet's 'Static Targets' are stationary standup targets. The Captive Car shot is a captive ball dressed as a race car."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "3 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Car shot [...] 6 Static Targets"
+      gameplay_feature:
+        [
+          { flippers: 3 },
+          { slingshots: 2 },
+          { pop-bumpers: 3 },
+          { spinners: 1 },
+          { captive-ball: 1 },
+          { standup-targets: 6 },
+        ]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: 6 Drop Targets
+      gameplay_feature: [{ drop-targets: 6 }]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "2,3 & 4 ball Multi Ball modes"
+      gameplay_feature: [2-ball-multiball, 3-ball-multiball, 4-ball-multiball]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "Five lettered upper rollover lanes with lane change."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "Skill Shot, Extra Ball, Jackpot & Super Jackpot, Bonus Hold features"
+      gameplay_feature: [skill-shot]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "One saucer lower on the playfield, one at the top."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "Shoot the left saucer for 10,000 points [...] Shoot the top saucer to add a virtual ball"
+      gameplay_feature: [{ kick-out-saucers: 2 }]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: Enable the Kick Back feature and Extra ball when lit
+      gameplay_feature: [kickback]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "A ball that drains within the owner-adjustable minimum play time is automatically returned to the player, which is a ball save."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "There is a Minimum play time (owner adjustable) from the first score on each ball, if the ball drains within that time it will be auto returned to you."
+      gameplay_feature: [ball-save]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: Standard Ball Shooter with Auto Shooter built in for use when required
+      gameplay_feature: [plungers, auto-launch]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: Cabinet Inner art Blades around the playfield to help create a world under glass
+      gameplay_feature: [art-blades]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Topper included
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Shaker Motor Included for extra effect
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: "End of Game lucky Number match, Old School Knocker built in to Alert Match & Replays Awarded"
+      gameplay_feature: [toppers, shaker-motors, knockers]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: "100% LED Lighting throughout for long life, keeps game bright and inviting"
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Quality 3 Speaker Sound system
+      gameplay_feature: [led-general-illumination, { speakers: 3 }]
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "32 Digit Alpha/Numeric Score/Information display mounted close to playfield so we can maximize the backglass art and make it easy for you to keep your eye on the ball !"
+      display_type: alphanumeric
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "Individually addressable RGB LED strings driven by field-upgradeable game software make this a computerized, solid-state game."
+      cite:
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: "2 LED strings, Each RGB LED is individually addressable for incredible light shows, 57 LEDs Under the Playfield and 82 on Top, Total 139"
+        - ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+          quote: Software is upgradeable as improvements and features are added
+      technology_generation: solid-state
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "Classified as a floor-standing cabinet from the full-size dimensions on the maker's spec sheet."
+      cite:
+        ref: "https://vectorpinball.com/peter-brock-king-of-the-mountain-game-rules-features-specs"
+        quote: "Dimensions (Setup) 140cm L (inc shooter) x 73cm W, 210cm H with Topper installed, 190cm High with no Topper fitted"
+      cabinet: floor
+  - model.peter-brock-king-of-the-mountain-vk-commodore:
+      note: "The credits follow Kineticist's Design Team listing for this machine; the maker's own pages and videos carry no credit lines, and its gallery attributes the artwork only to an Australian designer."
+      cite:
+        ref: "https://www.kineticist.com/games/pinball/peter-brock-holden"
+        locator: in the Design Team section
+        quote: "Design [...] Jason McNally [...] Art [...] Peter Hughes, Jeremy Ham"
+      credit:
+        - jason-mcnally: design
+        - peter-hughes: art
+        - jeremy-ham: art
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-pinball-games"
+        quote: "Available Now!"
+      production_status: produced
+  - model.holden-heritage:
+      note: "The Build Plate confirming the build number is a sequentially numbered plaque."
+      cite:
+        ref: "https://vectorpinball.com/holden-pinball-games"
+        quote: These pieces of playable art are limited to just 100 builds. They come with a Build Plate and certificate that confirms the build number and that we manufactured it under licence from GM Holden.
+      production_quantity: 100
+      tag: [limited-edition]
+      gameplay_feature: [numbered-plaques]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: 'Achieve "M O T O R" upper lanes & "C A R S" Lower rollover lanes with lane change feature'
+      gameplay_feature: [{ top-lanes: 5 }, lane-change]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: 'Shooting the "Hill Climb" Ramp on right will light "Ramp" for a period of time'
+      gameplay_feature: [{ ramps: 1 }]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "3 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Car shot [...] 6 Static Targets"
+      game_format: pinball
+  - model.holden-heritage:
+      note: "The spec sheet's 'Static Targets' are stationary standup targets. The Captive Car shot is a captive ball dressed as a race car."
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "3 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 1 Spinner [...] 1 Captive Car shot [...] 6 Static Targets"
+      gameplay_feature:
+        [
+          { flippers: 3 },
+          { slingshots: 2 },
+          { pop-bumpers: 3 },
+          { spinners: 1 },
+          { captive-ball: 1 },
+          { standup-targets: 6 },
+        ]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: 6 Drop Targets
+      gameplay_feature: [{ drop-targets: 6 }]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "2,3 & 4 ball Multi Ball modes"
+      gameplay_feature: [2-ball-multiball, 3-ball-multiball, 4-ball-multiball]
+  - model.holden-heritage:
+      note: "Five lettered upper rollover lanes with lane change."
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "Skill Shot, Extra Ball, Jackpot & Super Jackpot, Bonus Hold features"
+      gameplay_feature: [skill-shot]
+  - model.holden-heritage:
+      note: "One saucer lower on the playfield, one at the top."
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "Shoot the left saucer for 10,000 points [...] Shoot the top saucer to add a virtual ball"
+      gameplay_feature: [{ kick-out-saucers: 2 }]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: Enable the Kick Back feature and Extra ball when lit
+      gameplay_feature: [kickback]
+  - model.holden-heritage:
+      note: "A ball that drains within the owner-adjustable minimum play time is automatically returned to the player, which is a ball save."
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "There is a Minimum play time (owner adjustable) from the first score on each ball, if the ball drains within that time it will be auto returned to you."
+      gameplay_feature: [ball-save]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: Standard Ball Shooter with Auto Shooter built in for use when required
+      gameplay_feature: [plungers, auto-launch]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: Cabinet Inner art Blades around the playfield to help create a world under glass
+      gameplay_feature: [art-blades]
+  - model.holden-heritage:
+      cite:
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: Topper included
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: Shaker Motor Included for extra effect
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: "End of Game lucky Number match, Old School Knocker built in to Alert Match Credit & Replays Awarded"
+      gameplay_feature: [toppers, shaker-motors, knockers]
+  - model.holden-heritage:
+      cite:
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: "100% LED Lighting throughout for long life, keeps game bright and inviting"
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: Quality 3 Speaker Sound system
+      gameplay_feature: [led-general-illumination, { speakers: 3 }]
+  - model.holden-heritage:
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "32 Digit Alpha/Numeric Score/Information display mounted close to playfield so we can maximize the backglass art and make it easy for you to keep your eye on the ball !"
+      display_type: alphanumeric
+  - model.holden-heritage:
+      note: "Individually addressable RGB LED strings driven by field-upgradeable game software make this a computerized, solid-state game."
+      cite:
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: "2 LED strings, Each RGB LED is individually addressable for incredible light shows, 57 LEDs Under the Playfield and 82 on Top, Total 139"
+        - ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+          quote: Software is upgradeable as improvements and features are added
+      technology_generation: solid-state
+  - model.holden-heritage:
+      note: "Classified as a floor-standing cabinet from the full-size dimensions on the maker's spec sheet."
+      cite:
+        ref: "https://vectorpinball.com/holden-heritage-edition-game-rules"
+        quote: "Dimensions (Setup) 140cm L (inc shooter) x 73cm W, 210cm H with Topper installed, 190cm High with no Topper fitted"
+      cabinet: floor
+  - model.holden-heritage:
+      note: "The credits follow Kineticist's Design Team listing for this machine; the maker's own pages and videos carry no credit lines, and its gallery attributes the artwork only to an Australian designer."
+      cite:
+        ref: "https://www.kineticist.com/games/pinball/peter-brock-holden"
+        locator: in the Design Team section
+        quote: "Design [...] Jason McNally [...] Art [...] Peter Hughes, Jeremy Ham"
+      credit:
+        - jason-mcnally: design
+        - peter-hughes: art
+        - jeremy-ham: art
+  - title.ned-kelly:
+      create: true
+      name: Ned Kelly
+  - model.ned-kelly:
+      create: true
+      name: Ned Kelly
+      title: ned-kelly
+      corporate_entity: vector-pinball
+      year: 2026
+      theme: [historical-characters, crime]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly"
+        quote: "This game is now available to purchase and is priced at $13,900 inc gst."
+      production_status: produced
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly"
+        quote: 'NED KELLY "Very Limited Edition" Retro-Classic Style, Pinball Machine, the next in our Aussie Icon series (Only 100 units will be made)'
+      production_quantity: 100
+      tag: [limited-edition]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "2 Flippers [...] 2 Sling Shots [...] 4 Pop Bumpers [...] 1 Spinner [...] 1 Captive Ball shot [...] 5 Static Targets"
+      game_format: pinball
+  - model.ned-kelly:
+      note: "The spec sheet's 'Static Targets' are stationary standup targets."
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "2 Flippers [...] 2 Sling Shots [...] 4 Pop Bumpers [...] 1 Spinner [...] 1 Captive Ball shot [...] 5 Static Targets"
+      gameplay_feature:
+        [
+          { flippers: 2 },
+          { slingshots: 2 },
+          { pop-bumpers: 4 },
+          { spinners: 1 },
+          { captive-ball: 1 },
+          { standup-targets: 5 },
+        ]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: 6 Drop Targets
+      gameplay_feature: [{ drop-targets: 6 }]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "2,3 & 4 ball Multi Ball modes"
+      gameplay_feature: [2-ball-multiball, 3-ball-multiball, 4-ball-multiball]
+  - model.ned-kelly:
+      note: "Five lettered upper rollover lanes with lane change."
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: 'Achieve "R E B E L" upper lanes & "G U N S" Lower rollover lanes with lane change feature'
+      gameplay_feature: [{ top-lanes: 5 }, lane-change]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "Skill Shot, Extra Ball, Jackpot, Bonus Hold features"
+      gameplay_feature: [skill-shot]
+  - model.ned-kelly:
+      note: "One saucer lower right on the playfield, one at the top."
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "Shoot the right lower saucer for 10,000 points [...] Shoot the top saucer to add a virtual ball"
+      gameplay_feature: [{ kick-out-saucers: 2 }]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: This will enable the Kick Back feature and Extra ball (when lit)
+      gameplay_feature: [kickback]
+  - model.ned-kelly:
+      note: "A ball that drains within the owner-adjustable minimum play time is automatically returned to the player, which is a ball save."
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "There is a minimum play time (owner adjustable) from the first score on each ball, if the ball drains within that time it will be automatically returned to you."
+      gameplay_feature: [ball-save]
+  - model.ned-kelly:
+      note: "The stock configuration ships a gun-grip shooter; a standard shooter is optional."
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: Standard Ball Shooter with Auto Shooter built in for use when required (Gun Grip shooter is option at extra cost)
+      gameplay_feature: [plungers, auto-launch]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: Cabinet Inner art Blades around the playfield to help create a world under glass
+      gameplay_feature: [art-blades]
+  - model.ned-kelly:
+      cite:
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: Plastic Topper included
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: Shaker Motor Included for extra effect
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: "End of Game lucky Number match, Old School Knocker built in to Alert Match Credit & Replays Awarded"
+      gameplay_feature: [toppers, shaker-motors, knockers]
+  - model.ned-kelly:
+      cite:
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: "100% LED Lighting throughout for long life, keeps game bright and inviting"
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: Quality 3 Speaker Sound system
+      gameplay_feature: [led-general-illumination, { speakers: 3 }]
+  - model.ned-kelly:
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "32 Digit Alpha/Numeric Score/Information display mounted close to playfield so we can maximize the backglass art and make it easy for you to keep your eye on the ball !"
+      display_type: alphanumeric
+  - model.ned-kelly:
+      note: "Individually addressable RGB LED strings driven by field-upgradeable game software make this a computerized, solid-state game."
+      cite:
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: "2 LED strings, Each RGB LED is individually addressable for incredible light shows, 57 LEDs Under the Playfield and 82 on Top, Total 139"
+        - ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+          quote: Software is upgradeable as improvements and features are added
+      technology_generation: solid-state
+  - model.ned-kelly:
+      note: "Classified as a floor-standing cabinet from the full-size dimensions on the maker's spec sheet."
+      cite:
+        ref: "https://vectorpinball.com/ned-kelly-pinball-game-rules-features-specs"
+        quote: "Dimensions (Setup) 140cm L (inc shooter) x 73cm W, 210cm H with Topper installed, 190cm High with no Topper fitted"
+      cabinet: floor
+  - model.lost-in-space-vector-pinball:
+      create: true
+      note: "A namesake of Sega's 1998 machine on the existing Lost In Space title - a different machine from a different maker, themed on the 1965 TV series rather than the 1998 film. Debuted at the Melbourne Pinball Expo, November 2025."
+      cite:
+        - ref: "https://twip.kineticist.com/p/funkatron-mix"
+          quote: "Australia's upstart manufacturer Vector Pinball announced an upcoming licensed title, based on the 1965 classic sci-fi television series, Lost in Space."
+        - ref: "https://twip.kineticist.com/p/funkatron-mix"
+          quote: It's based on all three seasons of the show and is set to make its debut at the Melbourne Pinball Expo this November.
+      name: Lost in Space
+      title: lost-in-space
+      corporate_entity: vector-pinball
+      year: 2025
+      theme: [licensed, outer-space, science-fiction, television-shows]
+  - model.lost-in-space-vector-pinball:
+      note: "Debuted at the Melbourne Pinball Expo in November 2025; the maker's site now sells it as available and takes orders worldwide."
+      cite:
+        - ref: "https://vectorpinball.com/"
+          quote: "LOST IN SPACE Is available now, ORDER YOURS !"
+        - ref: "https://vectorpinball.com/lost-in-space"
+          quote: We are now taking orders for customers worldwide.
+      production_status: produced
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space"
+        quote: 'This fully licensed "Limited Edition" (Only 300 units for the world) game spans the 3 seasons of the show and is a real playable piece of art !'
+      production_quantity: 300
+      tag: [limited-edition]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "4 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] Standard Pinball Tilt Bob Mech"
+      game_format: pinball
+  - model.lost-in-space-vector-pinball:
+      note: "The spec sheet's 'Static Targets' are stationary standup targets."
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "4 Flippers [...] 2 Sling Shots [...] 3 Pop Bumpers [...] 3 Spinners [...] Dual Captive Ball shot [...] 14 Static Targets"
+      gameplay_feature:
+        [
+          { flippers: 4 },
+          { slingshots: 2 },
+          { pop-bumpers: 3 },
+          { spinners: 3 },
+          { captive-ball: 2 },
+          { standup-targets: 14 },
+        ]
+  - model.lost-in-space-vector-pinball:
+      note: "One 3-bank plus three individual software-controlled ('Smart') drop targets, played in 60-second timed modes."
+      cite:
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: '1 Triple + 3 Single "Smart" Drop Targets'
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "All 3 will pop up, Knock them down in any order as many times as possible within 60 seconds"
+      gameplay_feature:
+        [3-bank-drop-targets, { solitary-drop-targets: 3 }, timed-drop-targets]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "2,3 & 4 ball Multi Ball modes"
+      gameplay_feature: [2-ball-multiball, 3-ball-multiball, 4-ball-multiball]
+  - model.lost-in-space-vector-pinball:
+      note: "Four lettered top lanes; the lane change is dual-flipper."
+      cite:
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "L-O-S-T LANES [...] Completing top lanes boosts Pop Bumper scoring"
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: Dual Lane change feature
+      gameplay_feature: [{ top-lanes: 4 }, lane-change]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "Skill Shot, Extra Ball, Jackpot, Bonus Hold features"
+      gameplay_feature: [skill-shot]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: Making orbit shots (4-left & 3-right) will light CHARIOT
+      gameplay_feature: [orbits]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: Orbit into ramp shot then hit the flashing target
+      gameplay_feature: [ramps]
+  - model.lost-in-space-vector-pinball:
+      note: "A ball that drains within the owner-adjustable minimum play time is automatically returned to the player, which is a ball save."
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "Minimum play time – with auto Ball return feature (Owner Adjustable)"
+      gameplay_feature: [ball-save]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: Standard Ball Shooter with Auto Shooter built in for use when required
+      gameplay_feature: [plungers, auto-launch]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: Cabinet Inner art Blades around the playfield to help create a world under glass
+      gameplay_feature: [art-blades]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "3D Plastic, LED Animated lit, Topper included"
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: Shaker Motor Included for extra effect
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "End of Game lucky Number match, Old School Knocker built in to Alert Match Credit & Replays Awarded"
+      gameplay_feature: [toppers, shaker-motors, knockers]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "100% LED Lighting throughout for long life, keeps game bright and inviting"
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "Quality 3 Speaker Sound system – 2 Mounted High in the headbox for great effect"
+      gameplay_feature: [led-general-illumination, { speakers: 3 }]
+  - model.lost-in-space-vector-pinball:
+      note: "A video screen under the lower playfield showing clips from the licensed show - classified as a playfield LCD; the score display remains alphanumeric."
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "TV Feature Under the lower playfield, displays video snippets from the show relevant to the game play."
+      gameplay_feature: [playfield-lcds]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space"
+        quote: "We are lucky enough to have access to almost all the assets of the show including the music, voices, sound effects, video and are taking full advantage of that."
+      gameplay_feature: [speech]
+  - model.lost-in-space-vector-pinball:
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "32 Digit Alpha/Numeric Score/Information display mounted close to playfield so we can maximize the Backglass art and make it easy for you to keep your eye on the ball !"
+      display_type: alphanumeric
+  - model.lost-in-space-vector-pinball:
+      note: "Individually addressable RGB LED strings driven by field-upgradeable game software make this a computerized, solid-state game."
+      cite:
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: "2 LED strings, Each RGB LED is individually addressable for incredible light shows, 55 LEDs Under the Playfield and 84 on Top, Total 139"
+        - ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+          quote: Backup Software is included and is upgradeable as improvements and features are added
+      technology_generation: solid-state
+  - model.lost-in-space-vector-pinball:
+      note: "Classified as a floor-standing cabinet from the full-size dimensions on the maker's spec sheet."
+      cite:
+        ref: "https://vectorpinball.com/lost-in-space-the-pinball-game-rules-features-specs"
+        quote: "Dimensions (Setup) 140cm L (inc shooter) x 73cm W, 210cm H with Topper installed, 190cm High with no Topper fitted"
+      cabinet: floor
