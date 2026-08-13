@@ -458,7 +458,7 @@ claims:
           quote: With an exclusive production rollout of ONLY 200 units
         - ref: "https://arcadeheroes.com/2024/02/19/galactic-tank-force-signature-edition-package-now-available-from-american-pinball"
           quote: There are only 200 of these being made
-      production_quantity: 200
+      production_quantity: "200"
   - model.galactic-tank-force-signature:
       note: "Powder coated metal is cabinet armor and the 3-Dimension Lenticular Backglass a lenticular backglass."
       cite:
@@ -570,7 +570,7 @@ claims:
       cite:
         ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
         quote: Just 100 units will be available and each will be individually numbered.
-      production_quantity: 100
+      production_quantity: "100"
       tag: [limited-edition]
   - model.galactic-tank-force-victory-edition:
       note: "American Pinball states the Victory Edition's core playfield is the Deluxe's, so the Deluxe's playfield features carry with their counts."

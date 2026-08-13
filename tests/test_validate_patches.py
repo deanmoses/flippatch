@@ -841,6 +841,93 @@ def test_other_schema_errors_keep_jsonschemas_own_wording(schema_validator):
     assert message == "claims: 'not-a-list' is not of type 'array'"
 
 
+# --- Claim value types ------------------------------------------------------
+#
+# A claim's value is compared as JSON, so `100` and `"100"` are different
+# values for the same fact: duplicate detection misses the pair and every
+# cross-source comparison silently finds no match. The catalog's convention is
+# integer year/month/player_count and STRING production_quantity (the latter so
+# it can carry approximate quantities later), agreed independently by the
+# shipped patch corpus and by every ingest source. These tests are what stops
+# the schema quietly loosening back.
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        {"year": 2026},
+        {"month": 7},
+        {"player_count": 4},
+        {"production_quantity": "500"},
+    ],
+)
+def test_claim_values_in_the_catalog_convention_accepted(schema_validator, body):
+    doc = {"attribution": "flipcommons-catalog", "claims": [{"model.a": body}]}
+    assert not _has_error(schema_validator, doc)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        {"year": "2026"},  # string year -> never equals the integer form
+        {"month": "7"},
+        {"player_count": "4"},
+        {"production_quantity": 500},  # the inverse: bare int, not a string
+    ],
+)
+def test_claim_values_in_the_wrong_json_type_rejected(schema_validator, body):
+    doc = {"attribution": "flipcommons-catalog", "claims": [{"model.a": body}]}
+    assert _has_error(schema_validator, doc)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        {"year": 1799},
+        {"year": 2101},
+        {"month": 0},
+        {"month": 13},
+        {"player_count": 0},
+    ],
+)
+def test_out_of_range_claim_values_rejected(schema_validator, body):
+    doc = {"attribution": "flipcommons-catalog", "claims": [{"model.a": body}]}
+    assert _has_error(schema_validator, doc)
+
+
+def test_claim_value_types_apply_inside_changesets(schema_validator):
+    """The same fields are authorable in a companion changeset, so they carry
+    the same typing there — otherwise the rule is trivially sidestepped."""
+    doc = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.a": {"changesets": [{"player_count": "4"}]}}],
+    }
+    assert _has_error(schema_validator, doc)
+
+
+def test_retracting_a_typed_field_is_unaffected(schema_validator):
+    """`retract: [month]` names the field as a VALUE, not as a key, so the
+    month typing must not reach it — 0235 is exactly this shape."""
+    doc = {
+        "attribution": "opdb",
+        "claims": [{"model.road-trip": {"retract": ["month"]}}],
+    }
+    assert not _has_error(schema_validator, doc)
+
+
+def test_source_block_year_is_unaffected_by_claim_typing(schema_validator):
+    """`sources:` carries its own year/month (the date of the WORK) and was
+    already typed; claim-level typing must not disturb it."""
+    doc = {
+        "attribution": "flipcommons-catalog",
+        "claims": [{"model.a": {"year": 2026}}],
+        "sources": [
+            {"name": "A flyer", "source_type": "document", "year": 1996, "month": 5},
+        ],
+    }
+    assert not _has_error(schema_validator, doc)
+
+
 # --- The shipped patches validate cleanly ----------------------------------
 
 

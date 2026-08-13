@@ -366,7 +366,7 @@ claims:
       cite:
         ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
         quote: Limited to 750 games globally
-      production_quantity: 750
+      production_quantity: "750"
       tag: [limited-edition]
   - model.transformers-more-than-meets-the-eye-limited-edition:
       cite:
@@ -585,7 +585,7 @@ claims:
           archive: "http://web.archive.org/web/20130211085308id_/http://sternpinball.com/upload/Games/PinTransformers-Flyer-1012-01c.pdf"
           locator: "PDF document page 2"
           quote: "PLAYER 1 [...] PLAYER 2"
-      player_count: "2"
+      player_count: 2
   - model.transformers-the-pin:
       cite:
         ref: "ipdb:5861"

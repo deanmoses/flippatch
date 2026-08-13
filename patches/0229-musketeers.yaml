@@ -352,7 +352,7 @@ claims:
       cite:
         ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
         quote: Limited to 200 numbered copies worldwide.
-      production_quantity: 200
+      production_quantity: "200"
       tag: [limited-edition]
   - model.the-3-musketeers-elegance-edition:
       note: "The Classic lists the shaker only as an option, so no claim there."

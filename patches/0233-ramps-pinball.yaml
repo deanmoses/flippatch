@@ -125,7 +125,7 @@ claims:
           locator: "post #93 by Danzig, the game's creator"
           quote: the games are still coming out this year
       production_status: announced
-      year: "2026"
+      year: 2026
   - model.monster-league-hockey:
       note: "The trademark record's goods classification states the product category; the captured copy is USPTO.report's republication of the USPTO TSDR record."
       cite:
@@ -138,7 +138,7 @@ claims:
       cite:
         ref: "https://arcadeheroes.com/2026/03/22/newsbytes-resident-evil-2-arcade-texas-pinball-festival-konami-more"
         quote: "Completed by Danzig with his Killdozer Studios team, this is being made to support both one or two players (three or four with split flippers)"
-      player_count: "4"
+      player_count: 4
   - model.monster-league-hockey:
       note: "Stated by the build crew at the machine's Pinball Expo 2025 debut (the homebrew the announced production machine is built from); six screens at a 1:1 flipper-to-LCD ratio - two large and four small - are the game's design. the quote is verbatim ASR from the video's caption track"
       cite:

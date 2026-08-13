@@ -97,7 +97,7 @@ claims:
       cite:
         ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
         quote: "A limited worldwide release of 700 games, plus possible Barrels Reserve member access. If the initial release sells out within the first 7 days, eligible Barrels Reserve direct customers will receive an additional 7-day ordering window. After all orders are received, Barrels of Fun will announce the final edition number."
-      production_quantity: 700
+      production_quantity: "700"
       tag: [limited-edition]
   - model.bon-jovi:
       cite:

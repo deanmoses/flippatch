@@ -467,7 +467,7 @@ claims:
         - ref: "https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf"
           locator: PDF document page 1
           quote: Production limited to 750 machines.
-      production_quantity: 750
+      production_quantity: "750"
   - model.pokemon-limited-edition:
       cite:
         ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"

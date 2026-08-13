@@ -606,13 +606,13 @@ claims:
       cite:
         ref: "https://www.multimorphic.com/news/weird-als-museum-of-natural-hilarity"
         quote: "The Limited Edition package, which also includes an interactive and motorized machine topper, a printed translite autographed by Weird Al, and various game-specific accessory items, is limited to 227 copies."
-      production_quantity: 227
+      production_quantity: "227"
   - model.weird-als-museum-of-natural-hilarity-limited-edition:
       note: "OPDB supplies the base model's player count of 4; the Limited Edition is an artwork package over the same machine."
       cite:
         ref: "https://www.multimorphic.com/news/weird-als-museum-of-natural-hilarity"
         quote: "we have created two unique Weird Al's Museum of Natural Hilarity artwork packages to decorate the machine, a Standard Edition package and a Limited Edition package"
-      player_count: "4"
+      player_count: 4
   - model.final-resistance:
       cite:
         - ref: "https://www.multimorphic.com/p3-pinball-platform/games"
@@ -722,13 +722,13 @@ claims:
       cite:
         ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
         quote: The Collector's Edition (limited to only 500 units) is the ultimate collectible for a superfan of the film
-      production_quantity: 500
+      production_quantity: "500"
   - model.the-princess-bride-collectors-edition:
       note: "OPDB supplies the base model's player count of 4."
       cite:
         ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
         quote: All editions include the same playfield module and game software.
-      player_count: "4"
+      player_count: 4
   - model.the-princess-bride-limited-edition:
       cite:
         - ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
@@ -777,7 +777,7 @@ claims:
       cite:
         ref: "https://www.multimorphic.com/news/introducing-the-princess-bride-pinball-game"
         quote: All editions include the same playfield module and game software.
-      player_count: "4"
+      player_count: 4
   - model.portal-standard:
       cite:
         - ref: "https://www.multimorphic.com/category/p3-game-kits/multimorphic-game-kits"

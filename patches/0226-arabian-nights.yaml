@@ -151,7 +151,7 @@ claims:
         - ref: "https://www.planetarypinball.com/mm5/merchant.mvc?Product_Code=PPS-TOTAN-AE-DEPOSIT&Screen=PROD"
           locator: in the Shipping & Support section
           quote: 399 units worldwide. No second run planned.
-      production_quantity: 399
+      production_quantity: "399"
       tag: [limited-edition]
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
       note: "A remake preserves the original's creative work, so design, art, animation, music and sound carry to the remake. Mechanics and software do not: the remake is re-engineered. The art credit does not carry to this edition: its art package is new."

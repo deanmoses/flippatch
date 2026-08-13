@@ -72,7 +72,7 @@ claims:
       cite:
         ref: "ipdb:6470"
         quote: "Players: 4"
-      player_count: "4"
+      player_count: 4
   - model.houdini-master-of-mystery-deluxe:
       note: "A variant shares the base game's design, so the base game's value carries."
       cite:
@@ -178,4 +178,4 @@ claims:
       cite:
         ref: "ipdb:6470"
         quote: "Players: 4"
-      player_count: "4"
+      player_count: 4

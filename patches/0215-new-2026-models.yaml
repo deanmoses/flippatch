@@ -116,7 +116,7 @@ claims:
       cite:
         ref: "https://americanpinball.com/houdini-100th-anniversary-pinball/"
         quote: This limited production run of just 100 machines worldwide commemorates 100 years since Harry Houdini's passing
-      production_quantity: 100
+      production_quantity: "100"
       tag: [limited-edition]
   - model.bon-jovi:
       create: true

@@ -184,7 +184,7 @@ claims:
           quote: "We will produce 500 Legendary Edition™ Yukon Yeti™ machines before moving on to our next title."
         - ref: "https://turnerpinball.com/games/yukon-yeti"
           quote: Limited to 500 units.
-      production_quantity: 500
+      production_quantity: "500"
       tag: [limited-edition]
   - model.yukon-yeti:
       cite:
@@ -353,7 +353,7 @@ claims:
           quote: "No more than 500 Legendary Edition™ Merlin's Arcade™ machines will be produced. Each will be numbered and include a signed Certificate of Authenticity. Arcade Edition™ machines are not numbered or limited."
         - ref: "https://www.pinballnews.com/site/2025/03/19/merlins-arcade-revealed"
           quote: "The Legendary Edition is a limited run of up to 500 units, while the Arcade Edition has no restriction on production."
-      production_quantity: 500
+      production_quantity: "500"
       tag: [limited-edition]
   - model.merlins-arcade-legendary-edition:
       cite:
@@ -595,7 +595,7 @@ claims:
           locator: in the Our Journey timeline
           quote: "We delivered our first units at Chicago Pinball Expo. The show was a huge success, and the First Edition run of Ninja Eclipse™ sold out."
       production_status: produced
-      production_quantity: 100
+      production_quantity: "100"
   - model.ninja-eclipse-arcade-edition:
       note: "Never produced: the First Edition is the only Ninja Eclipse run ever made, and the maker discusses an Arcade Edition only as a future possibility, so the edition is announced rather than produced."
       cite:

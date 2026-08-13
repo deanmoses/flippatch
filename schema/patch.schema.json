@@ -101,6 +101,27 @@
       "additionalProperties": { "$ref": "#/definitions/citeSpec" },
       "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-ref string or a { ref, archive, locator, quote } mapping — locator and quote land on the minted footnote instance, exactly like the entry-level cite. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
     },
+    "yearValue": {
+      "type": "integer",
+      "minimum": 1800,
+      "maximum": 2100,
+      "description": "A model year, as a JSON integer (2026, never \"2026\"). The type is load-bearing: a claim's value is compared as JSON, so a string-typed year never equals the integer the same year carries elsewhere — duplicate detection misses it and cross-source comparison silently finds no match."
+    },
+    "monthValue": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 12,
+      "description": "A month as a JSON integer 1-12, never a string or a name. Same value-typing rationale as year."
+    },
+    "playerCountValue": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Maximum simultaneous players, as a JSON integer (4, never \"4\"). Matches the integer form every ingest source uses. Same value-typing rationale as year."
+    },
+    "productionQuantityValue": {
+      "type": "string",
+      "description": "Units produced, as a JSON STRING (\"500\", never 500) — the inverse of year/player_count, and deliberate: the field is a string so it can eventually carry approximate or ranged quantities, so no digits-only pattern is imposed here. Every catalog value is numeric today; the established convention across the seed and all ingest sources is nonetheless the string form."
+    },
     "retract": {
       "type": "array",
       "items": { "type": "string" },
@@ -197,6 +218,10 @@
               "note": { "$ref": "#/definitions/note" },
               "cite": { "$ref": "#/definitions/cite" },
               "cites": { "$ref": "#/definitions/cites" },
+              "year": { "$ref": "#/definitions/yearValue" },
+              "month": { "$ref": "#/definitions/monthValue" },
+              "player_count": { "$ref": "#/definitions/playerCountValue" },
+              "production_quantity": { "$ref": "#/definitions/productionQuantityValue" },
               "changesets": {
                 "type": "array",
                 "minItems": 1,
@@ -216,7 +241,11 @@
                     "remove": { "$ref": "#/definitions/remove" },
                     "note": { "$ref": "#/definitions/note" },
                     "cite": { "$ref": "#/definitions/cite" },
-                    "cites": { "$ref": "#/definitions/cites" }
+                    "cites": { "$ref": "#/definitions/cites" },
+                    "year": { "$ref": "#/definitions/yearValue" },
+                    "month": { "$ref": "#/definitions/monthValue" },
+                    "player_count": { "$ref": "#/definitions/playerCountValue" },
+                    "production_quantity": { "$ref": "#/definitions/productionQuantityValue" }
                   }
                 }
               }

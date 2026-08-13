@@ -56,7 +56,7 @@ claims:
       cite:
         ref: "https://vectorpinball.com/eight-ball-fury-specs"
         quote: This limited-Edition Game (50 Units Only)
-      production_quantity: 50
+      production_quantity: "50"
       tag: [limited-edition]
   - model.eight-ball-fury:
       cite:
@@ -445,7 +445,7 @@ claims:
       cite:
         ref: "https://vectorpinball.com/holden-pinball-games"
         quote: These pieces of playable art are limited to just 100 builds. They come with a Build Plate and certificate that confirms the build number and that we manufactured it under licence from GM Holden.
-      production_quantity: 100
+      production_quantity: "100"
       tag: [limited-edition]
       gameplay_feature: [numbered-plaques]
   - model.holden-heritage:
@@ -584,7 +584,7 @@ claims:
       cite:
         ref: "https://vectorpinball.com/ned-kelly"
         quote: 'NED KELLY "Very Limited Edition" Retro-Classic Style, Pinball Machine, the next in our Aussie Icon series (Only 100 units will be made)'
-      production_quantity: 100
+      production_quantity: "100"
       tag: [limited-edition]
   - model.ned-kelly:
       cite:
@@ -714,7 +714,7 @@ claims:
       cite:
         ref: "https://vectorpinball.com/lost-in-space"
         quote: 'This fully licensed "Limited Edition" (Only 300 units for the world) game spans the 3 seasons of the show and is a real playable piece of art !'
-      production_quantity: 300
+      production_quantity: "300"
       tag: [limited-edition]
   - model.lost-in-space-vector-pinball:
       cite:

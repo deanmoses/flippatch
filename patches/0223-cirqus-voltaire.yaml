@@ -121,7 +121,7 @@ claims:
       cite:
         ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
         quote: RINGMASTER EDITION (Limited to 772 units)
-      production_quantity: 772
+      production_quantity: "772"
       tag: [limited-edition]
   - model.cirqus-voltaire-remake-ringmaster-edition:
       cite:
