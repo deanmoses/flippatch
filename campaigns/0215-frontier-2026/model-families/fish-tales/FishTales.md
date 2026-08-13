@@ -2,6 +2,8 @@
 
 Patch: `patches/0225-fish-tales.yaml`. Two models: **Fish Tales: Ultimate Fishing Challenge (Kit)** (Cardona Pinball Designs, 2026, created bare by 0215) and **Fish Tales** (Williams, 1992, `ipdb:861`, already partly covered by the seed).
 
+Supplement: `patches/0230-fish-tales-documents.yaml` (claimed 2026-08-12) — [document cites](../../RULEBOOK.md#document-cites) for the 1992 model; see [The 0230 documents supplement](#the-0230-documents-supplement-2026-08-12).
+
 ## Baseline survey (2026-08-11)
 
 | field | fish-tales (1992) | ...-ultimate-fishing-challenge-kit (2026) |
@@ -87,6 +89,14 @@ Duplicate scan ran against `model_claims` (active claims, both models) — the t
 
 - 1992: rotary fishing reel ball lock; moving fish topper (Jerry Pinsler sculpt); fishing-rod-shaped autoplunger; lightning-bolt flippers reportedly 1/8" shorter than standard Williams.
 - Kit: 15-inch speaker-panel main display; second 5-inch playfield display in the Stretch the Truth location; five angler characters; licensed Heart "Barracuda" wizard-mode song.
+
+## The 0230 documents supplement (2026-08-12)
+
+Generator: [gen_documents.py](gen_documents.py). [DocumentsAudit.md](../../DocumentsAudit.md) had held this family because its documents are IPDB-only; the user unblocked acquisition by having the session drive the **in-app browser** (fetch from page context, chunked base64 out, `web_import.py` in — each import carries `imported = 1`).
+
+**Acquired** (all from ipdb.org, the only known holder — archive.org hunts recorded on the library docs): Operations Manual (16-50005-101, August 1992, 148 sheets, scanned + OCR'd), Operator's Handbook (June 1992, cached, service menus — **not declared**, no claim needs it), Parts List (plain text, fully gated), flyer front + back scans (merged into one library work; **back transcribed** via `--text-file`, so its quotes gate verbatim). Not acquired: promo video (.wmv, no transport), artwork/plastics scans, manual amendment.
+
+**Claims** (all on the 1992 model): `video-modes` (flyer back), `pop-bumpers ×3` + `slingshots ×2` (the staples IPDB's Notable line skips — switch matrix printed page 3-4 names Left/Center/Right Jet and Left/Right Sling; parts list corroborates the jets), and `cabinet: floor` (assembly-instructions dimensions block, printed page 1-2, per the 2026-08-12 ruling). Bonus corroboration found, not asserted (already set): "This is a four ball game. Three balls in play and one captive ball." (manual printed page 1-2).
 
 ## Gate-run history
 

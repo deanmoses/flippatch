@@ -1,0 +1,80 @@
+attribution: flipcommons-catalog
+description: >
+  Williams document cites for Fish Tales (1992).
+sources:
+  - name: Fish Tales Operations Manual (August 1992)
+    slug: fish-tales-operations-manual-1992
+    parent: williams
+    source_type: document
+    year: 1992
+    month: 8
+    description: >
+      Williams part 16-50005-101: operations & adjustments, testing & problem diagnosis, parts
+      information, wiring diagrams & schematics.
+    links:
+      - {
+          url: "https://www.ipdb.org/files/861/Williams_1992_Fish_Tales_English_Manual.pdf",
+          label: IPDB copy,
+          link_type: catalog,
+        }
+  - name: Fish Tales Flyer (1992)
+    slug: fish-tales-flyer-1992
+    parent: williams
+    source_type: document
+    year: 1992
+    description: >
+      Two-sided promotional flyer; the back carries the feature copy.
+    links:
+      - {
+          url: "https://www.ipdb.org/images/861/861f1.jpg",
+          label: "IPDB scan, front",
+          link_type: catalog,
+        }
+      - {
+          url: "https://www.ipdb.org/images/861/861f2.jpg",
+          label: "IPDB scan, back",
+          link_type: catalog,
+        }
+  - name: Fish Tales Parts List (1992)
+    slug: fish-tales-parts-list-1992
+    parent: williams
+    source_type: document
+    year: 1992
+    description: >
+      Williams parts list for game 50005, plain text.
+    links:
+      - {
+          url: "https://www.ipdb.org/files/861/Williams_1992_Fish_Tales_Parts_List.txt",
+          label: IPDB copy,
+          link_type: catalog,
+        }
+claims:
+  - model.fish-tales:
+      cite:
+        ref: "williams:fish-tales-flyer-1992"
+        locator: in the VIDEO MODE panel on the flyer back
+        quote: Video Mode allows players to torpedo speeding boats and watercraft in an overcrowded lake.
+      gameplay_feature: [video-modes]
+  - model.fish-tales:
+      note: "Williams-era documents call pop bumpers jet bumpers: the switch matrix names three (Left/Center/Right Jet) and the parts list carries the jet bumper coil assembly with quantity 3."
+      cite:
+        - ref: "williams:fish-tales-operations-manual-1992"
+          locator: "in the Switch Matrix, printed page 3-4, PDF document page 98"
+          quote: 51 Left Jet 52 Center Jet 53 Right Jet
+        - ref: "williams:fish-tales-parts-list-1992"
+          quote: jet bumper coil assy-2 pin con
+      gameplay_feature: [{ pop-bumpers: 3 }]
+  - model.fish-tales:
+      note: "Sling is Williams' term for the slingshot kicker; the switch matrix names a left and a right."
+      cite:
+        ref: "williams:fish-tales-operations-manual-1992"
+        locator: "in the Switch Matrix, printed page 3-4, PDF document page 98"
+        quote: 57 Left Sling 58 Right Sling
+      gameplay_feature: [{ slingshots: 2 }]
+  - model.fish-tales:
+      note: "No source names a cabinet format; classified from the manual's assembly-instructions dimensions - a 55-inch-long, 26-inch-wide, 285-pound machine on legs is a standard floor-standing cabinet."
+      cite:
+        ref: "williams:fish-tales-operations-manual-1992"
+        locator: "in Pinball Game Assembly Instructions, printed page 1-2, PDF document page 17"
+        quote: 'Cabinet Dimensions Approx. Length: 55"Approx. Width: 26" Approx. Height: 85" Weight: 285 lbs'
+      cabinet: floor

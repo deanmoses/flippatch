@@ -12,9 +12,9 @@ Each family is independent work, done by a separate AI session in its own folder
 - **✅ 0222 · [galactic-tank-force](model-families/galactic-tank-force)** (American Pinball) — Victory Edition **+ 4 older** (2023): Classic, Deluxe, Limited Edition, Signature
 - **✅ 0223 · [cirqus-voltaire](model-families/cirqus-voltaire)** (American Pinball) — Remake / Ringmaster Edition **+ 1 older**: Cirqus Voltaire (Bally, 1997)
 - **✅ 0224 · [bon-jovi](model-families/bon-jovi)** (Barrels of Fun) — Bon Jovi
-- **✅ 0225 · [fish-tales](model-families/fish-tales)** (Cardona) — Ultimate Fishing Challenge (Kit) **+ 1 older**: Fish Tales (Williams, 1992). Carries the Cardona citation root with the first **path-scoped CDN domain** — see [RULEBOOK.md](RULEBOOK.md#citation-roots).
+- **✅ 0225, open 0230 · [fish-tales](model-families/fish-tales)** (Cardona) — Ultimate Fishing Challenge (Kit) **+ 1 older**: Fish Tales (Williams, 1992). Carries the Cardona citation root with the first **path-scoped CDN domain** — see [RULEBOOK.md](RULEBOOK.md#citation-roots). 0230 adds the 1992 Williams document cites, acquired via the in-app browser (IPDB-only copies).
 - **✅ 0226, open 0228 · [arabian-nights](model-families/arabian-nights)** (Pedretti) — Tales of the Arabian Nights 30th Anniversary + Legacy Edition **+ 1 older**: TOTAN (Williams, 1996). 0228 is the [document-cites](RULEBOOK.md#document-cites) pilot: the Williams-era documents 0226 couldn't cite.
-- **✅ 0229 · [musketeers](model-families/musketeers)** (HEXA) — The 3 Musketeers base (renamed Classic Edition) + Elegance Edition. The maker's spec sheet survives only as images in Pinball News's article — the transcription route, not document cites, is the worked pattern (see [RULEBOOK.md](RULEBOOK.md#finding-and-fetching-documents)).
+- **✅ 0229 · [musketeers](model-families/musketeers)** (HEXA) — The 3 Musketeers base (renamed Classic Edition) + Elegance Edition. The maker's spec sheet survives only as images in Pinball News's article — the worked example of citing an image-only, outlet-hosted maker document as a merged multi-sheet **document cite** (see [RULEBOOK.md](RULEBOOK.md#finding-and-fetching-documents)).
 - **open · [p3-modules](model-families/p3-modules)** (Multimorphic) — Dungeon Crawler Carl, Ender's Game
 - **open · [yukon-yeti](model-families/yukon-yeti)** (Turner) — Yukon Yeti
 - **open · [ramps-pinball](model-families/ramps-pinball)** (Ramp's) — Monster League Hockey **+ 2 siblings**: Road Trip, Little Shop of Horrors
@@ -30,7 +30,7 @@ Each family is independent work, done by a separate AI session in its own folder
 
 **Don't overwrite data on existing models.** Only assert missing facts. If you think an existing fact is wrong, get user approval before correcting it.
 
-**We ship all patches at the end.** The done families are snapshot-validated and committed, but not shipped to prod. They are thus still mutable, so that if improving our technique on a later family shows an earlier one needs changing, we can.
+**We ship all patches at the end.** The done families are snapshot-validated and committed, but not shipped to prod. They are thus still mutable, so that if improving our technique on a later family shows an earlier one needs changing, we can. [DocumentsAudit.md](DocumentsAudit.md) (2026-08-12) judged the done families' pre-2013 halves against the IPDB document trove: hold, no supplements beyond 0228 — the yields are there recorded per family for whoever reopens one.
 
 ## The loop
 
