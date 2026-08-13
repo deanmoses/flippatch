@@ -16,14 +16,18 @@ themes). Deliberately absent (each recorded in 3Musketeers.md):
   pause mode / Plungr ranking / accessibility vocabulary         close calls: not created
   ~800 total production target                                   a target, not a cap
 
-CITE STRATEGY (user ruling 2026-08-12): HEXA's product specification sheet
-exists only as images reproduced in Pinball News's reveal article; the two
-sheets are web-cited at their pinballnews.com URLs with hand transcriptions
-filed in the cache (text_source=manual), locators naming them as HEXA's
-document. The maker's own product pages are cited directly. Non-English
-evidence would be quoted verbatim with a brief English gloss in the note; in
-the end every asserted fact's richest carrier was English, so no French quote
-appears.
+CITE STRATEGY (user ruling 2026-08-12, revised same day when the tooling
+landed): HEXA's product specification sheet exists only as images reproduced
+in Pinball News's reveal article. It is cited as a DOCUMENT —
+hexa-pinball:the-3-musketeers-product-specification-sheet-2026 — declared
+below with the HEXA publisher root (0227 predates HEXA) and the two
+pinballnews.com sheet images as catalog links. The sheets' hand
+transcriptions are filed in the cache (text_source=manual) and the document
+library holds both captures under one merged document row, so the quote gates
+verify every span through the document ref. The maker's own product pages are
+cited directly. Non-English evidence would be quoted verbatim with a brief
+English gloss in the note; in the end every asserted fact's richest carrier
+was English, so no French quote appears.
 
 The spec sheet is edition-neutral: the maker's own comparison table differs
 only in cosmetic items and Kineticist states gameplay is identical across
@@ -51,24 +55,16 @@ ELEG = "model.the-3-musketeers-elegance-edition"
 # ── Sources ─────────────────────────────────────────────────────────────
 PRODUCT_EN = "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
 PN_ARTICLE = "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
-SPEC_FRONT = (
+SPEC_FRONT_URL = (
     "https://www.pinballnews.com/site/wp-content/uploads/games/"
     "three-musketeers/024--three-musketeers.jpg"
 )
-SPEC_BACK = (
+SPEC_BACK_URL = (
     "https://www.pinballnews.com/site/wp-content/uploads/games/"
     "three-musketeers/025--three-musketeers.jpg"
 )
+SPEC_REF = "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
 KINETICIST = "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
-
-SPEC_FRONT_LOC = (
-    "front sheet of HEXA's product specification sheet, reproduced as an "
-    "image in Pinball News's reveal article"
-)
-SPEC_BACK_LOC = (
-    "back sheet of HEXA's product specification sheet, reproduced as an "
-    "image in Pinball News's reveal article"
-)
 
 
 def cite(ref: str, quote: str, **extra: str) -> dict[str, str]:
@@ -76,11 +72,11 @@ def cite(ref: str, quote: str, **extra: str) -> dict[str, str]:
 
 
 def spec_front(quote: str, section: str) -> dict[str, str]:
-    return cite(SPEC_FRONT, quote, locator=f"{SPEC_FRONT_LOC}; {section}")
+    return cite(SPEC_REF, quote, locator=f"front sheet; {section}")
 
 
 def spec_back(quote: str, section: str) -> dict[str, str]:
-    return cite(SPEC_BACK, quote, locator=f"{SPEC_BACK_LOC}; {section}")
+    return cite(SPEC_REF, quote, locator=f"back sheet; {section}")
 
 
 # ── Shared quotes ───────────────────────────────────────────────────────
@@ -496,11 +492,42 @@ def main() -> None:
         )
     )
 
+    # The HEXA publisher root (0227's seed predates HEXA) and the one document
+    # this patch cites. The document's only surviving copies are the two sheet
+    # images Pinball News reproduced, so both attach as catalog links.
+    sources = [
+        pk.source_root(
+            "HEXA Pinball",
+            source_type="document",
+            slug="hexa-pinball",
+            description="First-party game documentation published by HEXA Pinball.",
+        ),
+        pk.source_child(
+            "The 3 Musketeers Product Specification Sheet (March 2026)",
+            parent="hexa-pinball",
+            slug="the-3-musketeers-product-specification-sheet-2026",
+            year=2026,
+            month=3,
+            description=(
+                "Two-sheet product specification sheet from the March 20, 2026 "
+                "reveal press kit: game experience, modes, credits and digital "
+                "functions on the front; playfield features, experience "
+                "features, physical specifications and the per-edition columns "
+                "on the back."
+            ),
+            links=[
+                (SPEC_FRONT_URL, "Pinball News copy, front sheet", "catalog"),
+                (SPEC_BACK_URL, "Pinball News copy, back sheet", "catalog"),
+            ],
+        ),
+    ]
+
     pk.write_patch(
         OUT,
         attribution="flipcommons-catalog",
         description="The 3 Musketeers (HEXA 2026): naming, production, credits, features",
         entries=entries,
+        sources=sources,
     )
     print(f"wrote {OUT} — {len(entries)} entries")
 
