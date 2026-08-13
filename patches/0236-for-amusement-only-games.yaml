@@ -16,7 +16,6 @@ sources:
         }
 claims:
   - corporate-entity.for-amusement-only-games:
-      note: "The corporate entity takes the legal name from the maker's own copyright line and press release; the manufacturer keeps the trading name For Amusement Only Games (the Turner Logic precedent)."
       cite:
         - ref: "https://foramusementonlygames.com/"
           locator: in the page footer
@@ -78,7 +77,6 @@ claims:
       name: Johnny Haxby
   - person.esther-wijdevld:
       create: true
-      note: "Spelling as printed on the maker's own project page."
       cite:
         ref: "https://foramusementonlygames.com/projects/qfg.html"
         quote: I was lucky to work with a very talented artist named Esther Wijdevld for the 2D background paintings.
@@ -120,7 +118,6 @@ claims:
         quote: "In Drained, players become unlikely vampire hunters through an original, symmetrical playfield layout that blends classic gameplay with cutting-edge pinball technology."
       game_format: pinball
   - model.drained:
-      note: "The game is a playfield module kit for the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
       cite:
         - ref: "https://foramusementonlygames.com/drained.html"
           locator: in the page header badges
@@ -129,7 +126,6 @@ claims:
           quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
       system: multimorphic-p3-roc
   - model.drained:
-      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
       cite:
         ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
         quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"

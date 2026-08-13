@@ -204,6 +204,10 @@ A discrete published document — manual, schematic, flyer, service bulletin, pa
 
 ## Asserting claims
 
+**One assertion per changeset (user, 2026-08-13).** Facts that assert different things get their own changesets even when one source line supports them all — a Creative Director credit and a Rules credit, `system` and `technology_generation`, `cabinet` and `display_type`. A later correction then touches exactly one assertion (say a new role is created just for rulesets) instead of unpicking a bundle. Split the quote along with the changeset when the source's spans separate — each fact carries only the span that supports it.
+
+**Delete every `note:` the citation already carries (user, 2026-08-13).** The golden rule is DataPatchAuthoring.md → `note:`: if you can delete the note and the cite still carries the change, delete it. Mapping a maker's "Cabinet Artist" to the art role, or "Creative Director" to design, needs no note — it is obvious from the quote and the value. The 0220-era generators (and 0231's first emit) over-noted heavily; don't copy that habit from the templates.
+
 **`cabinet: floor` is asserted on standard machines too (user decision, 2026-08-12).** The field is not reserved for the novelty formats (cocktail/countertop/tabletop): classify from documented full-size dimensions — a spec line or manual dimensions table — with a note saying the classification is from the dimensions, since no source names a cabinet type for a standard machine. 0228's TOTAN 1996 is the worked example.
 
 **`production_status` has no `retired` value.** The vocabulary is announced / produced / unreleased / one-off / aftermarket, so a maker's RETIRED badge answers no catalog field — a retired machine stays `produced`.

@@ -1,8 +1,25 @@
-"""Emit patch 0231 — the Multimorphic P3 family: 2026 pair full, platform sweep wide.
+"""Generator for patch 0231 — the Multimorphic P3 family: 2026 pair full, platform sweep wide.
 
 See ../../README.md for the family split and P3Modules.md beside this file for
 the evidence inventory, the catalog baseline, the traps and the decisions this
 generator encodes (2026-08-13).
+
+STATUS: patches/0231-p3-modules.yaml was hand-restructured by the user after
+the first emit and IS THE AUTHORITATIVE ARTIFACT. This file has been synced to
+reproduce that final shape, but the patch must not be regenerated over the
+hand-edited file without diffing the result first.
+
+The 2026-08-13 restructure encodes two rules (now RULEBOOK.md → Asserting
+claims):
+  - ONE ASSERTION PER CHANGESET: system / technology_generation / cabinet /
+    game_format / display_type each get their own changeset, as do credits
+    that assert different things (a Creative Director credit vs a Rules
+    credit), each carrying only the cite span(s) that support it.
+  - DELETE EVERY NOTE THE CITATION ALREADY CARRIES: the only notes that
+    remain are reasoning no quote states — the wireform→habitrail mapping,
+    static-toy classification-by-absence, the four-launches produced ladder,
+    the OPDB-supplied base player count, and Portal Extended being an
+    ordering option of the one Portal launch.
 
 SCOPE (user decisions, 2026-08-13):
   Full enrichment for Dungeon Crawler Carl and Ender's Game (revealed together
@@ -36,6 +53,7 @@ Deliberately absent (each recorded in P3Modules.md):
   DCC/EG shared-design link             no relationship type fits
 
 Run: uv run python campaigns/0215-frontier-2026/model-families/p3-modules/gen.py
+     (do NOT run over the hand-edited patch without diffing — see STATUS)
 """
 
 from __future__ import annotations
@@ -78,55 +96,93 @@ def cite(ref: str, quote: str, **extra: str) -> dict[str, str]:
     return {"ref": ref, "quote": quote, **extra}
 
 
+def credits_cite(ref: str, line: str) -> dict[str, str]:
+    return cite(ref, line, locator="in the Credits section")
+
+
 # ── Shared platform quotes ──────────────────────────────────────────────
 HW_P3ROC = (
     "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, "
     "and SW-16 boards"
 )
-FAQ_REAL = (
+# The FAQ's one answer, split so each fact carries only its own span.
+FAQ_REAL_FULL = (
     "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball "
     "machines, and it has real balls, flippers, bumpers, targets, ramps, "
     "loops, etc. The P3 replaces a traditional wooden lower playfield with a "
     "touchscreen LCD"
 )
-SYSTEM_NOTE = (
-    "The P3-ROC is the control system of the P3 platform this game runs on, "
-    "and a computer-controlled system makes the technology generation "
-    "solid-state."
+FAQ_CABINET = (
+    "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball "
+    "machines, and it has real balls, flippers, bumpers, targets, ramps, "
+    "loops, etc."
 )
-CABINET_NOTE = (
-    "The cabinet classification follows from the maker's statement that the "
-    "P3 is the same size and shape as traditional pinball machines — a "
-    "standard full-size floor cabinet — and this game is sold installed in a "
-    "P3 machine."
-)
+FAQ_FORMAT = "Is the P3 a real pinball machine or a virtual pinball machine? REAL and PHYSICAL!"
+FAQ_DISPLAY = "The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
+
 GAMES_FULLKIT_HEAD = "Full game kits with playfield modules:"
 GAMES_ADDON_HEAD = "Add-on Games:"
-
 LATE_2026 = "Production of this title begins in late 2026."
-ANNOUNCED_NOTE = (
-    "The store sells only non-refundable deposits and production has not "
-    "begun, so the model is announced rather than produced."
-)
-# No month claims: a Model's year/month is the MANUFACTURE date, never the
-# announcement (DataPatchAuthoring.md; user ruling 2026-08-13 — the first
-# emit asserted the July reveal month and was hand-corrected). A future patch
-# records the real month once production starts.
 
-# ── Credits (both games' blocks quote the maker's own product pages; the
-# irregular punctuation — "Mechanicals;" — is the pages' own) ────────────
-CD_RULES_NOTE = (
-    "The maker's Creative Director and Rules credits are game-creation "
-    "leadership and ruleset design work, credited under the design role."
+# ── The notes that survived the golden rule (reasoning no quote states) ──
+HABITRAIL_NOTE = "The wireforms are habitrails (wire ball guides)."
+STATIC_TOYS_NOTE = (
+    "The character sculpts state no motion or ball interaction, so they "
+    "classify as static toys."
 )
-ART_MAP_NOTE = (
-    "Cabinet Artist, Playfield Artist and Art Direction are all art-role "
-    "credits: Fleitas the cabinet, Albright the playfield, Silver the "
-    "direction."
+FOUR_LAUNCHES_BASE_NOTE = (
+    "The maker's last four game launches before this June 2026 statement are "
+    "Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), "
+    "The Princess Bride (2024) and Portal (2025) - all orders filled means "
+    "all four were produced and shipped."
+)
+FOUR_LAUNCHES_TPB_EDITION_NOTE = (
+    "The maker's last four game launches before this June 2026 statement are "
+    "Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), "
+    "The Princess Bride (2024) and Portal (2025); the editions share one "
+    "production run, so this edition's orders shipped with the base's."
+)
+FOUR_LAUNCHES_WAL_LE_NOTE = (
+    "The maker's last four game launches before this June 2026 statement are "
+    "Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), "
+    "The Princess Bride (2024) and Portal (2025); the Limited Edition is an "
+    "artwork package over the same machine, so its orders shipped with the "
+    "base's."
+)
+PORTAL_EXT_NOTE = (
+    "Extended is an ordering option of the same Portal launch, not a separate "
+    "game, so the maker's statement that all 2025 Portal orders shipped "
+    "covers Extended-configuration orders."
+)
+TPB_PLAYERS_NOTE = "OPDB supplies the base model's player count of 4."
+WAL_LE_PLAYERS_NOTE = (
+    "OPDB supplies the base model's player count of 4; the Limited Edition is "
+    "an artwork package over the same machine."
+)
+
+FOUR_LAUNCHES = cite(
+    NEWS_JUNE26,
+    "our goal is always to fill all orders received from day-one through to "
+    "the beginning of production within about a year of launch, and we've "
+    "successfully done that with our last four game launches",
+)
+TPB_EDITIONS_SAME = "All editions include the same playfield module and game software."
+WAL_LE_ARTWORK = (
+    "we have created two unique Weird Al's Museum of Natural Hilarity artwork "
+    "packages to decorate the machine, a Standard Edition package and a "
+    "Limited Edition package"
+)
+PORTAL_SHIPPED = (
+    "In April, approximately 13 months after launching Portal in March 2025, "
+    "we finished shipping all 2025 Portal orders."
 )
 
 # People created by this patch (scaffolding; the credit assignments below
 # carry the same page evidence). (slug, name, ref, credit line naming them)
+EG_VOICES_LINE = (
+    "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
+    "Cash Bailey, Tyson and Eli Silver"
+)
 NEW_PEOPLE: list[tuple[str, str, str, str]] = [
     ("ian-harrower", "Ian Harrower", DCC_PAGE, "Creative Director: Stephen Silver and Ian Harrower"),
     ("wesley-johnson", "Wesley Johnson", DCC_PAGE, "Rules: Wesley Johnson"),
@@ -145,153 +201,115 @@ NEW_PEOPLE: list[tuple[str, str, str, str]] = [
     ("aaron-williams", "Aaron Williams", EG_PAGE, "Music: Aaron Williams and Paul Farrer"),
     ("paul-farrer", "Paul Farrer", EG_PAGE, "Music: Aaron Williams and Paul Farrer"),
     ("glenn-waechter", "Glenn Waechter", EG_PAGE, "Sound Design: Glenn Waechter"),
-    (
-        "lucas-pepke",
-        "Lucas Pepke",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
-    (
-        "sam-tucker",
-        "Sam Tucker",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
-    (
-        "aline-allen",
-        "Aline Allen",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
-    (
-        "alana-johnson",
-        "Alana Johnson",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
-    (
-        "cash-bailey",
-        "Cash Bailey",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
-    (
-        "tyson-silver",
-        "Tyson Silver",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
-    (
-        "eli-silver",
-        "Eli Silver",
-        EG_PAGE,
-        "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, "
-        "Cash Bailey, Tyson and Eli Silver",
-    ),
+    ("lucas-pepke", "Lucas Pepke", EG_PAGE, EG_VOICES_LINE),
+    ("sam-tucker", "Sam Tucker", EG_PAGE, EG_VOICES_LINE),
+    ("aline-allen", "Aline Allen", EG_PAGE, EG_VOICES_LINE),
+    ("alana-johnson", "Alana Johnson", EG_PAGE, EG_VOICES_LINE),
+    ("cash-bailey", "Cash Bailey", EG_PAGE, EG_VOICES_LINE),
+    ("tyson-silver", "Tyson Silver", EG_PAGE, EG_VOICES_LINE),
+    ("eli-silver", "Eli Silver", EG_PAGE, EG_VOICES_LINE),
 ]
-TYSON_ELI_NOTE = (
-    'The credit line names them jointly as "Tyson and Eli Silver"; each is a '
-    "distinct voice performer."
-)
 
 
 def person(slug: str, name: str, ref: str, line: str) -> str:
-    note = TYSON_ELI_NOTE if slug in ("tyson-silver", "eli-silver") else None
     return pk.entry(
         f"person.{slug}",
         create=True,
-        note=note,
-        cite=cite(ref, line, locator="in the Credits section"),
+        cite=credits_cite(ref, line),
         fields={"name": name},
     )
 
 
-def platform_entry(
+def game_2026(
+    model: str,
+    kit: str,
+    membership_quote: str,
+    format_quote: str,
+    page: str,
+    *,
+    cabinet_quote: str,
+    display_quote: str,
+) -> list[str]:
+    """The 2026 pair's shared field ladder: announced, format, tech, system,
+    cabinet, display — one assertion per changeset."""
+    p3 = [cite(kit, membership_quote), cite(HW, HW_P3ROC)]
+    return [
+        pk.entry(model, cite=cite(kit, LATE_2026), fields={"production_status": "announced"}),
+        pk.entry(model, cite=cite(page, format_quote), fields={"game_format": "pinball"}),
+        pk.entry(model, cite=p3, fields={"technology_generation": "solid-state"}),
+        pk.entry(model, cite=p3, fields={"system": "multimorphic-p3-roc"}),
+        pk.entry(model, cite=cite(FAQ, cabinet_quote), fields={"cabinet": "floor"}),
+        pk.entry(model, cite=cite(FAQ, display_quote), fields={"display_type": "lcd"}),
+    ]
+
+
+def sweep_platform(
     model: str,
     membership: dict[str, str],
     *,
     machine: bool,
-    fmt: str | None,
-    extra_fields: dict[str, object] | None = None,
-    extra_note: str = "",
-) -> str:
-    """The per-model platform changeset.
-
-    membership: a cite dict quoting the maker naming this game as a P3 game.
-    machine: full-kit games sold as P3 machines get cabinet (and the FAQ cite);
-             add-on games are software on another game's module — the
-             conversion-kit rule keeps donor hardware off them.
-    fmt: game_format, or None where no source states a genre.
-    """
-    fields: dict[str, object] = {"system": "multimorphic-p3-roc"}
-    cites = [membership, cite(HW, HW_P3ROC)]
-    note = SYSTEM_NOTE
+    fmt: bool = False,
+    tech: bool = False,
+    display: bool = False,
+) -> list[str]:
+    """The sweep's per-field platform changesets: each fact rides the
+    membership quote plus only the span that supports it."""
+    out = [
+        pk.entry(
+            model,
+            cite=[membership, cite(HW, HW_P3ROC)],
+            fields={"system": "multimorphic-p3-roc"},
+        )
+    ]
+    if tech:
+        out.append(
+            pk.entry(
+                model,
+                cite=[membership, cite(HW, HW_P3ROC)],
+                fields={"technology_generation": "solid-state"},
+            )
+        )
     if machine:
-        cites.append(cite(FAQ, FAQ_REAL))
-        fields["cabinet"] = "floor"
-        note += " " + CABINET_NOTE
+        out.append(
+            pk.entry(
+                model,
+                cite=[membership, cite(FAQ, FAQ_CABINET)],
+                fields={"cabinet": "floor"},
+            )
+        )
     if fmt:
-        fields["game_format"] = fmt
-    if extra_fields:
-        fields.update(extra_fields)
-    if extra_note:
-        note += " " + extra_note
-    return pk.entry(model, note=note, cite=cites, fields=fields)
+        out.append(
+            pk.entry(
+                model,
+                cite=[membership, cite(FAQ, FAQ_FORMAT)],
+                fields={"game_format": "pinball"},
+            )
+        )
+    if display:
+        out.append(
+            pk.entry(
+                model,
+                cite=[membership, cite(FAQ, FAQ_DISPLAY)],
+                fields={"display_type": "lcd"},
+            )
+        )
+    return out
 
 
 def games_index_cite(head: str, name: str) -> dict[str, str]:
-    return cite(
-        GAMES,
-        f"{head} [...] {name}",
-        locator="in the games list",
-    )
+    return cite(GAMES, f"{head} [...] {name}", locator="in the games list")
 
 
 def cat_row_cite(ref: str, row: str) -> dict[str, str]:
     return cite(ref, row, locator="in the store category listing")
 
 
-PRODUCED_STOCK_NOTE = (
-    "The maker's store sells the game from stock at full price (no deposit, "
-    "no pre-order), so the game is produced and commercially sold."
-)
-
-# ── The sweep: older Multimorphic models ────────────────────────────────
-# (model, membership cite, machine?, format, production cite(s), production note)
-FOUR_LAUNCHES = cite(
-    NEWS_JUNE26,
-    "our goal is always to fill all orders received from day-one through to "
-    "the beginning of production within about a year of launch, and we've "
-    "successfully done that with our last four game launches",
-)
-FOUR_LAUNCHES_NOTE = (
-    "The maker's last four game launches before this June 2026 statement are "
-    "Weird Al's Museum of Natural Hilarity (2022), Final Resistance (2023), "
-    "The Princess Bride (2024) and Portal (2025) — all orders filled means "
-    "all four were produced and shipped."
-)
-TPB_EDITIONS_SAME = "All editions include the same playfield module and game software."
-TPB_EDITION_NOTE = (
-    "This edition is a variant of The Princess Bride: the maker states all "
-    "editions share the same playfield module and game software, so the "
-    "shared design's platform facts and production carry from the base."
-)
-WAL_LE_ARTWORK = (
-    "we have created two unique Weird Al's Museum of Natural Hilarity artwork "
-    "packages to decorate the machine, a Standard Edition package and a "
-    "Limited Edition package"
-)
-WAL_LE_NOTE = (
-    "The Limited Edition is an artwork-and-accessories package over the same "
-    "machine and game kit, so the shared design's platform facts and "
-    "production carry from the base model."
-)
+def sold_from_stock(model: str, ref: str, row: str) -> str:
+    return pk.entry(
+        model,
+        cite=cat_row_cite(ref, row),
+        fields={"production_status": "produced"},
+    )
 
 
 def main() -> None:
@@ -301,84 +319,45 @@ def main() -> None:
         # ════════════════════════════════════════════════════════════════
         # Dungeon Crawler Carl (2026)
         # ════════════════════════════════════════════════════════════════
+        *game_2026(
+            DCC,
+            DCC_KIT,
+            "Enjoy Dungeon Crawler Carl on your P3 Pinball Platform!",
+            "Dungeon Crawler Carl is a pinball machine based on the Dungeon "
+            "Crawler Carl book series, written by Matt Dinniman.",
+            DCC_PAGE,
+            cabinet_quote=FAQ_CABINET,
+            display_quote=FAQ_DISPLAY,
+        ),
+        # Credits — one credit line per changeset.
         pk.entry(
             DCC,
-            note=ANNOUNCED_NOTE,
-            cite=cite(DCC_KIT, LATE_2026),
-            fields={"production_status": "announced"},
+            cite=credits_cite(DCC_PAGE, "Creative Director: Stephen Silver and Ian Harrower"),
+            credits=[("stephen-silver", "design"), ("ian-harrower", "design")],
         ),
         pk.entry(
             DCC,
-            cite=cite(
-                DCC_PAGE,
-                "Dungeon Crawler Carl is a pinball machine based on the Dungeon "
-                "Crawler Carl book series, written by Matt Dinniman.",
-            ),
-            fields={"game_format": "pinball"},
+            cite=credits_cite(DCC_PAGE, "Rules: Wesley Johnson"),
+            credits=[("wesley-johnson", "design")],
         ),
         pk.entry(
             DCC,
-            note=SYSTEM_NOTE,
-            cite=[
-                cite(DCC_KIT, "Enjoy Dungeon Crawler Carl on your P3 Pinball Platform!"),
-                cite(HW, HW_P3ROC),
-            ],
-            fields={
-                "system": "multimorphic-p3-roc",
-                "technology_generation": "solid-state",
-            },
-        ),
-        pk.entry(
-            DCC,
-            note=CABINET_NOTE + " The playfield display is the platform's LCD.",
-            cite=cite(FAQ, FAQ_REAL),
-            fields={"cabinet": "floor", "display_type": "lcd"},
-        ),
-        # Credits — the maker's own credits block, mapped role by role.
-        pk.entry(
-            DCC,
-            note=CD_RULES_NOTE,
-            cite=cite(
-                DCC_PAGE,
-                "Creative Director: Stephen Silver and Ian Harrower Rules: Wesley Johnson",
-                locator="in the Credits section",
-            ),
-            credits=[
-                ("stephen-silver", "design"),
-                ("ian-harrower", "design"),
-                ("wesley-johnson", "design"),
-            ],
-        ),
-        pk.entry(
-            DCC,
-            cite=cite(
-                DCC_PAGE,
-                "Mechanicals; TJ Weaver and Trey Jones",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(DCC_PAGE, "Mechanicals; TJ Weaver and Trey Jones"),
             credits=[("tj-weaver", "mechanics"), ("trey-jones", "mechanics")],
         ),
         pk.entry(
             DCC,
-            cite=cite(DCC_PAGE, "Voices: Jeff Hays", locator="in the Credits section"),
+            cite=credits_cite(DCC_PAGE, "Voices: Jeff Hays"),
             credits=[("jeff-hays", "voice")],
         ),
         pk.entry(
             DCC,
-            cite=cite(
-                DCC_PAGE,
-                "Music and Sound Design: Matt Kern",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(DCC_PAGE, "Music and Sound Design: Matt Kern"),
             credits=[("matt-kern", "music"), ("matt-kern", "sound")],
         ),
         pk.entry(
             DCC,
-            cite=cite(
-                DCC_PAGE,
-                "Software: Ian Harrower, Josh Kugler, and Michael Ocean",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(DCC_PAGE, "Software: Ian Harrower, Josh Kugler, and Michael Ocean"),
             credits=[
                 ("ian-harrower", "software"),
                 ("josh-kugler", "software"),
@@ -387,12 +366,10 @@ def main() -> None:
         ),
         pk.entry(
             DCC,
-            note=ART_MAP_NOTE,
-            cite=cite(
+            cite=credits_cite(
                 DCC_PAGE,
                 "Cabinet Artist: Luciano Fleitas Playfield Artist: Brad Albright "
                 "Art Direction: Stephen Silver and Brad Albright",
-                locator="in the Credits section",
             ),
             credits=[
                 ("luciano-fleitas", "art"),
@@ -402,12 +379,8 @@ def main() -> None:
         ),
         pk.entry(
             DCC,
-            note=(
-                "The maker credits the sculpting studio; Pinball News names "
-                "the person behind it. Sculpting is an art-role credit."
-            ),
             cite=[
-                cite(DCC_PAGE, "Sculpts: Stumblor Pinball", locator="in the Credits section"),
+                credits_cite(DCC_PAGE, "Sculpts: Stumblor Pinball"),
                 cite(
                     PN_DCC,
                     "All the sculpts in the game are produced by Davey Price of "
@@ -418,11 +391,7 @@ def main() -> None:
         ),
         pk.entry(
             DCC,
-            cite=cite(
-                DCC_PAGE,
-                "Animations: Stephen Silver and Ian Harrower",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(DCC_PAGE, "Animations: Stephen Silver and Ian Harrower"),
             credits=[("stephen-silver", "animation"), ("ian-harrower", "animation")],
         ),
         # Gameplay features.
@@ -437,11 +406,7 @@ def main() -> None:
         ),
         pk.entry(
             DCC,
-            note=(
-                "The wireforms are habitrails (wire ball guides); the Safe Room "
-                "scoop's upkicker is a vertical up-kicker; the lone drop target "
-                "guarding it classifies as a solitary drop target."
-            ),
+            note=HABITRAIL_NOTE,
             cite=cite(
                 PN_DCC,
                 "there is a left orbit lane which goes all the way around the "
@@ -468,12 +433,6 @@ def main() -> None:
         ),
         pk.entry(
             DCC,
-            note=(
-                "The disk cannon is a ball cannon; the grab/accelerator and "
-                "player-controlled disruptor magnets are magnets; the inlane "
-                "SlingLock blockers and the Mongo Cage lock balls, and the cage "
-                "doubles as a captive ball while building toward multiball."
-            ),
             cite=cite(
                 PN_DCC,
                 "a cannon which can be loaded and fired at playfield-level shots "
@@ -497,12 +456,7 @@ def main() -> None:
         ),
         pk.entry(
             DCC,
-            note=(
-                "The character sculpts state no motion or ball interaction, so "
-                "they classify as static toys; the rotating disk mech and Mongo "
-                "Cage identities stay in the family worklist as bespoke one-off "
-                "mechanisms."
-            ),
+            note=STATIC_TOYS_NOTE,
             cite=cite(
                 PN_DCC,
                 "There are four character sculpts – Carl, Samantha, Donut and "
@@ -513,88 +467,45 @@ def main() -> None:
         # ════════════════════════════════════════════════════════════════
         # Ender's Game (2026)
         # ════════════════════════════════════════════════════════════════
-        pk.entry(
+        *game_2026(
             EG,
-            note=ANNOUNCED_NOTE,
-            cite=cite(EG_KIT, LATE_2026),
-            fields={"production_status": "announced"},
-        ),
-        pk.entry(
-            EG,
-            cite=cite(
-                EG_PAGE,
-                "Ender's Game is a pinball machine based on the Hugo and Nebula "
-                "award wining novel Ender's Game.",
-            ),
-            fields={"game_format": "pinball"},
-        ),
-        pk.entry(
-            EG,
-            note=SYSTEM_NOTE,
-            cite=[
-                cite(EG_KIT, "Enjoy Ender's Game on your P3 Pinball Platform!"),
-                cite(HW, HW_P3ROC),
-            ],
-            fields={
-                "system": "multimorphic-p3-roc",
-                "technology_generation": "solid-state",
-            },
-        ),
-        pk.entry(
-            EG,
-            note=CABINET_NOTE + " The playfield display is the platform's LCD.",
-            cite=cite(FAQ, FAQ_REAL),
-            fields={"cabinet": "floor", "display_type": "lcd"},
+            EG_KIT,
+            "Enjoy Ender's Game on your P3 Pinball Platform!",
+            "Ender's Game is a pinball machine based on the Hugo and Nebula "
+            "award wining novel Ender's Game.",
+            EG_PAGE,
+            cabinet_quote=FAQ_REAL_FULL,
+            display_quote=FAQ_REAL_FULL,
         ),
         # Credits.
         pk.entry(
             EG,
-            note=CD_RULES_NOTE,
-            cite=cite(
-                EG_PAGE,
-                "Creative Director: Stephen Silver and Josh Kugler Rules; Colin MacAlpine",
-                locator="in the Credits section",
-            ),
-            credits=[
-                ("stephen-silver", "design"),
-                ("josh-kugler", "design"),
-                ("colin-macalpine", "design"),
-            ],
+            cite=credits_cite(EG_PAGE, "Creative Director: Stephen Silver and Josh Kugler"),
+            credits=[("stephen-silver", "design"), ("josh-kugler", "design")],
         ),
         pk.entry(
             EG,
-            cite=cite(
-                EG_PAGE,
-                "Mechanicals; TJ Weaver and Trey Jones",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, "Rules; Colin MacAlpine"),
+            credits=[("colin-macalpine", "design")],
+        ),
+        pk.entry(
+            EG,
+            cite=credits_cite(EG_PAGE, "Mechanicals; TJ Weaver and Trey Jones"),
             credits=[("tj-weaver", "mechanics"), ("trey-jones", "mechanics")],
         ),
         pk.entry(
             EG,
-            cite=cite(
-                EG_PAGE,
-                "Music: Aaron Williams and Paul Farrer",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, "Music: Aaron Williams and Paul Farrer"),
             credits=[("aaron-williams", "music"), ("paul-farrer", "music")],
         ),
         pk.entry(
             EG,
-            cite=cite(
-                EG_PAGE,
-                "Sound Design: Glenn Waechter",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, "Sound Design: Glenn Waechter"),
             credits=[("glenn-waechter", "sound")],
         ),
         pk.entry(
             EG,
-            cite=cite(
-                EG_PAGE,
-                "Software: Josh Kugler, Steve Shoyer, and Ian Harrower",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, "Software: Josh Kugler, Steve Shoyer, and Ian Harrower"),
             credits=[
                 ("josh-kugler", "software"),
                 ("steve-shoyer", "software"),
@@ -603,36 +514,17 @@ def main() -> None:
         ),
         pk.entry(
             EG,
-            note=(
-                "Artist and Technical Artist are both art-role credits; Brad "
-                "Albright created the full art package, Rory Cernuda the "
-                "technical art."
-            ),
-            cite=cite(
-                EG_PAGE,
-                "Artist: Brad Albright Technical Artist: Rory Cernuda",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, "Artist: Brad Albright Technical Artist: Rory Cernuda"),
             credits=[("brad-albright", "art"), ("rory-cernuda", "art")],
         ),
         pk.entry(
             EG,
-            cite=cite(
-                EG_PAGE,
-                "Animations: Stephen Silver and Rory Cernuda",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, "Animations: Stephen Silver and Rory Cernuda"),
             credits=[("stephen-silver", "animation"), ("rory-cernuda", "animation")],
         ),
         pk.entry(
             EG,
-            note=TYSON_ELI_NOTE,
-            cite=cite(
-                EG_PAGE,
-                "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, "
-                "Alana Johnson, Cash Bailey, Tyson and Eli Silver",
-                locator="in the Credits section",
-            ),
+            cite=credits_cite(EG_PAGE, EG_VOICES_LINE),
             credits=[
                 ("glenn-waechter", "voice"),
                 ("lucas-pepke", "voice"),
@@ -656,10 +548,6 @@ def main() -> None:
         ),
         pk.entry(
             EG,
-            note=(
-                "The captive ball balance mechanism is the maker's own naming; "
-                "the balls held in it classify as captive balls."
-            ),
             cite=cite(
                 EG_PAGE,
                 "you will need to moves balls in the captive ball balance "
@@ -669,11 +557,7 @@ def main() -> None:
         ),
         pk.entry(
             EG,
-            note=(
-                "The wireforms are habitrails (wire ball guides); the centre "
-                "scoop's upkicker is a vertical up-kicker; the lone drop target "
-                "guarding it classifies as a solitary drop target."
-            ),
+            note=HABITRAIL_NOTE,
             cite=cite(
                 PN_EG,
                 "there is a left orbit lane which goes all the way around the "
@@ -701,13 +585,6 @@ def main() -> None:
         ),
         pk.entry(
             EG,
-            note=(
-                "The disk cannon is a ball cannon; the grab/accelerator and "
-                "player-controlled disruptor magnets are magnets; the "
-                "energised-slingshot inlane blocker is a ball lock. The disk "
-                "mech, Fight Ring and Valentine/Peter ball-stacker identities "
-                "stay in the family worklist as bespoke one-off mechanisms."
-            ),
             cite=cite(
                 PN_EG,
                 "This magnet can grab the ball when certain battles begin [...] "
@@ -727,94 +604,64 @@ def main() -> None:
         # ════════════════════════════════════════════════════════════════
         # The sweep: older Multimorphic models
         # ════════════════════════════════════════════════════════════════
-        # ── Full game kits (machines): platform facts + production ──────
-        # Lexy Lightspeed — Escape from Earth (2017)
-        platform_entry(
+        # ── Full game kits (machines) ───────────────────────────────────
+        *sweep_platform(
             "model.lexy-lightspeed-escape-from-earth",
             games_index_cite(GAMES_FULLKIT_HEAD, "Lexy Lightspeed – Escape from Earth"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
-        pk.entry(
+        sold_from_stock(
             "model.lexy-lightspeed-escape-from-earth",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(
-                CAT_KITS, "Lexy Lightspeed – Escape From Earth $3,000.00 Add to cart"
-            ),
-            fields={"production_status": "produced"},
+            CAT_KITS,
+            "Lexy Lightspeed – Escape From Earth $3,000.00 Add to cart",
         ),
-        # Cannon Lagoon (2017) — timed cannon-lane game: no stated genre, so
-        # no game_format (P3Modules.md → Not asserted).
-        platform_entry(
+        # Cannon Lagoon: timed cannon-lane game — no stated genre, no format.
+        *sweep_platform(
             "model.cannon-lagoon",
             games_index_cite(GAMES_FULLKIT_HEAD, "Cannon Lagoon"),
             machine=True,
-            fmt=None,
         ),
-        pk.entry(
-            "model.cannon-lagoon",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_KITS, "Cannon Lagoon $1,800.00 Add to cart"),
-            fields={"production_status": "produced"},
-        ),
-        # Cosmic Cart Racing (2018)
-        platform_entry(
+        sold_from_stock("model.cannon-lagoon", CAT_KITS, "Cannon Lagoon $1,800.00 Add to cart"),
+        *sweep_platform(
             "model.cosmic-cart-racing",
             games_index_cite(GAMES_FULLKIT_HEAD, "Cosmic Cart Racing"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
-        pk.entry(
-            "model.cosmic-cart-racing",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_KITS, "Cosmic Cart Racing $3,000.00 Add to cart"),
-            fields={"production_status": "produced"},
+        sold_from_stock(
+            "model.cosmic-cart-racing", CAT_KITS, "Cosmic Cart Racing $3,000.00 Add to cart"
         ),
-        # Heist (2020)
-        platform_entry(
+        *sweep_platform(
             "model.heist",
             games_index_cite(GAMES_FULLKIT_HEAD, "Heist"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
-        pk.entry(
-            "model.heist",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_KITS, "Heist $3,250.00 Add to cart"),
-            fields={"production_status": "produced"},
-        ),
-        # Weird Al's Museum of Natural Hilarity (2022)
-        platform_entry(
+        sold_from_stock("model.heist", CAT_KITS, "Heist $3,250.00 Add to cart"),
+        *sweep_platform(
             "model.weird-als-museum-of-natural-hilarity",
-            games_index_cite(
-                GAMES_FULLKIT_HEAD, "Weird Al's Museum of Natural Hilarity"
-            ),
+            games_index_cite(GAMES_FULLKIT_HEAD, "Weird Al's Museum of Natural Hilarity"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
-        pk.entry(
+        sold_from_stock(
             "model.weird-als-museum-of-natural-hilarity",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(
-                CAT_KITS, "Weird Al's Museum of Natural Hilarity $3,500.00 Add to cart"
-            ),
-            fields={"production_status": "produced"},
+            CAT_KITS,
+            "Weird Al's Museum of Natural Hilarity $3,500.00 Add to cart",
         ),
-        # Weird Al LE (2022) — artwork-package variant; platform facts carry.
-        platform_entry(
+        # Weird Al LE — artwork-package variant; platform facts carry.
+        *sweep_platform(
             "model.weird-als-museum-of-natural-hilarity-limited-edition",
             cite(NEWS_WAL, WAL_LE_ARTWORK),
             machine=True,
-            fmt="pinball",
-            extra_fields={
-                "display_type": "lcd",
-                "technology_generation": "solid-state",
-            },
-            extra_note=WAL_LE_NOTE,
+            fmt=True,
+            tech=True,
+            display=True,
         ),
         pk.entry(
             "model.weird-als-museum-of-natural-hilarity-limited-edition",
-            note=WAL_LE_NOTE,
+            note=FOUR_LAUNCHES_WAL_LE_NOTE,
             cite=[cite(NEWS_WAL, WAL_LE_ARTWORK), FOUR_LAUNCHES],
             fields={"production_status": "produced"},
         ),
@@ -831,36 +678,28 @@ def main() -> None:
         ),
         pk.entry(
             "model.weird-als-museum-of-natural-hilarity-limited-edition",
-            note=(
-                "The base model records a player count of 4, a fact OPDB supplies for the base edition; "
-                + WAL_LE_NOTE
-            ),
+            note=WAL_LE_PLAYERS_NOTE,
             cite=cite(NEWS_WAL, WAL_LE_ARTWORK),
             fields={"player_count": "4"},
         ),
-        # Final Resistance (2023)
-        platform_entry(
+        *sweep_platform(
             "model.final-resistance",
             games_index_cite(GAMES_FULLKIT_HEAD, "Final Resistance"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
-        pk.entry(
-            "model.final-resistance",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_KITS, "Final Resistance $3,400.00 Add to cart"),
-            fields={"production_status": "produced"},
+        sold_from_stock(
+            "model.final-resistance", CAT_KITS, "Final Resistance $3,400.00 Add to cart"
         ),
-        # The Princess Bride (2024)
-        platform_entry(
+        *sweep_platform(
             "model.the-princess-bride",
             games_index_cite(GAMES_FULLKIT_HEAD, "The Princess Bride"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
         pk.entry(
             "model.the-princess-bride",
-            note=FOUR_LAUNCHES_NOTE,
+            note=FOUR_LAUNCHES_BASE_NOTE,
             cite=[
                 FOUR_LAUNCHES,
                 cite(
@@ -871,21 +710,18 @@ def main() -> None:
             ],
             fields={"production_status": "produced"},
         ),
-        # TPB Collector's Edition (2024) — variant; platform facts carry.
-        platform_entry(
+        # TPB Collector's Edition — variant; platform facts carry.
+        *sweep_platform(
             "model.the-princess-bride-collectors-edition",
             cite(NEWS_TPB, TPB_EDITIONS_SAME),
             machine=True,
-            fmt="pinball",
-            extra_fields={
-                "display_type": "lcd",
-                "technology_generation": "solid-state",
-            },
-            extra_note=TPB_EDITION_NOTE,
+            fmt=True,
+            tech=True,
+            display=True,
         ),
         pk.entry(
             "model.the-princess-bride-collectors-edition",
-            note=TPB_EDITION_NOTE + " " + FOUR_LAUNCHES_NOTE,
+            note=FOUR_LAUNCHES_TPB_EDITION_NOTE,
             cite=[cite(NEWS_TPB, TPB_EDITIONS_SAME), FOUR_LAUNCHES],
             fields={"production_status": "produced"},
         ),
@@ -900,75 +736,54 @@ def main() -> None:
         ),
         pk.entry(
             "model.the-princess-bride-collectors-edition",
-            note=(
-                "The base model records a player count of 4, a fact OPDB supplies for the base edition; "
-                + TPB_EDITION_NOTE
-            ),
+            note=TPB_PLAYERS_NOTE,
             cite=cite(NEWS_TPB, TPB_EDITIONS_SAME),
             fields={"player_count": "4"},
         ),
-        # TPB Limited Edition (2024) — variant; platform facts carry.
-        platform_entry(
+        # TPB Limited Edition — variant; platform facts carry.
+        *sweep_platform(
             "model.the-princess-bride-limited-edition",
             cite(NEWS_TPB, TPB_EDITIONS_SAME),
             machine=True,
-            fmt="pinball",
-            extra_fields={
-                "display_type": "lcd",
-                "technology_generation": "solid-state",
-            },
-            extra_note=TPB_EDITION_NOTE,
+            fmt=True,
+            tech=True,
+            display=True,
         ),
         pk.entry(
             "model.the-princess-bride-limited-edition",
-            note=TPB_EDITION_NOTE + " " + FOUR_LAUNCHES_NOTE,
+            note=FOUR_LAUNCHES_TPB_EDITION_NOTE,
             cite=[cite(NEWS_TPB, TPB_EDITIONS_SAME), FOUR_LAUNCHES],
             fields={"production_status": "produced"},
         ),
         pk.entry(
             "model.the-princess-bride-limited-edition",
-            note=(
-                "The base model records a player count of 4, a fact OPDB supplies for the base edition; "
-                + TPB_EDITION_NOTE
-            ),
+            note=TPB_PLAYERS_NOTE,
             cite=cite(NEWS_TPB, TPB_EDITIONS_SAME),
             fields={"player_count": "4"},
         ),
         # Portal Standard / Extended (2025)
-        platform_entry(
+        *sweep_platform(
             "model.portal-standard",
             cat_row_cite(CAT_KITS, "Portal Standard Game Kit (Deposit) $1,000.00"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
         pk.entry(
             "model.portal-standard",
-            cite=cite(
-                NEWS_JUNE26,
-                "In April, approximately 13 months after launching Portal in "
-                "March 2025, we finished shipping all 2025 Portal orders.",
-            ),
+            cite=cite(NEWS_JUNE26, PORTAL_SHIPPED),
             fields={"production_status": "produced"},
         ),
-        platform_entry(
+        *sweep_platform(
             "model.portal-extended",
             cat_row_cite(CAT_KITS, "Portal Extended Game Kit (Deposit) $1,500.00"),
             machine=True,
-            fmt="pinball",
+            fmt=True,
         ),
         pk.entry(
             "model.portal-extended",
-            note=(
-                "Extended is an ordering option of the same Portal launch, not "
-                "a separate game, so the maker's statement that all 2025 Portal "
-                "orders shipped covers Extended-configuration orders."
-            ),
+            note=PORTAL_EXT_NOTE,
             cite=[
-                cite(
-                    NEWS_JUNE26,
-                    "In April, approximately 13 months after launching Portal in "
-                    "March 2025, we finished shipping all 2025 Portal orders.",
-                ),
+                cite(NEWS_JUNE26, PORTAL_SHIPPED),
                 cite(
                     PN_DCC,
                     "Portal's extended option addressed this by introducing a "
@@ -978,114 +793,77 @@ def main() -> None:
             ],
             fields={"production_status": "produced"},
         ),
-        # ── Add-on games (software on another game's module): system +
-        #    production only — the conversion-kit rule keeps donor hardware
-        #    (cabinet, display) off them. ─────────────────────────────────
-        # Barnyard (2017)
-        platform_entry(
+        # ── Add-on games: software on another game's module — system +
+        #    production only (conversion-kit rule). ──────────────────────
+        *sweep_platform(
             "model.barnyard",
             games_index_cite(GAMES_ADDON_HEAD, "Barnyard"),
             machine=False,
-            fmt=None,
         ),
-        pk.entry(
-            "model.barnyard",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_ADDONS, "Barnyard $149.00 Add to cart"),
-            fields={"production_status": "produced"},
-        ),
-        # Lexy Lightspeed — Secret Agent Showdown (2017)
-        platform_entry(
+        sold_from_stock("model.barnyard", CAT_ADDONS, "Barnyard $149.00 Add to cart"),
+        *sweep_platform(
             "model.lexy-lightspeed-secret-agent-showdown",
-            games_index_cite(
-                GAMES_ADDON_HEAD, "Lexy Lightspeed – Secret Agent Showdown"
-            ),
+            games_index_cite(GAMES_ADDON_HEAD, "Lexy Lightspeed – Secret Agent Showdown"),
             machine=False,
-            fmt=None,
         ),
-        pk.entry(
+        sold_from_stock(
             "model.lexy-lightspeed-secret-agent-showdown",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(
-                CAT_ADDONS,
-                "Lexy Lightspeed – Secret Agent Showdown $99.00 Add to cart",
-            ),
-            fields={"production_status": "produced"},
+            CAT_ADDONS,
+            "Lexy Lightspeed – Secret Agent Showdown $99.00 Add to cart",
         ),
-        # Grand Slam Rally (2018) — the maker's own genre: pitch-and-bat.
+        # Grand Slam Rally — the maker's own genre: pitch-and-bat.
         pk.entry(
             "model.grand-slam-rally",
-            note=(
-                SYSTEM_NOTE
-                + " The maker's store bills the game as pitch-and-bat, so the "
-                "game format follows the maker's own genre naming."
-            ),
             cite=[
                 cite(
                     GSR_STORE,
-                    "Pitch-and-Bat on the P3! Grand Slam Rally is a P3 mini-game "
-                    "that works with the Cannon Lagoon playfield module (sold "
-                    "separately).",
+                    "Grand Slam Rally is a P3 mini-game that works with the "
+                    "Cannon Lagoon playfield module (sold separately).",
                 ),
                 cite(HW, HW_P3ROC),
             ],
-            fields={
-                "system": "multimorphic-p3-roc",
-                "game_format": "pitch-and-bat",
-            },
+            fields={"system": "multimorphic-p3-roc"},
         ),
         pk.entry(
             "model.grand-slam-rally",
-            note=PRODUCED_STOCK_NOTE,
+            cite=cite(
+                GSR_STORE,
+                "Pitch-and-Bat on the P3! Grand Slam Rally is a P3 mini-game "
+                "that works with the Cannon Lagoon playfield module (sold "
+                "separately).",
+            ),
+            fields={"game_format": "pitch-and-bat"},
+        ),
+        pk.entry(
+            "model.grand-slam-rally",
             cite=cite(GSR_STORE, "$199.00 [...] Add to cart"),
             fields={"production_status": "produced"},
         ),
-        # Hoopin' It Up (2019) — free download: production_status stays unset
-        # (P3Modules.md → Not asserted); system still asserts.
-        platform_entry(
+        # Hoopin' It Up — free download: production_status stays unset.
+        *sweep_platform(
             "model.hoopin-it-up",
             games_index_cite(GAMES_ADDON_HEAD, "Hoopin' It Up"),
             machine=False,
-            fmt=None,
         ),
-        # ROCs (2020)
-        platform_entry(
+        *sweep_platform(
             "model.rocs",
             games_index_cite(GAMES_ADDON_HEAD, "ROCs"),
             machine=False,
-            fmt=None,
         ),
-        pk.entry(
-            "model.rocs",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_ADDONS, "ROCs $199.00 Add to cart"),
-            fields={"production_status": "produced"},
-        ),
-        # Shoot 'n Scoot (2020)
-        platform_entry(
+        sold_from_stock("model.rocs", CAT_ADDONS, "ROCs $199.00 Add to cart"),
+        *sweep_platform(
             "model.shoot-n-scoot",
             games_index_cite(GAMES_ADDON_HEAD, "Shoot 'n Scoot"),
             machine=False,
-            fmt=None,
         ),
-        pk.entry(
-            "model.shoot-n-scoot",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_ADDONS, "Shoot 'n Scoot $169.00 Add to cart"),
-            fields={"production_status": "produced"},
-        ),
-        # Sorcerer's Apprentice (2021)
-        platform_entry(
+        sold_from_stock("model.shoot-n-scoot", CAT_ADDONS, "Shoot 'n Scoot $169.00 Add to cart"),
+        *sweep_platform(
             "model.sorcerers-apprentice",
             games_index_cite(GAMES_ADDON_HEAD, "Sorcerer's Apprentice"),
             machine=False,
-            fmt=None,
         ),
-        pk.entry(
-            "model.sorcerers-apprentice",
-            note=PRODUCED_STOCK_NOTE,
-            cite=cat_row_cite(CAT_ADDONS, "Sorcerer's Apprentice $499.00 Add to cart"),
-            fields={"production_status": "produced"},
+        sold_from_stock(
+            "model.sorcerers-apprentice", CAT_ADDONS, "Sorcerer's Apprentice $499.00 Add to cart"
         ),
         # Heads Up! (2021): absent from the maker's live site — nothing
         # asserted (P3Modules.md → Sought and not found).

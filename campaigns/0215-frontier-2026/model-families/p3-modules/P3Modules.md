@@ -2,7 +2,7 @@
 
 ## Status
 
-Patch emitted and through all local gates (2026-08-13): structural + editorial clean, verbatim 636/0 first run, support check 2 warnings both triaged (see Gate runs). Awaiting snapshot validation.
+**Snapshot-validated and complete (2026-08-13).** The user hand-restructured the emitted patch (one assertion per changeset; notes deleted where the cite carries the change — both rules promoted to RULEBOOK.md → Asserting claims) and the sweep section was reworked to match; gen.py is synced to the final shape but the hand-edited YAML is authoritative — do not regenerate without diffing. Applied cleanly on the 0214 snapshot with patches through 0232; all fields, credits, features, quantities and per-field citation instances verified through the analytics foundation. Awaiting user commit; not pushed.
 
 ## Scope (user decisions, 2026-08-13)
 
@@ -108,3 +108,5 @@ From the maker's games index (recorded 2026-08-13; user decision: do not create)
 - **2026-08-13 verbatim**: 0 failures on the first emit (all 0231 quotes verified; no SKIP-PDF — every source is HTML).
 - **2026-08-13 support** (95 claims, ~442k tokens): 2 warnings. `portal-extended production_status` — fair catch that "all 2025 Portal orders" doesn't name Extended; folded in a note (Extended is an ordering option of the same launch) plus PN's "Portal's extended option" quote. `weird-al LE player_count` — the carry ladder's base value wasn't named; note now says OPDB supplies the base's 4. Kept both claims; not re-run per RULEBOOK.
 - **2026-08-13 editorial lint, first emit**: 40 wording findings (banned phrases "the existing catalog", "No source", "maps to", "vocabulary", "entity" in notes) — all reworded, second emit clean.
+- **2026-08-13 post-restructure**: after the hand-restructure (splits + note deletions, including new tighter FAQ spans for cabinet/format/display), verbatim re-ran clean (0 failures repo-wide) and both fast gates pass.
+- **2026-08-13 snapshot apply**: 0231 applied cleanly (0214 snapshot + patches through 0232). 187 field-level citation instances landed; sweep fields, DCC/EG credits (17/23) and features (15/13) verified. Ingest stopped at 0233-ramps-pinball, which `create`s person.glenn-waechter — already created by 0231 (he is credited on both Ender's Game and a Ramp's title). That collision is the ramps session's to fix (reference, not create).

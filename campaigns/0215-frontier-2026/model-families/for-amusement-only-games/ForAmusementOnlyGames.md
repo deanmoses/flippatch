@@ -2,7 +2,9 @@
 
 ## Status
 
-Patch `0236-for-amusement-only-games.yaml` emitted, all local gates passed (structural, editorial, verbatim, scoped support — see Gate runs). Snapshot validation pending. (0235 was claimed by ramps-pinball while this family was in research; per the user's instruction the family takes the next open number, 0236.)
+Patch `0236-for-amusement-only-games.yaml` emitted, all local gates passed (structural, editorial, verbatim, scoped support — see Gate runs), and **snapshot-validated 2026-08-13**: 117 claims asserted, 0 rejected; every field, credit, theme, feature and kit relationship verified resolved through the foundation, citations bridged to the right roots. Left applied on the dev DB. Awaiting user commit. (0235 was claimed by ramps-pinball while this family was in research; per the user's instruction the family takes the next open number, 0236.)
+
+**Rebuild caveat (2026-08-13)**: during this snapshot rebuild, `0233-ramps-pinball` failed to apply — it and `0231-p3-modules` both `create:` `person.brad-albright`, and 0231 applies first. 0233 was temporarily sidelined to let 0234–0236 apply, then restored to `patches/` untouched; the current dev DB therefore holds every patch EXCEPT 0233. The fix (0233 referencing instead of creating, or the sessions agreeing who creates him) belongs to the ramps session.
 
 ## Scope
 

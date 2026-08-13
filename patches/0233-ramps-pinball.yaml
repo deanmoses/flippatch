@@ -49,15 +49,9 @@ claims:
   - person.jake-danzig:
       create: true
       name: Jake Danzig
-  - person.brad-albright:
-      create: true
-      name: Brad Albright
   - person.austin-carrigan:
       create: true
       name: Austin Carrigan
-  - person.glenn-waechter:
-      create: true
-      name: Glenn Waechter
   - person.joe-farnsworth:
       create: true
       name: Joe Farnsworth
@@ -68,7 +62,7 @@ claims:
       create: true
       name: Paul Fusco
   - model.road-trip:
-      note: "The resolved 'February 2026' is a chimera: month 2 is OPDB's dating of the February 2025 world debut at Pinball at the Beach, kept when the year was later corrected to 2026. The maker's only release statement is 'Expected Late 2026' (rampspinball.com, fetched 2026-08-13), so no month is assertable. A companion opdb-attributed patch retracts OPDB's copy of the same claim."
+      note: "The resolved 'February 2026' is a chimera: month 2 is OPDB's dating of the February 2025 world debut at Pinball at the Beach, kept when the year was later corrected to 2026. The maker's only release statement is 'Expected Late 2026' (rampspinball.com, fetched 2026-08-13), so no month is assertable."
       retract: [month]
   - model.road-trip:
       cite:
