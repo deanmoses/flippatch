@@ -54,14 +54,14 @@ claims:
         quote: Fly on the Magic Carpet Ramps around Ancient Baghdad
       gameplay_feature: [ramps]
   - model.tales-of-the-arabian-nights:
-      note: "The manual documents a diverter on the ramp with its own coil, switch and operator adjustment - the machine's ramp is diverter-equipped, hence the diverter-ramps leaf."
+      note: "The manual documents a diverter on the ramp with its own coil, switch and operator adjustment, so the ramp is diverter-equipped."
       cite:
         ref: "williams:tales-of-the-arabian-nights-operations-manual-1996"
         locator: "in the Error Messages section, printed page 1-43, PDF document page 69"
         quote: "The diverter on the ramp is not functioning properly. Check the Ramp Diverter coil (coil #21) as well as the Ramp Enter switch (#15) for proper adjustment."
       gameplay_feature: [diverter-ramps]
   - model.tales-of-the-arabian-nights:
-      note: "No source names a cabinet format; classified from the flyer's specifications: a 76-inch-tall, 29-inch-wide, 250-pound machine is a standard floor-standing cabinet."
+      note: "A 76-inch-tall, 29-inch-wide, 250-pound machine is a standard floor-standing cabinet."
       cite:
         ref: "williams:tales-of-the-arabian-nights-flyer-1996"
         locator: the SPECIFICATIONS line at the foot of the flyer back (PDF document page 2)

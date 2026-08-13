@@ -56,7 +56,7 @@ claims:
         quote: Video Mode allows players to torpedo speeding boats and watercraft in an overcrowded lake.
       gameplay_feature: [video-modes]
   - model.fish-tales:
-      note: "Williams-era documents call pop bumpers jet bumpers: the switch matrix names three (Left/Center/Right Jet) and the parts list carries the jet bumper coil assembly with quantity 3."
+      note: "Williams-era documents call pop bumpers jet bumpers; the switch matrix names three."
       cite:
         - ref: "williams:fish-tales-operations-manual-1992"
           locator: "in the Switch Matrix, printed page 3-4, PDF document page 98"
@@ -65,14 +65,14 @@ claims:
           quote: jet bumper coil assy-2 pin con
       gameplay_feature: [{ pop-bumpers: 3 }]
   - model.fish-tales:
-      note: "Sling is Williams' term for the slingshot kicker; the switch matrix names a left and a right."
+      note: "Sling is Williams' term for the slingshot kicker."
       cite:
         ref: "williams:fish-tales-operations-manual-1992"
         locator: "in the Switch Matrix, printed page 3-4, PDF document page 98"
         quote: 57 Left Sling 58 Right Sling
       gameplay_feature: [{ slingshots: 2 }]
   - model.fish-tales:
-      note: "No source names a cabinet format; classified from the manual's assembly-instructions dimensions - a 55-inch-long, 26-inch-wide, 285-pound machine on legs is a standard floor-standing cabinet."
+      note: "A 55-inch-long, 26-inch-wide, 285-pound machine on legs is a standard floor-standing cabinet."
       cite:
         ref: "williams:fish-tales-operations-manual-1992"
         locator: "in Pinball Game Assembly Instructions, printed page 1-2, PDF document page 17"

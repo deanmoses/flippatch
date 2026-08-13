@@ -24,7 +24,7 @@ claims:
         quote: 1 Video Mode
       gameplay_feature: [{ video-modes: 1 }]
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Design by: Joe Balcer [...] Art by: Jeff Busch, Matt Riesterer [...] Dots/Animation by: Ish Raneses [...] Mechanics by: Joe Balcer [...] Music by: Matt Kern [...] Sound by: Matt Kern [...] Software by: Josh Kugler"
@@ -38,43 +38,43 @@ claims:
         - matt-kern: sound
         - josh-kugler: software
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: The manufacturer's website stated the first game shipped 12/30/2017.
       production_status: produced
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
       game_format: pinball
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Type: Solid State Electronic (SS)"
       technology_generation: solid-state
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "MPU: Multimorphic P3-ROC"
       system: multimorphic-p3-roc
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: Backbox has 15.6 inch color LCD monitor.
       display_type: lcd
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Players: 4"
       player_count: "4"
   - model.houdini-master-of-mystery-deluxe:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
@@ -119,7 +119,7 @@ claims:
       credit:
         - christopher-franchi: art
   - model.houdini-100th-anniversary:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Design by: Joe Balcer [...] Art by: Jeff Busch, Matt Riesterer [...] Dots/Animation by: Ish Raneses [...] Mechanics by: Joe Balcer [...] Music by: Matt Kern [...] Sound by: Matt Kern [...] Software by: Josh Kugler"
@@ -138,7 +138,7 @@ claims:
         quote: "Each game includes a custom topper, Magic Glass, shaker motor, knocker, and mirrored art blades as standard equipment."
       gameplay_feature: [toppers, knockers, shaker-motors]
   - model.houdini-100th-anniversary:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Stereo speakers (6), Magnets (3), Catapults (2), Theater spotlights (2), Multiball."
@@ -162,19 +162,19 @@ claims:
         quote: '15.6" Full Color LCD'
       display_type: lcd
   - model.houdini-100th-anniversary:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "MPU: Multimorphic P3-ROC"
       system: multimorphic-p3-roc
   - model.houdini-100th-anniversary:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Type: Solid State Electronic (SS)"
       technology_generation: solid-state
   - model.houdini-100th-anniversary:
-      note: "IPDB 6470 is the base Houdini: Master of Mystery row; this model is a variant of it (same game design), so the base game's value carries."
+      note: "A variant shares the base game's design, so the base game's value carries."
       cite:
         ref: "ipdb:6470"
         quote: "Players: 4"

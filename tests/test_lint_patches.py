@@ -782,6 +782,16 @@ def test_seed_in_note_flagged():
     assert has(e, "'seed'")
 
 
+def test_seed_guidance_does_not_offer_a_replacement_name():
+    # The rule used to answer "say 'an earlier ingest'", and that phrase then
+    # spread through the notes it was fixing. Where a prior value came from is
+    # not the note's business under any name, so the guidance says cut, not
+    # rename.
+    e = perrs(note_unit("The seed derived this month from OPDB's date."))
+    assert has(e, "'seed'")
+    assert not has(e, "earlier ingest")
+
+
 def test_seed_in_patch_description_flagged():
     e = desc_errs("Seed the remaining video platform roots.")
     assert has(e, "'Seed'")
@@ -792,6 +802,205 @@ def test_seed_in_record_description_allowed():
     # record description ("seeded dozens of small local manufacturers").
     e = perrs(desc_unit("Prize laws seeded dozens of small local manufacturers."))
     assert not has(e, "seed")
+
+
+# --- the note's two durability rules (introduced at 0231) -------------------
+# A note renders publicly and must read standalone decades on: it may name
+# neither the authoring process that produced it nor what the data used to be.
+# The split is by what the word names, not by what it's used to say: 'seed' and
+# 'ingest' name our own pipeline, so they're process words even when the
+# sentence around them is about a prior value. prose-seed is the 0189-era
+# member of that family; its number is fixed, so the rest lands at 0231.
+#
+# The rule name isn't in the error text, so a test pins the categorization by
+# asserting on the guidance the author is shown.
+PROCESS_GUIDANCE = "how the patch got authored"
+PRIOR_STATE_GUIDANCE = "what the data used to be"
+
+
+def nerrs(note):
+    return perrs(note_unit(note), filename="0231-x.yaml")
+
+
+def test_user_approval_flagged():
+    assert has(
+        nerrs("The base model takes the maker's edition name (user-approved)."),
+        "'user-approved'",
+    )
+    assert has(nerrs("Asserted after user approval on the rename."), "'user approval'")
+
+
+def test_authoring_artifacts_flagged():
+    assert has(nerrs("See the README for the full family breakdown."), "'README'")
+    # Two alternatives fire here; either token names the problem.
+    assert has(
+        nerrs("Per the campaign README, the count follows the maker."),
+        "'Per the campaign'",
+    )
+    assert has(
+        nerrs("As discussed, the count follows the maker's own heading."),
+        "'As discussed'",
+    )
+    assert has(
+        nerrs("Flagged in review as a duplicate of the 1974 run."),
+        "'Flagged in review'",
+    )
+
+
+def test_user_manual_clean():
+    # 'user' alone is legitimate: the machine's own documentation.
+    assert nerrs("The user manual lists four flippers and two ramps.") == []
+
+
+def test_trade_senses_clean():
+    # The words the authoring-process rule must never reach: each is normal
+    # note prose about the machine or its sources.
+    assert nerrs("The manual documents an operator adjustment for the diverter.") == []
+    assert nerrs("A Pinside review states the ramp was rebuilt for the reissue.") == []
+    assert nerrs("IPDB confirms the 1974 manufacture year.") == []
+    assert nerrs("Bally's advertising campaign ran through 1974.") == []
+
+
+def test_pipeline_words_are_authoring_process():
+    # 'ingest' and 'seed' name our pipeline. The sentence they sit in is
+    # usually about a prior value, but the word itself is process vocabulary,
+    # so the author gets the process guidance, not the prior-state one.
+    e = nerrs("The date arrived via an earlier ingest.")
+    assert has(e, "'ingest'")
+    assert has(e, PROCESS_GUIDANCE)
+    assert not has(e, PRIOR_STATE_GUIDANCE)
+
+    # prose-seed predates the split and carries its own message, so all that's
+    # pinnable here is that 'seed' is not treated as a prior-state word.
+    e = nerrs("The seed derived this month from OPDB's date.")
+    assert has(e, "'seed'")
+    assert not has(e, PRIOR_STATE_GUIDANCE)
+
+
+def test_prior_state_flagged():
+    e = nerrs("This supersedes the coarser Germany location.")
+    assert has(e, "'supersedes'")
+    assert has(e, PRIOR_STATE_GUIDANCE)
+
+    e = nerrs("The prior value of 4 arrived uncited.")
+    assert has(e, "'prior value'")
+    assert has(e, PRIOR_STATE_GUIDANCE)
+
+
+def test_prior_state_about_the_world_clean():
+    # Prior state of the machines, not of the catalog's own field values.
+    assert nerrs("An earlier machine of the same name used this cabinet.") == []
+    assert nerrs("The firm's earlier games were all bingos.") == []
+
+
+def test_superseded_in_record_description_clean():
+    # Record descriptions are public encyclopedia prose, where one product
+    # superseding another is the plain English sense.
+    e = perrs(
+        desc_unit("The solid-state version superseded the electromechanical run."),
+        filename="0231-x.yaml",
+    )
+    assert not has(e, "supersed")
+
+
+def test_absence_claim_flagged():
+    # Present tense, asserted about the world: the next source to surface
+    # falsifies it.
+    assert has(
+        nerrs("No source states a release year, so none is asserted."), "'No source'"
+    )
+    assert has(nerrs("Documented nowhere else in the pinball press."), "'nowhere'")
+    assert has(nerrs("There is no evidence the machine ever shipped."), "'no evidence'")
+    assert has(
+        nerrs("Nothing else documents the 1974 run."), "'Nothing else documents'"
+    )
+
+
+def test_uniqueness_claim_flagged_in_record_description():
+    # Unlike the other two durability rules, this one reaches record
+    # descriptions: an ageing absolute is worse in public encyclopedia prose
+    # than in a note, and descriptions are generated at volume.
+    e = perrs(
+        desc_unit("The only known surviving example sits in a private collection."),
+        filename="0231-x.yaml",
+    )
+    assert has(e, "'only known'")
+
+
+def test_search_statement_clean():
+    # The prescribed durable form: past tense, about the authoring act. First
+    # person is fine too — the contributor's name rides the change forever, so
+    #'I' resolves for a reader where a third-party 'the user' would not.
+    assert (
+        nerrs("Corroborating sources were sought at authoring time, none found.") == []
+    )
+    assert nerrs("I was not able to find a second source for the year.") == []
+
+
+def test_bounded_absolutes_clean():
+    # Sourced claims about the machines, not about the state of the evidence.
+    assert nerrs("The firm made no bingos after 1974.") == []
+    assert nerrs("It was the first pinball to use a magnet under the playfield.") == []
+
+
+def test_absence_bounded_to_a_named_source_flagged():
+    # Naming the silent source does not rescue the claim: a gap in one source
+    # is not evidence, and writing it up as though it were treats that source
+    # as an oracle that owed us an answer. Both of these are real notes from
+    # the shipped corpus, and both should have been caught before they froze.
+    assert has(nerrs("OPDB has no record of the Bally Wulff build."), "'no record'")
+    assert has(
+        nerrs("The header graphic is one word, with Taito nowhere on the sheet."),
+        "'nowhere'",
+    )
+
+
+def test_vocabulary_in_note_flagged():
+    # The reader has never heard of the credit-role vocabulary, and the quote
+    # on the cite already shows the specialized role doesn't exist.
+    e = nerrs("The credit vocabulary has no sculptor role; sculpting records as art.")
+    assert has(e, "'vocabulary'")
+
+
+def test_taxonomy_siblings_in_note_flagged():
+    assert has(nerrs("Titles and models are separate namespaces."), "'namespaces'")
+    assert has(nerrs("The theme taxonomy has no entry for this."), "'taxonomy'")
+
+
+def test_taxonomy_siblings_flagged_in_every_corpus():
+    # 'namespace' and 'taxonomy' are pure internal jargon, like node and edge:
+    # no physical or trade sense anywhere, so no corpus is spared. This is what
+    # separates them from 'vocabulary', which does honest work in the
+    # Admin-only patch description.
+    e = perrs(
+        desc_unit("The theme taxonomy groups it under pirates."), filename="0231-x.yaml"
+    )
+    assert has(e, "'taxonomy'")
+    assert has(desc_errs("Seed the theme namespace.", "0231-x.yaml"), "'namespace'")
+
+
+def test_vocabulary_in_patch_description_allowed():
+    # The top-level description is the Admin-only IngestRun note, which is
+    # where taxonomy bookkeeping belongs — "Create the four ProductionStatus
+    # vocabulary values" is an accurate summary for the one audience that has
+    # the concept.
+    e = desc_errs("Create the four production-status vocabulary values.", "0231-x.yaml")
+    assert not has(e, "vocabulary")
+
+
+def test_note_durability_rules_grandfathered_before_0231():
+    assert (
+        perrs(
+            note_unit("Supersedes an earlier ingest (user-approved)."),
+            filename="0230-x.yaml",
+        )
+        == []
+    )
+
+
+def test_rule_since_registry_has_note_durability_rules():
+    for rule in ("prose-authoring-process", "prose-prior-state"):
+        assert lp.RULE_SINCE[rule] == 231, rule
 
 
 def test_node_in_record_description_flagged():

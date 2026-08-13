@@ -1,103 +1,12 @@
 #!/usr/bin/env python3
-"""Editorial lint for data patches — pindata authoring standards.
+"""Editorial authoring standards linting for data patches.
 
-Distinct from ``validate_patches.py`` (the structural gate that mirrors
-flipcommons' apply-time loader and JSON schema): this enforces the *authoring*
-conventions in flipcommons' ``docs/DataPatchAuthoring.md`` that the schema does
-not — public-note discipline and citation hygiene. Run by
-``make validate``.
+This enforces the authoring quality conventions like public-note discipline and
+citation hygiene.  The data patch schema does NOT enforce this stuff.
 
-A "unit" below is one provenance carrier: the entry header itself, plus each
-``changesets:`` item. A ``note:``/``cite:`` rides the claims of its own unit, so
-most checks run per unit.
+Much of this is also guidance in flipcommons' ``docs/DataPatchAuthoring.md``.
 
-Checks (each is tagged at its implementation site with a matching ``# name`` comment)
-------
-- ``note-patch-number`` — Notes must not reference a data patch by number (the
-  world has no concept of ingest runs; bookkeeping belongs in the Admin-only
-  ``description:``).
-- ``note-typography`` — Notes must not contain smart typography — straight quotes
-  only, ``…`` as ``[...]`` (DataPatchAuthoring "Note every entry").
-- ``alias-duplicates`` — Alias / abbreviation lists carry no duplicate members
-  (aliases case-fold; abbreviations are verbatim) — flipcommons rejects these at
-  apply.
-- ``alias-length`` — Alias members ≤ 200 chars, abbreviation members ≤ 50 —
-  flipcommons rejects over-long members at build.
-- ``cite-scheme-form`` — An IPDB/OPDB **record** cited by URL must use the
-  ``scheme:identifier`` form — flipcommons rejects a scheme-pattern URL. Keyed on
-  the record paths the schemes declare (``ipdb.org/machine.cgi``,
-  ``opdb.org/machines/``), not the bare domain: another page on those sites (an
-  image page holding a flyer scan) has no scheme form to be rewritten to, and is
-  cited by URL like any other web page.
-- ``description-attribution`` — A ``description:`` field must be attributed to
-  ``flipcommons-ai-desc-<type>`` matching the entity type, not the generic
-  ``flipcommons-catalog``.
-- ``note-required`` — A unit needs a ``note:`` when it cites, deletes,
-  retracts/removes, or asserts a substantive (non-alias) field — except a
-  description-only unit and create-scaffolding. A ``cite:`` mapping (or any
-  inline ``cites:`` entry) carrying a ``quote:`` satisfies it: the verbatim
-  evidence is the explanation.
-- ``description-needs-inline-cite`` — A ``description:`` unit must carry at least
-  one inline ``[[cite:N]]`` footnote; a ``note:`` no longer excuses its absence.
-  Exempt for the abstract-taxonomy entity types in
-  ``DESCRIPTION_CITE_EXEMPT_TYPES`` (e.g. ``gameplay-feature``), whose
-  descriptions are definitional cross-references, not sourced claims.
-- ``description-no-entry-cite`` — A ``description:`` unit may not carry an
-  entry-level ``cite:`` covering the whole field opaquely — footnote each fact
-  inline instead.
-- ``description-two-sources`` — A ``description:`` unit must cite at least two
-  distinct sources, resolving to at least two different root sources (registrable
-  domain for a URL, scheme for an ``ipdb:``/``opdb:``/``youtube:`` identifier) —
-  a single source, or several footnotes from one root, is not corroboration.
-- ``note-no-quote-scaffolding`` — A note must not carry the legacy
-  ``<source> says "<quote>"`` scaffolding — the verbatim excerpt belongs in
-  ``quote:`` on the ``cite:`` mapping, where the citation already names the
-  source. (Shipped patches keep their historical notes as-authored; their DB
-  rows were fixed by flipcommons' backfill migration, not the files.)
-- ``quote-typography`` — ``quote:`` values — on the entry-level ``cite:``
-  mapping and on inline ``cites:`` entries alike — must use straight quotes and
-  write an ellipsis as ``[...]`` — the same normalization ``note-typography``
-  enforces on notes.
-- ``patch-description-length`` — The *top-level* patch ``description:`` (→ the
-  Admin-only ``IngestRun`` note) must be ≤ 80 chars after whitespace collapse: a
-  commit-title-style summary, not a paragraph. Per-change detail belongs in
-  ``note:`` fields, not here. This is the one whole-patch check (the others run
-  per unit); the per-record ``description-*`` rules above target a different
-  field — the narrative ``description:`` inside a claim unit.
-- ``expect-obsolete`` — A unit must not carry ``expect:``. It was a drift guard
-  (assert stable attributes of the slug-addressed record before mutating it) that
-  flipcommons' apply engine now accepts-but-ignores. Older patches keep it
-  (grandfathered); it is rejected going forward so AI sessions stop copying it out
-  of recent patches.
-- ``prose-*`` (word-choice family, introduced at 0189) — prose written for the
-  site's nontechnical readers must not use internal programming vocabulary.
-  Three prose corpora are checked — the top-level patch ``description:``, unit
-  ``note:``, and the record ``description:`` field — with per-rule scopes,
-  because some words carry a legitimate physical/trade sense in record
-  descriptions ("the cabinet's edges", "seeded dozens of manufacturers",
-  "SIRMO's catalog is entirely bingo machines"):
-  ``prose-seed`` (say "an earlier ingest"; allowed in record descriptions),
-  ``prose-node``, ``prose-edge`` (allowed in record descriptions),
-  ``prose-code-identifier`` (snake_case tokens and internal CamelCase names),
-  ``prose-bare-entity`` ("entity" is fine only right after
-  "corporate"/"legal"), ``prose-the-record`` (a determiner directly before
-  "record(s)" is always the database sense; "IPDB records 1 unit" and "the
-  pinball record" don't match), ``prose-the-catalog`` (determiner + singular
-  "catalog" — "the catalog", "the eremeka catalog" — leaves the reader unable
-  to resolve the referent: name the site instead; possessive "SIRMO's catalog"
-  and the ``flipcommons-catalog`` slug are spared), ``prose-catalogs`` (bare
-  plural or verb — "catalogs like IPDB", "the community catalogues these
-  machines" — is clear but pedantic: write plain words, 'sites like IPDB',
-  'other pinball sites put it under that name'), and ``prose-pinball-record``
-  (the phrase "the pinball record").
-- ``description-link-density`` — A record ``description:`` may carry at most
-  ``DESCRIPTION_LINK_MAX`` non-citation ``[[…]]`` cross-reference links —
-  link only where load-bearing. ``[[cite:N]]`` footnotes don't count.
-
-Each rule is enforced from the patch number at which it was introduced
-(``RULE_SINCE``); patches below that are grandfathered for it. Run with
-``--all`` to lint every patch under every rule regardless of ``RULE_SINCE`` —
-the review mode for seeing what a new rule would have caught in history.
+Run by ``make validate``.
 """
 
 from __future__ import annotations
@@ -118,18 +27,8 @@ REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 PATCHES_DIR = REPO_ROOT / "patches"
 
 # Each rule is enforced only from the patch number at which it was introduced;
-# patches numbered below that are grandfathered for that rule. This is FIXED
-# history, not a moving "editable floor": a patch authored at/after a rule's
-# introduction complies by construction, so it keeps passing once it becomes
-# immutable — the number never moves as production advances. A rule added once
-# more patches are already immutable simply gets a higher number.
-#
-# Each rule carries its own literal number. They coincide at 39 today — the
-# original ruleset shipped after patches 0001-0038 were already immutable, and
-# the inline-citation rule rides the same line because 0039+ were retrofitted to
-# comply — but this is NOT one shared constant: an existing rule's number must
-# never change, and a new rule's is independent. Do not factor these into a
-# constant; that re-invites bumping them together, the very bug this removes.
+# patches numbered below that are grandfathered for that rule. A number never
+# moves once set — a rule introduced later simply gets a higher one.
 RULE_SINCE: dict[str, int] = {
     "note-patch-number": 39,
     "note-typography": 39,
@@ -154,6 +53,12 @@ RULE_SINCE: dict[str, int] = {
     "prose-the-catalog": 189,
     "prose-catalogs": 189,
     "prose-pinball-record": 189,
+    "prose-authoring-process": 231,
+    "prose-prior-state": 231,
+    "prose-absence-claim": 231,
+    "prose-vocabulary": 231,
+    "prose-namespace": 231,
+    "prose-taxonomy": 231,
     "description-link-density": 189,
     "feature-grouping-node": 219,
 }
@@ -250,18 +155,24 @@ NOTE_QUOTE_SCAFFOLDING_RE = re.compile(
 )
 # The host of a URL cite, with any leading www. stripped.
 URL_HOST_RE = re.compile(r"^https?://(?:www\.)?([^/?#]+)", re.IGNORECASE)
+# flipcommons rejects duplicate members at apply and over-long ones at build;
+# catching both here keeps the failure in authoring, where it is fixable.
 ALIAS_MAX, ABBREV_MAX = 200, 50
 # The top-level patch description maps to the Admin-only IngestRun note; keep it
 # to a commit-title-style summary rather than a paragraph of changeset detail.
 PATCH_DESC_MAX = 80
 
-# --- prose word-choice rules (see the docstring's prose-* section) -----------
-# The three prose corpora a rule can apply to. Record descriptions are public
+# --- prose word-choice rules ------------------------------------------------
+# Prose written for the site's nontechnical readers must not use internal
+# programming vocabulary. The three prose corpora a rule can apply to. Record descriptions are public
 # encyclopedia text where several of these words have a legitimate
 # physical/trade sense, so some rules exclude them.
 PATCH_DESC, NOTE, RECORD_DESC = "patch description", "note", "description"
 _ALL_PROSE = frozenset({PATCH_DESC, NOTE, RECORD_DESC})
 _AUTHORING_PROSE = frozenset({PATCH_DESC, NOTE})
+# Notes only. The top-level patch description is the Admin-only IngestRun note,
+# so internal bookkeeping vocabulary is correct there and wrong in a note.
+_NOTE_ONLY = frozenset({NOTE})
 
 # Internal CamelCase model names. A general CamelCase pattern can't work —
 # TiltBob, WhizBang, MarsaPlay and other brand names are legitimate CamelCase —
@@ -281,10 +192,89 @@ _INTERNAL_CAMEL = (
 # the offending token, so guidance stays generic.
 PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
     (
+        # A member of the prose-authoring-process family below, kept separate
+        # because a rule's RULE_SINCE number never moves once it ships.
         "prose-seed",
         _AUTHORING_PROSE,
         re.compile(r"\bseed(?:s|ed|ing)?\b", re.IGNORECASE),
-        "contributors don't know the seed — say 'an earlier ingest'",
+        "contributors don't know our pipeline — cut the reference, don't rename it",
+    ),
+    # A note renders publicly and must read standalone decades on, naming
+    # neither how it was authored nor what the data used to be. The next two
+    # split by what a word *names*, not by what the sentence uses it to say:
+    # "seed" and "ingest" name our own pipeline, so they are process words even
+    # in a sentence about a prior value, while "supersedes" and "the prior
+    # value" describe the data's history in ordinary English.
+    (
+        "prose-authoring-process",
+        _AUTHORING_PROSE,
+        re.compile(
+            r"\bingest(?:s|ed|ing)?\b"
+            r"|\bREADME\b"
+            r"|\bcampaign (?:README|dir(?:ectory)?)\b"
+            r"|\bper the campaign\b"
+            r"|\buser[-\s]approv\w*"
+            r"|\bapproved by the (?:user|operator)\b"
+            r"|\bas discussed\b"
+            r"|\b(?:flagged|held|caught) in review\b",
+            re.IGNORECASE,
+        ),
+        "how the patch got authored, and who took part, is invisible to the "
+        "reader — cut it",
+    ),
+    (
+        "prose-prior-state",
+        _AUTHORING_PROSE,
+        re.compile(
+            r"\bsupersed\w*"
+            r"|\b(?:prior|previous|former|old) value\b",
+            re.IGNORECASE,
+        ),
+        "what the data used to be is on the Edit History page already — cut "
+        "it, or say plainly what makes the prior state load-bearing",
+    ),
+    (
+        # Not a word-choice rule like its neighbours: the defect is the claim's
+        # shape, not its register. It reaches record descriptions because an
+        # ageing absolute is worse in public encyclopedia prose than in a note.
+        "prose-absence-claim",
+        _ALL_PROSE,
+        re.compile(
+            # Naming the silent source does not rescue the claim, so 'no
+            # record' and a bare 'nowhere' are in scope: a gap in one source is
+            # not evidence, and "OPDB has no record of it" writes that source
+            # up as an oracle that owed us an answer.
+            r"\bno (?:other |known )*(?:sources?|records?|evidence|documentation)\b"
+            r"|\bnowhere\b"
+            r"|\bnothing else (?:documents|records|states|mentions)\b"
+            r"|\bonly (?:known|surviving|documented|recorded)\b"
+            r"|\bsole (?:known|surviving|documented)\b",
+            re.IGNORECASE,
+        ),
+        "the next source to surface falsifies a present-tense absence — say "
+        "what was searched, in the past tense",
+    ),
+    (
+        # Notes only: unlike its namespace/taxonomy neighbours, this word does
+        # honest work in the Admin-only patch description ("create the four
+        # production-status vocabulary values").
+        "prose-vocabulary",
+        _NOTE_ONLY,
+        re.compile(r"\bvocabular(?:y|ies)\b", re.IGNORECASE),
+        "the reader has never heard of our lists of values — say what the "
+        "source offered and what you picked",
+    ),
+    (
+        "prose-namespace",
+        _ALL_PROSE,
+        re.compile(r"\bnamespaces?\b", re.IGNORECASE),
+        "internal term — name the kind of record in plain words",
+    ),
+    (
+        "prose-taxonomy",
+        _ALL_PROSE,
+        re.compile(r"\btaxonom(?:y|ies|ic)\b", re.IGNORECASE),
+        "internal term — name the set of values in plain words",
     ),
     (
         "prose-node",
@@ -422,7 +412,11 @@ def is_cite_map(value: object) -> TypeGuard[CiteMap]:
 
 
 def _units(body: PatchUnit) -> Iterator[tuple[str, PatchUnit]]:
-    """Yield ``(label, unit)`` for the entry header and each changesets item."""
+    """Yield ``(label, unit)`` for the entry header and each changesets item.
+
+    A ``note:``/``cite:`` rides the claims of its own unit, which is why the
+    checks run per unit rather than once per entry.
+    """
     yield "", body
     changesets = body.get("changesets")
     if isinstance(changesets, list):
@@ -741,9 +735,6 @@ def main(argv: list[str] | None = None) -> int:
 
     errors: list[str] = []
     for path in sorted(PATCHES_DIR.glob("*.yaml")):
-        # Every patch is linted; each rule grandfathers patches below its own
-        # introduction number (see RULE_SINCE), so immutable history stays clean
-        # — unless --all, the review mode that lints everything under every rule.
         try:
             data = yaml.safe_load(path.read_text(encoding="utf-8"))
         except yaml.YAMLError:

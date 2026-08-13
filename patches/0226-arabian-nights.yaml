@@ -17,7 +17,7 @@ claims:
       gameplay_feature_alias:
         [Playfield Lighted Backpanel, Illuminated Playfield Back Panel]
   - corporate-entity.pedretti-gaming:
-      note: "An earlier ingest's Podenzano (PC) survives only in third-party dealer copy, possibly describing the parent Pedretti Group. The maker's own site footer gives the Bagnatica street address and a Bergamo company-registry number (REA: BG 445013), and its June 2026 press release is datelined Bagnatica, so the coarser claim is removed and Bagnatica asserted."
+      note: "The removed Podenzano appears only in third-party dealer copy, possibly describing the parent Pedretti Group; the maker's own site footer gives the Bagnatica street address and a Bergamo company-registry number, and its June 2026 press release is datelined Bagnatica."
       cite:
         - ref: "https://www.pinballremakes.com/"
           locator: in the site footer's Contacts block and copyright line
@@ -38,7 +38,7 @@ claims:
         quote: "Flippers (2), Pop bumpers (3), Slingshots (2), Electromagnets (3), Spinning posts (2), Captive balls (2), Newton ball posts (2), Kick-out hole (1), 2- 3- and 4-ball multiball, Shooter lane skill shot."
       game_format: pinball
   - model.tales-of-the-arabian-nights:
-      note: "IPDB names the Genie a bash toy; the Lamp atop the spinning posts states no motion or ball interaction of its own, so it classifies as a static toy."
+      note: "IPDB names the Genie a bash toy; the Lamp atop the spinning posts has no motion or ball interaction of its own, so it is a static toy."
       cite:
         ref: "ipdb:3824"
         quote: "Toys: Lamp on top of spinning posts. Genie bash toy."
@@ -50,7 +50,7 @@ claims:
         quote: "Inspired by the legendary and mesmerizing 1996 original, this remake combines the magical gameplay of the classic machine with updated technology, immersive atmospheric lighting, enhanced visual effects, and modern features to create an unforgettable pinball experience for players and collectors alike. [...] Tales of the Arabian Nights Remake will be available in two different models: Legacy Edition and 30th Anniversary Edition."
       remake_of: tales-of-the-arabian-nights
   - model.tales-of-the-arabian-nights-legacy-edition-remake:
-      note: "The maker and its partners sell pre-order deposits only, with the balance due before delivery and no machine yet shipping, so the machine is announced, not produced."
+      note: "The maker and its partners sell pre-order deposits only, with nothing yet shipping, so the machine is announced."
       cite:
         - ref: "https://www.pinballnews.com/site/2026/06/15/tales-of-the-arabian-nights-remake-revealed"
           locator: in the manufacturer's press release reprinted verbatim in the article
@@ -65,13 +65,12 @@ claims:
         quote: "proudly announces its newest pinball machine: Tales of the Arabian Nights Remake."
       game_format: pinball
   - model.tales-of-the-arabian-nights-legacy-edition-remake:
-      note: "The press release's 'New DMD display animations' describes the animation content of the enhanced code; the maker's product page states the hardware is a 21.5-inch HD LCD."
       cite:
         ref: "https://www.pinballremakes.com/prodotto/acconto-preordine-tales-of-the-arabian-nights-legacy-edition"
         quote: 'The machine features a large 21.5" HD LCD display, bringing the world of the Arabian Nights to life with upgraded video animations and a more dynamic visual presentation.'
       display_type: lcd
   - model.tales-of-the-arabian-nights-legacy-edition-remake:
-      note: "A remake preserves the original's creative work, so the original's creative credits - design, art, animation, music, sound - carry to the remake, as with Medieval Madness and its Chicago Gaming remake. The maker frames the remake as preserving the classic machine's gameplay. Mechanics and software credits do not carry: the remake is re-engineered. The art credit carries to this edition because it retains the original 1996 artwork package."
+      note: "A remake preserves the original's creative work, so design, art, animation, music and sound carry to the remake. Mechanics and software do not: the remake is re-engineered. The art credit carries to this edition: it retains the original 1996 artwork package."
       cite:
         - ref: "ipdb:3824"
           quote: "Design by: John Popadiuk [...] Art by: Pat McMahon [...] Dots/Animation by: Adam Rhine, Brian Morris [...] Music by: Dave Zabriskie [...] Sound by: Dave Zabriskie"
@@ -86,7 +85,7 @@ claims:
         - dave-zabriskie: sound
         - pat-mcmahon: art
   - model.tales-of-the-arabian-nights-legacy-edition-remake:
-      note: "PPS's wording, 'Infinite mirror side blades', names the playfield side blades the maker's page calls Side Rails, so mirror-blades attaches. The edition's trim name and the Glowing Stars Ramp LEDs are model-specific presentation identities, recorded in the family notes."
+      note: "PPS's 'Infinite mirror side blades' names the side blades the maker's page calls Side Rails."
       cite:
         - ref: "https://www.pinballremakes.com/prodotto/acconto-preordine-tales-of-the-arabian-nights-legacy-edition"
           quote: 'The cabinet is enhanced with special "Night Sky" metal armor trims, Invisible Magic Glass, Infinite Mirror Side Rails, Glowing Stars Ramp LEDs, and a Playfield Lighted Backpanel, adding depth, elegance, and modern visual presence without losing the iconic look of the original game.'
@@ -101,7 +100,7 @@ claims:
           lighted-backpanels,
         ]
   - model.tales-of-the-arabian-nights-legacy-edition-remake:
-      note: "GameSync Lighting is Pedretti's brand of interactive lighting, here on the speakers and sidebars. The upgraded Lamp and Genie toys are the original 1996 machine's toys, retained by the remake: IPDB names the Genie a bash toy; the Lamp atop the spinning posts states no motion or ball interaction of its own, so it classifies as a static toy."
+      note: "GameSync Lighting is Pedretti's brand of interactive lighting. The remake retains the original's Lamp and Genie toys: IPDB names the Genie a bash toy; the Lamp atop the spinning posts has no motion or ball interaction of its own, so it is a static toy."
       cite:
         - ref: "https://www.pinballremakes.com/prodotto/acconto-preordine-tales-of-the-arabian-nights-legacy-edition"
           quote: "The Premium Sound System, combined with GameSync Lighting™ RGB speakers and GameSync Lighting™ RGB sidebars, creates a more powerful and engaging atmosphere. The machine also includes a shaker motor, upgraded Lamp and Genie toys, the Glitter Gold Lamp, Scorbit integration, and online software updates, allowing the game to remain current over time."
@@ -116,7 +115,7 @@ claims:
         quote: "Inspired by the legendary and mesmerizing 1996 original, this remake combines the magical gameplay of the classic machine with updated technology, immersive atmospheric lighting, enhanced visual effects, and modern features to create an unforgettable pinball experience for players and collectors alike. [...] Tales of the Arabian Nights Remake will be available in two different models: Legacy Edition and 30th Anniversary Edition."
       remake_of: tales-of-the-arabian-nights
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "The maker and its partners sell pre-order deposits only, with the balance due before delivery and no machine yet shipping, so the machine is announced, not produced."
+      note: "The maker and its partners sell pre-order deposits only, with nothing yet shipping, so the machine is announced."
       cite:
         - ref: "https://www.pinballnews.com/site/2026/06/15/tales-of-the-arabian-nights-remake-revealed"
           locator: in the manufacturer's press release reprinted verbatim in the article
@@ -131,7 +130,7 @@ claims:
         quote: "proudly announces its newest pinball machine: Tales of the Arabian Nights Remake."
       game_format: pinball
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "An edition is a variant of its base, and the Legacy Edition is the base: Pedretti's own Funhouse remakes take this shape (the Limited Edition is a variant of the Collector's Edition), the pricier strictly-limited edition pointing at the standard one. The maker describes this edition relative to the Legacy Edition and states both models share the newly developed feature set."
+      note: "The maker describes this edition relative to the Legacy Edition and states both models share the same feature set, so the Legacy Edition is its base."
       cite:
         - ref: "https://www.pinballremakes.com/prodotto/deposit-preorder-europe-only-tales-of-the-arabian-nights-30th-anniversary-edition"
           quote: 'Like the Legacy Edition, the 30th Anniversary Edition features the 21.5" HD LCD display, the original game code, and the enhanced 1.5+ game code, combining classic gameplay with expanded modern features.'
@@ -140,7 +139,6 @@ claims:
           quote: Both models include all of the newly developed features created specifically for this project.
       variant_of: tales-of-the-arabian-nights-legacy-edition-remake
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "The press release's 'New DMD display animations' describes the animation content of the enhanced code; the maker's product page states the hardware is a 21.5-inch HD LCD."
       cite:
         ref: "https://www.pinballremakes.com/prodotto/deposit-preorder-europe-only-tales-of-the-arabian-nights-30th-anniversary-edition"
         quote: 'Like the Legacy Edition, the 30th Anniversary Edition features the 21.5" HD LCD display, the original game code, and the enhanced 1.5+ game code, combining classic gameplay with expanded modern features.'
@@ -156,7 +154,7 @@ claims:
       production_quantity: 399
       tag: [limited-edition]
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "A remake preserves the original's creative work, so the original's creative credits - design, art, animation, music, sound - carry to the remake, as with Medieval Madness and its Chicago Gaming remake. The maker frames the remake as preserving the classic machine's gameplay. Mechanics and software credits do not carry: the remake is re-engineered. The art credit does not carry to this edition: its art package is new (Brian Allen)."
+      note: "A remake preserves the original's creative work, so design, art, animation, music and sound carry to the remake. Mechanics and software do not: the remake is re-engineered. The art credit does not carry to this edition: its art package is new."
       cite:
         ref: "ipdb:3824"
         quote: "Design by: John Popadiuk [...] Dots/Animation by: Adam Rhine, Brian Morris [...] Music by: Dave Zabriskie [...] Sound by: Dave Zabriskie"
@@ -167,7 +165,7 @@ claims:
         - dave-zabriskie: music
         - dave-zabriskie: sound
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "Flyland Designs is Brian Allen's studio, so the person credit is Brian Allen, who also created the Cirqus Voltaire remake's Ringmaster Edition art package."
+      note: "Flyland Designs is Brian Allen's studio, so the person credit is Brian Allen."
       cite:
         - ref: "https://www.pinballnews.com/site/2026/06/15/tales-of-the-arabian-nights-remake-revealed"
           locator: in the manufacturer's press release reprinted verbatim in the article
@@ -178,7 +176,7 @@ claims:
       credit:
         - brian-allen: art
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "PPS's wording, 'Infinite mirror side blades', names the playfield side blades the maker's page calls Side Rails, so mirror-blades attaches. The edition's trim name and the Glowing Stars Ramp LEDs are model-specific presentation identities, recorded in the family notes."
+      note: "PPS's 'Infinite mirror side blades' names the side blades the maker's page calls Side Rails."
       cite:
         - ref: "https://www.pinballremakes.com/prodotto/deposit-preorder-europe-only-tales-of-the-arabian-nights-30th-anniversary-edition"
           quote: 'The cabinet is further enhanced with special "Purple Glitter" metal armor trims, giving the game a distinctive and luxurious appearance. Combined with the Invisible Magic Glass, Infinite Mirror Side Rails, Glowing Stars Ramp LEDs, Playfield Lighted Backpanel, and Glitter Gold Lamp, the result is a machine with a bold, elegant, and unmistakably magical presence.'
@@ -193,7 +191,7 @@ claims:
           lighted-backpanels,
         ]
   - model.tales-of-the-arabian-nights-30th-anniversary-remake:
-      note: "GameSync Lighting is Pedretti's brand of interactive lighting, here on the speakers, sidebars and backbox. The upgraded Lamp and Genie toys are the original 1996 machine's toys, retained by the remake: IPDB names the Genie a bash toy; the Lamp atop the spinning posts states no motion or ball interaction of its own, so it classifies as a static toy."
+      note: "GameSync Lighting is Pedretti's brand of interactive lighting. The remake retains the original's Lamp and Genie toys: IPDB names the Genie a bash toy; the Lamp atop the spinning posts has no motion or ball interaction of its own, so it is a static toy."
       cite:
         - ref: "https://www.pinballremakes.com/prodotto/deposit-preorder-europe-only-tales-of-the-arabian-nights-30th-anniversary-edition"
           quote: "The 30th Anniversary Edition also includes the Premium Sound System, GameSync Lighting™ RGB speakers, GameSync Lighting™ RGB sidebars, Backbox GameSync Lighting, shaker motor, upgraded Lamp and Genie toys, Scorbit integration, and online software updates."

@@ -47,7 +47,7 @@ sources:
 claims:
   - manufacturer.fast-pinball:
       create: true
-      note: "The hardware-platform company behind the licensed 2.0 conversion-kit ecosystem; it makes boardsets, not machines of its own."
+      note: "FAST Pinball makes boardsets, not machines of its own."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "He writes the code, designs the games, and has brought in more professional artists and voice actors with each title, while FAST Pinball handles the hardware."
@@ -72,14 +72,14 @@ claims:
       parent: usa/nj
       name: Pennsville
   - corporate-entity.cardona-pinball-designs:
-      note: "The New Jersey business registry, republished by City-Data, registers Cardona Pinball Designs, LLC in Pennsville (registered 2021-01-06). Consistent with James Cardona's own author bio placing him in southern New Jersey; Pennsville is in Salem County in the state's southwest corner. The maker's own sites publish no address."
+      note: "The New Jersey business registry, republished by City-Data, registers the company in Pennsville, in the state's southwest corner; the maker's own sites publish no address."
       cite:
         ref: "https://www.city-data.com/business-entities/NJ/CARDONA-PINBALL-DESIGNS-LLC-0450585629-NJ.html"
         quote: "CARDONA PINBALL DESIGNS, LLC [...] Entity Id: 0450585629 [...] Registration date: 2021 Jan 06 [...] City: PENNSVILLE"
       location: [usa/nj/pennsville]
   - corporate-entity.fast-pinball:
       create: true
-      note: "The maker's own site and LinkedIn say only 'greater Seattle area'; Skill Shot's venue listing places FAST Pinball HQ in Gig Harbor, and the maker's own Facebook page header ('FAST Pinball, LLC | Gig Harbor WA') and the Washington company registry (UBI 603387874, incorporated 2014) agree - both on hosts the citation system cannot register, so they corroborate here rather than cite."
+      note: "The maker's own site says only 'greater Seattle area'; Skill Shot's venue listing places its headquarters in Gig Harbor, as do the Washington company registry (UBI 603387874) and the maker's own Facebook page header."
       cite:
         - ref: "https://fastpinball.com/about"
           quote: "FAST Pinball was founded in 2014 by Aaron Davis and Dave Beecher. We're based in the greater Seattle area and have sold pinball control systems to customers around the world, including individual hobbyists, indie pinball designers, and to pinball manufacturing companies who build upgrade kits and complete machines."
@@ -94,7 +94,7 @@ claims:
       location: [usa/wa/gig-harbor]
   - system.fast-pinball:
       create: true
-      note: "FAST Pinball's boardset platform for licensed 2.0 conversion kits. Cardona's implementation pairs its CPD CPU with the FAST controller and FAST sound board, per the July 2026 release notes' install procedure. The CPU is a PC-class computer - the kit installation video reads its port panel sticker naming HDMI video outputs, USB and Ethernet - so the PC subgeneration follows."
+      note: "Cardona's implementation pairs its CPD CPU with the FAST controller and sound board. The CPU is a PC-class computer - its port panel names HDMI video outputs, USB and Ethernet - so the PC subgeneration follows."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: he wanted all the manufacturers on the same hardware which is why I had to switch to the FAST platform
@@ -120,7 +120,7 @@ claims:
         quote: Added announcer voices from Jada Holmes
       name: Jada Holmes
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "An official, licensed, commercially sold product, so produced rather than aftermarket (DomainModel.md defines aftermarket as not an official commercial release)."
+      note: "An official, licensed, commercially sold product is produced rather than aftermarket."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "Back in April, James Cardona released Fish Tales: Ultimate Fishing Challenge, the third kit from his company, Cardona Pinball, with a fourth still to come."
@@ -129,7 +129,7 @@ claims:
           quote: FT 2026 05 05 First Commercial Release
       production_status: produced
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "The maker's own release history labels 2026-05-05 the First Commercial Release. Kineticist's 'Back in April' and Pinside's April date read as the launch-event framing; the maker's own document wins."
+      note: "The maker's own release history labels 2026-05-05 the First Commercial Release; the April dates elsewhere read as launch-event framing."
       cite:
         ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
         locator: "PDF document page 2 of 2; the sheet carries no printed folio"
@@ -142,7 +142,7 @@ claims:
         quote: "It's a 2.0 kit, a category of officially licensed products that install into classic Bally/Williams machines and turns them into a new game experience, while keeping the original intact."
       game_format: pinball
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "The announcement video's auto-captions render the title 'Fishtails'; the quote is verbatim ASR. The license is from Williams/Planetary Pinball Supply."
+      note: "The announcement video's auto-captions render the title 'Fishtails'. The license is from Williams/Planetary Pinball Supply."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "It's a 2.0 kit, a category of officially licensed products that install into classic Bally/Williams machines and turns them into a new game experience, while keeping the original intact."
@@ -166,7 +166,6 @@ claims:
       technology_generation: solid-state
       system: fast-pinball
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "Kineticist's own reporting names the roles; Cardona's own words in the same interview corroborate the code ('I write code and that has always been easy and enjoyable for me')."
       cite:
         ref: "https://www.kineticist.com/news/james-cardona-interview"
         quote: "He writes the code, designs the games, and has brought in more professional artists and voice actors with each title, while FAST Pinball handles the hardware."
@@ -189,7 +188,7 @@ claims:
       credit:
         - jada-holmes: voice
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "The June 2026 update added the video mode; MB is the release notes' own abbreviation for the Caster's Club multiball."
+      note: "MB is the release notes' own abbreviation for the Caster's Club multiball."
       cite:
         - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
           locator: "PDF document page 2 of 2; the sheet carries no printed folio"
@@ -199,7 +198,7 @@ claims:
           quote: Fixed various display issues when caster's club MB was running
       gameplay_feature: [video-modes, multiball]
   - model.fish-tales:
-      note: "A machine produced in five figures was commercially produced; IPDB records the exact run as 13,640."
+      note: "A machine made in five figures was commercially produced."
       cite:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "Fish Tales is a perfect example with over 13,000 made"
@@ -207,7 +206,7 @@ claims:
           quote: "they made over 13,000 uh of these machines"
       production_status: produced
   - model.fish-tales:
-      note: "The fishing-rod-shaped Autoplunger is an auto-launch; the ball-launching catapult attaches as a catapult; the rotary reel lock as a ball lock."
+      note: "The fishing-rod-shaped Autoplunger is an auto-launch; the ball-launching catapult is a catapult; the rotary reel lock is a ball lock."
       cite:
         ref: "ipdb:861"
         quote: "Flippers (2), Criss-cross Ramps (2), Rollunder spinner (1), Multiball, Captive ball, Autoplunger (shaped like a fishing rod), ball-launching catapult next to the rotary reel lock."
@@ -215,13 +214,12 @@ claims:
       gameplay_feature:
         [{ ramps: 2 }, captive-ball, auto-launch, catapults, ball-locks]
   - model.fish-tales:
-      note: "Toy classifications: the rotary fishing reel locks balls, so it is a ball-holding toy; the moving fish topper attaches as a topper (its motion is a bespoke identity recorded in the family notes as a future unique feature)."
+      note: "The rotary fishing reel locks balls, so it is a ball-holding toy."
       cite:
         ref: "ipdb:861"
         quote: "Toys: Rotary fishing reel ball lock, moving fish topper."
       gameplay_feature: [ball-holding-toys, toppers]
   - model.fish-tales:
-      note: "The four named voices are asserted; the note's 'possibly others' hedge covers only unnamed people."
       cite:
         ref: "ipdb:861"
         quote: "voices on this game were provided by Mark Ritchie, Steve Ritchie, Jim Gentile, Chris Granner, and possibly others"
@@ -231,7 +229,7 @@ claims:
         - jim-gentile: voice
         - chris-granner: voice
   - model.fish-tales:
-      note: "The credit vocabulary has no sculptor role; an earlier ingest classifies sculpting under art (Jerry Pinsler's existing Party Zone credit is art), so the topper sculpt attaches the same way, alongside Pat McMahon's package art credit."
+      note: "The credit vocabulary has no sculptor role; sculpting records as art."
       cite:
         ref: "ipdb:861"
         quote: Jerry Pinsler sculpted the fish on the topper.

@@ -28,7 +28,7 @@ claims:
       name: Custom Shooter Knobs
       gameplay_feature_alias: [Custom Shooter Knob]
   - model.sonic-the-hedgehog-special-edition:
-      note: "The maker sells the game now and ships it from stock - its delivery terms turn on production schedules and inventory availability - so the machine is in production, not merely announced."
+      note: "The maker sells the game now and ships it from stock, so it is in production."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -66,7 +66,6 @@ claims:
       credit:
         - steve-ritchie: design
   - model.sonic-the-hedgehog-special-edition:
-      note: "Slash contributed the soundtrack's exclusive guitar solos, so he credits as music."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Highlights section
@@ -77,7 +76,7 @@ claims:
       credit:
         - saul-slash-hudson: music
   - model.sonic-the-hedgehog-special-edition:
-      note: "Classifications: the Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target, so it attaches as a solitary drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield attaches as a mini-playfield, the term in use for upper playfields; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it attaches as a thrust magnet, and the Battle Zone! magnet states no direction, so it attaches as the generic magnet."
+      note: "The Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield is a mini-playfield; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it is a thrust magnet, and the Battle Zone! magnet has no stated direction, so it is the generic magnet."
       cite:
         ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
         locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -100,7 +99,7 @@ claims:
           magnets,
         ]
   - model.sonic-the-hedgehog-special-edition:
-      note: "Toy classifications: JJP's own wording calls the Dr. Eggman toy both interactive bash toy and animatronic, so it attaches as bash and animatronic; the Sonic and Amy Rose sculptures state no motion or ball interaction, so they classify as static toys."
+      note: "JJP calls the Dr. Eggman toy both interactive bash toy and animatronic, so it is both; the Sonic and Amy Rose sculptures have no stated motion or ball interaction, so they are static toys."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
           locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -110,7 +109,7 @@ claims:
           quote: Dr. Eggman Animatronic Bash Toy
       gameplay_feature: [bash-toys, animatronic-toys, static-toys, speech]
   - model.sonic-the-hedgehog-special-edition:
-      note: "The collection page's playfield list states the Chaos Emerald inserts are RGB; the 2,000+ individually controlled RGB LEDs attach as LED general illumination."
+      note: "The 2,000+ individually controlled RGB LEDs are the general illumination."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
           locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -137,7 +136,7 @@ claims:
       gameplay_feature:
         [cabinet-armor, toppers, shaker-motors, invisiglass, numbered-plaques]
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "The maker sells the game now and ships it from stock - its delivery terms turn on production schedules and inventory availability - so the machine is in production, not merely announced."
+      note: "The maker sells the game now and ships it from stock, so it is in production."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -175,7 +174,6 @@ claims:
       credit:
         - steve-ritchie: design
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "Slash contributed the soundtrack's exclusive guitar solos, so he credits as music."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Highlights section
@@ -186,7 +184,7 @@ claims:
       credit:
         - saul-slash-hudson: music
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "Classifications: the Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target, so it attaches as a solitary drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield attaches as a mini-playfield, the term in use for upper playfields; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it attaches as a thrust magnet, and the Battle Zone! magnet states no direction, so it attaches as the generic magnet."
+      note: "The Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield is a mini-playfield; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it is a thrust magnet, and the Battle Zone! magnet has no stated direction, so it is the generic magnet."
       cite:
         ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
         locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -209,7 +207,7 @@ claims:
           magnets,
         ]
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "Toy classifications: JJP's own wording calls the Dr. Eggman toy both interactive bash toy and animatronic, so it attaches as bash and animatronic; the Sonic and Amy Rose sculptures state no motion or ball interaction, so they classify as static toys."
+      note: "JJP calls the Dr. Eggman toy both interactive bash toy and animatronic, so it is both; the Sonic and Amy Rose sculptures have no stated motion or ball interaction, so they are static toys."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
           locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -219,7 +217,7 @@ claims:
           quote: Dr. Eggman Animatronic Bash Toy
       gameplay_feature: [bash-toys, animatronic-toys, static-toys, speech]
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "The collection page's playfield list states the Chaos Emerald inserts are RGB; the 2,000+ individually controlled RGB LEDs attach as LED general illumination."
+      note: "The 2,000+ individually controlled RGB LEDs are the general illumination."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
           locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -237,14 +235,14 @@ claims:
           rgb-playfield-inserts,
         ]
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "Jersey Jack sells the family as one game in three trim tiers around the Special Edition, the same shape as its other multi-edition families - Harry Potter's Arcade and Collector's Editions are likewise variants of that family's mid-tier Wizard Edition."
+      note: "Jersey Jack sells the family as one game in three trim tiers around the Special Edition."
       cite:
         ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
         locator: in the Frequently Asked Questions section
         quote: "There are three pinball machines for Sonic: the Collector's Edition ($15,000), the Special Edition ($12,000), and the Arcade Edition ($9,999)."
       variant_of: sonic-the-hedgehog-special-edition
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "Classifications: the Mechanical Battle Topper attaches as a topper; Gold Wireform Ramps attach as habitrails (wireform); the Gold Ring Shooter Knob is a custom shooter knob; the External LED Lighting Package reacts to gameplay per the collection page's cabinet caption, so it attaches as interactive cabinet lighting; the Guarnieri & Ritchie Signature Card attaches as designer autographs."
+      note: "The Mechanical Battle Topper is a topper; the Gold Wireform Ramps are habitrails; the Gold Ring Shooter Knob is a custom shooter knob; the External LED Lighting Package reacts to gameplay, so it is interactive cabinet lighting; the Guarnieri & Ritchie Signature Card is a designer autograph."
       cite:
         - ref: "https://jerseyjackpinball.com/products/sonic-collectors-edition"
           quote: "Sonic Vs. Dr. Eggman Mechanical Battle Topper with Super-Wide LCD Screen [...] 'Knuckles Red' Metallic Laser-Cut Armor [...] Gold Wireform Ramps [...] Gold Ring Shooter Knob [...] External LED Lighting Package [...] Shaker Motor with Haptic Feedback [...] Industry Leading JJP Invisiglass™ [...] 'Collector's Edition' Numbered Plaque [...] 'Jersey Jack' Guarnieri & Steve Ritchie Signature Card"
@@ -264,7 +262,7 @@ claims:
           designer-autographs,
         ]
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "The maker sells the game now and ships it from stock - its delivery terms turn on production schedules and inventory availability - so the machine is in production, not merely announced."
+      note: "The maker sells the game now and ships it from stock, so it is in production."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -302,7 +300,6 @@ claims:
       credit:
         - steve-ritchie: design
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "Slash contributed the soundtrack's exclusive guitar solos, so he credits as music."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Highlights section
@@ -313,7 +310,7 @@ claims:
       credit:
         - saul-slash-hudson: music
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "Classifications: the Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target, so it attaches as a solitary drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield attaches as a mini-playfield, the term in use for upper playfields; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it attaches as a thrust magnet, and the Battle Zone! magnet states no direction, so it attaches as the generic magnet."
+      note: "The Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield is a mini-playfield; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it is a thrust magnet, and the Battle Zone! magnet has no stated direction, so it is the generic magnet."
       cite:
         ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
         locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -336,7 +333,7 @@ claims:
           magnets,
         ]
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "Toy classifications: JJP's own wording calls the Dr. Eggman toy both interactive bash toy and animatronic, so it attaches as bash and animatronic; the Sonic and Amy Rose sculptures state no motion or ball interaction, so they classify as static toys."
+      note: "JJP calls the Dr. Eggman toy both interactive bash toy and animatronic, so it is both; the Sonic and Amy Rose sculptures have no stated motion or ball interaction, so they are static toys."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
           locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -346,7 +343,7 @@ claims:
           quote: Dr. Eggman Animatronic Bash Toy
       gameplay_feature: [bash-toys, animatronic-toys, static-toys, speech]
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "The collection page's playfield list states the Chaos Emerald inserts are RGB; the 2,000+ individually controlled RGB LEDs attach as LED general illumination."
+      note: "The 2,000+ individually controlled RGB LEDs are the general illumination."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
           locator: "PDF document page 2 of 2; the flyer carries no printed folios"
@@ -364,7 +361,7 @@ claims:
           rgb-playfield-inserts,
         ]
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "Jersey Jack sells the family as one game in three trim tiers around the Special Edition, the same shape as its other multi-edition families - Harry Potter's Arcade and Collector's Editions are likewise variants of that family's mid-tier Wizard Edition."
+      note: "Jersey Jack sells the family as one game in three trim tiers around the Special Edition."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -374,7 +371,6 @@ claims:
           quote: "And the Arcade Edition delivers the same layout, the same shots, and the same speed at an entry-level price"
       variant_of: sonic-the-hedgehog-special-edition
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "Armor is cabinet trim; the feature vocabulary includes presentation equipment, so the Black Armor attaches as cabinet armor."
       cite:
         ref: "https://jerseyjackpinball.com/products/sonic-arcade-edition"
         quote: Black Armor
