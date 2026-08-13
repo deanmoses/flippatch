@@ -2,6 +2,8 @@
 
 Patch: `patches/0226-arabian-nights.yaml` (claimed 2026-08-11; 0225 was already spoken for by a concurrent session).
 
+Supplement: `patches/0228-arabian-nights-documents.yaml` (claimed 2026-08-12) — the [document-cites](../../RULEBOOK.md#document-cites) pilot: the Williams-era documents 0226 recorded as unused (Operations Manual May 1996, Operators Handbook, parts list, Service Bulletin #91, flyer sides). Numbered above 0227 because it cites the `williams` publisher root seeded there.
+
 ## Models
 
 - Tales of the Arabian Nights (30th Anniversary Remake) (Pedretti Gaming • 2026) — `tales-of-the-arabian-nights-30th-anniversary-remake`
@@ -70,7 +72,28 @@ For the 1996 original: `game_format: pinball` (ipdb Notable Features line, as 02
 - 1996: the outlane "spikes" rings — "The top of each flipper inlane has a circle of metal 'spikes' that can rise up... to temporarily encircle the ball and stop it from exiting the outlane" (ipdb:3824). Also the Genie bash toy and the Lamp-on-spinning-posts as identities.
 - Remakes: Glitter Gold Lamp centerpiece, Glowing Stars Ramp LEDs, Night Sky trims (Legacy), Purple Glitter trims + numbered certificate + metal plaque (30th), Magic Lamp RGB + Genie internal RGB.
 
+## The 0228 documents supplement (2026-08-12)
+
+The document-cites pilot. Generator: [gen_documents.py](gen_documents.py).
+
+**Documents surveyed** (one metadata search names all nine unacquired IPDB-indexed TOTAN documents):
+
+- **Declared + cited (0228)**: Operations Manual (16-50047-101 FINAL MAY 1996, 160 sheets) and the two-sided flyer — both cached from **archive.org copies** (`Williams_Tales_of_the_Arabian_Nights_Operations_Manual`, `arabian-nights-pinball-us-flier`), identity verified against the covers and PPS's Online Game Manuals index row. Both scans; OCR'd. IPDB's copies ride as `catalog` links.
+- **Cached, not declared**: Operators Handbook (May 1996, 16-10252, archive.org `arcademanual_Tales_Of_The_Arabian_Nights_HAN`) — 16 sheets of service menus and FCC boilerplate, no game fact a claim needs. Declaring waits for a claim that cites it.
+- **IPDB-only, not acquired**: Service Bulletin #91 (wire dressing), WPC-95 Schematic Manual (platform doc — document-to-System attachment is out of scope), Parts List (.txt), instruction card scan. None evidences a missing claim; hand-import when one does.
+- **Third-party rulesheet** (Lehan v1.2) — stays `web` per the design, uncited.
+
+**What the documents newly evidence**: IPDB's Notable Features line names **no ramps**, so 0226 couldn't assert them. 0228 adds `ramps` (flyer back: "Fly on the Magic Carpet Ramps around Ancient Baghdad") and `diverter-ramps` (manual printed page 1-43: ramp diverter coil #21 + adjustment A2.19). Both quotes are author transcriptions from rendered sheets (SKIP-PDF).
+
+**Resolved non-conflict**: the flyer's "3-ball Multi-Ball" describes Genie Multiball's start; IPDB's line reads "2- 3- and 4-ball multiball", so the seeded `4-ball-multiball` (the maximum) stands.
+
+**Cabinet ruling (user, 2026-08-12)**: `cabinet: floor` IS asserted on standard machines when evidence supports it — 0228 classifies the 1996 model from the flyer's specifications line (76" height, 29" width, 250 lbs uncrated), the campaign's first `cabinet` assertion.
+
+**Library hygiene done in pinexplore**: archive.org URLs attached to the seeded documents (merge), flyer front/back image documents folded into one flyer work, `citation_ref` + publisher set on all three — which is exactly the join the quote gates now resolve document refs through.
+
 ## Gate-run history
 
 - **2026-08-11 `verify-quote-verbatim`**: 0 failed on the first emit (all 0226 quotes lifted from `web_cache.py quote` output / `make show-source --check`).
 - **2026-08-11 `verify-quote-support 0226`** (190k tokens): 1 warning — `numbered-plaques` on the 30th Anniversary is "a collector's item, not a gameplay feature". **Kept**: presentation features are vocabulary by the 0218 charter, and `numbered-plaques` was created in 0220 and attached to Stern's MTMTE LE with the same collector meaning (same warning class as 0221's `cabinet-armor`).
+- **2026-08-12 `verify-quote-verbatim`** (0228): 0 failed; both document-ref cites report SKIP-PDF, resolved through the library — the first document-ref gate run.
+- **2026-08-12 `verify-quote-support 0228`** (0 tokens): both claims skipped as PDF-source author-checked; 0 warnings.

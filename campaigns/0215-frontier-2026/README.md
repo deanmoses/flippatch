@@ -13,8 +13,8 @@ Each family is independent work, done by a separate AI session in its own folder
 - **✅ 0223 · [cirqus-voltaire](model-families/cirqus-voltaire)** (American Pinball) — Remake / Ringmaster Edition **+ 1 older**: Cirqus Voltaire (Bally, 1997)
 - **✅ 0224 · [bon-jovi](model-families/bon-jovi)** (Barrels of Fun) — Bon Jovi
 - **✅ 0225 · [fish-tales](model-families/fish-tales)** (Cardona) — Ultimate Fishing Challenge (Kit) **+ 1 older**: Fish Tales (Williams, 1992). Carries the Cardona citation root with the first **path-scoped CDN domain** — see [RULEBOOK.md](RULEBOOK.md#citation-roots).
-- **✅ 0226 · [arabian-nights](model-families/arabian-nights)** (Pedretti) — Tales of the Arabian Nights 30th Anniversary + Legacy Edition **+ 1 older**: TOTAN (Williams, 1996)
-- **open · [musketeers](model-families/musketeers)** (HEXA) — The 3 Musketeers base + Elegance Edition
+- **✅ 0226, open 0228 · [arabian-nights](model-families/arabian-nights)** (Pedretti) — Tales of the Arabian Nights 30th Anniversary + Legacy Edition **+ 1 older**: TOTAN (Williams, 1996). 0228 is the [document-cites](RULEBOOK.md#document-cites) pilot: the Williams-era documents 0226 couldn't cite.
+- **✅ 0229 · [musketeers](model-families/musketeers)** (HEXA) — The 3 Musketeers base (renamed Classic Edition) + Elegance Edition. The maker's spec sheet survives only as images in Pinball News's article — the transcription route, not document cites, is the worked pattern (see [RULEBOOK.md](RULEBOOK.md#finding-and-fetching-documents)).
 - **open · [p3-modules](model-families/p3-modules)** (Multimorphic) — Dungeon Crawler Carl, Ender's Game
 - **open · [yukon-yeti](model-families/yukon-yeti)** (Turner) — Yukon Yeti
 - **open · [ramps-pinball](model-families/ramps-pinball)** (Ramp's) — Monster League Hockey **+ 2 siblings**: Road Trip, Little Shop of Horrors

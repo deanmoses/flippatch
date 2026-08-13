@@ -215,9 +215,15 @@ class _FakeWebCache:
     the real row's ``content_type`` — the fact ``is_pdf`` reads.
     """
 
-    def __init__(self, pages: dict[str, str], pdf_urls: set[str] | None = None) -> None:
+    def __init__(
+        self,
+        pages: dict[str, str],
+        pdf_urls: set[str] | None = None,
+        documents: dict[str, str] | None = None,
+    ) -> None:
         self.pages = pages
         self.pdf_urls = pdf_urls or set()
+        self.documents = documents or {}
         self.requested: list[str] = []
 
     def get(self, url: str) -> dict[str, str] | None:
@@ -228,12 +234,20 @@ class _FakeWebCache:
         content_type = "application/pdf" if url in self.pdf_urls else "text/html"
         return {"text": text, "content_type": content_type}
 
+    def capture_for_citation_ref(self, ref: str) -> dict[str, str] | None:
+        """Mirrors pinexplore's document-library join: ref → captured page."""
+        self.requested.append(ref)
+        url = self.documents.get(ref)
+        return None if url is None else self.get(url)
+
 
 def _sources_with(
-    pages: dict[str, str], pdf_urls: set[str] | None = None
+    pages: dict[str, str],
+    pdf_urls: set[str] | None = None,
+    documents: dict[str, str] | None = None,
 ) -> tuple[Sources, _FakeWebCache]:
     sources = object.__new__(Sources)
-    fake = _FakeWebCache(pages, pdf_urls)
+    fake = _FakeWebCache(pages, pdf_urls, documents)
     sources._web_cache = fake
     return sources, fake
 
@@ -405,3 +419,55 @@ def test_pdf_extension_alone_does_not_skip_the_gate():
     # path stays gated. Only the cache's content_type exempts a document.
     sources, _ = _sources_with({"https://a.test/notreally.pdf": "html masquerading"})
     assert sources.is_pdf("https://a.test/notreally.pdf") is False
+
+
+# ── document refs: <publisher>:<doc-slug> through the document library ───────
+# A slug-addressed cite resolves via pinexplore's capture_for_citation_ref:
+# the library row names the document's URLs, whichever copy is cached answers.
+
+_MANUAL_REF = "williams:tales-of-the-arabian-nights-operations-manual-1996"
+_MANUAL_URL = "https://ia.test/items/x/manual.pdf"
+
+
+def test_document_ref_backed_by_a_pdf_capture_is_pdf():
+    sources, _ = _sources_with(
+        {_MANUAL_URL: ""},
+        pdf_urls={_MANUAL_URL},
+        documents={_MANUAL_REF: _MANUAL_URL},
+    )
+    assert sources.is_pdf(_MANUAL_REF) is True
+    assert sources.resolve_cite(_MANUAL_REF).status is SourceStatus.PDF
+
+
+def test_document_ref_backed_by_a_text_capture_resolves():
+    # A parts-list .txt or a transcription-backed image gates fully, like any
+    # other text — PDF is a fact about the capture, not about document refs.
+    ref = "williams:tales-of-the-arabian-nights-parts-list-1996"
+    sources, _ = _sources_with(
+        {"https://ia.test/items/x/parts.txt": "1 Ramp Assembly A-21753"},
+        documents={ref: "https://ia.test/items/x/parts.txt"},
+    )
+    assert sources.is_pdf(ref) is False
+    resolved = sources.resolve_cite(ref)
+    assert resolved.status is SourceStatus.RESOLVED
+    assert resolved.text == "1 Ramp Assembly A-21753"
+
+
+def test_document_ref_with_no_capture_is_missing():
+    # The trove's normal state: the document is known, no copy is cached. A
+    # document nobody can produce must not pass as merely unjudgeable.
+    sources, _ = _sources_with({}, documents={})
+    assert sources.is_pdf(_MANUAL_REF) is False
+    assert sources.resolve_cite(_MANUAL_REF).status is SourceStatus.MISSING
+
+
+def test_known_schemes_never_consult_the_document_library():
+    # ipdb/opdb/youtube/isbn each have their own resolution; a library lookup
+    # for them would let a stray citation_ref shadow a scheme.
+    sources, fake = _sources_with(
+        {"https://opdb.org/machines/2155": "Cactus Canyon"},
+        documents={"opdb:2155": "https://opdb.org/machines/2155"},
+    )
+    assert sources.text_for("opdb:2155") == "Cactus Canyon"
+    assert sources.is_pdf("isbn:9781889933023") is False
+    assert "opdb:2155" not in [r for r in fake.requested if ":" in r and "//" not in r]

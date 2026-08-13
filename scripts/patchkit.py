@@ -832,6 +832,74 @@ def source_root(
     return "\n".join(out)
 
 
+def source_child(
+    name: str,
+    *,
+    parent: str,
+    slug: str,
+    source_type: str = "document",
+    author: str | None = None,
+    year: int | None = None,
+    month: int | None = None,
+    day: int | None = None,
+    date_note: str | None = None,
+    description: str | None = None,
+    links: Sequence[tuple[str, str, str]] = (),
+) -> str:
+    """Emit one `sources:` block entry: a slug-addressed child node.
+
+    Declares a periodical issue or a publisher's document under its root, the
+    record a `<root-slug>:<child-slug>` cite ref resolves to (DataPatches.md →
+    Citation sources). Only the slug-addressed types are declarable this way —
+    web children are minted by URL cites and book editions are ISBN rows, so
+    asking for one here is refused rather than failing later at ingest.
+
+    parent: the root's slug (`williams`, `uspto`); the root must be declared in
+            this patch or an earlier one.
+    slug:   the child's authored handle; frozen at creation, full model slug,
+            never an abbreviation.
+    links:  (url, label, link_type) tuples — `reference` for the publisher's own
+            copy, `catalog` for a third-party index copy, `archive` for a
+            snapshot. Never `homepage`: that is a web root's recognition anchor.
+    """
+    if source_type not in ("periodical", "document"):
+        raise ValueError(
+            f"source_child is for slug-addressed types, not {source_type!r}"
+        )
+    for label, handle in (("parent", parent), ("slug", slug)):
+        if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", handle):
+            raise ValueError(f"{label} {handle!r} is not in the system slug grammar")
+    if any(lt == "homepage" for _, _, lt in links):
+        raise ValueError(
+            f"child {name!r} carries a homepage link — homepage is a web root's "
+            "recognition anchor, not a copy of a document"
+        )
+    out = [f"  - name: {_scalar(name)}", f"    slug: {slug}", f"    parent: {parent}"]
+    out.append(f"    source_type: {source_type}")
+    if author:
+        out.append(f"    author: {_scalar(author)}")
+    for key, value in (("year", year), ("month", month), ("day", day)):
+        if value is not None:
+            out.append(f"    {key}: {value}")
+    if date_note:
+        out.append(f"    date_note: {_scalar(date_note)}")
+    if description:
+        out.append("    description: >")
+        out += [f"      {line}" for line in _fold(clean_text(description))]
+    if links:
+        out.append("    links:")
+    for url, label, link_type in links:
+        link = _Map(
+            [
+                ("url", _scalar(url)),
+                ("label", _scalar(label)),
+                ("link_type", link_type),
+            ]
+        )
+        out.extend(_item_lines("      ", link))
+    return "\n".join(out)
+
+
 def render_patch(
     *,
     attribution: str,

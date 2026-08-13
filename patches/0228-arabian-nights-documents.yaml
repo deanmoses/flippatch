@@ -1,0 +1,69 @@
+attribution: flipcommons-catalog
+description: >
+  Williams document cites for Tales of the Arabian Nights (1996).
+sources:
+  - name: Tales of the Arabian Nights Operations Manual (May 1996)
+    slug: tales-of-the-arabian-nights-operations-manual-1996
+    parent: williams
+    source_type: document
+    year: 1996
+    month: 5
+    description: >
+      Williams part 16-50047-101, FINAL: operations & adjustments, testing & problem diagnosis,
+      parts information, wiring diagrams & schematics. 160 pages.
+    links:
+      - {
+          url: "https://archive.org/download/Williams_Tales_of_the_Arabian_Nights_Operations_Manual/Williams_1996_Tales_of_the_Arabian_Nights_Manual.pdf",
+          label: Internet Archive copy,
+          link_type: archive,
+        }
+      - {
+          url: "https://www.ipdb.org/files/3824/Williams_1996_Tales_of_the_Arabian_Nights_Manual.pdf",
+          label: IPDB copy,
+          link_type: catalog,
+        }
+  - name: Tales of the Arabian Nights Flyer (1996)
+    slug: tales-of-the-arabian-nights-flyer-1996
+    parent: williams
+    source_type: document
+    year: 1996
+    description: >
+      Two-sided promotional flyer: playfield photography, feature copy and the specifications
+      line.
+    links:
+      - {
+          url: "https://archive.org/download/arabian-nights-pinball-us-flier/Arabian%20Nights%20Pinball%20US%20Flier.pdf",
+          label: Internet Archive copy (both sides),
+          link_type: archive,
+        }
+      - {
+          url: "https://www.ipdb.org/images/3824/3824f1.jpg",
+          label: "IPDB scan, front",
+          link_type: catalog,
+        }
+      - {
+          url: "https://www.ipdb.org/images/3824/3824f2.jpg",
+          label: "IPDB scan, back",
+          link_type: catalog,
+        }
+claims:
+  - model.tales-of-the-arabian-nights:
+      cite:
+        ref: "williams:tales-of-the-arabian-nights-flyer-1996"
+        locator: "in The Magical Tales of Arabian Nights feature list, flyer back (PDF document page 2)"
+        quote: Fly on the Magic Carpet Ramps around Ancient Baghdad
+      gameplay_feature: [ramps]
+  - model.tales-of-the-arabian-nights:
+      note: "The manual documents a diverter on the ramp with its own coil, switch and operator adjustment - the machine's ramp is diverter-equipped, hence the diverter-ramps leaf."
+      cite:
+        ref: "williams:tales-of-the-arabian-nights-operations-manual-1996"
+        locator: "in the Error Messages section, printed page 1-43, PDF document page 69"
+        quote: "The diverter on the ramp is not functioning properly. Check the Ramp Diverter coil (coil #21) as well as the Ramp Enter switch (#15) for proper adjustment."
+      gameplay_feature: [diverter-ramps]
+  - model.tales-of-the-arabian-nights:
+      note: "No source names a cabinet format; classified from the flyer's specifications: a 76-inch-tall, 29-inch-wide, 250-pound machine is a standard floor-standing cabinet."
+      cite:
+        ref: "williams:tales-of-the-arabian-nights-flyer-1996"
+        locator: the SPECIFICATIONS line at the foot of the flyer back (PDF document page 2)
+        quote: 'Height...76"...193 cm Height (with backbox folded)...56"...142 cm Width...29"...74 cm Depth...55"...140 cm Weight (crated)...270 lbs...122 kg Weight (uncrated)...250 lbs...113 kg'
+      cabinet: floor

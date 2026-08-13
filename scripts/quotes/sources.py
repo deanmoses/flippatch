@@ -4,7 +4,10 @@ Sources come from the sister **pinexplore** repo: the web-scrape cache
 (``ingest_sources/web/cache.sqlite``) for ``http(s)`` refs — with ``opdb:`` and
 ``youtube:`` scheme refs resolved to their canonical cached page (the opdb.org
 machine page; the watch URL whose text is the video's caption-track transcript)
-— and the ``ipdb_machines`` table in ``explore.duckdb`` for ``ipdb:`` refs.
+— and the ``ipdb_machines`` table in ``explore.duckdb`` for ``ipdb:`` refs. A
+slug-addressed ref (``williams:some-manual-slug``) resolves through the
+document library's ``citation_ref`` to whichever copy of the document is
+cached.
 
 Every quote checker resolves through :meth:`Sources.resolve_cite`. Two checkers
 disagreeing about which document a cite names is the failure this module exists
@@ -240,7 +243,9 @@ class Sources:
             # youtube:<id> maps to the canonical watch URL; its cached text is
             # the caption-track transcript pinexplore's video transport stores.
             return self._page_text(f"https://www.youtube.com/watch?v={identifier}")
-        return None
+        page = self._document_capture(ref)
+        text = str((page or {}).get("text") or "")
+        return text if text.strip() else None
 
     def is_pdf(self, ref: str) -> bool:
         """Whether *ref* names a cached PDF.
@@ -250,15 +255,33 @@ class Sources:
         verifiable, because the patch is the record and a second place to say so
         is a second source of truth.
 
-        Deliberately narrow. Only an ``http(s)`` ref can name a PDF — scheme refs
-        resolve to IPDB rows, OPDB pages and caption transcripts, which stay
-        fully checkable. The URL's spelling is not consulted, so an HTML page
-        served at a ``.pdf`` path stays checked.
+        Two ref shapes can name a PDF: an ``http(s)`` URL, and a slug-addressed
+        document ref whose captured copy is one (a Williams manual is routinely
+        a scan). The known schemes stay non-PDF — IPDB rows, OPDB pages and
+        caption transcripts are fully checkable — and the URL's spelling is not
+        consulted, so an HTML page served at a ``.pdf`` path stays checked.
         """
-        if not ref.startswith(("http://", "https://")):
-            return False
-        page = self._web_cache.get(ref) or {}
+        if ref.startswith(("http://", "https://")):
+            page = self._web_cache.get(ref) or {}
+        else:
+            page = self._document_capture(ref) or {}
         return str(page.get("content_type") or "").startswith("application/pdf")
+
+    def _document_capture(self, ref: str) -> dict[str, object] | None:
+        """The cached capture behind a slug-addressed ref, or None.
+
+        A ``<root-slug>:<child-slug>`` cite (a publisher's document, a
+        periodical issue) resolves through the document library's
+        ``citation_ref`` — pinexplore's ``capture_for_citation_ref`` returns
+        whichever of the document's URLs is actually cached, alias-resolved
+        through redirects. The known schemes are excluded so a stray library
+        row can never shadow their own resolution.
+        """
+        scheme, sep, _ = ref.partition(":")
+        if not sep or scheme in ("http", "https", "ipdb", "opdb", "youtube", "isbn"):
+            return None
+        page = self._web_cache.capture_for_citation_ref(ref)
+        return dict(page) if page is not None else None
 
     def _page_text(self, url: str) -> str | None:
         page = self._web_cache.get(url)

@@ -716,6 +716,63 @@ def test_source_root_rejects_malformed_slug() -> None:
         source_root("Williams", source_type="document", slug="Not_A_Slug")
 
 
+def test_source_child_emits_document_node() -> None:
+    sc = patchkit.source_child(
+        "Tales of the Arabian Nights Operations Manual (May 1996)",
+        parent="williams",
+        slug="tales-of-the-arabian-nights-operations-manual-1996",
+        year=1996,
+        month=5,
+        links=[
+            (
+                "https://www.ipdb.org/files/3824/manual.pdf",
+                "IPDB copy",
+                "catalog",
+            ),
+            (
+                "https://archive.org/download/x/manual.pdf",
+                "Internet Archive copy",
+                "archive",
+            ),
+        ],
+    )
+    parsed = yaml.safe_load(sc)[0]
+    assert parsed["parent"] == "williams"
+    assert parsed["slug"] == "tales-of-the-arabian-nights-operations-manual-1996"
+    assert parsed["source_type"] == "document"
+    assert parsed["year"] == 1996
+    assert parsed["month"] == 5
+    assert [link["link_type"] for link in parsed["links"]] == ["catalog", "archive"]
+    assert sc.index("name:") < sc.index("slug:") < sc.index("parent:")
+
+
+def test_source_child_rejects_malformed_handles() -> None:
+    with pytest.raises(ValueError):
+        patchkit.source_child("M", parent="Williams!", slug="ok-slug")
+    with pytest.raises(ValueError):
+        patchkit.source_child("M", parent="williams", slug="Not_A_Slug")
+
+
+def test_source_child_rejects_non_slug_addressed_type() -> None:
+    """A web or book child is never declared as a node — web children are minted
+    by URL cites, book editions are ISBN rows — so a generator asking for one is
+    confused, and ingest would reject it later and less legibly."""
+    with pytest.raises(ValueError):
+        patchkit.source_child("M", parent="example", slug="m", source_type="web")
+
+
+def test_source_child_rejects_homepage_link() -> None:
+    """homepage is a web root's recognition anchor; on a slug-addressed child it
+    would silently widen URL recognition to the child's host."""
+    with pytest.raises(ValueError):
+        patchkit.source_child(
+            "M",
+            parent="williams",
+            slug="m",
+            links=[("https://example.com/", "Example", "homepage")],
+        )
+
+
 def test_render_patch_sources_only_omits_claims_key() -> None:
     """A roots-only patch carries no claims: key at all — a bare 'claims:'
     would load as null and fail the schema's minItems arm."""

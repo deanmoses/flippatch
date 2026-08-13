@@ -1,0 +1,382 @@
+attribution: flipcommons-catalog
+description: >
+  The 3 Musketeers (HEXA 2026): naming, production, credits, features
+claims:
+  - gameplay-feature.atmoslight:
+      create: true
+      name: Atmoslight
+      gameplay_feature_parent: [rgb-playfield-inserts]
+      gameplay_feature_alias:
+        [AtmosLight, Atmoslight Inserts, Atmoslight Surrounding System]
+  - person.tristan-fallon:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+        locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; beside the machine photo"
+        quote: Exclusive Art by Tristan Fallon
+      name: Tristan Fallon
+  - person.herve-coussillan:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+        locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; beside the machine photo"
+        quote: "Exclusive Soundtracks by Hervé Coussillan"
+      name: "Hervé Coussillan"
+  - person.luis-dos-santos:
+      create: true
+      note: "HEXA's own site interviews him as a game designer (the Space Hunt era 'Interview with Luis Dos Santos' page); his 3 Musketeers design credit is carried by Kineticist's Design Team block."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Game Design: Luis Dos Santos"
+      name: Luis Dos Santos
+  - model.the-3-musketeers:
+      note: "An earlier ingest created this model under the plain title name; the maker's own materials name the two editions Classic and Elegance, so the base model takes the maker's edition name (user-approved rename, 2026-08-12)."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; heading of the Classic column"
+          quote: CLASSIC EDITION
+        - ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
+          quote: "Classic Edition [...] Experience all the intensity of the game, the original epic adventure"
+      name: The 3 Musketeers (Classic Edition)
+  - model.the-3-musketeers:
+      note: "Announced per the vocabulary (officially revealed but not yet shipped) as of authoring, 2026-08-12: the newest timeline statement has first shipments merely expected, and no shipping-began statement was found."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: "Hexa Pinball today released full details of their second title, The 3 Musketeers, based on the famed novel by Alexandre Dumas."
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "HEXA says first shipments are expected within three months, roughly June 2026."
+      production_status: announced
+  - model.the-3-musketeers:
+      cite:
+        ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
+        quote: "this pinball machine plunges you into the adventure of d'Artagnan, an ambitious young Gascon who dreams of joining the prestigious Musketeers in the service of King Louis XIII of France"
+      game_format: pinball
+  - model.the-3-musketeers:
+      note: "Month records the announcement month (campaign convention, GTF Victory precedent): both editions were revealed March 20, 2026, in HEXA's dual Bordeaux / Texas Pinball Festival launch."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+        quote: "Date: March 20th, 2026"
+      month: 3
+  - model.the-3-musketeers:
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+          locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; beside the machine photo"
+          quote: Exclusive Art by Tristan Fallon
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: "Artwork is by Tristan Fallon, while the music comes from Hervé Coussillan."
+      credit:
+        - tristan-fallon: art
+  - model.the-3-musketeers:
+      note: "The maker's own label is 'Exclusive Soundtracks by'; the music role follows."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+          locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; beside the machine photo"
+          quote: "Exclusive Soundtracks by Hervé Coussillan"
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: "Artwork is by Tristan Fallon, while the music comes from Hervé Coussillan."
+      credit:
+        - herve-coussillan: music
+  - model.the-3-musketeers:
+      note: "Kineticist's Design Team block labels him 'Music / Sound'; the sound role follows in addition to the music credit the maker's sheet supports."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Music / Sound: Hervé Coussillan"
+      credit:
+        - herve-coussillan: sound
+  - model.the-3-musketeers:
+      note: "Kineticist's Design Team block is the only non-crowdsourced source naming this credit; corroborating first-party sources were sought at authoring time and none found (the maker's specification sheet credits only art, soundtracks and engineering, and no manual exists yet)."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Game Design: Luis Dos Santos"
+      credit:
+        - luis-dos-santos: design
+  - model.the-3-musketeers:
+      note: "'Electronic Engineering' has no dedicated role in the closed credit-role vocabulary, so the credit maps to the other role; the block label is recorded here. Kineticist's Design Team block is the only non-crowdsourced source naming this credit; corroborating first-party sources were sought at authoring time and none found (the maker's specification sheet credits only art, soundtracks and engineering, and no manual exists yet)."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Electronic Engineering: Romain Fontaine"
+      credit:
+        - romain-fontaine: other
+  - model.the-3-musketeers:
+      note: "Counts follow the sheet's PLAYFIELD FEATURES list. Balls attach as 7 with the extra mini-ball preserved in the quote (no mini-ball vocabulary; 3Musketeers.md keeps it on the future-unique-features list). Treville's Mansion's '3 Bank Drop Target' attaches as one 3-bank; the single three-ball La Rochelle Harbor lock attaches as ball-locks with count 1 (the Bon Jovi shape). Ramps attach as the sheet's own count of 3. The specification sheet is edition-neutral and the maker's own comparison table differs only in cosmetic items, so the playfield features are facts about both editions."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: "3 Bank Drop Target, Ramp, Diverter, Hidden Mini-Ball Shot [...] 3 Balls Lock La Rochelle Harbor [...] 3 Ramps: [...] VUK Treville's Mansion Roof [...] Captive Ball of the Queen's Diamonds Studs [...] 1 Spinner [...] 2 Flippers [...] 7 Balls + 1 Mini-Ball"
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "Gameplay is identical across editions — the Elegance is a cosmetic and tactile upgrade, not a mechanical one."
+      gameplay_feature:
+        [
+          { flippers: 2 },
+          { balls: 7 },
+          { spinners: 1 },
+          { ramps: 3 },
+          { 3-bank-drop-targets: 1 },
+          { ball-locks: 1 },
+          { vertical-up-kickers: 1 },
+          { captive-ball: 1 },
+        ]
+  - model.the-3-musketeers:
+      note: "Four diverter rows on the sheet: the cannon platform, the mansion courtyard (hidden), Notre Dame's Forest (hidden) and the back board. The specification sheet is edition-neutral and the maker's own comparison table differs only in cosmetic items, so the playfield features are facts about both editions."
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+        locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+        quote: "Canon platform Diverter [...] Treville's Mansion courtyard Hidden Diverter [...] Notre Dame's Forest Hidden Diverter [...] Back board Diverter"
+      gameplay_feature: [{ diverters: 4 }]
+  - model.the-3-musketeers:
+      note: "The Milady de Winter sculpt is a repeatable bash target under the center ramp."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: Bash Toy Milady de Winter
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: Both appear on the playfield with the latter represented by a bash toy under a lift ramp.
+      gameplay_feature: [{ bash-toys: 1 }]
+  - model.the-3-musketeers:
+      note: "A swinging ship of the English fleet, timed shots required."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: Swing Target ship of the English fleet
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "A swinging ship representing the English fleet. It moves, so you have to time your shots to connect."
+      gameplay_feature: [{ swinging-targets: 1 }]
+  - model.the-3-musketeers:
+      note: "A physical cannon that fires the ball, themed to the Battle of La Rochelle; its platform diverter is counted in the diverters entry."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: Canon Mechanism Battle of La Rochelle
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "a physical cannon fires the ball from its own platform, with a dedicated diverter routing shots into it"
+      gameplay_feature: [{ ball-cannons: 1 }]
+  - model.the-3-musketeers:
+      note: "Treville's Mansion is an explicitly three-level play area on an otherwise single-level playfield."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: "3-level play area Treville's Mansion:"
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "The main playfield is single-level (unlike Space Hunt's elevated mini-playfield with its pendulum shot), so this multi-level section stands out as the mechanical showpiece."
+      gameplay_feature: [multi-level-playfield]
+  - model.the-3-musketeers:
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Three-ball lock themed to the harbor, feeding into multiball."
+      gameplay_feature: [multiball]
+  - model.the-3-musketeers:
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+        locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the DIGITAL & GAMEPLAY FUNCTIONS list"
+        quote: "INTEGRATED VIDEO MODES [...] Narrative sequences and interactive [...] missions displayed on screen."
+      gameplay_feature: [video-modes]
+  - model.the-3-musketeers:
+      note: "A 2.1 system is a stereo pair plus subwoofer; the Pinsound branding stays in the quote (no equipment-brand vocabulary is created for it)."
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+        locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the EXPERIENCE FEATURES list"
+        quote: "Speakers and Subwoofer by Pinsound [...] 2.1 Sound System with 48V amplifier"
+      gameplay_feature: [stereo-sound, subwoofers]
+  - model.the-3-musketeers:
+      note: "Atmoslight is HEXA's branded RGB playfield-insert lighting system (resin inserts bonded into the playing surface), attached as the branded leaf under rgb-playfield-inserts; 'Sytem' and 'pattented' are the sheet's own spellings."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the EXPERIENCE FEATURES list"
+          quote: "Atmoslight Surrounding Sytem [...] with pattented Atmoslight Inserts [...] 400+ RGB LEDs"
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "The AtmosLight inserts, resin pieces bonded to the wood with epoxy, are integrated directly into the playing surface."
+      gameplay_feature: [atmoslight]
+  - model.the-3-musketeers:
+      note: "The Classic Edition's armor is Musketeer's Blue powder coat."
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+        locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the CLASSIC EDITION block"
+        quote: Musketeer's Blue Powder coated finish Armor
+      gameplay_feature: [cabinet-armor]
+  - model.the-3-musketeers-elegance-edition:
+      note: "Announced per the vocabulary (officially revealed but not yet shipped) as of authoring, 2026-08-12: the newest timeline statement has first shipments merely expected, and no shipping-began statement was found."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: "Hexa Pinball today released full details of their second title, The 3 Musketeers, based on the famed novel by Alexandre Dumas."
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "HEXA says first shipments are expected within three months, roughly June 2026."
+      production_status: announced
+  - model.the-3-musketeers-elegance-edition:
+      cite:
+        ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
+        quote: "this pinball machine plunges you into the adventure of d'Artagnan, an ambitious young Gascon who dreams of joining the prestigious Musketeers in the service of King Louis XIII of France"
+      game_format: pinball
+  - model.the-3-musketeers-elegance-edition:
+      note: "Month records the announcement month (campaign convention, GTF Victory precedent): both editions were revealed March 20, 2026, in HEXA's dual Bordeaux / Texas Pinball Festival launch."
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+        quote: "Date: March 20th, 2026"
+      month: 3
+  - model.the-3-musketeers-elegance-edition:
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+          locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; beside the machine photo"
+          quote: Exclusive Art by Tristan Fallon
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: "Artwork is by Tristan Fallon, while the music comes from Hervé Coussillan."
+      credit:
+        - tristan-fallon: art
+  - model.the-3-musketeers-elegance-edition:
+      note: "The maker's own label is 'Exclusive Soundtracks by'; the music role follows."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+          locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; beside the machine photo"
+          quote: "Exclusive Soundtracks by Hervé Coussillan"
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: "Artwork is by Tristan Fallon, while the music comes from Hervé Coussillan."
+      credit:
+        - herve-coussillan: music
+  - model.the-3-musketeers-elegance-edition:
+      note: "Kineticist's Design Team block labels him 'Music / Sound'; the sound role follows in addition to the music credit the maker's sheet supports."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Music / Sound: Hervé Coussillan"
+      credit:
+        - herve-coussillan: sound
+  - model.the-3-musketeers-elegance-edition:
+      note: "Kineticist's Design Team block is the only non-crowdsourced source naming this credit; corroborating first-party sources were sought at authoring time and none found (the maker's specification sheet credits only art, soundtracks and engineering, and no manual exists yet)."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Game Design: Luis Dos Santos"
+      credit:
+        - luis-dos-santos: design
+  - model.the-3-musketeers-elegance-edition:
+      note: "'Electronic Engineering' has no dedicated role in the closed credit-role vocabulary, so the credit maps to the other role; the block label is recorded here. Kineticist's Design Team block is the only non-crowdsourced source naming this credit; corroborating first-party sources were sought at authoring time and none found (the maker's specification sheet credits only art, soundtracks and engineering, and no manual exists yet)."
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Electronic Engineering: Romain Fontaine"
+      credit:
+        - romain-fontaine: other
+  - model.the-3-musketeers-elegance-edition:
+      note: "Counts follow the sheet's PLAYFIELD FEATURES list. Balls attach as 7 with the extra mini-ball preserved in the quote (no mini-ball vocabulary; 3Musketeers.md keeps it on the future-unique-features list). Treville's Mansion's '3 Bank Drop Target' attaches as one 3-bank; the single three-ball La Rochelle Harbor lock attaches as ball-locks with count 1 (the Bon Jovi shape). Ramps attach as the sheet's own count of 3. The specification sheet is edition-neutral and the maker's own comparison table differs only in cosmetic items, so the playfield features are facts about both editions."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: "3 Bank Drop Target, Ramp, Diverter, Hidden Mini-Ball Shot [...] 3 Balls Lock La Rochelle Harbor [...] 3 Ramps: [...] VUK Treville's Mansion Roof [...] Captive Ball of the Queen's Diamonds Studs [...] 1 Spinner [...] 2 Flippers [...] 7 Balls + 1 Mini-Ball"
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "Gameplay is identical across editions — the Elegance is a cosmetic and tactile upgrade, not a mechanical one."
+      gameplay_feature:
+        [
+          { flippers: 2 },
+          { balls: 7 },
+          { spinners: 1 },
+          { ramps: 3 },
+          { 3-bank-drop-targets: 1 },
+          { ball-locks: 1 },
+          { vertical-up-kickers: 1 },
+          { captive-ball: 1 },
+        ]
+  - model.the-3-musketeers-elegance-edition:
+      note: "Four diverter rows on the sheet: the cannon platform, the mansion courtyard (hidden), Notre Dame's Forest (hidden) and the back board. The specification sheet is edition-neutral and the maker's own comparison table differs only in cosmetic items, so the playfield features are facts about both editions."
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+        locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+        quote: "Canon platform Diverter [...] Treville's Mansion courtyard Hidden Diverter [...] Notre Dame's Forest Hidden Diverter [...] Back board Diverter"
+      gameplay_feature: [{ diverters: 4 }]
+  - model.the-3-musketeers-elegance-edition:
+      note: "The Milady de Winter sculpt is a repeatable bash target under the center ramp."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: Bash Toy Milady de Winter
+        - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
+          quote: Both appear on the playfield with the latter represented by a bash toy under a lift ramp.
+      gameplay_feature: [{ bash-toys: 1 }]
+  - model.the-3-musketeers-elegance-edition:
+      note: "A swinging ship of the English fleet, timed shots required."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: Swing Target ship of the English fleet
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "A swinging ship representing the English fleet. It moves, so you have to time your shots to connect."
+      gameplay_feature: [{ swinging-targets: 1 }]
+  - model.the-3-musketeers-elegance-edition:
+      note: "A physical cannon that fires the ball, themed to the Battle of La Rochelle; its platform diverter is counted in the diverters entry."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: Canon Mechanism Battle of La Rochelle
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "a physical cannon fires the ball from its own platform, with a dedicated diverter routing shots into it"
+      gameplay_feature: [{ ball-cannons: 1 }]
+  - model.the-3-musketeers-elegance-edition:
+      note: "Treville's Mansion is an explicitly three-level play area on an otherwise single-level playfield."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the PLAYFIELD FEATURES list"
+          quote: "3-level play area Treville's Mansion:"
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "The main playfield is single-level (unlike Space Hunt's elevated mini-playfield with its pendulum shot), so this multi-level section stands out as the mechanical showpiece."
+      gameplay_feature: [multi-level-playfield]
+  - model.the-3-musketeers-elegance-edition:
+      cite:
+        ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+        quote: "Three-ball lock themed to the harbor, feeding into multiball."
+      gameplay_feature: [multiball]
+  - model.the-3-musketeers-elegance-edition:
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/024--three-musketeers.jpg"
+        locator: "front sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the DIGITAL & GAMEPLAY FUNCTIONS list"
+        quote: "INTEGRATED VIDEO MODES [...] Narrative sequences and interactive [...] missions displayed on screen."
+      gameplay_feature: [video-modes]
+  - model.the-3-musketeers-elegance-edition:
+      note: "A 2.1 system is a stereo pair plus subwoofer; the Pinsound branding stays in the quote (no equipment-brand vocabulary is created for it)."
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+        locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the EXPERIENCE FEATURES list"
+        quote: "Speakers and Subwoofer by Pinsound [...] 2.1 Sound System with 48V amplifier"
+      gameplay_feature: [stereo-sound, subwoofers]
+  - model.the-3-musketeers-elegance-edition:
+      note: "Atmoslight is HEXA's branded RGB playfield-insert lighting system (resin inserts bonded into the playing surface), attached as the branded leaf under rgb-playfield-inserts; 'Sytem' and 'pattented' are the sheet's own spellings."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the EXPERIENCE FEATURES list"
+          quote: "Atmoslight Surrounding Sytem [...] with pattented Atmoslight Inserts [...] 400+ RGB LEDs"
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "The AtmosLight inserts, resin pieces bonded to the wood with epoxy, are integrated directly into the playing surface."
+      gameplay_feature: [atmoslight]
+  - model.the-3-musketeers-elegance-edition:
+      note: "The two editions are one design sold in two trims; the cheaper, unlimited Classic is the base and the 200-unit Elegance is its cosmetic/tactile upgrade (the standing variant rule)."
+      cite:
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: "Gameplay is identical across editions — the Elegance is a cosmetic and tactile upgrade, not a mechanical one."
+        - ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
+          quote: "Elegance Edition [...] Limited to 200 numbered copies worldwide."
+      variant_of: the-3-musketeers
+  - model.the-3-musketeers-elegance-edition:
+      note: "A strictly limited, individually numbered 200-unit run is a limited edition; the maker's flyer calls it 'Strictly Limited to 200 Numbered Machines Worldwide'."
+      cite:
+        ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
+        quote: Limited to 200 numbered copies worldwide.
+      production_quantity: 200
+      tag: [limited-edition]
+  - model.the-3-musketeers-elegance-edition:
+      note: "Included on the Elegance; the Classic lists it only as an option, so no claim there."
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the ELEGANCE EDITION block"
+          quote: Shaker Motor by Pinsound
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: Shaker motor by Pinsound
+      gameplay_feature: [shaker-motors]
+  - model.the-3-musketeers-elegance-edition:
+      cite:
+        - ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+          locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the ELEGANCE EDITION block"
+          quote: Anti-reflection Glass
+        - ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
+          quote: Anti-reflection glass (vs. standard)
+      gameplay_feature: [anti-reflection-playfield-glass]
+  - model.the-3-musketeers-elegance-edition:
+      note: "The Elegance's armor is Brilliant Splendor Gold powder coat."
+      cite:
+        ref: "https://www.pinballnews.com/site/wp-content/uploads/games/three-musketeers/025--three-musketeers.jpg"
+        locator: "back sheet of HEXA's product specification sheet, reproduced as an image in Pinball News's reveal article; in the ELEGANCE EDITION block"
+        quote: Brilliant Splendor Gold Powder coated finish Armor
+      gameplay_feature: [cabinet-armor]
