@@ -78,12 +78,6 @@ claims:
         quote: "this pinball machine plunges you into the adventure of d'Artagnan, an ambitious young Gascon who dreams of joining the prestigious Musketeers in the service of King Louis XIII of France"
       game_format: pinball
   - model.the-3-musketeers:
-      note: "Month records the announcement month: both editions were revealed March 20, 2026."
-      cite:
-        ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
-        quote: "Date: March 20th, 2026"
-      month: 3
-  - model.the-3-musketeers:
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "front sheet; beside the machine photo"
@@ -224,12 +218,6 @@ claims:
         ref: "https://www.hexa-pinball.com/en/produit/the-3-musketeers"
         quote: "this pinball machine plunges you into the adventure of d'Artagnan, an ambitious young Gascon who dreams of joining the prestigious Musketeers in the service of King Louis XIII of France"
       game_format: pinball
-  - model.the-3-musketeers-elegance-edition:
-      note: "Month records the announcement month: both editions were revealed March 20, 2026."
-      cite:
-        ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
-        quote: "Date: March 20th, 2026"
-      month: 3
   - model.the-3-musketeers-elegance-edition:
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"

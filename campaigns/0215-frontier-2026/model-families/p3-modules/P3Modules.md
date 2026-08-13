@@ -32,7 +32,7 @@ Baselines saved beside this file: `baseline-fields.txt` (per-model field state),
 
 ### 2026 two — journalism (reveal date evidence)
 
-- Pinball News `2026/07/27/dungeon-crawler-carl-revealed/` and `2026/07/27/enders-game-revealed/` — deeply detailed: shared-design story ("use the same playfield layout and gameplay mechanisms"; design originally developed for Ender's Game), disk mech internals (183 RGB LEDs, 10 switches, slip rings, cannon), SlingLocks, Gerry Stellenberg interview, full credit tables matching the maker's pages, prices, "Production … currently planned for late 2026". Date: July 27th, 2026 → `month: 7` (announcement month, 0229 precedent).
+- Pinball News `2026/07/27/dungeon-crawler-carl-revealed/` and `2026/07/27/enders-game-revealed/` — deeply detailed: shared-design story ("use the same playfield layout and gameplay mechanisms"; design originally developed for Ender's Game), disk mech internals (183 RGB LEDs, 10 switches, slip rings, cannon), SlingLocks, Gerry Stellenberg interview, full credit tables matching the maker's pages, prices, "Production … currently planned for late 2026".
 - Kineticist `news/multimorphic-dcc-enders-game`, Arcade Heroes `2026/07/27/dungeon-crawler-carl-enders-game/` + press-release reprint `news/press-releases/multimorphic-inc-launches-enders-game-for-the-p³-pinball-platform/`. DCC was unveiled Saturday July 25 at San Diego Comic-Con (Audible panel), full announcement July 27.
 
 ### Platform pages — first-party (the sweep's citation base)
@@ -77,6 +77,7 @@ From the maker's games index (recorded 2026-08-13; user decision: do not create)
 
 ## Not asserted (and why)
 
+- **month on DCC / Ender's Game** — a Model's `year`/`month` is the **manufacture date**, never the announcement (DataPatchAuthoring.md; user ruling 2026-08-13). The first emit asserted the July 27 reveal month following 0229's precedent; the user hand-deleted those entries from 0231 and had 0229's matching claims removed too. A future patch records the real month once production starts (planned late 2026).
 - **player_count on DCC / Ender's Game** — no primary source states it (see Sought and not found).
 - **production_status on Hoopin' It Up** — the game is an official but **free** download ("is a free download for all P3 owners"); `produced` means commercially produced and sold, and no other vocabulary value fits an official free release. Flagged to the user as a possible vocabulary gap. Its `system` still asserts.
 - **Heads Up! — everything** — absent from the maker's live games index and store; no citable evidence without a Wayback hunt nobody has done yet.
@@ -94,8 +95,8 @@ From the maker's games index (recorded 2026-08-13; user decision: do not create)
 - **No chassis model; no missing-game creation** (user, 2026-08-13).
 - **System**: reference existing `multimorphic-p3-roc` on all 22 models, cited to the maker's hardware-control-system page.
 - **`production_status`**: DCC/EG `announced` ("Production of this title begins in late 2026", deposits only). Sold-from-stock older games `produced` via the store category listings; Portal via the June 2026 update; TPB and Weird Al via their launch posts.
-- **`month: 7` for the 2026 two** — announcement month, noted as such (0229 precedent).
-- **DCC↔EG shared design** — no relationship type fits; recorded in both models' `description` text and here. Candidate for a future relationship vocabulary value.
+- **No month on the 2026 two (user, 2026-08-13)** — `month` is the manufacture date per DataPatchAuthoring.md; the announcement date is not evidence for it. 0229's announcement-month claims were removed under the same ruling.
+- **DCC↔EG shared design** — no relationship type fits; recorded here and deferred to the future descriptions patch. Candidate for a future relationship vocabulary value.
 
 ## Future unique features
 

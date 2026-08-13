@@ -2,7 +2,7 @@
 
 ## Status
 
-Research and evidence inventory complete, user rulings in (2026-08-13). Patch not yet emitted. (0235 was claimed by ramps-pinball while this family was in research; per the user's instruction the family takes the next open number, 0236.)
+Patch `0236-for-amusement-only-games.yaml` emitted, all local gates passed (structural, editorial, verbatim, scoped support — see Gate runs). Snapshot validation pending. (0235 was claimed by ramps-pinball while this family was in research; per the user's instruction the family takes the next open number, 0236.)
 
 ## Scope
 
@@ -108,4 +108,6 @@ System `multimorphic-p3-roc` (exists — reference, never create), `game_format:
 
 ## Gate runs
 
-(none yet)
+- **2026-08-13 structural + editorial**: first emit had 7 editorial errors, all note wording (patch description length, an absence claim, "superseded"/"edge" vocabulary); reworded, clean.
+- **2026-08-13 verify-quote-verbatim**: 0 failures on the first run (every span lifted from cached text).
+- **2026-08-13 verify-quote-support (scoped)**: 68 claims, 3 warnings. Triage: two `cabinet: floor` warnings are the known classification-by-dimensions taxonomy disagreement (0228/0231 pattern) — kept; the standups 20-vs-22 objection re-litigates the recorded user ruling — kept at 20; the `{3-bank-drop-targets: 2}` warning was a genuine catch (dual banks + six total does not establish 3+3 — could be 2+4) — folded in, now asserts `{drop-targets: 6}` which the source states directly. Not re-run (no clean-pass chasing).

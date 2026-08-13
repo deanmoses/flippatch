@@ -123,7 +123,6 @@ claims:
       name: Cash Bailey
   - person.tyson-silver:
       create: true
-      note: 'The credit line names them jointly as "Tyson and Eli Silver"; each is a distinct voice performer.'
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         locator: in the Credits section
@@ -131,24 +130,16 @@ claims:
       name: Tyson Silver
   - person.eli-silver:
       create: true
-      note: 'The credit line names them jointly as "Tyson and Eli Silver"; each is a distinct voice performer.'
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         locator: in the Credits section
         quote: "Voices: Glenn Waechter, Lucas Pepke, Sam Tucker, Aline Allen, Alana Johnson, Cash Bailey, Tyson and Eli Silver"
       name: Eli Silver
   - model.dungeon-crawler-carl:
-      note: "The store sells only non-refundable deposits and production has not begun, so the model is announced rather than produced."
       cite:
         ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/dcc-game-kit"
         quote: Production of this title begins in late 2026.
       production_status: announced
-  - model.dungeon-crawler-carl:
-      note: "Announcement month: revealed July 27, 2026."
-      cite:
-        ref: "https://www.pinballnews.com/site/2026/07/27/dungeon-crawler-carl-revealed/"
-        quote: "Date: July 27th, 2026"
-      month: 7
   - model.dungeon-crawler-carl:
       cite:
         ref: "https://www.multimorphic.com/dungeon-crawler-carl"
@@ -295,41 +286,48 @@ claims:
         quote: Production of this title begins in late 2026.
       production_status: announced
   - model.enders-game:
-      note: "Month records the announcement month: revealed July 27, 2026."
-      cite:
-        ref: "https://www.pinballnews.com/site/2026/07/27/enders-game-revealed/"
-        quote: "Date: July 27th, 2026"
-      month: 7
-  - model.enders-game:
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         quote: Ender's Game is a pinball machine based on the Hugo and Nebula award wining novel Ender's Game.
       game_format: pinball
   - model.enders-game:
-      note: "The P3-ROC is the control system of the P3 platform this game runs on, and a computer-controlled system makes the technology generation solid-state."
+      cite:
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/enders-game-game-kit"
+          quote: "Enjoy Ender's Game on your P3 Pinball Platform!"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      technology_generation: solid-state
+  - model.enders-game:
       cite:
         - ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/enders-game-game-kit"
           quote: "Enjoy Ender's Game on your P3 Pinball Platform!"
         - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
           quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
       system: multimorphic-p3-roc
-      technology_generation: solid-state
   - model.enders-game:
-      note: "The cabinet classification follows from the maker's statement that the P3 is the same size and shape as traditional pinball machines - a standard full-size floor cabinet - and this game is sold installed in a P3 machine. The playfield display is the platform's LCD."
       cite:
         ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
         quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
       cabinet: floor
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines, and it has real balls, flippers, bumpers, targets, ramps, loops, etc. The P3 replaces a traditional wooden lower playfield with a touchscreen LCD"
       display_type: lcd
   - model.enders-game:
-      note: "The maker's Creative Director and Rules credits are game-creation leadership and ruleset design work, credited under the design role."
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         locator: in the Credits section
-        quote: "Creative Director: Stephen Silver and Josh Kugler Rules; Colin MacAlpine"
+        quote: "Creative Director: Stephen Silver and Josh Kugler"
       credit:
         - stephen-silver: design
         - josh-kugler: design
+  - model.enders-game:
+      cite:
+        ref: "https://www.multimorphic.com/enders-game"
+        locator: in the Credits section
+        quote: "Rules; Colin MacAlpine"
+      credit:
         - colin-macalpine: design
   - model.enders-game:
       cite:
@@ -364,7 +362,6 @@ claims:
         - steve-shoyer: software
         - ian-harrower: software
   - model.enders-game:
-      note: "Artist and Technical Artist are both art-role credits; Brad Albright created the full art package, Rory Cernuda the technical art."
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         locator: in the Credits section
@@ -381,7 +378,6 @@ claims:
         - stephen-silver: animation
         - rory-cernuda: animation
   - model.enders-game:
-      note: 'The credit line names them jointly as "Tyson and Eli Silver"; each is a distinct voice performer.'
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         locator: in the Credits section
@@ -401,7 +397,6 @@ claims:
         quote: Ender's Game is a 3-flipper game and therefore requires a Right Side-Target Flipper Assembly.
       gameplay_feature: [{ flippers: 3 }]
   - model.enders-game:
-      note: "The captive ball balance mechanism is the maker's own naming; the balls held in it classify as captive balls."
       cite:
         ref: "https://www.multimorphic.com/enders-game"
         quote: "you will need to moves balls in the captive ball balance mechanism to be aggressive, compassionate or perfectly balanced"

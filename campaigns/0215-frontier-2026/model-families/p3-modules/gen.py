@@ -27,6 +27,8 @@ cannon lanes) and the remaining add-ons carry no stated genre and stay
 format-less (P3Modules.md → Not asserted).
 
 Deliberately absent (each recorded in P3Modules.md):
+  month on the 2026 two                 year/month is the manufacture date;
+                                        the July reveal date is not evidence
   player_count on the 2026 two          no primary source states it
   Heads Up! (all fields)                absent from the maker's live site
   production_status on Hoopin' It Up    free download; `produced` means sold
@@ -106,8 +108,10 @@ ANNOUNCED_NOTE = (
     "The store sells only non-refundable deposits and production has not "
     "begun, so the model is announced rather than produced."
 )
-MONTH_NOTE = "Month records the announcement month: revealed July 27, 2026."
-PN_DATE = "Date: July 27th, 2026"
+# No month claims: a Model's year/month is the MANUFACTURE date, never the
+# announcement (DataPatchAuthoring.md; user ruling 2026-08-13 — the first
+# emit asserted the July reveal month and was hand-corrected). A future patch
+# records the real month once production starts.
 
 # ── Credits (both games' blocks quote the maker's own product pages; the
 # irregular punctuation — "Mechanicals;" — is the pages' own) ────────────
@@ -302,12 +306,6 @@ def main() -> None:
             note=ANNOUNCED_NOTE,
             cite=cite(DCC_KIT, LATE_2026),
             fields={"production_status": "announced"},
-        ),
-        pk.entry(
-            DCC,
-            note=MONTH_NOTE,
-            cite=cite(PN_DCC, PN_DATE),
-            fields={"month": 7},
         ),
         pk.entry(
             DCC,
@@ -520,12 +518,6 @@ def main() -> None:
             note=ANNOUNCED_NOTE,
             cite=cite(EG_KIT, LATE_2026),
             fields={"production_status": "announced"},
-        ),
-        pk.entry(
-            EG,
-            note=MONTH_NOTE,
-            cite=cite(PN_EG, PN_DATE),
-            fields={"month": 7},
         ),
         pk.entry(
             EG,

@@ -1,0 +1,570 @@
+attribution: flipcommons-catalog
+description: >
+  For Amusement Only Games: maker location and details across its P3 titles
+sources:
+  - name: For Amusement Only Games
+    source_type: web
+    domains:
+      - drainedpinball.com
+      - rangerintheruins.com
+      - silverfallsforever.com
+    links:
+      - {
+          url: "https://foramusementonlygames.com/",
+          label: For Amusement Only Games,
+          link_type: homepage,
+        }
+claims:
+  - corporate-entity.for-amusement-only-games:
+      note: "The corporate entity takes the legal name from the maker's own copyright line and press release; the manufacturer keeps the trading name For Amusement Only Games (the Turner Logic precedent)."
+      cite:
+        - ref: "https://foramusementonlygames.com/"
+          locator: in the page footer
+          quote: "Copyright © For Amusement Only Games, LLC"
+        - ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+          locator: in the manufacturer's press release reprinted verbatim in the article
+          quote: the all-new game game kit from For Amusement Only Games LLC (FAOG)
+      name: "For Amusement Only Games, LLC"
+  - corporate-entity.for-amusement-only-games:
+      cite:
+        - ref: "https://store.foramusementonlygames.com/about"
+          locator: in the About Us section
+          quote: "For Amusement Only Games manufactures and distributes P³ pinball platforms and game kits, and many other items, in Richmond, VA. We are proud to be the only pinball manufacturer to have existed in Richmond!"
+        - ref: "https://foramusementonlygames.com/"
+          locator: in the page footer
+          quote: "Address: 3301 Rosedale Ave Ste D, Richmond, VA 23230"
+        - ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+          locator: in the manufacturer's press release reprinted verbatim in the article
+          quote: "The company manufactures game kits in Richmond, Va., and ships to customers worldwide."
+      location: [usa/va/richmond]
+  - person.nick-baldridge:
+      create: true
+      note: "Founder-designer of For Amusement Only Games; Nick per his own manual signature and most coverage, with the press release's formal Nicholas Baldridge as an alias."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+          quote: "The first third-party combination of a game and playfield module for the P3 pinball platform has been announced by game developer, podcaster and bingo expert, Nick Baldridge."
+        - ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+          locator: in the manufacturer's press release reprinted verbatim in the article
+          quote: "said Nicholas Baldridge, owner of FAOG and designer of Drained"
+      name: Nick Baldridge
+      person_alias: [Nicholas Baldridge]
+  - person.molly-baldridge:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+        quote: "The physical and digital artwork is by Molly Baldridge, while the extensive soundtrack – featuring 54 unique songs composed specifically for the game – is by Charles Wolf Music."
+      name: Molly Baldridge
+  - person.sophia-baldridge:
+      create: true
+      note: "The Pinside post is the designer's own launch thread (author bingopodcast; Pinball News identifies the maker as 'game developer, podcaster and bingo expert, Nick Baldridge')."
+      cite:
+        - ref: "https://silverfallsforever.com/"
+          quote: "Silver Falls is the latest game from Nick Baldridge, creator of Ranger In The Ruins, and his first collaboration with Sophia Baldridge"
+        - ref: "https://pinside.com/pinball/forum/topic/p3-game-flipper-foxtrot-rhythm-explosion"
+          locator: in the topic's game list
+          quote: "Silver Falls (populate a house and complete various tasks as a custom avatar you design, with beautiful chillhop music by Scott Danesi, and co-designed with my daughter, Sophia)"
+      name: Sophia Baldridge
+  - person.charles-wolf:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "Steelbound is the work of Nick and his talented team, including Jon Chad on artwork, Soliu Jamiu on character and 3D model animations, and Charles Wolf who composed and performed the soundtrack."
+      name: Charles Wolf
+  - person.johnny-haxby:
+      create: true
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        quote: "A second artist, Johnny Haxby, was hired to draw the backglass artwork."
+      name: Johnny Haxby
+  - person.esther-wijdevld:
+      create: true
+      note: "Spelling as printed on the maker's own project page."
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        quote: I was lucky to work with a very talented artist named Esther Wijdevld for the 2D background paintings.
+      name: Esther Wijdevld
+  - person.ben-rittmann:
+      create: true
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        quote: "Next, artist Ben Rittmann, was hired to draw the interaction and item icons."
+      name: Ben Rittmann
+  - person.bart-heinen:
+      create: true
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        quote: "The final artist, Bart Heinen, provided sprite animations."
+      name: Bart Heinen
+  - person.jon-chad:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "Steelbound is the work of Nick and his talented team, including Jon Chad on artwork, Soliu Jamiu on character and 3D model animations, and Charles Wolf who composed and performed the soundtrack."
+      name: Jon Chad
+  - person.soliu-jamiu:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "Steelbound is the work of Nick and his talented team, including Jon Chad on artwork, Soliu Jamiu on character and 3D model animations, and Charles Wolf who composed and performed the soundtrack."
+      name: Soliu Jamiu
+  - model.drained:
+      cite:
+        ref: "https://foramusementonlygames.com/drained.html"
+        locator: in the page header badges
+        quote: "In Production [...] Game Kit Available Now"
+      production_status: produced
+  - model.drained:
+      cite:
+        ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+        locator: in the manufacturer's press release reprinted verbatim in the article
+        quote: "In Drained, players become unlikely vampire hunters through an original, symmetrical playfield layout that blends classic gameplay with cutting-edge pinball technology."
+      game_format: pinball
+  - model.drained:
+      note: "The game is a playfield module kit for the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
+      cite:
+        - ref: "https://foramusementonlygames.com/drained.html"
+          locator: in the page header badges
+          quote: Requires Base P3 Pinball Platform
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.drained:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.drained:
+      cite:
+        ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+        locator: in the manufacturer's press release reprinted verbatim in the article
+        quote: "said Nicholas Baldridge, owner of FAOG and designer of Drained"
+      credit:
+        - nick-baldridge: design
+  - model.drained:
+      note: "The maker's page attributes the engineering and code to the company, whose developer is Nick Baldridge per the article's opening."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2023/10/02/drained-bite-sized"
+          quote: "Developed by Nick Baldridge, the original Drained is a full-featured game which launched in November 2022."
+        - ref: "https://foramusementonlygames.com/drained.html"
+          locator: in The Experience section
+          quote: "Designed, engineered, and coded entirely in-house by For Amusement Only Games, Drained brings a humourous gothic atmosphere to the P3."
+      credit:
+        - nick-baldridge: software
+  - model.drained:
+      cite:
+        ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+        quote: "The physical and digital artwork is by Molly Baldridge, while the extensive soundtrack – featuring 54 unique songs composed specifically for the game – is by Charles Wolf Music."
+      credit:
+        - molly-baldridge: art
+        - charles-wolf: music
+  - model.drained:
+      cite:
+        ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+        quote: "It also features classic pinball elements like a physical bell and mechanical knocker – and brings back a notorious pinball feature that hasn't been seen in nearly 60 years: the gobble hole."
+      gameplay_feature: [bells, knockers, gobble-holes]
+  - model.drained:
+      note: "The six drop targets sit in dual sweepable banks per the press release. The press release's 20 standup targets wins over the article body's count of twenty-two (maker beats outlet; user ruling 2026-08-13)."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+          locator: in the manufacturer's press release reprinted verbatim in the article
+          quote: "Drained includes 15 unique vampires to hunt, seven target sequences, 54 unique songs, 75 sound effects, more than 1,300 voice-acted callouts from 17 actors, dual banks of sweepable drop targets, a pop bumper and 20 standup targets, as well as a gorgeous pen-and-ink, hand-drawn art package."
+        - ref: "https://www.pinballnews.com/site/2023/10/02/drained-bite-sized"
+          quote: "It comes with its very own retro-themed P3 playfield module featuring an array of standup targets, twin ball launchers, six drop targets, a pop bumper and a gobble hole."
+      gameplay_feature:
+        [{ standup-targets: 20 }, { pop-bumpers: 1 }, { drop-targets: 6 }]
+  - model.drained:
+      note: "The Wing Slings are slingshot mechanisms concealed in the central bat plastic; the bespoke identity is a future unique feature, recorded in the family notes."
+      cite:
+        ref: "https://foramusementonlygames.com/drained.html"
+        locator: in the Unique Mechanisms list
+        quote: "Wing Slings: The central bat plastic hides a secret - slingshot mechanisms!"
+      gameplay_feature: [slingshots]
+  - model.drained:
+      cite:
+        ref: "https://drainedpinball.com/"
+        locator: in the Game Features section
+        quote: "A ball travelling from left to right or right to left count as separate shots, two separate series of combo shots for advanced players, a second ball can be launched into play to help battle the vampire or collect items."
+      gameplay_feature: [orbits, 2-ball-multiball]
+  - model.drained:
+      cite:
+        ref: "https://www.pinballnews.com/site/2022/11/21/drained-launched"
+        locator: in the manufacturer's press release reprinted verbatim in the article
+        quote: Slay silverball vampires in the new Drained pinball game
+      theme: [vampires]
+  - model.drained-bite-sized:
+      note: "Sold from the maker's and Multimorphic's stores as an immediate digital download, so the game is commercially produced and sold."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: "in the Drained: Bite-Sized panel"
+          quote: "Low Price - Only $99"
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Digital Delivery section
+          quote: "Upon purchasing these For Amusement Only Games Originals, you will be able to download and install the game directly to your P3."
+      production_status: produced
+  - model.drained-bite-sized:
+      note: "A software add-on ruleset for the Drained pinball module, so the machine format is pinball."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: "in the Drained: Bite-Sized panel"
+          quote: "Short on time but hungry for blood? Drained: Bite-Sized takes the core, satisfying kinetic flow of Drained and amplify the tension with speedrunning your vampire slaying, and an up to 16-ball multiball."
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      game_format: pinball
+  - model.drained-bite-sized:
+      note: "The game is a software add-on running on the Drained module on the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: "in the Drained: Bite-Sized panel"
+          quote: "Module Required: Drained Playfield Module"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.drained-bite-sized:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.drained-bite-sized:
+      note: "The donor module is the maker's own Drained playfield, so the conversion is the maker's own licensed use."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: "in the Drained: Bite-Sized panel"
+          quote: "Module Required: Drained Playfield Module"
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/drained-bite-sized"
+          quote: This game application requires the Drained P3 playfield module.
+      model_relationship:
+        - target_machine: drained
+          relationship_type: conversion_kit
+          license_status: licensed
+  - model.drained-bite-sized:
+      note: "The maker's own page names the Drained playfield module as the requirement, so the vague platform-wide conversion kit relationship comes off in favor of the resolved donor module relationship asserted here (user ruling 2026-08-13)."
+      remove:
+        model_relationship:
+          - target_label: the Multimorphic P3 platform
+  - model.drained-bite-sized:
+      cite:
+        ref: "https://www.pinballnews.com/site/2023/10/02/drained-bite-sized"
+        quote: "Now Nick has released Drained: Bite-Sized which works with the same playfield module and has a similar look and feel, but features a completely different ruleset based around slaying fifteen vampires in the shortest time possible."
+      credit:
+        - nick-baldridge: design
+  - model.drained-bite-sized:
+      cite:
+        ref: "https://foramusementonlygames.com/othergames.html"
+        locator: "in the Drained: Bite-Sized panel"
+        quote: "Short on time but hungry for blood? Drained: Bite-Sized takes the core, satisfying kinetic flow of Drained and amplify the tension with speedrunning your vampire slaying, and an up to 16-ball multiball."
+      theme: [vampires]
+      gameplay_feature: [multiball]
+  - model.flipper-foxtrot-rhythm-explosion:
+      note: "Sold from the maker's and Multimorphic's stores as an immediate digital download, so the game is commercially produced and sold."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Flipper Foxtrot panel
+          quote: "Low Price - Only $149"
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Digital Delivery section
+          quote: "Upon purchasing these For Amusement Only Games Originals, you will be able to download and install the game directly to your P3."
+      production_status: produced
+  - model.flipper-foxtrot-rhythm-explosion:
+      cite:
+        ref: "https://foramusementonlygames.com/othergames.html"
+        locator: in the Flipper Foxtrot panel
+        quote: "Pinball meets rhythm game! Tap your flippers to the beat of more than 30 songs from multiple genres."
+      game_format: pinball
+  - model.flipper-foxtrot-rhythm-explosion:
+      note: "The game is a software add-on running on the Cannon Lagoon module on the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Flipper Foxtrot panel
+          quote: "Module Required: Cannon Lagoon Playfield Module"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.flipper-foxtrot-rhythm-explosion:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.flipper-foxtrot-rhythm-explosion:
+      note: "The donor module is Multimorphic's own product and the game is sold through Multimorphic's official store, which establishes the maker's authorization as a third-party developer on the platform."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Flipper Foxtrot panel
+          quote: "Module Required: Cannon Lagoon Playfield Module"
+        - ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/flipper-foxtrot"
+          quote: "Rhythm action for your P3 system!"
+      model_relationship:
+        - target_machine: cannon-lagoon
+          relationship_type: conversion_kit
+          license_status: licensed
+  - model.flipper-foxtrot-rhythm-explosion:
+      note: "The maker's own page names the Cannon Lagoon playfield module as the requirement, so the vague platform-wide conversion kit relationship comes off in favor of the resolved donor module relationship asserted here (user ruling 2026-08-13)."
+      remove:
+        model_relationship:
+          - target_label: the Multimorphic P3 platform
+  - model.flipper-foxtrot-rhythm-explosion:
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "Steelbound is Nick Baldridge's sixth P3 project, following on from Quest for Glory, Ranger in the Ruins, Silver Falls, Flipper Foxtrot Rhythm Explosion and Drained (incorporating Drained: Bite Sized)."
+      credit:
+        - nick-baldridge: design
+  - model.flipper-foxtrot-rhythm-explosion:
+      cite:
+        ref: "https://foramusementonlygames.com/othergames.html"
+        locator: in the Flipper Foxtrot panel
+        quote: "Pinball meets rhythm game! Tap your flippers to the beat of more than 30 songs from multiple genres."
+      theme: [music]
+  - model.silver-falls:
+      note: "Sold from the maker's and Multimorphic's stores as an immediate digital download, so the game is commercially produced and sold."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Silver Falls panel
+          quote: "Low Price - Only $149"
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Digital Delivery section
+          quote: "Upon purchasing these For Amusement Only Games Originals, you will be able to download and install the game directly to your P3."
+      production_status: produced
+  - model.silver-falls:
+      cite:
+        ref: "https://silverfallsforever.com/"
+        locator: in the page header
+        quote: A Pinball Simulation for the Multimorphic P3 System
+      game_format: pinball
+  - model.silver-falls:
+      note: "The game is a software add-on running on the Heist module on the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Silver Falls panel
+          quote: "Module Required: Heist! Playfield Module"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.silver-falls:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.silver-falls:
+      note: "The Pinside post is the designer's own launch thread (author bingopodcast; Pinball News identifies the maker as 'game developer, podcaster and bingo expert, Nick Baldridge')."
+      cite:
+        - ref: "https://silverfallsforever.com/"
+          quote: "Silver Falls is the latest game from Nick Baldridge, creator of Ranger In The Ruins, and his first collaboration with Sophia Baldridge"
+        - ref: "https://pinside.com/pinball/forum/topic/p3-game-flipper-foxtrot-rhythm-explosion"
+          locator: in the topic's game list
+          quote: "Silver Falls (populate a house and complete various tasks as a custom avatar you design, with beautiful chillhop music by Scott Danesi, and co-designed with my daughter, Sophia)"
+      credit:
+        - nick-baldridge: design
+        - sophia-baldridge: design
+  - model.silver-falls:
+      cite:
+        ref: "https://silverfallsforever.com/"
+        locator: in the Major Features list
+        quote: "A unique chillhop soundtrack, a first for pinball, by Scott Danesi."
+      credit:
+        - scott-danesi: music
+  - model.ranger-in-the-ruins:
+      note: "Sold from the maker's and Multimorphic's stores as an immediate digital download, so the game is commercially produced and sold."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Ranger in the Ruins panel
+          quote: "Low Price - Only $149"
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Digital Delivery section
+          quote: "Upon purchasing these For Amusement Only Games Originals, you will be able to download and install the game directly to your P3."
+      production_status: produced
+  - model.ranger-in-the-ruins:
+      cite:
+        ref: "https://foramusementonlygames.com/othergames.html"
+        locator: in the Ranger in the Ruins panel
+        quote: "A retro-inspired, roguelike RPG pinball experience. Explore a ruined world, seeking the sum of all knowledge."
+      game_format: pinball
+  - model.ranger-in-the-ruins:
+      note: "The game is a software add-on running on the Cosmic Cart Racing module on the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Ranger in the Ruins panel
+          quote: "Module Required: Cosmic Cart Racing Playfield Module"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.ranger-in-the-ruins:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.ranger-in-the-ruins:
+      note: "The per-game site's author meta tag names the designer; the Pinball News chronology confirms the game as his project."
+      cite:
+        - ref: "https://rangerintheruins.com/"
+          locator: in the page's author meta tag
+          quote: "author: Nick Baldridge"
+        - ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+          quote: "Steelbound is Nick Baldridge's sixth P3 project, following on from Quest for Glory, Ranger in the Ruins, Silver Falls, Flipper Foxtrot Rhythm Explosion and Drained (incorporating Drained: Bite Sized)."
+      credit:
+        - nick-baldridge: design
+  - model.ranger-in-the-ruins:
+      cite:
+        - ref: "https://foramusementonlygames.com/othergames.html"
+          locator: in the Ranger in the Ruins panel
+          quote: It takes the physical playfield you know and transforms it into an 8-bit fantasy world.
+        - ref: "https://rangerintheruins.com/"
+          locator: in the About RITR section
+          quote: "You are a ranger, a wanderer in the crumbling cities of a civilization from the distant past."
+        - ref: "https://rangerintheruins.com/"
+          locator: in the About RITR section
+          quote: "As one of the last remaining humans, you fight to keep yourself alive, and hold out hope that you will find others willing to build a community."
+      theme: [fantasy, apocalyptic]
+  - model.quest-for-glory:
+      note: "A private fan rebuild of Sierra's PC game, published by the maker as a non-commercial project and never offered for sale, so it is a one-off rather than a produced or aftermarket machine."
+      cite:
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          locator: in the page title
+          quote: For Amusement Only Games - Quest for Glory (non-commercial/fan game)
+        - ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+          quote: "Steelbound is Nick Baldridge's sixth P3 project, following on from Quest for Glory, Ranger in the Ruins, Silver Falls, Flipper Foxtrot Rhythm Explosion and Drained (incorporating Drained: Bite Sized)."
+      production_status: one-off
+  - model.quest-for-glory:
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        locator: in the header claims strip
+        quote: Pinball RPG/Adventure
+      game_format: pinball
+  - model.quest-for-glory:
+      note: "The game runs on the Lexy Lightspeed module on the P3 platform. The P3 platform is built on the maker's P3-ROC control system, so the system follows for every game running on it."
+      cite:
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          locator: in the Programming section
+          quote: I decided to use the Lexy Lightspeed playfield module.
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+      system: multimorphic-p3-roc
+  - model.quest-for-glory:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.quest-for-glory:
+      note: "No statement establishes authorization either way: the P3 SDK is open to homebrew developers, while the game itself is a private non-commercial project."
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        locator: in the Programming section
+        quote: I decided to use the Lexy Lightspeed playfield module.
+      model_relationship:
+        - target_machine: lexy-lightspeed-escape-from-earth
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.quest-for-glory:
+      cite:
+        - ref: "https://twip.kineticist.com/p/this-week-in-pinball-march-30th-2020"
+          quote: host Nick Baldridge is making his own P3 game called Quest For Glory
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          locator: in the Programming section
+          quote: "In order to program this game, I had to be quite organized."
+      credit:
+        - nick-baldridge: design
+        - nick-baldridge: software
+  - model.quest-for-glory:
+      cite:
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          quote: "A second artist, Johnny Haxby, was hired to draw the backglass artwork."
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          quote: I was lucky to work with a very talented artist named Esther Wijdevld for the 2D background paintings.
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          quote: "Next, artist Ben Rittmann, was hired to draw the interaction and item icons."
+      credit:
+        - johnny-haxby: art
+        - esther-wijdevld: art
+        - ben-rittmann: art
+  - model.quest-for-glory:
+      cite:
+        ref: "https://foramusementonlygames.com/projects/qfg.html"
+        quote: "The final artist, Bart Heinen, provided sprite animations."
+      credit:
+        - bart-heinen: animation
+  - model.quest-for-glory:
+      cite:
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          locator: in The Concept section
+          quote: 'When I (Nick) was 8 years old, I received a copy of the VGA version of a computer game called "Quest For Glory I: So You Want To Be A Hero?", and I was immediately enthralled.'
+        - ref: "https://foramusementonlygames.com/projects/qfg.html"
+          locator: in The Concept section
+          quote: "There are three classes (fighter, magic user, and thief) to choose from, and that choice can impact solutions to puzzles and your ability (or lack thereof) with various skills."
+      theme: [fantasy, video-games]
+  - title.steelbound:
+      create: true
+      name: Steelbound
+  - model.steelbound:
+      create: true
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "The latest game from For Amusement Only Games for the Multimorphic P3 pinball platform has been announced, although it will be a while before it is available to purchase."
+      name: Steelbound
+      title: steelbound
+      corporate_entity: for-amusement-only-games
+      year: 2025
+  - model.steelbound:
+      note: "The month is the announcement month; no release month exists yet."
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "Date: July 1st, 2025"
+      month: 7
+  - model.steelbound:
+      note: "Still unreleased as of August 2026: the maker's store carries only Steelbound merchandise and the game is absent from Multimorphic's games index."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+          quote: "Although the game isn't expected to be released for several months, a number of Steelbound-branded items are available to purchase right now in the For Amusement Only Games store."
+        - ref: "https://store.foramusementonlygames.com/shop/steelbound/EYI3UAH5QNOG5S2COPV7O5EX"
+          locator: in the page's meta description
+          quote: "Merchandise for the pinball role-playing game: Steelbound from For Amusement Only Games, LLC."
+      production_status: announced
+  - model.steelbound:
+      note: "The P3 is a computerized platform whose lower playfield is a touchscreen LCD, so the solid-state generation and LCD display follow for a P3 game."
+      cite:
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/hardware-control-system"
+          quote: "The P3 Pinball Platform is built on top of our P3-ROC, PD-16, PD-LED, and SW-16 boards"
+        - ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+          quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      technology_generation: solid-state
+      display_type: lcd
+      system: multimorphic-p3-roc
+  - model.steelbound:
+      note: "The maker states the P3 platform matches traditional pinball machine dimensions, so the floor cabinet classification follows from the stated size and shape."
+      cite:
+        ref: "https://www.multimorphic.com/p3-pinball-platform/frequently-asked-questions-faq"
+        quote: "REAL and PHYSICAL! The P3 is the same size/shape as traditional pinball machines"
+      cabinet: floor
+  - model.steelbound:
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "The latest game from For Amusement Only Games for the Multimorphic P3 pinball platform has been announced, although it will be a while before it is available to purchase."
+      game_format: pinball
+  - model.steelbound:
+      cite:
+        - ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+          quote: "Steelbound is Nick Baldridge's sixth P3 project, following on from Quest for Glory, Ranger in the Ruins, Silver Falls, Flipper Foxtrot Rhythm Explosion and Drained (incorporating Drained: Bite Sized)."
+        - ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+          quote: "Steelbound is the work of Nick and his talented team, including Jon Chad on artwork, Soliu Jamiu on character and 3D model animations, and Charles Wolf who composed and performed the soundtrack."
+      credit:
+        - nick-baldridge: design
+        - jon-chad: art
+        - soliu-jamiu: animation
+        - charles-wolf: music
+  - model.steelbound:
+      note: "Module-agnostic by design, so the conversion kit relationship targets the platform rather than one donor module, matching how Drained relates to the platform."
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "Although it can be played and completed with any of the existing P3 playfield modules installed, additional gameplay, characters, locations and music are made available depending on which module is fitted."
+      model_relationship:
+        - target_label: the Multimorphic P3 platform
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.steelbound:
+      cite:
+        ref: "https://www.pinballnews.com/site/2025/07/01/steelbound-announced"
+        quote: "They also get to pilot a giant robot to explore dungeons, collect treasure, and even unearth dangerous truths about the world of pinball."
+      theme: [robots]
