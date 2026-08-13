@@ -1,0 +1,280 @@
+attribution: flipcommons-catalog
+description: >
+  The Fiery End of Obsidian High (UP Pinball) enrichment.
+sources:
+  - name: Obsidian High
+    source_type: web
+    description: >
+      Official site for The Fiery End of Obsidian High pinball machine and the story it adapts, published by its builder Ellie Corcoran.
+    domains:
+      - facebook.com/yooperpinballcollective
+    links:
+      - {
+          url: "https://obsidianhigh.com/",
+          label: Obsidian High,
+          link_type: homepage,
+        }
+claims:
+  - corporate-entity.up-pinball:
+      cite:
+        - ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+          locator: in the builder's own post
+          quote: not impossible considering the will of the UP Pinball Collective
+        - ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+          locator: in the builder's own post
+          quote: I decided to use it to make an engraved Yooper Pinball Collective sign rather than waste the metal
+      name: UP Pinball Collective
+  - corporate-entity.up-pinball:
+      corporate_entity_alias: [UP Pinball, Yooper Pinball Collective]
+  - location.usa/mi/escanaba:
+      create: true
+      cite:
+        ref: "https://www.facebook.com/yooperpinballcollective"
+        locator: in the About address block
+        quote: "2301 9th Ave., Escanaba, MI, United States, Michigan"
+      slug: escanaba
+      parent: usa/mi
+      name: Escanaba
+  - corporate-entity.up-pinball:
+      cite:
+        - ref: "https://www.facebook.com/yooperpinballcollective"
+          locator: in the page Intro
+          quote: "Community Pinball Arcade Collective in Escanaba, MI"
+        - ref: "https://www.facebook.com/yooperpinballcollective"
+          locator: in the About address block
+          quote: "2301 9th Ave., Escanaba, MI, United States, Michigan"
+      location: [usa/mi/escanaba]
+  - person.ellie-corcoran:
+      create: true
+      cite:
+        ref: "https://obsidianhigh.com/"
+        quote: "THE FIERY END OF OBSIDIAN HIGH copyright © 2019-2025 by Ellie Corcoran."
+      name: Ellie Corcoran
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The builder posts as Elliemechanical; her own site, obsidianhigh.com, names her Ellie Corcoran. The story the game adapts is her own work."
+      cite:
+        ref: "https://obsidianhigh.com/"
+        quote: "THE FIERY END OF OBSIDIAN HIGH copyright © 2019-2025 by Ellie Corcoran."
+      credit:
+        - ellie-corcoran: concept
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The builder posts as Elliemechanical; the footer of her own site, obsidianhigh.com, names her Ellie Corcoran."
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+        locator: in the builder's own post
+        quote: Tweaked my design a bit last night and will be doing more tonight.
+      credit:
+        - ellie-corcoran: design
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The builder posts as Elliemechanical; the footer of her own site, obsidianhigh.com, names her Ellie Corcoran."
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: I drew everything here except the hair and uniforms of the three main characters
+      credit:
+        - ellie-corcoran: art
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The builder posts as Elliemechanical; the footer of her own site, obsidianhigh.com, names her Ellie Corcoran."
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: immediately wrote up some basic firmware to at least let me test out the new flippers
+      credit:
+        - ellie-corcoran: software
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The builder posts as Elliemechanical; the footer of her own site, obsidianhigh.com, names her Ellie Corcoran."
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+        locator: in the builder's own post
+        quote: I'm fairly confident I can engineer a hidden ramp to accomplish the same task
+      credit:
+        - ellie-corcoran: mechanics
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The builder posts as Elliemechanical; the footer of her own site, obsidianhigh.com, names her Ellie Corcoran."
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: here's a look at a handful of sound effects as well as some VERY Sys11-esque bonus counting. I'm going to spend more time on SFX this week
+      credit:
+        - ellie-corcoran: sound
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+        locator: in the builder's own post
+        quote: "Back in 2008, I really wanted to build a pinball machine, and a significant lack of knowledge and funding didn't stop me from trying."
+      game_format: pinball
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/2"
+        locator: in the builder's own post
+        quote: "The Teensy has a built-in USB board, which straightforwardly solves upstream communication to and from the PC with code I can directly reuse from UT."
+      technology_generation: solid-state
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "this relay was connected to one of the ATX 5v lines, so when the computer comes on, so does the playfield"
+      technology_subgeneration: ss-pc
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/2"
+        locator: in the builder's own post
+        quote: '27" monitors. [...] I do think this JJP-size screen will catch a lot of eyes once it''s showing off visual novel art and anime girls.'
+      display_type: lcd
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/2"
+        locator: in the builder's own post
+        quote: "Tomorrow I will be bracing the cabinet with 90-degree corner brackets and standard leg plates, assembling the neck and attaching it to the lower cab, and most likely test-fitting it with legs and trim."
+      cabinet: floor
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+        locator: in the builder's own post
+        quote: "The new design, art, and story will be heavily anime-inspired."
+      theme: [anime]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+        locator: in the builder's own post
+        quote: "So each of them has a plan to try to save the school from the volcano using various strategies, supplies, and magical abilities."
+      theme: [volcanoes]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        - ref: "https://obsidianhigh.com/"
+          quote: "a tale of magic, heroism, and despair"
+        - ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+          locator: in the builder's own post
+          quote: illustrations of the moments that each main character's magic powers awaken
+      theme: [magic]
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The school is the titular Obsidian High; the characters are its students."
+      cite:
+        - ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+          locator: in the builder's own post
+          quote: "So each of them has a plan to try to save the school from the volcano using various strategies, supplies, and magical abilities."
+        - ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+          locator: in the builder's own post
+          quote: a vertical airball shield featuring classmate Katashi who is just now realizing he's not getting the calm day of studying he expected
+      theme: [high-school]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast"
+        locator: in the builder's own post
+        quote: "Canonically, there could have been any number of time loops between morning and apocalypse, but the game will depict three, one for each anti-volcano plan."
+      theme: [time-travel]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: Aside from the flipper switches - which get wired back up to the three flipper drivers on the playfield - everything in the cabinet is controlled by the final aux solenoid driver board.
+      gameplay_feature: [{ flippers: 3 }]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "Flippers, slingshots, and bumpers work (might need to double check an issue with the top two jets though)"
+      gameplay_feature: [jet-bumpers]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "Flippers, slingshots, and bumpers work (might need to double check an issue with the top two jets though)"
+      gameplay_feature: [slingshots]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "How did my five-volt microcontrollers and drop target optos manage to survive the unstoppable onslaught of a twelve-volt assault?"
+      gameplay_feature: [drop-targets]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: The light bulbs pictured in this scene sync with the standup target inserts on the playfield.
+      gameplay_feature: [standup-targets]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: 'From there, it can either be fired upwards to "erupt" via the VUK, or that repurposed kickback mech pushes it out of the VUK and into the volcano tunnel scoop'
+      gameplay_feature: [vertical-up-kickers]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "into the volcano tunnel scoop (also hittable from the playfield, to the right of the ramp), where it makes its way down the longer bent subway and eventually emerges from the left scoop"
+      gameplay_feature: [scoops]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "Yes, there are a couple of subway branches."
+      gameplay_feature: [subways]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: "With the hallway ramps on both sides in place (more or less), the diverters can finally become useful."
+      gameplay_feature: [ramps]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "the ramp diverters and outhole kicker, which are mounted topside"
+      gameplay_feature: [ramp-diverters]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: "Not only is it a lot more fun to shoot the elevated loop, there's also the satisfaction of a fully-working lift ramp here as well. I can't wait to start locking balls in the tunnel under the ramp!"
+      gameplay_feature: [moving-ramps]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: "Not only is it a lot more fun to shoot the elevated loop, there's also the satisfaction of a fully-working lift ramp here as well. I can't wait to start locking balls in the tunnel under the ramp!"
+      gameplay_feature: [ball-locks]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/4"
+        locator: in the builder's own post
+        quote: "Not only is it a lot more fun to shoot the elevated loop, there's also the satisfaction of a fully-working lift ramp here as well. I can't wait to start locking balls in the tunnel under the ramp! [...] 3 locks start multiball"
+      gameplay_feature: [multiball]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "In the top right (top left in the wiring photo, of course), there is a skill shot drop hole in the outer orbit."
+      gameplay_feature: [skill-shot]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "In the top right (top left in the wiring photo, of course), there is a skill shot drop hole in the outer orbit."
+      gameplay_feature: [orbits]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/2"
+        locator: in the builder's own post
+        quote: the autolauncher fork holds the ball and would physically conflict
+      gameplay_feature: [auto-launch]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "the four remaining drivers are used for the Start and Extra Ball button lights, the knocker, and the shaker motor"
+      gameplay_feature: [knockers]
+  - model.the-fiery-end-of-obsidian-high:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: "the four remaining drivers are used for the Start and Extra Ball button lights, the knocker, and the shaker motor"
+      gameplay_feature: [shaker-motors]
+  - model.the-fiery-end-of-obsidian-high:
+      note: "The volcano structure holds locked balls and ejects them upward via its VUK, so it classifies as a ball-holding toy."
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/volcano-blast/page/3"
+        locator: in the builder's own post
+        quote: 'From there, it can either be fired upwards to "erupt" via the VUK, or that repurposed kickback mech pushes it out of the VUK and into the volcano tunnel scoop'
+      gameplay_feature: [ball-holding-toys]
