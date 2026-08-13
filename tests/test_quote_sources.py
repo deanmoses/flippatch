@@ -219,11 +219,16 @@ class _FakeWebCache:
         self,
         pages: dict[str, str],
         pdf_urls: set[str] | None = None,
-        documents: dict[str, str] | None = None,
+        documents: dict[str, str | list[str]] | None = None,
     ) -> None:
         self.pages = pages
         self.pdf_urls = pdf_urls or set()
-        self.documents = documents or {}
+        # A document maps to its captured URL(s): one for a single-file work,
+        # several for a merged multi-sheet document. A bare str means one.
+        self.documents = {
+            ref: [urls] if isinstance(urls, str) else list(urls)
+            for ref, urls in (documents or {}).items()
+        }
         self.requested: list[str] = []
 
     def get(self, url: str) -> dict[str, str] | None:
@@ -234,17 +239,17 @@ class _FakeWebCache:
         content_type = "application/pdf" if url in self.pdf_urls else "text/html"
         return {"text": text, "content_type": content_type}
 
-    def capture_for_citation_ref(self, ref: str) -> dict[str, str] | None:
-        """Mirrors pinexplore's document-library join: ref → captured page."""
+    def captures_for_citation_ref(self, ref: str) -> list[dict[str, str]]:
+        """Mirrors pinexplore's document-library join: ref → captured pages."""
         self.requested.append(ref)
-        url = self.documents.get(ref)
-        return None if url is None else self.get(url)
+        pages = (self.get(url) for url in self.documents.get(ref, []))
+        return [page for page in pages if page is not None]
 
 
 def _sources_with(
     pages: dict[str, str],
     pdf_urls: set[str] | None = None,
-    documents: dict[str, str] | None = None,
+    documents: dict[str, str | list[str]] | None = None,
 ) -> tuple[Sources, _FakeWebCache]:
     sources = object.__new__(Sources)
     fake = _FakeWebCache(pages, pdf_urls, documents)
@@ -451,6 +456,46 @@ def test_document_ref_backed_by_a_text_capture_resolves():
     resolved = sources.resolve_cite(ref)
     assert resolved.status is SourceStatus.RESOLVED
     assert resolved.text == "1 Ramp Assembly A-21753"
+
+
+def test_document_ref_with_multiple_captures_reads_every_sheet():
+    # A merged multi-sheet document (a spec sheet's front and back as two
+    # image captures, each carrying its own transcription) quotes from any
+    # sheet: the source text is every captured copy's text, joined in the
+    # library's deterministic order so multi-span quotes keep source order.
+    ref = "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
+    sources, _ = _sources_with(
+        {
+            "https://news.test/024-front.jpg": "Exclusive Art by Tristan Fallon",
+            "https://news.test/025-back.jpg": "3 Balls Lock La Rochelle Harbor",
+        },
+        documents={
+            ref: ["https://news.test/024-front.jpg", "https://news.test/025-back.jpg"]
+        },
+    )
+    assert sources.is_pdf(ref) is False
+    resolved = sources.resolve_cite(ref)
+    assert resolved.status is SourceStatus.RESOLVED
+    assert resolved.text == (
+        "Exclusive Art by Tristan Fallon\n\n3 Balls Lock La Rochelle Harbor"
+    )
+
+
+def test_document_ref_with_any_pdf_capture_is_pdf():
+    # A PDF among the captured copies makes the whole ref unjudgeable by the
+    # gate — extraction reorders and drops text — so the PDF outcome wins even
+    # when a sibling sheet's text could have been checked.
+    ref = "williams:tales-of-the-arabian-nights-flyer-1996"
+    sources, _ = _sources_with(
+        {
+            "https://ia.test/flyer.pdf": "",
+            "https://news.test/front.jpg": "Front sheet transcription",
+        },
+        pdf_urls={"https://ia.test/flyer.pdf"},
+        documents={ref: ["https://ia.test/flyer.pdf", "https://news.test/front.jpg"]},
+    )
+    assert sources.is_pdf(ref) is True
+    assert sources.resolve_cite(ref).status is SourceStatus.PDF
 
 
 def test_document_ref_with_no_capture_is_missing():

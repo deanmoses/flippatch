@@ -243,9 +243,17 @@ class Sources:
             # youtube:<id> maps to the canonical watch URL; its cached text is
             # the caption-track transcript pinexplore's video transport stores.
             return self._page_text(f"https://www.youtube.com/watch?v={identifier}")
-        page = self._document_capture(ref)
-        text = str((page or {}).get("text") or "")
-        return text if text.strip() else None
+        texts = [
+            text
+            for page in self._document_captures(ref)
+            if (text := str(page.get("text") or "")).strip()
+        ]
+        # A merged multi-sheet document (a flyer's front and back as separate
+        # image captures) is one work in several files: its quotable text is
+        # every captured copy's text joined in the library's deterministic
+        # order, so a quote may sit on any sheet and a multi-span quote keeps
+        # source order across sheets.
+        return "\n\n".join(texts) if texts else None
 
     def is_pdf(self, ref: str) -> bool:
         """Whether *ref* names a cached PDF.
@@ -256,32 +264,37 @@ class Sources:
         is a second source of truth.
 
         Two ref shapes can name a PDF: an ``http(s)`` URL, and a slug-addressed
-        document ref whose captured copy is one (a Williams manual is routinely
-        a scan). The known schemes stay non-PDF — IPDB rows, OPDB pages and
-        caption transcripts are fully checkable — and the URL's spelling is not
-        consulted, so an HTML page served at a ``.pdf`` path stays checked.
+        document ref among whose captured copies is one (a Williams manual is
+        routinely a scan) — one PDF makes the whole ref unjudgeable, however
+        readable its sibling sheets. The known schemes stay non-PDF — IPDB
+        rows, OPDB pages and caption transcripts are fully checkable — and the
+        URL's spelling is not consulted, so an HTML page served at a ``.pdf``
+        path stays checked.
         """
         if ref.startswith(("http://", "https://")):
-            page = self._web_cache.get(ref) or {}
+            pages = [self._web_cache.get(ref) or {}]
         else:
-            page = self._document_capture(ref) or {}
-        return str(page.get("content_type") or "").startswith("application/pdf")
+            pages = self._document_captures(ref)
+        return any(
+            str(page.get("content_type") or "").startswith("application/pdf")
+            for page in pages
+        )
 
-    def _document_capture(self, ref: str) -> dict[str, object] | None:
-        """The cached capture behind a slug-addressed ref, or None.
+    def _document_captures(self, ref: str) -> list[dict[str, object]]:
+        """The cached captures behind a slug-addressed ref, in library order.
 
         A ``<root-slug>:<child-slug>`` cite (a publisher's document, a
         periodical issue) resolves through the document library's
-        ``citation_ref`` — pinexplore's ``capture_for_citation_ref`` returns
-        whichever of the document's URLs is actually cached, alias-resolved
-        through redirects. The known schemes are excluded so a stray library
-        row can never shadow their own resolution.
+        ``citation_ref`` — pinexplore's ``captures_for_citation_ref`` returns
+        whichever of the document's URLs are actually cached, alias-resolved
+        through redirects, one row per captured sheet of a merged multi-sheet
+        work. The known schemes are excluded so a stray library row can never
+        shadow their own resolution.
         """
         scheme, sep, _ = ref.partition(":")
         if not sep or scheme in ("http", "https", "ipdb", "opdb", "youtube", "isbn"):
-            return None
-        page = self._web_cache.capture_for_citation_ref(ref)
-        return dict(page) if page is not None else None
+            return []
+        return [dict(page) for page in self._web_cache.captures_for_citation_ref(ref)]
 
     def _page_text(self, url: str) -> str | None:
         page = self._web_cache.get(url)
