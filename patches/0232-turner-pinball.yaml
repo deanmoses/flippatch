@@ -64,13 +64,6 @@ claims:
         locator: in the Credits section
         quote: "Mechanical [...] Gabe Hernandez, Chris Turner, Zofia Ryan"
       name: Gabe Hernandez
-  - person.zofia-ryan:
-      create: true
-      cite:
-        ref: "https://turnerpinball.com/games/yukon-yeti"
-        locator: in the Credits section
-        quote: "Mechanical [...] Gabe Hernandez, Chris Turner, Zofia Ryan"
-      name: Zofia Ryan
   - person.jeff-dickson:
       create: true
       cite:
@@ -242,7 +235,7 @@ claims:
       credit:
         - gabe-hernandez: mechanics
         - chris-turner: mechanics
-        - zofia-ryan: mechanics
+        - zofia-bil-ryan: mechanics
   - model.yukon-yeti:
       note: "Announced after the March reveal - the reveal-era press coverage predates this and names no dedicated sound designer, and the page's formal Credits block, which lists no audio roles at all, predates the announcement too; the maker's own announcement is the newest statement and wins on chronology."
       cite:

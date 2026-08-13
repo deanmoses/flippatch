@@ -10,13 +10,13 @@ claims:
       create: true
       name: Lenticular Backglasses
       gameplay_feature_alias: [Lenticular Backglass, 3D Backglass]
-  - person.jack-haeger:
-      create: true
+  - person.jack-e-haeger:
+      note: "American Pinball credits the art director as Jack Haeger; his earlier Stern credits give the fuller Jack E. Haeger, so the shorter form is kept as an alias and both spellings resolve to one person."
       cite:
         ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         quote: "There to tell them more about the game and the process of creating it were Dennis Nordman (Design), Paul Reno (Design), Jack Haeger (Art Director), Christopher Franchi (Artist), and Steve Bowden (Rules)"
-      name: Jack Haeger
+      person_alias: [Jack Haeger]
   - person.steve-bowden:
       create: true
       cite:
@@ -79,16 +79,16 @@ claims:
         locator: the CREDITS panel printed beside the shooter lane in the playfield photo
         quote: "Jessica Durbala & Bobby Llereza ... 2D+VIDEO ART"
       name: Bobby Llereza
-  - person.zofia-bil-ryan:
-      create: true
-      note: "Zofia per the machine's printed credits and Pinball News' launch coverage; the Sofia spelling appears in Pinball News' Expo 2023 report and is kept as an alias."
+  - person.zofia-bil:
+      note: "The mechanical engineer credited on the early-1990s Williams machines as Zofia Bil. The machine's printed credits panel gives the fuller Zofia Bil Ryan, taken here as the canonical name, with the maiden and shortened forms kept as aliases so every credit resolves to one person. The Sofia spelling appears in Pinball News' Expo 2023 report."
       cite:
         ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         locator: the CREDITS panel printed beside the shooter lane in the playfield photo
         quote: Zofia Bil Ryan ... DIRECTOR OF MECH. ENGINEERING
+      slug: zofia-bil-ryan
       name: Zofia Bil Ryan
-      person_alias: [Sofia Bil Ryan]
+      person_alias: [Zofia Bil, Sofia Bil Ryan, Zofia Ryan, Sofia Ryan]
   - person.mitesh-pithva:
       create: true
       note: "The panel's cursive print is small; staff listings of American Pinball's engineering team corroborate the name reading."
@@ -114,7 +114,7 @@ claims:
       credit:
         - dennis-nordman: design
         - paul-reno: design
-        - jack-haeger: art
+        - jack-e-haeger: art
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-classic:
@@ -170,7 +170,7 @@ claims:
         - steve-bowden: software
         - jessica-durbala: animation
         - bobby-llereza: animation
-        - zofia-bil-ryan: mechanics
+        - zofia-bil: mechanics
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-classic:
@@ -196,7 +196,7 @@ claims:
       credit:
         - dennis-nordman: design
         - paul-reno: design
-        - jack-haeger: art
+        - jack-e-haeger: art
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-deluxe:
@@ -252,7 +252,7 @@ claims:
         - steve-bowden: software
         - jessica-durbala: animation
         - bobby-llereza: animation
-        - zofia-bil-ryan: mechanics
+        - zofia-bil: mechanics
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-deluxe:
@@ -292,7 +292,7 @@ claims:
       credit:
         - dennis-nordman: design
         - paul-reno: design
-        - jack-haeger: art
+        - jack-e-haeger: art
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-limited-edition:
@@ -348,7 +348,7 @@ claims:
         - steve-bowden: software
         - jessica-durbala: animation
         - bobby-llereza: animation
-        - zofia-bil-ryan: mechanics
+        - zofia-bil: mechanics
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-limited-edition:
@@ -380,7 +380,7 @@ claims:
       credit:
         - dennis-nordman: design
         - paul-reno: design
-        - jack-haeger: art
+        - jack-e-haeger: art
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-signature:
@@ -436,7 +436,7 @@ claims:
         - steve-bowden: software
         - jessica-durbala: animation
         - bobby-llereza: animation
-        - zofia-bil-ryan: mechanics
+        - zofia-bil: mechanics
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-signature:
@@ -482,7 +482,7 @@ claims:
       credit:
         - dennis-nordman: design
         - paul-reno: design
-        - jack-haeger: art
+        - jack-e-haeger: art
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-victory-edition:
@@ -538,7 +538,7 @@ claims:
         - steve-bowden: software
         - jessica-durbala: animation
         - bobby-llereza: animation
-        - zofia-bil-ryan: mechanics
+        - zofia-bil: mechanics
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-victory-edition:
