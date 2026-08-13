@@ -213,3 +213,9 @@ claims:
         archive: "http://web.archive.org/web/20240223102257id_/https://www.knapparcade.org/post/a-little-shop-of-horrors-pinball-machine-is-in-the-works"
         quote: A new pinball company is actively working on developing a pinball machine based on Little Shop of Horrors.
       game_format: pinball
+  - model.little-shop-of-horrors:
+      cite:
+        ref: "https://www.knapparcade.org/post/a-little-shop-of-horrors-pinball-machine-is-in-the-works"
+        archive: "http://web.archive.org/web/20240223102257id_/https://www.knapparcade.org/post/a-little-shop-of-horrors-pinball-machine-is-in-the-works"
+        quote: A new pinball company is actively working on developing a pinball machine based on Little Shop of Horrors.
+      theme: [licensed]

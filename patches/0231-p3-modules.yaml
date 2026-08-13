@@ -882,6 +882,27 @@ claims:
   - model.grand-slam-rally:
       cite:
         ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/grand-slam-rally"
+        quote: "Pitch-and-Bat on the P3! Grand Slam Rally is a P3 mini-game that works with the Cannon Lagoon playfield module (sold separately)."
+      theme: [baseball]
+  - model.hoopin-it-up:
+      cite:
+        ref: "https://www.multimorphic.com/store/add-on-software/3rd-party-add-on-game-software/hoopin-it-up"
+        quote: "Basketball on the P3!"
+      theme: [basketball]
+  - model.sorcerers-apprentice:
+      cite:
+        ref: "https://www.multimorphic.com/store/add-on-software/multimorphic-add-on-game-software/sorcerers-apprentice"
+        quote: "a magic-inspired add-on gaming experience for the P3 pinball platform"
+      theme: [magic, wizards]
+  - model.final-resistance:
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/multimorphic-game-kits/final-resistance"
+        locator: in the Playfield Module section
+        quote: "The imposing alien spaceship has a 3-ball rapid-fire cannon and active defenses!"
+      theme: [aliens]
+  - model.grand-slam-rally:
+      cite:
+        ref: "https://www.multimorphic.com/store/p3-game-kits/3rd-party-game-kits/grand-slam-rally"
         quote: "$199.00 [...] Add to cart"
       production_status: produced
   - model.hoopin-it-up:
