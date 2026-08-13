@@ -1,6 +1,6 @@
 # Bon Jovi (Barrels of Fun, 2026) — family record
 
-Patch **0224** (`patches/0224-bon-jovi.yaml`), emitted by `gen.py` beside this file. Single-model family: `model.bon-jovi`, one edition, no variants, no older siblings — Barrels of Fun's other machines (Labyrinth 2023, Dune 2025, Winchester Mystery House 2025) are separate Titles and out of scope. Authored 2026-08-10.
+Patch **0224** (`patches/0224-bon-jovi.yaml`), originally emitted by a `gen.py` beside this file (deleted 2026-08-13; in git history). Single-model family: `model.bon-jovi`, one edition, no variants, no older siblings — Barrels of Fun's other machines (Labyrinth 2023, Dune 2025, Winchester Mystery House 2025) are separate Titles and out of scope. Authored 2026-08-10.
 
 ## Catalog baseline (surveyed 2026-08-10)
 

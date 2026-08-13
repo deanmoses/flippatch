@@ -71,4 +71,4 @@ Patch: `patches/0238-obsidian-high.yaml` (number claimed 2026-08-13).
 - 2026-08-13 `make verify-quote-support ARGS="0238"`: **blocked — Anthropic API credit balance too low**; not yet run.
 - Snapshot validation: pending (waiting on the user's go-ahead — other sessions share the dev DB).
 
-**The patch is hand-edited from here on (user, 2026-08-13).** `gen.py` emitted the initial 38 entries and is retired; do not re-run it — it would overwrite the user's hand edits.
+**The patch is hand-edited from here on (user, 2026-08-13).** `gen.py` emitted the initial 38 entries and has been deleted, along with the campaign's other generators, precisely because re-running one would overwrite the hand edits.

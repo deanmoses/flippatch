@@ -1,6 +1,6 @@
 # Ramp's Pinball
 
-Family session 2026-08-13. Patches: `0233-ramps-pinball.yaml` + `0235-road-trip-month-opdb-retract.yaml` (0234 was claimed by another session mid-authoring; see [Road Trip month](#the-road-trip-month-fix)). Generator: [gen.py](gen.py) — emits both.
+Family session 2026-08-13. Patches: `0233-ramps-pinball.yaml` + `0235-road-trip-month-opdb-retract.yaml` (0234 was claimed by another session mid-authoring; see [Road Trip month](#the-road-trip-month-fix)). Originally emitted by `gen.py`, which wrote both (deleted 2026-08-13; in git history).
 
 ## Models
 

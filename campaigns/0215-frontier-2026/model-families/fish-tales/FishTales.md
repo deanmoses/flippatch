@@ -92,7 +92,7 @@ Duplicate scan ran against `model_claims` (active claims, both models) — the t
 
 ## The 0230 documents supplement (2026-08-12)
 
-Generator: [gen_documents.py](gen_documents.py). [DocumentsAudit.md](../../DocumentsAudit.md) had held this family because its documents are IPDB-only; the user unblocked acquisition by having the session drive the **in-app browser** (fetch from page context, chunked base64 out, `web_import.py` in — each import carries `imported = 1`).
+Originally emitted by `gen_documents.py` (deleted 2026-08-13; in git history). [DocumentsAudit.md](../../DocumentsAudit.md) had held this family because its documents are IPDB-only; the user unblocked acquisition by having the session drive the **in-app browser** (fetch from page context, chunked base64 out, `web_import.py` in — each import carries `imported = 1`).
 
 **Acquired** (all from ipdb.org, the only known holder — archive.org hunts recorded on the library docs): Operations Manual (16-50005-101, August 1992, 148 sheets, scanned + OCR'd), Operator's Handbook (June 1992, cached, service menus — **not declared**, no claim needs it), Parts List (plain text, fully gated), flyer front + back scans (merged into one library work; **back transcribed** via `--text-file`, so its quotes gate verbatim). Not acquired: promo video (.wmv, no transport), artwork/plastics scans, manual amendment.
 

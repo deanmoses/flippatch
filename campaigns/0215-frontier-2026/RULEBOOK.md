@@ -248,9 +248,9 @@ Watch false synonyms — flipper toppers are not cabinet `toppers`.
 
 ## Patch generator
 
-Each family gets a `gen.py` emitting via patchkit ([DataPatchKit.md](../../../flipcommons/docs/DataPatchKit.md)); never hand-roll YAML escaping. The best template so far is [transformers/gen.py](model-families/transformers/gen.py) — start by copying it.
+Each family's patch was first emitted by a per-family `gen.py` via patchkit ([DataPatchKit.md](../../../flipcommons/docs/DataPatchKit.md)) — never hand-roll YAML escaping. Facts stayed inline in the script at family scale; a handful of models doesn't need 0215's CSV architecture. User decisions go in the family notes, which is why the notes and not the generator are the campaign's record.
 
-**Keep the facts inline in `gen.py`** at family scale; a handful of models doesn't need 0215's CSV architecture. Record user decisions in the family notes.
+**The generators were deleted 2026-08-13.** Hand revision of the shipped patches — entries reordered, entries asserting unrelated things split apart, wrong entries dropped, redundant notes stripped where the quote already carries the evidence — left every `gen.py` describing a patch that no longer exists, and re-running one would overwrite the revisions. The YAML under `patches/` is now the only editable form. The scripts are in git history if a question about how a patch was originally assembled ever comes up.
 
 The AI page extractor ([ModelPageExtractionAuthoring.md](../../docs/page_extractor/ModelPageExtractionAuthoring.md)) has never worked very well. Houdini didn't need it (three models, hand-vetted). A bigger family might; investigate there rather than assuming.
 

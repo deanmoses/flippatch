@@ -1,6 +1,6 @@
 # 0215 — the 2026 model discovery sweep
 
-> **Historical.** This folder is the record of how patch `0215-new-2026-models.yaml` found and created the 2026 models — this file plus the artifacts that produced it (`candidates.csv`, `frontier.sql`, `gen.py`). The patch is applied and immutable; nothing here is re-run in the normal course. For current work see [../README.md](../README.md); for technique see [../RULEBOOK.md](../RULEBOOK.md). Read on for the **dead ends** — they are what stops a later session re-researching a settled question.
+> **Historical.** This folder is the record of how patch `0215-new-2026-models.yaml` found and created the 2026 models — this file plus the artifacts that produced it (`candidates.csv`, `frontier.sql`). The patch is applied and immutable, and its `gen.py` was deleted on 2026-08-13 along with the campaign's other generators (see [../RULEBOOK.md](../RULEBOOK.md#patch-generator)) — nothing here is re-run. For current work see [../README.md](../README.md); for technique see [../RULEBOOK.md](../RULEBOOK.md). Read on for the **dead ends** — they are what stops a later session re-researching a settled question.
 
 The catalog held **6 models dated 2026**; this campaign found the 21 that were missing and emitted the foundation rows for them.
 
@@ -51,10 +51,10 @@ Three other bugs the analysis caught in itself, worth knowing if you touch `fron
 
 ## Running it
 
+The emit step is gone with `gen.py`; the analysis still runs, and is how you re-read the reasoning behind the candidate list:
+
 ```bash
 make analyze FILE=../flippatch/campaigns/0215-frontier-2026/model-discovery/frontier.sql PREFIX=frontier
-uv run python campaigns/0215-frontier-2026/model-discovery/gen.py
-make validate
 ```
 
-Re-run the analysis after every edit to `candidates.csv` — the checks are what stop a stale or mistyped candidate list from being emitted, and `read_view` runs them before it yields a row, so the generator cannot emit from an analysis whose detectors have gone dark.
+While the sweep was live, the analysis was re-run after every edit to `candidates.csv`: its checks are what stopped a stale or mistyped candidate list from being emitted, and `read_view` ran them before yielding a row, so the generator could not emit from an analysis whose detectors had gone dark. That coupling is what the checks were for — they remain readable in `frontier.sql` as the record of what the candidate list was held to.

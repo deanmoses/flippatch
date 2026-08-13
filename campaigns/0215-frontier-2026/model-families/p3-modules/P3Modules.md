@@ -2,7 +2,7 @@
 
 ## Status
 
-**Snapshot-validated and complete (2026-08-13).** The user hand-restructured the emitted patch (one assertion per changeset; notes deleted where the cite carries the change — both rules promoted to RULEBOOK.md → Asserting claims) and the sweep section was reworked to match; gen.py is synced to the final shape but the hand-edited YAML is authoritative — do not regenerate without diffing. Applied cleanly on the 0214 snapshot with patches through 0232; all fields, credits, features, quantities and per-field citation instances verified through the analytics foundation. Awaiting user commit; not pushed.
+**Snapshot-validated and complete (2026-08-13).** The user hand-restructured the emitted patch (one assertion per changeset; notes deleted where the cite carries the change — both rules promoted to RULEBOOK.md → Asserting claims) and the sweep section was reworked to match; the hand-edited YAML is authoritative; `gen.py` was synced to that shape and has since been deleted along with the campaign's other generators (2026-08-13). Applied cleanly on the 0214 snapshot with patches through 0232; all fields, credits, features, quantities and per-field citation instances verified through the analytics foundation. Awaiting user commit; not pushed.
 
 ## Scope (user decisions, 2026-08-13)
 

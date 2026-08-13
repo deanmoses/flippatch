@@ -74,7 +74,7 @@ For the 1996 original: `game_format: pinball` (ipdb Notable Features line, as 02
 
 ## The 0228 documents supplement (2026-08-12)
 
-The document-cites pilot. Generator: [gen_documents.py](gen_documents.py).
+The document-cites pilot. Originally emitted by `gen_documents.py` (deleted 2026-08-13; in git history).
 
 **Documents surveyed** (one metadata search names all nine unacquired IPDB-indexed TOTAN documents):
 
