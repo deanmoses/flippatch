@@ -63,7 +63,7 @@ claims:
         quote: "Mechanical Engineering: Luke Underwood Paul Sulisz"
       name: Paul Sulisz
   - person.david-van-es:
-      note: "The maker spells it 'David van Es' (lowercase v, the Dutch convention); Pinside spells it 'David Van Es', kept as an alias."
+      note: "The manufacturer spells it 'David van Es' (lowercase v, the Dutch convention); Pinside spells it 'David Van Es', kept as an alias."
       cite:
         ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
         quote: "Game Design: David van Es"
@@ -75,7 +75,7 @@ claims:
         quote: "Animations: Joshua Clay Trent Armstrong"
       person_alias: [Joshua Clay]
   - person.parker-dillman:
-      note: "The maker spells it 'Parker Dillmann'; Pinside spells it 'Parker Dillman', kept as an alias."
+      note: "The manufacturer spells it 'Parker Dillmann'; Pinside spells it 'Parker Dillman', kept as an alias."
       cite:
         ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
         quote: "Electrical Engineering: Parker Dillmann"
@@ -93,7 +93,7 @@ claims:
           quote: The game is available for purchase now at www.barrelsoffun.com and all authorized distributor.
       production_status: produced
   - model.bon-jovi:
-      note: "The maker reserves a possible member overrun and will announce the final edition number after ordering closes, so 700 is the announced floor."
+      note: "The manufacturer reserves a possible member overrun and will announce the final edition number after ordering closes, so 700 is the announced floor."
       cite:
         ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
         quote: "A limited worldwide release of 700 games, plus possible Barrels Reserve member access. If the initial release sells out within the first 7 days, eligible Barrels Reserve direct customers will receive an additional 7-day ordering window. After all orders are received, Barrels of Fun will announce the final edition number."
@@ -110,7 +110,7 @@ claims:
           locator: in the press release reprinted verbatim in the article
           quote: '15.6" HD LCD Display flanked by 5-1/4"'
         - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: '15.6" HD LCD Display flanked by 5-1/4" Full-Range Stereo Speakers with Interactive Full RGBW Illumination'
       display_type: lcd
   - model.bon-jovi:
@@ -120,7 +120,6 @@ claims:
       credit:
         - david-van-es: design
   - model.bon-jovi:
-      note: "'Rules' has no role of its own in the credit vocabulary, so it maps to other."
       cite:
         ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
         quote: "Rules: Phil Grimaldi Jess DeNardo"
@@ -144,7 +143,7 @@ claims:
         - ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
           quote: "Artwork: Jonathan Bergeron"
         - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: Featuring Amped Up Original Art by Jonathan Bergeron
       credit:
         - jonathan-bergeron: art
@@ -164,7 +163,6 @@ claims:
         - luke-underwood: mechanics
         - paul-sulisz: mechanics
   - model.bon-jovi:
-      note: "'Electrical Engineering' has no role of its own in the credit vocabulary, so it maps to other."
       cite:
         ref: "https://www.barrelsoffun.com/2026/07/28/bon-jovi-pinball-is-ready-to-rock-build-the-setlist-and-play-it-loud"
         quote: "Electrical Engineering: Parker Dillmann"
@@ -177,7 +175,7 @@ claims:
           locator: in the press release reprinted verbatim in the article
           quote: "2 Lightning Flippers, 2 Mini Flippers, 6 Balls [...] 2 Plastic Ramps, 2 Metal Jump Ramps, 1 Metal Ramp, [...] 4 Chrome Wire Habitrails, 1 Subway, 2 Scoops, [...] 1 Vertical Upkick, 3 Magnets, 2 Spinners, 2 Diverters, [...] 2 Drop Targets, 2 Physical 3-Ball Locks, 1 Captive Ball"
         - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "2 Lightning Flippers, 2 Mini Flippers, 6 Balls [...] 2 Plastic Ramps, 2 Metal Jump Ramps, 1 Metal Ramp, 4 Chrome Wire Habitrails, 1 Subway, 2 Scoops, 1 Vertical Upkick, 3 Magnets, 2 Spinners, 2 Diverters, 2 Drop Targets, 2 Physical 3-Ball Locks, 1 Captive Ball"
       gameplay_feature:
         [
@@ -216,7 +214,7 @@ claims:
           quote: Bon Jovi Heart & Dagger Magnetic Ball Catch & Diverter
       gameplay_feature: [ball-holding-toys, static-toys]
   - model.bon-jovi:
-      note: "HAL is the maker's branded interactive inner-cabinet lighting."
+      note: "HAL is the manufacturer's branded interactive inner-cabinet lighting."
       cite:
         ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
         locator: in the press release reprinted verbatim in the article
@@ -228,7 +226,7 @@ claims:
           { stage-spotlights: 3 },
         ]
   - model.bon-jovi:
-      note: "Infinity Glass is the maker's branded anti-reflective playfield glass; 'Thunder From Down Under' is its branding for the shaker motor."
+      note: "Infinity Glass is the manufacturer's branded anti-reflective playfield glass; 'Thunder From Down Under' is its branding for the shaker motor."
       cite:
         ref: "https://www.pinballnews.com/site/2026/07/28/bon-jovi-revealed"
         locator: in the press release reprinted verbatim in the article
@@ -242,6 +240,6 @@ claims:
           locator: in the press release reprinted verbatim in the article
           quote: 'Full-Range Stereo Speakers with Interactive [...] Full RGBW Illumination [...] 8" Cabinet Subwoofer'
         - ref: "https://www.barrelsoffun.com/wp-content/uploads/2026/07/BJ-Flyer.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: '15.6" HD LCD Display flanked by 5-1/4" Full-Range Stereo Speakers with Interactive Full RGBW Illumination'
       gameplay_feature: [stereo-sound, subwoofers, interactive-speaker-lighting]

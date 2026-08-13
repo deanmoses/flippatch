@@ -108,7 +108,7 @@ claims:
       cite:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
-        locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
+        locator: "PDF sheet 2"
         quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination"
       gameplay_feature:
         [ball-locks, subways, rgb-playfield-inserts, led-general-illumination]
@@ -150,7 +150,7 @@ claims:
       cite:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
-        locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
+        locator: "PDF sheet 2"
         quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination"
       gameplay_feature:
         [ball-locks, subways, rgb-playfield-inserts, led-general-illumination]
@@ -197,7 +197,7 @@ claims:
       cite:
         ref: "http://american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
         archive: "http://web.archive.org/web/20250325113004id_/https://www.american-pinball.com/games/houdini/Houdini-Pinball-Flyer.pdf"
-        locator: "PDF sheet 2 of 2; the flyer carries no printed folios"
+        locator: "PDF sheet 2"
         quote: "Upper & Lower 3 Ball Staging/Lock Mechanisms [...] Hidden Ball Subway System [...] RGB Controlled Playfield Inserts [...] All LED General Illumination"
       gameplay_feature:
         [ball-locks, subways, rgb-playfield-inserts, led-general-illumination]

@@ -49,7 +49,7 @@ claims:
         quote: 'The "Boom Balloon" pop bumper (on the lower right side of the playfield) is a disappearing bumper, dropping down until its flat plastic top is level with the playfield.'
       gameplay_feature: [disappearing-bumpers]
   - model.cirqus-voltaire-remake:
-      note: "The maker announces the machine and gathers interest; nothing is sold yet, so announced."
+      note: "The manufacturer announces the machine and gathers interest; nothing is sold yet, so announced."
       cite:
         ref: "https://americanpinball.com/cirqus-voltaire-announcement"
         quote: American Pinball is proud to announce that we are bringing the legendary Cirqus Voltaire back to life for a new generation of players
@@ -93,7 +93,6 @@ claims:
       name: Brian Allen
   - model.cirqus-voltaire-remake-ringmaster-edition:
       create: true
-      note: "No source states a release year, so none is asserted."
       cite:
         ref: "https://sdamusements.com/products/cirqus-voltaire-ringmaster-edition"
         quote: RINGMASTER EDITION (Limited to 772 units)

@@ -343,6 +343,83 @@ def test_quote_straight_typography_clean():
     assert not has(e, "cite quote contains smart typography")
 
 
+# --- locator hygiene (introduced at 0215) -----------------------------------
+# A locator points at where the evidence sits. It is not prose about the
+# document: what isn't printed on the page, and how long the document runs,
+# help nobody find anything.
+
+
+def locerrs(locator, filename="0215-x.yaml"):
+    # The note satisfies note-required so the clean cases isolate locator rules.
+    return errs(
+        [
+            {
+                "model.x": {
+                    "note": "Why.",
+                    "cite": {"ref": "ipdb:1", "locator": locator},
+                    "year": 1970,
+                }
+            }
+        ],
+        filename=filename,
+    )
+
+
+def test_locator_missing_pagination_flagged():
+    e = locerrs("PDF document page 1; the sheet carries no printed folio")
+    assert has(e, "cite locator")
+    assert has(e, "no printed folio")
+
+
+def test_locator_document_length_flagged():
+    e = locerrs("PDF document page 2 of 2")
+    assert has(e, "'page 2 of 2'")
+
+
+def test_locator_sheet_of_n_flagged():
+    # 0219 counts sheets rather than pages; same defect.
+    assert has(locerrs("PDF sheet 2 of 2"), "'sheet 2 of 2'")
+
+
+def test_locator_both_defects_flagged():
+    # The corpus's most common locator, 23 uses, trips both rules at once.
+    e = locerrs("PDF document page 2 of 2; the flyer carries no printed folios")
+    assert has(e, "'page 2 of 2'")
+    assert has(e, "no printed folios")
+
+
+def test_locator_plain_clean():
+    assert locerrs("PDF document page 1") == []
+    assert locerrs("back sheet; in the PLAYFIELD FEATURES list") == []
+    assert locerrs("in the manufacturer's press release reprinted in the article") == []
+
+
+def test_locator_rules_grandfathered_before_0215():
+    assert (
+        locerrs(
+            "PDF document page 1 of 1; the sheet carries no printed folio",
+            filename="0214-x.yaml",
+        )
+        == []
+    )
+
+
+def test_inline_cites_locator_flagged():
+    e = errs(
+        [
+            {
+                "model.x": {
+                    "description": "A game.[[cite:1]]",
+                    "cites": {"1": {"ref": "ipdb:1", "locator": "page 1 of 4"}},
+                }
+            }
+        ],
+        attribution="flipcommons-ai-desc-model",
+        filename="0215-x.yaml",
+    )
+    assert has(e, "cites['1'] locator")
+
+
 def test_quoted_inline_cite_satisfies_note_requirement():
     # An inline cites: entry carrying a quote counts as the explanation, same
     # as the entry-level cite: mapping.
@@ -804,13 +881,13 @@ def test_seed_in_record_description_allowed():
     assert not has(e, "seed")
 
 
-# --- the note's two durability rules (introduced at 0231) -------------------
+# --- the note's durability rules (introduced at 0215) -----------------------
 # A note renders publicly and must read standalone decades on: it may name
 # neither the authoring process that produced it nor what the data used to be.
 # The split is by what the word names, not by what it's used to say: 'seed' and
 # 'ingest' name our own pipeline, so they're process words even when the
 # sentence around them is about a prior value. prose-seed is the 0189-era
-# member of that family; its number is fixed, so the rest lands at 0231.
+# member of that family; its number is fixed, so the rest lands at 0215.
 #
 # The rule name isn't in the error text, so a test pins the categorization by
 # asserting on the guidance the author is shown.
@@ -819,7 +896,7 @@ PRIOR_STATE_GUIDANCE = "what the data used to be"
 
 
 def nerrs(note):
-    return perrs(note_unit(note), filename="0231-x.yaml")
+    return perrs(note_unit(note), filename="0215-x.yaml")
 
 
 def test_user_approval_flagged():
@@ -898,7 +975,7 @@ def test_superseded_in_record_description_clean():
     # superseding another is the plain English sense.
     e = perrs(
         desc_unit("The solid-state version superseded the electromechanical run."),
-        filename="0231-x.yaml",
+        filename="0215-x.yaml",
     )
     assert not has(e, "supersed")
 
@@ -922,18 +999,18 @@ def test_uniqueness_claim_flagged_in_record_description():
     # than in a note, and descriptions are generated at volume.
     e = perrs(
         desc_unit("The only known surviving example sits in a private collection."),
-        filename="0231-x.yaml",
+        filename="0215-x.yaml",
     )
     assert has(e, "'only known'")
 
 
-def test_search_statement_clean():
-    # The prescribed durable form: past tense, about the authoring act. First
-    # person is fine too — the contributor's name rides the change forever, so
-    #'I' resolves for a reader where a third-party 'the user' would not.
-    assert (
-        nerrs("Corroborating sources were sought at authoring time, none found.") == []
-    )
+def test_first_person_clean():
+    # The contributor's name rides the change forever, so 'I' resolves for a
+    # reader where a third-party 'the user' would not.
+    #
+    # NB this sentence is still effort narration, which prose-search-effort
+    # bans in its 'sought'/'none found' forms; the phrasing is spared only
+    # because no pattern reaches it.
     assert nerrs("I was not able to find a second source for the year.") == []
 
 
@@ -955,6 +1032,82 @@ def test_absence_bounded_to_a_named_source_flagged():
     )
 
 
+def test_search_effort_flagged():
+    # How hard someone looked is not evidence. The cite carries what supports
+    # the value; a hunt that came up empty leaves nothing to say.
+    e = nerrs("Corroborating sources were sought at authoring time and none found.")
+    assert has(e, "'sought'")
+    assert has(e, "'at authoring time'")
+    assert has(e, "'none found'")
+
+
+FILLER_GUIDANCE = "the reader already assumes now"
+
+
+def test_authoring_time_is_filler_not_search_effort():
+    # 'at authoring time' rides along with effort narration but is a separate
+    # defect: the change is timestamped, so it dates what is already dated.
+    # It fires on a sentence with no hunt in it at all.
+    e = nerrs("Shipping had not begun at authoring time, so the machine is announced.")
+    assert has(e, "'at authoring time'")
+    assert has(e, FILLER_GUIDANCE)
+
+
+def test_temporal_filler_siblings_flagged():
+    assert has(nerrs("The maker's site currently expects late 2026."), "'currently'")
+    assert has(nerrs("No shipping date at the moment."), "'at the moment'")
+    assert has(nerrs("At this time the machine has no year."), "'At this time'")
+    assert has(nerrs("Two examples are known to date."), "'to date'")
+
+
+def test_historical_at_the_time_clean():
+    # 'at the time' points at a moment in the past — 1934, in 0112's case —
+    # which is the opposite of asserting the default frame.
+    e = perrs(
+        desc_unit("Gridiron football had scarcely any following in Italy at the time."),
+        filename="0215-x.yaml",
+    )
+    assert not has(e, "at the time")
+
+
+def test_still_and_today_clean():
+    # Natural encyclopedia prose, not filler: deliberately out of scope.
+    assert nerrs("The firm is still in business, so no end year is asserted.") == []
+    assert nerrs("The company remains active today.") == []
+
+
+def test_sought_after_clean():
+    # The collector's-market sense, and a real record description from 0111.
+    e = perrs(
+        desc_unit("They became among the most sought-after games of their era."),
+        filename="0215-x.yaml",
+    )
+    assert not has(e, "sought")
+    assert nerrs("The machine is sought-after among collectors.") == []
+
+
+def test_classification_rationale_flagged():
+    # The note documents the author working out which of our values to use.
+    # The cite's quote shows the source's own label, and the claim shows what
+    # it became; the deliberation between them is not the reader's business.
+    assert has(nerrs("'Lead LCD Artist' maps to the animation role."), "'maps to'")
+    assert has(nerrs("Produced and sold, so it records as produced."), "'records as'")
+
+
+def test_recorded_as_clean():
+    # Passive 'recorded as' is mostly ordinary prose about what a source
+    # documents, or real rationale for a deliberate omission — 30 distinct
+    # uses in the corpus, so the rule stops at the active voice.
+    assert (
+        nerrs("Troubadour is not recorded as a second donor, pending a source.") == []
+    )
+    e = perrs(
+        desc_unit("Among the last tables BEM is recorded as building."),
+        filename="0215-x.yaml",
+    )
+    assert not has(e, "recorded as")
+
+
 def test_vocabulary_in_note_flagged():
     # The reader has never heard of the credit-role vocabulary, and the quote
     # on the cite already shows the specialized role doesn't exist.
@@ -973,10 +1126,10 @@ def test_taxonomy_siblings_flagged_in_every_corpus():
     # separates them from 'vocabulary', which does honest work in the
     # Admin-only patch description.
     e = perrs(
-        desc_unit("The theme taxonomy groups it under pirates."), filename="0231-x.yaml"
+        desc_unit("The theme taxonomy groups it under pirates."), filename="0215-x.yaml"
     )
     assert has(e, "'taxonomy'")
-    assert has(desc_errs("Seed the theme namespace.", "0231-x.yaml"), "'namespace'")
+    assert has(desc_errs("Seed the theme namespace.", "0215-x.yaml"), "'namespace'")
 
 
 def test_vocabulary_in_patch_description_allowed():
@@ -984,15 +1137,15 @@ def test_vocabulary_in_patch_description_allowed():
     # where taxonomy bookkeeping belongs — "Create the four ProductionStatus
     # vocabulary values" is an accurate summary for the one audience that has
     # the concept.
-    e = desc_errs("Create the four production-status vocabulary values.", "0231-x.yaml")
+    e = desc_errs("Create the four production-status vocabulary values.", "0215-x.yaml")
     assert not has(e, "vocabulary")
 
 
-def test_note_durability_rules_grandfathered_before_0231():
+def test_note_durability_rules_grandfathered_before_0215():
     assert (
         perrs(
             note_unit("Supersedes an earlier ingest (user-approved)."),
-            filename="0230-x.yaml",
+            filename="0214-x.yaml",
         )
         == []
     )
@@ -1000,7 +1153,7 @@ def test_note_durability_rules_grandfathered_before_0231():
 
 def test_rule_since_registry_has_note_durability_rules():
     for rule in ("prose-authoring-process", "prose-prior-state"):
-        assert lp.RULE_SINCE[rule] == 231, rule
+        assert lp.RULE_SINCE[rule] == 215, rule
 
 
 def test_node_in_record_description_flagged():

@@ -72,14 +72,14 @@ claims:
       parent: usa/nj
       name: Pennsville
   - corporate-entity.cardona-pinball-designs:
-      note: "The New Jersey business registry, republished by City-Data, registers the company in Pennsville, in the state's southwest corner; the maker's own sites publish no address."
+      note: "The New Jersey business registry, republished by City-Data, registers the company in Pennsville, in the state's southwest corner; the manufacturer's own sites publish no address."
       cite:
         ref: "https://www.city-data.com/business-entities/NJ/CARDONA-PINBALL-DESIGNS-LLC-0450585629-NJ.html"
         quote: "CARDONA PINBALL DESIGNS, LLC [...] Entity Id: 0450585629 [...] Registration date: 2021 Jan 06 [...] City: PENNSVILLE"
       location: [usa/nj/pennsville]
   - corporate-entity.fast-pinball:
       create: true
-      note: "The maker's own site says only 'greater Seattle area'; Skill Shot's venue listing places its headquarters in Gig Harbor, as do the Washington company registry (UBI 603387874) and the maker's own Facebook page header."
+      note: "The manufacturer's own site says only 'greater Seattle area'; Skill Shot's venue listing places its headquarters in Gig Harbor, as do the Washington company registry (UBI 603387874) and the manufacturer's own Facebook page header."
       cite:
         - ref: "https://fastpinball.com/about"
           quote: "FAST Pinball was founded in 2014 by Aaron Davis and Dave Beecher. We're based in the greater Seattle area and have sold pinball control systems to customers around the world, including individual hobbyists, indie pinball designers, and to pinball manufacturing companies who build upgrade kits and complete machines."
@@ -99,7 +99,7 @@ claims:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: he wanted all the manufacturers on the same hardware which is why I had to switch to the FAST platform
         - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/ebc2f84f-c8c0-4c41-a7ee-dc72c462c785/FT%20release%202026%2007%2013.pdf"
-          locator: "PDF document page 1 of 2; the sheet carries no printed folio"
+          locator: "PDF document page 1"
           quote: DO NOT plug the USB into any slots on the FAST controller or the FAST sound board.
         - ref: "youtube:o-XezhzIBvg"
           quote: "says HDMI 1, playfield monitor, Ethernet, there's no connection. HDMI HDMI 2 speaker panel monitor. You got two USB cable connections"
@@ -116,7 +116,7 @@ claims:
       create: true
       cite:
         ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
-        locator: "PDF document page 2 of 2; the sheet carries no printed folio"
+        locator: "PDF document page 2"
         quote: Added announcer voices from Jada Holmes
       name: Jada Holmes
   - model.fish-tales-ultimate-fishing-challenge-kit:
@@ -125,14 +125,14 @@ claims:
         - ref: "https://www.kineticist.com/news/james-cardona-interview"
           quote: "Back in April, James Cardona released Fish Tales: Ultimate Fishing Challenge, the third kit from his company, Cardona Pinball, with a fourth still to come."
         - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
-          locator: "PDF document page 2 of 2; the sheet carries no printed folio"
+          locator: "PDF document page 2"
           quote: FT 2026 05 05 First Commercial Release
       production_status: produced
   - model.fish-tales-ultimate-fishing-challenge-kit:
-      note: "The maker's own release history labels 2026-05-05 the First Commercial Release; the April dates elsewhere read as launch-event framing."
+      note: "The manufacturer's own release history labels 2026-05-05 the First Commercial Release; the April dates elsewhere read as launch-event framing."
       cite:
         ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
-        locator: "PDF document page 2 of 2; the sheet carries no printed folio"
+        locator: "PDF document page 2"
         quote: FT 2026 05 05 First Commercial Release
       month: 5
   - model.fish-tales-ultimate-fishing-challenge-kit:
@@ -183,7 +183,7 @@ claims:
   - model.fish-tales-ultimate-fishing-challenge-kit:
       cite:
         ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
-        locator: "PDF document page 2 of 2; the sheet carries no printed folio"
+        locator: "PDF document page 2"
         quote: Added announcer voices from Jada Holmes
       credit:
         - jada-holmes: voice
@@ -191,10 +191,10 @@ claims:
       note: "MB is the release notes' own abbreviation for the Caster's Club multiball."
       cite:
         - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
-          locator: "PDF document page 2 of 2; the sheet carries no printed folio"
+          locator: "PDF document page 2"
           quote: Added video mode
         - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/6cdf589b-48c6-4fad-8f56-e481d6474fa6/FT%20release%202026%2006%2012.pdf"
-          locator: "PDF document page 2 of 2; the sheet carries no printed folio"
+          locator: "PDF document page 2"
           quote: Fixed various display issues when caster's club MB was running
       gameplay_feature: [video-modes, multiball]
   - model.fish-tales:
@@ -229,7 +229,6 @@ claims:
         - jim-gentile: voice
         - chris-granner: voice
   - model.fish-tales:
-      note: "The credit vocabulary has no sculptor role; sculpting records as art."
       cite:
         ref: "ipdb:861"
         quote: Jerry Pinsler sculpted the fish on the topper.

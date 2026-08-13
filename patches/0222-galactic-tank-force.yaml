@@ -106,7 +106,7 @@ claims:
         quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
       game_format: pinball
   - model.galactic-tank-force-classic:
-      note: "Art Director maps to the art role and Rules to design. The team is stated for the game, so every edition carries the credits."
+      note: "The team is stated for the game, so every edition carries the credits."
       cite:
         ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
@@ -118,7 +118,7 @@ claims:
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-classic:
-      note: "Corroborating first-party sources were sought at authoring time and none found. The voice is in the game every edition shares."
+      note: "The voice is in the game every edition shares."
       cite:
         ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
         quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
@@ -158,7 +158,7 @@ claims:
           quote: The player-operated ball diverter
       gameplay_feature: [diverters, moving-targets]
   - model.galactic-tank-force-classic:
-      note: "GAME CODE maps to software, 2D+VIDEO ART to animation, DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics, AUDIO ENGINEER to sound. Steve Bowden carries both design (Rules) and software (GAME CODE). The credits are printed on the game every edition shares."
+      note: "The credits are printed on the game every edition shares."
       cite:
         ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
@@ -174,7 +174,7 @@ claims:
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-classic:
-      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the manufacturer's own heading."
       cite:
         ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
         locator: "printed page 44, PDF document page 54"
@@ -188,7 +188,7 @@ claims:
         quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
       game_format: pinball
   - model.galactic-tank-force-deluxe:
-      note: "Art Director maps to the art role and Rules to design. The team is stated for the game, so every edition carries the credits."
+      note: "The team is stated for the game, so every edition carries the credits."
       cite:
         ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
@@ -200,7 +200,7 @@ claims:
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-deluxe:
-      note: "Corroborating first-party sources were sought at authoring time and none found. The voice is in the game every edition shares."
+      note: "The voice is in the game every edition shares."
       cite:
         ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
         quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
@@ -240,7 +240,7 @@ claims:
           quote: The player-operated ball diverter
       gameplay_feature: [diverters, moving-targets]
   - model.galactic-tank-force-deluxe:
-      note: "GAME CODE maps to software, 2D+VIDEO ART to animation, DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics, AUDIO ENGINEER to sound. Steve Bowden carries both design (Rules) and software (GAME CODE). The credits are printed on the game every edition shares."
+      note: "The credits are printed on the game every edition shares."
       cite:
         ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
@@ -256,14 +256,14 @@ claims:
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-deluxe:
-      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the manufacturer's own heading."
       cite:
         ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
         locator: "printed page 44, PDF document page 54"
         quote: "SKILL SHOTS (2) [...] MULTIBALL MODES (3)"
       gameplay_feature: [{ skill-shot: 2 }, { multiball: 3 }]
   - model.galactic-tank-force-deluxe:
-      note: "A retired machine was produced and sold, so it records as produced."
+      note: "A retired machine was produced and sold."
       cite:
         ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
         quote: "The cabinet artwork, translite, and core playfield feature the same setup of the now-retired Deluxe Edition."
@@ -284,7 +284,7 @@ claims:
         quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
       game_format: pinball
   - model.galactic-tank-force-limited-edition:
-      note: "Art Director maps to the art role and Rules to design. The team is stated for the game, so every edition carries the credits."
+      note: "The team is stated for the game, so every edition carries the credits."
       cite:
         ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
@@ -296,7 +296,7 @@ claims:
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-limited-edition:
-      note: "Corroborating first-party sources were sought at authoring time and none found. The voice is in the game every edition shares."
+      note: "The voice is in the game every edition shares."
       cite:
         ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
         quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
@@ -336,7 +336,7 @@ claims:
           quote: The player-operated ball diverter
       gameplay_feature: [diverters, moving-targets]
   - model.galactic-tank-force-limited-edition:
-      note: "GAME CODE maps to software, 2D+VIDEO ART to animation, DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics, AUDIO ENGINEER to sound. Steve Bowden carries both design (Rules) and software (GAME CODE). The credits are printed on the game every edition shares."
+      note: "The credits are printed on the game every edition shares."
       cite:
         ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
@@ -352,7 +352,7 @@ claims:
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-limited-edition:
-      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the manufacturer's own heading."
       cite:
         ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
         locator: "printed page 44, PDF document page 54"
@@ -372,7 +372,7 @@ claims:
         quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
       game_format: pinball
   - model.galactic-tank-force-signature:
-      note: "Art Director maps to the art role and Rules to design. The team is stated for the game, so every edition carries the credits."
+      note: "The team is stated for the game, so every edition carries the credits."
       cite:
         ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
@@ -384,7 +384,7 @@ claims:
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-signature:
-      note: "Corroborating first-party sources were sought at authoring time and none found. The voice is in the game every edition shares."
+      note: "The voice is in the game every edition shares."
       cite:
         ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
         quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
@@ -424,7 +424,7 @@ claims:
           quote: The player-operated ball diverter
       gameplay_feature: [diverters, moving-targets]
   - model.galactic-tank-force-signature:
-      note: "GAME CODE maps to software, 2D+VIDEO ART to animation, DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics, AUDIO ENGINEER to sound. Steve Bowden carries both design (Rules) and software (GAME CODE). The credits are printed on the game every edition shares."
+      note: "The credits are printed on the game every edition shares."
       cite:
         ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
@@ -440,7 +440,7 @@ claims:
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-signature:
-      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the manufacturer's own heading."
       cite:
         ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
         locator: "printed page 44, PDF document page 54"
@@ -474,7 +474,7 @@ claims:
         quote: "Galactic Tank Force is a sci-fi pinball machine featuring a fun storyline where you must protect the cows and save the ice cream!"
       game_format: pinball
   - model.galactic-tank-force-victory-edition:
-      note: "Art Director maps to the art role and Rules to design. The team is stated for the game, so every edition carries the credits."
+      note: "The team is stated for the game, so every edition carries the credits."
       cite:
         ref: "https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
         archive: "https://web.archive.org/web/20231002204904id_/https://www.american-pinball.com/news/slam-tilt-podcast-interviews-the-galactic-tank-fo"
@@ -486,7 +486,7 @@ claims:
         - christopher-franchi: art
         - steve-bowden: design
   - model.galactic-tank-force-victory-edition:
-      note: "Corroborating first-party sources were sought at authoring time and none found. The voice is in the game every edition shares."
+      note: "The voice is in the game every edition shares."
       cite:
         ref: "https://www.pinballnews.com/site/2023/03/22/galactic-tank-force-promo-released"
         quote: game designer Dennis Nordman appears in the game as the voice of the Nord-Man 3000 robot
@@ -526,7 +526,7 @@ claims:
           quote: The player-operated ball diverter
       gameplay_feature: [diverters, moving-targets]
   - model.galactic-tank-force-victory-edition:
-      note: "GAME CODE maps to software, 2D+VIDEO ART to animation, DIRECTOR OF MECH. ENGINEERING and ENGINEERING to mechanics, AUDIO ENGINEER to sound. Steve Bowden carries both design (Rules) and software (GAME CODE). The credits are printed on the game every edition shares."
+      note: "The credits are printed on the game every edition shares."
       cite:
         ref: "https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
         archive: "https://web.archive.org/web/20250920035317id_/https://www.american-pinball.com/games/galactic-tank-force/img/GTK_M13_Flyer.jpg"
@@ -542,7 +542,7 @@ claims:
         - mitesh-pithva: mechanics
         - matt-kern: sound
   - model.galactic-tank-force-victory-edition:
-      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the maker's own heading."
+      note: "The manual's rules chapter documents the game every edition shares. The skill shot section teases further undocumented skill shots ('There are more skill shots. Can you find them all?'); the count follows the manufacturer's own heading."
       cite:
         ref: "https://48804760.fs1.hubspotusercontent-na1.net/hubfs/48804760/Support%20Files/Game%20Manuals/Galactic%20Tank%20Force%20-%20Game%20Manual.pdf"
         locator: "printed page 44, PDF document page 54"
@@ -555,7 +555,7 @@ claims:
         quote: "The cabinet artwork, translite, and core playfield feature the same setup of the now-retired Deluxe Edition."
       variant_of: galactic-tank-force-deluxe
   - model.galactic-tank-force-victory-edition:
-      note: "Shipping had not begun at authoring time, so the machine is announced."
+      note: "Shipping has not yet begun, so the machine is announced."
       cite:
         ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
         quote: Shipping Begins August 2026

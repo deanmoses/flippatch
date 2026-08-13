@@ -28,7 +28,7 @@ claims:
       name: Custom Shooter Knobs
       gameplay_feature_alias: [Custom Shooter Knob]
   - model.sonic-the-hedgehog-special-edition:
-      note: "The maker sells the game now and ships it from stock, so it is in production."
+      note: "The manufacturer sells the game now and ships it from stock, so it is in production."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -46,7 +46,7 @@ claims:
   - model.sonic-the-hedgehog-special-edition:
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: 'Industry-Leading 27" LCD Display'
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Backglass section
@@ -58,7 +58,7 @@ claims:
           locator: in the Frequently Asked Questions section
           quote: "The game was designed by Steve Ritchie — widely regarded as one of the greatest pinball designers in history with a career spanning over 40 years."
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Game Designer: Steve Ritchie"
         - ref: "https://marketing.jerseyjackpinball.com/sonic/Sonic_Manual_10_July_2026.pdf"
           locator: "printed folio V, PDF document page 5"
@@ -71,7 +71,7 @@ claims:
           locator: in The Highlights section
           quote: amplified with exclusive guitar solos from Slash for a high-voltage edge
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Open Your Heart (Guitar Solo by Slash) [...] It Doesn't Matter (Guitar Solo by Slash)"
       credit:
         - saul-slash-hudson: music
@@ -79,7 +79,7 @@ claims:
       note: "The Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield is a mini-playfield; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it is a thrust magnet, and the Battle Zone! magnet has no stated direction, so it is the generic magnet."
       cite:
         ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-        locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+        locator: "PDF document page 2"
         quote: "4 Full-Sized Flippers [...] 9 Stand-Up Targets [...] 2 Spring Targets [...] 1 Spinner [...] 2 Up-Posts to Catch the Ball [...] Total-Control Inline 3-Bank Drop Target Lock [...] Upper Playfield Entry Drop Target [...] Bash Dash Captive Ball Lock [...] 6-Ball Multiball [...] Polycarbonate Upper Playfield [...] Stainless Steel Ramps [...] Magnetic Accelerator Loop Ramp [...] 'Superconducting' Battle Zone! Magnet"
       gameplay_feature:
         [
@@ -102,7 +102,7 @@ claims:
       note: "JJP calls the Dr. Eggman toy both interactive bash toy and animatronic, so it is both; the Sonic and Amy Rose sculptures have no stated motion or ball interaction, so they are static toys."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Interactive Dr. Eggman Bash Toy [...] Custom Sculptures of Sonic, Amy Rose & Dr. Eggman [...] Voice Callouts by Official Sonic Cast"
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Playfield section
@@ -112,7 +112,7 @@ claims:
       note: "The 2,000+ individually controlled RGB LEDs are the general illumination."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Wi-Fi Connectivity [...] Bluetooth Audio [...] Audio Equalizer and 8-inch Subwoofer [...] JJP Exclusive High-Score Player Camera [...] 2,000+ individually controlled RGB LEDs [...] Custom Chaos Emerald Inserts"
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Playfield section
@@ -136,7 +136,7 @@ claims:
       gameplay_feature:
         [cabinet-armor, toppers, shaker-motors, invisiglass, numbered-plaques]
   - model.sonic-the-hedgehog-collectors-edition:
-      note: "The maker sells the game now and ships it from stock, so it is in production."
+      note: "The manufacturer sells the game now and ships it from stock, so it is in production."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -154,7 +154,7 @@ claims:
   - model.sonic-the-hedgehog-collectors-edition:
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: 'Industry-Leading 27" LCD Display'
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Backglass section
@@ -166,7 +166,7 @@ claims:
           locator: in the Frequently Asked Questions section
           quote: "The game was designed by Steve Ritchie — widely regarded as one of the greatest pinball designers in history with a career spanning over 40 years."
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Game Designer: Steve Ritchie"
         - ref: "https://marketing.jerseyjackpinball.com/sonic/Sonic_Manual_10_July_2026.pdf"
           locator: "printed folio V, PDF document page 5"
@@ -179,7 +179,7 @@ claims:
           locator: in The Highlights section
           quote: amplified with exclusive guitar solos from Slash for a high-voltage edge
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Open Your Heart (Guitar Solo by Slash) [...] It Doesn't Matter (Guitar Solo by Slash)"
       credit:
         - saul-slash-hudson: music
@@ -187,7 +187,7 @@ claims:
       note: "The Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield is a mini-playfield; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it is a thrust magnet, and the Battle Zone! magnet has no stated direction, so it is the generic magnet."
       cite:
         ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-        locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+        locator: "PDF document page 2"
         quote: "4 Full-Sized Flippers [...] 9 Stand-Up Targets [...] 2 Spring Targets [...] 1 Spinner [...] 2 Up-Posts to Catch the Ball [...] Total-Control Inline 3-Bank Drop Target Lock [...] Upper Playfield Entry Drop Target [...] Bash Dash Captive Ball Lock [...] 6-Ball Multiball [...] Polycarbonate Upper Playfield [...] Stainless Steel Ramps [...] Magnetic Accelerator Loop Ramp [...] 'Superconducting' Battle Zone! Magnet"
       gameplay_feature:
         [
@@ -210,7 +210,7 @@ claims:
       note: "JJP calls the Dr. Eggman toy both interactive bash toy and animatronic, so it is both; the Sonic and Amy Rose sculptures have no stated motion or ball interaction, so they are static toys."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Interactive Dr. Eggman Bash Toy [...] Custom Sculptures of Sonic, Amy Rose & Dr. Eggman [...] Voice Callouts by Official Sonic Cast"
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Playfield section
@@ -220,7 +220,7 @@ claims:
       note: "The 2,000+ individually controlled RGB LEDs are the general illumination."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Wi-Fi Connectivity [...] Bluetooth Audio [...] Audio Equalizer and 8-inch Subwoofer [...] JJP Exclusive High-Score Player Camera [...] 2,000+ individually controlled RGB LEDs [...] Custom Chaos Emerald Inserts"
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Playfield section
@@ -262,7 +262,7 @@ claims:
           designer-autographs,
         ]
   - model.sonic-the-hedgehog-arcade-edition:
-      note: "The maker sells the game now and ships it from stock, so it is in production."
+      note: "The manufacturer sells the game now and ships it from stock, so it is in production."
       cite:
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in the Frequently Asked Questions section
@@ -280,7 +280,7 @@ claims:
   - model.sonic-the-hedgehog-arcade-edition:
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: 'Industry-Leading 27" LCD Display'
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Backglass section
@@ -292,7 +292,7 @@ claims:
           locator: in the Frequently Asked Questions section
           quote: "The game was designed by Steve Ritchie — widely regarded as one of the greatest pinball designers in history with a career spanning over 40 years."
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Game Designer: Steve Ritchie"
         - ref: "https://marketing.jerseyjackpinball.com/sonic/Sonic_Manual_10_July_2026.pdf"
           locator: "printed folio V, PDF document page 5"
@@ -305,7 +305,7 @@ claims:
           locator: in The Highlights section
           quote: amplified with exclusive guitar solos from Slash for a high-voltage edge
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Open Your Heart (Guitar Solo by Slash) [...] It Doesn't Matter (Guitar Solo by Slash)"
       credit:
         - saul-slash-hudson: music
@@ -313,7 +313,7 @@ claims:
       note: "The Total-Control Inline 3-Bank Drop Target Lock is an in-line 3-bank that locks balls; the Upper Playfield Entry Drop Target is a single drop target; the Bash Dash Captive Ball Lock is a captive ball that locks; the Polycarbonate Upper Playfield is a mini-playfield; the Magnetic Accelerator Loop Ramp's magnet accelerates the ball, so it is a thrust magnet, and the Battle Zone! magnet has no stated direction, so it is the generic magnet."
       cite:
         ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-        locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+        locator: "PDF document page 2"
         quote: "4 Full-Sized Flippers [...] 9 Stand-Up Targets [...] 2 Spring Targets [...] 1 Spinner [...] 2 Up-Posts to Catch the Ball [...] Total-Control Inline 3-Bank Drop Target Lock [...] Upper Playfield Entry Drop Target [...] Bash Dash Captive Ball Lock [...] 6-Ball Multiball [...] Polycarbonate Upper Playfield [...] Stainless Steel Ramps [...] Magnetic Accelerator Loop Ramp [...] 'Superconducting' Battle Zone! Magnet"
       gameplay_feature:
         [
@@ -336,7 +336,7 @@ claims:
       note: "JJP calls the Dr. Eggman toy both interactive bash toy and animatronic, so it is both; the Sonic and Amy Rose sculptures have no stated motion or ball interaction, so they are static toys."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Interactive Dr. Eggman Bash Toy [...] Custom Sculptures of Sonic, Amy Rose & Dr. Eggman [...] Voice Callouts by Official Sonic Cast"
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Playfield section
@@ -346,7 +346,7 @@ claims:
       note: "The 2,000+ individually controlled RGB LEDs are the general illumination."
       cite:
         - ref: "https://marketing.jerseyjackpinball.com/distributors/Sonic/Flyers/73-100024-12-04%20-%20REV.%20A%20-%20SONIC%20FLYER,%20ALL%20MODELS.pdf"
-          locator: "PDF document page 2 of 2; the flyer carries no printed folios"
+          locator: "PDF document page 2"
           quote: "Wi-Fi Connectivity [...] Bluetooth Audio [...] Audio Equalizer and 8-inch Subwoofer [...] JJP Exclusive High-Score Player Camera [...] 2,000+ individually controlled RGB LEDs [...] Custom Chaos Emerald Inserts"
         - ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
           locator: in The Playfield section

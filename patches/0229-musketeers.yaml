@@ -56,7 +56,7 @@ claims:
         quote: "Game Design: Luis Dos Santos"
       name: Luis Dos Santos
   - model.the-3-musketeers:
-      note: "The maker's own materials name the two editions Classic and Elegance, so the base model takes the maker's edition name."
+      note: "The manufacturer's own materials name the two editions Classic and Elegance, so the base model takes the manufacturer's edition name."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; heading of the Classic column"
@@ -65,7 +65,7 @@ claims:
           quote: "Classic Edition [...] Experience all the intensity of the game, the original epic adventure"
       name: The 3 Musketeers (Classic Edition)
   - model.the-3-musketeers:
-      note: "First shipments were still expected at authoring time, so the machine is announced."
+      note: "First shipments are still expected, so the machine is announced."
       cite:
         - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
           quote: "Hexa Pinball today released full details of their second title, The 3 Musketeers, based on the famed novel by Alexandre Dumas."
@@ -102,28 +102,26 @@ claims:
       credit:
         - herve-coussillan: music
   - model.the-3-musketeers:
-      note: "Kineticist's Design Team block labels the credit 'Music / Sound', so the sound role follows alongside the music credit the maker's sheet supports."
+      note: "Kineticist's Design Team block labels the credit 'Music / Sound', so the sound role follows alongside the music credit the manufacturer's sheet supports."
       cite:
         ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
         quote: "Music / Sound: Hervé Coussillan"
       credit:
         - herve-coussillan: sound
   - model.the-3-musketeers:
-      note: "Corroborating first-party sources were sought at authoring time and none found."
       cite:
         ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
         quote: "Game Design: Luis Dos Santos"
       credit:
         - luis-dos-santos: design
   - model.the-3-musketeers:
-      note: "'Electronic Engineering' has no role of its own in the credit vocabulary, so it maps to other. Corroborating first-party sources were sought at authoring time and none found."
       cite:
         ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
         quote: "Electronic Engineering: Romain Fontaine"
       credit:
         - romain-fontaine: other
   - model.the-3-musketeers:
-      note: "Balls attach as 7; the extra mini-ball has no vocabulary of its own and stays in the quote. Treville's Mansion's '3 Bank Drop Target' is one 3-bank, and the single three-ball La Rochelle Harbor lock one ball lock. The specification sheet is edition-neutral and the maker's comparison table differs only in cosmetic items, so the playfield features hold for both editions."
+      note: "Balls attach as 7, and the extra mini-ball, which has no feature of its own, stays in the quote. Treville's Mansion's '3 Bank Drop Target' is one 3-bank, and the single three-ball La Rochelle Harbor lock one ball lock. The specification sheet is edition-neutral and the manufacturer's comparison table differs only in cosmetic items, so the playfield features hold for both editions."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"
@@ -218,7 +216,7 @@ claims:
         quote: Musketeer's Blue Powder coated finish Armor
       gameplay_feature: [cabinet-armor]
   - model.the-3-musketeers-elegance-edition:
-      note: "First shipments were still expected at authoring time, so the machine is announced."
+      note: "First shipments are still expected, so the machine is announced."
       cite:
         - ref: "https://www.pinballnews.com/site/2026/03/20/the-3-musketeers-revealed"
           quote: "Hexa Pinball today released full details of their second title, The 3 Musketeers, based on the famed novel by Alexandre Dumas."
@@ -255,28 +253,26 @@ claims:
       credit:
         - herve-coussillan: music
   - model.the-3-musketeers-elegance-edition:
-      note: "Kineticist's Design Team block labels the credit 'Music / Sound', so the sound role follows alongside the music credit the maker's sheet supports."
+      note: "Kineticist's Design Team block labels the credit 'Music / Sound', so the sound role follows alongside the music credit the manufacturer's sheet supports."
       cite:
         ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
         quote: "Music / Sound: Hervé Coussillan"
       credit:
         - herve-coussillan: sound
   - model.the-3-musketeers-elegance-edition:
-      note: "Corroborating first-party sources were sought at authoring time and none found."
       cite:
         ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
         quote: "Game Design: Luis Dos Santos"
       credit:
         - luis-dos-santos: design
   - model.the-3-musketeers-elegance-edition:
-      note: "'Electronic Engineering' has no role of its own in the credit vocabulary, so it maps to other. Corroborating first-party sources were sought at authoring time and none found."
       cite:
         ref: "https://www.kineticist.com/news/hexa-3-musketeers-pinball"
         quote: "Electronic Engineering: Romain Fontaine"
       credit:
         - romain-fontaine: other
   - model.the-3-musketeers-elegance-edition:
-      note: "Balls attach as 7; the extra mini-ball has no vocabulary of its own and stays in the quote. Treville's Mansion's '3 Bank Drop Target' is one 3-bank, and the single three-ball La Rochelle Harbor lock one ball lock. The specification sheet is edition-neutral and the maker's comparison table differs only in cosmetic items, so the playfield features hold for both editions."
+      note: "Balls attach as 7, and the extra mini-ball, which has no feature of its own, stays in the quote. Treville's Mansion's '3 Bank Drop Target' is one 3-bank, and the single three-ball La Rochelle Harbor lock one ball lock. The specification sheet is edition-neutral and the manufacturer's comparison table differs only in cosmetic items, so the playfield features hold for both editions."
       cite:
         - ref: "hexa-pinball:the-3-musketeers-product-specification-sheet-2026"
           locator: "back sheet; in the PLAYFIELD FEATURES list"

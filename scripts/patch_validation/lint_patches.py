@@ -53,12 +53,17 @@ RULE_SINCE: dict[str, int] = {
     "prose-the-catalog": 189,
     "prose-catalogs": 189,
     "prose-pinball-record": 189,
-    "prose-authoring-process": 231,
-    "prose-prior-state": 231,
-    "prose-absence-claim": 231,
-    "prose-vocabulary": 231,
-    "prose-namespace": 231,
-    "prose-taxonomy": 231,
+    "prose-authoring-process": 215,
+    "prose-prior-state": 215,
+    "prose-absence-claim": 215,
+    "prose-vocabulary": 215,
+    "prose-namespace": 215,
+    "prose-taxonomy": 215,
+    "prose-search-effort": 215,
+    "prose-temporal-filler": 215,
+    "prose-classification": 215,
+    "locator-pagination-absence": 215,
+    "locator-document-length": 215,
     "description-link-density": 189,
     "feature-grouping-node": 219,
 }
@@ -141,6 +146,17 @@ SMART_RE = re.compile(r"[“”‘’…]")
 # `scheme:identifier` for one would leave it with no citable form at all.
 SCHEME_DOMAIN_RE = re.compile(
     r"https?://(?:www\.)?(?:ipdb\.org/machine\.cgi|opdb\.org/machines/)", re.IGNORECASE
+)
+# A locator describing what the document does NOT print — "the sheet carries no
+# printed folio". The absence of a page number locates nothing.
+LOCATOR_NO_FOLIO_RE = re.compile(
+    r"no (?:printed )?(?:folios?|foliation|page numbers?|pagination)"
+    r"|unpaginated|unnumbered pages?",
+    re.IGNORECASE,
+)
+# "page 2 of 2" / "sheet 1 of 4" — the total is document length, not a location.
+LOCATOR_PAGE_OF_RE = re.compile(
+    r"\b(?:pages?|sheets?|pp?\.)\s*\d+\s+of\s+\d+\b", re.IGNORECASE
 )
 INLINE_CITE = "[[cite:"
 # The key inside an inline footnote, e.g. the "2" in [[cite:2]].
@@ -251,8 +267,43 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
             r"|\bsole (?:known|surviving|documented)\b",
             re.IGNORECASE,
         ),
-        "the next source to surface falsifies a present-tense absence — say "
-        "what was searched, in the past tense",
+        "the next source to surface falsifies an absence claim — cut it and "
+        "let the cite stand for what is supported",
+    ),
+    (
+        # 'sought-after' is the collector's-market sense and stays clean.
+        "prose-search-effort",
+        _AUTHORING_PROSE,
+        re.compile(
+            r"\bsought\b(?!-after)|\bnone (?:were )?found\b",
+            re.IGNORECASE,
+        ),
+        "the fact of looking is not evidence — cut it",
+    ),
+    (
+        # 'at the time' is excluded: it points at a moment in the past, which
+        # is the opposite defect. 'still' and 'today' read as natural prose and
+        # stay out of scope.
+        "prose-temporal-filler",
+        _ALL_PROSE,
+        re.compile(
+            r"\bat authoring time\b"
+            r"|\bat (?:the moment|this time|this point|present)\b"
+            r"|\bcurrently\b|\bpresently\b"
+            r"|\bas of (?:now|today|this writing)\b"
+            r"|\bto date\b|\bso far\b",
+            re.IGNORECASE,
+        ),
+        "the reader already assumes now — cut it or name the date if timing matters",
+    ),
+    (
+        # Active voice only. Passive 'recorded as' is ordinary prose about what
+        # a source documents ("BEM is recorded as building"), or rationale for
+        # a deliberate omission — 30 distinct legitimate uses in the corpus.
+        "prose-classification",
+        _NOTE_ONLY,
+        re.compile(r"\bmap(?:s|ped|ping) to\b|\brecords as\b", re.IGNORECASE),
+        "the quote shows the match — cut the reasoning",
     ),
     (
         # Notes only: unlike its namespace/taxonomy neighbours, this word does
@@ -261,8 +312,7 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
         "prose-vocabulary",
         _NOTE_ONLY,
         re.compile(r"\bvocabular(?:y|ies)\b", re.IGNORECASE),
-        "the reader has never heard of our lists of values — say what the "
-        "source offered and what you picked",
+        "internal term — you can probably delete talking about it",
     ),
     (
         "prose-namespace",
@@ -395,10 +445,11 @@ PatchUnit = Mapping[str, object]  # a provenance carrier: entity body OR changes
 
 
 class CiteMap(TypedDict):
-    """A cite given as a map; we read its ``ref`` and ``quote`` (other keys are ignored)."""
+    """A cite given as a map; we read these keys (others are ignored)."""
 
     ref: str
     quote: NotRequired[str]
+    locator: NotRequired[str]
 
 
 def is_mapping(value: object) -> TypeGuard[Mapping[str, object]]:
@@ -451,23 +502,39 @@ def _cite_strings(unit: PatchUnit) -> Iterator[str]:
                 yield value["ref"]
 
 
-def _quote_values(unit: PatchUnit) -> Iterator[tuple[str, str]]:
-    """Yield ``(label, quote)`` for every verbatim quote on a unit.
+def _cite_maps(unit: PatchUnit) -> Iterator[tuple[str, CiteMap]]:
+    """Yield ``(label, cite)`` for every map-form cite on a unit.
 
     Walks the entry-level ``cite:`` spec(s) — including each element of a
-    list-valued ``cite:`` — and each inline ``cites:`` entry, so quote-driven
-    rules (``quote-typography``, the ``note-required`` exemption) treat every
-    carrier identically.
+    list-valued ``cite:`` — and each inline ``cites:`` entry, so rules reading
+    a cite's fields treat every carrier identically.
     """
     listed = isinstance(unit.get("cite"), list)
     for i, spec in enumerate(_cite_specs(unit)):
-        if is_cite_map(spec) and isinstance(spec.get("quote"), str):
-            yield (f"cite[{i}]" if listed else "cite"), spec["quote"]
+        if is_cite_map(spec):
+            yield (f"cite[{i}]" if listed else "cite"), spec
     cites = unit.get("cites")
     if is_mapping(cites):
         for handle, value in cites.items():
-            if is_cite_map(value) and isinstance(value.get("quote"), str):
-                yield f"cites[{handle!r}]", value["quote"]
+            if is_cite_map(value):
+                yield f"cites[{handle!r}]", value
+
+
+def _quote_values(unit: PatchUnit) -> Iterator[tuple[str, str]]:
+    """Every verbatim quote on a unit — drives ``quote-typography`` and the
+    ``note-required`` exemption."""
+    for label, cite in _cite_maps(unit):
+        quote = cite.get("quote")
+        if isinstance(quote, str):
+            yield label, quote
+
+
+def _locator_values(unit: PatchUnit) -> Iterator[tuple[str, str]]:
+    """Every locator on a unit — drives the ``locator-*`` rules."""
+    for label, cite in _cite_maps(unit):
+        locator = cite.get("locator")
+        if isinstance(locator, str):
+            yield label, locator
 
 
 def _check_unit(
@@ -515,13 +582,13 @@ def _check_unit(
         members = unit.get("gameplay_feature")
         if isinstance(members, list):
             for member in members:
-                slug = (
-                    member
-                    if isinstance(member, str)
-                    else next(iter(member), None)
-                    if is_mapping(member) and len(member) == 1
-                    else None
-                )
+                # A member is either a bare slug or a one-key {slug: count}
+                # mapping, whose single key is the slug.
+                slug: str | None = None
+                if isinstance(member, str):
+                    slug = member
+                elif is_mapping(member) and len(member) == 1:
+                    slug = next(iter(member))
                 if slug in GROUPING_FEATURE_SLUGS:
                     errors.append(
                         f"{where}: gameplay_feature member {slug!r} is a "
@@ -561,6 +628,22 @@ def _check_unit(
             errors.append(
                 f"{where}: {quote_label} quote contains smart typography {smart} — "
                 f"use straight quotes and write an ellipsis as [...]"
+            )
+
+    # locator-pagination-absence + locator-document-length: a locator points at
+    # where the evidence sits; it is not prose about the document.
+    for locator_label, locator in _locator_values(unit):
+        if on("locator-pagination-absence"):
+            errors.extend(
+                f"{where}: {locator_label} locator notes {token!r} — a locator "
+                f"points at where the evidence is, not at what the page lacks"
+                for token in dict.fromkeys(LOCATOR_NO_FOLIO_RE.findall(locator))
+            )
+        if on("locator-document-length"):
+            errors.extend(
+                f"{where}: {locator_label} locator gives the document length "
+                f"({token!r}) — the total does not help anyone find the page"
+                for token in dict.fromkeys(LOCATOR_PAGE_OF_RE.findall(locator))
             )
 
     # cite-scheme-form
