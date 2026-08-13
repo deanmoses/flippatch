@@ -263,7 +263,7 @@ claims:
         locator: PDF document page 1
       gameplay_feature: [{ balls: 6 }, stereo-sound]
   - model.pokemon-premium:
-      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows."
+      note: "SPIKE 3 is Stern's computerized game platform, thus solid-state."
       cite:
         ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
         quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
@@ -423,7 +423,7 @@ claims:
         locator: PDF document page 1
       gameplay_feature: [{ balls: 6 }, stereo-sound]
   - model.pokemon-limited-edition:
-      note: "SPIKE 3 is Stern's computerized game platform, so the solid-state generation follows."
+      note: "SPIKE 3 is Stern's computerized game platform, thus solid-state."
       cite:
         ref: "https://www.sternpinball.com/2026/02/13/become-a-top-pokemon-trainer-with-stern-pinballs-newest-line-of-machines"
         quote: "Powered by Stern's SPIKE 3 technology, this dynamic machine brings the thrill of catching, battling rivals and training Pokémon in the silverball arena for the very first time."
