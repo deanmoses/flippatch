@@ -86,11 +86,7 @@ make analyze CMD=describe                                                     # 
 make analyze CMD=describe ARGS=models                                         # one view + its columns
 ```
 
-**Query the foundation, not `../flipcommons/backend/db.sqlite3`.** The foundation is not a convenience wrapper over that file — it is what makes the obvious query the correct one:
-
-- Catalog records are **soft-deleted**, and `models` excludes them. Raw SQL counts deleted rows as live.
-- A model's maker sits three joins away in the physical schema (model → corporate entity → manufacturer). The foundation puts `manufacturer_name` / `manufacturer_slug` on the row.
-- Source free text — `ipdb_notes`, `ipdb_notable_features`, `opdb_features` — arrives as **plain columns**, so mining it needs no `json_extract` over `extra_data`. A raw field you want that isn't a column yet is a foundation change, not a hand-rolled extract in your query.
+**Query the foundation, not `../flipcommons/backend/db.sqlite3`.** The foundation makes it much harder to screw up: it does things like filter out soft-deleted records and regularize all absence to NULL.
 
 `describe` is the view reference: every public view carries its own one-line description, and the reasoning a one-liner can't hold sits in comments beside the SELECT in `catalog.sql`. Read those before guessing at a column name. The authority on **using** the layer is [`../flipcommons/scripts/analysis/README.md`](../../flipcommons/scripts/analysis/README.md); on **changing** it, `EDITING.md` beside it.
 
