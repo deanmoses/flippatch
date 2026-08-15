@@ -1297,6 +1297,74 @@ def test_prose_rules_grandfathered_before_0189():
     assert e == []
 
 
+def ddesc(description, filename="0239-x.yaml"):
+    """A record description linted under the dating-phrase rule's own number."""
+    return perrs(desc_unit(description), filename=filename)
+
+
+def test_dating_superlative_flagged():
+    e = ddesc("Their latest machine is a widebody with a magnet.")
+    assert has(e, "'latest'")
+
+
+def test_dating_newest_flagged():
+    e = ddesc("The newest table in the range uses a colour display.")
+    assert has(e, "'newest'")
+
+
+def test_dating_most_recent_flagged():
+    e = ddesc("Its most recent release returned to solid-state hardware.")
+    assert has(e, "'most recent'")
+
+
+def test_dating_recently_flagged():
+    e = ddesc("The firm recently returned to making flipper games.")
+    assert has(e, "'recently'")
+
+
+def test_dating_upcoming_flagged():
+    e = ddesc("An upcoming machine will use the same platform.")
+    assert has(e, "'upcoming'")
+
+
+def test_dating_sole_output_flagged():
+    e = ddesc("Its only machine was a two-player woodrail.")
+    assert has(e, "'Its only machine'")
+
+
+def test_dating_sole_output_needs_the_possessive():
+    # "the only machine on the line" is a fact about a factory, not a count of
+    # a maker's output — the possessive is what makes it the dating shape.
+    e = ddesc("The only machine on the line that year used a rubber belt.")
+    assert not has(e, "dates the prose")
+
+
+def test_dating_still_clean():
+    # 'still' and 'today' read as ordinary prose and are the settled wording in
+    # shipped descriptions ("It is still an active company", "it survives in
+    # Turin today"); flagging them would fire on 10 correct passages.
+    e = ddesc("It is still an active company, and survives in Turin today.")
+    assert not has(e, "dates the prose")
+
+
+def test_dating_a_named_year_clean():
+    # Naming the date is the fix the guidance asks for, not a violation.
+    e = ddesc("As of 2019 the firm had built eleven machines.")
+    assert not has(e, "dates the prose")
+
+
+def test_dating_phrase_not_flagged_in_notes():
+    # Scoped to public record descriptions: the note corpus has its own
+    # temporal rule, and 'latest' in a note is authoring context.
+    e = perrs(note_unit("Their latest machine is a widebody."), filename="0239-x.yaml")
+    assert not has(e, "dates the prose")
+
+
+def test_dating_phrase_grandfathered_before_0239():
+    e = ddesc("Their latest machine is a widebody.", filename="0238-x.yaml")
+    assert not has(e, "dates the prose")
+
+
 def test_rule_since_registry_has_prose_rules():
     for rule in (
         "prose-seed",

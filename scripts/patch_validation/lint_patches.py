@@ -66,6 +66,7 @@ RULE_SINCE: dict[str, int] = {
     "locator-document-length": 215,
     "description-link-density": 189,
     "feature-grouping-node": 219,
+    "description-dating-phrases": 239,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -189,6 +190,7 @@ _AUTHORING_PROSE = frozenset({PATCH_DESC, NOTE})
 # Notes only. The top-level patch description is the Admin-only IngestRun note,
 # so internal bookkeeping vocabulary is correct there and wrong in a note.
 _NOTE_ONLY = frozenset({NOTE})
+_RECORD_DESC_ONLY = frozenset({RECORD_DESC})
 
 # Internal CamelCase model names. A general CamelCase pattern can't work —
 # TiltBob, WhizBang, MarsaPlay and other brand names are legitimate CamelCase —
@@ -295,6 +297,22 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
             re.IGNORECASE,
         ),
         "the reader already assumes now — cut it or name the date if timing matters",
+    ),
+    (
+        # Superlatives and recency words pin an ongoing maker's description to
+        # the year it was written. 'still' and 'today' are excluded despite
+        # ageing the same way: they are the settled wording in ten shipped
+        # descriptions ("it survives in Turin today"), and a rule that fires on
+        # correct prose gets ignored.
+        "description-dating-phrases",
+        _RECORD_DESC_ONLY,
+        re.compile(
+            r"\blatest\b|\bnewest\b|\bmost recent\b|\brecently\b"
+            r"|\bupcoming\b|\bforthcoming\b"
+            r"|\b(?:their|its)\s+(?:one|only|sole)\s+(?:machine|game|title|model)\b",
+            re.IGNORECASE,
+        ),
+        "dates the prose — the next machine falsifies it; name the year instead",
     ),
     (
         # Active voice only. Passive 'recorded as' is ordinary prose about what
