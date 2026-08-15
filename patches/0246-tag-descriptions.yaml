@@ -1,0 +1,34 @@
+attribution: flipcommons-ai-desc-tag
+description: >-
+  Description for the limited-edition tag.
+claims:
+  - tag.limited-edition:
+      description: |
+        A limited edition is a pinball machine sold on scarcity: the maker announces a fixed production count up front, and the machine carries the proof — a sequentially numbered plaque, a signed certificate of authenticity, artwork and trim the standard models of the title don't get.[[cite:1]] The class covers machines offered as a distinct limited version of a game, whatever the maker calls it, not machines that merely happened to be built in small numbers.
+
+        ## From a name to a standing tier
+
+        The label predates real scarcity. [[manufacturer:williams]] sold a *[[model:black-knight-limited-edition]]* in 1981 and [[manufacturer:bally]] an *[[model:eight-ball-deluxe-limited-edition]]* the year after — the latter a "limited" run of 2,388 machines. The modern anatomy arrived in 1994 with *[[model:the-addams-family-special-collectors-edition]]*: exactly 1,000 built, each carrying a numbered gold plate and a certificate signed by the design team.[[cite:2]] [[manufacturer:stern-pinball]] made the idea a fixture. After one-off limited runs in the late 2000s and *[[model:james-camerons-avatar-limited-edition]]* (2010) — 250 machines, with features the standard release lacked[[cite:3]] — its titles came to ship in Pro, Premium and Limited Edition models,[[cite:4]] the Limited Edition topping the line with exclusive artwork, a global cap and the numbered plaque.[[cite:1]]
+
+        ## The boundary
+
+        What defines the class is the announced cap, not its size, and the class keeps its identity under other names: a Collector's Edition carries the same numbered plaque and signatures — [[manufacturer:jersey-jack]]'s *[[model:toy-story-4-collectors-edition]]* is "one of just 1,000 units produced", with a signed signature card[[cite:5]] — and for the boutique makers the edition can be the whole run: [[manufacturer:spooky]] capped *[[model:the-texas-chainsaw-massacre-collectors-edition]]* and its siblings at 888 units across all models.[[cite:6]] Outside the class sit the ordinary Pro and Premium models of the same titles, and machines rare only because few were built or sold — a short run is not an edition unless the maker sold it as one.
+      cites:
+        "1":
+          ref: https://www.sternpinball.com/2025/01/03/stern-pinball-invites-players-to-embark-on-an-epic-journey-into-the-forgotten-realms-of-dungeons-dragons
+          quote: "the Limited Edition model will be limited to 740 games globally. This highly collectible model includes [...] a custom designer-autographed bottom arch, [...] a sequentially numbered plaque, a signed Certificate of Authenticity"
+        "2":
+          ref: ipdb:21
+          quote: 'Each of the (only) 1000 "Gold" machines includes a certificate signed by the members of the design team and a gold plate, containing the machine number, on the lower right front of the machine.'
+        "3":
+          ref: ipdb:5653
+          quote: "The following changes were made from the original release"
+        "4":
+          ref: https://www.sternpinball.com/2025/01/03/stern-pinball-invites-players-to-embark-on-an-epic-journey-into-the-forgotten-realms-of-dungeons-dragons
+          quote: "available in Pro, Premium, and Limited Edition (LE) models"
+        "5":
+          ref: https://jerseyjackpinball.com/products/toy-story-4-pinball-game-limited-edition
+          quote: "Each machine in this Collector's Edition comes with an individually numbered CE plaque, marking its exclusivity as one of just 1,000 units produced. This, along with the signature card signed by Pat Lawlor & Jack Guarnieri, adds to the collectible value of this special edition game"
+        "6":
+          ref: "https://www.spookypinball.com/product/texas-chainsaw-massacre-collectors-edition-initial-payment-2000/"
+          quote: "Limited to 888 total units between all models!"

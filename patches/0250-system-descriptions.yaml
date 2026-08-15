@@ -1,0 +1,89 @@
+attribution: flipcommons-ai-desc-system
+description: >-
+  Descriptions for the Stern SPIKE 3 and FAST Pinball systems.
+sources:
+  - name: GamingShogun
+    source_type: web
+    description: Games and technology press site whose convention coverage includes pinball hardware.
+    links:
+      - {
+          url: "https://gamingshogun.com/",
+          label: GamingShogun,
+          link_type: homepage,
+        }
+claims:
+  - system.stern-spike-3:
+      description: |
+        Stern SPIKE 3 is the third generation of [[manufacturer:stern-pinball]]'s SPIKE control system, the embedded electronics platform inside its pinball machines. It arrived in September 2025 with *[[title:star-wars-fall-of-the-empire]]*, whose launch announcement introduced the next-generation platform alongside the game itself[[cite:1]][[cite:2]][[cite:3]] — the electronics were news in their own right, down to a SPIKE 3 stinger closing the game's teaser trailer.[[cite:4]]
+
+        ## Under the glass
+
+        Like the SPIKE generations before it, SPIKE 3 is a distributed system rather than a single board set: a CPU board holding the game software is networked with input/output boards over a custom control bus carried on ordinary Ethernet-style cabling, 48-volt boards driving the coils and flashers while bus-powered boards read the switches and drive the lamps.[[cite:5]] The generational change sits at the head of that bus: a custom processor built on the Raspberry Pi platform, with four times the computing and video power of [[system:stern-spike-2]] and twice its memory.[[cite:6]]
+
+        To the player the new capacity surfaces as presentation: a larger 18.5-inch full-HD display with greater color depth and a new immersive audio system, backed by more efficient power handling, improved Wi-Fi and support for wireless headphones.[[cite:1]]
+
+        ## The machines
+
+        *[[title:the-walking-dead-remastered]]* (2025) followed two months after the Star Wars debut, [[person:john-borg]] reworking his own 2014 design around the new display and audio,[[cite:7]] and the pair of SPIKE 3 machines anchored Stern's floor at CES 2026.[[cite:8]] The cornerstone titles that came next, *[[title:pokemon]]* (2026) and *[[title:transformers-more-than-meets-the-eye]]* (2026), ship on the platform in every model.
+      cites:
+        "1":
+          ref: "https://www.sternpinball.com/2025/09/12/stern-pinball-announces-star-wars-fall-of-the-empire-the-newest-line-of-star-wars-inspired-pinball-machines"
+          quote: 'The Star Wars: Fall of the Empire pinball games launch on Stern''s next-generation SPIKE 3 technology platform, which includes a larger 18.5" full HD display with true color depth, along with a more powerful processor, and a new immersive audio system. SPIKE 3 electronics also feature more efficient power handling, improved Wi-Fi support, and wireless headphone capabilities.'
+        "2":
+          ref: "https://www.kineticist.com/news/stern-star-wars-fall-of-the-empire"
+          quote: "the game's official reveal on September 12, 2025"
+        "3":
+          ref: "https://pinside.com/pinball/machine/star-wars-fall-of-the-empire-pro"
+          locator: in the Game details block
+          quote: "MSRP (September 2025)"
+        "4":
+          ref: "https://www.kineticist.com/news/stern-star-wars-fall-of-the-empire"
+          quote: "Spike 3 also received its own micro stinger at the end."
+        "5":
+          ref: "https://wp.sternpinball.com/wp-content/uploads/2026/04/Pokemon_Pro_web.pdf"
+          locator: "PDF document page 12"
+          quote: "The SPIKE Pinball system is a rugged, distributed, and embedded platform custom-designed for the rigors of the pinball machine environment. [...] A Stern Pinball machine based on the SPIKE system will have at least two nodes networked together with the SPIKE node bus, a custom industrial pinball control bus that is designed around industry standards and optimized for the pinball environment. The primary CPU node is networked to one or more input/output nodes over standard Category 5 UTP (unshielded twisted pair) ethernet cabling. [...] A SPIKE 48V node typically controls high-power outputs such as game coil mechanisms and high-brightness LEDs. [...] SPIKE standard I/O nodes are low-power nodes that read switch inputs and output to standard-brightness LEDs."
+        "6":
+          ref: "https://www.kineticist.com/news/stern-star-wars-fall-of-the-empire"
+          quote: "Custom processor based on the Raspberry Pi platform [...] 4x more computing and video power than Spike 2 [...] 2x more memory"
+        "7":
+          ref: "https://www.sternpinball.com/2025/11/04/fight-the-dead-fear-the-living-in-the-walking-dead-remastered-stern-pinballs-newest-pinball-machine"
+          quote: 'The development team, led by John Borg, the designer of the original game, have created a modern version of the original masterpiece. [...] The Walking Dead Remastered features Stern''s next-generation SPIKE 3 technology platform, which includes a larger 18.5" full HD display with true color depth, along with a more powerful processor, and a new high fidelity immersive audio system.'
+        "8":
+          ref: "https://gamingshogun.com/2026/02/07/sterns-spike-3-platform-steals-the-show-a-new-standard-for-connected-pinball"
+          quote: "It simply wouldn't be the Consumer Electronics Show without Stern Pinball. [...] they stormed the floor with two heavy hitters: Star Wars: Fall of the Empire and The Walking Dead Remastered"
+  - system.fast-pinball:
+      description: |
+        FAST Pinball is the machine-control platform of [[manufacturer:fast-pinball]], a hardware company founded in 2014 by [[person:aaron-davis]] and [[person:dave-beecher]] and based in the Seattle area. The firm builds no machines of its own; it sells control electronics to the people who do — individual hobbyists, indie game studios and commercial manufacturers, for new machines built from scratch as well as kits that update old ones.[[cite:1]][[cite:2]]
+
+        Two platforms share the family. The Modern platform is built around the Neuron controller, which combines machine control, smart power-system monitoring and room to expand with the I/O boards a full-size game needs.[[cite:3]] The Retro platform takes the same electronics thinking into classic machines, letting builders expand and modernize games from [[system:williams-system-11]] through the WPC era to [[system:wpc-95]].[[cite:4]]
+
+        ## Machines on FAST hardware
+
+        Commercial machines run on the platform at both ends of the boutique trade. [[manufacturer:barrels-of-fun]] built its first game, *[[title:jim-hensons-labyrinth]]* (2023) — a run limited to 1,100 units — around the FAST boardset, which drives the playfield devices, the sound system and the machine's two displays.[[cite:5]] [[manufacturer:pedretti-gaming]]'s *[[title:funhouse]]* remake lists the Neuron CPU, with FAST power-filter and audio boards, as its game electronics.[[cite:6]] And the officially licensed "2.0" kits — products that install into a classic [[manufacturer:bally]] or [[manufacturer:williams]] machine and turn it into a new game while keeping the original intact — came onto FAST hardware as a group when the category went commercial: [[person:james-cardona]], who had built his *[[title:no-good-gofers]]* conversion on the [[system:multimorphic-p-roc]], recoded it for the FAST platform to match the other kit makers,[[cite:7]] and his later kits, through *[[title:fish-tales-ultimate-fishing-challenge]]* (2026), ship with FAST Pinball handling the hardware.[[cite:8]]
+      cites:
+        "1":
+          ref: "https://fastpinball.com/about"
+          quote: "FAST Pinball was founded in 2014 by Aaron Davis and Dave Beecher. We're based in the greater Seattle area and have sold pinball control systems to customers around the world, including individual hobbyists, indie pinball designers, and to pinball manufacturing companies who build upgrade kits and complete machines."
+        "2":
+          ref: "https://fastpinball.com/"
+          quote: "We make premium electronics that let you make pinball machines, whether you're a home hobbyist, an indie game studio, or a commercial pinball manufacturer."
+        "3":
+          ref: "https://fastpinball.com/"
+          quote: "The Neuron Controller is the heart of the FAST Modern Pinball Platform. Designed to work seamlessly with our existing I/O boards and new expansion boards, the Neuron provides integrated machine control, smart power system monitoring, and plenty of expandability to power the world's most demanding pinball projects."
+        "4":
+          ref: "https://fastpinball.com/"
+          quote: "A modern approach to classic machines, the FAST Retro platform lets you expand and modernize classic System 11, WPC-89, and WPC-95 pinball machines."
+        "5":
+          ref: "https://www.pinballnews.com/site/2023/10/13/labyrinth-revealed"
+          quote: 'Behind that backglass is the FAST Pinball boardset which interfaces with the playfield devices, lights and switches, while driving the two 5¼" Kenwood backbox speakers and the JBL 8″ subwoofer in the cabinet base, the backbox LCD panel and, unusually, a 14.9″ second LCD which forms the playfield''s back panel. [...] Here''s how Barrels of Fun announced their first game: [...] Limited to just 1,100 units worldwide'
+        "6":
+          ref: "https://www.pinballremakes.com/wp-content/uploads/2024/07/MANUAL_FH_V2-compresso.pdf"
+          locator: "PDF document page 20"
+          quote: "FAST Smart Power Filter Board FP-PWR-0007 [...] FAST Neuron PF-CPU-2000-5 [...] FAST Pinball Audio Interface FP-AUD-0100-3"
+        "7":
+          ref: "https://www.kineticist.com/news/james-cardona-interview"
+          quote: "It's a 2.0 kit, a category of officially licensed products that install into classic Bally/Williams machines and turns them into a new game experience, while keeping the original intact. [...] I had only written No Good Gofers: Battle For The Green and developed the game for P-Roc hardware. The trade off to starting the company and making it all real was he wanted all the manufacturers on the same hardware which is why I had to switch to the FAST platform"
+        "8":
+          ref: "https://www.kineticist.com/news/james-cardona-interview"
+          quote: "He writes the code, designs the games, and has brought in more professional artists and voice actors with each title, while FAST Pinball handles the hardware."

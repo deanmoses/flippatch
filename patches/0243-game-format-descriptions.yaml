@@ -1,0 +1,211 @@
+attribution: flipcommons-ai-desc-game-format
+description: >-
+  Descriptions for game formats.
+sources:
+  - name: Pinball Collectors Resource
+    source_type: web
+    description: Collector reference site archiving pinball history articles and technical documentation.
+    links:
+      - {
+          url: "http://www.pinballcollectorsresource.com/",
+          label: Pinball Collectors Resource,
+          link_type: homepage,
+        }
+  - parent: billboard
+    slug: 1943-05-01
+    name: May 1, 1943
+    source_type: periodical
+    year: 1943
+    month: 5
+    day: 1
+  - parent: billboard
+    slug: 1948-01-10
+    name: January 10, 1948
+    source_type: periodical
+    year: 1948
+    month: 1
+    day: 10
+claims:
+  - game-format.one-ball:
+      description: |
+        A one-ball is a horse-race betting machine in the body of a pinball game. The player gets a single ball per game, shot onto a playfield divided into sections of numbered holes — Purse, Show, Place and Win in the classic layout, each holding seven or eight numbers that stand for the horses in a race.[[cite:1]] At the start of a game the backglass lights one or more winning numbers, along with the odds each section pays; the player wins by dropping the ball into a hole whose number is lit, and Win pays the most.[[cite:2]] These were multiple-coin machines: a player could keep feeding in coins before the shot, playing for winnings rather than a score.[[cite:3]]
+
+        ## Origins
+
+        The type descends from pinball's first split. *Rocket* (1933, [[manufacturer:bally]]) was the first automatic payout machine,[[cite:4]] and pin game design promptly divided into gambling "payouts" and "novelty" amusement games, the payout games that offered a single ball per game becoming known in the trade as "one-balls".[[cite:5]] The horse-race dressing arrived in the mid-1930s and lasted the life of the format.[[cite:6]] The games were named for famous racehorses, racetracks and other racing terms — *[[model:blue-grass]]* and *[[model:turf-king]]* among them — and their massive cabinets typically reached the floor rather than standing on legs.[[cite:7]]
+
+        ## Built to draw coins
+
+        Everything in the design worked to draw another coin. A later one-ball lit its selections at random with each coin inserted — the next coin might light one more number or all of them[[cite:8]] — and on the machines the trade called "one-ball multiples" the payoff was multiplied by up to four as the coins went in.[[cite:9]] With the pair *[[model:lexington]]* and *[[model:citation]]* (1949), Bally introduced "Guaranteed Advancing Odds": an additional coin could raise the odds or leave them unchanged but never lower them, and players responded by inserting more.[[cite:10]] Machines shipped as near-identical twins — Bally marked the war's end with *[[model:victory-derby]]*, which paid out directly in coins, and *[[model:victory-special]]*, which registered its awards as replays[[cite:11]][[cite:12]] — and "Special" in a name ordinarily signified the free-play model.[[cite:13]] The replay versions were gambling machines all the same: the location owner paid winners cash for their accumulated free games and cleared them with a concealed knock-off button.[[cite:14]]
+
+        ## The trade
+
+        The Second World War halted pinball production, the factories turning to war work,[[cite:15]] and the payout field never refilled. Bally returned to it nearly alone[[cite:16]] — the Victory pair were its first new games after the war[[cite:11]] — while [[manufacturer:gottlieb]] made its last payout game, *[[model:new-daily-races]]*, in 1947.[[cite:17]][[cite:18]] [[manufacturer:keeney]] built a few more, and late in the era [[manufacturer:universal-industries-inc-chicago-a-subsidiary-of-united-manufacturing-co]], a firm set up under [[manufacturer:united]] to build console slots and one-balls, made some notably sophisticated horse-race machines.[[cite:19]]
+
+        ## Outlawed and replaced
+
+        The end came by name. Anti-gambling ordinances took to naming "one-ball games" as an outlawed type,[[cite:20]] and Bally watched a market it practically owned dry up under legislation aimed at its product.[[cite:21]] Its hedge was the "Skill Lane", a factory option that nominally turned a one-ball into a five-ball game for jurisdictions that had banned the type.[[cite:22]][[cite:23]] The federal Johnson Act of 1950 then banned interstate shipment of gambling devices except into states where they were legal,[[cite:24]] and the one-ball was virtually outlawed by 1951.[[cite:6]] The industry's replacement arrived that same year: a pin game playing five balls and scoring by lighting numbers in a pattern, sold by Bally first as *[[title:bright-lights]]* — the beginning of the [[game-format:bingo-pinball]] line, created expressly to take the one-ball's place.[[cite:25]][[cite:26]][[cite:27]] Amusement [[game-format:pinball]] went the other way: the [[gameplay-feature:flippers]] introduced at the end of 1947[[cite:28]] gave it a claim of skill to argue in court — a defense the one-ball never had.[[cite:29]]
+      cites:
+        "1":
+          ref: http://www.pinballcollectorsresource.com/russ_files/bally.html
+          quote: "originally three, and then four, sections of holes on their playfields labeled PURSE, SHOW, PLACE, and WIN, starting at the top. Each section contained either 7 or 8 numbered holes into which the one ball available per game could drop"
+        "2":
+          ref: http://www.pinballcollectorsresource.com/russ_files/bally.html
+          quote: 'At the start of each game one or more numbers (of the 7 or 8 available on the game) would be lit on the game''s backboard. In order for a player to "win" he had to get his ball into a hole corresponding to a lighted number in one of the "sections" on the playfield. "Odds", indicating how many coins the player would receive for matching a lighted number in each section of the playfield (WIN paying the most), would also light on the backboard'
+        "3":
+          ref: https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball
+          quote: "The one balls allowed for multiple coin play, but the player only had one ball to achieve their goal and win some number of replays in return."
+        "4":
+          ref: ipdb:1987
+          quote: "'Rocket' was the first automatic payout machine."
+        "5":
+          ref: https://bingo.cdyn.com/history/gamblingpins/enterpayouts.html
+          quote: 'At that point pingame design began to split in two directions, "payouts", and "novelty" games. [...] Many of the payout games only offered the player one ball per game and became known as "one- balls".'
+        "6":
+          ref: http://www.pinballcollectorsresource.com/russ_files/bally.html
+          quote: 'A more complicated motif of payout pin, which developed in the mid thirties and lasted until they were virtually outlawed in 1951, was the so-called "One-Ball Horserace" Pinball.'
+        "7":
+          ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'differed mainly in their massive cabinets. Instead of individual legs, many one- balls had the front and back of the cabinet touching the floor. [...] The names of most of these games were those of famous racehorses, racetracks, or other "racy" terms.'
+        "8":
+          ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: "Instead of each coin lighting one additional selection, later one-balls offered a random selection or selections with each additional coin - from one to possibly all selections could be lit with each coin inserted."
+        "9":
+          ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'the payoff for achieving a "win" would be multiplied by the numbers of coins inserted (up to 4). [...] These machines came to be know as "One-ball Multiples" within the industry.'
+        "10":
+          ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'Then in 1949, with the introduction of the one-ball "pair" LEXINGTON/CITATION, Bally introduced what was known as "Guaranteed Advancing Odds." This meant that insertion of additional coins would either increase the odds or leave them unchanged; in no case would they ever decrease. [...] Thus, players tended to insert more additional coins making for better profits for the operator.'
+        "11":
+          ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'When the war ended Bally celebrated the event by coming out with their first new pingames, a pair of one-balls called VICTORY SPECIAL and VICTORY DERBY. These two games were virtually identical except that the former indicated "awards" as replays, with the latter paying off directly in coins.'
+        "12":
+          ref: https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball
+          quote: 'each one ball game made in the 1940s was produced in two models: a "replay" version, which contained a three-digit replay counter (which could be zeroed out at whim), and a "payout" version, which paid the player in nickels, directly upon winning.'
+        "13":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'These were often released in pairs with similar names, such a s JOCKEY CLUB and JOCKEY SPECIAL, with the term "special" in the name normally used to signify the "free play" version.'
+        "14":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'even the "free play" versions were used mostly for gambling, with the location owner paying off for "free games" and using the "knock- off button"'
+        "15":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: "the US entry into WWII would halt pinball production almost completely as the nation redirected resources toward the war effort"
+        "16":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'About the only company which began producing "payout" pinballs after the war was Bally.'
+        "17":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'Gottlieb, which had produced many "payouts" before the war, made their last payout machine in 1947, a game called DAILY RACES'
+        "18":
+          ref: ipdb:629
+          quote: "Only post WW-II payout game made by Gottlieb."
+        "19":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'In the late Forties there were also a few "one-balls" made by manufacturers other than Bally, Keeney made a few, and another outfit, Universal Industries (which was actually a subsidiary of Lyn Durant''s United Manufacturing set up to manufacture console slots and "one-balls") also made some rather sophisticated one-ball horserace machines.'
+        "20":
+          ref: https://bingo.cdyn.com/history/gamblingpins/johnson.html
+          quote: 'Many ordinances specifically mentioned "one-ball games" as a type which were outlawed'
+        "21":
+          ref: http://bingo.cdyn.com/machines/bally/bright_lights/
+          quote: "Bally saw the market for one-ball machines - which they practically owned - drying up due to legislation that specifically identified one-balls as gambling devices"
+        "22":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'the main idea of this was that a "one-ball game" (specifically outlawed in many areas) now became a "five ball game"'
+        "23":
+          ref: ipdb:2672
+          quote: "Skill Lane option for 5-ball jurisdictions."
+        "24":
+          ref: https://bingo.cdyn.com/history/gamblingpins/johnson.html
+          quote: 'That law banned inter-state shipment of "gambling devices" (including repair parts, manuals, etc.) except to states in which the device was legal.'
+        "25":
+          ref: https://bingo.cdyn.com/history/gamblingpins/johnson.html
+          quote: 'So, in 1951, a new type of pingame came into being to replace the "one-balls". [...] used 5 balls ("one-ball" was definitely out) and scored replays by lighting numbers in a given pattern'
+        "26":
+          ref: https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball
+          quote: "Bingo pinball machines were made as a reaction to the passing of the Johnson Act in 1950."
+        "27":
+          ref: http://bingo.cdyn.com/machines/bally/bright_lights/
+          quote: "Bally's first in-line bingo machine"
+        "28":
+          ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'the introduction of the "flipper" to pinball by D. Gottlieb and Company in December of 1947'
+        "29":
+          ref: https://bingo.cdyn.com/history/gamblingpins/johnson.html
+          quote: 'The advent of the flipper had made "amusement pinballs" less likely to be outlawed as gambling devices due to their increased "skill factor" [...] But the "one-balls" were an entirely different story.'
+  - game-format.rolldown:
+      description: |
+        A rolldown is a pinball game with the plunger deleted: the machine dispenses each ball to a cup and the player rolls it onto the playfield by hand, over rollover buttons and into scoring pockets.[[cite:1]][[cite:2]] The form sat close enough to standard pinball that makers built some designs both ways at once — a standard cabinet with a ball shooter alongside a rolldown console of the same game[[cite:3]] — and operators converted machines from one to the other, blocking the shooter lane and setting a ball cup where the spring-loaded shooter had been.[[cite:4]]
+
+        ## Genco and the postwar rush
+
+        The form belonged to [[manufacturer:genco]] before anyone else. Genco was well known for its rolldowns, a line running back to wartime baseball games like *[[model:play-ball-9]]* (1942),[[cite:5]] which distributors of the day advertised as roll down games.[[cite:6]][[cite:7]] When production resumed after the war, Genco led with the format again: *[[model:total-roll]]* entered production in October 1945 and ran to 4,518 units,[[cite:8]] ahead of the firm's first conventional postwar pinball.[[cite:9]] Within two years the trade had piled in — [[manufacturer:bally]]'s *[[model:hy-roll]]* banked a carry-over "Super-Score" from game to game,[[cite:11]] [[manufacturer:chicago-coin]] named its entry simply *[[model:roll-down]]*[[cite:12]] — and the fad reached past Chicago entirely: [[manufacturer:firestone-enterprises-inc]] of Brooklyn was advertising its *[[model:tally-roll]]* by the summer of 1946.[[cite:13]][[cite:14]]
+
+        ## Collision with the flipper
+
+        Then pinball changed underneath it. [[gameplay-feature:flippers]] arrived with [[manufacturer:gottlieb]]'s *[[title:humpty-dumpty]]* at the end of 1947, and by the close of that year every maker had a flipper game built or underway.[[cite:15]] The two forms crossed inside the same cabinets: Bally's first flipper game, *[[model:melody-2]]*, arrived with a rolldown twin, *[[model:melody-roll]]*;[[cite:16]] [[manufacturer:keeney]]'s first, *[[model:cover-girl]]*, was offered in rolldown and standard versions simultaneously;[[cite:3]] [[manufacturer:united]]'s first, *[[model:wisconsin]]*, survives in examples operators converted between the two forms.[[cite:17]] The collapse is plain in the production numbers: Chicago Coin's *Roll Down* of November 1947 ran to 350 units,[[cite:12]] and Genco's *[[model:bubbles-rolldown]]* of early 1948 to 245, built in three weeks.[[cite:18]]
+
+        ## Into the arcade
+
+        The format outlived the fad in the arcade. [[manufacturer:williams]]'s *[[model:jolly-joker]]* carried it into 1955, and Genco returned in 1957 with a pair of rolldowns built on gambling arithmetic — *[[model:number-roll]]* playing at blackjack,[[cite:19]] and *[[model:lucky-7-genco]]* at dice, its nudge buttons letting a practiced player steer the ball into the chosen hole.[[cite:20]][[cite:21]]
+      cites:
+        "1":
+          ref: ipdb:1686
+          quote: "This game was made in two versions: A standard cabinet version and a rolldown cabinet version. Both were made by the manufacturer without flippers. The rolldown version has a ball dispenser instead of a plunger."
+        "2":
+          ref: http://www.pinrepair.com/arcade/hyroll.htm
+          quote: "HyRoll, Bally, 11/47, rolldown game. Has 18 roll over buttons and seven pockets which score from 1000 to 10,000 points."
+        "3":
+          ref: ipdb:579
+          quote: "'Cover Girl' was the first flipper game made by Keeney. This game was made in two versions and offered simultaneously (per Billboard, Jan-10-1948, page 103)."
+        "4":
+          ref: ipdb:2800
+          quote: "The shooter lane would have been blocked at its top end, and a ball cup installed in place of the spring-loaded ball shooter."
+        "5":
+          ref: http://www.pinrepair.com/baseball/gencobb.htm
+          quote: "Baseball, Genco, 1942, a roll down game (which Genco was well-known for). Game did not get produced in any great numbers because of WW2."
+        "6":
+          ref: ipdb:4968
+          quote: 'in a close-out ad from a distributor in New Jersey, where it stated, "Roll Down Baseball Game, like Genco Playball, perfect, like new, real bargain at $50.00"'
+        "7":
+          ref: billboard:1943-05-01
+          locator: p. 70
+        "8":
+          ref: ipdb:3269
+          quote: "Production: 4518 [...] Production start date: 10/30/45"
+        "9":
+          ref: ipdb:2374
+          quote: "Genco advertised this game as their first post-war 5-ball pinball machine and, while that is accurate, it was actually their fourth post-war effort, following their rolldown game Total Roll and two vertical counter games Whizz and Pee-Wee."
+        "11":
+          ref: http://www.pinrepair.com/arcade/hyroll.htm
+          quote: "The 'super score' is a carry over feature that maintains from game to game."
+        "12":
+          ref: ipdb:3586
+          quote: "Roll Down [...] IPD No. 3586 / November 01, 1947 / 1 Player [...] Production: 350"
+        "13":
+          ref: ipdb:5435
+          quote: "Firestone Enterprises, Inc., of Brooklyn, New York [...] The first Billboard ad from the manufacturer for this rolldown game is dated 07/06/1946"
+        "14":
+          ref: billboard:1946-07-06
+          locator: p. 161
+        "15":
+          ref: https://en.wikipedia.org/wiki/Humpty_Dumpty_(pinball)
+          quote: "By the end of 1947 every pinball manufacturer had either produced or started to develop their own pinball machines with flippers."
+        "16":
+          ref: ipdb:1567
+          quote: "'Melody' was the first flipper machine manufactured by Bally. The rolldown version of this game is Bally's 1947 'Melody Roll'."
+        "17":
+          ref: ipdb:2800
+          quote: "'Wisconsin' was the first flipper game made by United. Pictured in this listing is a game that appears to have been converted not once, but twice, by an operator."
+        "18":
+          ref: ipdb:4355
+          quote: "According to Genco data, 245 units of this rolldown game were made. Production start date: 01/31/48 Production end date: 02/19/48"
+        "19":
+          ref: http://www.pinrepair.com/arcade/numroll.htm
+          quote: 'Number Roll, Genco, 6/57, two player, a rolldown game where the player is trying to get "21" in each of the four frames. [...] This roll down game largely mimics the game of black jack.'
+        "20":
+          ref: http://www.pinrepair.com/arcade/lucky7.htm
+          quote: "Though the game makes no reference to dice, it's apparent that the game does follow a dice style game."
+        "21":
+          ref: http://www.pinrepair.com/arcade/lucky7.htm
+          quote: "The thing that makes this roll down game unique is the player nudge buttons. [...] With a bit of practice this gives the game a great deal of skill, allowing the player to nudge to the point hole desired."

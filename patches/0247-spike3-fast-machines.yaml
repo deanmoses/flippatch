@@ -1,0 +1,94 @@
+attribution: flipcommons-catalog
+description: >-
+  Machines on Stern SPIKE 3 and FAST Pinball hardware; FAST founders.
+claims:
+  - model.star-wars-fall-of-the-empire-pro:
+      cite:
+        - ref: "https://www.sternpinball.com/2025/09/12/stern-pinball-announces-star-wars-fall-of-the-empire-the-newest-line-of-star-wars-inspired-pinball-machines"
+          quote: "Star Wars: Fall of the Empire pinball games are available in Pro, Premium, and Limited Edition (LE) models. [...] The Star Wars: Fall of the Empire pinball games launch on Stern's next-generation SPIKE 3 technology platform"
+        - ref: "https://pinside.com/pinball/machine/star-wars-fall-of-the-empire-pro"
+          locator: in the Game details block's Generation row
+          quote: "Stern SPIKE 3"
+      system: stern-spike-3
+  - model.star-wars-fall-of-the-empire-premium:
+      note: "SPIKE 3 is Stern's computerized game platform, thus solid-state."
+      cite:
+        ref: "https://www.sternpinball.com/2025/09/12/stern-pinball-announces-star-wars-fall-of-the-empire-the-newest-line-of-star-wars-inspired-pinball-machines"
+        quote: "Star Wars: Fall of the Empire pinball games are available in Pro, Premium, and Limited Edition (LE) models. [...] The Star Wars: Fall of the Empire pinball games launch on Stern's next-generation SPIKE 3 technology platform"
+      system: stern-spike-3
+      technology_generation: solid-state
+  - model.star-wars-fall-of-the-empire-limited-edition:
+      note: "SPIKE 3 is Stern's computerized game platform, thus solid-state."
+      cite:
+        ref: "https://www.sternpinball.com/2025/09/12/stern-pinball-announces-star-wars-fall-of-the-empire-the-newest-line-of-star-wars-inspired-pinball-machines"
+        quote: "Star Wars: Fall of the Empire pinball games are available in Pro, Premium, and Limited Edition (LE) models. [...] The Star Wars: Fall of the Empire pinball games launch on Stern's next-generation SPIKE 3 technology platform"
+      system: stern-spike-3
+      technology_generation: solid-state
+  - model.the-walking-dead-remastered-premium:
+      note: "SPIKE 3 is Stern's computerized game platform, thus solid-state."
+      cite:
+        - ref: "https://www.sternpinball.com/2025/11/04/fight-the-dead-fear-the-living-in-the-walking-dead-remastered-stern-pinballs-newest-pinball-machine"
+          quote: "Powered by Stern's new SPIKE 3 technology platform [...] The Walking Dead Remastered pinball game is available now in Premium and Limited Edition (LE) models"
+        - ref: "https://pinside.com/pinball/machine/walking-dead-remastered-premium"
+          locator: in the Game details block's Generation row
+          quote: "Stern SPIKE 3"
+      system: stern-spike-3
+      technology_generation: solid-state
+  - model.the-walking-dead-remastered-limited-edition:
+      note: "SPIKE 3 is Stern's computerized game platform, thus solid-state."
+      cite:
+        - ref: "https://www.sternpinball.com/2025/11/04/fight-the-dead-fear-the-living-in-the-walking-dead-remastered-stern-pinballs-newest-pinball-machine"
+          quote: "Powered by Stern's new SPIKE 3 technology platform [...] The Walking Dead Remastered pinball game is available now in Premium and Limited Edition (LE) models"
+        - ref: "https://pinside.com/pinball/machine/walking-dead-remastered-le"
+          locator: in the Game details block's Generation row
+          quote: "Stern SPIKE 3"
+      system: stern-spike-3
+      technology_generation: solid-state
+  - model.jim-hensons-labyrinth:
+      cite:
+        - ref: "https://www.pinballnews.com/site/2023/10/13/labyrinth-revealed"
+          quote: 'Behind that backglass is the FAST Pinball boardset which interfaces with the playfield devices, lights and switches, while driving the two 5¼" Kenwood backbox speakers and the JBL 8″ subwoofer in the cabinet base, the backbox LCD panel and, unusually, a 14.9″ second LCD which forms the playfield''s back panel.'
+        - ref: "https://pinside.com/pinball/machine/barrels-of-fun-labyrinth"
+          locator: in the Game details block's Generation row
+          quote: "FAST Pinball"
+      system: fast-pinball
+  - model.funhouse-remake-collectors-edition:
+      note: "The remake's manual lists the FAST Neuron CPU with FAST power-filter and audio boards as the game's circuit boards; a computerized platform, thus solid-state."
+      cite:
+        - ref: "https://www.pinballremakes.com/wp-content/uploads/2024/07/MANUAL_FH_V2-compresso.pdf"
+          locator: "PDF document page 20"
+          quote: "FAST Smart Power Filter Board FP-PWR-0007 [...] FAST Neuron PF-CPU-2000-5 [...] FAST Pinball Audio Interface FP-AUD-0100-3"
+        - ref: "https://www.pinballremakes.com/wp-content/uploads/2024/07/MANUAL_FH_V2-compresso.pdf"
+          locator: "PDF document page 19"
+          quote: "Fast Pinball for game circuit bords"
+      system: fast-pinball
+      technology_generation: solid-state
+  - model.funhouse-remake-limited-edition:
+      note: "The remake's manual lists the FAST Neuron CPU with FAST power-filter and audio boards as the game's circuit boards; a computerized platform, thus solid-state."
+      cite:
+        - ref: "https://www.pinballremakes.com/wp-content/uploads/2024/07/MANUAL_FH_V2-compresso.pdf"
+          locator: "PDF document page 20"
+          quote: "FAST Smart Power Filter Board FP-PWR-0007 [...] FAST Neuron PF-CPU-2000-5 [...] FAST Pinball Audio Interface FP-AUD-0100-3"
+        - ref: "https://www.pinballremakes.com/wp-content/uploads/2024/07/MANUAL_FH_V2-compresso.pdf"
+          locator: "PDF document page 19"
+          quote: "Fast Pinball for game circuit bords"
+      system: fast-pinball
+      technology_generation: solid-state
+  - person.aaron-davis:
+      create: true
+      cite:
+        - ref: "https://fastpinball.com/about"
+          quote: "FAST Pinball was founded in 2014 by Aaron Davis and Dave Beecher."
+        - ref: "https://fastpinball.com/about"
+          locator: in the team list
+          quote: "Aaron Davis, CEO"
+      name: Aaron Davis
+  - person.dave-beecher:
+      create: true
+      cite:
+        - ref: "https://fastpinball.com/about"
+          quote: "FAST Pinball was founded in 2014 by Aaron Davis and Dave Beecher."
+        - ref: "https://fastpinball.com/about"
+          locator: in the team list
+          quote: "Dave Beecher, Hardware"
+      name: Dave Beecher

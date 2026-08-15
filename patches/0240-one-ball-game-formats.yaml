@@ -1,0 +1,134 @@
+attribution: flipcommons-catalog
+description: >-
+  Classify one-ball horse-race machines and add missing years.
+claims:
+  # Post-war Bally replay/payout pairs named as one-balls by Russ Jensen's
+  # multiple-coin pinball history.
+  - model.victory-derby:
+      cite:
+        - ref: "ipdb:2735"
+          quote: "Theme: Sports - Horse Racing [...] The replay version of this game is Bally's 1946 'Victory Special'."
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'a pair of one-balls called VICTORY SPECIAL and VICTORY DERBY. These two games were virtually identical except that the former indicated "awards" as replays, with the latter paying off directly in coins.'
+      game_format: one-ball
+  - model.victory-special:
+      cite:
+        - ref: "ipdb:2736"
+          quote: "Trap holes (31). Skill Lane option for 5-ball jurisdictions. [...] 'Victory Special' was the first post-war Bally Game - a replay version of the payout game Bally's 1946 'Victory Derby'."
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'a pair of one-balls called VICTORY SPECIAL and VICTORY DERBY. These two games were virtually identical except that the former indicated "awards" as replays, with the latter paying off directly in coins.'
+      game_format: one-ball
+  - model.jockey-club:
+      cite:
+        - ref: "ipdb:1299"
+          quote: "Passive bumpers (4), Trap holes (31), Skill Lane option for 5-ball jurisdictions. [...] The replay version of this game is Bally's 1947 'Jockey Special'."
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'a pair of one-balls called VICTORY SPECIAL and VICTORY DERBY [...] This idea of "replay/payout pairs" became pretty much standard with Bally after the war. The names of both games of a "pair" were usually quite similar, with the word SPECIAL in a name usually signifying a "replay" model. Other examples of such pairs were: BALLY ENTRY / SPECIAL ENTRY, and JOCKEY CLUB / JOCKEY SPECIAL.'
+      game_format: one-ball
+  - model.jockey-special:
+      cite:
+        - ref: "ipdb:1303"
+          quote: "Passive bumpers (4), Trap holes (31), Skill Lane option for 5-ball jurisdictions. [...] The payout version of this game is Bally's 1947 'Jockey Club'."
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'a pair of one-balls called VICTORY SPECIAL and VICTORY DERBY [...] This idea of "replay/payout pairs" became pretty much standard with Bally after the war. The names of both games of a "pair" were usually quite similar, with the word SPECIAL in a name usually signifying a "replay" model. Other examples of such pairs were: BALLY ENTRY / SPECIAL ENTRY, and JOCKEY CLUB / JOCKEY SPECIAL.'
+      game_format: one-ball
+  - model.citation:
+      cite:
+        - ref: "ipdb:526"
+          quote: "Trap holes (31), Passive bumpers (4). Skill Lane option for 5-ball jurisdictions. [...] The payout version of this game is Bally's 1948 'Lexington'."
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'Then in 1949, with the introduction of the one-ball "pair" LEXINGTON/CITATION, Bally introduced what was known as "Guaranteed Advancing Odds."'
+      game_format: one-ball
+  - model.lexington:
+      cite:
+        - ref: "ipdb:1434"
+          quote: "Trap holes (31), Skill Lane option for 5-ball jurisdictions. [...] A coin payout version of Bally's 1948 'Citation'."
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'Then in 1949, with the introduction of the one-ball "pair" LEXINGTON/CITATION, Bally introduced what was known as "Guaranteed Advancing Odds."'
+      game_format: one-ball
+  - model.gold-cup:
+      cite:
+        - ref: "ipdb:1027"
+          quote: "Passive bumpers (4), Trap holes (31), Skill Lane option for 5-ball jurisdictions. [...] The coin payout version of this game is Bally's 1948 'Trophy'."
+        - ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'They introduced an optional feature on their "one-balls" which they called the "skill lane".'
+      game_format: one-ball
+
+  # Bally one-balls missing their year as well as their format.
+  - model.kentucky:
+      changesets:
+        - cite:
+            ref: "ipdb:1352"
+            quote: "IPD No. 1352 / April 13, 1949 / 1 Player"
+          year: 1949
+        - cite:
+            ref: "ipdb:1352"
+            quote: "1 ball for 5 cents. Trap holes (31), Passive bumpers (4). Skill Lane option for 5-ball jurisdictions."
+          game_format: one-ball
+  - model.grandstand:
+      changesets:
+        - cite:
+            ref: "ipdb:1080"
+            quote: "IPD No. 1080 / July 12, 1950 / 1 Player"
+          year: 1950
+        - cite:
+            - ref: "ipdb:1080"
+              quote: "Passive bumpers (4), Trap holes (31). Skill Lane option for 5-ball jurisdictions. [...] The replay version of this game is Bally's 1950 'Turf King'."
+            - ref: https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball
+              quote: 'One of the final "one ball" games Bally produced – ''Turf King'', which is the replay version of ''Grandstand''.'
+          game_format: one-ball
+  - model.futurity:
+      changesets:
+        - cite:
+            - ref: "ipdb:975"
+              quote: "IPD No. 975 / January 23, 1951 / 1 Player"
+            - ref: https://bingo.cdyn.com/history/mcp/racy.html
+              quote: "The last two Bally one-balls were FUTURITY in January 1951 and SUNSHINE PARK in March 1952."
+          year: 1951
+        - cite:
+            - ref: "ipdb:975"
+              quote: "Theme: Sports - Horse Racing [...] Trap holes (31)."
+            - ref: https://bingo.cdyn.com/history/mcp/racy.html
+              quote: "The last two Bally one-balls were FUTURITY in January 1951 and SUNSHINE PARK in March 1952."
+          game_format: one-ball
+
+  # Earlier Bally machines of the same type.
+  - model.kentucky-2:
+      cite:
+        ref: "ipdb:1353"
+        quote: "1 ball for 5 cents."
+      game_format: one-ball
+  - model.jockey-club-3:
+      note: "Its 'Buy the Board' feature sells the seven horse selections coin by coin — the standard arrangement of the one-ball horse-race machines."
+      cite:
+        - ref: "ipdb:1301"
+          quote: 'Theme: Sports - Horse Racing [...] "Buy the Board" - all 7 selections guaranteed after 40 coins played without a winner.'
+        - ref: https://bingo.cdyn.com/history/mcp/racy.html
+          quote: 'Most of these machines had a horse race motif with the "numbers" (''1'' through ''7'' on most machines) corresponding to horse "selections" in a race'
+      game_format: one-ball
+  - model.grandstand-2:
+      note: "A multiple-coin horse-race payout console of Bally's pre-war one-ball type."
+      cite:
+        - ref: "ipdb:1082"
+          quote: "Theme: Sports - Horse Racing [...] Trap holes (31). Multiple-coin. Console cabinet. [...] Available in payout and ticket models."
+        - ref: http://www.pinballcollectorsresource.com/russ_files/bally.html
+          quote: 'A more complicated motif of payout pin, which developed in the mid thirties and lasted until they were virtually outlawed in 1951, was the so-called "One-Ball Horserace" Pinball.'
+      game_format: one-ball
+
+  # Universal's entries in the same genre.
+  - model.photo-finish:
+      note: "One ball was the standard play; the Skill Lane option was the industry's workaround for jurisdictions that barred one-ball machines."
+      cite:
+        - ref: "ipdb:1781"
+          quote: "Theme: Horse Racing [...] Trap holes (31), Skill Lane option for 5-ball jurisdictions."
+        - ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'They introduced an optional feature on their "one-balls" which they called the "skill lane".'
+      game_format: one-ball
+  - model.winner-5:
+      note: "One ball was the standard play; the Skill Lane option was the industry's workaround for jurisdictions that barred one-ball machines."
+      cite:
+        - ref: "ipdb:2797"
+          quote: "Theme: Horse Racing [...] Trap holes (31). Skill Lane option for 5-ball jurisdictions."
+        - ref: https://bingo.cdyn.com/history/gamblingpins/postwar.html
+          quote: 'They introduced an optional feature on their "one-balls" which they called the "skill lane".'
+      game_format: one-ball

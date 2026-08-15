@@ -1,0 +1,82 @@
+attribution: flipcommons-catalog
+description: >-
+  Classify rolldown machines, fill missing dates, and create Genco's Lucky 7.
+claims:
+  # Bally's rolldown twin of its first flipper game.
+  - model.melody-roll:
+      changesets:
+        - cite:
+            ref: "ipdb:1569"
+            quote: "IPD No. 1569 / December 04, 1947 / 1 Player"
+          year: 1947
+          month: 12
+        - cite:
+            - ref: "ipdb:1569"
+              quote: "'Melody Roll' is the rolldown version of Bally's 1948 'Melody'."
+            - ref: "ipdb:1567"
+              quote: "'Melody' was the first flipper machine manufactured by Bally. The rolldown version of this game is Bally's 1947 'Melody Roll'."
+          game_format: rolldown
+  - model.hy-roll:
+      cite:
+        - ref: http://www.pinrepair.com/arcade/hyroll.htm
+          quote: "HyRoll, Bally, 11/47, rolldown game."
+        - ref: http://www.pinrepair.com/arcade/index.htm
+          quote: "Hyroll, Bally, 1940s (date unknown), rolldown game."
+      game_format: rolldown
+  # IPDB 5640 is the console (rolldown) edition of Marvel's Gold Mine;
+  # the standard edition with the ball shooter is IPDB 1032.
+  - model.gold-mine-4:
+      cite:
+        - ref: "ipdb:1032"
+          quote: "The rolldown version of this game is Marvel's 1948 'Gold Mine'."
+        - ref: "ipdb:5640"
+          quote: "No ball shooter. Console cabinet. [...] The standard version of this game with a ball shooter and a standard cabinet is Marvel's 1948 'Gold Mine'."
+      game_format: rolldown
+  # Factory-made in both standard and rolldown versions, so only the date is
+  # filled here; the single record spans both versions.
+  - model.nudgy:
+      cite:
+        ref: "ipdb:1686"
+        quote: "IPD No. 1686 / September 17, 1947 / 1 Player"
+      year: 1947
+      month: 9
+  - model.number-roll:
+      cite:
+        ref: http://www.pinrepair.com/arcade/numroll.htm
+        quote: 'Number Roll, Genco, 6/57, two player, a rolldown game where the player is trying to get "21" in each of the four frames.'
+      year: 1957
+      month: 6
+      game_format: rolldown
+  - model.derby-roll:
+      cite:
+        - ref: http://www.pinrepair.com/arcade/index.htm
+          quote: 'Derby Roll, United, 5/55, a "roll-down" game where a ball is rolled down the playfield and into the desired hole advancing a mechanical horse in the backbox.'
+        - ref: "ipdb:3060"
+          quote: "Player rolls wooden balls at targets, mechanical horses race on track in backbox."
+      game_format: rolldown
+  - model.deluxe-derby-roll:
+      note: "The deluxe edition of United's 1955 'Derby Roll', with the same wooden-ball rolldown play."
+      cite:
+        - ref: "ipdb:5428"
+          quote: "Player rolls wooden balls at targets, mechanical horses race on track in backbox. [...] See also United's 1955 'Derby Roll'."
+        - ref: http://www.pinrepair.com/arcade/index.htm
+          quote: 'Derby Roll, United, 5/55, a "roll-down" game where a ball is rolled down the playfield and into the desired hole advancing a mechanical horse in the backbox.'
+      game_format: rolldown
+  # Genco's 1957 arcade rolldown — not the Bally bingo of the same name.
+  # The title is scaffolding for the model created below it.
+  - title.lucky-7-genco:
+      create: true
+      name: Lucky 7
+  - model.lucky-7-genco:
+      create: true
+      name: Lucky 7
+      title: lucky-7-genco
+      corporate_entity: genco-manufacturing-company
+      year: 1957
+      game_format: rolldown
+      technology_generation: electromechanical
+      cite:
+        - ref: http://www.pinrepair.com/arcade/lucky7.htm
+          quote: "1957 Genco Lucky 7 [...] Lucky Seven, Genco, 1957. The Genco Lucky7 game is a rolldown game."
+        - ref: http://www.pinrepair.com/arcade/index.htm
+          quote: "Lucky 7, Genco, 1957, Genco Lucky7 is a rolldown equivalent of playing dice."
