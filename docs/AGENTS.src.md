@@ -23,7 +23,7 @@ Flippatch is the authoring home and transport for **data patches** — small YAM
 
 **What lives here:**
 
-- **Data patches**: change sets applied on top of the baseline seed catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file.
+- **Data patches**: change sets applied on top of the baseline seed catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file. Once the developers apply a patch to production, they archive it under `patches/shipped/`.
 - **Authoring artifacts**: the shared `patchkit` emitter (`scripts/patchkit.py`) and one directory per generated patch set (audit trail) under `campaigns/`.
 
 Supporting stuff:
@@ -68,7 +68,8 @@ Commits are gated by [pre-commit](https://pre-commit.com/) (`.pre-commit-config.
 
 ```text
 campaigns/        Assets involved in authoring specific data patches, like generator scripts
-patches/          Data patches — NNNN-slug.yaml claim corrections for downstream
+patches/          Data patches — NNNN-slug.yaml — claim corrections for downstream
+  shipped/        Applied to production, therefore immutable — archived, never re-validated
 schema/           patch.schema.json — structural validation
 scripts/          Python tooling (validate, lint, R2 push, agent-docs build)
   analysis/       evidence.sql — the web-scrape cache as a queryable layer
@@ -159,7 +160,7 @@ When creating a script to generate a patch -- such as going from analytics data 
 
 Localhost may be far ahead of production -- we often hold a series locally to tune them — but nothing in the dev DB records what production has ingested. Only the user knows. Sometimes the user will write that knowledge into a specific campaign, which is a point in time doc.
 
-If an existing patch looks worth altering, say so and let the user decide; never regenerate one on your own initiative.
+If an existing patch in `/patches/` (not `/patches/shipped/`) looks worth altering, say so and let the user decide; never regenerate one on your own initiative.
 
 ### Extracting a model's data from an unstructured web page
 
@@ -171,10 +172,10 @@ To populate or audit one sparse field across many models at once (a lineage rela
 
 ## Validation
 
-`make validate` runs two fast gates over the patches:
+`make validate` runs fast gates over the patches in `/patches/` (not `/patches/shipped/`)
 
-- **Structural** (`scripts/patch_validation/validate_patches.py`): filename format, unique numeric prefixes, strict JSON-shaped YAML (duplicate keys error; YAML 1.1 coercion off), and conformance to `schema/patch.schema.json`.
-- **Editorial** (`scripts/patch_validation/lint_patches.py`): citation hygiene, public-note discipline, and the description rules.
+- **Structural** (`scripts/patch_validation/validate_patches.py`): conformance to `schema/patch.schema.json`, filename format...
+- **Editorial** (`scripts/patch_validation/lint_patches.py`): citation hygiene, public-note discipline, description hygiene...
 
 Neither checks apply-time semantics (entity resolution, field classification, attribution existence); those live in flipcommons' `ingest_patches`. Preview them locally with the flipcommons SQLite snapshot loop (see DataPatchAuthoring.md).
 
