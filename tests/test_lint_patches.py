@@ -1274,24 +1274,6 @@ def test_pinball_record_phrase_flagged():
     assert has(e, "'the pinball record'")
 
 
-def test_link_density_flagged():
-    links = " ".join(f"[[theme:id:{i}]]" for i in range(9))
-    e = perrs(desc_unit(f"A machine of many themes: {links}."))
-    assert has(e, "cross-reference links")
-
-
-def test_link_density_cite_links_not_counted():
-    body = " ".join(f"[[cite:{i}]]" for i in range(12))
-    e = perrs(desc_unit(f"A well-footnoted machine. {body}"))
-    assert not has(e, "cross-reference links")
-
-
-def test_link_density_at_limit_clean():
-    links = " ".join(f"[[theme:id:{i}]]" for i in range(8))
-    e = perrs(desc_unit(f"A machine of many themes: {links}."))
-    assert not has(e, "cross-reference links")
-
-
 def test_prose_rules_grandfathered_before_0189():
     e = perrs(note_unit("The seed derived this month."), filename="0188-x.yaml")
     assert e == []
@@ -1365,6 +1347,53 @@ def test_dating_phrase_grandfathered_before_0239():
     assert not has(e, "dates the prose")
 
 
+def test_repeat_link_flagged():
+    e = ddesc("[[manufacturer:bally]] built it, and [[manufacturer:bally]] sold it.")
+    assert has(e, "'manufacturer:bally'")
+
+
+def test_repeat_link_reported_once_per_target():
+    e = ddesc(
+        "[[manufacturer:bally]] built it, [[manufacturer:bally]] sold it, "
+        "and [[manufacturer:bally]] serviced it."
+    )
+    assert len([x for x in e if "link the first mention" in x]) == 1
+
+
+def test_repeat_link_cite_markers_not_counted():
+    # A handle is meant to be referenced from several markers.
+    e = ddesc("A machine.[[cite:1]] Built in Chicago.[[cite:1]]")
+    assert not has(e, "link the first mention")
+
+
+def test_repeat_link_distinct_targets_clean():
+    e = ddesc("[[manufacturer:bally]] and [[manufacturer:williams]] both built one.")
+    assert not has(e, "link the first mention")
+
+
+def test_repeat_link_same_slug_different_type_clean():
+    # A title and a model sharing a slug are different records.
+    e = ddesc("*[[title:cosmic]]* covers the build *[[model:cosmic]]*.")
+    assert not has(e, "link the first mention")
+
+
+def test_repeat_link_not_flagged_in_notes():
+    # Scoped to public record descriptions; a note is not encyclopedia prose.
+    e = perrs(
+        note_unit("[[manufacturer:bally]] and [[manufacturer:bally]] again."),
+        filename="0239-x.yaml",
+    )
+    assert not has(e, "link the first mention")
+
+
+def test_repeat_link_grandfathered_before_0239():
+    e = ddesc(
+        "[[manufacturer:bally]] built it, and [[manufacturer:bally]] sold it.",
+        filename="0238-x.yaml",
+    )
+    assert not has(e, "link the first mention")
+
+
 def test_rule_since_registry_has_prose_rules():
     for rule in (
         "prose-seed",
@@ -1376,7 +1405,6 @@ def test_rule_since_registry_has_prose_rules():
         "prose-the-catalog",
         "prose-catalogs",
         "prose-pinball-record",
-        "description-link-density",
     ):
         assert lp.RULE_SINCE[rule] == 189, rule
 

@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import re
 import sys
+from collections import Counter
 from collections.abc import Mapping
 from pathlib import Path
 from typing import TYPE_CHECKING, NotRequired, TypedDict
@@ -64,9 +65,9 @@ RULE_SINCE: dict[str, int] = {
     "prose-classification": 215,
     "locator-pagination-absence": 215,
     "locator-document-length": 215,
-    "description-link-density": 189,
     "feature-grouping-node": 219,
     "description-dating-phrases": 239,
+    "description-repeat-link": 239,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -162,6 +163,10 @@ LOCATOR_PAGE_OF_RE = re.compile(
 INLINE_CITE = "[[cite:"
 # The key inside an inline footnote, e.g. the "2" in [[cite:2]].
 INLINE_CITE_KEY_RE = re.compile(r"\[\[cite:([^\]]+)\]\]")
+# A cross-reference wikilink in a description, captured as "type:public-id" so
+# the same record under two types (title vs model) keys apart. [[cite:N]] is
+# excluded: a footnote handle is *meant* to carry several markers.
+DESC_LINK_RE = re.compile(r"\[\[(?!cite:)([^\]]+)\]\]")
 # The legacy note-as-quote scaffolding shape: a short source phrase, a
 # quote-introducing verb (or a colon), then a quoted span. Verbs mirror the
 # migration recognizer's; own-data notes ('The name includes "Prototype"')
@@ -421,12 +426,6 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
         "drop the phrase — 'known in the pinball record for X' is just 'known for X'",
     ),
 )
-
-# A record description may cross-reference other entries, but only where
-# load-bearing; [[cite:N]] footnotes are evidence, not cross-references, and
-# don't count.
-NONCITE_LINK_RE = re.compile(r"\[\[(?!cite:)")
-DESCRIPTION_LINK_MAX = 8
 
 
 def _prose_errors(corpus: str, text: str, patch_num: int) -> Iterator[str]:
@@ -692,13 +691,16 @@ def _check_unit(
                 f"{where}: {e}"
                 for e in _prose_errors(RECORD_DESC, description, patch_num)
             )
-            # description-link-density: cross-reference only where load-bearing
-            n_links = len(NONCITE_LINK_RE.findall(description))
-            if n_links > DESCRIPTION_LINK_MAX and on("description-link-density"):
-                errors.append(
-                    f"{where}: description carries {n_links} cross-reference "
-                    f"links (max {DESCRIPTION_LINK_MAX}) — link only where "
-                    f"load-bearing"
+            # description-repeat-link: the first mention carries the link. A
+            # second marker for the same record adds no edge to the reference
+            # graph (it is unique on the pair) and only thins the prose.
+            if on("description-repeat-link"):
+                counts = Counter(DESC_LINK_RE.findall(description))
+                errors.extend(
+                    f"{where}: description links {target!r} {n} times — "
+                    f"link the first mention only"
+                    for target, n in counts.items()
+                    if n > 1
                 )
         want = f"flipcommons-ai-desc-{ref_type}"
         if attribution != want and on("description-attribution"):
