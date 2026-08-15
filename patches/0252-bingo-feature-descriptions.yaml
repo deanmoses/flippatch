@@ -1,0 +1,176 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: the bingo card family.
+claims:
+  - gameplay-feature.bingo-cards:
+      description: |
+        The bingo card is the scoring heart of a [[game-format:bingo-pinball]] machine: a grid of numbers — classically five by five — printed across the backglass, the upright glass panel in the machine's head, each number matching one of the numbered [[gameplay-feature:trap-holes]] on the playfield below. A ball resting in a hole lights its number, and three or more lit numbers in a row pays, the award climbing steeply with the length of the line — on the earliest machines, four in a row paid roughly four times what three did, and five in a row paid 100 replays.[[cite:1]]
+
+        ## Origins
+
+        The card arrived with *[[model:bright-lights]]* (1951, [[manufacturer:bally]]), where the play is at its most elemental: a coin buys a card, five balls go up the shooter, three in a line wins.[[cite:2]] Bright Lights carried six cards, each purchasable in turn for another nickel.[[cite:3]][[cite:4]] [[manufacturer:united]] had actually reached the market first with *[[model:a-b-c]]* (1951), whose short roulette-tub playfield players rejected as too random; Bally's long field of holes let a practiced shooter aim at the numbers a card needed, and by United's third bingo its layout had been copied outright, becoming the pattern the whole genre followed.[[cite:5]][[cite:6]]
+
+        ## Rearranging the card
+
+        The card is where the format's invention played out. Through the 1950s and 1960s Bally's designers kept finding new ways to let a player — for more coins — reshape a losing card into a paying one:[[cite:7]] rotating blocks of numbers with [[gameplay-feature:magic-squares]], shifting whole columns with [[gameplay-feature:magic-lines]], sliding a painted screen across stationary numbers with the [[gameplay-feature:magic-screen]], abandoning lines for color groups with [[gameplay-feature:mystic-lines]], and hanging small [[gameplay-feature:super-cards]] beside the main card with payouts of their own.
+      cites:
+        "1":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "You only had to line up three numbers on the card to win a small amount of replays. 4 in a row earned about 4 times the amount for 3. And 5 in a row earned 100 replays."
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/bright_lights"
+          quote: "Deposit one coin/credit per card, and shoot the five balls. If you get three or more in a line, you win."
+        "3":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "The first game from Bally had six cards – each card could be bought, in order, for one nickel."
+        "4":
+          ref: ipdb:374
+          quote: "Trap holes (25), Six Cards."
+        "5":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "A competitor was actually first to market with their version of the bingo pinball. [...] Bally's playfield design was far superior, and allowed for a skilled player to make the numbers needed to win. [...] with United's third bingo design, which almost mirrored the layout from Bally."
+        "6":
+          ref: "https://bingo.cdyn.com/machines/bally/bright_lights"
+          quote: "While United's ABC beat Bally to market by a couple months, Bally's playfield layout became the standard for bingo's."
+        "7":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "Subsequent games would get increasingly complex, adding things such as mechanically moving numbers on the bingo card [...] mechanical rearrangement of the card design itself"
+  - gameplay-feature.super-cards:
+      description: |
+        Super cards are small three-by-three side cards on a [[game-format:bingo-pinball]] backglass, hung beside the main [[gameplay-feature:bingo-cards]] and scored on their own. They first appeared on *[[model:palm-beach]]* (1952, [[manufacturer:bally]]), which carried two of them, and recur across the one-card machines that followed.[[cite:1]][[cite:2]] Their signature award is corner scoring: lighting the four corner numbers of an enabled super card paid 200 or 400 credits — on Palm Beach, the largest single payout in the game.[[cite:3]][[cite:4]]
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/bally/palm_beach"
+          quote: "The 3x3 super cards first appeared on this game, and show up again on many of the one-card machines."
+        "2":
+          ref: ipdb:1739
+          quote: "One card, two super cards"
+        "3":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "A high payout (e.g. 200 or 400) awarded for lighting the four corner numbers of the main card or super cards."
+        "4":
+          ref: "https://bingo.cdyn.com/machines/bally/palm_beach"
+          quote: "Lighting the four corner numbers of an enabled supercard is how you get the maximum single payout in this game - 400 credits."
+  - gameplay-feature.magic-lines:
+      description: |
+        Magic Lines is a feature of [[game-format:bingo-pinball]] machines that puts some of the numbers on the [[gameplay-feature:bingo-cards]] on movable strips — typically a full vertical column of the card's grid. Knobs or buttons on the machine shift a strip up or down one position, the number leaving one end reappearing at the other, so a near-miss card can be nudged into a paying line.[[cite:1]][[cite:2]] It was the first bingo feature to mechanically move the numbers themselves.[[cite:3]]
+
+        The idea arrived on *[[model:variety-2]]* (1954, [[manufacturer:bally]]), where the three left columns of the card could shift;[[cite:4]][[cite:5]] its follow-on *[[model:big-time-2]]* freed all five.[[cite:6]][[cite:7]] Later machines turned the lines sideways — *[[model:miss-america-2]]* (1957) slid numbers horizontally between two cards mounted side by side.[[cite:8]] Where [[gameplay-feature:magic-squares]] rotates a block of four numbers in place, a magic line moves a whole column, and the two mechanisms defined Bally's card-moving games until the [[gameplay-feature:magic-screen]] arrived.
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: "The numbers on the bingo card were on strips that could be moved one position by turning knobs/pushing buttons on the foot rail. [...] Usually, the numbered strips were the vertical columns of the card"
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: 'When a column was shifted up, the top number "wrapped" and became the bottom number.'
+        "3":
+          ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: "The first feature that mechanically moved numbers!"
+        "4":
+          ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: "A completely new concept for bingo's started with this game - the ability to rearrange numbers on the bingo card by moving them!"
+        "5":
+          ref: ipdb:2719
+          quote: "One card, Two super cards, Three magic lines."
+        "6":
+          ref: "https://bingo.cdyn.com/machines/bally/big_time"
+          quote: "The follow-on game to Variety, Big Time is pretty much identical except you can move all five columns on the bingo card up/down one position."
+        "7":
+          ref: ipdb:283
+          quote: "One Card, 2 Super Cards, 5 Magic Lines."
+        "8":
+          ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: "Miss America introduced horizontally shifting lines that used two 5x5 cards next to each other. A number could be slid from one card to the other."
+  - gameplay-feature.magic-screen:
+      description: |
+        The Magic Screen is a painted metal screen that slides in front of the [[gameplay-feature:bingo-cards]] of a [[game-format:bingo-pinball]] machine: the numbers on the card stay put while the screen moves across them, changing what pattern pays — an inversion of the card-moving features that came before it.[[cite:1]]
+
+        ## Scoring through the screen
+
+        In the screen's home position the card scores conventional colored lines; sliding it left trades lines for irregular colored sections, and within a section lit numbers pay without needing to be adjacent at all.[[cite:2]][[cite:3]][[cite:4]] Striped "Super Sections" sweetened it further, scoring a section as one number better than the player actually had.[[cite:5]]
+
+        The screen made winning combinatorial, and finding the wins became the player's own job. Screen games added an R-button to the machine: the game only scans for winners when it is pressed, and every new screen position needs a fresh press.[[cite:8]] A winning combination the player fails to find and score before starting the next game is simply lost.[[cite:9]]
+
+        ## Origins
+
+        The first Magic Screen game was *[[model:carnival-queen]]* (1958, [[manufacturer:bally]]), which also introduced the R-button.[[cite:6]][[cite:1]][[cite:8]] The screen games became a mainstay — [bingo.cdyn.com](https://bingo.cdyn.com/), a collector archive devoted to the genre, rates them as probably the most popular style Bally made.[[cite:7]] The section-scoring idea outlived the screen itself: [[gameplay-feature:mystic-lines]] machines kept the colored sections and dropped in-line scoring entirely.
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "First introduced in Carnival Queen, the numbers on the card are stationary, but a moving metal screen is slid across them."
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "In the screen home position, the standard three color in-line scoring is available. As the screen is slid left, the in-line scoring is replaced with section scoring."
+        "3":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "to win in a section, the lit numbers DO NOT need to be adjacent!"
+        "4":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: 'They were "Magic Screen" games, which allowed the player to shift the entire bingo card, mechanically rearranging it''s design, and in the process, changing the way replays were scored.'
+        "5":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: 'The striped sections were called "Super Sections", and when the corresponding feature was lit, they score as one better than you really had'
+        "6":
+          ref: ipdb:456
+          quote: "First 'Magic Screen' game."
+        "7":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "This machine begins a style of game that is probably the most popular Bally made"
+        "8":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "Another significant change happened on this game - the addition of the R-Button on the foot rail. To score, you have to push the R-button every time you want the game to scan for winners. If you change the screen position, you need to push the R-button again to rescan."
+        "9":
+          ref: "https://bingo.cdyn.com/machines/glossary.html"
+          quote: "you need to push the R-button for every winning combination you set. If you don't find all the possible winners before starting the next game...too bad!"
+  - gameplay-feature.mystic-lines:
+      description: |
+        Mystic Lines is a feature of [[game-format:bingo-pinball]] machines that mounts the numbers of the [[gameplay-feature:bingo-cards]] on movable columns behind a metal panel painted with fixed colored sections. The center column shifts up or down as a [[gameplay-feature:magic-lines]] line, and the pairs of columns flanking it swap with each other, letting the player gather lit numbers into a paying color group — the [[gameplay-feature:magic-screen]] relationship inverted: the numbers move behind a stationary pattern instead of a screen moving over stationary numbers.[[cite:4]][[cite:5]]
+
+        ## Scoring by sections
+
+        Mystic Lines games abandoned in-line scoring — the classic bingo win of lighting three or more adjacent numbers in a row — and made section scoring the only way to win: lit numbers in the same colored group pay whether or not they touch.[[cite:1]] The card is divided among four colors rather than the three of the Magic Screen games.[[cite:2]] And the scheme hid a trap: one number in each color was a white "star" that counted toward its color only as the fifth number — four lit blues plus the blue star paid 5-in-blue, but two blues plus the star paid nothing.[[cite:6]]
+
+        ## Origins
+
+        The first Mystic Lines game was *[[model:border-beauty]]* (1965, [[manufacturer:bally]]), which was also the first bingo built on a 20-hole playfield.[[cite:7]][[cite:3]] The card shrank with it, to four rows by five columns, giving up five of the 25 [[gameplay-feature:trap-holes]] every bingo before it had carried.[[cite:5]][[cite:2]]
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "First appearing on Border Beauty, this new game type took the section scoring idea from the magic screen games and got rid of the in-line scoring that had been on every bingo up until now."
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "While they were at it, they removed five holes from the playfield, and decided four colors (red/yellow/green/blue) were better than three."
+        "3":
+          ref: ipdb:3657
+          quote: "First use of the Mystic Lines feature. First 20-hole playfield."
+        "4":
+          ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "Unlike the magic screen games, the color sections were stationary and you moved the numbers behind the metal panel that had the color pattern painted on it."
+        "5":
+          ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "The main card is 4x5 (four rows, five columns). The center column was a Magic Line - it could be moved up or down one position. The two columns on the left could be swapped with themselves, and so could the two columns on the right."
+        "6":
+          ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "The nasty trick was that one number in each color group was white with a corresponding colored star. That number counted as the fifth number in the color only, otherwise it only counted as a lit star."
+        "7":
+          ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "First appearing on Border Beauty"
+  - gameplay-feature.bally-hole:
+      description: |
+        The Bally Hole is hole #16 among the 25 [[gameplay-feature:trap-holes]] of a mid-1950s [[manufacturer:bally]] [[game-format:bingo-pinball]] playfield, wired to do something special when its light is on — classically, awarding the player's first extra ball free.[[cite:1]][[cite:2]] That was worth real money on a bingo, where up to three extra balls are otherwise bought with coins after the fifth ball, at odds the machine steadily worsens.[[cite:3]] The hole could also light features for the next game played — enabling all of a game's [[gameplay-feature:magic-squares]] at once, say — a next-game award in the tradition the [[game-format:one-ball]] payout games had proven: give the player a reason to put in another coin.[[cite:1]][[cite:4]] It arrived on *[[model:broadway-3]]* (1955) alongside Magic Squares.[[cite:2]][[cite:5]]
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Playfield hole #16 does something special, such as awarding an extra ball. The ballyhole was also used to light features automatically for the NEXT game played, like enabling all the magic squares."
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/broadway"
+          quote: 'Broadway also introduced the "Ballyhole" feature. Makeing a ball in hole #16 when the feature is lit awards the player the first extra ball for free.'
+        "3":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Almost all the bingo's are five ball games, and you have the option to try and get up to three extra balls by playing credits or depositing coins after the fifth ball is shot."
+        "4":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "A great idea from the one-ball games. Something you do on the current game will enable a feature automatically on the next game. Are you going to play again?...of course!"
+        "5":
+          ref: ipdb:382
+          quote: "Trap holes (25), Magic Squares, Bally Hole, Double/triple scores"
