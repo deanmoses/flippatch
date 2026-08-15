@@ -276,7 +276,7 @@ Standing recipe (user, 2026-08-08) — rebuild as often as you like:
 
 ```bash
 cd ../flipcommons/backend
-cp db.prod.patch-0214.2026-08-03.sqlite3 db.sqlite3
+cp db.prod.patch-0238.2026-08-13.sqlite3 db.sqlite3
 uv run python manage.py migrate
 uv run python manage.py ingest_patches --patches-dir ../../flippatch/patches
 ```

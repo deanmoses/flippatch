@@ -1,0 +1,193 @@
+attribution: flipcommons-catalog
+description: >
+  Cardona family: the two pre-2026 conversion kits and their Williams/Bally donors
+claims:
+  - title.no-good-gofers-battle-for-the-green:
+      create: true
+      name: "No Good Gofers: Battle for the Green"
+  - model.no-good-gofers-battle-for-the-green-kit:
+      create: true
+      name: "No Good Gofers: Battle for the Green (Kit)"
+      title: no-good-gofers-battle-for-the-green
+      corporate_entity: cardona-pinball-designs
+      year: 2022
+      theme: [golf, sports]
+  - model.no-good-gofers-battle-for-the-green-kit:
+      note: "An official, licensed, commercially sold product, so produced rather than aftermarket (DomainModel.md defines aftermarket as not an official commercial release)."
+      cite:
+        - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/b8901727-49fa-4784-801d-6663cfa49dd1/NGG%20rev%20changes%202025%2006%2001.pdf"
+          locator: PDF document page 1
+          quote: "version 20221215 [...] First commercial release"
+        - ref: "https://www.kineticist.com/news/james-cardona-interview"
+          quote: 'when we finally released No Good Gofers: Battle For the Green, everyone was like, "Yeah, yesterday''s news."'
+      production_status: produced
+  - model.no-good-gofers-battle-for-the-green-kit:
+      note: "The maker's release history stamps each version by date - the 20250601 sibling entry shows the YYYYMMDD convention - and labels 20221215 the first commercial release. Pinside's February 2023 reads as later framing; the maker's own document wins."
+      cite:
+        ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/b8901727-49fa-4784-801d-6663cfa49dd1/NGG%20rev%20changes%202025%2006%2001.pdf"
+        locator: PDF document page 1
+        quote: "version 20221215 [...] First commercial release"
+      month: 12
+  - model.no-good-gofers-battle-for-the-green-kit:
+      note: "The kit installs into a pinball machine and its result is a new pinball game, so the format follows."
+      cite:
+        ref: "https://www.kineticist.com/news/james-cardona-interview"
+        quote: "It's a 2.0 kit, a category of officially licensed products that install into classic Bally/Williams machines and turns them into a new game experience, while keeping the original intact."
+      game_format: pinball
+  - model.no-good-gofers-battle-for-the-green-kit:
+      cite:
+        - ref: "https://cardonapinball.com/shop/ols/products/no-good-gofers-battle-for-the-green-upgrade-kit"
+          locator: in the page's meta description
+          quote: "Includes everything you need to install No Good Gofers: Battle For The Green into a No Good Gofers Pinball machine. [...] Cardona Pinball Designs is licensed by Planetary Pinball Supply to create 2.0 game kits for Bally-Williams titles"
+      model_relationship:
+        - target_machine: no-good-gofers
+          relationship_type: conversion_kit
+          license_status: licensed
+  - model.no-good-gofers-battle-for-the-green-kit:
+      note: "The industrial 15.6-inch monitor in the kit's replacement speaker panel is an LCD-class display."
+      cite:
+        ref: "https://cardonapinball.com/shop/ols/products/no-good-gofers-battle-for-the-green-upgrade-kit"
+        locator: in the page's meta description
+        quote: 'Speaker panel with (2) 4" speakers, a industrial 15.6 inch monitor, and associated cabling.'
+      display_type: lcd
+  - model.no-good-gofers-battle-for-the-green-kit:
+      note: "The FAST platform is a computerized game system, so the solid-state generation follows."
+      cite:
+        - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/b8901727-49fa-4784-801d-6663cfa49dd1/NGG%20rev%20changes%202025%2006%2001.pdf"
+          locator: PDF document page 1
+          quote: "tested with FAST firmware 2.1, mpf 0.56 dev 20"
+        - ref: "https://cardonapinball.com/shop/ols/products/no-good-gofers-battle-for-the-green-upgrade-kit"
+          locator: in the page's meta description
+          quote: "FAST Interface controller board (to be installed in the removed CPU location). CPU panel that includes CPU, FAST audio and accessory controller, and associated cabling (to be installed in the removed audio/video board location)."
+      technology_generation: solid-state
+      system: fast-pinball
+  - model.no-good-gofers-battle-for-the-green-kit:
+      cite:
+        - ref: "https://www.kineticist.com/news/james-cardona-interview"
+          quote: "He writes the code, designs the games, and has brought in more professional artists and voice actors with each title, while FAST Pinball handles the hardware."
+        - ref: "https://www.kineticist.com/news/james-cardona-interview"
+          quote: "I had only written No Good Gofers: Battle For The Green and developed the game for P-Roc hardware."
+      credit:
+        - james-cardona: design
+        - james-cardona: software
+  - model.no-good-gofers-battle-for-the-green-kit:
+      cite:
+        ref: "https://cardonapinball.com/shop/ols/products/no-good-gofers-battle-for-the-green-upgrade-kit"
+        locator: in the page's meta description
+        quote: "Cart Smash - multiball mode started by enough gopher or cart hits, shoot cart or TNT"
+      gameplay_feature: [multiball]
+  - title.black-rose-skull-and-bones:
+      create: true
+      name: "Black Rose: Skull and Bones"
+  - model.black-rose-skull-and-bones-kit:
+      create: true
+      name: "Black Rose: Skull and Bones (Kit)"
+      title: black-rose-skull-and-bones
+      corporate_entity: cardona-pinball-designs
+      year: 2023
+      theme: [fantasy, fictional, pirates]
+  - model.black-rose-skull-and-bones-kit:
+      note: "An official, licensed, commercially sold product, so produced rather than aftermarket (DomainModel.md defines aftermarket as not an official commercial release)."
+      cite:
+        - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/4c1e843c-5ca2-4426-9b9a-37d3ff7ac4be/BRose%2020250610%20change%20log.pdf"
+          locator: PDF document page 1
+          quote: "Black Rose: Skull and Bones version 2023_06_22 [...] 1st production release"
+        - ref: "https://www.kineticist.com/news/james-cardona-interview"
+          quote: "You've now done this three times, from No Good Gofers to Black Rose to Fish Tales."
+      production_status: produced
+  - model.black-rose-skull-and-bones-kit:
+      note: "The maker's release history stamps each version by date and labels 2023_06_22 the 1st production release. Pinside's August 2023 reads as later framing; the maker's own document wins."
+      cite:
+        ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/4c1e843c-5ca2-4426-9b9a-37d3ff7ac4be/BRose%2020250610%20change%20log.pdf"
+        locator: PDF document page 1
+        quote: "Black Rose: Skull and Bones version 2023_06_22 [...] 1st production release"
+      month: 6
+  - model.black-rose-skull-and-bones-kit:
+      note: "The kit installs into a pinball machine and its result is a new pinball game, so the format follows."
+      cite:
+        ref: "https://www.kineticist.com/news/james-cardona-interview"
+        quote: "It's a 2.0 kit, a category of officially licensed products that install into classic Bally/Williams machines and turns them into a new game experience, while keeping the original intact."
+      game_format: pinball
+  - model.black-rose-skull-and-bones-kit:
+      cite:
+        ref: "https://cardonapinball.com/shop/ols/products/black-rose-skull-and-bones-20-pinball-kit"
+        locator: in the page's meta description
+        quote: 'Black Rose: Skull and Bones (BR:SnB) A Licensed "2.0" Upgrade Kit by Cardona Pinball Designs Includes everything you need to install Black Rose: Skull and Bones into a Black Rose Pinball machine.'
+      model_relationship:
+        - target_machine: black-rose
+          relationship_type: conversion_kit
+          license_status: licensed
+  - model.black-rose-skull-and-bones-kit:
+      note: "The industrial 15.6-inch monitor in the kit's display panel is an LCD-class display."
+      cite:
+        ref: "https://cardonapinball.com/shop/ols/products/black-rose-skull-and-bones-20-pinball-kit"
+        locator: in the page's meta description
+        quote: "display panel with an industrial 15.6 inch monitor, and associated cabling."
+      display_type: lcd
+  - model.black-rose-skull-and-bones-kit:
+      note: "The FAST platform is a computerized game system, so the solid-state generation follows."
+      cite:
+        - ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/4c1e843c-5ca2-4426-9b9a-37d3ff7ac4be/BRose%2020250610%20change%20log.pdf"
+          locator: PDF document page 1
+          quote: "sound board ID: EMU FP-CPU-1060 fast controller ID: NET FP-SBI-0095 02.5"
+        - ref: "https://cardonapinball.com/shop/ols/products/black-rose-skull-and-bones-20-pinball-kit"
+          locator: in the page's meta description
+          quote: "CPU panel that includes CPU, FAST audio and accessory controller, and associated cabling (to be installed in the removed audio/video board location)."
+      technology_generation: solid-state
+      system: fast-pinball
+  - model.black-rose-skull-and-bones-kit:
+      cite:
+        ref: "https://www.kineticist.com/news/james-cardona-interview"
+        quote: "He writes the code, designs the games, and has brought in more professional artists and voice actors with each title, while FAST Pinball handles the hardware."
+      credit:
+        - james-cardona: design
+        - james-cardona: software
+  - model.black-rose-skull-and-bones-kit:
+      cite:
+        ref: "https://www.kineticist.com/news/james-cardona-interview"
+        quote: I hired Scott Gullicks to do my Black Rose artwork and now Brian Allen for Fish Tales.
+      credit:
+        - scott-gullicks: art
+  - model.no-good-gofers:
+      note: "A machine produced in four figures was commercially produced; IPDB records the exact run as 2,711."
+      cite:
+        ref: "ipdb:4338"
+        quote: "Production: 2711"
+      production_status: produced
+  - model.no-good-gofers:
+      note: "The ramp entrances that elevate make the ramps moving ramps."
+      cite:
+        ref: "ipdb:4338"
+        quote: "Flippers (3), Pop bumpers (3), Slingshots (2), Ramps (3), Spinning targets (2), Spinning disc (1), Captive ball (1), Newton ball post (1), Left outlane kickback, Dual left inlanes. Entrances to ramps elevate to allow access to bash toy targets."
+      game_format: pinball
+      gameplay_feature: [moving-ramps]
+  - model.no-good-gofers:
+      cite:
+        ref: "ipdb:4338"
+        quote: 'Height: 76" (190cm) - backbox upright [...] Width: 28.75" (73cm) [...] Depth: 51.5" (127cm) [...] Weight: 300 lbs. (136kg) - uncrated'
+      cabinet: floor
+  - model.no-good-gofers:
+      note: "The beaver identity of the two bash toys is recorded in the family notes as a future unique feature."
+      cite:
+        ref: "ipdb:4338"
+        quote: "Toys: Beaver bash toys (2)"
+      gameplay_feature: [{ bash-toys: 2 }]
+  - model.no-good-gofers:
+      cite:
+        ref: "ipdb:4338"
+        quote: Voices of Jon Hey as Bud and Vince Pontarelli as Buzz.
+      credit:
+        - jon-hey: voice
+        - vince-pontarelli: voice
+  - model.black-rose:
+      note: "A machine produced in four figures was commercially produced; IPDB records the exact run as 3,746."
+      cite:
+        ref: "ipdb:313"
+        quote: "Production: 3746"
+      production_status: produced
+  - model.black-rose:
+      cite:
+        ref: "ipdb:313"
+        quote: "Flippers (3), Pop bumpers (3), Ramps (3), 3-bank standup targets (3), 2- or 3-ball Multiball. Left ramp is a mechanically raised or lowered ramp which is raised at certain times to load the ball cannon. [...] The Broadside VUK kicks the ball to the center habitrail above the playfield the and sends it to the flippers."
+      game_format: pinball
+      gameplay_feature: [moving-ramps, vertical-up-kickers, habitrails]

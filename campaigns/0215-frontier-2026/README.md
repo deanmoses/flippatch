@@ -23,6 +23,7 @@ Each family is independent work, done by a separate AI session in its own folder
 - **✅ 0237 · [pokemon](model-families/pokemon)** (Stern) — Pokémon Pro / Premium / Limited Edition. **Not created by 0215** — all three editions were already in the catalog.
 - **✅ 0238 · [obsidian-high](model-families/obsidian-high)** (UP Pinball) — The Fiery End of Obsidian High, a homebrew
 - **open · [resident-evil](model-families/resident-evil)** (World Pinball) — Resident Evil. Mostly **corporate-entity** work: the maker's site is password-gated, and everything about the machine itself traces to one unconfirmed post. Read `ResidentEvil.md` before spending time on it.
+- **✅ 0242 · [cardona](model-families/cardona)** (Cardona) — not on 0215's original list; added 2026-08-15. The maker's two pre-2026 kits, both missing from the catalog: No Good Gofers: Battle for the Green (2022) + Black Rose: Skull and Bones (2023), **+ 2 donors** enriched: No Good Gofers (Williams, 1997), Black Rose (Bally, 1992). Rides the fish-tales groundwork (Cardona root with the path-scoped wsimg domain, fast-pinball system, corporate entity — all shipped in 0225). One patch for the whole maker (user, 2026-08-15); Demolition Time (the 2014 Demolition Man firmware rewrite) deliberately not created. Snapshot-validated 2026-08-15; `verify-quote-support` still owed (API credits were exhausted — see Cardona.md → Gate-run history).
 
 ## Campaign rules
 

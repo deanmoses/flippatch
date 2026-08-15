@@ -16,7 +16,7 @@ claims:
       description: |
         Stern SPIKE 3 is the third generation of [[manufacturer:stern-pinball]]'s SPIKE control system, the embedded electronics platform inside its pinball machines. It arrived in September 2025 with *[[title:star-wars-fall-of-the-empire]]*, whose launch announcement introduced the next-generation platform alongside the game itself[[cite:1]][[cite:2]][[cite:3]] — the electronics were news in their own right, down to a SPIKE 3 stinger closing the game's teaser trailer.[[cite:4]]
 
-        ## Under the glass
+        ## The hardware
 
         Like the SPIKE generations before it, SPIKE 3 is a distributed system rather than a single board set: a CPU board holding the game software is networked with input/output boards over a custom control bus carried on ordinary Ethernet-style cabling, 48-volt boards driving the coils and flashers while bus-powered boards read the switches and drive the lamps.[[cite:5]] The generational change sits at the head of that bus: a custom processor built on the Raspberry Pi platform, with four times the computing and video power of [[system:stern-spike-2]] and twice its memory.[[cite:6]]
 

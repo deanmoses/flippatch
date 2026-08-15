@@ -1,0 +1,64 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: shaker motors and Magic Squares.
+claims:
+  - gameplay-feature.shaker-motors:
+      description: |
+        A shaker motor is an electric motor with off-center weights mounted inside the pinball cabinet, spun on cue by the game program to rattle the whole machine under the player's hands. It scores nothing and touches no ball; it exists to make an event on the playfield land in the body — modern makers pitch the effect as haptic feedback, felt rather than seen.[[cite:5]]
+
+        ## Origins
+
+        The device arrived with *[[model:earthshaker]]* (1989, [[manufacturer:williams]]), [[person:pat-lawlor]]'s earthquake game, which shook the machine at set moments to simulate the tremors of its theme.[[cite:1]][[cite:2]] Williams sold the novelty as hard as the game — "It's a Moving Experience!" ran one of its slogans[[cite:3]] — and [[manufacturer:data-east]] took the device up as a regular fitting in the years that followed, from *[[model:checkpoint]]* (1991) through *[[model:jurassic-park]]* (1993).
+
+        ## Later use as a trim differentiator
+
+        On machines of the 2010s and after, the shaker settled into a different role: the mark of the upper trim. [[manufacturer:jersey-jack]] fits it to the Collector's and Special editions of *[[title:sonic-the-hedgehog]]* (2026) and leaves it off the model below them,[[cite:5]] and [[manufacturer:stern-pinball]] sells the motor as a bolt-in accessory kit, so an owner can add the shake to a game that shipped without one.[[cite:4]]
+      cites:
+        "1":
+          ref: ipdb:753
+          quote: "Shaker motor. Machine shakes at certain times during a game to simulate an earthquake."
+        "2":
+          ref: "https://www.kineticist.com/games/pinball/earthshaker"
+          quote: "This game is notable for being the first pinball machine to include a shaker motor, which shakes the machine during specific gameplay moments"
+        "3":
+          ref: ipdb:753
+          quote: "It's a Moving Experience!"
+        "4":
+          ref: "https://shop.sternpinball.com/products/stern-shaker-motor-kit-for-spike-system-games"
+          quote: "Stern Spike Shaker Motor Kit for the SPIKE system games. Make sure your game is a Spike game, before you purchase this motor."
+        "5":
+          ref: "https://jerseyjackpinball.com/collections/sonic-the-hedgehog-pinball-game"
+          quote: "SHAKER MOTOR WITH HAPTIC FEEDBACK (CE & SE ONLY) [...] From loop ramps to boss battles, the shaker motor delivers physical feedback that puts you in the action. Available on the Collector's and Special Editions"
+  - gameplay-feature.magic-squares:
+      description: |
+        Magic Squares is a backglass mechanism of [[manufacturer:bally]]'s [[game-format:bingo-pinball]] machines: blocks of four numbers on the game's [[gameplay-feature:bingo-cards]] are mounted on wheels behind the glass, and buttons on the cabinet's foot rail turn each block a quarter-turn at a time, rearranging the card itself.[[cite:1]] A ball already resting in a numbered hole stays put while the card moves around it, so a player can rotate a near miss into a paying line after the shooting is done.[[cite:1]] The squares sat in the corners of the card at first, and players took to calling the feature "turning corners".[[cite:2]]
+
+        ## Origins
+
+        The first Magic Squares game was *[[model:broadway-3]]* (1955, Bally).[[cite:3]][[cite:4]] Like most things on a bingo, the rotation ran on money: whether the buttons worked at all, and how deep into the game they stayed live, were features the player bought with additional coins.[[cite:5]][[cite:6]]
+
+        ## The arms race
+
+        Magic Squares was one round in an arms race — through the 1950s Bally's bingos grew steadily more elaborate, each new machine adding another way to work the card.[[cite:7]] It followed the moving numbers of [[gameplay-feature:magic-lines]], introduced on *[[model:big-time-2]]* (1954), and was answered in turn by the [[gameplay-feature:magic-screen]] in 1958 and [[gameplay-feature:mystic-lines]] in 1965. The wheels earned their keep for two decades — Bally was still building Magic Squares games as late as *[[model:bonanza-4]]* (1976).
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/bally/broadway"
+          quote: "Some of the numbers on the bingo card are are mounted on wheels (behind the backglass), and pushing buttons on the foot rail allows you to rotate the wheels to rearrange the numbers into paying combinations."
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/broadway"
+          quote: 'The 4-number squares were initially used in the corners of the card, so people also called the feature "turning corners".'
+        "3":
+          ref: ipdb:382
+          quote: "First 'Magic Squares' game."
+        "4":
+          ref: "https://bingo.cdyn.com/machines/bally/broadway"
+          quote: "Broadway introduced a new form of rearranging numbers which turned out to be very popular - Magic Squares."
+        "5":
+          ref: ipdb:382
+          quote: "Player can press buttons to rearrange numbers on card in backglass if these features are purchased"
+        "6":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "During this phase, the player drops one or more coins in an attempt to earn increased odds or feature awards."
+        "7":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "Subsequent games would get increasingly complex, adding things such as mechanically moving numbers on the bingo card"
