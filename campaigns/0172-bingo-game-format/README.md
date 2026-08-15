@@ -4,7 +4,7 @@ Sets `game_format = bingo-pinball` on the catalog's bingo machines. This directo
 
 ## The candidate hunt: [bingo.sql](bingo.sql)
 
-A read-only DuckDB analysis over the live flipcommons catalog. It reuses flipcommons' shared DuckDB layer **verbatim**: the decode foundation (`scripts/analysis/catalog.sql`, pulled in by a `.read`) and its runner (`scripts/analysis/analysis`) — we keep no copy of either. `make analyze` sets cwd to the flipcommons checkout (so the `.read` and the foundation's `ATTACH backend/db.sqlite3` resolve) and delegates to that runner, which prints the `analysis_context` watermark + `bingo_summary` and **gates on `bingo_checks`** (nonzero exit on any row):
+A read-only DuckDB analysis over the live flipcommons catalog. It reuses flipcommons' shared DuckDB layer **verbatim**: the decode foundation (`scripts/analysis/catalog.sql`, pulled in by a `.read`) and its runner (`scripts/analysis/analysis`) — we keep no copy of either. `make analyze` sets cwd to the flipcommons checkout (so the `.read` and the foundation's `ATTACH` resolve) and delegates to that runner, which prints the `analysis_context` watermark + `bingo_summary` and **gates on `bingo_checks`** (nonzero exit on any row):
 
 ```bash
 F=campaigns/0172-bingo-game-format/bingo.sql

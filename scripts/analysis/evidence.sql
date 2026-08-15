@@ -18,9 +18,9 @@
 -- WHERE THE PATHS RESOLVE. This file lives in flippatch, but every path in it is
 -- relative to the FLIPCOMMONS checkout, because that is where the analysis runner
 -- `cd`s before invoking DuckDB. Same frame as `catalog.sql`'s own literal
--- 'backend/db.sqlite3'. So the ATTACH below reads `../pinexplore/...` — do not "fix" it
--- to `../../pinexplore` on the reasoning that this file sits two levels down in
--- flippatch; it is not resolved from here. `ATTACH` takes a string LITERAL — no
+-- 'backend/db.analytics.duckdb'. So the ATTACH below reads `../pinexplore/...` — do not
+-- "fix" it to `../../pinexplore` on the reasoning that this file sits two levels down
+-- in flippatch; it is not resolved from here. `ATTACH` takes a string LITERAL — no
 -- expression, no `getenv()`, no `getvariable()` — so unlike the rest of flippatch's
 -- tooling this cannot honour a `PINEXPLORE_DIR` override. The sibling layout is
 -- assumed, exactly as the foundation assumes it from the other direction.

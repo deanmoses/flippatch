@@ -13,9 +13,9 @@
 -- ../0128-relationships/relationships.sql and ../0172-bingo-game-format/bingo.sql.
 --
 -- HOW TO RUN. cwd must be the flipcommons checkout so BOTH the `.read` below AND the
--- foundation's own `ATTACH backend/db.sqlite3` resolve there. `make analyze` handles
--- the cwd/path resolution and delegates to flipcommons' shared runner, which prints
--- the analysis_context watermark + export_summary and gates on export_checks. Do not
+-- foundation's own `ATTACH` resolve there. `make analyze` handles the cwd/path
+-- resolution and delegates to flipcommons' shared runner, which prints the
+-- analysis_context watermark + export_summary and gates on export_checks. Do not
 -- run this file directly:
 --
 --     P=campaigns/0177-exports/exports.sql

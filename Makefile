@@ -83,9 +83,9 @@ sweep:
 #
 # FILE names a campaign's analysis file; omit it to query the foundation alone.
 # Everything runs from the flipcommons checkout (override with FLIPCOMMONS_DIR) so an
-# analysis file's `.read` and the foundation's `ATTACH backend/db.sqlite3` resolve — a
-# FILE is abspath'd first, since it is given relative to YOUR cwd. duckdb must be on
-# PATH. Nothing is written; not a commit gate.
+# analysis file's `.read` and the foundation's `ATTACH` resolve — a FILE is abspath'd
+# first, since it is given relative to YOUR cwd. duckdb must be on PATH. Nothing is
+# written; not a commit gate.
 #
 #   make analyze Q="SELECT count(*) FROM models WHERE year IS NULL;"   # ad-hoc
 #   make analyze CMD=describe                                         # the view reference

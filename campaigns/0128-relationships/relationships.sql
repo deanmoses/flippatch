@@ -24,9 +24,9 @@
 -- below — flippatch keeps no copy. Same pattern as ../0172-bingo-game-format/bingo.sql.
 --
 -- HOW TO RUN. cwd must be the flipcommons checkout so BOTH the `.read` below AND the
--- foundation's own `ATTACH backend/db.sqlite3` resolve there. `make analyze` handles
--- the cwd/path resolution and delegates to flipcommons' shared runner, which prints
--- the analysis_context watermark + relationships_summary and gates on
+-- foundation's own `ATTACH` resolve there. `make analyze` handles the cwd/path
+-- resolution and delegates to flipcommons' shared runner, which prints the
+-- analysis_context watermark + relationships_summary and gates on
 -- relationships_checks. Do not run this file directly:
 --
 --     F=campaigns/0128-relationships/relationships.sql

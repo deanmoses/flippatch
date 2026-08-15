@@ -10,9 +10,9 @@
 --
 -- HOW TO RUN. This must run with cwd = the flipcommons checkout, so that BOTH the
 -- `.read scripts/analysis/catalog.sql` below AND the foundation's own relative
--- `ATTACH backend/db.sqlite3` resolve there. `make analyze` handles the cwd/path
--- resolution and delegates to flipcommons' shared runner (scripts/analysis/analysis),
--- which prints the analysis_context watermark + gpf_summary and gates on
+-- `ATTACH` resolve there. `make analyze` handles the cwd/path resolution and
+-- delegates to flipcommons' shared runner (scripts/analysis/analysis), which
+-- prints the analysis_context watermark + gpf_summary and gates on
 -- gpf_checks. Do not run this file directly:
 --
 --     P=campaigns/0178-gameplay-features/features.sql

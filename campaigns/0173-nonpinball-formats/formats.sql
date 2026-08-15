@@ -17,7 +17,7 @@
 -- `.read` below — flippatch keeps no copy of it. See this dir's README.md.
 --
 -- HOW TO RUN. Must run with cwd = the flipcommons checkout, so BOTH the `.read`
--- below AND the foundation's relative `ATTACH backend/db.sqlite3` resolve there.
+-- below AND the foundation's relative `ATTACH` resolve there.
 -- `make analyze` (in flippatch) handles the cwd/path resolution and delegates to
 -- flipcommons' shared runner (scripts/analysis), which prints analysis_context +
 -- format_summary and gates on format_checks. Do not run this file directly:
