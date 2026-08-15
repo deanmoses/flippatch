@@ -1,6 +1,6 @@
 # Flippatch
 
-Flippatch is the authoring home for **data patches** — small YAML files that correct or extend catalog data in already-seeded downstream databases.
+Flippatch is the authoring home for **data patches** — small YAML files that correct or extend catalog data.
 
 This repo holds the patch files (`patches/`), their generator artifacts (`campaigns/`), the patch JSON schema, structural validation, and the tooling to publish the patches to Cloudflare R2.
 
@@ -11,7 +11,6 @@ This repo holds the patch files (`patches/`), their generator artifacts (`campai
 - **flippatch** (here) — data patches + authoring generators + transport.
 - **flipcommons** (`../flipcommons`) — the live catalog (Django + SvelteKit) and the `ingest_patches` apply engine; the canonical patch documentation.
 - **pinexplore** (`../pinexplore`) — research/evidence stores (web scrape cache + DuckDB analysis DB) used to source `note:`/`cite:` text.
-- **pindata** (`../pindata`) — the immutable baseline seed catalog (markdown entity files).
 
 ## Requirements
 

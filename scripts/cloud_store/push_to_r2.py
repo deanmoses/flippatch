@@ -7,8 +7,7 @@ conversion) under the ``flippatch/patches/`` prefix and writes a manifest at
 ``ingest_patches`` via ``make pull-patches``) can fetch the patch set without
 listing the bucket.
 
-The bucket is shared with the catalog (pindata, under ``pindata/``) and
-pinexplore ingest sources (root); the ``flippatch/`` prefix keeps patches
+The bucket is shared with pinexplore ingest sources (root); the ``flippatch/`` prefix keeps patches
 isolated. Every ``*.yaml`` in ``patches/`` ships: the directory holds nothing
 else, since campaign authoring artifacts live in ``campaigns/``.
 

@@ -1,10 +1,8 @@
 # Data Patches
 
-A **data patch** is a small YAML files that corrects or extends the pinball catalog data in already-seeded downstream databases. Patches are the schema-migration model applied to data: the catalog seed is an immutable baseline, and patches are an append-only, numbered log replayed on top of it in every environment.
+A **data patch** is a small YAML files that corrects or extends the pinball catalog data. Patches are similar to the schema-migration model applied to data: patches are an append-only, numbered log replayed on top of it in every environment.
 
 **This repo is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in [`campaigns/`](../campaigns/), they are validated _structurally_ here, and `make push` ships them to R2. However, the authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here.
-
-The baseline seed catalog these patches target lives in a separate repo, [pindata](https://github.com/deanmoses/pindata) (`../pindata`).
 
 ## Read the canonical docs before authoring
 
@@ -16,7 +14,7 @@ This file is a thin local pointer. The authoritative, current patch documentatio
 - **DataPatchReviewing.md** — the patch review checklist.
 - **DomainModel.md** — the catalog entity hierarchy claims target.
 
-For the repo topology (flippatch / pindata / flipcommons / pinexplore) and the end-to-end authoring loop, see the **Data Patches** section of [AGENTS.src.md](AGENTS.src.md) (rendered into [CLAUDE.md](../CLAUDE.md) and [AGENTS.md](../AGENTS.md)).
+For the repo topology (flippatch / flipcommons / pinexplore) and the end-to-end authoring loop, see the **Data Patches** section of [AGENTS.src.md](AGENTS.src.md) (rendered into [CLAUDE.md](../CLAUDE.md) and [AGENTS.md](../AGENTS.md)).
 
 ## Location and naming
 

@@ -19,11 +19,11 @@ This file provides guidance to AI programming agents when working with code in t
 
 ## Project Overview
 
-Flippatch is the authoring home and transport for **data patches** — small YAML files that correct or extend pinball catalog data in already-seeded downstream databases. It contains **only data and tooling** — no web framework, no frontend, no backend.
+Flippatch is the authoring home and transport for **data patches** — small YAML files that correct or extend pinball catalog data. It contains **only data and tooling** — no web framework, no frontend, no backend.
 
 **What lives here:**
 
-- **Data patches**: change sets applied on top of the baseline seed catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file. Once the developers apply a patch to production, they archive it under `patches/shipped/`.
+- **Data patches**: change sets applied on top of the catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file. Once the developers apply a patch to production, they archive it under `patches/shipped/`.
 - **Authoring artifacts**: the shared `patchkit` emitter (`scripts/patchkit.py`) and one directory per generated patch set (audit trail) under `campaigns/`.
 
 Supporting stuff:
@@ -113,7 +113,7 @@ pinexplore's `explore.duckdb` is a **fallback, not a peer**. It holds IPDB/OPDB/
 
 ## Data Patches
 
-`patches/` holds **data patches** — small, source-attributed YAML files named `NNNN-slug.yaml` that correct or extend catalog data in already-seeded downstream databases **without a full re-ingest**. The catalog seed (in the sibling [pindata](https://github.com/deanmoses/pindata) repo) is an immutable baseline; patches are an append-only, numbered log replayed on top of it in every environment.
+`patches/` holds **data patches** — small, source-attributed YAML files named `NNNN-slug.yaml` that correct or extend catalog data. Patches are an append-only, numbered log replayed on top of it in every environment.
 
 **Flippatch is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in `campaigns/`, they are validated _structurally_ here, and `make push` ships them verbatim to R2 under the `flippatch/` prefix (files at `flippatch/patches/`, plus a `flippatch/manifest.json`). The authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here. `scripts/patch_validation/validate_patches.py` and `scripts/patch_validation/lint_patches.py` (run by `make validate`) are fast **structural and editorial** gates only — see [Validation](#validation).
 
@@ -121,18 +121,17 @@ The thin local reference is [docs/Patches.md](Patches.md); the authoritative for
 
 ### The repo topology
 
-Real patch authoring spans four repos, checked out as siblings (`../pindata`, `../flipcommons`, `../pinexplore`):
+Real patch authoring spans four repos, checked out as siblings (`../flipcommons`, `../pinexplore`):
 
 - **flippatch** (here) — where patches and their `campaigns/` generators live, and where you run `make validate` and `make push`.
 - **flipcommons** (`../flipcommons`) — the source of truth. The live catalog, the **DuckDB analytics foundation** you query it through ([Querying the catalog](#querying-the-catalog)), the `ingest_patches` apply engine, and the **canonical patch documentation**.
-- **pinexplore** (`../pinexplore`) — where you research the verbatim source text behind a `cite:`. The **web scrape cache** is the primary evidence store, since most new catalog data comes from the web; see `../pinexplore/docs/WebCache.md`. Its `explore.duckdb` holds source dumps and is a fallback for questions the foundation can't answer — see `../pinexplore/CLAUDE.md`.
-- **pindata** (`../pindata`) — the immutable baseline seed catalog (markdown entity files) the patch claims target. This is basically retired, we're switching to database dumps to bootstrap new databases.
+- **pinexplore** (`../pinexplore`) — helps with patch research. The **web scrape cache** is an evidence store; see `../pinexplore/docs/WebCache.md`. Its `explore.duckdb` holds source dumps and is a fallback for questions the foundation can't answer — see `../pinexplore/CLAUDE.md`.
 
 ### Read the linked docs before authoring a patch
 
 The authoritative, current patch docs live in flipcommons. Flippatch's local docs are thin pointers. Read, in `../flipcommons/docs/`:
 
-- **Data.md** — the index for working with catalog data (seed vs patches, explore vs correct); start here to orient.
+- **Data.md** — the index for working with catalog data (patches, explore vs correct); start here to orient.
 - **DataPatches.md** — the patch file format and the full apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations. The source of truth for what a patch _is_.
 - **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, verbatim `quote:` on the cite, record descriptions, and the localhost snapshot-validate loop.
 - **DomainModel.md** — the catalog entity hierarchy the claims target.
@@ -168,7 +167,7 @@ For pulling a model's field values out of a cached free-text source (a review, a
 
 ### Sweeping one field across the whole corpus
 
-To populate or audit one sparse field across many models at once (a lineage relationship, later booleans like widebody), use the **AI corpus sweep** — `make sweep ARGS="<candidates.jsonl>"`. Follow its operator guide, [docs/corpus_sweep/CorpusSweepOperating.md](corpus_sweep/CorpusSweepOperating.md). You supply the candidate set (deterministic SQL/FTS mining, one JSONL row per model+field, prior guesses as never-shown-to-the-model `hint`s); it reconciles every row against the dev DB, judges each full source note in an independent trusted-tier call, gates deterministically (verbatim quote + unique target resolution + catalog diff), and emits `results.json` + a `REVIEW.md` filtered to disagreements and doubt. It judges already-set values too — that is what catches wrong seeded data. Start with `--no-ai` (free reconcile) and `--limit 10` (trial) before a full run. (Localhost only; needs the dev DB, the pinexplore stores, and `ANTHROPIC_API_KEY`.)
+To populate or audit one sparse field across many models at once (a lineage relationship, later booleans like widebody), use the **AI corpus sweep** — `make sweep ARGS="<candidates.jsonl>"`. Follow its operator guide, [docs/corpus_sweep/CorpusSweepOperating.md](corpus_sweep/CorpusSweepOperating.md). You supply the candidate set (deterministic SQL/FTS mining, one JSONL row per model+field, prior guesses as never-shown-to-the-model `hint`s); it reconciles every row against the dev DB, judges each full source note in an independent trusted-tier call, gates deterministically (verbatim quote + unique target resolution + catalog diff), and emits `results.json` + a `REVIEW.md` filtered to disagreements and doubt. Start with `--no-ai` (free reconcile) and `--limit 10` (trial) before a full run. (Localhost only; needs the dev DB, the pinexplore stores, and `ANTHROPIC_API_KEY`.)
 
 ## Validation
 

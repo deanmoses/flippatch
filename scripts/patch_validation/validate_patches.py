@@ -35,7 +35,7 @@ PATCH_ID_RE = re.compile(r"^\d{4}-[a-z0-9-]+$")
 class _StrictLoader(yaml.SafeLoader):
     """SafeLoader that rejects duplicate keys and YAML implicit coercion.
 
-    Mirrors flipcommons' patch loader so pindata catches the same problems
+    Mirrors flipcommons' patch loader so this catches the same problems
     *before* publishing. The canonical implementation lives in flipcommons at
     ``backend/apps/claim_ingest/patches/parsing.py``; this is a hand-maintained
     copy. **Keep the two in sync** — if flipcommons tightens or loosens what it
