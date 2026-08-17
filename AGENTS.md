@@ -41,24 +41,26 @@ uv run pre-commit install   # enable the commit-time quality gates
 ## Development Commands
 
 ```bash
-make analyze      # Query the live catalog through flipcommons' DuckDB foundation
-make validate     # Validate data patches: structural gate + editorial lint
-make lint         # ruff check + format-check the Python tooling
-make typecheck    # strict mypy over the Python tooling
-make test         # tooling unit tests (uv run pytest)
-make check        # lint + typecheck + test + validate (everything pre-commit gates)
-make push         # Push patches to Cloudflare R2 under the flippatch/ prefix
-make agent-docs   # Regenerate CLAUDE.md and AGENTS.md
+make analyze         # Query the live catalog through flipcommons' DuckDB foundation
+make validate        # Data patches: structural gate + editorial lint. YAML only, no DB
+make validate-in-db  # …plus the catalog audit. Run after applying to a snapshot
+make db-patch-state  # Is the local flipcommons dev DB current with the patches/ dir?
+make lint            # ruff check + format-check the Python tooling
+make typecheck       # Strict mypy over the Python tooling
+make test            # Tooling unit tests (uv run pytest)
+make check           # lint + typecheck + test + validate (everything pre-commit gates)
+make push            # Push patches to Cloudflare R2
+make agent-docs      # Regenerate CLAUDE.md and AGENTS.md
 ```
 
-Commits are gated by [pre-commit](https://pre-commit.com/) (`.pre-commit-config.yaml`): ruff, strict mypy, pytest, the patch structural + editorial gates, schema well-formedness, secret detection, and markdown formatting. Run `uv run pre-commit run --all-files` to check everything at once.
+Commits are gated by [pre-commit](.pre-commit-config.yaml): ruff, strict mypy, pytest, patch validation, secret detection, markdown formatting. Run `uv run pre-commit run --all-files` to check everything at once.
 
 ## Project Structure
 
 ```text
 campaigns/        Assets involved in authoring specific data patches, like generator scripts
-patches/          Data patches — NNNN-slug.yaml — claim corrections for downstream
-  shipped/        Applied to production, therefore immutable — archived, never re-validated
+patches/          Data patches, each patch a NNNN-slug.yaml file
+  shipped/        …applied to production, therefore immutable — archived, not re-validated
 schema/           patch.schema.json — structural validation
 scripts/          Python tooling (validate, lint, R2 push, agent-docs build)
   analysis/       evidence.sql — the web-scrape cache as a queryable layer
@@ -67,7 +69,7 @@ docs/             Documentation source files
 
 ## Querying the catalog
 
-Every question about catalog data — what the catalog holds, what is missing, what looks wrong — goes through the **DuckDB analytics foundation** that lives in flipcommons, via `make analyze`. It reads the live localhost dev catalog read-only, writes nothing, and leaves no artifact.
+To look at catalog data — what the catalog holds, what is missing, what looks wrong — use the **Flipcommons DuckDB analytics foundation**, via `make analyze`. It reads the live localhost dev catalog db read-only:
 
 ```bash
 make analyze Q="SELECT count(*) AS yearless FROM models WHERE year IS NULL;"  # ad-hoc question
@@ -100,41 +102,46 @@ pinexplore's `explore.duckdb` is a **fallback, not a peer**. It holds IPDB/OPDB/
 
 `patches/` holds **data patches** — small, source-attributed YAML files named `NNNN-slug.yaml` that correct or extend catalog data. Patches are an append-only, numbered log replayed on top of it in every environment.
 
-**Flippatch is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in `campaigns/`, they are validated _structurally_ here, and `make push` ships them verbatim to R2 under the `flippatch/` prefix (files at `flippatch/patches/`, plus a `flippatch/manifest.json`). The authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here. `scripts/patch_validation/validate_patches.py` and `scripts/patch_validation/lint_patches.py` (run by `make validate`) are fast **structural and editorial** gates only — see [Validation](#validation).
-
-The thin local reference is [docs/Patches.md](Patches.md); the authoritative format and authoring guidance live in flipcommons (below). **Do not author a patch from flippatch's docs alone.**
+**Flippatch is the authoring home and the transport — not the apply engine.** Patches are authored here, their generator artifacts live in `campaigns/`, and `make push` ships them verbatim to R2 under the `flippatch/` prefix (files at `flippatch/patches/`, plus a `flippatch/manifest.json`). The authoritative apply model — attribution resolution, the assert/create/retract/remove/delete operations, citation sources, the per-database ledger, and immutability hashing — lives in the consumer that applies them (flipcommons' `ingest_patches`), not here.
 
 ### The repo topology
 
-Real patch authoring spans four repos, checked out as siblings (`../flipcommons`, `../pinexplore`):
+Patch authoring spans multiple repos, checked out into sibling directories (`../flipcommons`, `../pinexplore`):
 
-- **flippatch** (here) — where patches and their `campaigns/` generators live, and where you run `make validate` and `make push`.
-- **flipcommons** (`../flipcommons`) — the source of truth. The live catalog, the **DuckDB analytics foundation** you query it through ([Querying the catalog](#querying-the-catalog)), the `ingest_patches` apply engine, and the **canonical patch documentation**.
+- **flippatch** (here) — where patches and their `campaigns/` live.
+- **flipcommons** (`../flipcommons`) — the website code, the dev DB containing a near-copy of prod's catalog, and [the DuckDB analytics foundation you query it through](#querying-the-catalog), the `ingest_patches` apply engine, and the **canonical patch documentation**.
 - **pinexplore** (`../pinexplore`) — helps with patch research. The **web scrape cache** is an evidence store; see `../pinexplore/docs/WebCache.md`. Its `explore.duckdb` holds source dumps and is a fallback for questions the foundation can't answer — see `../pinexplore/CLAUDE.md`.
 
-### Read the linked docs before authoring a patch
+### Data patch documentation
 
-The authoritative, current patch docs live in flipcommons. Flippatch's local docs are thin pointers. Read, in `../flipcommons/docs/`:
+The authoritative patch docs live in flipcommons in `../flipcommons/docs/`. Flippatch's local docs are thin pointers.
+
+Read these before authoring a patch:
 
 - **Data.md** — the index for working with catalog data (patches, explore vs correct); start here to orient.
 - **DataPatches.md** — the patch file format and the full apply model: every operation (assert/create/retract/remove/delete), reserved keys (`note:`/`cite:`), citation `sources:`, the ledger, and limitations. The source of truth for what a patch _is_.
 - **DataPatchAuthoring.md** — how to author a _good_ patch: attribution, verbatim `quote:` on the cite, record descriptions, and the localhost snapshot-validate loop.
 - **DomainModel.md** — the catalog entity hierarchy the claims target.
 - **DataPatchKit.md** — when and how to generate large curated patches with the shared `patchkit` helper (which lives here at `scripts/patchkit.py`).
-- **DataPatchReviewing.md** — the patch review checklist.
 
-For the concepts a patch rests on, read these two when a claim or citation question gets subtle:
+Read these when a claim or citation question gets subtle:
 
 - **Provenance.md** — claims, source-priority resolution, and superseding: the model behind `attribution:` and `retract:`. Explains _who asserted_ a value and how a new claim supersedes an old one.
 - **Citations.md** — the evidence system behind `cite:` and the `sources:` block: why a URL cite needs its website root seeded first (domain match keys off the root's `homepage` link), and why citation sources carry no provenance. Note this is distinct from pinexplore's web scrape cache — Citations.md is the in-app evidence model; the cache is the authoring-side research tool.
+
+Read this before reviewing a data patch:
+
+- **DataPatchReviewing.md** — the patch review checklist.
 
 ### The authoring loop
 
 1. **Read** the canonical docs above for the operation you need.
 2. **Scope the population and research the evidence.** Ask the catalog what is actually there with `make analyze` ([Querying the catalog](#querying-the-catalog)). For a claim resting on a web page, the source text comes from pinexplore's web scrape cache (per `WebCache.md`): `web_fetch.py <url> --query "..."` fetches a page once into the cache, then `web_cache.search()` / `web_cache.quote()` find pages and pull the verbatim quote; the `cite:` is the page URL, whose website root must be seeded in the same or an earlier patch. An IPDB/OPDB-keyed claim cites `scheme:identifier` and quotes the source text the foundation carries as a column. Whichever form the cite takes, `make show-source ARGS="<ref>"` prints the exact text `make verify-quote-verbatim` will match a quote against, and `ARGS="<ref> --check '<span>'"` settles a draft span before it is written into a patch — the only way to see an `ipdb:` ref's quotable text, which is reconstructed rather than stored.
 3. **Author** the patch: hand-write native YAML for a handful of targeted corrections, or generate for a classified population — see [Generating a patch](#generating-a-patch).
-4. **Validate against flipcommons** behind a SQLite snapshot — **ask the user which snapshot to reset from; never pick one yourself and never make your own** — then restore it, `migrate`, apply the patches, and inspect the result. Leave them applied. An applied patch is immutable (the ledger fingerprints its content and keys on the patch id, so re-ingesting an edited one fails no matter what directory you ingest from); to revise, restore the snapshot and replay. The loop is in DataPatchAuthoring.md → Validate via snapshot.
-5. **`make validate`** here (the [structural gate](#validation)) — where the authoring loop ends, on localhost. Hand off: **committing and `make push` are both the user's call — never automatic, never something you do yourself.** `make push` publishes the patches to R2 (whence other environments pull them via `make pull-patches && make ingest-patches`); it is a deliberate command the user issues, on the same footing as `git commit`/`git push`, never a step the loop takes on its own. Tell the user the patch is validated and ready, and let them decide when to commit and when to publish.
+4. **[`make validate`](#static-validation)**: the static gates — schema and editorial lint over the YAML. No database, under a second. Run it **before** applying: a typo caught here costs a second, and the same typo caught after a snapshot replay costs the whole round trip.
+5. **Apply to dev DB**: apply the patches to a SQLite snapshot. Ask the user which snapshot to reset from, then restore it, `migrate`, apply the patches, inspect the result. Leave them applied. An applied patch is immutable (the ledger fingerprints its content and keys on the patch id, so re-ingesting an edited one fails); to revise, restore snapshot and replay. The loop is in `DataPatchAuthoring.md → Validate via snapshot`.
+6. **[`make validate-in-db`](#db-aware-validation)**: validate against the Flipcommons localhost dev DB. There will likely be warnings and errors across multiple patches. You and the user will decide which ones to address. Once they are addressed, re-apply the patches to the dev DB and re-run `make validate-in-db`.
+7. **Hand off to user**: committing and `make push` are both the user's call — **never** something you do yourself. `make push` publishes the patches to R2 (whence other environments pull them via `make pull-patches && make ingest-patches`); it is a deliberate command the user issues, on the same footing as `git commit`/`git push`, never a step the loop takes on its own. Tell the user the patch is validated and ready, and let them decide when to commit and when to publish. Outstanding audit findings do not block that — say what they are and let the user weigh them.
 
 ### Generating a patch
 
@@ -156,19 +163,25 @@ To populate or audit one sparse field across many models at once (a lineage rela
 
 ## Validation
 
+There's static [`make validate`](#static-validation) and db-aware [`make validate-in-db`](#db-aware-validation).
+
+### Static validation
+
 `make validate` runs fast gates over the patches in `/patches/` (not `/patches/shipped/`)
 
 - **Structural** (`scripts/patch_validation/validate_patches.py`): conformance to `schema/patch.schema.json`, filename format...
 - **Editorial** (`scripts/patch_validation/lint_patches.py`): citation hygiene, public-note discipline, description hygiene...
 
-Neither checks apply-time semantics (entity resolution, field classification, attribution existence); those live in flipcommons' `ingest_patches`. Preview them locally with the flipcommons SQLite snapshot loop (see DataPatchAuthoring.md).
-
-To run one validator on its own while iterating:
+To run a validator on its own while iterating on data patches:
 
 ```bash
 python3 scripts/patch_validation/validate_patches.py
 python3 scripts/patch_validation/lint_patches.py
 ```
+
+### DB-aware validation
+
+`make validate-in-db`: validates all the mutable, unshipped patches against the live DB, checking what only the DB knows — prose linking itself, a link at the wrong grain, a link to a deleted record, a parenthetical year the record contradicts, a name mentioned but never linked, prose with no links at all, two records answering to the same name.
 
 ## Tool Usage
 
@@ -185,12 +198,12 @@ GitHub access:
 
 ## Testing
 
-- For any patch change, run `make validate`.
-- Tooling has unit tests under `tests/` (`uv run pytest`).
+- **Patch changes**: run `make validate` before applying it to dev DB and `make validate-in-db` afterwards.
+- **Tooling**: unit tests under `tests/` (`uv run pytest`).
 
 ## Test-Driven Development (TDD)
 
-This project follows Test-Driven Development. When fixing a bug, you MUST write failing test(s) that exercise the bug **before** writing the fix. Confirm the test fails for the expected reason, then implement the fix and verify the test passes.
+When fixing a bug, write failing test(s) that exercise the bug **before** writing the fix. Confirm the test fails for the expected reason, then implement the fix and verify the test passes.
 
 ## Rules
 

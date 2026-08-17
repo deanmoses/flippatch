@@ -8,7 +8,7 @@ claims:
 
         ## Origins
 
-        The card arrived with *[[model:bright-lights]]* (1951, [[manufacturer:bally]]), where the play is at its most elemental: a coin buys a card, five balls go up the shooter, three in a line wins.[[cite:2]] Bright Lights carried six cards, each purchasable in turn for another nickel.[[cite:3]][[cite:4]] [[manufacturer:united]] had actually reached the market first with *[[model:a-b-c]]* (1951), whose short roulette-tub playfield players rejected as too random; Bally's long field of holes let a practiced shooter aim at the numbers a card needed, and by United's third bingo its layout had been copied outright, becoming the pattern the whole genre followed.[[cite:5]][[cite:6]]
+        The card arrived with *[[title:bright-lights]]* (1951, [[manufacturer:bally]]), where the play is at its most elemental: a coin buys a card, five balls go up the shooter, three in a line wins.[[cite:2]] Bright Lights carried six cards, each purchasable in turn for another nickel.[[cite:3]][[cite:4]] [[manufacturer:united]] had actually reached the market first with *[[title:a-b-c]]* (1951), whose short roulette-tub playfield players rejected as too random; Bally's long field of holes let a practiced shooter aim at the numbers a card needed, and by United's third bingo its layout had been copied outright, becoming the pattern the whole genre followed.[[cite:5]][[cite:6]]
 
         ## Rearranging the card
 
@@ -37,7 +37,7 @@ claims:
           quote: "Subsequent games would get increasingly complex, adding things such as mechanically moving numbers on the bingo card [...] mechanical rearrangement of the card design itself"
   - gameplay-feature.super-cards:
       description: |
-        Super cards are small three-by-three side cards on a [[game-format:bingo-pinball]] backglass, hung beside the main [[gameplay-feature:bingo-cards]] and scored on their own. They first appeared on *[[model:palm-beach]]* (1952, [[manufacturer:bally]]), which carried two of them, and recur across the one-card machines that followed.[[cite:1]][[cite:2]] Their signature award is corner scoring: lighting the four corner numbers of an enabled super card paid 200 or 400 credits — on Palm Beach, the largest single payout in the game.[[cite:3]][[cite:4]]
+        Super cards are small three-by-three side cards on a [[game-format:bingo-pinball]] backglass, hung beside the main [[gameplay-feature:bingo-cards]] and scored on their own. They first appeared on *[[title:palm-beach]]* (1952, [[manufacturer:bally]]), which carried two of them, and recur across the one-card machines that followed.[[cite:1]][[cite:2]] Their signature award is corner scoring: lighting the four corner numbers of an enabled super card paid 200 or 400 credits — on Palm Beach, the largest single payout in the game.[[cite:3]][[cite:4]]
       cites:
         "1":
           ref: "https://bingo.cdyn.com/machines/bally/palm_beach"
@@ -55,7 +55,7 @@ claims:
       description: |
         Magic Lines is a feature of [[game-format:bingo-pinball]] machines that puts some of the numbers on the [[gameplay-feature:bingo-cards]] on movable strips — typically a full vertical column of the card's grid. Knobs or buttons on the machine shift a strip up or down one position, the number leaving one end reappearing at the other, so a near-miss card can be nudged into a paying line.[[cite:1]][[cite:2]] It was the first bingo feature to mechanically move the numbers themselves.[[cite:3]]
 
-        The idea arrived on *[[model:variety-2]]* (1954, [[manufacturer:bally]]), where the three left columns of the card could shift;[[cite:4]][[cite:5]] its follow-on *[[model:big-time-2]]* freed all five.[[cite:6]][[cite:7]] Later machines turned the lines sideways — *[[model:miss-america-2]]* (1957) slid numbers horizontally between two cards mounted side by side.[[cite:8]] Where [[gameplay-feature:magic-squares]] rotates a block of four numbers in place, a magic line moves a whole column, and the two mechanisms defined Bally's card-moving games until the [[gameplay-feature:magic-screen]] arrived.
+        The idea arrived on *[[title:variety-2]]* (1954, [[manufacturer:bally]]), where the three left columns of the card could shift;[[cite:4]][[cite:5]] its follow-on *[[title:big-time-2]]* freed all five.[[cite:6]][[cite:7]] Later machines turned the lines sideways — *[[title:miss-america-2]]* (1957) slid numbers horizontally between two cards mounted side by side.[[cite:8]] Where [[gameplay-feature:magic-squares]] rotates a block of four numbers in place, a magic line moves a whole column, and the two mechanisms defined Bally's card-moving games until the [[gameplay-feature:magic-screen]] arrived.
       cites:
         "1":
           ref: "https://bingo.cdyn.com/machines/bally/variety"
@@ -93,7 +93,7 @@ claims:
 
         ## Origins
 
-        The first Magic Screen game was *[[model:carnival-queen]]* (1958, [[manufacturer:bally]]), which also introduced the R-button.[[cite:6]][[cite:1]][[cite:8]] The screen games became a mainstay — [bingo.cdyn.com](https://bingo.cdyn.com/), a collector archive devoted to the genre, rates them as probably the most popular style Bally made.[[cite:7]] The section-scoring idea outlived the screen itself: [[gameplay-feature:mystic-lines]] machines kept the colored sections and dropped in-line scoring entirely.
+        The first Magic Screen game was *[[title:carnival-queen]]* (1958, [[manufacturer:bally]]), which also introduced the R-button.[[cite:6]][[cite:1]][[cite:8]] The screen games became a mainstay — [bingo.cdyn.com](https://bingo.cdyn.com/), a collector archive devoted to the genre, rates them as probably the most popular style Bally made.[[cite:7]] The section-scoring idea outlived the screen itself: [[gameplay-feature:mystic-lines]] machines kept the colored sections and dropped in-line scoring entirely.
       cites:
         "1":
           ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
@@ -132,7 +132,7 @@ claims:
 
         ## Origins
 
-        The first Mystic Lines game was *[[model:border-beauty]]* (1965, [[manufacturer:bally]]), which was also the first bingo built on a 20-hole playfield.[[cite:7]][[cite:3]] The card shrank with it, to four rows by five columns, giving up five of the 25 [[gameplay-feature:trap-holes]] every bingo before it had carried.[[cite:5]][[cite:2]]
+        The first Mystic Lines game was *[[title:border-beauty]]* (1965, [[manufacturer:bally]]), which was also the first bingo built on a 20-hole playfield.[[cite:7]][[cite:3]] The card shrank with it, to four rows by five columns, giving up five of the 25 [[gameplay-feature:trap-holes]] every bingo before it had carried.[[cite:5]][[cite:2]]
       cites:
         "1":
           ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
@@ -157,7 +157,7 @@ claims:
           quote: "First appearing on Border Beauty"
   - gameplay-feature.bally-hole:
       description: |
-        The Bally Hole is hole #16 among the 25 [[gameplay-feature:trap-holes]] of a mid-1950s [[manufacturer:bally]] [[game-format:bingo-pinball]] playfield, wired to do something special when its light is on — classically, awarding the player's first extra ball free.[[cite:1]][[cite:2]] That was worth real money on a bingo, where up to three extra balls are otherwise bought with coins after the fifth ball, at odds the machine steadily worsens.[[cite:3]] The hole could also light features for the next game played — enabling all of a game's [[gameplay-feature:magic-squares]] at once, say — a next-game award in the tradition the [[game-format:one-ball]] payout games had proven: give the player a reason to put in another coin.[[cite:1]][[cite:4]] It arrived on *[[model:broadway-3]]* (1955) alongside Magic Squares.[[cite:2]][[cite:5]]
+        The Bally Hole is hole #16 among the 25 [[gameplay-feature:trap-holes]] of a mid-1950s [[manufacturer:bally]] [[game-format:bingo-pinball]] playfield, wired to do something special when its light is on — classically, awarding the player's first extra ball free.[[cite:1]][[cite:2]] That was worth real money on a bingo, where up to three extra balls are otherwise bought with coins after the fifth ball, at odds the machine steadily worsens.[[cite:3]] The hole could also light features for the next game played — enabling all of a game's [[gameplay-feature:magic-squares]] at once, say — a next-game award in the tradition the [[game-format:one-ball]] payout games had proven: give the player a reason to put in another coin.[[cite:1]][[cite:4]] It arrived on *[[title:broadway-3]]* (1955) alongside Magic Squares.[[cite:2]][[cite:5]]
       cites:
         "1":
           ref: "https://bingo.cdyn.com/machines/features.html"

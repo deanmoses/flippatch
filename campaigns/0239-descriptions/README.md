@@ -35,3 +35,7 @@ As we author descriptions, if we find that they don't meet the bar in whatever w
 ## Analytics
 
 We recently substantially changed the Flipcommons analytics system; it should now be simpler to use. LMK if there's any issues in understanding it or using it, or if you have ideas for improving it.
+
+## Gameplay feature descriptions
+
+See [GameplayFeatureDescriptions.md](./GameplayFeatureDescriptions.md).

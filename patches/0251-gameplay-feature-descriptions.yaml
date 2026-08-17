@@ -8,7 +8,7 @@ claims:
 
         ## Origins
 
-        The device arrived with *[[model:earthshaker]]* (1989, [[manufacturer:williams]]), [[person:pat-lawlor]]'s earthquake game, which shook the machine at set moments to simulate the tremors of its theme.[[cite:1]][[cite:2]] Williams sold the novelty as hard as the game — "It's a Moving Experience!" ran one of its slogans[[cite:3]] — and [[manufacturer:data-east]] took the device up as a regular fitting in the years that followed, from *[[model:checkpoint]]* (1991) through *[[model:jurassic-park]]* (1993).
+        The device arrived with *[[model:earthshaker]]* (1989, [[manufacturer:williams]]), [[person:pat-lawlor]]'s earthquake game, which shook the machine at set moments to simulate the tremors of its theme.[[cite:1]][[cite:2]] Williams sold the novelty as hard as the game — "It's a Moving Experience!" ran one of its slogans[[cite:3]] — and [[manufacturer:data-east]] took the device up as a regular fitting in the years that followed, from *[[title:checkpoint]]* (1991) through *[[title:jurassic-park]]* (1993).
 
         ## Later use as a trim differentiator
 
@@ -35,11 +35,11 @@ claims:
 
         ## Origins
 
-        The first Magic Squares game was *[[model:broadway-3]]* (1955, Bally).[[cite:3]][[cite:4]] Like most things on a bingo, the rotation ran on money: whether the buttons worked at all, and how deep into the game they stayed live, were features the player bought with additional coins.[[cite:5]][[cite:6]]
+        The first Magic Squares game was *[[title:broadway-3]]* (1955, Bally).[[cite:3]][[cite:4]] Like most things on a bingo, the rotation ran on money: whether the buttons worked at all, and how deep into the game they stayed live, were features the player bought with additional coins.[[cite:5]][[cite:6]]
 
         ## The arms race
 
-        Magic Squares was one round in an arms race — through the 1950s Bally's bingos grew steadily more elaborate, each new machine adding another way to work the card.[[cite:7]] It followed the moving numbers of [[gameplay-feature:magic-lines]], introduced on *[[model:big-time-2]]* (1954), and was answered in turn by the [[gameplay-feature:magic-screen]] in 1958 and [[gameplay-feature:mystic-lines]] in 1965. The wheels earned their keep for two decades — Bally was still building Magic Squares games as late as *[[model:bonanza-4]]* (1976).
+        Magic Squares was one round in an arms race — through the 1950s Bally's bingos grew steadily more elaborate, each new machine adding another way to work the card.[[cite:7]] It followed the moving numbers of [[gameplay-feature:magic-lines]], introduced on *[[title:variety-2]]* (1954),[[cite:8]] and was answered in turn by the [[gameplay-feature:magic-screen]] in 1958 and [[gameplay-feature:mystic-lines]] in 1965. The wheels earned their keep for two decades — Bally was still building Magic Squares games as late as *[[title:bonanza-4]]* (1976).
       cites:
         "1":
           ref: "https://bingo.cdyn.com/machines/bally/broadway"
@@ -62,3 +62,6 @@ claims:
         "7":
           ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
           quote: "Subsequent games would get increasingly complex, adding things such as mechanically moving numbers on the bingo card"
+        "8":
+          ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: "A completely new concept for bingo's started with this game - the ability to rearrange numbers on the bingo card by moving them!"

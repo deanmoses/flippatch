@@ -68,6 +68,7 @@ RULE_SINCE: dict[str, int] = {
     "feature-grouping-node": 219,
     "description-dating-phrases": 239,
     "description-repeat-link": 239,
+    "description-definitional-lead": 239,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -167,6 +168,68 @@ INLINE_CITE_KEY_RE = re.compile(r"\[\[cite:([^\]]+)\]\]")
 # the same record under two types (title vs model) keys apart. [[cite:N]] is
 # excluded: a footnote handle is *meant* to carry several markers.
 DESC_LINK_RE = re.compile(r"\[\[(?!cite:)([^\]]+)\]\]")
+# Candidate ends for a record description's lead sentence. Requiring whitespace
+# or end-of-string after the terminator is what excludes a decimal point, whose
+# period is followed by a digit — a guard on what PRECEDES it would instead
+# swallow the real sentence end in "…debuted in 1955. It is …", running the lead
+# on into the next sentence to borrow its copula. Cite markers are stripped
+# before this runs; they sit tight after the period ("…in Brazil.[[cite:1]]") and
+# would hide it. Not every candidate ends the sentence; `lead_sentence` decides.
+LEAD_SENTENCE_END_RE = re.compile(r"[.!?](?=\s|$)")
+# The word a candidate terminator sits on the end of — letters plus the inner
+# dots of an acronym, so "S.p.A" comes back whole rather than as "A".
+LEAD_TOKEN_RE = re.compile(r"[A-Za-z][A-Za-z.]*$")
+# Abbreviations whose period ends a word, not a sentence. A maker's lead runs
+# through these constantly — "D. Gottlieb & Co.", "Chicago Coin Machine Mfg.
+# Co.", "Sega Pinball, Inc." — and a lead cut at the first of them is a fragment
+# that could not hold a copula whatever it said.
+LEAD_ABBREVIATIONS = frozenset(
+    {
+        "approx",
+        "bros",
+        "co",
+        "corp",
+        "dr",
+        "est",
+        "gmbh",
+        "inc",
+        "jr",
+        "llc",
+        "ltd",
+        "mfg",
+        "mr",
+        "mrs",
+        "ms",
+        "no",
+        "plc",
+        "prof",
+        "sr",
+        "st",
+        "vs",
+    }
+)
+# The copular verb a standalone definition hangs on ("X is a …", "supercards
+# are …", a defunct firm "was …").
+COPULA_RE = re.compile(r"\b(?:is|are|was|were)\b")
+
+
+def lead_sentence(text: str) -> str:
+    """The first sentence of a record description.
+
+    Walks the candidate terminators and skips the ones that close an
+    abbreviation, an initial or a dotted acronym rather than a sentence.
+    """
+    for match in LEAD_SENTENCE_END_RE.finditer(text):
+        token = LEAD_TOKEN_RE.search(text[: match.start()])
+        if token is None:
+            return text[: match.start()]
+        word = token.group()
+        if len(word) == 1 or "." in word or word.lower() in LEAD_ABBREVIATIONS:
+            continue
+        return text[: match.start()]
+    return text
+
+
 # The legacy note-as-quote scaffolding shape: a short source phrase, a
 # quote-introducing verb (or a colon), then a quoted span. Verbs mirror the
 # migration recognizer's; own-data notes ('The name includes "Prototype"')
@@ -702,6 +765,19 @@ def _check_unit(
                     for target, n in counts.items()
                     if n > 1
                 )
+            # description-definitional-lead: the first sentence says what the
+            # record IS, before history or significance. Every good lead hangs
+            # on a copular verb; the teaser leads that reviews kept rejecting
+            # ("Magic Lines put the columns on movable strips…") never do.
+            if on("description-definitional-lead"):
+                lead = lead_sentence(INLINE_CITE_KEY_RE.sub("", description).strip())
+                if not COPULA_RE.search(lead):
+                    errors.append(
+                        f"{where}: the description's lead sentence never says "
+                        f"what the record is — open with a standalone "
+                        f"definition ('X is a …'), before history or "
+                        f"significance"
+                    )
         want = f"flipcommons-ai-desc-{ref_type}"
         if attribution != want and on("description-attribution"):
             errors.append(

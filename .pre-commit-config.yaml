@@ -65,18 +65,35 @@ repos:
       # editorial lint whenever a patch, the schema, or their validators change.
       - id: validate-patches
         name: validate data patches (structural)
-        entry: uv run python3 scripts/patch_validation/validate_patches.py
+        entry: env PYTHONPATH=scripts uv run python3 -m patch_validation.validate_patches
         language: system
         files: ^(patches/.*\.ya?ml|schema/patch\.schema\.json|scripts/patch_validation/validate_patches\.py)$
         pass_filenames: false
         require_serial: true
       - id: lint-patches
         name: lint data patches (editorial)
-        entry: uv run python3 scripts/patch_validation/lint_patches.py
+        entry: env PYTHONPATH=scripts uv run python3 -m patch_validation.lint_patches
         language: system
         files: ^(patches/.*\.ya?ml|scripts/patch_validation/lint_patches\.py)$
         pass_filenames: false
         require_serial: true
+      # The two above read the YAML; this reads the CATALOG, after the patches have been
+      # applied to a local flipcommons DB. It catches what only the database knows — a
+      # link pointing at the wrong machine, a stated year the record contradicts, prose
+      # naming something it never links. ADVISORY: it prints and always exits 0, because
+      # the catalog carries a standing backlog unrelated to any one patch. Needs the
+      # filenames, to scope the report to the patch range being committed.
+      # Its own implementation is in `files:` alongside the patches — like the two hooks
+      # above — so a change to the wrapper or its core runs the gate that change affects.
+      # Those paths name no patch, and the wrapper falls back to the whole mutable set
+      # rather than deriving an empty scope and passing on having checked nothing.
+      - id: audit-patches
+        name: audit data patches (catalog-aware, advisory)
+        entry: scripts/analysis/audit-patches
+        language: system
+        files: ^(patches/[^/]+\.ya?ml|scripts/analysis/audit-patches|scripts/patch_validation/db_patch_state\.py)$
+        require_serial: true
+        verbose: true
       # JSON Schema — confirm patch.schema.json is itself a well-formed
       # Draft 7 schema (every patch validates against it). Offline, instant.
       - id: schema-metaschema

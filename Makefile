@@ -1,18 +1,30 @@
-.PHONY: validate lint-patches-all verify-quote-verbatim show-source lint-descriptions verify-quote-support extract-page sweep analyze push agent-docs lint typecheck test check
+.PHONY: validate validate-in-db db-patch-state lint-patches-all verify-quote-verbatim show-source lint-descriptions verify-quote-support extract-page sweep analyze push agent-docs lint typecheck test check
 
-# Validate data patches against the patch schema (structural gate) plus the
-# editorial authoring lint. Run this before push.
+# Statically validate all data patches.
+# Run BEFORE applying: a schema typo caught here costs a second, caught after a
+# snapshot replay it costs the whole round trip.
 validate:
-	uv run python3 scripts/patch_validation/validate_patches.py
-	uv run python3 scripts/patch_validation/lint_patches.py
+	PYTHONPATH=scripts uv run python3 -m patch_validation.validate_patches
+	PYTHONPATH=scripts uv run python3 -m patch_validation.lint_patches
 
-# Review mode: run the editorial lint over EVERY patch under EVERY rule,
-# ignoring RULE_SINCE grandfathering — for seeing what a new rule would have
-# caught in immutable history. Expect old-rule noise from pre-0039 patches;
-# filter to the prose word-choice findings with:
+# Validate all data patches against the state of the catalog db.
+# Run AFTER applying the patches to the db.  Always exits 0 because there's
+# a standing backlog of issues unrelated to any one patch.
+validate-in-db: validate
+	scripts/analysis/audit-patches patches/*.yaml
+
+# Report which patches the DB has ingested.
+# Exits 0 either way.
+db-patch-state:
+	PYTHONPATH=scripts uv run python3 -m patch_validation.db_patch_state
+
+# Run the editorial lint over EVERY patch under EVERY rule, ignoring the
+# RULE_SINCE grandfathering — for seeing what a new rule would have
+# caught in immutable history. Expect old-rule noise; filter to the prose
+# word-choice findings with:
 #   make lint-patches-all 2>&1 | grep -E "uses '|cross-reference"
 lint-patches-all:
-	uv run python3 scripts/patch_validation/lint_patches.py --all
+	PYTHONPATH=scripts uv run python3 -m patch_validation.lint_patches --all
 
 # ── Quote verbatim check ────────────────────────
 # Verify every cite: quote is verbatim against its cached source text.
@@ -121,14 +133,16 @@ typecheck:
 test:
 	uv run pytest
 
-# Everything pre-commit gates on, in one shot.
+# Everything pre-commit BLOCKS on, in one shot. Not `validate-in-db`: the audit hook
+# can never fail a commit, so it would make this slower and dev-DB dependent without
+# making it stricter.
 check: lint typecheck test validate
 
 # Push data patches (patches/*.yaml) verbatim to Cloudflare R2 under the
 # flippatch/ prefix, with a manifest. Requires R2_* credentials in the
 # environment or .env.
 push:
-	uv run python3 scripts/cloud_store/push_to_r2.py
+	PYTHONPATH=scripts uv run python3 -m cloud_store.push_to_r2
 
 # Regenerate CLAUDE.md and AGENTS.md from docs/AGENTS.src.md.
 agent-docs:

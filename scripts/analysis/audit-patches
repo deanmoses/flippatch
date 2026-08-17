@@ -1,0 +1,73 @@
+#!/bin/sh
+# DB-aware lint of the records the staged patches wrote to.
+#
+# The static validators (validate_patches, lint_patches) read the YAML. This reads the
+# CATALOG, after the patches have been applied to a local flipcommons DB — so it catches
+# what only the database knows: a link pointing at the wrong machine, a year that
+# disagrees with the record, prose naming something it never links.
+#
+# A thin wrapper over flipcommons' `scripts/analysis/audit`, which owns the rules and the
+# rendering. Everything specific to this repo is here: finding flipcommons, turning staged
+# filenames into a patch range, warning when the database has drifted from those files,
+# and never failing the commit.
+#
+# ADVISORY. The findings are gaps to weigh, not defects to block on, and the catalog
+# carries a standing backlog unrelated to your patch — so this always exits 0.
+#
+# Skips quietly when flipcommons, its dev database or duckdb is unavailable.
+set -eu
+
+REPO=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
+
+# Patch numbers, ascending, from whatever paths we were handed. Matched on the BASENAME:
+# pre-commit passes repo-relative paths, but `make` and a hand-run need not, and a path
+# with no directory component must not read as "no patch given".
+patch_numbers() {
+  printf '%s\n' "$@" | sed 's|.*/||' | sed -n 's|^0*\([0-9][0-9]*\)-.*|\1|p' | sort -n
+}
+
+# The audit reports on the lowest patch number given and every later one, because a
+# shipped patch is immutable — the mutable set is that patch onward.
+since=$(patch_numbers "$@" | head -1)
+
+# Nothing we were handed names a patch, so this ran because the wrapper or its own core
+# changed rather than because a patch did. Auditing nothing here would be worse than not
+# running at all: pre-commit reports "Passed" either way, so a silent no-op reads as a
+# gate that checked something. Fall back to the whole mutable set — which is what
+# patches/ is, patches/shipped/ being immutable and excluded by living elsewhere.
+[ -n "$since" ] || since=$(patch_numbers "$REPO"/patches/*.yaml | head -1)
+[ -n "$since" ] || exit 0
+
+# Where flipcommons is, and whether this database is current, both come from the Python
+# side (common.paths) — so FLIPCOMMONS_DIR in this repo's .env is honoured here exactly
+# as it is by `make analyze`, patchkit and `make db-patch-state`, instead of this script
+# resolving a second, .env-blind answer of its own.
+state() {
+  PYTHONPATH="$REPO/scripts" uv run --project "$REPO" python3 \
+    -m patch_validation.db_patch_state "$@"
+}
+
+if ! FC=$(state --flipcommons-dir 2>/dev/null); then
+  echo "catalog audit: skipped — could not resolve the flipcommons checkout"
+  exit 0
+fi
+if ! command -v duckdb >/dev/null 2>&1 || [ ! -f "$FC/backend/db.sqlite3" ]; then
+  echo "catalog audit: skipped — no flipcommons dev database at $FC"
+  exit 0
+fi
+
+# The audit answers from what this database INGESTED, but `since` above was derived from
+# the files on disk. Where the two disagree the report is wrong about its own scope, and
+# cannot say so itself — so the banner says it here, above the findings it governs.
+# Silent when the two agree. `|| true` for the same reason as the audit call below.
+#
+# `--since`, not the filenames: the report covers `since` and every later patch, so a
+# banner built from the arguments would go quiet about exactly the later patch nobody
+# staged. Passing the number makes the two sets the same set by construction, and leaves
+# nothing for a tooling path among the arguments to be mistaken for a patch.
+state --banner --since "$since" || true
+
+# stderr folded into stdout on purpose: a broken audit should be READABLE without being
+# fatal, and `audit` is quiet on stderr unless something is actually wrong. `|| true`
+# because nothing here may fail the commit — not a failing gate, not a missing view.
+"$FC/scripts/analysis/audit" "$since" 2>&1 || true

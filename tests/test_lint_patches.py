@@ -1500,3 +1500,110 @@ def test_grouping_feature_grandfathered_before_0219():
         filename="0100-x.yaml",
     )
     assert not has(e, "grouping node")
+
+
+# ── description-definitional-lead ────────────────────────
+
+
+def test_definitional_lead_missing_flagged():
+    e = ddesc(
+        "Magic Lines put the columns of a bingo card on movable strips. Knobs shift them."
+    )
+    assert has(e, "standalone definition")
+
+
+def test_definitional_lead_is_clean():
+    e = ddesc("Magic Lines is a feature of bingo machines that moves the numbers.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_are_clean():
+    e = ddesc("Super cards are small side cards scored on their own.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_was_clean():
+    # A defunct subject defines itself in the past tense.
+    e = ddesc("Taito do Brasil was the Brazilian arm of the amusement company Taito.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_copula_in_second_sentence_still_flagged():
+    # The definition must be the FIRST sentence, not arrive after a teaser.
+    e = ddesc("The Magic Screen inverted everything before it. It is a metal screen.")
+    assert has(e, "standalone definition")
+
+
+def test_definitional_lead_ignores_cite_markers():
+    # [[cite:N]] rides tight after the period and must not hide the terminator.
+    e = ddesc(
+        "A shaker motor is an electric motor with off-center weights.[[cite:1]] It rattles."
+    )
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_decimal_point_is_not_a_terminator():
+    # "2.5"'s period is followed by a digit, not whitespace, so the lead runs past
+    # it to the real terminator, where the copula lives.
+    e = ddesc("At 2.5 inches the bumper cap is the widest part of the assembly.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_grandfathered_before_0239():
+    e = perrs(
+        desc_unit("Curved lanes that send the ball in a sweeping loop."),
+        filename="0238-x.yaml",
+    )
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_allows_company_abbreviation():
+    # "Co." does not end the lead; cutting there leaves a fragment that could
+    # never hold a copula, so the rule would reject a perfectly good definition.
+    e = ddesc("D. Gottlieb & Co. was a Chicago manufacturer of pinball machines.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_allows_leading_initial():
+    e = ddesc("D. Gottlieb is the founder the company was named for.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_allows_dotted_acronym():
+    e = ddesc("Zaccaria S.p.A. was an Italian manufacturer of pinball machines.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_allows_inc_and_corp():
+    assert not has(
+        ddesc("Sega Pinball, Inc. is the pinball division of Sega."),
+        "standalone definition",
+    )
+    assert not has(
+        ddesc("Bally Manufacturing Corp. is a Chicago manufacturer."),
+        "standalone definition",
+    )
+
+
+def test_definitional_lead_allows_stacked_abbreviations():
+    e = ddesc("Chicago Coin Machine Mfg. Co. was an American maker of coin-op games.")
+    assert not has(e, "standalone definition")
+
+
+def test_definitional_lead_still_flags_a_teaser_after_an_abbreviation():
+    # The guard must not become a blanket exemption: once past the abbreviation,
+    # a lead with no copula is still a lead with no copula.
+    e = ddesc("D. Gottlieb & Co. put the flipper on the map. It was a maker.")
+    assert has(e, "standalone definition")
+
+
+def test_definitional_lead_flagged_when_first_sentence_ends_in_a_year():
+    # The lead must not run past its own terminator and borrow the copula from
+    # the sentence after it — a first sentence ending in a year is ordinary here.
+    e = ddesc("Magic Lines debuted on bingo machines in 1955. It is a bingo feature.")
+    assert has(e, "standalone definition")
+
+
+def test_definitional_lead_flagged_when_lead_ends_in_a_year_with_bang():
+    e = ddesc("Williams built 10,000 of them in 1975! It is a classic.")
+    assert has(e, "standalone definition")
