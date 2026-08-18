@@ -7,8 +7,6 @@
 --     make analyze FILE=$F Q="FROM desc_candidates;"            # the worklist
 --     make analyze FILE=$F Q="FROM desc_coverage;"              # gap per type
 
-.read scripts/analysis/catalog.sql
-
 CREATE OR REPLACE VIEW _desc_scope AS
   SELECT unnest([
     'cabinet', 'display-type', 'display-subtype', 'game-format',

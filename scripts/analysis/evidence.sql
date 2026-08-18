@@ -35,9 +35,9 @@
 -- costs tens of milliseconds and supports arbitrary correlated joins, regex and
 -- offset windows. So: no index, full scans, and everything joinable.
 --
--- USAGE, from a campaign analysis file:
+-- USAGE, from a campaign analysis file (the foundation is already in the session —
+-- the runner attaches the baked catalog before reading the campaign):
 --
---     .read scripts/analysis/catalog.sql
 --     .read ../flippatch/scripts/analysis/evidence.sql
 --
 -- `evidence_checks` and `evidence_context` are discovered by the runner, so a

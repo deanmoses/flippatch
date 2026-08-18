@@ -90,14 +90,15 @@ sweep:
 # ── DuckDB catalog analysis ────────────────────────
 # Read-only analysis over the LIVE flipcommons catalog — the way to ask the catalog
 # anything, ad-hoc or as a patch campaign. Reuses flipcommons' shared DuckDB layer
-# VERBATIM: the foundation (scripts/analysis/catalog.sql) and its runner
-# (scripts/analysis/analysis). See flipcommons' scripts/analysis/README.md.
+# VERBATIM: the baked foundation (backend/db.analytics.duckdb, built from
+# scripts/analysis/sql/) and its runner (scripts/analysis/analysis). See flipcommons'
+# scripts/analysis/README.md.
 #
 # FILE names a campaign's analysis file; omit it to query the foundation alone.
 # Everything runs from the flipcommons checkout (override with FLIPCOMMONS_DIR) so an
-# analysis file's `.read` and the foundation's `ATTACH` resolve — a FILE is abspath'd
-# first, since it is given relative to YOUR cwd. duckdb must be on PATH. Nothing is
-# written; not a commit gate.
+# analysis file's `.read`s and ATTACHes resolve — a FILE is abspath'd first, since it
+# is given relative to YOUR cwd. duckdb must be on PATH. Nothing is written; not a
+# commit gate.
 #
 #   make analyze Q="SELECT count(*) FROM models WHERE year IS NULL;"   # ad-hoc
 #   make analyze CMD=describe                                         # the view reference
@@ -113,12 +114,12 @@ sweep:
 export Q
 analyze:
 	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.paths import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
-	if [ -n '$(FILE)' ]; then AN="$(abspath $(FILE))"; else AN="$$FC/scripts/analysis/catalog.sql"; fi; \
+	AN=; if [ -n '$(FILE)' ]; then AN="$(abspath $(FILE))"; fi; \
 	cd "$$FC" && \
-	if [ -n "$$Q" ]; then scripts/analysis/analysis query "$$AN" "$$Q" $(ARGS); \
-	elif [ '$(CMD)' = describe ]; then scripts/analysis/analysis describe "$$AN" $(ARGS); \
+	if [ -n "$$Q" ]; then scripts/analysis/analysis query $${AN:+"$$AN"} "$$Q" $(ARGS); \
+	elif [ '$(CMD)' = describe ]; then scripts/analysis/analysis describe $${AN:+"$$AN"} $(ARGS); \
 	else test -n "$(PREFIX)" -o -n '$(CMD)' || { echo 'usage: make analyze [FILE=<analysis.sql>] PREFIX=<name> | Q="<sql>" | CMD=describe|ui|snapshot [ARGS=...]'; exit 2; }; \
-	  scripts/analysis/analysis $(or $(CMD),run) "$$AN" $(PREFIX) $(ARGS); fi
+	  scripts/analysis/analysis $(or $(CMD),run) $${AN:+"$$AN"} $(PREFIX) $(ARGS); fi
 
 # Lint + format-check the Python tooling (same ruff config pre-commit uses).
 lint:
