@@ -1607,3 +1607,57 @@ def test_definitional_lead_flagged_when_first_sentence_ends_in_a_year():
 def test_definitional_lead_flagged_when_lead_ends_in_a_year_with_bang():
     e = ddesc("Williams built 10,000 of them in 1975! It is a classic.")
     assert has(e, "standalone definition")
+
+
+# ── description-unsourced-first ────────────────────────
+
+
+def test_unsourced_first_flagged():
+    e = ddesc("The first Magic Squares game was Broadway (1955). It rotated numbers.")
+    assert has(e, "only a source")
+
+
+def test_cited_first_clean():
+    e = ddesc(
+        "The first Magic Squares game was Broadway (1955).[[cite:1]] It rotated numbers."
+    )
+    assert not has(e, "only a source")
+
+
+def test_first_appeared_flagged():
+    e = ddesc("Super cards are side cards. They first appeared on Palm Beach (1952).")
+    assert has(e, "only a source")
+
+
+def test_mid_sentence_marker_covers_the_claim():
+    # 0243's Rocket shape: the marker rides a clause comma, not the period.
+    e = ddesc(
+        "Rocket (1933) was the first automatic payout machine,[[cite:4]] and design divided."
+    )
+    assert not has(e, "only a source")
+
+
+def test_marker_on_earlier_sentence_does_not_cover_a_later_first():
+    e = ddesc(
+        "The screen is a metal sheet.[[cite:1]] It was the first feature to move numbers."
+    )
+    assert has(e, "only a source")
+
+
+def test_benign_first_is_not_a_claim():
+    # "first extra ball" is gameplay prose, not an origin claim.
+    e = ddesc("The hole is special: it awards the player's first extra ball free.")
+    assert not has(e, "only a source")
+
+
+def test_first_to_market_flagged():
+    e = ddesc("United reached the market first with a three-card game.")
+    assert has(e, "only a source")
+
+
+def test_unsourced_first_grandfathered_before_0239():
+    e = perrs(
+        desc_unit("The first widebody game was Paragon."),
+        filename="0238-x.yaml",
+    )
+    assert not has(e, "only a source")

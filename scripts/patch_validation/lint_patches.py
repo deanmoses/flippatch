@@ -69,6 +69,7 @@ RULE_SINCE: dict[str, int] = {
     "description-dating-phrases": 239,
     "description-repeat-link": 239,
     "description-definitional-lead": 239,
+    "description-unsourced-first": 239,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -211,6 +212,31 @@ LEAD_ABBREVIATIONS = frozenset(
 # The copular verb a standalone definition hangs on ("X is a …", "supercards
 # are …", a defunct firm "was …").
 COPULA_RE = re.compile(r"\b(?:is|are|was|were)\b")
+# An origin-priority claim: "the first Magic Squares game", "first appeared
+# on", "the first to fit flippers", "reached the market first". Anchored on the
+# claim SHAPES, not the bare word — "the player's first extra ball" is gameplay
+# prose, not a claim about history.
+FIRST_CLAIM_RE = re.compile(
+    r"\bfirst\s+(?:\w+\s+){0,3}?"
+    r"(?:machines?|games?|bingos?|pinball|features?|platforms?|systems?|use)\b"
+    r"|\bfirst\s+appear\w*"
+    r"|\bfirst\s+to\s+\w+"
+    r"|\bmarket\s+first\b",
+    re.IGNORECASE,
+)
+# Hoists trailing cite markers in front of their sentence's terminator
+# ("…machine.[[cite:4]]" → "…machine[[cite:4]].") so the terminator regains its
+# following whitespace and the marker stays inside the sentence it supports.
+MARKER_HOIST_RE = re.compile(r"([.!?])((?:\[\[cite:[^\]]+\]\])+)")
+
+
+def _sentence_end(text: str, match: re.Match[str]) -> bool:
+    """Whether this candidate terminator ends a sentence (vs an abbreviation)."""
+    token = LEAD_TOKEN_RE.search(text[: match.start()])
+    if token is None:
+        return True
+    word = token.group()
+    return not (len(word) == 1 or "." in word or word.lower() in LEAD_ABBREVIATIONS)
 
 
 def lead_sentence(text: str) -> str:
@@ -220,14 +246,24 @@ def lead_sentence(text: str) -> str:
     abbreviation, an initial or a dotted acronym rather than a sentence.
     """
     for match in LEAD_SENTENCE_END_RE.finditer(text):
-        token = LEAD_TOKEN_RE.search(text[: match.start()])
-        if token is None:
+        if _sentence_end(text, match):
             return text[: match.start()]
-        word = token.group()
-        if len(word) == 1 or "." in word or word.lower() in LEAD_ABBREVIATIONS:
-            continue
-        return text[: match.start()]
     return text
+
+
+def sentences(text: str) -> Iterator[str]:
+    """Every sentence of a record description, cite markers kept with the
+    sentence they support (hoisted inside its terminator first)."""
+    text = MARKER_HOIST_RE.sub(r"\2\1", text)
+    start = 0
+    for match in LEAD_SENTENCE_END_RE.finditer(text):
+        if not _sentence_end(text, match):
+            continue
+        yield text[start : match.end()]
+        start = match.end()
+    tail = text[start:].strip()
+    if tail:
+        yield tail
 
 
 # The legacy note-as-quote scaffolding shape: a short source phrase, a
@@ -778,6 +814,17 @@ def _check_unit(
                         f"definition ('X is a …'), before history or "
                         f"significance"
                     )
+            # description-unsourced-first: the catalog is not complete enough
+            # to establish that anything was first; a "first …" claim stands
+            # only on a source saying so, so its sentence must carry a marker.
+            if on("description-unsourced-first"):
+                errors.extend(
+                    f"{where}: a 'first' claim ({sentence.strip()[:60]!r}…) "
+                    f"has no inline [[cite:N]] in its sentence — the catalog "
+                    f"cannot establish firsts; only a source can say it"
+                    for sentence in sentences(description)
+                    if FIRST_CLAIM_RE.search(sentence) and INLINE_CITE not in sentence
+                )
         want = f"flipcommons-ai-desc-{ref_type}"
         if attribution != want and on("description-attribution"):
             errors.append(
