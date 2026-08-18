@@ -96,10 +96,9 @@ Where flipcommons sits on disk is resolved by `scripts/common/paths.py` — a si
 
 ### Joining catalog rows to the evidence behind them
 
-`scripts/analysis/evidence.sql` (this repo) attaches pinexplore's web-scrape cache as `ev` and exposes `evidence_pages`, so an analysis can test the rows it is about to emit against the cached source text they rest on — under the same normalization `make verify-quote-verbatim` applies. An analysis file reads it after the foundation:
+`scripts/analysis/evidence.sql` (this repo) attaches pinexplore's web-scrape cache as `ev` and exposes `evidence_pages`, so an analysis can test the rows it is about to emit against the cached source text they rest on — under the same normalization `make verify-quote-verbatim` applies. The foundation is already in every runner session, so an analysis file only reads the bridge:
 
 ```sql
-.read scripts/analysis/catalog.sql
 .read ../flippatch/scripts/analysis/evidence.sql
 ```
 
