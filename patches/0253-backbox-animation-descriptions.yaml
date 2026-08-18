@@ -1,0 +1,100 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: the backbox animation family.
+claims:
+  - gameplay-feature.backbox-animations:
+      description: |
+        Backbox animations are moving displays built into a pinball machine's backbox that act out the game in progress — with physical figures driven by motors and relays, or with lamps flashed in sequence so the artwork itself appears to move. [[gameplay-feature:playfield-animations]] is the same idea but on the playfield.
+
+        The animation is wired to the game's scoring, so the head performs what the playfield only tallies. The device is as old as the payout era: a tank on *[[title:battle]]* (1935, [[manufacturer:bally]]) shoots shells to score,[[cite:1]] and *[[title:mars]]* (1937, [[manufacturer:chicago-coin]]) flew its spaceships between two [[gameplay-feature:backglasses]] layered a few centimetres apart, so the player watched the scene in real depth.[[cite:2]][[cite:3]]
+
+        The flipper-era makers kept it up for decades. On [[manufacturer:gottlieb]]'s *[[title:mermaid]]* (1951) a fisherman lands a boot while a fish surfaces behind him,[[cite:4]][[cite:5]] and on the firm's *[[title:flipper-cowboy]]* (1962) a cowboy shoots at a target.[[cite:6]] Machines carried animated backboxes to the end of the 1990s, and 2000s remakes such as *[[model:king-of-diamonds-2]]* (2010, [[manufacturer:retro-pinball]]) rebuilt the animation units along with the games.
+      cites:
+        "1":
+          ref: ipdb:199
+          quote: 'Backbox animation ("shells" are shot from tank to score 1000 points each).'
+        "2":
+          ref: ipdb:3395
+          quote: "Mechanical backbox animation (spaceships fly in and out of view)."
+        "3":
+          ref: ipdb:3395
+          quote: "Two backglasses, spaced 3.1 cm apart, each have artwork on them, and the player can look through both of them to see a distant city and mountains on the inside of the backbox door."
+        "4":
+          ref: ipdb:1574
+          quote: 'Backbox animation (man catches boot when points are scored while a fish surfaces to apparently thumb its "nose").'
+        "5":
+          ref: https://www.pinrepair.com/gtb/index.htm
+          quote: "backbox animation of fisherman catching a boot"
+        "6":
+          ref: ipdb:893
+          quote: "Backbox animation (cowboy shoots at target)."
+  - gameplay-feature.mechanical-backbox-animations:
+      description: |
+        Mechanical backbox animations are [[gameplay-feature:backbox-animations]] performed by real machinery — figures, wheels and discs mounted inside the head, driven by motors and score relays, and watched through the glass.
+
+        ## Williams' sports games
+
+        [[manufacturer:williams]] built a run of animated sports games in the years after the flipper arrived: baserunners circle the bases in the heads of *[[title:all-stars-4]]* (1947) and *[[title:star-series]]* (1949),[[cite:1]][[cite:2]] horses race across *[[model:hayburners]]* (1951)[[cite:3]] and cars race to the finish line on its companion piece *[[model:jalopy]]* (1951).[[cite:4]]
+
+        ## Gottlieb's animation units
+
+        [[manufacturer:gottlieb]] fitted animation units to a long line of games: a spinner changes the card selections on *[[title:world-beauties]]* (1959),[[cite:5]] silhouettes dance on *[[title:dancing-dolls]]* (1960)[[cite:6]] and a horse kicks a cowboy on *[[model:buckaroo]]* (1965).[[cite:7]]
+
+        ## Bingo machinery
+
+        The same machinery carried a different trade: on [[manufacturer:bally]]'s [[game-format:bingo-pinball]] machines the moving numbers of [[gameplay-feature:magic-lines]] and [[gameplay-feature:magic-squares]] and the moving [[gameplay-feature:magic-screen]] are backbox mechanisms in the same family, rearranging the card the player is betting on.[[cite:8]]
+
+        ## Late mechanical animation
+
+        The device survived into the solid-state era: a large disc spins in the head of *[[title:hurricane]]* (1991),[[cite:9]] and on *[[title:scared-stiff]]* (1996) a spider wheel spins when the ball falls into a trap, stopping on a press of the flipper button to award the feature it points to.[[cite:10]] The 2000s remake *[[model:bank-a-ball-6]]* (2008, [[manufacturer:retro-pinball]]) brought a unit back once more.
+      cites:
+        "1":
+          ref: ipdb:2870
+          quote: "Mechanical backbox animation (men run bases)."
+        "2":
+          ref: ipdb:3497
+          quote: "Mechanical backbox animation (men run bases)."
+        "3":
+          ref: ipdb:1142
+          quote: "Mechanical backbox animation (horses race)."
+        "4":
+          ref: ipdb:1284
+          quote: "Mechanical backbox animation (cars race to finish line)."
+        "5":
+          ref: ipdb:2807
+          quote: "Mechanical backbox animation (spinner changes card selections)."
+        "6":
+          ref: ipdb:634
+          quote: "Mechanical backbox animation (silhouettes dance)."
+        "7":
+          ref: ipdb:393
+          quote: "Mechanical backbox animation (horse kicks cowboy)."
+        "8":
+          ref: https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball
+          quote: "I began seeking out unique examples of mechanical backbox animation – Magic Lines, Magic Squares, Magic Screen."
+        "9":
+          ref: ipdb:1257
+          quote: "Mechanical backbox animation (large disc spins)."
+        "10":
+          ref: ipdb:3915
+          quote: "Mechanical backbox animation (spider spins around when ball falls into playfield trap. Pressing a flipper button stops the spider and awards the indicated feature)."
+  - gameplay-feature.backbox-light-animations:
+      description: |
+        Backbox light animations are [[gameplay-feature:backbox-animations]] drawn in light rather than machinery: lamps banked behind the [[gameplay-feature:backglasses]] flash in sequence, making the figures painted on the glass appear to move.
+
+        The effect predates [[gameplay-feature:flippers]]: lamps carry racing cars around a track on the glass of *[[title:motordrome]]* (1936, [[manufacturer:o-d-jennings-and-company]]).[[cite:1]] [[manufacturer:gottlieb]] took it into the flipper age at the very start — *[[title:humpty-dumpty]]* (1947) animates its namesake's fall in stop-motion light,[[cite:2]] and the fairy-tale series it opened ran to seven games, every one carrying a backglass animation.[[cite:3]][[cite:4]]
+
+        Where a [[gameplay-feature:mechanical-backbox-animations]] unit turns real wheels, the light show is wiring alone, and it kept a place on the backglass long after scores moved to electronic displays: Gottlieb's *[[title:silver-slugger]]* (1990) and [[manufacturer:stern-pinball]]'s *[[title:high-roller-casino]]* (2001) both sequence backglass lamps beside their score displays.
+      cites:
+        "1":
+          ref: ipdb:1632
+          quote: "Backglass light animation (cars move around track)."
+        "2":
+          ref: ipdb:1254
+          quote: "Backglass stop-motion light animation (Humpty Dumpty falls)."
+        "3":
+          ref: https://en.wikipedia.org/wiki/Humpty_Dumpty_(pinball)
+          quote: "The game is the first in a series of seven Fairy Tale games"
+        "4":
+          ref: https://en.wikipedia.org/wiki/Humpty_Dumpty_(pinball)
+          quote: "all of which include an backglass animation"

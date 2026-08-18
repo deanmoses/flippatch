@@ -1,0 +1,147 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: the toys family.
+claims:
+  - gameplay-feature.toys:
+      description: |
+        Toys are the sculpted figures and mechanical contraptions a pinball machine carries to act out its theme, mounted on, above or even beneath the playfield, and usually built for one game alone.[[cite:1]] The name comes straight from the toy box: the pieces are called toys largely because they look like children's playthings.[[cite:2]]
+
+        What a toy does varies as widely as what it depicts. Many are pure scenery — [[gameplay-feature:static-toys]] the ball plays around, never against. [[gameplay-feature:interactive-toys]] join the game instead, ranging from an ordinary mechanism in costume — a hand or claw that grabs the ball where a plain hole would swallow it[[cite:3]] — to a device the whole game is organized around.[[cite:4]]
+
+        The toy became a signature of [[manufacturer:williams]] and [[manufacturer:bally]] machines in the early 1990s, when complicated mechanical devices were part of what drew new players to the game.[[cite:5]] *[[title:funhouse]]* (1990, Williams) is built around Rudy, a talking head that opens its mouth at midnight so the player can shoot a ball into it;[[cite:6]] on *[[title:the-addams-family]]* (1992, Bally) a disembodied hand named Thing picks the ball off the playfield by magnet and spirits it below,[[cite:7]] and *[[title:twilight-zone]]* (1993) carries both a gumball machine that stores and releases balls and a working analog clock.[[cite:8]] The Addams Family set the modern sales record at 20,270 machines,[[cite:9]] and by the decade's end whole games were organized around a single toy: the animated castle of *[[title:medieval-madness]]* (1997) lowers its drawbridge and raises its portcullis under a battering of balls.[[cite:10]][[cite:11]]
+
+        The toy also sells the machine. [[manufacturer:stern-pinball]] grades the editions of a title partly by its toys: on *[[title:godzilla-stern]]* (2021) the Premium and [[tag:limited-edition]] models carry a motorized skyscraper whose collapsing floors redirect shots while the Pro model gets a static building,[[cite:12]] and on *[[title:transformers-more-than-meets-the-eye]]* (2026) the Soundwave figure that locks pinballs behind a working cassette door is absent from the Pro model altogether.[[cite:13]][[cite:14]]
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "each toy is unique to the machine it was made for, and reflects the game's theme"
+        "2":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: called "toys" mainly because they often resemble children's toys
+        "3":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "instead of using a drop hole to hold the ball, a hand or claw might reach out, grab the ball, and capture it that way"
+        "4":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "or they may be an integral part of the game rules and play"
+        "5":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "with complicated mechanical devices and more elaborate display and sound systems attracting new players to the game"
+        "6":
+          ref: ipdb:966
+          quote: "A talking head opens mouth when clock reaches midnight. Then, the player must shoot a ball into the mouth"
+        "7":
+          ref: ipdb:20
+          quote: "magnetically pick up the ball and take it below the playfield"
+        "8":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "Twilight Zone features two significant toys: The gumball machine (which stores and releases balls), and a working analog clock"
+        "9":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "The Addams Family from 1992 hitting a modern sales record of 20,270 machines"
+        "10":
+          ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote: "The centerpiece of the playfield is an animated castle with a solenoid-controlled portcullis and motorized drawbridge"
+        "11":
+          ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote: "A specific number of hits will lower the drawbridge, exposing the portcullis; additional hits will cause the portcullis to rise"
+        "12":
+          ref: https://www.sternpinball.com/wp-content/uploads/2021/09/Godzilla-Pinball-Feature-Matrix-3kjhasdf.pdf
+          quote: "Premium and LE models feature a motorized collapsing skyscraper building bash toy"
+        "13":
+          ref: https://www.kineticist.com/news/stern-transformers-reveal
+          quote: "Soundwave's chest deck is a functional cassette door that locks pinballs and launches them back into play"
+        "14":
+          ref: https://www.kineticist.com/news/stern-transformers-reveal
+          quote: "Pro models skip the mech entirely"
+  - gameplay-feature.interactive-toys:
+      description: |
+        Interactive toys are [[gameplay-feature:toys]] that take part in the game rather than just decorating it: the ball strikes them, they seize and carry it, or they move in answer to play. Any ordinary job can be handed to one — a hand or claw might reach out and grab the ball instead of a plain hole holding it.[[cite:1]]
+
+        [[gameplay-feature:bash-toys]] soak up direct hits, [[gameplay-feature:ball-holding-toys]] capture the ball, [[gameplay-feature:animatronic-toys]] move under their own power and [[gameplay-feature:pop-up-toys]] rise through the playfield on the game's cue.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "instead of using a drop hole to hold the ball, a hand or claw might reach out, grab the ball, and capture it that way"
+  - gameplay-feature.static-toys:
+      description: |
+        Static toys are [[gameplay-feature:toys]] that hold still: sculpted scenery fixed to the playfield or cabinet that carries the theme while having no effect on the play — the ball moves around them, never against them.[[cite:1]] A static toy is not necessarily silent, and the same figure often exists in both still and moving forms: *[[model:pokemon-pro]]* (2026, [[manufacturer:stern-pinball]]) mounts a Pikachu that stands still yet speaks,[[cite:2]] standing in for the animatronic Pikachu of the dearer editions.[[cite:3]]
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "They may be visual only, and have no effect on gameplay"
+        "2":
+          ref: https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf
+          quote: "Pikachu static toy with custom recorded speech."
+        "3":
+          ref: https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf
+          quote: "Pikachu animatronic toy reacts to playfield action with movement and custom recorded speech."
+  - gameplay-feature.bash-toys:
+      description: |
+        Bash toys are [[gameplay-feature:interactive-toys]] built to be shot: a sculpted figure planted in the line of fire that registers the hits, doing the work of a bank of [[gameplay-feature:standup-targets]] in the shape of the game's villain, monster or mascot.
+
+        This was a late-1990s [[manufacturer:williams]] and [[manufacturer:bally]] staple — the genie of *[[title:tales-of-the-arabian-nights]]* (1996, Williams),[[cite:1]] the pair of gophers on *[[title:no-good-gofers]]* (1997), whose ramp entrances lift to expose the bash targets behind them,[[cite:2]] the flying saucer of *[[title:attack-from-mars]]* (1995, Bally) that shakes and flashes above its targets as the player batters the Martian fleet[[cite:3]] — and it never went away: Optimus Prime serves as the bash toy on both of [[manufacturer:stern-pinball]]'s Transformers games, *[[title:transformers]]* (2011) and *[[title:transformers-more-than-meets-the-eye]]* (2026),[[cite:4]][[cite:5]] and an interactive Leatherface bash toy hangs on the kill door of [[manufacturer:spooky]]'s *[[title:the-texas-chainsaw-massacre]]*.[[cite:6]]
+      cites:
+        "1":
+          ref: ipdb:3824
+          quote: "Genie bash toy"
+        "2":
+          ref: ipdb:4338
+          quote: "Entrances to ramps elevate to allow access to bash toy targets"
+        "3":
+          ref: https://en.wikipedia.org/wiki/Attack_from_Mars
+          quote: "placed above a set of targets at the top center of the playfield, can shake and flash in time with the player's success"
+        "4":
+          ref: https://www.kineticist.com/news/stern-transformers-reveal
+          quote: "The first shipped in 2011"
+        "5":
+          ref: https://www.kineticist.com/news/stern-transformers-reveal
+          quote: "Optimus serving as a bash toy on each"
+        "6":
+          ref: https://www.spookypinball.com/product/texas-chainsaw-massacre-collectors-edition-initial-payment-2000
+          quote: "an interactive Leatherface Kill Door Bash Toy"
+  - gameplay-feature.ball-holding-toys:
+      description: |
+        Ball-holding toys are [[gameplay-feature:interactive-toys]] that catch the ball and keep it — themed stand-ins for plain [[gameplay-feature:ball-locks]], usually staging a [[gameplay-feature:multiball]]. The catch is the show: a rotary fishing reel locks the balls on *[[title:fish-tales]]* (1992, [[manufacturer:williams]]),[[cite:1]] Thing's disembodied hand plucks the ball from the playfield of *[[title:the-addams-family]]* (1992, [[manufacturer:bally]]) by magnet and drops it below,[[cite:2]][[cite:3]] the ball flies more than twenty inches through the air into the steamer trunk of *[[title:houdini]]* (2017, [[manufacturer:american-pinball]])[[cite:4]] and Soundwave's chest opens as a working cassette door to lock pinballs on *[[title:transformers-more-than-meets-the-eye]]* (2026, [[manufacturer:stern-pinball]]).[[cite:5]]
+      cites:
+        "1":
+          ref: ipdb:861
+          quote: "Rotary fishing reel ball lock"
+        "2":
+          ref: ipdb:20
+          quote: "'Thing' hand - ball capture device"
+        "3":
+          ref: ipdb:20
+          quote: "magnetically pick up the ball and take it below the playfield"
+        "4":
+          ref: https://americanpinball.com/houdini
+          quote: Over 20" Launch into Houdini's Steamer Trunk
+        "5":
+          ref: https://www.kineticist.com/news/stern-transformers-reveal
+          quote: "Soundwave's chest deck is a functional cassette door that locks pinballs and launches them back into play"
+  - gameplay-feature.animatronic-toys:
+      description: |
+        Animatronic toys are [[gameplay-feature:interactive-toys]] that move under their own power: motorized figures that gesture, speak or fight back in response to the game rather than waiting to be struck. On the Premium and [[tag:limited-edition]] models of *[[title:pokemon]]* (2026, [[manufacturer:stern-pinball]]) a Pikachu reacts to the action on the playfield with movement and recorded speech,[[cite:1]] and the fully animatronic Megatron of *[[title:transformers-more-than-meets-the-eye]]* (2026) turns its fusion cannon and fires pinballs back at the player.[[cite:2]] [[manufacturer:american-pinball]]'s *[[title:galactic-tank-force]]* (2023) and [[manufacturer:turner-pinball]]'s *[[title:merlins-arcade]]* (2025) carry them as well.
+      cites:
+        "1":
+          ref: https://wp.sternpinball.com/wp-content/uploads/2026/02/PANTS-Matrix-added-%C2%A9_021226.pdf
+          quote: "Pikachu animatronic toy reacts to playfield action with movement and custom recorded speech."
+        "2":
+          ref: https://www.pinballnews.com/site/2026/05/21/stern-reveals-new-transformers-game
+          quote: "a fully animatronic Megatron robot toy with an articulated fusion cannon that rotates and fires pinballs back at players"
+  - gameplay-feature.pop-up-toys:
+      description: |
+        Pop-up toys are [[gameplay-feature:interactive-toys]] that hide beneath the playfield and rise through it when the game calls for them, turning bare playfield into a target. This overlaps with [[gameplay-feature:bash-toys]]: the Ringmaster of *[[title:cirqus-voltaire]]* (1997, [[manufacturer:bally]]) elevates from under the playfield as an animated head the player defeats by hitting it with the pinball,[[cite:1]][[cite:2]] and the two trolls of *[[title:medieval-madness]]* (1997, [[manufacturer:williams]]) stay concealed below the playfield until certain modes pop them up as targets.[[cite:3]][[cite:4]]
+      cites:
+        "1":
+          ref: ipdb:4059
+          quote: "The Ringmaster is an animated head that elevates from the underside of the playfield"
+        "2":
+          ref: ipdb:4059
+          quote: "who tries to defeat him by hitting him with the pinball"
+        "3":
+          ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote: "two Trolls, animated targets that are normally concealed below the playfield"
+        "4":
+          ref: https://en.wikipedia.org/wiki/Medieval_Madness
+          quote: "can pop up during certain gameplay modes"

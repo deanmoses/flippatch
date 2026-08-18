@@ -70,6 +70,7 @@ RULE_SINCE: dict[str, int] = {
     "description-repeat-link": 239,
     "description-definitional-lead": 239,
     "description-unsourced-first": 239,
+    "prose-the-register": 254,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -523,6 +524,18 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
         _ALL_PROSE,
         re.compile(r"\bthe pinball record\b", re.IGNORECASE),
         "drop the phrase — 'known in the pinball record for X' is just 'known for X'",
+    ),
+    # 'Register' as a noun classifies prose for the people authoring it, not
+    # machines for the reader ("the register is a Williams staple", "both
+    # registers"). Determiner must sit directly on the word, so the verb
+    # ("that registers the hits") and a qualified company registry ("the
+    # commercial register of Bielefeld") stay legal.
+    (
+        "prose-the-register",
+        _ALL_PROSE,
+        re.compile(r"\b(?:the|this|both|either|each)\s+registers?\b", re.IGNORECASE),
+        "authoring-doc vocabulary — say the thing itself ('this was a "
+        "late-1990s staple', 'in both still and moving forms')",
     ),
 )
 

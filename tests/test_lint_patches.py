@@ -1250,6 +1250,56 @@ def test_flipcommons_catalog_slug_clean():
     assert not has(e, "catalog")
 
 
+# --- 'the register' is authoring-doc vocabulary, not reader prose -----------
+
+
+def test_the_register_flagged():
+    # 'Register' classifies prose for the people writing it; the reader met
+    # the word one sentence ago at best. Say the thing itself.
+    e = perrs(
+        desc_unit("The register is a late-1990s Williams staple."),
+        filename="0254-x.yaml",
+    )
+    assert has(e, "'The register'")
+    assert has(e, "authoring")
+
+
+def test_both_registers_flagged():
+    e = perrs(
+        desc_unit("The same figure often exists in both registers."),
+        filename="0254-x.yaml",
+    )
+    assert has(e, "'both registers'")
+
+
+def test_register_verb_clean():
+    # The ordinary verb ('registers the hits', 'registered its awards as
+    # replays') is trade English and stays legal.
+    e = perrs(
+        desc_unit(
+            "A figure that registers the hits, beside a twin that "
+            "registered its awards as replays."
+        ),
+        filename="0254-x.yaml",
+    )
+    assert not has(e, "register")
+
+
+def test_qualified_registry_clean():
+    # A named company registry is evidence prose, not classification.
+    e = perrs(
+        desc_unit("The firm entered the commercial register of Bielefeld in 1972."),
+        filename="0254-x.yaml",
+    )
+    assert not has(e, "register")
+
+
+def test_the_register_grandfathered_before_0254():
+    e = perrs(desc_unit("The register is old style."), filename="0253-x.yaml")
+    assert not has(e, "register")
+    assert lp.RULE_SINCE["prose-the-register"] == 254
+
+
 def test_bare_plural_catalogs_flagged():
     # Plural noun without determiner: the referent is clear, the register is
     # the problem — these are just sites.

@@ -1,0 +1,104 @@
+attribution: flipcommons-catalog
+description: >-
+  Toy gameplay features attached to the machines that carry them.
+claims:
+  - model.funhouse:
+      cite:
+        - ref: ipdb:966
+          quote: 'A talking head named "Rudy".'
+        - ref: ipdb:966
+          quote: "A talking head opens mouth when clock reaches midnight. Then, the player must shoot a ball into the mouth"
+      gameplay_feature:
+        - animatronic-toys
+  - model.the-addams-family:
+      cite:
+        - ref: ipdb:20
+          quote: "'Thing' hand - ball capture device"
+        - ref: ipdb:20
+          quote: "magnetically pick up the ball and take it below the playfield"
+      gameplay_feature:
+        - ball-holding-toys
+  - model.twilight-zone:
+      cite:
+        ref: ipdb:2684
+        quote: "Real working gumball machine on playfield that dispenses pinballs"
+      gameplay_feature:
+        - ball-holding-toys
+  - model.medieval-madness:
+      cite:
+        - ref: "https://en.wikipedia.org/wiki/Medieval_Madness"
+          quote: 'One of the game''s primary objectives is to "destroy" six castles by hitting the castle''s entryway with the pinball'
+        - ref: ipdb:4032
+          quote: 'Two pop-up trolls in playfield become active during "Trolls!" mode.'
+        - ref: "https://en.wikipedia.org/wiki/Medieval_Madness"
+          quote: "animated targets that are normally concealed below the playfield"
+      gameplay_feature:
+        - bash-toys
+        - pop-up-toys
+  - model.attack-from-mars:
+      cite:
+        - ref: "https://en.wikipedia.org/wiki/Attack_from_Mars"
+          quote: "placed above a set of targets at the top center of the playfield, can shake and flash in time with the player's success"
+        - ref: "https://en.wikipedia.org/wiki/Attack_from_Mars"
+          quote: "the player must defend a city against the Martians by repeatedly shooting the saucer"
+      gameplay_feature:
+        - bash-toys
+  - model.cirqus-voltaire:
+      cite:
+        ref: ipdb:4059
+        quote: "The Ringmaster is an animated head that elevates from the underside of the playfield"
+      gameplay_feature:
+        - pop-up-toys
+  - model.godzilla-premium:
+      cite:
+        - ref: "https://www.sternpinball.com/wp-content/uploads/2021/09/Godzilla-Pinball-Feature-Matrix-3kjhasdf.pdf"
+          locator: in the Main Attractions block
+          quote: "Premium and LE models feature a motorized collapsing skyscraper building bash toy"
+        - ref: ipdb:6842
+          quote: "Magnetic ball-catching Mechagodzilla sculpture"
+      gameplay_feature:
+        - bash-toys
+        - ball-holding-toys
+  - model.godzilla-limited-edition:
+      cite:
+        - ref: "https://www.sternpinball.com/wp-content/uploads/2021/09/Godzilla-Pinball-Feature-Matrix-3kjhasdf.pdf"
+          locator: in the Main Attractions block
+          quote: "Premium and LE models feature a motorized collapsing skyscraper building bash toy"
+        - ref: ipdb:6843
+          quote: "Magnetic ball-catching Mechagodzilla sculpture"
+      gameplay_feature:
+        - bash-toys
+        - ball-holding-toys
+  - model.godzilla-pro:
+      note: "The Pro model's skyscraper is a fixed sculpture; the motorized collapsing version is Premium and Limited Edition only."
+      cite:
+        - ref: ipdb:6841
+          quote: "The skyscraper on this Pro model is not motorized and does not move."
+        - ref: "https://www.sternpinball.com/wp-content/uploads/2021/09/Godzilla-Pinball-Feature-Matrix-3kjhasdf.pdf"
+          locator: in the Pro row of the game features matrix
+          quote: "Static skyscraper building with intersecting ramps and virtual ball lock"
+      gameplay_feature:
+        - static-toys
+  - model.the-texas-chainsaw-massacre-standard-edition:
+      note: "The kill door and the meat grinder are mechanisms of the game itself rather than an edition upgrade, so every edition carries them."
+      cite:
+        ref: "https://www.spookypinball.com/product/texas-chainsaw-massacre-collectors-edition-initial-payment-2000"
+        quote: "an interactive Leatherface Kill Door Bash Toy, and a Meat Grinding Ball Lock Mechanism"
+      gameplay_feature:
+        - bash-toys
+        - ball-holding-toys
+  - model.the-texas-chainsaw-massacre-blood-sucker-edition:
+      note: "The kill door and the meat grinder are mechanisms of the game itself rather than an edition upgrade, so every edition carries them."
+      cite:
+        ref: "https://www.spookypinball.com/product/texas-chainsaw-massacre-collectors-edition-initial-payment-2000"
+        quote: "an interactive Leatherface Kill Door Bash Toy, and a Meat Grinding Ball Lock Mechanism"
+      gameplay_feature:
+        - bash-toys
+        - ball-holding-toys
+  - model.the-texas-chainsaw-massacre-collectors-edition:
+      cite:
+        ref: "https://www.spookypinball.com/product/texas-chainsaw-massacre-collectors-edition-initial-payment-2000"
+        quote: "an interactive Leatherface Kill Door Bash Toy, and a Meat Grinding Ball Lock Mechanism"
+      gameplay_feature:
+        - bash-toys
+        - ball-holding-toys
