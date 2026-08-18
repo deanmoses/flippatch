@@ -1,0 +1,31 @@
+attribution: flipcommons-catalog
+description: >-
+  Classify the remaining Chicago Coin and United rolldown-era machines.
+claims:
+  # Chicago Coin's entry in the postwar rolldown rush.
+  - model.roll-down:
+      note: "The machine is named for the form it plays."
+      cite:
+        ref: "ipdb:3586"
+        quote: "Roll Down [...] IPD No. 3586 / November 01, 1947 / 1 Player [...] Production: 350"
+      game_format: rolldown
+  # The rolldown edition of Chicago Coin's first flipper game; each machine's
+  # catalog entry points at the other.
+  - model.bermuda-roll-down:
+      note: "The rolldown edition of Chicago Coin's 1947 'Bermuda', named for the form it plays."
+      cite:
+        - ref: "ipdb:2856"
+          quote: "Bermuda Roll Down [...] Manufacturer: Chicago Coin Machine Manufacturing Company (1932-1977) [...] Notes: See also Chicago Coin's 1947 'Bermuda'."
+        - ref: "ipdb:225"
+          quote: "'Bermuda' is the first flipper machine made by Chicago Coin. [...] See also Chicago Coin's 1948 'Bermuda Roll Down'."
+      game_format: rolldown
+  # Built standard; the rolldown cabinet on the surviving example is aftermarket.
+  - model.wisconsin:
+      note: >-
+        United built the game as a standard flipper pinball. The rolldown
+        cabinet is an operator's later alteration of a surviving machine, not a
+        form the factory offered.
+      cite:
+        ref: "ipdb:2800"
+        quote: "'Wisconsin' was the first flipper game made by United. [...] The first conversion would have changed the cabinet from a standard game into a rolldown game"
+      game_format: pinball
