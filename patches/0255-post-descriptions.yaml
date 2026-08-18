@@ -1,0 +1,121 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: the playfield post family.
+claims:
+  - gameplay-feature.stationary-posts:
+      description: |
+        A stationary post is a fixed upright peg set into the playfield — a small metal or plastic pillar, usually wearing a rubber ring — that deflects the ball on contact and never moves.[[cite:1]]
+
+        Posts are the cheapest shaping tool a designer has: they anchor rubber rings, fence the sides of a lane, shield a delicate mechanism from a direct hit and turn away a poorly aimed shot.[[cite:1]] What separates the stationary kind from its relatives is that nothing about it is powered. [[gameplay-feature:up-posts]] rise and drop on command from the game and [[gameplay-feature:spinning-posts]] swivel when the ball strikes them, while a stationary post is a screw, a sleeve and a rubber ring.
+
+        Most of a playfield's posts are structural and pass unremarked. The placements that change how a game plays stand the post between the ball and the drain. [[gameplay-feature:center-stationary-posts]] sit in the gap between the flippers, where a ball coming straight down the middle can strike one and bounce back within reach;[[cite:2]] [[gameplay-feature:right-outlane-stationary-posts]] sit in the lane that carries the ball past the flippers, where hitting the post can send it across into the inlane instead.[[cite:3]]
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "A small, stationary vertical post with a rubber ring, designed to deflect the ball away from sensitive parts and to reject poorly-aimed shots"
+        "2":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "Some games place a peg between the flippers, giving the ball a chance to bounce away from the drain and back onto the flippers"
+        "3":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "sometimes with a possibility of striking a peg and re-entering the adjacent inlane"
+  - gameplay-feature.center-stationary-posts:
+      description: |
+        Center stationary posts are fixed pegs planted between and just below the flipper tips, in the path a ball takes when it drains down the middle.[[cite:1]] The trade calls the piece a stopper, a peg or a mini-post screw: it is a metal post screwed into the playfield with a rubber ring on top, and a ball that catches it bounces up and away instead of out of play.[[cite:2]] A practised player will work shots off it on purpose.[[cite:1]]
+
+        Because it is a screw and a rubber sleeve rather than a mechanism, the post costs a designer nothing but the hole, and it has stayed in use across the whole flipper era — on woodrail machines of the early 1950s, on [[manufacturer:stern-electronics]] and [[manufacturer:williams]] playfields through the solid-state years, and on modern boutique games such as *[[title:the-hobbit]]* (2015, [[manufacturer:jersey-jack]]) and *[[title:the-mafia]]* (2018, [[manufacturer:team-pinball]]). Where [[gameplay-feature:center-up-posts]] do the same job only for as long as the game grants it, the stationary post is there for every ball of every game.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "If the ball hits the post, it will bounce up and away, saving it from draining. Skilled players can use the stopper to make trick shots."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A typical placement of this device is between and below the flippers at the bottom of the playfield to bounce an otherwise drained ball back into play."
+  - gameplay-feature.right-outlane-stationary-posts:
+      description: |
+        Right outlane stationary posts are fixed pegs standing in the right [[gameplay-feature:outlanes]], the channel that carries a ball past the flippers and out of play. The post gives that ball something to hit on the way down: struck at the right angle it can cross back into the adjacent inlane and return to a flipper.[[cite:1]]
+
+        It is the passive answer to a problem later machines solved with power. A [[gameplay-feature:kickback]] fires the ball back up the same lane and [[gameplay-feature:magnetic-kickbacks]] pull it away from the gutter; the post does neither, and rewards only a ball that happens to strike it well. The fitting belongs to the [[technology-generation:electromechanical]] years, turning up on 1970s machines from [[manufacturer:williams]], [[manufacturer:inder]], [[manufacturer:sonic]] and [[manufacturer:martel]].
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "sometimes with a possibility of striking a peg and re-entering the adjacent inlane"
+  - gameplay-feature.center-up-posts:
+      description: |
+        A center up-post is a post that rises out of the playfield between the flippers on command from the game, closing the gap a ball would otherwise fall through and dropping flush again afterwards.[[cite:1]] It is usually a round translucent column with a bulb inside, lit when raised so the player can see the save is live;[[cite:2]] a ball that meets it stops, rolls along its edge and comes to rest against one flipper or the other.[[cite:3]] The trade also calls it a magic post or a recovery post.[[cite:1]]
+
+        ## Origins
+
+        The idea is older than the post. [[manufacturer:gottlieb]] and [[manufacturer:chicago-coin]] fitted a V-shaped metal blade between the flippers on machines of 1950 and 1951 — Gottlieb called it a blocking gate, or a safety gate — which rose to close the flipper gap and steer the ball to one flipper or the other, and the round plastic up-post descended from it.[[cite:4]][[cite:5]] *[[title:thing]]* (1951, Chicago Coin) is one of the machines that carried the blade.[[cite:6]] The up-post proper first appeared on *[[title:playboy]]* (1967, [[manufacturer:rally]]),[[cite:7]] after which [[manufacturer:williams]], [[manufacturer:bally]] and Chicago Coin all fitted one between the flippers across their late-1960s and early-1970s lines, with makers in Japan and Spain taking it up in the same years.
+
+        ## What raises it
+
+        Whether the game or the player commands the post varies from machine to machine. On *[[title:big-guns]]* (1987, Williams) the game raises it for the duration of a jackpot mode, holding the [[gameplay-feature:left-outlane-kickbacks]] live and diverting the right outlane back to the flipper at the same time.[[cite:8]] On *[[model:harley-davidson-3rd-edition]]* (2002, [[manufacturer:stern-pinball]]) both have a say — the machine and the player each command the post.[[cite:9]]
+
+        ## The UK All-Skill system
+
+        The post's largest deliberate use was legal rather than sporting. British law long treated pinball as a game of chance rather than skill, which put it under the same licensing and tax regime as slot machines, since the free game a player could win carried the cash value of a play.[[cite:10]] The answer the trade devised was the UK All-Skill system: two extra up-posts at the top of the outlanes and a large centre up-post between the flippers, all three worked by a second pair of flipper buttons on the cabinet sides.[[cite:11]][[cite:12]] The reasoning was that a player who always had a physical means of stopping the ball could only lose it by reacting too slowly, which made the game one of skill.[[cite:13]] The posts stayed up for about half a second and could be fired again as soon as they fell.[[cite:14]]
+
+        The system first appeared on *[[title:the-x-files]]* (1997, [[manufacturer:sega]]) and ran through Sega's line and then Stern's as far as *[[title:the-sopranos]]* (2005).[[cite:15]] It was never universally welcome: many operators simply switched the posts off on location.[[cite:16]] What ended it was hardware and then law — from *[[title:nascar]]* (2005) Stern's new siderail design left no room for the extra buttons,[[cite:17]] and the Gambling Act 2005, in force from September 2007, settled that a free game is not a prize and took pinball out of gaming-machine licensing altogether.[[cite:18]]
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "A post that can rise up between the flipper fingers and completely block the middle drain. Sometimes also called a recovery post or up post."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A light bulb inside the device illuminates the post when raised, to be more noticeable to the player."
+        "3":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Instead, the ball typically hits it, stops, and rolls along its edge to rest against one or the other flipper."
+        "4":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "The metal, V-shaped ball-saving device that would raise and lower between flippers on some Gottlieb and Chicago Coin games during 1950-1951."
+        "5":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "It is the precedessor of the round plastic Up-post used in 1960's games and later."
+        "6":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "An example of this feature can be found on Chicago Coin's 1951 'Thing'."
+        "7":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "First used on Rally's 1967 'Play boy'."
+        "8":
+          ref: ipdb:250
+          quote: "During Invincible/Queen's Rescue (Jackpot mode), the center post is raised, the kickback stays active, and the right gate diverts the ball back to the right flipper for a set amount of time."
+        "9":
+          ref: ipdb:5277
+          quote: "The up-post is controlled by both the machine and the player."
+        "10":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "until quite recently in this country, pinball used to be legally deemed a game of chance rather than skill"
+        "11":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "It was called the UK All-Skill system, and consisted of two extra up-posts added to the game's playfield - one at the top of each outlane, as shown arrowed below - and a large centre up-post between the flippers."
+        "12":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "The posts were player-controlled using extra flipper buttons installed on the cabinet sides."
+        "13":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "the idea behind installing them was to ensure the player always had a physical way to stop the ball from draining"
+        "14":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "The posts only raised for around half a second but could be activated again as soon as they fell by repeatedly pressing the appropriate buttons."
+        "15":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "The resulting solution first appeared on the 1997 game X-Files from Sega, and although it was never adopted at Williams, it continued to be used at Sega - and then Stern - until The Sopranos came out in 2005."
+        "16":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "in practice many operators disabled the posts when the games were on location"
+        "17":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "from NASCAR onwards, the new siderail design which incorporated metal flipper button protectors ruled out the addition of the extra flipper buttons, and Stern stopped fitting the system to UK games"
+        "18":
+          ref: https://www.pinballnews.com/learn/ukposts.html
+          quote: "So after decades of being treated a gambling device, pinball was officially free of any licensing restrictions."

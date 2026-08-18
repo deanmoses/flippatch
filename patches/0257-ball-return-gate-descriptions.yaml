@@ -1,0 +1,92 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: the ball return gate family.
+claims:
+  - gameplay-feature.detour-gates:
+      description: |
+        A detour gate is a gate that takes the ball off the path it is running down and puts it on another one. Where a plain [[gameplay-feature:ball-return-gates]] only enforces the direction of travel, a detour gate changes the destination, and the change is usually one the player has earned.
+
+        Its commonest use is at the bottom of the playfield, where a gate in an [[gameplay-feature:outlanes]] catches a ball on its way out and hands it back to a flipper. *[[title:big-guns]]* (1987, [[manufacturer:williams]]) opens its right-hand one for the length of a jackpot mode, so that for those seconds the outlane returns the ball instead of losing it.[[cite:1]]
+
+        The device does not have to be a rescue. On *[[title:dogies]]* (1968, [[manufacturer:bally]]) the gates are the game: five of them govern a canyon in the upper left, three deciding whether the ball crosses the rollovers and leaves or stays trapped inside, a fourth closing the entrance behind it, and a fifth — armed only if the player has hit the right bumpers first — the one that saves the ball from draining at the end of it all.[[cite:2]][[cite:3]] The fitting belongs to the [[technology-generation:electromechanical]] years and the solid-state machines that grew out of them, running from Bally and [[manufacturer:allied-leisure]] tables of the 1960s and 1970s to *[[title:mario-andretti]]* (1995, [[manufacturer:gottlieb]]).
+      cites:
+        "1":
+          ref: ipdb:250
+          quote: "the right gate diverts the ball back to the right flipper for a set amount of time"
+        "2":
+          ref: ipdb:696
+          quote: "When open, these gates will detour the ball to remain inside the Canyon."
+        "3":
+          ref: ipdb:696
+          quote: "it is essential to first hit either of the two mushroom bumpers at top of playfield before entering the Canyon in order to activate a fifth detour gate in the drop lane to rescue the ball from draining"
+  - gameplay-feature.free-ball-gates:
+      description: |
+        A free ball gate is a [[gameplay-feature:ball-return-gates]] variant that, when the game opens it, sends the ball down a lane that delivers it back to the shooter alley rather than to the drain — so the player shoots the same ball again and the machine counts no ball played.[[cite:1]]
+
+        It is an award, and the game keeps it shut until the award is earned. On *[[title:wild-wheels]]* (1966, [[manufacturer:bally]]) three number wheels in the playfield turn as the ball strikes the bumpers in front of them, and the right combination is one of the things that opens the gate.[[cite:2]] On *[[title:millionaire-2]]* (1977, [[manufacturer:sega]]) the gate opens at one moment in the game and no other: a bonus sequence kicks the ball across the playfield into the long right-hand lane, where the gate is waiting to carry it back to the shooter.[[cite:3]][[cite:4]]
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A lane that delivers the ball to the shooter alley."
+        "2":
+          ref: ipdb:2786
+          quote: "Different combinations of wheel numbers light different features on the playfield for increased value or Special, or open the free ball gate."
+        "3":
+          ref: ipdb:4561
+          quote: "opens the Free Ball Gate, the only time this gate opens"
+        "4":
+          ref: ipdb:4561
+          quote: "the Free Ball Gate delivers it back to the shooter lane"
+  - gameplay-feature.right-outlane-free-ball-gates:
+      description: |
+        Right outlane free ball gates are [[gameplay-feature:free-ball-gates]] fitted to the right [[gameplay-feature:outlanes]], so that the lane which normally ends a ball can instead return it to the shooter for another go.
+
+        The arrangement is a short-lived one of the middle [[technology-generation:electromechanical]] period. [[manufacturer:bally]] used it on machines of 1965 and 1966 — *[[title:bulls-eye]]*, *[[title:magic-circle]]* and *[[title:wild-wheels]]* — and [[manufacturer:williams]] fitted one to *[[model:dipsy-doodle]]* (1970). Where a [[gameplay-feature:kickback]] later put the same rescue in the same lane, it did so by throwing the ball back onto the playfield; the free ball gate instead sends it round to the plunger and lets the player start the shot again.
+  - gameplay-feature.right-outlane-ball-return-gates:
+      description: |
+        Right outlane ball return gates are [[gameplay-feature:right-side-ball-return-gates]] fitted at the right [[gameplay-feature:outlanes]] — a hinged metal flap the ball can push through in one direction and not the other,[[cite:1]] fixing which way traffic runs at the bottom right of the playfield.
+
+        Nothing about the gate is powered or earned: it is a strip of metal on a pivot, and it does the same thing on every ball. That cheapness is why it turns up on so many playfields, fitted across four decades of machines from [[manufacturer:bally]], [[manufacturer:williams]], [[manufacturer:gottlieb]], [[manufacturer:sega]] and [[manufacturer:maresa]], and why designers reached instead for a [[gameplay-feature:detour-gates]] when they wanted the ball's route to depend on what the player had done.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A thing the pinball can go through in one direction but not the other. You can often find gates at the end of the plunger lane."
+  - gameplay-feature.upper-ball-return-gates:
+      description: |
+        Upper ball return gates are [[gameplay-feature:ball-return-gates]] set high on the playfield rather than down among the flippers, where they keep a ball that has climbed into the top arch from rolling back the way it came.
+
+        Up there the gate is about traffic rather than survival: the ball has a long way to fall before it is in danger, and what the gate settles is which of the routes down it takes. [[manufacturer:bally]] fitted the arrangement across the second half of the 1960s, and [[manufacturer:williams]], [[manufacturer:playmatic]] and [[manufacturer:maresa]] used it in the same years. Its right-hand form is the [[gameplay-feature:upper-right-ball-return-gates]].
+  - gameplay-feature.upper-right-ball-return-gates:
+      description: |
+        Upper right ball return gates are [[gameplay-feature:upper-ball-return-gates]] placed on the right of the upper playfield, the side the ball arrives on from the [[gameplay-feature:shooter-lanes]].
+
+        That position makes the gate the last thing a plunged ball passes before the playfield proper, and it stops the ball rolling back down the lane it was launched from.[[cite:1]] [[manufacturer:williams]] was the heaviest user, fitting one across a run of machines between 1965 and 1969, and [[manufacturer:bally]] and [[manufacturer:playmatic]] used the arrangement into the 1970s.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A thing the pinball can go through in one direction but not the other. You can often find gates at the end of the plunger lane."
+  - gameplay-feature.right-ball-return-rollunders:
+      description: |
+        Right ball return rollunders are [[gameplay-feature:rollunders]] doing a gate's work on the right of the playfield: the U-shaped wireform hangs in the ball's return path, swings up as the ball passes beneath it and closes a switch on the way.[[cite:1]]
+
+        The appeal is that one part does two jobs. A plain [[gameplay-feature:ball-return-gates]] only keeps the ball moving the right way, and a [[gameplay-feature:rollovers]] switch only scores; a rollunder in a return lane scores the passage and holds the one-way discipline at the same time,[[cite:2]] and it fits where a narrow rollover channel will not.[[cite:3]]
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "It's a wireform, generally U-shaped, hanging inside a metal frame. A ball passing through this frame will push the wireform to make it swing and close a switch under the playfield."
+        "2":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "a rollunder is a switch triggered by the ball rolling under it, sometimes presenting as a one-way gate to prevent, for instance, a launched ball from rolling back into the plunger lane"
+        "3":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Rollunders can be used in places too wide for a narrow rollover channel, or at one end of a ramp, or in any place where a rollover switch is desired but would not fit."
+  - gameplay-feature.upper-right-ball-return-rollunders:
+      description: |
+        Upper right ball return rollunders are [[gameplay-feature:right-ball-return-rollunders]] mounted high on the right of the playfield, where the ball passes under the wireform as it comes up out of the [[gameplay-feature:shooter-lanes]] and enters play.
+
+        The fitting is [[manufacturer:gottlieb]]'s. It appears on a run of the firm's machines between *[[title:orbit-outer-space]]* (1971) and *[[title:solar-ride]]* (1979), and travelled to Spain with the licensed and copied versions [[manufacturer:petaco]] and [[manufacturer:recel]] built from the same designs in the middle 1970s.

@@ -1,0 +1,70 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: inlane and outlane layouts.
+claims:
+  - gameplay-feature.dual-inlanes:
+      description: |
+        Dual inlanes are pairs of [[gameplay-feature:inlanes]] running side by side on the same flank of the playfield, so that the ball has two ways of being fed back to the flipper instead of one.[[cite:1]]
+
+        Each lane carries its own rollover, which is most of the point: doubling the lane gives a ruleset two switches to a side where it had one, and two lit lamps for the player to work between. The arrangement came in towards the end of the [[technology-generation:electromechanical]] years — [[manufacturer:gottlieb]] was using it by the middle 1970s — and it has stayed in modern practice, on machines such as *[[title:the-hobbit]]* (2015, [[manufacturer:jersey-jack]]) and *[[title:ghostbusters]]* (2016, [[manufacturer:stern-pinball]]). Doubling one flank does not oblige the other: [[gameplay-feature:left-dual-inlanes]] and [[gameplay-feature:right-dual-inlanes]] turn up alone more often than they turn up as a pair.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "The path feeding a falling ball from the playfield to the flippers, usually behind a slingshot."
+  - gameplay-feature.left-dual-inlanes:
+      description: |
+        Left dual inlanes are [[gameplay-feature:dual-inlanes]] on the left flank — two return lanes between the left [[gameplay-feature:outlanes]] and the left flipper, each with its own rollover.
+
+        The layout appears from the middle 1970s onward and has never gone away: [[manufacturer:gottlieb]] and [[manufacturer:playmatic]] used it on late [[technology-generation:electromechanical]] machines, [[manufacturer:inder]] built it into most of its solid-state line, and [[manufacturer:stern-pinball]] and [[manufacturer:jersey-jack]] fit it to current games. Most machines that double one flank double the other too, giving the mirror arrangement of [[gameplay-feature:right-dual-inlanes]].
+  - gameplay-feature.right-dual-inlanes:
+      description: |
+        Right dual inlanes are [[gameplay-feature:dual-inlanes]] on the right flank — two return lanes between the right [[gameplay-feature:outlanes]] and the right flipper, each with its own rollover.
+
+        It is the busier side of the playfield: the [[gameplay-feature:shooter-lanes]] runs up the cabinet's right edge, and a ball arriving from a ramp or a habitrail on that side lands in one lane or the other. The layout runs from the middle 1970s to current production, on machines from [[manufacturer:inder]], [[manufacturer:playmatic]], [[manufacturer:gottlieb]] and, later, [[manufacturer:stern-pinball]], and it is normally the twin of [[gameplay-feature:left-dual-inlanes]] rather than an arrangement on its own.
+  - gameplay-feature.open-elbow-inlanes:
+      description: |
+        Open-elbow inlanes are [[gameplay-feature:inlanes]] whose divider from the [[gameplay-feature:outlanes]] stops short at the bend, leaving the two lanes joined so a ball can cross from one into the other in either direction.[[cite:1]]
+
+        The gap cuts both ways, which is what makes it interesting: a ball on the safe side of the divider can wander out into the drain lane, and a ball already in the outlane can wander back. [[manufacturer:gottlieb]] used the layout from *[[title:extra-inning]]* (1971) into the middle 1980s, and Spanish and Italian makers — [[manufacturer:recreativos-franco]], [[manufacturer:zaccaria]], [[manufacturer:maresa]] and [[manufacturer:inder]] among them — built it into machines through the 1970s. [[gameplay-feature:right-open-elbow-inlanes]] open the right pair alone and keep the divider on the left.
+      cites:
+        "1":
+          ref: ipdb:801
+          quote: "Open-elbow inlanes allow ball to pass from inlane to outlane and vice-versa."
+  - gameplay-feature.right-open-elbow-inlanes:
+      description: |
+        Right open-elbow inlanes are [[gameplay-feature:open-elbow-inlanes]] on the right flank alone, where the right inlane and outlane run into each other at the bend and the left pair keep their divider.
+
+        The one-sided version is rare, and belongs to the last [[technology-generation:electromechanical]] years: [[manufacturer:gottlieb]] built it into *[[title:centigrade-37]]* (1977), and Spanish makers used it on machines of the same decade.
+  - gameplay-feature.dual-outlanes:
+      description: |
+        Dual outlanes are two [[gameplay-feature:outlanes]] side by side on each flank of the lower playfield, so a ball leaving the flipper area has an adjacent pair of channels to be lost down rather than a single one.[[cite:1]]
+
+        The layout belongs to the years before the inlane. The flipper return lane — the channel that feeds a ball back to the flipper instead of past it — arrived in 1965,[[cite:2]] and until then everything outside the flippers was drain, which designers divided into a pair of scoring lanes rather than leaving as one. [[manufacturer:gottlieb]] was much the heaviest user, from *[[title:harvest-moon]]* (1948) through *[[title:sunset]]* (1962), and [[manufacturer:williams]] built the same layout into its 1964 *[[title:zig-zag-wing-ding]]* pair.[[cite:1]] Afterwards the doubling moved inward: machines that want two lanes to a side now double the return lane instead, as [[gameplay-feature:dual-inlanes]].
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Two outlanes on each side of lower playfield, as in the examples of Gottlieb's 1962 'Sunset' and Williams' 1964 'Zig Zag'."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "The design feature was prevalent prior to the introduction of flipper return lanes in 1965."
+  - gameplay-feature.triple-outlanes:
+      description: |
+        Triple outlanes are lower playfields laid out with three [[gameplay-feature:outlanes]] together, one more than the [[gameplay-feature:dual-outlanes]] of the same period.
+
+        Like the paired layout, they come from the decades before the flipper return lane, when the ground outside the flippers was drain and a designer could divide it as finely as the scoring wanted. [[manufacturer:gottlieb]] used the arrangement on machines between 1959 and 1966, and [[manufacturer:midway]], [[manufacturer:automaticos]] and [[manufacturer:alben]] each built one. *[[title:target-gallery]]* (1962, Midway) makes the lanes the punishment for a bad shot: batting an errant ball into one of the machine's [[gameplay-feature:horseshoe-lanes]] delivers it straight to them.[[cite:1]]
+      cites:
+        "1":
+          ref: ipdb:2501
+          quote: "Batting an errant ball into a horseshoe directs it to the triple outlanes."
+  - gameplay-feature.bounce-back-outlanes:
+      description: |
+        Bounce-back outlanes are [[gameplay-feature:outlanes]] built so that a ball running down one can be shoved back into play by nudging the cabinet, the player's shoulder doing what a solenoid does in a [[gameplay-feature:kickback]].[[cite:1]]
+
+        The save costs the maker nothing but the geometry, and it puts the rescue entirely in the player's hands — badly timed, the same shove tilts the machine. [[manufacturer:bally]] fitted the layout to a run of games in the second half of the 1970s, and [[manufacturer:sega]], [[manufacturer:bell-games]] and [[manufacturer:nsm]] used it into the 1980s. The later [[gameplay-feature:flex-save-lanes]] make the same trick deliberate, giving the nudge a hinged wall to work against instead of a fixed one.
+      cites:
+        "1":
+          ref: ipdb:1365
+          quote: "Bounce-back outlanes allow the player to nudge a draining ball back into play."

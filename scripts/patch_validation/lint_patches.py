@@ -71,6 +71,7 @@ RULE_SINCE: dict[str, int] = {
     "description-definitional-lead": 239,
     "description-unsourced-first": 239,
     "prose-the-register": 254,
+    "prose-record-set": 255,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -296,6 +297,9 @@ _AUTHORING_PROSE = frozenset({PATCH_DESC, NOTE})
 # so internal bookkeeping vocabulary is correct there and wrong in a note.
 _NOTE_ONLY = frozenset({NOTE})
 _RECORD_DESC_ONLY = frozenset({RECORD_DESC})
+# The two corpora a reader sees. The top-level patch description is Admin-only
+# bookkeeping, where pointing at the record set is exactly what it is for.
+_PUBLIC_PROSE = frozenset({NOTE, RECORD_DESC})
 
 # Internal CamelCase model names. A general CamelCase pattern can't work —
 # TiltBob, WhizBang, MarsaPlay and other brand names are legitimate CamelCase —
@@ -536,6 +540,35 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
         re.compile(r"\b(?:the|this|both|either|each)\s+registers?\b", re.IGNORECASE),
         "authoring-doc vocabulary — say the thing itself ('this was a "
         "late-1990s staple', 'in both still and moving forms')",
+    ),
+    # Prose about the RECORD SET rather than about pinball: "the machines
+    # recorded here", "this entry". Two failures at once — the reader is on one
+    # page and cannot resolve "here", and a description that narrates its own
+    # listing stops being an essay about the thing. Anchored on the verb sitting
+    # DIRECTLY on the deictic word, so ordinary evidence prose ("IPDB records
+    # 1932", "recorded the sound here in Chicago") does not match, and on
+    # 'this' + a listing noun, so an unqualified "entry in the commercial
+    # register" stays legal.
+    (
+        "prose-record-set",
+        _PUBLIC_PROSE,
+        re.compile(
+            r"\b(?:record|records|recorded|list|lists|listed|catalogu?ed|count|counts"
+            r"|counted|group|groups|grouped|show|shows|shown|includ\w+)"
+            r"\s+(?:here|below|above)\b"
+            r"|\bthis\s+(?:entry|listing|record|page)\b"
+            # The record-NAMING form: what a thing is filed as, rather than what
+            # it is. The wikilink object is what separates it from the ordinary
+            # evidence prose the corpus uses fifteen times ("BEM is recorded as
+            # building", "recorded as a licensed build"), which stays legal.
+            r"|\brecorded\s+as\s+\[\["
+            r"|\bthe\s+recorded\s+(?:placement|form|variant|version|name|value)\b",
+            re.IGNORECASE,
+        ),
+        "prose about the record set, not about pinball — the reader is on one "
+        "page and can't resolve 'here', and how a thing is filed is not a fact "
+        "about it; say what is true of the machines ('most machines double "
+        "both flanks at once')",
     ),
 )
 

@@ -1,0 +1,127 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: return lanes, drop lanes and shooter lanes.
+claims:
+  - gameplay-feature.drop-lanes:
+      description: |
+        A drop lane is a vertical channel running down the playfield directly above an [[gameplay-feature:outlanes]], so that a ball entering it falls straight into the outlane below — which gives that outlane a second mouth, higher up and away from the flippers.[[cite:1]]
+
+        A lane whose whole purpose is to hand the ball to the drain is a hard bargain, and designers rarely left it at that. On *[[title:gay-90s]]* (1970, [[manufacturer:williams]]) the drop lane doubles as an extended [[gameplay-feature:kickback-lanes]], so the kicker throws the ball back up the length of it;[[cite:2]] on *[[title:dixieland]]* (1968, [[manufacturer:bally]]) the left lane is unusually long and carries a [[gameplay-feature:detour-gates]] the player can earn to be let out of it.[[cite:3]] Where a factory put a post in the falling ball's path to steer it back towards the flipper, the lane is not counted as a drop lane at all.[[cite:4]]
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A vertical lane directly above an outlane that causes the ball entering it to drop straight down into the outlane. In this way, it makes the outlane have more than one entrance."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "In the example of Williams' 1970 'Gay 90's' the drop lane also serves as an extended kickback lane."
+        "3":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A game having two of these lanes is Bally's 1968 'Dixieland' where the left one is very long and has a detour gate in its path, if earned by the player."
+        "4":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Some games were designed by the factory to have a mini-post in the path of the dropping ball to deflect the ball away from the outlane and towards the flipper."
+  - gameplay-feature.left-drop-lanes:
+      description: |
+        Left drop lanes are [[gameplay-feature:drop-lanes]] on the left flank of the playfield, feeding the left [[gameplay-feature:outlanes]] from higher up.
+
+        [[manufacturer:bally]] used them on its zipper-flipper machines of the late 1960s, beginning with *[[title:the-wiggler]]* (1967),[[cite:1]] where a lane that drops the ball is one more thing for a game already built around the risk of losing it. [[manufacturer:williams]] and [[manufacturer:sega]] each fitted one in the 1970s.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "An example of this feature is found on Bally's 1967 'The Wiggler'."
+  - gameplay-feature.crossover-return-lanes:
+      description: |
+        Crossover return lanes are [[gameplay-feature:inlanes]] that have swapped places with the [[gameplay-feature:outlanes]] beside them: the return lane runs outside the drain lane, so a ball coming down it has to cross the outlane to reach the flipper.[[cite:1]] It usually carries enough speed to jump the gap, but not always.[[cite:2]]
+
+        The reversal turns a safe lane into a wager, and it is a solid-state idea rather than an [[technology-generation:electromechanical]] one. [[manufacturer:bally]] used it repeatedly in the early 1980s — *[[title:fathom]]* (1981) is the machine the arrangement is usually named for[[cite:3]] — and Spanish makers built it into machines through the decade. It has never quite gone away: [[manufacturer:jersey-jack]] laid out *[[title:pirates-of-the-caribbean-jersey-jack-pinball]]* (2018) the same way.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A flipper return lane that by design has swapped places with the outlane, and is separated from the flipper by this outlane. A ball entering the top of the return lane has to cross the outlane in order to reach the flipper."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "The speed of the ball usually allows it to jump the outlane and not drain, although success of this is not guaranteed."
+        "3":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "have reversed inlanes and outlanes, where the outer lane returns the ball to the flippers and the inner lane returns the ball to the drain"
+  - gameplay-feature.free-ball-return-lanes:
+      description: |
+        A free ball return lane is a lane that delivers the ball to the shooter alley instead of to the drain, so the player plunges the same ball again; unlike a [[gameplay-feature:free-ball-gates]], it has no gate across it and is open whenever the ball finds it.[[cite:1]]
+
+        [[manufacturer:gottlieb]] built the lane into a run of machines around 1970 and called it a mid-field ball back — *[[title:scuba]]* (1970) is the example the term is usually explained by.[[cite:2]] The idea came back four decades later on the other side of the flipper: [[manufacturer:stern-pinball]] machines from *[[title:star-trek-stern]]* (2013) to *[[title:rush]]* (2022) run a return lane behind the flipper that carries the ball round to the shooter lane, and [[manufacturer:american-pinball]] uses the same arrangement.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: 'A lane that delivers the ball to the shooter alley. Typically, this lane has no gate and therefore is always "open".'
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: 'An example of this is found on Gottlieb''s 1970 ''Scuba'' where it is referred to as a "mid-field ball back feature".'
+  - gameplay-feature.serial-rollover-lanes:
+      description: |
+        Serial rollover lanes are lanes carrying a line of [[gameplay-feature:rollovers]] one after another, so that a single ball running the length of the lane closes every switch in it in turn rather than one.
+
+        The arrangement is [[manufacturer:gottlieb]]'s, and the firm normally built two of them side by side down the right of the playfield, where a ball entering the top of one lane scores its way down.[[cite:1]] It runs from *[[title:lawman]]* (1971) through the middle 1970s, and the Spanish and Italian makers who worked from Gottlieb layouts — [[manufacturer:maresa]], [[manufacturer:playmatic]], [[manufacturer:nordamatic]] and [[manufacturer:mondialmatic]] — copied it along with everything else.
+      cites:
+        "1":
+          ref: ipdb:1419
+          quote: "Right side of playfield has parallel lanes of serial rollovers."
+  - gameplay-feature.elevated-shooter-lanes:
+      description: |
+        Elevated shooter lanes are [[gameplay-feature:shooter-lanes]] that launch the ball onto a raised deck rather than onto the main playfield, so the plunge starts the ball a storey above where it will finish.
+
+        The fitting belongs almost entirely to [[manufacturer:zaccaria]] and to one idea the firm pursued in the early 1980s: the two-level machine with a transparent upper playfield above the lower one. *[[title:pinball-champ]]* (1982) introduced the layout to the firm's line — the same title also covers the [[manufacturer:bell-games]] build of the following year[[cite:1]] — and *[[title:farfalla]]* (1983), *[[title:devil-riders]]* (1984) and *[[title:robot]]* (1985) each carry the same elevated lane.[[cite:2]]
+      cites:
+        "1":
+          ref: ipdb:1794
+          quote: "Zaccaria's first multi-level game, with two playfields."
+        "2":
+          ref: ipdb:824
+          quote: "Elevated ball shooter lane."
+  - gameplay-feature.looping-shooter-lanes:
+      description: |
+        Looping shooter lanes are [[gameplay-feature:shooter-lanes]] laid out so that the plunged ball travels a full circle around the playfield before it drops into play.[[cite:1]]
+
+        They belong to the 1930s — to [[technology-generation:pure-mechanical]] boards and the early [[technology-generation:electromechanical]] tables that followed them, machines with no [[gameplay-feature:flippers]] anywhere on the playfield. A game was pins, holes and one shot from the plunger, which made the plunge itself the skill: how hard the player pulled it and let it go was most of what they could do about where the ball went.[[cite:2]] The loop made the most of that — a long, visible arc that delivered the ball to the top of the field from an unexpected side.
+      cites:
+        "1":
+          ref: ipdb:1756
+          quote: "This game has a shooter lane to allow the ball to loop 360 degrees around the playfield before entering into play."
+        "2":
+          ref: https://www.pinrepair.com/prewar/index.htm
+          quote: "relied mostly on a good plunger shot, and not much more"
+  - gameplay-feature.outholes:
+      description: |
+        The outhole is where a lost ball leaves the playfield — the mouth at the bottom that swallows a drained ball and passes it to the trough beneath.[[cite:1]] The word is old, and pinball has used it as a plain synonym for the drain since before [[gameplay-feature:flippers]] existed.[[cite:2]]
+
+        On the pin tables of the 1930s and 1940s a game ended when the player's ten balls were gone, and several makers gave the playfield a pair of outhole troughs rather than a single mouth — [[manufacturer:o-d-jennings-and-company]]'s *[[title:monarch-2]]* (1932) and the German Tura and Bera machines of 1933 among them, and [[manufacturer:bally]]'s one-ball games *[[title:seabiscuit]]* (1938) and *[[title:grand-national]]* (1939).[[cite:3]] [[manufacturer:marvel]] was still building them that way in 1948.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Where lost balls exit the playfield (noun), as well as the actual act of losing a ball (verb)."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Also known as the outhole."
+        "3":
+          ref: ipdb:3825
+          quote: "Two outholes."
+  - gameplay-feature.lane-change:
+      description: |
+        Lane change is a control that lets the player move the lit lamps across a set of lanes — pressing a flipper button shifts which of the [[gameplay-feature:inlanes]], [[gameplay-feature:outlanes]] or [[gameplay-feature:top-lanes]] is the one carrying the award.[[cite:1]]
+
+        It is a small piece of software that changes the shape of a shot. Before it, completing a bank of lanes meant putting the ball through whichever one was unlit; after it, the player lines the lamps up with where the ball is already going, and the skill moves from the shot to the timing of the button. [[manufacturer:williams]] built it into *[[title:blackout]]* (1980) and *[[title:space-shuttle-2]]* (1984), [[manufacturer:data-east]] into *[[title:laser-war]]* (1987), and it settled into the standard vocabulary of solid-state design — [[manufacturer:vector-pinball]] fits it to machines built in the 2020s.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Games featuring lane change allow the player to shift the lit lights in a set of lights on the playfield, such as a set of lights on the outlanes and inlanes showing which lane has an award."

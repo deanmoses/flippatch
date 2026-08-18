@@ -1711,3 +1711,102 @@ def test_unsourced_first_grandfathered_before_0239():
         filename="0238-x.yaml",
     )
     assert not has(e, "only a source")
+
+
+# --- prose-record-set --------------------------------------------------------
+# Prose that points at the record set instead of at pinball — "the machines
+# recorded here", "this entry". The reader is looking at one page and cannot
+# resolve "here"; a description decades on should read as an essay about the
+# thing, not about its listing.
+
+
+def rset(text, corpus=desc_unit, filename="0255-x.yaml"):
+    return perrs(corpus(text), filename=filename)
+
+
+def test_recorded_here_flagged():
+    e = rset("The machines recorded here are the ones that have more than one.")
+    assert has(e, "'recorded here'")
+    assert has(e, "the record set")
+
+
+def test_listed_below_flagged():
+    e = rset("The games listed below share the cabinet.")
+    assert has(e, "'listed below'")
+
+
+def test_counted_here_flagged():
+    e = rset("The models counted here are all Bally.")
+    assert has(e, "'counted here'")
+
+
+def test_this_entry_flagged():
+    e = rset("This entry covers both builds.")
+    assert has(e, "'This entry'")
+
+
+def test_this_listing_flagged():
+    e = rset("The date on this listing comes from the flyer.")
+    assert has(e, "'this listing'")
+
+
+def test_record_set_rule_applies_to_notes():
+    e = rset("Year taken from the flyer shown here.", corpus=note_unit)
+    assert has(e, "'shown here'")
+
+
+def test_recorded_without_deixis_clean():
+    # Ordinary evidence prose: who recorded it, not where it sits.
+    e = rset("The year IPDB records is 1932, and tilt.it lists the same.")
+    assert not has(e, "the record set")
+
+
+def test_company_register_entry_clean():
+    # 'entry' unqualified by 'this' is trade English — an entry in a register,
+    # an entry in a series.
+    e = rset("Its entry in the commercial register is dated 1972.")
+    assert not has(e, "the record set")
+
+
+def test_here_apart_from_verb_clean():
+    # The words must be adjacent: a sentence that merely contains both is fine.
+    e = rset("Bally recorded the sound for the game here in Chicago.")
+    assert not has(e, "the record set")
+
+
+def test_record_set_grandfathered_before_0255():
+    e = rset("The machines recorded here are prewar.", filename="0254-x.yaml")
+    assert not has(e, "the record set")
+    assert lp.RULE_SINCE["prose-record-set"] == 255
+
+
+def test_recorded_as_wikilink_flagged():
+    # How a thing is catalogued is not a fact about pinball. The wikilink is
+    # what makes this construction unambiguous: the object being "recorded as"
+    # is a record, not a fact a source documents.
+    e = rset(
+        "Which flank is doubled is recorded as [[gameplay-feature:left-dual-inlanes]]."
+    )
+    assert has(e, "'recorded as [['")
+    assert has(e, "the record set")
+
+
+def test_the_recorded_placement_flagged():
+    e = rset("The recorded placement is the [[gameplay-feature:left-drop-lanes]].")
+    assert has(e, "'The recorded placement'")
+
+
+def test_recorded_as_evidence_prose_clean():
+    # 'recorded as' is ordinary evidence prose about what a source documents,
+    # and the shipped corpus uses it that way fifteen times. Only the
+    # record-naming form, with a wikilink as its object, is the failing.
+    e = rset(
+        "Taito do Brasil is recorded as acknowledging a licence for the design.",
+        corpus=note_unit,
+    )
+    assert not has(e, "the record set")
+
+
+def test_recorded_as_plain_object_clean():
+    e = rset("The machine is recorded as a licensed build of the US original.")
+    assert not has(e, "the record set")

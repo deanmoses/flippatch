@@ -1,0 +1,69 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: kickback and kicker lane placements.
+claims:
+  - gameplay-feature.left-outlane-kickbacks:
+      description: |
+        Left outlane kickbacks are [[gameplay-feature:kickback]] mechanisms built into the left of the two [[gameplay-feature:outlanes]]: a solenoid at the foot of the lane fires the ball back up onto the playfield instead of letting it reach the drain.[[cite:1]] This is the ordinary home of the device,[[cite:2]] and a ruleset that lights "the kickback" without saying which one usually means this one.
+
+        The fitting has been in continuous service since the [[technology-generation:electromechanical]] years. [[manufacturer:bally]] used it through the late 1960s and 1970s, it became a staple of the solid-state era on machines such as *[[title:high-speed]]* (1986, [[manufacturer:williams]]), and [[manufacturer:jersey-jack]] still builds it into current games. Its relatives are variations on the same rescue rather than on its position: [[gameplay-feature:magnetic-kickbacks]] pull the ball clear with an electromagnet rather than striking it, [[gameplay-feature:subway-kickbacks]] swallow it and return it somewhere else on the playfield, and [[gameplay-feature:virtual-kickbacks]] dispense with the hardware and do the whole thing in software.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Glossary_of_pinball_terms
+          quote: "A launching mechanism located inside an outlane that sends the ball back into play."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Usually located at the left outlane, the kickback, when activated, kicks the ball back into play instead of allowing the ball to pass to the drain."
+  - gameplay-feature.left-kickback-lanes:
+      description: |
+        Left kickback lanes are [[gameplay-feature:kickback-lanes]] cut into the left flank of the playfield — a channel of their own, with a kicker at the bottom that throws back any ball running down it.
+
+        What separates the arrangement from a [[gameplay-feature:left-outlane-kickbacks]] is where the kicker lives. There it is fitted inside the outlane, rescuing a ball on its way out of play; here the lane is a route the designer has cut for it, and being kicked back out is what the lane is for. The two often share a playfield with the other left-side devices: *[[title:airborne-avenger]]* (1977, [[manufacturer:atari]]) puts a kickback lane down its left side and a [[gameplay-feature:detour-gates]] in the outlane beside it.[[cite:1]] The fitting is a long-lived one, running from woodrail machines such as *[[title:rag-mop]]* (1950, [[manufacturer:williams]]) to *[[title:whirlwind]]* (1990), and its high-playfield form is the [[gameplay-feature:upper-left-kickback-lanes]].
+      cites:
+        "1":
+          ref: ipdb:33
+          quote: "Left kickback lane, Left dual outlanes, Left outlane detour gate"
+  - gameplay-feature.upper-left-kickback-lanes:
+      description: |
+        Upper left kickback lanes are [[gameplay-feature:left-kickback-lanes]] set high on the playfield rather than down beside the flippers. A ball that works its way up the left flank runs into the lane and is kicked straight back out into the upper playfield, so the lane is a scoring route the player aims for rather than a save for a ball already lost.
+
+        [[manufacturer:bally]] built one into *[[title:playboy-arkon]]* (1978) and gave it a name of its own, the Grotto,[[cite:1]] and [[manufacturer:gottlieb]] used the same arrangement across the four machines of its *[[title:hit-the-deck-neptune]]* family in 1978 and 1979.
+      cites:
+        "1":
+          ref: ipdb:1823
+          quote: "Upper left kickback lane (the Grotto)"
+  - gameplay-feature.right-kickback-lanes:
+      description: |
+        Right kickback lanes are [[gameplay-feature:kickback-lanes]] on the right flank of the playfield, the mirror image of [[gameplay-feature:left-kickback-lanes]]. The kicker sits at the bottom of the channel and returns the ball up it.
+
+        The right side of a playfield is the crowded one — the [[gameplay-feature:shooter-lanes]] runs up the cabinet's right edge and the ball arrives from that direction — and where designers have found room for a kickback lane there, it has been high on the playfield, as [[gameplay-feature:upper-right-kickback-lanes]].
+  - gameplay-feature.upper-right-kickback-lanes:
+      description: |
+        Upper right kickback lanes are [[gameplay-feature:right-kickback-lanes]] placed high on the playfield, above the pop bumpers rather than beside the flippers, where they return a ball that has climbed the right flank back into the upper field.
+
+        The arrangement belongs to the [[technology-generation:electromechanical]] years and the solid-state machines that immediately followed them: [[manufacturer:bally]] fitted it to *[[title:mariner-sea-ray]]* (1971), and [[manufacturer:williams]], [[manufacturer:sonic]] and [[manufacturer:zaccaria]] all used it through the middle 1970s.
+  - gameplay-feature.left-kicker-lanes:
+      description: |
+        Left kicker lanes are [[gameplay-feature:kicker-lanes]] on the left side of the playfield: a channel with a solenoid [[gameplay-feature:kickers]] in it that strikes the ball as it passes and sends it on with more speed than it arrived with.
+
+        The difference from a [[gameplay-feature:left-kickback-lanes]] is direction. A kickback lane sends the ball back the way it came; a kicker lane keeps it going, and exists to move the ball from one part of the playfield to another. [[manufacturer:bally]] was the heaviest user, from *[[title:3-in-line-2]]* (1935) through *[[title:nip-it]]* (1973) and *[[title:future-spa]]* (1979), and Spanish and Italian makers took the fitting up in the same years.
+  - gameplay-feature.upper-left-kicker-lanes:
+      description: |
+        Upper left kicker lanes are [[gameplay-feature:left-kicker-lanes]] set high on the playfield, where the kick launches the ball across the upper field rather than down towards the flippers.
+
+        The fitting had a short life, running through the second half of the 1970s on machines from [[manufacturer:inder]], [[manufacturer:sega]] and [[manufacturer:stern-electronics]] before [[manufacturer:williams]] used it on *[[title:algar]]* (1980).
+  - gameplay-feature.right-kicker-lanes:
+      description: |
+        Right kicker lanes are [[gameplay-feature:kicker-lanes]] on the right flank of the playfield, where a solenoid in the channel adds speed to a ball travelling through it rather than returning it the way it came.
+
+        As with their [[gameplay-feature:right-kickback-lanes]] neighbours, the lower right of a playfield is largely spoken for by the [[gameplay-feature:shooter-lanes]] and the ball's arrival path, and the arrangement is found high on the playfield instead, as [[gameplay-feature:upper-right-kicker-lanes]].
+  - gameplay-feature.upper-right-kicker-lanes:
+      description: |
+        Upper right kicker lanes are [[gameplay-feature:right-kicker-lanes]] placed high on the playfield, where the kicker drives a ball that has climbed the right flank onward into the upper field.
+
+        The lane is rarely the whole mechanism. On *[[title:big-hunt]]* (1976, [[manufacturer:ami]]) a spring-loaded diverter above it sorts the traffic, letting balls arriving from the spinning target drop to the kicker while sending balls the kicker has just launched away towards the pop bumpers.[[cite:1]] The fitting is a late-[[technology-generation:electromechanical]] and early solid-state one, used by [[manufacturer:inder]], [[manufacturer:zaccaria]], [[manufacturer:williams]] and [[manufacturer:playmatic]] between the middle 1970s and the middle 1980s.
+      cites:
+        "1":
+          ref: ipdb:3692
+          quote: "It allows balls coming from the spinning target to pass to the kicker below it while balls from the kicker are diverted towards the pop bumpers."
