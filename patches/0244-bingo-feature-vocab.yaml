@@ -1,0 +1,39 @@
+attribution: flipcommons-catalog
+description: >
+  New bingo gameplay-feature vocabulary and parent links.
+claims:
+  - gameplay-feature.next-game-award:
+      create: true
+      name: Next Game Award
+      cite:
+        ref: "https://bingo.cdyn.com/machines/features.html"
+        quote: "Something you do on the current game will enable a feature automatically on the next game."
+  - gameplay-feature.in-line-scoring:
+      create: true
+      name: In-Line Scoring
+      cite:
+        ref: "https://bingo.cdyn.com/machines/features.html"
+        quote: "you win credits by getting a minimum of three adjacent numbers lit in a vertical/horizontal line or the two corner-to-corner diagonal lines of the 5x5 card"
+  - gameplay-feature.section-scoring:
+      create: true
+      name: Section Scoring
+      cite:
+        ref: "https://bingo.cdyn.com/machines/features.html"
+        quote: "section scoring determined winners by balls being in the same colored pattern on the card, and most importantly, the numbers did not need to be adjacent to win"
+  - gameplay-feature.backglasses:
+      create: true
+      name: Backglasses
+  - gameplay-feature.bally-hole:
+      note: "The Bally Hole is playfield hole #16, one of the numbered trap holes on a bingo playfield; making it enables a feature on the next game."
+      cite:
+        - ref: ipdb:382
+          quote: "Trap holes (25), Magic Squares, Bally Hole"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Playfield hole #16 does something special, such as awarding an extra ball. The ballyhole was also used to light features automatically for the NEXT game played, like enabling all the magic squares."
+      gameplay_feature_parent: [trap-holes, next-game-award]
+  - gameplay-feature.mirrored-backglasses:
+      note: "A backglass variant; belongs under the new generic Backglasses parent."
+      gameplay_feature_parent: [backglasses]
+  - gameplay-feature.lenticular-backglasses:
+      note: "A backglass variant; belongs under the new generic Backglasses parent."
+      gameplay_feature_parent: [backglasses]

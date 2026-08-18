@@ -6,7 +6,8 @@ Working notes for the sessions writing the remaining gameplay-feature descriptio
 
 - **Done**: 0251 (calibration pair: shaker-motors, magic-squares), 0252 (bingo card family: bingo-cards, super-cards, magic-lines, magic-screen, mystic-lines, bally-hole). Both reviewed by the user through several feedback rounds — copy their register.
 - **Remaining**: ~134 features without descriptions. Worklist: `make analyze FILE=campaigns/0239-descriptions/candidates.sql Q="FROM desc_candidates WHERE entity_type='gameplay-feature';"`
-- Patches 0244/0245/0248/0249 are open slots reserved for catalog-fill work (see [gaps.jsonl](gaps.jsonl)); do NOT reserve new holes. Description patches take the next fresh number.
+- Patches 0245/0249 are open slots reserved for catalog-fill work (see [gaps.jsonl](gaps.jsonl)); do NOT reserve new holes. Description patches take the next fresh number.
+- 0244 (2026-08-18) filled the bingo/vocabulary gaps rows: created gameplay-feature records `next-game-award`, `in-line-scoring`, `section-scoring`, `backglasses`; parented `bally-hole` under trap-holes + next-game-award and the two backglass variants under `backglasses`. All four new records still need descriptions under this campaign (they surface on the worklist query). The roto gaps row (united-bingos) was presented and not approved — it stays in gaps.jsonl.
 
 ## Classification → register
 
