@@ -1,0 +1,133 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: bingo scoring methods, next game award.
+claims:
+  - gameplay-feature.in-line-scoring:
+      description: |
+        In-line scoring is the way a [[game-format:bingo-pinball]] machine pays: a win is three or more lit numbers standing adjacent along a row, a column or one of the two corner-to-corner diagonals of the 5x5 [[gameplay-feature:bingo-cards]], and the award climbs steeply with the length of the line — four in a row paid roughly four times what three did, and five paid 100 replays.[[cite:1]][[cite:2]]
+
+        The method named the machines before the card did. When the Johnson Act closed interstate commerce to the [[game-format:one-ball]] payout games, [[manufacturer:bally]] answered with a five-ball design that asked the player to light a row of numbers in a grid printed on the [[gameplay-feature:backglasses]]; the trade called these in-line games, and players, reading the grid for what it looked like, renamed them bingo pinballs.[[cite:3]][[cite:4]][[cite:5]]
+
+        ## Which line, not just how many
+
+        Early machines drew no distinction between one three-in-line and another.[[cite:6]] Painting the lines in colors changed that: with red, yellow and green carrying separate odds, three in red might pay 8 where three in green paid 64.[[cite:7]] That gap is the reason the card-moving features exist — a player holding a cheap winner can spend more coins on [[gameplay-feature:magic-squares]] or [[gameplay-feature:magic-lines]] and drag the same lit numbers into an expensive one.
+
+        The shape of a scoring line was not fixed either. The two long diagonals through the card counted on most machines, and where a machine allowed diagonals at all, any diagonal run of three or more scored; a few added extra short diagonals, and a few laid out cards of 3x6 or 4x6 holes that paid for six in a row.[[cite:8]][[cite:9]]
+
+        ## Displacement
+
+        [[gameplay-feature:section-scoring]] arrived beside in-line scoring rather than instead of it: on a [[gameplay-feature:magic-screen]] machine the screen's home position scores lines, and sliding it left trades them away for colored sections.[[cite:10]] The clean break came with [[gameplay-feature:mystic-lines]], from *[[title:border-beauty]]* (1965, Bally), which took the section idea and dropped line scoring altogether.[[cite:11]]
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "you win credits by getting a minimum of three adjacent numbers lit in a vertical/horizontal line or the two corner-to-corner diagonal lines of the 5x5 card"
+        "2":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "You only had to line up three numbers on the card to win a small amount of replays. 4 in a row earned about 4 times the amount for 3. And 5 in a row earned 100 replays."
+        "3":
+          ref: "http://www.pinballcollectorsresource.com/russ_files/bally.html"
+          quote: 'were, for all practical purposes, "outlawed" by being included in the classes of machines covered by the new Johnson Act.'
+        "4":
+          ref: "http://www.pinballcollectorsresource.com/russ_files/bally.html"
+          quote: 'These "In-Line" games, as they were first known, used 5 (or more) balls, instead of 1, and required the player to light a row of 3 or more numbers on the backglass in a 5 by 5 matrix in the form of a common "bingo card".'
+        "5":
+          ref: "http://www.pinballcollectorsresource.com/russ_files/bally.html"
+          quote: 'For this reason these games soon became known to players as "Bingo Pinballs".'
+        "6":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Most early bingo's made no distinction on how an in-line scoring win was achieved. When colored lines were added, though, it became more important how the in-line score was formed on the card."
+        "7":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Triple deck odds made the payout for 3,4, or 5-in-line depend on the colored line the win was in. For example, 3-in-line in red might pay 8, but three-in-line in green could pay 64."
+        "8":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "In most bingos with in-line scoring, the five number diagonal lines forming a big X through the main card counted. Games with diagonal scores generally allowed any diagonal line three numbers or longer to score."
+        "9":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "a few games also had 6-in-line scoring on 3x6 (18 holes) or 4x6 cards (24 holes)"
+        "10":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "In the screen home position, the standard three color in-line scoring is available. As the screen is slid left, the in-line scoring is replaced with section scoring."
+        "11":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "this new game type took the section scoring idea from the magic screen games and got rid of the in-line scoring that had been on every bingo up until now"
+  - gameplay-feature.section-scoring:
+      description: |
+        Section scoring is the [[game-format:bingo-pinball]] alternative to lining numbers up: a win is counted inside an irregular colored area of the [[gameplay-feature:bingo-cards]], and the lit numbers only have to fall in the same section — they need not touch each other at all.[[cite:1]][[cite:2]]
+
+        That one relaxation changes what the player is doing. Holding two numbers of a line means shooting for one specific hole; a section of six numbers wanting any three of them means several holes will serve, and the reading of a near-miss card opens up accordingly.[[cite:3]]
+
+        ## Origins
+
+        The method came in with the [[gameplay-feature:magic-screen]] on *[[title:carnival-queen]]* (1958, [[manufacturer:bally]]), a painted metal panel sliding across a card of fixed numbers.[[cite:4]] A screen machine carries both scoring styles at once: in the home position the card pays conventional colored lines, and as the screen slides left the lines give way to sections.[[cite:5]] Sections could be sweetened as well as shaped — a super-section paid two lit numbers as though they were three, three as though they were four.[[cite:6]][[cite:7]]
+
+        ## Afterwards
+
+        Section scoring outlived the mechanism that introduced it. [[gameplay-feature:mystic-lines]] machines kept the colored areas but held them still, moving the numbers behind a painted panel instead, and abandoned [[gameplay-feature:in-line-scoring]] entirely.[[cite:8]]
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "section scoring determined winners by balls being in the same colored pattern on the card, and most importantly, the numbers did not need to be adjacent to win"
+        "2":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "to win in a section, the lit numbers DO NOT need to be adjacent!"
+        "3":
+          ref: "https://www.kineticist.com/news/a-beginners-guide-to-bingo-pinball"
+          quote: "a shape comprised of 6 different numbers only required that you land three balls in any of the six holes corresponding to the numbers in that shape to win"
+        "4":
+          ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "First introduced in Carnival Queen, the numbers on the card are stationary, but a moving metal screen is slid across them."
+        "5":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "In the screen home position, the standard three color in-line scoring is available. As the screen is slid left, the in-line scoring is replaced with section scoring."
+        "6":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "section scoring combined with score boosting."
+        "7":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Two numbers lit in this section would pay like three, three pay like four, etc."
+        "8":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Unlike the magic screen games, the color sections were stationary and you moved the numbers behind the metal panel that had the color pattern painted on it."
+  - gameplay-feature.next-game-award:
+      description: |
+        A next game award is a [[game-format:bingo-pinball]] feature that pays into the future: something the player achieves during the current game switches a feature on, or guarantees a level of odds, in the game that follows it.[[cite:1]]
+
+        It is a device carried over from the [[game-format:one-ball]] machines, and its commercial logic is plain — an award that cannot be collected without playing again.[[cite:1]]
+
+        ## The forms it took
+
+        The [[gameplay-feature:bally-hole]], playfield hole 16, is the blunt version: making it lights features automatically next game, a whole card's worth of [[gameplay-feature:magic-squares]] among them.[[cite:2]] The elaborate version is the OK game, renamed the red letter game on later machines, in which two or more balls landing in a designated orange section bought the following game a guaranteed floor of odds and features without the extra coins that would ordinarily buy them.[[cite:3]][[cite:4]][[cite:5]] Futurity went further again, letting a player bank OK games one on top of another until the game finally played could be played with nearly everything enabled.[[cite:6]]
+
+        [[manufacturer:united]] worked the same idea through the game's own name. Its machines lit the letters of the title on the [[gameplay-feature:backglasses]] as enabled [[gameplay-feature:rollover-buttons]] were hit, a count held on a unit that survived power cycles and could take days and many players to complete.[[cite:7]][[cite:8]] Completing it usually paid out on the spot, though on some machines what it bought was a feature in the next game played.[[cite:9]][[cite:10]]
+      cites:
+        "1":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "A great idea from the one-ball games. Something you do on the current game will enable a feature automatically on the next game."
+        "2":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "The ballyhole was also used to light features automatically for the NEXT game played, like enabling all the magic squares."
+        "3":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Two or more balls in the orange will give you a free game with guaranteed minimum odds and features lit"
+        "4":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "The OK game was also called a red letter game on later model bingos"
+        "5":
+          ref: "http://www.pinballcollectorsresource.com/russ_files/bally.html"
+          quote: 'special screen section (the "OK Section") in which lighting 3 of it''s 4 or 5 numbers gave the player guaranteed minimum "odds" and "special features" in the next game played, without depositing the usual "extra coins"'
+        "6":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "The futurity feature allowed you to accumulate OK games in an additive fashion until you got to the maximum game."
+        "7":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "the letters in the game name could be progressively lit by hitting enabled rollover buttons"
+        "8":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Like Bally's futurity, lite-a-name was tracked by a unit in the machine that did not reset between power cycles, so it could take many days/players to fully light the game name."
+        "9":
+          ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "When the name was completed, the usual reward was an in-line payout at the current score levels."
+        "10":
+          ref: "http://www.pinballcollectorsresource.com/russ_files/bally.html"
+          quote: "lighting all the letters in the name of the game on the backglass awarded the player a large number of replays, or some special feature in the next game played"

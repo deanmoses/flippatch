@@ -1,0 +1,114 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >-
+  Gameplay feature descriptions: roulette wheels, time clocks, plaques.
+claims:
+  - gameplay-feature.roulette-wheels:
+      description: |
+        A roulette wheel is a turning disc set into the playfield and divided into marked segments, whose resting position decides what the player is awarded — the casino wheel borrowed as a scoring device, and fitted almost exclusively to machines themed on gambling.
+
+        The name is shared. IPDB's glossary treats roulette wheel as another term for the [[gameplay-feature:captive-ball-spinners]], a different mechanism entirely: a large metal wheel ringed with small trap holes, spun with a captive ball sealed away from the ball in play, which settles into one of the holes for its value when the wheel stops.[[cite:1]][[cite:2]] In its literal sense the term means what it says: a disc the player can watch turn, painted to look like the wheel it imitates.
+
+        [[manufacturer:game-plan]] built its 1978 cocktail machines around one. On *[[title:real]]* the wheel sits in the middle of the playfield and is set going by the machine's kick-out holes, handing out random awards;[[cite:3]] *[[title:chuck-a-luck]]* is the same playfield with factory-applied stickers pasted over the original artwork,[[cite:4]] and *[[title:foxy-lady]]* carries the wheel as well.
+
+        Where the wheel is stepped rather than spun it stops being a lottery. [[manufacturer:segasa]]'s *[[title:casino-royale]]* (1976) advances its wheel one position at a time from two targets at the top of the playfield, freezes it with a target at the lower left and cashes whatever value is showing through a kick-out hole — a value the player has spent the ball climbing.[[cite:5]] [[manufacturer:bally]] took the other route on *[[title:speakeasy]]* (1982) and hid the mechanism under the playfield,[[cite:6]] a machine [[manufacturer:ltd-do-brasil]] then copied as *[[title:al-capone]]*.[[cite:7]]
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Also referred to as a Roulette Wheel."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A scoring device consisting of a large metal wheel and a small steel ball enclosed in an area not accessible by the ball in play."
+        "3":
+          ref: ipdb:1925
+          quote: "A roulette wheel sits in the center of the playfield, activated by the three poppers on the machine, to give the player random awards."
+        "4":
+          ref: ipdb:3020
+          quote: "The playfields for this game are actually playfields from Game Plan's 1978 'Real' but with factory-applied stickers overlaying the original artwork."
+        "5":
+          ref: ipdb:467
+          quote: "Two top targets advance roulette wheel playfield spinner. Hitting lower left target stops wheel from advancing. Kick-out hole collects wheel value."
+        "6":
+          ref: "https://pinside.com/pinball/machine/speakeasy"
+          quote: "Flyaway targets, working roulette wheel under playfield, Add-A-Ball play, but can win credits too."
+        "7":
+          ref: ipdb:5176
+          quote: "This game is a copy of Bally's 1982 'Speakeasy'."
+  - gameplay-feature.time-clocks:
+      description: |
+        A time clock is a spring-and-gears timer mounted beneath the playfield of an early machine, wound and started by the mechanical push of the coin chute that begins a game, which three to five minutes later opens a switch and cuts power to the machine and all its lighting — whether or not a game is still in progress.[[cite:1]][[cite:2]]
+
+        What a coin bought on such a machine was therefore an interval rather than a count of balls. The next coin pushed in resets the timer, closes the switch and lights the machine again for play, which makes the timer as much a merchandising device as a mechanism: it ends the transaction on the operator's schedule.[[cite:3]]
+
+        ## The bell housing
+
+        The standard timer sits inside a metal bell that has no clapper and never rings, the bell serving only as a protective shell.[[cite:4]] The variant that keeps its clapper, and does ring when the time expires, is called a bell timer.[[cite:5]] Parts lists of the period carried the assembly under the same name the trade used for the mechanism, illustrated so that it could not be confused with something else.[[cite:6]]
+
+        ## Span
+
+        PAMCO put one on the playfield of *[[title:time]]* in February 1935,[[cite:7]] and [[manufacturer:rock-ola-manufacturing-corporation]] fitted them from that year too. The device outlasted the flipperless machines it was made for: [[manufacturer:gottlieb]]'s *[[title:buccaneer]]* (1948) and [[manufacturer:genco]]'s *[[title:canasta]]* (1950) still carried a time clock, on playfields that by then had flippers and counted balls, and the timer went out with the era of selling time by the coin rather than the game.
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A device found under the playfields of many flipperless games consisting of a spring-and-gears timing mechanism. This timer was wound up and initiated by the mechanical action of the player pushing the coin chute to start a game."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "Usually 3 to 5 minutes later, the timer would finish by opening a switch to kill power to the game and all of its illumination whether the player had a game in progress or not."
+        "3":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "When a player inserts a next coin into the chute and pushes it in to start a new game, it resets the timer, closes the switch, and lights up the game for play."
+        "4":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "The timer found standard in many flipperless games is housed inside a metal bell yet it has no clapper and the bell does not ring. The bell serves only as a protective housing for this timer."
+        "5":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "A Time Clock that has a clapper to ring a bell when the time is up."
+        "6":
+          ref: https://www.ipdb.org/glossary.php
+          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
+          quote: "This timer may be listed in parts catalogs of the day as a time clock or a time clock assembly and will have a picture with it so that the term is not confused to mean some other device."
+        "7":
+          ref: "https://www.pinrepair.com/prewar/index.htm"
+          quote: "Time, Pacific Amusement Co. (PamCo), 02/35, has a time clock on the playfield."
+  - gameplay-feature.numbered-plaques:
+      description: |
+        A numbered plaque is a small engraved plate fitted to a machine built in a capped run, carrying that machine's own number within the run. It travels with a certificate of authenticity, and it is the piece of a limited edition that cannot be reproduced afterwards.
+
+        The plaque belongs to a commercial arrangement rather than to the game: the same design sold at two or three specification levels, with the dearest level limited to a stated number of machines. [[manufacturer:stern-pinball]] listed "1-500 Numbered plaque and certificate of authenticity" among the limited-edition-only features of *[[model:transformers-limited-edition]]* in 2011, with 125 more numbered machines each in the [[model:transformers-autobot-crimson-limited-edition]] and [[model:transformers-decepticon-violet-limited-edition]] trims.[[cite:1]][[cite:2]] The wording has barely moved since: *[[model:transformers-more-than-meets-the-eye-limited-edition]]* is capped at 750 machines worldwide and ships with a sequentially numbered plaque and a signed certificate.[[cite:3]][[cite:4]]
+
+        The practice is not one firm's. [[manufacturer:turner-pinball]] caps *[[model:merlins-arcade-legendary-edition]]* at 500 machines, each numbered and accompanied by a signed certificate, and leaves its cheaper edition unnumbered and unlimited.[[cite:5]][[cite:8]] [[manufacturer:pedretti-gaming]] gave *[[model:funhouse-remake-limited-edition]]* a numbered metal plaque and a certificate signed in the name of the game's talking head.[[cite:6]]
+
+        That contrast with the cheaper edition is the point of the thing. Much of what separates the tiers — code, a shaker motor, a topper — can be bought later as an upgrade kit and fitted to a machine that shipped without it.[[cite:7]] The number cannot, and the plaque is what fixes a machine's place in a run that is closed.
+      cites:
+        "1":
+          ref: "https://www.sternpinball.com/Games/transformers-le.aspx"
+          archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+          quote: "1-500 Numbered plaque and certificate of authenticity."
+        "2":
+          ref: "https://www.sternpinball.com/Games/transformers-le.aspx"
+          archive: "http://web.archive.org/web/20111203043615id_/http://www.sternpinball.com/Games/transformers-le.aspx"
+          quote: "1-125 Numbered plaque and certificate of authenticity."
+        "3":
+          ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: "Limited to 750 games globally, the highly collectible Limited Edition model includes"
+        "4":
+          ref: "https://www.sternpinball.com/2026/05/20/roll-out-for-battle-with-transformers-more-than-meets-the-eye-by-stern-pinball"
+          quote: "a sequentially numbered plaque, a signed Certificate of Authenticity"
+        "5":
+          ref: "https://turnerpinball.com/games/merlins-arcade"
+          quote: "machines will be produced. Each will be numbered and include a signed Certificate of Authenticity."
+        "8":
+          ref: "https://turnerpinball.com/games/merlins-arcade"
+          quote: "Arcade Edition™ machines are not numbered or limited."
+        "6":
+          ref: "https://www.pinballnews.com/site/2024/05/14/funhouse-remake-revealed"
+          quote: "The Limited Edition also gains an enhanced sound system, a numbered metal plaque and a certificate of authenticity"
+        "7":
+          ref: "https://www.pinballnews.com/site/2024/05/14/funhouse-remake-revealed"
+          quote: "Additional upgrades and add-ons for the Classic Edition will be available for purchase, including 2.0 game code, shaker motor, and a topper."

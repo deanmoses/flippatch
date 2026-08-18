@@ -17,9 +17,8 @@ The catalog's own hierarchy (`gameplay_features.parents`/`children`) does the cl
 
 ## Remaining batches
 
-1. **Modern lighting + glass**: interactive-lighting tree, Stern Expression family, the anti-reflection-glass family with its branded children. Maker marketing pages, many already cached.
-2. **Audio + universal parts**: speakers, subwoofers, stereo-sound, speech, bells, chimes, knockers (0251's shaker-motors is the register model).
-3. **Bingo-adjacent stragglers**: roulette-wheels, time-clocks, numbered-plaques, magic-glass… cdyn sources already cached.
+- **Modern lighting + glass**: interactive-lighting tree, Stern Expression family, the anti-reflection-glass family with its branded children. Maker marketing pages, many already cached.
+- **Audio + universal parts**: speakers, subwoofers, stereo-sound, speech, bells, chimes, knockers (0251's shaker-motors is the register model).
 
 ## Process per batch
 
@@ -28,7 +27,7 @@ The catalog's own hierarchy (`gameplay_features.parents`/`children`) does the cl
 3. Verify every quote span BEFORE writing it into the patch: `make show-source ARGS="<ref> --check '<span>'"`.
 4. One patch per family, `flipcommons-ai-desc-gameplay-feature`, descriptions only.
 5. `make validate` + `make verify-quote-verbatim ARGS="<NNNN>"`, then apply via the snapshot loop — **ask the user which snapshot**; this campaign has been using `db.prod.patch-0238.2026-08-13.sqlite3`.
-6. `make validate-in-db` — the DB-aware catalog audit. Fix its **errors** (wrong-grain links, parenthetical year/maker mismatches); triage its **warnings** with the user (uncarried-link fires on deliberate contrast mentions too). Several standing warnings on 0243/0250/0251 are confirmed-deliberate (Bright Lights, Humpty Dumpty, Melody, Cover Girl, Variety, "Star Wars") — leave them.
+6. `make validate-in-db` — the DB-aware catalog audit. Fix its **errors** (wrong-grain links, parenthetical year/maker mismatches); triage its **warnings** with the user (uncarried-link fires on deliberate contrast mentions too). Several standing warnings on 0243/0250/0251 are confirmed-deliberate (Bright Lights, Humpty Dumpty, Melody, Cover Girl, Variety, "Star Wars") — leave them. From 0260/0261, four more are confirmed-deliberate: `in-line-scoring` → Border Beauty (the machine that abolished it), `section-scoring` → Carnival Queen and `time-clocks` → _Time_, both real attachment gaps now in gaps.jsonl, and `numbered-plaques` → Funhouse (Remake Limited Edition), whose model grain is deliberate per the Model vs title rule below.
 7. Research bycatch (missing records, missing fields, missing parents) appends rows to [gaps.jsonl](gaps.jsonl) — fields: `group`, `kind` (missing-field | new-record), `entity_type`, `target`, `field`, `claimed_value`, `source_urls`, `evidence_note`. Group by manufacturer/family so an acquisition session gets all its sources together.
 
 ## Sources
