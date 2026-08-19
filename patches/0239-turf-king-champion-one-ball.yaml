@@ -19,7 +19,7 @@ claims:
               quote: "IPD No. 2672 / April 12, 1950 / 1 Player"
             - ref: https://bingo.cdyn.com/history/mcp/racy.html
               quote: "Bally Turf King - 1950"
-          year: 1950
+          production_year: 1950
         - note: "The replay (non-payout) form of the one-ball horse-race genre; its payout twin is Bally's 1950 'Grandstand', and the Skill Lane was the alternate configuration for jurisdictions requiring 5-ball play."
           cite:
             - ref: "ipdb:2672"
@@ -32,7 +32,7 @@ claims:
         - cite:
             ref: "ipdb:3008"
             quote: "IPD No. 3008 / April 04, 1949 / 1 Player"
-          year: 1949
+          production_year: 1949
         - cite:
             - ref: "ipdb:3008"
               quote: "1 ball for 5 cents. Trap holes (31), Passive bumpers (4). Skill Lane option for 5-ball jurisdictions."

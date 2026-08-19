@@ -10,7 +10,7 @@ claims:
       name: "No Good Gofers: Battle for the Green (Kit)"
       title: no-good-gofers-battle-for-the-green
       corporate_entity: cardona-pinball-designs
-      year: 2022
+      production_year: 2022
       theme: [golf, sports]
   - model.no-good-gofers-battle-for-the-green-kit:
       note: "An official, licensed, commercially sold product, so produced rather than aftermarket (DomainModel.md defines aftermarket as not an official commercial release)."
@@ -27,7 +27,7 @@ claims:
         ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/b8901727-49fa-4784-801d-6663cfa49dd1/NGG%20rev%20changes%202025%2006%2001.pdf"
         locator: PDF document page 1
         quote: "version 20221215 [...] First commercial release"
-      month: 12
+      production_month: 12
   - model.no-good-gofers-battle-for-the-green-kit:
       note: "The kit installs into a pinball machine and its result is a new pinball game, so the format follows."
       cite:
@@ -84,7 +84,7 @@ claims:
       name: "Black Rose: Skull and Bones (Kit)"
       title: black-rose-skull-and-bones
       corporate_entity: cardona-pinball-designs
-      year: 2023
+      production_year: 2023
       theme: [fantasy, fictional, pirates]
   - model.black-rose-skull-and-bones-kit:
       note: "An official, licensed, commercially sold product, so produced rather than aftermarket (DomainModel.md defines aftermarket as not an official commercial release)."
@@ -101,7 +101,7 @@ claims:
         ref: "https://img1.wsimg.com/blobby/go/4bd466e8-edb0-49f6-afcc-31250ba5b0f3/downloads/4c1e843c-5ca2-4426-9b9a-37d3ff7ac4be/BRose%2020250610%20change%20log.pdf"
         locator: PDF document page 1
         quote: "Black Rose: Skull and Bones version 2023_06_22 [...] 1st production release"
-      month: 6
+      production_month: 6
   - model.black-rose-skull-and-bones-kit:
       note: "The kit installs into a pinball machine and its result is a new pinball game, so the format follows."
       cite:

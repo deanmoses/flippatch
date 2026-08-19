@@ -60,7 +60,7 @@ claims:
         - cite:
             ref: "ipdb:1352"
             quote: "IPD No. 1352 / April 13, 1949 / 1 Player"
-          year: 1949
+          production_year: 1949
         - cite:
             ref: "ipdb:1352"
             quote: "1 ball for 5 cents. Trap holes (31), Passive bumpers (4). Skill Lane option for 5-ball jurisdictions."
@@ -70,7 +70,7 @@ claims:
         - cite:
             ref: "ipdb:1080"
             quote: "IPD No. 1080 / July 12, 1950 / 1 Player"
-          year: 1950
+          production_year: 1950
         - cite:
             - ref: "ipdb:1080"
               quote: "Passive bumpers (4), Trap holes (31). Skill Lane option for 5-ball jurisdictions. [...] The replay version of this game is Bally's 1950 'Turf King'."
@@ -84,7 +84,7 @@ claims:
               quote: "IPD No. 975 / January 23, 1951 / 1 Player"
             - ref: https://bingo.cdyn.com/history/mcp/racy.html
               quote: "The last two Bally one-balls were FUTURITY in January 1951 and SUNSHINE PARK in March 1952."
-          year: 1951
+          production_year: 1951
         - cite:
             - ref: "ipdb:975"
               quote: "Theme: Sports - Horse Racing [...] Trap holes (31)."

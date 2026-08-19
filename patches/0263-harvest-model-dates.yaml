@@ -4,8 +4,8 @@ description: >-
 claims:
   - model.golden-harvest:
       changesets:
-        - year: 1935
-          month: 11
+        - production_year: 1935
+          production_month: 11
           cite:
             - ref: ipdb:1052
               quote: "IPD No. 1052 / November 19, 1935 / 1 Player"
@@ -31,8 +31,8 @@ claims:
               quote: "This is a payout machine that dispenses nickles (2 at a time) depending on the holes the balls land in."
   - model.harvest-moon-2:
       changesets:
-        - year: 1936
-          month: 2
+        - production_year: 1936
+          production_month: 2
           cite:
             - ref: ipdb:1130
               quote: "IPD No. 1130 / February 11, 1936 / 1 Player"

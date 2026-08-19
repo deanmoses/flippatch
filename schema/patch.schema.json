@@ -101,6 +101,14 @@
       "additionalProperties": { "$ref": "#/definitions/citeSpec" },
       "description": "Inline-citation map declaring the NEW footnotes referenced from a markdown field (e.g. description) via [[cite:N]] markers. Each key is a numeric handle quoted as a string ('1'); each value is a cite-ref string or a { ref, archive, locator, quote } mapping — locator and quote land on the minted footnote instance, exactly like the entry-level cite. Existing-footnote markers ([[cite:<slug>]]) self-resolve and take no entry here. Marker<->map correspondence and cite resolution are validated authoritatively by ingest_patches."
     },
+    "renamedToProductionYear": {
+      "not": {},
+      "description": "RENAMED. The model date field `year` is now `production_year` (the date of physical assembly and factory rollout); a design/release-to-production date goes in `project_year`. flipcommons' ingest_patches accepts only the new names — there is no legacy alias — so a patch carrying `year` would fail at apply time. This rule turns that into a validation error here instead. Note this applies to CLAIM fields only: a `sources:` entry keeps its own `year`, which is the publication date of a cited work and is unrelated."
+    },
+    "renamedToProductionMonth": {
+      "not": {},
+      "description": "RENAMED. The model date field `month` is now `production_month`; see `renamedToProductionYear`. A design/release-to-production month goes in `project_month`. `sources[].month` is unaffected."
+    },
     "yearValue": {
       "type": "integer",
       "minimum": 1800,
@@ -218,8 +226,12 @@
               "note": { "$ref": "#/definitions/note" },
               "cite": { "$ref": "#/definitions/cite" },
               "cites": { "$ref": "#/definitions/cites" },
-              "year": { "$ref": "#/definitions/yearValue" },
-              "month": { "$ref": "#/definitions/monthValue" },
+              "production_year": { "$ref": "#/definitions/yearValue" },
+              "production_month": { "$ref": "#/definitions/monthValue" },
+              "project_year": { "$ref": "#/definitions/yearValue" },
+              "project_month": { "$ref": "#/definitions/monthValue" },
+              "year": { "$ref": "#/definitions/renamedToProductionYear" },
+              "month": { "$ref": "#/definitions/renamedToProductionMonth" },
               "player_count": { "$ref": "#/definitions/playerCountValue" },
               "production_quantity": { "$ref": "#/definitions/productionQuantityValue" },
               "changesets": {
@@ -242,8 +254,12 @@
                     "note": { "$ref": "#/definitions/note" },
                     "cite": { "$ref": "#/definitions/cite" },
                     "cites": { "$ref": "#/definitions/cites" },
-                    "year": { "$ref": "#/definitions/yearValue" },
-                    "month": { "$ref": "#/definitions/monthValue" },
+                    "production_year": { "$ref": "#/definitions/yearValue" },
+                    "production_month": { "$ref": "#/definitions/monthValue" },
+                    "project_year": { "$ref": "#/definitions/yearValue" },
+                    "project_month": { "$ref": "#/definitions/monthValue" },
+                    "year": { "$ref": "#/definitions/renamedToProductionYear" },
+                    "month": { "$ref": "#/definitions/renamedToProductionMonth" },
                     "player_count": { "$ref": "#/definitions/playerCountValue" },
                     "production_quantity": { "$ref": "#/definitions/productionQuantityValue" }
                   }

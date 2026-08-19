@@ -8,8 +8,8 @@ claims:
         - cite:
             ref: "ipdb:1569"
             quote: "IPD No. 1569 / December 04, 1947 / 1 Player"
-          year: 1947
-          month: 12
+          production_year: 1947
+          production_month: 12
         - cite:
             - ref: "ipdb:1569"
               quote: "'Melody Roll' is the rolldown version of Bally's 1948 'Melody'."
@@ -38,14 +38,14 @@ claims:
       cite:
         ref: "ipdb:1686"
         quote: "IPD No. 1686 / September 17, 1947 / 1 Player"
-      year: 1947
-      month: 9
+      production_year: 1947
+      production_month: 9
   - model.number-roll:
       cite:
         ref: http://www.pinrepair.com/arcade/numroll.htm
         quote: 'Number Roll, Genco, 6/57, two player, a rolldown game where the player is trying to get "21" in each of the four frames.'
-      year: 1957
-      month: 6
+      production_year: 1957
+      production_month: 6
       game_format: rolldown
   - model.derby-roll:
       cite:
@@ -72,7 +72,7 @@ claims:
       name: Lucky 7
       title: lucky-7-genco
       corporate_entity: genco-manufacturing-company
-      year: 1957
+      production_year: 1957
       game_format: rolldown
       technology_generation: electromechanical
       cite:

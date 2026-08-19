@@ -161,7 +161,7 @@ def test_legal_directive_combinations_accepted(schema_validator, body):
     ],
 )
 def test_valid_entity_refs_accepted(schema_validator, ref):
-    data = {"attribution": "ipdb", "claims": [{ref: {"year": 1990}}]}
+    data = {"attribution": "ipdb", "claims": [{ref: {"production_year": 1990}}]}
     assert not _has_error(schema_validator, data)
 
 
@@ -177,7 +177,7 @@ def test_valid_entity_refs_accepted(schema_validator, ref):
     ],
 )
 def test_malformed_entity_refs_rejected(schema_validator, ref):
-    data = {"attribution": "ipdb", "claims": [{ref: {"year": 1990}}]}
+    data = {"attribution": "ipdb", "claims": [{ref: {"production_year": 1990}}]}
     assert _has_error(schema_validator, data)
 
 
@@ -392,7 +392,7 @@ def test_entry_cite_mapping_with_locator_and_quote_accepted(schema_validator):
         "claims": [
             {
                 "model.foo": {
-                    "year": 1990,
+                    "production_year": 1990,
                     "cite": {
                         "ref": "ipdb:4443",
                         "locator": "Notes section",
@@ -417,7 +417,7 @@ def test_entry_cite_mapping_with_locator_and_quote_accepted(schema_validator):
 def test_malformed_entry_cite_mapping_rejected(schema_validator, cite):
     data = {
         "attribution": "flipcommons-catalog",
-        "claims": [{"model.foo": {"year": 1990, "cite": cite}}],
+        "claims": [{"model.foo": {"production_year": 1990, "cite": cite}}],
     }
     assert _has_error(schema_validator, data)
 
@@ -468,7 +468,7 @@ def test_cite_and_cites_coexist(schema_validator):
         "claims": [
             {
                 "model.foo": {
-                    "year": 1990,
+                    "production_year": 1990,
                     "description": "x[[cite:1]]",
                     "cite": "ipdb:4443",
                     "cites": {"1": "https://example.com/a"},
@@ -699,7 +699,7 @@ def test_grouped_pure_wrapper_valid(schema_validator):
                 "model.foo": {
                     "expect": {"ipdb_id": 4443},
                     "changesets": [
-                        {"note": "first", "cite": "ipdb:4443", "year": 1970},
+                        {"note": "first", "cite": "ipdb:4443", "production_year": 1970},
                         {"note": "second", "production_status": "unreleased"},
                     ],
                 }
@@ -766,8 +766,8 @@ def test_grouped_empty_or_nonlist_changesets_rejected(schema_validator, changese
 @pytest.mark.parametrize(
     "item",
     [
-        {"cite": "not-a-valid-cite", "year": 1970},
-        {"cites": {"1": "not-a-valid-cite"}, "year": 1970},
+        {"cite": "not-a-valid-cite", "production_year": 1970},
+        {"cites": {"1": "not-a-valid-cite"}, "production_year": 1970},
         {"retract": "year"},
         {"remove": {"location": "germany"}},
     ],
@@ -792,7 +792,7 @@ def _errors_for(schema_validator, doc: dict[str, object]) -> list[str]:
 def _cite_doc(cite: object) -> dict[str, object]:
     return {
         "attribution": "flipcommons-catalog",
-        "claims": [{"model.a": {"year": 1994, "cite": cite}}],
+        "claims": [{"model.a": {"production_year": 1994, "cite": cite}}],
     }
 
 
@@ -802,7 +802,7 @@ def test_over_length_note_reports_its_size_and_the_limit(schema_validator):
     # the error object; report those and leave the value out.
     doc = {
         "attribution": "flipcommons-catalog",
-        "claims": [{"model.a": {"note": "z" * 1200, "year": 1994}}],
+        "claims": [{"model.a": {"note": "z" * 1200, "production_year": 1994}}],
     }
     (message,) = [m for m in _errors_for(schema_validator, doc) if "1000" in m]
     assert message == "claims/0/model.a/note: 1200 characters, over the 1000 limit"
@@ -830,7 +830,7 @@ def test_over_length_locator_inside_a_cite_names_the_inner_field(schema_validato
 
 
 def test_under_length_value_reports_the_minimum(schema_validator):
-    doc = {"attribution": "", "claims": [{"model.a": {"year": 1994}}]}
+    doc = {"attribution": "", "claims": [{"model.a": {"production_year": 1994}}]}
     (message,) = [m for m in _errors_for(schema_validator, doc) if "0 character" in m]
     assert message == "attribution: 0 characters, under the 1 minimum"
 
@@ -855,8 +855,8 @@ def test_other_schema_errors_keep_jsonschemas_own_wording(schema_validator):
 @pytest.mark.parametrize(
     "body",
     [
-        {"year": 2026},
-        {"month": 7},
+        {"production_year": 2026},
+        {"production_month": 7},
         {"player_count": 4},
         {"production_quantity": "500"},
     ],
@@ -869,8 +869,8 @@ def test_claim_values_in_the_catalog_convention_accepted(schema_validator, body)
 @pytest.mark.parametrize(
     "body",
     [
-        {"year": "2026"},  # string year -> never equals the integer form
-        {"month": "7"},
+        {"production_year": "2026"},  # string year -> never equals the integer form
+        {"production_month": "7"},
         {"player_count": "4"},
         {"production_quantity": 500},  # the inverse: bare int, not a string
     ],
@@ -883,10 +883,10 @@ def test_claim_values_in_the_wrong_json_type_rejected(schema_validator, body):
 @pytest.mark.parametrize(
     "body",
     [
-        {"year": 1799},
-        {"year": 2101},
-        {"month": 0},
-        {"month": 13},
+        {"production_year": 1799},
+        {"production_year": 2101},
+        {"production_month": 0},
+        {"production_month": 13},
         {"player_count": 0},
     ],
 )
@@ -915,12 +915,66 @@ def test_retracting_a_typed_field_is_unaffected(schema_validator):
     assert not _has_error(schema_validator, doc)
 
 
+@pytest.mark.parametrize(
+    "body",
+    [
+        {"production_year": 2026},
+        {"production_month": 7},
+        {"project_year": 1989},
+        {"project_month": 5},
+        {"project_year": 1989, "project_month": 5, "production_year": 1991},
+    ],
+)
+def test_project_and_production_dates_accepted(schema_validator, body):
+    """Both date pairs are typed the same way and may coexist on one claim:
+    IPDB publishes a Project Date (design/release-to-production) separately
+    from a Manufacture Date, and a model can carry both."""
+    doc = {"attribution": "ipdb", "claims": [{"model.a": body}]}
+    assert not _has_error(schema_validator, doc)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [
+        {"project_year": "1989"},  # string year -> never equals the integer form
+        {"project_month": "5"},
+        {"project_year": 1799},
+        {"project_year": 2101},
+        {"project_month": 0},
+        {"project_month": 13},
+    ],
+)
+def test_project_date_typing_matches_production(schema_validator, body):
+    doc = {"attribution": "ipdb", "claims": [{"model.a": body}]}
+    assert _has_error(schema_validator, doc)
+
+
+@pytest.mark.parametrize(
+    "body",
+    [{"year": 2026}, {"month": 7}],
+)
+def test_legacy_date_field_names_are_rejected(schema_validator, body):
+    """`year`/`month` were renamed to `production_year`/`production_month`.
+    ingest_patches carries no legacy alias, so a patch using the old name
+    fails at apply time; the schema turns that into an authoring-time error."""
+    doc = {"attribution": "ipdb", "claims": [{"model.a": body}]}
+    assert _has_error(schema_validator, doc)
+
+
+def test_legacy_date_field_names_are_rejected_in_a_changeset(schema_validator):
+    doc = {
+        "attribution": "ipdb",
+        "claims": [{"model.a": {"note": "x", "changesets": [{"year": 2026}]}}],
+    }
+    assert _has_error(schema_validator, doc)
+
+
 def test_source_block_year_is_unaffected_by_claim_typing(schema_validator):
     """`sources:` carries its own year/month (the date of the WORK) and was
     already typed; claim-level typing must not disturb it."""
     doc = {
         "attribution": "flipcommons-catalog",
-        "claims": [{"model.a": {"year": 2026}}],
+        "claims": [{"model.a": {"production_year": 2026}}],
         "sources": [
             {"name": "A flyer", "source_type": "document", "year": 1996, "month": 5},
         ],
