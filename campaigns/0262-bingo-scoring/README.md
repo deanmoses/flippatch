@@ -83,4 +83,4 @@ The cites are URLs, so bingo.cdyn.com must be seeded as a citation source root �
 
 ## A note on the foundation
 
-`.read scripts/analysis/catalog.sql` — the line every earlier campaign analysis opens with, including ../0181-bingo-years/years.sql — **now fails**: the foundation moved to `scripts/analysis/sql/`, and the runner attaches it before reading the analysis, so no `.read` of it is wanted at all. `make analyze FILE=campaigns/0181-bingo-years/years.sql PREFIX=year` errors out today for that reason. This file carries no foundation `.read`.
+`.read scripts/analysis/catalog.sql` — the line every earlier campaign analysis opens with — **now fails**: the foundation moved to `scripts/analysis/sql/`, and the runner attaches it before reading the analysis, so no `.read` of it is wanted at all. This file carries no foundation `.read`, and ../0181-bingo-years/years.sql has had its line removed. **Eight other analyses still carry it** and will fail the same way when next run: 0128-relationships, 0172-bingo-game-format, 0173-nonpinball-formats, 0177-exports, 0178-gameplay-features, 0189-print-citations, 0215-frontier-2026, 0227-document-publisher-roots.

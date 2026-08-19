@@ -35,7 +35,11 @@
 -- scripts/analysis/README.md): 1 FOUNDATION, 2 REFERENCE, 3 ANALYSIS, 4 SUMMARY & CHECKS.
 
 -- ── 1 · FOUNDATION ─────────────────────────────────────────────────────────
-.read scripts/analysis/catalog.sql
+-- The catalog foundation is already in the session — the runner attaches it before
+-- reading this file, so there is no `.read` of it here. This file used to open with
+-- `.read scripts/analysis/catalog.sql`; the foundation has since moved to
+-- scripts/analysis/sql/ and that line stopped resolving, which failed the whole run.
+--
 -- flippatch's evidence bridge — pinexplore's web scrape cache as `ev`, so the source
 -- text this campaign rests on is queryable next to the catalog rows it emits. That is
 -- what lets the checks below verify each cite quote against the live cached page, and
@@ -274,7 +278,16 @@ CREATE OR REPLACE VIEW _cdyn_page_rows AS
     -- New-style lambda deliberately: the deprecated `->` spelling emits a DuckDB
     -- warning on stderr, which the analysis runner's view discovery parses as output.
     AND len(list_filter(string_split(trim(trim(line), '|'), '|'), lambda x: trim(x) <> '')) = 4
-    AND NOT starts_with(trim(line), '| Game Name');
+    AND NOT starts_with(trim(line), '| Game Name')
+    -- …and not the `| --- | --- | --- | --- |` separator under a section header, which is
+    -- also four cells wide. Counting it made this probe report one row more than the TSV
+    -- holds, firing `tsv_stale_vs_cached_page` on a page that had not changed at all —
+    -- the drift check crying wolf is worse than no drift check, since the fix it names
+    -- (rerun the extractor) cannot make the counts agree.
+    AND NOT list_bool_and(
+          list_transform(
+            list_filter(string_split(trim(trim(line), '|'), '|'), lambda x: trim(x) <> ''),
+            lambda x: trim(x) = '---'));
 
 -- ── 4 · SUMMARY & CHECKS ───────────────────────────────────────────────────
 

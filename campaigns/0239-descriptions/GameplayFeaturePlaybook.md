@@ -7,7 +7,6 @@ Working notes for the sessions writing the remaining gameplay-feature descriptio
 - **Remaining worklist**: `make analyze FILE=campaigns/0239-descriptions/candidates.sql Q="FROM desc_candidates WHERE entity_type='gameplay-feature';"`
 - Patches 0245/0249 were the reserved catalog-fill slots and are both **spent**; do NOT reserve new holes. Every patch now takes the next fresh number, catalog-fill included — 0262 did.
 - **0262 attached the bingo scoring vocabulary** (149 entries, 239 attachments) from cdyn's per-machine Features blocks; see [../0262-bingo-scoring/README.md](../0262-bingo-scoring/README.md). `in-line-scoring`, `section-scoring` and `next-game-award` now have 134/31/74 carriers where they had none.
-- The catalog analytics foundation moved to `scripts/analysis/sql/` and the runner loads it for you: an analysis file must NOT `.read scripts/analysis/catalog.sql`. That line now errors, which is why `make analyze FILE=campaigns/0181-bingo-years/years.sql PREFIX=year` fails today.
 
 ## Classification → register
 

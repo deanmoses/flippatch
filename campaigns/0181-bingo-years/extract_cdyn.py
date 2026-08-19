@@ -36,7 +36,8 @@ import sys
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-REPO_ROOT = HERE.parents[2]
+REPO_ROOT = HERE.parents[1]
+sys.path.insert(0, str(REPO_ROOT / "scripts"))  # common.paths
 
 from common.paths import WEB_CACHE_DB, load_env  # noqa: E402
 
@@ -60,7 +61,11 @@ def rows_from_page(text: str) -> list[tuple[str, str, str, str, str]]:
         cells = [c.strip() for c in line.strip("|").split("|") if c.strip()]
         if len(cells) == 1:
             maker = cells[0]
-        elif len(cells) == 4 and cells[0] != "Game Name":
+        # The header row repeats per section and is skipped by name; the `| --- | ... |`
+        # separator beneath it is also four cells wide and must be skipped by shape, or
+        # it parses as a machine named "---". Exactly one of them survives the text
+        # extraction today, which is enough to put a junk row in the TSV.
+        elif len(cells) == 4 and cells[0] != "Game Name" and not all(c == "---" for c in cells):
             if maker is None:
                 raise SystemExit(f"machine row before any maker heading: {line!r}")
             out.append((maker, *cells))  # type: ignore[arg-type]
@@ -105,7 +110,7 @@ def main() -> int:
         encoding="utf-8",
     )
     makers = sorted({r[0] for r in rows})
-    print(f"wrote {len(rows)} rows across {len(makers)} makers -> {OUT.relative_to(pk.REPO_ROOT)}")
+    print(f"wrote {len(rows)} rows across {len(makers)} makers -> {OUT.relative_to(REPO_ROOT)}")
     return 0
 
 
