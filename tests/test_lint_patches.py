@@ -1810,3 +1810,58 @@ def test_recorded_as_evidence_prose_clean():
 def test_recorded_as_plain_object_clean():
     e = rset("The machine is recorded as a licensed build of the US original.")
     assert not has(e, "the record set")
+
+
+# --- description-source-name -------------------------------------------------
+# A description that names the reference database or glossary it leans on is
+# doing a citation's job in the sentence. The reader wants the fact; the
+# footnote carries who says so. Scoped to descriptions: a note: is
+# curator-facing provenance, where naming the source is the point.
+
+
+def srcname(text, corpus=desc_unit, filename="0260-x.yaml"):
+    return perrs(corpus(text), filename=filename)
+
+
+def test_glossary_in_description_flagged():
+    e = srcname("IPDB's glossary treats roulette wheel as another term for it.")
+    assert has(e, "'glossary'")
+
+
+def test_glossaries_plural_flagged():
+    e = srcname("The trade glossaries disagree on the term.")
+    assert has(e, "'glossaries'")
+
+
+def test_ipdb_in_description_flagged():
+    e = srcname("IPDB records the wheel as a captive ball spinner.")
+    assert has(e, "'IPDB'")
+
+
+def test_opdb_in_description_flagged():
+    e = srcname("The device is filed under a different name by OPDB.")
+    assert has(e, "'OPDB'")
+
+
+def test_source_name_rule_skips_notes():
+    # A note explains a claim to a curator; saying where the value came from is
+    # exactly what it is for. 0242 does this legitimately twice.
+    e = srcname("IPDB records the exact run as 2,711.", corpus=note_unit)
+    assert not has(e, "'IPDB'")
+
+
+def test_named_site_with_link_stays_clean():
+    # The house rule permits naming another site when the prose hyperlinks it —
+    # 0252 does this for bingo.cdyn.com. Only the reference databases and the
+    # word 'glossary' are denied.
+    e = srcname(
+        "[bingo.cdyn.com](https://bingo.cdyn.com/), a collector archive, rates "
+        "them the most popular style Bally made."
+    )
+    assert not has(e, "belongs in a cite")
+
+
+def test_source_name_grandfathered_before_0260():
+    e = srcname("IPDB's glossary calls it that.", filename="0259-x.yaml")
+    assert not has(e, "belongs in a cite")
+    assert lp.RULE_SINCE["description-source-name"] == 260

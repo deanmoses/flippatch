@@ -6,35 +6,31 @@ claims:
       description: |
         A roulette wheel is a turning disc set into the playfield and divided into marked segments, whose resting position decides what the player is awarded — the casino wheel borrowed as a scoring device, and fitted almost exclusively to machines themed on gambling.
 
-        The name is shared. IPDB's glossary treats roulette wheel as another term for the [[gameplay-feature:captive-ball-spinners]], a different mechanism entirely: a large metal wheel ringed with small trap holes, spun with a captive ball sealed away from the ball in play, which settles into one of the holes for its value when the wheel stops.[[cite:1]][[cite:2]] In its literal sense the term means what it says: a disc the player can watch turn, painted to look like the wheel it imitates.
+        [[manufacturer:game-plan]] built its cocktail machines around one. On *[[title:real]]* (1978) the wheel sits in the middle of the playfield and is set going by the machine's kick-out holes, handing out random awards;[[cite:1]] *[[title:chuck-a-luck]]* (1978) is the same playfield with factory-applied stickers pasted over the original artwork,[[cite:2]] and *[[title:foxy-lady]]* (1978) carries the wheel as well.
 
-        [[manufacturer:game-plan]] built its 1978 cocktail machines around one. On *[[title:real]]* the wheel sits in the middle of the playfield and is set going by the machine's kick-out holes, handing out random awards;[[cite:3]] *[[title:chuck-a-luck]]* is the same playfield with factory-applied stickers pasted over the original artwork,[[cite:4]] and *[[title:foxy-lady]]* carries the wheel as well.
-
-        Where the wheel is stepped rather than spun it stops being a lottery. [[manufacturer:segasa]]'s *[[title:casino-royale]]* (1976) advances its wheel one position at a time from two targets at the top of the playfield, freezes it with a target at the lower left and cashes whatever value is showing through a kick-out hole — a value the player has spent the ball climbing.[[cite:5]] [[manufacturer:bally]] took the other route on *[[title:speakeasy]]* (1982) and hid the mechanism under the playfield,[[cite:6]] a machine [[manufacturer:ltd-do-brasil]] then copied as *[[title:al-capone]]*.[[cite:7]]
+        Where the wheel is stepped rather than spun it stops being a lottery. [[manufacturer:segasa]]'s *[[title:casino-royale]]* (1976) advances its wheel one position at a time from two targets at the top of the playfield, freezes it with a target at the lower left and cashes whatever value is showing through a kick-out hole — a value the player has spent the ball climbing.[[cite:3]] [[manufacturer:bally]] took the other route on *[[title:speakeasy]]* (1982) and hid the mechanism under the playfield, where the saucers on either side of mid-field set it going.[[cite:4]][[cite:5]] That wheel scores points, but two of its segments deal in balls instead: one adds a ball to the game and one takes a ball away, and the backglass counts anywhere from two balls owed to nine in hand.[[cite:6]][[cite:7]]
       cites:
         "1":
-          ref: https://www.ipdb.org/glossary.php
-          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
-          quote: "Also referred to as a Roulette Wheel."
-        "2":
-          ref: https://www.ipdb.org/glossary.php
-          archive: "https://web.archive.org/web/20240118022958id_/https://www.ipdb.org/glossary.php"
-          quote: "A scoring device consisting of a large metal wheel and a small steel ball enclosed in an area not accessible by the ball in play."
-        "3":
           ref: ipdb:1925
           quote: "A roulette wheel sits in the center of the playfield, activated by the three poppers on the machine, to give the player random awards."
-        "4":
+        "2":
           ref: ipdb:3020
           quote: "The playfields for this game are actually playfields from Game Plan's 1978 'Real' but with factory-applied stickers overlaying the original artwork."
-        "5":
+        "3":
           ref: ipdb:467
           quote: "Two top targets advance roulette wheel playfield spinner. Hitting lower left target stops wheel from advancing. Kick-out hole collects wheel value."
-        "6":
+        "4":
           ref: "https://pinside.com/pinball/machine/speakeasy"
           quote: "Flyaway targets, working roulette wheel under playfield, Add-A-Ball play, but can win credits too."
+        "5":
+          ref: "https://pinballorama.com/bally-speakeasy-1982"
+          quote: "The roulette wheel adds points. You trigger it by the saucers to the left and right located mid-field."
+        "6":
+          ref: "https://pinballorama.com/bally-speakeasy-1982"
+          quote: "It also has one section to add a ball, and another to take away a ball."
         "7":
-          ref: ipdb:5176
-          quote: "This game is a copy of Bally's 1982 'Speakeasy'."
+          ref: "https://pinballorama.com/bally-speakeasy-1982"
+          quote: "The backglass display goes from -2 to +9 balls."
   - gameplay-feature.time-clocks:
       description: |
         A time clock is a spring-and-gears timer mounted beneath the playfield of an early machine, wound and started by the mechanical push of the coin chute that begins a game, which three to five minutes later opens a switch and cuts power to the machine and all its lighting — whether or not a game is still in progress.[[cite:1]][[cite:2]]

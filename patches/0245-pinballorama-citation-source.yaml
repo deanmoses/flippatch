@@ -1,0 +1,13 @@
+attribution: flipcommons-catalog
+description: >-
+  Create the Pinballorama website citation-source root.
+sources:
+  - name: Pinballorama
+    source_type: web
+    description: Collector site documenting the restoration of individual machines, with per-machine notes on playfield mechanisms and rules.
+    links:
+      - {
+          url: "https://pinballorama.com/",
+          label: Pinballorama,
+          link_type: homepage,
+        }

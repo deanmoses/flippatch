@@ -72,6 +72,7 @@ RULE_SINCE: dict[str, int] = {
     "description-unsourced-first": 239,
     "prose-the-register": 254,
     "prose-record-set": 255,
+    "description-source-name": 260,
 }
 
 # Gameplay-feature nodes that exist only to group their children (the toy
@@ -569,6 +570,25 @@ PROSE_RULES: tuple[tuple[str, frozenset[str], re.Pattern[str], str], ...] = (
         "page and can't resolve 'here', and how a thing is filed is not a fact "
         "about it; say what is true of the machines ('most machines double "
         "both flanks at once')",
+    ),
+    # The reference databases by name, and the word 'glossary'. A description
+    # that says "IPDB's glossary treats X as Y" is doing a citation's job in
+    # the sentence: it hands the reader a lookup to trust instead of the fact,
+    # and it dates the moment that source is edited. The fact goes in the
+    # prose, the attribution goes in the cite:.
+    #
+    # Scoped to descriptions, not notes: a note: is curator-facing provenance,
+    # where naming the source is exactly the point ("IPDB records the exact run
+    # as 2,711" in 0242). Only IPDB and OPDB are denied by name, not every
+    # site — the house style deliberately permits naming another site when the
+    # prose hyperlinks it, which is how 0252 credits bingo.cdyn.com.
+    (
+        "description-source-name",
+        _RECORD_DESC_ONLY,
+        re.compile(r"\bglossar(?:y|ies)\b|\b[IO]PDB\b", re.IGNORECASE),
+        "names a reference database or a glossary in reader-facing prose — a "
+        "source belongs in a cite:, not in the sentence; state the fact and "
+        "let the footnote say who records it",
     ),
 )
 
