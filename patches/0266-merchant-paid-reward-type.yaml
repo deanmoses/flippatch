@@ -1,0 +1,106 @@
+attribution: flipcommons-catalog
+description: >
+  Merchant-paid award reward type and the machines the location paid on.
+sources:
+  - name: "March 7, 1936"
+    slug: 1936-03-07
+    parent: billboard
+    source_type: periodical
+    year: 1936
+    month: 3
+    day: 7
+    links:
+      - {
+          url: "https://www.worldradiohistory.com/Archive-All-Music/Billboard/30s/1936/BB-1936-03-07.pdf",
+          label: World Radio History scan,
+          link_type: archive,
+        }
+claims:
+  - reward-type.merchant-paid:
+      create: true
+      name: Merchant-Paid Award
+      display_order: 6
+  - reward-type.free-play:
+      note: "Shifted down one place so the merchant-paid award seats with the payout mechanisms it belongs among."
+      display_order: 7
+  - model.monarch-2:
+      cite:
+        ref: "ipdb:3414"
+        quote: shipped from the factory with a set of printed back panel marquees offering a variety of non-cash prizes for high scores
+      reward_type: [merchant-paid]
+  - model.3-ring-circus:
+      cite:
+        ref: "ipdb:2543"
+        quote: 'The awards would indicate how much money "in trade" would be given to the player by the location.'
+      reward_type: [merchant-paid]
+  - model.odom-special:
+      cite:
+        ref: "ipdb:1693"
+        quote: "the prizes range from $5.00 in trade down through twenty-five smaller trade prizes"
+      reward_type: [merchant-paid]
+  - model.autocount:
+      cite:
+        ref: "ipdb:114"
+        quote: "before awarding a prize, the operator can verify that a slug was not used"
+      reward_type: [merchant-paid]
+  - model.crusader:
+      cite:
+        ref: "ipdb:607"
+        quote: 'the different awards as payout "in trade" while the other side indicated point awards "For Amusement Only"'
+      reward_type: [merchant-paid]
+  - model.mat-cha-skor:
+      cite:
+        ref: "ipdb:1560"
+        quote: "If the player's final score matches this number, the location would award the player a prize."
+      reward_type: [merchant-paid]
+  - model.golden-arrow-2:
+      cite:
+        ref: "ipdb:3807"
+        quote: Prizes placed underneath plate glass playfield are visible to the player.
+      reward_type: [merchant-paid]
+  - model.vend-a-gift:
+      cite:
+        ref: "ipdb:5578"
+        quote: Skillful play of balls awards prizes displayed under playfield glass.
+      reward_type: [merchant-paid]
+  - model.castle-lite:
+      cite:
+        ref: "ipdb:468"
+        quote: before paying the player any location award at the end of a game.
+      reward_type: [merchant-paid]
+  - model.flying-colors:
+      cite:
+        ref: "ipdb:903"
+        quote: The merchant checks the rewards through the mirror backboard
+      reward_type: [merchant-paid]
+  - model.pedal-pushers:
+      cite:
+        ref: "ipdb:1771"
+        quote: this would be a local payout from the merchant and not from the machine itself.
+      reward_type: [merchant-paid]
+  - model.bulls-eye-drop-ball-upright-model:
+      cite:
+        ref: "ipdb:5976"
+        quote: "The machine awards the player nothing for earning these marbles, but the location could provide under-the-counter cash payouts."
+      reward_type: [merchant-paid]
+  - model.cueball:
+      cite:
+        ref: "ipdb:6026"
+        quote: holds a card that can be updated weekly by the location to indicate what prize is awarded at the end of the week indicated
+      reward_type: [merchant-paid]
+  - model.startime:
+      cite:
+        ref: "ipdb:3400"
+        quote: "If the player chooses to cash out, the location would subtract the Sub-Total from the Total Score and pay the difference, one dime for each point."
+      reward_type: [merchant-paid]
+  - model.el-rancho:
+      cite:
+        ref: "ipdb:769"
+        quote: "If the player chooses to cash out, the location would subtract the Sub-Total from the Total Score and pay the difference, one dime for each point."
+      reward_type: [merchant-paid]
+  - model.harvest-moon-2:
+      cite:
+        ref: "billboard:1936-03-07"
+        locator: p. 78
+        quote: "PROGRESSIVE AWARDS [...] Light-up Back-Board, showing all winners, makes a hit with merchants everywhere."
+      reward_type: [merchant-paid]

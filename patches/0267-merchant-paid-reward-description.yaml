@@ -1,0 +1,33 @@
+attribution: flipcommons-ai-desc-reward-type
+description: >-
+  Description for the merchant-paid award reward type.
+claims:
+  - reward-type.merchant-paid:
+      description: |
+        A merchant-paid award is a reward in which the machine identifies a winner but pays nothing itself. The award is handed over at the location — by the merchant, operator or storekeeper on whose counter the game stands — so the payment happens across the counter rather than through a coin hopper.[[cite:1]] What the machine supplies is the verdict: a score, a lit winning number, a marquee naming what that score is worth.
+
+        The arrangement was the trade's answer to territory where a payout machine was illegal. A game that dispensed no coins was not a payout machine in the eyes of the law, yet the operator could still offer the pull of winnings. Bally sold its non-payout *[[model:harvest-moon-2]]* on exactly that promise, offering operators "a crack at 'payout profits' in NON-PAYOUT TERRITORY".[[cite:2]]
+
+        The award was often credit at the counter rather than cash. Score cards mounted on the backbox told the player how much money "in trade" a given score returned,[[cite:3]] and some were printed on both sides so one game could be presented as a trade-award machine or an amusement-only one as local conditions demanded.[[cite:4]] Other makers put the goods in front of the player instead of naming a sum, displaying the prizes themselves beneath the playfield glass.[[cite:5]]
+
+        The mode outlasted the pre-war payout bans it was built for. Keeney was still building it into machines in the 1960s, where a player who chose to cash out was paid by the location at a dime a point.[[cite:6]]
+      cites:
+        "1":
+          ref: ipdb:1771
+          quote: "this would be a local payout from the merchant and not from the machine itself."
+        "2":
+          ref: billboard:1936-03-07
+          locator: p. 78
+          quote: 'gives you a crack at "payout profits" in NON-PAYOUT TERRITORY'
+        "3":
+          ref: ipdb:2543
+          quote: 'The awards would indicate how much money "in trade" would be given to the player by the location.'
+        "4":
+          ref: ipdb:607
+          quote: 'the different awards as payout "in trade" while the other side indicated point awards "For Amusement Only"'
+        "5":
+          ref: ipdb:3807
+          quote: "Prizes placed underneath plate glass playfield are visible to the player."
+        "6":
+          ref: ipdb:3400
+          quote: "If the player chooses to cash out, the location would subtract the Sub-Total from the Total Score and pay the difference, one dime for each point."

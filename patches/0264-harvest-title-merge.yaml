@@ -1,0 +1,28 @@
+attribution: flipcommons-catalog
+description: >-
+  Merge Bally's Harvest Moon into a shared Golden Harvest title.
+claims:
+  # The model moves first; the title it moves to is renamed below, and the
+  # emptied Harvest Moon title is retired in the next patch — a delete's
+  # referrer check reads live database state, so it cannot share this patch.
+  - model.harvest-moon-2:
+      note: >-
+        Bally issued one machine in two forms months apart: Golden Harvest pays
+        out cash and has no backbox, Harvest Moon adds a lit backbox and pays
+        nothing. A maker's payout and non-payout issues of a single game are
+        gathered under one title, so both belong under Golden Harvest.
+      cite:
+        - ref: ipdb:1130
+          quote: "The payout version of this game is Bally's 1935 'Golden Harvest' and does not have a backbox."
+        - ref: ipdb:1052
+          quote: "The non-payout version of this game came with a backbox as Bally's 1936 'Harvest Moon'."
+      title: golden-harvest
+  - title.golden-harvest:
+      note: >-
+        The title now covers both of Bally's issues of the game, and its name
+        lists each in the order they were built.
+      cite:
+        ref: ipdb:1052
+        quote: "The non-payout version of this game came with a backbox as Bally's 1936 'Harvest Moon'."
+      name: "Golden Harvest / Harvest Moon"
+      slug: golden-harvest-harvest-moon

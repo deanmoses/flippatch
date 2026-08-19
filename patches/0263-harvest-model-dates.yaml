@@ -1,0 +1,59 @@
+attribution: flipcommons-catalog
+description: >-
+  Dates and gameplay facts for Bally's Golden Harvest and Harvest Moon.
+claims:
+  - model.golden-harvest:
+      changesets:
+        - year: 1935
+          month: 11
+          cite:
+            - ref: ipdb:1052
+              quote: "IPD No. 1052 / November 19, 1935 / 1 Player"
+            - ref: "https://pinside.com/pinball/machine/golden-harvest"
+              quote: "Golden Harvest is a pinball machine from November 1935, manufactured by Bally Manufacturing Co."
+            - ref: "https://www.arcade-museum.com/Pinball/golden-harvest"
+              locator: in the Specs table's Year row
+              quote: "| Year | 1935 |"
+            - ref: "https://pinside.com/pinball/forum/topic/1935-bally-golden-harvest-restoration"
+              quote: "I was fortunate enough to obtain a 1935 Bally Golden Harvest payout machine a few months ago."
+        - game_format: pinball
+          cite:
+            - ref: "https://www.arcade-museum.com/Pinball/golden-harvest"
+              locator: in the Specs table's Type row
+              quote: "| Type | Pinball |"
+            - ref: "https://pinside.com/pinball/machine/golden-harvest"
+              quote: "Golden Harvest is a pinball machine from November 1935, manufactured by Bally Manufacturing Co."
+        - reward_type: [cash-payout]
+          cite:
+            - ref: ipdb:1052
+              quote: "Payouts range from a dime to $1.50 and several successive payouts can be obtained in the course of a single game."
+            - ref: "https://pinside.com/pinball/forum/topic/1935-bally-golden-harvest-restoration"
+              quote: "This is a payout machine that dispenses nickles (2 at a time) depending on the holes the balls land in."
+  - model.harvest-moon-2:
+      changesets:
+        - year: 1936
+          month: 2
+          cite:
+            - ref: ipdb:1130
+              quote: "IPD No. 1130 / February 11, 1936 / 1 Player"
+            - ref: "https://pinside.com/pinball/machine/harvest-moon"
+              quote: "Harvest Moon is a pinball machine from February 1936, manufactured by Bally Manufacturing Co."
+        - game_format: pinball
+          cite:
+            - ref: "https://www.arcade-museum.com/Pinball/harvest-moon--bally"
+              locator: in the Specs table's Type row
+              quote: "| Type | Pinball |"
+            - ref: "https://pinside.com/pinball/machine/harvest-moon"
+              quote: "Harvest Moon is a pinball machine from February 1936, manufactured by Bally Manufacturing Co."
+        - display_type: backglass-lights
+          cite:
+            - ref: ipdb:1130
+              quote: "Light-up backbox."
+            - ref: "https://pinside.com/pinball/machine/harvest-moon"
+              locator: in the Game details block's Display type row
+              quote: "Backglass Lights"
+        - gameplay_feature:
+            - trap-holes: 21
+          cite:
+            ref: ipdb:1130
+            quote: "Trap holes (21)."

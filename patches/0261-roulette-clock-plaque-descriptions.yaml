@@ -33,7 +33,7 @@ claims:
           quote: "The backglass display goes from -2 to +9 balls."
   - gameplay-feature.time-clocks:
       description: |
-        A time clock is a spring-and-gears timer mounted beneath the playfield of an early machine, wound and started by the mechanical push of the coin chute that begins a game, which three to five minutes later opens a switch and cuts power to the machine and all its lighting — whether or not a game is still in progress.[[cite:1]][[cite:2]]
+        A time clock is a spring-and-gears timer mounted beneath the playfield of an [[technology-generation:electromechanical]] machine of the 1930s and 1940s, wound and started by the mechanical push of the coin chute that begins a game, which three to five minutes later opens a switch and cuts power to the machine and all its lighting — whether or not a game is still in progress.[[cite:1]][[cite:2]]
 
         What a coin bought on such a machine was therefore an interval rather than a count of balls. The next coin pushed in resets the timer, closes the switch and lights the machine again for play, which makes the timer as much a merchandising device as a mechanism: it ends the transaction on the operator's schedule.[[cite:3]]
 
@@ -43,7 +43,7 @@ claims:
 
         ## Span
 
-        PAMCO put one on the playfield of *[[title:time]]* in February 1935,[[cite:7]] and [[manufacturer:rock-ola-manufacturing-corporation]] fitted them from that year too. The device outlasted the flipperless machines it was made for: [[manufacturer:gottlieb]]'s *[[title:buccaneer]]* (1948) and [[manufacturer:genco]]'s *[[title:canasta]]* (1950) still carried a time clock, on playfields that by then had flippers and counted balls, and the timer went out with the era of selling time by the coin rather than the game.
+        PAMCO put one on the playfield of *[[title:time]]* in February 1935,[[cite:7]] and [[manufacturer:rock-ola-manufacturing-corporation]] fitted them the same year. The flipperless game is the setting the device was made for and where nearly every one of them sits,[[cite:1]] but it outlasted that setting: flippered machines carried a time clock too, from 1948 on — [[manufacturer:gottlieb]]'s *[[title:buccaneer]]* (1948) and, as late as 1950, [[manufacturer:genco]]'s *[[title:canasta]]* — so for a few years the two ways of ending a game, the clock and the ball count, ran side by side on one playfield.
       cites:
         "1":
           ref: https://www.ipdb.org/glossary.php

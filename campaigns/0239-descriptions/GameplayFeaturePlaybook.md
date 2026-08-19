@@ -5,7 +5,9 @@ Working notes for the sessions writing the remaining gameplay-feature descriptio
 ## State (as of 2026-08-18)
 
 - **Remaining worklist**: `make analyze FILE=campaigns/0239-descriptions/candidates.sql Q="FROM desc_candidates WHERE entity_type='gameplay-feature';"`
-- Patches 0245/0249 are open slots reserved for catalog-fill work (see [gaps.jsonl](gaps.jsonl)); do NOT reserve new holes. Description patches take the next fresh number.
+- Patches 0245/0249 were the reserved catalog-fill slots and are both **spent**; do NOT reserve new holes. Every patch now takes the next fresh number, catalog-fill included — 0262 did.
+- **0262 attached the bingo scoring vocabulary** (149 entries, 239 attachments) from cdyn's per-machine Features blocks; see [../0262-bingo-scoring/README.md](../0262-bingo-scoring/README.md). `in-line-scoring`, `section-scoring` and `next-game-award` now have 134/31/74 carriers where they had none.
+- The catalog analytics foundation moved to `scripts/analysis/sql/` and the runner loads it for you: an analysis file must NOT `.read scripts/analysis/catalog.sql`. That line now errors, which is why `make analyze FILE=campaigns/0181-bingo-years/years.sql PREFIX=year` fails today.
 
 ## Classification → register
 
@@ -27,8 +29,8 @@ The catalog's own hierarchy (`gameplay_features.parents`/`children`) does the cl
 3. Verify every quote span BEFORE writing it into the patch: `make show-source ARGS="<ref> --check '<span>'"`.
 4. One patch per family, `flipcommons-ai-desc-gameplay-feature`, descriptions only.
 5. `make validate` + `make verify-quote-verbatim ARGS="<NNNN>"`, then apply via the snapshot loop — **ask the user which snapshot**; this campaign has been using `db.prod.patch-0238.2026-08-13.sqlite3`.
-6. `make validate-in-db` — the DB-aware catalog audit. Fix its **errors** (wrong-grain links, parenthetical year/maker mismatches); triage its **warnings** with the user (uncarried-link fires on deliberate contrast mentions too). Several standing warnings on 0243/0250/0251 are confirmed-deliberate (Bright Lights, Humpty Dumpty, Melody, Cover Girl, Variety, "Star Wars") — leave them. From 0260/0261, four more are confirmed-deliberate: `in-line-scoring` → Border Beauty (the machine that abolished it), `section-scoring` → Carnival Queen and `time-clocks` → _Time_, both real attachment gaps now in gaps.jsonl, and `numbered-plaques` → Funhouse (Remake Limited Edition), whose model grain is deliberate per the Model vs title rule below.
-7. Research bycatch (missing records, missing fields, missing parents) appends rows to [gaps.jsonl](gaps.jsonl) — fields: `group`, `kind` (missing-field | new-record), `entity_type`, `target`, `field`, `claimed_value`, `source_urls`, `evidence_note`. Group by manufacturer/family so an acquisition session gets all its sources together.
+6. `make validate-in-db` — the DB-aware catalog audit. Fix its **errors** (wrong-grain links, parenthetical year/maker mismatches); triage its **warnings** with the user (uncarried-link fires on deliberate contrast mentions too). Several standing warnings on 0243/0250/0251 are confirmed-deliberate (Bright Lights, Humpty Dumpty, Melody, Cover Girl, Variety, "Star Wars") — leave them. From 0260/0261, three more are confirmed-deliberate: `in-line-scoring` → Border Beauty (the machine that _abolished_ it — 0262 attached `section-scoring` to Border Beauty and not `in-line-scoring`, which is the source agreeing), `time-clocks` → _Time_, a real attachment gap still in gaps.jsonl, and `numbered-plaques` → Funhouse (Remake Limited Edition), whose model grain is deliberate per the Model vs title rule below. `section-scoring` → Carnival Queen is **resolved**: 0262 attached it.
+7. Research bycatch (missing records, missing fields, missing parents) appends rows to [gaps.jsonl](gaps.jsonl) — fields: `group`, `kind` (missing-field | new-record), `entity_type`, `target`, `field`, `claimed_value`, `source_urls`, `evidence_note`. Group by manufacturer/family so an acquisition session gets all its sources together. **Delete a row once its gap is filled** — verify against the dev DB, then drop the line (git keeps the history). A resolved row left in the file reads as open work and costs every later session context to re-verify.
 
 ## Sources
 

@@ -1,0 +1,37 @@
+log-cabin-2|1901|caille-schiemer-company|-|g a small "throwing device" (vertical plunger). landing the ball into the top center hole paid a dollar prize. of the thirteen score troughs at playfield bottom, a manufacturer advertisement stated t
+log-cabin-3|1901|caille-bros|-|g a small "throwing device" (vertical plunger). landing the ball into the top center hole paid a dollar prize. the thirteen score troughs at playfield bottom alternated between seven that paid betwee
+log-cabin|1903|caille-bros|-|g a small "throwing device" (vertical plunger). landing the ball into the top center hole paid a prize. of the thirteen score troughs at playfield bottom, a manufacturer advertisement stated t
+american-keen-ball-game|1932|the-w-c-peters-company|-|11. merchant should not allow small children to play this game.
+monarch-2|1932|o-d-jennings-and-company|-| shipped from the factory with a set of printed back panel marquees offering a variety of non-cash prizes for high scores. these marquee cards were printed on both sides, with the back sid
+3-ring-circus|1932|bally|-|ts to indicate awards for player's high scores. the awards would indicate how much money "in trade" would be given to the player by the location. these score cards might be mounted in a wo
+odom-special|1932|american-sales-corporation|-|the manufacturer advertises that "the prizes range from $5.00 in trade down through twenty-five smaller trade prizes", which means this game does not payout and
+autocount|1933|abt-manufacturing-company|-|atures a small window that displays the last coin played so, before awarding a prize, the operator can verify that a slug was not used. it originally sold for $75.
+crusader|1933|bally|-|the two-sided score card for this game showed on one side the different awards as payout "in trade" while the other side indicated point awards "for amusement only". according to the encyc
+mat-cha-skor|1933|peo-manufacturing-corporation|-| stops, displaying a random score total. if the player's final score matches this number, the location would award the player a prize.
+golden-arrow-2|1934|royal-novelty-company|-|pecified when ordering from the manufacturer. 1 ball for 5 cents, or 3 balls for 5 cents. prizes placed underneath plate glass playfield are visible to the player.
+les-fleches|1934|magister|-|the tokens are marked as redeemable for equivalent values of 25, 50, or 75 centimes. luck determines which value of token
+vend-a-gift|1935|NULL|-|another pinball game that displays prizes is royal novelty company's 1934 'golden arrow'. skillful play of balls awards prizes displaye
+whirl-pool|1935|esco|-|rs (2). a ticket is vended at end of game showing final score. a high score ticket can be redeemed on location. cabinet advertised as 42 inches long and 21 inches wide.
+castle-lite|1935|esco|-| that a genuine coin was used, and not a slug or other disc, before paying the player any location award at the end of a game.
+rockelite|1935|bally|-|s lit by small bulbs. the tilt feature was also placed on the backglass which allowed the merchant behind the counter to easily glance at the game to see both score and tilt status. 10 bal
+flying-colors|1935|genco|-|y the action of pushing in the coin slide or the ball lift knob. the ad also states, "the merchant checks the rewards through the mirror backboard". that might be intended for instances wh
+big-game|1935|rock-ola-manufacturing-corporation|free-play+replay|up is present, the backglass lamp ensures a tilt has been recorded and can be seen by the merchant from behind the counter.
+big-bank-nite|1936|rock-ola-manufacturing-corporation|-|o register holes, both winning number holes, and either of the player present holes would award the player the value shown on the lower playfield bank dial. if no win, then the bank dial would inc
+tout|1936|pamco|-|ith a check separator and electropak. the payout drawer has a lock which allowed only the merchant to have access to its contents.
+basketball-2|1938|esco|-|d coin was based on a wholesome enjoyment of the game, or maybe anticipation of under-the-counter payouts by the location owner.
+pedal-pushers|1938|o-d-jennings-and-company|-|ure award up to $5.00." we presume, therefore, that this would be a local payout from the merchant and not from the machine itself.
+build-up|1948|esco|replay|f the backbox door with a printed date of january 20, 1948. the earliest mention we found in trade magazines was in cash box, feb-21-1948, page 27, in their list of "manufacturer's new equ
+startime|1961|keeney|-|ed sub-total) increment to count the games played off. if the player chooses to cash out, the location would subtract the sub-total from the total score and pay the difference, one dime for each poi
+el-rancho|1962|keeney|-|ed sub-total) increment to count the games played off. if the player chooses to cash out, the location would subtract the sub-total from the total score and pay the difference, one dime for each poi
+atlantis-2|1989|bally|-|we previously showed the programmer was rehman merchant but he informed us that he did not do the software for this game.
+teenage-mutant-ninja-turtles|1991|data-east|-|fred young did voice characterizations on this game. rehman merchant told us that neil falconer did sound and speech for this game.
+a-maze-ing-baseball|1994|alvin-g|-|we previously showed the programmer was rehman merchant but he informed us that he did not do the software for this game.
+black-pearl|2009|viditis-sprl|replay|e game). the player can replay as long as there are 25 cents left on the credit meter, or redeem the credits for cash from the location.
+monte-carlo-mirrored-backbox-model|NULL|NULL|-|the ticket could be redeemed for a choice of prizes of a certain value, or redeemed in quantity for a prize of higher value.
+bulls-eye-drop-ball-upright-model|NULL|chicago-coin|-| marbles come in five colors and are fed by a large dispenser in the backbox. the machine awards the player nothing for earning these marbles, but the location could provide under-the-counter cash
+playland-2|NULL|komaya-seisakusho|-| gobble holes (8). a ball landing in center gobble hole awards 1, 3, or 5 added balls. no prizes are given.
+total-recall|NULL|data-east|-|we previously showed the programmer was rehman merchant but he informed us that he did not do the software for this game.
+cueball|NULL|b-l-co|-| of the game and holds a card that can be updated weekly by the location to indicate what prize is awarded at the end of the week indicated. the handwriting on the game shown here is for th
+united-keen-ball|NULL|united-game-company|-|11. merchant should not allow small children to play this game. 12 balls for 5 cents. pins are rubbere
+euro-star|NULL|skillpins|-|a flipperless game. they also added a printer to print tickets showing credits won, to be redeemable for merchandise. to ensure the flipper was noticed, the conversion games done by this
+flipper-3|NULL|NULL|-| towards the bottom on the metal pins and, depending on the location where it lands, some prize is paid out. 1 cent play. coin slot on top of cabinet.

@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >-
+  Delete the title orphaned by the Harvest Moon merge.
+claims:
+  - title.harvest-moon-2:
+      delete: true
+      note: "Orphaned after its sole model (harvest-moon-2) was merged into the Golden Harvest / Harvest Moon title."

@@ -1,0 +1,867 @@
+attribution: flipcommons-catalog
+description: >
+  Bingo scoring methods, from bingo.cdyn.com feature blocks.
+claims:
+  - model.5-star:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/universal/5_star"
+          quote: "| Features | - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.acapulco:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/acapulco"
+          quote: "| Features | - advancing odds/scores - ballyhole - extended/extra time/play - extra balls - in-line scoring - pick-a-play buttons - roll-over buttons - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.atlantic-city:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/atlantic_city"
+          quote: "| Features | - extra balls - in-line scoring - spot numbers - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.bahama-beach:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bahama_beach"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.bali:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bali"
+          quote: "| Features | - auto-mission coin divider - corners scoring - double or nothing - extended/extra time/play - extra balls - in-line scoring - kumbackey - nickel-quarter play - spot numbers - super line - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.ballerina:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/ballerina"
+          quote: "| Features | - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, section-scoring]
+  - model.bally-beauty:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bally_beauty"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-spot - spot numbers - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.barrel-o-fun:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/barrel_o_fun"
+          quote: "| Features | - auto-mission coin divider - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.beach-beauty:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/beach_beauty"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - in-line scoring - select-a-spot - wild pockets |"
+      gameplay_feature: [in-line-scoring]
+  - model.beach-club-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/beach_club"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-spot - spot numbers - super cards |"
+      gameplay_feature: [in-line-scoring]
+  - model.beach-time:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/beach_time"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - next game award - roll-over buttons - stop and shop score booster - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.beauty-beach:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/beauty_beach"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.big-show-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/big_show"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extra balls - in-line scoring - spot numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.big-time-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/big_time"
+          quote: "| Features | - advancing odds/scores - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - spot numbers - super cards |"
+      gameplay_feature: [in-line-scoring]
+  - model.bikini:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bikini"
+          quote: "| Features | - OK game - advancing odds/scores - auto-mission coin divider - blue section scores - colored lines - extended/extra time/play - extra balls - futurity - in-line scoring - orange scores as green - orange section - pick-a-play buttons - roll-over buttons - score booster - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.blue-chip-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/blue_chip"
+          quote: "| Features | - auto-mission coin divider - corners scoring - double or nothing - extended/extra time/play - in-line scoring - kumbackey - nickel-quarter play - spot numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.bolero:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/bolero"
+          quote: "| Features | - extra balls - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.bonanza-4:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bonanza"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - extended/extra time/play - in-line scoring - kumbackey - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.bonus-7:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bonus_7"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - kumbackey - next game award - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - special game - star numbers - sunny circles - super/double/triple/quadruple scores - triple deck advancing odds/scores - twin numbers |"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.border-beauty:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/border_beauty"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.bounty-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bounty"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - orange section - pick-a-play buttons - roll-over buttons - section scoring - skill shot - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.brazil:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/brazil"
+          quote: "| Features | - advancing odds/scores - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - spell name - spot numbers |"
+      gameplay_feature: [in-line-scoring]
+  - model.bright-lights:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bright_lights"
+          quote: "| Features | - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.bright-spot:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bright_spot"
+          quote: "| Features | - in-line scoring - spot numbers |"
+      gameplay_feature: [in-line-scoring]
+  - model.broadway-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/broadway"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - spot numbers - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.brooklyn:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/brooklyn"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.bull-market:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/bull_market"
+          quote: "| Features | - auto-mission coin divider - corners scoring - double or nothing - extended/extra time/play - in-line scoring - kumbackey - nickel-quarter play - spot numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.cabana:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/cabana"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-spot - spottem - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.can-can:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/can_can"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - orange scores as green - orange section - pick-a-play buttons - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.caravan:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/caravan"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - diagonal scores - extended/extra time/play - extra balls - futurity - in-line scoring - roll-over buttons - select-a-spot - spell name - spot numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.carnival-queen:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/carnival_queen"
+          quote: "| Features | - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, section-scoring]
+  - model.circus-10-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/circus_10"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - diagonal scores - extra balls - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.circus-5:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/circus"
+          quote: "| Features | - extra balls - in-line scoring - spottem - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.circus-queen:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/circus_queen"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - orange scores as green - orange section - pick-a-play buttons - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.columbia:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/columbia"
+          quote: "| Features | - diagonal scores - double or nothing - extra balls - in-line scoring - magic number doubling - skill shot - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.coney-island-4:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/coney_island"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.continental:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/continental"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - section scoring - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.county-fair-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/county_fair"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - orange section - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.cypress-gardens:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/cypress_gardens"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - next game award - roll-over buttons - stop and shop score booster - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.dallas-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/dallas"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - corners scoring - diagonal scores - double or nothing - extended/extra time/play - extra balls - in-line scoring - magic number doubling - roll-over buttons - super line - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.daytona-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/daytona"
+          quote: "| Features | - corners scoring - diagonal scores - double or nothing - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.dixieland-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/dixieland"
+          quote: "| Features | - corners scoring - double or nothing - in-line scoring - magic number doubling - roll-over buttons - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.double-header-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/double_header"
+          quote: "| Features | - advancing odds/scores - colored lines - extra balls - in-line scoring - spot numbers - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.double-up-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/double_up"
+          quote: "| Features | - advancing odds/scores - double up - extended/extra time/play - extra balls - kumbackey - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.dude-ranch-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/dude_ranch"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-spot - spot numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.euro-continental-star:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/euro_continental_star"
+          quote: "| Features | - corners scoring - diagonal scores - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.extra-six-cards:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/extra_six_cards"
+          quote: "| Features | - corners scoring - diagonal scores - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.folies-bergeres:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/folies_bergeres"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.frolics:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/frolics"
+          quote: "| Features | - advancing odds/scores - extra balls - in-line scoring - next game award - roll-over buttons - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.fun-spot:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/fun_spot"
+          quote: "| Features | - auto-mission coin divider - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.fun-spot-63:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/fun_spot_63"
+          quote: "| Features | - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.fun-way:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/fun_way"
+          quote: "| Features | - in-line scoring - spot numbers |"
+      gameplay_feature: [in-line-scoring]
+  - model.galaxy-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/galaxy"
+          quote: "| Features | - advancing odds/scores - ball return - colored lines - extended/extra time/play - extra balls - in-line scoring - pick-a-play buttons - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.gay-time:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/gay_time"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - extra balls - in-line scoring - magic pockets - spot numbers |"
+      gameplay_feature: [in-line-scoring]
+  - model.gayety:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/gayety"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - in-line scoring - magic pockets - spot numbers |"
+      gameplay_feature: [in-line-scoring]
+  - model.golden-continental-joker:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/golden_continental_joker"
+          quote: "| Features | - corners scoring - diagonal scores - double or nothing - extra balls - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.golden-gate-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/golden_gate"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - golden game - in-line scoring - next game award - orange section - pick-a-play buttons - purple section - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.green-diamond:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/green_diamond"
+          quote: "| Features | - corners scoring - diagonal scores - extra balls - in-line scoring - magic number doubling - roll-over buttons - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.havana-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/havana"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - in-line scoring - next game award - select-a-feature - select-a-spot - spot numbers - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.hawaii-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/hawaii"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - in-line scoring - next game award - select-a-feature - select-a-spot - spot numbers - spottem - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.hawaii-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/hawaii"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - kumbackey - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - stop and shop score booster - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.hi-fi:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/hi_fi"
+          quote: "| Features | - advancing odds/scores - bump - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-spot - spot numbers - super cards |"
+      gameplay_feature: [in-line-scoring]
+  - model.high-flyer:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/high_flyer"
+          quote: "| Features | - corners scoring - double or nothing - in-line scoring - roll-over buttons - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.hole-in-one:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/hole_in_one"
+          quote: "| Features | - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.honolulu:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/interflip/honolulu"
+          quote: "| Features | - corners scoring - double or nothing - in-line scoring - spot numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.ice-frolics:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/ice_frolics"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - hold/double hold - in-line scoring - roll-over buttons - score booster - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.key-west:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/key_west"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - select-a-score booster - spot numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.laguna-beach:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/laguna_beach"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - orange scores as green - orange section - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.leader-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/leader"
+          quote: "| Features | - extra balls - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.lido:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/lido"
+          quote: "| Features | - OK game - advancing odds/scores - auto-mission coin divider - blue section scores - colored lines - extended/extra time/play - extra balls - futurity - in-line scoring - orange scores as green - orange section - pick-a-play buttons - roll-over buttons - score booster - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.lite-a-line:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/lite_a_line"
+          quote: "| Features | - colored lines - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.london:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/london"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores - twin numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.long-beach-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/williams/long_beach"
+          quote: "| Features | - in-line scoring - score booster |"
+      gameplay_feature: [in-line-scoring]
+  - model.lotta-fun:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/lotta_fun"
+          quote: "| Features | - auto-mission coin divider - in-line scoring - spot numbers |"
+      gameplay_feature: [in-line-scoring]
+  - model.louisiana:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/louisiana"
+          quote: "| Features | - corners scoring - diagonal scores - double or nothing - extra balls - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.magic-screen:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/magic_screen"
+          quote: "| Features | - advancing odds/scores - corners scoring - diagonal scores - extra balls - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.malibu-beach:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/malibu_beach"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - section scoring - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.manhattan-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/manhattan"
+          quote: "| Features | - advancing odds/scores - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - next game award - roll-over buttons - score booster - select-a-spot - spot numbers |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.manhattan-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/manhattan"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - double or nothing - extended/extra time/play - extra balls - in-line scoring - orange section - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.mexico-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/mexico"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - in-line scoring - next game award - select-a-feature - select-a-spot - spot numbers - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miami-beach-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/miami_beach"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - double duty numbers - extra balls - extra lines - in-line scoring - select-a-spot - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.miss-america-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/miss_america"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - double duty numbers - extended/extra time/play - extra balls - in-line scoring - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.miss-america-75:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/miss_america_75"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - double duty numbers - double or nothing - extended/extra time/play - extra balls - in-line scoring - kumbackey - nickel-quarter play - roll-over buttons - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.miss-america-deluxe:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/miss_america_deluxe"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - double duty numbers - extended/extra time/play - extra balls - in-line scoring - kumbackey - red letter game - roll-over buttons - star numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-america-supreme:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/miss_america_supreme"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - double duty numbers - extended/extra time/play - extra balls - in-line scoring - kumbackey - red letter game - roll-over buttons - star numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-americana:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/miss_americana"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-americana-triple-bonus:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/miss_americana_triple_bonus"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-belgium-turbo:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/miss_belgium_turbo"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - corners scoring - diagonal scores - double or nothing - extended/extra time/play - extra balls - in-line scoring - magic number doubling |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-bonus:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/miss_bonus"
+          quote: "| Features | - OK game - advancing odds/scores - ballyhole - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - star numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-bowling:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/miss_bowling"
+          quote: "| Features | - OK game - advancing odds/scores - ballyhole - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - star numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-bowling-golden:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/miss_bowling_golden"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - corners scoring - diagonal scores - double or nothing - extended/extra time/play - extra balls - in-line scoring - magic number doubling |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-bowling-turbo:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/miss_bowling_turbo"
+          quote: "| Features | - OK game - advancing odds/scores - ballyhole - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - star numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-florida:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sg/miss_florida"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - super cards - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-queen:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/miss_queen"
+          quote: "| Features | - OK game - advancing odds/scores - ballyhole - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - star numbers - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.miss-universe:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/miss_universe"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - in-line scoring - kumbackey - select-a-spot - spot numbers - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.mississippi-showboat:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/mississippi_showboat"
+          quote: "| Features | - corners scoring - double or nothing - extra balls - in-line scoring - magic number doubling - roll-over buttons - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.monaco:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/monaco"
+          quote: "| Features | - advancing odds/scores - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - roll-over buttons - spot numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.mondial:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/mondial"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - diagonal scores - extra balls - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.mystic-gate:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/mystic_gate"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - kumbackey - nickel-quarter play - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+      gameplay_feature: [section-scoring]
+  - model.nashville:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/nashville"
+          quote: "| Features | - corners scoring - double or nothing - in-line scoring - magic number doubling - roll-over buttons - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.nevada:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/nevada"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - next game award - select-a-feature - select-a-spot - spot numbers - spottem - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.new-dixieland-2000:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/new_dixieland_2000"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - diagonal scores - extra balls - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.new-florida:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sg/new_florida"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - score booster - star numbers - super cards - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.new-orleans:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/new_orleans"
+          quote: "| Features | - corners scoring - diagonal scores - double or nothing - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.night-club:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/night_club"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - spot numbers - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.orient:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/orient"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - special game - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.palm-beach:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/palm_beach"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - in-line scoring - pick-a-play buttons - roll-over buttons - spot numbers - super cards |"
+      gameplay_feature: [in-line-scoring]
+  - model.palm-springs:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/palm_springs"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - hold/double hold - in-line scoring - select-a-spot |"
+      gameplay_feature: [in-line-scoring]
+  - model.parade:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/parade"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - double duty numbers - extended/extra time/play - extra balls - extra lines - in-line scoring - spot numbers - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.pixies:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/pixies"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - lite-a-name - next game award - roll-over buttons - score booster - select-a-spot - spot numbers |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.playtime-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/playtime"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.president:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/president"
+          quote: "| Features | - corners scoring - diagonal scores - in-line scoring - magic number doubling - star numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.rio:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/rio"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - in-line scoring - select-a-feature - select-a-spot - spot numbers - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.roller-derby:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/roller_derby"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - orange scores as green - orange section - pick-a-play buttons - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.route-66-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/route_66"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - diagonal scores - extra balls - in-line scoring - red letter game - roll-over buttons - skill shot - spot numbers - super line - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.safari-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/safari"
+          quote: "| Features | - advancing odds/scores - animal feature - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - special game - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores - twin numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.sea-island:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/sea_island"
+          quote: "| Features | - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, section-scoring]
+  - model.serenade-5:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/serenade"
+          quote: "| Features | - ballyhole - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-spot - spell name |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.shoot-a-line:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/shoot_a_line"
+          quote: "| Features | - colored lines - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.show-boat-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/show_boat"
+          quote: "| Features | - ballyhole - extra balls - in-line scoring - spottem - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.show-time:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/show_time"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.silver-sails:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/silver_sails"
+          quote: "| Features | - OK game - advancing odds/scores - blue section scores - colored lines - extended/extra time/play - extra balls - golden game - in-line scoring - next game award - orange section - pick-a-play buttons - purple section - roll-over buttons - section scoring - super-section - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring, next-game-award, section-scoring]
+  - model.singapore-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/singapore"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - next game award - select-a-feature - select-a-spot - spot numbers - spottem - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.south-seas-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/south_seas"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - diagonal scores - extended/extra time/play - extra balls - futurity - in-line scoring - roll-over buttons - select-a-spot - spot numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.star-continental-2000:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sirmo/star_continental_2000"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - diagonal scores - extra balls - in-line scoring - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.stardust-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/stardust"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - roll-over buttons - score booster - select-a-spot - spell name - spot numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.starlet:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/starlet"
+          quote: "| Features | - advancing odds/scores - ballyhole - colored lines - corners scoring - diagonal scores - extended/extra time/play - extra balls - futurity - in-line scoring - roll-over buttons - score booster - select-a-spot - spell name - spot numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.stars-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/stars"
+          quote: "| Features | - extra balls - in-line scoring - spottem - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.stock-market-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/stock_market"
+          quote: "| Features | - corners scoring - double or nothing - in-line scoring - kumbackey - nickel-quarter play |"
+      gameplay_feature: [in-line-scoring]
+  - model.sun-valley-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/sun_valley"
+          quote: "| Features | - advancing odds/scores - colored lines - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - score booster - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.super-7:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/super_7"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores - twin numbers |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.surf-club:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/surf_club"
+          quote: "| Features | - advancing odds/scores - corners scoring - extra balls - hold/double hold - in-line scoring - roll-over buttons - select-a-spot - super cards - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.tahiti-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/tahiti"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - select-a-feature - select-a-spot - spot numbers - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.tahiti-3:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/tahiti"
+          quote: "| Features | - advancing odds/scores - ball return - extended/extra time/play - nickel-quarter play - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+      gameplay_feature: [section-scoring]
+  - model.texas:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sg/texas"
+          quote: "| Features | - OK game - advancing odds/scores - colored lines - diagonal scores - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - score booster - star numbers - super cards - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.ticker-tape:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/ticker_tape"
+          quote: "| Features | - auto-mission coin divider - double or nothing - in-line scoring - kumbackey - nickel-quarter play - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.touchdown-4:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/touchdown"
+          quote: "| Features | - advancing odds/scores - colored lines - extended/extra time/play - extra balls - in-line scoring - pick-a-play buttons - spot numbers - star numbers - triple deck advancing odds/scores |"
+      gameplay_feature: [in-line-scoring]
+  - model.transcontinental:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sg/transcontinental"
+          quote: "| Features | - corners scoring - diagonal scores - double or nothing - extra balls - in-line scoring - magic number doubling - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.transcontinental-deluxe:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/sg/transcontinental_deluxe"
+          quote: "| Features | - corners scoring - diagonal scores - double or nothing - extra balls - in-line scoring - magic number doubling - super cards - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.triple-play:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/triple_play"
+          quote: "| Features | - advancing odds/scores - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - next game award - roll-over buttons - score booster - select-a-spot - spot numbers |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.triple-seven:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/wimi/triple_seven"
+          quote: "| Features | - corners scoring - diagonal scores - extra balls - in-line scoring - skill shot - spot numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.tropicana-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/tropicana"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extended/extra time/play - extra balls - futurity - in-line scoring - next game award - select-a-feature - select-a-spot - spot numbers - spottem - super/double/triple/quadruple scores |"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.tropics:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/tropics"
+          quote: "| Features | - advancing odds/scores - ballyhole - corners scoring - extra balls - in-line scoring - roll-over buttons - select-a-feature - select-a-spot - spot numbers - super/double/triple/quadruple scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [in-line-scoring, next-game-award]
+  - model.variety-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/variety"
+          quote: "| Features | - advancing odds/scores - corners scoring - extended/extra time/play - extra balls - in-line scoring - roll-over buttons - spot numbers - super cards |"
+      gameplay_feature: [in-line-scoring]
+  - model.venice:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/venice"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
+  - model.wall-street-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/wall_street"
+          quote: "| Features | - auto-mission coin divider - corners scoring - double or nothing - in-line scoring - kumbackey - spot numbers - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.yacht-club-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/yacht_club"
+          quote: "| Features | - advancing odds/scores - extra balls - in-line scoring - roll-over buttons - super line |"
+      gameplay_feature: [in-line-scoring]
+  - model.zingo:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/united/zingo"
+          quote: "| Features | - extra balls - in-line scoring |"
+      gameplay_feature: [in-line-scoring]
+  - model.zodiac-2:
+      cite:
+        - ref: "https://bingo.cdyn.com/machines/bally/zodiac"
+          quote: "| Features | - advancing odds/scores - extended/extra time/play - extra balls - nickel-quarter play - pick-a-play buttons - red letter game - roll-over buttons - section scoring - star numbers - super/double/triple/quadruple scores - triple deck advancing odds/scores |"
+        - ref: "https://bingo.cdyn.com/machines/features.html"
+          quote: "Something you do on the current game will enable a feature automatically on the next game. [...] See: - ballyhole - red letter game - ok game - futurity game - sunny circles"
+      gameplay_feature: [next-game-award, section-scoring]
