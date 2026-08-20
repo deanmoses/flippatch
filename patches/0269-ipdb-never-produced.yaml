@@ -1,0 +1,184 @@
+attribution: flipcommons-catalog
+description: >
+  Cancelled projects IPDB records as never produced.
+claims:
+  - model.a-world-of-clowns:
+      cite:
+        ref: "ipdb:6592"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.automat-2:
+      cite:
+        ref: "ipdb:5724"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.avalanche:
+      cite:
+        ref: "ipdb:3691"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.cyclone-5:
+      cite:
+        ref: "ipdb:3697"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.cyclops:
+      cite:
+        ref: "ipdb:3698"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.daffy-derby-2:
+      cite:
+        ref: "ipdb:6282"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.dual-pool:
+      cite:
+        ref: "ipdb:4347"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.enforcer:
+      cite:
+        ref: "ipdb:5604"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.firefly:
+      cite:
+        ref: "ipdb:6545"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.gridiron-4:
+      cite:
+        ref: "ipdb:1090"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.guardian:
+      cite:
+        ref: "ipdb:3708"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.gypsy:
+      cite:
+        ref: "ipdb:5958"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.high-steel:
+      cite:
+        ref: "ipdb:3710"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.hoss-feathers:
+      cite:
+        ref: "ipdb:6286"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.ice-castle:
+      cite:
+        ref: "ipdb:3711"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.in-concert:
+      cite:
+        ref: "ipdb:7043"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.jungle-drum:
+      cite:
+        ref: "ipdb:5959"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.la-vie-parisienne:
+      cite:
+        ref: "ipdb:5196"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.lai-lani:
+      cite:
+        ref: "ipdb:5960"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.light-speed:
+      cite:
+        ref: "ipdb:3712"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.m-game:
+      cite:
+        ref: "ipdb:3687"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.pee-wee-golf:
+      cite:
+        ref: "ipdb:3778"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.pool:
+      cite:
+        ref: "ipdb:3717"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.reflex:
+      cite:
+        ref: "ipdb:3721"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.royal-cards:
+      cite:
+        ref: "ipdb:5547"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.showdown-2:
+      cite:
+        ref: "ipdb:5402"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.space-circus:
+      cite:
+        ref: "ipdb:5573"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.spellbinder:
+      cite:
+        ref: "ipdb:3727"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.spitfire-2:
+      cite:
+        ref: "ipdb:3728"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.strike-force:
+      cite:
+        ref: "ipdb:4337"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.sudden-withdrawal:
+      cite:
+        ref: "ipdb:5721"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.tic-tac-lotto:
+      cite:
+        ref: "ipdb:6413"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.tornado-2:
+      cite:
+        ref: "ipdb:6376"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.total-recall:
+      cite:
+        ref: "ipdb:4335"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.typhoon:
+      cite:
+        ref: "ipdb:6546"
+        quote: "Production: Never Produced"
+      production_status: unreleased
+  - model.venus-3:
+      cite:
+        ref: "ipdb:3883"
+        quote: "Production: Never Produced"
+      production_status: unreleased
