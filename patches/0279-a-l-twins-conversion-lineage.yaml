@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: "1963 A. L. Twins: conversion lineage to its Williams donor."
+claims:
+  - model.1963-a-l-twins:
+      cite:
+        ref: ipdb:4386
+        quote: "This is a conversion of Williams '1963 Major League', made by altering the name on the backglass. It was probably done by an operator."
+      model_relationship:
+        - target_machine: "1963-major-league"
+          relationship_type: conversion
+          license_status: unknown
