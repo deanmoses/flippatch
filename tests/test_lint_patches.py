@@ -235,6 +235,25 @@ def test_substantive_assert_without_note_flagged():
     assert has(e, "needs a note")
 
 
+def test_self_evident_field_needs_no_note():
+    # A location's location_type restates what the record already is, and the
+    # app derives it from the parent chain — there is nothing a note could add.
+    e = errs([{"location.usa/nj/pennsville": {"location_type": "city"}}])
+    assert not has(e, "needs a note")
+
+
+def test_self_evident_exemption_does_not_cover_other_fields():
+    # The exemption is per (ref_type, field); a second field on the same entry
+    # is an ordinary change and still needs explaining.
+    e = errs([{"location.usa/nj/pennsville": {"location_type": "city", "name": "P"}}])
+    assert has(e, "needs a note")
+
+
+def test_self_evident_exemption_does_not_leak_across_types():
+    e = errs([{"model.x": {"location_type": "city"}}])
+    assert has(e, "needs a note")
+
+
 def test_quoted_cite_satisfies_note_requirement():
     # A cite carrying a verbatim quote explains the change by itself.
     e = errs(

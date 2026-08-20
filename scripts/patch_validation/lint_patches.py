@@ -138,6 +138,17 @@ DESCRIPTION_CITE_EXEMPT_TYPES = {
     "gameplay-feature",
 }
 
+# note-required exemption, keyed (entity_type -> field names). A field lands here
+# only when its value restates what the record already is, so a note could add
+# nothing but noise. ``location_type`` is the case: the app itself derives it
+# from the country ancestor's ``divisions`` (catalog ``derive_child_location_type``)
+# and forbids the editor's callers from supplying one, so a patch typing a
+# location is transcribing a derivation, not making a judgment. Keep this list
+# short — an ordinary sourced fact belongs behind a cite or a note.
+SELF_EVIDENT_FIELDS = {
+    "location": frozenset({"location_type"}),
+}
+
 # A zero-padded 4-digit token (0001-0999) is how patches are numbered/referenced
 # — bare ("0067") or as a stem prefix ("0067-slug", \b on the hyphen). Years
 # (19xx/20xx) and IPDB/OPDB ids (6069, 5572) never lead with a zero.
@@ -845,7 +856,19 @@ def _check_unit(
         or has_retract_remove
         or (bool(nonalias_field) and not is_create)
     )
-    if needs_note and not has_note and not has_quoted_cite and on("note-required"):
+    # A change whose every authored field is self-evident for its entity type
+    # explains itself (SELF_EVIDENT_FIELDS). One ordinary field alongside them
+    # puts the whole entry back under the rule.
+    self_evident = bool(nonalias_field) and nonalias_field <= SELF_EVIDENT_FIELDS.get(
+        ref_type, frozenset()
+    )
+    if (
+        needs_note
+        and not self_evident
+        and not has_note
+        and not has_quoted_cite
+        and on("note-required")
+    ):
         errors.append(f"{where}: this change needs a note: explaining it")
 
     # description-attribution + description-needs-inline-cite + description-no-entry-cite
