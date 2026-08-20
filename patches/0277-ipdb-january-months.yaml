@@ -1,0 +1,1306 @@
+attribution: flipcommons-catalog
+description: >
+  Production months IPDB names that our baseline could not read.
+claims:
+  - model.1941-velvet:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2726"
+        quote: "IPD No. 2726 / January, 1941 / 1 Player"
+      production_month: 1
+  - model.1957-baseball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2904"
+        quote: "IPD No. 2904 / January, 1957 / 1 Player"
+      production_month: 1
+  - model.1957-baseball-deluxe:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3047"
+        quote: "IPD No. 3047 / January, 1957 / 1 Player"
+      production_month: 1
+  - model.1962-world-series:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2814"
+        quote: "IPD No. 2814 / January, 1962 / 1 Player"
+      production_month: 1
+  - model.21-odds:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4268"
+        quote: "IPD No. 4268 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.abc-roll:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4519"
+        quote: "IPD No. 4519 / January, 1948 / 1 Player"
+      production_month: 1
+  - model.across-the-board:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:12"
+        quote: "IPD No. 12 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.adventure:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5544"
+        quote: "IPD No. 5544 / January, 1979 / 2 Players"
+      production_month: 1
+  - model.air-circus:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:29"
+        quote: "IPD No. 29 / January, 1942 / 1 Player"
+      production_month: 1
+  - model.all-stars-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:56"
+        quote: "IPD No. 56 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.aloha-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2871"
+        quote: "IPD No. 2871 / January, 1949 / 1 Player"
+      production_month: 1
+  - model.anchors-aweigh:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4727"
+        quote: "IPD No. 4727 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.arctic-gun:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6342"
+        quote: "IPD No. 6342 / January, 1967 / 1 Player"
+      production_month: 1
+  - model.arlington-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4192"
+        quote: "IPD No. 4192 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.armada:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:89"
+        quote: "IPD No. 89 / January, 1941 / 1 Player"
+      production_month: 1
+  - model.avengers-the-pin:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6373"
+        quote: "IPD No. 6373 / January, 2013 / 2 Players"
+      production_month: 1
+  - model.baby-whiffle:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4452"
+        quote: "IPD No. 4452 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.baffle-ball-sr:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:131"
+        quote: "IPD No. 131 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.ball-park:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:138"
+        quote: "IPD No. 138 / January, 1968 / 2 Players"
+      production_month: 1
+  - model.bally-entry-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2892"
+        quote: "IPD No. 2892 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.bat-a-score:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2910"
+        quote: "IPD No. 2910 / January, 1948 / 1 Player"
+      production_month: 1
+  - model.beat-em:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2851"
+        quote: "IPD No. 2851 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.big-broadcast-junior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:236"
+        quote: "IPD No. 236 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.big-five:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:246"
+        quote: "IPD No. 246 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.big-richard:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:270"
+        quote: "IPD No. 270 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.big-round-up:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4726"
+        quote: "IPD No. 4726 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.big-shot-1-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:273"
+        quote: "IPD No. 273 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.big-shot-5-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6906"
+        quote: "IPD No. 6906 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.big-time:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:282"
+        quote: "IPD No. 282 / January, 1941 / 1 Player"
+      production_month: 1
+  - model.billiard-flash:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3752"
+        quote: "IPD No. 3752 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.bingo-bombo:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4677"
+        quote: "IPD No. 4677 / January, 1990"
+      production_month: 1
+  - model.bingo-play-cards:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:299"
+        quote: "IPD No. 299 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.bobs:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3638"
+        quote: "IPD No. 3638 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.bouncing-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4837"
+        quote: "IPD No. 4837 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.bridgeball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6658"
+        quote: "IPD No. 6658 / January, 1949 / 1 Player"
+      production_month: 1
+  - model.bubbles-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5325"
+        quote: "IPD No. 5325 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.bump-t-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3671"
+        quote: "IPD No. 3671 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.bumper-shuffle:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6714"
+        quote: "IPD No. 6714 / January, 1959 / 8 Players"
+      production_month: 1
+  - model.carnival-target-gallery:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:452"
+        quote: "IPD No. 452 / January, 1963 / 1 Player"
+      production_month: 1
+  - model.casba:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:461"
+        quote: "IPD No. 461 / January, 1948 / 1 Player"
+      production_month: 1
+  - model.catch-n-match:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:472"
+        quote: "IPD No. 472 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.checkers:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:497"
+        quote: "IPD No. 497 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.chicago-express:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:503"
+        quote: "IPD No. 503 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.chicago-express-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3013"
+        quote: "IPD No. 3013 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.chief:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:507"
+        quote: "IPD No. 507 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.chieftain:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:508"
+        quote: "IPD No. 508 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.chuck-o-luck:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:511"
+        quote: "IPD No. 511 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.contact-baby:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4454"
+        quote: "IPD No. 4454 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.copper-mine:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6540"
+        quote: "IPD No. 6540 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.cross-word-puzzle:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4217"
+        quote: "IPD No. 4217 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.daily-dozen:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3038"
+        quote: "IPD No. 3038 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.dairylea:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4214"
+        quote: "IPD No. 4214 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.defense-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3043"
+        quote: "IPD No. 3043 / January, 1942 / 1 Player"
+      production_month: 1
+  - model.deluxe-e-three:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4728"
+        quote: "IPD No. 4728 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.derby-clock:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:663"
+        quote: "IPD No. 663 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.destroyer:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3831"
+        quote: "IPD No. 3831 / January, 1943 / 1 Player"
+      production_month: 1
+  - model.domino-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4210"
+        quote: "IPD No. 4210 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.double-feature-6:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:715"
+        quote: "IPD No. 715 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.double-track:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3068"
+        quote: "IPD No. 3068 / January, 1938 / 2 Players"
+      production_month: 1
+  - model.double-up:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:725"
+        quote: "IPD No. 725 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.evel-knievel-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:794"
+        quote: "IPD No. 794 / January, 1978 / 4 Players"
+      production_month: 1
+  - model.extra-inning-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3086"
+        quote: "IPD No. 3086 / January, 1962 / 1 Player"
+      production_month: 1
+  - model.fair-play:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:812"
+        quote: "IPD No. 812 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.fast-track:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3833"
+        quote: "IPD No. 3833 / January, 1943 / 1 Player"
+      production_month: 1
+  - model.flat-top:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:876"
+        quote: "IPD No. 876 / January, 1945 / 1 Player"
+      production_month: 1
+  - model.fleche-dor:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6835"
+        quote: "IPD No. 6835 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.flicker-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:884"
+        quote: "IPD No. 884 / January, 1941 / 1 Player"
+      production_month: 1
+  - model.flying-trapeze-bar:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4213"
+        quote: "IPD No. 4213 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.form-a-word:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4225"
+        quote: "IPD No. 4225 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.fortune-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:921"
+        quote: "IPD No. 921 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.fox-and-hound:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6538"
+        quote: "IPD No. 6538 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.free-play:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3112"
+        quote: "IPD No. 3112 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.fun-cruise:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:963"
+        quote: "IPD No. 963 / January, 1966 / 1 Player"
+      production_month: 1
+  - model.golden-comet-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1046"
+        quote: "IPD No. 1046 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.golden-continental-joker:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4680"
+        quote: "IPD No. 4680 / January, 1990 / 1 Player"
+      production_month: 1
+  - model.golden-continental-laser:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4681"
+        quote: "IPD No. 4681 / January, 1990 / 1 Player"
+      production_month: 1
+  - model.golden-nugget:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1054"
+        quote: "IPD No. 1054 / January, 1953 / 1 Player"
+      production_month: 1
+  - model.grand-prize:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1073"
+        quote: "IPD No. 1073 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.gun-club-4:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6929"
+        quote: "IPD No. 6929 / January, 1958 / 1 Player"
+      production_month: 1
+  - model.guns-n-roses-not-in-this-lifetime-team-edition:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6784"
+        quote: "IPD No. 6784 / January, 2021 / 4 Players"
+      production_month: 1
+  - model.handicap-4:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4716"
+        quote: "IPD No. 4716 / January, 1935 / 2 Players"
+      production_month: 1
+  - model.hawthorne-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3139"
+        quote: "IPD No. 3139 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.he-no:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1154"
+        quote: "IPD No. 1154 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.hi-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1164"
+        quote: "IPD No. 1164 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.hi-de-ho:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1156"
+        quote: "IPD No. 1156 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.hi-lo-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1185"
+        quote: "IPD No. 1185 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.hi-lo-senior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1189"
+        quote: "IPD No. 1189 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.hi-low-game-senior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5041"
+        quote: "IPD No. 5041 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.hit-to-score:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3151"
+        quote: "IPD No. 3151 / January, 1979 / 1 Player"
+      production_month: 1
+  - model.hooligan-pool:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6380"
+        quote: "IPD No. 6380 / January, 1956 / 4 Players"
+      production_month: 1
+  - model.horsefeathers-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5388"
+        quote: "IPD No. 5388 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.hurdle-hop:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3166"
+        quote: "IPD No. 3166 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.improved-sportsman-sportsman:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2309"
+        quote: "IPD No. 2309 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.jiggilo:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4548"
+        quote: "IPD No. 4548 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.jimmy-valentine:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3177"
+        quote: "IPD No. 3177 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.jockey-club-5:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3178"
+        quote: "IPD No. 3178 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.justice:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1345"
+        quote: "IPD No. 1345 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.lariat:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1401"
+        quote: "IPD No. 1401 / January, 1949 / 1 Player"
+      production_month: 1
+  - model.line-o:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1451"
+        quote: "IPD No. 1451 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.little-dandy:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1459"
+        quote: "IPD No. 1459 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.log-cabin:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1466"
+        quote: "IPD No. 1466 / January, 1903 / 1 Player"
+      production_month: 1
+  - model.log-cabin-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1467"
+        quote: "IPD No. 1467 / January, 1901 / 1 Player"
+      production_month: 1
+  - model.longacres:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3219"
+        quote: "IPD No. 3219 / January, 1949 / 1 Player"
+      production_month: 1
+  - model.lucky-strike-marble:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3224"
+        quote: "IPD No. 3224 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.mad-cap:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1503"
+        quote: "IPD No. 1503 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.magic-picture-pin-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3891"
+        quote: "IPD No. 3891 / January, 1982 / 4 Players"
+      production_month: 1
+  - model.magic-pins:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1517"
+        quote: "IPD No. 1517 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.mar-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3387"
+        quote: "IPD No. 3387 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.mat-cha-skor:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1560"
+        quote: "IPD No. 1560 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.match-a-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4211"
+        quote: "IPD No. 4211 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.match-a-color:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4266"
+        quote: "IPD No. 4266 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.match-em:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3366"
+        quote: "IPD No. 3366 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.merchandiser:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1571"
+        quote: "IPD No. 1571 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.mike-bossy-the-scoring-machine:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1596"
+        quote: "IPD No. 1596 / January, 1982 / 4 Players"
+      production_month: 1
+  - model.mills-pay-table:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1600"
+        quote: "IPD No. 1600 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.miss-america-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1610"
+        quote: "IPD No. 1610 / January, 1947 / 1 Player"
+      production_month: 1
+  - model.miss-bonus:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4678"
+        quote: "IPD No. 4678 / January, 1997 / 1 Player"
+      production_month: 1
+  - model.miss-florida:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4682"
+        quote: "IPD No. 4682 / January, 1990"
+      production_month: 1
+  - model.mystic-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1651"
+        quote: "IPD No. 1651 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.neighbors:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1660"
+        quote: "IPD No. 1660 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.new-daily-races:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:629"
+        quote: "IPD No. 629 / January, 1947 / 1 Player"
+      production_month: 1
+  - model.new-florida:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4683"
+        quote: "IPD No. 4683 / January, 1990"
+      production_month: 1
+  - model.northern-lights:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1684"
+        quote: "IPD No. 1684 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.old-jenny-whiffle:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5394"
+        quote: "IPD No. 5394 / January, 1931 / 1 Player"
+      production_month: 1
+  - model.owl:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1732"
+        quote: "IPD No. 1732 / January, 1941 / 1 Player"
+      production_month: 1
+  - model.pamco-casino:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:464"
+        quote: "IPD No. 464 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.pamco-handicap:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1110"
+        quote: "IPD No. 1110 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.pamco-palooka-senior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1742"
+        quote: "IPD No. 1742 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.pamco-parlay-junior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5598"
+        quote: "IPD No. 5598 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.pamco-races:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3535"
+        quote: "IPD No. 3535 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.pamco-speedway:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2280"
+        quote: "IPD No. 2280 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.par-lay:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1759"
+        quote: "IPD No. 1759 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.penny-play:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6539"
+        quote: "IPD No. 6539 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.pin-up-girl:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1790"
+        quote: "IPD No. 1790 / January, 1944 / 1 Player"
+      production_month: 1
+  - model.pitchem-batem:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4700"
+        quote: "IPD No. 4700 / January, 1948 / 1 Player"
+      production_month: 1
+  - model.pittsburgh-penguins:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6017"
+        quote: "IPD No. 6017 / January, 2013 / 4 Players"
+      production_month: 1
+  - model.play-ball-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1814"
+        quote: "IPD No. 1814 / January, 1951 / 1 Player"
+      production_month: 1
+  - model.poker-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4913"
+        quote: "IPD No. 4913 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.pol-roger:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4216"
+        quote: "IPD No. 4216 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.ponies:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1845"
+        quote: "IPD No. 1845 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.pontiac:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1846"
+        quote: "IPD No. 1846 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.pot-shot:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1856"
+        quote: "IPD No. 1856 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.president:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4039"
+        quote: "IPD No. 4039 / January, 1990 / 1 Player"
+      production_month: 1
+  - model.profit-sharing-pin-game:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1868"
+        quote: "IPD No. 1868 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.put-n-take:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1879"
+        quote: "IPD No. 1879 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.qualified-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4267"
+        quote: "IPD No. 4267 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.quick-silver:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1894"
+        quote: "IPD No. 1894 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.race-king:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3832"
+        quote: "IPD No. 3832 / January, 1943 / 1 Player"
+      production_month: 1
+  - model.rapid-fire-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4212"
+        quote: "IPD No. 4212 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.rat-race:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3718"
+        quote: "IPD No. 3718 / January, 1983 / 2 Players"
+      production_month: 1
+  - model.red-heads-of-1942:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3866"
+        quote: "IPD No. 3866 / January, 1942 / 1 Player"
+      production_month: 1
+  - model.red-n-blue:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1936"
+        quote: "IPD No. 1936 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.repeater:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1947"
+        quote: "IPD No. 1947 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.rex:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1955"
+        quote: "IPD No. 1955 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.ricochet-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3562"
+        quote: "IPD No. 3562 / January, 1955 / 4 Players"
+      production_month: 1
+  - model.rio-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1960"
+        quote: "IPD No. 1960 / January, 1947 / 1 Player"
+      production_month: 1
+  - model.rio-rita:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5784"
+        quote: "IPD No. 5784 / January, 1948 / 1 Player"
+      production_month: 1
+  - model.robin-hood-3:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3518"
+        quote: "IPD No. 3518 / January, 1978 / 1 Player"
+      production_month: 1
+  - model.rockingham:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:1992"
+        quote: "IPD No. 1992 / January, 1944 / 1 Player"
+      production_month: 1
+  - model.rodeo-shooting-gallery:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6655"
+        quote: "IPD No. 6655 / January, 1972 / 1 Player"
+      production_month: 1
+  - model.roll-ette:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4269"
+        quote: "IPD No. 4269 / January, 1936 / 3 Players"
+      production_month: 1
+  - model.roll-skill:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2000"
+        quote: "IPD No. 2000 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.roly-poly:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2013"
+        quote: "IPD No. 2013 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.royal-flash:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2033"
+        quote: "IPD No. 2033 / January, 1964 / 2 Players"
+      production_month: 1
+  - model.runabout:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2041"
+        quote: "IPD No. 2041 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.running-wild-jr:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4907"
+        quote: "IPD No. 4907 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.salute:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2047"
+        quote: "IPD No. 2047 / January, 1941 / 1 Player"
+      production_month: 1
+  - model.sea-avenger:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6908"
+        quote: "IPD No. 6908 / January, 1977 / 2 Players"
+      production_month: 1
+  - model.sea-raider:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3362"
+        quote: "IPD No. 3362 / January, 1945 / 1 Player"
+      production_month: 1
+  - model.seagrams:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4215"
+        quote: "IPD No. 4215 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.shells:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3341"
+        quote: "IPD No. 3341 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.shoot-the-chutes:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3292"
+        quote: "IPD No. 3292 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.shuffle-bowl:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3246"
+        quote: "IPD No. 3246 / January, 1950 / 5 Players"
+      production_month: 1
+  - model.silver-moon:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4729"
+        quote: "IPD No. 4729 / January, 1934 / 1 Player"
+      production_month: 1
+  - model.ske-dad-del:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2171"
+        quote: "IPD No. 2171 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.sportland:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2303"
+        quote: "IPD No. 2303 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.sports-parade:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3469"
+        quote: "IPD No. 3469 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.spot-a-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2311"
+        quote: "IPD No. 2311 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.spot-ball:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2312"
+        quote: "IPD No. 2312 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.star-lite:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2348"
+        quote: "IPD No. 2348 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.star-series:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3497"
+        quote: "IPD No. 3497 / January, 1949 / 1 Player"
+      production_month: 1
+  - model.steeple-chase-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2370"
+        quote: "IPD No. 2370 / January, 1952 / 1 Player"
+      production_month: 1
+  - model.stock-market:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2380"
+        quote: "IPD No. 2380 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.stop-and-sock:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2385"
+        quote: "IPD No. 2385 / January, 1931 / 1 Player"
+      production_month: 1
+  - model.stratosphere:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2400"
+        quote: "IPD No. 2400 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.sunshine-derby:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2425"
+        quote: "IPD No. 2425 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.super-charger:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2451"
+        quote: "IPD No. 2451 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.super-wild-cat:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6968"
+        quote: "IPD No. 6968 / January, 1960 / 1 Player"
+      production_month: 1
+  - model.swing-time:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2482"
+        quote: "IPD No. 2482 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.tackle:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2488"
+        quote: "IPD No. 2488 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.tee-off-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6738"
+        quote: "IPD No. 6738 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.ten-strike:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2519"
+        quote: "IPD No. 2519 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.ten-strike-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2520"
+        quote: "IPD No. 2520 / January, 1958 / 2 Players"
+      production_month: 1
+  - model.texas:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4684"
+        quote: "IPD No. 4684 / January, 1990"
+      production_month: 1
+  - model.the-silver-king-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6933"
+        quote: "IPD No. 6933 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.the-whip:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6537"
+        quote: "IPD No. 6537 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.three-up:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2546"
+        quote: "IPD No. 2546 / January, 1938 / 1 Player"
+      production_month: 1
+  - model.tigers:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3495"
+        quote: "IPD No. 3495 / January, 1939 / 1 Player"
+      production_month: 1
+  - model.tip-top:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2571"
+        quote: "IPD No. 2571 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.top-hat-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2584"
+        quote: "IPD No. 2584 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.top-it:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2586"
+        quote: "IPD No. 2586 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.totalizer:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2605"
+        quote: "IPD No. 2605 / January, 1937 / 1 Player"
+      production_month: 1
+  - model.touchdown:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2608"
+        quote: "IPD No. 2608 / January, 1952 / 1 Player"
+      production_month: 1
+  - model.transcontinental:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4685"
+        quote: "IPD No. 4685 / January, 1990"
+      production_month: 1
+  - model.tricks-junior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:6536"
+        quote: "IPD No. 6536 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.tricks-senior:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2643"
+        quote: "IPD No. 2643 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.tropicana-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2664"
+        quote: "IPD No. 2664 / January, 1955 / 1 Player"
+      production_month: 1
+  - model.turf-champs:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2671"
+        quote: "IPD No. 2671 / January, 1936 / 7 Players"
+      production_month: 1
+  - model.tycoon:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2700"
+        quote: "IPD No. 2700 / January, 1936 / 1 Player"
+      production_month: 1
+  - model.venus-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:3300"
+        quote: "IPD No. 3300 / January, 1963 / 1 Player"
+      production_month: 1
+  - model.victory-derby:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2735"
+        quote: "IPD No. 2735 / January, 1946 / 1 Player"
+      production_month: 1
+  - model.victory-special:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2736"
+        quote: "IPD No. 2736 / January, 1946 / 1 Player"
+      production_month: 1
+  - model.war-admiral-2:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4052"
+        quote: "IPD No. 4052 / January, 1943 / 1 Player"
+      production_month: 1
+  - model.whifflette:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:5264"
+        quote: "IPD No. 5264 / January, 1932 / 1 Player"
+      production_month: 1
+  - model.whirl-pool:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:2759"
+        quote: "IPD No. 2759 / January, 1935 / 1 Player"
+      production_month: 1
+  - model.wild-widow:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4811"
+        quote: "IPD No. 4811 / January, 1933 / 1 Player"
+      production_month: 1
+  - model.ziel:
+      note: "IPDB has a date of manufacture for this model, which means the quoted header date here is a production date."
+      cite:
+        ref: "ipdb:4418"
+        quote: "IPD No. 4418 / January, 1954 / 1 Player"
+      production_month: 1

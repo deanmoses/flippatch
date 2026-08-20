@@ -29,9 +29,24 @@ Patch `0270-ipdb-refreshed-snapshot-dates` fills both, under 0268's classificati
 
 The other direction is clean too — exactly one record (3239 _Sixty-Two Baseball_) is dated only in the _older_ snapshot, and the catalog already has it as 1962.
 
-## Months are the one IPDB job left
+## Months were the one IPDB job left — done in 0277 and 0278
 
-**314 models have no month while IPDB's header line names one** — 307 of them where the catalog year already agrees with IPDB's. Same shape as 0268 and reusing its machinery exactly: the parse is pinexplore's `ipdb_machine_additional_details`, quoting the raw header line makes the quote verbatim by construction, and `production_month` vs `project_month` is decided the same way — by whether the listing holds a `DateOfManufacture`. No new source, no page fetching. Worth doing before the multi-site sweep below.
+IPDB's header line names a month for models the catalog has none for, and 0268's classifier splits them cleanly: `DateOfManufacture` present means the header date is a **production** date, absent means a **project** date. That is not one job but two, with different causes, different target fields and different value.
+
+|                            | IPDB kind  | emitted | target field                     | shape                        |
+| -------------------------- | ---------- | ------: | -------------------------------- | ---------------------------- |
+| `0277-ipdb-january-months` | production | **217** | `production_month`               | every row is January         |
+| `0278-ipdb-project-months` | project    | **113** | `project_year` + `project_month` | 110 Bally, 111 day-precision |
+
+**0277 recovers 217 lost Januaries.** `DateOfManufacture` is a full timestamp, so a year-only IPDB date arrives padded to `1938-01-01` — indistinguishable in that field from a machine genuinely dated January 1938. Our baseline read `-01-01` as year-only precision, the only safe call there, and every genuine January without a day lost its month. The header line has no such ambiguity: it renders `January, 1938` for month precision and a bare `1990` for year precision. The shortfall table proves the mechanism — across every IPDB listing with a manufacture date naming a month, the catalog holds that month on **100% of all eleven other months**, and on January holds 156 of 374. Nothing about January is special to pinball, only to a padding rule. One row is held back: `asteroid-killer`, where the catalog says 1979 and IPDB says January, 1980 — a year dispute, not a month gap.
+
+**0278 is 0268 re-run over the population its scope test could not see.** 0268 scoped on `models.year IS NULL` — the derived fallback — so it never saw a model that already carries a production year from another source. Scoping on the field, `project_year IS NULL`, finds 115 more. Their existing production years come from `0181-bingo-years` (85), OPDB and the baseline (38) and a handful of later patches, so this is not one date filed twice: it is a production date from one source and a project date from another, for the same machine. Two rows are held back where IPDB's project date **postdates** our production year (`blue-chip-2`, `dixieland-2`) — a game cannot be designed after it is built, and which of the two dates is wrong is a review, not a fill.
+
+Worth knowing before measuring 0278 by the wrong yardstick: it changes **nothing a reader sees**. `production_year` wins the derivation, so the site goes on showing the production date. Its value is that the catalog stops being silent about a date IPDB holds.
+
+### By-catch: 254 month conflicts
+
+Falling out of the same join, and **not** addressed by either patch: **254 models already hold a `production_month` that disagrees with IPDB's header month**, 205 of them where the year agrees — so a genuine month-level conflict between IPDB and whatever source we took the month from, not two different dates. That is an audit, not a fill, and it wants its own pass.
 
 ## Catalog site sweep options
 

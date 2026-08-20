@@ -1,0 +1,795 @@
+attribution: flipcommons-catalog
+description: >
+  IPDB project dates for models already dated from another source.
+claims:
+  - model.24:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:5419"
+        quote: "IPD No. 5419 / February, 2009 / 4 Players"
+      project_year: 2009
+      project_month: 2
+  - model.acapulco:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3"
+        quote: "IPD No. 3 / March 21, 1961 / 1 Player"
+      project_year: 1961
+      project_month: 3
+  - model.apollo-ball:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3648"
+        quote: "IPD No. 3648 / September 25, 1969 / 1 Player"
+      project_year: 1969
+      project_month: 9
+  - model.baby-pac-man:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:125"
+        quote: "IPD No. 125 / October 11, 1982 / 2 Players"
+      project_year: 1982
+      project_month: 10
+  - model.bahama-beach:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2889"
+        quote: "IPD No. 2889 / March 18, 1966 / 1 Player"
+      project_year: 1966
+      project_month: 3
+  - model.bali:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:134"
+        quote: "IPD No. 134 / July 19, 1974 / 1 Player"
+      project_year: 1974
+      project_month: 7
+  - model.bali-hi:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:135"
+        quote: "IPD No. 135 / September 14, 1970 / 4 Players"
+      project_year: 1970
+      project_month: 9
+  - model.ballerina:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:140"
+        quote: "IPD No. 140 / April 23, 1959 / 1 Player"
+      project_year: 1959
+      project_month: 4
+  - model.ballerina-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:141"
+        quote: "IPD No. 141 / February 10, 1948 / 1 Player"
+      project_year: 1948
+      project_month: 2
+  - model.balls-a-poppin:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:144"
+        quote: "IPD No. 144 / August 29, 1956 / 2 Players"
+      project_year: 1956
+      project_month: 8
+  - model.bally-beauty:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:216"
+        quote: "IPD No. 216 / October 17, 1952 / 1 Player"
+      project_year: 1952
+      project_month: 10
+  - model.beach-beauty:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3598"
+        quote: "IPD No. 3598 / October 07, 1955 / 1 Player"
+      project_year: 1955
+      project_month: 10
+  - model.beach-club-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:205"
+        quote: "IPD No. 205 / January 06, 1953 / 1 Player"
+      project_year: 1953
+      project_month: 1
+  - model.beach-time:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:207"
+        quote: "IPD No. 207 / July 09, 1958 / 1 Player"
+      project_year: 1958
+      project_month: 7
+  - model.beauty-beach:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3681"
+        quote: "IPD No. 3681 / April 01, 1965 / 1 Player"
+      project_year: 1965
+      project_month: 4
+  - model.beauty-queens:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:218"
+        quote: "IPD No. 218 / January 11, 1960 / 1 Player"
+      project_year: 1960
+      project_month: 1
+  - model.big-show-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:276"
+        quote: "IPD No. 276 / July 27, 1956 / 1 Player"
+      project_year: 1956
+      project_month: 7
+  - model.big-time-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:283"
+        quote: "IPD No. 283 / November 02, 1954 / 1 Player"
+      project_year: 1954
+      project_month: 11
+  - model.big-wheel:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3608"
+        quote: "IPD No. 3608 / February 07, 1968 / 1 Player"
+      project_year: 1968
+      project_month: 2
+  - model.bigfoot:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:4345"
+        quote: "IPD No. 4345 / April 29, 1977 / 4 Players"
+      project_year: 1977
+      project_month: 4
+  - model.bikini:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:290"
+        quote: "IPD No. 290 / May 24, 1961 / 1 Player"
+      project_year: 1961
+      project_month: 5
+  - model.bonanza-4:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3803"
+        quote: "IPD No. 3803 / April 07, 1976 / 1 Player"
+      project_year: 1976
+      project_month: 4
+  - model.bonus-7:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:351"
+        quote: "IPD No. 351 / December 21, 1970 / 1 Player"
+      project_year: 1970
+      project_month: 12
+  - model.boot-a-ball:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:356"
+        quote: "IPD No. 356 / June 20, 1967 / 2 Players"
+      project_year: 1967
+      project_month: 6
+  - model.border-beauty:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3657"
+        quote: "IPD No. 3657 / January 06, 1965 / 1 Player"
+      project_year: 1965
+      project_month: 1
+  - model.bounty-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3659"
+        quote: "IPD No. 3659 / August 29, 1963 / 1 Player"
+      project_year: 1963
+      project_month: 8
+  - model.bright-lights:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:374"
+        quote: "IPD No. 374 / April 23, 1951 / 1 Player"
+      project_year: 1951
+      project_month: 4
+  - model.bright-spot:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:375"
+        quote: "IPD No. 375 / September 21, 1952 / 1 Player"
+      project_year: 1952
+      project_month: 9
+  - model.broadway-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:382"
+        quote: "IPD No. 382 / November 19, 1955 / 1 Player"
+      project_year: 1955
+      project_month: 11
+  - model.bull-market:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3668"
+        quote: "IPD No. 3668 / March 15, 1976 / 1 Player"
+      project_year: 1976
+      project_month: 3
+  - model.bulls-eye-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1198"
+        quote: "IPD No. 1198 / December 08, 1965 / 2 Players"
+      project_year: 1965
+      project_month: 12
+  - model.can-can:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:425"
+        quote: "IPD No. 425 / August 28, 1961 / 1 Player"
+      project_year: 1961
+      project_month: 8
+  - model.carnival:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:450"
+        quote: "IPD No. 450 / August 27, 1957 / 2 Players"
+      project_year: 1957
+      project_month: 8
+  - model.carnival-5:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:455"
+        quote: "IPD No. 455 / June 01, 1948 / 1 Player"
+      project_year: 1948
+      project_month: 6
+  - model.carnival-queen:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:456"
+        quote: "IPD No. 456 / October 18, 1958 / 1 Player"
+      project_year: 1958
+      project_month: 10
+  - model.champion-4:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3008"
+        quote: "IPD No. 3008 / April 04, 1949 / 1 Player"
+      project_year: 1949
+      project_month: 4
+  - model.circus-6:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:520"
+        quote: "IPD No. 520 / July 29, 1957 / 2 Players"
+      project_year: 1957
+      project_month: 7
+  - model.circus-queen:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:524"
+        quote: "IPD No. 524 / December 15, 1960 / 1 Player"
+      project_year: 1960
+      project_month: 12
+  - model.combat-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:6682"
+        quote: "IPD No. 6682 / October, 1977 / 4 Players"
+      project_year: 1977
+      project_month: 10
+  - model.coney-island-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:554"
+        quote: "IPD No. 554 / August 07, 1951 / 1 Player"
+      project_year: 1951
+      project_month: 8
+  - model.county-fair-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:577"
+        quote: "IPD No. 577 / September 23, 1959 / 1 Player"
+      project_year: 1959
+      project_month: 9
+  - model.crosswords:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:606"
+        quote: "IPD No. 606 / December 12, 1955 / 1 Player"
+      project_year: 1955
+      project_month: 12
+  - model.cypress-gardens:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:620"
+        quote: "IPD No. 620 / June 02, 1958 / 1 Player"
+      project_year: 1958
+      project_month: 6
+  - model.double-header-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:717"
+        quote: "IPD No. 717 / June 18, 1956 / 1 Player"
+      project_year: 1956
+      project_month: 6
+  - model.double-up-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3069"
+        quote: "IPD No. 3069 / October 29, 1970 / 1 Player"
+      project_year: 1970
+      project_month: 10
+  - model.double-up-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:4447"
+        quote: "IPD No. 4447 / August 13, 1971 / 1 Player"
+      project_year: 1971
+      project_month: 8
+  - model.dude-ranch-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:741"
+        quote: "IPD No. 741 / July 15, 1953 / 1 Player"
+      project_year: 1953
+      project_month: 7
+  - model.eight-ball-deluxe-limited-edition:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:763"
+        quote: "IPD No. 763 / August 09, 1982 / 4 Players"
+      project_year: 1982
+      project_month: 8
+  - model.folies-bergeres:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3105"
+        quote: "IPD No. 3105 / September 23, 1965 / 1 Player"
+      project_year: 1965
+      project_month: 9
+  - model.frolics:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:958"
+        quote: "IPD No. 958 / August 08, 1952 / 1 Player"
+      project_year: 1952
+      project_month: 8
+  - model.fun-spot:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:969"
+        quote: "IPD No. 969 / August 02, 1960 / 1 Player"
+      project_year: 1960
+      project_month: 8
+  - model.fun-spot-63:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:970"
+        quote: "IPD No. 970 / April 08, 1962 / 1 Player"
+      project_year: 1962
+      project_month: 4
+  - model.fun-way:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:971"
+        quote: "IPD No. 971 / July 23, 1959 / 1 Player"
+      project_year: 1959
+      project_month: 7
+  - model.futurity:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:975"
+        quote: "IPD No. 975 / January 23, 1951 / 1 Player"
+      project_year: 1951
+      project_month: 1
+  - model.gay-time:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:992"
+        quote: "IPD No. 992 / May 05, 1955 / 1 Player"
+      project_year: 1955
+      project_month: 5
+  - model.gayety:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:993"
+        quote: "IPD No. 993 / February 09, 1955 / 1 Player"
+      project_year: 1955
+      project_month: 2
+  - model.golden-gate-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1049"
+        quote: "IPD No. 1049 / May 07, 1962 / 1 Player"
+      project_year: 1962
+      project_month: 5
+  - model.golden-harvest:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1052"
+        quote: "IPD No. 1052 / November 19, 1935 / 1 Player"
+      project_year: 1935
+      project_month: 11
+  - model.grandstand:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1080"
+        quote: "IPD No. 1080 / July 12, 1950 / 1 Player"
+      project_year: 1950
+      project_month: 7
+  - model.harvest-moon-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1130"
+        quote: "IPD No. 1130 / February 11, 1936 / 1 Player"
+      project_year: 1936
+      project_month: 2
+  - model.hawaii-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3138"
+        quote: "IPD No. 3138 / January 09, 1973 / 1 Player"
+      project_year: 1973
+      project_month: 1
+  - model.hi-fi:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1166"
+        quote: "IPD No. 1166 / May 06, 1954 / 1 Player"
+      project_year: 1954
+      project_month: 5
+  - model.high-flyer:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3145"
+        quote: "IPD No. 3145 / June 23, 1977 / 1 Player"
+      project_year: 1977
+      project_month: 6
+  - model.hole-in-one:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3634"
+        quote: "IPD No. 3634 / March 09, 1971 / 1 Player"
+      project_year: 1971
+      project_month: 3
+  - model.ice-frolics:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1261"
+        quote: "IPD No. 1261 / November 20, 1953 / 1 Player"
+      project_year: 1953
+      project_month: 11
+  - model.joker-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3179"
+        quote: "IPD No. 3179 / June 26, 1968 / 4 Players"
+      project_year: 1968
+      project_month: 6
+  - model.kentucky:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1352"
+        quote: "IPD No. 1352 / April 13, 1949 / 1 Player"
+      project_year: 1949
+      project_month: 4
+  - model.key-west:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1360"
+        quote: "IPD No. 1360 / October 23, 1956 / 1 Player"
+      project_year: 1956
+      project_month: 10
+  - model.laguna-beach:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1408"
+        quote: "IPD No. 1408 / February 28, 1960 / 1 Player"
+      project_year: 1960
+      project_month: 2
+  - model.lido:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1439"
+        quote: "IPD No. 1439 / November 30, 1961 / 1 Player"
+      project_year: 1961
+      project_month: 11
+  - model.lite-a-line:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1454"
+        quote: "IPD No. 1454 / January 09, 1961 / 1 Player"
+      project_year: 1961
+      project_month: 1
+  - model.london:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3218"
+        quote: "IPD No. 3218 / February 05, 1969 / 1 Player"
+      project_year: 1969
+      project_month: 2
+  - model.lotta-fun:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1479"
+        quote: "IPD No. 1479 / August 11, 1959 / 1 Player"
+      project_year: 1959
+      project_month: 8
+  - model.magic-ring:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3475"
+        quote: "IPD No. 3475 / September 04, 1968 / 1 Player"
+      project_year: 1968
+      project_month: 9
+  - model.malibu-beach:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3481"
+        quote: "IPD No. 3481 / December 28, 1978 / 1 Player"
+      project_year: 1978
+      project_month: 12
+  - model.melody-roll:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1569"
+        quote: "IPD No. 1569 / December 04, 1947 / 1 Player"
+      project_year: 1947
+      project_month: 12
+  - model.miami-beach-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1588"
+        quote: "IPD No. 1588 / August 05, 1955 / 1 Player"
+      project_year: 1955
+      project_month: 8
+  - model.miss-america-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1609"
+        quote: "IPD No. 1609 / December 13, 1957 / 1 Player"
+      project_year: 1957
+      project_month: 12
+  - model.miss-america-75:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3402"
+        quote: "IPD No. 3402 / December 09, 1974 / 1 Player"
+      project_year: 1974
+      project_month: 12
+  - model.miss-america-supreme:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3405"
+        quote: "IPD No. 3405 / October 19, 1976 / 1 Player"
+      project_year: 1976
+      project_month: 10
+  - model.miss-universe:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3411"
+        quote: "IPD No. 3411 / August 26, 1975 / 1 Player"
+      project_year: 1975
+      project_month: 8
+  - model.mississippi-showboat:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:6275"
+        quote: "IPD No. 6275 / July 23, 1981 / 1 Player"
+      project_year: 1981
+      project_month: 7
+  - model.nashville:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3369"
+        quote: "IPD No. 3369 / May 01, 1978 / 1 Player"
+      project_year: 1978
+      project_month: 5
+  - model.night-club:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1676"
+        quote: "IPD No. 1676 / February 13, 1956 / 1 Player"
+      project_year: 1956
+      project_month: 2
+  - model.nudgy:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1686"
+        quote: "IPD No. 1686 / September 17, 1947 / 1 Player"
+      project_year: 1947
+      project_month: 9
+  - model.orient:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3283"
+        quote: "IPD No. 3283 / February 02, 1967 / 1 Player"
+      project_year: 1967
+      project_month: 2
+  - model.palm-beach:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1739"
+        quote: "IPD No. 1739 / May 22, 1952 / 1 Player"
+      project_year: 1952
+      project_month: 5
+  - model.palm-springs:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1740"
+        quote: "IPD No. 1740 / September 24, 1953 / 1 Player"
+      project_year: 1953
+      project_month: 9
+  - model.parade:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1749"
+        quote: "IPD No. 1749 / February 25, 1956 / 1 Player"
+      project_year: 1956
+      project_month: 2
+  - model.roller-derby:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2003"
+        quote: "IPD No. 2003 / May 10, 1960 / 1 Player"
+      project_year: 1960
+      project_month: 5
+  - model.round-up:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2026"
+        quote: "IPD No. 2026 / July 22, 1971 / 2 Players"
+      project_year: 1971
+      project_month: 7
+  - model.safari-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3307"
+        quote: "IPD No. 3307 / October 10, 1969 / 1 Player"
+      project_year: 1969
+      project_month: 10
+  - model.sea-island:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2082"
+        quote: "IPD No. 2082 / January 19, 1959 / 1 Player"
+      project_year: 1959
+      project_month: 1
+  - model.show-time:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2135"
+        quote: "IPD No. 2135 / February 11, 1957 / 1 Player"
+      project_year: 1957
+      project_month: 2
+  - model.silver-sails:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2149"
+        quote: "IPD No. 2149 / September 18, 1962 / 1 Player"
+      project_year: 1962
+      project_month: 9
+  - model.spot-lite-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2321"
+        quote: "IPD No. 2321 / November 21, 1951 / 1 Player"
+      project_year: 1951
+      project_month: 11
+  - model.star-ship:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3498"
+        quote: "IPD No. 3498 / October 06, 1976 / 2 Players"
+      project_year: 1976
+      project_month: 10
+  - model.stock-market-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3392"
+        quote: "IPD No. 3392 / March 09, 1971 / 1 Player"
+      project_year: 1971
+      project_month: 3
+  - model.sun-valley-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2419"
+        quote: "IPD No. 2419 / May 08, 1957 / 1 Player"
+      project_year: 1957
+      project_month: 5
+  - model.super-7:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3225"
+        quote: "IPD No. 3225 / June 29, 1970 / 1 Player"
+      project_year: 1970
+      project_month: 6
+  - model.surf-club:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2460"
+        quote: "IPD No. 2460 / February 12, 1954 / 1 Player"
+      project_year: 1954
+      project_month: 2
+  - model.tahiti-3:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3401"
+        quote: "IPD No. 3401 / October 09, 1978 / 1 Player"
+      project_year: 1978
+      project_month: 10
+  - model.the-red-max:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:1935"
+        quote: "IPD No. 1935 / March 19, 1971 / 1 Player"
+      project_year: 1971
+      project_month: 3
+  - model.ticker-tape:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3505"
+        quote: "IPD No. 3505 / January 21, 1972 / 1 Player"
+      project_year: 1972
+      project_month: 1
+  - model.time-tunnel:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2566"
+        quote: "IPD No. 2566 / February 23, 1971 / 4 Players"
+      project_year: 1971
+      project_month: 2
+  - model.touchdown-4:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2611"
+        quote: "IPD No. 2611 / September 27, 1960 / 1 Player"
+      project_year: 1960
+      project_month: 9
+  - model.tramway:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2627"
+        quote: "IPD No. 2627 / February 03, 1973 / 2 Players"
+      project_year: 1973
+      project_month: 2
+  - model.turf-king:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2672"
+        quote: "IPD No. 2672 / April 12, 1950 / 1 Player"
+      project_year: 1950
+      project_month: 4
+  - model.variety-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2719"
+        quote: "IPD No. 2719 / July 07, 1954 / 1 Player"
+      project_year: 1954
+      project_month: 7
+  - model.venice:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3295"
+        quote: "IPD No. 3295 / September 12, 1968 / 1 Player"
+      project_year: 1968
+      project_month: 9
+  - model.wall-street-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3323"
+        quote: "IPD No. 3323 / February 13, 1974 / 1 Player"
+      project_year: 1974
+      project_month: 2
+  - model.yacht-club-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:2824"
+        quote: "IPD No. 2824 / March 27, 1953 / 1 Player"
+      project_year: 1953
+      project_month: 3
+  - model.zodiac-2:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:3585"
+        quote: "IPD No. 3585 / October 12, 1966 / 1 Player"
+      project_year: 1966
+      project_month: 10
