@@ -2,35 +2,36 @@
 
 We have a lot of models that are missing years. This is a very basic and important piece of identifying a model: `Godzilla (Stern 2021)`. You basically triangulate on name, mfr, year.
 
-Anyway, for plenty of our missing-year models, plenty of OTHER catalog sites have years. We need not and should not rely solely on IPDB.
-
 We need years for as many machines as possible and I'm okay mining catalog sites.
 
-## Xantari IPDB dump was incomplete
+## IPDB is exhausted for years
 
-IPDB's website shows years for many machines for which we do NOT have years. An example: we have no year for `models/ice-castle` but IPDB does. This means that our baseline ingest from IPDB was incomplete. We did some research and figured out what happened. There's two causes:
+Checked 2026-08-19 against the dev DB at patch 0269 (6,941 live models, 974 undated), joined to pinexplore's `ipdb_machines` + `ipdb_machine_additional_details`. Of the **944** undated models carrying an IPDB ID:
 
-1. our original baseline IPDB dump was missing data
-2. we incompletely extracted data from that dump
+|                                                           | count |
+| --------------------------------------------------------- | ----: |
+| IPDB ID absent from the dump                              |     0 |
+| in the dump, but the dump holds no date in either carrier |   942 |
+| in the dump, and the dump holds a year we lack            |     2 |
 
-We got our original baseline IPDB info from a JSON dump, `~/dev/pinexplore/ingest_sources/ipdb_xantari.json` . It's still accessible via the pinexplore DuckDB. Most of the information has already been incorporated into the Flipcommons database.
+So IPDB has nothing left to give us on years — 942 of the 944 are models IPDB itself cannot date. Everything below is the only remaining lever.
 
-`ipdb_xantari.json` has **two** date carriers:
+The 2 stragglers are not misses by patch 0268. pinexplore's `ipdb_machines` unions two snapshots, and both records were **dateless** in the 2025-02-01 Xantari dump and gained a date in the 2026-04-11 snapshot, which landed after 0268 was generated:
 
-- `DateOfManufacture` — the structured field, present on 5,265 of 6,664 records. **This is the only one our ingest read.**
-- `AdditionalDetails` — present on **all 6,664**, and it is verbatim the header line IPDB renders on the machine page: `IPD No. 3711 / May, 1989 / 4 Players`. **zero** records contain a year the parser fails to extract (no unparsed remainder), and where both fields exist the parse **agrees with `DateOfManufacture` 5,265 / 5,265 — no disagreements**. The regex is not guessing; it is reading a fixed-format field. We realized that the Xantari dump missed a concept in IPDB: Project Date, which is distinct from Production Date. `AdditionalDetails`'s date is the production date if it exists, else project date. Pinexplore now has the `AdditionalDetails` date information parsed out in a new `ipdb_machine_additional_details` view, added in `04_staging.sql`.
+| snapshot   | IPDB | title            | `DateOfManufacture` | `AdditionalDetails`               |
+| ---------- | ---: | ---------------- | ------------------- | --------------------------------- |
+| 2025-02-01 | 4386 | 1963 A. L. Twins | —                   | `IPD No. 4386 / 1 Player`         |
+| 2026-04-11 | 4386 | 1963 A. L. Twins | `1963-01-01`        | `IPD No. 4386 / 1963 / 1 Player`  |
+| 2025-02-01 | 6543 | Alien Space      | —                   | `IPD No. 6543 / 4 Players`        |
+| 2026-04-11 | 6543 | Alien Space      | —                   | `IPD No. 6543 / 1979 / 4 Players` |
 
-In addition, the dump contains other fields that we simply didn't notice, such as:
+Patch `0270-ipdb-refreshed-snapshot-dates` fills both, under 0268's classification rule: `project_year: 1979` for `alien-space` (no date of manufacture, so the header date is a project date) and `production_year: 1963` for `1963-a-l-twins` (IPDB does hold a date of manufacture). Caveat carried in that patch's note: IPDB's own prose says the conversion date is unknown, so 1963 is really the donor game's year, Williams' 1963 Major League.
 
-- Specialty
-- PhotosIn
-- Source
-- ConceptBy
-- EasterEggs
+The other direction is clean too — exactly one record (3239 _Sixty-Two Baseball_) is dated only in the _older_ snapshot, and the catalog already has it as 1962.
 
-In addition, the dump did not contain other information, such as:
+## Months are the one IPDB job left
 
-- `Production:` when it wasn't a quantity but a status like `Never Produced`.
+**314 models have no month while IPDB's header line names one** — 307 of them where the catalog year already agrees with IPDB's. Same shape as 0268 and reusing its machinery exactly: the parse is pinexplore's `ipdb_machine_additional_details`, quoting the raw header line makes the quote verbatim by construction, and `production_month` vs `project_month` is decided the same way — by whether the listing holds a `DateOfManufacture`. No new source, no page fetching. Worth doing before the multi-site sweep below.
 
 ## Catalog site sweep options
 
@@ -45,15 +46,6 @@ model_slug ⬅️ Flipcommons model slug
 year ⬅️ Flipcommons year
 month ⬅️ Flipcommons month
 manufacturer ⬅️ Flipcommons manufacturer
-
-ipdb year / month manufactured
-ipdb year / month of project
-ipdb specialty
-ipdb additional_details
-ipdb photos_in
-ipdb source
-ipdb concept_by
-ipdb easter_eggs
 
 pinside month
 pinside year
