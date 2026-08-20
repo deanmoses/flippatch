@@ -1,0 +1,16 @@
+attribution: flipcommons-catalog
+description: >
+  Two dates IPDB gained after our baseline dump was taken.
+claims:
+  - model.alien-space:
+      note: "IPDB has no date of manufacture for this model, which means the quoted header date here is a project date."
+      cite:
+        ref: "ipdb:6543"
+        quote: IPD No. 6543 / 1979 / 4 Players
+      project_year: 1979
+  - model.1963-a-l-twins:
+      note: "IPDB records this year as a date of manufacture. It is the year of [[title:1963-major-league]], the game this machine is a backglass conversion of; when the conversion itself was made is not known."
+      cite:
+        ref: "ipdb:4386"
+        quote: IPD No. 4386 / 1963 / 1 Player
+      production_year: 1963
