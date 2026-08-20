@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >
+  Delete the title orphaned by the Big Lebowski merge.
+claims:
+  - title.the-big-lebowski-pinball-second-model:
+      note: "Orphaned after its sole model moved to the shared The Big Lebowski title."
+      delete: true

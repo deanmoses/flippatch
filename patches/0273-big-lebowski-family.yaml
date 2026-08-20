@@ -1,0 +1,181 @@
+attribution: flipcommons-catalog
+description: >
+  The Big Lebowski: one title for all three models, and the older two filled in.
+claims:
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        - ref: "ipdb:6833"
+          quote: This is a revised edition of their original model
+        - ref: "ipdb:6833"
+          quote: Cosmetically nothing changed
+      title: the-big-lebowski
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        - ref: "ipdb:6320"
+          quote: The manufacturer advised us that the first shipment of this game occurred April 2016.
+        - ref: "ipdb:6320"
+          quote: The manufacturer made a quantity of 95 of this First Model.
+      production_status: produced
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+        quote: A pinball machine is an extremely heavy machine and not setting it up correctly may result in injuries.
+      game_format: pinball
+  - model.the-big-lebowski-pinball-first-model:
+      note: "The floor classification follows from the manual's own setup: a free-standing machine on four levelled legs with a backbox raised at the rear."
+      cite:
+        - ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+          locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+          quote: "4 Pinball legs [...] 4 Pinball Leg levelers with tightening nuts [...] 8 Leg bolts"
+        - ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+          locator: "printed page 17, PDF document page 17, at STEP 12"
+          quote: Lift the backbox in its upright position.
+      cabinet: floor
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: Playfield - all lamps are LED. Cabinet - all lamps are LED.
+      gameplay_feature: [led-general-illumination]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        - ref: "ipdb:6833"
+          quote: first shipped in August 2019
+        - ref: "https://dutchpinball.com/games/the-big-lebowski"
+          locator: in the availability badge
+          quote: Sold out
+      production_status: produced
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+        quote: A pinball machine is an extremely heavy machine and not setting it up correctly may result in injuries.
+      game_format: pinball
+  - model.the-big-lebowski-pinball-second-model:
+      note: "The floor classification follows from the manual's own setup: a free-standing machine on four levelled legs with a backbox raised at the rear."
+      cite:
+        - ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+          locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+          quote: "4 Pinball legs [...] 4 Pinball Leg levelers with tightening nuts [...] 8 Leg bolts"
+        - ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+          locator: "printed page 17, PDF document page 17, at STEP 12"
+          quote: Lift the backbox in its upright position.
+      cabinet: floor
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 55, PDF document page 55, in the DISPLAY section"
+        quote: "TBL's with the new style LCD display (recognizable due to being higher as the speakerpanel) will have a setting of 100, previous TBL will have a setting of 0."
+      display_type: lcd
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "ipdb:6833"
+        quote: 'This game is based on the 1998 movie "The Big Lebowski" and features characters and events from this movie.'
+      theme: [movies]
+  - model.the-big-lebowski-pinball-second-model:
+      note: "The second model is the first re-issued unchanged in the cabinet and on the playfield, so the first model's illumination is a fact about it too."
+      cite:
+        - ref: "ipdb:6320"
+          quote: Playfield - all lamps are LED. Cabinet - all lamps are LED.
+        - ref: "ipdb:6833"
+          quote: Cosmetically nothing changed
+      gameplay_feature: [led-general-illumination]
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        - ref: "ipdb:6320"
+          quote: Carpet bash toy unrolls when repeatedly hit.
+        - ref: "ipdb:6320"
+          quote: Parking garage building on upper mini-playfield with car bash toy.
+      gameplay_feature: [bash-toys]
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: White Russian mixed drink in glass. Bowling pin in upper left playfield.
+      gameplay_feature: [static-toys]
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: Bowling ball return on left ramp.
+      gameplay_feature: [ramps]
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: Elevated mini-playfield. Ramp diverter. Left outlane kickback. Up to 5-ball multiball. Speech.
+      gameplay_feature: [ramp-diverters, speech]
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: "On the elevated mini-playfield are a garage building, two targets, a looping lane, and a scoop."
+      gameplay_feature: [targets]
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+        quote: "6 Steel pinballs (5 for the playfield, and 1 for the Bowling Alley)"
+      gameplay_feature: [{ balls: 6 }]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        - ref: "ipdb:6320"
+          quote: Carpet bash toy unrolls when repeatedly hit.
+        - ref: "ipdb:6320"
+          quote: Parking garage building on upper mini-playfield with car bash toy.
+      gameplay_feature: [bash-toys]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: White Russian mixed drink in glass. Bowling pin in upper left playfield.
+      gameplay_feature: [static-toys]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: Bowling ball return on left ramp.
+      gameplay_feature: [ramps]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: Elevated mini-playfield. Ramp diverter. Left outlane kickback. Up to 5-ball multiball. Speech.
+      gameplay_feature: [ramp-diverters, speech]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "ipdb:6320"
+        quote: "On the elevated mini-playfield are a garage building, two targets, a looping lane, and a scoop."
+      gameplay_feature: [targets]
+  - model.the-big-lebowski-pinball-second-model:
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+        quote: "6 Steel pinballs (5 for the playfield, and 1 for the Bowling Alley)"
+      gameplay_feature: [{ balls: 6 }]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        - ref: "ipdb:6320"
+          quote: Elevated mini-playfield. Ramp diverter. Left outlane kickback. Up to 5-ball multiball. Speech.
+        - ref: "ipdb:6320"
+          quote: Bowling ball return on left ramp.
+      gameplay_feature: [ramps, ramp-diverters]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        - ref: "ipdb:6320"
+          quote: White Russian mixed drink in glass. Bowling pin in upper left playfield.
+        - ref: "ipdb:6320"
+          quote: "On the elevated mini-playfield are a garage building, two targets, a looping lane, and a scoop."
+      gameplay_feature: [static-toys, targets]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+        quote: "6 Steel pinballs (5 for the playfield, and 1 for the Bowling Alley)"
+      gameplay_feature: [{ balls: 6 }]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The floor classification follows from the manual's own setup: a free-standing machine on four levelled legs with a backbox raised at the rear."
+      cite:
+        - ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+          locator: "printed page 12, PDF document page 12, in the GAME SETUP INSTRUCTION section"
+          quote: "4 Pinball legs [...] 4 Pinball Leg levelers with tightening nuts [...] 8 Leg bolts"
+        - ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+          locator: "printed page 17, PDF document page 17, at STEP 12"
+          quote: Lift the backbox in its upright position.
+      cabinet: floor

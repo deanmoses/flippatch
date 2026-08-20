@@ -1,0 +1,18 @@
+attribution: flipcommons-catalog
+description: >
+  Dutch Pinball moved from Reuver to Herkenbosch.
+claims:
+  - location.netherlands/herkenbosch:
+      create: true
+      slug: herkenbosch
+      parent: netherlands
+      name: Herkenbosch
+  - corporate-entity.dutch-pinball:
+      cite:
+        - ref: "https://dutchpinball.com/contact"
+          locator: in the Headquarters block
+          quote: "Dutch Pinball B.V. [...] Veldweg 26 [...] 6075 NL Herkenbosch [...] The Netherlands"
+        - ref: "https://www.pinballnews.com/site/2026/08/10/the-big-lebowski-jesus-edition-revealed"
+          quote: "The Jesus Edition will be built, like the original, at the Dutch Pinball factory in Herkenbosch in the Netherlands."
+      location: [netherlands/herkenbosch]
+      remove: { location: [netherlands/reuver] }

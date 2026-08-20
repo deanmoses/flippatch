@@ -1,0 +1,211 @@
+attribution: flipcommons-catalog
+description: >
+  The Big Lebowski (Jesus Edition), Dutch Pinball's 300-unit 2026 edition.
+claims:
+  - model.the-big-lebowski-jesus-edition:
+      create: true
+      cite:
+        ref: "https://dutchpinball.com/news/meet-the-big-lebowski-jesus-edition"
+        quote: "Introducing The Big Lebowski™ Jesus Edition, produced under exclusive license from Universal Pictures."
+      name: The Big Lebowski (Jesus Edition)
+      title: the-big-lebowski
+      corporate_entity: dutch-pinball
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/08/10/the-big-lebowski-jesus-edition-revealed"
+        locator: in the manufacturer's press release reprinted verbatim in the article
+        quote: First deliveries are scheduled for September 2026.
+      production_year: 2026
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        - ref: "https://dutchpinball.com/news/meet-the-big-lebowski-jesus-edition"
+          quote: "Introducing The Big Lebowski™ Jesus Edition, produced under exclusive license from Universal Pictures."
+        - ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+          locator: in the Key Features list
+          quote: "Brunswick™ Bowling Alley with 10 controlled pins"
+        - ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+          locator: in the Key Features list
+          quote: More than 250 quotes and clips from the movie
+      theme: [licensed, bowling, movies]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The base is the 2019 second model - the machine in production when the Jesus Edition was revealed - not the 2015 first run."
+      cite:
+        - ref: "https://www.pinballnews.com/site/2026/08/10/the-big-lebowski-jesus-edition-revealed"
+          quote: "Twelve years after first showing the original, Dutch Pinball today revealed a new limited edition model of their The Big Lebowski game."
+        - ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+          quote: brings a fresh look and feel while keeping everything that made the original TBL special
+      variant_of: the-big-lebowski-pinball-second-model
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        - ref: "https://dutchpinball.com/news/meet-the-big-lebowski-jesus-edition"
+          quote: Reservations are now open
+        - ref: "https://www.pinballnews.com/site/2026/08/10/the-big-lebowski-jesus-edition-revealed"
+          locator: in the manufacturer's press release reprinted verbatim in the article
+          quote: First deliveries are scheduled for September 2026.
+      production_status: announced
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        ref: "https://www.pinballnews.com/site/2026/08/10/the-big-lebowski-jesus-edition-revealed"
+        locator: in the manufacturer's press release reprinted verbatim in the article
+        quote: an exclusive collector's edition of one of the most beloved licensed pinball machines ever created
+      game_format: pinball
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        - ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+          quote: Production is strictly limited to just 300 individually numbered machines worldwide
+        - ref: "https://dutchpinball.com/news/meet-the-big-lebowski-jesus-edition"
+          quote: Limited to just 300 individually numbered machines worldwide
+      production_quantity: "300"
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        ref: "https://dutchpinball.com/news/meet-the-big-lebowski-jesus-edition"
+        quote: Limited to just 300 individually numbered machines worldwide
+      tag: [limited-edition]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Players: 4"
+      player_count: 4
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Type: Solid State Electronic (SS)"
+      technology_generation: solid-state
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "https://cms.dutchpinball.com/uploads/Dutch_Pinball_2021_The_Big_Lebowski_Pinball_Manual_1_12_f7ce352aaa.pdf"
+        locator: "printed page 55, PDF document page 55, in the DISPLAY section"
+        quote: "TBL's with the new style LCD display (recognizable due to being higher as the speakerpanel) will have a setting of 100, previous TBL will have a setting of 0."
+      display_type: lcd
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Design by: Koen Heltzel, Barry Driessen"
+      credit:
+        - koen-heltzel: design
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Design by: Koen Heltzel, Barry Driessen"
+      credit:
+        - barry-driessen: design
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Art by: Jean-Paul de Win, Freek van Haagen"
+      credit:
+        - jean-paul-de-win: art
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Art by: Jean-Paul de Win, Freek van Haagen"
+      credit:
+        - freek-van-haagen: art
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Dots/Animation by: Jean-Paul de Win, Barry Driessen"
+      credit:
+        - jean-paul-de-win: animation
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Dots/Animation by: Jean-Paul de Win, Barry Driessen"
+      credit:
+        - barry-driessen: animation
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Mechanics by: Guus Fingskes, Barry Driessen"
+      credit:
+        - guus-fingskes: mechanics
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Mechanics by: Guus Fingskes, Barry Driessen"
+      credit:
+        - barry-driessen: mechanics
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Music by: Roel Gommans, Jules Reivers"
+      credit:
+        - roel-gommans: music
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Music by: Roel Gommans, Jules Reivers"
+      credit:
+        - jules-reivers: music
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Sound by: Jules Reivers"
+      credit:
+        - jules-reivers: sound
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Software by: Koen Heltzel"
+      credit:
+        - koen-heltzel: software
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+        locator: in the Key Features list
+        quote: "3 flippers [...] Multi-level playfield [...] Bash Toys (Rug and Dude's Car) [...] Up to 5-ball multiball"
+      gameplay_feature:
+        [{ flippers: 3 }, multi-level-playfield, bash-toys, multiball]
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+        locator: in the Key Features list
+        quote: Premium anti-reflective playfield glass
+      gameplay_feature: [anti-reflection-playfield-glass]
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+        locator: in the Key Features list
+        quote: Custom inner art blades
+      gameplay_feature: [art-blades]
+  - model.the-big-lebowski-jesus-edition:
+      cite:
+        - ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+          locator: in the Key Features list
+          quote: New custom voice callouts
+        - ref: "https://dutchpinball.com/games/the-big-lebowski-jesus-edition"
+          locator: in the Key Features list
+          quote: More than 250 quotes and clips from the movie
+      gameplay_feature: [speech]
+  - model.the-big-lebowski-jesus-edition:
+      note: "The Jesus Edition is a trim variant of the 2019 second model, so the shared design's value holds for it too; the cite is the base model's evidence."
+      cite:
+        ref: "ipdb:6833"
+        quote: "Flippers (3), Pop bumpers (2), Slingshots (2), Kick-out hole (1), Spinning target (1), Captive ball (1), Scoop (1), Elevated mini-playfield. Ramp diverter. Left outlane kickback. Up to 5-ball multiball. Speech."
+      gameplay_feature:
+        [
+          { pop-bumpers: 2 },
+          { slingshots: 2 },
+          { kick-out-holes: 1 },
+          { spinning-targets: 1 },
+          { captive-ball: 1 },
+          { scoops: 1 },
+          mini-playfields,
+          kickback,
+          left-outlane-kickbacks,
+        ]

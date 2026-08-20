@@ -1,0 +1,14 @@
+attribution: flipcommons-catalog
+description: >
+  Type the five cities that patch creates left blank.
+claims:
+  - location.netherlands/herkenbosch:
+      location_type: city
+  - location.usa/mi/escanaba:
+      location_type: city
+  - location.usa/nj/pennsville:
+      location_type: city
+  - location.usa/tx/boerne:
+      location_type: city
+  - location.usa/wa/gig-harbor:
+      location_type: city

@@ -1,0 +1,18 @@
+attribution: flipcommons-catalog
+description: >
+  The Big Lebowski first model shipped April 2016.
+claims:
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        - ref: "ipdb:6320"
+          quote: The manufacturer advised us that the first shipment of this game occurred April 2016.
+        - ref: "ipdb:6320"
+          quote: "IPD No. 6320 / April, 2016 / 4 Players"
+      production_year: 2016
+  - model.the-big-lebowski-pinball-first-model:
+      cite:
+        - ref: "ipdb:6320"
+          quote: The manufacturer advised us that the first shipment of this game occurred April 2016.
+        - ref: "ipdb:6320"
+          quote: "IPD No. 6320 / April, 2016 / 4 Players"
+      production_month: 4
