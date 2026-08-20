@@ -516,3 +516,84 @@ def test_known_schemes_never_consult_the_document_library():
     assert sources.text_for("opdb:2155") == "Cactus Canyon"
     assert sources.is_pdf("isbn:9781889933023") is False
     assert "opdb:2155" not in [r for r in fake.requested if ":" in r and "//" not in r]
+
+
+# --------------------------------------------------------------------------- #
+# Page-only labels: the archive fill-in for what the dump has no column for
+# --------------------------------------------------------------------------- #
+
+
+def _sources_with_page(row: dict[str, object], page_fields: dict[str, str]) -> Sources:
+    """A ``Sources`` over one stubbed dump row and one stubbed cached page."""
+    sources, _ = _sources_with({})
+    sources._rows = {"3711": row}
+    sources._page_fields = {"3711": page_fields}
+    return sources
+
+
+def test_ipdb_text_appends_a_production_status_the_dump_cannot_hold():
+    # The dump's ProductionNumber is an integer column, so IPDB's
+    # "Never Produced" arrives as a null indistinguishable from unknown. The
+    # cached page is the only carrier of the status, and the dump has no line
+    # under that label to be overridden.
+    text = _sources_with_page(
+        {"Title": "Ice Castle", "ProductionNumber": None},
+        {"Production": "Never Produced"},
+    ).text_for("ipdb:3711")
+    assert text == "Ice Castle\nProduction: Never Produced"
+
+
+def test_ipdb_text_keeps_the_dumps_production_number_over_the_page():
+    # The dump is the newer source. Wherever it states a value the page is not
+    # consulted, however stale or fresh the capture behind the page is.
+    text = _sources_with_page(
+        {"Title": "Baby Pac-Man", "ProductionNumber": 7000},
+        {"Production": "Never Produced"},
+    ).text_for("ipdb:3711")
+    assert text == "Baby Pac-Man\nProduction: 7000"
+
+
+def test_ipdb_text_appends_specialty_concept_by_and_easter_eggs():
+    # The three labels the dump has no column for at all, in page order.
+    text = _sources_with_page(
+        {"Title": "Atari Arcade Classics"},
+        {
+            "Easter Eggs": "See the eggs list",
+            "Concept by": "Roger Shiffman, Marc Rosenberg",
+            "Specialty": "Non-Commercial Machine [Home Model]",
+        },
+    ).text_for("ipdb:3711")
+    assert text == (
+        "Atari Arcade Classics\n"
+        "Specialty: Non-Commercial Machine [Home Model]\n"
+        "Concept by: Roger Shiffman, Marc Rosenberg\n"
+        "Easter Eggs: See the eggs list"
+    )
+
+
+def test_ipdb_text_never_takes_a_date_from_the_page():
+    # The whole reason for the allowlist. Archive captures are years older than
+    # the dump and IPDB has relabelled dates since; a date quote must resolve
+    # against the dump's own AdditionalDetails or not at all.
+    text = _sources_with_page(
+        {"Title": "Ice Castle", "AdditionalDetails": "IPD No. 3711 / May, 1989"},
+        {"Date Of Manufacture": "May, 1989", "Project Date": "May, 1989"},
+    ).text_for("ipdb:3711")
+    assert text == "Ice Castle\nIPD No. 3711 / May, 1989"
+
+
+def test_ipdb_text_with_no_cached_page_is_the_dump_alone():
+    sources, _ = _sources_with({})
+    sources._rows = {"3711": {"Title": "Ice Castle"}}
+    sources._page_fields = {"3711": {}}
+    assert sources.text_for("ipdb:3711") == "Ice Castle"
+
+
+def test_ipdb_notes_text_ignores_page_only_labels():
+    # AI extraction reads machine prose; a Specialty tag is a structured value
+    # and would read as prose the model could quote.
+    sources = _sources_with_page(
+        {"Title": "Ice Castle", "Notes": "Shown at a trade show."},
+        {"Specialty": "Widebody"},
+    )
+    assert sources.free_text_for("ipdb:3711") == "Notes: Shown at a trade show."
