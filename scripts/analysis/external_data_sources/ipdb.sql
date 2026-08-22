@@ -391,124 +391,134 @@ CREATE OR REPLACE VIEW ipdb_people_unmatched AS
 COMMENT ON VIEW ipdb_people_unmatched IS
   'Worklist — one row per person IPDB credits whose name matches no live catalog person, with the roles and machines they appear on.';
 
-CREATE OR REPLACE VIEW ipdb_summary AS
-  SELECT 'unmatched_' || classification AS metric, count(*) AS value
-  FROM ipdb_models_unmatched GROUP BY classification
-  UNION ALL SELECT 'catalog_ids_not_in_dump', count(*) FROM ipdb_ids_not_in_dump
-  UNION ALL SELECT 'corporate_entity_' || classification, count(*)
-    FROM ipdb_model_corporate_entity_mismatched GROUP BY classification
-  UNION ALL SELECT 'ipdb_corporate_entities_unmatched', count(*) FROM ipdb_corporate_entities_unmatched
-  UNION ALL SELECT 'corporate_entities_missing_ipdb_id', count(*) FROM corporate_entities_missing_ipdb_id
-  UNION ALL SELECT 'models_without_corporate_entity', count(*) FROM models WHERE corporate_entity_slug IS NULL
-  UNION ALL SELECT 'credits_missing', count(*) FROM ipdb_credits_missing
-  UNION ALL SELECT 'people_unmatched', count(*) FROM ipdb_people_unmatched
-  UNION ALL SELECT 'dump_models', count(*) FROM px.ipdb.models
-  UNION ALL SELECT 'dump_credits', count(*) FROM px.ipdb.credits
-  UNION ALL SELECT 'catalog_models_with_ipdb_id', count(*) FROM models WHERE ipdb_id IS NOT NULL
-  -- The findings rollup, so `run` shows the headline without a second query. Counted off
-  -- the live worklist, so a dismissal is reflected here too.
-  UNION ALL SELECT 'FINDINGS errors', count(*)
-    FROM external_data_source_findings WHERE source = 'ipdb' AND severity = 'error'
-  UNION ALL SELECT 'FINDINGS warnings', count(*)
-    FROM external_data_source_findings WHERE source = 'ipdb' AND severity = 'warning'
-  UNION ALL SELECT 'FINDINGS dismissed', count(*)
-    FROM external_data_source_findings_all WHERE source = 'ipdb' AND dismissed
-  ORDER BY metric;
-COMMENT ON VIEW ipdb_summary IS
-  'Headline counts for the IPDB comparison — the unmatched set by classification, the credit gap, and the totals both sides are measured against.';
+-- ═══ SPECIALTIES ═══════════════════════════════════════════════════════════
+--
+-- IPDB's Specialty field, which the Xantari dumps do not carry and the archive.org
+-- pages do. It is the source of basic classification we have otherwise had to
+-- synthesize: bingo, payout, widebody, flipperless.
+--
+-- pinexplore maps each IPDB specialty onto OUR vocabulary and publishes the rules whole
+-- in `px.ipdb.specialties`, including the ones aimed at vocabulary we do not have. Its
+-- reference file states the division of labour outright: "This build can check only that
+-- spelling convention; flippatch must check whether the target exists." That check is
+-- `specialty_target_not_in_catalog` below, and it is the reason this section exists at
+-- all rather than the mapping being trusted end to end.
+--
+-- Coverage is archive-sourced and therefore partial -- 189 assignments over 151 models
+-- today, against 6676 listings. A model with no row here has not been checked, not been
+-- cleared.
 
--- Empty when healthy. Invariants of this layer, never findings about the data.
-CREATE OR REPLACE VIEW ipdb_checks AS
-  -- The catalog-side join key of `_eds_ipdb_dump`. Not unique by construction, and a
-  -- second row would multiply every count taken off the dump.
-  SELECT 'corporate_entity_ipdb_id_not_unique' AS check_name,
-         ipdb_manufacturer_id::VARCHAR AS detail
-  FROM corporate_entities
-  WHERE ipdb_manufacturer_id IS NOT NULL
-  GROUP BY ipdb_manufacturer_id HAVING count(*) > 1
+-- One row per (IPDB model, specialty), landed on the catalog model and answered twice
+-- over: does the target vocabulary EXIST, and does the model CARRY it.
+--
+-- `target_exists` is asked only of rows that name a public_id. `model-relationship`
+-- targets (`conversion`, `conversion_kit`, `retheme`) name a relationship type rather
+-- than a record, which is why pinexplore leaves `target_is_public_id` NULL on them --
+-- they are neither resolvable nor missing vocabulary. They resolve structurally here.
+--
+-- CARRIAGE IS `IS NOT DISTINCT FROM` ON THE TWO SINGLE-VALUED DIMS, not `=`. A model
+-- with no game format at all yields NULL from `=`, and NULL is neither carried nor a
+-- gap -- it silently drops out of both, which is precisely backwards: a model whose
+-- game format is unset is the MOST actionable row IPDB's assertion produces. That
+-- mistake cost 27 findings when this was first counted.
+--
+-- `model_edges` is outbound-only, which suits all three relationship specialties: IPDB
+-- is saying THIS machine is a conversion, a kit, or a retheme of something else.
+CREATE OR REPLACE VIEW _eds_ipdb_specialties AS
+  SELECT
+    s.ipdb_id,
+    s.specialty,
+    s.target_entity_type,
+    s.target_public_id,
+    s.target_is_public_id,
+    s.archive_source_url,
+    s.archive_capture_date,
+    m.id   AS model_id,
+    m.slug AS model_slug,
+    m.name AS model_name,
+    CASE
+      WHEN s.target_is_public_id IS NULL THEN true   -- relationship type, not a record
+      WHEN NOT s.target_is_public_id     THEN false  -- IPDB wording: vocabulary we lack
+      ELSE EXISTS (SELECT 1 FROM entity_subjects AS es
+                   WHERE es.subject_type = s.target_entity_type
+                     AND es.subject_public_id = s.target_public_id
+                     AND is_live(es.subject_status))
+    END AS target_exists,
+    CASE s.target_entity_type
+      WHEN 'reward-type'      THEN EXISTS (SELECT 1 FROM model_rewards AS r
+                                     WHERE r.model_id = m.id AND r.reward_type_slug = s.target_public_id)
+      WHEN 'tag'              THEN EXISTS (SELECT 1 FROM model_tags AS t
+                                     WHERE t.model_id = m.id AND t.tag_slug = s.target_public_id)
+      WHEN 'gameplay-feature' THEN EXISTS (SELECT 1 FROM model_gameplay_features AS g
+                                     WHERE g.model_id = m.id AND g.feature_slug = s.target_public_id)
+      WHEN 'game-format'      THEN m.game_format_slug IS NOT DISTINCT FROM s.target_public_id
+      WHEN 'cabinet'          THEN m.cabinet_slug     IS NOT DISTINCT FROM s.target_public_id
+      WHEN 'model-relationship' THEN EXISTS (SELECT 1 FROM model_edges AS e
+                                     WHERE e.model_id = m.id
+                                       AND e.relationship_type = s.target_public_id)
+      -- No ELSE: a target_entity_type nobody wrote a branch for lands NULL, which
+      -- `specialty_carriage_unhandled` fails on. An ELSE false would report every such
+      -- row as a gap instead, which is a wrong answer rather than a loud one.
+    END AS carried
+  FROM px.ipdb.model_specialties AS s
+  LEFT JOIN models AS m ON m.ipdb_id = s.ipdb_id;
 
-  UNION ALL
-  -- The aggregation in `_eds_ipdb_candidates` is what holds the worklist at one row per
-  -- listing; if it ever stops, the classification silently double-counts.
-  SELECT 'unmatched_not_one_row_per_listing', ipdb_id::VARCHAR
-  FROM ipdb_models_unmatched GROUP BY ipdb_id HAVING count(*) > 1
+-- WORKLIST — IPDB asserts a classification the catalog has the vocabulary for and the
+-- model does not carry.
+--
+-- The actionable payload: each row is a patch waiting to be written, with the archived
+-- page that evidences it. `archive_source_url` and `archive_capture_date` ride along
+-- because the claim rests on a capture that is typically years old -- worth knowing
+-- before asserting it against a catalog that has moved since.
+--
+-- Listings with no catalog model are excluded rather than reported: that is already a
+-- finding under `ipdb-model-*`, and reporting it twice under two names is the overlap
+-- the audit holds its rules apart to avoid.
+CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
+  SELECT
+    ipdb_id,
+    model_slug,
+    model_name,
+    specialty,
+    target_entity_type,
+    target_public_id,
+    archive_source_url,
+    archive_capture_date,
+    'https://www.ipdb.org/machine.cgi?id=' || ipdb_id AS ipdb_url
+  FROM _eds_ipdb_specialties
+  WHERE model_slug IS NOT NULL
+    AND target_exists
+    AND NOT carried;
+COMMENT ON VIEW ipdb_model_specialties_missing IS
+  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry, with the archived page and capture date behind it. Rows are expected.';
 
-  UNION ALL
-  -- A classification outside the closed set means the CASE grew a branch the consumers
-  -- of this view do not know how to answer.
-  SELECT 'classification_unknown', classification
-  FROM ipdb_models_unmatched
-  WHERE classification NOT IN
-    ('duplicate_listing', 'catalog_holds_unlinked', 'possible_duplicate',
-     'maker_unresolved', 'absent')
-
-  UNION ALL
-  -- `absent` is the one classification that ASSERTS something about the catalog rather
-  -- than reporting what was found, and it is only true if a search ran. A search needs a
-  -- maker on both sides, so a row reaching `absent` without one is the classification
-  -- claiming a machine is missing that nobody looked for. That is exactly the bug
-  -- `maker_unresolved` was added for, and this is its regression guard.
-  SELECT 'absent_without_maker_search', u.ipdb_id::VARCHAR
-  FROM ipdb_models_unmatched AS u
-  WHERE u.classification = 'absent'
-    AND u.ipdb_manufacturer_slug IS NULL
-
-  UNION ALL
-  -- The namesake join is a per-listing aggregate and must not fan the worklist out.
-  SELECT 'namesakes_not_one_row_per_listing', ipdb_id::VARCHAR
-  FROM _eds_ipdb_namesakes GROUP BY ipdb_id HAVING count(*) > 1
-
-  UNION ALL
-  -- The CASE precedence. A confirmed duplicate also matches the `possible_duplicate`
-  -- shape by construction, so a branch reordered above it would silently demote these
-  -- and they would read as work to do. There is no join left to break -- the fact is a
-  -- column on the mart row -- so this tests the ordering alone.
-  SELECT 'confirmed_duplicate_misclassified', u.ipdb_id::VARCHAR
-  FROM ipdb_models_unmatched AS u
-  WHERE u.duplicate_of_ipdb_id IS NOT NULL
-    AND u.classification <> 'duplicate_listing'
-
-  UNION ALL
-  -- The pairing points at the listing the catalog is expected to hold instead. If that
-  -- one is missing too, the row is no longer explaining anything away.
-  SELECT 'duplicate_target_not_in_catalog', d.duplicate_of_ipdb_id::VARCHAR
-  FROM _eds_ipdb_dump AS d
-  WHERE d.duplicate_of_ipdb_id IS NOT NULL
-    AND NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.duplicate_of_ipdb_id)
-
-  UNION ALL
-  -- A credit role that names nothing in the catalog's vocabulary matches no catalog
-  -- credit either, so every credit carrying it reports as missing forever. Catches both
-  -- a dump field pinexplore has not mapped and a role the catalog has renamed.
-  SELECT 'credit_role_not_in_vocabulary', detail
-  FROM (
-    SELECT DISTINCT coalesce(c.role_slug, '<unmapped ' || c.ipdb_role || '>') AS detail
-    FROM _eds_ipdb_credits AS c
-    WHERE c.role_slug IS NULL
-       OR NOT EXISTS (SELECT 1 FROM credit_roles AS cr WHERE cr.slug = c.role_slug)
-  )
-
-  UNION ALL
-  -- The corporate-entity worklist is one row per model, so the decode in
-  -- `_eds_ipdb_dump` must stay a lookup rather than becoming a fan-out.
-  SELECT 'corporate_entity_mismatch_not_one_row_per_model', ipdb_id::VARCHAR
-  FROM ipdb_model_corporate_entity_mismatched GROUP BY ipdb_id HAVING count(*) > 1
-
-  UNION ALL
-  -- A classification outside the closed set.
-  SELECT 'corporate_entity_classification_unknown', classification
-  FROM ipdb_model_corporate_entity_mismatched
-  WHERE classification NOT IN ('catalog_has_none', 'ipdb_entity_unmatched', 'disagrees')
-
-  UNION ALL
-  -- Person resolution is a lookup, so it must leave the credit grain alone.
-  SELECT 'credits_not_one_row_per_dump_credit',
-         (SELECT count(*) FROM px.ipdb.credits)::VARCHAR || ' dump credits -> '
-           || (SELECT count(*) FROM _eds_ipdb_credits)::VARCHAR || ' resolved'
-  WHERE (SELECT count(*) FROM _eds_ipdb_credits)
-      > (SELECT count(*) FROM px.ipdb.credits);
-COMMENT ON VIEW ipdb_checks IS
-  'Empty when healthy — grain, closed vocabulary and duplicate-list anchors for the IPDB comparison.';
+-- WORKLIST — an IPDB specialty aimed at vocabulary the catalog does not have.
+--
+-- SPECIALTY GRAIN, not model grain, and that is the whole point. These are the rules
+-- pinexplore deliberately left pointing at IPDB's own wording because no catalog term
+-- answers them, and each is ONE decision -- add the tag, split the payout type, work out
+-- what "Not A Pinball" should be -- not one decision per machine. Reported per model,
+-- 49 rows would restate 5 questions.
+--
+-- Two shapes sit here together. Some are vocabulary we may simply want (`Flipperless`,
+-- `WWII Contract`). Others are IPDB headings coarser than ours that no new term would
+-- fix: `Payout Machine` spans our `cash-payout` and `merchant-paid`, and `Table
+-- Top/Counter Game` spans `tabletop` and `countertop`. Those need the models read, not a
+-- slug minted -- pinexplore's reference file says which is which.
+CREATE OR REPLACE VIEW ipdb_specialty_vocabulary_absent AS
+  SELECT
+    specialty,
+    target_entity_type,
+    target_public_id          AS ipdb_wording,
+    count(*)                  AS n_models,
+    -- Ordered: this reaches a finding message, whose identity depends on it rendering
+    -- the same way every run.
+    list_sort(list(DISTINCT model_slug) FILTER (model_slug IS NOT NULL))[:5] AS sample_model_slugs
+  FROM _eds_ipdb_specialties
+  WHERE NOT target_exists
+  GROUP BY ALL;
+COMMENT ON VIEW ipdb_specialty_vocabulary_absent IS
+  'Worklist — one row per IPDB specialty naming catalog vocabulary that does not exist, with how many models carry it and a sample. One row is one decision, not one per machine.';
 
 -- ═══ FINDINGS ══════════════════════════════════════════════════════════════
 --
@@ -733,3 +743,205 @@ SELECT
          array_to_string(list_sort(role_slugs), ', ')) AS message,
   'ipdb_people_unmatched' AS detail_view
 FROM ipdb_people_unmatched;
+
+-- ─── specialties ───────────────────────────────────────────────────────────
+-- Warnings, both. IPDB asserting a classification we lack is the catalog being
+-- incomplete, not wrong -- and the archive captures behind these are typically years
+-- old, which is the wrong footing for an error.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  'ipdb-specialty-missing' AS rule,
+  'warning' AS severity,
+  ipdb_id::VARCHAR AS external_id,
+  'model' AS entity_type,
+  model_slug AS entity_public_id,
+  format('{} does not carry {} {}, which IPDB lists as specialty "{}" (captured {})',
+         model_slug, target_entity_type, target_public_id, specialty,
+         coalesce(archive_capture_date::VARCHAR, 'undated')) AS message,
+  'ipdb_model_specialties_missing' AS detail_view
+FROM ipdb_model_specialties_missing;
+
+-- Specialty grain: one row is one vocabulary decision. `external_id` is NULL because no
+-- single IPDB listing owns the question, and `entity_type` is NULL because the record
+-- whose absence is the finding cannot be named.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  'ipdb-specialty-vocabulary-absent' AS rule,
+  'warning' AS severity,
+  NULL::VARCHAR AS external_id,
+  NULL::VARCHAR AS entity_type,
+  NULL::VARCHAR AS entity_public_id,
+  -- "e.g." only when the sample is actually a sample: the list caps at 5, so at or
+  -- below that it IS the population and hedging it would understate what is known.
+  format('IPDB specialty "{}" maps to {} "{}", which the catalog does not have; {} affected: {}{}',
+         specialty, target_entity_type, ipdb_wording,
+         plural(n_models, 'model', 'models'),
+         CASE WHEN n_models > 5 THEN 'e.g. ' ELSE '' END,
+         array_to_string(sample_model_slugs, ', ')) AS message,
+  'ipdb_specialty_vocabulary_absent' AS detail_view
+FROM ipdb_specialty_vocabulary_absent;
+
+-- ═══ SUMMARY & CHECKS ══════════════════════════════════════════════════════
+
+CREATE OR REPLACE VIEW ipdb_summary AS
+  SELECT 'unmatched_' || classification AS metric, count(*) AS value
+  FROM ipdb_models_unmatched GROUP BY classification
+  UNION ALL SELECT 'catalog_ids_not_in_dump', count(*) FROM ipdb_ids_not_in_dump
+  UNION ALL SELECT 'corporate_entity_' || classification, count(*)
+    FROM ipdb_model_corporate_entity_mismatched GROUP BY classification
+  UNION ALL SELECT 'ipdb_corporate_entities_unmatched', count(*) FROM ipdb_corporate_entities_unmatched
+  UNION ALL SELECT 'corporate_entities_missing_ipdb_id', count(*) FROM corporate_entities_missing_ipdb_id
+  UNION ALL SELECT 'models_without_corporate_entity', count(*) FROM models WHERE corporate_entity_slug IS NULL
+  UNION ALL SELECT 'credits_missing', count(*) FROM ipdb_credits_missing
+  UNION ALL SELECT 'people_unmatched', count(*) FROM ipdb_people_unmatched
+  UNION ALL SELECT 'dump_models', count(*) FROM px.ipdb.models
+  UNION ALL SELECT 'dump_credits', count(*) FROM px.ipdb.credits
+  UNION ALL SELECT 'catalog_models_with_ipdb_id', count(*) FROM models WHERE ipdb_id IS NOT NULL
+  UNION ALL SELECT 'specialty_assignments', count(*) FROM px.ipdb.model_specialties
+  UNION ALL SELECT 'specialty_models_covered', count(DISTINCT ipdb_id) FROM px.ipdb.model_specialties
+  UNION ALL SELECT 'specialty_carried', count(*) FROM _eds_ipdb_specialties WHERE carried
+  UNION ALL SELECT 'specialty_missing', count(*) FROM ipdb_model_specialties_missing
+  UNION ALL SELECT 'specialty_vocabulary_absent', count(*) FROM ipdb_specialty_vocabulary_absent
+  -- The findings rollup, so `run` shows the headline without a second query. Counted off
+  -- the live worklist, so a dismissal is reflected here too.
+  UNION ALL SELECT 'FINDINGS errors', count(*)
+    FROM external_data_source_findings WHERE source = 'ipdb' AND severity = 'error'
+  UNION ALL SELECT 'FINDINGS warnings', count(*)
+    FROM external_data_source_findings WHERE source = 'ipdb' AND severity = 'warning'
+  UNION ALL SELECT 'FINDINGS dismissed', count(*)
+    FROM external_data_source_findings_all WHERE source = 'ipdb' AND dismissed
+  ORDER BY metric;
+COMMENT ON VIEW ipdb_summary IS
+  'Headline counts for the IPDB comparison — the unmatched set by classification, the credit gap, and the totals both sides are measured against.';
+
+-- Empty when healthy. Invariants of this layer, never findings about the data.
+CREATE OR REPLACE VIEW ipdb_checks AS
+  -- The catalog-side join key of `_eds_ipdb_dump`. Not unique by construction, and a
+  -- second row would multiply every count taken off the dump.
+  SELECT 'corporate_entity_ipdb_id_not_unique' AS check_name,
+         ipdb_manufacturer_id::VARCHAR AS detail
+  FROM corporate_entities
+  WHERE ipdb_manufacturer_id IS NOT NULL
+  GROUP BY ipdb_manufacturer_id HAVING count(*) > 1
+
+  UNION ALL
+  -- The aggregation in `_eds_ipdb_candidates` is what holds the worklist at one row per
+  -- listing; if it ever stops, the classification silently double-counts.
+  SELECT 'unmatched_not_one_row_per_listing', ipdb_id::VARCHAR
+  FROM ipdb_models_unmatched GROUP BY ipdb_id HAVING count(*) > 1
+
+  UNION ALL
+  -- A classification outside the closed set means the CASE grew a branch the consumers
+  -- of this view do not know how to answer.
+  SELECT 'classification_unknown', classification
+  FROM ipdb_models_unmatched
+  WHERE classification NOT IN
+    ('duplicate_listing', 'catalog_holds_unlinked', 'possible_duplicate',
+     'maker_unresolved', 'absent')
+
+  UNION ALL
+  -- `absent` is the one classification that ASSERTS something about the catalog rather
+  -- than reporting what was found, and it is only true if a search ran. A search needs a
+  -- maker on both sides, so a row reaching `absent` without one is the classification
+  -- claiming a machine is missing that nobody looked for. That is exactly the bug
+  -- `maker_unresolved` was added for, and this is its regression guard.
+  SELECT 'absent_without_maker_search', u.ipdb_id::VARCHAR
+  FROM ipdb_models_unmatched AS u
+  WHERE u.classification = 'absent'
+    AND u.ipdb_manufacturer_slug IS NULL
+
+  UNION ALL
+  -- The namesake join is a per-listing aggregate and must not fan the worklist out.
+  SELECT 'namesakes_not_one_row_per_listing', ipdb_id::VARCHAR
+  FROM _eds_ipdb_namesakes GROUP BY ipdb_id HAVING count(*) > 1
+
+  UNION ALL
+  -- The CASE precedence. A confirmed duplicate also matches the `possible_duplicate`
+  -- shape by construction, so a branch reordered above it would silently demote these
+  -- and they would read as work to do. There is no join left to break -- the fact is a
+  -- column on the mart row -- so this tests the ordering alone.
+  SELECT 'confirmed_duplicate_misclassified', u.ipdb_id::VARCHAR
+  FROM ipdb_models_unmatched AS u
+  WHERE u.duplicate_of_ipdb_id IS NOT NULL
+    AND u.classification <> 'duplicate_listing'
+
+  UNION ALL
+  -- The pairing points at the listing the catalog is expected to hold instead. If that
+  -- one is missing too, the row is no longer explaining anything away.
+  SELECT 'duplicate_target_not_in_catalog', d.duplicate_of_ipdb_id::VARCHAR
+  FROM _eds_ipdb_dump AS d
+  WHERE d.duplicate_of_ipdb_id IS NOT NULL
+    AND NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.duplicate_of_ipdb_id)
+
+  UNION ALL
+  -- A credit role that names nothing in the catalog's vocabulary matches no catalog
+  -- credit either, so every credit carrying it reports as missing forever. Catches both
+  -- a dump field pinexplore has not mapped and a role the catalog has renamed.
+  SELECT 'credit_role_not_in_vocabulary', detail
+  FROM (
+    SELECT DISTINCT coalesce(c.role_slug, '<unmapped ' || c.ipdb_role || '>') AS detail
+    FROM _eds_ipdb_credits AS c
+    WHERE c.role_slug IS NULL
+       OR NOT EXISTS (SELECT 1 FROM credit_roles AS cr WHERE cr.slug = c.role_slug)
+  )
+
+  UNION ALL
+  -- The corporate-entity worklist is one row per model, so the decode in
+  -- `_eds_ipdb_dump` must stay a lookup rather than becoming a fan-out.
+  SELECT 'corporate_entity_mismatch_not_one_row_per_model', ipdb_id::VARCHAR
+  FROM ipdb_model_corporate_entity_mismatched GROUP BY ipdb_id HAVING count(*) > 1
+
+  UNION ALL
+  -- A classification outside the closed set.
+  SELECT 'corporate_entity_classification_unknown', classification
+  FROM ipdb_model_corporate_entity_mismatched
+  WHERE classification NOT IN ('catalog_has_none', 'ipdb_entity_unmatched', 'disagrees')
+
+  UNION ALL
+  -- Person resolution is a lookup, so it must leave the credit grain alone.
+  SELECT 'credits_not_one_row_per_dump_credit',
+         (SELECT count(*) FROM px.ipdb.credits)::VARCHAR || ' dump credits -> '
+           || (SELECT count(*) FROM _eds_ipdb_credits)::VARCHAR || ' resolved'
+  WHERE (SELECT count(*) FROM _eds_ipdb_credits)
+      > (SELECT count(*) FROM px.ipdb.credits)
+
+  UNION ALL
+  -- THE CHECK PINEXPLORE DELEGATES. Its specialty reference says so in as many words:
+  -- it can verify only that a target is SPELLED like a public_id, and whether that
+  -- public_id exists is a question only the catalog answers. A mapping that names a
+  -- slug we re-slugged reports every model carrying that specialty as a permanent gap,
+  -- or drops it from the worklist entirely -- and nothing else here would notice.
+  SELECT 'specialty_target_not_in_catalog',
+         specialty || ' -> ' || target_entity_type || '.' || target_public_id
+  FROM _eds_ipdb_specialties
+  WHERE target_is_public_id AND NOT target_exists
+  GROUP BY ALL
+
+  UNION ALL
+  -- The carriage CASE has no ELSE, so a target_entity_type nobody wrote a branch for
+  -- lands NULL rather than being silently reported as a gap. This is what turns that
+  -- into a loud failure. It fires the day pinexplore maps a specialty onto an entity
+  -- type this file has never seen.
+  SELECT 'specialty_carriage_unhandled', target_entity_type
+  FROM _eds_ipdb_specialties
+  WHERE model_slug IS NOT NULL AND carried IS NULL
+  GROUP BY ALL
+
+  UNION ALL
+  -- The specialty worklist is one row per (listing, specialty); the join to `models` is
+  -- a lookup and must not fan it out.
+  SELECT 'specialty_not_one_row_per_assignment',
+         ipdb_id::VARCHAR || ' / ' || specialty
+  FROM _eds_ipdb_specialties
+  GROUP BY ipdb_id, specialty HAVING count(*) > 1
+
+  UNION ALL
+  -- A closed vocabulary, and the anchor for the whole section: if pinexplore's rule
+  -- table were emptied or the join silently produced nothing, every specialty view
+  -- would go quiet and read exactly like a catalog that already carries everything.
+  SELECT 'specialty_rules_missing', 'px.ipdb.specialties is empty'
+  WHERE (SELECT count(*) FROM px.ipdb.specialties) = 0;
+COMMENT ON VIEW ipdb_checks IS
+  'Empty when healthy — grain, closed vocabulary and duplicate-list anchors for the IPDB comparison, plus the specialty-target resolution pinexplore delegates here.';
