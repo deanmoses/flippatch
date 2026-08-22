@@ -19,6 +19,14 @@ set -eu
 
 REPO=$(CDPATH= cd -- "$(dirname -- "$0")/../.." && pwd)
 
+# The mutable patch set: patches/, patches/shipped/ being immutable and excluded by
+# living elsewhere. Resolved once and passed to the banner below, so the range this
+# script audits and the set the banner checks can never be derived from different
+# directories. FLIPPATCH_PATCHES_DIR overrides it so the end-to-end tests can drive
+# this script against a planted patch set instead of the repo's live one — which
+# empties completely every time a series ships, taking the suite's fixtures with it.
+PATCHES=${FLIPPATCH_PATCHES_DIR:-$REPO/patches}
+
 # Patch numbers, ascending, from whatever paths we were handed. Matched on the BASENAME:
 # pre-commit passes repo-relative paths, but `make` and a hand-run need not, and a path
 # with no directory component must not read as "no patch given".
@@ -33,10 +41,18 @@ since=$(patch_numbers "$@" | head -1)
 # Nothing we were handed names a patch, so this ran because the wrapper or its own core
 # changed rather than because a patch did. Auditing nothing here would be worse than not
 # running at all: pre-commit reports "Passed" either way, so a silent no-op reads as a
-# gate that checked something. Fall back to the whole mutable set — which is what
-# patches/ is, patches/shipped/ being immutable and excluded by living elsewhere.
-[ -n "$since" ] || since=$(patch_numbers "$REPO"/patches/*.yaml | head -1)
-[ -n "$since" ] || exit 0
+# gate that checked something. Fall back to the whole mutable set.
+[ -n "$since" ] || since=$(patch_numbers "$PATCHES"/*.yaml | head -1)
+
+# Still nothing: the mutable set is empty, which is the steady state between ships —
+# every patch archived to patches/shipped/ and nothing yet authored on top. There is
+# genuinely no scope to audit, so this is a skip rather than a finding. SAID OUT LOUD
+# for the same reason as the fallback above: every other skip below announces itself,
+# and silence here is indistinguishable from a gate that ran and approved.
+if [ -z "$since" ]; then
+  echo "catalog audit: skipped — no mutable patches in $PATCHES"
+  exit 0
+fi
 
 # Where flipcommons is, and whether this database is current, both come from the Python
 # side (common.paths) — so FLIPCOMMONS_DIR in this repo's .env is honoured here exactly
@@ -65,7 +81,7 @@ fi
 # banner built from the arguments would go quiet about exactly the later patch nobody
 # staged. Passing the number makes the two sets the same set by construction, and leaves
 # nothing for a tooling path among the arguments to be mistaken for a patch.
-state --banner --since "$since" || true
+state --banner --since "$since" --patches-dir "$PATCHES" || true
 
 # stderr folded into stdout on purpose: a broken audit should be READABLE without being
 # fatal, and `audit` is quiet on stderr unless something is actually wrong. `|| true`

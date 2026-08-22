@@ -217,6 +217,15 @@ def main(argv: Sequence[str] | None = None) -> int:
         "reports on — instead of the files named",
     )
     parser.add_argument(
+        "--patches-dir",
+        type=Path,
+        default=PATCHES_DIR,
+        metavar="DIR",
+        help="the mutable patch directory to reconcile; defaults to this repo's "
+        "patches/. The audit wrapper resolves that directory itself, to derive the "
+        "range it audits, and passes it here so the two can never name different sets",
+    )
+    parser.add_argument(
         "files",
         nargs="*",
         type=Path,
@@ -235,10 +244,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         return 0
 
     if args.since is not None:
-        paths = patches_since(args.since)
+        paths = patches_since(args.since, args.patches_dir)
     else:
         paths = [
-            p for p in (args.files or sorted(PATCHES_DIR.glob("*.yaml"))) if p.is_file()
+            p
+            for p in (args.files or sorted(args.patches_dir.glob("*.yaml")))
+            if p.is_file()
         ]
     states = read_states(paths, db)
     if states is None:
