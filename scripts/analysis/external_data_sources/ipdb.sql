@@ -405,6 +405,14 @@ CREATE OR REPLACE VIEW ipdb_summary AS
   UNION ALL SELECT 'dump_models', count(*) FROM px.ipdb.models
   UNION ALL SELECT 'dump_credits', count(*) FROM px.ipdb.credits
   UNION ALL SELECT 'catalog_models_with_ipdb_id', count(*) FROM models WHERE ipdb_id IS NOT NULL
+  -- The findings rollup, so `run` shows the headline without a second query. Counted off
+  -- the live worklist, so a dismissal is reflected here too.
+  UNION ALL SELECT 'FINDINGS errors', count(*)
+    FROM external_data_source_findings WHERE source = 'ipdb' AND severity = 'error'
+  UNION ALL SELECT 'FINDINGS warnings', count(*)
+    FROM external_data_source_findings WHERE source = 'ipdb' AND severity = 'warning'
+  UNION ALL SELECT 'FINDINGS dismissed', count(*)
+    FROM external_data_source_findings_all WHERE source = 'ipdb' AND dismissed
   ORDER BY metric;
 COMMENT ON VIEW ipdb_summary IS
   'Headline counts for the IPDB comparison — the unmatched set by classification, the credit gap, and the totals both sides are measured against.';
@@ -501,3 +509,227 @@ CREATE OR REPLACE VIEW ipdb_checks AS
       > (SELECT count(*) FROM px.ipdb.credits);
 COMMENT ON VIEW ipdb_checks IS
   'Empty when healthy — grain, closed vocabulary and duplicate-list anchors for the IPDB comparison.';
+
+-- ═══ FINDINGS ══════════════════════════════════════════════════════════════
+--
+-- The worklists above projected down into `_external_data_source_findings`. See
+-- `bridge.sql` for why this is an INSERT rather than a UNION, and for the identity and
+-- dismissal rules. Each block is self-contained: rule name, severity and wording sit
+-- together, and a new rule is added by copying one block rather than by editing a
+-- distant manifest.
+--
+-- SEVERITY. The bar for `error` is the doc's: OUR DATA IS CURRENTLY WRONG. A gap is not
+-- an error -- a listing we have not linked, a credit we have not recorded and a maker we
+-- hold no id for are all things the catalog does not YET say, and the catalog being
+-- incomplete is its normal condition. What earns `error` is the catalog making a
+-- positive claim the source contradicts: a dead IPDB id still cited, or two live records
+-- that resolve and disagree.
+--
+-- MESSAGES ARE DETERMINISTIC AND SHORT. Every nullable argument is coalesced, because
+-- `format()` propagates NULL and one NULL blanks the entire message -- the failure
+-- `finding_null_required` exists to catch. They stay one line and carry no prose the
+-- wide view already holds: `ipdb_ids_not_in_dump.retraction_reason` is a paragraph, and
+-- the finding's job is to point at it, not to reproduce it.
+--
+-- Counts go through the foundation's `plural()` rather than "1 model(s)", since these
+-- messages are read one per line by a human working the list.
+
+-- Idempotent under a double `.read` -- see the note beside the table in `bridge.sql`.
+DELETE FROM _external_data_source_findings WHERE source = 'ipdb';
+
+-- ─── unmatched listings ────────────────────────────────────────────────────
+-- `duplicate_listing` is excluded, not downgraded: it is a confirmed IPDB-side double
+-- entry whose twin the catalog already links, so there is nothing to do and a finding
+-- would be permanent noise. It stays visible in `ipdb_models_unmatched`.
+--
+-- One rule per classification rather than one rule for the view, because the classes ask
+-- for different actions and a dismissal keys on the rule. Four warnings: each is
+-- something the catalog does not yet say, never something it says wrongly.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  CASE classification
+    WHEN 'catalog_holds_unlinked' THEN 'ipdb-model-unlinked'
+    WHEN 'possible_duplicate'     THEN 'ipdb-model-possible-duplicate'
+    WHEN 'maker_unresolved'       THEN 'ipdb-model-maker-unresolved'
+    WHEN 'absent'                 THEN 'ipdb-model-absent'
+  END AS rule,
+  'warning' AS severity,
+  ipdb_id::VARCHAR AS external_id,
+  -- Only the unlinked class names a catalog record with any confidence. `absent` names
+  -- none by definition, and the other two point at candidates the wide view carries with
+  -- the counts that qualify them.
+  CASE WHEN classification = 'catalog_holds_unlinked' AND unlinked_model_slug IS NOT NULL
+       THEN 'model' END AS entity_type,
+  CASE WHEN classification = 'catalog_holds_unlinked' THEN unlinked_model_slug END AS entity_public_id,
+  CASE classification
+    WHEN 'catalog_holds_unlinked' THEN
+      format('IPDB {} "{}" matches unlinked catalog model {}; backfill the ipdb_id',
+             ipdb_id, coalesce(ipdb_name, '?'), coalesce(unlinked_model_slug, '?'))
+    WHEN 'possible_duplicate' THEN
+      format('IPDB {} "{}" matches catalog model {}, which already links IPDB {}; read both pages',
+             ipdb_id, coalesce(ipdb_name, '?'), coalesce(linked_model_slug, '?'),
+             coalesce(linked_model_ipdb_id::VARCHAR, '?'))
+    -- Two causes, and they read as different sentences because they ARE different
+    -- situations: IPDB naming nobody can only be settled by the page, while IPDB naming
+    -- a maker we hold no id for is settled at the entity, in
+    -- `ipdb-corporate-entity-unknown`. A single coalesced wording collapsed them into
+    -- "names maker nothing that resolves to no catalog corporate entity".
+    WHEN 'maker_unresolved' THEN
+      CASE WHEN ipdb_corporate_entity_text IS NULL THEN
+        format('IPDB {} "{}" names no maker at all, so no candidate search ran; {}',
+               ipdb_id, coalesce(ipdb_name, '?'),
+               plural(n_namesake_models, 'catalog namesake', 'catalog namesakes'))
+      ELSE
+        format('IPDB {} "{}" names maker "{}", whose id no live corporate entity carries, so no candidate search ran; {}',
+               ipdb_id, coalesce(ipdb_name, '?'), ipdb_corporate_entity_text,
+               plural(n_namesake_models, 'catalog namesake', 'catalog namesakes'))
+      END
+    WHEN 'absent' THEN
+      format('IPDB {} "{}" ({}) has no catalog model and none matches its name and maker; {} under other makers',
+             ipdb_id, coalesce(ipdb_name, '?'), coalesce(ipdb_year::VARCHAR, 'undated'),
+             plural(n_namesake_models, 'namesake', 'namesakes'))
+  END AS message,
+  'ipdb_models_unmatched' AS detail_view
+FROM ipdb_models_unmatched
+WHERE classification <> 'duplicate_listing';
+
+-- ─── dead ids ──────────────────────────────────────────────────────────────
+-- The one place the catalog is positively wrong rather than incomplete, and so the one
+-- rule here that reaches `error` -- but only where the deletion is CONFIRMED. An
+-- unexplained absence is as likely to be a crawl that missed a page as a real deletion,
+-- and calling that an error would assert something the dump cannot support.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  CASE WHEN retraction_reason IS NOT NULL THEN 'ipdb-id-retracted'
+       ELSE 'ipdb-id-not-in-dump' END AS rule,
+  CASE WHEN retraction_reason IS NOT NULL THEN 'error' ELSE 'warning' END AS severity,
+  ipdb_id::VARCHAR AS external_id,
+  'model' AS entity_type,
+  model_slug AS entity_public_id,
+  CASE WHEN retraction_reason IS NOT NULL
+    THEN format('{} cites IPDB {}, a listing IPDB has deleted; see retraction_reason', model_slug, ipdb_id)
+    ELSE format('{} cites IPDB {}, absent from the merged dump with no recorded retraction; load the page', model_slug, ipdb_id)
+  END AS message,
+  'ipdb_ids_not_in_dump' AS detail_view
+FROM ipdb_ids_not_in_dump;
+
+-- ─── maker disagreement ────────────────────────────────────────────────────
+-- `disagrees` is an error: both sides resolve to a live corporate entity and name
+-- different ones, so one of them is wrong. The doc calls this structurally rare -- the
+-- catalog's entities were largely seeded FROM these ids -- which is exactly why a row
+-- deserves the stronger severity: it should not happen.
+--
+-- The other two classes are gaps. `manufacturer_differs` rides in the message because a
+-- disagreement surviving the roll-up to manufacturer is a materially larger claim than
+-- two incarnations of one company being confused.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  CASE classification
+    WHEN 'disagrees'             THEN 'ipdb-corporate-entity-disagrees'
+    WHEN 'catalog_has_none'      THEN 'ipdb-corporate-entity-missing'
+    WHEN 'ipdb_entity_unmatched' THEN 'ipdb-corporate-entity-unresolved'
+  END AS rule,
+  CASE WHEN classification = 'disagrees' THEN 'error' ELSE 'warning' END AS severity,
+  ipdb_id::VARCHAR AS external_id,
+  'model' AS entity_type,
+  model_slug AS entity_public_id,
+  CASE classification
+    WHEN 'disagrees' THEN
+      format('{} is attributed to {} but IPDB names {}{}',
+             model_slug, coalesce(corporate_entity_slug, '?'),
+             coalesce(ipdb_corporate_entity_slug, '?'),
+             CASE WHEN manufacturer_differs THEN ' — and the manufacturers differ too' ELSE '' END)
+    WHEN 'catalog_has_none' THEN
+      format('{} carries no corporate entity; IPDB names {}',
+             model_slug, coalesce(ipdb_corporate_entity_slug, coalesce(ipdb_corporate_entity_text, '?')))
+    WHEN 'ipdb_entity_unmatched' THEN
+      format('{}: IPDB names maker "{}", whose id no live corporate entity carries; resolve at the entity',
+             model_slug, coalesce(ipdb_corporate_entity_text, '?'))
+  END AS message,
+  'ipdb_model_corporate_entity_mismatched' AS detail_view
+FROM ipdb_model_corporate_entity_mismatched;
+
+-- ─── corporate entities ────────────────────────────────────────────────────
+-- Entity grain, not model grain: one company the catalog holds no id for silently
+-- unresolves every model IPDB files under it, and fixing it once fixes them all.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  'ipdb-corporate-entity-unknown' AS rule,
+  'warning' AS severity,
+  ipdb_corporate_entity_id::VARCHAR AS external_id,
+  NULL::VARCHAR AS entity_type,     -- no catalog record: that is the finding
+  NULL::VARCHAR AS entity_public_id,
+  format('IPDB corporate entity {} "{}" is on no live catalog record; {} depend{} on it{}',
+         ipdb_corporate_entity_id, coalesce(ipdb_corporate_entity_name, '?'),
+         plural(n_ipdb_models, 'IPDB model', 'IPDB models'),
+         CASE WHEN n_ipdb_models = 1 THEN 's' ELSE '' END,
+         -- Ordered, because identity includes the message and an unordered aggregate
+         -- would render the same finding differently between runs.
+         CASE WHEN len(catalog_name_matches) > 0
+              THEN ' — catalog names matching: ' || array_to_string(list_sort(catalog_name_matches), ', ')
+              ELSE '' END) AS message,
+  'ipdb_corporate_entities_unmatched' AS detail_view
+FROM ipdb_corporate_entities_unmatched;
+
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  'ipdb-corporate-entity-id-acquirable' AS rule,
+  'warning' AS severity,
+  ipdb_corporate_entity_id::VARCHAR AS external_id,
+  'corporate-entity' AS entity_type,
+  corporate_entity_slug AS entity_public_id,
+  format('{} carries no IPDB id; IPDB appears to hold {} matching by name, e.g. {}',
+         corporate_entity_slug, plural(n_ipdb_matches, 'record', 'records'),
+         ipdb_corporate_entity_id) AS message,
+  'corporate_entities_missing_ipdb_id' AS detail_view
+FROM corporate_entities_missing_ipdb_id;
+
+-- ─── credits ───────────────────────────────────────────────────────────────
+-- Three rules over one view, split so they cannot overlap -- the audit holds its rules
+-- to exact boundaries for the same reason, so that one defect is never reported twice
+-- under two names. The split is on how far person resolution got, which is also what
+-- decides the next action:
+--
+--   exactly one match  the credit can be added as it stands
+--   several matches    the name reaches several people and names none of them
+--   no match           the person does not exist yet, and creating them comes first --
+--                      reported at PERSON grain below, not once per credit
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  CASE WHEN n_person_matches = 1 THEN 'ipdb-credit-missing'
+       ELSE 'ipdb-credit-person-ambiguous' END AS rule,
+  'warning' AS severity,
+  ipdb_id::VARCHAR AS external_id,
+  'model' AS entity_type,
+  model_slug AS entity_public_id,
+  CASE WHEN n_person_matches = 1
+    THEN format('{} is not credited to {} as {}, which IPDB records',
+                model_slug, coalesce(ipdb_person_name, '?'), coalesce(role_slug, '?'))
+    ELSE format('{}: IPDB credits "{}" as {}, a name matching {} catalog people; resolve by hand',
+                model_slug, coalesce(ipdb_person_name, '?'), coalesce(role_slug, '?'), n_person_matches)
+  END AS message,
+  'ipdb_credits_missing' AS detail_view
+FROM ipdb_credits_missing
+WHERE n_person_matches >= 1;
+
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'ipdb' AS source,
+  'ipdb-person-unmatched' AS rule,
+  'warning' AS severity,
+  NULL::VARCHAR AS external_id,     -- person grain: no single IPDB id owns this
+  NULL::VARCHAR AS entity_type,     -- no catalog record: that is the finding
+  NULL::VARCHAR AS entity_public_id,
+  format('IPDB credits "{}" on {} as {}, matching no live catalog person',
+         ipdb_person_name, plural(n_models, 'model', 'models'),
+         -- Already sorted by the view; spelled again here so the message's determinism
+         -- does not depend on a detail of a view someone may later change.
+         array_to_string(list_sort(role_slugs), ', ')) AS message,
+  'ipdb_people_unmatched' AS detail_view
+FROM ipdb_people_unmatched;

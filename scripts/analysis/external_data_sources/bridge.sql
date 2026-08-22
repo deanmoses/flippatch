@@ -66,8 +66,10 @@ COMMENT ON VIEW external_data_sources_context IS
 -- and so the `_checks` suffix makes the runner fail on a row instead of printing one.
 -- That suffix is the whole difference between a warning and a gate.
 --
--- It reads view definitions, so a relation named only in an ad-hoc `query` is invisible.
--- That understates, which is the safe direction.
+-- It reads view definitions, so a relation named only in an ad-hoc `query` -- or in an
+-- INSERT feeding the findings table -- is invisible. That understates, which is the safe
+-- direction, and it is why every source file reads `px` in its RULE VIEWS only and lets
+-- the INSERT project from those: keeping the reads in views is what keeps them checked.
 CREATE OR REPLACE VIEW external_data_sources_boundary_checks AS
   WITH reads AS (
     SELECT
@@ -114,3 +116,228 @@ CREATE OR REPLACE VIEW external_data_sources_checks AS
   WHERE (SELECT count(*) FROM px.opdb.machines) = 0;
 COMMENT ON VIEW external_data_sources_checks IS
   'Empty when healthy — invariants of the bridge itself, not findings about the data. A row means the attached dump is unusable.';
+
+-- ═══ FINDINGS ══════════════════════════════════════════════════════════════
+--
+-- The single cross-source readout. Every per-source file projects its worklists down
+-- into this one narrow shape, so "what does the external world disagree with us about"
+-- is one query rather than one query per source per rule.
+--
+-- Modelled on flipcommons' `audit_findings` and deliberately NOT folded into it: an
+-- audit finding is about a single record, while every finding here is about a PAIR --
+-- an external listing and the catalog row it does or does not correspond to. Forcing
+-- the pair into the audit's single-subject shape would cost that layer its own
+-- self-checks, which is why this is a parallel structure rather than a contribution.
+--
+-- ASSEMBLED BY INSERT, NOT BY UNION. The audit unions because each of its rule views
+-- already emits the five common columns itself; ours do not, and must not -- the wide
+-- worklist IS the product a campaign works down, and `ipdb_models_unmatched` earns its
+-- candidate slugs, counts and namesake lists. So a projection step exists here that the
+-- audit does not need, and a positional `UNION ALL` is the worst place to put one: the
+-- audit's own comment flags that a rule reordering its SELECT would swap `message` into
+-- `severity` with no type error, and mitigates it with discipline alone. `INSERT ... BY
+-- NAME` against a typed table removes that failure mode structurally -- names are
+-- matched, not positions -- and keeps each rule's severity and wording next to the rule
+-- instead of in a distant manifest.
+--
+-- Private, because the public spelling is the two views below: findings are only
+-- meaningful after dismissals are applied.
+CREATE TABLE IF NOT EXISTS _external_data_source_findings (
+  source           VARCHAR,  -- 'ipdb', 'opdb' -- the external data source
+  rule             VARCHAR,  -- kebab-case, source-prefixed: 'ipdb-model-absent'
+  severity         VARCHAR,  -- 'error' | 'warning'
+  external_id      VARCHAR,  -- the source's own id; NULL where the finding is catalog-side
+  entity_type      VARCHAR,  -- catalog entity type; NULL where no catalog record exists
+  entity_public_id VARCHAR,  -- the catalog slug; NULL likewise
+  message          VARCHAR,  -- deterministic one-liner; see the ordering rule below
+  detail_view      VARCHAR   -- the wide worklist this was projected from
+);
+COMMENT ON TABLE _external_data_source_findings IS
+  'Private accumulator — every source file INSERTs its projected findings here. Read external_data_source_findings instead, which applies dismissals.';
+
+-- IF NOT EXISTS above, and a per-source DELETE in each source file, together make a
+-- double `.read` harmless. It is not hypothetical: `ipdb.sql` and a future `opdb.sql`
+-- both read this file, so a campaign reading both runs it twice. `CREATE OR REPLACE
+-- TABLE` here would silently discard the first file's rows; `IF NOT EXISTS` without the
+-- per-source DELETE would silently double them. Each source owns its own rows and
+-- clears them before writing, so either order of reads converges on the same table.
+
+-- ─── dismissals ────────────────────────────────────────────────────────────
+--
+-- A finding that is permanently, knowably wrong -- a quirk of the external source we
+-- have already adjudicated and do not want to re-adjudicate every run.
+--
+-- AN INLINE VALUES LIST, NOT A FILE. It is how both repos already carry hand-curated
+-- exception lists with their reasoning -- pinexplore's `ipdb_ref.retracted` (with
+-- `reason` and `evidence_url`) and `ipdb_ref.specialty`, and the pattern flipcommons'
+-- analysis README names under "Making manual judgment checkable". It keeps the
+-- dismissal in the same file as the rule it dismisses, needs no parser, and has exactly
+-- one escaping rule (double a single quote) rather than CSV's several. If this ever
+-- outgrows a screenful the answer is a JSONL sidecar, because CSV fails SILENTLY on
+-- prose containing commas and quotes -- which is precisely what `note` and `message`
+-- are -- while `read_json` rejects malformed input outright.
+--
+-- IDENTITY INCLUDES THE MESSAGE, following the audit, whose `duplicate-name` rule states
+-- it outright: identity is (rule, record, message). That is also why every aggregate
+-- reaching a message below is ordered. A dismissal keyed without the message would stay
+-- attached to a finding whose substance had changed underneath it -- a candidate count
+-- moving 1 -> 3 is a different situation, and the old adjudication should lapse rather
+-- than silently cover it.
+--
+-- THE BAR IS HIGH. The audit has no per-finding suppression anywhere in 900 lines; its
+-- exemptions are whole categories excluded in the rule with a documented data-model
+-- reason. A rule needing dismissals in bulk is a rule to fix, not to paper over.
+--
+-- Typed-empty rather than a VALUES list, because an empty VALUES list is a syntax error
+-- and a dummy seed row would be a live trap. Add one by appending a UNION ALL line.
+CREATE OR REPLACE VIEW _external_data_source_dismissals AS
+  SELECT NULL::VARCHAR AS source,
+         NULL::VARCHAR AS rule,
+         NULL::VARCHAR AS external_id,
+         NULL::VARCHAR AS entity_public_id,
+         NULL::VARCHAR AS message,
+         NULL::DATE    AS dismissed_on,
+         NULL::VARCHAR AS note
+  WHERE false
+  -- Append dismissals here, newest last. Copy the finding's `message` VERBATIM from
+  -- `external_data_source_findings`; a dismissal whose message has drifted matches
+  -- nothing and is reported as stale by `external_data_source_findings_summary`.
+  --
+  -- UNION ALL SELECT 'ipdb', 'ipdb-model-absent', '7067', NULL,
+  --   '<the exact message>', DATE '2026-08-22', 'Why this is permanently not a finding.'
+  ;
+
+-- Every finding with its dismissal state. The auditable spelling: what was dismissed,
+-- when and why is visible here rather than vanishing from the record.
+--
+-- `IS NOT DISTINCT FROM` on the two nullable key columns, not `=`: `external_id` is NULL
+-- on catalog-side findings and `entity_public_id` is NULL wherever no catalog record
+-- exists, and `NULL = NULL` is unknown, so `=` would make exactly those findings
+-- undismissable.
+CREATE OR REPLACE VIEW external_data_source_findings_all AS
+  SELECT f.*,
+         d.dismissed_on,
+         d.note AS dismissal_note,
+         d.dismissed_on IS NOT NULL AS dismissed
+  FROM _external_data_source_findings AS f
+  LEFT JOIN _external_data_source_dismissals AS d
+    ON  d.source = f.source
+    AND d.rule   = f.rule
+    AND d.external_id      IS NOT DISTINCT FROM f.external_id
+    AND d.entity_public_id IS NOT DISTINCT FROM f.entity_public_id
+    AND d.message = f.message;
+COMMENT ON VIEW external_data_source_findings_all IS
+  'Every external-source finding INCLUDING dismissed ones, each carrying its dismissal date and note. The auditable spelling; external_data_source_findings is the worklist.';
+
+-- THE WORKLIST. Rows are the normal, healthy state -- this is what a campaign is built
+-- to work down, which is why it is a view and never a `*_checks` view. The runner fails
+-- nonzero on a row from any public `*_checks` view in the session, so a standing backlog
+-- placed in one would break every campaign that reads this layer.
+CREATE OR REPLACE VIEW external_data_source_findings AS
+  SELECT * EXCLUDE (dismissed, dismissed_on, dismissal_note)
+  FROM external_data_source_findings_all
+  WHERE NOT dismissed
+  ORDER BY CASE severity WHEN 'error' THEN 0 ELSE 1 END, source, rule, external_id;
+COMMENT ON VIEW external_data_source_findings IS
+  'Worklist — one row per live disagreement between an external data source and the catalog, errors first: source, rule, severity, the external id and catalog record it is about, a message, and the wide view to read next. Rows are expected.';
+
+-- The headline readout, per rule.
+--
+-- Counted from the findings table rather than per rule VIEW, which is the one place this
+-- layer departs from the audit's shape and does so knowingly. The audit counts per view
+-- so a rule finding nothing keeps a row at zero -- a detector going dark otherwise looks
+-- exactly like a clean catalog. Here a rule contributes no row when it finds nothing, so
+-- that signal is carried instead by `<prefix>_summary` in each source file, which does
+-- count per view. Reading both is how you tell "no findings" from "no detector".
+--
+-- The stale-dismissal rows ride along deliberately, and deliberately NOT in `*_checks`:
+-- a dismissal goes stale when someone FIXES the finding, which is a success, and gating
+-- the build on it would punish exactly the outcome the layer exists to produce.
+CREATE OR REPLACE VIEW external_data_source_findings_summary AS
+            SELECT source, rule, severity, count(*) AS n, false AS is_stale_dismissal
+            FROM external_data_source_findings_all
+            WHERE NOT dismissed
+            GROUP BY ALL
+  UNION ALL SELECT source, rule, 'dismissed', count(*), false
+            FROM external_data_source_findings_all
+            WHERE dismissed
+            GROUP BY ALL
+  UNION ALL SELECT d.source, d.rule, 'STALE DISMISSAL', count(*), true
+            FROM _external_data_source_dismissals AS d
+            WHERE NOT EXISTS (
+              SELECT 1 FROM external_data_source_findings_all AS f
+              WHERE f.source = d.source AND f.rule = d.rule
+                AND f.external_id      IS NOT DISTINCT FROM d.external_id
+                AND f.entity_public_id IS NOT DISTINCT FROM d.entity_public_id
+                AND f.message = d.message)
+            GROUP BY ALL
+  ORDER BY is_stale_dismissal DESC, severity, source, rule;
+COMMENT ON VIEW external_data_source_findings_summary IS
+  'One row per (source, rule, severity) with its count, plus dismissed tallies and any STALE DISMISSAL that no longer matches a finding. Stale is reported, never gated — it means someone fixed the finding.';
+
+-- Empty when healthy. Invariants of the findings LAYER, never findings about the data.
+CREATE OR REPLACE VIEW external_data_source_findings_checks AS
+  -- format() propagates NULL, so one NULL argument blanks the WHOLE message and the
+  -- finding renders as an empty line — broken-looking rather than wrong-looking. Needs
+  -- its own branch because NULL slips every other test: `NULL NOT IN (…)` is unknown,
+  -- not true. Straight from the audit's `finding_null_required`, for the same reason.
+  SELECT 'finding_null_required' AS check_name,
+         rule || ' -> ' || col   AS detail
+  FROM _external_data_source_findings AS f,
+       LATERAL (VALUES ('source', f.source), ('rule', f.rule),
+                       ('severity', f.severity), ('message', f.message),
+                       ('detail_view', f.detail_view)) AS v(col, val)
+  WHERE v.val IS NULL
+
+  UNION ALL
+  -- Severity is computed per finding, so a CASE that loses its ELSE returns something
+  -- nothing downstream knows how to rank or colour.
+  SELECT 'unknown_severity', rule || ' -> ' || severity
+  FROM _external_data_source_findings
+  WHERE severity NOT IN ('error', 'warning')
+
+  UNION ALL
+  -- A finding names a catalog record by entity type, and the vocabulary is closed. A
+  -- typo'd type makes the record unresolvable by every consumer without erroring.
+  SELECT 'unknown_entity_type', rule || ' -> ' || entity_type
+  FROM _external_data_source_findings
+  WHERE entity_type IS NOT NULL
+    AND entity_type NOT IN (SELECT entity_type FROM entity_registry)
+
+  UNION ALL
+  -- Identity is (source, rule, external_id, entity_public_id, message), which is what a
+  -- dismissal keys on. A repeat means either two rules collided on one identity or a
+  -- source file was inserted twice — and in the second case a single dismissal would
+  -- silently only suppress one of the copies.
+  SELECT 'duplicate_finding_identity',
+         source || ' / ' || rule || ' / ' || coalesce(external_id, '-')
+  FROM _external_data_source_findings
+  GROUP BY source, rule, external_id, entity_public_id, message
+  HAVING count(*) > 1
+
+  UNION ALL
+  -- `detail_view` is the reader's route from the narrow finding to the wide worklist it
+  -- came from. A renamed or deleted view leaves the finding pointing at nothing, which
+  -- no other check would notice.
+  SELECT 'detail_view_missing', missing_view
+  FROM (
+    SELECT DISTINCT f.detail_view AS missing_view
+    FROM _external_data_source_findings AS f
+    WHERE f.detail_view IS NOT NULL
+      AND NOT EXISTS (
+        SELECT 1 FROM duckdb_views() AS v
+        WHERE v.database_name = current_database()
+          AND v.schema_name = 'main'
+          AND v.view_name = f.detail_view)
+  )
+
+  UNION ALL
+  -- A dismissal is an adjudication of one specific finding, so its rule must be one a
+  -- source file actually emits. Catches a rule renamed out from under a dismissal, which
+  -- would otherwise read as "nothing to dismiss" — silently reviving a settled finding.
+  SELECT 'dismissal_unknown_rule', d.source || ' -> ' || d.rule
+  FROM _external_data_source_dismissals AS d
+  WHERE NOT EXISTS (SELECT 1 FROM _external_data_source_findings AS f
+                    WHERE f.source = d.source AND f.rule = d.rule);
+COMMENT ON VIEW external_data_source_findings_checks IS
+  'Empty when healthy — invariants of the findings layer: no NULL in a required column, closed severity and entity-type vocabularies, one row per identity, every detail_view resolvable, every dismissal naming a live rule.';
