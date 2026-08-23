@@ -112,8 +112,8 @@ CREATE OR REPLACE VIEW external_data_sources_checks AS
   SELECT 'dump_empty' AS check_name, 'px.ipdb.models has no rows' AS detail
   WHERE (SELECT count(*) FROM px.ipdb.models) = 0
   UNION ALL
-  SELECT 'dump_empty', 'px.opdb.machines has no rows'
-  WHERE (SELECT count(*) FROM px.opdb.machines) = 0;
+  SELECT 'dump_empty', 'px.opdb.models has no rows'
+  WHERE (SELECT count(*) FROM px.opdb.models) = 0;
 COMMENT ON VIEW external_data_sources_checks IS
   'Empty when healthy — invariants of the bridge itself, not findings about the data. A row means the attached dump is unusable.';
 
