@@ -88,10 +88,15 @@ CREATE OR REPLACE VIEW external_data_sources_boundary_checks AS
     -- mart and matched none of them. Naming the publishable schemas instead fails
     -- closed: a schema pinexplore adds is off-limits until someone decides otherwise,
     -- which is the right default for another repo's working material.
+    --
+    -- `fandom` is deliberately absent: pinexplore publishes no fandom mart, and the
+    -- plan rules the comparison out even if one appears -- Fandom was never ingested
+    -- and comparing would only surface ids nobody intends to acquire. `web_cache` is
+    -- absent too; source TEXT is `evidence.sql`'s concern, per the header above.
     CASE
       WHEN NOT regexp_matches(relation, '^px\.[A-Za-z_][A-Za-z0-9_]*\.')
         THEN 'unqualified -- names no schema, so no layer'
-      WHEN NOT regexp_matches(relation, '^px\.(ipdb|opdb|fandom|glossary|ingest)\.')
+      WHEN NOT regexp_matches(relation, '^px\.(ipdb|opdb|glossary|ingest)\.')
         THEN 'not a published mart'
     END AS layer,
     list_sort(list(DISTINCT view_name)) AS read_by
