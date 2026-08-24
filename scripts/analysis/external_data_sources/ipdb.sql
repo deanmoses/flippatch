@@ -573,7 +573,6 @@ COMMENT ON VIEW ipdb_model_specialties_missing IS
 --
 -- A target pinexplore spells as a SLUG is making the opposite claim -- that it expects
 -- to resolve -- so it fails `specialty_target_not_in_catalog` instead of waiting here.
--- `flipperless` is deliberately on that side.
 CREATE OR REPLACE VIEW ipdb_specialty_vocabulary_absent AS
   SELECT
     specialty,
