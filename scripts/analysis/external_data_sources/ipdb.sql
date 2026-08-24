@@ -411,10 +411,11 @@ COMMENT ON VIEW ipdb_people_unmatched IS
 -- One row per (IPDB model, specialty), landed on the catalog model and answered twice
 -- over: does the target vocabulary EXIST, and does the model CARRY it.
 --
--- `target_exists` is asked only of rows that name a public_id. `model-relationship`
+-- `target_exists` is asked of every row except the `model-relationship` ones, whose
 -- targets (`conversion`, `conversion_kit`, `retheme`) name a relationship type rather
--- than a record, which is why pinexplore leaves `target_is_public_id` NULL on them --
--- they are neither resolvable nor missing vocabulary. They resolve structurally here.
+-- than a record -- neither resolvable nor missing vocabulary, so they resolve
+-- structurally. Pinexplore used to ship a flag pre-answering this; it no longer does,
+-- and should not have: whether our catalog holds a value is ours to answer.
 --
 -- CARRIAGE IS `IS NOT DISTINCT FROM` ON THE TWO SINGLE-VALUED DIMS, not `=`. A model
 -- with no game format at all yields NULL from `=`, and NULL is neither carried nor a
@@ -429,33 +430,37 @@ CREATE OR REPLACE VIEW _eds_ipdb_specialties AS
     s.ipdb_id,
     s.specialty,
     s.target_entity_type,
-    s.target_public_id,
-    s.target_is_public_id,
+    s.target_value,
     s.archive_source_url,
     s.archive_capture_date,
     m.id   AS model_id,
     m.slug AS model_slug,
     m.name AS model_name,
+    -- Resolved HERE, against the live catalog, because here is the only place it
+    -- can be. Pinexplore used to ship a flag saying whether a target existed, and
+    -- this read it rather than looking -- a claim about our database made by one
+    -- that cannot see it, and stale the moment we added the vocabulary. The
+    -- relationship types stay exempt: an edge type is neither a record that
+    -- resolves nor vocabulary we lack.
     CASE
-      WHEN s.target_is_public_id IS NULL THEN true   -- relationship type, not a record
-      WHEN NOT s.target_is_public_id     THEN false  -- IPDB wording: vocabulary we lack
+      WHEN s.target_entity_type = 'model-relationship' THEN true
       ELSE EXISTS (SELECT 1 FROM entity_subjects AS es
                    WHERE es.subject_type = s.target_entity_type
-                     AND es.subject_public_id = s.target_public_id
+                     AND es.subject_public_id = s.target_value
                      AND is_live(es.subject_status))
     END AS target_exists,
     CASE s.target_entity_type
       WHEN 'reward-type'      THEN EXISTS (SELECT 1 FROM model_rewards AS r
-                                     WHERE r.model_id = m.id AND r.reward_type_slug = s.target_public_id)
+                                     WHERE r.model_id = m.id AND r.reward_type_slug = s.target_value)
       WHEN 'tag'              THEN EXISTS (SELECT 1 FROM model_tags AS t
-                                     WHERE t.model_id = m.id AND t.tag_slug = s.target_public_id)
+                                     WHERE t.model_id = m.id AND t.tag_slug = s.target_value)
       WHEN 'gameplay-feature' THEN EXISTS (SELECT 1 FROM model_gameplay_features AS g
-                                     WHERE g.model_id = m.id AND g.feature_slug = s.target_public_id)
-      WHEN 'game-format'      THEN m.game_format_slug IS NOT DISTINCT FROM s.target_public_id
-      WHEN 'cabinet'          THEN m.cabinet_slug     IS NOT DISTINCT FROM s.target_public_id
+                                     WHERE g.model_id = m.id AND g.feature_slug = s.target_value)
+      WHEN 'game-format'      THEN m.game_format_slug IS NOT DISTINCT FROM s.target_value
+      WHEN 'cabinet'          THEN m.cabinet_slug     IS NOT DISTINCT FROM s.target_value
       WHEN 'model-relationship' THEN EXISTS (SELECT 1 FROM model_edges AS e
                                      WHERE e.model_id = m.id
-                                       AND e.relationship_type = s.target_public_id)
+                                       AND e.relationship_type = s.target_value)
       -- No ELSE: a target_entity_type nobody wrote a branch for lands NULL, which
       -- `specialty_carriage_unhandled` fails on. An ELSE false would report every such
       -- row as a gap instead, which is a wrong answer rather than a loud one.
@@ -481,7 +486,7 @@ CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
     model_name,
     specialty,
     target_entity_type,
-    target_public_id,
+    target_value,
     archive_source_url,
     archive_capture_date,
     'https://www.ipdb.org/machine.cgi?id=' || ipdb_id AS ipdb_url
@@ -509,7 +514,7 @@ CREATE OR REPLACE VIEW ipdb_specialty_vocabulary_absent AS
   SELECT
     specialty,
     target_entity_type,
-    target_public_id          AS ipdb_wording,
+    target_value              AS ipdb_wording,
     count(*)                  AS n_models,
     -- Ordered: this reaches a finding message, whose identity depends on it rendering
     -- the same way every run.
@@ -757,7 +762,7 @@ SELECT
   'model' AS entity_type,
   model_slug AS entity_public_id,
   format('{} does not carry {} {}, which IPDB lists as specialty "{}" (captured {})',
-         model_slug, target_entity_type, target_public_id, specialty,
+         model_slug, target_entity_type, target_value, specialty,
          coalesce(archive_capture_date::VARCHAR, 'undated')) AS message,
   'ipdb_model_specialties_missing' AS detail_view
 FROM ipdb_model_specialties_missing;
@@ -908,15 +913,21 @@ CREATE OR REPLACE VIEW ipdb_checks AS
       > (SELECT count(*) FROM px.ipdb.credits)
 
   UNION ALL
-  -- THE CHECK PINEXPLORE DELEGATES. Its specialty reference says so in as many words:
-  -- it can verify only that a target is SPELLED like a public_id, and whether that
-  -- public_id exists is a question only the catalog answers. A mapping that names a
-  -- slug we re-slugged reports every model carrying that specialty as a permanent gap,
-  -- or drops it from the worklist entirely -- and nothing else here would notice.
+  -- THE CHECK PINEXPLORE DELEGATES: whether a public_id exists is a question only the
+  -- catalog answers. A mapping naming a slug we have since re-slugged would otherwise
+  -- report every model carrying that specialty as a permanent gap, or drop it from the
+  -- worklist entirely, with nothing else here noticing.
+  --
+  -- SCOPED BY SPELLING, which is the convention pinexplore writes these in: a
+  -- slug-shaped target is one it expects to resolve, and IPDB's display wording --
+  -- `Payout Machine`, `Not A Pinball` -- marks vocabulary the catalog is known not to
+  -- have yet. Those belong to `specialty_vocabulary_absent` below, and firing on them
+  -- here would report the entire backlog as a fault every run. The test is on the
+  -- string, so it stays answerable here.
   SELECT 'specialty_target_not_in_catalog',
-         specialty || ' -> ' || target_entity_type || '.' || target_public_id
+         specialty || ' -> ' || target_entity_type || '.' || target_value
   FROM _eds_ipdb_specialties
-  WHERE target_is_public_id AND NOT target_exists
+  WHERE regexp_full_match(target_value, '[a-z0-9][a-z0-9_-]*') AND NOT target_exists
   GROUP BY ALL
 
   UNION ALL
