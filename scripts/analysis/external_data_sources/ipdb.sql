@@ -336,7 +336,7 @@ CREATE OR REPLACE VIEW _eds_ipdb_credits AS
     r.person_id,
     coalesce(r.n_people, 0) AS n_person_matches,
     p.slug          AS person_slug
-  FROM px.ipdb.credits AS c
+  FROM px.ipdb.model_credits AS c
   INNER JOIN models AS m ON m.ipdb_id = c.ipdb_id
   LEFT JOIN _eds_person_by_name AS r ON r.person_name_norm = name_norm(c.person_name)
   LEFT JOIN people AS p ON p.id = r.person_id;
@@ -866,7 +866,7 @@ CREATE OR REPLACE VIEW ipdb_summary AS
   UNION ALL SELECT 'credits_missing', count(*) FROM ipdb_credits_missing
   UNION ALL SELECT 'people_unmatched', count(*) FROM ipdb_people_unmatched
   UNION ALL SELECT 'dump_models', count(*) FROM px.ipdb.models
-  UNION ALL SELECT 'dump_credits', count(*) FROM px.ipdb.credits
+  UNION ALL SELECT 'dump_credits', count(*) FROM px.ipdb.model_credits
   UNION ALL SELECT 'catalog_models_with_ipdb_id', count(*) FROM models WHERE ipdb_id IS NOT NULL
   UNION ALL SELECT 'specialty_assignments', count(*) FROM px.ipdb.model_specialties
   UNION ALL SELECT 'specialty_models_covered', count(DISTINCT ipdb_id) FROM px.ipdb.model_specialties
@@ -971,10 +971,10 @@ CREATE OR REPLACE VIEW ipdb_checks AS
   UNION ALL
   -- Person resolution is a lookup, so it must leave the credit grain alone.
   SELECT 'credits_not_one_row_per_dump_credit',
-         (SELECT count(*) FROM px.ipdb.credits)::VARCHAR || ' dump credits -> '
+         (SELECT count(*) FROM px.ipdb.model_credits)::VARCHAR || ' dump credits -> '
            || (SELECT count(*) FROM _eds_ipdb_credits)::VARCHAR || ' resolved'
   WHERE (SELECT count(*) FROM _eds_ipdb_credits)
-      > (SELECT count(*) FROM px.ipdb.credits)
+      > (SELECT count(*) FROM px.ipdb.model_credits)
 
   UNION ALL
   -- THE CHECK PINEXPLORE DELEGATES: whether a public_id exists is a question only the
