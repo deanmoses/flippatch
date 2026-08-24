@@ -36,7 +36,15 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
     im.name                                                         AS ipdb_name,
     im.ipdb_corporate_entity_id,
     im.corporate_entity_text                                        AS ipdb_corporate_entity_text,
-    EXTRACT(YEAR FROM TRY_CAST(im.date_of_manufacture AS DATE))::INT AS ipdb_year,
+    -- The HEADER-PARSED year, never `date_of_manufacture`: that field is a timestamp,
+    -- so a year-only listing arrives padded to Jan 1 and its year is indistinguishable
+    -- from real precision -- the trap campaigns 0277/0268 document. The header parse
+    -- covers every dated listing (checked: zero rows carry a date the header lacks) and
+    -- brings `date_kind`, without which the year is not comparable: a project year
+    -- answers `project_year`, never `production_year`. The kind rides beside the year
+    -- so no consumer can take one without seeing the other.
+    im.additional_details_date_year::INT   AS ipdb_date_year,
+    im.additional_details_date_kind        AS ipdb_date_kind,
     im.carried_forward,
     im.duplicate_of_ipdb_id,
     corporate_entity.slug                                           AS ipdb_corporate_entity_slug,
@@ -68,7 +76,7 @@ CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
     any_value(m.slug)    FILTER (WHERE m.ipdb_id IS NULL)            AS unlinked_model_slug,
     any_value(m.slug)    FILTER (WHERE m.ipdb_id IS NOT NULL)        AS linked_model_slug,
     any_value(m.ipdb_id) FILTER (WHERE m.ipdb_id IS NOT NULL)        AS linked_model_ipdb_id,
-    any_value(m.year)    FILTER (WHERE m.ipdb_id IS NOT NULL)        AS linked_model_year
+    any_value(m.production_year) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_production_year
   FROM unmatched AS u
   INNER JOIN models AS m
     ON name_norm(m.name) = name_norm(u.ipdb_name)
@@ -143,7 +151,8 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
   SELECT
     d.ipdb_id,
     d.ipdb_name,
-    d.ipdb_year,
+    d.ipdb_date_year,
+    d.ipdb_date_kind,
     d.ipdb_corporate_entity_text,
     d.ipdb_manufacturer_slug,
     CASE
@@ -157,7 +166,7 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
     c.unlinked_model_slug,
     c.linked_model_slug,
     c.linked_model_ipdb_id,
-    c.linked_model_year,
+    c.linked_model_production_year,
     coalesce(c.n_unlinked_candidates, 0)   AS n_unlinked_candidates,
     coalesce(c.n_linked_candidates, 0)     AS n_linked_candidates,
     -- Name-only evidence, carried on every row rather than only the unsearchable ones:
@@ -188,7 +197,7 @@ CREATE OR REPLACE VIEW ipdb_ids_not_in_dump AS
     m.slug              AS model_slug,
     m.name              AS model_name,
     m.ipdb_id,
-    m.year,
+    m.production_year,
     m.manufacturer_slug,
     r.reason            AS retraction_reason,
     r.evidence_url      AS retraction_evidence_url,
@@ -538,6 +547,11 @@ CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
     model_name,
     specialty,
     target_entity_type,
+    -- `target_slug` is what a patch asserts -- the resolved catalog record, NULL only on
+    -- the structural model-relationship rows. `target_value` is IPDB's wording, kept for
+    -- tracing back to the source; writing IT into a patch fails to resolve or mints a
+    -- duplicate term.
+    target_slug,
     target_value,
     archive_source_url,
     archive_capture_date,
@@ -547,7 +561,7 @@ CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
     AND target_exists
     AND NOT carried;
 COMMENT ON VIEW ipdb_model_specialties_missing IS
-  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry, with the archived page and capture date behind it. Rows are expected.';
+  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry: target_slug is the record a patch asserts, with the archived page and capture date behind it. Rows are expected.';
 
 -- WORKLIST — an IPDB specialty aimed at vocabulary the catalog does not have.
 --
@@ -664,8 +678,13 @@ SELECT
                plural(n_namesake_models, 'catalog namesake', 'catalog namesakes'))
       END
     WHEN 'absent' THEN
+      -- The kind qualifies the year: a project year rendered bare would read as a
+      -- manufacture year, which is the confusion `ipdb_date_kind` exists to prevent.
       format('IPDB {} "{}" ({}) has no catalog model and none matches its name and maker; {} under other makers',
-             ipdb_id, coalesce(ipdb_name, '?'), coalesce(ipdb_year::VARCHAR, 'undated'),
+             ipdb_id, coalesce(ipdb_name, '?'),
+             coalesce(ipdb_date_year::VARCHAR ||
+                      CASE WHEN ipdb_date_kind IN ('project', 'project_inferred')
+                           THEN ' project' ELSE '' END, 'undated'),
              plural(n_namesake_models, 'namesake', 'namesakes'))
   END AS message,
   'ipdb_models_unmatched' AS detail_view
@@ -835,8 +854,10 @@ SELECT
   ipdb_id::VARCHAR AS external_id,
   'model' AS entity_type,
   model_slug AS entity_public_id,
+  -- The resolved slug, not IPDB's wording -- the slug is what the patch asserts. The
+  -- structural model-relationship rows have no slug and fall back to the edge type.
   format('{} does not carry {} {}, which IPDB lists as specialty "{}" (captured {})',
-         model_slug, target_entity_type, target_value, specialty,
+         model_slug, target_entity_type, coalesce(target_slug, target_value), specialty,
          coalesce(archive_capture_date::VARCHAR, 'undated')) AS message,
   'ipdb_model_specialties_missing' AS detail_view
 FROM ipdb_model_specialties_missing;

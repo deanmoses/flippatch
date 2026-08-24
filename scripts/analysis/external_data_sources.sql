@@ -11,22 +11,19 @@
 .read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
 .read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
 
--- The cross-source headline. The per-rule breakdown is
--- `external_data_source_findings_summary` in `bridge.sql`; per-source totals and
--- coverage sit in each source's own `<source>_summary`.
+-- Every source's summary, source-labelled, in the one view the gated run prints. The
+-- per-source summaries already carry their findings rollups, worklist and coverage
+-- counts, and stale-adjudication tallies -- and counting per VIEW is what tells "no
+-- findings" from "no detector", so printing them whole is the point. The per-rule
+-- breakdown is `external_data_source_findings_summary` in `bridge.sql`.
 --
 -- Completes the runner's summary+checks contract for PREFIX=external_data_sources
 -- (`bridge.sql` carries the checks and context under the same prefix).
 CREATE OR REPLACE VIEW external_data_sources_summary AS
   SELECT * FROM (
-              SELECT source, severity, count(*) AS n
-              FROM external_data_source_findings
-              GROUP BY ALL
-    UNION ALL SELECT source, 'dismissed', count(*)
-              FROM external_data_source_findings_all
-              WHERE dismissed
-              GROUP BY source
+              SELECT 'ipdb' AS source, metric, value FROM ipdb_summary
+    UNION ALL SELECT 'opdb',           metric, value FROM opdb_summary
   )
-  ORDER BY source, CASE severity WHEN 'error' THEN 0 WHEN 'warning' THEN 1 ELSE 2 END;
+  ORDER BY source, metric;
 COMMENT ON VIEW external_data_sources_summary IS
-  'The layer''s headline — findings per (source, severity), errors first, plus dismissed tallies. The per-rule breakdown is external_data_source_findings_summary.';
+  'Every per-source summary metric, source-labelled: findings rollups, worklist and coverage counts, stale adjudications. An absent-listing count is bounded by dump age — read it beside the watermarks in external_data_sources_context.';

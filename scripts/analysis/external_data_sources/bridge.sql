@@ -12,6 +12,13 @@
 -- `external_data_sources_boundary_checks` below fails on. Source TEXT for citing a claim is a
 -- different concern and lives in `../evidence.sql`, over the web-scrape cache.
 --
+-- CATALOG DATES ARE ALWAYS KIND-QUALIFIED. The foundation's `models.year` / `models.month`
+-- are coalesced display columns -- a project date fills in where no production date
+-- exists -- so comparing either against a source asserts the wrong fact on every
+-- project-dated machine. This layer reads `production_*` / `project_*` explicitly, and
+-- IPDB's side carries `date_kind` beside every year it quotes. The one undifferentiated
+-- date is OPDB's own, which has no kinds to tell.
+--
 -- WHERE A WORDING FIX LIVES. A vocabulary value's spelling says which repo resolves it:
 -- slug-shaped means pinexplore translated it, so a mapping decision updates pinexplore's
 -- ref table; source display wording resolves through the catalog's aliases, so the fix

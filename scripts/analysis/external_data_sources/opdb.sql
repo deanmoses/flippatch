@@ -82,7 +82,7 @@ CREATE OR REPLACE VIEW _eds_opdb_candidates AS
     any_value(m.slug)    FILTER (WHERE m.opdb_id IS NULL)     AS unlinked_model_slug,
     any_value(m.slug)    FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_slug,
     any_value(m.opdb_id) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_opdb_id,
-    any_value(m.year)    FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_year
+    any_value(m.production_year) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_production_year
   FROM unmatched AS u
   INNER JOIN models AS m
     ON name_norm(m.name) = name_norm(u.opdb_name)
@@ -107,6 +107,13 @@ CREATE OR REPLACE VIEW _eds_opdb_namesakes AS
 -- The classification is the IPDB one, minus `duplicate_listing` (OPDB records its own
 -- duplicates as moved ids, which land in `opdb_ids_stale` instead):
 --
+--   moved_successor         This id is where a moved id LANDED: some catalog model's
+--                           stale opdb_id names it as successor. The repoint reported by
+--                           `opdb-id-moved` covers it -- one action, so no second
+--                           finding -- and `moved_from_model_slug` names the model to
+--                           repoint. First in precedence because the successor usually
+--                           also name-matches that very model, and reading it as a
+--                           `possible_duplicate` restates the same repoint as new work.
 --   catalog_holds_unlinked  The catalog has the machine and no OPDB id on it. A
 --                           backfill: patch the id, do not create a record.
 --   possible_duplicate      A catalog model of the same name and maker is already
@@ -133,17 +140,19 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
     d.opdb_manufacturer_slug,
     d.opdb_relation,
     CASE
+      WHEN moved_from.model_slug IS NOT NULL  THEN 'moved_successor'
       WHEN c.n_unlinked_candidates > 0        THEN 'catalog_holds_unlinked'
       WHEN c.n_linked_candidates > 0          THEN 'possible_duplicate'
       WHEN d.opdb_manufacturer_slug IS NULL   THEN 'maker_unresolved'
       ELSE                                         'absent'
     END                                  AS classification,
+    moved_from.model_slug                AS moved_from_model_slug,
     parent.slug                          AS parent_model_slug,
     linked_title.slug                    AS linked_title_slug,
     c.unlinked_model_slug,
     c.linked_model_slug,
     c.linked_model_opdb_id,
-    c.linked_model_year,
+    c.linked_model_production_year,
     coalesce(c.n_unlinked_candidates, 0) AS n_unlinked_candidates,
     coalesce(c.n_linked_candidates, 0)   AS n_linked_candidates,
     coalesce(n.n_namesake_models, 0)     AS n_namesake_models,
@@ -153,9 +162,18 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
   LEFT JOIN _eds_opdb_namesakes  AS n USING (opdb_id)
   LEFT JOIN models AS parent       ON parent.opdb_id = d.opdb_variant_of
   LEFT JOIN titles AS linked_title ON linked_title.opdb_id = d.title_opdb_id
+  -- A scalar subquery, so it cannot fan the grain out even if several stale ids moved
+  -- onto one successor (a merge); `any_value` then picks a representative and the
+  -- others are still visible in `opdb_ids_stale`.
+  LEFT JOIN LATERAL (
+    SELECT any_value(m.slug) AS model_slug
+    FROM models AS m
+    INNER JOIN px.opdb.model_ids AS i ON i.opdb_id = m.opdb_id
+    WHERE i.status = 'moved' AND i.current_opdb_id = d.opdb_id
+  ) AS moved_from ON true
   WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.opdb_id = d.opdb_id);
 COMMENT ON VIEW opdb_models_unmatched IS
-  'Worklist — one row per OPDB listing no live model carries the id of, classified catalog_holds_unlinked / possible_duplicate / maker_unresolved / absent, with the machine-or-edition relation, the catalog parent and title where OPDB names them, and candidate or namesake evidence. Rows are expected.';
+  'Worklist — one row per OPDB listing no live model carries the id of, classified moved_successor / catalog_holds_unlinked / possible_duplicate / maker_unresolved / absent, with the machine-or-edition relation, the catalog parent and title where OPDB names them, and candidate or namesake evidence. Rows are expected.';
 
 -- WORKLIST — the other direction: a model carries an OPDB id the dump no longer serves.
 --
@@ -179,7 +197,7 @@ CREATE OR REPLACE VIEW opdb_ids_stale AS
     m.slug                  AS model_slug,
     m.name                  AS model_name,
     m.opdb_id,
-    m.year,
+    m.production_year,
     m.manufacturer_slug,
     CASE
       WHEN i.status = 'moved'                    THEN 'moved'
@@ -458,7 +476,9 @@ CREATE OR REPLACE VIEW opdb_model_fields_disagreeing AS
     FROM _eds_opdb_dump AS d
     INNER JOIN models AS m ON m.opdb_id = d.opdb_id,
     LATERAL (VALUES
-      ('year',                  m.year::VARCHAR,                  d.opdb_year::VARCHAR),
+      -- `production_year`, not the coalesced `year`: OPDB's date is manufacture
+      -- semantics, and a project-only machine has no production year to disagree with.
+      ('production_year',       m.production_year::VARCHAR,       d.opdb_year::VARCHAR),
       ('player_count',          m.player_count::VARCHAR,          d.opdb_player_count::VARCHAR),
       ('technology_generation', m.technology_generation_slug,     d.opdb_technology_generation),
       ('display_type',          m.display_type_slug,              d.opdb_display_type)
@@ -470,7 +490,7 @@ CREATE OR REPLACE VIEW opdb_model_fields_disagreeing AS
     AND opdb_value IS NOT NULL
     AND catalog_value <> opdb_value;
 COMMENT ON VIEW opdb_model_fields_disagreeing IS
-  'Worklist — one row per (model, field) where the catalog and OPDB both state a single-valued fact and the values differ: year, player_count, technology_generation, display_type. Rows are expected.';
+  'Worklist — one row per (model, field) where the catalog and OPDB both state a single-valued fact and the values differ: production_year, player_count, technology_generation, display_type. Rows are expected.';
 
 -- ═══ VOCABULARY ════════════════════════════════════════════════════════════
 --
@@ -639,7 +659,9 @@ DELETE FROM _external_data_source_findings WHERE source = 'opdb';
 
 -- ─── unmatched listings and groups ─────────────────────────────────────────
 -- Four warnings, one per classification, because the classes ask for different actions
--- and a dismissal keys on the rule.
+-- and a dismissal keys on the rule. `moved_successor` is excluded, not downgraded: the
+-- repoint is already reported by `opdb-id-moved`, and a second finding on the successor
+-- id would restate it. It stays visible in the wide view.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
@@ -684,7 +706,8 @@ SELECT
                   THEN '; files under title ' || linked_title_slug ELSE '' END)
   END AS message,
   'opdb_models_unmatched' AS detail_view
-FROM opdb_models_unmatched;
+FROM opdb_models_unmatched
+WHERE classification <> 'moved_successor';
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
@@ -1001,7 +1024,16 @@ CREATE OR REPLACE VIEW opdb_checks AS
   SELECT 'classification_unknown', classification
   FROM opdb_models_unmatched
   WHERE classification NOT IN
-    ('catalog_holds_unlinked', 'possible_duplicate', 'maker_unresolved', 'absent')
+    ('moved_successor', 'catalog_holds_unlinked', 'possible_duplicate', 'maker_unresolved', 'absent')
+
+  UNION ALL
+  -- The CASE precedence: a successor usually also name-matches the model holding the
+  -- old id, so a branch reordered above `moved_successor` would silently demote these
+  -- to `possible_duplicate` and the repoint would read as new work.
+  SELECT 'moved_successor_misclassified', u.opdb_id
+  FROM opdb_models_unmatched AS u
+  WHERE u.moved_from_model_slug IS NOT NULL
+    AND u.classification <> 'moved_successor'
 
   UNION ALL
   SELECT 'title_classification_unknown', classification
@@ -1054,7 +1086,7 @@ CREATE OR REPLACE VIEW opdb_checks AS
   -- probe behind it should announce itself.
   SELECT 'field_unknown', field
   FROM opdb_model_fields_disagreeing
-  WHERE field NOT IN ('year', 'player_count', 'technology_generation', 'display_type')
+  WHERE field NOT IN ('production_year', 'player_count', 'technology_generation', 'display_type')
 
   UNION ALL
   -- The carriage CASE has no ELSE; this turns an unhandled target_entity_type into a
