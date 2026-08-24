@@ -9,9 +9,9 @@ We did some research and figured out what happened. There's two causes:
 1. our original baseline IPDB dump was missing data
 2. we incompletely extracted data from that dump
 
-We got our original baseline IPDB info from a JSON dump, `~/dev/pinexplore/ingest_sources/ipdb_xantari.json` . It's still accessible via the pinexplore DuckDB. Most of the information has already been incorporated into the Flipcommons database.
+We got our original baseline IPDB info from a JSON dump, `~/dev/pinexplore/ingest_sources/ipdb_xantari_2025_02_01.json` . It's still accessible via the pinexplore DuckDB. Most of the information has already been incorporated into the Flipcommons database.
 
-Here's an example. `ipdb_xantari.json` has **two** date carriers:
+Here's an example. `ipdb_xantari_2025_02_01.json` has **two** date carriers:
 
 - `DateOfManufacture`: the structured field, present on 5,265 of 6,664 records. **This is the only one our ingest read.**
 - `AdditionalDetails`: present on **all 6,664**, and it is verbatim the header line IPDB renders on the machine page: `IPD No. 3711 / May, 1989 / 4 Players`.

@@ -10,7 +10,7 @@ Fills `project_year` (and `project_month` where IPDB names a month) for **187 mo
 
 IPDB carries two kinds of date and labels them separately on a machine page: a **Date Of Manufacture** (physical assembly, factory rollout) and a **Project Date** (the design milestone logged in the manufacturer's internal records — IPDB's own gloss is "Project Dates (aka Design Dates)"). Per IPDB's stated display rule, the page's header line shows whichever it holds, preferring the manufacture date when it holds both.
 
-Our IPDB baseline came from `ipdb_xantari.json`, which carries both — and the ingest read only one:
+Our IPDB baseline came from `ipdb_xantari_2025_02_01.json`, which carries both — and the ingest read only one:
 
 | field | fill | ingested |
 | --- | --- | --- |

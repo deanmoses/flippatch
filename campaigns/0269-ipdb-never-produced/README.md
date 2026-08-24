@@ -10,7 +10,7 @@ Sets `production_status: unreleased` on **36 models the catalog filed as unknown
 
 IPDB prints one `Production:` row per machine, and it is not a number field. A machine that shipped gets a quantity — `1,750 units (confirmed)` — and a machine that did not gets the words `Never Produced`.
 
-Our IPDB baseline, `ipdb_xantari.json`, types that row as an integer. The quantity survives; the words do not:
+Our IPDB baseline, `ipdb_xantari_2025_02_01.json`, types that row as an integer. The quantity survives; the words do not:
 
 | carrier | holds |
 | --- | --- |

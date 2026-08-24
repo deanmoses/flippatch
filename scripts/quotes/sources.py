@@ -37,7 +37,7 @@ if TYPE_CHECKING:
 # scrape of it evidences nothing the catalog records.
 #
 # Order and labels are inferred from the key order of pinexplore's
-# ``ingest_sources/ipdb_xantari.json`` dump. A wrong one costs a false FAIL,
+# ``ingest_sources/ipdb_xantari_*.json`` dumps. A wrong one costs a false FAIL,
 # never a false pass. The archive.org captures now in the web cache render the
 # same labels, which is what :data:`_IPDB_PAGE_ONLY_LABELS` reads.
 _IPDB_ROW_FIELDS: tuple[tuple[str, str | None], ...] = (

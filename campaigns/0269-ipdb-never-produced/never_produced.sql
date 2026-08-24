@@ -18,7 +18,7 @@
 --
 -- == WHY THE CATALOG DOES NOT KNOW THESE MACHINES WERE CANCELLED ============
 --
--- Our IPDB baseline is `ipdb_xantari.json`, and its `ProductionNumber` is an INTEGER
+-- Our IPDB baseline is `ipdb_xantari_2025_02_01.json`, and its `ProductionNumber` is an INTEGER
 -- column. IPDB's own `Production:` row is not an integer field: it prints a quantity
 -- (`1,750 units (confirmed)`) on machines that shipped and the words `Never Produced` on
 -- machines that did not. Only the quantity survives the dump's typing. `Never Produced`
