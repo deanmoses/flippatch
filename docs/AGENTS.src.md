@@ -15,26 +15,20 @@ Markers:
 
 END_IGNORE
 
-This file provides guidance to AI programming agents when working with code in this repository.
-
 ## Project Overview
 
-Flippatch is the authoring home and transport for **data patches** — small YAML files that correct or extend pinball catalog data. It contains **only data and tooling** — no web framework, no frontend, no backend.
+Flippatch is the authoring home and transport for **data patches** — small YAML files that correct or extend data in the Flipcommons pinball catalog. This repo contains **only data and tooling** — no web framework, no frontend, no backend.
+
+These patches are ingested by [Flipcommons](https://github.com/The-Flip/flipcommons), a collaborative pinball catalog encyclopedia wiki website + production DB, in Django + SvelteKit; applies data patches via `ingest_patches`.
 
 **What lives here:**
 
 - **Data patches**: change sets applied on top of the catalog. They live at `patches/NNNN-slug.yaml` (numbered, e.g. `patches/0042-japanese-maker-years.yaml`). Format: YAML files, one source-attributed set of catalog claims per file. Once the developers apply a patch to production, they archive it under `patches/shipped/`.
-- **Authoring artifacts**: the shared `patchkit` emitter (`scripts/patchkit.py`) and one directory per generated patch set (audit trail) under `campaigns/`.
-
-Supporting stuff:
-
-- The patch JSON schema (`schema/patch.schema.json`) for structural validation.
-- Python scripts for structural validation, the editorial lint, and upload to Cloudflare R2, from which downstream projects pull patches.
-
-**Downstream consumers:**
-
-- [Flipcommons](https://github.com/The-Flip/flipcommons) — collaborative pinball catalog encyclopedia wiki website + production DB, in Django + SvelteKit; applies data patches via `ingest_patches`.
-- [Pinexplore](https://github.com/deanmoses/pinexplore) — analyzes, validates, and explores pinball data.
+- **Supporting stuff**
+  - **Authoring artifacts**: one directory per set of generated patches under `campaigns/`.
+  - The `patchkit` tool for helping emit patches (`scripts/patchkit.py`)
+  - Python scripts for structural validation, the editorial lint.
+  - The patch JSON schema (`schema/patch.schema.json`) for structural validation.
 
 ## Requirements
 
@@ -88,7 +82,7 @@ make analyze Q="SELECT count(*) AS yearless FROM models WHERE year IS NULL;"  # 
 make analyze CMD=describe                                                     # every view, described
 make analyze CMD=describe ARGS=models                                         # one view + its columns
 make analyze FILE=<analysis.sql> PREFIX=<name>   # run an analysis file, gated on its <name>_checks
-make analyze FILE=<analysis.sql> Q="SELECT …"    # one query with the file loaded (checks warn, not gate)
+make analyze FILE=<analysis.sql> Q="SELECT …"    # one query with the file loaded (checks do not run)
 ```
 
 **Query the foundation, not `../flipcommons/backend/db.sqlite3`.** The foundation makes it much harder to screw up: it does things like filter out soft-deleted records and regularize all absence to NULL.
@@ -109,17 +103,17 @@ Both paths resolve from the flipcommons checkout, which is where the runner work
 
 ### Comparing external data sources against the catalog
 
-`scripts/analysis/external_data_sources/` (this repo) is the **comparison layer**: it attaches pinexplore's `explore.duckdb` as `px` and compares what an external data source says against what the live catalog holds — the disagreements a data patch campaign is built to work down. One file per source; each reads `bridge.sql` itself, so a campaign's analysis file reaches straight for the source it wants:
+`scripts/analysis/external_data_sources/` (this repo) is the **comparison layer**: it attaches pinexplore's `explore.duckdb` as `px` and compares what external data sources (IPDB, OPDB) hold against what the live catalog holds — the disagreements a data patch campaign is built to work down. To look at a source's findings, run its file directly — one file per source, and its prefix is the source name:
+
+```bash
+make analyze FILE=scripts/analysis/external_data_sources/opdb.sql PREFIX=opdb
+```
+
+A campaign instead puts the `.read` in its own analysis file — each source file reads `bridge.sql` itself, so this one line brings the whole layer — and runs that file with `make analyze FILE=… PREFIX=…` as above:
 
 ```sql
 .read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
 .read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
-```
-
-Put the `.read` in your campaign's analysis file and run that with `make analyze FILE=… PREFIX=…` as above — or, to just look at the findings with no campaign file, run a source file directly (its prefix is the source name):
-
-```bash
-make analyze FILE=scripts/analysis/external_data_sources/opdb.sql PREFIX=opdb
 ```
 
 What a session gets:
@@ -128,7 +122,7 @@ What a session gets:
 - **Wide worklists per rule** — each finding's `detail_view` names the view holding the full evidence (`ipdb_models_unmatched`, `opdb_ids_stale`, …), with classifications, candidate slugs, and counts that qualify them.
 - **Dismissals** — a finding adjudicated as permanently not-a-finding is appended to `_external_data_source_dismissals` in `bridge.sql`, with a date and a note recording why; dismissed findings leave the worklist but stay auditable in `external_data_source_findings_all`, and a dismissal that stops matching is reported as stale (someone fixed the finding — a success, never gated).
 - **`external_data_sources_context`** — the dump watermarks (Xantari snapshot dates, OPDB export), printed on every run, so "same query, newer dump" is distinguishable from a broken reproduction.
-- **`ipdb_summary` / `opdb_summary`** and **`*_checks`** — the per-source headline counts and the layer's own invariants; the runner gates on the checks, so a session that runs at all ran clean.
+- **`ipdb_summary` / `opdb_summary`** and **`*_checks`** — the per-source headline counts and the layer's own invariants; the gated `PREFIX=` run fails on any checks row, while a `Q=` query skips the checks entirely — its silence is not a pass, so only a gated run certifies the layer clean.
 
 The layer reads **only pinexplore's published marts** (`px.ipdb.*`, `px.opdb.*`, `px.ingest.*`); everything under `*_raw` / `*_stg` / `*_ref` is that repo's working material, and `external_data_sources_boundary_checks` fails the session on any view reaching past the mart. Source TEXT for citing a claim is a separate concern and stays in `evidence.sql`. Themes are deliberately not compared, and only one direction is: the catalog is a superset of every source, so "missing from the external source" is never a finding. The reasoning behind every rule lives in comments beside the SQL — read `bridge.sql`'s header first.
 
@@ -179,7 +173,7 @@ Read this before reviewing a data patch:
 4. **[`make validate`](#static-validation)**: the static gates — schema and editorial lint over the YAML. No database, under a second. Run it **before** applying: a typo caught here costs a second, and the same typo caught after a snapshot replay costs the whole round trip.
 5. **Apply to dev DB**: apply the patches to a SQLite snapshot. Ask the user which snapshot to reset from, then restore it, `migrate`, apply the patches, inspect the result. Leave them applied. An applied patch is immutable (the ledger fingerprints its content and keys on the patch id, so re-ingesting an edited one fails); to revise, restore snapshot and replay. The loop is in `DataPatchAuthoring.md → Validate via snapshot`.
 6. **[`make validate-in-db`](#db-aware-validation)**: validate against the Flipcommons localhost dev DB. There will likely be warnings and errors across multiple patches. You and the user will decide which ones to address. Once they are addressed, re-apply the patches to the dev DB and re-run `make validate-in-db`.
-7. **Hand off to user**: committing and `make push` are both the user's call — **never** something you do yourself. `make push` publishes the patches to R2 (whence other environments pull them via `make pull-patches && make ingest-patches`); it is a deliberate command the user issues, on the same footing as `git commit`/`git push`, never a step the loop takes on its own. Tell the user the patch is validated and ready, and let them decide when to commit and when to publish. Outstanding audit findings do not block that — say what they are and let the user weigh them.
+7. **Hand off to user**: committing and `make push` are both the user's call — **never** something you do yourself. `make push` publishes the patches to R2 (whence other dev and prod environments pull them via `make pull-patches && make ingest-patches`); it is a deliberate command the user issues, on the same footing as `git commit`/`git push`, never a step the loop takes on its own. Tell the user the patch is validated and ready, and let them decide when to commit and when to publish. Outstanding audit findings do not block that — say what they are and let the user weigh them.
 
 ### Generating a patch
 
