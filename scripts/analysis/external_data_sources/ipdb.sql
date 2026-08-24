@@ -751,7 +751,13 @@ SELECT
               THEN ' — catalog names matching: ' || array_to_string(list_sort(catalog_name_matches), ', ')
               ELSE '' END) AS message,
   'ipdb_corporate_entities_unmatched' AS detail_view
-FROM ipdb_corporate_entities_unmatched;
+FROM ipdb_corporate_entities_unmatched AS u
+-- Deduplication, matching the OPDB twin: where the id-acquirable rule below fired for
+-- this id, both rules describe the same missing link from opposite ends, and the
+-- acquirable side survives because it names a catalog record. Guarded on that rule
+-- actually firing, never on a name match alone. The wide view keeps every row.
+WHERE NOT EXISTS (SELECT 1 FROM corporate_entities_missing_ipdb_id AS a
+                  WHERE a.ipdb_corporate_entity_id = u.ipdb_corporate_entity_id);
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
@@ -761,9 +767,14 @@ SELECT
   ipdb_corporate_entity_id::VARCHAR AS external_id,
   'corporate-entity' AS entity_type,
   corporate_entity_slug AS entity_public_id,
-  format('{} carries no IPDB id; IPDB appears to hold {} matching by name, e.g. {}',
-         corporate_entity_slug, plural(n_ipdb_matches, 'record', 'records'),
-         ipdb_corporate_entity_id) AS message,
+  -- "e.g." only when the id is actually an example: with one match it IS the record.
+  CASE WHEN n_ipdb_matches = 1
+    THEN format('{} carries no IPDB id; IPDB record {} matches it by name',
+                corporate_entity_slug, ipdb_corporate_entity_id)
+    ELSE format('{} carries no IPDB id; {} match it by name, e.g. record {}',
+                corporate_entity_slug, plural(n_ipdb_matches, 'IPDB record', 'IPDB records'),
+                ipdb_corporate_entity_id)
+  END AS message,
   'corporate_entities_missing_ipdb_id' AS detail_view
 FROM corporate_entities_missing_ipdb_id;
 

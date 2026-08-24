@@ -116,7 +116,9 @@ analyze:
 	@FC="$$(PYTHONPATH=scripts uv run python3 -c 'import os; from common.paths import load_env, REPO_ROOT; load_env(); print(os.environ.get("FLIPCOMMONS_DIR") or (REPO_ROOT.parent / "flipcommons"))')"; \
 	AN=; if [ -n '$(FILE)' ]; then AN="$(abspath $(FILE))"; fi; \
 	cd "$$FC" && \
-	if [ -n "$$Q" ]; then scripts/analysis/analysis query $${AN:+"$$AN"} "$$Q" $(ARGS); \
+	if [ -n "$$Q" ]; then \
+	  if [ -n "$$AN" ]; then echo "note: $(FILE)'s *_checks are not evaluated under Q= — silence is not a pass" >&2; fi; \
+	  scripts/analysis/analysis query $${AN:+"$$AN"} "$$Q" $(ARGS); \
 	elif [ '$(CMD)' = describe ]; then scripts/analysis/analysis describe $${AN:+"$$AN"} $(ARGS); \
 	else test -n "$(PREFIX)" -o -n '$(CMD)' || { echo 'usage: make analyze [FILE=<analysis.sql>] PREFIX=<name> | Q="<sql>" | CMD=describe|ui|snapshot [ARGS=...]'; exit 2; }; \
 	  scripts/analysis/analysis $(or $(CMD),run) $${AN:+"$$AN"} $(PREFIX) $(ARGS); fi

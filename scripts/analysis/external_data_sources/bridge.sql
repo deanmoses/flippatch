@@ -12,6 +12,11 @@
 -- `external_data_sources_boundary_checks` below fails on. Source TEXT for citing a claim is a
 -- different concern and lives in `../evidence.sql`, over the web-scrape cache.
 --
+-- WHERE A WORDING FIX LIVES. A vocabulary value's spelling says which repo resolves it:
+-- slug-shaped means pinexplore translated it, so a mapping decision updates pinexplore's
+-- ref table; source display wording resolves through the catalog's aliases, so the fix
+-- is an alias patch here.
+--
 -- FINDINGS ARE VIEWS, NEVER CHECKS. A comparison view returning rows is the normal,
 -- healthy state -- that is the worklist a campaign is built to work down. The runner
 -- fails nonzero on a row from ANY public `*_checks` view in the session, so a finding
@@ -234,6 +239,20 @@ CREATE OR REPLACE VIEW external_data_source_findings_all AS
 COMMENT ON VIEW external_data_source_findings_all IS
   'Every external-source finding INCLUDING dismissed ones, each carrying its dismissal date and note. The auditable spelling; external_data_source_findings is the worklist.';
 
+-- The dismissal record, browsable. `is_stale` marks an adjudication no longer matching
+-- any finding -- someone fixed it, so the row can be pruned when convenient.
+CREATE OR REPLACE VIEW external_data_source_dismissals AS
+  SELECT d.*,
+         NOT EXISTS (
+           SELECT 1 FROM external_data_source_findings_all AS f
+           WHERE f.source = d.source AND f.rule = d.rule
+             AND f.external_id      IS NOT DISTINCT FROM d.external_id
+             AND f.entity_public_id IS NOT DISTINCT FROM d.entity_public_id
+             AND f.message = d.message) AS is_stale
+  FROM _external_data_source_dismissals AS d;
+COMMENT ON VIEW external_data_source_dismissals IS
+  'Every dismissal with its date, note and is_stale flag. Stale means no finding matches any more — someone fixed it; prune when convenient.';
+
 -- THE WORKLIST. Rows are the normal, healthy state -- this is what a campaign is built
 -- to work down, which is why it is a view and never a `*_checks` view. The runner fails
 -- nonzero on a row from any public `*_checks` view in the session, so a standing backlog
@@ -267,14 +286,9 @@ CREATE OR REPLACE VIEW external_data_source_findings_summary AS
             FROM external_data_source_findings_all
             WHERE dismissed
             GROUP BY ALL
-  UNION ALL SELECT d.source, d.rule, 'STALE DISMISSAL', count(*), true
-            FROM _external_data_source_dismissals AS d
-            WHERE NOT EXISTS (
-              SELECT 1 FROM external_data_source_findings_all AS f
-              WHERE f.source = d.source AND f.rule = d.rule
-                AND f.external_id      IS NOT DISTINCT FROM d.external_id
-                AND f.entity_public_id IS NOT DISTINCT FROM d.entity_public_id
-                AND f.message = d.message)
+  UNION ALL SELECT source, rule, 'STALE DISMISSAL', count(*), true
+            FROM external_data_source_dismissals
+            WHERE is_stale
             GROUP BY ALL
   ORDER BY is_stale_dismissal DESC, severity, source, rule;
 COMMENT ON VIEW external_data_source_findings_summary IS

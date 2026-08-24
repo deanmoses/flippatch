@@ -331,6 +331,38 @@ CREATE OR REPLACE VIEW opdb_model_manufacturer_mismatched AS
 COMMENT ON VIEW opdb_model_manufacturer_mismatched IS
   'Worklist — one row per model whose manufacturer differs from the one OPDB names, classified excepted / catalog_has_none / opdb_unmatched / disagrees, with the adjudication reason on excepted rows. Rows are expected.';
 
+-- The exceptions, browsable, with `is_stale` marking a pairing no model exercises any
+-- more -- OPDB refiled the game or the catalog moved; prune when convenient.
+CREATE OR REPLACE VIEW opdb_manufacturer_exceptions AS
+  SELECT ex.*,
+         NOT EXISTS (SELECT 1 FROM opdb_model_manufacturer_mismatched AS w
+                     WHERE w.classification = 'excepted'
+                       AND w.opdb_manufacturer_id = ex.opdb_manufacturer_id
+                       AND w.manufacturer_slug = ex.manufacturer_slug) AS is_stale
+  FROM _eds_opdb_manufacturer_exceptions AS ex;
+COMMENT ON VIEW opdb_manufacturer_exceptions IS
+  'Every adjudicated maker pairing with its reason and is_stale flag. Stale means no model pair exercises it any more; prune when convenient.';
+
+-- DECISION GRAIN, which is the whole point: the disagreements arrive in filing-policy
+-- clumps (28 of the first 30 were one Taito pair), and the adjudication -- fine, so
+-- except it; or wrong, so patch the models -- happens once per pair. The model-grain
+-- rows stay above as the patch material. IPDB's twin stays per-model deliberately:
+-- there a disagreement is a seeding-key anomaly, individually suspicious.
+CREATE OR REPLACE VIEW opdb_manufacturer_pairs_disagreeing AS
+  SELECT
+    manufacturer_slug,
+    opdb_manufacturer_slug,
+    opdb_manufacturer_id,
+    count(*)                                    AS n_models,
+    -- Ordered: this reaches a finding message, whose identity depends on it rendering
+    -- the same way every run.
+    list_sort(list(DISTINCT model_slug))[:5]    AS sample_model_slugs
+  FROM opdb_model_manufacturer_mismatched
+  WHERE classification = 'disagrees'
+  GROUP BY ALL;
+COMMENT ON VIEW opdb_manufacturer_pairs_disagreeing IS
+  'Worklist — one row per unadjudicated (catalog manufacturer, OPDB manufacturer) pairing that disagrees, with how many models file that way. One row is one adjudication.';
+
 -- WORKLIST — an OPDB manufacturer the catalog has no handle on.
 --
 -- Grouped by id because pinexplore's `opdb.manufacturers` warns that one id can carry
@@ -551,14 +583,33 @@ CREATE OR REPLACE VIEW opdb_model_vocabulary_missing AS
 COMMENT ON VIEW opdb_model_vocabulary_missing IS
   'Worklist — one row per OPDB-asserted value the catalog has vocabulary for but the model (or its title, for series) does not carry. Rows are expected.';
 
--- WORKLIST — an OPDB value aimed at vocabulary the catalog does not have.
+-- Absent-vocabulary values adjudicated as PERMANENTLY not ours to mint. A settled value
+-- leaves the worklist below but stays browsable here with its reason; `is_stale` marks
+-- one no absent value exercises any more -- the vocabulary was created after all, or the
+-- value left the dump -- and stale is reported, never gated.
 --
--- VALUE GRAIN: one row is one decision, not one per machine. The standing residents are
--- known shapes -- the edition tags (`pro-edition`, `premium-edition`, `vault-edition`)
--- name a thing the catalog states structurally through variants rather than as tags,
--- and `licensed` is a signal about licensing relationships that `OpdbMappings.md`
--- already rules out minting a tag for. Deciding one away permanently is what a
--- dismissal on the `opdb-vocabulary-absent` finding is for.
+-- NOT dismissals, deliberately: a dismissal keys on the message, whose count lapses it
+-- whenever another model gains the value, and "we will never mint this" is a decision
+-- about the VALUE. The edition tags are absent here on purpose -- OpdbMappings.md calls
+-- them signals to CONSIDER, an open decision that belongs on the worklist.
+CREATE OR REPLACE VIEW opdb_vocabulary_settled AS
+  SELECT
+    s.*,
+    NOT EXISTS (SELECT 1 FROM _eds_opdb_vocabulary AS v
+                WHERE NOT v.target_exists
+                  AND v.target_entity_type = s.target_entity_type
+                  AND v.target_value = s.target_value) AS is_stale
+  FROM (VALUES
+    ('tag', 'licensed',
+     'OpdbMappings.md rules out minting a tag: the signal feeds licensed-relationship research, not tag vocabulary.')
+  ) AS s(target_entity_type, target_value, reason);
+COMMENT ON VIEW opdb_vocabulary_settled IS
+  'Absent-vocabulary values adjudicated as permanently not ours to mint, with the reason and an is_stale flag. Settled values leave opdb_vocabulary_absent.';
+
+-- WORKLIST — an OPDB value aimed at vocabulary the catalog does not have, settled
+-- values excluded.
+--
+-- VALUE GRAIN: one row is one decision, not one per machine.
 CREATE OR REPLACE VIEW opdb_vocabulary_absent AS
   SELECT
     target_entity_type,
@@ -567,11 +618,14 @@ CREATE OR REPLACE VIEW opdb_vocabulary_absent AS
     -- Ordered: this reaches a finding message, whose identity depends on it rendering
     -- the same way every run.
     list_sort(list(DISTINCT model_slug) FILTER (model_slug IS NOT NULL))[:5] AS sample_model_slugs
-  FROM _eds_opdb_vocabulary
+  FROM _eds_opdb_vocabulary AS v
   WHERE NOT target_exists
+    AND NOT EXISTS (SELECT 1 FROM opdb_vocabulary_settled AS st
+                    WHERE st.target_entity_type = v.target_entity_type
+                      AND st.target_value = v.target_value)
   GROUP BY ALL;
 COMMENT ON VIEW opdb_vocabulary_absent IS
-  'Worklist — one row per OPDB value naming catalog vocabulary that does not exist, with how many models carry it and a sample. One row is one decision, not one per machine.';
+  'Worklist — one row per unsettled OPDB value naming catalog vocabulary that does not exist, with how many models carry it and a sample. One row is one decision, not one per machine.';
 
 -- ═══ FINDINGS ══════════════════════════════════════════════════════════════
 --
@@ -710,36 +764,53 @@ SELECT
 FROM opdb_title_ids_stale;
 
 -- ─── maker disagreement ────────────────────────────────────────────────────
--- All warnings -- the brand-grain sanity check never supports `error`, and the excepted
--- class is excluded outright: an adjudicated pairing is not a finding.
+-- All warnings -- the brand-grain sanity check never supports `error`. Two classes
+-- produce no finding at all: `excepted` is an adjudicated pairing, and
+-- `opdb_unmatched` is already reported at its decision grain by
+-- `opdb-manufacturer-unknown` -- resolving the manufacturer resolves every model filed
+-- under it, and reporting each model besides restates one defect under two names.
+--
+-- `disagrees` is PAIR grain: one finding per pairing, however many models file that
+-- way. A pairing adjudicated as fine goes in the EXCEPTIONS list, not a dismissal --
+-- the message carries the count, so a dismissal would lapse whenever a model was added,
+-- which is wrong for a decision about the pairing itself.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
-  CASE classification
-    WHEN 'disagrees'        THEN 'opdb-manufacturer-disagrees'
-    WHEN 'catalog_has_none' THEN 'opdb-manufacturer-missing'
-    WHEN 'opdb_unmatched'   THEN 'opdb-manufacturer-unresolved'
-  END AS rule,
+  'opdb-manufacturer-disagrees' AS rule,
+  'warning' AS severity,
+  opdb_manufacturer_id::VARCHAR AS external_id,
+  'manufacturer' AS entity_type,
+  manufacturer_slug AS entity_public_id,
+  format('{} disagrees with OPDB''s {} on {}: {}{} — OPDB files under parent companies; adjudicate, then except or patch',
+         coalesce(manufacturer_slug, '?'), coalesce(opdb_manufacturer_slug, '?'),
+         plural(n_models, 'model', 'models'),
+         CASE WHEN n_models > 5 THEN 'e.g. ' ELSE '' END,
+         array_to_string(sample_model_slugs, ', ')) AS message,
+  'opdb_manufacturer_pairs_disagreeing' AS detail_view
+FROM opdb_manufacturer_pairs_disagreeing;
+
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'opdb' AS source,
+  'opdb-manufacturer-missing' AS rule,
   'warning' AS severity,
   opdb_id AS external_id,
   'model' AS entity_type,
   model_slug AS entity_public_id,
-  CASE classification
-    WHEN 'disagrees' THEN
-      format('{} is attributed to {} but OPDB names {}; OPDB files under parent companies, so adjudicate before patching',
-             model_slug, coalesce(manufacturer_slug, '?'), coalesce(opdb_manufacturer_slug, '?'))
-    WHEN 'catalog_has_none' THEN
-      format('{} carries no manufacturer; OPDB names {}',
-             model_slug, coalesce(opdb_manufacturer_slug, coalesce(opdb_manufacturer_name, '?')))
-    WHEN 'opdb_unmatched' THEN
-      format('{}: OPDB names maker "{}", whose id no live manufacturer carries; resolve at the manufacturer',
-             model_slug, coalesce(opdb_manufacturer_name, '?'))
-  END AS message,
+  format('{} carries no manufacturer; OPDB names {}',
+         model_slug, coalesce(opdb_manufacturer_slug, coalesce(opdb_manufacturer_name, '?'))) AS message,
   'opdb_model_manufacturer_mismatched' AS detail_view
 FROM opdb_model_manufacturer_mismatched
-WHERE classification <> 'excepted';
+WHERE classification = 'catalog_has_none';
 
 -- ─── manufacturers ─────────────────────────────────────────────────────────
+-- The NOT EXISTS is deduplication: where the id-acquirable rule below fired for this
+-- id, both rules describe the same missing link from opposite ends, and the acquirable
+-- side survives because it names a catalog record. Guarded on the acquirable rule
+-- ACTUALLY FIRING, not on `catalog_name_matches` -- that list resolves through aliases
+-- and ignores already-linked manufacturers, so a name match alone does not promise the
+-- other finding exists. The wide view keeps every row either way.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
@@ -756,7 +827,9 @@ SELECT
               THEN ' — catalog names matching: ' || array_to_string(catalog_name_matches, ', ')
               ELSE '' END) AS message,
   'opdb_manufacturers_unmatched' AS detail_view
-FROM opdb_manufacturers_unmatched;
+FROM opdb_manufacturers_unmatched AS u
+WHERE NOT EXISTS (SELECT 1 FROM manufacturers_missing_opdb_id AS a
+                  WHERE a.opdb_manufacturer_id = u.opdb_manufacturer_id);
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
@@ -766,9 +839,14 @@ SELECT
   opdb_manufacturer_id::VARCHAR AS external_id,
   'manufacturer' AS entity_type,
   manufacturer_slug AS entity_public_id,
-  format('{} carries no OPDB id; OPDB appears to hold {} matching by name, e.g. {}',
-         manufacturer_slug, plural(n_opdb_matches, 'record', 'records'),
-         opdb_manufacturer_id) AS message,
+  -- "e.g." only when the id is actually an example: with one match it IS the record.
+  CASE WHEN n_opdb_matches = 1
+    THEN format('{} carries no OPDB id; OPDB record {} matches it by name',
+                manufacturer_slug, opdb_manufacturer_id)
+    ELSE format('{} carries no OPDB id; {} match it by name, e.g. record {}',
+                manufacturer_slug, plural(n_opdb_matches, 'OPDB record', 'OPDB records'),
+                opdb_manufacturer_id)
+  END AS message,
   'manufacturers_missing_opdb_id' AS detail_view
 FROM manufacturers_missing_opdb_id;
 
@@ -855,22 +933,18 @@ CREATE OR REPLACE VIEW opdb_summary AS
   UNION ALL SELECT 'title_ids_stale', count(*) FROM opdb_title_ids_stale
   UNION ALL SELECT 'manufacturer_' || classification, count(*)
     FROM opdb_model_manufacturer_mismatched GROUP BY classification
+  UNION ALL SELECT 'manufacturer_pairs_disagreeing', count(*) FROM opdb_manufacturer_pairs_disagreeing
   UNION ALL SELECT 'opdb_manufacturers_unmatched', count(*) FROM opdb_manufacturers_unmatched
   UNION ALL SELECT 'manufacturers_missing_opdb_id', count(*) FROM manufacturers_missing_opdb_id
-  -- An exception no model pair exercises any more: someone fixed the data or OPDB
-  -- refiled the game. Reported, never gated -- like a stale dismissal, it marks a
-  -- success -- and at zero it is the sign the whole list has been adjudicated away.
   UNION ALL SELECT 'manufacturer_exceptions_stale', count(*)
-    FROM _eds_opdb_manufacturer_exceptions AS ex
-    WHERE NOT EXISTS (SELECT 1 FROM opdb_model_manufacturer_mismatched AS w
-                      WHERE w.classification = 'excepted'
-                        AND w.opdb_manufacturer_id = ex.opdb_manufacturer_id
-                        AND w.manufacturer_slug = ex.manufacturer_slug)
+    FROM opdb_manufacturer_exceptions WHERE is_stale
   UNION ALL SELECT 'ipdb_crosscheck_' || classification, count(*)
     FROM opdb_ipdb_id_crosscheck GROUP BY classification
   UNION ALL SELECT 'fields_disagreeing', count(*) FROM opdb_model_fields_disagreeing
   UNION ALL SELECT 'vocabulary_missing', count(*) FROM opdb_model_vocabulary_missing
   UNION ALL SELECT 'vocabulary_absent_values', count(*) FROM opdb_vocabulary_absent
+  UNION ALL SELECT 'vocabulary_settled_stale', count(*)
+    FROM opdb_vocabulary_settled WHERE is_stale
   UNION ALL SELECT 'dump_models', count(*) FROM px.opdb.models
   UNION ALL SELECT 'dump_titles', count(*) FROM px.opdb.titles
   UNION ALL SELECT 'catalog_models_with_opdb_id', count(*) FROM models WHERE opdb_id IS NOT NULL
