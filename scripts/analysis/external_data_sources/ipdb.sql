@@ -397,16 +397,26 @@ COMMENT ON VIEW ipdb_people_unmatched IS
 -- pages do. It is the source of basic classification we have otherwise had to
 -- synthesize: bingo, payout, widebody, flipperless.
 --
--- pinexplore maps each IPDB specialty onto OUR vocabulary and publishes the rules whole
--- in `px.ipdb.specialties`, including the ones aimed at vocabulary we do not have. Its
--- reference file states the division of labour outright: "This build can check only that
--- spelling convention; flippatch must check whether the target exists." That check is
--- `specialty_target_not_in_catalog` below, and it is the reason this section exists at
--- all rather than the mapping being trusted end to end.
+-- pinexplore buckets each IPDB specialty onto one of OUR entity types and publishes the
+-- rules whole in `px.ipdb.specialties`, including the ones aimed at vocabulary we do not
+-- have. Its reference file states the division of labour outright: `target_value` "IS
+-- NEVER A CLAIM ABOUT THE CATALOG ... pinexplore reads no catalog and cannot know
+-- whether a value resolves; flippatch answers that beside the live records."
 --
--- Coverage is archive-sourced and therefore partial -- 189 assignments over 151 models
--- today, against 6676 listings. A model with no row here has not been checked, not been
--- cleared.
+-- SO BOTH HALVES OF THE ANSWER ARE OURS. `target_slug` resolves the wording onto a
+-- record, through our aliases where the vocabulary has them, and
+-- `specialty_target_not_in_catalog` below fails when a value that ought to resolve does
+-- not. That is the reason this section exists at all rather than the mapping being
+-- trusted end to end.
+--
+-- Its converse is `specialty_vocabulary_absent`, a worklist rather than a gate: a target
+-- pinexplore spells in IPDB's own wording -- `Payout Machine`, `Not A Pinball` -- is one
+-- nobody has catalog vocabulary for yet, and is a decision waiting rather than a fault.
+--
+-- Coverage is archive-sourced and therefore partial: only a small fraction of IPDB
+-- listings have a cached page to read a Specialty off. A model with no row here has not
+-- been checked, not been cleared -- and `specialty_models_covered` in the summary is how
+-- many have, which is the number to read rather than one written down here.
 
 -- One row per (IPDB model, specialty), landed on the catalog model and answered twice
 -- over: does the target vocabulary EXIST, and does the model CARRY it.
@@ -481,13 +491,12 @@ CREATE OR REPLACE VIEW _eds_ipdb_specialties AS
       m.cabinet_slug     AS m_cabinet_slug,
       -- THE CATALOG RECORD PINEXPLORE'S WORDING DENOTES, or NULL if none does.
       --
-      -- Pinexplore does not translate our large vocabularies -- theme at 540 rows,
-      -- gameplay feature at 323 -- because both carry aliases, and matching a
-      -- source's wording to our slug is what those aliases are FOR. It ships
-      -- IPDB's phrasing (`Mechanical Backbox Animation`) and leaves the lookup to
-      -- us. This is that lookup. Without it every such target reads as vocabulary
-      -- we lack, which is how 15 assignments onto features we demonstrably hold
-      -- came to report as absent.
+      -- Pinexplore does not translate our large vocabularies -- theme, gameplay
+      -- feature -- because both carry aliases, and matching a source's wording to
+      -- our slug is what those aliases are FOR. It ships IPDB's phrasing
+      -- (`Mechanical Backbox Animation`) and leaves the lookup to us. This is that
+      -- lookup. Without it every such target reads as vocabulary we lack, however
+      -- plainly we hold the feature.
       --
       -- Three ways in, most specific first, so an exact public_id can never lose
       -- to someone else's alias. LIMIT 1 with that ORDER BY makes the answer
@@ -542,17 +551,29 @@ COMMENT ON VIEW ipdb_model_specialties_missing IS
 
 -- WORKLIST — an IPDB specialty aimed at vocabulary the catalog does not have.
 --
--- SPECIALTY GRAIN, not model grain, and that is the whole point. These are the rules
--- pinexplore deliberately left pointing at IPDB's own wording because no catalog term
--- answers them, and each is ONE decision -- add the tag, split the payout type, work out
--- what "Not A Pinball" should be -- not one decision per machine. Reported per model,
--- 49 rows would restate 5 questions.
+-- SPECIALTY GRAIN, not model grain, and that is the whole point. Each row is ONE
+-- decision -- add the tag, split the payout type, work out what "Not A Pinball" should
+-- be -- not one decision per machine, and reported per model it would restate the same
+-- handful of questions dozens of times over.
 --
--- Two shapes sit here together. Some are vocabulary we may simply want (`Flipperless`,
--- `WWII Contract`). Others are IPDB headings coarser than ours that no new term would
--- fix: `Payout Machine` spans our `cash-payout` and `merchant-paid`, and `Table
--- Top/Counter Game` spans `tabletop` and `countertop`. Those need the models read, not a
--- slug minted -- pinexplore's reference file says which is which.
+-- THREE SHAPES SIT HERE TOGETHER.
+--
+-- Some are IPDB headings coarser than ours that no new term would fix: `Payout Machine`
+-- spans our `cash-payout` and `merchant-paid`, `Table Top/Counter Game` spans `tabletop`
+-- and `countertop`. Those need the models read, not a slug minted.
+--
+-- Some are vocabulary we may simply want and do not have, which pinexplore spells in
+-- IPDB's own wording so it reads at a glance as work outstanding.
+--
+-- And some are vocabulary we DO have under another name, where the alias is what is
+-- missing rather than the term: `Mechanical Backbox Animation` against our
+-- `mechanical-backbox-animations`. `target_slug` resolves through our aliases, so a row
+-- landing here is partly a question about whether we have the concept and partly one
+-- about whether we have taught it the source's phrasing.
+--
+-- A target pinexplore spells as a SLUG is making the opposite claim -- that it expects
+-- to resolve -- so it fails `specialty_target_not_in_catalog` instead of waiting here.
+-- `flipperless` is deliberately on that side.
 CREATE OR REPLACE VIEW ipdb_specialty_vocabulary_absent AS
   SELECT
     specialty,
