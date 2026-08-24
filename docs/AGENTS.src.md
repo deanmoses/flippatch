@@ -101,35 +101,45 @@ Where flipcommons sits on disk is resolved by `scripts/common/paths.py` — a si
 
 Both paths resolve from the flipcommons checkout, which is where the runner works; the file's own header explains why. It serves campaigns citing `https:` URLs — an `ipdb:` cite resolves its evidence through `scripts/quotes` instead.
 
-### Comparing external data sources against the catalog
+### Exploring data from IPDB and OPDB
 
-`scripts/analysis/external_data_sources.sql` (this repo) is the **comparison layer**: it attaches pinexplore's `explore.duckdb` as `px` and compares what external data sources (IPDB, OPDB) hold against what the live catalog holds — the disagreements a data patch campaign is built to work down. To look at the findings, run it directly:
+There are multiple ways to look at data from IPDB (Internet Pinball Database) and OPDB (Online Pinball Database):
+
+- **[The external data source compare layer](#the-external-data-source-comparison-layer)**: integrates external dumps of IPDB and OPDB and compares them against Flipcommons.
+- **Flipcommons `extra_data`**: some entities like `MachineModel` have a field called `extra_data`. These contain un-integrated source data (aka stuff that hasn't been put into public, structured Flipcommons fields) including original verbatim free text. The values in `extra_data` date from early 2026 so the external data source dumps _may_ contain newer info, but since IPDB and OPDB change so very infrequently I'd treat them as good enough when you need to explore verbatim free text from a single source.
+
+#### The external data source comparison layer
+
+To compare IPDB and OPDB against the Flipcommons catalog, use this repo's [external data source comparison layer](./scripts/analysis/external_data_sources.sql).
+
+To run it directly:
 
 ```bash
 make analyze FILE=scripts/analysis/external_data_sources.sql PREFIX=external_data_sources
 ```
 
-A campaign instead puts the `.read` in its own analysis file and runs that file with `make analyze FILE=… PREFIX=…` as above:
+Campaigns should instead put the `.read` in their own analysis file and run that file with `make analyze FILE=… PREFIX=…` as above:
 
 ```sql
 .read ../flippatch/scripts/analysis/external_data_sources.sql
 ```
 
+It attaches [pinexplore's `explore.duckdb`](#pinexplores-duckdb) as `px`.
+
 The files under `external_data_sources/` are internals, split for editing; a session working one source deeply can read just that file (its prefix is the source name, e.g. `PREFIX=opdb`).
 
 What a session gets:
 
-- **`external_data_source_findings`** — the single cross-source worklist, one row per live disagreement, errors first. `error` means the catalog is currently **wrong** (a dead or superseded external id still cited, two records that resolve and disagree); `warning` means a **gap** (a listing not yet linked, a credit not yet recorded). Rows are the normal, healthy state — findings are views, never build-failing `*_checks`.
-- **Wide worklists per rule** — each finding's `detail_view` names the view holding the full evidence (`ipdb_models_unmatched`, `opdb_ids_stale`, …), with classifications, candidate slugs, and counts that qualify them.
-- **Dismissals** — a finding adjudicated as permanently not-a-finding is appended to the dismissals list in `bridge.sql`, with a date and a note recording why. Browse `external_data_source_dismissals`; a stale row means the finding got fixed. Settled _vocabulary_ decisions use the source file's settled list instead (e.g. `opdb_vocabulary_settled`), and adjudicated maker pairings the exceptions list (`opdb_manufacturer_exceptions`) — a dismissal covers one finding, those cover the value or pairing.
-- **`external_data_sources_context`** — the dump watermarks (Xantari snapshot dates, OPDB export), printed on every run, so "same query, newer dump" is distinguishable from a broken reproduction.
-- **`external_data_sources_summary`** (every per-source metric, source-labelled — the headline the gated run prints) and **`*_checks`** (the layer's own invariants); the gated `PREFIX=` run fails on any checks row, while a `Q=` query skips the checks entirely — its silence is not a pass, so only a gated run certifies the layer clean.
+- **`external_data_source_findings`** — the single worklist, one row per live disagreement, errors first. `error` means the catalog is confirmed **wrong** (a dead or superseded external id still cited, two linked records that contradict); `warning` covers **gaps and unresolved disagreements** — things the catalog does not yet say, or says without external support. Rows are the normal, healthy state, and each row's `detail_view` names the wide view holding the full evidence (`ipdb_models_unmatched`, `opdb_ids_stale`, …).
+- **Field merge views** — scalar fields (dates, players, …) are compared against all sources at once, never per source: `model_fields_unsupported` is the worklist (no source matches the catalog), `model_fields_contested` the browsable standoffs where a source backs the catalog against another. The why: [docs/plans/ExternalDataSourceFieldMerge.md](plans/ExternalDataSourceFieldMerge.md).
+- **Retiring a finding permanently** — a one-off finding gets a dismissal (appended in `bridge.sql` with a date and note; browse `external_data_source_dismissals`); a settled vocabulary value or an adjudicated maker pairing gets the source file's settled/exceptions list (`opdb_vocabulary_settled`, `opdb_manufacturer_exceptions`) — a dismissal covers one finding, those cover the value or pairing.
+- Expectation-setting: the catalog is a superset of every source, so "missing from the external source" is never a finding, and themes are deliberately not compared.
 
-The layer reads **only pinexplore's published marts** (`px.ipdb.*`, `px.opdb.*`, `px.ingest.*`); everything under `*_raw` / `*_stg` / `*_ref` is that repo's working material, and `external_data_sources_boundary_checks` fails the session on any view reaching past the mart. Source TEXT for citing a claim is a separate concern and stays in `evidence.sql`. Themes are deliberately not compared, and only one direction is: the catalog is a superset of every source, so "missing from the external source" is never a finding. The reasoning behind every rule lives in comments beside the SQL — read `bridge.sql`'s header first.
+Every public view carries a COMMENT — `make analyze CMD=describe ARGS=<view>` is the reference, so using the layer never requires reading its SQL. The reasoning sits in comments beside the SQL for when you are _changing_ the layer; start at `bridge.sql`'s header.
 
-### pinexplore's DuckDB
+#### Pinexplore's DuckDB
 
-pinexplore's `explore.duckdb` is a **fallback, not a peer**. It holds IPDB/OPDB/Fandom source dumps and does not contain the flipcommons catalog, so a catalog question answered there is answered from something that cannot see the source of truth — and the result looks perfectly reasonable. Source questions mostly belong to the foundation too, since the un-integrated source data and its original verbatim free text ride along in `extra_data` on entities like `MachineModel` and surface as foundation columns. Reach for pinexplore only when the foundation genuinely cannot answer.
+Pinexplore's `explore.duckdb` holds dumps from external sources (IPDB/OPDB/Fandom). It's designed to be accessible via Flippatch's comparison layer, but you can access it directly if need be. It does not contain the Flipcommons catalog, so a catalog question answered there is answered from something that cannot see the source of truth — and the result looks perfectly reasonable.
 
 ## Data Patches
 

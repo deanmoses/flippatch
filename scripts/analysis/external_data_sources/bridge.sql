@@ -160,7 +160,8 @@ COMMENT ON VIEW external_data_sources_checks IS
 -- Private, because the public spelling is the two views below: findings are only
 -- meaningful after dismissals are applied.
 CREATE TABLE IF NOT EXISTS _external_data_source_findings (
-  source           VARCHAR,  -- 'ipdb', 'opdb' -- the external data source
+  source           VARCHAR,  -- 'ipdb', 'opdb' -- the external data source; or 'cross',
+                             -- for a merge finding no single witness owns (fields.sql)
   rule             VARCHAR,  -- kebab-case, source-prefixed: 'ipdb-model-absent'
   severity         VARCHAR,  -- 'error' | 'warning'
   external_id      VARCHAR,  -- the source's own id; NULL where the finding is catalog-side

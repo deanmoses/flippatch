@@ -457,40 +457,16 @@ CREATE OR REPLACE VIEW opdb_ipdb_id_crosscheck AS
 COMMENT ON VIEW opdb_ipdb_id_crosscheck IS
   'Worklist — one row per model where OPDB''s ipdb_id cross-reference and the catalog''s ipdb_id differ or ours is missing, with whether OPDB''s id resolves in the IPDB dump. Rows are expected.';
 
--- WORKLIST — single-valued fields where both sides state a value and the values differ.
+-- NO FIELD COMPARISON LIVES HERE, deliberately. A per-source scalar-field worklist
+-- manufactures seesaw work, because sources disagree with each other and a dissent
+-- another witness backs us on is a standoff, not a defect. Fields are compared against
+-- the testimony POOL in `fields.sql` -- see its header and
+-- docs/plans/ExternalDataSourceFieldMerge.md before proposing one here.
 --
--- Both-set only, deliberately: a probe found ZERO models linked to OPDB with a NULL
--- year, player count, technology generation or display type, so a backfill class would
--- be dead code today -- and if the catalog ever grows such a gap, `absent` rows in the
--- unmatched worklist are where new-model data arrives, not here.
---
--- Names are deliberately NOT compared: 135 models differ under `name_norm` and nearly
--- all of it is styling convention (subtitle punctuation, edition spelling), a worklist
--- with no action. The unmatched views compare names where a name is all there is.
---
--- One row per (model, field) rather than the old wide `compare_models_opdb` shape,
--- because a finding needs one disagreement, not five booleans.
-CREATE OR REPLACE VIEW opdb_model_fields_disagreeing AS
-  WITH j AS (
-    SELECT m.slug AS model_slug, d.opdb_id, v.*
-    FROM _eds_opdb_dump AS d
-    INNER JOIN models AS m ON m.opdb_id = d.opdb_id,
-    LATERAL (VALUES
-      -- `production_year`, not the coalesced `year`: OPDB's date is manufacture
-      -- semantics, and a project-only machine has no production year to disagree with.
-      ('production_year',       m.production_year::VARCHAR,       d.opdb_year::VARCHAR),
-      ('player_count',          m.player_count::VARCHAR,          d.opdb_player_count::VARCHAR),
-      ('technology_generation', m.technology_generation_slug,     d.opdb_technology_generation),
-      ('display_type',          m.display_type_slug,              d.opdb_display_type)
-    ) AS v(field, catalog_value, opdb_value)
-  )
-  SELECT model_slug, opdb_id, field, catalog_value, opdb_value
-  FROM j
-  WHERE catalog_value IS NOT NULL
-    AND opdb_value IS NOT NULL
-    AND catalog_value <> opdb_value;
-COMMENT ON VIEW opdb_model_fields_disagreeing IS
-  'Worklist — one row per (model, field) where the catalog and OPDB both state a single-valued fact and the values differ: production_year, player_count, technology_generation, display_type. Rows are expected.';
+-- Names are deliberately not compared anywhere: 135 models differ under `name_norm`
+-- and nearly all of it is styling convention (subtitle punctuation, edition spelling),
+-- a worklist with no action. The unmatched views compare names where a name is all
+-- there is.
 
 -- ═══ VOCABULARY ════════════════════════════════════════════════════════════
 --
@@ -897,22 +873,6 @@ SELECT
   'opdb_ipdb_id_crosscheck' AS detail_view
 FROM opdb_ipdb_id_crosscheck;
 
--- ─── field disagreements ───────────────────────────────────────────────────
--- Warnings: both sides state a value and differ, and nothing says which is wrong --
--- the catalog's values are researched past OPDB on exactly these fields.
-INSERT INTO _external_data_source_findings BY NAME
-SELECT
-  'opdb' AS source,
-  'opdb-field-disagrees' AS rule,
-  'warning' AS severity,
-  opdb_id AS external_id,
-  'model' AS entity_type,
-  model_slug AS entity_public_id,
-  format('{}: {} is {} here but {} on OPDB',
-         model_slug, field, catalog_value, opdb_value) AS message,
-  'opdb_model_fields_disagreeing' AS detail_view
-FROM opdb_model_fields_disagreeing;
-
 -- ─── vocabulary ────────────────────────────────────────────────────────────
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
@@ -963,7 +923,6 @@ CREATE OR REPLACE VIEW opdb_summary AS
     FROM opdb_manufacturer_exceptions WHERE is_stale
   UNION ALL SELECT 'ipdb_crosscheck_' || classification, count(*)
     FROM opdb_ipdb_id_crosscheck GROUP BY classification
-  UNION ALL SELECT 'fields_disagreeing', count(*) FROM opdb_model_fields_disagreeing
   UNION ALL SELECT 'vocabulary_missing', count(*) FROM opdb_model_vocabulary_missing
   UNION ALL SELECT 'vocabulary_absent_values', count(*) FROM opdb_vocabulary_absent
   UNION ALL SELECT 'vocabulary_settled_stale', count(*)
@@ -980,7 +939,7 @@ CREATE OR REPLACE VIEW opdb_summary AS
     FROM external_data_source_findings_all WHERE source = 'opdb' AND dismissed
   ORDER BY metric;
 COMMENT ON VIEW opdb_summary IS
-  'Headline counts for the OPDB comparison — the unmatched sets by classification, the stale ids, the maker and field disagreements, and the totals both sides are measured against.';
+  'Headline counts for the OPDB comparison — the unmatched sets by classification, the stale ids, the maker disagreements, and the totals both sides are measured against. Field comparisons live in fields_summary.';
 
 -- Empty when healthy. Invariants of this layer, never findings about the data.
 CREATE OR REPLACE VIEW opdb_checks AS
@@ -1080,13 +1039,6 @@ CREATE OR REPLACE VIEW opdb_checks AS
   SELECT 'crosscheck_classification_unknown', classification
   FROM opdb_ipdb_id_crosscheck
   WHERE classification NOT IN ('disagrees', 'acquirable')
-
-  UNION ALL
-  -- The fields LATERAL names a closed set; a field added there without a message and
-  -- probe behind it should announce itself.
-  SELECT 'field_unknown', field
-  FROM opdb_model_fields_disagreeing
-  WHERE field NOT IN ('production_year', 'player_count', 'technology_generation', 'display_type')
 
   UNION ALL
   -- The carriage CASE has no ELSE; this turns an unhandled target_entity_type into a

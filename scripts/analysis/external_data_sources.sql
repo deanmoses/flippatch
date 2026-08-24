@@ -10,6 +10,7 @@
 
 .read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
 .read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
+.read ../flippatch/scripts/analysis/external_data_sources/fields.sql
 
 -- Every source's summary, source-labelled, in the one view the gated run prints. The
 -- per-source summaries already carry their findings rollups, worklist and coverage
@@ -23,6 +24,7 @@ CREATE OR REPLACE VIEW external_data_sources_summary AS
   SELECT * FROM (
               SELECT 'ipdb' AS source, metric, value FROM ipdb_summary
     UNION ALL SELECT 'opdb',           metric, value FROM opdb_summary
+    UNION ALL SELECT 'cross',          metric, value FROM fields_summary
   )
   ORDER BY source, metric;
 COMMENT ON VIEW external_data_sources_summary IS
