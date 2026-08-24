@@ -68,8 +68,8 @@ patches/          Data patches, each patch a NNNN-slug.yaml file
   shipped/        …applied to production, therefore immutable — archived, not re-validated
 schema/           patch.schema.json — structural validation
 scripts/          Python tooling (validate, lint, R2 push, agent-docs build)
-  analysis/       evidence.sql — the web-scrape cache as a queryable layer
-    external_data_sources/   IPDB/OPDB dumps compared against the live catalog
+  analysis/       evidence.sql + external_data_sources.sql — the two bridges an analysis reads
+    external_data_sources/   the comparison layer's internals, one file per source
 docs/             Documentation source files
 ```
 
@@ -103,18 +103,19 @@ Both paths resolve from the flipcommons checkout, which is where the runner work
 
 ### Comparing external data sources against the catalog
 
-`scripts/analysis/external_data_sources/` (this repo) is the **comparison layer**: it attaches pinexplore's `explore.duckdb` as `px` and compares what external data sources (IPDB, OPDB) hold against what the live catalog holds — the disagreements a data patch campaign is built to work down. To look at a source's findings, run its file directly — one file per source, and its prefix is the source name:
+`scripts/analysis/external_data_sources.sql` (this repo) is the **comparison layer**: it attaches pinexplore's `explore.duckdb` as `px` and compares what external data sources (IPDB, OPDB) hold against what the live catalog holds — the disagreements a data patch campaign is built to work down. To look at the findings, run it directly:
 
 ```bash
-make analyze FILE=scripts/analysis/external_data_sources/opdb.sql PREFIX=opdb
+make analyze FILE=scripts/analysis/external_data_sources.sql PREFIX=external_data_sources
 ```
 
-A campaign instead puts the `.read` in its own analysis file — each source file reads `bridge.sql` itself, so this one line brings the whole layer — and runs that file with `make analyze FILE=… PREFIX=…` as above:
+A campaign instead puts the `.read` in its own analysis file and runs that file with `make analyze FILE=… PREFIX=…` as above:
 
 ```sql
-.read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
-.read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
+.read ../flippatch/scripts/analysis/external_data_sources.sql
 ```
+
+The files under `external_data_sources/` are internals, split for editing; a session working one source deeply can read just that file (its prefix is the source name, e.g. `PREFIX=opdb`).
 
 What a session gets:
 
@@ -122,7 +123,7 @@ What a session gets:
 - **Wide worklists per rule** — each finding's `detail_view` names the view holding the full evidence (`ipdb_models_unmatched`, `opdb_ids_stale`, …), with classifications, candidate slugs, and counts that qualify them.
 - **Dismissals** — a finding adjudicated as permanently not-a-finding is appended to `_external_data_source_dismissals` in `bridge.sql`, with a date and a note recording why; dismissed findings leave the worklist but stay auditable in `external_data_source_findings_all`, and a dismissal that stops matching is reported as stale (someone fixed the finding — a success, never gated).
 - **`external_data_sources_context`** — the dump watermarks (Xantari snapshot dates, OPDB export), printed on every run, so "same query, newer dump" is distinguishable from a broken reproduction.
-- **`ipdb_summary` / `opdb_summary`** and **`*_checks`** — the per-source headline counts and the layer's own invariants; the gated `PREFIX=` run fails on any checks row, while a `Q=` query skips the checks entirely — its silence is not a pass, so only a gated run certifies the layer clean.
+- **`external_data_sources_summary`** (findings per source and severity — the headline), **`ipdb_summary` / `opdb_summary`** (per-source counts and coverage) and **`*_checks`** (the layer's own invariants); the gated `PREFIX=` run fails on any checks row, while a `Q=` query skips the checks entirely — its silence is not a pass, so only a gated run certifies the layer clean.
 
 The layer reads **only pinexplore's published marts** (`px.ipdb.*`, `px.opdb.*`, `px.ingest.*`); everything under `*_raw` / `*_stg` / `*_ref` is that repo's working material, and `external_data_sources_boundary_checks` fails the session on any view reaching past the mart. Source TEXT for citing a claim is a separate concern and stays in `evidence.sql`. Themes are deliberately not compared, and only one direction is: the catalog is a superset of every source, so "missing from the external source" is never a finding. The reasoning behind every rule lives in comments beside the SQL — read `bridge.sql`'s header first.
 
