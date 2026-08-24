@@ -427,46 +427,89 @@ COMMENT ON VIEW ipdb_people_unmatched IS
 -- is saying THIS machine is a conversion, a kit, or a retheme of something else.
 CREATE OR REPLACE VIEW _eds_ipdb_specialties AS
   SELECT
-    s.ipdb_id,
-    s.specialty,
-    s.target_entity_type,
-    s.target_value,
-    s.archive_source_url,
-    s.archive_capture_date,
-    m.id   AS model_id,
-    m.slug AS model_slug,
-    m.name AS model_name,
-    -- Resolved HERE, against the live catalog, because here is the only place it
-    -- can be. Pinexplore used to ship a flag saying whether a target existed, and
-    -- this read it rather than looking -- a claim about our database made by one
-    -- that cannot see it, and stale the moment we added the vocabulary. The
-    -- relationship types stay exempt: an edge type is neither a record that
-    -- resolves nor vocabulary we lack.
-    CASE
-      WHEN s.target_entity_type = 'model-relationship' THEN true
-      ELSE EXISTS (SELECT 1 FROM entity_subjects AS es
-                   WHERE es.subject_type = s.target_entity_type
-                     AND es.subject_public_id = s.target_value
-                     AND is_live(es.subject_status))
-    END AS target_exists,
-    CASE s.target_entity_type
-      WHEN 'reward-type'      THEN EXISTS (SELECT 1 FROM model_rewards AS r
-                                     WHERE r.model_id = m.id AND r.reward_type_slug = s.target_value)
-      WHEN 'tag'              THEN EXISTS (SELECT 1 FROM model_tags AS t
-                                     WHERE t.model_id = m.id AND t.tag_slug = s.target_value)
+    r.ipdb_id,
+    r.specialty,
+    r.target_entity_type,
+    r.target_value,
+    r.target_slug,
+    r.archive_source_url,
+    r.archive_capture_date,
+    r.model_id,
+    r.model_slug,
+    r.model_name,
+    -- Existence is `did the value land on a record`, which is now what
+    -- `target_slug` answers. The relationship types stay exempt: an edge type is
+    -- neither a record that resolves nor vocabulary we lack.
+    CASE WHEN r.target_entity_type = 'model-relationship' THEN true
+         ELSE r.target_slug IS NOT NULL END AS target_exists,
+    -- CARRIAGE IS ASKED OF `target_slug`, NOT of pinexplore's wording. The catalog
+    -- stores slugs on these join rows, so comparing IPDB's phrasing to them would
+    -- answer false for every alias-resolved target -- reporting a model as missing
+    -- a feature it demonstrably carries.
+    CASE r.target_entity_type
+      WHEN 'reward-type'      THEN EXISTS (SELECT 1 FROM model_rewards AS rw
+                                     WHERE rw.model_id = r.model_id AND rw.reward_type_slug = r.target_slug)
+      WHEN 'tag'              THEN EXISTS (SELECT 1 FROM model_tags AS tg
+                                     WHERE tg.model_id = r.model_id AND tg.tag_slug = r.target_slug)
       WHEN 'gameplay-feature' THEN EXISTS (SELECT 1 FROM model_gameplay_features AS g
-                                     WHERE g.model_id = m.id AND g.feature_slug = s.target_value)
-      WHEN 'game-format'      THEN m.game_format_slug IS NOT DISTINCT FROM s.target_value
-      WHEN 'cabinet'          THEN m.cabinet_slug     IS NOT DISTINCT FROM s.target_value
+                                     WHERE g.model_id = r.model_id AND g.feature_slug = r.target_slug)
+      -- `target_slug IS NOT NULL` GUARDS THESE TWO, and only these two. Vocabulary
+      -- that does not resolve cannot be carried, and `IS NOT DISTINCT FROM` says
+      -- the opposite when both sides are NULL -- every model with no game format
+      -- at all would read as carrying `Not A Pinball`. The EXISTS branches need no
+      -- guard: they compare inside a join and yield false against NULL.
+      WHEN 'game-format'      THEN r.target_slug IS NOT NULL
+                                     AND m_game_format_slug IS NOT DISTINCT FROM r.target_slug
+      WHEN 'cabinet'          THEN r.target_slug IS NOT NULL
+                                     AND m_cabinet_slug     IS NOT DISTINCT FROM r.target_slug
+      -- Structural, so it reads the raw value: a relationship type is not a record
+      -- and never resolves through `target_slug`.
       WHEN 'model-relationship' THEN EXISTS (SELECT 1 FROM model_edges AS e
-                                     WHERE e.model_id = m.id
-                                       AND e.relationship_type = s.target_value)
+                                     WHERE e.model_id = r.model_id
+                                       AND e.relationship_type = r.target_value)
       -- No ELSE: a target_entity_type nobody wrote a branch for lands NULL, which
       -- `specialty_carriage_unhandled` fails on. An ELSE false would report every such
       -- row as a gap instead, which is a wrong answer rather than a loud one.
     END AS carried
-  FROM px.ipdb.model_specialties AS s
-  LEFT JOIN models AS m ON m.ipdb_id = s.ipdb_id;
+  FROM (
+    SELECT
+      s.*,
+      m.id   AS model_id,
+      m.slug AS model_slug,
+      m.name AS model_name,
+      m.game_format_slug AS m_game_format_slug,
+      m.cabinet_slug     AS m_cabinet_slug,
+      -- THE CATALOG RECORD PINEXPLORE'S WORDING DENOTES, or NULL if none does.
+      --
+      -- Pinexplore does not translate our large vocabularies -- theme at 540 rows,
+      -- gameplay feature at 323 -- because both carry aliases, and matching a
+      -- source's wording to our slug is what those aliases are FOR. It ships
+      -- IPDB's phrasing (`Mechanical Backbox Animation`) and leaves the lookup to
+      -- us. This is that lookup. Without it every such target reads as vocabulary
+      -- we lack, which is how 15 assignments onto features we demonstrably hold
+      -- came to report as absent.
+      --
+      -- Three ways in, most specific first, so an exact public_id can never lose
+      -- to someone else's alias. LIMIT 1 with that ORDER BY makes the answer
+      -- deterministic rather than whichever row the scan reached first.
+      (SELECT es.subject_public_id
+       FROM entity_subjects AS es
+       WHERE es.subject_type = s.target_entity_type
+         AND is_live(es.subject_status)
+         AND (es.subject_public_id = s.target_value
+              OR lower(es.subject_name) = lower(s.target_value)
+              OR EXISTS (SELECT 1 FROM entity_aliases AS ea
+                         WHERE ea.entity_type = es.subject_type
+                           AND ea.entity_id = es.subject_id
+                           AND lower(ea.alias) = lower(s.target_value)))
+       ORDER BY CASE WHEN es.subject_public_id = s.target_value THEN 0
+                     WHEN lower(es.subject_name) = lower(s.target_value) THEN 1
+                     ELSE 2 END,
+                es.subject_public_id
+       LIMIT 1) AS target_slug
+    FROM px.ipdb.model_specialties AS s
+    LEFT JOIN models AS m ON m.ipdb_id = s.ipdb_id
+  ) AS r;
 
 -- WORKLIST — IPDB asserts a classification the catalog has the vocabulary for and the
 -- model does not carry.
