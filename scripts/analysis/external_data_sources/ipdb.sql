@@ -65,11 +65,12 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
 -- are what expose that: a representative slug is projected for the common single-
 -- candidate case, and `n_*_candidates > 1` says not to trust it.
 --
--- Representatives are `min` over the slug, companions `min_by` ON that slug -- never
--- `any_value`. Finding messages render these values and message is part of dismissal
--- identity, so a nondeterministic pick would lapse dismissals at random between runs;
--- and pairing `min` of one column with an independent aggregate of another could
--- describe two different models in one row. Slugs are unique, so no tie-breaking.
+-- Representatives are `min` over the slug, companions `first(x ORDER BY slug)` -- never
+-- `any_value`, which is nondeterministic (finding messages render these values, message
+-- is part of dismissal identity, so a random pick would lapse dismissals between runs),
+-- and never `min_by`, which skips rows whose VALUE is NULL and would pair the
+-- representative slug with another model's value. `first` ordered by the slug reads the
+-- representative row whole, its NULLs included. Slugs are unique, so no tie-breaking.
 CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
   WITH unmatched AS (
     SELECT * FROM _eds_ipdb_dump AS d
@@ -81,8 +82,8 @@ CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
     count(*) FILTER (WHERE m.ipdb_id IS NOT NULL)         AS n_linked_candidates,
     min(m.slug) FILTER (WHERE m.ipdb_id IS NULL)          AS unlinked_model_slug,
     min(m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL)      AS linked_model_slug,
-    min_by(m.ipdb_id, m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_ipdb_id,
-    min_by(m.production_year, m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_production_year
+    first(m.ipdb_id ORDER BY m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_ipdb_id,
+    first(m.production_year ORDER BY m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_production_year
   FROM unmatched AS u
   INNER JOIN models AS m
     ON name_norm(m.name) = name_norm(u.ipdb_name)
@@ -315,11 +316,11 @@ CREATE OR REPLACE VIEW corporate_entities_missing_ipdb_id AS
     SELECT
       name_norm(corporate_entity_name)  AS name_key,
       count(*)                          AS n_ipdb_matches,
-      -- `min_by` keyed on the id `min` picked, so the published pair names ONE IPDB
-      -- record -- and deterministically, for the dismissal-identity reason on
+      -- `first` ordered by the id `min` picked, so the published pair names ONE IPDB
+      -- record -- deterministically and NULLs included, for the reasons on
       -- `_eds_ipdb_candidates`.
       min(ipdb_corporate_entity_id)     AS ipdb_corporate_entity_id,
-      min_by(corporate_entity_text, ipdb_corporate_entity_id) AS ipdb_corporate_entity_text
+      first(corporate_entity_text ORDER BY ipdb_corporate_entity_id) AS ipdb_corporate_entity_text
     FROM px.ipdb.corporate_entities
     GROUP BY 1
   ) AS i ON i.name_key = name_norm(c.name)

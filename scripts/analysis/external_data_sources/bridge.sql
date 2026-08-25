@@ -37,6 +37,14 @@
 -- classification is exhaustive. Same line flipcommons' `audit.sql` draws between
 -- `audit_findings` and `audit_checks`.
 --
+-- FINDINGS ARE NEVER SILENTLY ADJUDICATED. A classification may be excluded from a
+-- findings INSERT only when the same situation is reported by another rule -- a
+-- structural fact the exclusion comment must name -- never because a session judged
+-- the class permanently fine. "The catalog is right about these" is a data-quality
+-- adjudication; it belongs to Moses, and its instrument is the per-finding dismissal
+-- below, dated and noted. A session that believes a whole class needs no findings
+-- surfaces that belief as a proposal, not as a WHERE clause.
+--
 -- WHERE THE PATHS RESOLVE. Every path is relative to the FLIPCOMMONS checkout, because
 -- that is where the analysis runner `cd`s before invoking DuckDB -- the same frame
 -- `catalog.sql`'s own literal 'backend/db.analytics.duckdb' is in. `ATTACH` takes a

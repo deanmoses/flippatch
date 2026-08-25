@@ -71,11 +71,12 @@ CREATE OR REPLACE VIEW _eds_opdb_dump AS
 -- Aggregated rather than joined through, because a name and maker can answer to more
 -- than one model and joining would emit the listing once per candidate.
 --
--- Representatives are `min` over the slug, companions `min_by` ON that slug -- never
--- `any_value`. Finding messages render these values and message is part of dismissal
--- identity, so a nondeterministic pick would lapse dismissals at random between runs;
--- and pairing `min` of one column with an independent aggregate of another could
--- describe two different models in one row. Slugs are unique, so no tie-breaking.
+-- Representatives are `min` over the slug, companions `first(x ORDER BY slug)` -- never
+-- `any_value`, which is nondeterministic (finding messages render these values, message
+-- is part of dismissal identity, so a random pick would lapse dismissals between runs),
+-- and never `min_by`, which skips rows whose VALUE is NULL and would pair the
+-- representative slug with another model's value. `first` ordered by the slug reads the
+-- representative row whole, its NULLs included. Slugs are unique, so no tie-breaking.
 CREATE OR REPLACE VIEW _eds_opdb_candidates AS
   WITH unmatched AS (
     SELECT * FROM _eds_opdb_dump AS d
@@ -87,8 +88,8 @@ CREATE OR REPLACE VIEW _eds_opdb_candidates AS
     count(*) FILTER (WHERE m.opdb_id IS NOT NULL)         AS n_linked_candidates,
     min(m.slug) FILTER (WHERE m.opdb_id IS NULL)          AS unlinked_model_slug,
     min(m.slug) FILTER (WHERE m.opdb_id IS NOT NULL)      AS linked_model_slug,
-    min_by(m.opdb_id, m.slug) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_opdb_id,
-    min_by(m.production_year, m.slug) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_production_year
+    first(m.opdb_id ORDER BY m.slug) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_opdb_id,
+    first(m.production_year ORDER BY m.slug) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_production_year
   FROM unmatched AS u
   INNER JOIN models AS m
     ON name_norm(m.name) = name_norm(u.opdb_name)
@@ -238,9 +239,10 @@ COMMENT ON VIEW opdb_ids_stale IS
 -- ONE distinct title across the tiers is decisive, and the verdict columns fill only
 -- then -- split by whether that title already links a group -- so a consumer can
 -- coalesce them over weaker evidence and never publish half a verdict. MORE than one
--- title means the catalog deliberately splits what OPDB groups; the verdict columns
--- stay NULL and `machines_title_slugs` shows the whole split rather than an arbitrary
--- pick papering over it.
+-- title means the two sides DISAGREE about grouping -- which side is right is
+-- adjudicated per group, never assumed; see `opdb_title_splits` -- so the verdict
+-- columns stay NULL and `machines_title_slugs` shows the whole split rather than an
+-- arbitrary pick papering over it.
 CREATE OR REPLACE VIEW _eds_opdb_group_titles AS
   WITH machine_titles AS (
     SELECT om.title_opdb_id, t.slug AS title_slug, t.opdb_id AS title_group_opdb_id
@@ -289,13 +291,14 @@ CREATE OR REPLACE VIEW _eds_opdb_group_titles AS
 -- answer. A group usually goes unmatched for the same reason its machines do: a
 -- release newer than the catalog's last OPDB acquisition.
 --
--- `split_across_titles` is the one class with no finding, same species as
--- `moved_successor` on the model side: OPDB groups for tournament equivalence what the
--- catalog correctly holds as separate titles ("Family Guy / Shrek"), so the row is
--- permanent, correct on our side, and actionable by nobody -- creating a combo title
--- is precisely the wrong response. It stays visible here, `machines_title_slugs`
--- naming the titles, and outranks every other class: the machines' own split verdict
--- makes any name-route reading of the group noise.
+-- `split_across_titles` outranks every other class -- the machines' own split verdict
+-- makes any name-route reading of the group noise -- and asserts only DISAGREEMENT:
+-- OPDB groups machines the catalog holds under more than one title. Which side is
+-- right is adjudicated per group, never assumed. A tournament combo ("Family Guy /
+-- Shrek") is a correct catalog split, but the identical signature is produced by a
+-- misfiled model or a wrong tier-2 inference, so an `absent` finding (create the
+-- combo title) would be exactly wrong and a blanket all-clear would be too. The
+-- finding is emitted at the split grain from `opdb_title_splits` below.
 CREATE OR REPLACE VIEW opdb_titles_unmatched AS
   SELECT
     ot.opdb_id,
@@ -324,11 +327,11 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
       ot2.opdb_id,
       count(*) FILTER (WHERE t.opdb_id IS NULL)         AS n_unlinked_candidates,
       count(*) FILTER (WHERE t.opdb_id IS NOT NULL)     AS n_linked_candidates,
-      -- `min`/`min_by` for the same determinism-and-coherence reasons as
+      -- `min` and `first(ORDER BY)` for the same determinism-and-coherence reasons as
       -- `_eds_opdb_candidates`.
       min(t.slug) FILTER (WHERE t.opdb_id IS NULL)      AS unlinked_title_slug,
       min(t.slug) FILTER (WHERE t.opdb_id IS NOT NULL)  AS linked_title_slug,
-      min_by(t.opdb_id, t.slug) FILTER (WHERE t.opdb_id IS NOT NULL) AS linked_title_opdb_id
+      first(t.opdb_id ORDER BY t.slug) FILTER (WHERE t.opdb_id IS NOT NULL) AS linked_title_opdb_id
     FROM px.opdb.titles AS ot2
     INNER JOIN titles AS t ON name_norm(t.name) = name_norm(ot2.name)
     WHERE NOT EXISTS (SELECT 1 FROM titles AS x WHERE x.opdb_id = ot2.opdb_id)
@@ -336,7 +339,33 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
   ) AS c USING (opdb_id)
   WHERE NOT EXISTS (SELECT 1 FROM titles AS t WHERE t.opdb_id = ot.opdb_id);
 COMMENT ON VIEW opdb_titles_unmatched IS
-  'Worklist — one row per OPDB machine group no live title carries the id of, classified split_across_titles / catalog_holds_unlinked / possible_duplicate / absent. The group''s own machines settle the title where they can (split_across_titles means the catalog correctly splits the group — no finding); a name-only search is the fallback. Rows are expected.';
+  'Worklist — one row per OPDB machine group no live title carries the id of, classified split_across_titles / catalog_holds_unlinked / possible_duplicate / absent. The group''s own machines settle the title where they can (split_across_titles means they reach more than one title — reported from opdb_title_splits); a name-only search is the fallback. Rows are expected.';
+
+-- WORKLIST — every OPDB group whose machines the catalog holds under more than one
+-- title, MATCHED groups included.
+--
+-- The one split-grain readout. `opdb_titles_unmatched` classifies its rows
+-- `split_across_titles`, but a matched group can split too -- its id sits on one
+-- title while its machines resolve to others -- and the unmatched worklist never
+-- looks at those. The signature proves only that the two sides disagree about
+-- grouping; which side is right is adjudicated per group, by a person: a tournament
+-- combo ("Family Guy / Shrek") is a correct catalog split to dismiss, but the same
+-- rows have surfaced one clone family filed two different ways (Eight Ball Deluxe)
+-- and two unrelated namesakes sharing a title (The Games) -- catalog defects no
+-- other rule reports.
+CREATE OR REPLACE VIEW opdb_title_splits AS
+  SELECT
+    g.opdb_id,
+    ot.name AS opdb_title_name,
+    t.slug  AS matched_title_slug,
+    g.n_machines_title_slugs,
+    g.machines_title_slugs
+  FROM _eds_opdb_group_titles AS g
+  INNER JOIN px.opdb.titles AS ot USING (opdb_id)
+  LEFT JOIN titles AS t ON t.opdb_id = g.opdb_id
+  WHERE g.n_machines_title_slugs > 1;
+COMMENT ON VIEW opdb_title_splits IS
+  'Worklist — one row per OPDB machine group whose machines resolve to more than one catalog title, matched groups included, with the linked title (if any) and every title the machines reach. A grouping disagreement to adjudicate per group: a correct catalog split gets dismissed, a misfiled model gets fixed. Rows are expected.';
 
 -- WORKLIST — a title citing a group id the dump no longer serves.
 --
@@ -503,11 +532,11 @@ CREATE OR REPLACE VIEW manufacturers_missing_opdb_id AS
     SELECT
       name_norm(name)              AS name_key,
       count(DISTINCT opdb_manufacturer_id) AS n_opdb_matches,
-      -- `min_by` keyed on the id `min` picked, so the published pair names ONE OPDB
-      -- record -- and deterministically, for the dismissal-identity reason on
+      -- `first` ordered by the id `min` picked, so the published pair names ONE OPDB
+      -- record -- deterministically and NULLs included, for the reasons on
       -- `_eds_opdb_candidates`.
       min(opdb_manufacturer_id)    AS opdb_manufacturer_id,
-      min_by(name, opdb_manufacturer_id) AS opdb_name
+      first(name ORDER BY opdb_manufacturer_id) AS opdb_name
     FROM px.opdb.manufacturers
     GROUP BY 1
   ) AS i ON i.name_key = name_norm(f.name)
@@ -770,11 +799,10 @@ SELECT
 FROM opdb_models_unmatched
 WHERE classification <> 'moved_successor';
 
--- `split_across_titles` is excluded, not downgraded, for the same reason
--- `moved_successor` is above: there is nothing for anyone to do -- the catalog
--- correctly splits what OPDB groups -- and an `absent` finding here would tell an
--- operator to create a combo title, which is precisely wrong. It stays visible in the
--- wide view.
+-- `split_across_titles` is excluded HERE only because its finding is emitted at the
+-- split grain below, from `opdb_title_splits` -- which also covers the matched groups
+-- this worklist cannot see. Reported elsewhere, like `moved_successor`; never
+-- silently adjudicated.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
@@ -804,6 +832,29 @@ SELECT
   'opdb_titles_unmatched' AS detail_view
 FROM opdb_titles_unmatched
 WHERE classification <> 'split_across_titles';
+
+-- ─── grouping splits ───────────────────────────────────────────────────────
+-- One rule over matched and unmatched groups alike. A split is a live disagreement
+-- until a person adjudicates the group: dismiss it where the catalog's split is right
+-- (a tournament combo), fix the records where it is not (a misfiled model, an
+-- inconsistent clone filing). Nothing here presumes either verdict.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  'opdb' AS source,
+  'opdb-title-split-across-titles' AS rule,
+  'warning' AS severity,
+  opdb_id AS external_id,
+  CASE WHEN matched_title_slug IS NOT NULL THEN 'title' END AS entity_type,
+  matched_title_slug AS entity_public_id,
+  -- The slug list is sorted at the source, so the message is deterministic.
+  format('OPDB group {} "{}" holds machines the catalog files across {} titles ({}){}',
+         opdb_id, coalesce(opdb_title_name, '?'), n_machines_title_slugs,
+         array_to_string(machines_title_slugs, ', '),
+         CASE WHEN matched_title_slug IS NOT NULL
+              THEN '; the group id is linked by ' || matched_title_slug
+              ELSE '; no title links the group id' END) AS message,
+  'opdb_title_splits' AS detail_view
+FROM opdb_title_splits;
 
 -- ─── stale ids ─────────────────────────────────────────────────────────────
 -- Three of the four classes are errors -- the changelog CONFIRMS the catalog is citing
@@ -1002,6 +1053,7 @@ CREATE OR REPLACE VIEW opdb_summary AS
   FROM opdb_models_unmatched GROUP BY classification
   UNION ALL SELECT 'unmatched_titles_' || classification, count(*)
     FROM opdb_titles_unmatched GROUP BY classification
+  UNION ALL SELECT 'title_splits', count(*) FROM opdb_title_splits
   UNION ALL SELECT 'ids_stale_' || classification, count(*)
     FROM opdb_ids_stale GROUP BY classification
   UNION ALL SELECT 'title_ids_stale', count(*) FROM opdb_title_ids_stale
@@ -1100,8 +1152,9 @@ CREATE OR REPLACE VIEW opdb_checks AS
   UNION ALL
   -- The CASE precedence: a split group's machines usually also name-match something,
   -- so a branch reordered above `split_across_titles` would silently demote these to a
-  -- name-route class -- and its finding would tell an operator to act on a group the
-  -- catalog is right about. Same guard as `moved_successor_misclassified`.
+  -- name-route class -- an `absent` finding would tell an operator to create a combo
+  -- title, beside the split finding already reporting the group. Same guard as
+  -- `moved_successor_misclassified`.
   SELECT 'split_across_titles_misclassified', u.opdb_id
   FROM opdb_titles_unmatched AS u
   WHERE u.n_machines_title_slugs > 1
