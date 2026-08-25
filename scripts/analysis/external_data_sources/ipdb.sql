@@ -64,6 +64,12 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
 -- than one model and joining would emit the listing once per candidate. The two counts
 -- are what expose that: a representative slug is projected for the common single-
 -- candidate case, and `n_*_candidates > 1` says not to trust it.
+--
+-- Representatives are `min` over the slug, companions `min_by` ON that slug -- never
+-- `any_value`. Finding messages render these values and message is part of dismissal
+-- identity, so a nondeterministic pick would lapse dismissals at random between runs;
+-- and pairing `min` of one column with an independent aggregate of another could
+-- describe two different models in one row. Slugs are unique, so no tie-breaking.
 CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
   WITH unmatched AS (
     SELECT * FROM _eds_ipdb_dump AS d
@@ -71,12 +77,12 @@ CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
   )
   SELECT
     u.ipdb_id,
-    count(*) FILTER (WHERE m.ipdb_id IS NULL)                        AS n_unlinked_candidates,
-    count(*) FILTER (WHERE m.ipdb_id IS NOT NULL)                    AS n_linked_candidates,
-    any_value(m.slug)    FILTER (WHERE m.ipdb_id IS NULL)            AS unlinked_model_slug,
-    any_value(m.slug)    FILTER (WHERE m.ipdb_id IS NOT NULL)        AS linked_model_slug,
-    any_value(m.ipdb_id) FILTER (WHERE m.ipdb_id IS NOT NULL)        AS linked_model_ipdb_id,
-    any_value(m.production_year) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_production_year
+    count(*) FILTER (WHERE m.ipdb_id IS NULL)             AS n_unlinked_candidates,
+    count(*) FILTER (WHERE m.ipdb_id IS NOT NULL)         AS n_linked_candidates,
+    min(m.slug) FILTER (WHERE m.ipdb_id IS NULL)          AS unlinked_model_slug,
+    min(m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL)      AS linked_model_slug,
+    min_by(m.ipdb_id, m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_ipdb_id,
+    min_by(m.production_year, m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_production_year
   FROM unmatched AS u
   INNER JOIN models AS m
     ON name_norm(m.name) = name_norm(u.ipdb_name)
@@ -309,8 +315,11 @@ CREATE OR REPLACE VIEW corporate_entities_missing_ipdb_id AS
     SELECT
       name_norm(corporate_entity_name)  AS name_key,
       count(*)                          AS n_ipdb_matches,
+      -- `min_by` keyed on the id `min` picked, so the published pair names ONE IPDB
+      -- record -- and deterministically, for the dismissal-identity reason on
+      -- `_eds_ipdb_candidates`.
       min(ipdb_corporate_entity_id)     AS ipdb_corporate_entity_id,
-      any_value(corporate_entity_text)  AS ipdb_corporate_entity_text
+      min_by(corporate_entity_text, ipdb_corporate_entity_id) AS ipdb_corporate_entity_text
     FROM px.ipdb.corporate_entities
     GROUP BY 1
   ) AS i ON i.name_key = name_norm(c.name)
@@ -424,7 +433,7 @@ COMMENT ON VIEW ipdb_people_unmatched IS
 --
 -- Coverage is archive-sourced and therefore partial: only a small fraction of IPDB
 -- listings have a cached page to read a Specialty off. A model with no row here has not
--- been checked, not been cleared -- and `specialty_models_covered` in the summary is how
+-- been checked, not been cleared -- and `specialty_listings_covered` in the summary is how
 -- many have, which is the number to read rather than one written down here.
 
 -- One row per (IPDB model, specialty), landed on the catalog model and answered twice
@@ -885,8 +894,12 @@ FROM ipdb_specialty_vocabulary_absent;
 
 -- ═══ SUMMARY & CHECKS ══════════════════════════════════════════════════════
 
+-- Metric names carry their grain, per the bridge header. The specialty family is a
+-- PARTITION of `specialty_assignments`: carried + missing + vocabulary-absent +
+-- on-unmatched-listings sums to it exactly, so a reader who notices a gap has found a
+-- bug, not an undocumented exclusion.
 CREATE OR REPLACE VIEW ipdb_summary AS
-  SELECT 'unmatched_' || classification AS metric, count(*) AS value
+  SELECT 'unmatched_listings_' || classification AS metric, count(*) AS value
   FROM ipdb_models_unmatched GROUP BY classification
   UNION ALL SELECT 'catalog_ids_not_in_dump', count(*) FROM ipdb_ids_not_in_dump
   UNION ALL SELECT 'corporate_entity_' || classification, count(*)
@@ -900,10 +913,22 @@ CREATE OR REPLACE VIEW ipdb_summary AS
   UNION ALL SELECT 'dump_credits', count(*) FROM px.ipdb.model_credits
   UNION ALL SELECT 'catalog_models_with_ipdb_id', count(*) FROM models WHERE ipdb_id IS NOT NULL
   UNION ALL SELECT 'specialty_assignments', count(*) FROM px.ipdb.model_specialties
-  UNION ALL SELECT 'specialty_models_covered', count(DISTINCT ipdb_id) FROM px.ipdb.model_specialties
-  UNION ALL SELECT 'specialty_carried', count(*) FROM _eds_ipdb_specialties WHERE carried
-  UNION ALL SELECT 'specialty_missing', count(*) FROM ipdb_model_specialties_missing
-  UNION ALL SELECT 'specialty_vocabulary_absent', count(*) FROM ipdb_specialty_vocabulary_absent
+  UNION ALL SELECT 'specialty_listings_covered', count(DISTINCT ipdb_id) FROM px.ipdb.model_specialties
+  -- The coverage cliff, beside the covered count where it cannot be missed: specialty
+  -- data is archive-sourced and reaches ~2% of listings. A model with no row has NOT
+  -- BEEN CHECKED, not been cleared -- without this number, the small `missing` count
+  -- reads as near-complete classification, which inverts the truth.
+  UNION ALL SELECT 'specialty_listings_unchecked', count(*) FROM px.ipdb.models AS im
+    WHERE NOT EXISTS (SELECT 1 FROM px.ipdb.model_specialties AS s WHERE s.ipdb_id = im.ipdb_id)
+  UNION ALL SELECT 'specialty_carried_assignments', count(*) FROM _eds_ipdb_specialties WHERE carried
+  UNION ALL SELECT 'specialty_missing_assignments', count(*) FROM ipdb_model_specialties_missing
+  UNION ALL SELECT 'specialty_vocabulary_absent_values', count(*) FROM ipdb_specialty_vocabulary_absent
+  UNION ALL SELECT 'specialty_vocabulary_absent_assignments', count(*)
+    FROM _eds_ipdb_specialties WHERE model_slug IS NOT NULL AND NOT target_exists
+  -- The named remainder: assignments on listings no model matches, already reported
+  -- under `ipdb-model-*` and deliberately excluded from every specialty worklist.
+  UNION ALL SELECT 'specialty_assignments_on_unmatched_listings', count(*)
+    FROM _eds_ipdb_specialties WHERE model_slug IS NULL
   -- The findings rollup, so `run` shows the headline without a second query. Counted off
   -- the live worklist, so a dismissal is reflected here too.
   UNION ALL SELECT 'FINDINGS errors', count(*)
@@ -1048,6 +1073,33 @@ CREATE OR REPLACE VIEW ipdb_checks AS
   -- table were emptied or the join silently produced nothing, every specialty view
   -- would go quiet and read exactly like a catalog that already carries everything.
   SELECT 'specialty_rules_missing', 'px.ipdb.specialties is empty'
-  WHERE (SELECT count(*) FROM px.ipdb.specialties) = 0;
+  WHERE (SELECT count(*) FROM px.ipdb.specialties) = 0
+
+  UNION ALL
+  -- The summary PROMISES these partitions ("a reader who notices a gap has found a
+  -- bug"), so they are asserted, not just stated: the next specialty bucket added
+  -- without joining the sum breaks here, loudly, instead of breaking the promise.
+  SELECT 'specialty_assignment_partition_broken',
+         format('carried {} + missing {} + vocab-absent {} + on-unmatched {} <> assignments {}',
+                carried, missing, absent, unmatched, total)
+  FROM (SELECT
+          (SELECT count(*) FROM _eds_ipdb_specialties WHERE carried) AS carried,
+          (SELECT count(*) FROM ipdb_model_specialties_missing) AS missing,
+          (SELECT count(*) FROM _eds_ipdb_specialties
+             WHERE model_slug IS NOT NULL AND NOT target_exists) AS absent,
+          (SELECT count(*) FROM _eds_ipdb_specialties WHERE model_slug IS NULL) AS unmatched,
+          (SELECT count(*) FROM px.ipdb.model_specialties) AS total)
+  WHERE carried + missing + absent + unmatched <> total
+
+  UNION ALL
+  SELECT 'specialty_coverage_partition_broken',
+         format('covered {} + unchecked {} <> dump models {}', covered, unchecked, total)
+  FROM (SELECT
+          (SELECT count(DISTINCT ipdb_id) FROM px.ipdb.model_specialties) AS covered,
+          (SELECT count(*) FROM px.ipdb.models AS im
+             WHERE NOT EXISTS (SELECT 1 FROM px.ipdb.model_specialties AS s
+                               WHERE s.ipdb_id = im.ipdb_id)) AS unchecked,
+          (SELECT count(*) FROM px.ipdb.models) AS total)
+  WHERE covered + unchecked <> total;
 COMMENT ON VIEW ipdb_checks IS
   'Empty when healthy — grain, closed vocabulary and duplicate-list anchors for the IPDB comparison, plus the specialty-target resolution pinexplore delegates here.';

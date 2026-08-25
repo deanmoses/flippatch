@@ -70,6 +70,12 @@ CREATE OR REPLACE VIEW _eds_opdb_dump AS
 --
 -- Aggregated rather than joined through, because a name and maker can answer to more
 -- than one model and joining would emit the listing once per candidate.
+--
+-- Representatives are `min` over the slug, companions `min_by` ON that slug -- never
+-- `any_value`. Finding messages render these values and message is part of dismissal
+-- identity, so a nondeterministic pick would lapse dismissals at random between runs;
+-- and pairing `min` of one column with an independent aggregate of another could
+-- describe two different models in one row. Slugs are unique, so no tie-breaking.
 CREATE OR REPLACE VIEW _eds_opdb_candidates AS
   WITH unmatched AS (
     SELECT * FROM _eds_opdb_dump AS d
@@ -77,12 +83,12 @@ CREATE OR REPLACE VIEW _eds_opdb_candidates AS
   )
   SELECT
     u.opdb_id,
-    count(*) FILTER (WHERE m.opdb_id IS NULL)                 AS n_unlinked_candidates,
-    count(*) FILTER (WHERE m.opdb_id IS NOT NULL)             AS n_linked_candidates,
-    any_value(m.slug)    FILTER (WHERE m.opdb_id IS NULL)     AS unlinked_model_slug,
-    any_value(m.slug)    FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_slug,
-    any_value(m.opdb_id) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_opdb_id,
-    any_value(m.production_year) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_production_year
+    count(*) FILTER (WHERE m.opdb_id IS NULL)             AS n_unlinked_candidates,
+    count(*) FILTER (WHERE m.opdb_id IS NOT NULL)         AS n_linked_candidates,
+    min(m.slug) FILTER (WHERE m.opdb_id IS NULL)          AS unlinked_model_slug,
+    min(m.slug) FILTER (WHERE m.opdb_id IS NOT NULL)      AS linked_model_slug,
+    min_by(m.opdb_id, m.slug) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_opdb_id,
+    min_by(m.production_year, m.slug) FILTER (WHERE m.opdb_id IS NOT NULL) AS linked_model_production_year
   FROM unmatched AS u
   INNER JOIN models AS m
     ON name_norm(m.name) = name_norm(u.opdb_name)
@@ -163,10 +169,10 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
   LEFT JOIN models AS parent       ON parent.opdb_id = d.opdb_variant_of
   LEFT JOIN titles AS linked_title ON linked_title.opdb_id = d.title_opdb_id
   -- A scalar subquery, so it cannot fan the grain out even if several stale ids moved
-  -- onto one successor (a merge); `any_value` then picks a representative and the
-  -- others are still visible in `opdb_ids_stale`.
+  -- onto one successor (a merge); `min` then picks a deterministic representative and
+  -- the others are still visible in `opdb_ids_stale`.
   LEFT JOIN LATERAL (
-    SELECT any_value(m.slug) AS model_slug
+    SELECT min(m.slug) AS model_slug
     FROM models AS m
     INNER JOIN px.opdb.model_ids AS i ON i.opdb_id = m.opdb_id
     WHERE i.status = 'moved' AND i.current_opdb_id = d.opdb_id
@@ -216,12 +222,80 @@ CREATE OR REPLACE VIEW opdb_ids_stale AS
 COMMENT ON VIEW opdb_ids_stale IS
   'Worklist — one row per live model whose opdb_id is absent from the published dump, classified moved / deleted / container / unexplained via OPDB''s own id changelog, with the successor id and any model already linking it. Rows are expected.';
 
--- WORKLIST — OPDB machine groups with no catalog title, name-matched for candidates.
+-- The titles an OPDB group's OWN machines point at -- the decisive evidence for
+-- matching a group to a title, one row per group with any machine verdict.
 --
--- Group ids are their own namespace (`titles.opdb_id`, never `models.opdb_id`), and a
--- group has no maker, so the candidate search is name-only -- weaker than the model
--- search above, which the counts qualify. A group usually goes unmatched for the same
--- reason its machines do: a release newer than the catalog's last OPDB acquisition.
+-- A group has no maker, so matching its bare name is weak: a name can answer to
+-- several titles, and only a machine's maker tells them apart (two catalog titles
+-- answer to "Top Hand", and the name route once proposed the wrong one). But the group
+-- HAS machines, and where those resolve to catalog models, the models' own titles
+-- settle what the group is. Two evidence tiers feed the verdict: a LINKED machine's
+-- title, and the title of an unmatched machine whose name-and-maker search resolved
+-- UNIQUELY -- exactly one unlinked candidate AND no linked one, because a linked
+-- candidate means the same name and maker already answer to a different machine, and
+-- the resolution is not unique at all. That gate is written here and nowhere else.
+--
+-- ONE distinct title across the tiers is decisive, and the verdict columns fill only
+-- then -- split by whether that title already links a group -- so a consumer can
+-- coalesce them over weaker evidence and never publish half a verdict. MORE than one
+-- title means the catalog deliberately splits what OPDB groups; the verdict columns
+-- stay NULL and `machines_title_slugs` shows the whole split rather than an arbitrary
+-- pick papering over it.
+CREATE OR REPLACE VIEW _eds_opdb_group_titles AS
+  WITH machine_titles AS (
+    SELECT om.title_opdb_id, t.slug AS title_slug, t.opdb_id AS title_group_opdb_id
+    FROM px.opdb.models AS om
+    INNER JOIN models AS m ON m.opdb_id = om.opdb_id
+    INNER JOIN titles AS t ON t.id = m.title_id
+    UNION
+    SELECT om.title_opdb_id, t.slug, t.opdb_id
+    FROM px.opdb.models AS om
+    INNER JOIN _eds_opdb_candidates AS c
+      ON  c.opdb_id = om.opdb_id
+      AND c.n_unlinked_candidates = 1
+      AND c.n_linked_candidates = 0
+    INNER JOIN models AS m ON m.slug = c.unlinked_model_slug
+    INNER JOIN titles AS t ON t.id = m.title_id
+  )
+  SELECT
+    opdb_id,
+    n_machines_title_slugs,
+    machines_title_slugs,
+    CASE WHEN n_machines_title_slugs = 1 AND only_title_group_opdb_id IS NULL
+         THEN only_title_slug END AS unlinked_title_slug,
+    CASE WHEN n_machines_title_slugs = 1 AND only_title_group_opdb_id IS NOT NULL
+         THEN only_title_slug END AS linked_title_slug,
+    CASE WHEN n_machines_title_slugs = 1
+         THEN only_title_group_opdb_id END AS linked_title_opdb_id
+  FROM (
+    -- The UNION above dedupes whole rows and a slug names exactly one title, so when
+    -- one distinct slug survives there is exactly one row, and `min` of each column
+    -- reads that row whole -- the published pair cannot mix two titles.
+    SELECT
+      title_opdb_id                        AS opdb_id,
+      count(DISTINCT title_slug)           AS n_machines_title_slugs,
+      list_sort(list(DISTINCT title_slug)) AS machines_title_slugs,
+      min(title_slug)                      AS only_title_slug,
+      min(title_group_opdb_id)             AS only_title_group_opdb_id
+    FROM machine_titles
+    GROUP BY title_opdb_id
+  );
+
+-- WORKLIST — OPDB machine groups with no catalog title, classified on two evidence
+-- routes: what the group's own machines say (`_eds_opdb_group_titles` above, decisive
+-- wherever it speaks) and, below that, a name-only candidate search whose counts
+-- qualify it. Precedence is the coalesce order -- the machine route's verdict columns
+-- fill only when decisive, so each column takes the strongest route that has an
+-- answer. A group usually goes unmatched for the same reason its machines do: a
+-- release newer than the catalog's last OPDB acquisition.
+--
+-- `split_across_titles` is the one class with no finding, same species as
+-- `moved_successor` on the model side: OPDB groups for tournament equivalence what the
+-- catalog correctly holds as separate titles ("Family Guy / Shrek"), so the row is
+-- permanent, correct on our side, and actionable by nobody -- creating a combo title
+-- is precisely the wrong response. It stays visible here, `machines_title_slugs`
+-- naming the titles, and outranks every other class: the machines' own split verdict
+-- makes any name-route reading of the group noise.
 CREATE OR REPLACE VIEW opdb_titles_unmatched AS
   SELECT
     ot.opdb_id,
@@ -229,24 +303,32 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
     ot.year        AS opdb_year,
     ot.n_models    AS n_opdb_models,
     CASE
-      WHEN c.n_unlinked_candidates > 0 THEN 'catalog_holds_unlinked'
-      WHEN c.n_linked_candidates > 0   THEN 'possible_duplicate'
-      ELSE                                  'absent'
+      WHEN md.n_machines_title_slugs > 1      THEN 'split_across_titles'
+      WHEN md.unlinked_title_slug IS NOT NULL THEN 'catalog_holds_unlinked'
+      WHEN md.linked_title_slug IS NOT NULL   THEN 'possible_duplicate'
+      WHEN c.n_unlinked_candidates > 0        THEN 'catalog_holds_unlinked'
+      WHEN c.n_linked_candidates > 0          THEN 'possible_duplicate'
+      ELSE                                         'absent'
     END            AS classification,
-    c.unlinked_title_slug,
-    c.linked_title_slug,
-    c.linked_title_opdb_id,
-    coalesce(c.n_unlinked_candidates, 0) AS n_unlinked_candidates,
-    coalesce(c.n_linked_candidates, 0)   AS n_linked_candidates
+    coalesce(md.unlinked_title_slug, c.unlinked_title_slug)   AS unlinked_title_slug,
+    coalesce(md.linked_title_slug, c.linked_title_slug)       AS linked_title_slug,
+    coalesce(md.linked_title_opdb_id, c.linked_title_opdb_id) AS linked_title_opdb_id,
+    md.machines_title_slugs,
+    coalesce(md.n_machines_title_slugs, 0) AS n_machines_title_slugs,
+    coalesce(c.n_unlinked_candidates, 0)   AS n_unlinked_candidates,
+    coalesce(c.n_linked_candidates, 0)     AS n_linked_candidates
   FROM px.opdb.titles AS ot
+  LEFT JOIN _eds_opdb_group_titles AS md USING (opdb_id)
   LEFT JOIN (
     SELECT
       ot2.opdb_id,
-      count(*) FILTER (WHERE t.opdb_id IS NULL)                 AS n_unlinked_candidates,
-      count(*) FILTER (WHERE t.opdb_id IS NOT NULL)             AS n_linked_candidates,
-      any_value(t.slug)    FILTER (WHERE t.opdb_id IS NULL)     AS unlinked_title_slug,
-      any_value(t.slug)    FILTER (WHERE t.opdb_id IS NOT NULL) AS linked_title_slug,
-      any_value(t.opdb_id) FILTER (WHERE t.opdb_id IS NOT NULL) AS linked_title_opdb_id
+      count(*) FILTER (WHERE t.opdb_id IS NULL)         AS n_unlinked_candidates,
+      count(*) FILTER (WHERE t.opdb_id IS NOT NULL)     AS n_linked_candidates,
+      -- `min`/`min_by` for the same determinism-and-coherence reasons as
+      -- `_eds_opdb_candidates`.
+      min(t.slug) FILTER (WHERE t.opdb_id IS NULL)      AS unlinked_title_slug,
+      min(t.slug) FILTER (WHERE t.opdb_id IS NOT NULL)  AS linked_title_slug,
+      min_by(t.opdb_id, t.slug) FILTER (WHERE t.opdb_id IS NOT NULL) AS linked_title_opdb_id
     FROM px.opdb.titles AS ot2
     INNER JOIN titles AS t ON name_norm(t.name) = name_norm(ot2.name)
     WHERE NOT EXISTS (SELECT 1 FROM titles AS x WHERE x.opdb_id = ot2.opdb_id)
@@ -254,7 +336,7 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
   ) AS c USING (opdb_id)
   WHERE NOT EXISTS (SELECT 1 FROM titles AS t WHERE t.opdb_id = ot.opdb_id);
 COMMENT ON VIEW opdb_titles_unmatched IS
-  'Worklist — one row per OPDB machine group no live title carries the id of, classified catalog_holds_unlinked / possible_duplicate / absent on a name-only search. Rows are expected.';
+  'Worklist — one row per OPDB machine group no live title carries the id of, classified split_across_titles / catalog_holds_unlinked / possible_duplicate / absent. The group''s own machines settle the title where they can (split_across_titles means the catalog correctly splits the group — no finding); a name-only search is the fallback. Rows are expected.';
 
 -- WORKLIST — a title citing a group id the dump no longer serves.
 --
@@ -421,8 +503,11 @@ CREATE OR REPLACE VIEW manufacturers_missing_opdb_id AS
     SELECT
       name_norm(name)              AS name_key,
       count(DISTINCT opdb_manufacturer_id) AS n_opdb_matches,
+      -- `min_by` keyed on the id `min` picked, so the published pair names ONE OPDB
+      -- record -- and deterministically, for the dismissal-identity reason on
+      -- `_eds_opdb_candidates`.
       min(opdb_manufacturer_id)    AS opdb_manufacturer_id,
-      any_value(name)              AS opdb_name
+      min_by(name, opdb_manufacturer_id) AS opdb_name
     FROM px.opdb.manufacturers
     GROUP BY 1
   ) AS i ON i.name_key = name_norm(f.name)
@@ -685,6 +770,11 @@ SELECT
 FROM opdb_models_unmatched
 WHERE classification <> 'moved_successor';
 
+-- `split_across_titles` is excluded, not downgraded, for the same reason
+-- `moved_successor` is above: there is nothing for anyone to do -- the catalog
+-- correctly splits what OPDB groups -- and an `absent` finding here would tell an
+-- operator to create a combo title, which is precisely wrong. It stays visible in the
+-- wide view.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
@@ -712,7 +802,8 @@ SELECT
              plural(n_opdb_models, 'OPDB model', 'OPDB models'))
   END AS message,
   'opdb_titles_unmatched' AS detail_view
-FROM opdb_titles_unmatched;
+FROM opdb_titles_unmatched
+WHERE classification <> 'split_across_titles';
 
 -- ─── stale ids ─────────────────────────────────────────────────────────────
 -- Three of the four classes are errors -- the changelog CONFIRMS the catalog is citing
@@ -907,7 +998,7 @@ FROM opdb_vocabulary_absent;
 -- ═══ SUMMARY & CHECKS ══════════════════════════════════════════════════════
 
 CREATE OR REPLACE VIEW opdb_summary AS
-  SELECT 'unmatched_' || classification AS metric, count(*) AS value
+  SELECT 'unmatched_listings_' || classification AS metric, count(*) AS value
   FROM opdb_models_unmatched GROUP BY classification
   UNION ALL SELECT 'unmatched_titles_' || classification, count(*)
     FROM opdb_titles_unmatched GROUP BY classification
@@ -923,7 +1014,7 @@ CREATE OR REPLACE VIEW opdb_summary AS
     FROM opdb_manufacturer_exceptions WHERE is_stale
   UNION ALL SELECT 'ipdb_crosscheck_' || classification, count(*)
     FROM opdb_ipdb_id_crosscheck GROUP BY classification
-  UNION ALL SELECT 'vocabulary_missing', count(*) FROM opdb_model_vocabulary_missing
+  UNION ALL SELECT 'vocabulary_missing_assignments', count(*) FROM opdb_model_vocabulary_missing
   UNION ALL SELECT 'vocabulary_absent_values', count(*) FROM opdb_vocabulary_absent
   UNION ALL SELECT 'vocabulary_settled_stale', count(*)
     FROM opdb_vocabulary_settled WHERE is_stale
@@ -997,7 +1088,24 @@ CREATE OR REPLACE VIEW opdb_checks AS
   UNION ALL
   SELECT 'title_classification_unknown', classification
   FROM opdb_titles_unmatched
-  WHERE classification NOT IN ('catalog_holds_unlinked', 'possible_duplicate', 'absent')
+  WHERE classification NOT IN
+    ('split_across_titles', 'catalog_holds_unlinked', 'possible_duplicate', 'absent')
+
+  UNION ALL
+  -- The verdict layer holds one row per group; if it ever fans out, the title worklist
+  -- silently double-counts. Same anchor as the worklists' own grain checks.
+  SELECT 'group_titles_not_one_row_per_group', opdb_id
+  FROM _eds_opdb_group_titles GROUP BY opdb_id HAVING count(*) > 1
+
+  UNION ALL
+  -- The CASE precedence: a split group's machines usually also name-match something,
+  -- so a branch reordered above `split_across_titles` would silently demote these to a
+  -- name-route class -- and its finding would tell an operator to act on a group the
+  -- catalog is right about. Same guard as `moved_successor_misclassified`.
+  SELECT 'split_across_titles_misclassified', u.opdb_id
+  FROM opdb_titles_unmatched AS u
+  WHERE u.n_machines_title_slugs > 1
+    AND u.classification <> 'split_across_titles'
 
   UNION ALL
   SELECT 'stale_classification_unknown', classification

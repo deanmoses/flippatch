@@ -19,6 +19,11 @@
 -- IPDB's side carries `date_kind` beside every year it quotes. The one undifferentiated
 -- date is OPDB's own, which has no kinds to tell.
 --
+-- SUMMARY METRICS NAME THEIR GRAIN (`_listings`, `_assignments`, `_values`, …), and
+-- when a family's parts deliberately do not sum, the remainder gets a named metric --
+-- an honest reader who notices a gap should find the explanation in the next row, not
+-- in a query against a private view.
+--
 -- WHERE A WORDING FIX LIVES. A vocabulary value's spelling says which repo resolves it:
 -- slug-shaped means pinexplore translated it, so a mapping decision updates pinexplore's
 -- ref table; source display wording resolves through the catalog's aliases, so the fix
@@ -51,6 +56,8 @@ ATTACH IF NOT EXISTS '../pinexplore/explore.duckdb' AS px (READ_ONLY);
 -- question this answers. `observed_at` is the artifact's claim about its own currency --
 -- for a Xantari snapshot, the `LastRefreshDateUtc` in its header -- and is NULL for an
 -- export that carries no date, which is an honest absence rather than a missing value.
+-- `acquired_on` is the other fact: when the file was manually downloaded, recorded by
+-- hand in pinexplore's acquisition log and NULL where nobody recorded it.
 --
 -- pinexplore assembles this itself in `ingest.watermarks`; this view is a pass-through
 -- so that a campaign gets the watermark from the same place it gets everything else.
@@ -60,10 +67,10 @@ ATTACH IF NOT EXISTS '../pinexplore/explore.duckdb' AS px (READ_ONLY);
 -- moved because a newer snapshot landed is indistinguishable from a broken query until
 -- this row says otherwise.
 CREATE OR REPLACE VIEW external_data_sources_context AS
-  SELECT source, artifact_kind, artifact, observed_at, n_records
+  SELECT source, artifact_kind, artifact, observed_at, acquired_on, n_records
   FROM px.ingest.watermarks;
 COMMENT ON VIEW external_data_sources_context IS
-  'One row per ingested external-source artifact — source, kind, which artifact, the date it claims for itself, and its record count. Printed by every analysis run that reads this layer.';
+  'One row per ingested external-source artifact — source, kind, which artifact, the date it claims for itself, the recorded manual-download date, and its record count. Printed by every analysis run that reads this layer.';
 
 -- WHAT THIS LAYER READS FROM PINEXPLORE, AND WHETHER IT SHOULD.
 --
