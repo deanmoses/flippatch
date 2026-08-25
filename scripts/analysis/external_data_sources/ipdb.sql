@@ -61,34 +61,43 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
 -- would offer all three as candidates for each. The edition suffix is the identity here.
 --
 -- Aggregated rather than joined through, because a name and maker can answer to more
--- than one model and joining would emit the listing once per candidate. The two counts
--- are what expose that: a representative slug is projected for the common single-
--- candidate case, and `n_*_candidates > 1` says not to trust it.
+-- than one model and joining would emit the listing once per candidate.
 --
--- Representatives are `min` over the slug, companions `first(x ORDER BY slug)` -- never
--- `any_value`, which is nondeterministic (finding messages render these values, message
--- is part of dismissal identity, so a random pick would lapse dismissals between runs),
--- and never `min_by`, which skips rows whose VALUE is NULL and would pair the
--- representative slug with another model's value. `first` ordered by the slug reads the
--- representative row whole, its NULLs included. Slugs are unique, so no tie-breaking.
+-- THE VERDICT DISCIPLINE (shared with OPDB's ladder): the verdict columns fill only
+-- when exactly ONE model answers; a plural answer is published as `n_candidates` and
+-- the sorted capped list, never as the alphabetically first match dressed up as the
+-- answer -- the worklist classifies it `multiple_candidates` instead. IPDB has no
+-- grouping concept, so unlike OPDB there is no title tier: name-and-maker is the only
+-- candidate search below the id. With exactly one row, `min` of each column reads
+-- that row whole, NULLs included.
 CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
   WITH unmatched AS (
     SELECT * FROM _eds_ipdb_dump AS d
     WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.ipdb_id)
   )
   SELECT
-    u.ipdb_id,
-    count(*) FILTER (WHERE m.ipdb_id IS NULL)             AS n_unlinked_candidates,
-    count(*) FILTER (WHERE m.ipdb_id IS NOT NULL)         AS n_linked_candidates,
-    min(m.slug) FILTER (WHERE m.ipdb_id IS NULL)          AS unlinked_model_slug,
-    min(m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL)      AS linked_model_slug,
-    first(m.ipdb_id ORDER BY m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_ipdb_id,
-    first(m.production_year ORDER BY m.slug) FILTER (WHERE m.ipdb_id IS NOT NULL) AS linked_model_production_year
-  FROM unmatched AS u
-  INNER JOIN models AS m
-    ON name_norm(m.name) = name_norm(u.ipdb_name)
-   AND m.manufacturer_slug = u.ipdb_manufacturer_slug
-  GROUP BY u.ipdb_id;
+    ipdb_id,
+    n_candidates,
+    candidate_model_slugs,
+    CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END    AS unlinked_model_slug,
+    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END    AS linked_model_slug,
+    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_ipdb_id END AS linked_model_ipdb_id,
+    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_year END    AS linked_model_production_year
+  FROM (
+    SELECT
+      u.ipdb_id,
+      count(*)                                      AS n_candidates,
+      count(*) FILTER (WHERE m.ipdb_id IS NOT NULL) AS n_linked,
+      list_sort(list(m.slug))[:5]                   AS candidate_model_slugs,
+      min(m.slug)                                   AS only_slug,
+      min(m.ipdb_id)                                AS only_ipdb_id,
+      min(m.production_year)                        AS only_year
+    FROM unmatched AS u
+    INNER JOIN models AS m
+      ON name_norm(m.name) = name_norm(u.ipdb_name)
+     AND m.manufacturer_slug = u.ipdb_manufacturer_slug
+    GROUP BY u.ipdb_id
+  );
 
 -- Catalog models answering to an unmatched listing's NAME, whatever their maker.
 --
@@ -121,12 +130,16 @@ CREATE OR REPLACE VIEW _eds_ipdb_namesakes AS
 --                           Confirmed cases only, carried on the mart row itself;
 --                           pinexplore's `ipdb_ref.duplicate_listings` records the
 --                           reasoning and the two URLs it rests on.
---   catalog_holds_unlinked  The catalog has the machine and no IPDB id on it. A
---                           backfill: patch the id, do not create a record.
---   possible_duplicate      A catalog model of the same name and maker is already
---                           linked to a DIFFERENT IPDB id. Either an unrecorded
---                           duplicate listing, or two genuinely different machines.
---                           Needs both IPDB pages read before it can move.
+--   catalog_holds_unlinked  The search resolved UNIQUELY to a model with no IPDB id.
+--                           A backfill: patch the id, do not create a record.
+--   possible_duplicate      The search resolved uniquely to a model already linked to
+--                           a DIFFERENT IPDB id. Either an unrecorded duplicate
+--                           listing, or two genuinely different machines. Needs both
+--                           IPDB pages read before it can move.
+--   multiple_candidates     MORE than one model answers the name and maker, so the
+--                           search answers plurally: `candidate_model_slugs` lists
+--                           them. Adjudicate before patching; no arbitrary candidate
+--                           is ever presented as the answer.
 --   maker_unresolved        No candidate search was possible: the listing has no maker
 --                           to match on. NOT a statement that the catalog lacks the
 --                           machine -- read `n_namesake_models` and the IPDB page.
@@ -145,11 +158,11 @@ CREATE OR REPLACE VIEW _eds_ipdb_namesakes AS
 --
 -- Precedence runs confirmed-first: a confirmed duplicate also matches the
 -- `possible_duplicate` shape by construction, and the confirmation is the stronger
--- statement. `catalog_holds_unlinked` outranks `possible_duplicate` because an unlinked
--- model is the cheaper and likelier explanation; where both hold, the candidate counts
--- carry the ambiguity. `maker_unresolved` sits below both only for reading order -- a
--- row without a maker slug reaches neither branch anyway, since the join they rest on
--- cannot match on a NULL.
+-- statement. The two verdict branches are mutually exclusive by construction -- the
+-- candidate view fills at most one -- and any plural or mixed answer lands in
+-- `multiple_candidates` rather than being resolved by precedence. `maker_unresolved`
+-- sits below them only for reading order: a row without a maker slug reaches no
+-- candidate branch anyway, since the join they rest on cannot match on a NULL.
 --
 -- `carried_forward` is worth reading before acting on an `absent` row: it marks a record
 -- the newest scrape missed, served from an older snapshot, so the listing may no longer
@@ -164,8 +177,9 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
     d.ipdb_manufacturer_slug,
     CASE
       WHEN d.duplicate_of_ipdb_id IS NOT NULL   THEN 'duplicate_listing'
-      WHEN c.n_unlinked_candidates > 0          THEN 'catalog_holds_unlinked'
-      WHEN c.n_linked_candidates > 0            THEN 'possible_duplicate'
+      WHEN c.unlinked_model_slug IS NOT NULL    THEN 'catalog_holds_unlinked'
+      WHEN c.linked_model_slug IS NOT NULL      THEN 'possible_duplicate'
+      WHEN c.n_candidates > 1                   THEN 'multiple_candidates'
       WHEN d.ipdb_manufacturer_slug IS NULL     THEN 'maker_unresolved'
       ELSE                                           'absent'
     END                                    AS classification,
@@ -174,8 +188,8 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
     c.linked_model_slug,
     c.linked_model_ipdb_id,
     c.linked_model_production_year,
-    coalesce(c.n_unlinked_candidates, 0)   AS n_unlinked_candidates,
-    coalesce(c.n_linked_candidates, 0)     AS n_linked_candidates,
+    coalesce(c.n_candidates, 0)            AS n_candidates,
+    c.candidate_model_slugs,
     -- Name-only evidence, carried on every row rather than only the unsearchable ones:
     -- a namesake under a DIFFERENT maker is worth seeing before creating a record, and
     -- an `absent` row with namesakes is the shape a mis-attributed listing takes.
@@ -187,7 +201,7 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
   LEFT JOIN _eds_ipdb_namesakes  AS n USING (ipdb_id)
   WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.ipdb_id);
 COMMENT ON VIEW ipdb_models_unmatched IS
-  'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / maker_unresolved / absent, with the candidate model where one was found and a namesake count where one was not. Rows are expected.';
+  'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / multiple_candidates / maker_unresolved / absent, with the resolved model where exactly one answered, the sorted candidate list where several did, and a namesake count where none could. Rows are expected.';
 
 -- WORKLIST — the other direction: a model carries an IPDB id the dump no longer holds.
 --
@@ -329,13 +343,16 @@ COMMENT ON VIEW corporate_entities_missing_ipdb_id IS
   'Worklist — one row per live corporate entity with no IPDB id that IPDB now appears to hold a record for, matched by name. Empty when there is nothing to acquire.';
 
 -- Every string that names a live person, folded once, so a credit can be resolved
--- without joining the whole name pool per row. `n_people` is the guard: one norm can
--- name two different people, and a credit resolved to an arbitrary one of them is worse
--- than one left unresolved.
+-- without joining the whole name pool per row. One norm can name two different people,
+-- and a credit resolved to an arbitrary one of them is worse than one left unresolved
+-- -- so `person_id` fills ONLY when the name names exactly one person (the verdict
+-- discipline of the model-matching ladders), and an ambiguous name resolves nobody:
+-- its credits stay in the missing worklist carrying `n_people` as the explanation.
 CREATE OR REPLACE VIEW _eds_person_by_name AS
   SELECT name_norm(name) AS person_name_norm,
          count(DISTINCT entity_id) AS n_people,
-         min(entity_id)            AS person_id
+         CASE WHEN count(DISTINCT entity_id) = 1
+              THEN min(entity_id) END AS person_id
   FROM entity_names
   WHERE entity_type = 'person'
   GROUP BY 1;
@@ -645,7 +662,7 @@ DELETE FROM _external_data_source_findings WHERE source = 'ipdb';
 -- would be permanent noise. It stays visible in `ipdb_models_unmatched`.
 --
 -- One rule per classification rather than one rule for the view, because the classes ask
--- for different actions and a dismissal keys on the rule. Four warnings: each is
+-- for different actions and a dismissal keys on the rule. Five warnings: each is
 -- something the catalog does not yet say, never something it says wrongly.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
@@ -653,6 +670,7 @@ SELECT
   CASE classification
     WHEN 'catalog_holds_unlinked' THEN 'ipdb-model-unlinked'
     WHEN 'possible_duplicate'     THEN 'ipdb-model-possible-duplicate'
+    WHEN 'multiple_candidates'    THEN 'ipdb-model-multiple-candidates'
     WHEN 'maker_unresolved'       THEN 'ipdb-model-maker-unresolved'
     WHEN 'absent'                 THEN 'ipdb-model-absent'
   END AS rule,
@@ -672,6 +690,13 @@ SELECT
       format('IPDB {} "{}" matches catalog model {}, which already links IPDB {}; read both pages',
              ipdb_id, coalesce(ipdb_name, '?'), coalesce(linked_model_slug, '?'),
              coalesce(linked_model_ipdb_id::VARCHAR, '?'))
+    WHEN 'multiple_candidates' THEN
+      -- The plural answer, listed and never picked from. The list is sorted at the
+      -- source and capped at 5; `n_candidates` is the true count.
+      format('IPDB {} "{}" matches {} by name and maker ({}); adjudicate before patching',
+             ipdb_id, coalesce(ipdb_name, '?'),
+             plural(n_candidates, 'catalog model', 'catalog models'),
+             array_to_string(candidate_model_slugs, ', '))
     -- Two causes, and they read as different sentences because they ARE different
     -- situations: IPDB naming nobody can only be settled by the page, while IPDB naming
     -- a maker we hold no id for is settled at the entity, in
@@ -965,7 +990,7 @@ CREATE OR REPLACE VIEW ipdb_checks AS
   FROM ipdb_models_unmatched
   WHERE classification NOT IN
     ('duplicate_listing', 'catalog_holds_unlinked', 'possible_duplicate',
-     'maker_unresolved', 'absent')
+     'multiple_candidates', 'maker_unresolved', 'absent')
 
   UNION ALL
   -- `absent` is the one classification that ASSERTS something about the catalog rather
@@ -1101,6 +1126,36 @@ CREATE OR REPLACE VIEW ipdb_checks AS
              WHERE NOT EXISTS (SELECT 1 FROM px.ipdb.model_specialties AS s
                                WHERE s.ipdb_id = im.ipdb_id)) AS unchecked,
           (SELECT count(*) FROM px.ipdb.models) AS total)
-  WHERE covered + unchecked <> total;
+  WHERE covered + unchecked <> total
+
+  UNION ALL
+  -- The target lookup in `_eds_ipdb_specialties` resolves with LIMIT 1 at its best
+  -- tier (exact public_id, then name, then alias). Across tiers that ordering is the
+  -- point; two records answering at the SAME tier would resolve alphabetically and
+  -- silently -- the "ignore multiple matches" bug in miniature. This mirrors the
+  -- lookup's match conditions (keep the two in step) and fails on any target value
+  -- that is plural at its winning tier, so the collision gets adjudicated -- an alias
+  -- retired, a value re-aimed -- instead of auto-picked.
+  SELECT 'specialty_target_ambiguous', v.target_entity_type || ' -> ' || v.target_value
+  FROM (SELECT DISTINCT target_entity_type, target_value
+        FROM px.ipdb.specialties
+        WHERE target_entity_type <> 'model-relationship') AS v
+  WHERE (
+    WITH matches AS (
+      SELECT CASE WHEN es.subject_public_id = v.target_value THEN 0
+                  WHEN lower(es.subject_name) = lower(v.target_value) THEN 1
+                  ELSE 2 END AS tier
+      FROM entity_subjects AS es
+      WHERE es.subject_type = v.target_entity_type
+        AND is_live(es.subject_status)
+        AND (es.subject_public_id = v.target_value
+             OR lower(es.subject_name) = lower(v.target_value)
+             OR EXISTS (SELECT 1 FROM entity_aliases AS ea
+                        WHERE ea.entity_type = es.subject_type
+                          AND ea.entity_id = es.subject_id
+                          AND lower(ea.alias) = lower(v.target_value)))
+    )
+    SELECT count(*) FROM matches WHERE tier = (SELECT min(tier) FROM matches)
+  ) > 1;
 COMMENT ON VIEW ipdb_checks IS
   'Empty when healthy — grain, closed vocabulary and duplicate-list anchors for the IPDB comparison, plus the specialty-target resolution pinexplore delegates here.';
