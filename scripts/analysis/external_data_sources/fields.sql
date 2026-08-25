@@ -146,6 +146,7 @@ DELETE FROM _external_data_source_findings WHERE source = 'cross';
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'cross' AS source,
+  'content' AS resolution_stage,
   'cross-field-unsupported' AS rule,   -- rules are source-prefixed; 'cross' is the source
   'warning' AS severity,
   NULL::VARCHAR AS external_id,   -- no single witness owns a merge finding

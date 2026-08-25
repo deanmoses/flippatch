@@ -70,34 +70,86 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
 -- grouping concept, so unlike OPDB there is no title tier: name-and-maker is the only
 -- candidate search below the id. With exactly one row, `min` of each column reads
 -- that row whole, NULLs included.
+--
+-- THE YEAR TRIANGULATES OPPORTUNISTICALLY. Model identity is (name, maker, year),
+-- the year allowed off by one but no more -- but a sixth of IPDB's listings state no
+-- year, so unlike OPDB the triangle closes only where both sides date the machine. It
+-- REFUTES, never elects (see the OPDB ladder for why): a refuted candidate leaves the
+-- pool and the worklist classifies its stranded listing `year_conflict`, the refuted
+-- list on the row. Either catalog year corroborates, whatever the IPDB date's kind --
+-- kind precision matters for comparing FIELD VALUES (fields.sql), not for recognizing
+-- that two records describe one machine.
 CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
-  WITH unmatched AS (
-    SELECT * FROM _eds_ipdb_dump AS d
-    WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.ipdb_id)
+  WITH matches AS (
+    SELECT
+      d.ipdb_id,
+      m.slug     AS model_slug,
+      m.ipdb_id  AS model_ipdb_id,
+      m.production_year,
+      coalesce(m.production_year, m.project_year) AS model_display_year,
+      -- Same NULL logic as the OPDB twin: `NULL OR false` falls through to refuted,
+      -- which is correct -- the only year the catalog states is off.
+      CASE WHEN d.ipdb_date_year IS NULL
+             OR (m.production_year IS NULL AND m.project_year IS NULL)  THEN 'unknown'
+           WHEN abs(d.ipdb_date_year - m.production_year) <= 1
+             OR abs(d.ipdb_date_year - m.project_year) <= 1             THEN 'corroborated'
+           ELSE                                                              'refuted'
+      END AS year_verdict
+    FROM _eds_ipdb_dump AS d
+    INNER JOIN models AS m
+      ON name_norm(m.name) = name_norm(d.ipdb_name)
+     AND m.manufacturer_slug = d.ipdb_manufacturer_slug
+    WHERE NOT EXISTS (SELECT 1 FROM models AS x WHERE x.ipdb_id = d.ipdb_id)
+  ),
+  refuted AS (
+    -- A refuted candidate that is already LINKED says so: whether the near-miss is
+    -- spoken for by another external id is the fact that turns "investigate a year
+    -- discrepancy" into "this is a different machine; create it".
+    SELECT ipdb_id,
+           count(*) AS n_year_refuted,
+           list_sort(list(model_slug || ' (' || coalesce(model_display_year::VARCHAR, '?')
+             || coalesce(', links IPDB ' || model_ipdb_id::VARCHAR, '') || ')'))[:5]
+             AS year_refuted_models
+    FROM matches WHERE year_verdict = 'refuted' GROUP BY ipdb_id
+  ),
+  verdicts AS (
+    SELECT
+      ipdb_id,
+      n_candidates,
+      candidate_model_slugs,
+      CASE WHEN n_candidates = 1 THEN only_year_verdict END             AS resolved_year_verdict,
+      CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END    AS unlinked_model_slug,
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END    AS linked_model_slug,
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_ipdb_id END AS linked_model_ipdb_id,
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_year END    AS linked_model_production_year
+    FROM (
+      SELECT
+        ipdb_id,
+        count(*)                                            AS n_candidates,
+        count(*) FILTER (WHERE model_ipdb_id IS NOT NULL)   AS n_linked,
+        list_sort(list(model_slug))[:5]                     AS candidate_model_slugs,
+        min(model_slug)                                     AS only_slug,
+        min(model_ipdb_id)                                  AS only_ipdb_id,
+        min(production_year)                                AS only_year,
+        min(year_verdict)                                   AS only_year_verdict
+      FROM matches
+      WHERE year_verdict <> 'refuted'
+      GROUP BY ipdb_id
+    )
   )
   SELECT
-    ipdb_id,
-    n_candidates,
-    candidate_model_slugs,
-    CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END    AS unlinked_model_slug,
-    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END    AS linked_model_slug,
-    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_ipdb_id END AS linked_model_ipdb_id,
-    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_year END    AS linked_model_production_year
-  FROM (
-    SELECT
-      u.ipdb_id,
-      count(*)                                      AS n_candidates,
-      count(*) FILTER (WHERE m.ipdb_id IS NOT NULL) AS n_linked,
-      list_sort(list(m.slug))[:5]                   AS candidate_model_slugs,
-      min(m.slug)                                   AS only_slug,
-      min(m.ipdb_id)                                AS only_ipdb_id,
-      min(m.production_year)                        AS only_year
-    FROM unmatched AS u
-    INNER JOIN models AS m
-      ON name_norm(m.name) = name_norm(u.ipdb_name)
-     AND m.manufacturer_slug = u.ipdb_manufacturer_slug
-    GROUP BY u.ipdb_id
-  );
+    coalesce(v.ipdb_id, rf.ipdb_id) AS ipdb_id,
+    coalesce(v.n_candidates, 0)     AS n_candidates,
+    v.candidate_model_slugs,
+    v.resolved_year_verdict,
+    v.unlinked_model_slug,
+    v.linked_model_slug,
+    v.linked_model_ipdb_id,
+    v.linked_model_production_year,
+    coalesce(rf.n_year_refuted, 0)  AS n_year_refuted,
+    rf.year_refuted_models
+  FROM verdicts AS v
+  FULL JOIN refuted AS rf ON rf.ipdb_id = v.ipdb_id;
 
 -- Catalog models answering to an unmatched listing's NAME, whatever their maker.
 --
@@ -140,6 +192,11 @@ CREATE OR REPLACE VIEW _eds_ipdb_namesakes AS
 --                           search answers plurally: `candidate_model_slugs` lists
 --                           them. Adjudicate before patching; no arbitrary candidate
 --                           is ever presented as the answer.
+--   year_conflict           Every name-and-maker match is refuted by the year
+--                           triangle: more than a year from the catalog's dates.
+--                           Either a wrong year on one side or a different era's
+--                           machine -- `year_refuted_models` lists them with their
+--                           years. Read the pages; do not create a record blind.
 --   maker_unresolved        No candidate search was possible: the listing has no maker
 --                           to match on. NOT a statement that the catalog lacks the
 --                           machine -- read `n_namesake_models` and the IPDB page.
@@ -180,6 +237,7 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
       WHEN c.unlinked_model_slug IS NOT NULL    THEN 'catalog_holds_unlinked'
       WHEN c.linked_model_slug IS NOT NULL      THEN 'possible_duplicate'
       WHEN c.n_candidates > 1                   THEN 'multiple_candidates'
+      WHEN c.n_year_refuted > 0                 THEN 'year_conflict'
       WHEN d.ipdb_manufacturer_slug IS NULL     THEN 'maker_unresolved'
       ELSE                                           'absent'
     END                                    AS classification,
@@ -188,8 +246,11 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
     c.linked_model_slug,
     c.linked_model_ipdb_id,
     c.linked_model_production_year,
+    c.resolved_year_verdict,
     coalesce(c.n_candidates, 0)            AS n_candidates,
     c.candidate_model_slugs,
+    coalesce(c.n_year_refuted, 0)          AS n_year_refuted,
+    c.year_refuted_models,
     -- Name-only evidence, carried on every row rather than only the unsearchable ones:
     -- a namesake under a DIFFERENT maker is worth seeing before creating a record, and
     -- an `absent` row with namesakes is the shape a mis-attributed listing takes.
@@ -201,7 +262,7 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
   LEFT JOIN _eds_ipdb_namesakes  AS n USING (ipdb_id)
   WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.ipdb_id);
 COMMENT ON VIEW ipdb_models_unmatched IS
-  'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / multiple_candidates / maker_unresolved / absent, with the resolved model where exactly one answered, the sorted candidate list where several did, and a namesake count where none could. Rows are expected.';
+  'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_conflict / maker_unresolved / absent, with the resolved model where exactly one answered, the sorted candidate list where several did, the year-refuted list where the triangle disagreed, and a namesake count where no search could run. Rows are expected.';
 
 -- WORKLIST — the other direction: a model carries an IPDB id the dump no longer holds.
 --
@@ -662,15 +723,17 @@ DELETE FROM _external_data_source_findings WHERE source = 'ipdb';
 -- would be permanent noise. It stays visible in `ipdb_models_unmatched`.
 --
 -- One rule per classification rather than one rule for the view, because the classes ask
--- for different actions and a dismissal keys on the rule. Five warnings: each is
+-- for different actions and a dismissal keys on the rule. Six warnings: each is
 -- something the catalog does not yet say, never something it says wrongly.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'models' AS resolution_stage,
   CASE classification
     WHEN 'catalog_holds_unlinked' THEN 'ipdb-model-unlinked'
     WHEN 'possible_duplicate'     THEN 'ipdb-model-possible-duplicate'
     WHEN 'multiple_candidates'    THEN 'ipdb-model-multiple-candidates'
+    WHEN 'year_conflict'          THEN 'ipdb-model-year-conflict'
     WHEN 'maker_unresolved'       THEN 'ipdb-model-maker-unresolved'
     WHEN 'absent'                 THEN 'ipdb-model-absent'
   END AS rule,
@@ -697,6 +760,12 @@ SELECT
              ipdb_id, coalesce(ipdb_name, '?'),
              plural(n_candidates, 'catalog model', 'catalog models'),
              array_to_string(candidate_model_slugs, ', '))
+    WHEN 'year_conflict' THEN
+      format('IPDB {} "{}" ({}) matches {} by name and maker but more than a year off ({}); read the pages -- a wrong year on one side, or a different era''s machine',
+             ipdb_id, coalesce(ipdb_name, '?'),
+             coalesce(ipdb_date_year::VARCHAR, 'undated'),
+             plural(n_year_refuted, 'catalog model', 'catalog models'),
+             array_to_string(year_refuted_models, ', '))
     -- Two causes, and they read as different sentences because they ARE different
     -- situations: IPDB naming nobody can only be settled by the page, while IPDB naming
     -- a maker we hold no id for is settled at the entity, in
@@ -734,6 +803,7 @@ WHERE classification <> 'duplicate_listing';
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'models' AS resolution_stage,
   CASE WHEN retraction_reason IS NOT NULL THEN 'ipdb-id-retracted'
        ELSE 'ipdb-id-not-in-dump' END AS rule,
   CASE WHEN retraction_reason IS NOT NULL THEN 'error' ELSE 'warning' END AS severity,
@@ -759,6 +829,7 @@ FROM ipdb_ids_not_in_dump;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'manufacturers' AS resolution_stage,
   CASE classification
     WHEN 'disagrees'             THEN 'ipdb-corporate-entity-disagrees'
     WHEN 'catalog_has_none'      THEN 'ipdb-corporate-entity-missing'
@@ -790,6 +861,7 @@ FROM ipdb_model_corporate_entity_mismatched;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'manufacturers' AS resolution_stage,
   'ipdb-corporate-entity-unknown' AS rule,
   'warning' AS severity,
   ipdb_corporate_entity_id::VARCHAR AS external_id,
@@ -816,6 +888,7 @@ WHERE NOT EXISTS (SELECT 1 FROM corporate_entities_missing_ipdb_id AS a
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'manufacturers' AS resolution_stage,
   'ipdb-corporate-entity-id-acquirable' AS rule,
   'warning' AS severity,
   ipdb_corporate_entity_id::VARCHAR AS external_id,
@@ -845,6 +918,7 @@ FROM corporate_entities_missing_ipdb_id;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'content' AS resolution_stage,
   CASE WHEN n_person_matches = 1 THEN 'ipdb-credit-missing'
        ELSE 'ipdb-credit-person-ambiguous' END AS rule,
   'warning' AS severity,
@@ -864,6 +938,7 @@ WHERE n_person_matches >= 1;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'content' AS resolution_stage,
   'ipdb-person-unmatched' AS rule,
   'warning' AS severity,
   NULL::VARCHAR AS external_id,     -- person grain: no single IPDB id owns this
@@ -884,6 +959,7 @@ FROM ipdb_people_unmatched;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'content' AS resolution_stage,
   'ipdb-specialty-missing' AS rule,
   'warning' AS severity,
   ipdb_id::VARCHAR AS external_id,
@@ -903,6 +979,7 @@ FROM ipdb_model_specialties_missing;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'ipdb' AS source,
+  'content' AS resolution_stage,
   'ipdb-specialty-vocabulary-absent' AS rule,
   'warning' AS severity,
   NULL::VARCHAR AS external_id,
@@ -990,7 +1067,7 @@ CREATE OR REPLACE VIEW ipdb_checks AS
   FROM ipdb_models_unmatched
   WHERE classification NOT IN
     ('duplicate_listing', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'maker_unresolved', 'absent')
+     'multiple_candidates', 'year_conflict', 'maker_unresolved', 'absent')
 
   UNION ALL
   -- `absent` is the one classification that ASSERTS something about the catalog rather

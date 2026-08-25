@@ -70,11 +70,16 @@ CREATE OR REPLACE VIEW _eds_opdb_dump AS
 --   1. title_and_maker  name match among the models of the catalog title that links
 --                       the listing's own GROUP (OPDB group = catalog Title), with
 --                       the maker matching too
---   2. title            name match among that title's models alone -- needs no maker,
---                       so it reaches listings `maker_unresolved` used to strand, and
---                       it is scoped to the family the listing itself claims
---   3. maker            name-and-maker match across the whole catalog: the fallback
---                       for listings whose group no title links
+--   2. maker            name-and-maker match across the whole catalog. Above the
+--                       title-only tier because the maker is a leg of the identity
+--                       triangle: catalog `cobra` is Bell Games, and Playbar's Cobra
+--                       machine must resolve to the Playbar `cobra-2` on another
+--                       title, not to the same-title model whose maker CONTRADICTS
+--                       the listing's.
+--   3. title            name match among the linked title's models alone -- needs no
+--                       maker, so it reaches listings `maker_unresolved` used to
+--                       strand. Last, because it holds both maker-unknown and
+--                       maker-contradicted matches.
 --
 -- The first tier holding any candidate answers, and it answers PLURALLY when it holds
 -- more than one: a verdict is published only when the winning tier holds exactly one
@@ -82,6 +87,17 @@ CREATE OR REPLACE VIEW _eds_opdb_dump AS
 -- match dressed up as an answer. A bare name match with neither title nor maker
 -- behind it is not a candidate at all; that is `_eds_opdb_namesakes`, evidence rather
 -- than an answer.
+--
+-- THE THIRD LEG OF THE TRIANGLE IS THE YEAR, and it REFUTES, never elects. Model
+-- identity is (name, maker, year) with the year allowed off by one but no more; OPDB
+-- states a year on every listing, so a candidate whose catalog year (production or
+-- project, either kind corroborates identity) sits more than a year away is not this
+-- machine -- a remake, a different era's namesake -- and leaves the pool. It does not
+-- vanish: `year_conflict` classifies the listings it strands, and the refuted list
+-- rides the worklist row. Year CORROBORATION never breaks a plural tie, because the
+-- true match can be the yearless candidate -- Meteor's is -- and electing the dated
+-- one is the arbitrary-pick bug wearing a year. A candidate with no catalog year
+-- cannot be refuted; absence refutes nothing.
 
 -- One row per (unmatched listing, candidate model): every catalog model answering the
 -- listing's name with at least one tier of support, flagged by tier.
@@ -98,8 +114,19 @@ CREATE OR REPLACE VIEW _eds_opdb_candidate_models AS
     m.slug            AS model_slug,
     m.opdb_id         AS model_opdb_id,
     m.production_year,
+    coalesce(m.production_year, m.project_year) AS model_display_year,
     coalesce(m.title_id = t.id, false)                              AS in_group_title,
-    coalesce(m.manufacturer_slug = d.opdb_manufacturer_slug, false) AS maker_matches
+    coalesce(m.manufacturer_slug = d.opdb_manufacturer_slug, false) AS maker_matches,
+    -- NULL-safe by construction: a NULL year on either side lands `unknown` in the
+    -- first branch; in the second, an `abs` against a NULL catalog year is NULL, and
+    -- `NULL OR true` is true while `NULL OR false` falls through to `refuted` --
+    -- which is correct, because the only year the catalog states is then off.
+    CASE WHEN d.opdb_year IS NULL
+           OR (m.production_year IS NULL AND m.project_year IS NULL)  THEN 'unknown'
+         WHEN abs(d.opdb_year - m.production_year) <= 1
+           OR abs(d.opdb_year - m.project_year) <= 1                  THEN 'corroborated'
+         ELSE                                                              'refuted'
+    END AS year_verdict
   FROM _eds_opdb_dump AS d
   LEFT JOIN titles AS t ON t.opdb_id = d.title_opdb_id
   INNER JOIN models AS m ON name_norm(m.name) = name_norm(d.opdb_name)
@@ -120,35 +147,74 @@ CREATE OR REPLACE VIEW _eds_opdb_model_resolution AS
   WITH winning AS (
     SELECT *,
       CASE WHEN in_group_title AND maker_matches THEN 1
-           WHEN in_group_title THEN 2
+           WHEN maker_matches THEN 2
            ELSE 3 END AS tier
     FROM _eds_opdb_candidate_models
+    -- The triangle's refutation: a candidate more than a year away is not this
+    -- machine and never enters a pool. It resurfaces through `refuted` below.
+    WHERE year_verdict <> 'refuted'
     QUALIFY tier = min(tier) OVER (PARTITION BY opdb_id)
-  )
-  SELECT
-    opdb_id,
-    match_basis,
-    n_candidates,
-    candidate_model_slugs,
-    CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END AS unlinked_model_slug,
-    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END AS linked_model_slug,
-    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_opdb_id END AS linked_model_opdb_id,
-    CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_year END AS linked_model_production_year
-  FROM (
+  ),
+  refuted AS (
+    -- A refuted candidate that is already LINKED says so: whether the near-miss is
+    -- spoken for by another external id is the fact that turns "investigate a year
+    -- discrepancy" into "this is a different machine; create it".
     SELECT
       opdb_id,
-      CASE min(tier) WHEN 1 THEN 'title_and_maker'
-                     WHEN 2 THEN 'title'
-                     ELSE        'maker' END              AS match_basis,
-      count(*)                                            AS n_candidates,
-      count(*) FILTER (WHERE model_opdb_id IS NOT NULL)   AS n_linked,
-      list_sort(list(model_slug))[:5]                     AS candidate_model_slugs,
-      min(model_slug)                                     AS only_slug,
-      min(model_opdb_id)                                  AS only_opdb_id,
-      min(production_year)                                AS only_year
-    FROM winning
+      count(*) AS n_year_refuted,
+      list_sort(list(model_slug || ' (' || coalesce(model_display_year::VARCHAR, '?')
+        || coalesce(', links OPDB ' || model_opdb_id, '') || ')'))[:5]
+        AS year_refuted_models
+    FROM _eds_opdb_candidate_models
+    WHERE year_verdict = 'refuted'
     GROUP BY opdb_id
-  );
+  ),
+  verdicts AS (
+    SELECT
+      opdb_id,
+      match_basis,
+      n_candidates,
+      candidate_model_slugs,
+      -- `resolved_year_verdict` qualifies a verdict: 'corroborated' means the full
+      -- triangle agrees, 'unknown' that the catalog states no year to check.
+      CASE WHEN n_candidates = 1 THEN only_year_verdict END AS resolved_year_verdict,
+      CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END AS unlinked_model_slug,
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END AS linked_model_slug,
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_opdb_id END AS linked_model_opdb_id,
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_year END AS linked_model_production_year
+    FROM (
+      SELECT
+        opdb_id,
+        CASE min(tier) WHEN 1 THEN 'title_and_maker'
+                       WHEN 2 THEN 'maker'
+                       ELSE        'title' END              AS match_basis,
+        count(*)                                            AS n_candidates,
+        count(*) FILTER (WHERE model_opdb_id IS NOT NULL)   AS n_linked,
+        list_sort(list(model_slug))[:5]                     AS candidate_model_slugs,
+        min(model_slug)                                     AS only_slug,
+        min(model_opdb_id)                                  AS only_opdb_id,
+        min(production_year)                                AS only_year,
+        min(year_verdict)                                   AS only_year_verdict
+      FROM winning
+      GROUP BY opdb_id
+    )
+  )
+  -- FULL join: a listing whose every candidate was year-refuted has no verdict row,
+  -- and its refuted evidence is exactly what the worklist needs to say so.
+  SELECT
+    coalesce(v.opdb_id, rf.opdb_id) AS opdb_id,
+    v.match_basis,
+    coalesce(v.n_candidates, 0)     AS n_candidates,
+    v.candidate_model_slugs,
+    v.resolved_year_verdict,
+    v.unlinked_model_slug,
+    v.linked_model_slug,
+    v.linked_model_opdb_id,
+    v.linked_model_production_year,
+    coalesce(rf.n_year_refuted, 0)  AS n_year_refuted,
+    rf.year_refuted_models
+  FROM verdicts AS v
+  FULL JOIN refuted AS rf ON rf.opdb_id = v.opdb_id;
 
 -- Catalog models answering to an unmatched listing's NAME, whatever their maker.
 -- The evidence for the rows the candidate search could not run on -- see the IPDB twin
@@ -184,13 +250,18 @@ CREATE OR REPLACE VIEW _eds_opdb_namesakes AS
 --                           `match_basis` says which tier. Adjudicate before
 --                           patching; no arbitrary candidate is ever presented as
 --                           the answer.
+--   year_conflict           Every name match the tiers found is refuted by the year
+--                           triangle: more than a year from the catalog's dates.
+--                           Either a wrong year on one side or a different era's
+--                           machine -- `year_refuted_models` lists them with their
+--                           years. Read the pages; do not create a record blind.
 --   maker_unresolved        No candidate search was possible: the listing has no
 --                           maker to match on AND no catalog title links its group.
 --                           NOT a statement that the catalog lacks the machine --
 --                           read `n_namesake_models` and the OPDB page.
 --   absent                  A search ran -- within the group's linked title, by name
---                           and maker, or both -- and found nothing. A candidate new
---                           record.
+--                           and maker, or both -- and found nothing, with nothing
+--                           even year-refuted. A candidate new record.
 --
 -- Two columns qualify what an `absent` row would take to create, because OPDB's alias
 -- rows are full Models to us (see `OpdbMappings.md`): `opdb_relation` says whether this
@@ -212,6 +283,7 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
       WHEN r.unlinked_model_slug IS NOT NULL  THEN 'catalog_holds_unlinked'
       WHEN r.linked_model_slug IS NOT NULL    THEN 'possible_duplicate'
       WHEN r.n_candidates > 1                 THEN 'multiple_candidates'
+      WHEN r.n_year_refuted > 0               THEN 'year_conflict'
       WHEN d.opdb_manufacturer_slug IS NULL
        AND linked_title.id IS NULL            THEN 'maker_unresolved'
       ELSE                                         'absent'
@@ -224,8 +296,11 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
     r.linked_model_slug,
     r.linked_model_opdb_id,
     r.linked_model_production_year,
+    r.resolved_year_verdict,
     coalesce(r.n_candidates, 0)          AS n_candidates,
     r.candidate_model_slugs,
+    coalesce(r.n_year_refuted, 0)        AS n_year_refuted,
+    r.year_refuted_models,
     coalesce(n.n_namesake_models, 0)     AS n_namesake_models,
     n.namesake_model_slugs
   FROM _eds_opdb_dump AS d
@@ -244,7 +319,7 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
   ) AS moved_from ON true
   WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.opdb_id = d.opdb_id);
 COMMENT ON VIEW opdb_models_unmatched IS
-  'Worklist — one row per OPDB listing no live model carries the id of, classified moved_successor / catalog_holds_unlinked / possible_duplicate / multiple_candidates / maker_unresolved / absent by the matching ladder (id, then name within the group''s linked title, then name and maker), with match_basis, candidate lists, and namesake evidence. Rows are expected.';
+  'Worklist — one row per OPDB listing no live model carries the id of, classified moved_successor / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_conflict / maker_unresolved / absent by the matching ladder (id, then name within the group''s linked title, then name and maker, with the year refuting any candidate more than a year off), with match_basis, candidate and year-refuted lists, and namesake evidence. Rows are expected.';
 
 -- WORKLIST — the other direction: a model carries an OPDB id the dump no longer serves.
 --
@@ -293,11 +368,17 @@ COMMENT ON VIEW opdb_ids_stale IS
 -- A group has no maker, so matching its bare name is weak: a name can answer to
 -- several titles, and only a machine's maker tells them apart (two catalog titles
 -- answer to "Top Hand", and the name route once proposed the wrong one). But the group
--- HAS machines, and where those resolve to catalog models, the models' own titles
--- settle what the group is. Two evidence tiers feed the verdict: a LINKED machine's
--- title, and the title of an unmatched machine the ladder resolved UNIQUELY to an
--- unlinked model -- `_eds_opdb_model_resolution` defines unique, and its verdict
--- column being non-NULL IS the gate, so this view cannot hold a looser copy of it.
+-- HAS machines, and where those connect to catalog models, the models' own titles
+-- settle what the group is. Two evidence tiers feed the vote: a LINKED machine's
+-- title is a verdict, and an unmatched machine votes the titles of its CANDIDATES.
+--
+-- The candidate vote is deliberately looser than the model ladder's verdict: title
+-- identity is FAMILY grain, and family evidence survives what model evidence cannot.
+-- A plural candidate set confined to one title is a clean family vote (Meteor's three
+-- bootlegs all live under `meteor`), and the year triangle is not consulted -- a
+-- family spans years, and a year-refuted model twin still places the machine in that
+-- family. Model-grain uniqueness questions stay in the model worklist, where they
+-- belong.
 --
 -- ONE distinct title across the tiers is decisive, and the verdict columns fill only
 -- then -- split by whether that title already links a group -- so a consumer can
@@ -315,9 +396,8 @@ CREATE OR REPLACE VIEW _eds_opdb_group_titles AS
     UNION
     SELECT om.title_opdb_id, t.slug, t.opdb_id
     FROM px.opdb.models AS om
-    INNER JOIN _eds_opdb_model_resolution AS r
-      ON r.opdb_id = om.opdb_id AND r.unlinked_model_slug IS NOT NULL
-    INNER JOIN models AS m ON m.slug = r.unlinked_model_slug
+    INNER JOIN _eds_opdb_candidate_models AS cm ON cm.opdb_id = om.opdb_id
+    INNER JOIN models AS m ON m.slug = cm.model_slug
     INNER JOIN titles AS t ON t.id = m.title_id
   )
   SELECT
@@ -820,17 +900,19 @@ COMMENT ON VIEW opdb_vocabulary_absent IS
 DELETE FROM _external_data_source_findings WHERE source = 'opdb';
 
 -- ─── unmatched listings and groups ─────────────────────────────────────────
--- Five warnings, one per classification, because the classes ask for different actions
+-- Six warnings, one per classification, because the classes ask for different actions
 -- and a dismissal keys on the rule. `moved_successor` is excluded, not downgraded: the
 -- repoint is already reported by `opdb-id-moved`, and a second finding on the successor
 -- id would restate it. It stays visible in the wide view.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'models' AS resolution_stage,
   CASE classification
     WHEN 'catalog_holds_unlinked' THEN 'opdb-model-unlinked'
     WHEN 'possible_duplicate'     THEN 'opdb-model-possible-duplicate'
     WHEN 'multiple_candidates'    THEN 'opdb-model-multiple-candidates'
+    WHEN 'year_conflict'          THEN 'opdb-model-year-conflict'
     WHEN 'maker_unresolved'       THEN 'opdb-model-maker-unresolved'
     WHEN 'absent'                 THEN 'opdb-model-absent'
   END AS rule,
@@ -857,6 +939,11 @@ SELECT
                               WHEN 'title'           THEN 'name within its linked title'
                               ELSE                        'name and maker' END,
              array_to_string(candidate_model_slugs, ', '))
+    WHEN 'year_conflict' THEN
+      format('OPDB {} "{}" ({}) matches {} by name but more than a year off ({}); read the pages -- a wrong year on one side, or a different era''s machine',
+             opdb_id, coalesce(opdb_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
+             plural(n_year_refuted, 'catalog model', 'catalog models'),
+             array_to_string(year_refuted_models, ', '))
     WHEN 'maker_unresolved' THEN
       CASE WHEN opdb_manufacturer_name IS NULL THEN
         format('OPDB {} "{}" names no maker at all and no title links its group, so no candidate search ran; {}',
@@ -889,6 +976,7 @@ WHERE classification <> 'moved_successor';
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'titles' AS resolution_stage,
   CASE classification
     WHEN 'catalog_holds_unlinked' THEN 'opdb-title-unlinked'
     WHEN 'possible_duplicate'     THEN 'opdb-title-possible-duplicate'
@@ -930,6 +1018,7 @@ WHERE classification <> 'split_across_titles';
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'titles' AS resolution_stage,
   'opdb-title-split-across-titles' AS rule,
   'warning' AS severity,
   opdb_id AS external_id,
@@ -953,6 +1042,7 @@ FROM opdb_title_splits;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'models' AS resolution_stage,
   CASE classification
     WHEN 'moved'       THEN 'opdb-id-moved'
     WHEN 'deleted'     THEN 'opdb-id-deleted'
@@ -983,6 +1073,7 @@ FROM opdb_ids_stale;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'titles' AS resolution_stage,
   'opdb-title-id-not-in-dump' AS rule,
   'warning' AS severity,
   opdb_id AS external_id,
@@ -1007,6 +1098,7 @@ FROM opdb_title_ids_stale;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'manufacturers' AS resolution_stage,
   'opdb-manufacturer-disagrees' AS rule,
   'warning' AS severity,
   opdb_manufacturer_id::VARCHAR AS external_id,
@@ -1023,6 +1115,7 @@ FROM opdb_manufacturer_pairs_disagreeing;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'manufacturers' AS resolution_stage,
   'opdb-manufacturer-missing' AS rule,
   'warning' AS severity,
   opdb_id AS external_id,
@@ -1044,6 +1137,7 @@ WHERE classification = 'catalog_has_none';
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'manufacturers' AS resolution_stage,
   'opdb-manufacturer-unknown' AS rule,
   'warning' AS severity,
   opdb_manufacturer_id::VARCHAR AS external_id,
@@ -1064,6 +1158,7 @@ WHERE NOT EXISTS (SELECT 1 FROM manufacturers_missing_opdb_id AS a
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'manufacturers' AS resolution_stage,
   'opdb-manufacturer-id-acquirable' AS rule,
   'warning' AS severity,
   opdb_manufacturer_id::VARCHAR AS external_id,
@@ -1086,6 +1181,7 @@ FROM manufacturers_missing_opdb_id;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'models' AS resolution_stage,
   CASE classification WHEN 'disagrees' THEN 'opdb-ipdb-id-disagrees'
                       ELSE 'opdb-ipdb-id-acquirable' END AS rule,
   CASE classification WHEN 'disagrees' THEN 'error' ELSE 'warning' END AS severity,
@@ -1108,6 +1204,7 @@ FROM opdb_ipdb_id_crosscheck;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'content' AS resolution_stage,
   'opdb-vocabulary-missing' AS rule,
   'warning' AS severity,
   opdb_id AS external_id,
@@ -1122,6 +1219,7 @@ FROM opdb_model_vocabulary_missing;
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
   'opdb' AS source,
+  'content' AS resolution_stage,
   'opdb-vocabulary-absent' AS rule,
   'warning' AS severity,
   NULL::VARCHAR AS external_id,
@@ -1216,7 +1314,7 @@ CREATE OR REPLACE VIEW opdb_checks AS
   FROM opdb_models_unmatched
   WHERE classification NOT IN
     ('moved_successor', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'maker_unresolved', 'absent')
+     'multiple_candidates', 'year_conflict', 'maker_unresolved', 'absent')
 
   UNION ALL
   -- The CASE precedence: a successor usually also name-matches the model holding the

@@ -37,6 +37,30 @@
 -- classification is exhaustive. Same line flipcommons' `audit.sql` draws between
 -- `audit_findings` and `audit_checks`.
 --
+-- RESOLUTION RUNS COARSE TO FINE, AND THE WORKLIST IS THE ORDER. Identity is
+-- resolved in stages -- manufacturers first (OPDB manufacturers, IPDB corporate
+-- entities), then titles (OPDB groups), then models -- because each stage's ID links
+-- are evidence the next stage matches on: a model candidate needs its maker resolved,
+-- a group verdict reads its machines' links. ID matching at every stage precedes all
+-- other work (field values, vocabulary, credits), which is the trailing `content`
+-- stage. Not a strict DAG -- title verdicts read already-linked models, which works
+-- because most models are ID-linked -- but the working order stands: author and apply
+-- the manufacturer patch, re-run, then titles, re-run, then models. This is
+-- STRUCTURAL, not advice: every finding carries `resolution_stage`, the worklist
+-- orders stage-first, and working it top to bottom IS the process.
+--
+-- THE MAKER STAGE IS ONE STAGE WITH INTERNAL STRUCTURE, deliberately not split into
+-- corporate-entity and manufacturer stages, because the dependency between the two
+-- grains runs both ways. IDENTIFICATION runs at corporate-entity grain: IPDB speaks
+-- only corporate entities, the manufacturer layer is the catalog's own grouping over
+-- them, and an unresolved corporate entity degrades every IPDB model match -- the
+-- maker leg of triangulation routes through `corporate_entities.manufacturer_slug`.
+-- Record CREATION runs manufacturer-first inside the patch, because
+-- `corporate_entities.manufacturer_id` is required. Those opposite arrows are why a
+-- new maker is ONE adjudication and one patch -- identify the entity, decide its
+-- grouping, create the manufacturer then the corporate entity referencing it -- and
+-- splitting the stage would cut that unit of work in half across a boundary.
+--
 -- FINDINGS ARE NEVER SILENTLY ADJUDICATED. A classification may be excluded from a
 -- findings INSERT only when the same situation is reported by another rule -- a
 -- structural fact the exclusion comment must name -- never because a session judged
@@ -178,6 +202,10 @@ CREATE TABLE IF NOT EXISTS _external_data_source_findings (
   source           VARCHAR,  -- 'ipdb', 'opdb' -- the external data source; or 'cross',
                              -- for a merge finding no single witness owns (fields.sql)
   rule             VARCHAR,  -- kebab-case, source-prefixed: 'ipdb-model-absent'
+  resolution_stage VARCHAR,  -- 'manufacturers' | 'titles' | 'models' | 'content' --
+                             -- where the finding sits in the coarse-to-fine
+                             -- resolution order (see the header); the worklist sorts
+                             -- on it first
   severity         VARCHAR,  -- 'error' | 'warning'
   external_id      VARCHAR,  -- the source's own id; NULL where the finding is catalog-side
   entity_type      VARCHAR,  -- catalog entity type; NULL where no catalog record exists
@@ -280,13 +308,19 @@ COMMENT ON VIEW external_data_source_dismissals IS
 -- to work down, which is why it is a view and never a `*_checks` view. The runner fails
 -- nonzero on a row from any public `*_checks` view in the session, so a standing backlog
 -- placed in one would break every campaign that reads this layer.
+-- ORDERED BY RESOLUTION STAGE FIRST, severity second: a manufacturer warning
+-- precedes a model error, because fixing the maker's id changes what every later
+-- stage matches. Working the list top to bottom is the resolution process; filter on
+-- `resolution_stage` to hold the current stage until it is empty.
 CREATE OR REPLACE VIEW external_data_source_findings AS
   SELECT * EXCLUDE (dismissed, dismissed_on, dismissal_note)
   FROM external_data_source_findings_all
   WHERE NOT dismissed
-  ORDER BY CASE severity WHEN 'error' THEN 0 ELSE 1 END, source, rule, external_id;
+  ORDER BY CASE resolution_stage WHEN 'manufacturers' THEN 0 WHEN 'titles' THEN 1
+                                 WHEN 'models' THEN 2 ELSE 3 END,
+           CASE severity WHEN 'error' THEN 0 ELSE 1 END, source, rule, external_id;
 COMMENT ON VIEW external_data_source_findings IS
-  'Worklist — one row per live disagreement between an external data source and the catalog, errors first: source, rule, severity, the external id and catalog record it is about, a message, and the wide view to read next. Rows are expected.';
+  'Worklist — one row per live disagreement between an external data source and the catalog, ordered by resolution_stage (manufacturers, then titles, then models, then content) and errors-first within a stage: work it top to bottom, holding each stage until it is empty. Rows are expected.';
 
 -- The headline readout, per rule.
 --
@@ -301,21 +335,27 @@ COMMENT ON VIEW external_data_source_findings IS
 -- a dismissal goes stale when someone FIXES the finding, which is a success, and gating
 -- the build on it would punish exactly the outcome the layer exists to produce.
 CREATE OR REPLACE VIEW external_data_source_findings_summary AS
-            SELECT source, rule, severity, count(*) AS n, false AS is_stale_dismissal
-            FROM external_data_source_findings_all
-            WHERE NOT dismissed
-            GROUP BY ALL
-  UNION ALL SELECT source, rule, 'dismissed', count(*), false
-            FROM external_data_source_findings_all
-            WHERE dismissed
-            GROUP BY ALL
-  UNION ALL SELECT source, rule, 'STALE DISMISSAL', count(*), true
-            FROM external_data_source_dismissals
-            WHERE is_stale
-            GROUP BY ALL
-  ORDER BY is_stale_dismissal DESC, severity, source, rule;
+  SELECT * FROM (
+              SELECT resolution_stage, source, rule, severity, count(*) AS n,
+                     false AS is_stale_dismissal
+              FROM external_data_source_findings_all
+              WHERE NOT dismissed
+              GROUP BY ALL
+    UNION ALL SELECT resolution_stage, source, rule, 'dismissed', count(*), false
+              FROM external_data_source_findings_all
+              WHERE dismissed
+              GROUP BY ALL
+    UNION ALL SELECT NULL, source, rule, 'STALE DISMISSAL', count(*), true
+              FROM external_data_source_dismissals
+              WHERE is_stale
+              GROUP BY ALL
+  )
+  ORDER BY is_stale_dismissal DESC,
+           CASE resolution_stage WHEN 'manufacturers' THEN 0 WHEN 'titles' THEN 1
+                                 WHEN 'models' THEN 2 ELSE 3 END,
+           severity, source, rule;
 COMMENT ON VIEW external_data_source_findings_summary IS
-  'One row per (source, rule, severity) with its count, plus dismissed tallies and any STALE DISMISSAL that no longer matches a finding. Stale is reported, never gated — it means someone fixed the finding.';
+  'One row per (stage, source, rule, severity) with its count, in resolution-stage order, plus dismissed tallies and any STALE DISMISSAL that no longer matches a finding. Stale is reported, never gated — it means someone fixed the finding.';
 
 -- Empty when healthy. Invariants of the findings LAYER, never findings about the data.
 CREATE OR REPLACE VIEW external_data_source_findings_checks AS
@@ -327,9 +367,17 @@ CREATE OR REPLACE VIEW external_data_source_findings_checks AS
          rule || ' -> ' || col   AS detail
   FROM _external_data_source_findings AS f,
        LATERAL (VALUES ('source', f.source), ('rule', f.rule),
+                       ('resolution_stage', f.resolution_stage),
                        ('severity', f.severity), ('message', f.message),
                        ('detail_view', f.detail_view)) AS v(col, val)
   WHERE v.val IS NULL
+
+  UNION ALL
+  -- The stage vocabulary is closed and the worklist ORDER BY ranks it by literal
+  -- string; a value outside the set would silently sort with `content`.
+  SELECT 'unknown_resolution_stage', rule || ' -> ' || resolution_stage
+  FROM _external_data_source_findings
+  WHERE resolution_stage NOT IN ('manufacturers', 'titles', 'models', 'content')
 
   UNION ALL
   -- Severity is computed per finding, so a CASE that loses its ELSE returns something
