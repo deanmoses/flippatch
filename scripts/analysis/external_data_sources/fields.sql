@@ -7,7 +7,6 @@
 -- IPDB recreates every row in the OPDB bucket. A dissent where another witness backs
 -- us is a standoff already adjudicated, not a defect -- which is why there is no
 -- ipdb_model_fields_disagreeing and no per-source field rule anywhere in this layer.
--- The design and its measurements: docs/plans/ExternalDataSourceFieldMerge.md.
 --
 -- Two public shapes over one merge:
 --

@@ -182,12 +182,18 @@ CREATE OR REPLACE VIEW _eds_ipdb_namesakes AS
 --                           Confirmed cases only, carried on the mart row itself;
 --                           pinexplore's `ipdb_ref.duplicate_listings` records the
 --                           reasoning and the two URLs it rests on.
---   catalog_holds_unlinked  The search resolved UNIQUELY to a model with no IPDB id.
---                           A backfill: patch the id, do not create a record.
---   possible_duplicate      The search resolved uniquely to a model already linked to
---                           a DIFFERENT IPDB id. Either an unrecorded duplicate
---                           listing, or two genuinely different machines. Needs both
---                           IPDB pages read before it can move.
+--   catalog_holds_unlinked  The search resolved UNIQUELY to a model with no IPDB id
+--                           AND the year corroborates. A backfill: patch the id, do
+--                           not create a record.
+--   possible_duplicate      The search resolved uniquely, year corroborated, to a
+--                           model already linked to a DIFFERENT IPDB id. Either an
+--                           unrecorded duplicate listing, or two genuinely different
+--                           machines. Needs both IPDB pages read before it can move.
+--   year_unverified         Exactly one model answers, but the year triangle CANNOT
+--                           CLOSE -- the listing or the catalog model is undated --
+--                           so the match is unproven and linking it would be a guess
+--                           (the identity doc's NEVER-GUESS rule). Find the year,
+--                           date the undated side, then link.
 --   multiple_candidates     MORE than one model answers the name and maker, so the
 --                           search answers plurally: `candidate_model_slugs` lists
 --                           them. Adjudicate before patching; no arbitrary candidate
@@ -234,8 +240,14 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
     d.ipdb_manufacturer_slug,
     CASE
       WHEN d.duplicate_of_ipdb_id IS NOT NULL   THEN 'duplicate_listing'
-      WHEN c.unlinked_model_slug IS NOT NULL    THEN 'catalog_holds_unlinked'
-      WHEN c.linked_model_slug IS NOT NULL      THEN 'possible_duplicate'
+      -- The confident classes demand the CLOSED triangle: unique candidate AND the
+      -- year corroborated. A unique match whose year leg cannot close is
+      -- `year_unverified` -- never a link instruction.
+      WHEN c.unlinked_model_slug IS NOT NULL
+       AND c.resolved_year_verdict = 'corroborated' THEN 'catalog_holds_unlinked'
+      WHEN c.linked_model_slug IS NOT NULL
+       AND c.resolved_year_verdict = 'corroborated' THEN 'possible_duplicate'
+      WHEN c.n_candidates = 1                   THEN 'year_unverified'
       WHEN c.n_candidates > 1                   THEN 'multiple_candidates'
       WHEN c.n_year_refuted > 0                 THEN 'year_conflict'
       WHEN d.ipdb_manufacturer_slug IS NULL     THEN 'maker_unresolved'
@@ -262,7 +274,7 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
   LEFT JOIN _eds_ipdb_namesakes  AS n USING (ipdb_id)
   WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.ipdb_id);
 COMMENT ON VIEW ipdb_models_unmatched IS
-  'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_conflict / maker_unresolved / absent, with the resolved model where exactly one answered, the sorted candidate list where several did, the year-refuted list where the triangle disagreed, and a namesake count where no search could run. Rows are expected.';
+  'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_unverified / year_conflict / maker_unresolved / absent, with the resolved model where exactly one answered, the sorted candidate list where several did, the year-refuted list where the triangle disagreed, and a namesake count where no search could run. Rows are expected.';
 
 -- WORKLIST — the other direction: a model carries an IPDB id the dump no longer holds.
 --
@@ -723,7 +735,7 @@ DELETE FROM _external_data_source_findings WHERE source = 'ipdb';
 -- would be permanent noise. It stays visible in `ipdb_models_unmatched`.
 --
 -- One rule per classification rather than one rule for the view, because the classes ask
--- for different actions and a dismissal keys on the rule. Six warnings: each is
+-- for different actions and a dismissal keys on the rule. Seven warnings: each is
 -- something the catalog does not yet say, never something it says wrongly.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
@@ -733,6 +745,7 @@ SELECT
     WHEN 'catalog_holds_unlinked' THEN 'ipdb-model-unlinked'
     WHEN 'possible_duplicate'     THEN 'ipdb-model-possible-duplicate'
     WHEN 'multiple_candidates'    THEN 'ipdb-model-multiple-candidates'
+    WHEN 'year_unverified'        THEN 'ipdb-model-year-unverified'
     WHEN 'year_conflict'          THEN 'ipdb-model-year-conflict'
     WHEN 'maker_unresolved'       THEN 'ipdb-model-maker-unresolved'
     WHEN 'absent'                 THEN 'ipdb-model-absent'
@@ -760,6 +773,14 @@ SELECT
              ipdb_id, coalesce(ipdb_name, '?'),
              plural(n_candidates, 'catalog model', 'catalog models'),
              array_to_string(candidate_model_slugs, ', '))
+    WHEN 'year_unverified' THEN
+      format('IPDB {} "{}" ({}) matches {}{} by name and maker, but {}, so the match is unproven; find the year, date the undated side, then link',
+             ipdb_id, coalesce(ipdb_name, '?'),
+             coalesce(ipdb_date_year::VARCHAR, 'undated'),
+             coalesce(unlinked_model_slug, linked_model_slug),
+             coalesce(' (links IPDB ' || linked_model_ipdb_id::VARCHAR || ')', ''),
+             CASE WHEN ipdb_date_year IS NULL THEN 'the IPDB listing states no year'
+                  ELSE 'the catalog model is undated' END)
     WHEN 'year_conflict' THEN
       format('IPDB {} "{}" ({}) matches {} by name and maker but more than a year off ({}); read the pages -- a wrong year on one side, or a different era''s machine',
              ipdb_id, coalesce(ipdb_name, '?'),
@@ -1067,7 +1088,8 @@ CREATE OR REPLACE VIEW ipdb_checks AS
   FROM ipdb_models_unmatched
   WHERE classification NOT IN
     ('duplicate_listing', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'year_conflict', 'maker_unresolved', 'absent')
+     'multiple_candidates', 'year_unverified', 'year_conflict',
+     'maker_unresolved', 'absent')
 
   UNION ALL
   -- `absent` is the one classification that ASSERTS something about the catalog rather

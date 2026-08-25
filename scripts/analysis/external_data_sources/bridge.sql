@@ -312,6 +312,12 @@ COMMENT ON VIEW external_data_source_dismissals IS
 -- precedes a model error, because fixing the maker's id changes what every later
 -- stage matches. Working the list top to bottom is the resolution process; filter on
 -- `resolution_stage` to hold the current stage until it is empty.
+--
+-- THE SOURCE SORT IS LOAD-BEARING, not cosmetic: the identity doc rules "match IPDB
+-- before OPDB" -- IPDB's names match the catalog's, and every IPDB link extends the
+-- ipdb_id route's reach on the OPDB side -- and `'ipdb' < 'opdb'` happens to satisfy
+-- it alphabetically. A source added later, or an innocent reorder, must keep the
+-- doc's order deliberate here.
 CREATE OR REPLACE VIEW external_data_source_findings AS
   SELECT * EXCLUDE (dismissed, dismissed_on, dismissal_note)
   FROM external_data_source_findings_all

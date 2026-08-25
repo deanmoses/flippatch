@@ -61,11 +61,67 @@ CREATE OR REPLACE VIEW _eds_opdb_dump AS
   LEFT JOIN manufacturers AS manufacturer
     ON manufacturer.opdb_manufacturer_id = om.opdb_manufacturer_id;
 
+-- ─── the ipdb_id route: link-by-id, above the whole name ladder ────────────
+--
+-- 92% of OPDB listings cross-reference an IPDB id, and the catalog's own ipdb_id
+-- links are unique (asserted in ipdb_checks) -- so an unmatched listing whose
+-- ipdb_id a catalog model already holds is ID-GRADE evidence, needing no name and no
+-- triangle (the identity doc's "OPDB's ipdb_id" rule: link by id before any entity
+-- tier). Trusted only while the transitive chain contradicts nothing; the doc's
+-- three exceptions, checked coarsest first:
+--
+--   shared           several OPDB listings carry this ipdb_id -- OPDB splits
+--                    variants finer than IPDB (both Metallica Premiums
+--                    cross-reference IPDB 6029), so the id names a variant FAMILY,
+--                    not this listing. Never a link; the evidence rides the row.
+--   conflict         the model holding the ipdb_id already links a DIFFERENT
+--                    opdb_id: possible-duplicate evidence, never a backfill.
+--   titles_disagree  the listing's group and the model's title are both linked and
+--                    differ; someone is wrong about grouping, and linking would
+--                    take a side silently.
+--   linkable         a clean chain -- the verdict columns fill and the worklist
+--                    classifies it a backfill.
+CREATE OR REPLACE VIEW _eds_opdb_ipdb_route AS
+  SELECT
+    d.opdb_id,
+    d.opdb_ipdb_id,
+    m.slug AS ipdb_route_model_slug,
+    (SELECT count(*) FROM px.opdb.models AS om
+       WHERE om.ipdb_id = d.opdb_ipdb_id)  AS n_listings_sharing_ipdb_id,
+    CASE
+      WHEN (SELECT count(*) FROM px.opdb.models AS om
+              WHERE om.ipdb_id = d.opdb_ipdb_id) > 1        THEN 'shared'
+      WHEN m.opdb_id IS NOT NULL                            THEN 'conflict'
+      WHEN t_group.id IS NOT NULL AND t_model.id IS NOT NULL
+       AND t_group.id <> t_model.id                         THEN 'titles_disagree'
+      ELSE                                                       'linkable'
+    END AS ipdb_id_chain,
+    CASE WHEN (SELECT count(*) FROM px.opdb.models AS om
+                 WHERE om.ipdb_id = d.opdb_ipdb_id) = 1
+          AND m.opdb_id IS NULL
+          AND NOT (t_group.id IS NOT NULL AND t_model.id IS NOT NULL
+                   AND t_group.id <> t_model.id)
+         THEN m.slug END    AS unlinked_model_slug,
+    CASE WHEN (SELECT count(*) FROM px.opdb.models AS om
+                 WHERE om.ipdb_id = d.opdb_ipdb_id) = 1
+          AND m.opdb_id IS NOT NULL
+         THEN m.slug END    AS linked_model_slug,
+    CASE WHEN (SELECT count(*) FROM px.opdb.models AS om
+                 WHERE om.ipdb_id = d.opdb_ipdb_id) = 1
+         THEN m.opdb_id END AS linked_model_opdb_id,
+    m.production_year       AS ipdb_route_model_production_year
+  FROM _eds_opdb_dump AS d
+  INNER JOIN models AS m ON m.ipdb_id = try_cast(d.opdb_ipdb_id AS BIGINT)
+  LEFT JOIN titles AS t_group ON t_group.opdb_id = d.title_opdb_id
+  LEFT JOIN titles AS t_model ON t_model.id = m.title_id
+  WHERE NOT EXISTS (SELECT 1 FROM models AS x WHERE x.opdb_id = d.opdb_id);
+
 -- ─── the model-matching ladder ─────────────────────────────────────────────
 --
 -- Matching an OPDB listing to a catalog model runs down evidence tiers, strongest
--- first. The id tier is implicit -- every view here is scoped to listings whose id no
--- model carries -- and below it:
+-- first. Above everything sits the ipdb_id route -- an id, not a match. The name
+-- tiers below apply to what it could not settle. The catalog-id tier is implicit --
+-- every view here is scoped to listings whose id no model carries -- and below it:
 --
 --   1. title_and_maker  name match among the models of the catalog title that links
 --                       the listing's own GROUP (OPDB group = catalog Title), with
@@ -241,10 +297,18 @@ CREATE OR REPLACE VIEW _eds_opdb_namesakes AS
 --                           repoint. First in precedence because the successor usually
 --                           also name-matches that very model, and reading it as a
 --                           `possible_duplicate` restates the same repoint as new work.
---   catalog_holds_unlinked  The ladder resolved UNIQUELY to a model with no OPDB id.
---                           A backfill: patch the id, do not create a record.
---   possible_duplicate      The ladder resolved uniquely to a model already linked to
---                           a DIFFERENT OPDB id. Read both OPDB pages.
+--   catalog_holds_unlinked  The ladder resolved UNIQUELY to a model with no OPDB id
+--                           AND the year corroborates. A backfill: patch the id, do
+--                           not create a record.
+--   possible_duplicate      The ladder resolved uniquely, year corroborated, to a
+--                           model already linked to a DIFFERENT OPDB id. Read both
+--                           OPDB pages.
+--   year_unverified         Exactly one model answers, but the year triangle CANNOT
+--                           CLOSE -- the catalog model is undated -- so the match is
+--                           unproven and linking it would be a guess (the identity
+--                           doc's NEVER-GUESS rule: a missing leg blocks the link,
+--                           full stop). Verify the year on the OPDB page, date the
+--                           model, then link.
 --   multiple_candidates     The winning tier holds MORE than one model, so the ladder
 --                           answers plurally: `candidate_model_slugs` lists them and
 --                           `match_basis` says which tier. Adjudicate before
@@ -280,8 +344,20 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
     d.opdb_relation,
     CASE
       WHEN moved_from.model_slug IS NOT NULL  THEN 'moved_successor'
-      WHEN r.unlinked_model_slug IS NOT NULL  THEN 'catalog_holds_unlinked'
-      WHEN r.linked_model_slug IS NOT NULL    THEN 'possible_duplicate'
+      -- The ipdb_id route outranks the whole name ladder: an id, not a match, so no
+      -- triangle applies (identity doc: link by id before any entity tier). Only a
+      -- CLEAN chain links; its exceptions fall through to the ladder with the
+      -- evidence riding the row.
+      WHEN ir.unlinked_model_slug IS NOT NULL THEN 'catalog_holds_unlinked'
+      WHEN ir.linked_model_slug IS NOT NULL   THEN 'possible_duplicate'
+      -- The confident ladder classes demand the CLOSED triangle: unique candidate
+      -- AND the year corroborated. A unique match whose year leg cannot close is
+      -- `year_unverified` -- never a link instruction.
+      WHEN r.unlinked_model_slug IS NOT NULL
+       AND r.resolved_year_verdict = 'corroborated' THEN 'catalog_holds_unlinked'
+      WHEN r.linked_model_slug IS NOT NULL
+       AND r.resolved_year_verdict = 'corroborated' THEN 'possible_duplicate'
+      WHEN r.n_candidates = 1                 THEN 'year_unverified'
       WHEN r.n_candidates > 1                 THEN 'multiple_candidates'
       WHEN r.n_year_refuted > 0               THEN 'year_conflict'
       WHEN d.opdb_manufacturer_slug IS NULL
@@ -291,19 +367,28 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
     moved_from.model_slug                AS moved_from_model_slug,
     parent.slug                          AS parent_model_slug,
     linked_title.slug                    AS linked_title_slug,
-    r.match_basis,
-    r.unlinked_model_slug,
-    r.linked_model_slug,
-    r.linked_model_opdb_id,
-    r.linked_model_production_year,
+    CASE WHEN ir.unlinked_model_slug IS NOT NULL
+           OR ir.linked_model_slug IS NOT NULL THEN 'ipdb_id'
+         ELSE r.match_basis END          AS match_basis,
+    coalesce(ir.unlinked_model_slug, r.unlinked_model_slug) AS unlinked_model_slug,
+    coalesce(ir.linked_model_slug, r.linked_model_slug)     AS linked_model_slug,
+    coalesce(ir.linked_model_opdb_id, r.linked_model_opdb_id) AS linked_model_opdb_id,
+    coalesce(CASE WHEN ir.linked_model_slug IS NOT NULL
+                  THEN ir.ipdb_route_model_production_year END,
+             r.linked_model_production_year) AS linked_model_production_year,
     r.resolved_year_verdict,
     coalesce(r.n_candidates, 0)          AS n_candidates,
     r.candidate_model_slugs,
     coalesce(r.n_year_refuted, 0)        AS n_year_refuted,
     r.year_refuted_models,
+    ir.opdb_ipdb_id,
+    ir.ipdb_route_model_slug,
+    ir.ipdb_id_chain,
+    ir.n_listings_sharing_ipdb_id,
     coalesce(n.n_namesake_models, 0)     AS n_namesake_models,
     n.namesake_model_slugs
   FROM _eds_opdb_dump AS d
+  LEFT JOIN _eds_opdb_ipdb_route AS ir USING (opdb_id)
   LEFT JOIN _eds_opdb_model_resolution AS r USING (opdb_id)
   LEFT JOIN _eds_opdb_namesakes  AS n USING (opdb_id)
   LEFT JOIN models AS parent       ON parent.opdb_id = d.opdb_variant_of
@@ -319,7 +404,7 @@ CREATE OR REPLACE VIEW opdb_models_unmatched AS
   ) AS moved_from ON true
   WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.opdb_id = d.opdb_id);
 COMMENT ON VIEW opdb_models_unmatched IS
-  'Worklist — one row per OPDB listing no live model carries the id of, classified moved_successor / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_conflict / maker_unresolved / absent by the matching ladder (id, then name within the group''s linked title, then name and maker, with the year refuting any candidate more than a year off), with match_basis, candidate and year-refuted lists, and namesake evidence. Rows are expected.';
+  'Worklist — one row per OPDB listing no live model carries the id of, classified moved_successor / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_unverified / year_conflict / maker_unresolved / absent. The ipdb_id route links first where its chain is clean (match_basis ipdb_id; a shared id or a grouping disagreement blocks it, the evidence riding the row); then the name ladder (name within the group''s linked title, then name and maker, the year refuting any candidate more than a year off). Rows are expected.';
 
 -- WORKLIST — the other direction: a model carries an OPDB id the dump no longer serves.
 --
@@ -450,8 +535,19 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
       WHEN md.n_machines_title_slugs > 1      THEN 'split_across_titles'
       WHEN md.unlinked_title_slug IS NOT NULL THEN 'catalog_holds_unlinked'
       WHEN md.linked_title_slug IS NOT NULL   THEN 'possible_duplicate'
-      WHEN c.unlinked_title_slug IS NOT NULL  THEN 'catalog_holds_unlinked'
-      WHEN c.linked_title_slug IS NOT NULL    THEN 'possible_duplicate'
+      -- The name route's verdicts are gated by the YEAR LEG (identity doc: a name
+      -- alone is a guess). A title has no year of its own; the comparable fact is
+      -- its EARLIEST dated model year, because OPDB's group year is the family's
+      -- original release. A candidate title with no dated model corroborates
+      -- nothing; one more than a year off contradicts. Machine votes above are
+      -- deliberately not year-gated -- members outrank both name and year.
+      WHEN c.unlinked_title_slug IS NOT NULL
+        OR c.linked_title_slug IS NOT NULL    THEN
+        CASE WHEN c.candidate_earliest_model_year IS NULL         THEN 'year_unverified'
+             WHEN abs(ot.year - c.candidate_earliest_model_year) > 1 THEN 'year_conflict'
+             WHEN c.unlinked_title_slug IS NOT NULL               THEN 'catalog_holds_unlinked'
+             ELSE                                                      'possible_duplicate'
+        END
       WHEN c.n_candidates > 1                 THEN 'multiple_candidates'
       ELSE                                         'absent'
     END            AS classification,
@@ -461,7 +557,8 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
     md.machines_title_slugs,
     coalesce(md.n_machines_title_slugs, 0) AS n_machines_title_slugs,
     coalesce(c.n_candidates, 0)            AS n_candidates,
-    c.candidate_title_slugs
+    c.candidate_title_slugs,
+    c.candidate_earliest_model_year
   FROM px.opdb.titles AS ot
   LEFT JOIN _eds_opdb_group_titles AS md USING (opdb_id)
   -- The name route, under the ladder's verdict discipline: verdict columns fill only
@@ -474,7 +571,8 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
       candidate_title_slugs,
       CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END    AS unlinked_title_slug,
       CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END    AS linked_title_slug,
-      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_opdb_id END AS linked_title_opdb_id
+      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_opdb_id END AS linked_title_opdb_id,
+      CASE WHEN n_candidates = 1 THEN only_earliest_year END AS candidate_earliest_model_year
     FROM (
       SELECT
         ot2.opdb_id,
@@ -482,16 +580,23 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
         count(*) FILTER (WHERE t.opdb_id IS NOT NULL) AS n_linked,
         list_sort(list(t.slug))[:5]                   AS candidate_title_slugs,
         min(t.slug)                                   AS only_slug,
-        min(t.opdb_id)                                AS only_opdb_id
+        min(t.opdb_id)                                AS only_opdb_id,
+        -- `least` ignores NULLs, so this is the earliest year any model on the
+        -- title states, production or project -- and NULL when none is dated.
+        min(te.earliest_year)                         AS only_earliest_year
       FROM px.opdb.titles AS ot2
       INNER JOIN titles AS t ON name_norm(t.name) = name_norm(ot2.name)
+      LEFT JOIN LATERAL (
+        SELECT least(min(m.production_year), min(m.project_year)) AS earliest_year
+        FROM models AS m WHERE m.title_id = t.id
+      ) AS te ON true
       WHERE NOT EXISTS (SELECT 1 FROM titles AS x WHERE x.opdb_id = ot2.opdb_id)
       GROUP BY ot2.opdb_id
     )
   ) AS c USING (opdb_id)
   WHERE NOT EXISTS (SELECT 1 FROM titles AS t WHERE t.opdb_id = ot.opdb_id);
 COMMENT ON VIEW opdb_titles_unmatched IS
-  'Worklist — one row per OPDB machine group no live title carries the id of, classified split_across_titles / catalog_holds_unlinked / possible_duplicate / multiple_candidates / absent. The group''s own machines settle the title where they can (split_across_titles means they reach more than one title — reported from opdb_title_splits); a name-only search is the fallback, its plural answers listed rather than picked from. Rows are expected.';
+  'Worklist — one row per OPDB machine group no live title carries the id of, classified split_across_titles / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_unverified / year_conflict / absent. The group''s own machines settle the title where they can (split_across_titles means they reach more than one title — reported from opdb_title_splits); the name-only fallback needs the group''s year within one of the candidate title''s earliest model year, its plural answers listed rather than picked from. Rows are expected.';
 
 -- WORKLIST — every OPDB group whose machines the catalog holds under more than one
 -- title, MATCHED groups included.
@@ -726,8 +831,7 @@ COMMENT ON VIEW opdb_ipdb_id_crosscheck IS
 -- NO FIELD COMPARISON LIVES HERE, deliberately. A per-source scalar-field worklist
 -- manufactures seesaw work, because sources disagree with each other and a dissent
 -- another witness backs us on is a standoff, not a defect. Fields are compared against
--- the testimony POOL in `fields.sql` -- see its header and
--- docs/plans/ExternalDataSourceFieldMerge.md before proposing one here.
+-- the testimony POOL in `fields.sql` -- read its header before proposing one here.
 --
 -- Names are deliberately not compared anywhere: 135 models differ under `name_norm`
 -- and nearly all of it is styling convention (subtitle punctuation, edition spelling),
@@ -900,7 +1004,7 @@ COMMENT ON VIEW opdb_vocabulary_absent IS
 DELETE FROM _external_data_source_findings WHERE source = 'opdb';
 
 -- ─── unmatched listings and groups ─────────────────────────────────────────
--- Six warnings, one per classification, because the classes ask for different actions
+-- Seven warnings, one per classification, because the classes ask for different actions
 -- and a dismissal keys on the rule. `moved_successor` is excluded, not downgraded: the
 -- repoint is already reported by `opdb-id-moved`, and a second finding on the successor
 -- id would restate it. It stays visible in the wide view.
@@ -912,6 +1016,7 @@ SELECT
     WHEN 'catalog_holds_unlinked' THEN 'opdb-model-unlinked'
     WHEN 'possible_duplicate'     THEN 'opdb-model-possible-duplicate'
     WHEN 'multiple_candidates'    THEN 'opdb-model-multiple-candidates'
+    WHEN 'year_unverified'        THEN 'opdb-model-year-unverified'
     WHEN 'year_conflict'          THEN 'opdb-model-year-conflict'
     WHEN 'maker_unresolved'       THEN 'opdb-model-maker-unresolved'
     WHEN 'absent'                 THEN 'opdb-model-absent'
@@ -923,12 +1028,25 @@ SELECT
   CASE WHEN classification = 'catalog_holds_unlinked' THEN unlinked_model_slug END AS entity_public_id,
   CASE classification
     WHEN 'catalog_holds_unlinked' THEN
-      format('OPDB {} "{}" matches unlinked catalog model {}; backfill the opdb_id',
-             opdb_id, coalesce(opdb_name, '?'), coalesce(unlinked_model_slug, '?'))
+      -- The ipdb_id route earns its own wording: the reader should know the link
+      -- rests on an id chain, not a name match.
+      CASE WHEN match_basis = 'ipdb_id' THEN
+        format('OPDB {} "{}" cross-references IPDB {}, held by unlinked catalog model {}; backfill the opdb_id',
+               opdb_id, coalesce(opdb_name, '?'), opdb_ipdb_id, coalesce(unlinked_model_slug, '?'))
+      ELSE
+        format('OPDB {} "{}" matches unlinked catalog model {}; backfill the opdb_id',
+               opdb_id, coalesce(opdb_name, '?'), coalesce(unlinked_model_slug, '?'))
+      END
     WHEN 'possible_duplicate' THEN
-      format('OPDB {} "{}" matches catalog model {}, which already links OPDB {}; read both pages',
-             opdb_id, coalesce(opdb_name, '?'), coalesce(linked_model_slug, '?'),
-             coalesce(linked_model_opdb_id, '?'))
+      CASE WHEN match_basis = 'ipdb_id' THEN
+        format('OPDB {} "{}" cross-references IPDB {}, held by catalog model {}, which already links OPDB {}; read both pages',
+               opdb_id, coalesce(opdb_name, '?'), opdb_ipdb_id,
+               coalesce(linked_model_slug, '?'), coalesce(linked_model_opdb_id, '?'))
+      ELSE
+        format('OPDB {} "{}" matches catalog model {}, which already links OPDB {}; read both pages',
+               opdb_id, coalesce(opdb_name, '?'), coalesce(linked_model_slug, '?'),
+               coalesce(linked_model_opdb_id, '?'))
+      END
     WHEN 'multiple_candidates' THEN
       -- The plural answer, listed and never picked from. The list is sorted at the
       -- source and capped at 5; `n_candidates` is the true count.
@@ -939,6 +1057,14 @@ SELECT
                               WHEN 'title'           THEN 'name within its linked title'
                               ELSE                        'name and maker' END,
              array_to_string(candidate_model_slugs, ', '))
+    WHEN 'year_unverified' THEN
+      format('OPDB {} "{}" ({}) matches {}{} by {}, but the catalog model is undated, so the match is unproven; verify the year on the OPDB page, date the model, then link',
+             opdb_id, coalesce(opdb_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
+             coalesce(unlinked_model_slug, linked_model_slug),
+             coalesce(' (links OPDB ' || linked_model_opdb_id || ')', ''),
+             CASE match_basis WHEN 'title_and_maker' THEN 'name and maker within its linked title'
+                              WHEN 'title'           THEN 'name within its linked title'
+                              ELSE                        'name and maker' END)
     WHEN 'year_conflict' THEN
       format('OPDB {} "{}" ({}) matches {} by name but more than a year off ({}); read the pages -- a wrong year on one side, or a different era''s machine',
              opdb_id, coalesce(opdb_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
@@ -957,13 +1083,23 @@ SELECT
     WHEN 'absent' THEN
       -- The relation qualifies what creating the record involves: an edition with a
       -- resolved parent is a smaller job than a standalone machine.
-      format('OPDB {} "{}" ({}, {}) has no catalog model and no candidate matched its name{}{}',
+      format('OPDB {} "{}" ({}, {}) has no catalog model and no candidate matched its name{}{}{}',
              opdb_id, coalesce(opdb_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
              opdb_relation,
              CASE WHEN parent_model_slug IS NOT NULL
                   THEN '; catalog parent ' || parent_model_slug ELSE '' END,
              CASE WHEN linked_title_slug IS NOT NULL
-                  THEN '; files under title ' || linked_title_slug ELSE '' END)
+                  THEN '; files under title ' || linked_title_slug ELSE '' END,
+             -- A blocked ipdb_id chain is still the best lead on the row: the reader
+             -- should see the family the id names before creating anything.
+             CASE WHEN ipdb_route_model_slug IS NOT NULL
+                  THEN '; cross-references IPDB ' || opdb_ipdb_id || ', held by ' || ipdb_route_model_slug
+                       || CASE WHEN ipdb_id_chain = 'shared'
+                               THEN ' (' || n_listings_sharing_ipdb_id::VARCHAR || ' OPDB listings share the id)'
+                               WHEN ipdb_id_chain = 'titles_disagree'
+                               THEN ' (on a different title)'
+                               ELSE '' END
+                  ELSE '' END)
   END AS message,
   'opdb_models_unmatched' AS detail_view
 FROM opdb_models_unmatched
@@ -981,6 +1117,8 @@ SELECT
     WHEN 'catalog_holds_unlinked' THEN 'opdb-title-unlinked'
     WHEN 'possible_duplicate'     THEN 'opdb-title-possible-duplicate'
     WHEN 'multiple_candidates'    THEN 'opdb-title-multiple-candidates'
+    WHEN 'year_unverified'        THEN 'opdb-title-year-unverified'
+    WHEN 'year_conflict'          THEN 'opdb-title-year-conflict'
     WHEN 'absent'                 THEN 'opdb-title-absent'
   END AS rule,
   'warning' AS severity,
@@ -1001,6 +1139,15 @@ SELECT
              opdb_id, coalesce(opdb_title_name, '?'),
              plural(n_candidates, 'catalog title', 'catalog titles'),
              array_to_string(candidate_title_slugs, ', '))
+    WHEN 'year_unverified' THEN
+      format('OPDB group {} "{}" ({}) matches catalog title {} by name, but no model on it is dated, so the year leg cannot close; date a model, then link',
+             opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
+             coalesce(unlinked_title_slug, linked_title_slug))
+    WHEN 'year_conflict' THEN
+      format('OPDB group {} "{}" ({}) matches catalog title {} by name, but its earliest model year {} is more than a year off; read the pages -- a wrong year on one side, or a different family',
+             opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
+             coalesce(unlinked_title_slug, linked_title_slug),
+             candidate_earliest_model_year)
     WHEN 'absent' THEN
       format('OPDB group {} "{}" ({}, {}) has no catalog title and none matches its name',
              opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
@@ -1314,7 +1461,8 @@ CREATE OR REPLACE VIEW opdb_checks AS
   FROM opdb_models_unmatched
   WHERE classification NOT IN
     ('moved_successor', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'year_conflict', 'maker_unresolved', 'absent')
+     'multiple_candidates', 'year_unverified', 'year_conflict',
+     'maker_unresolved', 'absent')
 
   UNION ALL
   -- The CASE precedence: a successor usually also name-matches the model holding the
@@ -1330,7 +1478,7 @@ CREATE OR REPLACE VIEW opdb_checks AS
   FROM opdb_titles_unmatched
   WHERE classification NOT IN
     ('split_across_titles', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'absent')
+     'multiple_candidates', 'year_unverified', 'year_conflict', 'absent')
 
   UNION ALL
   -- The verdict layer holds one row per group; if it ever fans out, the title worklist
@@ -1376,6 +1524,13 @@ CREATE OR REPLACE VIEW opdb_checks AS
   -- it fans out, every consumer double-counts at once.
   SELECT 'resolution_not_one_row_per_listing', opdb_id
   FROM _eds_opdb_model_resolution GROUP BY opdb_id HAVING count(*) > 1
+
+  UNION ALL
+  -- The ipdb_id route joins the catalog on models.ipdb_id, whose uniqueness
+  -- ipdb_checks asserts -- but this view's grain is its own claim, so it is anchored
+  -- here too.
+  SELECT 'ipdb_route_not_one_row_per_listing', opdb_id
+  FROM _eds_opdb_ipdb_route GROUP BY opdb_id HAVING count(*) > 1
 
   UNION ALL
   -- The stale-id join to the changelog is a lookup and must not fan the worklist out.
