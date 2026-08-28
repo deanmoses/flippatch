@@ -4,191 +4,22 @@
 --
 --     .read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
 --
--- It reads `bridge.sql` itself, so the attach, the watermark and the bridge's own
--- invariants come with it. Read that file first for the scope and the findings/checks
--- rule; the worklists below return rows on a healthy catalog.
+-- It reads `identity.sql` itself — the decode of IPDB's dump, the model-matching
+-- ladder, and the known-good replay live THERE, run once for both sources — which in
+-- turn reads `bridge.sql`, so the attach, the watermark and the bridge's invariants
+-- come with it. This file holds what is IPDB's alone: the worklist in IPDB's terms,
+-- corporate entities (IPDB's maker grain), credits, specialties, and their findings.
+-- The worklists below return rows on a healthy catalog.
 
-.read ../flippatch/scripts/analysis/external_data_sources/bridge.sql
-
--- One row per IPDB model, as IPDB states it, decoded into catalog terms.
---
--- Reads pinexplore's MART. It is the only thing here that may be read: the staging and
--- reference layers under it are that repo's working material. The mart is also where
--- the corrections live -- records whose scraped manufacturer IPDB's own page denies
--- arrive with those fields already cleared, and IPDB's two ways of writing "no
--- manufacturer" (ids 0 and 328) arrive as NULL rather than as a company.
---
--- That last point is why the filters below are `IS NOT NULL` rather than a NOT IN
--- against a list of placeholder ids. A forgotten `IS NOT NULL` compares against NULL
--- and matches nothing; a forgotten NOT IN compares against a real corporate entity and
--- matches the wrong one.
---
--- Every `ipdb_` column is IPDB's assertion; the two slugs are that assertion decoded, not
--- the catalog's own answer -- `ipdb_corporate_entity_slug` is the corporate entity IPDB's
--- id points at, which is the thing the catalog's own value gets compared against below.
---
--- The decode joins on `ipdb_manufacturer_id`, the catalog's handle on an IPDB maker,
--- which resolves all but two of them and cannot multiply the grain: that column is unique
--- across live corporate entities, asserted in `ipdb_checks`.
--- MATERIALIZED, with the view above it kept as the DEFINITION WITNESS. The relation is
--- scanned dozens of times per run -- every summary branch, every check -- and as a view
--- each scan re-read and re-joined the dump. As a table it is computed once. The
--- `_source` view exists so `external_data_sources_boundary_checks` can still see the
--- `px.` reads: that guard regex-scans VIEW definitions, and DuckDB keeps no defining SQL
--- for a table, so materializing without the witness would silently retire the guard on
--- exactly the relations that read pinexplore. Never read `_source` directly.
-CREATE OR REPLACE VIEW _eds_ipdb_dump_source AS
-  SELECT
-    im.ipdb_id,
-    im.name                                                         AS ipdb_name,
-    im.ipdb_corporate_entity_id,
-    im.corporate_entity_text                                        AS ipdb_corporate_entity_text,
-    -- The HEADER-PARSED year, never `date_of_manufacture`: that field is a timestamp,
-    -- so a year-only listing arrives padded to Jan 1 and its year is indistinguishable
-    -- from real precision -- the trap campaigns 0277/0268 document. The header parse
-    -- covers every dated listing (checked: zero rows carry a date the header lacks) and
-    -- brings `date_kind`, without which the year is not comparable: a project year
-    -- answers `project_year`, never `production_year`. The kind rides beside the year
-    -- so no consumer can take one without seeing the other.
-    im.additional_details_date_year::INT   AS ipdb_date_year,
-    im.additional_details_date_kind        AS ipdb_date_kind,
-    im.carried_forward,
-    im.duplicate_of_ipdb_id,
-    corporate_entity.slug                                           AS ipdb_corporate_entity_slug,
-    corporate_entity.manufacturer_slug                              AS ipdb_manufacturer_slug
-  FROM px.ipdb.models AS im
-  LEFT JOIN corporate_entities AS corporate_entity
-    ON corporate_entity.ipdb_manufacturer_id = im.ipdb_corporate_entity_id;
-CREATE OR REPLACE TABLE _eds_ipdb_dump AS SELECT * FROM _eds_ipdb_dump_source;
-
--- Catalog models that answer to an unmatched listing's name and maker, counted by
--- whether they already carry an IPDB id.
---
--- Matched on `name_norm`, not `name_key`: `name_key` strips a trailing parenthetical, so
--- it folds "Foo Fighters (Pro)", "(Premium)" and "(Limited Edition)" onto one key and
--- would offer all three as candidates for each. The edition suffix is the identity here.
---
--- Aggregated rather than joined through, because a name and maker can answer to more
--- than one model and joining would emit the listing once per candidate.
---
--- THE VERDICT DISCIPLINE (shared with OPDB's ladder): the verdict columns fill only
--- when exactly ONE model answers; a plural answer is published as `n_candidates` and
--- the sorted capped list, never as the alphabetically first match dressed up as the
--- answer -- the worklist classifies it `multiple_candidates` instead. IPDB has no
--- grouping concept, so unlike OPDB there is no title tier: name-and-maker is the only
--- candidate search below the id. With exactly one row, `min` of each column reads
--- that row whole, NULLs included.
---
--- THE YEAR TRIANGULATES OPPORTUNISTICALLY. Model identity is (name, maker, year),
--- the year allowed off by one but no more -- but a sixth of IPDB's listings state no
--- year, so unlike OPDB the triangle closes only where both sides date the machine. It
--- REFUTES, never elects (see the OPDB ladder for why): a refuted candidate leaves the
--- pool and the worklist classifies its stranded listing `year_conflict`, the refuted
--- list on the row. Either catalog year corroborates, whatever the IPDB date's kind --
--- kind precision matters for comparing FIELD VALUES (fields.sql), not for recognizing
--- that two records describe one machine.
--- MATERIALIZED: the ladder is the layer's most-scanned computation and, since it is
--- deliberately unscoped for the replay, its most expensive. Computed once per session.
-CREATE OR REPLACE TABLE _eds_ipdb_candidates AS
-  WITH matches AS (
-    SELECT
-      d.ipdb_id,
-      m.slug     AS model_slug,
-      m.ipdb_id  AS model_ipdb_id,
-      m.production_year,
-      coalesce(m.production_year, m.project_year) AS model_display_year,
-      -- Same NULL logic as the OPDB twin: `NULL OR false` falls through to refuted,
-      -- which is correct -- the only year the catalog states is off.
-      CASE WHEN d.ipdb_date_year IS NULL
-             OR (m.production_year IS NULL AND m.project_year IS NULL)  THEN 'unknown'
-           WHEN abs(d.ipdb_date_year - m.production_year) <= 1
-             OR abs(d.ipdb_date_year - m.project_year) <= 1             THEN 'corroborated'
-           ELSE                                                              'refuted'
-      END AS year_verdict
-    FROM _eds_ipdb_dump AS d
-    INNER JOIN models AS m
-      ON name_norm(m.name) = name_norm(d.ipdb_name)
-     AND m.manufacturer_slug = d.ipdb_manufacturer_slug
-    -- NOT filtered to unmatched listings, for the reason its OPDB twin carries: the
-    -- ladder has to be runnable over the links we ALREADY hold, or `known_good_replay.sql`
-    -- would be testing a copy of the matcher rather than the matcher. The one consumer,
-    -- `ipdb_models_unmatched`, filters in its own WHERE, so live output is unchanged.
-  ),
-  refuted AS (
-    -- A refuted candidate that is already LINKED says so: whether the near-miss is
-    -- spoken for by another external id is the fact that turns "investigate a year
-    -- discrepancy" into "this is a different machine; create it".
-    SELECT ipdb_id,
-           count(*) AS n_year_refuted,
-           list_sort(list(model_slug || ' (' || coalesce(model_display_year::VARCHAR, '?')
-             || coalesce(', links IPDB ' || model_ipdb_id::VARCHAR, '') || ')'))[:5]
-             AS year_refuted_models
-    FROM matches WHERE year_verdict = 'refuted' GROUP BY ipdb_id
-  ),
-  verdicts AS (
-    SELECT
-      ipdb_id,
-      n_candidates,
-      candidate_model_slugs,
-      CASE WHEN n_candidates = 1 THEN only_year_verdict END             AS resolved_year_verdict,
-      CASE WHEN n_candidates = 1 AND n_linked = 0 THEN only_slug END    AS unlinked_model_slug,
-      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_slug END    AS linked_model_slug,
-      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_ipdb_id END AS linked_model_ipdb_id,
-      CASE WHEN n_candidates = 1 AND n_linked = 1 THEN only_year END    AS linked_model_production_year
-    FROM (
-      SELECT
-        ipdb_id,
-        count(*)                                            AS n_candidates,
-        count(*) FILTER (WHERE model_ipdb_id IS NOT NULL)   AS n_linked,
-        list_sort(list(model_slug))[:5]                     AS candidate_model_slugs,
-        min(model_slug)                                     AS only_slug,
-        min(model_ipdb_id)                                  AS only_ipdb_id,
-        min(production_year)                                AS only_year,
-        min(year_verdict)                                   AS only_year_verdict
-      FROM matches
-      WHERE year_verdict <> 'refuted'
-      GROUP BY ipdb_id
-    )
-  )
-  SELECT
-    coalesce(v.ipdb_id, rf.ipdb_id) AS ipdb_id,
-    coalesce(v.n_candidates, 0)     AS n_candidates,
-    v.candidate_model_slugs,
-    v.resolved_year_verdict,
-    v.unlinked_model_slug,
-    v.linked_model_slug,
-    v.linked_model_ipdb_id,
-    v.linked_model_production_year,
-    coalesce(rf.n_year_refuted, 0)  AS n_year_refuted,
-    rf.year_refuted_models
-  FROM verdicts AS v
-  FULL JOIN refuted AS rf ON rf.ipdb_id = v.ipdb_id;
-
--- Catalog models answering to an unmatched listing's NAME, whatever their maker.
---
--- The weaker half of the pair above, and it exists because the stronger half needs a
--- maker on both sides. Where the listing has no resolved maker, `_eds_ipdb_candidates`
--- cannot match anything at all, and a count of zero there is "not looked for" rather
--- than "not there" -- the two read identically until this says otherwise.
---
--- A namesake is not a candidate. Machine names repeat freely across makers and decades
--- (eight live models are called Lady Luck), so this evidences the question rather than
--- answering it: a non-zero count means read the IPDB page before creating a record.
-CREATE OR REPLACE VIEW _eds_ipdb_namesakes AS
-  SELECT
-    d.ipdb_id,
-    count(*)                                    AS n_namesake_models,
-    list_sort(list(m.slug))[:5]                 AS namesake_model_slugs
-  FROM _eds_ipdb_dump AS d
-  INNER JOIN models AS m ON name_norm(m.name) = name_norm(d.ipdb_name)
-  WHERE NOT EXISTS (SELECT 1 FROM models AS x WHERE x.ipdb_id = d.ipdb_id)
-  GROUP BY d.ipdb_id;
+.read ../flippatch/scripts/analysis/external_data_sources/identity.sql
 
 -- WORKLIST — IPDB listings with no catalog model, and what each one actually is.
 --
--- "No model carries this IPDB id" is one condition covering five situations that want
--- five different responses, and reading them all as gaps overstates the work by roughly
--- half. `classification` separates them:
+-- The classification is `identity.sql`'s (`_eds_models_unmatched`; the mechanics — tiers,
+-- the verdict discipline, the year triangle — are documented there). "No model
+-- carries this IPDB id" is one condition covering several situations that want
+-- different responses, and reading them all as gaps overstates the work by roughly
+-- half. The classes as they read on this side:
 --
 --   duplicate_listing       IPDB lists this model twice under two of its own maker
 --                           records; the catalog links the other id. Nothing to do.
@@ -232,14 +63,6 @@ CREATE OR REPLACE VIEW _eds_ipdb_namesakes AS
 -- names one the catalog carries no id for, which `ipdb_corporate_entities_unmatched`
 -- worklists -- acquire the id there and these rows classify themselves.
 --
--- Precedence runs confirmed-first: a confirmed duplicate also matches the
--- `possible_duplicate` shape by construction, and the confirmation is the stronger
--- statement. The two verdict branches are mutually exclusive by construction -- the
--- candidate view fills at most one -- and any plural or mixed answer lands in
--- `multiple_candidates` rather than being resolved by precedence. `maker_unresolved`
--- sits below them only for reading order: a row without a maker slug reaches no
--- candidate branch anyway, since the join they rest on cannot match on a NULL.
---
 -- `carried_forward` is worth reading before acting on an `absent` row: it marks a record
 -- the newest scrape missed, served from an older snapshot, so the listing may no longer
 -- exist upstream at all.
@@ -251,41 +74,26 @@ CREATE OR REPLACE VIEW ipdb_models_unmatched AS
     d.ipdb_date_kind,
     d.ipdb_corporate_entity_text,
     d.ipdb_manufacturer_slug,
-    CASE
-      WHEN d.duplicate_of_ipdb_id IS NOT NULL   THEN 'duplicate_listing'
-      -- The confident classes demand the CLOSED triangle: unique candidate AND the
-      -- year corroborated. A unique match whose year leg cannot close is
-      -- `year_unverified` -- never a link instruction.
-      WHEN c.unlinked_model_slug IS NOT NULL
-       AND c.resolved_year_verdict = 'corroborated' THEN 'catalog_holds_unlinked'
-      WHEN c.linked_model_slug IS NOT NULL
-       AND c.resolved_year_verdict = 'corroborated' THEN 'possible_duplicate'
-      WHEN c.n_candidates = 1                   THEN 'year_unverified'
-      WHEN c.n_candidates > 1                   THEN 'multiple_candidates'
-      WHEN c.n_year_refuted > 0                 THEN 'year_conflict'
-      WHEN d.ipdb_manufacturer_slug IS NULL     THEN 'maker_unresolved'
-      ELSE                                           'absent'
-    END                                    AS classification,
+    u.classification,
     d.duplicate_of_ipdb_id,
-    c.unlinked_model_slug,
-    c.linked_model_slug,
-    c.linked_model_ipdb_id,
-    c.linked_model_production_year,
-    c.resolved_year_verdict,
-    coalesce(c.n_candidates, 0)            AS n_candidates,
-    c.candidate_model_slugs,
-    coalesce(c.n_year_refuted, 0)          AS n_year_refuted,
-    c.year_refuted_models,
+    u.unlinked_model_slug,
+    u.linked_model_slug,
+    u.linked_model_external_id::BIGINT AS linked_model_ipdb_id,
+    u.linked_model_production_year,
+    u.resolved_year_verdict,
+    u.n_candidates,
+    u.candidate_model_slugs,
+    u.n_year_refuted,
+    u.year_refuted_models,
     -- Name-only evidence, carried on every row rather than only the unsearchable ones:
     -- a namesake under a DIFFERENT maker is worth seeing before creating a record, and
     -- an `absent` row with namesakes is the shape a mis-attributed listing takes.
-    coalesce(n.n_namesake_models, 0)       AS n_namesake_models,
-    n.namesake_model_slugs,
+    u.n_namesake_models,
+    u.namesake_model_slugs,
     d.carried_forward
-  FROM _eds_ipdb_dump AS d
-  LEFT JOIN _eds_ipdb_candidates AS c USING (ipdb_id)
-  LEFT JOIN _eds_ipdb_namesakes  AS n USING (ipdb_id)
-  WHERE NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.ipdb_id);
+  FROM _eds_models_unmatched AS u
+  INNER JOIN _eds_ipdb_dump AS d ON d.ipdb_id::VARCHAR = u.external_id
+  WHERE u.source = 'ipdb';
 COMMENT ON VIEW ipdb_models_unmatched IS
   'Worklist — one row per IPDB listing no live model carries the id of, classified as duplicate_listing / catalog_holds_unlinked / possible_duplicate / multiple_candidates / year_unverified / year_conflict / maker_unresolved / absent, with the resolved model where exactly one answered, the sorted candidate list where several did, the year-refuted list where the triangle disagreed, and a namesake count where no search could run. Rows are expected.';
 
@@ -417,8 +225,8 @@ CREATE OR REPLACE VIEW corporate_entities_missing_ipdb_id AS
       name_norm(corporate_entity_name)  AS name_key,
       count(*)                          AS n_ipdb_matches,
       -- `first` ordered by the id `min` picked, so the published pair names ONE IPDB
-      -- record -- deterministically and NULLs included, for the reasons on
-      -- `_eds_ipdb_candidates`.
+      -- record -- deterministically and NULLs included, for the reasons on the
+      -- identity resolution.
       min(ipdb_corporate_entity_id)     AS ipdb_corporate_entity_id,
       first(corporate_entity_text ORDER BY ipdb_corporate_entity_id) AS ipdb_corporate_entity_text
     FROM px.ipdb.corporate_entities
@@ -432,7 +240,7 @@ COMMENT ON VIEW corporate_entities_missing_ipdb_id IS
 -- without joining the whole name pool per row. One norm can name two different people,
 -- and a credit resolved to an arbitrary one of them is worse than one left unresolved
 -- -- so `person_id` fills ONLY when the name names exactly one person (the verdict
--- discipline of the model-matching ladders), and an ambiguous name resolves nobody:
+-- discipline of the model-matching ladder), and an ambiguous name resolves nobody:
 -- its credits stay in the missing worklist carrying `n_people` as the explanation.
 CREATE OR REPLACE VIEW _eds_person_by_name AS
   SELECT name_norm(name) AS person_name_norm,
@@ -1078,62 +886,14 @@ CREATE OR REPLACE VIEW ipdb_summary AS
 COMMENT ON VIEW ipdb_summary IS
   'Headline counts for the IPDB comparison — the unmatched set by classification, the credit gap, and the totals both sides are measured against.';
 
--- Empty when healthy. Invariants of this layer, never findings about the data.
+-- Empty when healthy. Invariants of this file's own views, never findings about the
+-- data. The ladder, worklist-grain, classification and decode-key anchors live in
+-- `identity_checks`; what remains here guards the IPDB-only sections.
 CREATE OR REPLACE VIEW ipdb_checks AS
-  -- The catalog-side join key of `_eds_ipdb_dump`. Not unique by construction, and a
-  -- second row would multiply every count taken off the dump.
-  SELECT 'corporate_entity_ipdb_id_not_unique' AS check_name,
-         ipdb_manufacturer_id::VARCHAR AS detail
-  FROM corporate_entities
-  WHERE ipdb_manufacturer_id IS NOT NULL
-  GROUP BY ipdb_manufacturer_id HAVING count(*) > 1
-
-  UNION ALL
-  -- The aggregation in `_eds_ipdb_candidates` is what holds the worklist at one row per
-  -- listing; if it ever stops, the classification silently double-counts.
-  SELECT 'unmatched_not_one_row_per_listing', ipdb_id::VARCHAR
-  FROM ipdb_models_unmatched GROUP BY ipdb_id HAVING count(*) > 1
-
-  UNION ALL
-  -- A classification outside the closed set means the CASE grew a branch the consumers
-  -- of this view do not know how to answer.
-  SELECT 'classification_unknown', classification
-  FROM ipdb_models_unmatched
-  WHERE classification NOT IN
-    ('duplicate_listing', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'year_unverified', 'year_conflict',
-     'maker_unresolved', 'absent')
-
-  UNION ALL
-  -- `absent` is the one classification that ASSERTS something about the catalog rather
-  -- than reporting what was found, and it is only true if a search ran. A search needs a
-  -- maker on both sides, so a row reaching `absent` without one is the classification
-  -- claiming a machine is missing that nobody looked for. That is exactly the bug
-  -- `maker_unresolved` was added for, and this is its regression guard.
-  SELECT 'absent_without_maker_search', u.ipdb_id::VARCHAR
-  FROM ipdb_models_unmatched AS u
-  WHERE u.classification = 'absent'
-    AND u.ipdb_manufacturer_slug IS NULL
-
-  UNION ALL
-  -- The namesake join is a per-listing aggregate and must not fan the worklist out.
-  SELECT 'namesakes_not_one_row_per_listing', ipdb_id::VARCHAR
-  FROM _eds_ipdb_namesakes GROUP BY ipdb_id HAVING count(*) > 1
-
-  UNION ALL
-  -- The CASE precedence. A confirmed duplicate also matches the `possible_duplicate`
-  -- shape by construction, so a branch reordered above it would silently demote these
-  -- and they would read as work to do. There is no join left to break -- the fact is a
-  -- column on the mart row -- so this tests the ordering alone.
-  SELECT 'confirmed_duplicate_misclassified', u.ipdb_id::VARCHAR
-  FROM ipdb_models_unmatched AS u
-  WHERE u.duplicate_of_ipdb_id IS NOT NULL
-    AND u.classification <> 'duplicate_listing'
-
-  UNION ALL
   -- The pairing points at the listing the catalog is expected to hold instead. If that
   -- one is missing too, the row is no longer explaining anything away.
-  SELECT 'duplicate_target_not_in_catalog', d.duplicate_of_ipdb_id::VARCHAR
+  SELECT 'duplicate_target_not_in_catalog' AS check_name,
+         d.duplicate_of_ipdb_id::VARCHAR AS detail
   FROM _eds_ipdb_dump AS d
   WHERE d.duplicate_of_ipdb_id IS NOT NULL
     AND NOT EXISTS (SELECT 1 FROM models AS m WHERE m.ipdb_id = d.duplicate_of_ipdb_id)
@@ -1270,4 +1030,4 @@ CREATE OR REPLACE VIEW ipdb_checks AS
     SELECT count(*) FROM matches WHERE tier = (SELECT min(tier) FROM matches)
   ) > 1;
 COMMENT ON VIEW ipdb_checks IS
-  'Empty when healthy — grain, closed vocabulary and duplicate-list anchors for the IPDB comparison, plus the specialty-target resolution pinexplore delegates here.';
+  'Empty when healthy — the IPDB-only sections'' anchors: duplicate-listing targets, credit grain and role vocabulary, corporate-entity grain, plus the specialty-target resolution pinexplore delegates here. The ladder and worklist anchors live in identity_checks.';

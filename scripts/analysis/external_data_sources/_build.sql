@@ -8,10 +8,13 @@
 --
 -- A new source is one `.read` below plus its own file under this directory.
 
+-- `ipdb.sql` and `opdb.sql` each read `identity.sql` (the shared decode + matching
+-- ladder + replay) so they stay individually loadable; under this bake that means the
+-- identity file executes twice, which is deterministic and idempotent -- the second read
+-- recreates the same relations from the same inputs -- and bake-time only.
 .read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
 .read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
 .read ../flippatch/scripts/analysis/external_data_sources/fields.sql
-.read ../flippatch/scripts/analysis/external_data_sources/known_good_replay.sql
 
 -- Every source's summary, source-labelled, in the one view the gated run prints. The
 -- per-source summaries already carry their findings rollups, worklist and coverage
