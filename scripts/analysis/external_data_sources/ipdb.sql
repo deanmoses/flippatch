@@ -30,7 +30,14 @@
 -- The decode joins on `ipdb_manufacturer_id`, the catalog's handle on an IPDB maker,
 -- which resolves all but two of them and cannot multiply the grain: that column is unique
 -- across live corporate entities, asserted in `ipdb_checks`.
-CREATE OR REPLACE VIEW _eds_ipdb_dump AS
+-- MATERIALIZED, with the view above it kept as the DEFINITION WITNESS. The relation is
+-- scanned dozens of times per run -- every summary branch, every check -- and as a view
+-- each scan re-read and re-joined the dump. As a table it is computed once. The
+-- `_source` view exists so `external_data_sources_boundary_checks` can still see the
+-- `px.` reads: that guard regex-scans VIEW definitions, and DuckDB keeps no defining SQL
+-- for a table, so materializing without the witness would silently retire the guard on
+-- exactly the relations that read pinexplore. Never read `_source` directly.
+CREATE OR REPLACE VIEW _eds_ipdb_dump_source AS
   SELECT
     im.ipdb_id,
     im.name                                                         AS ipdb_name,
@@ -52,6 +59,7 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
   FROM px.ipdb.models AS im
   LEFT JOIN corporate_entities AS corporate_entity
     ON corporate_entity.ipdb_manufacturer_id = im.ipdb_corporate_entity_id;
+CREATE OR REPLACE TABLE _eds_ipdb_dump AS SELECT * FROM _eds_ipdb_dump_source;
 
 -- Catalog models that answer to an unmatched listing's name and maker, counted by
 -- whether they already carry an IPDB id.
@@ -79,7 +87,9 @@ CREATE OR REPLACE VIEW _eds_ipdb_dump AS
 -- list on the row. Either catalog year corroborates, whatever the IPDB date's kind --
 -- kind precision matters for comparing FIELD VALUES (fields.sql), not for recognizing
 -- that two records describe one machine.
-CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
+-- MATERIALIZED: the ladder is the layer's most-scanned computation and, since it is
+-- deliberately unscoped for the replay, its most expensive. Computed once per session.
+CREATE OR REPLACE TABLE _eds_ipdb_candidates AS
   WITH matches AS (
     SELECT
       d.ipdb_id,
@@ -99,7 +109,10 @@ CREATE OR REPLACE VIEW _eds_ipdb_candidates AS
     INNER JOIN models AS m
       ON name_norm(m.name) = name_norm(d.ipdb_name)
      AND m.manufacturer_slug = d.ipdb_manufacturer_slug
-    WHERE NOT EXISTS (SELECT 1 FROM models AS x WHERE x.ipdb_id = d.ipdb_id)
+    -- NOT filtered to unmatched listings, for the reason its OPDB twin carries: the
+    -- ladder has to be runnable over the links we ALREADY hold, or `known_good_replay.sql`
+    -- would be testing a copy of the matcher rather than the matcher. The one consumer,
+    -- `ipdb_models_unmatched`, filters in its own WHERE, so live output is unchanged.
   ),
   refuted AS (
     -- A refuted candidate that is already LINKED says so: whether the near-miss is

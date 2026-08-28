@@ -121,6 +121,12 @@ COMMENT ON VIEW external_data_sources_context IS
 -- INSERT feeding the findings table -- is invisible. That understates, which is the safe
 -- direction, and it is why every source file reads `px` in its RULE VIEWS only and lets
 -- the INSERT project from those: keeping the reads in views is what keeps them checked.
+--
+-- A MATERIALIZED relation keeps a `_source` VIEW as its definition witness, for the same
+-- reason: DuckDB stores no defining SQL for a table, so a dump converted to a table
+-- outright would drop out of this scan and retire the guard on the very relations that
+-- read pinexplore. The witness is never read at runtime -- it exists to be scanned here
+-- -- and `external_data_sources_checks` fails if one goes missing.
 CREATE OR REPLACE VIEW external_data_sources_boundary_checks AS
   WITH reads AS (
     SELECT
@@ -169,7 +175,19 @@ CREATE OR REPLACE VIEW external_data_sources_checks AS
   WHERE (SELECT count(*) FROM px.ipdb.models) = 0
   UNION ALL
   SELECT 'dump_empty', 'px.opdb.models has no rows'
-  WHERE (SELECT count(*) FROM px.opdb.models) = 0;
+  WHERE (SELECT count(*) FROM px.opdb.models) = 0
+  UNION ALL
+  -- THE DEFINITION WITNESSES. Each materialized dump is `CREATE TABLE AS SELECT * FROM
+  -- <name>_source`, and that `_source` view is the only thing keeping its pinexplore
+  -- reads inside `external_data_sources_boundary_checks`, which can scan views alone.
+  -- Fold a witness back into its table and the boundary guard goes quiet rather than
+  -- loud -- so its absence is a hard failure here.
+  SELECT 'materialized_dump_lost_its_definition_witness', t.name
+  FROM (VALUES ('_eds_ipdb_dump'), ('_eds_opdb_dump')) AS t(name)
+  WHERE NOT EXISTS (SELECT 1 FROM duckdb_views() AS v
+                    WHERE v.database_name = current_database()
+                      AND v.schema_name = 'main'
+                      AND v.view_name = t.name || '_source');
 COMMENT ON VIEW external_data_sources_checks IS
   'Empty when healthy — invariants of the bridge itself, not findings about the data. A row means the attached dump is unusable.';
 
