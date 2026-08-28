@@ -1,31 +1,19 @@
--- A layer that compares the Flipcommons catalog against external data sources like IPDB and OPDB.
--- `.read` this from a campaign analysis after flipcommons' foundation:
+-- A layer that compares the Flipcommons catalog against external data sources like
+-- IPDB and OPDB. `.read` this from a campaign analysis after flipcommons' foundation:
 --
 --     .read ../flippatch/scripts/analysis/external_data_sources.sql
 --
--- The external data source files below read `external_data_sources/bridge.sql` -- the
--- cross-source worklist, `external_data_source_findings`, the dismissals, and the layer's
--- own checks live there.
--- A new source is one `.read` below plus its own file under `external_data_sources/`.
-
-.read ../flippatch/scripts/analysis/external_data_sources/ipdb.sql
-.read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
-.read ../flippatch/scripts/analysis/external_data_sources/fields.sql
-
--- Every source's summary, source-labelled, in the one view the gated run prints. The
--- per-source summaries already carry their findings rollups, worklist and coverage
--- counts, and stale-adjudication tallies -- and counting per VIEW is what tells "no
--- findings" from "no detector", so printing them whole is the point. The per-rule
--- breakdown is `external_data_source_findings_summary` in `bridge.sql`.
---
--- Completes the runner's summary+checks contract for PREFIX=external_data_sources
--- (`bridge.sql` carries the checks and context under the same prefix).
-CREATE OR REPLACE VIEW external_data_sources_summary AS
-  SELECT * FROM (
-              SELECT 'ipdb' AS source, metric, value FROM ipdb_summary
-    UNION ALL SELECT 'opdb',           metric, value FROM opdb_summary
-    UNION ALL SELECT 'cross',          metric, value FROM fields_summary
-  )
-  ORDER BY source, metric;
-COMMENT ON VIEW external_data_sources_summary IS
-  'Every per-source summary metric, source-labelled: findings rollups, worklist and coverage counts, stale adjudications. An absent-listing count is bounded by dump age — read it beside the watermarks in external_data_sources_context.';
+-- BAKED. The directive below registers the layer with the analysis runner, which
+-- rebakes external_data_sources.duckdb whenever an input changes — the catalog
+-- snapshot, pinexplore's explore.duckdb, or any file under external_data_sources/ —
+-- and regenerates the pass-through shim read here. The layer's source SQL is
+-- external_data_sources/_build.sql and executes only at bake time; a query session
+-- opens finished tables read-only, so this read costs milliseconds, not the analysis.
+-- Note `px` is therefore attached at bake time only — a campaign wanting pinexplore's
+-- dumps raw attaches explore.duckdb itself, as 0268/0269/0277/0278 do.
+-- Freshness is guaranteed only through the runner (make analyze); raw `duckdb`
+-- sessions read whatever the last bake produced.
+-- A session editing one source deeply still `.read`s that source's file under
+-- external_data_sources/ directly — live SQL is the point there (PREFIX=<source>).
+-- layer: ../flippatch/scripts/analysis/external_data_sources.layer
+.read ../flippatch/scripts/analysis/external_data_sources.gen.sql

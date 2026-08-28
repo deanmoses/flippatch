@@ -1,0 +1,14 @@
+# Layer manifest for the analysis runner's bake (see flipcommons
+# scripts/analysis/analysis, ensure_layer). KEY=VALUE, one per line; every path is
+# relative to the flipcommons root, the runner's execution frame — the same frame all
+# of this layer's own `.read` and ATTACH paths already assume.
+#
+# The runner rebakes the artifact when any stamp input changes: the foundation
+# snapshot, anything under stamp_paths, or this manifest itself. build_entry runs at
+# bake time only; the generated shim is what query sessions read.
+name=external_data_sources
+alias=eds
+build_entry=../flippatch/scripts/analysis/external_data_sources/_build.sql
+artifact=../flippatch/scripts/analysis/external_data_sources.duckdb
+shim=../flippatch/scripts/analysis/external_data_sources.gen.sql
+stamp_paths=../flippatch/scripts/analysis/external_data_sources ../pinexplore/explore.duckdb
