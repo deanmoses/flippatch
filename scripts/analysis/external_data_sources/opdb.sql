@@ -4,14 +4,14 @@
 --
 --     .read ../flippatch/scripts/analysis/external_data_sources/opdb.sql
 --
--- It reads `identity.sql` itself — the decode of OPDB's dump, the model-matching
--- ladder, the ipdb_id route, the contested-maker guard and the known-good replay live
--- THERE, run once for both sources — which in turn reads `bridge.sql`, so the attach,
--- the watermark and the bridge's invariants come with it. This file holds what is
--- OPDB's alone: the worklist in OPDB's terms, machine groups against catalog Titles,
--- manufacturers (OPDB's maker grain), the vocabulary comparison, the IPDB
--- cross-reference check, and their findings. The worklists below return rows on a
--- healthy catalog.
+-- It reads `assertions.sql` itself — which reads `identity.sql` (the decode of
+-- OPDB's dump, the model-matching ladder, the ipdb_id route, the contested-maker
+-- guard and the known-good replay, run once for both sources), which reads
+-- `bridge.sql` — so the attach, the watermark and every shared invariant come with
+-- it. This file holds what is OPDB's alone: the worklist in OPDB's terms, machine
+-- groups against catalog Titles, manufacturers (OPDB's maker grain), the vocabulary
+-- comparison, the IPDB cross-reference check, and their findings. The worklists below
+-- return rows on a healthy catalog.
 --
 -- WHAT OPDB IS TO US, which shapes every rule here. The catalog's models and titles were
 -- seeded from OPDB, so its ids are our densest external key: models join `opdb_id` at
@@ -28,7 +28,7 @@
 -- has been re-curated since seeding; comparing would restate the IPDB-themes decision the
 -- plan already made. The bucket stays published in pinexplore for ad-hoc looks.
 
-.read ../flippatch/scripts/analysis/external_data_sources/identity.sql
+.read ../flippatch/scripts/analysis/external_data_sources/assertions.sql
 
 -- WORKLIST — OPDB listings with no catalog model, and what each one actually is.
 --
@@ -269,7 +269,12 @@ CREATE OR REPLACE VIEW opdb_titles_unmatched AS
       -- deliberately not year-gated -- members outrank both name and year.
       WHEN c.unlinked_title_slug IS NOT NULL
         OR c.linked_title_slug IS NOT NULL    THEN
-        CASE WHEN c.candidate_earliest_model_year IS NULL         THEN 'year_unverified'
+        -- EITHER missing leg blocks the triangle. OPDB groups are all dated today
+        -- (checked 2026-08-28: zero NULL years), but the gate must not assume it --
+        -- an undated group falling through `abs(NULL - y) > 1` (never true) would
+        -- classify as a confident link, the exact guess the NEVER-GUESS rule forbids.
+        CASE WHEN ot.year IS NULL
+               OR c.candidate_earliest_model_year IS NULL          THEN 'year_unverified'
              WHEN abs(ot.year - c.candidate_earliest_model_year) > 1 THEN 'year_conflict'
              WHEN c.unlinked_title_slug IS NOT NULL               THEN 'catalog_holds_unlinked'
              ELSE                                                      'possible_duplicate'
@@ -548,81 +553,22 @@ COMMENT ON VIEW opdb_ipdb_id_crosscheck IS
 -- `opdb_vocabulary_absent`, and when a decision maps one (`payout-machine` ==
 -- `cash-payout`), the mapping goes back INTO pinexplore rather than living here.
 
--- One row per (OPDB model, asserted value), landed on the catalog model.
---
--- The per-entity mart views union into one shape so the resolution lookup and the
--- carriage CASE are written once. `model-relationship` targets name an edge type
--- rather than a record, so they resolve structurally -- same exemption as IPDB's.
+-- One row per (OPDB model, asserted value): OPDB's slice of the unified assertion
+-- layer (`assertions.sql` — the resolution lookup, the carriage CASE and their
+-- reasoning live there, once for both sources), in the columns this file's worklists
+-- read.
 CREATE OR REPLACE VIEW _eds_opdb_vocabulary AS
   SELECT
-    r.opdb_id,
-    r.target_entity_type,
-    r.target_value,
-    r.target_slug,
-    r.model_id,
-    r.model_slug,
-    CASE WHEN r.target_entity_type = 'model-relationship' THEN true
-         ELSE r.target_slug IS NOT NULL END AS target_exists,
-    CASE r.target_entity_type
-      WHEN 'tag'              THEN EXISTS (SELECT 1 FROM model_tags AS tg
-                                     WHERE tg.model_id = r.model_id AND tg.tag_slug = r.target_slug)
-      WHEN 'reward-type'      THEN EXISTS (SELECT 1 FROM model_rewards AS rw
-                                     WHERE rw.model_id = r.model_id AND rw.reward_type_slug = r.target_slug)
-      WHEN 'gameplay-feature' THEN EXISTS (SELECT 1 FROM model_gameplay_features AS g
-                                     WHERE g.model_id = r.model_id AND g.feature_slug = r.target_slug)
-      -- Single-valued dims: `target_slug IS NOT NULL` guards the IS NOT DISTINCT FROM,
-      -- for the reason spelled out on the IPDB twin -- unguarded, a model with no
-      -- cabinet at all would read as carrying every unresolved cabinet value.
-      WHEN 'cabinet'          THEN r.target_slug IS NOT NULL
-                                     AND m_cabinet_slug IS NOT DISTINCT FROM r.target_slug
-      -- Series hangs off the TITLE in the catalog (`OpdbMappings.md` leaves the view at
-      -- OPDB's model grain for exactly this reason), so carriage is asked of the
-      -- model's title.
-      WHEN 'series'           THEN r.target_slug IS NOT NULL
-                                     AND m_series_slug IS NOT DISTINCT FROM r.target_slug
-      -- Structural: an edge type is not a record and never resolves through target_slug.
-      WHEN 'model-relationship' THEN EXISTS (SELECT 1 FROM model_edges AS e
-                                     WHERE e.model_id = r.model_id
-                                       AND e.relationship_type = r.target_value)
-      -- No ELSE: an unhandled target_entity_type lands NULL, which
-      -- `vocabulary_carriage_unhandled` fails on -- loud rather than wrong.
-    END AS carried
-  FROM (
-    SELECT
-      s.*,
-      m.id   AS model_id,
-      m.slug AS model_slug,
-      m.cabinet_slug AS m_cabinet_slug,
-      t.series_slug  AS m_series_slug,
-      -- THE CATALOG RECORD THE VALUE DENOTES, or NULL if none does: exact public_id
-      -- first, then name, then alias -- the same three-way lookup, with the same
-      -- determinism rule, as the IPDB specialties section.
-      (SELECT es.subject_public_id
-       FROM entity_subjects AS es
-       WHERE es.subject_type = s.target_entity_type
-         AND is_live(es.subject_status)
-         AND (es.subject_public_id = s.target_value
-              OR lower(es.subject_name) = lower(s.target_value)
-              OR EXISTS (SELECT 1 FROM entity_aliases AS ea
-                         WHERE ea.entity_type = es.subject_type
-                           AND ea.entity_id = es.subject_id
-                           AND lower(ea.alias) = lower(s.target_value)))
-       ORDER BY CASE WHEN es.subject_public_id = s.target_value THEN 0
-                     WHEN lower(es.subject_name) = lower(s.target_value) THEN 1
-                     ELSE 2 END,
-                es.subject_public_id
-       LIMIT 1) AS target_slug
-    FROM (
-                SELECT opdb_id, 'tag'              AS target_entity_type, tag              AS target_value FROM px.opdb.model_tags
-      UNION ALL SELECT opdb_id, 'reward-type',                            reward_type                      FROM px.opdb.model_reward_types
-      UNION ALL SELECT opdb_id, 'gameplay-feature',                       gameplay_feature                 FROM px.opdb.model_gameplay_features
-      UNION ALL SELECT opdb_id, 'series',                                 series                           FROM px.opdb.model_series
-      UNION ALL SELECT opdb_id, 'model-relationship',                     relationship_type                FROM px.opdb.model_relationships
-      UNION ALL SELECT opdb_id, 'cabinet',                                cabinet                          FROM px.opdb.models WHERE cabinet IS NOT NULL
-    ) AS s
-    LEFT JOIN models AS m ON m.opdb_id = s.opdb_id
-    LEFT JOIN titles AS t ON t.id = m.title_id
-  ) AS r;
+    external_id AS opdb_id,
+    target_entity_type,
+    target_value,
+    target_slug,
+    model_id,
+    model_slug,
+    target_exists,
+    carried
+  FROM _eds_external_assertions
+  WHERE source = 'opdb';
 
 -- WORKLIST — OPDB asserts a classification the catalog has the vocabulary for and the
 -- model does not carry. Each row is a patch waiting to be written.
@@ -884,9 +830,17 @@ SELECT
              plural(n_candidates, 'catalog title', 'catalog titles'),
              array_to_string(candidate_title_slugs, ', '))
     WHEN 'year_unverified' THEN
-      format('OPDB group {} "{}" ({}) matches catalog title {} by name, but no model on it is dated, so the year leg cannot close; date a model, then link',
-             opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
-             coalesce(unlinked_title_slug, linked_title_slug))
+      -- Which leg is missing decides the instruction: an undated GROUP needs its year
+      -- found on OPDB's side, an undated title needs a model dated on ours.
+      CASE WHEN opdb_year IS NULL THEN
+        format('OPDB group {} "{}" (undated) matches catalog title {} by name, but the group states no year, so the year leg cannot close; find the year, then link',
+               opdb_id, coalesce(opdb_title_name, '?'),
+               coalesce(unlinked_title_slug, linked_title_slug))
+      ELSE
+        format('OPDB group {} "{}" ({}) matches catalog title {} by name, but no model on it is dated, so the year leg cannot close; date a model, then link',
+               opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
+               coalesce(unlinked_title_slug, linked_title_slug))
+      END
     WHEN 'year_conflict' THEN
       format('OPDB group {} "{}" ({}) matches catalog title {} by name, but its earliest model year {} is more than a year off; read the pages -- a wrong year on one side, or a different family',
              opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
@@ -1254,30 +1208,10 @@ CREATE OR REPLACE VIEW opdb_checks AS
   FROM (SELECT DISTINCT classification FROM opdb_ipdb_id_crosscheck) AS c
   WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
                     WHERE r.detail_view = 'opdb_ipdb_id_crosscheck'
-                      AND r.classification = c.classification)
-
-  UNION ALL
-  -- The carriage CASE has no ELSE; this turns an unhandled target_entity_type into a
-  -- loud failure instead of a silent gap report.
-  SELECT 'vocabulary_carriage_unhandled', target_entity_type
-  FROM _eds_opdb_vocabulary
-  WHERE model_slug IS NOT NULL AND carried IS NULL
-  GROUP BY ALL
-
-  UNION ALL
-  -- The vocabulary union is one row per (listing, entity type, value); the model join
-  -- is a lookup and must not fan it out.
-  SELECT 'vocabulary_not_one_row_per_assertion',
-         opdb_id || ' / ' || target_entity_type || ' / ' || target_value
-  FROM _eds_opdb_vocabulary
-  GROUP BY opdb_id, target_entity_type, target_value HAVING count(*) > 1
-
-  UNION ALL
-  -- The anchor for the vocabulary section: pinexplore publishing NO assertions at all
-  -- reads exactly like a catalog that already carries everything.
-  -- Worded without naming the attach alias: the boundary check regex-scans view SQL
-  -- and cannot tell an identifier from prose.
-  SELECT 'vocabulary_assertions_missing', 'every pinexplore OPDB model vocabulary view is empty'
-  WHERE (SELECT count(*) FROM _eds_opdb_vocabulary) = 0;
+                      AND r.classification = c.classification);
+-- The vocabulary section deliberately contributes nothing here: its grain, carriage
+-- and lookup anchors live in `assertions_checks`, and the unified grain there — one
+-- row per (listing, label, type, value) — is exactly this section's grain, because
+-- OPDB's assertion label is the entity type itself.
 COMMENT ON VIEW opdb_checks IS
-  'Empty when healthy — the OPDB-only sections'' anchors: title grouping grain and precedence, stale-id and maker classifications, the contested-pair drift guard, and the vocabulary section. The ladder and worklist anchors live in identity_checks.';
+  'Empty when healthy — the OPDB-only sections'' anchors: title grouping grain and precedence, stale-id and maker classifications, and the contested-pair drift guard. The ladder and worklist anchors live in identity_checks; the vocabulary section''s grain, carriage and lookup anchors in assertions_checks.';

@@ -594,18 +594,23 @@ CREATE OR REPLACE VIEW external_data_source_findings_checks AS
   WHERE v.val IS NULL
 
   UNION ALL
-  -- The stage vocabulary is closed and the worklist ORDER BY ranks it by literal
-  -- string; a value outside the set would silently sort with `content`.
-  SELECT 'unknown_resolution_stage', rule || ' -> ' || resolution_stage
-  FROM _external_data_source_findings
-  WHERE resolution_stage NOT IN ('manufacturers', 'titles', 'models', 'content')
-
-  UNION ALL
-  -- Severity is computed per finding, so a CASE that loses its ELSE returns something
-  -- nothing downstream knows how to rank or colour.
-  SELECT 'unknown_severity', rule || ' -> ' || severity
-  FROM _external_data_source_findings
-  WHERE severity NOT IN ('error', 'warning')
+  -- Findings inherit rule, stage, severity and detail_view by joining the registry,
+  -- so AGREEMENT WITH THE REGISTRY is the one invariant -- it subsumes the old
+  -- findings-grain closed-set checks (the vocabularies are closed at the registry, in
+  -- the registry_* checks below) and the unregistered-rule check (a rule the registry
+  -- lacks matches no row here either). A row means an INSERT hand-wrote a literal
+  -- beside the registry, which is exactly the fork this makes loud.
+  SELECT 'finding_registry_mismatch',
+         f.source || ' / ' || f.rule || ' -> ' || f.resolution_stage || ' / '
+           || f.severity || ' / ' || f.detail_view
+  FROM (SELECT DISTINCT source, rule, resolution_stage, severity, detail_view
+        FROM _external_data_source_findings) AS f
+  WHERE NOT EXISTS (
+    SELECT 1 FROM _eds_rule_registry AS r
+    WHERE r.source = f.source AND r.rule = f.rule
+      AND r.resolution_stage = f.resolution_stage
+      AND r.severity = f.severity
+      AND r.detail_view = f.detail_view)
 
   UNION ALL
   -- A finding names a catalog record by entity type, and the vocabulary is closed. A
@@ -654,14 +659,6 @@ CREATE OR REPLACE VIEW external_data_source_findings_checks AS
   FROM _external_data_source_dismissals AS d
   WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
                     WHERE r.source = d.source AND r.rule = d.rule)
-
-  UNION ALL
-  -- Every finding's rule must be registered — the registry is the vocabulary's one
-  -- home, and an INSERT minting a rule beside it would fork that home.
-  SELECT 'finding_rule_unregistered', f.source || ' -> ' || f.rule
-  FROM (SELECT DISTINCT source, rule FROM _external_data_source_findings) AS f
-  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
-                    WHERE r.source = f.source AND r.rule = f.rule)
 
   UNION ALL
   -- ─── invariants of the registry itself ───
@@ -757,4 +754,4 @@ CREATE OR REPLACE VIEW external_data_source_findings_checks AS
   FROM _eds_adjudications
   WHERE note IS NULL;
 COMMENT ON VIEW external_data_source_findings_checks IS
-  'Empty when healthy — invariants of the findings layer and its rule registry: no NULL in a required column, closed stage/severity/entity-type vocabularies, one row per finding identity, one registry row per (worklist, class), every rule one thing, every exclusion reasoned, every detail_view resolvable, every dismissal naming a registered rule.';
+  'Empty when healthy — invariants of the findings layer, its rule registry and the adjudications: no NULL in a required column, every finding agreeing with the registry on stage/severity/detail_view, one row per finding identity, one registry row per (worklist, class), every rule one thing, every exclusion reasoned, every detail_view resolvable, every dismissal naming a registered rule, every adjudication in its scope''s shape with its reason.';

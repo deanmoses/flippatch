@@ -211,7 +211,9 @@ CREATE OR REPLACE VIEW _eds_opdb_ipdb_route AS
          THEN m.opdb_id END AS linked_model_opdb_id,
     m.production_year       AS ipdb_route_model_production_year
   FROM _eds_opdb_dump AS d
-  INNER JOIN models AS m ON m.ipdb_id = try_cast(d.opdb_ipdb_id AS BIGINT)
+  -- A plain equality: both sides are BIGINT (checked 2026-08-28), so there is nothing
+  -- to defensively cast — the crosscheck in opdb.sql compares the same pair bare.
+  INNER JOIN models AS m ON m.ipdb_id = d.opdb_ipdb_id
   LEFT JOIN titles AS t_group ON t_group.opdb_id = d.title_opdb_id
   LEFT JOIN titles AS t_model ON t_model.id = m.title_id
   WHERE NOT EXISTS (SELECT 1 FROM models AS x WHERE x.opdb_id = d.opdb_id);
