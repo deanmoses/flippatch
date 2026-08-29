@@ -1,0 +1,10 @@
+attribution: flipcommons-catalog
+description: >
+  Flatten the GTF Victory Edition's variant link onto the base model
+claims:
+  - model.galactic-tank-force-victory-edition:
+      note: "American Pinball describes the Victory Edition as carrying the Deluxe Edition's cabinet art, translite and core playfield, but that names the dress it copies rather than its base: the Deluxe is itself a variant of the 2023 Galactic Tank Force. The Victory Edition is a new model of that same 2023 game, so the original edition is its base."
+      cite:
+        ref: "https://americanpinball.com/galactic-tank-force-victory-edition"
+        quote: "We're celebrating the final run of Galactic Tank Force (first launched in 2023) with a new updated model: The Victory Edition."
+      variant_of: galactic-tank-force-classic
