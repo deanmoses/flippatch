@@ -4,8 +4,8 @@ Sources come from the sister **pinexplore** repo: the web-scrape cache
 (``ingest_sources/web/cache.sqlite``) for ``http(s)`` refs — with ``opdb:`` and
 ``youtube:`` scheme refs resolved to their canonical cached page (the opdb.org
 machine page; the watch URL whose text is the video's caption-track transcript)
-— and the ``ipdb_machines`` table in ``explore.duckdb`` for ``ipdb:`` refs,
-topped up from the cached machine page for the handful of labels that table has
+— and the ``ipdb.models`` mart in ``explore.duckdb`` for ``ipdb:`` refs,
+topped up from the cached machine page for the handful of labels that mart has
 no column for (:data:`_IPDB_PAGE_ONLY_LABELS`). A slug-addressed ref
 (``williams:some-manual-slug``) resolves through the document library's
 ``citation_ref`` to whichever copy of the document is cached.
@@ -21,7 +21,7 @@ import html
 import sys
 from dataclasses import dataclass
 from enum import StrEnum
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING, NamedTuple, Protocol, TypedDict
 
 from common.paths import EXPLORE_DUCKDB, PINEXPLORE_DIR, WEB_CACHE_DB
 
@@ -30,61 +30,108 @@ if TYPE_CHECKING:
     from pathlib import Path
 
 
-# One IPDB machine row as the page prints it: ``(column, page label)`` pairs, a
-# ``None`` label for the rows the page renders bare.
+# The strings this module traffics in. Transparent aliases in the house style of
+# ``common.catalog.types``: every one is ``str`` at runtime and interchanges
+# freely with it, so the job is saying *which* string a value holds, not nominal
+# enforcement. They earn their keep because two vocabularies meet here —
+# pinexplore's column names and IPDB's own page labels — and they pair up in
+# opposite orders on the two sides of the renderer, a difference a bare
+# ``tuple[str, str | None]`` cannot state.
+
+type MartColumn = str  # a pinexplore ``ipdb.models`` column: "notable_features"
+type PageLabel = str  # a label an IPDB page prints above a value: "Notable Features"
+type IpdbId = str  # an IPDB machine id as a cite spells it: the "4059" of ``ipdb:4059``
+type CiteRef = str  # a cite's ``ref``: an http(s) URL, or ``scheme:identifier``
+# An http(s) address: one legal spelling of a CiteRef, and the only shape a
+# cite's ``archive`` snapshot ever takes.
+type Url = str
+
+# One ``ipdb.models`` row keyed by column. Values stay ``object`` — the renderer's
+# whole contract with them is ``str(value)``, and narrowing further would be this
+# module asserting the column types of a mart it does not own.
+type IpdbRow = Mapping[MartColumn, object]
+
+
+class _IpdbField(NamedTuple):
+    """One quotable mart column, and the label the IPDB page prints above it."""
+
+    column: MartColumn
+    label: PageLabel | None
+
+
+class _LabeledValue(NamedTuple):
+    """One rendered row: a populated value under the label the page shows.
+
+    The reverse of :class:`_IpdbField` — label first, and the second string is a
+    value rather than a name. Naming both is what keeps that reversal legible.
+    """
+
+    label: PageLabel | None
+    text: str
+
+
+# One IPDB machine row as the page prints it, one :class:`_IpdbField` per line
+# and a ``None`` label for the rows the page renders bare.
 #
-# ``AverageFunRating`` is left out: it is a moving aggregate, so a point-in-time
+# ``average_fun_rating`` is left out: it is a moving aggregate, so a point-in-time
 # scrape of it evidences nothing the catalog records.
 #
-# Order and labels are inferred from the key order of pinexplore's
-# ``ingest_sources/ipdb_xantari_*.json`` dumps. A wrong one costs a false FAIL,
-# never a false pass. The archive.org captures now in the web cache render the
-# same labels, which is what :data:`_IPDB_PAGE_ONLY_LABELS` reads.
-_IPDB_ROW_FIELDS: tuple[tuple[str, str | None], ...] = (
-    ("Title", None),
-    ("Players", "Players"),
-    ("AdditionalDetails", None),
-    ("Manufacturer", "Manufacturer"),
-    ("CommonAbbreviations", "Common Abbreviations"),
-    ("Type", "Type"),
-    ("MPU", "MPU"),
-    ("ModelNumber", "Model Number"),
-    ("ProductionNumber", "Production"),
-    ("Theme", "Theme"),
-    ("NotableFeatures", "Notable Features"),
-    ("Toys", "Toys"),
-    ("DesignBy", "Design by"),
-    ("ArtBy", "Art by"),
-    ("DotsAnimationBy", "Dots/Animation by"),
-    ("MechanicsBy", "Mechanics by"),
-    ("MusicBy", "Music by"),
-    ("SoundBy", "Sound by"),
-    ("SoftwareBy", "Software by"),
-    ("Notes", "Notes"),
-    ("MarketingSlogans", "Marketing Slogans"),
-    ("PhotosIn", "Photos in"),
-    ("Source", "Source"),
+# Columns are pinexplore's, from the published ``ipdb.models`` mart — the only
+# layer of that repo this one reads. Two of them are not the mechanical
+# snake_case of the underlying Xantari key: the page's ``Manufacturer:`` line is
+# ``corporate_entity_text`` (IPDB names a corporate incarnation there, not a
+# brand), and its ``Source:`` line is ``source_note``. The labels are the page's
+# own, and a wrong one costs a false FAIL, never a false pass. The archive.org
+# captures now in the web cache render the same labels, which is what
+# :data:`_IPDB_PAGE_ONLY_LABELS` reads.
+_IPDB_ROW_FIELDS: tuple[_IpdbField, ...] = (
+    _IpdbField("name", None),
+    _IpdbField("players", "Players"),
+    _IpdbField("additional_details", None),
+    _IpdbField("corporate_entity_text", "Manufacturer"),
+    _IpdbField("common_abbreviations", "Common Abbreviations"),
+    _IpdbField("type_text", "Type"),
+    _IpdbField("mpu", "MPU"),
+    _IpdbField("model_number", "Model Number"),
+    _IpdbField("production_number", "Production"),
+    _IpdbField("theme_text", "Theme"),
+    _IpdbField("notable_features", "Notable Features"),
+    _IpdbField("toys", "Toys"),
+    _IpdbField("design_by", "Design by"),
+    _IpdbField("art_by", "Art by"),
+    _IpdbField("dots_animation_by", "Dots/Animation by"),
+    _IpdbField("mechanics_by", "Mechanics by"),
+    _IpdbField("music_by", "Music by"),
+    _IpdbField("sound_by", "Sound by"),
+    _IpdbField("software_by", "Software by"),
+    _IpdbField("notes", "Notes"),
+    _IpdbField("marketing_slogans", "Marketing Slogans"),
+    _IpdbField("photos_in", "Photos in"),
+    _IpdbField("source_note", "Source"),
 )
 
-# Labels an IPDB machine page prints that the Xantari dump has no column for,
+# Labels an IPDB machine page prints that the published mart has no column for,
 # in the order the page renders them. The cached archive.org captures fill these
 # in — and only these.
 #
-# The dump is the newer source and always wins: a page label is appended only
-# when the dump rendered no line under it, so a value the dump states is never
+# The mart is the newer source and always wins: a page label is appended only
+# when the mart rendered no line under it, so a value the mart states is never
 # reached for. That rule is what keeps a 2018 capture from overwriting a 2025
-# fact, and it is why ``Production`` is safe to list here. The dump's
-# ``ProductionNumber`` is an integer column, so IPDB's non-numeric statuses
+# fact, and it is why ``Production`` is safe to list here. The mart's
+# ``production_number`` is an integer column, so IPDB's non-numeric statuses
 # ("Never Produced") arrive as a null indistinguishable from unknown; where the
-# dump holds a number, that number is what renders.
+# mart holds a number, that number is what renders. (pinexplore has since grown
+# a ``production_status_name`` carrying that status directly, which would retire
+# ``Production`` from this list; reading it is a widening of the quotable corpus
+# and deliberately not folded into a rename.)
 #
 # Dates are deliberately absent. IPDB has relabelled header dates between
 # ``Date Of Manufacture`` and ``Project Date`` since the older captures were
-# taken, and the dump carries both its own ``DateOfManufacture`` and the header
-# line verbatim in ``AdditionalDetails`` — so a date quote has a current carrier
+# taken, and the mart carries both its own ``date_of_manufacture`` and the header
+# line verbatim in ``additional_details`` — so a date quote has a current carrier
 # already and must never resolve against a stale page. Same for the fun rating,
-# which is a moving aggregate the dump also holds.
-_IPDB_PAGE_ONLY_LABELS: tuple[str, ...] = (
+# which is a moving aggregate the mart also holds.
+_IPDB_PAGE_ONLY_LABELS: tuple[PageLabel, ...] = (
     "Production",
     "Specialty",
     "Concept by",
@@ -92,11 +139,11 @@ _IPDB_PAGE_ONLY_LABELS: tuple[str, ...] = (
 )
 
 # The row narrowed to editor-authored prose about the machine — what
-# ``ipdb_notes_text`` feeds an AI. ``Source`` ("flyer", "Bally documentation")
-# and ``PhotosIn`` record IPDB's own paperwork, so feeding them invites a model
-# to mistake IPDB's sourcing for a fact about the machine.
-_IPDB_PROSE_COLUMNS = frozenset(
-    {"NotableFeatures", "Toys", "Notes", "MarketingSlogans"}
+# ``ipdb_notes_text`` feeds an AI. ``source_note`` ("flyer", "Bally
+# documentation") and ``photos_in`` record IPDB's own paperwork, so feeding them
+# invites a model to mistake IPDB's sourcing for a fact about the machine.
+_IPDB_PROSE_COLUMNS: frozenset[MartColumn] = frozenset(
+    {"notable_features", "toys", "notes", "marketing_slogans"}
 )
 
 
@@ -151,36 +198,34 @@ def require_pinexplore() -> None:
 
 
 def _ipdb_fields(
-    row: Mapping[str, object], columns: Container[str] | None = None
-) -> Iterator[tuple[str | None, str]]:
-    """*row*'s populated fields as ``(page label, value)`` in page order.
+    row: IpdbRow, columns: Container[MartColumn] | None = None
+) -> Iterator[_LabeledValue]:
+    """*row*'s populated fields as :class:`_LabeledValue` in page order.
 
     A blank value is skipped rather than yielded as a bare ``Label:`` — text
     the page never shows, which a quote of the label alone could verify against.
     """
-    for column, label in _IPDB_ROW_FIELDS:
-        if columns is not None and column not in columns:
+    for field in _IPDB_ROW_FIELDS:
+        if columns is not None and field.column not in columns:
             continue
-        value = row.get(column)
+        value = row.get(field.column)
         if value is None:
             continue
         text = html.unescape(str(value))
         if not text.strip():
             continue
-        yield label, text
+        yield _LabeledValue(field.label, text)
 
 
-def _ipdb_lines(
-    row: Mapping[str, object], columns: Container[str] | None = None
-) -> str:
+def _ipdb_lines(row: IpdbRow, columns: Container[MartColumn] | None = None) -> str:
     """Render *row*'s fields in page order, narrowed to *columns* if given."""
     return "\n".join(
-        f"{label}: {text}" if label else text
-        for label, text in _ipdb_fields(row, columns)
+        f"{field.label}: {field.text}" if field.label else field.text
+        for field in _ipdb_fields(row, columns)
     )
 
 
-def ipdb_row_text(row: Mapping[str, object]) -> str:
+def ipdb_row_text(row: IpdbRow) -> str:
     """The quotable text of one IPDB machine row, keyed by DuckDB column name.
 
     Reconstructs what the IPDB page renders so a quote stays ctrl-F honest
@@ -192,7 +237,7 @@ def ipdb_row_text(row: Mapping[str, object]) -> str:
     return _ipdb_lines(row)
 
 
-def ipdb_notes_text(row: Mapping[str, object]) -> str:
+def ipdb_notes_text(row: IpdbRow) -> str:
     """The editor-authored prose of one IPDB machine row — the AI-readable slice.
 
     IPDB's structured fields are deterministic data read straight from the
@@ -207,6 +252,61 @@ def ipdb_notes_text(row: Mapping[str, object]) -> str:
     all is what lets a model tell a Note from ad copy in Marketing Slogans.
     """
     return _ipdb_lines(row, _IPDB_PROSE_COLUMNS)
+
+
+class CachePage(TypedDict, total=False):
+    """The web-cache row fields a quote gate reads — a slice of ``PageRow``.
+
+    ``total=False`` for two reasons at once: the real row is far wider than the
+    two columns asked for here, and an uncached address stands in as ``{}``, so
+    a lookup that found nothing has the same shape as one that did.
+    """
+
+    text: str | None
+    content_type: str | None
+
+
+class _WebCache(Protocol):
+    """The three functions of pinexplore's ``web_cache`` module used here.
+
+    That module is fully typed in its own repo, but it is imported off
+    ``sys.path`` from outside this one's mypy path, so it arrives as ``Any`` and
+    every call through it is unchecked. Naming the slice is what keeps a
+    misspelled function a type error rather than an ``AttributeError`` raised at
+    the first cite that happens to reach it.
+    """
+
+    def get(self, url: Url) -> CachePage | None: ...
+
+    def blob_for(self, page: CachePage) -> Path | None: ...
+
+    def captures_for_citation_ref(self, ref: CiteRef) -> list[CachePage]: ...
+
+
+class _IpdbPageField(Protocol):
+    """One labeled row of a parsed IPDB page (pinexplore's ``parse_ipdb.Field``)."""
+
+    @property
+    def text(self) -> str: ...
+
+
+class _IpdbPageModel(Protocol):
+    """A parsed IPDB machine page, read only through its label-keyed rows.
+
+    ``fields`` is the lossless backstop pinexplore keeps beside its typed
+    attributes, and reading the page-only labels out of it — rather than the
+    typed attribute for each — is what lets :data:`_IPDB_PAGE_ONLY_LABELS` grow
+    by one string.
+    """
+
+    @property
+    def fields(self) -> Mapping[PageLabel, _IpdbPageField]: ...
+
+
+class _IpdbPageParser(Protocol):
+    """pinexplore's ``parse_model_page``: page bytes in, one parsed model out."""
+
+    def __call__(self, html: bytes, /) -> _IpdbPageModel: ...
 
 
 class Sources:
@@ -224,15 +324,15 @@ class Sources:
         sys.path.insert(0, str(PINEXPLORE_DIR / "scripts" / "web_scrape"))
         import web_cache  # type: ignore[import-not-found]  # pinexplore module, stdlib-only
 
-        self._web_cache = web_cache
+        self._web_cache: _WebCache = web_cache
         self._duck_db = duck_db
-        self._rows: dict[str, dict[str, object]] | None = None
+        self._rows: dict[IpdbId, IpdbRow] | None = None
         # Cached machine pages parsed on demand, keyed by IPDB id: most ids have
         # no capture, and parsing one is only worth doing for an id actually
         # cited. An id that resolved to nothing memoizes as ``{}``.
-        self._page_fields: dict[str, dict[str, str]] = {}
+        self._page_fields: dict[IpdbId, dict[PageLabel, str]] = {}
 
-    def resolve_cite(self, ref: str, archive: str | None = None) -> CiteSource:
+    def resolve_cite(self, ref: CiteRef, archive: Url | None = None) -> CiteSource:
         """Resolve a whole cite — ref, then its archive snapshot — to a document.
 
         A dead original is cached under its Wayback snapshot URL while the cite's
@@ -250,7 +350,7 @@ class Sources:
                 return CiteSource(SourceStatus.RESOLVED, text)
         return CiteSource(SourceStatus.MISSING)
 
-    def free_text_for(self, ref: str) -> str | None:
+    def free_text_for(self, ref: CiteRef) -> str | None:
         """Source text for AI extraction — editor-authored prose only.
 
         The input adapter for the page extractor. Web / opdb / youtube refs
@@ -262,7 +362,7 @@ class Sources:
             return self._ipdb_notes_text(ref.partition(":")[2])
         return self.text_for(ref)
 
-    def text_for(self, ref: str) -> str | None:
+    def text_for(self, ref: CiteRef) -> str | None:
         """The full quotable source text for one address.
 
         For ``ipdb:`` this is the whole rendered row (:func:`ipdb_row_text`), so
@@ -285,7 +385,7 @@ class Sources:
         texts = [
             text
             for page in self._document_captures(ref)
-            if (text := str(page.get("text") or "")).strip()
+            if (text := page.get("text") or "").strip()
         ]
         # A merged multi-sheet document (a flyer's front and back as separate
         # image captures) is one work in several files: its quotable text is
@@ -294,7 +394,7 @@ class Sources:
         # source order across sheets.
         return "\n\n".join(texts) if texts else None
 
-    def is_pdf(self, ref: str) -> bool:
+    def is_pdf(self, ref: CiteRef) -> bool:
         """Whether *ref* names a cached PDF.
 
         The signal is the cache row's ``content_type``, a fact about the
@@ -310,16 +410,17 @@ class Sources:
         URL's spelling is not consulted, so an HTML page served at a ``.pdf``
         path stays checked.
         """
+        pages: list[CachePage]
         if ref.startswith(("http://", "https://")):
             pages = [self._web_cache.get(ref) or {}]
         else:
             pages = self._document_captures(ref)
         return any(
-            str(page.get("content_type") or "").startswith("application/pdf")
+            (page.get("content_type") or "").startswith("application/pdf")
             for page in pages
         )
 
-    def _document_captures(self, ref: str) -> list[dict[str, object]]:
+    def _document_captures(self, ref: CiteRef) -> list[CachePage]:
         """The cached captures behind a slug-addressed ref, in library order.
 
         A ``<root-slug>:<child-slug>`` cite (a publisher's document, a
@@ -333,14 +434,14 @@ class Sources:
         scheme, sep, _ = ref.partition(":")
         if not sep or scheme in ("http", "https", "ipdb", "opdb", "youtube", "isbn"):
             return []
-        return [dict(page) for page in self._web_cache.captures_for_citation_ref(ref)]
+        return self._web_cache.captures_for_citation_ref(ref)
 
-    def _page_text(self, url: str) -> str | None:
+    def _page_text(self, url: Url) -> str | None:
         page = self._web_cache.get(url)
-        text = (page or {}).get("text") or ""
+        text = (page or CachePage()).get("text") or ""
         return text if text.strip() else None
 
-    def _ipdb_rows(self) -> dict[str, dict[str, object]]:
+    def _ipdb_rows(self) -> dict[IpdbId, IpdbRow]:
         """Every IPDB row as a column-keyed mapping, read and cached once.
 
         Selects exactly the columns the renderer knows, so adding a quotable
@@ -349,10 +450,10 @@ class Sources:
         if self._rows is None:
             import duckdb
 
-            columns = ["IpdbId", *(column for column, _ in _IPDB_ROW_FIELDS)]
+            columns = ["ipdb_id", *(field.column for field in _IPDB_ROW_FIELDS)]
             con = duckdb.connect(str(self._duck_db), read_only=True)
             rows = con.execute(
-                f"SELECT {', '.join(columns)} FROM ipdb_machines"  # noqa: S608 — column names are this module's own literals
+                f"SELECT {', '.join(columns)} FROM ipdb.models"  # noqa: S608 — column names are this module's own literals
             ).fetchall()
             con.close()
             self._rows = {
@@ -360,7 +461,7 @@ class Sources:
             }
         return self._rows
 
-    def _ipdb_text(self, identifier: str) -> str | None:
+    def _ipdb_text(self, identifier: IpdbId) -> str | None:
         """The dump's row, topped up from the cached page where it is silent.
 
         The dump has no row for an id it never carried, and a page alone is not
@@ -369,7 +470,7 @@ class Sources:
         row = self._ipdb_rows().get(identifier)
         if row is None:
             return None
-        rendered = {label for label, _ in _ipdb_fields(row) if label}
+        rendered = {field.label for field in _ipdb_fields(row) if field.label}
         page = self._ipdb_page_fields(identifier)
         return "\n".join(
             [
@@ -382,7 +483,7 @@ class Sources:
             ]
         )
 
-    def _ipdb_page_fields(self, identifier: str) -> dict[str, str]:
+    def _ipdb_page_fields(self, identifier: IpdbId) -> dict[PageLabel, str]:
         """:data:`_IPDB_PAGE_ONLY_LABELS` as the cached machine page prints them.
 
         Parses pinexplore's stored capture with pinexplore's own machine-page
@@ -396,7 +497,7 @@ class Sources:
         parse, error = self._ipdb_page_parser()
         page = self._web_cache.get(f"https://www.ipdb.org/machine.cgi?id={identifier}")
         blob = self._web_cache.blob_for(page) if page else None
-        fields: dict[str, str] = {}
+        fields: dict[PageLabel, str] = {}
         if blob is not None and blob.exists():
             try:
                 model = parse(blob.read_bytes())
@@ -412,7 +513,7 @@ class Sources:
         return fields
 
     @staticmethod
-    def _ipdb_page_parser() -> tuple[Any, type[Exception]]:
+    def _ipdb_page_parser() -> tuple[_IpdbPageParser, type[Exception]]:
         """pinexplore's machine-page parser and the error it raises.
 
         Imported at call time, like ``web_cache`` in :meth:`__init__`: it pulls
@@ -425,7 +526,7 @@ class Sources:
 
         return parse_model_page, IpdbParseError
 
-    def _ipdb_notes_text(self, identifier: str) -> str | None:
+    def _ipdb_notes_text(self, identifier: IpdbId) -> str | None:
         row = self._ipdb_rows().get(identifier)
         text = ipdb_notes_text(row) if row else None
         return text if text and text.strip() else None

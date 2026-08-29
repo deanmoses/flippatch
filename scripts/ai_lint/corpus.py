@@ -14,15 +14,15 @@ from common.paths import EXPLORE_DUCKDB, WEB_CACHE_DB
 from quotes.sources import CiteSource, SourceStatus
 
 if TYPE_CHECKING:
-    from quotes.sources import Sources
+    from quotes.sources import CiteRef, Sources, Url
 
 
 class SourceResolver(Protocol):
     """The slice of ``Sources`` the rules use — the seam a test fake stands in at."""
 
-    def text_for(self, ref: str) -> str | None: ...
+    def text_for(self, ref: CiteRef) -> str | None: ...
 
-    def resolve_cite(self, ref: str, archive: str | None = None) -> CiteSource: ...
+    def resolve_cite(self, ref: CiteRef, archive: Url | None = None) -> CiteSource: ...
 
 
 class Corpus:
@@ -50,13 +50,13 @@ class Corpus:
         """Whether pinexplore source text can be resolved at all."""
         return self._resolver is not None
 
-    def text_for(self, ref: str) -> str | None:
+    def text_for(self, ref: CiteRef) -> str | None:
         """The cached source text for one address, or ``None`` if unresolvable."""
         if self._resolver is None:
             return None
         return self._resolver.text_for(ref)
 
-    def resolve_cite(self, ref: str, archive: str | None = None) -> CiteSource:
+    def resolve_cite(self, ref: CiteRef, archive: Url | None = None) -> CiteSource:
         """See :meth:`quotes.sources.Sources.resolve_cite`."""
         if self._resolver is None:
             return CiteSource(SourceStatus.MISSING)

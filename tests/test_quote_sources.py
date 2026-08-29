@@ -5,21 +5,29 @@ cover the pure renderers (ipdb_row_text / ipdb_notes_text) and ``Sources`` ref
 routing against a stubbed cache.
 """
 
-from quotes.sources import Sources, SourceStatus, ipdb_notes_text, ipdb_row_text
+from pathlib import Path
+
+from quotes.sources import (
+    CachePage,
+    Sources,
+    SourceStatus,
+    ipdb_notes_text,
+    ipdb_row_text,
+)
 from quotes.verbatim import check_quote
 
 
 def test_ipdb_row_text_serializes_labeled_fields_in_page_order():
     text = ipdb_row_text(
         {
-            "Title": "Fishing Tengu (&#12388;&#12426;&#22825;&#29399;)",
-            "Players": 1,
-            "AdditionalDetails": "IPD No. 3862 / June, 1974 / 1 Player",
-            "Manufacturer": "Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan",
-            "Type": "Electro-mechanical (EM)",
-            "Theme": "Sports - Fishing - Mythology",
-            "NotableFeatures": "Red knob on the cabinet.",
-            "Notes": "A tengu is a mythical creature.",
+            "name": "Fishing Tengu (&#12388;&#12426;&#22825;&#29399;)",
+            "players": 1,
+            "additional_details": "IPD No. 3862 / June, 1974 / 1 Player",
+            "corporate_entity_text": "Sankyo Precision Equipment Company, Ltd., of Tokyo, Japan",
+            "type_text": "Electro-mechanical (EM)",
+            "theme_text": "Sports - Fishing - Mythology",
+            "notable_features": "Red knob on the cabinet.",
+            "notes": "A tengu is a mythical creature.",
         }
     )
     assert text == (
@@ -36,7 +44,7 @@ def test_ipdb_row_text_serializes_labeled_fields_in_page_order():
 
 def test_ipdb_row_text_skips_empty_fields():
     assert ipdb_row_text(
-        {"Title": "Asteroid Killer", "Type": "Solid State Electronic (SS)"}
+        {"name": "Asteroid Killer", "type_text": "Solid State Electronic (SS)"}
     ) == ("Asteroid Killer\nType: Solid State Electronic (SS)")
 
 
@@ -46,21 +54,21 @@ def test_ipdb_row_text_renders_hardware_and_credit_fields():
     # claim citing ipdb:NNNN can quote them ctrl-F honestly.
     text = ipdb_row_text(
         {
-            "Title": "Houdini: Master of Mystery",
-            "Manufacturer": "American Pinball, Incorporated",
-            "Type": "Solid State Electronic (SS)",
-            "Players": 4,
-            "Theme": "Magic - Illusions",
-            "ModelNumber": "GAM0001",
-            "MPU": "Multimorphic P3-ROC",
-            "DesignBy": "Joe Balcer",
-            "ArtBy": "Jeff Busch, Matt Riesterer",
-            "DotsAnimationBy": "Ish Raneses",
-            "MechanicsBy": "Joe Balcer",
-            "MusicBy": "Matt Kern",
-            "SoundBy": "Matt Kern",
-            "SoftwareBy": "Josh Kugler",
-            "Notes": "MSRP when new: $6,995",
+            "name": "Houdini: Master of Mystery",
+            "corporate_entity_text": "American Pinball, Incorporated",
+            "type_text": "Solid State Electronic (SS)",
+            "players": 4,
+            "theme_text": "Magic - Illusions",
+            "model_number": "GAM0001",
+            "mpu": "Multimorphic P3-ROC",
+            "design_by": "Joe Balcer",
+            "art_by": "Jeff Busch, Matt Riesterer",
+            "dots_animation_by": "Ish Raneses",
+            "mechanics_by": "Joe Balcer",
+            "music_by": "Matt Kern",
+            "sound_by": "Matt Kern",
+            "software_by": "Josh Kugler",
+            "notes": "MSRP when new: $6,995",
         }
     )
     assert text == (
@@ -87,9 +95,9 @@ def test_ipdb_row_text_renders_toys_and_marketing_slogans():
     # `toys` claim citing ipdb:NNNN can quote the Toys line ctrl-F honestly.
     text = ipdb_row_text(
         {
-            "Title": "The Addams Family",
-            "Toys": "'Thing' hand - ball capture device.\r\n'Electric chair'",
-            "MarketingSlogans": '"A pinball experience for the whole family!"',
+            "name": "The Addams Family",
+            "toys": "'Thing' hand - ball capture device.\r\n'Electric chair'",
+            "marketing_slogans": '"A pinball experience for the whole family!"',
         }
     )
     assert text == (
@@ -104,10 +112,10 @@ def test_ipdb_row_text_renders_ipdbs_own_sourcing_rows():
     # page, so quotable; excluded from the AI slice by ipdb_notes_text.
     text = ipdb_row_text(
         {
-            "Title": "Ballyhoo",
-            "CommonAbbreviations": "TAF",
-            "PhotosIn": "Pinball Memories, page 18",
-            "Source": "Bally documentation",
+            "name": "Ballyhoo",
+            "common_abbreviations": "TAF",
+            "photos_in": "Pinball Memories, page 18",
+            "source_note": "Bally documentation",
         }
     )
     assert text == (
@@ -123,10 +131,10 @@ def test_ipdb_row_text_omits_the_fun_rating():
     # evidence of anything the catalog records.
     text = ipdb_row_text(
         {
-            "Title": "The Addams Family",
-            "ProductionNumber": 20270,
-            "AverageFunRating": 8.3,
-            "AdditionalDetails": "IPD No. 20 / March, 1992 / 4 Players",
+            "name": "The Addams Family",
+            "production_number": 20270,
+            "average_fun_rating": 8.3,
+            "additional_details": "IPD No. 20 / March, 1992 / 4 Players",
         }
     )
     assert text == (
@@ -139,10 +147,10 @@ def test_ipdb_row_text_omits_blank_values_rather_than_a_bare_label():
     # shows — a quote of the label alone would verify against nothing.
     assert ipdb_row_text(
         {
-            "Title": "Ballyhoo",
-            "Notes": "   ",
-            "Toys": "",
-            "NotableFeatures": "Two flippers.",
+            "name": "Ballyhoo",
+            "notes": "   ",
+            "toys": "",
+            "notable_features": "Two flippers.",
         }
     ) == ("Ballyhoo\nNotable Features: Two flippers.")
 
@@ -151,12 +159,12 @@ def test_ipdb_row_text_ignores_join_keys_and_array_columns():
     assert (
         ipdb_row_text(
             {
-                "Title": "Ballyhoo",
-                "IpdbId": 1,
-                "ManufacturerId": 42,
-                "ManufacturerShortName": "Bally",
-                "TypeShortName": "EM",
-                "ImageFiles": [{"Url": "x", "Name": "y"}],
+                "name": "Ballyhoo",
+                "ipdb_id": 1,
+                "ipdb_corporate_entity_id": 42,
+                "type_code": "EM",
+                "technology_generation_slug": "electromechanical",
+                "image_files": [{"Url": "x", "Name": "y"}],
             }
         )
         == "Ballyhoo"
@@ -168,16 +176,16 @@ def test_ipdb_notes_text_is_free_text_prose_only():
     # by a model; Source and Photos In are not about the machine at all.
     text = ipdb_notes_text(
         {
-            "Title": "Fishing Tengu",
-            "Manufacturer": "Sankyo",
-            "Players": 1,
-            "NotableFeatures": "Red knob on the cabinet.",
-            "Toys": "Dancing tengu",
-            "Notes": "A tengu is a mythical creature.",
-            "MarketingSlogans": '"Reel in the fun!"',
-            "Source": "flyer",
-            "PhotosIn": "Pinball Memories, page 18",
-            "CommonAbbreviations": "FT",
+            "name": "Fishing Tengu",
+            "corporate_entity_text": "Sankyo",
+            "players": 1,
+            "notable_features": "Red knob on the cabinet.",
+            "toys": "Dancing tengu",
+            "notes": "A tengu is a mythical creature.",
+            "marketing_slogans": '"Reel in the fun!"',
+            "source_note": "flyer",
+            "photos_in": "Pinball Memories, page 18",
+            "common_abbreviations": "FT",
         }
     )
     assert text == (
@@ -193,19 +201,19 @@ def test_ipdb_notes_text_labels_match_ipdb_row_text_verbatim():
     # against the row text at ship time, so a delimiter in one and not the
     # other is a quote that passes the first gate and fails the second.
     row = {
-        "Title": "The Addams Family",
-        "Manufacturer": "Bally",
-        "NotableFeatures": "Two-level playfield.",
-        "Toys": "'Thing' hand - ball capture device.",
-        "Notes": "The best-selling pinball machine of all time.",
-        "MarketingSlogans": '"A pinball experience for the whole family!"',
+        "name": "The Addams Family",
+        "corporate_entity_text": "Bally",
+        "notable_features": "Two-level playfield.",
+        "toys": "'Thing' hand - ball capture device.",
+        "notes": "The best-selling pinball machine of all time.",
+        "marketing_slogans": '"A pinball experience for the whole family!"',
     }
     for line in ipdb_notes_text(row).split("\n"):
         assert check_quote(line, ipdb_row_text(row)) is None
 
 
 def test_ipdb_notes_text_empty_prose_is_empty_string():
-    assert ipdb_notes_text({"Title": "Ballyhoo", "Manufacturer": "Bally"}) == ""
+    assert ipdb_notes_text({"name": "Ballyhoo", "corporate_entity_text": "Bally"}) == ""
 
 
 class _FakeWebCache:
@@ -231,7 +239,7 @@ class _FakeWebCache:
         }
         self.requested: list[str] = []
 
-    def get(self, url: str) -> dict[str, str] | None:
+    def get(self, url: str) -> CachePage | None:
         self.requested.append(url)
         text = self.pages.get(url)
         if text is None:
@@ -239,11 +247,16 @@ class _FakeWebCache:
         content_type = "application/pdf" if url in self.pdf_urls else "text/html"
         return {"text": text, "content_type": content_type}
 
-    def captures_for_citation_ref(self, ref: str) -> list[dict[str, str]]:
+    def captures_for_citation_ref(self, ref: str) -> list[CachePage]:
         """Mirrors pinexplore's document-library join: ref → captured pages."""
         self.requested.append(ref)
         pages = (self.get(url) for url in self.documents.get(ref, []))
         return [page for page in pages if page is not None]
+
+    def blob_for(self, page: CachePage) -> Path | None:
+        """No stubbed page has stored bytes behind it — which is why every
+        page-only-label test seeds ``_page_fields`` rather than a capture."""
+        return None
 
 
 def _sources_with(
@@ -288,10 +301,10 @@ def test_free_text_for_ipdb_returns_machine_prose_only():
     sources, _ = _sources_with({})
     sources._rows = {
         "5632": {
-            "Title": "Dogs Race",
-            "Manufacturer": "Chicago Coin",
-            "Notes": "Converted from an earlier Gottlieb model.",
-            "Source": "flyer",
+            "name": "Dogs Race",
+            "corporate_entity_text": "Chicago Coin",
+            "notes": "Converted from an earlier Gottlieb model.",
+            "source_note": "flyer",
         }
     }
     assert sources.free_text_for("ipdb:5632") == (
@@ -537,7 +550,7 @@ def test_ipdb_text_appends_a_production_status_the_dump_cannot_hold():
     # cached page is the only carrier of the status, and the dump has no line
     # under that label to be overridden.
     text = _sources_with_page(
-        {"Title": "Ice Castle", "ProductionNumber": None},
+        {"name": "Ice Castle", "production_number": None},
         {"Production": "Never Produced"},
     ).text_for("ipdb:3711")
     assert text == "Ice Castle\nProduction: Never Produced"
@@ -547,7 +560,7 @@ def test_ipdb_text_keeps_the_dumps_production_number_over_the_page():
     # The dump is the newer source. Wherever it states a value the page is not
     # consulted, however stale or fresh the capture behind the page is.
     text = _sources_with_page(
-        {"Title": "Baby Pac-Man", "ProductionNumber": 7000},
+        {"name": "Baby Pac-Man", "production_number": 7000},
         {"Production": "Never Produced"},
     ).text_for("ipdb:3711")
     assert text == "Baby Pac-Man\nProduction: 7000"
@@ -556,7 +569,7 @@ def test_ipdb_text_keeps_the_dumps_production_number_over_the_page():
 def test_ipdb_text_appends_specialty_concept_by_and_easter_eggs():
     # The three labels the dump has no column for at all, in page order.
     text = _sources_with_page(
-        {"Title": "Atari Arcade Classics"},
+        {"name": "Atari Arcade Classics"},
         {
             "Easter Eggs": "See the eggs list",
             "Concept by": "Roger Shiffman, Marc Rosenberg",
@@ -574,9 +587,9 @@ def test_ipdb_text_appends_specialty_concept_by_and_easter_eggs():
 def test_ipdb_text_never_takes_a_date_from_the_page():
     # The whole reason for the allowlist. Archive captures are years older than
     # the dump and IPDB has relabelled dates since; a date quote must resolve
-    # against the dump's own AdditionalDetails or not at all.
+    # against the mart's own additional_details or not at all.
     text = _sources_with_page(
-        {"Title": "Ice Castle", "AdditionalDetails": "IPD No. 3711 / May, 1989"},
+        {"name": "Ice Castle", "additional_details": "IPD No. 3711 / May, 1989"},
         {"Date Of Manufacture": "May, 1989", "Project Date": "May, 1989"},
     ).text_for("ipdb:3711")
     assert text == "Ice Castle\nIPD No. 3711 / May, 1989"
@@ -584,7 +597,7 @@ def test_ipdb_text_never_takes_a_date_from_the_page():
 
 def test_ipdb_text_with_no_cached_page_is_the_dump_alone():
     sources, _ = _sources_with({})
-    sources._rows = {"3711": {"Title": "Ice Castle"}}
+    sources._rows = {"3711": {"name": "Ice Castle"}}
     sources._page_fields = {"3711": {}}
     assert sources.text_for("ipdb:3711") == "Ice Castle"
 
@@ -593,7 +606,75 @@ def test_ipdb_notes_text_ignores_page_only_labels():
     # AI extraction reads machine prose; a Specialty tag is a structured value
     # and would read as prose the model could quote.
     sources = _sources_with_page(
-        {"Title": "Ice Castle", "Notes": "Shown at a trade show."},
+        {"name": "Ice Castle", "notes": "Shown at a trade show."},
         {"Specialty": "Widebody"},
     )
     assert sources.free_text_for("ipdb:3711") == "Notes: Shown at a trade show."
+
+
+def test_ipdb_rows_reads_the_published_mart_by_its_own_column_names(tmp_path):
+    """The one test that runs the DuckDB query instead of stubbing its result.
+
+    Every other IPDB test injects ``_rows``, so the whole suite passes against a
+    store that no longer holds the table the query names — which is exactly how
+    pinexplore's flat ``ipdb_machines`` becoming the ``ipdb.models`` mart went
+    unnoticed until a cite failed to resolve. The DDL below spells the mart's
+    columns literally rather than deriving them from the module's own list, so
+    the next rename fails here and names itself.
+    """
+    import duckdb
+
+    db = tmp_path / "explore.duckdb"
+    con = duckdb.connect(str(db))
+    con.execute("CREATE SCHEMA ipdb")
+    con.execute("""
+        CREATE TABLE ipdb.models AS SELECT
+          4032::BIGINT AS ipdb_id,
+          'Medieval Madness' AS name,
+          4::BIGINT AS players,
+          'IPD No. 4032 / June, 1997 / 4 Players' AS additional_details,
+          'Williams Electronics Games, Incorporated' AS corporate_entity_text,
+          'MM' AS common_abbreviations,
+          'Solid State Electronic (SS)' AS type_text,
+          'Williams WPC-95' AS mpu,
+          '50059' AS model_number,
+          4016::BIGINT AS production_number,
+          'Fantasy - Medieval' AS theme_text,
+          'A castle with a drawbridge' AS notable_features,
+          'Trolls' AS toys,
+          'Brian Eddy' AS design_by,
+          'John Youssi' AS art_by,
+          'Adam Rhine' AS dots_animation_by,
+          'Robert C. Friesl' AS mechanics_by,
+          'Dan Forden' AS music_by,
+          'Dan Forden' AS sound_by,
+          'Lyman F. Sheats, Jr.' AS software_by,
+          'Widely regarded as a high point.' AS notes,
+          'The Kingdom is in trouble!' AS marketing_slogans,
+          'Play Meter, October 1997' AS photos_in,
+          'flyer' AS source_note
+    """)
+    con.close()
+
+    sources = object.__new__(Sources)
+    sources._duck_db = db
+    sources._rows = None
+    sources._page_fields = {"4032": {}}
+
+    text = sources.text_for("ipdb:4032")
+    assert text is not None
+    # Page order, the title bare and every other field under the page's label.
+    assert text.startswith(
+        "Medieval Madness\n"
+        "Players: 4\n"
+        "IPD No. 4032 / June, 1997 / 4 Players\n"
+        "Manufacturer: Williams Electronics Games, Incorporated\n"
+    )
+    # The renamed columns specifically: a wrong guess at any of these renders a
+    # label with no line under it, and a true quote fails the verbatim gate.
+    assert "Type: Solid State Electronic (SS)" in text
+    assert "Theme: Fantasy - Medieval" in text
+    assert "Production: 4016" in text
+    assert "Source: flyer" in text
+    # An id the mart never carried resolves to nothing, not to an empty row.
+    assert sources.text_for("ipdb:9999") is None

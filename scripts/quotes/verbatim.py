@@ -36,7 +36,7 @@ from __future__ import annotations
 import argparse
 import re
 import sys
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, NamedTuple
 
 from common.patch_files import patch_paths, unmatched_scope_error
 from common.paths import PATCHES_DIR
@@ -45,6 +45,8 @@ from quotes.sources import Sources, SourceStatus, require_pinexplore
 
 if TYPE_CHECKING:
     from collections.abc import Iterator
+
+    from quotes.sources import CiteRef, Url
 
 _SMART = {"“": '"', "”": '"', "‘": "'", "’": "'"}
 
@@ -79,8 +81,21 @@ def check_quote(quote: str, source: str) -> str | None:
     return None
 
 
-def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str | None, str]]:
-    """Every (ref, archive, quote) triple in an entry: header plus changesets.
+class QuoteUnit(NamedTuple):
+    """One quote and the two addresses it may be checked against.
+
+    Three strings in a row is exactly the shape a caller can scramble
+    unnoticed, and two of them are addresses, so the triple carries its field
+    names rather than resting on position.
+    """
+
+    ref: CiteRef
+    archive: Url | None
+    quote: str
+
+
+def _quote_units(body: dict[str, object]) -> Iterator[QuoteUnit]:
+    """Every :class:`QuoteUnit` in an entry: header cites plus changesets.
 
     Walks the entry-level ``cite:`` mapping and each inline ``cites:`` entry
     carrying a quote, so inline footnote quotes are verified against their
@@ -98,7 +113,7 @@ def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str | None, str
         for spec in specs:
             if isinstance(spec, dict) and spec.get("quote"):
                 archive = spec.get("archive")
-                yield (
+                yield QuoteUnit(
                     str(spec["ref"]),
                     str(archive) if archive else None,
                     str(spec["quote"]),
@@ -108,7 +123,7 @@ def _quote_units(body: dict[str, object]) -> Iterator[tuple[str, str | None, str
             for value in cites.values():
                 if isinstance(value, dict) and value.get("quote"):
                     archive = value.get("archive")
-                    yield (
+                    yield QuoteUnit(
                         str(value["ref"]),
                         str(archive) if archive else None,
                         str(value["quote"]),
