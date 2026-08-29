@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >
+  OPDB ID for Wonderland Amusements.
+claims:
+  - manufacturer.wonderland-amusements:
+      note: 'OPDB''s API lists this manufacturer as "Wonderland Amusements".'
+      opdb_manufacturer_id: 169

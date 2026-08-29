@@ -1,0 +1,117 @@
+attribution: ipdb
+description: >
+  IPDB field values for the 2023+ models just linked.
+claims:
+  - model.foo-fighters-limited-edition:
+      changesets:
+        - cite:
+            ref: "ipdb:7073"
+            quote: "IPD No. 7073 / March, 2023 / 4 Players"
+          production_year: 2023
+          production_month: 3
+        - cite:
+            ref: "ipdb:7073"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7073"
+            quote: "Production: 1000"
+          production_quantity: "1000"
+        - cite:
+            ref: "ipdb:7073"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.foo-fighters-premium:
+      changesets:
+        - cite:
+            ref: "ipdb:7072"
+            quote: "IPD No. 7072 / April, 2023 / 4 Players"
+          production_year: 2023
+          production_month: 4
+        - cite:
+            ref: "ipdb:7072"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7072"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.foo-fighters-pro:
+      changesets:
+        - cite:
+            ref: "ipdb:7071"
+            quote: "IPD No. 7071 / March, 2023 / 4 Players"
+          production_year: 2023
+          production_month: 3
+        - cite:
+            ref: "ipdb:7071"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7071"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.the-uncanny-x-men-limited-edition:
+      changesets:
+        - cite:
+            ref: "ipdb:7070"
+            quote: "IPD No. 7070 / September, 2024 / 4 Players"
+          production_year: 2024
+          production_month: 9
+        - cite:
+            ref: "ipdb:7070"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7070"
+            quote: "Production: 811"
+          production_quantity: "811"
+        - cite:
+            ref: "ipdb:7070"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.the-uncanny-x-men-premium:
+      changesets:
+        - cite:
+            ref: "ipdb:7069"
+            quote: "IPD No. 7069 / October, 2024 / 4 Players"
+          production_year: 2024
+          production_month: 10
+        - cite:
+            ref: "ipdb:7069"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7069"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.the-uncanny-x-men-pro:
+      changesets:
+        - cite:
+            ref: "ipdb:7068"
+            quote: "IPD No. 7068 / September, 2024 / 4 Players"
+          production_year: 2024
+          production_month: 9
+        - cite:
+            ref: "ipdb:7068"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7068"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.venom-pro:
+      changesets:
+        - cite:
+            ref: "ipdb:7064"
+            quote: "IPD No. 7064 / July, 2023 / 4 Players"
+          production_year: 2023
+          production_month: 7
+        - cite:
+            ref: "ipdb:7064"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7064"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state

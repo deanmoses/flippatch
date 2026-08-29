@@ -1,0 +1,93 @@
+attribution: flipcommons-catalog
+description: >
+  IPDB and OPDB IDs for 2023+ models.
+claims:
+  - model.foo-fighters-limited-edition:
+      cite:
+        ref: "ipdb:7073"
+        quote: "Foo Fighters (Limited Edition) [...] IPD No. 7073 / March, 2023 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7073
+  - model.foo-fighters-premium:
+      cite:
+        ref: "ipdb:7072"
+        quote: "Foo Fighters (Premium) [...] IPD No. 7072 / April, 2023 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7072
+  - model.foo-fighters-pro:
+      cite:
+        ref: "ipdb:7071"
+        quote: "Foo Fighters (Pro) [...] IPD No. 7071 / March, 2023 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7071
+  - model.the-uncanny-x-men-limited-edition:
+      cite:
+        ref: "ipdb:7070"
+        quote: "The Uncanny X-Men (Limited Edition) [...] IPD No. 7070 / September, 2024 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7070
+  - model.the-uncanny-x-men-premium:
+      cite:
+        ref: "ipdb:7069"
+        quote: "The Uncanny X-Men (Premium) [...] IPD No. 7069 / October, 2024 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7069
+  - model.the-uncanny-x-men-pro:
+      cite:
+        ref: "ipdb:7068"
+        quote: "The Uncanny X-Men (Pro) [...] IPD No. 7068 / September, 2024 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7068
+  - model.venom-pro:
+      cite:
+        ref: "ipdb:7064"
+        quote: "Venom (Pro) [...] IPD No. 7064 / July, 2023 / 4 Players [...] Manufacturer: Stern Pinball, Incorporated, of Chicago, Illinois, USA (1999-now) [Trade Name: Stern]"
+      ipdb_id: 7064
+  - model.alice-goes-to-wonderland:
+      note: 'OPDB''s API lists this machine as "Alice Goes to Wonderland" by Wonderland Amusements, 2025'
+      opdb_id: G8lqj-M61lr
+  - model.bon-jovi:
+      note: 'OPDB''s API lists this machine as "Bon Jovi" by Barrels of Fun, 2026'
+      opdb_id: GbP6J-ME0v7
+  - model.dungeon-crawler-carl:
+      note: 'OPDB''s API lists this machine as "Dungeon Crawler Carl" by Multimorphic, 2026'
+      opdb_id: G0lJE-MP3vX
+  - model.enders-game:
+      note: 'OPDB''s API lists this machine as "Ender''s Game" by Multimorphic, 2026'
+      opdb_id: G7ZBd-M9Rvz
+  - model.galactic-tank-force-victory-edition:
+      note: 'OPDB''s API lists this machine as "Galactic Tank Force (Victory)" by American Pinball, 2026'
+      opdb_id: Gj6PZ-Mb5z6-A1ZzW
+  - model.houdini-100th-anniversary:
+      note: 'OPDB''s API lists this machine as "Houdini: Master of Mystery (100th Anniversary)" by American Pinball, 2026'
+      opdb_id: GvBQX-M0ody-A1kee
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: 'OPDB''s API lists this machine as "Sonic the Hedgehog (Arcade)" by Jersey Jack Pinball, 2026'
+      opdb_id: GvBPJ-M1rjr-AO7zb
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: 'OPDB''s API lists this machine as "Sonic the Hedgehog (CE)" by Jersey Jack Pinball, 2026'
+      opdb_id: GvBPJ-M1rjr-ARBkl
+  - model.sonic-the-hedgehog-special-edition:
+      note: 'OPDB''s API lists this machine as "Sonic the Hedgehog (Special)" by Jersey Jack Pinball, 2026'
+      opdb_id: GvBPJ-M1rjr-A9Pzw
+  - model.tales-of-the-arabian-nights-30th-anniversary-remake:
+      note: 'OPDB''s API lists this machine as "Tales of the Arabian Nights (30th Anniversary)" by Pedretti Gaming, 2026'
+      opdb_id: G4llj-M3dyz-A1Xy5
+  - model.tales-of-the-arabian-nights-legacy-edition-remake:
+      note: 'OPDB''s API lists this machine as "Tales of the Arabian Nights (Legacy)" by Pedretti Gaming, 2026'
+      opdb_id: G4llj-M3dyz-ARWyv
+  - model.the-3-musketeers:
+      note: 'OPDB''s API lists this machine as "The 3 Musketeers" by HEXA Pinball, 2026'
+      opdb_id: Gwej3-MrRYv
+  - model.the-3-musketeers-elegance-edition:
+      note: 'OPDB''s API lists this machine as "The 3 Musketeers (Elegance Edition)" by HEXA Pinball, 2026'
+      opdb_id: Gwej3-MrRYv-AOx2j
+  - model.the-big-lebowski-jesus-edition:
+      note: 'OPDB''s API lists this machine as "The Big Lebowski (Jesus Edition)" by Dutch Pinball, 2026'
+      opdb_id: G5WBr-MvB3E-A93XY
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: 'OPDB''s API lists this machine as "Transformers: More Than Meets the Eye (LE)" by Stern, 2026'
+      opdb_id: GBLzz-M4ok4-ARnwo
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: 'OPDB''s API lists this machine as "Transformers: More Than Meets the Eye (Premium)" by Stern, 2026'
+      opdb_id: GBLzz-M4ok4-AO2XW
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: 'OPDB''s API lists this machine as "Transformers: More Than Meets the Eye (Pro)" by Stern, 2026'
+      opdb_id: GBLzz-M7Zd5
+  - model.yukon-yeti:
+      note: 'OPDB''s API lists this machine as "Yukon Yeti (Legendary Edition)" by Turner Pinball, 2026'
+      opdb_id: G3EYo-Mo1ep

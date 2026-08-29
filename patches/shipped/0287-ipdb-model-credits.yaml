@@ -1,0 +1,88 @@
+attribution: ipdb
+description: >
+  IPDB credits for the 2023+ models just linked.
+claims:
+  - model.foo-fighters-limited-edition:
+      changesets:
+        - cite:
+            ref: "ipdb:7073"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7073"
+            quote: "Design by: Jack Danger"
+          credit:
+            - jack-danger: design
+  - model.foo-fighters-premium:
+      changesets:
+        - cite:
+            ref: "ipdb:7072"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7072"
+            quote: "Design by: Jack Danger"
+          credit:
+            - jack-danger: design
+  - model.foo-fighters-pro:
+      changesets:
+        - cite:
+            ref: "ipdb:7071"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7071"
+            quote: "Design by: Jack Danger"
+          credit:
+            - jack-danger: design
+  - model.the-uncanny-x-men-limited-edition:
+      changesets:
+        - cite:
+            ref: "ipdb:7070"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7070"
+            quote: "Design by: Jack Danger"
+          credit:
+            - jack-danger: design
+  - model.the-uncanny-x-men-premium:
+      changesets:
+        - cite:
+            ref: "ipdb:7069"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7069"
+            quote: "Design by: Jack Danger"
+          credit:
+            - jack-danger: design
+  - model.the-uncanny-x-men-pro:
+      changesets:
+        - cite:
+            ref: "ipdb:7068"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7068"
+            quote: "Design by: Jack Danger"
+          credit:
+            - jack-danger: design
+  - model.venom-pro:
+      changesets:
+        - cite:
+            ref: "ipdb:7064"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7064"
+            quote: "Design by: Brian Eddy"
+          credit:
+            - brian-eddy: design

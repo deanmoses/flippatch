@@ -1,0 +1,58 @@
+attribution: ipdb
+description: >
+  IPDB field values and credits for the two Venom variants.
+claims:
+  - model.venom-limited-edition:
+      changesets:
+        - cite:
+            ref: "ipdb:7066"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7066"
+            quote: "Design by: Brian Eddy"
+          credit:
+            - brian-eddy: design
+        - cite:
+            ref: "ipdb:7066"
+            quote: "IPD No. 7066 / August, 2023 / 4 Players"
+          production_year: 2023
+          production_month: 8
+        - cite:
+            ref: "ipdb:7066"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7066"
+            quote: "Production: 1000"
+          production_quantity: "1000"
+        - cite:
+            ref: "ipdb:7066"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state
+  - model.venom-premium:
+      changesets:
+        - cite:
+            ref: "ipdb:7065"
+            quote: "Art by: Jeremy Packer"
+          credit:
+            - jeremy-packer: art
+        - cite:
+            ref: "ipdb:7065"
+            quote: "Design by: Brian Eddy"
+          credit:
+            - brian-eddy: design
+        - cite:
+            ref: "ipdb:7065"
+            quote: "IPD No. 7065 / August, 2023 / 4 Players"
+          production_year: 2023
+          production_month: 8
+        - cite:
+            ref: "ipdb:7065"
+            quote: "Players: 4"
+          player_count: 4
+        - cite:
+            ref: "ipdb:7065"
+            quote: "Type: Solid State Electronic (SS)"
+          technology_generation: solid-state

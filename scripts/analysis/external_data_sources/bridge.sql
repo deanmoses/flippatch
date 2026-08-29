@@ -435,6 +435,38 @@ CREATE OR REPLACE VIEW _eds_adjudications AS
   WHERE false
 
   UNION ALL
+  -- OPDB files HEXA Pinball's Louis Vuitton as an ALIAS of machine GV8j1-M0oZe
+  -- ('-A1r2W'), i.e. the same machine rethemed, and so groups it with Space Hunt.
+  -- Flipcommons holds the two as separate titles. Adjudicated in favour of the
+  -- catalog: the split stands, and both models already carry their correct OPDB ids,
+  -- so nothing about the link is in question -- only the grouping, which is a
+  -- difference of editorial policy rather than a defect on either side.
+  SELECT 'finding', 'opdb', 'opdb-title-split-across-titles', 'GV8j1', 'space-hunt',
+         'louis-vuitton, space-hunt', NULL::INT, NULL, NULL, NULL,
+         DATE '2026-08-29',
+         'OPDB groups the Louis Vuitton retheme with Space Hunt as one machine; Flipcommons holds them as separate titles'
+
+  UNION ALL
+  -- Road Trip is unreleased. OPDB dates it February 2025 — its world debut at Pinball
+  -- at the Beach — while Ramps' own statement is "Expected Late 2026", so the two sides
+  -- are dating different events rather than disagreeing about one. Both month claims
+  -- were deliberately retracted (0233-ramps-pinball called the resolved February 2026 "a
+  -- chimera"; 0235-road-trip-month-opdb-retract dropped OPDB's), and the year carries
+  -- the same debut date. The comparison reads the dump against the catalog and cannot
+  -- see those retractions, so without these two rows the settled question returns on
+  -- every run. The discriminator carries OPDB's value, so a changed dump lapses them.
+  SELECT 'finding', 'cross', 'cross-field-unsupported', NULL, 'road-trip',
+         'production_year: - / 2025', NULL::INT, NULL, NULL, NULL,
+         DATE '2026-08-29',
+         'OPDB dates this machine to its February 2025 world debut rather than to manufacture; the machine is unreleased'
+
+  UNION ALL
+  SELECT 'finding', 'cross', 'cross-field-unsupported', NULL, 'road-trip',
+         'production_month: - / 2', NULL::INT, NULL, NULL, NULL,
+         DATE '2026-08-29',
+         'OPDB month is the February 2025 world debut, not a manufacture month; no month is assertable while the machine is unreleased'
+
+  UNION ALL
   -- ── scope 'maker-pair' ──
   --
   -- Keyed on the PAIR -- this OPDB maker id against this catalog manufacturer -- so

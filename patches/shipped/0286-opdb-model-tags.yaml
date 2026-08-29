@@ -1,0 +1,10 @@
+attribution: opdb
+description: >
+  OPDB tags for the 2023+ models just linked.
+claims:
+  - model.predator-trophy-edition:
+      note: "From the OPDB API."
+      tag: [limited-edition]
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "From the OPDB API."
+      tag: [limited-edition]

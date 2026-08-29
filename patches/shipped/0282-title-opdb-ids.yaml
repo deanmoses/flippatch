@@ -1,0 +1,28 @@
+attribution: flipcommons-catalog
+description: >
+  OPDB group IDs for 2023+ titles.
+claims:
+  - title.alice-goes-to-wonderland:
+      note: 'OPDB''s API files this title''s model under its "Alice Goes to Wonderland" grouping.'
+      opdb_id: G8lqj
+  - title.bon-jovi:
+      note: 'OPDB''s API files this title''s model under its "Bon Jovi" grouping.'
+      opdb_id: GbP6J
+  - title.dungeon-crawler-carl:
+      note: 'OPDB''s API files this title''s model under its "Dungeon Crawler Carl" grouping.'
+      opdb_id: G0lJE
+  - title.enders-game:
+      note: 'OPDB''s API files this title''s model under its "Ender''s Game" grouping.'
+      opdb_id: G7ZBd
+  - title.sonic-the-hedgehog:
+      note: 'OPDB''s API files this title''s three models under its "Sonic the Hedgehog" grouping.'
+      opdb_id: GvBPJ
+  - title.the-3-musketeers:
+      note: 'OPDB''s API files this title''s two models under its "The 3 Musketeers" grouping.'
+      opdb_id: Gwej3
+  - title.transformers-more-than-meets-the-eye:
+      note: 'OPDB''s API files this title''s three models under its "Transformers: More Than Meets the Eye" grouping.'
+      opdb_id: GBLzz
+  - title.yukon-yeti:
+      note: 'OPDB''s API files this title''s model under its "Yukon Yeti" grouping.'
+      opdb_id: G3EYo

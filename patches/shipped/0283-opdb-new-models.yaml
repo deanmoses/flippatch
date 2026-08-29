@@ -1,0 +1,23 @@
+attribution: flipcommons-catalog
+description: >
+  2023+ models from OPDB.
+claims:
+  - model.pokemon-home-edition:
+      create: true
+      note: 'OPDB''s API lists this machine as "Pokémon (Home Edition)" by Stern, 2026.'
+      name: Pokémon (Home Edition)
+      title: pokemon
+      corporate_entity: stern-pinball-incorporated
+      production_year: 2026
+      opdb_id: GV8wB-MnKpO
+      tag: [home-use]
+      game_format: pinball
+  - model.predator-trophy-edition:
+      create: true
+      note: 'OPDB''s API lists this machine as "Predator (Trophy Edition)" by Pinball Brothers, 2025.'
+      name: Predator (Trophy Edition)
+      title: predator-2
+      corporate_entity: pinball-brothers
+      production_year: 2025
+      opdb_id: Gwe3B-MnKrO-AOw2o
+      game_format: pinball

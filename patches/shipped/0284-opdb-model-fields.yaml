@@ -1,0 +1,108 @@
+attribution: opdb
+description: >
+  OPDB field values for the 2023+ models just linked.
+claims:
+  - model.alice-goes-to-wonderland:
+      note: "From the OPDB API."
+      production_year: 2025
+      production_month: 11
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.bon-jovi:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 7
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.dungeon-crawler-carl:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 7
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.enders-game:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 7
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.galactic-tank-force-victory-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 7
+  - model.houdini-100th-anniversary:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 3
+  - model.pokemon-home-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 8
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.predator-trophy-edition:
+      note: "From the OPDB API."
+      production_year: 2025
+      production_month: 12
+  - model.sonic-the-hedgehog-arcade-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 6
+  - model.sonic-the-hedgehog-collectors-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 6
+  - model.sonic-the-hedgehog-special-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 6
+  - model.tales-of-the-arabian-nights-30th-anniversary-remake:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 5
+  - model.tales-of-the-arabian-nights-legacy-edition-remake:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 5
+  - model.the-3-musketeers:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 3
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.the-3-musketeers-elegance-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 3
+  - model.the-big-lebowski-jesus-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 8
+  - model.transformers-more-than-meets-the-eye-limited-edition:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 5
+  - model.transformers-more-than-meets-the-eye-premium:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 5
+  - model.transformers-more-than-meets-the-eye-pro:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 5
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
+  - model.yukon-yeti:
+      note: "From the OPDB API."
+      production_year: 2026
+      production_month: 3
+      player_count: 4
+      technology_generation: solid-state
+      display_type: lcd
