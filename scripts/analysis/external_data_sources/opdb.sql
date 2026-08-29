@@ -643,27 +643,24 @@ CREATE OR REPLACE VIEW opdb_model_vocabulary_missing AS
 COMMENT ON VIEW opdb_model_vocabulary_missing IS
   'Worklist — one row per OPDB-asserted value the catalog has vocabulary for but the model (or its title, for series) does not carry. Rows are expected.';
 
--- Absent-vocabulary values adjudicated as PERMANENTLY not ours to mint. A settled value
--- leaves the worklist below but stays browsable here with its reason; `is_stale` marks
--- one no absent value exercises any more -- the vocabulary was created after all, or the
--- value left the dump -- and stale is reported, never gated.
---
--- NOT dismissals, deliberately: a dismissal suppresses the finding and nothing else,
--- while a settled value leaves the WORKLIST itself -- "we will never mint this" is a
--- decision about the VALUE, recorded beside the worklist that would otherwise keep
--- asking. The edition tags are absent here on purpose -- OpdbMappings.md calls them
--- signals to CONSIDER, an open decision that belongs on the worklist.
+-- Absent-vocabulary values adjudicated as PERMANENTLY not ours to mint. The rows live
+-- in `bridge.sql`'s adjudications relation under scope 'vocabulary-value' (its header
+-- carries the scope doctrine: a settled value leaves the WORKLIST itself, where a
+-- finding-scope dismissal suppresses one finding and nothing else); this is that scope
+-- beside the worklist it feeds, with `is_stale` marking a value no absent assertion
+-- exercises any more -- the vocabulary was created after all, or the value left the
+-- dump. Stale is reported, never gated.
 CREATE OR REPLACE VIEW opdb_vocabulary_settled AS
   SELECT
-    s.*,
+    a.target_entity_type,
+    a.target_value,
+    a.note AS reason,
     NOT EXISTS (SELECT 1 FROM _eds_opdb_vocabulary AS v
                 WHERE NOT v.target_exists
-                  AND v.target_entity_type = s.target_entity_type
-                  AND v.target_value = s.target_value) AS is_stale
-  FROM (VALUES
-    ('tag', 'licensed',
-     'OpdbMappings.md rules out minting a tag: the signal feeds licensed-relationship research, not tag vocabulary.')
-  ) AS s(target_entity_type, target_value, reason);
+                  AND v.target_entity_type = a.target_entity_type
+                  AND v.target_value = a.target_value) AS is_stale
+  FROM _eds_adjudications AS a
+  WHERE a.scope = 'vocabulary-value';
 COMMENT ON VIEW opdb_vocabulary_settled IS
   'Absent-vocabulary values adjudicated as permanently not ours to mint, with the reason and an is_stale flag. Settled values leave opdb_vocabulary_absent.';
 
@@ -687,6 +684,45 @@ CREATE OR REPLACE VIEW opdb_vocabulary_absent AS
   GROUP BY ALL;
 COMMENT ON VIEW opdb_vocabulary_absent IS
   'Worklist — one row per unsettled OPDB value naming catalog vocabulary that does not exist, with how many models carry it and a sample. One row is one decision, not one per machine.';
+
+-- ═══ ADJUDICATIONS, BROWSABLE ══════════════════════════════════════════════
+--
+-- Every recorded human judgment across all three scopes (the relation and its
+-- doctrine live in `bridge.sql`), each with its per-scope staleness. ONE staleness
+-- rule: stale means someone fixed the situation the adjudication covered -- no
+-- finding matches the dismissal, no model files under the excepted pair, no absent
+-- assertion exercises the settled value. It is a success, so it is REPORTED here and
+-- in the summaries, never gated; prune stale rows when convenient.
+--
+-- Lives in this file rather than `bridge.sql` because two of the three staleness
+-- computations read OPDB-side views; a session that has read only `ipdb.sql` browses
+-- dismissals through `external_data_source_dismissals` instead.
+CREATE OR REPLACE VIEW external_data_source_adjudications AS
+            SELECT 'finding' AS scope,
+                   d.source || ' / ' || d.rule || ' / ' || coalesce(d.external_id, '-')
+                     || ' / ' || coalesce(d.entity_public_id, '-')
+                     || coalesce(' / ' || d.discriminator, '') AS subject,
+                   d.dismissed_on AS adjudicated_on, d.note, d.is_stale
+            FROM external_data_source_dismissals AS d
+  UNION ALL SELECT 'maker-pair',
+                   'OPDB manufacturer ' || x.opdb_manufacturer_id || ' filed as catalog ' || x.manufacturer_slug,
+                   a.adjudicated_on, x.reason, x.is_stale
+            FROM opdb_manufacturer_exceptions AS x
+            INNER JOIN _eds_adjudications AS a
+              ON  a.scope = 'maker-pair'
+              AND a.opdb_manufacturer_id = x.opdb_manufacturer_id
+              AND a.manufacturer_slug    = x.manufacturer_slug
+  UNION ALL SELECT 'vocabulary-value',
+                   s.target_entity_type || ' / ' || s.target_value,
+                   a.adjudicated_on, s.reason, s.is_stale
+            FROM opdb_vocabulary_settled AS s
+            INNER JOIN _eds_adjudications AS a
+              ON  a.scope = 'vocabulary-value'
+              AND a.target_entity_type = s.target_entity_type
+              AND a.target_value       = s.target_value
+  ORDER BY scope, subject;
+COMMENT ON VIEW external_data_source_adjudications IS
+  'Every recorded adjudication across all three scopes — finding dismissals, excepted maker pairings, settled vocabulary values — with its date where recorded, its reason, and its per-scope is_stale. Stale means someone fixed it: reported, never gated; prune when convenient.';
 
 -- ═══ FINDINGS ══════════════════════════════════════════════════════════════
 --

@@ -218,35 +218,19 @@ CREATE OR REPLACE VIEW _eds_opdb_ipdb_route AS
 
 -- Maker pairings adjudicated as permanent, researched disagreements -- OPDB filing a
 -- game under a parent or successor company where the catalog names the brand on the
--- machine. Inherited verbatim from pinexplore's deleted `opdb_ref.manufacturer_exceptions`
--- (recoverable there via `git log -S opdb_ref.manufacturer_exceptions -p`), which is
--- also where the research behind each row lives; one slug updated: the row written as
--- `mecatronics-aka-taito-brazil-a-division-of-taito` had already rotted against the
--- catalog's rename to `mecatronics`, exactly the failure the `exception_slug_unresolved`
--- check below now makes loud.
+-- machine. The rows live in `bridge.sql`'s adjudications relation under scope
+-- 'maker-pair' (its header carries the scope doctrine and provenance); this is that
+-- scope in the shape the maker machinery joins.
 --
 -- An exception is keyed on the PAIR -- this OPDB maker id against this catalog
 -- manufacturer -- so it clears every model filed that way at once, which is why these
--- are not dismissals: a dismissal adjudicates one finding, and these adjudicate a
--- filing policy that surfaces on dozens.
+-- are not finding-scope dismissals: a dismissal adjudicates one finding, and these
+-- adjudicate a filing policy that surfaces on dozens and arms the contested-maker
+-- guard below.
 CREATE OR REPLACE VIEW _eds_opdb_manufacturer_exceptions AS
-  SELECT * FROM (VALUES
-    (15, 'sonic',                'OPDB uses parent name Segasa for Sonic-branded games'),
-    -- Geiger-Automatenbau GmbH = A.H. Geiger Co. = the Komplett Flipper brand.
-    (50, 'komplett-flipper',     'OPDB uses Geiger for Komplett Flipper brand'),
-    (50, 'professional-pinball', 'OPDB misattributes to Geiger; IPDB says Professional Pinball'),
-    (95, 'the-pinball-company',  'Collaboration: designed by TPC, manufactured by Spooky'),
-    (40, 'briarwood',            'OPDB uses parent Brunswick for Briarwood division games'),
-    (14, 'bally',                'OPDB uses Midway for Bally-branded game'),
-    (2,  'alben',                'OPDB uses Gottlieb for Alben-manufactured game'),
-    (20, 'bell-coin-matics',     'OPDB uses Bell Games for Bell Coin Matics game'),
-    (3,  'chicago-gaming',       'OPDB uses Chicago Coin for Chicago Gaming game'),
-    (4,  'sentinel',             'OPDB uses Cic Play for Sentinel game'),
-    -- LAI = Leisure & Allied Industries, Australian.
-    (49, 'lai',                  'OPDB uses Allied Leisure for LAI game'),
-    (90, 'jocmatic-sa',          'OPDB uses Joctronic for Jocmatic game'),
-    (73, 'mecatronics',          'OPDB uses Taito for Brazilian division')
-  ) AS t(opdb_manufacturer_id, manufacturer_slug, reason);
+  SELECT opdb_manufacturer_id, manufacturer_slug, note AS reason
+  FROM _eds_adjudications
+  WHERE scope = 'maker-pair';
 
 -- The maker disagreements, at PAIR grain and derived once, so the ladder's contested
 -- guard and the maker worklist in `opdb.sql` cannot drift apart about which pairings

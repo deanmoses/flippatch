@@ -353,55 +353,135 @@ CREATE OR REPLACE VIEW _eds_rule_registry AS
   ) AS t(source, detail_view, classification, rule, resolution_stage, severity,
          covered_by_rule, excluded_because);
 
--- ─── dismissals ────────────────────────────────────────────────────────────
+-- ─── adjudications ─────────────────────────────────────────────────────────
 --
--- A finding that is permanently, knowably wrong -- a quirk of the external source we
--- have already adjudicated and do not want to re-adjudicate every run.
+-- THE ONE PLACE A HUMAN JUDGMENT ABOUT A FINDING IS RECORDED. Three scopes, one
+-- relation; what separates them is not their shape but their EFFECT:
+--
+--   finding           dismisses ONE finding -- a quirk of the external source already
+--                     adjudicated, not to be re-adjudicated every run. Keys on the
+--                     finding's identity; touches nothing else.
+--   maker-pair        adjudicates an (OPDB maker, catalog manufacturer) FILING POLICY
+--                     -- OPDB filing games under a parent or successor company. It
+--                     reaches into computation, not just reporting: it clears the
+--                     `excepted` class on every model filed that way and feeds the
+--                     ladder's contested-maker guard (identity.sql), which a
+--                     finding-scope dismissal would leave armed.
+--   vocabulary-value  settles an absent vocabulary value as permanently not ours to
+--                     mint: the value leaves `opdb_vocabulary_absent` itself, with
+--                     the reason kept browsable.
+--
+-- Pick the NARROWEST scope that carries the decision: one finding gets 'finding'; a
+-- judgment about the pairing or the value gets its scope, because the wider scopes
+-- survive changes (another model filed that way, another machine gaining the value)
+-- that would rightly lapse a finding-scope dismissal.
 --
 -- AN INLINE VALUES LIST, NOT A FILE. It is how both repos already carry hand-curated
 -- exception lists with their reasoning -- pinexplore's `ipdb_ref.retracted` (with
 -- `reason` and `evidence_url`) and `ipdb_ref.specialty`, and the pattern flipcommons'
 -- analysis README names under "Making manual judgment checkable". It keeps the
--- dismissal in the same file as the rule it dismisses, needs no parser, and has exactly
--- one escaping rule (double a single quote) rather than CSV's several. If this ever
--- outgrows a screenful the answer is a JSONL sidecar, because CSV fails SILENTLY on
--- prose containing commas and quotes -- which is precisely what `note` and `message`
--- are -- while `read_json` rejects malformed input outright.
---
--- IDENTITY IS (source, rule, external_id, entity_public_id, discriminator): the
--- record-level keys plus the fact's own key within the record. The discriminator does
--- the job the rendered message once did without making a sentence load-bearing: a
--- dismissal keyed on record alone would stay attached to a finding whose substance
--- had changed underneath it -- a candidate set growing from one model to three is a
--- different situation, and the old adjudication should lapse rather than silently
--- cover it -- so each rule's INSERT chooses the discriminator carrying exactly that
--- substance (the candidate list, the disputed slug, the field and its values), or
--- leaves it NULL where the record-level keys already say everything, or where a
--- moving count should NOT lapse the adjudication (the pair-grain maker rule).
+-- adjudication beside the machinery it feeds, needs no parser, and has exactly one
+-- escaping rule (double a single quote) rather than CSV's several. If this ever
+-- outgrows a couple of screenfuls the answer is a JSONL sidecar, because CSV fails
+-- SILENTLY on prose containing commas and quotes -- which is precisely what `note`
+-- is -- while `read_json` rejects malformed input outright.
 --
 -- THE BAR IS HIGH. The audit has no per-finding suppression anywhere in 900 lines; its
 -- exemptions are whole categories excluded in the rule with a documented data-model
 -- reason. A rule needing dismissals in bulk is a rule to fix, not to paper over.
 --
--- Typed-empty rather than a VALUES list, because an empty VALUES list is a syntax error
--- and a dummy seed row would be a live trap. Add one by appending a UNION ALL line.
-CREATE OR REPLACE VIEW _external_data_source_dismissals AS
-  SELECT NULL::VARCHAR AS source,
-         NULL::VARCHAR AS rule,
-         NULL::VARCHAR AS external_id,
-         NULL::VARCHAR AS entity_public_id,
-         NULL::VARCHAR AS discriminator,
-         NULL::DATE    AS dismissed_on,
-         NULL::VARCHAR AS note
-  WHERE false
-  -- Append dismissals here, newest last. Copy the finding's `discriminator` VERBATIM
-  -- (often NULL) from `external_data_source_findings`; a dismissal whose discriminator
-  -- has drifted matches nothing and is reported as stale by
-  -- `external_data_source_findings_summary`.
+-- EVERY ROW CARRIES ITS REASON in `note` (checked), and new rows carry
+-- `adjudicated_on`; the maker-pair rows inherited from pinexplore's deleted
+-- `opdb_ref.manufacturer_exceptions` predate the dating discipline and are honestly
+-- undated (the research behind each is recoverable there via
+-- `git log -S opdb_ref.manufacturer_exceptions -p`). Staleness is computed per scope
+-- and REPORTED, never gated -- a stale row means someone fixed the situation, which
+-- is a success; browse `external_data_source_adjudications` (opdb.sql) and prune when
+-- convenient.
+--
+-- Each scope's block writes only its own key columns; the projection stamps the rest
+-- NULL, and `adjudication_scope_keys_mismatched` holds every row to its scope's shape.
+CREATE OR REPLACE VIEW _eds_adjudications AS
+  -- ── scope 'finding' ──
   --
-  -- UNION ALL SELECT 'ipdb', 'ipdb-model-absent', '7067', NULL,
-  --   NULL, DATE '2026-08-22', 'Why this is permanently not a finding.'
-  ;
+  -- IDENTITY IS (source, rule, external_id, entity_public_id, discriminator): the
+  -- record-level keys plus the fact's own key within the record. The discriminator
+  -- does the job the rendered message once did without making a sentence load-bearing:
+  -- a dismissal keyed on record alone would stay attached to a finding whose substance
+  -- had changed underneath it -- a candidate set growing from one model to three is a
+  -- different situation, and the old adjudication should lapse rather than silently
+  -- cover it -- so each rule's INSERT chooses the discriminator carrying exactly that
+  -- substance, and a dismissal copies it VERBATIM (often NULL) from
+  -- `external_data_source_findings`. One whose discriminator has drifted matches
+  -- nothing and is reported as stale.
+  --
+  -- Typed-empty rather than a VALUES list, because an empty VALUES list is a syntax
+  -- error and a dummy seed row would be a live trap. Add one by appending a UNION ALL:
+  --
+  -- UNION ALL SELECT 'finding', 'ipdb', 'ipdb-model-absent', '7067', NULL, NULL,
+  --   NULL::INT, NULL, NULL, NULL, DATE '2026-08-22', 'Why this is permanently not a finding.'
+  SELECT 'finding'      AS scope,
+         NULL::VARCHAR  AS source,
+         NULL::VARCHAR  AS rule,
+         NULL::VARCHAR  AS external_id,
+         NULL::VARCHAR  AS entity_public_id,
+         NULL::VARCHAR  AS discriminator,
+         NULL::INT      AS opdb_manufacturer_id,
+         NULL::VARCHAR  AS manufacturer_slug,
+         NULL::VARCHAR  AS target_entity_type,
+         NULL::VARCHAR  AS target_value,
+         NULL::DATE     AS adjudicated_on,
+         NULL::VARCHAR  AS note
+  WHERE false
+
+  UNION ALL
+  -- ── scope 'maker-pair' ──
+  --
+  -- Keyed on the PAIR -- this OPDB maker id against this catalog manufacturer -- so
+  -- one row clears every model filed that way at once. One slug was updated at
+  -- inheritance: the row written as `mecatronics-aka-taito-brazil-a-division-of-taito`
+  -- had already rotted against the catalog's rename to `mecatronics`, exactly the
+  -- failure `exception_slug_unresolved` (identity_checks) now makes loud.
+  SELECT 'maker-pair', 'opdb', NULL, NULL, NULL, NULL,
+         t.opdb_manufacturer_id, t.manufacturer_slug, NULL, NULL, NULL, t.reason
+  FROM (VALUES
+    (15, 'sonic',                'OPDB uses parent name Segasa for Sonic-branded games'),
+    -- Geiger-Automatenbau GmbH = A.H. Geiger Co. = the Komplett Flipper brand.
+    (50, 'komplett-flipper',     'OPDB uses Geiger for Komplett Flipper brand'),
+    (50, 'professional-pinball', 'OPDB misattributes to Geiger; IPDB says Professional Pinball'),
+    (95, 'the-pinball-company',  'Collaboration: designed by TPC, manufactured by Spooky'),
+    (40, 'briarwood',            'OPDB uses parent Brunswick for Briarwood division games'),
+    (14, 'bally',                'OPDB uses Midway for Bally-branded game'),
+    (2,  'alben',                'OPDB uses Gottlieb for Alben-manufactured game'),
+    (20, 'bell-coin-matics',     'OPDB uses Bell Games for Bell Coin Matics game'),
+    (3,  'chicago-gaming',       'OPDB uses Chicago Coin for Chicago Gaming game'),
+    (4,  'sentinel',             'OPDB uses Cic Play for Sentinel game'),
+    -- LAI = Leisure & Allied Industries, Australian.
+    (49, 'lai',                  'OPDB uses Allied Leisure for LAI game'),
+    (90, 'jocmatic-sa',          'OPDB uses Joctronic for Jocmatic game'),
+    (73, 'mecatronics',          'OPDB uses Taito for Brazilian division')
+  ) AS t(opdb_manufacturer_id, manufacturer_slug, reason)
+
+  UNION ALL
+  -- ── scope 'vocabulary-value' ──
+  --
+  -- A decision about the VALUE, wherever it appears. The edition tags are deliberately
+  -- NOT here -- OpdbMappings.md calls them signals to CONSIDER, an open decision that
+  -- belongs on the worklist.
+  SELECT 'vocabulary-value', 'opdb', NULL, NULL, NULL, NULL, NULL, NULL,
+         t.target_entity_type, t.target_value, NULL, t.reason
+  FROM (VALUES
+    ('tag', 'licensed',
+     'OpdbMappings.md rules out minting a tag: the signal feeds licensed-relationship research, not tag vocabulary.')
+  ) AS t(target_entity_type, target_value, reason);
+
+-- The finding scope under its historical name, for every consumer below: the columns
+-- a dismissal keys on, plus its date and note.
+CREATE OR REPLACE VIEW _external_data_source_dismissals AS
+  SELECT source, rule, external_id, entity_public_id, discriminator,
+         adjudicated_on AS dismissed_on, note
+  FROM _eds_adjudications
+  WHERE scope = 'finding';
 
 -- Every finding with its dismissal state. The auditable spelling: what was dismissed,
 -- when and why is visible here rather than vanishing from the record.
@@ -632,6 +712,49 @@ CREATE OR REPLACE VIEW external_data_source_findings_checks AS
          detail_view || ' / ' || coalesce(classification, '-') || ' -> ' || covered_by_rule
   FROM _eds_rule_registry AS x
   WHERE covered_by_rule IS NOT NULL
-    AND NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r WHERE r.rule = x.covered_by_rule);
+    AND NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r WHERE r.rule = x.covered_by_rule)
+
+  UNION ALL
+  -- ─── invariants of the adjudications relation ───
+  -- The scope vocabulary is closed: every consumer projects one scope by literal
+  -- string, so a row under an unknown scope would be invisible to all of them.
+  SELECT 'adjudication_scope_unknown', scope
+  FROM _eds_adjudications
+  WHERE scope NOT IN ('finding', 'maker-pair', 'vocabulary-value')
+
+  UNION ALL
+  -- Every row holds its scope's shape: its own keys filled, the other scopes' keys
+  -- NULL. A finding row missing its rule matches nothing; a pair row carrying
+  -- vocabulary keys is two adjudications fused into one unreadable row.
+  SELECT 'adjudication_scope_keys_mismatched',
+         scope || ': ' || coalesce(note, '<no note>')
+  FROM _eds_adjudications
+  WHERE CASE scope
+          WHEN 'finding' THEN
+            NOT (source IS NOT NULL AND rule IS NOT NULL
+                 AND opdb_manufacturer_id IS NULL AND manufacturer_slug IS NULL
+                 AND target_entity_type IS NULL AND target_value IS NULL)
+          WHEN 'maker-pair' THEN
+            NOT (source IS NOT NULL
+                 AND opdb_manufacturer_id IS NOT NULL AND manufacturer_slug IS NOT NULL
+                 AND rule IS NULL AND external_id IS NULL AND entity_public_id IS NULL
+                 AND discriminator IS NULL
+                 AND target_entity_type IS NULL AND target_value IS NULL)
+          WHEN 'vocabulary-value' THEN
+            NOT (source IS NOT NULL
+                 AND target_entity_type IS NOT NULL AND target_value IS NOT NULL
+                 AND rule IS NULL AND external_id IS NULL AND entity_public_id IS NULL
+                 AND discriminator IS NULL
+                 AND opdb_manufacturer_id IS NULL AND manufacturer_slug IS NULL)
+          ELSE false  -- an unknown scope is already reported above
+        END
+
+  UNION ALL
+  -- An adjudication without its reason is an assertion of authority, not a record of
+  -- judgment.
+  SELECT 'adjudication_note_required',
+         scope || ' / ' || coalesce(rule, manufacturer_slug, target_value, '-')
+  FROM _eds_adjudications
+  WHERE note IS NULL;
 COMMENT ON VIEW external_data_source_findings_checks IS
   'Empty when healthy — invariants of the findings layer and its rule registry: no NULL in a required column, closed stage/severity/entity-type vocabularies, one row per finding identity, one registry row per (worklist, class), every rule one thing, every exclusion reasoned, every detail_view resolvable, every dismissal naming a registered rule.';
