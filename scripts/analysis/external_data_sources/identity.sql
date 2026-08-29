@@ -824,14 +824,17 @@ CREATE OR REPLACE VIEW identity_checks AS
   FROM _eds_opdb_ipdb_route GROUP BY opdb_id HAVING count(*) > 1
 
   UNION ALL
-  -- A classification outside the closed set means the CASE grew a branch the
-  -- consumers of the worklist do not know how to answer.
-  SELECT 'classification_unknown', classification
-  FROM _eds_models_unmatched
-  WHERE classification NOT IN
-    ('duplicate_listing', 'moved_successor', 'catalog_holds_unlinked',
-     'possible_duplicate', 'maker_contested', 'multiple_candidates',
-     'year_unverified', 'year_conflict', 'maker_unresolved', 'absent')
+  -- The classification vocabulary lives in the rule registry (`bridge.sql`), and only
+  -- there: an emitted class the registry has never heard of means the CASE grew a
+  -- branch nobody decided a finding policy for. Checked per source, because each
+  -- source's worklist registers its own class set (only OPDB has moved_successor and
+  -- maker_contested; only IPDB has duplicate_listing).
+  SELECT 'classification_unregistered', u.source || ' -> ' || u.classification
+  FROM (SELECT DISTINCT source, classification FROM _eds_models_unmatched) AS u
+  WHERE NOT EXISTS (
+    SELECT 1 FROM _eds_rule_registry AS r
+    WHERE r.detail_view = u.source || '_models_unmatched'
+      AND r.classification = u.classification)
 
   UNION ALL
   -- The CASE precedence. A confirmed duplicate also matches the `possible_duplicate`

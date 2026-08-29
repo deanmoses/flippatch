@@ -434,8 +434,8 @@ CREATE OR REPLACE VIEW opdb_manufacturer_pairs_disagreeing AS
     opdb_manufacturer_slug,
     opdb_manufacturer_id,
     count(*)                                    AS n_models,
-    -- Ordered: this reaches a finding message, whose identity depends on it rendering
-    -- the same way every run.
+    -- Ordered: this reaches a finding message, kept deterministic so two runs render
+    -- the same finding identically.
     list_sort(list(DISTINCT model_slug))[:5]    AS sample_model_slugs
   FROM opdb_model_manufacturer_mismatched
   WHERE classification = 'disagrees'
@@ -648,10 +648,11 @@ COMMENT ON VIEW opdb_model_vocabulary_missing IS
 -- one no absent value exercises any more -- the vocabulary was created after all, or the
 -- value left the dump -- and stale is reported, never gated.
 --
--- NOT dismissals, deliberately: a dismissal keys on the message, whose count lapses it
--- whenever another model gains the value, and "we will never mint this" is a decision
--- about the VALUE. The edition tags are absent here on purpose -- OpdbMappings.md calls
--- them signals to CONSIDER, an open decision that belongs on the worklist.
+-- NOT dismissals, deliberately: a dismissal suppresses the finding and nothing else,
+-- while a settled value leaves the WORKLIST itself -- "we will never mint this" is a
+-- decision about the VALUE, recorded beside the worklist that would otherwise keep
+-- asking. The edition tags are absent here on purpose -- OpdbMappings.md calls them
+-- signals to CONSIDER, an open decision that belongs on the worklist.
 CREATE OR REPLACE VIEW opdb_vocabulary_settled AS
   SELECT
     s.*,
@@ -675,8 +676,8 @@ CREATE OR REPLACE VIEW opdb_vocabulary_absent AS
     target_entity_type,
     target_value,
     count(*)     AS n_models,
-    -- Ordered: this reaches a finding message, whose identity depends on it rendering
-    -- the same way every run.
+    -- Ordered: this reaches a finding message, kept deterministic so two runs render
+    -- the same finding identically.
     list_sort(list(DISTINCT model_slug) FILTER (model_slug IS NOT NULL))[:5] AS sample_model_slugs
   FROM _eds_opdb_vocabulary AS v
   WHERE NOT target_exists
@@ -690,7 +691,9 @@ COMMENT ON VIEW opdb_vocabulary_absent IS
 -- ═══ FINDINGS ══════════════════════════════════════════════════════════════
 --
 -- The worklists projected down into `_external_data_source_findings`; `bridge.sql`
--- holds the identity, dismissal and INSERT-not-UNION rules, and the IPDB file the
+-- holds the identity, dismissal and INSERT-not-UNION rules and the RULE REGISTRY each
+-- INSERT joins (rule name, stage and severity live there, and an excluded class is a
+-- registry row with its reason, never a WHERE clause here), and the IPDB file the
 -- severity reasoning this follows: `error` means the catalog makes a positive claim
 -- the source contradicts, and a gap is never an error.
 
@@ -698,29 +701,28 @@ COMMENT ON VIEW opdb_vocabulary_absent IS
 DELETE FROM _external_data_source_findings WHERE source = 'opdb';
 
 -- ─── unmatched listings and groups ─────────────────────────────────────────
--- Seven warnings, one per classification, because the classes ask for different actions
--- and a dismissal keys on the rule. `moved_successor` is excluded, not downgraded: the
--- repoint is already reported by `opdb-id-moved`, and a second finding on the successor
--- id would restate it. It stays visible in the wide view.
+-- One rule per classification, because the classes ask for different actions and a
+-- dismissal keys on the rule — `maker_contested` included, in the same projection as
+-- its siblings now that the registry routes each class to its rule. `moved_successor`
+-- produces no finding (the registry row carries why) and stays visible in the wide
+-- view.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'models' AS resolution_stage,
-  CASE classification
-    WHEN 'catalog_holds_unlinked' THEN 'opdb-model-unlinked'
-    WHEN 'possible_duplicate'     THEN 'opdb-model-possible-duplicate'
-    WHEN 'multiple_candidates'    THEN 'opdb-model-multiple-candidates'
-    WHEN 'year_unverified'        THEN 'opdb-model-year-unverified'
-    WHEN 'year_conflict'          THEN 'opdb-model-year-conflict'
-    WHEN 'maker_unresolved'       THEN 'opdb-model-maker-unresolved'
-    WHEN 'absent'                 THEN 'opdb-model-absent'
-  END AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
-  CASE WHEN classification = 'catalog_holds_unlinked' AND unlinked_model_slug IS NOT NULL
+  CASE WHEN w.classification = 'catalog_holds_unlinked' AND unlinked_model_slug IS NOT NULL
        THEN 'model' END AS entity_type,
-  CASE WHEN classification = 'catalog_holds_unlinked' THEN unlinked_model_slug END AS entity_public_id,
-  CASE classification
+  CASE WHEN w.classification = 'catalog_holds_unlinked' THEN unlinked_model_slug END AS entity_public_id,
+  -- The identity-completing substance, per class: the answer or candidate set whose
+  -- change should lapse a dismissal. NULL where the listing id says everything.
+  CASE w.classification
+    WHEN 'possible_duplicate'  THEN linked_model_slug
+    WHEN 'multiple_candidates' THEN array_to_string(candidate_model_slugs, ', ')
+    WHEN 'year_unverified'     THEN coalesce(unlinked_model_slug, linked_model_slug)
+    WHEN 'year_conflict'       THEN array_to_string(year_refuted_models, ', ')
+    WHEN 'maker_contested'     THEN array_to_string(contested_rival_models, ', ')
+  END AS discriminator,
+  CASE w.classification
     WHEN 'catalog_holds_unlinked' THEN
       -- The ipdb_id route earns its own wording: the reader should know the link
       -- rests on an id chain, not a name match.
@@ -794,10 +796,24 @@ SELECT
                                THEN ' (on a different title)'
                                ELSE '' END
                   ELSE '' END)
-  END AS message,
-  'opdb_models_unmatched' AS detail_view
-FROM opdb_models_unmatched
-WHERE classification <> 'moved_successor';
+    -- The ladder held an answer back because the maker leg could not discriminate.
+    -- Filed at MODELS stage (it is a model that went unlinked) but the message names
+    -- the blocker, which lives one stage up: adjudicate the maker pairing and this
+    -- resolves itself.
+    WHEN 'maker_contested' THEN
+      format('OPDB {} "{}" ({}) name-matches {} under OPDB''s maker {}, but {} answer{} to the same name under a manufacturer contested against it ({}); adjudicate the maker pairing first',
+             opdb_id, opdb_name, coalesce(opdb_year::VARCHAR, '?'),
+             coalesce(unlinked_model_slug, linked_model_slug, '?'),
+             coalesce(opdb_manufacturer_slug, '?'),
+             plural(len(contested_rival_models), 'model', 'models'),
+             CASE WHEN len(contested_rival_models) = 1 THEN 's' ELSE '' END,
+             array_to_string(contested_rival_models, ', '))
+  END AS message
+FROM opdb_models_unmatched AS w
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'opdb_models_unmatched'
+  AND reg.classification = w.classification
+WHERE reg.rule IS NOT NULL;
 
 -- `split_across_titles` is excluded HERE only because its finding is emitted at the
 -- split grain below, from `opdb_title_splits` -- which also covers the matched groups
@@ -805,22 +821,20 @@ WHERE classification <> 'moved_successor';
 -- silently adjudicated.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'titles' AS resolution_stage,
-  CASE classification
-    WHEN 'catalog_holds_unlinked' THEN 'opdb-title-unlinked'
-    WHEN 'possible_duplicate'     THEN 'opdb-title-possible-duplicate'
-    WHEN 'multiple_candidates'    THEN 'opdb-title-multiple-candidates'
-    WHEN 'year_unverified'        THEN 'opdb-title-year-unverified'
-    WHEN 'year_conflict'          THEN 'opdb-title-year-conflict'
-    WHEN 'absent'                 THEN 'opdb-title-absent'
-  END AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
-  CASE WHEN classification = 'catalog_holds_unlinked' AND unlinked_title_slug IS NOT NULL
+  CASE WHEN w.classification = 'catalog_holds_unlinked' AND unlinked_title_slug IS NOT NULL
        THEN 'title' END AS entity_type,
-  CASE WHEN classification = 'catalog_holds_unlinked' THEN unlinked_title_slug END AS entity_public_id,
-  CASE classification
+  CASE WHEN w.classification = 'catalog_holds_unlinked' THEN unlinked_title_slug END AS entity_public_id,
+  -- The identity-completing substance, per class — the title answer or candidate set
+  -- whose change should lapse a dismissal. NULL where the group id says everything.
+  CASE w.classification
+    WHEN 'possible_duplicate'  THEN linked_title_slug
+    WHEN 'multiple_candidates' THEN array_to_string(candidate_title_slugs, ', ')
+    WHEN 'year_unverified'     THEN coalesce(unlinked_title_slug, linked_title_slug)
+    WHEN 'year_conflict'       THEN coalesce(unlinked_title_slug, linked_title_slug)
+  END AS discriminator,
+  CASE w.classification
     WHEN 'catalog_holds_unlinked' THEN
       format('OPDB group {} "{}" matches unlinked catalog title {}; backfill the opdb_id',
              opdb_id, coalesce(opdb_title_name, '?'), coalesce(unlinked_title_slug, '?'))
@@ -846,10 +860,12 @@ SELECT
       format('OPDB group {} "{}" ({}, {}) has no catalog title and none matches its name',
              opdb_id, coalesce(opdb_title_name, '?'), coalesce(opdb_year::VARCHAR, 'undated'),
              plural(n_opdb_models, 'OPDB model', 'OPDB models'))
-  END AS message,
-  'opdb_titles_unmatched' AS detail_view
-FROM opdb_titles_unmatched
-WHERE classification <> 'split_across_titles';
+  END AS message
+FROM opdb_titles_unmatched AS w
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'opdb_titles_unmatched'
+  AND reg.classification = w.classification
+WHERE reg.rule IS NOT NULL;
 
 -- ─── grouping splits ───────────────────────────────────────────────────────
 -- One rule over matched and unmatched groups alike. A split is a live disagreement
@@ -858,22 +874,24 @@ WHERE classification <> 'split_across_titles';
 -- inconsistent clone filing). Nothing here presumes either verdict.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'titles' AS resolution_stage,
-  'opdb-title-split-across-titles' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
   CASE WHEN matched_title_slug IS NOT NULL THEN 'title' END AS entity_type,
   matched_title_slug AS entity_public_id,
+  -- The split set is the substance: a machine moving between titles is a new
+  -- situation, and a standing adjudication of the old split should lapse.
+  array_to_string(machines_title_slugs, ', ') AS discriminator,
   -- The slug list is sorted at the source, so the message is deterministic.
   format('OPDB group {} "{}" holds machines the catalog files across {} titles ({}){}',
          opdb_id, coalesce(opdb_title_name, '?'), n_machines_title_slugs,
          array_to_string(machines_title_slugs, ', '),
          CASE WHEN matched_title_slug IS NOT NULL
               THEN '; the group id is linked by ' || matched_title_slug
-              ELSE '; no title links the group id' END) AS message,
-  'opdb_title_splits' AS detail_view
-FROM opdb_title_splits;
+              ELSE '; no title links the group id' END) AS message
+FROM opdb_title_splits
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'opdb_title_splits' AND reg.classification IS NULL
+WHERE reg.rule IS NOT NULL;
 
 -- ─── stale ids ─────────────────────────────────────────────────────────────
 -- Three of the four classes are errors -- the changelog CONFIRMS the catalog is citing
@@ -882,19 +900,14 @@ FROM opdb_title_splits;
 -- the stronger claim.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'models' AS resolution_stage,
-  CASE classification
-    WHEN 'moved'       THEN 'opdb-id-moved'
-    WHEN 'deleted'     THEN 'opdb-id-deleted'
-    WHEN 'container'   THEN 'opdb-id-container'
-    WHEN 'unexplained' THEN 'opdb-id-not-in-dump'
-  END AS rule,
-  CASE WHEN classification = 'unexplained' THEN 'warning' ELSE 'error' END AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
   'model' AS entity_type,
   model_slug AS entity_public_id,
-  CASE classification
+  -- The repoint target is the substance of a moved id: OPDB re-pointing the successor
+  -- again is a new situation.
+  CASE w.classification WHEN 'moved' THEN current_opdb_id END AS discriminator,
+  CASE w.classification
     WHEN 'moved' THEN
       format('{} cites OPDB {}, which OPDB moved to {}{}',
              model_slug, opdb_id, coalesce(current_opdb_id, '?'),
@@ -907,23 +920,26 @@ SELECT
       format('{} cites OPDB {}, a non-physical group container, not a machine', model_slug, opdb_id)
     WHEN 'unexplained' THEN
       format('{} cites OPDB {}, absent from both the dump and the id changelog; read OPDB', model_slug, opdb_id)
-  END AS message,
-  'opdb_ids_stale' AS detail_view
-FROM opdb_ids_stale;
+  END AS message
+FROM opdb_ids_stale AS w
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'opdb_ids_stale'
+  AND reg.classification = w.classification
+WHERE reg.rule IS NOT NULL;
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'titles' AS resolution_stage,
-  'opdb-title-id-not-in-dump' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
   'title' AS entity_type,
   title_slug AS entity_public_id,
+  NULL::VARCHAR AS discriminator,
   format('{} cites OPDB group {}, absent from the dump; the changelog is machine-grain, so read OPDB',
-         title_slug, opdb_id) AS message,
-  'opdb_title_ids_stale' AS detail_view
-FROM opdb_title_ids_stale;
+         title_slug, opdb_id) AS message
+FROM opdb_title_ids_stale
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'opdb_title_ids_stale' AND reg.classification IS NULL
+WHERE reg.rule IS NOT NULL;
 
 -- ─── maker disagreement ────────────────────────────────────────────────────
 -- All warnings -- the brand-grain sanity check never supports `error`. Two classes
@@ -933,63 +949,43 @@ FROM opdb_title_ids_stale;
 -- under it, and reporting each model besides restates one defect under two names.
 --
 -- `disagrees` is PAIR grain: one finding per pairing, however many models file that
--- way. A pairing adjudicated as fine goes in the EXCEPTIONS list, not a dismissal --
--- the message carries the count, so a dismissal would lapse whenever a model was added,
--- which is wrong for a decision about the pairing itself.
--- The ladder held an answer back because the maker leg could not discriminate. Filed at
--- MODELS stage (it is a model that went unlinked) but the message names the blocker,
--- which lives one stage up: adjudicate the maker pairing and this resolves itself.
+-- way. A pairing adjudicated as fine goes in the EXCEPTIONS list, not a dismissal:
+-- the exception also feeds the ladder's contested-pair guard and the `excepted`
+-- class, which a dismissal of the finding alone would leave untouched. The
+-- discriminator is NULL for the same reason — a decision about the pairing must not
+-- lapse just because another model files under it.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'models' AS resolution_stage,
-  'opdb-model-maker-contested' AS rule,
-  'warning' AS severity,
-  opdb_id AS external_id,
-  NULL::VARCHAR AS entity_type,
-  NULL::VARCHAR AS entity_public_id,
-  format('OPDB {} "{}" ({}) name-matches {} under OPDB''s maker {}, but {} answer{} to the same name under a manufacturer contested against it ({}); adjudicate the maker pairing first',
-         opdb_id, opdb_name, coalesce(opdb_year::VARCHAR, '?'),
-         coalesce(unlinked_model_slug, linked_model_slug, '?'),
-         coalesce(opdb_manufacturer_slug, '?'),
-         plural(len(contested_rival_models), 'model', 'models'),
-         CASE WHEN len(contested_rival_models) = 1 THEN 's' ELSE '' END,
-         array_to_string(contested_rival_models, ', ')) AS message,
-  'opdb_models_unmatched' AS detail_view
-FROM opdb_models_unmatched
-WHERE classification = 'maker_contested';
-
-INSERT INTO _external_data_source_findings BY NAME
-SELECT
-  'opdb' AS source,
-  'manufacturers' AS resolution_stage,
-  'opdb-manufacturer-disagrees' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_manufacturer_id::VARCHAR AS external_id,
   'manufacturer' AS entity_type,
   manufacturer_slug AS entity_public_id,
+  NULL::VARCHAR AS discriminator,
   format('{} disagrees with OPDB''s {} on {}: {}{} — OPDB files under parent companies; adjudicate, then except or patch',
          coalesce(manufacturer_slug, '?'), coalesce(opdb_manufacturer_slug, '?'),
          plural(n_models, 'model', 'models'),
          CASE WHEN n_models > 5 THEN 'e.g. ' ELSE '' END,
-         array_to_string(sample_model_slugs, ', ')) AS message,
-  'opdb_manufacturer_pairs_disagreeing' AS detail_view
-FROM opdb_manufacturer_pairs_disagreeing;
+         array_to_string(sample_model_slugs, ', ')) AS message
+FROM opdb_manufacturer_pairs_disagreeing
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'opdb_manufacturer_pairs_disagreeing' AND reg.classification IS NULL
+WHERE reg.rule IS NOT NULL;
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'manufacturers' AS resolution_stage,
-  'opdb-manufacturer-missing' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
   'model' AS entity_type,
   model_slug AS entity_public_id,
+  -- The named maker is the substance: OPDB refiling the game changes the situation.
+  coalesce(opdb_manufacturer_slug, opdb_manufacturer_name) AS discriminator,
   format('{} carries no manufacturer; OPDB names {}',
-         model_slug, coalesce(opdb_manufacturer_slug, coalesce(opdb_manufacturer_name, '?'))) AS message,
-  'opdb_model_manufacturer_mismatched' AS detail_view
-FROM opdb_model_manufacturer_mismatched
-WHERE classification = 'catalog_has_none';
+         model_slug, coalesce(opdb_manufacturer_slug, coalesce(opdb_manufacturer_name, '?'))) AS message
+FROM opdb_model_manufacturer_mismatched AS w
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'opdb_model_manufacturer_mismatched'
+  AND reg.classification = w.classification
+WHERE reg.rule IS NOT NULL;
 
 -- ─── manufacturers ─────────────────────────────────────────────────────────
 -- The NOT EXISTS is deduplication: where the id-acquirable rule below fired for this
@@ -1000,34 +996,33 @@ WHERE classification = 'catalog_has_none';
 -- other finding exists. The wide view keeps every row either way.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'manufacturers' AS resolution_stage,
-  'opdb-manufacturer-unknown' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_manufacturer_id::VARCHAR AS external_id,
   NULL::VARCHAR AS entity_type,     -- no catalog record: that is the finding
   NULL::VARCHAR AS entity_public_id,
+  NULL::VARCHAR AS discriminator,
   format('OPDB manufacturer {} "{}" is on no live catalog manufacturer; {} depend{} on it{}',
          opdb_manufacturer_id, array_to_string(opdb_names, '" / "'),
          plural(n_opdb_models, 'OPDB model', 'OPDB models'),
          CASE WHEN n_opdb_models = 1 THEN 's' ELSE '' END,
          CASE WHEN len(catalog_name_matches) > 0
               THEN ' — catalog names matching: ' || array_to_string(catalog_name_matches, ', ')
-              ELSE '' END) AS message,
-  'opdb_manufacturers_unmatched' AS detail_view
+              ELSE '' END) AS message
 FROM opdb_manufacturers_unmatched AS u
-WHERE NOT EXISTS (SELECT 1 FROM manufacturers_missing_opdb_id AS a
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'opdb_manufacturers_unmatched' AND reg.classification IS NULL
+-- A per-ROW dedup predicate, not a class exclusion — see the comment above.
+WHERE reg.rule IS NOT NULL
+  AND NOT EXISTS (SELECT 1 FROM manufacturers_missing_opdb_id AS a
                   WHERE a.opdb_manufacturer_id = u.opdb_manufacturer_id);
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'manufacturers' AS resolution_stage,
-  'opdb-manufacturer-id-acquirable' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_manufacturer_id::VARCHAR AS external_id,
   'manufacturer' AS entity_type,
   manufacturer_slug AS entity_public_id,
+  NULL::VARCHAR AS discriminator,
   -- "e.g." only when the id is actually an example: with one match it IS the record.
   CASE WHEN n_opdb_matches = 1
     THEN format('{} carries no OPDB id; OPDB record {} matches it by name',
@@ -1035,24 +1030,27 @@ SELECT
     ELSE format('{} carries no OPDB id; {} match it by name, e.g. record {}',
                 manufacturer_slug, plural(n_opdb_matches, 'OPDB record', 'OPDB records'),
                 opdb_manufacturer_id)
-  END AS message,
-  'manufacturers_missing_opdb_id' AS detail_view
-FROM manufacturers_missing_opdb_id;
+  END AS message
+FROM manufacturers_missing_opdb_id
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'manufacturers_missing_opdb_id' AND reg.classification IS NULL
+WHERE reg.rule IS NOT NULL;
 
 -- ─── the IPDB cross-reference ──────────────────────────────────────────────
 -- `disagrees` is the one OPDB rule outside the stale ids that reaches `error`: both
 -- sides assert the same link and one of them is wrong.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'models' AS resolution_stage,
-  CASE classification WHEN 'disagrees' THEN 'opdb-ipdb-id-disagrees'
-                      ELSE 'opdb-ipdb-id-acquirable' END AS rule,
-  CASE classification WHEN 'disagrees' THEN 'error' ELSE 'warning' END AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
   'model' AS entity_type,
   model_slug AS entity_public_id,
-  CASE classification
+  -- Both links are the substance: either changing is a new situation.
+  CASE w.classification
+    WHEN 'disagrees' THEN coalesce(ipdb_id::VARCHAR, '-') || ' vs ' || opdb_ipdb_id::VARCHAR
+    ELSE opdb_ipdb_id::VARCHAR
+  END AS discriminator,
+  CASE w.classification
     WHEN 'disagrees' THEN
       format('{} carries ipdb_id {} but OPDB cross-references IPDB {}; one link is wrong',
              model_slug, coalesce(ipdb_id::VARCHAR, '?'), coalesce(opdb_ipdb_id::VARCHAR, '?'))
@@ -1060,42 +1058,47 @@ SELECT
       format('{} carries no ipdb_id; OPDB cross-references IPDB {}, which {} in the merged IPDB dump',
              model_slug, coalesce(opdb_ipdb_id::VARCHAR, '?'),
              CASE WHEN ipdb_id_in_ipdb_dump THEN 'resolves' ELSE 'does NOT resolve' END)
-  END AS message,
-  'opdb_ipdb_id_crosscheck' AS detail_view
-FROM opdb_ipdb_id_crosscheck;
+  END AS message
+FROM opdb_ipdb_id_crosscheck AS w
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'opdb_ipdb_id_crosscheck'
+  AND reg.classification = w.classification
+WHERE reg.rule IS NOT NULL;
 
 -- ─── vocabulary ────────────────────────────────────────────────────────────
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'content' AS resolution_stage,
-  'opdb-vocabulary-missing' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   opdb_id AS external_id,
   'model' AS entity_type,
   model_slug AS entity_public_id,
+  -- A model carries many assertions: the value's own key completes the identity.
+  target_entity_type || ' / ' || coalesce(target_slug, target_value) AS discriminator,
   format('{} does not carry {} {}, which OPDB asserts',
-         model_slug, target_entity_type, coalesce(target_slug, target_value)) AS message,
-  'opdb_model_vocabulary_missing' AS detail_view
-FROM opdb_model_vocabulary_missing;
+         model_slug, target_entity_type, coalesce(target_slug, target_value)) AS message
+FROM opdb_model_vocabulary_missing
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'opdb_model_vocabulary_missing' AND reg.classification IS NULL
+WHERE reg.rule IS NOT NULL;
 
 -- Value grain: one row is one vocabulary decision.
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'opdb' AS source,
-  'content' AS resolution_stage,
-  'opdb-vocabulary-absent' AS rule,
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   NULL::VARCHAR AS external_id,
   NULL::VARCHAR AS entity_type,
   NULL::VARCHAR AS entity_public_id,
+  -- Value grain with no record-level keys at all: the value IS the identity.
+  target_entity_type || ' / ' || target_value AS discriminator,
   format('OPDB asserts {} "{}", which the catalog does not have; {} affected: {}{}',
          target_entity_type, target_value,
          plural(n_models, 'model', 'models'),
          CASE WHEN n_models > 5 THEN 'e.g. ' ELSE '' END,
-         array_to_string(sample_model_slugs, ', ')) AS message,
-  'opdb_vocabulary_absent' AS detail_view
-FROM opdb_vocabulary_absent;
+         array_to_string(sample_model_slugs, ', ')) AS message
+FROM opdb_vocabulary_absent
+INNER JOIN _eds_rule_registry AS reg
+  ON reg.detail_view = 'opdb_vocabulary_absent' AND reg.classification IS NULL
+WHERE reg.rule IS NOT NULL;
 
 -- ═══ SUMMARY & CHECKS ══════════════════════════════════════════════════════
 
@@ -1151,12 +1154,14 @@ CREATE OR REPLACE VIEW opdb_checks AS
   FROM _eds_opdb_group_titles GROUP BY opdb_id HAVING count(*) > 1
 
   UNION ALL
-  -- A classification outside the closed set.
-  SELECT 'title_classification_unknown', classification
-  FROM opdb_titles_unmatched
-  WHERE classification NOT IN
-    ('split_across_titles', 'catalog_holds_unlinked', 'possible_duplicate',
-     'multiple_candidates', 'year_unverified', 'year_conflict', 'absent')
+  -- The classification vocabularies live in the rule registry, and only there: an
+  -- emitted class the registry has never heard of means a CASE grew a branch nobody
+  -- decided a finding policy for. One check shape per worklist, no restated lists.
+  SELECT 'title_classification_unregistered', c.classification
+  FROM (SELECT DISTINCT classification FROM opdb_titles_unmatched) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'opdb_titles_unmatched'
+                      AND r.classification = c.classification)
 
   UNION ALL
   -- The CASE precedence: a split group's machines usually also name-match something,
@@ -1170,9 +1175,11 @@ CREATE OR REPLACE VIEW opdb_checks AS
     AND u.classification <> 'split_across_titles'
 
   UNION ALL
-  SELECT 'stale_classification_unknown', classification
-  FROM opdb_ids_stale
-  WHERE classification NOT IN ('moved', 'deleted', 'container', 'unexplained')
+  SELECT 'stale_classification_unregistered', c.classification
+  FROM (SELECT DISTINCT classification FROM opdb_ids_stale) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'opdb_ids_stale'
+                      AND r.classification = c.classification)
 
   UNION ALL
   -- The stale-id join to the changelog is a lookup and must not fan the worklist out.
@@ -1180,9 +1187,11 @@ CREATE OR REPLACE VIEW opdb_checks AS
   FROM opdb_ids_stale GROUP BY model_slug, opdb_id HAVING count(*) > 1
 
   UNION ALL
-  SELECT 'manufacturer_classification_unknown', classification
-  FROM opdb_model_manufacturer_mismatched
-  WHERE classification NOT IN ('excepted', 'catalog_has_none', 'opdb_unmatched', 'disagrees')
+  SELECT 'manufacturer_classification_unregistered', c.classification
+  FROM (SELECT DISTINCT classification FROM opdb_model_manufacturer_mismatched) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'opdb_model_manufacturer_mismatched'
+                      AND r.classification = c.classification)
 
   UNION ALL
   -- The corporate-mismatch view is one row per model; the decode must stay a lookup.
@@ -1205,10 +1214,11 @@ CREATE OR REPLACE VIEW opdb_checks AS
   WHERE a.manufacturer_slug IS NULL OR b.manufacturer_slug IS NULL
 
   UNION ALL
-  -- The crosscheck classification is closed.
-  SELECT 'crosscheck_classification_unknown', classification
-  FROM opdb_ipdb_id_crosscheck
-  WHERE classification NOT IN ('disagrees', 'acquirable')
+  SELECT 'crosscheck_classification_unregistered', c.classification
+  FROM (SELECT DISTINCT classification FROM opdb_ipdb_id_crosscheck) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'opdb_ipdb_id_crosscheck'
+                      AND r.classification = c.classification)
 
   UNION ALL
   -- The carriage CASE has no ELSE; this turns an unhandled target_entity_type into a

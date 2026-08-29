@@ -118,7 +118,11 @@ CREATE OR REPLACE VIEW model_fields_unsupported AS
   SELECT slug AS model_slug, field, catalog_value, ipdb_value, opdb_value,
          ipdb_date_kind, shape
   FROM _eds_field_merge
-  WHERE shape IN ('backfill', 'outvoted', 'lone_witness', 'scatter');
+  -- The worklist shapes are the registry's, not a restated list: a shape is work
+  -- exactly when a rule projects it, and `shape_unregistered` in fields_checks fails
+  -- on any shape the registry has never adjudicated either way.
+  WHERE shape IN (SELECT classification FROM _eds_rule_registry
+                  WHERE rule = 'cross-field-unsupported');
 COMMENT ON VIEW model_fields_unsupported IS
   'Worklist — one row per (model, field) where at least one external source states a value and none matches the catalog, every witness''s value on the row, shaped backfill / outvoted / lone_witness / scatter. Rows are expected.';
 
@@ -136,21 +140,23 @@ COMMENT ON VIEW model_fields_contested IS
 
 -- ═══ FINDINGS ══════════════════════════════════════════════════════════════
 --
--- One rule: at 64 rows the sub-shapes do not earn separate dismissal grain, and the
--- shape is in the message. `source` is the literal 'cross' -- a merge finding has no
--- single witness -- which bridge.sql's findings table blesses.
+-- One rule (the registry maps all four worklist shapes onto it): at 64 rows the
+-- sub-shapes do not earn separate dismissal grain, and the shape is in the message.
+-- `source` is the literal 'cross' -- a merge finding has no single witness -- which
+-- bridge.sql's findings table blesses.
 
 DELETE FROM _external_data_source_findings WHERE source = 'cross';
 
 INSERT INTO _external_data_source_findings BY NAME
 SELECT
-  'cross' AS source,
-  'content' AS resolution_stage,
-  'cross-field-unsupported' AS rule,   -- rules are source-prefixed; 'cross' is the source
-  'warning' AS severity,
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
   NULL::VARCHAR AS external_id,   -- no single witness owns a merge finding
   'model' AS entity_type,
   model_slug AS entity_public_id,
+  -- A model has many fields, so the field completes the identity; the witnesses'
+  -- values ride along so a dismissal lapses when the testimony changes.
+  field || ': ' || coalesce(ipdb_value, '-') || ' / ' || coalesce(opdb_value, '-')
+    AS discriminator,
   -- concat_ws drops NULL arguments, so each witness clause appears exactly when that
   -- source spoke; IPDB before OPDB, fixed, for message determinism.
   format('{}: {} is {} here ({}); {}',
@@ -158,9 +164,12 @@ SELECT
          concat_ws(', ',
            'IPDB says ' || ipdb_value ||
              CASE WHEN ipdb_date_kind = 'project_inferred' THEN ' (date inferred)' ELSE '' END,
-           'OPDB says ' || opdb_value)) AS message,
-  'model_fields_unsupported' AS detail_view
-FROM model_fields_unsupported;
+           'OPDB says ' || opdb_value)) AS message
+FROM model_fields_unsupported
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'model_fields_unsupported'
+  AND reg.classification = shape
+WHERE reg.rule IS NOT NULL;
 
 -- ═══ SUMMARY & CHECKS ══════════════════════════════════════════════════════
 
@@ -223,6 +232,18 @@ CREATE OR REPLACE VIEW fields_checks AS
   SELECT 'shape_underived', slug || ' / ' || field
   FROM _eds_field_merge
   WHERE shape IS NULL
+
+  UNION ALL
+  -- Every derived shape must be one the registry has adjudicated either way -- into
+  -- the worklist rule or excluded with its reason. A shape added to the CASE without a
+  -- registry row would otherwise fall out of the worklist silently, which is the
+  -- silent adjudication the registry exists to prevent. (The registry files the
+  -- merge's shapes under model_fields_unsupported, the view they project through.)
+  SELECT 'shape_unregistered', c.shape
+  FROM (SELECT DISTINCT shape FROM _eds_field_merge WHERE shape IS NOT NULL) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'model_fields_unsupported'
+                      AND r.classification = c.shape)
 
   UNION ALL
   -- One row per (model, field): the source joins are lookups on unique external ids

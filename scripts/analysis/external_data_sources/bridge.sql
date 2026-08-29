@@ -228,6 +228,11 @@ CREATE TABLE IF NOT EXISTS _external_data_source_findings (
   external_id      VARCHAR,  -- the source's own id; NULL where the finding is catalog-side
   entity_type      VARCHAR,  -- catalog entity type; NULL where no catalog record exists
   entity_public_id VARCHAR,  -- the catalog slug; NULL likewise
+  discriminator    VARCHAR,  -- the fact's own key within the record -- which credit,
+                             -- which field, which candidate set -- completing identity
+                             -- where the record-level keys repeat, and lapsing a
+                             -- dismissal when the substance changes; NULL where the
+                             -- record-level keys already say everything
   message          VARCHAR,  -- deterministic one-liner; see the ordering rule below
   detail_view      VARCHAR   -- the wide worklist this was projected from
 );
@@ -240,6 +245,113 @@ COMMENT ON TABLE _external_data_source_findings IS
 -- TABLE` here would silently discard the first file's rows; `IF NOT EXISTS` without the
 -- per-source DELETE would silently double them. Each source owns its own rows and
 -- clears them before writing, so either order of reads converges on the same table.
+
+-- ─── the rule registry ─────────────────────────────────────────────────────
+--
+-- One row per (worklist, classification): THE home of the rule vocabulary. Everything
+-- a rule states about itself -- its stage, severity and detail view, or the reason its
+-- class deliberately produces no finding -- lives here and nowhere else. The findings
+-- INSERTs join this on the class they project and inherit those columns, so a new
+-- class is a registry row plus a message branch, not four sites edited in lockstep;
+-- `classification` is NULL for a worklist that is a single rule whole.
+--
+-- EXCLUSIONS ARE ROWS, NEVER WHERE CLAUSES. The header's rule -- findings are never
+-- silently adjudicated -- becomes structural here: a class that produces no finding
+-- carries `excluded_because`, plus `covered_by_rule` when the same situation is
+-- reported under another name (verified live by `registry_covered_by_unregistered`),
+-- and the per-file classification checks fail on any emitted class the registry has
+-- never heard of. A WHERE clause can no longer quietly retire a class -- which also
+-- closes a live near-miss: the old opdb INSERT's CASE had no `maker_contested`
+-- branch, so a row of that class would have inserted a NULL rule and message and
+-- relied on `finding_null_required` to notice; under the registry join the class
+-- simply routes to its own rule.
+CREATE OR REPLACE VIEW _eds_rule_registry AS
+  SELECT * FROM (VALUES
+    -- source | detail_view | classification | rule | resolution_stage | severity | covered_by_rule | excluded_because
+    -- ── ipdb: the unmatched worklist ──
+    ('ipdb', 'ipdb_models_unmatched', 'catalog_holds_unlinked', 'ipdb-model-unlinked',            'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'possible_duplicate',     'ipdb-model-possible-duplicate',  'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'multiple_candidates',    'ipdb-model-multiple-candidates', 'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'year_unverified',        'ipdb-model-year-unverified',     'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'year_conflict',          'ipdb-model-year-conflict',       'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'maker_unresolved',       'ipdb-model-maker-unresolved',    'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'absent',                 'ipdb-model-absent',              'models', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_models_unmatched', 'duplicate_listing',      NULL, NULL, NULL, NULL,
+     'a confirmed IPDB-side double entry whose twin the catalog links; the confirmation lives on the mart row, and there is nothing to do'),
+    -- ── ipdb: dead ids (classes derived in the INSERT from retraction_reason) ──
+    ('ipdb', 'ipdb_ids_not_in_dump', 'retracted',   'ipdb-id-retracted',   'models', 'error',   NULL, NULL),
+    ('ipdb', 'ipdb_ids_not_in_dump', 'unexplained', 'ipdb-id-not-in-dump', 'models', 'warning', NULL, NULL),
+    -- ── ipdb: makers ──
+    ('ipdb', 'ipdb_model_corporate_entity_mismatched', 'disagrees',             'ipdb-corporate-entity-disagrees',  'manufacturers', 'error',   NULL, NULL),
+    ('ipdb', 'ipdb_model_corporate_entity_mismatched', 'catalog_has_none',      'ipdb-corporate-entity-missing',    'manufacturers', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_model_corporate_entity_mismatched', 'ipdb_entity_unmatched', 'ipdb-corporate-entity-unresolved', 'manufacturers', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_corporate_entities_unmatched', NULL, 'ipdb-corporate-entity-unknown',        'manufacturers', 'warning', NULL, NULL),
+    ('ipdb', 'corporate_entities_missing_ipdb_id', NULL, 'ipdb-corporate-entity-id-acquirable', 'manufacturers', 'warning', NULL, NULL),
+    -- ── ipdb: credits (classes derived in the INSERT from n_person_matches) ──
+    ('ipdb', 'ipdb_credits_missing', 'person_resolved',  'ipdb-credit-missing',          'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_credits_missing', 'person_ambiguous', 'ipdb-credit-person-ambiguous', 'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_credits_missing', 'person_unmatched', NULL, NULL, NULL, 'ipdb-person-unmatched',
+     'the person does not exist yet, and creating them comes first; reported once at person grain rather than once per credit'),
+    ('ipdb', 'ipdb_people_unmatched',           NULL, 'ipdb-person-unmatched',            'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_model_specialties_missing',  NULL, 'ipdb-specialty-missing',           'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_specialty_vocabulary_absent', NULL, 'ipdb-specialty-vocabulary-absent', 'content', 'warning', NULL, NULL),
+    -- ── opdb: the unmatched worklist ──
+    ('opdb', 'opdb_models_unmatched', 'catalog_holds_unlinked', 'opdb-model-unlinked',            'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'possible_duplicate',     'opdb-model-possible-duplicate',  'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'maker_contested',        'opdb-model-maker-contested',     'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'multiple_candidates',    'opdb-model-multiple-candidates', 'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'year_unverified',        'opdb-model-year-unverified',     'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'year_conflict',          'opdb-model-year-conflict',       'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'maker_unresolved',       'opdb-model-maker-unresolved',    'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'absent',                 'opdb-model-absent',              'models', 'warning', NULL, NULL),
+    ('opdb', 'opdb_models_unmatched', 'moved_successor',        NULL, NULL, NULL, 'opdb-id-moved',
+     'the repoint is reported on the model citing the stale id; a second finding on the successor would restate it'),
+    -- ── opdb: titles ──
+    ('opdb', 'opdb_titles_unmatched', 'catalog_holds_unlinked', 'opdb-title-unlinked',            'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_titles_unmatched', 'possible_duplicate',     'opdb-title-possible-duplicate',  'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_titles_unmatched', 'multiple_candidates',    'opdb-title-multiple-candidates', 'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_titles_unmatched', 'year_unverified',        'opdb-title-year-unverified',     'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_titles_unmatched', 'year_conflict',          'opdb-title-year-conflict',       'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_titles_unmatched', 'absent',                 'opdb-title-absent',              'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_titles_unmatched', 'split_across_titles',    NULL, NULL, NULL, 'opdb-title-split-across-titles',
+     'reported at split grain, which also reaches the matched groups this worklist cannot see'),
+    ('opdb', 'opdb_title_splits',    NULL, 'opdb-title-split-across-titles', 'titles', 'warning', NULL, NULL),
+    ('opdb', 'opdb_title_ids_stale', NULL, 'opdb-title-id-not-in-dump',      'titles', 'warning', NULL, NULL),
+    -- ── opdb: stale ids ──
+    ('opdb', 'opdb_ids_stale', 'moved',       'opdb-id-moved',       'models', 'error',   NULL, NULL),
+    ('opdb', 'opdb_ids_stale', 'deleted',     'opdb-id-deleted',     'models', 'error',   NULL, NULL),
+    ('opdb', 'opdb_ids_stale', 'container',   'opdb-id-container',   'models', 'error',   NULL, NULL),
+    ('opdb', 'opdb_ids_stale', 'unexplained', 'opdb-id-not-in-dump', 'models', 'warning', NULL, NULL),
+    -- ── opdb: makers ──
+    ('opdb', 'opdb_model_manufacturer_mismatched', 'catalog_has_none', 'opdb-manufacturer-missing', 'manufacturers', 'warning', NULL, NULL),
+    ('opdb', 'opdb_model_manufacturer_mismatched', 'excepted',       NULL, NULL, NULL, NULL,
+     'an adjudicated pairing; the reason rides the worklist row'),
+    ('opdb', 'opdb_model_manufacturer_mismatched', 'opdb_unmatched', NULL, NULL, NULL, 'opdb-manufacturer-unknown',
+     'resolving the manufacturer resolves every model filed under it; reported once at decision grain'),
+    ('opdb', 'opdb_model_manufacturer_mismatched', 'disagrees',      NULL, NULL, NULL, 'opdb-manufacturer-disagrees',
+     'reported once at pair grain; the model-grain rows stay as the patch material'),
+    ('opdb', 'opdb_manufacturer_pairs_disagreeing', NULL, 'opdb-manufacturer-disagrees',      'manufacturers', 'warning', NULL, NULL),
+    ('opdb', 'opdb_manufacturers_unmatched',        NULL, 'opdb-manufacturer-unknown',        'manufacturers', 'warning', NULL, NULL),
+    ('opdb', 'manufacturers_missing_opdb_id',       NULL, 'opdb-manufacturer-id-acquirable',  'manufacturers', 'warning', NULL, NULL),
+    -- ── opdb: the IPDB cross-reference ──
+    ('opdb', 'opdb_ipdb_id_crosscheck', 'disagrees',  'opdb-ipdb-id-disagrees',  'models', 'error',   NULL, NULL),
+    ('opdb', 'opdb_ipdb_id_crosscheck', 'acquirable', 'opdb-ipdb-id-acquirable', 'models', 'warning', NULL, NULL),
+    -- ── opdb: vocabulary ──
+    ('opdb', 'opdb_model_vocabulary_missing', NULL, 'opdb-vocabulary-missing', 'content', 'warning', NULL, NULL),
+    ('opdb', 'opdb_vocabulary_absent',        NULL, 'opdb-vocabulary-absent',  'content', 'warning', NULL, NULL),
+    -- ── cross: the field merge (classes are the merge's `shape`; the excluded shapes
+    --    never reach the unsupported worklist, and registering them is what lets
+    --    fields_checks prove the shape vocabulary complete instead of trusting the CASE) ──
+    ('cross', 'model_fields_unsupported', 'backfill',     'cross-field-unsupported', 'content', 'warning', NULL, NULL),
+    ('cross', 'model_fields_unsupported', 'outvoted',     'cross-field-unsupported', 'content', 'warning', NULL, NULL),
+    ('cross', 'model_fields_unsupported', 'lone_witness', 'cross-field-unsupported', 'content', 'warning', NULL, NULL),
+    ('cross', 'model_fields_unsupported', 'scatter',      'cross-field-unsupported', 'content', 'warning', NULL, NULL),
+    ('cross', 'model_fields_unsupported', 'contested',    NULL, NULL, NULL, NULL,
+     'a standoff a witness already backs the catalog on; browsable in model_fields_contested, never work'),
+    ('cross', 'model_fields_unsupported', 'supported',    NULL, NULL, NULL, NULL,
+     'the catalog agrees with a witness; nothing to report')
+  ) AS t(source, detail_view, classification, rule, resolution_stage, severity,
+         covered_by_rule, excluded_because);
 
 -- ─── dismissals ────────────────────────────────────────────────────────────
 --
@@ -256,12 +368,16 @@ COMMENT ON TABLE _external_data_source_findings IS
 -- prose containing commas and quotes -- which is precisely what `note` and `message`
 -- are -- while `read_json` rejects malformed input outright.
 --
--- IDENTITY INCLUDES THE MESSAGE, following the audit, whose `duplicate-name` rule states
--- it outright: identity is (rule, record, message). That is also why every aggregate
--- reaching a message below is ordered. A dismissal keyed without the message would stay
--- attached to a finding whose substance had changed underneath it -- a candidate count
--- moving 1 -> 3 is a different situation, and the old adjudication should lapse rather
--- than silently cover it.
+-- IDENTITY IS (source, rule, external_id, entity_public_id, discriminator): the
+-- record-level keys plus the fact's own key within the record. The discriminator does
+-- the job the rendered message once did without making a sentence load-bearing: a
+-- dismissal keyed on record alone would stay attached to a finding whose substance
+-- had changed underneath it -- a candidate set growing from one model to three is a
+-- different situation, and the old adjudication should lapse rather than silently
+-- cover it -- so each rule's INSERT chooses the discriminator carrying exactly that
+-- substance (the candidate list, the disputed slug, the field and its values), or
+-- leaves it NULL where the record-level keys already say everything, or where a
+-- moving count should NOT lapse the adjudication (the pair-grain maker rule).
 --
 -- THE BAR IS HIGH. The audit has no per-finding suppression anywhere in 900 lines; its
 -- exemptions are whole categories excluded in the rule with a documented data-model
@@ -274,25 +390,26 @@ CREATE OR REPLACE VIEW _external_data_source_dismissals AS
          NULL::VARCHAR AS rule,
          NULL::VARCHAR AS external_id,
          NULL::VARCHAR AS entity_public_id,
-         NULL::VARCHAR AS message,
+         NULL::VARCHAR AS discriminator,
          NULL::DATE    AS dismissed_on,
          NULL::VARCHAR AS note
   WHERE false
-  -- Append dismissals here, newest last. Copy the finding's `message` VERBATIM from
-  -- `external_data_source_findings`; a dismissal whose message has drifted matches
-  -- nothing and is reported as stale by `external_data_source_findings_summary`.
+  -- Append dismissals here, newest last. Copy the finding's `discriminator` VERBATIM
+  -- (often NULL) from `external_data_source_findings`; a dismissal whose discriminator
+  -- has drifted matches nothing and is reported as stale by
+  -- `external_data_source_findings_summary`.
   --
   -- UNION ALL SELECT 'ipdb', 'ipdb-model-absent', '7067', NULL,
-  --   '<the exact message>', DATE '2026-08-22', 'Why this is permanently not a finding.'
+  --   NULL, DATE '2026-08-22', 'Why this is permanently not a finding.'
   ;
 
 -- Every finding with its dismissal state. The auditable spelling: what was dismissed,
 -- when and why is visible here rather than vanishing from the record.
 --
--- `IS NOT DISTINCT FROM` on the two nullable key columns, not `=`: `external_id` is NULL
--- on catalog-side findings and `entity_public_id` is NULL wherever no catalog record
--- exists, and `NULL = NULL` is unknown, so `=` would make exactly those findings
--- undismissable.
+-- `IS NOT DISTINCT FROM` on the three nullable key columns, not `=`: `external_id` is
+-- NULL on catalog-side findings, `entity_public_id` is NULL wherever no catalog record
+-- exists, `discriminator` is NULL wherever the record-level keys suffice, and
+-- `NULL = NULL` is unknown, so `=` would make exactly those findings undismissable.
 CREATE OR REPLACE VIEW external_data_source_findings_all AS
   SELECT f.*,
          d.dismissed_on,
@@ -304,7 +421,7 @@ CREATE OR REPLACE VIEW external_data_source_findings_all AS
     AND d.rule   = f.rule
     AND d.external_id      IS NOT DISTINCT FROM f.external_id
     AND d.entity_public_id IS NOT DISTINCT FROM f.entity_public_id
-    AND d.message = f.message;
+    AND d.discriminator    IS NOT DISTINCT FROM f.discriminator;
 COMMENT ON VIEW external_data_source_findings_all IS
   'Every external-source finding INCLUDING dismissed ones, each carrying its dismissal date and note. The auditable spelling; external_data_source_findings is the worklist.';
 
@@ -317,7 +434,7 @@ CREATE OR REPLACE VIEW external_data_source_dismissals AS
            WHERE f.source = d.source AND f.rule = d.rule
              AND f.external_id      IS NOT DISTINCT FROM d.external_id
              AND f.entity_public_id IS NOT DISTINCT FROM d.entity_public_id
-             AND f.message = d.message) AS is_stale
+             AND f.discriminator    IS NOT DISTINCT FROM d.discriminator) AS is_stale
   FROM _external_data_source_dismissals AS d;
 COMMENT ON VIEW external_data_source_dismissals IS
   'Every dismissal with its date, note and is_stale flag. Stale means no finding matches any more — someone fixed it; prune when convenient.';
@@ -419,39 +536,102 @@ CREATE OR REPLACE VIEW external_data_source_findings_checks AS
     AND entity_type NOT IN (SELECT entity_type FROM entity_registry)
 
   UNION ALL
-  -- Identity is (source, rule, external_id, entity_public_id, message), which is what a
-  -- dismissal keys on. A repeat means either two rules collided on one identity or a
-  -- source file was inserted twice — and in the second case a single dismissal would
-  -- silently only suppress one of the copies.
+  -- Identity is (source, rule, external_id, entity_public_id, discriminator), which is
+  -- what a dismissal keys on. A repeat means either two rules collided on one identity,
+  -- a source file was inserted twice, or a rule that emits several facts per record
+  -- forgot to discriminate them — and in every case a single dismissal would silently
+  -- suppress only one of the copies.
   SELECT 'duplicate_finding_identity',
          source || ' / ' || rule || ' / ' || coalesce(external_id, '-')
+           || ' / ' || coalesce(discriminator, '-')
   FROM _external_data_source_findings
-  GROUP BY source, rule, external_id, entity_public_id, message
+  GROUP BY source, rule, external_id, entity_public_id, discriminator
   HAVING count(*) > 1
 
   UNION ALL
   -- `detail_view` is the reader's route from the narrow finding to the wide worklist it
-  -- came from. A renamed or deleted view leaves the finding pointing at nothing, which
-  -- no other check would notice.
+  -- came from. Checked at REGISTRY grain, so a rule whose worklist is currently empty
+  -- still validates: a renamed or deleted view would leave its findings pointing at
+  -- nothing, and nothing else would notice.
   SELECT 'detail_view_missing', missing_view
   FROM (
-    SELECT DISTINCT f.detail_view AS missing_view
-    FROM _external_data_source_findings AS f
-    WHERE f.detail_view IS NOT NULL
-      AND NOT EXISTS (
+    SELECT DISTINCT r.detail_view AS missing_view
+    FROM _eds_rule_registry AS r
+    WHERE NOT EXISTS (
         SELECT 1 FROM duckdb_views() AS v
         WHERE v.database_name = current_database()
           AND v.schema_name = 'main'
-          AND v.view_name = f.detail_view)
+          AND v.view_name = r.detail_view)
   )
 
   UNION ALL
-  -- A dismissal is an adjudication of one specific finding, so its rule must be one a
-  -- source file actually emits. Catches a rule renamed out from under a dismissal, which
-  -- would otherwise read as "nothing to dismiss" — silently reviving a settled finding.
+  -- A dismissal is an adjudication of one specific finding, so its rule must be one the
+  -- registry knows. Catches a rule renamed out from under a dismissal, which would
+  -- otherwise read as "nothing to dismiss" — silently reviving a settled finding.
+  -- Against the REGISTRY, not the findings table: a rule whose last finding was fixed
+  -- still validates its dismissal, which then simply reads as stale.
   SELECT 'dismissal_unknown_rule', d.source || ' -> ' || d.rule
   FROM _external_data_source_dismissals AS d
-  WHERE NOT EXISTS (SELECT 1 FROM _external_data_source_findings AS f
-                    WHERE f.source = d.source AND f.rule = d.rule);
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.source = d.source AND r.rule = d.rule)
+
+  UNION ALL
+  -- Every finding's rule must be registered — the registry is the vocabulary's one
+  -- home, and an INSERT minting a rule beside it would fork that home.
+  SELECT 'finding_rule_unregistered', f.source || ' -> ' || f.rule
+  FROM (SELECT DISTINCT source, rule FROM _external_data_source_findings) AS f
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.source = f.source AND r.rule = f.rule)
+
+  UNION ALL
+  -- ─── invariants of the registry itself ───
+  -- The join key: two rows answering one (worklist, class) would double every finding
+  -- projected through them.
+  SELECT 'registry_key_duplicate',
+         detail_view || ' / ' || coalesce(classification, '-')
+  FROM _eds_rule_registry
+  GROUP BY detail_view, classification HAVING count(*) > 1
+
+  UNION ALL
+  -- A rule is one thing: one worklist, one stage, one severity, one source — however
+  -- many classes project into it (the field shapes do). A rule spanning two answers
+  -- to any of those is two rules wearing one name.
+  SELECT 'registry_rule_inconsistent', rule
+  FROM _eds_rule_registry
+  WHERE rule IS NOT NULL
+  GROUP BY rule
+  HAVING count(DISTINCT source || '/' || detail_view || '/' || resolution_stage || '/' || severity) > 1
+
+  UNION ALL
+  -- A row either emits (rule filled, its columns with it) or is excluded with its
+  -- reason on record — never both, never neither. This is the "never silently
+  -- adjudicated" rule made structural.
+  SELECT 'registry_rule_xor_excluded',
+         detail_view || ' / ' || coalesce(classification, '-')
+  FROM _eds_rule_registry
+  WHERE (rule IS NULL) = (excluded_because IS NULL)
+     OR (rule IS NOT NULL AND (resolution_stage IS NULL OR severity IS NULL))
+
+  UNION ALL
+  -- The stage and severity vocabularies, closed at their one source: findings inherit
+  -- these columns from the registry, so guarding them here guards every finding.
+  SELECT 'registry_stage_unknown', rule || ' -> ' || resolution_stage
+  FROM _eds_rule_registry
+  WHERE rule IS NOT NULL
+    AND resolution_stage NOT IN ('manufacturers', 'titles', 'models', 'content')
+
+  UNION ALL
+  SELECT 'registry_severity_unknown', rule || ' -> ' || severity
+  FROM _eds_rule_registry
+  WHERE rule IS NOT NULL AND severity NOT IN ('error', 'warning')
+
+  UNION ALL
+  -- An excluded class claiming coverage must name a rule that exists — otherwise the
+  -- claim is the silent adjudication it exists to prevent.
+  SELECT 'registry_covered_by_unregistered',
+         detail_view || ' / ' || coalesce(classification, '-') || ' -> ' || covered_by_rule
+  FROM _eds_rule_registry AS x
+  WHERE covered_by_rule IS NOT NULL
+    AND NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r WHERE r.rule = x.covered_by_rule);
 COMMENT ON VIEW external_data_source_findings_checks IS
-  'Empty when healthy — invariants of the findings layer: no NULL in a required column, closed severity and entity-type vocabularies, one row per identity, every detail_view resolvable, every dismissal naming a live rule.';
+  'Empty when healthy — invariants of the findings layer and its rule registry: no NULL in a required column, closed stage/severity/entity-type vocabularies, one row per finding identity, one registry row per (worklist, class), every rule one thing, every exclusion reasoned, every detail_view resolvable, every dismissal naming a registered rule.';
