@@ -1,0 +1,398 @@
+attribution: flipcommons-catalog
+description: >
+  Machine classifications from IPDB's specialty listings.
+claims:
+  - tag.flipperless:
+      create: true
+      name: Flipperless
+  - gameplay-feature.mechanical-backbox-animations:
+      gameplay_feature_alias: [Mechanical Backbox Animation]
+  - model.1871-redgrave-parlor-bagatelle:
+      cite:
+        ref: "ipdb:4542"
+        quote: "Specialty: [...] Bagatelle"
+      game_format: bagatelle
+  - model.atari-arcade-classics:
+      cite:
+        ref: "ipdb:6628"
+        quote: "Specialty: [...] Non-Commercial Machine [Home Model]"
+      tag: [home-use]
+  - model.ball-park-3:
+      cite:
+        ref: "ipdb:2890"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.ball-park-3:
+      cite:
+        ref: "ipdb:2890"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.bally-arcade:
+      cite:
+        ref: "ipdb:3650"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.bally-derby:
+      cite:
+        ref: "ipdb:148"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.ballyhoo:
+      cite:
+        ref: "ipdb:158"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.batting-practice:
+      cite:
+        ref: "ipdb:4759"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.beach-queens:
+      cite:
+        ref: "ipdb:206"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.beach-queens:
+      cite:
+        ref: "ipdb:206"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.beauty-contest:
+      cite:
+        ref: "ipdb:217"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.beauty-contest:
+      cite:
+        ref: "ipdb:217"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.big-guns:
+      cite:
+        ref: "ipdb:250"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.big-inning:
+      cite:
+        ref: "ipdb:2862"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.big-inning-2:
+      cite:
+        ref: "ipdb:5083"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.big-inning-2:
+      cite:
+        ref: "ipdb:5083"
+        quote: "Specialty: [...] Widebody"
+      tag: [widebody]
+  - model.big-league-2:
+      cite:
+        ref: "ipdb:260"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.bus-stop-2:
+      cite:
+        ref: "ipdb:4876"
+        quote: "Specialty: [...] Zipper Flippers"
+      gameplay_feature: [zipper-flippers]
+  - model.centennial:
+      cite:
+        ref: "ipdb:478"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.combination-rotation:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:5331"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.daffy-derby-2:
+      cite:
+        ref: "ipdb:6282"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.dancing-dolls-extended-play-prototype:
+      cite:
+        ref: "ipdb:5902"
+        quote: "Specialty: [...] Add-A-Ball"
+      reward_type: [add-a-ball]
+  - model.dancing-dolls-extended-play-prototype:
+      cite:
+        ref: "ipdb:5902"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.gay-cruise:
+      cite:
+        ref: "ipdb:990"
+        quote: "Specialty: [...] Add-A-Ball"
+      reward_type: [add-a-ball]
+  - model.gay-cruise:
+      cite:
+        ref: "ipdb:990"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.gold-rush-5:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:5329"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.grand-slam-9:
+      cite:
+        ref: "ipdb:5323"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.gridiron-4:
+      cite:
+        ref: "ipdb:1090"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.heavy-hitter-2:
+      cite:
+        ref: "ipdb:3140"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.high-ace:
+      cite:
+        ref: "ipdb:1168"
+        quote: "Specialty: [...] Add-A-Ball"
+      reward_type: [add-a-ball]
+  - model.hot-rods:
+      cite:
+        ref: "ipdb:1246"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.hyperball:
+      cite:
+        ref: "ipdb:3169"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.island-queens:
+      cite:
+        ref: "ipdb:1271"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.island-queens-2:
+      cite:
+        ref: "ipdb:6525"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.joker-wild:
+      cite:
+        ref: "ipdb:3573"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.kentucky-star:
+      cite:
+        ref: "ipdb:1356"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.kings-of-the-road:
+      cite:
+        ref: "ipdb:5723"
+        quote: "Specialty: [...] Cocktail Table"
+      cabinet: cocktail
+  - model.m-w-pin:
+      cite:
+        ref: "ipdb:5523"
+        quote: "Specialty: [...] Bagatelle"
+      game_format: bagatelle
+  - model.magic-4:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:5328"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.midget-racer:
+      cite:
+        ref: "ipdb:1592"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.miss-america-81:
+      cite:
+        ref: "ipdb:6531"
+        quote: "Specialty: [...] Bingo Machine"
+      game_format: bingo-pinball
+  - model.parlor-bagatelle-two-star-three-bell:
+      cite:
+        ref: "ipdb:5355"
+        quote: "Specialty: [...] Bagatelle"
+      game_format: bagatelle
+  - model.pim-pam-pum:
+      cite:
+        ref: "ipdb:4642"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.pin:
+      cite:
+        ref: "ipdb:5921"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.pipeline-2:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:5327"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.poker-ball-square:
+      cite:
+        ref: "ipdb:5522"
+        quote: "Specialty: [...] Bagatelle"
+      game_format: bagatelle
+  - model.prospector-2:
+      cite:
+        ref: "ipdb:1872"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.rancho:
+      cite:
+        ref: "ipdb:1916"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.rocket:
+      cite:
+        ref: "ipdb:153"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.royal-cards:
+      cite:
+        ref: "ipdb:5547"
+        quote: "Specialty: [...] Add-A-Ball"
+      reward_type: [add-a-ball]
+  - model.royal-crown:
+      cite:
+        ref: "ipdb:5536"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.royal-crown:
+      cite:
+        ref: "ipdb:5536"
+        quote: "Specialty: [...] Rolldown Game"
+      game_format: rolldown
+  - model.santa-anita:
+      cite:
+        ref: "ipdb:2050"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.sevens:
+      cite:
+        ref: "ipdb:5345"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.silver-streak-3:
+      cite:
+        ref: "ipdb:2155"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.skill-derby-non-replay-model:
+      cite:
+        ref: "ipdb:6433"
+        quote: "Specialty: [...] Novelty Play"
+      reward_type: [novelty]
+  - model.speakeasy-4:
+      cite:
+        ref: "ipdb:4342"
+        quote: "Specialty: [...] Add-A-Ball"
+      reward_type: [add-a-ball]
+  - model.spellbinder:
+      cite:
+        ref: "ipdb:3727"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.stock-market-4:
+      cite:
+        ref: "ipdb:6526"
+        quote: "Specialty: [...] Bingo Machine"
+      game_format: bingo-pinball
+  - model.strike-force:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:4337"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.surf-queens:
+      cite:
+        ref: "ipdb:2462"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.tahiti-6:
+      cite:
+        ref: "ipdb:5807"
+        quote: "Specialty: [...] Mechanical Backbox Animation"
+      gameplay_feature: [mechanical-backbox-animations]
+  - model.target-roll:
+      cite:
+        ref: "ipdb:2503"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.targets:
+      cite:
+        ref: "ipdb:3429"
+        quote: "Specialty: [...] Bat Game"
+      game_format: pitch-and-bat
+  - model.the-twist:
+      cite:
+        ref: "ipdb:2694"
+        quote: "Specialty: [...] Bingo Machine"
+      game_format: bingo-pinball
+  - model.thistledowns:
+      cite:
+        ref: "ipdb:2533"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.tidal-wave:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:5326"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.titan-2:
+      note: "A widebody has a wider-than-standard pinball cabinet and playfield, so the machine is a pinball."
+      cite:
+        ref: "ipdb:5330"
+        quote: "Specialty: [...] Widebody"
+      game_format: pinball
+      tag: [widebody]
+  - model.tropic-queens:
+      cite:
+        ref: "ipdb:2662"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.tropic-queens:
+      cite:
+        ref: "ipdb:2662"
+        quote: "Specialty: [...] One Ball Game"
+      game_format: one-ball
+  - model.twin-joker:
+      cite:
+        ref: "ipdb:2687"
+        quote: "Specialty: [...] Bingo Machine"
+      game_format: bingo-pinball
+  - model.twin-joker:
+      cite:
+        ref: "ipdb:2687"
+        quote: "Specialty: [...] Novelty Play"
+      reward_type: [novelty]
+  - model.usa:
+      cite:
+        ref: "ipdb:2709"
+        quote: "Specialty: [...] Flipperless"
+      tag: [flipperless]
+  - model.wall-street-spain:
+      cite:
+        ref: "ipdb:6527"
+        quote: "Specialty: [...] Bingo Machine"
+      game_format: bingo-pinball
+  - model.world-cup-2:
+      cite:
+        ref: "ipdb:3520"
+        quote: "Specialty: [...] Head-to-Head Play"
+      gameplay_feature: [head-to-head]
