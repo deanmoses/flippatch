@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >
+  The WWII Contract tag.
+claims:
+  - tag.wwii-contract:
+      create: true
+      name: WWII Contract

@@ -1,0 +1,34 @@
+attribution: ipdb
+description: >
+  The machines IPDB marks WWII Contract, and their non-pinball format.
+claims:
+  - model.free-gunnery-training-sight:
+      cite:
+        ref: "ipdb:6462"
+        quote: "Specialty: [...] WWII Contract"
+      tag: [wwii-contract]
+  - model.free-gunnery-training-sight:
+      cite:
+        ref: "ipdb:6462"
+        quote: "Specialty: [...] Not A Pinball"
+      game_format: miscellaneous
+  - model.infra-red-scorer-aa:
+      cite:
+        ref: "ipdb:6463"
+        quote: "Specialty: [...] WWII Contract"
+      tag: [wwii-contract]
+  - model.infra-red-scorer-aa:
+      cite:
+        ref: "ipdb:6463"
+        quote: "Specialty: [...] Not A Pinball"
+      game_format: miscellaneous
+  - model.planning-device:
+      cite:
+        ref: "ipdb:6464"
+        quote: "Specialty: [...] WWII Contract"
+      tag: [wwii-contract]
+  - model.planning-device:
+      cite:
+        ref: "ipdb:6464"
+        quote: "Specialty: [...] Not A Pinball"
+      game_format: miscellaneous
