@@ -246,6 +246,9 @@ def judge_candidate(
         user=build_user_prompt(facts, spec, evidence),
         schema=RELATIONAL_SCHEMA,
         model=TRUSTED_MODEL,
-        max_tokens=1024,
+        # Sized to the worst real note, not the typical one: the judge reports EVERY
+        # relationship a note supports, and ipdb:1723 truncated a multi-claim answer
+        # at 1024, landing a permanent ai-error.
+        max_tokens=4096,
     )
     return parse_claims(result)

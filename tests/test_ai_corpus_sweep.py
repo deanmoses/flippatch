@@ -25,6 +25,7 @@ from ai_corpus_sweep.judge import (
     RELATIONAL_SCHEMA,
     JudgeClaim,
     build_user_prompt,
+    judge_candidate,
     parse_claims,
 )
 from ai_corpus_sweep.render import progress_line, render_reconcile, render_review
@@ -290,7 +291,9 @@ class FakeAi:
         self.calls = []
 
     def structured(self, *, system, user, schema, model, max_tokens=512):
-        self.calls.append({"system": system, "user": user, "model": model})
+        self.calls.append(
+            {"system": system, "user": user, "model": model, "max_tokens": max_tokens}
+        )
         if "CLAIM:" in user:
             return {
                 "supported": self.supports,
@@ -449,6 +452,16 @@ def test_prompt_carries_note_and_identity_but_never_catalog_or_hint(catalog):
     assert "Spider" in prompt
     assert "Hurdy Gurdy (Italy)" in prompt  # the note rides along in full
     assert "central-park" not in prompt  # the catalog's current value stays out
+
+
+def test_judge_requests_room_for_a_long_answer(catalog):
+    # ipdb:1723's multi-relationship note truncated the structured answer at a
+    # 1024-token cap, landing a permanent ai-error. The judge emits EVERY
+    # relationship a note supports, so its budget must fit the worst real note.
+    facts = catalog.by_ipdb(5555)
+    ai = FakeAi({"ipdb:5555": rels()})
+    judge_candidate(ai, facts, SPEC, (("ipdb:5555", _NOTES["ipdb:5555"]),))
+    assert ai.calls[0]["max_tokens"] >= 4096
 
 
 # ── gate.resolve_target ──────────────────────────────────────────────────────
