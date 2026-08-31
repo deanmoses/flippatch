@@ -46,7 +46,7 @@
 
 INSTALL sqlite;
 LOAD sqlite;
-ATTACH IF NOT EXISTS '../pinexplore/ingest_sources/web/cache.sqlite' AS ev (TYPE sqlite, READ_ONLY);
+ATTACH IF NOT EXISTS '../pinexplore/ingest_sources/web_cache/cache.sqlite' AS ev (TYPE sqlite, READ_ONLY);
 
 -- The normalization `make verify-quotes` applies to the SOURCE side before testing a
 -- quote as a substring — smart quotes straightened, whitespace runs collapsed. It

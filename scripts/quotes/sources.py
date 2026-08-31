@@ -1,7 +1,7 @@
 """Resolve a ``cite:`` to the cached source text it points at.
 
 Sources come from the sister **pinexplore** repo: the web-scrape cache
-(``ingest_sources/web/cache.sqlite``) for ``http(s)`` refs — with ``opdb:`` and
+(``ingest_sources/web_cache/cache.sqlite``) for ``http(s)`` refs — with ``opdb:`` and
 ``youtube:`` scheme refs resolved to their canonical cached page (the opdb.org
 machine page; the watch URL whose text is the video's caption-track transcript)
 — and the ``ipdb.models`` mart in ``explore.duckdb`` for ``ipdb:`` refs,

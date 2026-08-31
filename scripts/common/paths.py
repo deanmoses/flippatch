@@ -64,7 +64,7 @@ PINEXPLORE_DIR = _sibling("pinexplore", "PINEXPLORE_DIR")
 FLIPCOMMONS_DB = FLIPCOMMONS_DIR / "backend" / "db.sqlite3"
 
 # Pinexplore's web-scrape cache (pages/PDFs/transcripts)
-WEB_CACHE_DB = PINEXPLORE_DIR / "ingest_sources" / "web" / "cache.sqlite"
+WEB_CACHE_DB = PINEXPLORE_DIR / "ingest_sources" / "web_cache" / "cache.sqlite"
 
 # Pinexplore's analytics DB
 EXPLORE_DUCKDB = PINEXPLORE_DIR / "explore.duckdb"
