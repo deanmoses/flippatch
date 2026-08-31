@@ -361,8 +361,8 @@ CREATE OR REPLACE VIEW _eds_ipdb_specialties AS
     target_entity_type,
     target_value,
     target_slug,
-    archive_source_url,
-    archive_capture_date,
+    source_url,
+    observed_on,
     model_id,
     model_slug,
     model_name,
@@ -374,10 +374,11 @@ CREATE OR REPLACE VIEW _eds_ipdb_specialties AS
 -- WORKLIST — IPDB asserts a classification the catalog has the vocabulary for and the
 -- model does not carry.
 --
--- The actionable payload: each row is a patch waiting to be written, with the archived
--- page that evidences it. `archive_source_url` and `archive_capture_date` ride along
--- because the claim rests on a capture that is typically years old -- worth knowing
--- before asserting it against a catalog that has moved since.
+-- The actionable payload: each row is a patch waiting to be written, with the search
+-- that evidences it. `source_url` is the advanced-search listing the assignment was
+-- read from -- per specialty, not per model -- and `observed_on` is the one date the
+-- whole census was taken. Unlike the archive captures this replaced, the evidence is
+-- a current read rather than one typically years old.
 --
 -- Listings with no catalog model are excluded rather than reported: that is already a
 -- finding under `ipdb-model-*`, and reporting it twice under two names is the overlap
@@ -395,15 +396,15 @@ CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
     -- duplicate term.
     target_slug,
     target_value,
-    archive_source_url,
-    archive_capture_date,
+    source_url,
+    observed_on,
     'https://www.ipdb.org/machine.cgi?id=' || ipdb_id AS ipdb_url
   FROM _eds_ipdb_specialties
   WHERE model_slug IS NOT NULL
     AND target_exists
     AND NOT carried;
 COMMENT ON VIEW ipdb_model_specialties_missing IS
-  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry: target_slug is the record a patch asserts, with the archived page and capture date behind it. Rows are expected.';
+  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry: target_slug is the record a patch asserts, with the advanced search it was read from and the census date behind it. Rows are expected.';
 
 -- WORKLIST — an IPDB specialty aimed at vocabulary the catalog does not have.
 --
@@ -736,9 +737,9 @@ SELECT
   specialty || ' / ' || coalesce(target_slug, target_value) AS discriminator,
   -- The resolved slug, not IPDB's wording -- the slug is what the patch asserts. The
   -- structural model-relationship rows have no slug and fall back to the edge type.
-  format('{} does not carry {} {}, which IPDB lists as specialty "{}" (captured {})',
+  format('{} does not carry {} {}, which IPDB lists as specialty "{}" (observed {})',
          model_slug, target_entity_type, coalesce(target_slug, target_value), specialty,
-         coalesce(archive_capture_date::VARCHAR, 'undated')) AS message
+         coalesce(observed_on::VARCHAR, 'undated')) AS message
 FROM ipdb_model_specialties_missing
 INNER JOIN _eds_rule_registry AS reg
   ON reg.detail_view = 'ipdb_model_specialties_missing' AND reg.classification IS NULL

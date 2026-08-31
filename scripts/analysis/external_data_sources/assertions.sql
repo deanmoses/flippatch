@@ -124,11 +124,11 @@ CREATE OR REPLACE VIEW _eds_external_assertions AS
        LIMIT 1) AS target_slug
     FROM (
       -- Each source's assertions, in the unified shape. IPDB's specialty label and
-      -- archive provenance ride along; OPDB's per-entity mart views union in with
+      -- census provenance ride along; OPDB's per-entity mart views union in with
       -- the entity type as the whole label.
                 SELECT 'ipdb' AS source, ipdb_id::VARCHAR AS external_id,
                        specialty AS assertion_label, target_entity_type, target_value,
-                       archive_source_url, archive_capture_date
+                       source_url, observed_on
                 FROM px.ipdb.model_specialties
       UNION ALL SELECT 'opdb', opdb_id, NULL, 'tag',                tag,               NULL, NULL FROM px.opdb.model_tags
       UNION ALL SELECT 'opdb', opdb_id, NULL, 'reward-type',        reward_type,       NULL, NULL FROM px.opdb.model_reward_types
