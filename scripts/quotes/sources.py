@@ -4,9 +4,10 @@ Sources come from the sister **pinexplore** repo: the web-scrape cache
 (``ingest_sources/web_cache/cache.sqlite``) for ``http(s)`` refs — with ``opdb:`` and
 ``youtube:`` scheme refs resolved to their canonical cached page (the opdb.org
 machine page; the watch URL whose text is the video's caption-track transcript)
-— and the ``ipdb.models`` mart in ``explore.duckdb`` for ``ipdb:`` refs,
-topped up from the cached machine page for the handful of labels that mart has
-no column for (:data:`_IPDB_PAGE_ONLY_LABELS`). A slug-addressed ref
+— and the ``ipdb.models`` mart in ``explore.duckdb`` for ``ipdb:`` refs — joined
+to ``ipdb.model_specialties`` for the ``Specialty:`` row, and topped up from the
+cached machine page for the handful of labels neither mart has a column for
+(:data:`_IPDB_PAGE_ONLY_LABELS`). A slug-addressed ref
 (``williams:some-manual-slug``) resolves through the document library's
 ``citation_ref`` to whichever copy of the document is cached.
 
@@ -125,6 +126,14 @@ _IPDB_ROW_FIELDS: tuple[_IpdbField, ...] = (
 # ``Production`` from this list; reading it is a widening of the quotable corpus
 # and deliberately not folded into a rename.)
 #
+# ``Specialty`` used to sit here and no longer does. It now has a mart carrier of
+# its own — pinexplore's advanced-search census, published as
+# ``ipdb.model_specialties`` — so :meth:`Sources._ipdb_specialty` renders it
+# instead. That is the same "the mart is the newer source" rule this list states,
+# applied the moment a column appeared: the census is a strict superset of what
+# the captures held, and it reaches 3,291 listings where the captures reached
+# 156.
+#
 # Dates are deliberately absent. IPDB has relabelled header dates between
 # ``Date Of Manufacture`` and ``Project Date`` since the older captures were
 # taken, and the mart carries both its own ``date_of_manufacture`` and the header
@@ -133,10 +142,29 @@ _IPDB_ROW_FIELDS: tuple[_IpdbField, ...] = (
 # which is a moving aggregate the mart also holds.
 _IPDB_PAGE_ONLY_LABELS: tuple[PageLabel, ...] = (
     "Production",
-    "Specialty",
     "Concept by",
     "Easter Eggs",
 )
+
+# The label the census renders under, and the separator IPDB prints between two
+# specialties on one machine — a single space, as ``Specialty: Bingo Machine One
+# Ball Game``. Both are the page's own, matched against a capture that shows them.
+#
+# ORDER IS NOT IPDB'S. The census records which specialties a machine has, not the
+# sequence the page lists them in, and that sequence is not recoverable from what
+# it stores: measured across the 32 captured multi-specialty machines, page order
+# is neither alphabetical (10 disagree) nor by IPDB's specialty id (``Payout
+# Machine One Ball Game`` descends where ``Not A Pinball Head-to-Head Play``
+# ascends). So this renders a stable alphabetical line and does not pretend to
+# reproduce the page's.
+#
+# What that costs is bounded, and it is the direction this module already accepts
+# everywhere else: a quote naming ONE specialty is unaffected, because the
+# ``[...]`` ellipsis absorbs whatever precedes it either way. Only a quote
+# asserting that two specialties are ADJACENT can be hurt, and it fails — never
+# passes wrongly. Quote one specialty at a time, as ``Specialty: [...] Bagatelle``.
+_IPDB_SPECIALTY_LABEL: PageLabel = "Specialty"
+_IPDB_SPECIALTY_SEPARATOR = " "
 
 # The row narrowed to editor-authored prose about the machine — what
 # ``ipdb_notes_text`` feeds an AI. ``source_note`` ("flyer", "Bally
@@ -327,6 +355,7 @@ class Sources:
         self._web_cache: _WebCache = web_cache
         self._duck_db = duck_db
         self._rows: dict[IpdbId, IpdbRow] | None = None
+        self._specialty: dict[IpdbId, str] | None = None
         # Cached machine pages parsed on demand, keyed by IPDB id: most ids have
         # no capture, and parsing one is only worth doing for an id actually
         # cited. An id that resolved to nothing memoizes as ``{}``.
@@ -472,6 +501,7 @@ class Sources:
             return None
         rendered = {field.label for field in _ipdb_fields(row) if field.label}
         page = self._ipdb_page_fields(identifier)
+        specialty = self._ipdb_specialty().get(identifier)
         return "\n".join(
             [
                 ipdb_row_text(row),
@@ -480,8 +510,33 @@ class Sources:
                     for label in _IPDB_PAGE_ONLY_LABELS
                     if label not in rendered and (text := page.get(label))
                 ),
+                *([f"{_IPDB_SPECIALTY_LABEL}: {specialty}"] if specialty else []),
             ]
         )
+
+    def _ipdb_specialty(self) -> dict[IpdbId, str]:
+        """The ``Specialty:`` line per machine, from the census, read once.
+
+        Its own query rather than a column on :meth:`_ipdb_rows` because the grain
+        differs: ``ipdb.models`` is one row per machine and
+        ``ipdb.model_specialties`` is one row per machine per specialty, so this
+        folds the many into the one line the page prints.
+
+        A machine IPDB assigns no specialty is absent here, not empty — the page
+        prints no such row, so neither may this.
+        """
+        if self._specialty is None:
+            import duckdb
+
+            con = duckdb.connect(str(self._duck_db), read_only=True)
+            rows = con.execute(
+                "SELECT ipdb_id, string_agg(specialty, ? ORDER BY specialty) "
+                "FROM ipdb.model_specialties GROUP BY ipdb_id",
+                [_IPDB_SPECIALTY_SEPARATOR],
+            ).fetchall()
+            con.close()
+            self._specialty = {str(row[0]): str(row[1]) for row in rows}
+        return self._specialty
 
     def _ipdb_page_fields(self, identifier: IpdbId) -> dict[PageLabel, str]:
         """:data:`_IPDB_PAGE_ONLY_LABELS` as the cached machine page prints them.

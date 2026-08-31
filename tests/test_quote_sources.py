@@ -267,6 +267,10 @@ def _sources_with(
     sources = object.__new__(Sources)
     fake = _FakeWebCache(pages, pdf_urls, documents)
     sources._web_cache = fake
+    # No machine has a specialty unless a test says so. Stubbed rather than left
+    # unset so the census query never reaches DuckDB from these tests, the same
+    # bargain ``_rows`` and ``_page_fields`` strike.
+    sources._specialty = {}
     return sources, fake
 
 
@@ -566,22 +570,48 @@ def test_ipdb_text_keeps_the_dumps_production_number_over_the_page():
     assert text == "Baby Pac-Man\nProduction: 7000"
 
 
-def test_ipdb_text_appends_specialty_concept_by_and_easter_eggs():
-    # The three labels the dump has no column for at all, in page order.
+def test_ipdb_text_appends_concept_by_and_easter_eggs():
+    # The labels the dump has no column for at all, in page order. Specialty was
+    # one of them until the census gave it a mart carrier of its own.
     text = _sources_with_page(
         {"name": "Atari Arcade Classics"},
         {
             "Easter Eggs": "See the eggs list",
             "Concept by": "Roger Shiffman, Marc Rosenberg",
-            "Specialty": "Non-Commercial Machine [Home Model]",
         },
     ).text_for("ipdb:3711")
     assert text == (
         "Atari Arcade Classics\n"
-        "Specialty: Non-Commercial Machine [Home Model]\n"
         "Concept by: Roger Shiffman, Marc Rosenberg\n"
         "Easter Eggs: See the eggs list"
     )
+
+
+def test_ipdb_text_takes_specialty_from_the_census_not_the_page():
+    # The census reaches every listing; the captures reached 156 of them. A
+    # machine with no capture at all still renders its Specialty row, which is
+    # the whole point of the move — and a stale page cannot contradict it.
+    sources = _sources_with_page({"name": "Ballyhoo"}, {})
+    sources._specialty = {"3711": "Flipperless"}
+    assert sources.text_for("ipdb:3711") == "Ballyhoo\nSpecialty: Flipperless"
+
+
+def test_ipdb_text_joins_two_specialties_the_way_the_page_prints_them():
+    # One row, space-separated, as ``Specialty: Bingo Machine One Ball Game``.
+    # Order is this module's (alphabetical), not IPDB's — see the constant.
+    sources = _sources_with_page({"name": "Bally Big Show"}, {})
+    sources._specialty = {"3711": "Bingo Machine One Ball Game"}
+    assert sources.text_for("ipdb:3711") == (
+        "Bally Big Show\nSpecialty: Bingo Machine One Ball Game"
+    )
+
+
+def test_ipdb_text_omits_specialty_where_ipdb_assigns_none():
+    # Absent, not empty: 3,385 listings carry no specialty and the page prints
+    # no such row for them, so a bare ``Specialty:`` would be a fabricated line.
+    sources = _sources_with_page({"name": "Ice Castle"}, {})
+    sources._specialty = {}
+    assert sources.text_for("ipdb:3711") == "Ice Castle"
 
 
 def test_ipdb_text_never_takes_a_date_from_the_page():
@@ -607,20 +637,26 @@ def test_ipdb_notes_text_ignores_page_only_labels():
     # and would read as prose the model could quote.
     sources = _sources_with_page(
         {"name": "Ice Castle", "notes": "Shown at a trade show."},
-        {"Specialty": "Widebody"},
+        {},
     )
+    sources._specialty = {"3711": "Widebody"}
     assert sources.free_text_for("ipdb:3711") == "Notes: Shown at a trade show."
 
 
 def test_ipdb_rows_reads_the_published_mart_by_its_own_column_names(tmp_path):
-    """The one test that runs the DuckDB query instead of stubbing its result.
+    """The one test that runs the DuckDB queries instead of stubbing their result.
 
-    Every other IPDB test injects ``_rows``, so the whole suite passes against a
-    store that no longer holds the table the query names — which is exactly how
-    pinexplore's flat ``ipdb_machines`` becoming the ``ipdb.models`` mart went
-    unnoticed until a cite failed to resolve. The DDL below spells the mart's
-    columns literally rather than deriving them from the module's own list, so
-    the next rename fails here and names itself.
+    Every other IPDB test injects ``_rows`` and ``_specialty``, so the whole suite
+    passes against a store that no longer holds the tables the queries name —
+    which is exactly how pinexplore's flat ``ipdb_machines`` becoming the
+    ``ipdb.models`` mart went unnoticed until a cite failed to resolve. The DDL
+    below spells both marts' columns literally rather than deriving them from the
+    module's own list, so the next rename fails here and names itself.
+
+    ``ipdb.model_specialties`` is here for that reason and no other: it is a
+    second pinexplore table this module now depends on, and it has already been
+    renamed under us once (``archive_source_url`` → ``source_url``, when the
+    advanced-search census replaced the archive captures behind it).
     """
     import duckdb
 
@@ -654,11 +690,19 @@ def test_ipdb_rows_reads_the_published_mart_by_its_own_column_names(tmp_path):
           'Play Meter, October 1997' AS photos_in,
           'flyer' AS source_note
     """)
+    con.execute("""
+        CREATE TABLE ipdb.model_specialties AS SELECT * FROM (VALUES
+          (4032::BIGINT, 'Widebody',
+           'https://www.ipdb.org/search.pl?specialty=14&sortby=name&searchtype=advanced',
+           DATE '2026-08-30')
+        ) AS t(ipdb_id, specialty, source_url, observed_on)
+    """)
     con.close()
 
     sources = object.__new__(Sources)
     sources._duck_db = db
     sources._rows = None
+    sources._specialty = None
     sources._page_fields = {"4032": {}}
 
     text = sources.text_for("ipdb:4032")
@@ -675,6 +719,8 @@ def test_ipdb_rows_reads_the_published_mart_by_its_own_column_names(tmp_path):
     assert "Type: Solid State Electronic (SS)" in text
     assert "Theme: Fantasy - Medieval" in text
     assert "Production: 4016" in text
+    # The second mart, folded to one line under the page's own label.
+    assert text.endswith("\nSpecialty: Widebody")
     assert "Source: flyer" in text
     # An id the mart never carried resolves to nothing, not to an empty row.
     assert sources.text_for("ipdb:9999") is None
