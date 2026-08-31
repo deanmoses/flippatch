@@ -396,6 +396,13 @@ CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
     -- duplicate term.
     target_slug,
     target_value,
+    -- The relationship specialties are a different kind of row and route to a different
+    -- rule: `target_slug` is NULL for them by construction, so what the other rows offer
+    -- as the thing to assert, these cannot. The class is on the row rather than filtered
+    -- out of it so the specialty partition still counts them (see the summary's promise)
+    -- and the registry, not a WHERE clause, is what excludes them from this rule.
+    CASE WHEN target_entity_type = 'model-relationship' THEN 'relationship'
+         ELSE 'vocabulary' END AS classification,
     source_url,
     observed_on,
     'https://www.ipdb.org/machine.cgi?id=' || ipdb_id AS ipdb_url
@@ -404,7 +411,169 @@ CREATE OR REPLACE VIEW ipdb_model_specialties_missing AS
     AND target_exists
     AND NOT carried;
 COMMENT ON VIEW ipdb_model_specialties_missing IS
-  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry: target_slug is the record a patch asserts, with the advanced search it was read from and the census date behind it. Rows are expected.';
+  'Worklist — one row per IPDB specialty the catalog has vocabulary for but the model does not carry: target_slug is the record a patch asserts, with the advanced search it was read from and the census date behind it. classification ''relationship'' rows are worked from ipdb_model_relationships_missing instead. Rows are expected.';
+
+-- WORKLIST — IPDB marks a machine as a conversion, a conversion kit or a re-theme and
+-- the catalog records no such edge on it.
+--
+-- ITS OWN VIEW BECAUSE ITS OWN ROWS ARE A DIFFERENT KIND OF WORK. Every other specialty
+-- resolves to a RECORD, and the worklist row is very nearly the patch: assert this slug
+-- on this model. These three resolve to a relationship TYPE, and an edge is only half
+-- stated by its type — `conversion` of WHAT. IPDB's Specialty field never names the
+-- other end, so a row here is a research task, not a transcription, and pretending
+-- otherwise inside the specialties worklist would put 168 unactionable rows beside the
+-- actionable ones.
+--
+-- ─── DO NOT TRY TO DERIVE THE COUNTERPART IN SQL ───────────────────────────
+--
+-- There was a column here that cropped IPDB's Notes to "the sentences naming the donor".
+-- It was written twice, both versions were wrong, and it is gone. This is a rut, not a
+-- one-off: session after session meets this worklist, sees that the notes usually do name
+-- the donor, and reaches for a pattern. Reading these notes is a LANGUAGE problem. The
+-- live cases that defeat every rule are recorded here BY NAME, so the next reader can
+-- check them in a minute instead of rediscovering them over an afternoon.
+--
+--   jaws         The whole argument in one note. It names SIX machines, each for a
+--                different reason: Bally's 1978 'Playboy' (playfield "appears to borrow
+--                from"), Bell Coin Matics' 1979 'White Shark' (what jaws was converted
+--                INTO -- the opposite direction), Gottlieb's 1970 'Scuba' (backglass art
+--                copied FROM), AMI's 1976 'The Shark' (where that art went next), and
+--                Unknown Manufacturer's 1980 'Hell' (a hedged guess about the cabinet).
+--                The actual conversion donor is the one machine the note never names --
+--                "a converted electromechanical Gottlieb game" -- which is precisely why
+--                the catalog carries a `target_label` edge for it. EVERY quoted title in
+--                that note is a wrong answer, and any extraction rule returns one.
+--                Worse: all five (`playboy`, `white-shark`, `scuba`, `the-shark`, `hell`)
+--                are live catalog models that resolve cleanly. The failure mode is not a
+--                rule finding nothing -- it is a rule finding five confident, resolvable
+--                slugs and every one of them being the wrong relationship.
+--
+--   handicap-5   "This is a conversion of an unknown game." The note goes on to name
+--                Williams' 1951 'Hayburners' and Gottlieb's 1964 'World Fair' in order to
+--                rule them OUT: "none of them have a playfield anything like this one."
+--                The titles are negations. Nearest-title-wins is not unreliable here, it
+--                is exactly backwards.
+--
+--   gateway      "...lists Gateway as a converted game but the source game is not
+--                identified." It then cites the Coin Machine Journal -- a publication,
+--                indistinguishable by shape from a machine.
+--
+--   a-circus     "...no mention of what game it converted. It may be that this company
+--                only made replacement playfields, and this one would be for Ace
+--                Novelty's 1932 'A Circus'." The only candidate sits behind a hedge and
+--                carries the model's OWN name.
+--
+--   wer-zahlt-   TWO donors ('Turf' and 'Clipper'), both behind "T.H. Bergmann & Co.",
+--   die-runde    whose periods shred any sentence split -- and RE2 has no lookbehind, so
+--                no split rule can tell an abbreviation from a sentence end.
+--
+--   broadway-5   "a conversion kit for unspecified games" -- correctly has no machine
+--                target at all. The right answer is a `target_label` edge, and any
+--                extractor that finds a title here has invented the relationship.
+--
+-- And the case no note settles from this row at all: the deciding sentence is often on a
+-- SISTER model's page ("the other model, Foo, is the conversion kit"), which nothing here
+-- can see.
+--
+-- ADJUDICATION REQUIRES THE FULL FREE TEXT, NEVER AN EXCERPT. That is what those cases
+-- have in common -- in each one the deciding words fall outside any window a rule would
+-- have cropped, and an excerpt reads as complete while being wrong. 92 of the 168 notes
+-- are longer than an excerpt would show and 64 discuss lineage in more than one place, so
+-- cropping loses the evidence at scale rather than occasionally. The row therefore
+-- identifies the WORK and stops: `ipdb_url` and `make show-source ARGS="ipdb:<id>"` put
+-- the whole note in front of the reader, and that whole note is what a `cite:` quote has
+-- to match verbatim in any case.
+--
+-- EVERY ROW NEEDS AI AND HUMAN JUDGMENT OVER THAT FULL TEXT BEFORE IT IS A PATCH. Not one
+-- is clear-to-write from what is here: the counterpart has to be identified from prose,
+-- the machine it names found in the catalog or created, the type settled between
+-- conversion and kit, and `license_status` is mandatory with no default while IPDB's
+-- Specialty establishes nothing about licensing. The instruments for that already exist
+-- -- `make extract-page` for one model's page, `make sweep` for one field across the
+-- corpus -- and both put the ENTIRE source text through a model call, gate the result,
+-- and hand back CANDIDATES for a human to vet. This view sizes and sorts the work. It
+-- does not shorten it, and a patch generated straight off these rows is confident fiction.
+--
+-- THREE CLASSES, BECAUSE THE CATALOG'S SILENCE HAS THREE SHAPES.
+--
+-- `no_edge` is the blank slate: no lineage edge on this model in either direction. Find
+-- the donor in the note, check it is in the catalog, write the edge.
+--
+-- `other_type_edge` is EDGES ALREADY ON THE RECORD, not a gap and not, by itself, a
+-- defect. The catalog records lineage out of this model under some other type -- often
+-- an outbound `conversion` where IPDB says `conversion_kit`, and per `DomainModel.md`
+-- those are different things: a conversion is a complete machine built from a donor, a
+-- kit is parts sold to convert one.
+--
+-- WHETHER THAT IS THE SAME RELATIONSHIP MISTYPED IS NOT KNOWABLE HERE, and the rule
+-- must not pretend otherwise. IPDB's Specialty field names no counterpart at all, so
+-- nothing in this view can test the catalog's counterpart against IPDB's -- and a model
+-- is expressly allowed several edges of several types. `jaws` is the live proof: it
+-- carries an outbound `conversion` to an unidentified Gottlieb and IPDB marks it a kit,
+-- which may be one relationship mistyped or two relationships to two different
+-- machines. So the finding states both facts and asks the question; wording it as the
+-- catalog having the type wrong would send an author to change a sound edge.
+--
+-- `edge_points_inward` is THE COUNTERPART END SPEAKING INSTEAD. Nothing outbound, but
+-- another model names this one -- typically under the very type IPDB assigns here, so
+-- the two may be one relationship recorded from the far end. `model_edges` is
+-- outbound-only, which is correct for all three types (the kit points at its donor), so
+-- this class exists to keep a row the catalog does connect from reading as a blank. It
+-- carries the same caveat as `other_type_edge`: same relationship reversed and two
+-- separate relationships look identical from here.
+--
+-- THE INBOUND TEST IS DELIBERATELY UNTYPED, and the class boundary is the reason. Asking
+-- it only of the ASSERTED type would let a model connected inbound under some OTHER type
+-- fall through to `no_edge` -- a row promising "no lineage here at all" about a model the
+-- catalog demonstrably connects to a counterpart, which is the one answer that sends an
+-- author off researching a donor already on the record. No such row exists today; the
+-- test is untyped so that none can appear later without changing class.
+--
+-- Listings with no catalog model are excluded rather than reported, on the same footing
+-- as the specialties worklist: that is already a finding under `ipdb-model-*`.
+CREATE OR REPLACE VIEW ipdb_model_relationships_missing AS
+  SELECT
+    s.ipdb_id,
+    s.model_slug,
+    s.model_name,
+    s.specialty,
+    -- The edge type a patch would write. Structural, so it is the raw asserted value:
+    -- a relationship type is not a record and never resolves through `target_slug`.
+    s.target_value AS relationship_type,
+    -- Outbound wins over inbound: a model the catalog already points OUT from has its
+    -- counterpart identified, whichever way the type question lands, and that is the
+    -- more specific thing to say about it. Every row reaching here fails carriage, so
+    -- an outbound edge is necessarily of some OTHER type.
+    CASE WHEN len(outbound_edges) > 0        THEN 'other_type_edge'
+         WHEN len(inbound_claimants) > 0     THEN 'edge_points_inward'
+         ELSE 'no_edge' END AS classification,
+    outbound_edges,
+    inbound_claimants,
+    s.source_url,
+    s.observed_on,
+    'https://www.ipdb.org/machine.cgi?id=' || s.ipdb_id AS ipdb_url
+  FROM (
+    SELECT
+      sp.*,
+      -- What the catalog already says, rendered to read: `conversion -> roxy`. Sorted so
+      -- two runs render one row identically; `target_label` covers the unresolved edges
+      -- (`an electromechanical Gottlieb game`), which are edges all the same.
+      (SELECT list_sort(list(o.relationship_type || ' -> '
+                             || coalesce(o.target_slug, o.target_label, '?')))
+       FROM model_edges AS o WHERE o.model_id = sp.model_id) AS outbound_edges,
+      -- The other end: models naming THIS one as their counterpart. ANY type, not just
+      -- the asserted one, so that `no_edge` can mean what it says -- see the class
+      -- reasoning above. Rendered `type <- claimant`, mirroring `outbound_edges`.
+      (SELECT list_sort(list(i.relationship_type || ' <- ' || i.model_slug))
+       FROM model_edges AS i
+       WHERE i.target_id = sp.model_id) AS inbound_claimants
+    FROM _eds_ipdb_specialties AS sp
+    WHERE sp.target_entity_type = 'model-relationship'
+      AND sp.model_slug IS NOT NULL
+      AND NOT sp.carried
+  ) AS s;
+COMMENT ON VIEW ipdb_model_relationships_missing IS
+  'Worklist — one row per model IPDB marks a conversion, conversion kit or re-theme that carries no such edge: classification says whether the catalog is silent (no_edge), already records other edges out of the model (other_type_edge) or is connected only from the far end (edge_points_inward). It does not name the counterpart — read the IPDB note via make show-source, or extract it with make extract-page / make sweep. Rows are expected.';
 
 -- WORKLIST — an IPDB specialty aimed at vocabulary the catalog does not have.
 --
@@ -742,7 +911,45 @@ SELECT
          coalesce(observed_on::VARCHAR, 'undated')) AS message
 FROM ipdb_model_specialties_missing
 INNER JOIN _eds_rule_registry AS reg
-  ON reg.detail_view = 'ipdb_model_specialties_missing' AND reg.classification IS NULL
+  ON  reg.detail_view = 'ipdb_model_specialties_missing'
+  -- The class is on the worklist row, so the relationship rows simply join to their
+  -- registry row, find no rule on it, and drop — reported by the block below instead.
+  AND reg.classification = ipdb_model_specialties_missing.classification
+WHERE reg.rule IS NOT NULL;
+
+-- Model + edge-type grain. `discriminator` is the relationship type alone: one model can
+-- be marked both a kit and a converted game (IPDB marks several that way), and the
+-- specialty heading adds nothing the type does not already say.
+INSERT INTO _external_data_source_findings BY NAME
+SELECT
+  reg.source, reg.resolution_stage, reg.rule, reg.severity, reg.detail_view,
+  ipdb_id::VARCHAR AS external_id,
+  'model' AS entity_type,
+  model_slug AS entity_public_id,
+  relationship_type AS discriminator,
+  -- One message per class, each stating only what the catalog holds: nothing, the edges
+  -- already on the model, or the model naming it from the far end. None of them names a
+  -- counterpart for the asserted edge — no rule here knows one.
+  CASE ipdb_model_relationships_missing.classification
+    WHEN 'other_type_edge' THEN
+      format('{} carries no {} edge, which IPDB lists as specialty "{}"; it does carry {} — the same relationship mistyped, or a separate one?',
+             model_slug, relationship_type, specialty, array_to_string(outbound_edges, ', '))
+    WHEN 'edge_points_inward' THEN
+      format('{} carries no outbound edge, which IPDB lists as specialty "{}" wanting a {} edge; {} names it from the far end — the same relationship reversed, or a separate one?',
+             model_slug, specialty, relationship_type, array_to_string(inbound_claimants, ', '))
+    WHEN 'no_edge' THEN
+      format('{} carries no lineage edge at all, and IPDB lists it as specialty "{}" — a {} edge is missing (observed {})',
+             model_slug, specialty, relationship_type,
+             coalesce(observed_on::VARCHAR, 'undated'))
+    -- No ELSE, on the same reasoning as the carriage CASE in `assertions.sql`: a class
+    -- nobody wrote a branch for lands a NULL message and fails `finding_null_required`.
+    -- An ELSE would hand it the `no_edge` wording instead — a wrong answer rather than
+    -- a loud one, and the wrong answer is the one that reads as correct.
+  END AS message
+FROM ipdb_model_relationships_missing
+INNER JOIN _eds_rule_registry AS reg
+  ON  reg.detail_view = 'ipdb_model_relationships_missing'
+  AND reg.classification = ipdb_model_relationships_missing.classification
 WHERE reg.rule IS NOT NULL;
 
 -- Specialty grain: one row is one vocabulary decision. `external_id` is NULL because no
@@ -798,6 +1005,14 @@ CREATE OR REPLACE VIEW ipdb_summary AS
     WHERE NOT EXISTS (SELECT 1 FROM px.ipdb.model_specialties AS s WHERE s.ipdb_id = im.ipdb_id)
   UNION ALL SELECT 'specialty_carried_assignments', count(*) FROM _eds_ipdb_specialties WHERE carried
   UNION ALL SELECT 'specialty_missing_assignments', count(*) FROM ipdb_model_specialties_missing
+  -- A SUBSET of `specialty_missing_assignments`, not another slice of the partition:
+  -- the relationship rows stay counted there and are re-cut here by what the catalog
+  -- already holds. `specialty_relationship_missing_assignments` is the join between the
+  -- two, asserted row for row by `relationship_worklist_diverged`.
+  UNION ALL SELECT 'specialty_relationship_missing_assignments', count(*)
+    FROM ipdb_model_specialties_missing WHERE classification = 'relationship'
+  UNION ALL SELECT 'relationship_missing_' || classification, count(*)
+    FROM ipdb_model_relationships_missing GROUP BY classification
   UNION ALL SELECT 'specialty_vocabulary_absent_values', count(*) FROM ipdb_specialty_vocabulary_absent
   UNION ALL SELECT 'specialty_vocabulary_absent_assignments', count(*)
     FROM _eds_ipdb_specialties WHERE model_slug IS NOT NULL AND NOT target_exists
@@ -916,6 +1131,59 @@ CREATE OR REPLACE VIEW ipdb_checks AS
           (SELECT count(*) FROM _eds_ipdb_specialties WHERE model_slug IS NULL) AS unmatched,
           (SELECT count(*) FROM px.ipdb.model_specialties) AS total)
   WHERE carried + missing + absent + unmatched <> total
+
+  UNION ALL
+  -- The relationship worklist re-cuts the specialty worklist's relationship rows and must
+  -- carry over exactly them: the registry excludes those rows from `ipdb-specialty-missing`
+  -- on the promise that this view reports them, so a row falling between the two would be
+  -- silently adjudicated — the one thing the exclusion mechanism exists to prevent.
+  --
+  -- AN ANTI-JOIN, NOT A COUNT. Equal totals are not the invariant: one row lost and
+  -- another duplicated balances, and a count would report the pair as healthy. Both
+  -- directions, so a row appearing here that the specialty worklist never held fails too.
+  SELECT 'relationship_worklist_diverged', detail
+  FROM (
+    SELECT format('{} / {} in the specialty worklist only', ipdb_id, target_value) AS detail
+    FROM ipdb_model_specialties_missing AS sm
+    WHERE sm.classification = 'relationship'
+      AND NOT EXISTS (SELECT 1 FROM ipdb_model_relationships_missing AS rm
+                      WHERE rm.ipdb_id = sm.ipdb_id
+                        AND rm.relationship_type = sm.target_value)
+    UNION ALL
+    SELECT format('{} / {} in the relationship worklist only', ipdb_id, relationship_type)
+    FROM ipdb_model_relationships_missing AS rm
+    WHERE NOT EXISTS (SELECT 1 FROM ipdb_model_specialties_missing AS sm
+                      WHERE sm.classification = 'relationship'
+                        AND sm.ipdb_id = rm.ipdb_id
+                        AND sm.target_value = rm.relationship_type)
+  )
+
+  UNION ALL
+  -- The view's own grain, and the one thing the anti-join above cannot see: a duplicate
+  -- matches its counterpart perfectly, so both sides balance while every finding the row
+  -- feeds is doubled. Nothing in the view can fan out today — the edge columns are
+  -- correlated subqueries — which is exactly when a grain check is cheap to keep and the
+  -- next join added here is the one it is waiting for.
+  SELECT 'relationship_worklist_not_one_row_per_assertion',
+         ipdb_id::VARCHAR || ' / ' || relationship_type
+  FROM ipdb_model_relationships_missing
+  GROUP BY ipdb_id, relationship_type HAVING count(*) > 1
+
+  UNION ALL
+  -- The classification vocabulary lives in the rule registry, and only there — same
+  -- anchor as the corporate-entity one above, for the same reason.
+  SELECT 'relationship_classification_unregistered', c.classification
+  FROM (SELECT DISTINCT classification FROM ipdb_model_relationships_missing) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'ipdb_model_relationships_missing'
+                      AND r.classification = c.classification)
+
+  UNION ALL
+  SELECT 'specialty_classification_unregistered', c.classification
+  FROM (SELECT DISTINCT classification FROM ipdb_model_specialties_missing) AS c
+  WHERE NOT EXISTS (SELECT 1 FROM _eds_rule_registry AS r
+                    WHERE r.detail_view = 'ipdb_model_specialties_missing'
+                      AND r.classification = c.classification)
 
   UNION ALL
   SELECT 'specialty_coverage_partition_broken',

@@ -293,8 +293,29 @@ CREATE OR REPLACE VIEW _eds_rule_registry AS
     ('ipdb', 'ipdb_credits_missing', 'person_unmatched', NULL, NULL, NULL, 'ipdb-person-unmatched',
      'the person does not exist yet, and creating them comes first; reported once at person grain rather than once per credit'),
     ('ipdb', 'ipdb_people_unmatched',           NULL, 'ipdb-person-unmatched',            'content', 'warning', NULL, NULL),
-    ('ipdb', 'ipdb_model_specialties_missing',  NULL, 'ipdb-specialty-missing',           'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_model_specialties_missing',  'vocabulary',   'ipdb-specialty-missing',        'content', 'warning', NULL, NULL),
+    -- The three relationship specialties are reported at model+edge grain instead. Every
+    -- other specialty row hands an author `target_slug` -- the record the patch asserts;
+    -- a relationship row cannot, because its target names an edge TYPE and an edge needs
+    -- a COUNTERPART the specialty census never states. So the same fact under this rule
+    -- would be a worklist row nobody can act on; the detail view it points at splits the
+    -- work by what the catalog already holds instead.
+    ('ipdb', 'ipdb_model_specialties_missing',  'relationship', NULL, NULL, NULL, 'ipdb-relationship-missing',
+     'the target is a relationship type, not a record: reported at model+edge grain by ipdb_model_relationships_missing, which splits the work by the edges the catalog already holds'),
     ('ipdb', 'ipdb_specialty_vocabulary_absent', NULL, 'ipdb-specialty-vocabulary-absent', 'content', 'warning', NULL, NULL),
+    -- ── ipdb: relationship edges (classes derived in the INSERT from the edges the
+    -- catalog already holds). All three are warnings: a source asserting an edge we do
+    -- not hold is not the catalog being demonstrably wrong, which is the bar for `error`.
+    --
+    -- THE LATTER TWO ARE NAMED FOR WHAT THE CATALOG HOLDS, not for a verdict on it.
+    -- IPDB's Specialty names no counterpart, so nothing can test whether an edge already
+    -- on the model is this same relationship mistyped or a second relationship to another
+    -- machine — and `DomainModel.md` allows both. A rule called `-type-disagrees` would
+    -- assert the first and send an author to change a sound edge; see the class prose in
+    -- `ipdb.sql` for the live case (`jaws`) that settles it.
+    ('ipdb', 'ipdb_model_relationships_missing', 'no_edge',            'ipdb-relationship-missing',      'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_model_relationships_missing', 'other_type_edge',    'ipdb-relationship-other-edges',  'content', 'warning', NULL, NULL),
+    ('ipdb', 'ipdb_model_relationships_missing', 'edge_points_inward', 'ipdb-relationship-inbound-only', 'content', 'warning', NULL, NULL),
     -- ── opdb: the unmatched worklist ──
     ('opdb', 'opdb_models_unmatched', 'catalog_holds_unlinked', 'opdb-model-unlinked',            'models', 'warning', NULL, NULL),
     ('opdb', 'opdb_models_unmatched', 'possible_duplicate',     'opdb-model-possible-duplicate',  'models', 'warning', NULL, NULL),
