@@ -1,0 +1,14 @@
+attribution: ipdb
+description: >
+  IPDB's names for Hearts & Spades (IPD No. 1146) and Sea-Belles (IPD No. 2078).
+claims:
+  - model.hearts-spades:
+      cite:
+        ref: "ipdb:1146"
+        quote: "Hearts & Spades"
+      name: Hearts & Spades
+  - model.sea-belles:
+      cite:
+        ref: "ipdb:2078"
+        quote: "Sea-Belles"
+      name: Sea-Belles

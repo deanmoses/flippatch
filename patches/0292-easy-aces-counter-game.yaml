@@ -1,0 +1,22 @@
+attribution: flipcommons-catalog
+description: >
+  Easy Aces, the 1930s counter game of IPD No. 7074, as a new title and model.
+claims:
+  - title.easy-aces-2:
+      create: true
+      cite:
+        ref: "ipdb:7074"
+        quote: "Easy Aces [...] IPD No. 7074 / 1 Player"
+      name: Easy Aces
+  - model.easy-aces-2:
+      create: true
+      cite:
+        ref: "ipdb:7074"
+        quote: "Easy Aces [...] IPD No. 7074 / 1 Player"
+      name: Easy Aces
+      title: easy-aces-2
+      changesets:
+        - cite:
+            ref: "ipdb:7074"
+            quote: "IPD No. 7074 / 1 Player"
+          ipdb_id: 7074

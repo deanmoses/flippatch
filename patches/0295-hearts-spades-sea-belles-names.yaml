@@ -1,0 +1,26 @@
+attribution: flipcommons-catalog
+description: >
+  Punctuation in the names of Hearts & Spades and Sea-Belles.
+claims:
+  - model.hearts-spades:
+      cite:
+        ref: "ipdb:1146"
+        quote: "Hearts & Spades"
+      name: Hearts & Spades
+  - title.hearts-spades:
+      cite:
+        ref: "ipdb:1146"
+        quote: "Hearts & Spades"
+      name: Hearts & Spades
+  - model.sea-belles:
+      cite:
+        ref: "ipdb:2078"
+        quote: "Sea-Belles"
+      name: Sea-Belles
+  - title.sea-belles-fair-lady:
+      cite:
+        - ref: "ipdb:2078"
+          quote: "Sea-Belles"
+        - ref: "ipdb:809"
+          quote: "Fair Lady"
+      name: Sea-Belles / Fair Lady

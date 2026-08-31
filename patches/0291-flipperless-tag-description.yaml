@@ -15,49 +15,63 @@ claims:
       description: |
         A flipperless machine is a pin game with no player-operated [[gameplay-feature:flippers]]. The ball is launched with a plunger, and from there gravity, the pins and the [[gameplay-feature:bumpers]] decide where it goes, so a play ends wherever the ball settles rather than in how long the player can keep it alive.
 
+        ## Origins
+
+        Pinball began flipperless. Historians date the game to [[person:montague-redgrave]]'s bagatelle patent of 1871, which already had the spring plunger firing a ball into an inclined field of obstacles - and nothing the player could do once it was moving.[[cite:1]]
+
+        The earliest flippers were purely mechanical. *[[title:double-shuffle-3]]* (1932, [[manufacturer:ad-lee]]) carried eight of them, and baseball machines commonly gave the player a bat to swing by hand.[[cite:2]]
+
+        The electrically operated flipper reached production in 1947, on [[manufacturer:gottlieb]]'s *[[title:humpty-dumpty]]*.[[cite:3]] It carried three pairs of them climbing the playfield, a long way from the single pair at the bottom that later became ordinary.[[cite:4]]
+
         ## Chance, skill and the law
 
-        The lack of flippers carries legal weight across the world. Gaming law turns almost everywhere on a single distinction — whether a game is one of skill or one of chance — and a machine nobody could steer had no obvious claim to skill, which placed it alongside gambling equipment.[[cite:1]]
+        The lack of flippers carries legal weight across the world. Almost everywhere, gaming law turns on whether a game is one of skill or chance. Flipperless machines have no obvious claim to skill, which places them alongside gambling equipment.[[cite:5]]
 
-        The question was litigated as exactly that. In [[location:germany]] the finger-flick *Bajazzo* was long treated as a game of skill and so escaped the criminal ban on gambling, until a 1928 ruling of the Reichsgericht reclassified it and set out the criteria for deciding later cases.[[cite:2]]
+        The German word for a pinball machine carries that distinction outright, naming it a machine of skill that offers no cash prize.[[cite:6]]
 
-        Most countries answered by licensing the payout machine into a category of its own rather than outlawing it. [[location:spain]] separates purely recreational machines from those programmed to pay a cash prize.[[cite:3]] [[location:japan]] arrived at a similar accommodation by a stranger route: cash gambling is illegal there, and pachinko, a flipperless vertical pin field, survives through an exchange of prizes for cash off the premises.[[cite:4]]
+        Most countries answered by licensing the payout machine into a category of its own rather than outlawing it. [[location:spain]] separates purely recreational machines from those programmed to pay a cash prize.[[cite:7]] [[location:japan]] arrived at a similar accommodation by a stranger route: cash gambling is illegal there, and pachinko, a flipperless vertical pin field, survives through an exchange of prizes for cash off the premises.[[cite:8]]
 
-        The [[location:usa]] took the harder course. For much of the twentieth century pinball there was not licensed into any category but simply illegal across much of the country.[[cite:5]]
+        The [[location:usa]] took the harder course. For much of the twentieth century pinball there was not licensed into any category but simply illegal across much of the country.[[cite:9]]
 
-        ## Where it survived
+        ## The flipperless formats
 
-        Flipperless play did not end when flippers became ordinary. It continued for decades as the gambling side of the trade, where a wager on where the ball lands is only spoiled by a player who can aim — [[game-format:bingo-pinball]] and [[game-format:one-ball]] machines kept bare playfields long after flippers were the norm everywhere else.
+        Several formats are flipperless by definition rather than by omission. [[game-format:bagatelle]], the ancestor of the whole medium, gives the player the launch and nothing after it. [[game-format:rolldown]] takes away even the plunger: the machine hands a ball to the player, who rolls it onto the playfield by hand.
 
-        The legal split then cut the other way. Because flipper games counted as machines of skill in many places while bingos did not, operators cut into bingo playfields and fitted flippers themselves, often impulse flippers that cannot be held up, so a machine could read as skill without handing the player much control.[[cite:6]]
+        The gambling formats are bare for a reason of their own, since a wager on where the ball lands is only spoiled by a player who can aim. [[game-format:one-ball]] was legislated out of the trade by about 1951, and [[game-format:bingo-pinball]] was built expressly to replace it; bingo playfields stayed flipperless for decades afterwards. Operators fitted flippers to them anyway, cutting into the playfield and often using impulse flippers that cannot be held up, so a machine could read as skill without handing the player much control.[[cite:10]] What an operator did afterwards does not change the machine, which keeps the description it left the factory with.[[cite:11]]
 
-        ## The boundary
+        Not every machine lacking a pair of flippers belongs here. [[game-format:pitch-and-bat]] hands the player a bat to swing, which is player control under another name.
 
-        Flipperless is not a synonym for early. Player-operated flippers are considerably older than the electrical ones that eventually became standard: games were fitted with purely mechanical flippers well before that, and baseball games commonly carried a bat the player worked by hand.[[cite:7]] A machine with such a bat is not flipperless.
-
-        The term also describes how a machine left the factory rather than how a surviving example happens to be wired. Those operator retrofits do not turn a bingo into a flipper game.[[cite:8]]
       cites:
         "1":
-          ref: https://www.kineticist.com/news/pinball-prohibition
-          quote: "A pinball machine without flippers made for a very different game, one that made the movement of the ball completely random."
-        "2":
-          ref: https://de.wikipedia.org/wiki/Geldspielger%C3%A4t
-          quote: "wurde der Bajazzo lange Zeit als Geschicklichkeitsspiel eingestuft [...] und fiel somit nicht unter das Glücksspielverbot nach § 284 Strafgesetzbuch (StGB) [...] 1928 stufte das Reichsgericht den Bajazzoapparat in einem Urteil als Glücksspiel ein"
-        "3":
-          ref: https://es.wikipedia.org/wiki/M%C3%A1quina_tragaperras
-          quote: "ofrecen al jugador la posibilidad de ganar un premio en metálico"
-        "4":
-          ref: https://en.wikipedia.org/wiki/Pachinko
-          quote: "Gambling for cash is illegal de jure in Japan, but the widespread popularity of low-stakes pachinko in Japanese society has enabled a specific legal loophole allowing it to exist."
-        "5":
           ref: https://www.pacificpinball.org/pinball-gambling
-          quote: "pinball was illegal in many places for much of the 20th century"
-        "6":
-          ref: https://bingo.cdyn.com/oddities/flippers
-          quote: "flipper pins were skill machines [...] often impulse flippers were used so you can't hold the flipper in an up position"
-        "7":
+          quote: 'Most pinball historians tie the birth of pinball with the 1871 patent for "Improvement in Bagatelle" secured by Montague Redgrave. [...] the spring-loaded plunger that launches a ball into an inclined field of obstacles'
+        "2":
           ref: https://www.ipdb.org/glossary.php
           quote: "flippers were already used on many games prior to 1947, but they were non-electrical, entirely mechanical. Some games had eight mechanical flippers, such as Ad-Lee Company's 1932 'Double-Shuffle'."
+        "3":
+          ref: https://en.wikipedia.org/wiki/Humpty_Dumpty_(pinball)
+          quote: "it is the first pinball machine to include electromechanical flippers"
+        "4":
+          ref: https://www.kineticist.com/news/pinball-prohibition
+          quote: "included three pairs of flippers ascending the playfield to help send the ball around and give the player more control"
+        "5":
+          ref: https://www.kineticist.com/news/pinball-prohibition
+          quote: "A pinball machine without flippers made for a very different game, one that made the movement of the ball completely random."
+        "6":
+          ref: https://de.wikipedia.org/wiki/Flipperautomat
+          quote: "Ein Flipperautomat (kurz: Flipper, in der Schweiz meist Flipperkasten) ist ein Geschicklichkeits-Spielautomat ohne Geldgewinnmöglichkeit"
+        "7":
+          ref: https://es.wikipedia.org/wiki/M%C3%A1quina_tragaperras
+          quote: "ofrecen al jugador la posibilidad de ganar un premio en metálico"
         "8":
+          ref: https://en.wikipedia.org/wiki/Pachinko
+          quote: "Gambling for cash is illegal de jure in Japan, but the widespread popularity of low-stakes pachinko in Japanese society has enabled a specific legal loophole allowing it to exist."
+        "9":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: "pinball was illegal in many places for much of the 20th century"
+        "10":
+          ref: https://bingo.cdyn.com/oddities/flippers
+          quote: "flipper pins were skill machines [...] often impulse flippers were used so you can't hold the flipper in an up position"
+        "11":
           ref: https://www.ipdb.org/glossary.php
           quote: "These games will still be designated as flipperless, because they were manufactured without flippers"

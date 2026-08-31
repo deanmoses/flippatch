@@ -1,0 +1,18 @@
+attribution: ipdb
+description: >
+  IPDB's field values for Easy Aces (IPD No. 7074).
+claims:
+  - model.easy-aces-2:
+      changesets:
+        - cite:
+            ref: "ipdb:7074"
+            quote: "Players: 1"
+          player_count: 1
+        - cite:
+            ref: "ipdb:7074"
+            quote: "Type: Pure Mechanical (PM)"
+          technology_generation: pure-mechanical
+        - cite:
+            ref: "ipdb:7074"
+            quote: "Theme: Cards/Gambling"
+          theme: [cards, gambling]
