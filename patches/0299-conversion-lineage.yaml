@@ -1,0 +1,167 @@
+attribution: flipcommons-catalog
+description: >
+  Conversion lineage for 20 machines, from campaign 0128's parked verdicts.
+claims:
+  - model.bookmakers:
+      cite:
+        ref: "ipdb:4397"
+        quote: Conversion kit for Bazaar
+      model_relationship:
+        - target_machine: bazaar-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.coal-town:
+      cite:
+        ref: "ipdb:5098"
+        quote: "This is a backglass conversion of either Bally's 1948 'Citation' or Bally's 1948 'Lexington', depending on if its cabinet has the payout mechanism in it."
+      model_relationship:
+        - target_label: Bally's 1948 'Citation' or Bally's 1948 'Lexington'
+          relationship_type: conversion
+          license_status: unknown
+  - model.handicap-5:
+      cite:
+        ref: "ipdb:6238"
+        quote: This is a conversion of an unknown game.
+      model_relationship:
+        - target_label: an unknown game
+          relationship_type: conversion
+          license_status: unknown
+  - model.having-fun:
+      cite:
+        ref: "ipdb:6329"
+        quote: Conversion of an unknown Bally bingo game.
+      model_relationship:
+        - target_label: an unknown Bally bingo game
+          relationship_type: conversion
+          license_status: unknown
+  - model.hippy:
+      cite:
+        ref: "ipdb:4400"
+        quote: Conversion kit for Ice Show
+      model_relationship:
+        - target_machine: ice-show
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.hold-your-horses:
+      cite:
+        ref: "ipdb:6743"
+        quote: we list this unique and apparently amalgamated non-payout game as a Converted Game done by an unknown company or person(s)
+      model_relationship:
+        - target_label: an unidentified Bally horserace game
+          relationship_type: conversion
+          license_status: unknown
+  - model.kiss-2:
+      cite:
+        ref: "ipdb:5002"
+        quote: A source indicates that this is a conversion of Gottlieb's 1972 'Space Orbit'.
+      model_relationship:
+        - target_machine: space-orbit
+          relationship_type: conversion
+          license_status: unknown
+  - model.last-round:
+      cite:
+        ref: "ipdb:5379"
+        quote: This was described to us as a conversion kit for a Gottlieb game.
+      model_relationship:
+        - target_label: a Gottlieb game
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.lucky-double:
+      cite:
+        ref: "ipdb:4812"
+        quote: The backglass in each instance is a conversion of Bally's 1948 'Gold Cup' probably renamed to remove this game from a no-operate list.
+      model_relationship:
+        - target_machine: gold-cup
+          relationship_type: conversion
+          license_status: unknown
+  - model.moderne:
+      cite:
+        ref: "ipdb:6752"
+        quote: Conversion of an unknown game.
+      model_relationship:
+        - target_label: an unknown game
+          relationship_type: conversion
+          license_status: unknown
+  - model.road:
+      cite:
+        ref: "ipdb:4403"
+        quote: Conversion kit for Rancho
+      model_relationship:
+        - target_machine: rancho-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.s-joao:
+      cite:
+        ref: "ipdb:5738"
+        quote: 'It has been reported that this 4-player "S. João" is a conversion of the 2-player Playmatic''s 1977 ''Carnival''.'
+      model_relationship:
+        - target_machine: carnival-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.single-coin-2:
+      cite:
+        ref: "ipdb:4853"
+        quote: This game is a conversion of Bally's 1960 'Barrel O' Fun'
+      model_relationship:
+        - target_machine: barrel-o-fun
+          relationship_type: conversion
+          license_status: unknown
+  - model.southside-johnny-and-the-asbury-jukes:
+      cite:
+        ref: "ipdb:5033"
+        quote: this game is a conversion of Bally's 1979 'Star Trek'
+      model_relationship:
+        - target_machine: star-trek-bally
+          relationship_type: conversion
+          license_status: unknown
+  - model.summer-time-4:
+      cite:
+        ref: "ipdb:4072"
+        quote: this game is a conversion of both Gottlieb's 1967 'Hit-A-Card' and Gottlieb's 1967 'Solitaire'
+      model_relationship:
+        - target_machine: solitaire
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: hit-a-card
+          relationship_type: conversion
+          license_status: unknown
+  - model.tanforan:
+      cite:
+        ref: "ipdb:5115"
+        quote: This game has no payout mechanism and is a conversion of Bally's 1949 'Champion'.
+      model_relationship:
+        - target_machine: champion-4
+          relationship_type: conversion
+          license_status: unknown
+  - model.tommy:
+      cite:
+        ref: "ipdb:5150"
+        quote: "This looks like a conversion of a Stoner game, possibly Stoner's 1938 'Chubbie'."
+      model_relationship:
+        - target_label: "a Stoner game, possibly Stoner's 1938 'Chubbie'"
+          relationship_type: conversion
+          license_status: unknown
+  - model.top-hand-4:
+      cite:
+        ref: "ipdb:4990"
+        quote: This is a conversion of Gottlieb's 1973 'Top Hand'.
+      model_relationship:
+        - target_machine: top-hand-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.top-pin:
+      cite:
+        ref: "ipdb:3471"
+        quote: furthering an idea that Top Pin is a conversion kit of some Bally game
+      model_relationship:
+        - target_label: some Bally game
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.western-2:
+      cite:
+        ref: "ipdb:4066"
+        quote: The undated magazine ad shown here indicates that this game is a conversion of Gottlieb's 1966 'Subway'
+      model_relationship:
+        - target_machine: subway-2
+          relationship_type: conversion
+          license_status: unknown
