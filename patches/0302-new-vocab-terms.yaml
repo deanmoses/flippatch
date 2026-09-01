@@ -1,6 +1,6 @@
 attribution: flipcommons-catalog
 description: >
-  The Upright cabinet and the playfield feature hierarchy.
+  New vocabulary terms
 claims:
   - cabinet.upright:
       create: true
@@ -10,13 +10,13 @@ claims:
       create: true
       name: Playfields
   - gameplay-feature.mini-playfields:
-      note: "Grouping all playfield sub-features under the new parent playfield feature."
+      note: "Moving under the newly created playfield feature."
       gameplay_feature_parent: [playfields]
   - gameplay-feature.multi-level-playfield:
-      note: "Grouping all playfield sub-features under the new parent playfield feature."
+      note: "Moving under the newly created playfield feature."
       gameplay_feature_parent: [playfields]
   - gameplay-feature.tilting-playfields:
-      note: "Grouping all playfield sub-features under the new parent playfield feature."
+      note: "Moving under the newly created playfield feature."
       gameplay_feature_parent: [playfields]
   - gameplay-feature.vertical-playfields:
       create: true
