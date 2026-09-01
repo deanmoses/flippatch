@@ -1,0 +1,50 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >
+  Descriptions for the playfield-shaker gameplay features.
+claims:
+  - gameplay-feature.playfield-shakers:
+      description: |
+        A playfield shaker is a player-operated control that jolts or shifts the [[gameplay-feature:playfields]] to influence a ball already in play.
+
+        It's a rare mechanism, existing only on a handful of machines. And the shakes are often rationed: [[manufacturer:bally]]'s *[[title:hi-fi]]* (1954) puts buttons where the flipper buttons would be and "allows the player to 'bump' the playfield up to ten times per game",[[cite:1]] while [[manufacturer:sega]]'s *[[title:skill-ball-4]]* jolts "the playfield forward about an inch"[[cite:2]] a number of times bought with the tokens that started the game.
+
+        ## The tilt circuit
+
+        Playfield shakers often interact with the tilt circuit. Hi-Fi suppresses the tilt so the bump is safe — "There is a delay feature on the tilt circuit to prevent tilting during a 'bump'."[[cite:3]] [[manufacturer:allied-leisure]]'s *[[title:sea-hunt]]* (1972) and *[[title:spooksville]]* (1973) leave it armed, so the shake carries risk: "Pushing too sharply will tilt the ball in play."[[cite:4]] That tension is what the mechanism is: the sanctioned form of a thing every other machine punishes.
+
+        ## Not a shaker motor
+
+        [[gameplay-feature:shaker-motors]] are activated by the game itself, shaking during specific gameplay moments,[[cite:5]] whereas playfield shakers are player-controlled.
+
+        ## Not a tilting playfield
+
+        [[gameplay-feature:tilting-playfields]] are playfields that the player holds at an angle to aim to ball, whereas playfield shakers deliver a jolt or thump.
+      cites:
+        "1":
+          ref: "ipdb:1166"
+          quote: 'allows the player to "bump" the playfield up to ten times per game'
+        "2":
+          ref: "ipdb:6759"
+          quote: "Pressing either button during play will jolt the playfield forward about an inch."
+        "3":
+          ref: "ipdb:1166"
+          quote: 'There is a delay feature on the tilt circuit to prevent tilting during a "bump".'
+        "4":
+          ref: "ipdb:2081"
+          quote: "Pushing too sharply will tilt the ball in play."
+        "5":
+          ref: "https://www.kineticist.com/games/pinball/earthshaker"
+          quote: "which shakes the machine during specific gameplay moments"
+        "6":
+          ref: "ipdb:3062"
+          quote: "Handles on the front of cabinet allow the player to raise and lower the playfield in all four directions to guide the ball through the lit path."
+        "7":
+          ref: "ipdb:2081"
+          quote: "The joysticks do not nudge the playfield in any other direction except upwards."
+  - gameplay-feature.shaker-ball:
+      description: |
+        Shaker Ball is [[manufacturer:allied-leisure]]'s marketing term for the [[gameplay-feature:playfield-shakers]] on *[[title:sea-hunt]]* (1972) and *[[title:spooksville]]* (1973). On both models the player works it with two joysticks, which nudge the playfield up in a "jolting 'Shaker Ball' action".[[cite:1]]
+      cites:
+        "1":
+          ref: "ipdb:2081"
+          quote: 'The joysticks manually push up to electromechanically nudge the playfield upwards in a jolting "Shaker Ball" action.'

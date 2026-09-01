@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: >
+  Playfield shaking gameplay features.
+claims:
+  - gameplay-feature.playfield-shakers:
+      create: true
+      name: Playfield Shakers
+  - gameplay-feature.shaker-ball:
+      create: true
+      name: Shaker Ball
+      gameplay_feature_parent: [playfield-shakers]

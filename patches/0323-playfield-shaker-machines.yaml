@@ -1,0 +1,39 @@
+attribution: ipdb
+description: >
+  Machines IPDB marks as having a player-shaken playfield.
+claims:
+  - model.apollo-ball-2:
+      cite:
+        - ref: "ipdb:6763"
+          quote: "Specialty: [...] Shaker Ball Machine"
+        - ref: "ipdb:6763"
+          quote: A button on each side of the cabinet activates the Skill Bumper feature. Pressing either button during play will jolt the playfield forward about an inch.
+      gameplay_feature: [playfield-shakers]
+  - model.hi-fi:
+      cite:
+        - ref: "ipdb:1166"
+          quote: "Specialty: [...] Shaker Ball Machine"
+        - ref: "ipdb:1166"
+          quote: 'A button on each side of the cabinet (where flipper buttons would be) allows the player to "bump" the playfield up to ten times per game. This action jolts the playfield away from the player, allowing a playfield post to hit a rolling ball upfield.'
+      gameplay_feature: [playfield-shakers]
+  - model.sea-hunt:
+      cite:
+        - ref: "ipdb:2081"
+          quote: "Specialty: [...] Shaker Ball Machine"
+        - ref: "ipdb:2081"
+          quote: 'The joysticks manually push up to electromechanically nudge the playfield upwards in a jolting "Shaker Ball" action.'
+      gameplay_feature: [shaker-ball]
+  - model.skill-ball-4:
+      cite:
+        - ref: "ipdb:6759"
+          quote: "Specialty: [...] Shaker Ball Machine"
+        - ref: "ipdb:6759"
+          quote: A button on each side of the cabinet activates the Skill Bumper feature. Pressing either button during play will jolt the playfield forward about an inch.
+      gameplay_feature: [playfield-shakers]
+  - model.spooksville:
+      cite:
+        - ref: "ipdb:2298"
+          quote: "Specialty: [...] Shaker Ball Machine"
+        - ref: "ipdb:2298"
+          quote: 'The joysticks manually push up to electromechanically nudge the playfield upwards in a jolting "Shaker Ball" action.'
+      gameplay_feature: [shaker-ball]

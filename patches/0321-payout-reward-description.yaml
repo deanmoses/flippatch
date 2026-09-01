@@ -4,15 +4,21 @@ description: >-
 claims:
   - reward-type.payout:
       description: |
-        A payout is a reward the machine dispenses itself: the player reaches a goal the game recognizes, and the game hands the award over without anyone at the location taking part.[[cite:1]]
+        A **payout machine** is a machine that dispenses a physical award to the player.[[cite:1]]
 
-        What it handed over varied. Coins were the usual answer and the one the era is remembered for, but the same arrangement paid in tickets, candy, merchandise or free games, depending on how a machine was built and where it stood.[[cite:2]] The apparatus sat in plain sight on the cabinet. A pull knob on the front of *[[title:les-deux-as]]* drops a winning player's tokens into a cup below,[[cite:3]] and [[manufacturer:a-j-stephens-and-company]] set the same cup into the cabinet front of *[[title:stevo-jackpot]]*.[[cite:4]]
+        Paying out in coins was common, but also there were things like candy and merchandise.[[cite:2]] The apparatus sat in plain sight on the cabinet. A pull knob on the front of *[[title:les-deux-as]]* drops a winning player's tokens into a cup below,[[cite:3]] and [[manufacturer:a-j-stephens-and-company]] set the same cup into the cabinet front of *[[title:stevo-jackpot]]*.[[cite:4]]
 
-        ## The form was often chosen at the order desk
+        ## One model, multiple payout types
 
-        Which form a game paid in was frequently settled when an operator ordered it, rather than fixed in the design. [[manufacturer:stoner-manufacturing-company]]'s *[[title:zipper]]* came three ways — "Ticket, cash, or check models were available"[[cite:5]] — and the choice was priced openly on *[[title:preakness]]*, where the "Payout version sold for $149.50. Ticket version sold for $159.50."[[cite:6]] *[[title:carom]]* was sold both as a coin-paying game and as a ticket vendor.[[cite:7]] One design could therefore reach one route as a [[reward-type:cash-payout]] game and another as a [[reward-type:ticket-payout]] one, on an identical playfield.
+        A single model could often be ordered with different types of payouts.  [[manufacturer:stoner-manufacturing-company]]'s *[[title:zipper]]* came three ways — "Ticket, cash, or check models were available".[[cite:5]] *[[title:carom]]* was sold both as a coin-paying game and as a ticket vendor.[[cite:7]]
 
-        What separates all of them from a [[reward-type:merchant-paid]] award is who settles up. There the game names a winner and the storekeeper hands over the prize; a payout game closes the transaction itself.
+        ## How it differs from ticket payout
+
+        Whereas a **payout machine** dispenses the actual prize, a [[reward-type.ticket-payout]] machine dispenses a ticket which is then redeemed for a prize.
+
+        ## How it differs from merchant-paid
+
+        Whereas a **payout machine** dispenses the prize itself, a [[reward-type:merchant-paid]] machine displays the fact that the player has won, and the storekeeper hands over the prize.
 
         ## Coins, and the law that followed them
 
