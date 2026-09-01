@@ -29,3 +29,10 @@ claims:
   - gameplay-feature.pins:
       create: true
       name: Pins
+  - game-format.cue-game:
+      create: true
+      name: Cue Game
+      display_order: 11
+  - game-format.miscellaneous:
+      note: Bumped so it stays last.
+      display_order: 12

@@ -1,0 +1,44 @@
+attribution: ipdb
+description: >
+  Horse-racing themes from IPDB's Horserace Game specialty.
+claims:
+  - model.club-trophy:
+      cite:
+        ref: "ipdb:539"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.dust-whirls:
+      cite:
+        ref: "ipdb:746"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.kentucky-star:
+      cite:
+        ref: "ipdb:1356"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.multiple-races:
+      cite:
+        ref: "ipdb:1642"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.pace-maker:
+      cite:
+        ref: "ipdb:1734"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.pace-maker-2:
+      cite:
+        ref: "ipdb:4825"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.seven-flashers:
+      cite:
+        ref: "ipdb:2101"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]
+  - model.valley:
+      cite:
+        ref: "ipdb:4002"
+        quote: "Specialty: [...] Horserace Game"
+      theme: [horse-racing]

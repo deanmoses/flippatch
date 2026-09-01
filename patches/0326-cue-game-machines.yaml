@@ -1,0 +1,159 @@
+attribution: ipdb
+description: >
+  Cue-game formats from IPDB's Cue Game specialty.
+claims:
+  - model.advance-pool:
+      cite:
+        ref: "ipdb:5752"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.automatic-pool:
+      cite:
+        ref: "ipdb:5082"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.baseball-pool:
+      cite:
+        ref: "ipdb:5750"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.carombolette-table:
+      cite:
+        ref: "ipdb:6104"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.combination-recreation-board:
+      cite:
+        ref: "ipdb:6103"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.cueball:
+      cite:
+        ref: "ipdb:6026"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.deluxe-bank-pool:
+      cite:
+        ref: "ipdb:6343"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.diamond-score-pool:
+      cite:
+        ref: "ipdb:5012"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.double-score-2:
+      cite:
+        ref: "ipdb:5641"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.electric-tournament-pool:
+      cite:
+        ref: "ipdb:6781"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.electro-pool:
+      cite:
+        ref: "ipdb:6397"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.hi-score-pool-2:
+      cite:
+        ref: "ipdb:4922"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.hi-skor-2:
+      cite:
+        ref: "ipdb:5225"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.hooligan-pool:
+      cite:
+        ref: "ipdb:6380"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.karom-golf:
+      cite:
+        ref: "ipdb:1348"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.kew-pin-ball:
+      cite:
+        ref: "ipdb:1359"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.kew-pin-golf-table:
+      cite:
+        ref: "ipdb:1357"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.kow-tow:
+      cite:
+        ref: "ipdb:3594"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.kue-ball:
+      cite:
+        ref: "ipdb:6398"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.official-tournament-pool:
+      cite:
+        ref: "ipdb:6341"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.olympic-pool:
+      cite:
+        ref: "ipdb:5313"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.parlor-table:
+      cite:
+        ref: "ipdb:3595"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.pass-time:
+      cite:
+        ref: "ipdb:6074"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.pool-alley:
+      cite:
+        ref: "ipdb:5751"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.rola:
+      cite:
+        ref: "ipdb:6050"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.roto-pool-2:
+      cite:
+        ref: "ipdb:4515"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.score-pool:
+      cite:
+        ref: "ipdb:4771"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.senior-deluxe-bank-pool:
+      cite:
+        ref: "ipdb:6344"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.skill-score-4:
+      cite:
+        ref: "ipdb:6379"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.unknown-cue-game:
+      cite:
+        ref: "ipdb:6779"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
+  - model.unknown-figure-8:
+      cite:
+        ref: "ipdb:6659"
+        quote: "Specialty: [...] Cue Game"
+      game_format: cue-game
