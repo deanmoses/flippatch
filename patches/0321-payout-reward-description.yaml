@@ -1,0 +1,64 @@
+attribution: flipcommons-ai-desc-reward-type
+description: >-
+  Description for the payout reward type.
+claims:
+  - reward-type.payout:
+      description: |
+        A payout is a reward the machine dispenses itself: the player reaches a goal the game recognizes, and the game hands the award over without anyone at the location taking part.[[cite:1]]
+
+        What it handed over varied. Coins were the usual answer and the one the era is remembered for, but the same arrangement paid in tickets, candy, merchandise or free games, depending on how a machine was built and where it stood.[[cite:2]] The apparatus sat in plain sight on the cabinet. A pull knob on the front of *[[title:les-deux-as]]* drops a winning player's tokens into a cup below,[[cite:3]] and [[manufacturer:a-j-stephens-and-company]] set the same cup into the cabinet front of *[[title:stevo-jackpot]]*.[[cite:4]]
+
+        ## The form was often chosen at the order desk
+
+        Which form a game paid in was frequently settled when an operator ordered it, rather than fixed in the design. [[manufacturer:stoner-manufacturing-company]]'s *[[title:zipper]]* came three ways — "Ticket, cash, or check models were available"[[cite:5]] — and the choice was priced openly on *[[title:preakness]]*, where the "Payout version sold for $149.50. Ticket version sold for $159.50."[[cite:6]] *[[title:carom]]* was sold both as a coin-paying game and as a ticket vendor.[[cite:7]] One design could therefore reach one route as a [[reward-type:cash-payout]] game and another as a [[reward-type:ticket-payout]] one, on an identical playfield.
+
+        What separates all of them from a [[reward-type:merchant-paid]] award is who settles up. There the game names a winner and the storekeeper hands over the prize; a payout game closes the transaction itself.
+
+        ## Coins, and the law that followed them
+
+        [[manufacturer:bally]] released the first pinball machine to pay out on its own, *[[title:rocket-3]]*, in 1933,[[cite:8]] and the coin-paying games that followed drew the regulation that shaped the rest of the century: the delivery of rewards "via cash payouts or prizes" was one of the two grounds on which pinball was classed as gambling.[[cite:9]] The coin-paying machines were eventually classed as gambling devices and banned in most states,[[cite:10]] and the trade answered by changing what came out of the chute rather than giving up the mechanism: tokens took the place of coins, and the machines accepted them back.[[cite:11]] The other answer was to make the award worthless away from the machine — the [[reward-type:replay]] — and that is the one the industry kept.
+
+        Payout survived where the law allowed it. [[manufacturer:keeney]] was still building upright payout games for export in the 1960s,[[cite:12]] the decade American law narrowed its aim to payout machines specifically.[[cite:13]] Some late examples hedged, letting the operator decide whether a win paid cash or added credits.[[cite:14]]
+      cites:
+        "1":
+          ref: https://www.ipdb.org/glossary.php
+          quote: "These machines have the ability to dispense an award to players who achieved a goal."
+        "2":
+          ref: https://www.ipdb.org/glossary.php
+          quote: "The awards have taken many forms (free games, tickets, candy, merchandise, etc.), but the most popular was probably coins."
+        "3":
+          ref: ipdb:6211
+          quote: "delivers earned tokens to the payout cup"
+        "4":
+          ref: ipdb:2375
+          quote: "the payout cup on the left side of the cabinet front"
+        "5":
+          ref: ipdb:3581
+          quote: "Ticket, cash, or check models were available."
+        "6":
+          ref: ipdb:1860
+          quote: "Payout version sold for $149.50. Ticket version sold for $159.50."
+        "7":
+          ref: ipdb:458
+          quote: "made in two versions: a cash payout and a ticket vendor"
+        "8":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: "The first to release an automatic payout pinball machine, Rocket in 1933"
+        "9":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: "Two major sticking points kept pinball categorized as gambling machines: the delivery of rewards via cash payouts or prizes"
+        "10":
+          ref: https://www.ipdb.org/glossary.php
+          quote: "were eventually labeled gambling machines and outlawed in most states"
+        "11":
+          ref: https://www.ipdb.org/glossary.php
+          quote: "awarding and accepting tokens instead of coins in an attempt to circumvent the gambling laws"
+        "12":
+          ref: ipdb:7014
+          quote: "Keeney made upright payout games for export."
+        "13":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: "Revisions to the Johnson Act in 1962 clarified its scope specifically to payout pinball machines."
+        "14":
+          ref: ipdb:6977
+          quote: "this upright offers operators the choice of awarding cash payout or awarding credits"

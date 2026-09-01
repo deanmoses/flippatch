@@ -1,0 +1,2174 @@
+attribution: ipdb
+description: >
+  Payout reward types from IPDB's Payout Machine specialty.
+claims:
+  - model.1-2-3:
+      cite:
+        ref: "ipdb:1718"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.1937-daily-races:
+      cite:
+        ref: "ipdb:4293"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.1939-baseball-payout-model:
+      cite:
+        ref: "ipdb:6601"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.21-odds:
+      cite:
+        ref: "ipdb:4268"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.3-in-a-row:
+      cite:
+        ref: "ipdb:4324"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.7-11:
+      cite:
+        ref: "ipdb:2105"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ace-2:
+      cite:
+        ref: "ipdb:5"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.across-the-board:
+      cite:
+        ref: "ipdb:12"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.air-derby:
+      cite:
+        ref: "ipdb:2881"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.air-lane:
+      cite:
+        ref: "ipdb:30"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.air-races-2:
+      cite:
+        ref: "ipdb:32"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ak-sar-ben:
+      cite:
+        ref: "ipdb:39"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.alamo:
+      cite:
+        ref: "ipdb:41"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.all-american-2:
+      cite:
+        ref: "ipdb:58"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.all-stars-3:
+      cite:
+        ref: "ipdb:57"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.angle-lite:
+      cite:
+        ref: "ipdb:74"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.apollo-ball-2:
+      cite:
+        ref: "ipdb:6763"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.archer:
+      cite:
+        ref: "ipdb:4314"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.arlington:
+      cite:
+        ref: "ipdb:88"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.arlington-2:
+      cite:
+        ref: "ipdb:811"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.auto-winner:
+      cite:
+        ref: "ipdb:4302"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.autodart:
+      cite:
+        ref: "ipdb:115"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.automat:
+      cite:
+        ref: "ipdb:4177"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ball-park-2:
+      cite:
+        ref: "ipdb:139"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bally-bonus:
+      cite:
+        ref: "ipdb:146"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bally-bonus-2:
+      cite:
+        ref: "ipdb:3651"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bally-derby:
+      cite:
+        ref: "ipdb:148"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bally-entry:
+      cite:
+        ref: "ipdb:149"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bally-entry-2:
+      cite:
+        ref: "ipdb:2892"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ballys-club-house:
+      cite:
+        ref: "ipdb:3025"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ballys-stables:
+      cite:
+        ref: "ipdb:2333"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ballys-stables-2:
+      cite:
+        ref: "ipdb:2894"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bambino-2:
+      cite:
+        ref: "ipdb:161"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.barracuda:
+      cite:
+        ref: "ipdb:7013"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.baseball-4:
+      cite:
+        ref: "ipdb:188"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.batter-up-4:
+      cite:
+        ref: "ipdb:4238"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bazaar:
+      cite:
+        ref: "ipdb:200"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bee-jay:
+      cite:
+        ref: "ipdb:219"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.belmont:
+      cite:
+        ref: "ipdb:224"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-ben-daval-1936:
+      cite:
+        ref: "ipdb:229"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-casino-2:
+      cite:
+        ref: "ipdb:2859"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-five:
+      cite:
+        ref: "ipdb:246"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-parlay:
+      cite:
+        ref: "ipdb:267"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-prize:
+      cite:
+        ref: "ipdb:268"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-race:
+      cite:
+        ref: "ipdb:269"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-richard:
+      cite:
+        ref: "ipdb:270"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-shot-1-ball:
+      cite:
+        ref: "ipdb:273"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-shot-2:
+      cite:
+        ref: "ipdb:272"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.big-shot-6:
+      cite:
+        ref: "ipdb:4323"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.blue-bird:
+      cite:
+        ref: "ipdb:324"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.blue-spot:
+      cite:
+        ref: "ipdb:7014"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.board-of-trade:
+      cite:
+        ref: "ipdb:4262"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bonanza:
+      cite:
+        ref: "ipdb:344"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.booster:
+      cite:
+        ref: "ipdb:4282"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.box-score:
+      cite:
+        ref: "ipdb:369"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.brokers-tip-2:
+      cite:
+        ref: "ipdb:384"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.broncho:
+      cite:
+        ref: "ipdb:385"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bucks:
+      cite:
+        ref: "ipdb:4161"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bullet:
+      cite:
+        ref: "ipdb:399"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.bump-a-lite:
+      cite:
+        ref: "ipdb:404"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cadet-2:
+      cite:
+        ref: "ipdb:419"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.captain-kidd:
+      cite:
+        ref: "ipdb:435"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.carioca:
+      cite:
+        ref: "ipdb:3678"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.carom:
+      cite:
+        ref: "ipdb:458"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cash-and-carry:
+      cite:
+        ref: "ipdb:5769"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cash-and-carry-600:
+      cite:
+        ref: "ipdb:5462"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.centennial:
+      cite:
+        ref: "ipdb:478"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.center-smash:
+      cite:
+        ref: "ipdb:479"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.challenger-3:
+      cite:
+        ref: "ipdb:484"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.champion-3:
+      cite:
+        ref: "ipdb:489"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.champs:
+      cite:
+        ref: "ipdb:6459"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cherry-parade:
+      cite:
+        ref: "ipdb:7015"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cigarette-pin-game:
+      cite:
+        ref: "ipdb:4179"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cisco-jackpot:
+      cite:
+        ref: "ipdb:1280"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.classic:
+      cite:
+        ref: "ipdb:529"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.clocker:
+      cite:
+        ref: "ipdb:535"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.close-finish:
+      cite:
+        ref: "ipdb:3995"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cloverleaf:
+      cite:
+        ref: "ipdb:537"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.club-trophy:
+      cite:
+        ref: "ipdb:539"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.cocktail-hour:
+      cite:
+        ref: "ipdb:4278"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.college-football:
+      cite:
+        ref: "ipdb:542"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.colors-2:
+      cite:
+        ref: "ipdb:6182"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.combination-2:
+      cite:
+        ref: "ipdb:547"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.combination-3:
+      cite:
+        ref: "ipdb:3028"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.crazy-gang:
+      cite:
+        ref: "ipdb:7016"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.credit:
+      cite:
+        ref: "ipdb:589"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.daily-double-de-luxe:
+      cite:
+        ref: "ipdb:6916"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.daily-double-standard:
+      cite:
+        ref: "ipdb:626"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.daily-limit:
+      cite:
+        ref: "ipdb:627"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.daily-races:
+      cite:
+        ref: "ipdb:628"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.de-luxe-preakness:
+      cite:
+        ref: "ipdb:6944"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.de-luxe-preakness-2:
+      cite:
+        ref: "ipdb:6945"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.dead-heat:
+      cite:
+        ref: "ipdb:644"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.deauville:
+      cite:
+        ref: "ipdb:650"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.deluxe-46:
+      cite:
+        ref: "ipdb:655"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.derby-1941:
+      cite:
+        ref: "ipdb:922"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.derby-champ:
+      cite:
+        ref: "ipdb:3059"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.derby-day-3:
+      cite:
+        ref: "ipdb:666"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.derby-king:
+      cite:
+        ref: "ipdb:668"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.derby-king-2:
+      cite:
+        ref: "ipdb:669"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.derby-time:
+      cite:
+        ref: "ipdb:3061"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.diamond-mine:
+      cite:
+        ref: "ipdb:4381"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.discovery:
+      cite:
+        ref: "ipdb:688"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.do-or-dont:
+      cite:
+        ref: "ipdb:693"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.double-feature-6:
+      cite:
+        ref: "ipdb:715"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.double-header:
+      cite:
+        ref: "ipdb:716"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.double-up:
+      cite:
+        ref: "ipdb:725"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.draw-ball:
+      cite:
+        ref: "ipdb:732"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.e-z-aces:
+      cite:
+        ref: "ipdb:803"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.eclipse-2:
+      cite:
+        ref: "ipdb:757"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.eclipse-3:
+      cite:
+        ref: "ipdb:4147"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.electric-automatic-whiffle-model-34:
+      cite:
+        ref: "ipdb:5400"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.electric-baffle-ball:
+      cite:
+        ref: "ipdb:773"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.electric-eye:
+      cite:
+        ref: "ipdb:775"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.equity:
+      cite:
+        ref: "ipdb:787"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fair-grounds:
+      cite:
+        ref: "ipdb:810"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fairmont:
+      cite:
+        ref: "ipdb:4038"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fairway:
+      cite:
+        ref: "ipdb:813"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fast-track:
+      cite:
+        ref: "ipdb:3833"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.favorite:
+      cite:
+        ref: "ipdb:831"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.feed-bag:
+      cite:
+        ref: "ipdb:3093"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fence-buster:
+      cite:
+        ref: "ipdb:832"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.first-national:
+      cite:
+        ref: "ipdb:4171"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.five-star-reserve:
+      cite:
+        ref: "ipdb:866"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fleetwood:
+      cite:
+        ref: "ipdb:882"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.flicker-3:
+      cite:
+        ref: "ipdb:885"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.flying-champ:
+      cite:
+        ref: "ipdb:900"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.flying-high:
+      cite:
+        ref: "ipdb:904"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.flying-turf:
+      cite:
+        ref: "ipdb:909"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.football-4:
+      cite:
+        ref: "ipdb:4259"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fortuna:
+      cite:
+        ref: "ipdb:6909"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fortune-2:
+      cite:
+        ref: "ipdb:920"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.fortune-3:
+      cite:
+        ref: "ipdb:921"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.foto-finish:
+      cite:
+        ref: "ipdb:926"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.futurity-2:
+      cite:
+        ref: "ipdb:976"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.g-e-t:
+      cite:
+        ref: "ipdb:4240"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.galloping-plugs:
+      cite:
+        ref: "ipdb:983"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gee-whiz:
+      cite:
+        ref: "ipdb:4285"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.giant:
+      cite:
+        ref: "ipdb:1001"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.giant-movie-bank:
+      cite:
+        ref: "ipdb:1002"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gold-award:
+      cite:
+        ref: "ipdb:5094"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gold-medal:
+      cite:
+        ref: "ipdb:1030"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gold-medal-2:
+      cite:
+        ref: "ipdb:1031"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gold-rush-3:
+      cite:
+        ref: "ipdb:1037"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gold-rush-7:
+      cite:
+        ref: "ipdb:7017"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.gold-star-kickers:
+      cite:
+        ref: "ipdb:1041"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.golden-arrow-2:
+      cite:
+        ref: "ipdb:3807"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.golden-harvest:
+      cite:
+        ref: "ipdb:1052"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.golden-wheel:
+      cite:
+        ref: "ipdb:1056"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grand-circuit:
+      cite:
+        ref: "ipdb:4185"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grand-national:
+      cite:
+        ref: "ipdb:1071"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grand-prize:
+      cite:
+        ref: "ipdb:1073"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grand-prize-2:
+      cite:
+        ref: "ipdb:4317"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grand-slam-2:
+      cite:
+        ref: "ipdb:1075"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grandstand:
+      cite:
+        ref: "ipdb:1080"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grandstand-2:
+      cite:
+        ref: "ipdb:1082"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.great-guns-2:
+      cite:
+        ref: "ipdb:4244"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grub-stake:
+      cite:
+        ref: "ipdb:1092"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.grub-stake-2:
+      cite:
+        ref: "ipdb:4326"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.handicapper:
+      cite:
+        ref: "ipdb:3817"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hawthorne:
+      cite:
+        ref: "ipdb:1140"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.heavyweight:
+      cite:
+        ref: "ipdb:1151"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hells-bells:
+      cite:
+        ref: "ipdb:1153"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hey-day:
+      cite:
+        ref: "ipdb:3141"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hi-boy:
+      cite:
+        ref: "ipdb:3143"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hi-de-ho:
+      cite:
+        ref: "ipdb:1156"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hialeah:
+      cite:
+        ref: "ipdb:1163"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.high-card:
+      cite:
+        ref: "ipdb:1169"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.high-pockets:
+      cite:
+        ref: "ipdb:3148"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.high-stepper:
+      cite:
+        ref: "ipdb:6729"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hit-it:
+      cite:
+        ref: "ipdb:4290"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hit-n-run-2:
+      cite:
+        ref: "ipdb:3149"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hit-parade:
+      cite:
+        ref: "ipdb:1199"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hole-in-one-2:
+      cite:
+        ref: "ipdb:4224"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.hollywood-4:
+      cite:
+        ref: "ipdb:1217"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.horse-shoes:
+      cite:
+        ref: "ipdb:1238"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.horse-shoes-3:
+      cite:
+        ref: "ipdb:3157"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.imo-spurt:
+      cite:
+        ref: "ipdb:4719"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.improved-sportsman-huck-finn:
+      cite:
+        ref: "ipdb:6918"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.improved-sportsman-sportsman:
+      cite:
+        ref: "ipdb:2309"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ivory-golf:
+      cite:
+        ref: "ipdb:3173"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jack-pot-2:
+      cite:
+        ref: "ipdb:1278"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jack-pot-pin-game:
+      cite:
+        ref: "ipdb:5404"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jitters:
+      cite:
+        ref: "ipdb:1297"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jockey-club:
+      cite:
+        ref: "ipdb:1299"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jockey-club-3:
+      cite:
+        ref: "ipdb:1301"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jumbo:
+      cite:
+        ref: "ipdb:1325"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.jumbo-2:
+      cite:
+        ref: "ipdb:4170"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.just-rite-monarch:
+      cite:
+        ref: "ipdb:4772"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.kentucky:
+      cite:
+        ref: "ipdb:1352"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.kentucky-2:
+      cite:
+        ref: "ipdb:1353"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.kentucky-derby:
+      cite:
+        ref: "ipdb:1354"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.kentucky-derby-winners:
+      cite:
+        ref: "ipdb:1355"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.kentucky-star:
+      cite:
+        ref: "ipdb:1356"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.king-fish:
+      cite:
+        ref: "ipdb:1370"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.kings-of-the-turf-payout-model:
+      cite:
+        ref: "ipdb:4253"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.klondike-2:
+      cite:
+        ref: "ipdb:1389"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lady-luck-5:
+      cite:
+        ref: "ipdb:3203"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.latonia:
+      cite:
+        ref: "ipdb:1417"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.les-deux-as:
+      cite:
+        ref: "ipdb:6211"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.les-fleches:
+      cite:
+        ref: "ipdb:5260"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lexington:
+      cite:
+        ref: "ipdb:1434"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.liberty-bell-2:
+      cite:
+        ref: "ipdb:1437"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lincoln-fields:
+      cite:
+        ref: "ipdb:6940"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.line-up-3:
+      cite:
+        ref: "ipdb:1450"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lite-a-pair:
+      cite:
+        ref: "ipdb:1452"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lolly-dolly:
+      cite:
+        ref: "ipdb:7018"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lone-star-3:
+      cite:
+        ref: "ipdb:5322"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.long-shot:
+      cite:
+        ref: "ipdb:1471"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.long-shot-2:
+      cite:
+        ref: "ipdb:1472"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.loop:
+      cite:
+        ref: "ipdb:1473"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lucky-draw-2:
+      cite:
+        ref: "ipdb:7019"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.lucky-star-4:
+      cite:
+        ref: "ipdb:6785"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.magic-continental-bounty:
+      cite:
+        ref: "ipdb:6097"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.magic-lamp:
+      cite:
+        ref: "ipdb:3439"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.magic-pins:
+      cite:
+        ref: "ipdb:1517"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.majestic-3:
+      cite:
+        ref: "ipdb:4150"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.mammoth:
+      cite:
+        ref: "ipdb:1534"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.man-o-war:
+      cite:
+        ref: "ipdb:1539"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.mardi-gras-3:
+      cite:
+        ref: "ipdb:3390"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.match-em-2:
+      cite:
+        ref: "ipdb:4189"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.match-it:
+      cite:
+        ref: "ipdb:4186"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.match-play:
+      cite:
+        ref: "ipdb:1558"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.mazooma-bell:
+      cite:
+        ref: "ipdb:7020"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.mazuma:
+      cite:
+        ref: "ipdb:1563"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.merchandiser:
+      cite:
+        ref: "ipdb:1571"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.mills-pay-table:
+      cite:
+        ref: "ipdb:1600"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.miss-america:
+      cite:
+        ref: "ipdb:1608"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.monopolee:
+      cite:
+        ref: "ipdb:1618"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.monte-carlo:
+      cite:
+        ref: "ipdb:1619"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.mountain-climber:
+      cite:
+        ref: "ipdb:7021"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.multiplay:
+      cite:
+        ref: "ipdb:3431"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.multiple:
+      cite:
+        ref: "ipdb:1641"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.natural-2:
+      cite:
+        ref: "ipdb:1657"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.navy:
+      cite:
+        ref: "ipdb:1658"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.new-deal:
+      cite:
+        ref: "ipdb:1669"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.new-improved-rocket:
+      cite:
+        ref: "ipdb:4145"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.new-pay-table:
+      cite:
+        ref: "ipdb:3487"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.new-yorker:
+      cite:
+        ref: "ipdb:4148"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.nord-express:
+      cite:
+        ref: "ipdb:3898"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.northern-lights:
+      cite:
+        ref: "ipdb:1684"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ok-skill-table:
+      cite:
+        ref: "ipdb:4209"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.one-ball-circus:
+      cite:
+        ref: "ipdb:5845"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.one-better:
+      cite:
+        ref: "ipdb:1717"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.one-two-three:
+      cite:
+        ref: "ipdb:1719"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.oscar-2:
+      cite:
+        ref: "ipdb:3282"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.paddles:
+      cite:
+        ref: "ipdb:3255"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.paddock-2:
+      cite:
+        ref: "ipdb:1736"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pair-em:
+      cite:
+        ref: "ipdb:4247"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-ante:
+      cite:
+        ref: "ipdb:75"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-ballot:
+      cite:
+        ref: "ipdb:142"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-bells:
+      cite:
+        ref: "ipdb:222"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-chase:
+      cite:
+        ref: "ipdb:494"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-handicap:
+      cite:
+        ref: "ipdb:1110"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-leathernecks:
+      cite:
+        ref: "ipdb:1428"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-palooka-junior:
+      cite:
+        ref: "ipdb:6117"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-palooka-senior:
+      cite:
+        ref: "ipdb:1742"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-parlay:
+      cite:
+        ref: "ipdb:1760"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-parlay-junior:
+      cite:
+        ref: "ipdb:5598"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-parlay-senior:
+      cite:
+        ref: "ipdb:5597"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-races:
+      cite:
+        ref: "ipdb:3535"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-saratoga:
+      cite:
+        ref: "ipdb:2054"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pamco-speedway:
+      cite:
+        ref: "ipdb:2280"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.panther-roulette:
+      cite:
+        ref: "ipdb:6189"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.panther-roulette-ii:
+      cite:
+        ref: "ipdb:6190"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.par-lay:
+      cite:
+        ref: "ipdb:1759"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pari-mutuel:
+      cite:
+        ref: "ipdb:1758"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.party-games:
+      cite:
+        ref: "ipdb:5828"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pay-day:
+      cite:
+        ref: "ipdb:1769"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.payday:
+      cite:
+        ref: "ipdb:3334"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pearl-harbor:
+      cite:
+        ref: "ipdb:1770"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.peerless-multiple:
+      cite:
+        ref: "ipdb:1772"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.penny-play:
+      cite:
+        ref: "ipdb:6539"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.phantom:
+      cite:
+        ref: "ipdb:3354"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.phantom-haus:
+      cite:
+        ref: "ipdb:6840"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pheasant:
+      cite:
+        ref: "ipdb:1779"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pikes-peak:
+      cite:
+        ref: "ipdb:1786"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pinball-roulette:
+      cite:
+        ref: "ipdb:6186"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pinball-roulette-gold-panther:
+      cite:
+        ref: "ipdb:6187"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pinball-roulette-silver-panther:
+      cite:
+        ref: "ipdb:6188"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pinch-hitter-2:
+      cite:
+        ref: "ipdb:1798"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.play-ball-8:
+      cite:
+        ref: "ipdb:5057"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pleasure-island-2:
+      cite:
+        ref: "ipdb:6183"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.plus-and-minus:
+      cite:
+        ref: "ipdb:1833"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.plus-or-minus:
+      cite:
+        ref: "ipdb:4187"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.plus-or-minus-2:
+      cite:
+        ref: "ipdb:5129"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.policy:
+      cite:
+        ref: "ipdb:3320"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pony-derby:
+      cite:
+        ref: "ipdb:7022"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pop-em:
+      cite:
+        ref: "ipdb:1850"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.post-time-2:
+      cite:
+        ref: "ipdb:1854"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.post-time-3:
+      cite:
+        ref: "ipdb:4152"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.pot-shot:
+      cite:
+        ref: "ipdb:1856"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.preakness:
+      cite:
+        ref: "ipdb:1860"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.preview-2:
+      cite:
+        ref: "ipdb:3315"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.profit-sharing-pin-game:
+      cite:
+        ref: "ipdb:1868"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.program:
+      cite:
+        ref: "ipdb:3314"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.prospector-2:
+      cite:
+        ref: "ipdb:1872"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.punch-a-lite:
+      cite:
+        ref: "ipdb:4277"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.put-n-take:
+      cite:
+        ref: "ipdb:1879"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.q-t-pay-table:
+      cite:
+        ref: "ipdb:1601"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.qualified-2:
+      cite:
+        ref: "ipdb:4267"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.queen-mary:
+      cite:
+        ref: "ipdb:1889"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.quinella:
+      cite:
+        ref: "ipdb:3543"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.races:
+      cite:
+        ref: "ipdb:1900"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.racing-club:
+      cite:
+        ref: "ipdb:3537"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.racing-form:
+      cite:
+        ref: "ipdb:7059"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.railroad:
+      cite:
+        ref: "ipdb:1907"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rainbow:
+      cite:
+        ref: "ipdb:1909"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rainbow-belle:
+      cite:
+        ref: "ipdb:6977"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rambler:
+      cite:
+        ref: "ipdb:1914"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rapid-fire-2:
+      cite:
+        ref: "ipdb:4212"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.record-purse:
+      cite:
+        ref: "ipdb:3556"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.red-arrow:
+      cite:
+        ref: "ipdb:1930"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.red-arrow-payout-model:
+      cite:
+        ref: "ipdb:7023"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.red-man:
+      cite:
+        ref: "ipdb:1934"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.red-sails:
+      cite:
+        ref: "ipdb:1937"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.regates:
+      cite:
+        ref: "ipdb:5369"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.reno:
+      cite:
+        ref: "ipdb:1945"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.repeater:
+      cite:
+        ref: "ipdb:1947"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rex:
+      cite:
+        ref: "ipdb:1955"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.riviera-golf:
+      cite:
+        ref: "ipdb:6327"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rocket-3:
+      cite:
+        ref: "ipdb:1987"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rockingham:
+      cite:
+        ref: "ipdb:1992"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rodeo-2:
+      cite:
+        ref: "ipdb:1995"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.roll-ette:
+      cite:
+        ref: "ipdb:4269"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.roundup:
+      cite:
+        ref: "ipdb:2029"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.rover:
+      cite:
+        ref: "ipdb:2030"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.royal-races:
+      cite:
+        ref: "ipdb:2039"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.safe-cracker:
+      cite:
+        ref: "ipdb:3782"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.santa-anita:
+      cite:
+        ref: "ipdb:2050"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.santa-anita-2:
+      cite:
+        ref: "ipdb:5051"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.selector:
+      cite:
+        ref: "ipdb:4178"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sharp-shooter:
+      cite:
+        ref: "ipdb:4255"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.shells:
+      cite:
+        ref: "ipdb:3341"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.silver-cup-2:
+      cite:
+        ref: "ipdb:2157"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.silver-streak:
+      cite:
+        ref: "ipdb:2153"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.silver-streak-2:
+      cite:
+        ref: "ipdb:2154"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.skill-ball-4:
+      cite:
+        ref: "ipdb:6759"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.skill-roll:
+      cite:
+        ref: "ipdb:2184"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.skill-shot-2:
+      cite:
+        ref: "ipdb:4201"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.skipper-2:
+      cite:
+        ref: "ipdb:2188"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sky-high:
+      cite:
+        ref: "ipdb:2194"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sky-high-2:
+      cite:
+        ref: "ipdb:4169"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sky-lark:
+      cite:
+        ref: "ipdb:2197"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.skyway-2:
+      cite:
+        ref: "ipdb:3278"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.smart-ball:
+      cite:
+        ref: "ipdb:6930"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.smokehouse:
+      cite:
+        ref: "ipdb:3288"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.snappy-2:
+      cite:
+        ref: "ipdb:2222"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.snooker:
+      cite:
+        ref: "ipdb:2224"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.soccer-champ:
+      cite:
+        ref: "ipdb:5600"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sockit:
+      cite:
+        ref: "ipdb:3291"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.solo:
+      cite:
+        ref: "ipdb:4310"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.special:
+      cite:
+        ref: "ipdb:3268"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.speed-king:
+      cite:
+        ref: "ipdb:2279"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.spinning-reels:
+      cite:
+        ref: "ipdb:2291"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sport-king:
+      cite:
+        ref: "ipdb:2299"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sport-page:
+      cite:
+        ref: "ipdb:2300"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sports-parade:
+      cite:
+        ref: "ipdb:3469"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sportsman-4:
+      cite:
+        ref: "ipdb:6919"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sportsman-5:
+      cite:
+        ref: "ipdb:6920"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sportsman-de-luxe:
+      cite:
+        ref: "ipdb:3473"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.spot-lite-3:
+      cite:
+        ref: "ipdb:2322"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.stampede-2:
+      cite:
+        ref: "ipdb:2340"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.standard:
+      cite:
+        ref: "ipdb:2341"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.stepper-upper:
+      cite:
+        ref: "ipdb:3383"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.stevo-jackpot:
+      cite:
+        ref: "ipdb:2375"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.stock-market:
+      cite:
+        ref: "ipdb:2380"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.stop-n-go:
+      cite:
+        ref: "ipdb:2383"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.straight-eight:
+      cite:
+        ref: "ipdb:2391"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.straights:
+      cite:
+        ref: "ipdb:3365"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sunshine-baseball:
+      cite:
+        ref: "ipdb:2424"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sunshine-derby:
+      cite:
+        ref: "ipdb:2425"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.super-blue-spot:
+      cite:
+        ref: "ipdb:7024"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sure-shot-3:
+      cite:
+        ref: "ipdb:2458"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.sweet-21:
+      cite:
+        ref: "ipdb:2477"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.target:
+      cite:
+        ref: "ipdb:3751"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.teaser:
+      cite:
+        ref: "ipdb:3421"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.tempo-tempo:
+      cite:
+        ref: "ipdb:3896"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ten-grand:
+      cite:
+        ref: "ipdb:2514"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ten-strike:
+      cite:
+        ref: "ipdb:2519"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.the-mccoy:
+      cite:
+        ref: "ipdb:1564"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.the-new-deal:
+      cite:
+        ref: "ipdb:1670"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.the-sportsman:
+      cite:
+        ref: "ipdb:2305"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.the-winner:
+      cite:
+        ref: "ipdb:2796"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.thistledowns:
+      cite:
+        ref: "ipdb:2533"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.three-up:
+      cite:
+        ref: "ipdb:2546"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.tick-a-lite:
+      cite:
+        ref: "ipdb:3749"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ticker:
+      cite:
+        ref: "ipdb:2558"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.ting-a-ling:
+      cite:
+        ref: "ipdb:5626"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.tiny:
+      cite:
+        ref: "ipdb:3451"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.top-em:
+      cite:
+        ref: "ipdb:3465"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.top-row:
+      cite:
+        ref: "ipdb:2588"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.tops:
+      cite:
+        ref: "ipdb:2594"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.totem:
+      cite:
+        ref: "ipdb:2606"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.tout:
+      cite:
+        ref: "ipdb:2614"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.track-odds:
+      cite:
+        ref: "ipdb:2616"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.traffic:
+      cite:
+        ref: "ipdb:2622"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.trans-pacific:
+      cite:
+        ref: "ipdb:4318"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.transmitter:
+      cite:
+        ref: "ipdb:2629"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.trap-lite:
+      cite:
+        ref: "ipdb:2631"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treasure:
+      cite:
+        ref: "ipdb:5284"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treasure-hunt-2:
+      cite:
+        ref: "ipdb:6988"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treasure-pirate:
+      cite:
+        ref: "ipdb:4264"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treasure-ship:
+      cite:
+        ref: "ipdb:2639"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treble-chance:
+      cite:
+        ref: "ipdb:7025"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treff-gloria-speedboat:
+      cite:
+        ref: "ipdb:4417"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.treff-gloria-water-skier:
+      cite:
+        ref: "ipdb:4420"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.triple-up:
+      cite:
+        ref: "ipdb:7026"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.trojan:
+      cite:
+        ref: "ipdb:2657"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.trophy-2:
+      cite:
+        ref: "ipdb:2659"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.turf:
+      cite:
+        ref: "ipdb:3900"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.turf-champs:
+      cite:
+        ref: "ipdb:2671"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.turf-derby:
+      cite:
+        ref: "ipdb:3901"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.turf-special:
+      cite:
+        ref: "ipdb:2675"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.turret:
+      cite:
+        ref: "ipdb:2677"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.twister-2:
+      cite:
+        ref: "ipdb:3351"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.tycoon:
+      cite:
+        ref: "ipdb:2700"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.unknown-11:
+      cite:
+        ref: "ipdb:5487"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.unknown-four-crowns:
+      cite:
+        ref: "ipdb:5423"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.velvet:
+      cite:
+        ref: "ipdb:2727"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.vend-a-gift:
+      cite:
+        ref: "ipdb:5578"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.victory-derby:
+      cite:
+        ref: "ipdb:2735"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.volcan:
+      cite:
+        ref: "ipdb:5731"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.wahoo:
+      cite:
+        ref: "ipdb:2748"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.wall-street:
+      cite:
+        ref: "ipdb:2750"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.war-admiral-2:
+      cite:
+        ref: "ipdb:4052"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.wheel-of-fortune:
+      cite:
+        ref: "ipdb:2757"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.whirl-pool:
+      cite:
+        ref: "ipdb:2759"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.whiz-ball-jack-pot:
+      cite:
+        ref: "ipdb:3550"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.whiz-ball-jack-pot-2:
+      cite:
+        ref: "ipdb:5619"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.wild-fire:
+      cite:
+        ref: "ipdb:2781"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.winning-ticket:
+      cite:
+        ref: "ipdb:2798"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.wizard-jackpot:
+      cite:
+        ref: "ipdb:6056"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]
+  - model.zipper:
+      cite:
+        ref: "ipdb:3581"
+        quote: "Specialty: [...] Payout Machine"
+      reward_type: [payout]

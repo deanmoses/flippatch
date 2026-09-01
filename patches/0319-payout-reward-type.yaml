@@ -1,0 +1,21 @@
+attribution: flipcommons-catalog
+description: >
+  The payout reward type, and the terms its display order displaces.
+claims:
+  - reward-type.payout:
+      create: true
+      name: Payout
+      display_order: 4
+      reward_type_alias: [Payout Machine]
+  - reward-type.cash-payout:
+      note: "Shifted down one place so the general payout term seats ahead of the specific ones."
+      display_order: 5
+  - reward-type.ticket-payout:
+      note: "Shifted down one place so the general payout term seats ahead of the specific ones."
+      display_order: 6
+  - reward-type.merchant-paid:
+      note: "Shifted down one place so the general payout term seats ahead of the specific ones."
+      display_order: 7
+  - reward-type.free-play:
+      note: "Shifted down one place so the general payout term seats ahead of the specific ones."
+      display_order: 8
