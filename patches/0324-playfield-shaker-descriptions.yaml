@@ -35,12 +35,6 @@ claims:
         "5":
           ref: "https://www.kineticist.com/games/pinball/earthshaker"
           quote: "which shakes the machine during specific gameplay moments"
-        "6":
-          ref: "ipdb:3062"
-          quote: "Handles on the front of cabinet allow the player to raise and lower the playfield in all four directions to guide the ball through the lit path."
-        "7":
-          ref: "ipdb:2081"
-          quote: "The joysticks do not nudge the playfield in any other direction except upwards."
   - gameplay-feature.shaker-ball:
       description: |
         Shaker Ball is [[manufacturer:allied-leisure]]'s marketing term for the [[gameplay-feature:playfield-shakers]] on *[[title:sea-hunt]]* (1972) and *[[title:spooksville]]* (1973). On both models the player works it with two joysticks, which nudge the playfield up in a "jolting 'Shaker Ball' action".[[cite:1]]

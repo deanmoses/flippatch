@@ -14,7 +14,7 @@ claims:
 
         ## How it differs from ticket payout
 
-        Whereas a **payout machine** dispenses the actual prize, a [[reward-type.ticket-payout]] machine dispenses a ticket which is then redeemed for a prize.
+        Whereas a **payout machine** dispenses the actual prize, a [[reward-type:ticket-payout]] machine dispenses a ticket which is then redeemed for a prize.
 
         ## How it differs from merchant-paid
 
@@ -41,9 +41,6 @@ claims:
         "5":
           ref: ipdb:3581
           quote: "Ticket, cash, or check models were available."
-        "6":
-          ref: ipdb:1860
-          quote: "Payout version sold for $149.50. Ticket version sold for $159.50."
         "7":
           ref: ipdb:458
           quote: "made in two versions: a cash payout and a ticket vendor"
