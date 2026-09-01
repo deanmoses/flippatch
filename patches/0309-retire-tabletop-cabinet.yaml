@@ -1,0 +1,7 @@
+attribution: flipcommons-catalog
+description: >
+  Retire the Tabletop cabinet format.
+claims:
+  - cabinet.tabletop:
+      delete: true
+      note: In pinball, tabletop refers to a toy.

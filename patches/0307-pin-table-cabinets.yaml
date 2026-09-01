@@ -1,0 +1,16 @@
+attribution: flipcommons-catalog
+description: >
+  Cabinets for two legged pin tables previously called tabletop.
+claims:
+  - model.betcha-ball-2:
+      note: "In 1930s trade usage a 'pin table' is a legged floorstanding model."
+      cite:
+        ref: "ipdb:6925"
+        quote: Model RT is Radio Table only (on legs) Model GRT is combination Game on Radio Table (a pin table)
+      cabinet: floor
+  - model.lucky-star-3:
+      note: "In 1930s trade usage a 'pin table' is a legged floorstanding model."
+      cite:
+        ref: "ipdb:6606"
+        quote: This is a pin table.
+      cabinet: floor

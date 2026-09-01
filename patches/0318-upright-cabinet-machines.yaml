@@ -1,0 +1,68 @@
+attribution: flipcommons-catalog
+description: >
+  Cabinets for the machines IPDB describes as upright.
+claims:
+  # Midway's bouncing-ball console.
+  - model.red-ball:
+      cite:
+        ref: "ipdb:1932"
+        quote: "Upright cabinet advertised as 26 inches wide, 66 inches high, and 30 inches deep."
+      cabinet: upright
+  # Chester-Pollard's floor-standing arcade games.
+  - model.baseball-17:
+      cite:
+        ref: "ipdb:6630"
+        quote: "Large upright cabinet."
+      cabinet: upright
+  - model.play-ball-10:
+      cite:
+        ref: "ipdb:6632"
+        quote: "Large upright cabinet."
+      cabinet: upright
+  - model.play-golf:
+      cite:
+        ref: "ipdb:6631"
+        quote: "Large upright cabinet."
+      cabinet: upright
+  # SIRMO's European one-ball consoles: a small bingo playfield in a tall body.
+  - model.jokers-ladders-one-ball:
+      cite:
+        ref: "ipdb:5849"
+        quote: "This is a one-ball game with a small bingo-type playfield in an upright cabinet."
+      cabinet: upright
+  - model.magic-circus:
+      cite:
+        ref: "ipdb:6084"
+        quote: "This game is in an upright cabinet advertised as 65 cm wide, 184 cm high, and 75 cm deep."
+      cabinet: upright
+  - model.magic-house:
+      note: Known from pictures rather than from a measured cabinet, and matched against its sibling Magic Circus.
+      cite:
+        ref: "ipdb:6095"
+        quote: "show it fits in an upright cabinet similar to the one we picture for SIRMO's 'Magic Circus'."
+      cabinet: upright
+  - model.one-ball-bonus-multiplier:
+      cite:
+        ref: "ipdb:6091"
+        quote: "This is a one-ball game with a small bingo-type playfield in an upright cabinet."
+      cabinet: upright
+  - model.one-ball-conti:
+      cite:
+        ref: "ipdb:6090"
+        quote: "This is a one-ball game with a small bingo-type playfield in an upright cabinet."
+      cabinet: upright
+  - model.party-games:
+      cite:
+        ref: "ipdb:5828"
+        quote: "This is a one-ball game with a small bingo-type playfield in an upright cabinet with a 17-inch thin film transistor (TFT) screen at the top."
+      cabinet: upright
+  - model.triple-joker-2:
+      cite:
+        ref: "ipdb:6089"
+        quote: "This is a one-ball game with a small bingo-type playfield in an upright cabinet."
+      cabinet: upright
+  - model.up-n-down-one-ball:
+      cite:
+        ref: "ipdb:6092"
+        quote: "This is a one-ball game with a small bingo-type playfield in an upright cabinet."
+      cabinet: upright

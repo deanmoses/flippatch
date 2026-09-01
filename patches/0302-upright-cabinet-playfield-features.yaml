@@ -1,0 +1,31 @@
+attribution: flipcommons-catalog
+description: >
+  The Upright cabinet and the playfield feature hierarchy.
+claims:
+  - cabinet.upright:
+      create: true
+      name: Upright
+      display_order: 5
+  - gameplay-feature.playfields:
+      create: true
+      name: Playfields
+  - gameplay-feature.mini-playfields:
+      note: "Grouping all playfield sub-features under the new parent playfield feature."
+      gameplay_feature_parent: [playfields]
+  - gameplay-feature.multi-level-playfield:
+      note: "Grouping all playfield sub-features under the new parent playfield feature."
+      gameplay_feature_parent: [playfields]
+  - gameplay-feature.tilting-playfields:
+      note: "Grouping all playfield sub-features under the new parent playfield feature."
+      gameplay_feature_parent: [playfields]
+  - gameplay-feature.vertical-playfields:
+      create: true
+      name: Vertical Playfields
+      gameplay_feature_parent: [playfields]
+  - gameplay-feature.backbox-playfields:
+      create: true
+      name: Backbox Playfields
+      gameplay_feature_parent: [vertical-playfields]
+  - gameplay-feature.pins:
+      create: true
+      name: Pins

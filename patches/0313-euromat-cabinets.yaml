@@ -1,0 +1,24 @@
+attribution: flipcommons-catalog
+description: >
+  Cabinets for the wall-hung Euromat machines.
+claims:
+  - model.euromat:
+      note: Hung on a wall rather than stood on the floor. The playfield itself is sloped toward the player, so the machine is not a vertical one.
+      cite:
+        ref: "ipdb:5171"
+        quote: "This is a wall-mounted game. The playfield is sloped towards the player."
+      cabinet: upright
+  - model.euromat-super:
+      note: Hung on a wall rather than stood on the floor. The playfield itself is sloped toward the player, so the machine is not a vertical one.
+      cite:
+        ref: "ipdb:5173"
+        quote: "This is a wall-mounted game. Bulb scoring. The playfield is sloped towards the player."
+      cabinet: upright
+  - model.euromat-super-2:
+      note: Stamped inside as a Wandflipper, a wall pinball. The playfield itself is sloped toward the player, so the machine is not a vertical one.
+      cite:
+        - ref: "ipdb:5174"
+          quote: "There are some holes in the backside for wall-mounting."
+        - ref: "ipdb:5174"
+          quote: "the playfield is surrounded by mirrors on three sides and is sloped towards the player"
+      cabinet: upright

@@ -6,134 +6,134 @@ claims:
       cite:
         ref: "ipdb:6270"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.4-in-1-pigskin-2010:
       cite:
         ref: "ipdb:6010"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.4-in-1-poker:
       cite:
         ref: "ipdb:6009"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.4-in-1-willy-at-the-bat:
       cite:
         ref: "ipdb:6008"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.4-in-1-willys-cup:
       cite:
         ref: "ipdb:6011"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.400:
       cite:
         ref: "ipdb:934"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.bat-a-ball:
       cite:
         ref: "ipdb:6022"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.boomerang-2:
       cite:
         ref: "ipdb:6042"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.bouncing-ball:
       cite:
         ref: "ipdb:4837"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.bowling-alle-neune:
       cite:
         ref: "ipdb:6037"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.catch-n-match:
       cite:
         ref: "ipdb:472"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.chuck-o-luck:
       cite:
         ref: "ipdb:511"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.flik-flak:
       cite:
         ref: "ipdb:5613"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.golden-nugget:
       cite:
         ref: "ipdb:1054"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.jumpin-jacks-2:
       cite:
         ref: "ipdb:1330"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.junior-league-bat-a-ball:
       cite:
         ref: "ipdb:4675"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.match-ball-wall-flipper:
       cite:
         ref: "ipdb:7046"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.mini-baseball:
       cite:
         ref: "ipdb:5985"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.pee-wee-2:
       cite:
         ref: "ipdb:5527"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.pickwick:
       cite:
         ref: "ipdb:5431"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.silver-chest:
       cite:
         ref: "ipdb:2145"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.sky-line:
       cite:
         ref: "ipdb:6047"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.still-crazy:
       cite:
         ref: "ipdb:3730"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.unknown-13:
       cite:
         ref: "ipdb:5714"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.whizz:
       cite:
         ref: "ipdb:3544"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.whoopee-ball:
       cite:
         ref: "ipdb:5726"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]
   - model.zingo-2:
       cite:
         ref: "ipdb:3578"
         quote: "Specialty: [...] Vertical Pinball Machine"
-      tag: [vertical]
+      gameplay_feature: [vertical-playfields]

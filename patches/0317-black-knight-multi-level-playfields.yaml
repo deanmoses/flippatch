@@ -1,0 +1,24 @@
+attribution: ipdb
+description: >
+  Split-level playfields on the Black Knight machines.
+claims:
+  - model.black-knight:
+      cite:
+        ref: "ipdb:310"
+        quote: "Split-level playfield with 3 ramps."
+      gameplay_feature: [multi-level-playfield]
+  - model.black-knight-2000:
+      cite:
+        ref: "ipdb:311"
+        quote: "Split-level playfield, Magna-save, Kickback."
+      gameplay_feature: [multi-level-playfield]
+  - model.black-knight-limited-edition:
+      cite:
+        ref: "ipdb:3799"
+        quote: Split-Level Playfield
+      gameplay_feature: [multi-level-playfield]
+  - model.black-rider:
+      cite:
+        ref: "ipdb:4085"
+        quote: "Split-level playfield with 3 ramps."
+      gameplay_feature: [multi-level-playfield]

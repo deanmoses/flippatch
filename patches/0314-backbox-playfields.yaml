@@ -1,0 +1,25 @@
+attribution: ipdb
+description: >
+  Machines with a vertical playfield in the backbox.
+claims:
+  - model.banzai-run:
+      cite:
+        ref: "ipdb:175"
+        quote: A magnet on a moving vertical track lifts the ball in play to the vertical playfield in the backbox.
+      gameplay_feature: [backbox-playfields]
+  - model.double-action:
+      cite:
+        ref: "ipdb:706"
+        quote: activates a flipperless vertical playfield in the backbox where the next captive ball is mechanically lifted to the top and released to fall through pins
+      gameplay_feature: [backbox-playfields]
+  - model.springtime-2:
+      note: "Genco's companion to Double Action of three months earlier, which states the same flipperless vertical playfield sits in the backbox."
+      cite:
+        ref: "ipdb:2326"
+        quote: The scores from the flipperless vertical playfield carry-over to the next game.
+      gameplay_feature: [backbox-playfields]
+  - model.wreckn-ball:
+      cite:
+        ref: "ipdb:6167"
+        quote: A vertical moving track lifts the ball in play to the vertical playfield in the backbox.
+      gameplay_feature: [backbox-playfields]

@@ -1,0 +1,29 @@
+attribution: ipdb
+description: >
+  Vertical playfields IPDB states outside its Specialty field.
+claims:
+  - model.flipper-4:
+      cite:
+        ref: "ipdb:7040"
+        quote: Player drops coin at top of game to fall through a small vertical playfield of pins to scoring pockets at the bottom.
+      gameplay_feature: [vertical-playfields]
+  - model.hi-fly:
+      cite:
+        ref: "ipdb:5615"
+        quote: This is a table top game with a vertical playfield.
+      gameplay_feature: [vertical-playfields]
+  - model.pickwick-improved:
+      cite:
+        ref: "ipdb:5432"
+        quote: Vertical playfield bagatelle.
+      gameplay_feature: [vertical-playfields]
+  - model.whiz-bowler:
+      cite:
+        ref: "ipdb:5702"
+        quote: 10 balls for 1 cent. Vertical playfield.
+      gameplay_feature: [vertical-playfields]
+  - model.zipper-3:
+      cite:
+        ref: "ipdb:5701"
+        quote: 5 balls for 1-cent. Vertical playfield.
+      gameplay_feature: [vertical-playfields]

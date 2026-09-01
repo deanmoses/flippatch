@@ -1,0 +1,1544 @@
+attribution: ipdb
+description: >
+  Counter-game cabinets from IPDB's Table Top/Counter Game specialty.
+claims:
+  - model.3-ring-circus:
+      cite:
+        ref: "ipdb:2543"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.3-ring-circus-2:
+      cite:
+        ref: "ipdb:3486"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ace:
+      cite:
+        ref: "ipdb:4"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ace-high:
+      cite:
+        ref: "ipdb:6"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ace-is-high:
+      cite:
+        ref: "ipdb:8"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.aces-high-2:
+      cite:
+        ref: "ipdb:3990"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.acey-ducy:
+      cite:
+        ref: "ipdb:2877"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.admiral:
+      cite:
+        ref: "ipdb:22"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.advance-baby:
+      cite:
+        ref: "ipdb:4824"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.amuzu:
+      cite:
+        ref: "ipdb:6237"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.arc-en-ciel-bebe:
+      cite:
+        ref: "ipdb:5258"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.arlington-3:
+      cite:
+        ref: "ipdb:4192"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.automatic-poker-das:
+      cite:
+        ref: "ipdb:5975"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.b-skilful:
+      cite:
+        ref: "ipdb:5456"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baby-grand-pin-game:
+      cite:
+        ref: "ipdb:2887"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baby-leland:
+      cite:
+        ref: "ipdb:123"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baby-lite-a-line:
+      cite:
+        ref: "ipdb:124"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baby-whiffle:
+      cite:
+        ref: "ipdb:4452"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baffle-ball:
+      cite:
+        ref: "ipdb:129"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baffle-ball-2:
+      cite:
+        ref: "ipdb:130"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.baffle-ball-jr-home-game:
+      cite:
+        ref: "ipdb:4889"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ball-quet:
+      cite:
+        ref: "ipdb:143"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ball-shooter:
+      cite:
+        ref: "ipdb:5459"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ball-shooter-gum-vender:
+      cite:
+        ref: "ipdb:5460"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ballota-acht:
+      cite:
+        ref: "ipdb:5371"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ballota-baby:
+      cite:
+        ref: "ipdb:5372"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ballota-ball:
+      cite:
+        ref: "ipdb:5373"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ballyhoo-3:
+      cite:
+        ref: "ipdb:4817"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bank-a-ball-3:
+      cite:
+        ref: "ipdb:172"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bank-a-ball-4:
+      cite:
+        ref: "ipdb:2899"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bank-a-ball-5:
+      cite:
+        ref: "ipdb:5361"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bank-a-ball-7:
+      cite:
+        ref: "ipdb:6520"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bank-a-shot:
+      cite:
+        ref: "ipdb:173"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bankum:
+      cite:
+        ref: "ipdb:5659"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bat-em:
+      cite:
+        ref: "ipdb:194"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bell-skill:
+      cite:
+        ref: "ipdb:4134"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bera-ball:
+      cite:
+        ref: "ipdb:6240"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.big-shot-3:
+      cite:
+        ref: "ipdb:274"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.billiard-practice:
+      cite:
+        ref: "ipdb:6145"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bills-belotts:
+      cite:
+        ref: "ipdb:6268"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo:
+      cite:
+        ref: "ipdb:294"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo-2:
+      cite:
+        ref: "ipdb:3612"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo-4:
+      cite:
+        ref: "ipdb:3617"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo-5:
+      cite:
+        ref: "ipdb:3620"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo-ball:
+      cite:
+        ref: "ipdb:296"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo-improved:
+      cite:
+        ref: "ipdb:5406"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bingo-play-cards:
+      cite:
+        ref: "ipdb:299"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.black-baby:
+      cite:
+        ref: "ipdb:301"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.blow-me-down:
+      cite:
+        ref: "ipdb:323"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.boop-a-doop:
+      cite:
+        ref: "ipdb:3653"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bouncer:
+      cite:
+        ref: "ipdb:4740"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bouteille-bill:
+      cite:
+        ref: "ipdb:5972"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.brownie-pool:
+      cite:
+        ref: "ipdb:5508"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.bunko:
+      cite:
+        ref: "ipdb:3672"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.buster-ball:
+      cite:
+        ref: "ipdb:409"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.cash-and-carry-600:
+      cite:
+        ref: "ipdb:5462"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.circus-2:
+      cite:
+        ref: "ipdb:516"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.circus-junior:
+      cite:
+        ref: "ipdb:4752"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.commander:
+      cite:
+        ref: "ipdb:551"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.counter-knock-out:
+      cite:
+        ref: "ipdb:5591"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.darby:
+      cite:
+        ref: "ipdb:637"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.deca-bill:
+      cite:
+        ref: "ipdb:6214"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.deluxe:
+      cite:
+        ref: "ipdb:4191"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.derby-4:
+      cite:
+        ref: "ipdb:4600"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.derby-day-2:
+      cite:
+        ref: "ipdb:665"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.double-play-4:
+      cite:
+        ref: "ipdb:3981"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.double-shuffle-2:
+      cite:
+        ref: "ipdb:5293"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.double-shuffle-3:
+      cite:
+        ref: "ipdb:5294"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.double-shuffle-junior:
+      cite:
+        ref: "ipdb:723"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.dreadnought:
+      cite:
+        ref: "ipdb:4005"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.dubbs:
+      cite:
+        ref: "ipdb:5454"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.dutch-pool:
+      cite:
+        ref: "ipdb:747"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.el-toro-shoot-the-bull:
+      cite:
+        ref: "ipdb:5945"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.electro-ball:
+      cite:
+        ref: "ipdb:5535"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.empire:
+      cite:
+        ref: "ipdb:5205"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.fan-tan:
+      cite:
+        ref: "ipdb:819"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.favorite-2:
+      cite:
+        ref: "ipdb:3089"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.favorite-3:
+      cite:
+        ref: "ipdb:5240"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.figure-8:
+      cite:
+        ref: "ipdb:844"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.figure-8-2:
+      cite:
+        ref: "ipdb:4546"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.figure-eight:
+      cite:
+        ref: "ipdb:5728"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.five-star-final:
+      cite:
+        ref: "ipdb:4746"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.five-star-final-jr:
+      cite:
+        ref: "ipdb:865"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.flash-junior:
+      cite:
+        ref: "ipdb:5028"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.fleche-dor:
+      cite:
+        ref: "ipdb:6835"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.flipper-2:
+      cite:
+        ref: "ipdb:5121"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.flipper-3:
+      cite:
+        ref: "ipdb:5977"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.flipper-4:
+      cite:
+        ref: "ipdb:7040"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.futurity-2:
+      cite:
+        ref: "ipdb:976"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.gee-whiz:
+      cite:
+        ref: "ipdb:4285"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.gold-ball-3:
+      cite:
+        ref: "ipdb:4823"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.gold-crown:
+      cite:
+        ref: "ipdb:1026"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.gold-rush-4:
+      cite:
+        ref: "ipdb:3125"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.golden-comet-ball:
+      cite:
+        ref: "ipdb:1046"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.golf-ball:
+      cite:
+        ref: "ipdb:5984"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.good-luck:
+      cite:
+        ref: "ipdb:1059"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.goofus-2:
+      cite:
+        ref: "ipdb:3956"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.goofy-junior:
+      cite:
+        ref: "ipdb:1061"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.grand-canyon-2:
+      cite:
+        ref: "ipdb:1066"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.greyhound:
+      cite:
+        ref: "ipdb:1086"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.haf-shot:
+      cite:
+        ref: "ipdb:1106"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.handicap:
+      cite:
+        ref: "ipdb:1108"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.happy-gang:
+      cite:
+        ref: "ipdb:1117"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.happy-midget:
+      cite:
+        ref: "ipdb:1118"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.heavy-hitter:
+      cite:
+        ref: "ipdb:1149"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hei-score:
+      cite:
+        ref: "ipdb:6708"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hi-fly:
+      cite:
+        ref: "ipdb:5615"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hi-lo-junior:
+      cite:
+        ref: "ipdb:1188"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hi-low-game-junior:
+      cite:
+        ref: "ipdb:5042"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hi-skor:
+      cite:
+        ref: "ipdb:5224"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hit-the-deck-play-cards:
+      cite:
+        ref: "ipdb:4923"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hokum:
+      cite:
+        ref: "ipdb:5088"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hollywood-derby:
+      cite:
+        ref: "ipdb:5990"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.home-tango:
+      cite:
+        ref: "ipdb:6331"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.honey-2:
+      cite:
+        ref: "ipdb:1229"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hooey-ball-jr:
+      cite:
+        ref: "ipdb:5409"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hoops-2:
+      cite:
+        ref: "ipdb:6395"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.horsefeathers-2:
+      cite:
+        ref: "ipdb:5388"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.horseshoe:
+      cite:
+        ref: "ipdb:3158"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hot-cha:
+      cite:
+        ref: "ipdb:1241"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hy-skor:
+      cite:
+        ref: "ipdb:3918"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.hy-skor-2:
+      cite:
+        ref: "ipdb:6915"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.impact:
+      cite:
+        ref: "ipdb:1265"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.jack-pot:
+      cite:
+        ref: "ipdb:1275"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.jig-alo-electro-ball:
+      cite:
+        ref: "ipdb:1294"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.jiggilo:
+      cite:
+        ref: "ipdb:4548"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.jostle-2:
+      cite:
+        ref: "ipdb:5403"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.joy-game:
+      cite:
+        ref: "ipdb:3185"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.juggle-ball:
+      cite:
+        ref: "ipdb:1323"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.junior:
+      cite:
+        ref: "ipdb:1342"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.junior-2:
+      cite:
+        ref: "ipdb:4260"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.king-pin-4:
+      cite:
+        ref: "ipdb:3983"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.kow-tow:
+      cite:
+        ref: "ipdb:3594"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.krazy-komiks:
+      cite:
+        ref: "ipdb:1395"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ku-ku:
+      cite:
+        ref: "ipdb:1398"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.la-comete:
+      cite:
+        ref: "ipdb:6121"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.larlequin:
+      cite:
+        ref: "ipdb:6131"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.le-diamant:
+      cite:
+        ref: "ipdb:5672"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.le-paris:
+      cite:
+        ref: "ipdb:6174"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.le-passe-partout:
+      cite:
+        ref: "ipdb:5954"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.le-roulis:
+      cite:
+        ref: "ipdb:5962"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.les-10-cases:
+      cite:
+        ref: "ipdb:5989"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.les-etoiles:
+      cite:
+        ref: "ipdb:6147"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.life:
+      cite:
+        ref: "ipdb:3984"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.little-joe-3:
+      cite:
+        ref: "ipdb:4871"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.little-manhattan:
+      cite:
+        ref: "ipdb:1462"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.little-monarch:
+      cite:
+        ref: "ipdb:5516"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.loop-ball:
+      cite:
+        ref: "ipdb:4747"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.lucky-boy:
+      cite:
+        ref: "ipdb:5858"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.lucky-loop:
+      cite:
+        ref: "ipdb:7044"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.lucky-star-4:
+      cite:
+        ref: "ipdb:6785"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.lucky-strike-2:
+      cite:
+        ref: "ipdb:1496"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.lucky-strike-5:
+      cite:
+        ref: "ipdb:3947"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.lucky-strike-7:
+      cite:
+        ref: "ipdb:5268"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.majestic-moving-target:
+      cite:
+        ref: "ipdb:6361"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.mar-blette:
+      cite:
+        ref: "ipdb:4852"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.marble:
+      cite:
+        ref: "ipdb:5546"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.marble-let:
+      cite:
+        ref: "ipdb:6924"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.marble-pool:
+      cite:
+        ref: "ipdb:6339"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.merry-go-round-4:
+      cite:
+        ref: "ipdb:3985"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.mexican-golf:
+      cite:
+        ref: "ipdb:6258"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.midget-hi-ball:
+      cite:
+        ref: "ipdb:4657"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.mike-ike:
+      cite:
+        ref: "ipdb:1595"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.mike-ike-2:
+      cite:
+        ref: "ipdb:3955"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.moderna:
+      cite:
+        ref: "ipdb:5889"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.monte-carlo-2:
+      cite:
+        ref: "ipdb:1620"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.monte-carlo-8:
+      cite:
+        ref: "ipdb:6923"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.new-moon:
+      cite:
+        ref: "ipdb:3489"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.new-roll-a-ballhit-the-goal:
+      cite:
+        ref: "ipdb:4547"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.new-star-jiggers:
+      cite:
+        ref: "ipdb:4528"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.nugget:
+      cite:
+        ref: "ipdb:3449"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.o-lett-o:
+      cite:
+        ref: "ipdb:3953"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.official-counter:
+      cite:
+        ref: "ipdb:1694"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.oh-yeah:
+      cite:
+        ref: "ipdb:1698"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.old-orchard:
+      cite:
+        ref: "ipdb:1707"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.olympic:
+      cite:
+        ref: "ipdb:1712"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.panbridge:
+      cite:
+        ref: "ipdb:6747"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pansy:
+      cite:
+        ref: "ipdb:3923"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.par-golf-2:
+      cite:
+        ref: "ipdb:1747"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pee-wee:
+      cite:
+        ref: "ipdb:5526"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.penny-play:
+      cite:
+        ref: "ipdb:6539"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pentacup:
+      cite:
+        ref: "ipdb:3821"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pentacup-2:
+      cite:
+        ref: "ipdb:3822"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.petes-penny-ante:
+      cite:
+        ref: "ipdb:5785"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pico-baby-grand:
+      cite:
+        ref: "ipdb:5628"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pico-crown:
+      cite:
+        ref: "ipdb:5629"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.piffle-egyptian-horse-shoe-game:
+      cite:
+        ref: "ipdb:5679"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pipe-eye:
+      cite:
+        ref: "ipdb:3301"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.planet-ball:
+      cite:
+        ref: "ipdb:298"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.play-a-hand:
+      cite:
+        ref: "ipdb:5238"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.play-ball-2:
+      cite:
+        ref: "ipdb:1813"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.play-boy:
+      cite:
+        ref: "ipdb:1817"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.play-the-joker:
+      cite:
+        ref: "ipdb:1820"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.players-choice-2:
+      cite:
+        ref: "ipdb:6997"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pokette:
+      cite:
+        ref: "ipdb:1840"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.prima:
+      cite:
+        ref: "ipdb:6294"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.prosperity:
+      cite:
+        ref: "ipdb:5950"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.putt-putt:
+      cite:
+        ref: "ipdb:6797"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.putt-putt-putt:
+      cite:
+        ref: "ipdb:6798"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.pyramid-peg:
+      cite:
+        ref: "ipdb:3589"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.qby:
+      cite:
+        ref: "ipdb:5335"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.rainbo:
+      cite:
+        ref: "ipdb:1908"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.rainbo-2:
+      cite:
+        ref: "ipdb:4749"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.rambler-2:
+      cite:
+        ref: "ipdb:6041"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.rodello:
+      cite:
+        ref: "ipdb:5978"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.rol-let:
+      cite:
+        ref: "ipdb:3468"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.rola-ball:
+      cite:
+        ref: "ipdb:5243"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.roll-a-ball:
+      cite:
+        ref: "ipdb:2001"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.roll-a-heart:
+      cite:
+        ref: "ipdb:5037"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.roll-itt:
+      cite:
+        ref: "ipdb:2011"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.royal-bilbill-2:
+      cite:
+        ref: "ipdb:5988"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.royal-jumping:
+      cite:
+        ref: "ipdb:6142"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.running-wild-jr:
+      cite:
+        ref: "ipdb:4907"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.scoop:
+      cite:
+        ref: "ipdb:2059"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.score-m-high:
+      cite:
+        ref: "ipdb:6621"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.scram:
+      cite:
+        ref: "ipdb:2069"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.scram-2:
+      cite:
+        ref: "ipdb:2070"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.scram-4:
+      cite:
+        ref: "ipdb:5138"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.screwy:
+      cite:
+        ref: "ipdb:2075"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.shamrock-2:
+      cite:
+        ref: "ipdb:2108"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.sharp-shooter-2:
+      cite:
+        ref: "ipdb:4964"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.shooting-star:
+      cite:
+        ref: "ipdb:2125"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.shuffle-ball:
+      cite:
+        ref: "ipdb:2139"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.signal-2:
+      cite:
+        ref: "ipdb:5648"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.silver-prince:
+      cite:
+        ref: "ipdb:5463"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.silver-streak:
+      cite:
+        ref: "ipdb:2153"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.silver-streak-2:
+      cite:
+        ref: "ipdb:2154"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.six-star:
+      cite:
+        ref: "ipdb:4615"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ski-doo-23:
+      cite:
+        ref: "ipdb:2175"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.skil-luck:
+      cite:
+        ref: "ipdb:4847"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.skill-cards:
+      cite:
+        ref: "ipdb:4022"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.skill-shot:
+      cite:
+        ref: "ipdb:3233"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.skipper:
+      cite:
+        ref: "ipdb:2187"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.sky-ride:
+      cite:
+        ref: "ipdb:2200"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.soccer-champ:
+      cite:
+        ref: "ipdb:5600"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.speed-king-2:
+      cite:
+        ref: "ipdb:4757"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.spider-ball:
+      cite:
+        ref: "ipdb:5909"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.spoofus:
+      cite:
+        ref: "ipdb:5457"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.sport-ball-automat:
+      cite:
+        ref: "ipdb:6241"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.spot-a-ball:
+      cite:
+        ref: "ipdb:2311"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.squirly:
+      cite:
+        ref: "ipdb:2331"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.standard-2:
+      cite:
+        ref: "ipdb:4840"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.star-ball:
+      cite:
+        ref: "ipdb:5665"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.starette:
+      cite:
+        ref: "ipdb:6170"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.steeple-chase:
+      cite:
+        ref: "ipdb:2369"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.stop-and-sock:
+      cite:
+        ref: "ipdb:2385"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.stop-and-sock-2:
+      cite:
+        ref: "ipdb:3394"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.superior-pool:
+      cite:
+        ref: "ipdb:5911"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.teaser-2:
+      cite:
+        ref: "ipdb:4168"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-advance-pin-table:
+      cite:
+        ref: "ipdb:5518"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-arrow:
+      cite:
+        ref: "ipdb:94"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-baby-springbal-pin-table:
+      cite:
+        ref: "ipdb:6579"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-baron:
+      cite:
+        ref: "ipdb:4928"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-cedar-ball:
+      cite:
+        ref: "ipdb:295"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-diamond:
+      cite:
+        ref: "ipdb:4693"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-flea:
+      cite:
+        ref: "ipdb:3102"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-flush:
+      cite:
+        ref: "ipdb:6624"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-furious-jazz:
+      cite:
+        ref: "ipdb:6273"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-greyhound:
+      cite:
+        ref: "ipdb:6935"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-ideal-pin-table:
+      cite:
+        ref: "ipdb:5208"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-joy-game:
+      cite:
+        ref: "ipdb:1318"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-maple-leaf:
+      cite:
+        ref: "ipdb:5321"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-midget:
+      cite:
+        ref: "ipdb:1591"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-pixie-pin-game:
+      cite:
+        ref: "ipdb:6347"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.the-ritz:
+      cite:
+        ref: "ipdb:1964"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.theyre-off:
+      cite:
+        ref: "ipdb:2530"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ticker-2:
+      cite:
+        ref: "ipdb:4668"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ting-a-ling:
+      cite:
+        ref: "ipdb:5626"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tiny:
+      cite:
+        ref: "ipdb:3451"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tip-top:
+      cite:
+        ref: "ipdb:2571"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tire-le-bibi:
+      cite:
+        ref: "ipdb:5637"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tivoli-jr:
+      cite:
+        ref: "ipdb:4822"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.transmitter:
+      cite:
+        ref: "ipdb:2629"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.treasure-island:
+      cite:
+        ref: "ipdb:3809"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.triumph:
+      cite:
+        ref: "ipdb:5662"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.trou-de-souris:
+      cite:
+        ref: "ipdb:6067"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tura-ball:
+      cite:
+        ref: "ipdb:4748"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tura-de-luxe:
+      cite:
+        ref: "ipdb:6213"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.tura-junior:
+      cite:
+        ref: "ipdb:4750"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.ukon-trol-black-diamond:
+      cite:
+        ref: "ipdb:5774"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-12:
+      cite:
+        ref: "ipdb:5614"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-18:
+      cite:
+        ref: "ipdb:5915"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-2:
+      cite:
+        ref: "ipdb:4833"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-20:
+      cite:
+        ref: "ipdb:6027"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-23:
+      cite:
+        ref: "ipdb:6124"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-5:
+      cite:
+        ref: "ipdb:5039"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.unknown-6:
+      cite:
+        ref: "ipdb:5187"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.victory-ball:
+      cite:
+        ref: "ipdb:2734"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.wang-poo:
+      cite:
+        ref: "ipdb:2752"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whiffle-bagatelle:
+      cite:
+        ref: "ipdb:4541"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whifflette:
+      cite:
+        ref: "ipdb:5264"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whir-pool-jr:
+      cite:
+        ref: "ipdb:5245"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whirlpool-jr:
+      cite:
+        ref: "ipdb:2763"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whirlpool-jr-2:
+      cite:
+        ref: "ipdb:5417"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whiz-bang:
+      cite:
+        ref: "ipdb:4382"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whiz-bowler:
+      cite:
+        ref: "ipdb:5702"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whizz-bang-model-a:
+      cite:
+        ref: "ipdb:4830"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whizz-bang-model-b:
+      cite:
+        ref: "ipdb:4831"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whizz-bang-model-c:
+      cite:
+        ref: "ipdb:2771"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.whizzard:
+      cite:
+        ref: "ipdb:2770"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.world-series-baseball:
+      cite:
+        ref: "ipdb:2816"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.wow-2:
+      cite:
+        ref: "ipdb:2819"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.yoyo:
+      cite:
+        ref: "ipdb:2828"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.zig-zag-3:
+      cite:
+        ref: "ipdb:3986"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.zip-4:
+      cite:
+        ref: "ipdb:5674"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.zipball:
+      cite:
+        ref: "ipdb:5452"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.zipper-2:
+      cite:
+        ref: "ipdb:4653"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop
+  - model.zipper-3:
+      cite:
+        ref: "ipdb:5701"
+        quote: "Specialty: [...] Table Top/Counter Game"
+      cabinet: countertop

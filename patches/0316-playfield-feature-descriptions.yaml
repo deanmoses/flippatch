@@ -1,0 +1,125 @@
+attribution: flipcommons-ai-desc-gameplay-feature
+description: >
+  Descriptions for recent gameplay features.
+claims:
+  - gameplay-feature.playfields:
+      description: |
+        The playfield of a pinball machine is the surface on which the game is played: a sheet of wood under glass, studded with [[gameplay-feature:pins]], [[gameplay-feature:bumpers]], [[gameplay-feature:lanes]] and [[gameplay-feature:targets]] that score.
+
+        ## Before the flipper
+
+        The playfield used to be almost the entire game. On a machine with no flippers, influencing the ball was mainly confined to how the player pulled the plunger and nudged the machine as the ball rolled across the playfield, meaning the arrangement of pins and holes decided almost everything.[[cite:4]] That is the inheritance from [[game-format:bagatelle]], and it is why the earliest pin games were argued over in court as games of chance.
+
+        ## Standardization
+
+        The playfield settled into a standard shape, a little over a metre long and half a metre wide, across most manufacturers since the 1960s[[cite:1]].
+
+        It settled on an angle too. The surface is inclined upward and away from the player, usually by about six and a half degrees.[[cite:2]] The figure is a compromise: shallow enough that a player can send the ball back up and keep it in play, steep enough that it is always falling. Operators move it deliberately, extending the levelers on the rear legs or shortening those at the front to steepen the slope, which makes a machine faster and harder to play.[[cite:3]]
+
+        ## Variations
+
+        Not every machine is a single sloping sheet.
+
+        Some games have multiple playfields that the ball travels between,[[cite:5]] whether a small raised surface set into the main one ([[gameplay-feature:mini-playfields]]) or a full second level the ball climbs to and returns from ([[gameplay-feature:multi-level-playfield]]).
+
+        Other machines break the assumption that the surface holds still, letting the game itself tilt and swing it while the ball is on it ([[gameplay-feature:tilting-playfields]]).
+
+        And a whole family of machines abandons the slope altogether, standing the surface upright so the ball falls down its face rather than rolling down its length ([[gameplay-feature:vertical-playfields]]).
+      cites:
+        "1":
+          ref: https://www.flippers.be/basics/101_pinball_dimensions.html
+          quote: "The dimensions of playfield glass have remained unchanged since the 1960s and are consistent across most manufacturers."
+        "2":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "The playfield is a planar surface inclined upward, usually at six and a half degrees"
+        "3":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Some operators intentionally extend threaded levelers on the rear legs and/or shorten or remove the levelers on the front legs to create additional incline in the playfield, making the ball move faster and harder to play."
+        "4":
+          ref: https://www.pacificpinball.org/pinball-gambling
+          quote: "a player's influence over the ball was mostly limited to skillshots via the plunger and nudging the machine as the ball traversed the playfield"
+        "5":
+          ref: https://www.ipdb.org/glossary.php
+          quote: "Some games may have multiple playfields, with various methods for the ball to travel between them."
+  - gameplay-feature.vertical-playfields:
+      description: |
+        A vertical playfield is a playing surface that stands upright behind the glass instead of sloping away from the player. The ball is fired to the top and falls back down through pins, gates and pockets under gravity, so where it finishes owes more to the arrangement of the pin field than to anything the player does after the shot.
+
+        Turning a [[gameplay-feature:playfields]] on its end changes what skill can reach. On an inclined surface the ball rolls its length and a flipper at the bottom gets a moment to meet it; on a vertical one it drops the face and arrives fast. Many of these machines are [[tag:flipperless]] for that reason, and those that answer the problem often answer it with something other than a flipper — [[manufacturer:melchers-automatenbau-kg]]'s *[[title:flik-flak]]* has "no flippers in the traditional sense, but each of the two springs that form the bottom edge of the playfield has a kicker post below it",[[cite:1]] so the player times a kick at a resting ball rather than swinging a bat at a rolling one.
+
+        ## On machines of every size
+
+        Standing the surface up says nothing about how big the machine is or where it sits. [[manufacturer:gottlieb]]'s *[[title:chuck-o-luck]]* (1932) is fourteen inches tall and lives on a bar, small enough that some references leave it out because "it's small and vertical, resembling a pachinko game more than a traditional pinball machine".[[cite:2]] [[manufacturer:williams]] put the same idea on a full-sized floor machine with *[[title:still-crazy]]* half a century later. [[manufacturer:american-amusement-company]] sold both at once: *[[title:bat-a-ball]]* was "a floor-standing upright game" whose "counter game version is American Amusement's 1946 'Junior League Bat-A-Ball'",[[cite:3]] the surface vertical in each.
+
+        Nor does a tall machine imply one. [[manufacturer:aisch-melchers-kg]]'s *[[title:euromat]]* hangs on a wall in an [[cabinet:upright]] body, and "the playfield is sloped towards the player"[[cite:4]] exactly as it would be on legs.
+
+        ## Pachinko is the format at scale
+
+        The vertical pin field found its mass audience in [[location:japan]] rather than in the West. A pachinko machine "resembles a vertical pinball machine, but is different from Western pinball in several ways",[[cite:5]] and plays much the way these games do: "the balls fall vertically through an array of pins, levers, cups, traps and obstacles until they enter a payoff target or reach the bottom of the playfield".[[cite:6]] Western makers reached the same layout repeatedly and independently, from the coin-operated [[game-format:bagatelle]] of *[[title:pickwick]]* onwards, without ever building an industry on it.
+      cites:
+        "1":
+          ref: "ipdb:5613"
+          quote: "No flippers in the traditional sense, but each of the two springs that form the bottom edge of the playfield has a kicker post below it"
+        "2":
+          ref: "ipdb:511"
+          quote: "it's small and vertical, resembling a pachinko game more than a traditional pinball machine"
+        "3":
+          ref: "ipdb:6022"
+          quote: "This is a floor-standing upright game. The counter game version is American Amusement's 1946 'Junior League Bat-A-Ball'."
+        "4":
+          ref: "ipdb:5171"
+          quote: "This is a wall-mounted game. The playfield is sloped towards the player."
+        "5":
+          ref: https://en.wikipedia.org/wiki/Pachinko
+          quote: "A pachinko machine resembles a vertical pinball machine, but is different from Western pinball in several ways."
+        "6":
+          ref: https://en.wikipedia.org/wiki/Pachinko
+          quote: "The balls fall vertically through an array of pins, levers, cups, traps and obstacles until they enter a payoff target or reach the bottom of the playfield."
+  - gameplay-feature.backbox-playfields:
+      description: |
+        A backbox playfield is a second, upright playing surface standing in the backbox above a machine's ordinary sloping one. The game has both, and the ball travels between them — up to the vertical surface for a spell of play there, then back down to the main one.
+
+        [[manufacturer:genco]] built the idea mechanically in the early 1950s, as something to watch rather than to play. On *[[title:double-action-2]]* (1951) a ball settling in a Double Action hole stays put and "activates a flipperless vertical playfield in the backbox where the next captive ball is mechanically lifted to the top and released to fall through pins",[[cite:1]] scoring on its way down before the held ball is returned to play. *[[title:springtime]]* followed three months later with the same arrangement, and carried its result further: "the scores from the flipperless vertical playfield carry-over to the next game".[[cite:2]]
+
+        ## Made playable
+
+        The solid-state era handed the upper surface its own flippers. [[manufacturer:williams]] prototyped it in 1987 on *[[title:wreckn-ball]]*, where "a vertical moving track lifts the ball in play to the vertical playfield in the backbox" and returns it below when it drains.[[cite:3]] That machine never shipped; retooled with a motocross theme it became *[[title:banzai-run]]* (1988), which raises the ball the same way, by "a magnet on a moving vertical track".[[cite:4]] The result is a game played on two surfaces at right angles to each other, and the best-known machine of this shape.
+      cites:
+        "1":
+          ref: "ipdb:706"
+          quote: "activates a flipperless vertical playfield in the backbox where the next captive ball is mechanically lifted to the top and released to fall through pins"
+        "2":
+          ref: "ipdb:2326"
+          quote: "The scores from the flipperless vertical playfield carry-over to the next game."
+        "3":
+          ref: "ipdb:6167"
+          quote: "A vertical moving track lifts the ball in play to the vertical playfield in the backbox."
+        "4":
+          ref: "ipdb:175"
+          quote: "A magnet on a moving vertical track lifts the ball in play to the vertical playfield in the backbox."
+  - gameplay-feature.pins:
+      description: |
+        The "pin" in pinball is the game's oldest feature: a small metal post standing up out of the [[gameplay-feature:playfields]] for the ball to strike and glance off. It does nothing on its own — no switch, no coil, no moving part — and scores nothing when hit. Its whole job is to change where the ball goes, and a field of them turns a straight roll down the slope into an unpredictable scatter.
+
+        ## Origins
+
+        On the French billiards tables that [[game-format:bagatelle]] descends from, the pins began as skittles at the far end for the player to knock over, but "pins took too long to reset when knocked down, so they were eventually fixed to the table, and holes in the table's bed became the targets".[[cite:1]] Fixing them in place inverted the game: the pins stopped being what a player aimed at and became what stood in the way. The eighteenth-century variant Billard japonais "used thin metal pins and replaced the cue at the player's end of the table with a coiled spring and a plunger",[[cite:2]] which is a pin game in everything but name, and by the time [[person:montague-redgrave]] was building bagatelles in Cincinnati in the 1870s "the balls became marbles and the wickets became small metal pins".[[cite:3]]
+
+        The machines of the early 1930s ran on nothing else. After the plunger, the ball "simply proceeded down the playfield, directed by static nails (or 'pins') to one of several scoring areas. These pins gave the game its name."[[cite:4]] Every [[tag:flipperless]] machine works this way still, and so does the [[cabinet:countertop]] trade of the same era, where a penny bought five balls and the pin field decided all five.
+
+        ## What became of them
+
+        Modern machines more often have [[gameplay-feature:stationary-posts]] than pins. Strictly speaking, a pin is a bare nail or peg driven into the wood,[[cite:4]] whereas a post is a rubber-sleeved or plastic anchor used to bounce the ball around, guide balls into lanes, and hold up playfield plastics.  However, many players use the words interchangeably.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Pins took too long to reset when knocked down, so they were eventually fixed to the table, and holes in the table's bed became the targets."
+        "2":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "it used thin metal pins and replaced the cue at the player's end of the table with a coiled spring and a plunger"
+        "3":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "The balls became marbles and the wickets became small metal pins."
+        "4":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: 'After launching the ball simply proceeded down the playfield, directed by static nails (or "pins") to one of several scoring areas. These pins gave the game its name.'

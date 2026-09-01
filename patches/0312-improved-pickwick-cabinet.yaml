@@ -1,0 +1,12 @@
+attribution: flipcommons-catalog
+description: >
+  Cabinet for the improved Pickwick.
+claims:
+  - model.pickwick-improved:
+      note: The improved model of the same Pickwick design, which hung on a wall rather than lying on a table.
+      cite:
+        - ref: https://www.encyclopedia.com/sports-and-everyday-life/games/games-and-hobbies/pinball
+          quote: "His game was called Pickwick, and was different from most of its predecessors in that it was mounted vertically on a wall, instead of inclined on a table."
+        - ref: "ipdb:5432"
+          quote: "Vertical playfield bagatelle."
+      cabinet: upright
