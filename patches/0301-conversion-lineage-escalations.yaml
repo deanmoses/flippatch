@@ -1,0 +1,636 @@
+attribution: flipcommons-catalog
+description: >
+  Conversion lineage for 58 machines, adjudicated from the 0299 sweep review.
+claims:
+  - model.a-circus:
+      cite:
+        ref: "ipdb:5385"
+        quote: "This is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted."
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion
+          license_status: unknown
+  - model.a-circus-2:
+      cite:
+        ref: "ipdb:5389"
+        quote: 'The ad shown here indicates "Our boards are made to fit any machine - can be installed in 15 minutes."'
+      model_relationship:
+        - target_label: any machine
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.all-american-derby:
+      cite:
+        ref: "ipdb:5418"
+        quote: A conversion of the free play versions of Bally's 1940 'Sport Special' and Bally's 1940 'Sport Event'.
+      model_relationship:
+        - target_machine: sport-event
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sport-special
+          relationship_type: conversion
+          license_status: unknown
+  - model.american-beauty:
+      cite:
+        ref: "ipdb:2872"
+        quote: "`American Beauty' was a conversion of Exhibit's 'Attention' of 1940"
+      model_relationship:
+        - target_machine: attention
+          relationship_type: conversion
+          license_status: unknown
+  - model.american-beauty-4:
+      cite:
+        ref: "ipdb:5451"
+        quote: A conversion of Bally's 1940 'Attention' and Bally's 1940 'Mascot'.
+      model_relationship:
+        - target_machine: attention-2
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: mascot
+          relationship_type: conversion
+          license_status: unknown
+  - model.baseball-6:
+      cite:
+        ref: "ipdb:191"
+        quote: World War II conversion
+      model_relationship:
+        - target_label: an unknown game
+          relationship_type: conversion
+          license_status: unknown
+  - model.beatem:
+      cite:
+        ref: "ipdb:5061"
+        quote: "'Beatem' was a conversion of Chicago Coin's 1939 'Lucky'."
+      model_relationship:
+        - target_label: Chicago Coin's 1939 'Lucky'
+          relationship_type: conversion
+          license_status: unknown
+  - model.best-bet:
+      cite:
+        ref: "ipdb:5592"
+        quote: Victory Sales' 1946 'Thorobreds'
+      model_relationship:
+        - target_machine: thorobreds
+          relationship_type: conversion
+          license_status: unknown
+  - model.big-top:
+      cite:
+        ref: "ipdb:284"
+        quote: "advertised this game as a new revamp (conversion) of these games:  Keeney's 1941 'Twin Six' Keeney's 'Clover' Keeney's 1941 'Sky Ray'"
+      model_relationship:
+        - target_label: Keeney's 'Clover'
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sky-ray
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: twin-six
+          relationship_type: conversion
+          license_status: unknown
+  - model.black-jack-4:
+      cite:
+        ref: "ipdb:4843"
+        quote: "The ad states the playfield can be used to convert  Allswell's 1932 'Oh Yeah!' Bally's 1932 'Ballyhoo' Buckley Manufacturing Company's 1932 'Favorite' Pierce Tool's 1932 'Hoop-Er-Doo' and similar size machines."
+      model_relationship:
+        - target_label: similar size machines
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: ballyhoo-3
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: favorite-2
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: hoop-er-doo
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: oh-yeah
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.bug-a-boo:
+      cite:
+        ref: "ipdb:6981"
+        quote: "that flyer shown here was an offer from the manufacturer to sell Bug-A-Boo as an otherwise unadvertised conversion backglass for their game, 'The Hunter', at a separate price"
+      model_relationship:
+        - target_machine: the-hunter-2
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.challenger-5:
+      cite:
+        ref: "ipdb:3884"
+        quote: "'Challenger' was a conversion of Bally's 1938 'Sport Page' and Bally's 1939 'Blue Ribbon'."
+      model_relationship:
+        - target_machine: blue-ribbon-3
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sport-page
+          relationship_type: conversion
+          license_status: unknown
+  - model.cherry-reel-football-board:
+      cite:
+        ref: "ipdb:6000"
+        quote: "This two-page ad advertises the replacement playfield to fit in the following games:  • Lucky Star Manufacturing Company's 1932 'Lucky Star' • Ballyhoo (not sure whether Bally or Rock-ola) • Lucky Strike Manufacturing Company's 1932 'Lucky Strike' (maybe also their Marble and Steel Ball versions) • Royal Novelty Company's 1931 'Jostle' • Etzel (unknown) • The Wizzard (unknown, might be Eagle Sheet Metal Manufacturing Co.'s 1932 'Wizard Ball Game')"
+      model_relationship:
+        - target_label: "Lucky Star, Ballyhoo, Etzel and The Wizzard"
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: jostle
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: lucky-strike-5
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.classic-2:
+      cite:
+        ref: "ipdb:3023"
+        quote: 'The ad shown here indicates "Our boards are made to fit any machine - can be installed in 15 minutes."'
+      model_relationship:
+        - target_label: any machine
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.classic-3:
+      cite:
+        ref: "ipdb:5384"
+        quote: "This is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted."
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion
+          license_status: unknown
+  - model.commander-2:
+      cite:
+        ref: "ipdb:3842"
+        quote: "`Commander' was a conversion of Bally's `Fleet'"
+      model_relationship:
+        - target_label: Bally's 'Fleet'
+          relationship_type: conversion
+          license_status: unknown
+  - model.de-icer-2:
+      cite:
+        ref: "ipdb:4790"
+        quote: "`De-Icer' was a conversion of Success Game's `Red White Blue' of 1941."
+      model_relationship:
+        - target_machine: red-white-blue
+          relationship_type: conversion
+          license_status: unknown
+  - model.derby-king-2:
+      cite:
+        ref: "ipdb:669"
+        quote: "'Derby King' is a conversion of any of these three games: Bally's 1940 'Sport King' Bally's 1940 'Long Shot' Bally's 1941 'Kentucky'"
+      model_relationship:
+        - target_label: "any of Bally's 1940 'Sport King', Bally's 1940 'Long Shot' or Bally's 1941 'Kentucky'"
+          relationship_type: conversion
+          license_status: unknown
+  - model.eagle-squadron:
+      cite:
+        ref: "ipdb:3834"
+        quote: "'Eagle Squadron' was a conversion of Genco's 1940 'Big League' and Genco's 1940 'Big Town'."
+      model_relationship:
+        - target_machine: big-league
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: big-town
+          relationship_type: conversion
+          license_status: unknown
+  - model.fast-track:
+      cite:
+        ref: "ipdb:3833"
+        quote: "'Fast Track' was a conversion of Bally's 1938 'Sport Page' and Bally's 1939 'Blue Ribbon'."
+      model_relationship:
+        - target_machine: blue-ribbon-3
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sport-page
+          relationship_type: conversion
+          license_status: unknown
+  - model.flat-top:
+      cite:
+        ref: "ipdb:876"
+        quote: 'it was a conversion of this game: Bally''s 1940 ''Attention'' (or maybe Exhibit''s 1940 ''Attention'')  Then, a pictureless manufacturer ad in BB 04/21/1945 p76 announced the following games were also used for this conversion: Bally''s 1940 ''Mascot'' Bally''s 1941 ''Air Force'' Bally''s 1941 ''Silver Skates''  Finally, a pictureless manufacturer ad in BB 06/16/1945 p82 announced "now 4 more games" were also used for this conversion: Bally''s 1941 ''Mystic'' (or, less likely, Pacific Manufacturing Corporation''s 1937 ''Mystic'') Bally''s 1941 ''Pursuit'' Bally''s 1941 ''Pan-American'' Bally''s ''Crystal'''
+      model_relationship:
+        - target_label: Bally's 1940 'Attention' (or maybe Exhibit's)
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: air-force
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: crystal
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: mascot
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: mystic-3
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: pan-american
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: pursuit
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: silver-skates-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.gateway:
+      cite:
+        ref: "ipdb:6302"
+        quote: The Encyclopedia of Pinball Vol 2 lists Gateway as a converted game but the source game is not identified.
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion
+          license_status: unknown
+  - model.high-stepper:
+      cite:
+        ref: "ipdb:6729"
+        quote: A conversion of Bally's 1947 'Bally Entry' and Bally's 1947 'Special Entry'.
+      model_relationship:
+        - target_machine: bally-entry
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: special-entry
+          relationship_type: conversion
+          license_status: unknown
+  - model.hit-the-deck-play-cards:
+      cite:
+        ref: "ipdb:4923"
+        quote: "Per the  Encyclopedia of Pinball Vol 1, this is a converted game, likely that of Bingo Novelty Manufacturing Company's 1932 'Bingo Play Cards'."
+      model_relationship:
+        - target_machine: bingo-play-cards
+          relationship_type: conversion
+          license_status: unknown
+  - model.home-run-44:
+      cite:
+        ref: "ipdb:5065"
+        quote: "'Home Run '44' was a conversion of a game called 'Home Run'."
+      model_relationship:
+        - target_label: a game called 'Home Run'
+          relationship_type: conversion
+          license_status: unknown
+  - model.hullabaloo:
+      cite:
+        ref: "ipdb:6807"
+        quote: "This was advertised as a replacement playfield for the following games:  Baffle Ball (possibly any of several) Bingo (possibly any of several) Bingo Planet (likely 'Planet Ball') Golden Comet Hit the Deck (likely 'Hit The Deck Play Cards') Lucky Strike Joy Game (likely this one: 'The Joy Game') Play Boy (likely this one: 'Play-Boy') Spot-A-Ball (likely 'Spot A Ball')"
+      model_relationship:
+        - target_label: "Baffle Ball, Bingo and six other early-1930s games"
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.invasion:
+      cite:
+        ref: "ipdb:1269"
+        quote: "'Invasion' was a conversion of Genco's 1941 'Seven Up' and Genco's 1941 'Sluggers'."
+      model_relationship:
+        - target_machine: seven-up
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sluggers
+          relationship_type: conversion
+          license_status: unknown
+  - model.jeep:
+      cite:
+        ref: "ipdb:3843"
+        quote: "`Jeep' was a conversion of Exhibit's `Duplex'"
+      model_relationship:
+        - target_machine: duplex
+          relationship_type: conversion
+          license_status: unknown
+  - model.jiggilo-2:
+      cite:
+        ref: "ipdb:5387"
+        quote: "This is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted."
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion
+          license_status: unknown
+  - model.jiggilo-3:
+      cite:
+        ref: "ipdb:5390"
+        quote: 'it''s possible that this December 1932 conversion kit was Ace''s initial response to the injunction, to address their "Who''s Goofy" games that they had sold prior to the injunction'
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.kismet:
+      cite:
+        ref: "ipdb:1384"
+        quote: World War II conversion.
+      model_relationship:
+        - target_label: an unknown game
+          relationship_type: conversion
+          license_status: unknown
+  - model.lariat:
+      cite:
+        ref: "ipdb:1401"
+        quote: "`Lariat' is a conversion of United's `Nevada'."
+      model_relationship:
+        - target_machine: nevada-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.laura:
+      cite:
+        ref: "ipdb:1418"
+        quote: "According to a magazine ad pictured here, the following games could be converted to become 'Laura':  Bally's 1940 'Attention' (or maybe Exhibit's 1940 'Attention') Bally's 1940 'Mascot' Bally's 1941 'Air Force' Bally's 1941 'Broadcast' Bally's 1941 'Cross-Line' Bally's 1941 'Flicker' Bally's 1941 'Mystic' (or, less likely, Pacific Manufacturing Corporation's 1937 'Mystic') Bally's 1941 'Pan-American' Bally's 1941 'Play Ball' Bally's 1941 'Pursuit' Bally's 1941 'Silver Skates' Bally's 1941 'Speed Ball' Bally's 1941 'Trailways' Bally's 'Crystal'"
+      model_relationship:
+        - target_label: Bally's 1940 'Attention' (or maybe Exhibit's)
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: air-force
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: broadcast
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: cross-line
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: crystal
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: flicker-2
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: mascot
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: mystic-3
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: pan-american
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: play-ball
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: pursuit
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: silver-skates-2
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: speed-ball
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: trailways
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.old-hilltop:
+      cite:
+        ref: "ipdb:1706"
+        quote: "General Vending Sales Corporation, a distributor, converted Universal Industries' 1950 'Winner' into 'Old Hilltop'."
+      model_relationship:
+        - target_machine: winner-5
+          relationship_type: conversion
+          license_status: unknown
+  - model.pastime-2:
+      cite:
+        ref: "ipdb:1766"
+        quote: "`Pastime' was a conversion of Stoner's `Turf Champ'"
+      model_relationship:
+        - target_label: Stoner's 'Turf Champ'
+          relationship_type: conversion
+          license_status: unknown
+  - model.picture-parade:
+      cite:
+        ref: "ipdb:4773"
+        quote: Schneller's 1949 and 1950 ads indicate this game is a conversion of 'Robin Hood' but this is likely a reference to the recent Gottlieb's 1948 'Lady Robin Hood'
+      model_relationship:
+        - target_machine: lady-robin-hood
+          relationship_type: conversion
+          license_status: unknown
+  - model.poko-lite:
+      cite:
+        ref: "ipdb:5299"
+        quote: Conversion of Bally's 1936 'Bumper' and Bally's 1937 'Skipper'.
+      model_relationship:
+        - target_machine: bumper
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: skipper-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.profit-sharer:
+      cite:
+        ref: "ipdb:6256"
+        quote: 'is a "Jack Pot Attachment" for the front of the pinball cabinet to convert non-payout pinball machines to payout.'
+      model_relationship:
+        - target_label: non-payout pinball machines
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.race-king:
+      cite:
+        ref: "ipdb:3832"
+        quote: "'Race King' was a conversion of these games: Bally's 1938 'Seabiscuit' Bally's 1938 'Thistledowns'"
+      model_relationship:
+        - target_label: Bally's 1938 'Thistledowns'
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: seabiscuit
+          relationship_type: conversion
+          license_status: unknown
+  - model.rocket-buster:
+      cite:
+        ref: "ipdb:6943"
+        quote: Conversion of another gun game that we have not yet identified.
+      model_relationship:
+        - target_label: an unidentified gun game
+          relationship_type: conversion
+          license_status: unknown
+  - model.scout:
+      cite:
+        ref: "ipdb:6823"
+        quote: a kit made in 1970-1972 for Gottlieb's 1967 'Harmony' and Gottlieb's 1967 'Troubadour'
+      model_relationship:
+        - target_machine: harmony
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: troubadour
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.soft-ball-queens:
+      cite:
+        ref: "ipdb:2236"
+        quote: "Munves advertised that the following games could be used for this conversion, which included replacing the playfield: Bally's 1941 'Broadcast' Bally's 1941 'Pan-American' Bally's 1941 'Mystic' Bally's 1941 'Silver Skates' Bally's 1941 'Cross-Line' Bally's 1940 'Vacation' Crystal (unknown game) Westerhaus Amusement Co.'s 1944 'Marines At Play (1st Edition)' (itself a conversion) Bally's 1940 'Attention' Bally's 1940 'Charm' Bally's 1940 'Mascot' Bally's 1941 'Flicker'"
+      model_relationship:
+        - target_label: Crystal (unknown game)
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: attention-2
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: broadcast
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: charm
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: cross-line
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: flicker-2
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: marines-at-play-1st-edition
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: mascot
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: mystic-3
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: pan-american
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: silver-skates-2
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: vacation
+          relationship_type: conversion
+          license_status: unknown
+  - model.space-duel:
+      cite:
+        ref: "ipdb:5256"
+        quote: The Pinball Collectors Resource - Millenium Edition lists this game as a conversion.
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion
+          license_status: unknown
+  - model.sportsman-3:
+      cite:
+        ref: "ipdb:2308"
+        quote: "`Sportsman' was a conversion of Bally's `Blue Grass', `Dark Horse', `Sport Special', or `Sport Event'"
+      model_relationship:
+        - target_label: "Bally's 'Blue Grass', 'Dark Horse', 'Sport Special', or 'Sport Event'"
+          relationship_type: conversion
+          license_status: unknown
+  - model.spot-cha:
+      cite:
+        ref: "ipdb:2319"
+        quote: World War II conversion of Exhibit's 'Attention'.
+      model_relationship:
+        - target_machine: attention
+          relationship_type: conversion
+          license_status: unknown
+  - model.starlight:
+      cite:
+        ref: "ipdb:3868"
+        quote: "'Starlight' was a converted game for Bally's 1940 'Triumph (Model 1)'."
+      model_relationship:
+        - target_machine: triumph-model-1
+          relationship_type: conversion
+          license_status: unknown
+  - model.strip-tease:
+      cite:
+        ref: "ipdb:3750"
+        quote: "'Strip Tease' was a wartime conversion of Chicago Coin's 1939 'Sports' (Model 69) and/or Chicago Coin's 1939 'Sports' (Model 70)."
+      model_relationship:
+        - target_label: Chicago Coin's 1939 'Sports' (Model 69 and/or Model 70)
+          relationship_type: conversion
+          license_status: unknown
+  - model.super-wall-street:
+      cite:
+        ref: "ipdb:6349"
+        quote: "Reportedly, this is a backglass issued by Bally for converting Bally's 1974 'Bali' to a new game name."
+      model_relationship:
+        - target_machine: bali
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.swat-king:
+      cite:
+        ref: "ipdb:5074"
+        quote: "'Swat King' was a conversion of a game called 'Play Ball'."
+      model_relationship:
+        - target_label: a game called 'Play Ball'
+          relationship_type: conversion
+          license_status: unknown
+  - model.sweethearts:
+      cite:
+        ref: "ipdb:3869"
+        quote: "'Sweethearts' was a converted game for Exhibit's 1941 'Stars'."
+      model_relationship:
+        - target_machine: stars-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.triumph:
+      cite:
+        ref: "ipdb:5662"
+        quote: The ad indicates this game is a conversion of one or more other games.
+      model_relationship:
+        - target_label: one or more other games
+          relationship_type: conversion
+          license_status: unknown
+  - model.turf-course:
+      cite:
+        ref: "ipdb:4037"
+        quote: 'Probably a conversion backglass for a Bally''s `Turf King".'
+      model_relationship:
+        - target_label: a Bally 'Turf King'
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.war-admiral:
+      cite:
+        ref: "ipdb:3851"
+        quote: "`War Admiral' was a conversion of Bally's `Grand Stand', `Grand National' or `Pace Maker'."
+      model_relationship:
+        - target_label: "Bally's 'Grand Stand', 'Grand National' or 'Pace Maker'"
+          relationship_type: conversion
+          license_status: unknown
+  - model.war-admiral-2:
+      cite:
+        ref: "ipdb:4052"
+        quote: "War Admiral' was a conversion of these games: Bally's 1938 'Grandstand' Bally's 1938 'Pace Maker' and/or Bally's 1939 'Pace Maker' Bally's 1939 'Grand National'"
+      model_relationship:
+        - target_label: Bally's 1938 and/or 1939 'Pace Maker'
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: grand-national
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: grandstand-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.wer-zahlt-die-runde:
+      cite:
+        ref: "ipdb:4997"
+        quote: "This game was a conversion for T.H. Bergmann & Co.'s 1957 'Turf' and T.H. Bergmann & Co.'s 1954 'Clipper', two of the more successful games from that manufacturer."
+      model_relationship:
+        - target_machine: clipper-2
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: turf
+          relationship_type: conversion
+          license_status: unknown
+  - model.whirlaway:
+      cite:
+        ref: "ipdb:3547"
+        quote: "`Whirlaway' was a conversion of Bally's `Blue Grass', `Dark Horse', or `Sport Special'."
+      model_relationship:
+        - target_label: "Bally's 'Blue Grass', 'Dark Horse', or 'Sport Special'"
+          relationship_type: conversion
+          license_status: unknown
+  - model.whirlaway-2:
+      cite:
+        ref: "ipdb:3848"
+        quote: "'Whirlaway' was a conversion of these 1-player games:  Bally's 1940 'Sport Event' Bally's 1940 'Sport Special' Bally's 1940 'Record Time' Bally's 1940 'Dark Horse' Bally's 1941 'Blue Grass'"
+      model_relationship:
+        - target_machine: blue-grass
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: dark-horse
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: record-time
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sport-event
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sport-special
+          relationship_type: conversion
+          license_status: unknown
+  - model.whos-goofy-2:
+      cite:
+        ref: "ipdb:5386"
+        quote: "This is listed as a conversion game in the Encyclopedia of Pinball Vol 1, but no mention of what game it converted."
+      model_relationship:
+        - target_label: an unidentified game
+          relationship_type: conversion
+          license_status: unknown

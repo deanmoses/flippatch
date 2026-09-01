@@ -1,0 +1,478 @@
+attribution: flipcommons-catalog
+description: >
+  Conversion lineage for 51 machines, the 0299 sweep's vetted green tier.
+claims:
+  - model.1776:
+      cite:
+        ref: "ipdb:4909"
+        quote: 'This game was modified from a Chicago Coin 1941 ''Show Boat'' for use in the 1948 motion picture titled "The Time of Your Life".'
+      model_relationship:
+        - target_machine: show-boat-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.1942-bowling-alley:
+      cite:
+        ref: "ipdb:6003"
+        quote: "'1942 Bowling Alley' is a converted game for Gottlieb's 1939 'Bowling Alley'."
+      model_relationship:
+        - target_machine: bowling-alley
+          relationship_type: conversion
+          license_status: unknown
+  - model.45-derby:
+      cite:
+        ref: "ipdb:5705"
+        quote: Wartime conversion of Bally's 1941 '41-Derby' with new paint and new playfield.
+      model_relationship:
+        - target_machine: 41-derby
+          relationship_type: conversion
+          license_status: unknown
+  - model.all-out:
+      cite:
+        ref: "ipdb:3840"
+        quote: "`All Out' was a conversion of Bally's `Cross Line' of 1941"
+      model_relationship:
+        - target_machine: cross-line
+          relationship_type: conversion
+          license_status: unknown
+  - model.archery:
+      cite:
+        ref: "ipdb:3857"
+        quote: "'Archery' was a converted game for Genco's 1940 'Cadillac'."
+      model_relationship:
+        - target_machine: cadillac
+          relationship_type: conversion
+          license_status: unknown
+  - model.arlington-2:
+      cite:
+        ref: "ipdb:811"
+        quote: "World War II conversion from Bally's `Fairmont'."
+      model_relationship:
+        - target_machine: fairmont
+          relationship_type: conversion
+          license_status: unknown
+  - model.arrow:
+      cite:
+        ref: "ipdb:3876"
+        quote: "'Arrow' was a conversion of Genco's 1940 'Cadillac'."
+      model_relationship:
+        - target_machine: cadillac
+          relationship_type: conversion
+          license_status: unknown
+  - model.baseball-12:
+      cite:
+        ref: "ipdb:5056"
+        quote: "Game was advertised in May, 1932 as a 15-inch by 30-inch conversion playfield delivered a little long on three sides for trimming by operator to fit existing machines."
+      model_relationship:
+        - target_label: existing machines
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.beat-aces:
+      cite:
+        ref: "ipdb:4895"
+        quote: "This was a replacement playfield for the following games made by Exhibit Manufacturing: Lightning, Electro, Golden Gate, and Drop Kick."
+      model_relationship:
+        - target_label: "Exhibit's Lightning, Electro, Golden Gate, and Drop Kick"
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.best-bet:
+      cite:
+        ref: "ipdb:5592"
+        quote: "this is a conversion of these games: Bally's 1942 'Longacres' possibly Bally's 1941 '41-Derby' Bally's 1941 'Club Trophy' Whirlaway (either Victory Sales' 1943 'Whirlaway' or Roy McGinnis' 1943 'Whirlaway') Roy McGinnis' 1944 'Dust Whirls' Bally's 1946 'Victory Special' Pimlico (either Bally's 1941 'Pimlico' or Victory Sales' 1946 'Pimlico') Victory Sales' 1946 'Thorobreds'"
+      model_relationship:
+        - target_machine: club-trophy
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: dust-whirls
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: longacres-2
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: victory-special
+          relationship_type: conversion
+          license_status: unknown
+  - model.big-three-2:
+      cite:
+        ref: "ipdb:3875"
+        quote: 'A conversion of Mills'' 1940 ''"1 2 3"'''
+      model_relationship:
+        - target_machine: 1-2-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.bombardier-2:
+      cite:
+        ref: "ipdb:3846"
+        quote: "`Bombardier' was a conversion of Genco's `Formation'"
+      model_relationship:
+        - target_machine: formation
+          relationship_type: conversion
+          license_status: unknown
+  - model.broadway-5:
+      cite:
+        ref: "ipdb:5563"
+        quote: This is a conversion kit for unspecified games.
+      model_relationship:
+        - target_label: unspecified games
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.cherry-picker:
+      cite:
+        ref: "ipdb:4857"
+        quote: This game was created in 1963 by R. P. Hilleirich and derived from a Bally 1959 'Sea Island' but with an overpainted playfield and backglass.
+      model_relationship:
+        - target_machine: sea-island
+          relationship_type: conversion
+          license_status: unknown
+  - model.combat-2:
+      cite:
+        ref: "ipdb:3858"
+        quote: "'Combat' was a converted game for Exhibit's 1940 'Leader'."
+      model_relationship:
+        - target_machine: leader
+          relationship_type: conversion
+          license_status: unknown
+  - model.combination-recreation-board:
+      cite:
+        ref: "ipdb:6103"
+        quote: This board is placed at one end of a billiard table surface to convert it to a carombolette table.
+      model_relationship:
+        - target_label: billiard tables
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.daily-races-2:
+      cite:
+        ref: "ipdb:4527"
+        quote: This game was a conversion of Bally's 1941 Jockey Club.
+      model_relationship:
+        - target_machine: jockey-club-3
+          relationship_type: conversion
+          license_status: unknown
+  - model.dark-shadow-conversion-kit:
+      cite:
+        ref: "ipdb:6723"
+        quote: The example pictured here used Bally's 1979 'Dolly Parton' as a source game.
+      model_relationship:
+        - target_machine: dolly-parton
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.double-feature-5:
+      cite:
+        ref: "ipdb:714"
+        quote: One ad pictured here indicates only Bally games were used for this converted game.
+      model_relationship:
+        - target_label: Bally games
+          relationship_type: conversion
+          license_status: unknown
+  - model.easy-pickin:
+      cite:
+        ref: "ipdb:3859"
+        quote: Easy Pickin' was a converted game for Chicago Coin's 1939 'O'Boy'.
+      model_relationship:
+        - target_machine: oboy
+          relationship_type: conversion
+          license_status: unknown
+  - model.falling-suns:
+      cite:
+        ref: "ipdb:3853"
+        quote: "`Falling Suns' was a conversion of Genco's `Ten Spot'"
+      model_relationship:
+        - target_machine: ten-spot
+          relationship_type: conversion
+          license_status: unknown
+  - model.figure-8-3:
+      cite:
+        ref: "ipdb:5727"
+        quote: The manufacturer indicated this game was sold as a replacement playfield for a variety of unspecified games while also sold as a complete game in a cabinet advertised as 31 inches long and 16 inches wide.
+      model_relationship:
+        - target_label: a variety of unspecified games
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.film-cavalcade:
+      cite:
+        ref: "ipdb:845"
+        quote: "'Film Cavalcade' is a flipper conversion of the flipperless United's 1948 'Manhattan'."
+      model_relationship:
+        - target_machine: manhattan
+          relationship_type: conversion
+          license_status: unknown
+  - model.flying-tigers:
+      cite:
+        ref: "ipdb:3854"
+        quote: "`Flying Tigers` was a conversion of Bally's `Play Ball'"
+      model_relationship:
+        - target_machine: play-ball
+          relationship_type: conversion
+          license_status: unknown
+  - model.frisco:
+      cite:
+        ref: "ipdb:956"
+        quote: "'Frisco' is a World War II conversion of the following games:  Gottlieb's 1940 'The Champ' Gottlieb's 1941 'The New Champ' Gottlieb's 1941 'Sea Hawk' Gottlieb's 1941 'Horoscope' Gottlieb's 1941 'School Days' Gottlieb's 1941 'Belle Hop' Gottlieb's 1940 'Paradise' Gottlieb's 1941 'Spot Pool' Gottlieb's 1941 'Miami Beach' Gottlieb's 1941 'A-B-C Bowler'"
+      model_relationship:
+        - target_machine: a-b-c-bowler
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: belle-hop
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: horoscope
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: miami-beach
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: paradise-3
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: school-days
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sea-hawk
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: spot-pool
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: the-champ
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: the-new-champ
+          relationship_type: conversion
+          license_status: unknown
+  - model.high-boy:
+      cite:
+        ref: "ipdb:4791"
+        quote: "`Hi-Boy' was a conversion of Genco's `Metro' of 1940"
+      model_relationship:
+        - target_machine: metro-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.madame-butterfly:
+      cite:
+        ref: "ipdb:1505"
+        quote: "'Madam Butterfly' was a conversion of United's 1947 flipperless game Singapore."
+      model_relationship:
+        - target_machine: singapore
+          relationship_type: conversion
+          license_status: unknown
+  - model.mandalay:
+      cite:
+        ref: "ipdb:3384"
+        quote: We previously listed 'Mandalay' as a converted game for Genco's 1948 'Trade Winds' but a Billboard ad shown here identifies Mandalay as Schneller's first conversion kit
+      model_relationship:
+        - target_machine: trade-winds
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.movie:
+      cite:
+        ref: "ipdb:4813"
+        quote: The playfield is that of 'Pinball Champ' by Zaccaria.
+      model_relationship:
+        - target_machine: pinball-champ
+          relationship_type: conversion
+          license_status: unknown
+  - model.mystic-star:
+      cite:
+        ref: "ipdb:3375"
+        quote: "A conversion kit, was shipped as a complete game, less circuit boards. Uses a Bally -35 MPU board set."
+      model_relationship:
+        - target_label: machines using a Bally -35 MPU board set
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.nine-bells:
+      cite:
+        ref: "ipdb:3862"
+        quote: "'Nine Bells' was a converted game for Genco's 1939 'Mr. Chips'."
+      model_relationship:
+        - target_machine: mr-chips
+          relationship_type: conversion
+          license_status: unknown
+  - model.nite-club:
+      cite:
+        ref: "ipdb:4792"
+        quote: "`Nite Club' was a conversion of Genco's `Formation' of 1940"
+      model_relationship:
+        - target_machine: formation
+          relationship_type: conversion
+          license_status: unknown
+  - model.opportunity:
+      cite:
+        ref: "ipdb:1723"
+        quote: "'Opportunity' is a conversion of these games:  Gottlieb's 1940 'The Champ' Gottlieb's 1940 'Paradise' Gottlieb's 1941 'Sea Hawk' Gottlieb's 1941 'Horoscope' Gottlieb's 1941 'School Days' Gottlieb's 1941 'Belle Hop' Gottlieb's 1941 'A-B-C Bowler' Gottlieb's 1941 'Miami Beach' Gottlieb's 1941 'Spot Pool' Gottlieb's 1941 'The New Champ'"
+      model_relationship:
+        - target_machine: a-b-c-bowler
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: belle-hop
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: horoscope
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: miami-beach
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: paradise-3
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: school-days
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: sea-hawk
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: spot-pool
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: the-champ
+          relationship_type: conversion
+          license_status: unknown
+        - target_machine: the-new-champ
+          relationship_type: conversion
+          license_status: unknown
+  - model.peacherino:
+      cite:
+        ref: "ipdb:3865"
+        quote: "'Peacherino' was a converted game for Chicago Coin's 1940 'Jolly'."
+      model_relationship:
+        - target_machine: jolly
+          relationship_type: conversion
+          license_status: unknown
+  - model.pin-up-girl:
+      cite:
+        ref: "ipdb:1790"
+        quote: World War II conversion of Bally's 'Silver Skates'.
+      model_relationship:
+        - target_machine: silver-skates-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.play-ball-6:
+      cite:
+        ref: "ipdb:3298"
+        quote: "'Play Ball' was a conversion of Gottlieb's 1940 'The Champ' and Gottlieb's 1941 'The New Champ'."
+      model_relationship:
+        - target_machine: the-champ
+          relationship_type: conversion_kit
+          license_status: unknown
+        - target_machine: the-new-champ
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.pokette:
+      cite:
+        ref: "ipdb:1840"
+        quote: This is a replacement playfield for Bally's 1932 'Ballyhoo' to be installed by the operator.
+      model_relationship:
+        - target_machine: ballyhoo-3
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.production:
+      cite:
+        ref: "ipdb:3847"
+        quote: "`Production' was a conversion of Genco's `Blondie'."
+      model_relationship:
+        - target_machine: blondie-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.red-heads-of-1942:
+      cite:
+        ref: "ipdb:3866"
+        quote: "'Red Heads of 1942' was a converted game for Genco's 1940 'Blondie'."
+      model_relationship:
+        - target_machine: blondie-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.retro-spa:
+      cite:
+        ref: "ipdb:7037"
+        quote: A narrow-body adaptation of the widebody game Bally's 1979 'Future Spa'.
+      model_relationship:
+        - target_machine: future-spa
+          relationship_type: conversion
+          license_status: unknown
+  - model.sailorettes:
+      cite:
+        ref: "ipdb:3828"
+        quote: Sailorettes' was a converted game for Chicago Coin's 1939 'Commodore'.
+      model_relationship:
+        - target_machine: commodore
+          relationship_type: conversion
+          license_status: unknown
+  - model.sea-fair:
+      cite:
+        ref: "ipdb:4530"
+        quote: "This is a custom version of Bally's 1956 'Big Show' and named for use during the annual Sea Fair festival held in Seattle, Washington."
+      model_relationship:
+        - target_machine: big-show-2
+          relationship_type: retheme
+          license_status: unknown
+  - model.sea-power:
+      cite:
+        ref: "ipdb:4794"
+        quote: "`Sea Power' was a conversion of Genco's `Four Roses' of 1940."
+      model_relationship:
+        - target_machine: four-roses
+          relationship_type: conversion
+          license_status: unknown
+  - model.shangrila:
+      cite:
+        ref: "ipdb:3337"
+        quote: "'Shangri-La' is a conversion of Genco's 1939 'Mr. Chips'."
+      model_relationship:
+        - target_machine: mr-chips
+          relationship_type: conversion
+          license_status: unknown
+  - model.silver-runway:
+      cite:
+        ref: "ipdb:3247"
+        quote: "This is a conversion playfield, meant to fit other manufacturer's games."
+      model_relationship:
+        - target_label: other manufacturer's games
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.sink-the-japs:
+      cite:
+        ref: "ipdb:3829"
+        quote: "'Sink the Japs' was a conversion of Genco's 1941 'Seven Up'."
+      model_relationship:
+        - target_machine: seven-up
+          relationship_type: conversion_kit
+          license_status: unknown
+  - model.sixty-grand:
+      cite:
+        ref: "ipdb:3867"
+        quote: "'Sixty Grand' was a converted game for Genco's 1940 'Big Town'."
+      model_relationship:
+        - target_machine: big-town
+          relationship_type: conversion
+          license_status: unknown
+  - model.sky-rider-2:
+      cite:
+        ref: "ipdb:3855"
+        quote: "`Sky Rider' was a conversion of Bally's `Pan American'"
+      model_relationship:
+        - target_machine: pan-american
+          relationship_type: conversion
+          license_status: unknown
+  - model.torpedo-patrol:
+      cite:
+        ref: "ipdb:3838"
+        quote: "`Torpedo Patrol' was a conversion of Genco's `Formation'"
+      model_relationship:
+        - target_machine: formation
+          relationship_type: conversion
+          license_status: unknown
+  - model.treasure:
+      cite:
+        ref: "ipdb:5284"
+        quote: Conversion of Bally's 1937 'Skipper'.
+      model_relationship:
+        - target_machine: skipper-2
+          relationship_type: conversion
+          license_status: unknown
+  - model.triple-play-3:
+      cite:
+        ref: "ipdb:3870"
+        quote: "'Triple Play' was a converted game for Chicago Coin's 1940 'Home Run 1940'."
+      model_relationship:
+        - target_machine: home-run-1940
+          relationship_type: conversion
+          license_status: unknown
