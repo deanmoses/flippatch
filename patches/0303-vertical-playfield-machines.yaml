@@ -1,0 +1,139 @@
+attribution: ipdb
+description: >
+  Machines IPDB marks as having a vertical playfield.
+claims:
+  - model.2005-world-car-racing-pinball:
+      cite:
+        ref: "ipdb:6270"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.4-in-1-pigskin-2010:
+      cite:
+        ref: "ipdb:6010"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.4-in-1-poker:
+      cite:
+        ref: "ipdb:6009"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.4-in-1-willy-at-the-bat:
+      cite:
+        ref: "ipdb:6008"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.4-in-1-willys-cup:
+      cite:
+        ref: "ipdb:6011"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.400:
+      cite:
+        ref: "ipdb:934"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.bat-a-ball:
+      cite:
+        ref: "ipdb:6022"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.boomerang-2:
+      cite:
+        ref: "ipdb:6042"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.bouncing-ball:
+      cite:
+        ref: "ipdb:4837"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.bowling-alle-neune:
+      cite:
+        ref: "ipdb:6037"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.catch-n-match:
+      cite:
+        ref: "ipdb:472"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.chuck-o-luck:
+      cite:
+        ref: "ipdb:511"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.flik-flak:
+      cite:
+        ref: "ipdb:5613"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.golden-nugget:
+      cite:
+        ref: "ipdb:1054"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.jumpin-jacks-2:
+      cite:
+        ref: "ipdb:1330"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.junior-league-bat-a-ball:
+      cite:
+        ref: "ipdb:4675"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.match-ball-wall-flipper:
+      cite:
+        ref: "ipdb:7046"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.mini-baseball:
+      cite:
+        ref: "ipdb:5985"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.pee-wee-2:
+      cite:
+        ref: "ipdb:5527"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.pickwick:
+      cite:
+        ref: "ipdb:5431"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.silver-chest:
+      cite:
+        ref: "ipdb:2145"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.sky-line:
+      cite:
+        ref: "ipdb:6047"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.still-crazy:
+      cite:
+        ref: "ipdb:3730"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.unknown-13:
+      cite:
+        ref: "ipdb:5714"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.whizz:
+      cite:
+        ref: "ipdb:3544"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.whoopee-ball:
+      cite:
+        ref: "ipdb:5726"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]
+  - model.zingo-2:
+      cite:
+        ref: "ipdb:3578"
+        quote: "Specialty: [...] Vertical Pinball Machine"
+      tag: [vertical]

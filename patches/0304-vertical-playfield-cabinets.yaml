@@ -1,0 +1,164 @@
+attribution: flipcommons-catalog
+description: >
+  Cabinet form factors for the vertical-playfield machines.
+sources:
+  - name: LiveAuctioneers
+    source_type: web
+    description: >
+      Auction marketplace whose sold-lot records carry cataloguers' machine descriptions and
+      measurements.
+    links:
+      - {
+          url: "https://www.liveauctioneers.com/",
+          label: LiveAuctioneers,
+          link_type: homepage,
+        }
+  - name: Encyclopedia.com
+    source_type: web
+    description: >
+      Reference aggregator republishing encyclopedia and subject-dictionary articles.
+    links:
+      - {
+          url: "https://www.encyclopedia.com/",
+          label: Encyclopedia.com,
+          link_type: homepage,
+        }
+claims:
+  - model.2005-world-car-racing-pinball:
+      cite:
+        ref: "ipdb:6270"
+        quote: "Vertical cabinet measured 71 1/2 inches high, 22 inches wide, and 26 inches deep."
+      cabinet: upright
+  - model.4-in-1-pigskin-2010:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/4-in-1"
+        quote: '30" tall x 22" wide x 9.25 deep. Unique bar or counter top game'
+      cabinet: countertop
+  - model.4-in-1-poker:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/4-in-1"
+        quote: '30" tall x 22" wide x 9.25 deep. Unique bar or counter top game'
+      cabinet: countertop
+  - model.4-in-1-willy-at-the-bat:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/4-in-1"
+        quote: '30" tall x 22" wide x 9.25 deep. Unique bar or counter top game'
+      cabinet: countertop
+  - model.4-in-1-willys-cup:
+      cite:
+        ref: "https://pinside.com/pinball/forum/topic/4-in-1"
+        quote: '30" tall x 22" wide x 9.25 deep. Unique bar or counter top game'
+      cabinet: countertop
+  - model.400:
+      cite:
+        ref: "ipdb:934"
+        quote: This is an upright game with a vertical playfield.
+      cabinet: upright
+  - model.bat-a-ball:
+      cite:
+        ref: "ipdb:6022"
+        quote: This is a floor-standing upright game.
+      cabinet: upright
+  - model.boomerang-2:
+      cite:
+        ref: "ipdb:6042"
+        quote: "Cabinet measures 84 inches high, 21 inches wide, and 18 inches deep."
+      cabinet: upright
+  - model.bowling-alle-neune:
+      cite:
+        ref: "ipdb:6037"
+        quote: "Cabinet measures 28 inches high, 22 inches wide, and 9 inches deep."
+      cabinet: countertop
+  - model.catch-n-match:
+      note: "A penny-and-nickel machine worked by handles on its side and front, photographed in a guide to counter games rather than to floor machines."
+      cite:
+        ref: "ipdb:472"
+        quote: "Guide to Vintage Trade Stimulators & Counter Games, page 177"
+      cabinet: countertop
+  - model.chuck-o-luck:
+      note: "Fourteen inches puts it among the smallest bar machines rather than among the two-to-four-foot miniatures of full-sized games."
+      cite:
+        ref: "ipdb:511"
+        quote: This is a table top game with a vertical playfield. Its height has been listed at 14 inches
+      cabinet: countertop
+  - model.flik-flak:
+      cite:
+        ref: "ipdb:5613"
+        quote: This is a wall-mounted game with a vertical playfield.
+      cabinet: upright
+  - model.golden-nugget:
+      cite:
+        ref: "ipdb:1054"
+        quote: This is an upright game with a vertical playfield.
+      cabinet: upright
+  - model.jumpin-jacks-2:
+      cite:
+        ref: "ipdb:1330"
+        quote: This is an upright game with a vertical playfield.
+      cabinet: upright
+  - model.junior-league-bat-a-ball:
+      cite:
+        ref: "ipdb:4675"
+        quote: This counter game was available with a floor stand for an additional charge.
+      cabinet: countertop
+  - model.match-ball-wall-flipper:
+      cite:
+        ref: "ipdb:7046"
+        quote: This game mounts onto a wall.
+      cabinet: upright
+  - model.mini-baseball:
+      cite:
+        ref: "ipdb:5985"
+        quote: Can mount on wall or be placed on an optional console base
+      cabinet: upright
+  - model.pee-wee-2:
+      cite:
+        ref: "ipdb:5527"
+        quote: "Game measures approximately 24 inches high, 14 inches wide, and 7 inches deep."
+      cabinet: countertop
+  - model.pickwick:
+      note: "Pickwick hung on a wall rather than lying on a table; this Gamages machine is one of the models built to that design."
+      cite:
+        - ref: "https://www.encyclopedia.com/sports-and-everyday-life/games/games-and-hobbies/pinball"
+          quote: "His game was called Pickwick, and was different from most of its predecessors in that it was mounted vertically on a wall, instead of inclined on a table."
+        - ref: "ipdb:5431"
+          quote: Vertical playfield bagatelle.
+      cabinet: upright
+  - model.silver-chest:
+      cite:
+        ref: "ipdb:2145"
+        quote: This is an upright game with a vertical playfield.
+      cabinet: upright
+  - model.sky-line:
+      cite:
+        ref: "ipdb:6047"
+        quote: This is an upright game with a vertical playfield.
+      cabinet: upright
+  - model.still-crazy:
+      note: "Four flippers across a playfield its own designers called large rules out a counter machine, leaving a floor-standing cabinet with the playfield turned vertical."
+      cite:
+        ref: "ipdb:3730"
+        quote: it was just too difficult to control the balls via the four flippers over the large vertical playfield
+      cabinet: upright
+  - model.unknown-13:
+      cite:
+        ref: "ipdb:5714"
+        quote: "Cabinet measured 23 inches high, 12 inches wide, and 10 1/2 inches deep."
+      cabinet: countertop
+  - model.whizz:
+      note: "Sold on a 38-inch pedestal that brings it to 62 inches, but the game lifts off it and works on a counter."
+      cite:
+        ref: "ipdb:3544"
+        quote: The game can be detached from the pedestal to use as a counter game.
+      cabinet: countertop
+  - model.whoopee-ball:
+      cite:
+        ref: "ipdb:5726"
+        quote: "Game measures 14 1/4 inches high, 9 inches wide, 7 inches deep at the bottom"
+      cabinet: countertop
+  - model.zingo-2:
+      note: "At 86 inches it stands on the floor."
+      cite:
+        ref: "https://www.liveauctioneers.com/price-result/zingo-5-cent-vertical-cabinet-arcade-machine"
+        quote: "Zingo 5 Cent Vertical Cabinet Arcade Machine. Chicago: Williams Mfg. Co., ca. 1944. Five cents for five balls. 86 x 22"
+      cabinet: upright

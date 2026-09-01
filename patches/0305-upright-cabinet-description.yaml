@@ -1,0 +1,45 @@
+attribution: flipcommons-ai-desc-cabinet
+description: >
+  Description for the upright cabinet.
+claims:
+  - cabinet.upright:
+      description: |
+        An upright pinball machine is one in a cabinet that stands its playfield on end, vertically rather than the standard horizontal.
+
+        ## Older than the inclined cabinet
+
+        Coin-operated pinball began this way. *[[title:pickwick]]*, patented by Henry Pessers in 1889, "was different from most of its predecessors in that it was mounted vertically on a wall, instead of inclined on a table".[[cite:1]] The [[game-format:bagatelle]] board it descended from lay flat on a table; standing that board up is what turned it into a machine an operator could hang somewhere and charge for.
+
+        ## The floor upright
+
+        [[manufacturer:genco]] built a short run of them in the early 1950s — *[[title:400]]*, *[[title:jumpin-jacks-2]]*, *[[title:golden-nugget]]*, *[[title:silver-chest]]* — each "an upright game with a vertical playfield",[[cite:2]] played with a single flipper worked by a button on the backglass frame rather than by buttons on the cabinet sides. These were full-height machines: [[manufacturer:amusematic-corporation]]'s *[[title:boomerang]]* measured 84 inches tall,[[cite:3]] and *[[title:zingo-2]]*, the first game [[manufacturer:williams]] ever built, reached 86.[[cite:4]]
+
+        ## The wall box
+
+        A standing playfield needs no floor at all. [[manufacturer:melchers-automatenbau-kg]]'s *[[title:flik-flak]]* "is a wall-mounted game with a vertical playfield",[[cite:5]] and [[manufacturer:chicago-coin]]'s *[[title:mini-baseball]]* "Can mount on wall or be placed on an optional console base"[[cite:6]] — one machine, hung or stood as the location allowed. A wall box costs an operator no floor space, which is why the format kept turning up in bars and cafés long after it had left the arcade.
+
+        ## Why it stayed a minority
+
+        Standing the playfield up hands most of the play to gravity, and a flipper aimed across a vertical surface has far less to work with than a pair at the bottom of an incline. Williams tried the format once in the solid-state era with *[[title:still-crazy]]* (1984), which put four flippers on a large vertical playfield. Twelve test units were built and the sample run was pulled before it shipped: "it was just too difficult to control the balls via the four flippers over the large vertical playfield".[[cite:7]]
+      cites:
+        "1":
+          ref: https://www.encyclopedia.com/sports-and-everyday-life/games/games-and-hobbies/pinball
+          quote: "was different from most of its predecessors in that it was mounted vertically on a wall, instead of inclined on a table"
+        "2":
+          ref: "ipdb:934"
+          quote: "an upright game with a vertical playfield"
+        "3":
+          ref: "ipdb:6042"
+          quote: "Cabinet measures 84 inches high, 21 inches wide, and 18 inches deep."
+        "4":
+          ref: https://www.liveauctioneers.com/price-result/zingo-5-cent-vertical-cabinet-arcade-machine
+          quote: "Zingo 5 Cent Vertical Cabinet Arcade Machine. Chicago: Williams Mfg. Co., ca. 1944. Five cents for five balls. 86 x 22"
+        "5":
+          ref: "ipdb:5613"
+          quote: "This is a wall-mounted game with a vertical playfield."
+        "6":
+          ref: "ipdb:5985"
+          quote: "Can mount on wall or be placed on an optional console base"
+        "7":
+          ref: "ipdb:3730"
+          quote: "it was just too difficult to control the balls via the four flippers over the large vertical playfield"
