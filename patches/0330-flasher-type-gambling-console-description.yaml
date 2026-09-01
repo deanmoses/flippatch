@@ -1,0 +1,62 @@
+attribution: flipcommons-ai-desc-game-format
+description: Description for the flasher-type-gambling-console game format.
+claims:
+  - game-format.flasher-type-gambling-console:
+      description: |
+        A **flasher-type gambling console**, also called an "electronic upright" or simply an "upright", is not a pinball machine; it is a gambling device styled to look or operate similarly to mechanical arcade games.[[cite:1]]
+
+        Historically, these machines were designed by manufacturers to bypass anti-slot-machine gambling laws. They replaced the slot machine's traditional physical spinning reels — a feature by which laws often identified a slot machine — with electronic flashers that lit up symbols behind a silk-screened glass, and dressed that difference in the language of skill.
+        [[manufacturer:pace-manufacturing-company-incorporated]] sold *[[title:king-pin-5]]* (1938) as a "pin table", "an attempt to get their slot machine console games into pinball-only territory",[[cite:2]] and [[manufacturer:bally]] offered *[[title:lincoln-fields]]* (1937) with an optional captive-ball "Skill Feature", "something to add an element of skill to the game usually done to circumvent gambling ordinances".[[cite:3]] After the war the line moved again: "Upright machines built for coin payout were not legal in the United States so American manufacturers exported them to the UK."[[cite:4]]
+
+        ## How a flasher-type machine works
+
+        - **The credit counter.** Coins increment a credit meter, and on the post-war uprights that meter is also the prize. Of [[manufacturer:games-incorporated]]'s *[[title:wild-cat]]* (1958): "It does not payout cash. The credit meter increments instead, allowing for continued play without insertion of additional coins."[[cite:5]]
+        - **The spin.** A handle or button starts a motor-driven wiper. On a flasher "the wipers for the flashers not only control the lights but the timer wiper as well",[[cite:6]] so the same mechanism that runs the light show decides the result.
+        - **The flashers.** Symbols printed on the glass light in sequence. [[manufacturer:mills-novelty-company]]'s *[[title:flasher-bell-fruit]]* (1937) "has a glass playfield with no moving parts but has slot machine symbols that are lit from behind after the player pulls the side handle".[[cite:7]]
+        - **The outcome.** When the cycle stops, the symbols left lit are read against the award schedule on the glass. A pre-war console paid in coin, the Mills machine "into a spring-loaded metal cup located on the front underside of the machine";[[cite:8]] a post-war upright paid in credits, and only the export models paid cash.
+
+        ## Two generations
+
+        The pre-war consoles of 1937 to 1947, such as Bally's *[[title:ballys-club-house]]*, "an upright 7-coin console slot machine",[[cite:9]] Mills' Flasher and [[manufacturer:keeney]]'s *[[title:gold-nugget]]*, paid out in coin. The electronic uprights of 1955 to 1964 from Games Inc, Keeney, Bally and [[manufacturer:auto-bell-novelty-company]], such as Keeney's *[[title:big-tent]]* and Games Inc's Wild Cat, paid in credits, with cash-payout versions such as *[[title:barracuda]]* built for the UK.
+
+        ## Connection to pinball
+
+        These machines came off the same factory floors as pinball, and share its relays, wiring and backglass art. "Bally had a foot in both sides of the coin operated industry",[[cite:10]] and so did Keeney, Games Inc and Mills. Collectors and restorers in the pinball community meet them regularly and find them thinly documented; one owner of a 1959 Wild Cat wrote that he had "an extremely hard time finding any real resources for these machines".[[cite:11]]
+      cites:
+        "1":
+          ref: "https://www.ipdb.org/glossary.php"
+          quote: 'Also called an "upright" or a "flasher type" slot machine, this is not a pinball machine.'
+          locator: Electronic Upright entry
+        "2":
+          ref: "ipdb:6175"
+          quote: an attempt to get their slot machine console games into pinball-only territory
+        "3":
+          ref: "ipdb:6940"
+          quote: something to add an element of skill to the game usually done to circumvent gambling ordinances
+        "4":
+          ref: "ipdb:7013"
+          quote: Upright machines built for coin payout were not legal in the United States so American manufacturers exported them to the UK.
+        "5":
+          ref: "ipdb:6966"
+          quote: It does not payout cash. The credit meter increments instead, allowing for continued play without insertion of additional coins.
+        "6":
+          ref: "https://pinside.com/pinball/forum/topic/anyone-know-anything-about-flasher-slots"
+          quote: the wipers for the flashers not only control the lights but the timer wiper as well
+          locator: post by AndyGarber
+        "7":
+          ref: "ipdb:3101"
+          quote: has a glass playfield with no moving parts but has slot machine symbols that are lit from behind after the player pulls the side handle
+        "8":
+          ref: "ipdb:3101"
+          quote: into a spring-loaded metal cup located on the front underside of the machine
+        "9":
+          ref: "ipdb:3025"
+          quote: an upright 7-coin console slot machine
+        "10":
+          ref: "https://www.pacificpinball.org/pinball-gambling"
+          quote: Bally had a foot in both sides of the coin operated industry
+          locator: in the A Game Of Skill section
+        "11":
+          ref: "https://pinside.com/pinball/forum/topic/anyone-know-anything-about-flasher-slots"
+          quote: an extremely hard time finding any real resources for these machines
+          locator: post by phurst

@@ -1,0 +1,21 @@
+attribution: flipcommons-catalog
+description: Flasher-type gambling consoles classified from IPDB's notes.
+claims:
+  - model.de-luxe-big-tent:
+      cite:
+        ref: "ipdb:6952"
+        quote: 'This is a device called an "electronic upright" or just "upright". Also called a "flasher type" slot machine.'
+      game_format: flasher-type-gambling-console
+  - model.galloping-dominos:
+      cite:
+        ref: "ipdb:6954"
+        quote: 'This is a device called an "electronic upright" or just "upright". Also called a "flasher type" slot machine.'
+      game_format: flasher-type-gambling-console
+  - model.king-pin-6:
+      note: >
+        A console with a small odds-setting playfield, the same shape as Lincoln
+        Fields' captive-ball skill feature, which already carries this format.
+      cite:
+        ref: "ipdb:6175"
+        quote: 'Pace used the term "pin table" to describe this 1938 console slot machine.'
+      game_format: flasher-type-gambling-console

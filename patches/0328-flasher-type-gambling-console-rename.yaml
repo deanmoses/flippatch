@@ -1,0 +1,11 @@
+attribution: flipcommons-catalog
+description: Rename the slot-machine game format to Flasher-Type Gambling Console.
+claims:
+  - game-format.slot-machine:
+      note: >
+        Renamed from Slot Machine. Every machine here is a flasher-type console or
+        electronic upright, which lights its symbols instead of spinning reels and
+        was built precisely so as not to be a slot machine in law; the new name
+        says what the mechanism is and keeps "gambling" in plain sight.
+      slug: flasher-type-gambling-console
+      name: Flasher-Type Gambling Console
