@@ -4,7 +4,7 @@ description: >
 claims:
   - game-format.cue-game:
       description: |
-        A **cue game** is a coin-operated table on which the player drives the ball with a hand-held cue, in the manner of pool or billiards, rather than launching it with a plunger. The form runs from carom and golf novelties of the early 1930s such as [[manufacturer:karom-golf-table-corporation]]'s *[[title:karom-golf]]* (1931), on which "Real golf balls are used",[[cite:1]] through the electric pool tables the pinball makers built in the mid-1950s, to [[manufacturer:us-billiards-inc]]'s *[[title:electro-pool]]* (1966), "A pool table with a pinball-style backbox".[[cite:2]]
+        A **cue game** is a coin-operated table on which the player drives the ball with a hand-held cue, in the manner of pool or billiards, rather than launching it with a plunger. The form runs from carom and golf novelties of the early 1930s such as [[manufacturer:karom-golf-table-corporation]]'s *[[title:karom-golf]]* (1931), on which "Real golf balls are used",[[cite:1]] through the electric pool tables the pinball makers built in the mid-1950s, opened by [[manufacturer:chicago-coin]]'s *[[title:automatic-pool]]* (1955), "the first electric pool game in the industry",[[cite:3]] to [[manufacturer:us-billiards-inc]]'s *[[title:electro-pool]]* (1966), "A pool table with a pinball-style backbox".[[cite:2]]
       cites:
         "1":
           ref: "ipdb:1348"
@@ -12,3 +12,6 @@ claims:
         "2":
           ref: "ipdb:6397"
           quote: "A pool table with a pinball-style backbox."
+        "3":
+          ref: "ipdb:5082"
+          quote: "the first electric pool game in the industry"
