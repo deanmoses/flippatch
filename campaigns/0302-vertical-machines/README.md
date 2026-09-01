@@ -44,3 +44,27 @@ The obvious move was a `vertical` cabinet form factor. Reading all 27 IPDB listi
 ## Still open
 
 `Table Top/Counter Game` (321 models) and the other unmapped specialties — Cue Game, Horserace Game, Not A Pinball, Payout Machine, Shaker Ball Machine — are untouched. The 12 countertop readings here settle that specialty for those models in advance.
+
+## Follow-on: 0311–0312, from IPDB's free text
+
+The Specialty field is not the only place IPDB states the orientation. Sweeping `notable_features` and `notes` for "vertical playfield" turned up five more machines the specialty misses:
+
+| model | IPDB says |
+| --- | --- |
+| Whiz-Bowler (`ipdb:5702`) | "10 balls for 1 cent. Vertical playfield." |
+| Zipper (`ipdb:5701`) | "5 balls for 1-cent. Vertical playfield." |
+| Pickwick (Improved) (`ipdb:5432`) | "Vertical playfield bagatelle." |
+| Flipper (`ipdb:7040`) | "a small vertical playfield of pins to scoring pockets at the bottom" |
+| Hi Fly (`ipdb:5615`) | "This is a table top game with a vertical playfield." |
+
+`0311-vertical-playfield-free-text.yaml` tags all five; `0312-improved-pickwick-cabinet.yaml` gives the improved Pickwick the `upright` cabinet its predecessor already has.
+
+### Deliberately not tagged
+
+The same sweep matched six more, none of which is a vertical *machine*:
+
+- **A secondary vertical playfield in the backbox**, on an otherwise ordinary floor machine — Banzai Run (`ipdb:175`), Wreck'n Ball (`ipdb:6167`), Double Action (`ipdb:706`), Springtime (`ipdb:2326`). This is a gameplay feature, and there is no record for it to land on yet.
+- **Varkon** (`ipdb:2721`) — "Both playfields are tilted away from the player and viewed through a mirror", so the vertical playfield is an illusion the mirror creates.
+- **Play Ball** (`ipdb:1813`) — the vertical playfield belongs to a smaller Play Ball in a 1926 patent drawing, not to this 1932 model.
+
+A second sweep for "upright game", "wall-mounted", "vertical cabinet" found only IPDB's *other* sense of upright — its flasher-type gambling consoles (Black Dragon, Skill Derby, Bulls-Eye Drop Ball) — plus Bally Alley, a wall-mounted light game with no playfield at all. The Euromat trio (`ipdb:5171`, `5173`, `5174`) is the instructive case: wall-mounted, so `upright` by cabinet, but "The playfield is sloped towards the player", so not `vertical`. Those three still have no cabinet.

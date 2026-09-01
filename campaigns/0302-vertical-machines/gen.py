@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Emit the vertical-playfield patches: 0302 (create), 0303 (tag), 0304 (cabinet).
+"""Emit the vertical-playfield patches: 0303, 0304, 0311 and 0314.
+
+0302 is hand-maintained -- it was generated once and then edited, so nothing here
+writes it.
 
 IPDB's `Vertical Pinball Machine` specialty describes a playfield ORIENTATION,
 not a footprint: IPDB hangs it on floor uprights, counter games and wall boxes
@@ -21,6 +24,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "scripts"))
 import patchkit as pk  # noqa: E402
 
 PATCHES = Path(__file__).resolve().parents[2] / "patches"
+
+
+def emit(path: Path, **kwargs: object) -> None:
+    """Write only if the rendered text differs — an identical rewrite still bumps
+    mtime, which `make db-patch-state` reads as a patch edited since it applied."""
+    text = pk.render_patch(**kwargs)  # type: ignore[arg-type]
+    if not path.exists() or path.read_text() != text:
+        path.write_text(text)
+        print(f"  wrote {path.name}")
 
 PINSIDE = "https://pinside.com/pinball/forum/topic/4-in-1"
 AUCTION = (
@@ -268,19 +280,7 @@ if unknown:
     raise SystemExit(f"cabinet rows for models not in the population: {sorted(unknown)}")
 
 
-def write_create() -> None:
-    pk.write_patch(
-        PATCHES / "0302-upright-cabinet-vertical-tag.yaml",
-        attribution="flipcommons-catalog",
-        description="The Upright cabinet form factor and the Vertical tag.",
-        entries=[
-            pk.entry("cabinet.upright", create=True, fields={"name": "Upright", "display_order": 5}),
-            pk.entry("tag.vertical", create=True, fields={"name": "Vertical"}),
-        ],
-    )
-
-
-def write_tags() -> None:
+def write_features() -> None:
     entries = [
         pk.entry(
             f"model.{slug}",
@@ -288,11 +288,11 @@ def write_tags() -> None:
                 "ref": f"ipdb:{ipdb_id}",
                 "quote": "Specialty: [...] Vertical Pinball Machine",
             },
-            tags=["vertical"],
+            relationships={"gameplay_feature": ["vertical-playfields"]},
         )
         for slug, ipdb_id in sorted(VERTICAL.items())
     ]
-    pk.write_patch(
+    emit(
         PATCHES / "0303-vertical-playfield-machines.yaml",
         attribution="ipdb",
         description="Machines IPDB marks as having a vertical playfield.",
@@ -323,7 +323,7 @@ def write_cabinets() -> None:
             links=[("https://www.encyclopedia.com/", "Encyclopedia.com", "homepage")],
         ),
     ]
-    pk.write_patch(
+    emit(
         PATCHES / "0304-vertical-playfield-cabinets.yaml",
         attribution="flipcommons-catalog",
         description="Cabinet form factors for the vertical-playfield machines.",
@@ -332,9 +332,103 @@ def write_cabinets() -> None:
     )
 
 
+
+
+# ── 0314-0316: the tag becomes a gameplay feature ────────────────────────────
+#
+# A vertical playfield is a property of the PLAYFIELD, not of the machine, which
+# is why it stopped fitting a tag. An upright cabinet very often has one -- and
+# not always: the Euromats hang on a wall with the playfield sloped toward the
+# player. Modelling it as a feature also gives the backbox playfields somewhere
+# to land, as a child: they are vertical playfields that are not the machine's
+# own playing surface.
+
+# The five IPDB states outside the Specialty field (0311's population).
+FREETEXT: dict[str, tuple[int, str]] = {
+    "flipper-4": (
+        7040,
+        "Player drops coin at top of game to fall through a small vertical "
+        "playfield of pins to scoring pockets at the bottom.",
+    ),
+    "hi-fly": (5615, "This is a table top game with a vertical playfield."),
+    "pickwick-improved": (5432, "Vertical playfield bagatelle."),
+    "whiz-bowler": (5702, "10 balls for 1 cent. Vertical playfield."),
+    "zipper-3": (5701, "5 balls for 1-cent. Vertical playfield."),
+}
+
+# A vertical playfield that is NOT the machine's own playing surface: a second
+# one standing in the backbox, above an ordinary horizontal playfield.
+BACKBOX: dict[str, tuple[int, str, str | None]] = {
+    "banzai-run": (
+        175,
+        "A magnet on a moving vertical track lifts the ball in play to the "
+        "vertical playfield in the backbox.",
+        None,
+    ),
+    "double-action": (
+        706,
+        "activates a flipperless vertical playfield in the backbox where the next "
+        "captive ball is mechanically lifted to the top and released to fall "
+        "through pins",
+        None,
+    ),
+    "springtime-2": (
+        2326,
+        "The scores from the flipperless vertical playfield carry-over to the next game.",
+        "Genco's companion to Double Action of three months earlier, which states "
+        "the same flipperless vertical playfield sits in the backbox.",
+    ),
+    "wreckn-ball": (
+        6167,
+        "A vertical moving track lifts the ball in play to the vertical playfield "
+        "in the backbox.",
+        None,
+    ),
+}
+
+SPECIALTY_QUOTE = "Specialty: [...] Vertical Pinball Machine"
+
+
+def write_freetext() -> None:
+    """The five IPDB states outside the Specialty field."""
+    entries = [
+        pk.entry(
+            f"model.{slug}",
+            cite={"ref": f"ipdb:{ipdb_id}", "quote": quote},
+            relationships={"gameplay_feature": ["vertical-playfields"]},
+        )
+        for slug, (ipdb_id, quote) in sorted(FREETEXT.items())
+    ]
+    emit(
+        PATCHES / "0311-vertical-playfield-free-text.yaml",
+        attribution="ipdb",
+        description="Vertical playfields IPDB states outside its Specialty field.",
+        entries=entries,
+    )
+
+
+def write_backbox() -> None:
+    entries = [
+        pk.entry(
+            f"model.{slug}",
+            note=note,
+            cite={"ref": f"ipdb:{ipdb_id}", "quote": quote},
+            relationships={"gameplay_feature": ["backbox-playfields"]},
+        )
+        for slug, (ipdb_id, quote, note) in sorted(BACKBOX.items())
+    ]
+    emit(
+        PATCHES / "0314-backbox-playfields.yaml",
+        attribution="ipdb",
+        description="Machines with a vertical playfield in the backbox.",
+        entries=entries,
+    )
+
+
 if __name__ == "__main__":
-    write_create()
-    write_tags()
+    write_features()
     write_cabinets()
+    write_freetext()
+    write_backbox()
     print(f"{len(VERTICAL)} tagged, {len(CABINET)} cabinets, "
           f"{len(set(VERTICAL) - set(CABINET))} left without one")
