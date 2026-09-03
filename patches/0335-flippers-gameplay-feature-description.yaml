@@ -4,62 +4,45 @@ description: >
 claims:
   - gameplay-feature.flippers:
       description: |
-        A flipper is a pivoting bat set into the playfield ([[gameplay-feature:playfields]]) and swung by a button on the side of the cabinet, used to knock the ball back up the machine. It is the main control a player has over the ball once it is in play,[[cite:1]] and because the swing can be timed against a moving target, one bat can send the ball in a range of directions at a range of speeds and spins.[[cite:2]]
+        A **flipper** is a pivoting bat or paddle set into pinball machines' [[gameplay-feature:playfields]] and swung by a button on the side of the cabinet, used to knock the ball back up the playfield.
 
-        The flipper is what separates a machine the player acts on from one the player only watches, and pinball acquired it in a single season. [[manufacturer:gottlieb]] put electrically operated flippers on *[[title:humpty-dumpty]]* in 1947,[[cite:3]] and by the end of that year every maker in the trade had either built a flipper game or started one.[[cite:4]]
+        Much of the world considers the flipper to be the game's defining characteristic.  While called "pinball" in English, many countries know the game as "flipper", including [[location:italy]], [[location:france]], [[location:germany]], [[location:sweden]], Denmark, and Norway ('flipperspill'). Spain and Spanish South America use both flipper and pinball, among other terms, depending on where.
 
         ## The first electric flipper
 
-        *Humpty Dumpty* was designed by [[person:harry-mabs]], who is credited with the invention.[[cite:5]] It carried six flippers, in three pairs climbing the playfield, because each bat was too weak on its own to work the ball back toward the top.[[cite:6]][[cite:7]] Gottlieb advertised them to operators as "Player Controlled Flipper Bumpers".[[cite:8]]
+        The universal adoption of the flipper on pinball machines dates from the introduction of the electric flipper, which vastly improved upon its purely mechanical predecessors. The first electrically operated flipper arrived in 1947 on [[manufacturer:gottlieb]]'s *[[title:humpty-dumpty]]*,[[cite:3]] designed by [[person:harry-mabs]].[[cite:5]] The impact on the industry was immediate: by the end of that year, most makers in the trade had either built a flipper game or started one.[[cite:4]]
 
-        The trade answered at once. Gottlieb announced the machine in the trade paper The Billboard on 1 November 1947,[[cite:9]] and inside a month of its reaching locations a distributor was paying for space in the same paper to thank the firm "for making the greatest improvement in the history of pin games".[[cite:10]]
+        Gottlieb announced the machine in the trade paper The Billboard on 1 November 1947.[[cite:9]] Inside a month of its reaching locations, a distributor was paying for space in the same paper to thank the firm "for making the greatest improvement in the history of pin games".[[cite:10]]
+
+        *Humpty Dumpty* carried six flippers, in three pairs climbing the playfield, because each bat was too weak on its own to work the ball back toward the top.[[cite:6]][[cite:7]] Gottlieb advertised them to operators as "Player Controlled Flipper Bumpers".[[cite:8]]
 
         ## Who invented it
 
-        Credit was contested from the start. [[manufacturer:chicago-coin]] designer [[person:jerry-koci]] held a patent of his own on an electric flipper, filed in January 1948 and granted in August 1950 as a pivotal ball return means for pin games,[[cite:11]] and maintained that his firm had got there ahead of Gottlieb. By his account he had asked, in mid-1947 while at work on a baseball game, for a bat to go on a pin game; the firm declined, which left the field to Gottlieb.[[cite:12]] *[[title:bermuda]]* was the machine the firm eventually did put flippers on.[[cite:13]]
+        Credit for the electric flipper was contested from the start. While the name most commonly associated with inventing it is Gottlieb's Harry Mabs,
+        [[manufacturer:chicago-coin]] designer [[person:jerry-koci]] held a patent of his own on an electric flipper, filed in January 1948 and granted in August 1950 as a pivotal ball return means for pin games,[[cite:11]] and maintained that his firm had got there ahead of Gottlieb. By his account he had asked, in mid-1947 while at work on a baseball game, for a bat to go on a pin game; the firm declined, which left the field to Gottlieb.[[cite:12]] *[[title:bermuda]]* was the machine the firm eventually did put flippers on.[[cite:13]]
 
         [[person:harry-williams]] said in a 1978 interview that [[manufacturer:williams]] had been working on a comparable device at the same time — a shallow hole with a bat behind it that kicked the ball out again. The Williams device fired on its own rather than on a button under the player's hand, which is precisely the distinction the invention turns on.[[cite:14]]
 
         ## Before the electric flipper
 
-        Bats on a playfield were not new in 1947. [[manufacturer:ad-lee]]'s *[[title:double-shuffle-3]]* (1932) carried eight of them, worked through levers with no power behind them ([[gameplay-feature:mechanical-flippers]]), and most other early bats were manually operated, one to a playfield, on baseball games.[[cite:15]][[cite:16]] Nor did player control have to mean a bat: *[[title:juggle-ball]]* (1932, [[manufacturer:rock-ola-manufacturing-corporation]]) offered player control by other means entirely.[[cite:17]]
+        Some purely mechanical flippered pinball machines existed before electricity made flippers universal.
+
+        [[manufacturer:ad-lee]]'s *[[title:double-shuffle-3]]* (1932) carried eight of them, worked through levers with no power behind them ([[gameplay-feature:mechanical-flippers]]), and most other early bats were manually operated, one to a playfield, on baseball games.[[cite:15]][[cite:16]] Nor did player control have to mean a bat: *[[title:juggle-ball]]* (1932, [[manufacturer:rock-ola-manufacturing-corporation]]) offered player control by other means entirely.[[cite:17]]
 
         Even the name was already taken. [[person:david-gottlieb]] wanted to call the 1947 machine Flipper, and a legal check turned up a patented 1932 countertop game with a manual bat, [[manufacturer:smith-manufacturing-company]]'s *[[title:flipper-2]]*, so the nursery rhyme went on the cabinet instead.[[cite:18]]
 
-        ## Finding the modern layout
+        ## The modern layout
 
-        The arrangement everyone now recognises took three years and three machines to arrive at. [[manufacturer:genco]]'s *[[title:triple-action]]*, designed by [[person:steve-kordek]] and in production for ten weeks from January 1948, cut the number down to two and set them at the foot of the playfield, where they have stayed ever since;[[cite:19]] they still pointed outward, away from one another. Two Gottlieb games of 1950 turned them inward: *[[title:just-21]]* in January, its pair set wide apart to leave room for a turret shooter in the middle, and then *[[title:spot-bowler]]*, whose inward-facing flippers sat close together[[cite:20]] — the layout, credited to [[person:wayne-neyens]], that the trade eventually settled on.[[cite:21]]
+        The standard flipper arrangement, with two flippers guarding the center drain at the bottom of the playfield, took three years and three machines to arrive. [[manufacturer:genco]]'s *[[title:triple-action]]*, designed by [[person:steve-kordek]] and in production for ten weeks from January 1948, cut the number down to two and set them at the foot of the playfield, where they have stayed ever since;[[cite:19]] they still pointed outward, away from one another. Two Gottlieb games of 1950 turned them inward: *[[title:just-21]]* in January, its pair set wide apart to leave room for a turret shooter in the middle, and then *[[title:spot-bowler]]*, whose inward-facing flippers sat close together[[cite:20]] — the layout, credited to [[person:wayne-neyens]], that the trade eventually settled on.[[cite:21]]
 
         Settling took another thirty years. The bats grew: Williams' *[[title:hayburners-ii]]* carried the first three-inch flippers in 1968, and three inches was standard across the industry by the end of the 1970s.[[cite:22]] The bottom of the playfield converged too, on the symmetrical arrangement the trade calls an Italian bottom — a flipper on each side, flanked by [[gameplay-feature:outlanes]] and [[gameplay-feature:inlanes]] — which was standard by the middle of the 1980s.[[cite:23]]
 
-        ## How a flipper works
-
-        A flipper coil is two windings in one package: a heavy one that throws the bat up, and a light one that holds it there at much lower power. A switch under the flipper takes the heavy winding out of circuit as the bat reaches the top of its travel, leaving the light one to hold the position.[[cite:24]] That second winding is what makes modern play possible, because a flipper that can be held up will catch a ball and keep it still while the player aims, which is called trapping.[[cite:25]]
-
         ## Skill and the law
 
-        Where the ball goes became partly a matter of the player's judgment, and that gave pinball an argument to make in the many jurisdictions that had banned it as gambling. The [[location:usa/ca]] Supreme Court found in 1974 that flipper games did involve an element of skill,[[cite:26]] and in 1976 [[person:roger-sharpe]] demonstrated as much before the city council in [[location:usa/ny/new-york]], which lifted a ban held there for decades.[[cite:27]] A [[tag:flipperless]] machine had no such case to make: with nothing on the playfield for the player to work, where the ball went was random.[[cite:28]]
+        The flipper has often been the legal boundary between a game of skill and a game of chance (i.e., gambling).
 
-        ## Variants
-
-        [[manufacturer:bally]] trademarked a pair that closed the gap between them once the player lit a set of targets, so the ball could not drain down the middle. Its parts listings called the assembly the Flipper-Zipper and its flyers eventually called them zipper flippers ([[gameplay-feature:zipper-flippers]]), a feature that ran from *[[title:bazaar]]* in 1966 to *[[title:medusa]]* in 1981.[[cite:29]][[cite:30]]
-
-        Not every flipper answers the button in the ordinary way. Woodrail machines of the early 1950s often used a bat that stops pushing before the button is released ([[gameplay-feature:impulse-flippers]]),[[cite:31]] and games of the same period sometimes fitted one the machine fires itself, tripped by a switch set in front of it ([[gameplay-feature:automatic-flippers]]).[[cite:32]]
-
-        The bat itself has been varied since. Bally and Williams fitted bats an eighth of an inch shorter than standard to some machines of the early 1990s, widening the gap between them and shortening the game ([[gameplay-feature:lightning-flippers]]).[[cite:33]]
-
-        Smaller bats serve upper playfields ([[gameplay-feature:mini-flippers]]), and a pair hung to face the other way reverses which shots a player can make ([[gameplay-feature:reversed-flippers]]).
-
-        ## The part that named the game
-
-        The flipper ended up naming the machine it sits in. In several languages a pinball machine is not called a pinball machine at all, but a flipper.[[cite:34]]
+        The [[location:usa/ca]] Supreme Court found in 1974 that flipper games did involve an element of skill,[[cite:26]] and in 1976 [[person:roger-sharpe]] demonstrated as much before the city council in [[location:usa/ny/new-york]], which lifted a ban held there for decades.[[cite:27]] A [[tag:flipperless]] machine had no such case to make: with nothing on the playfield for the player to work, where the ball went was random.[[cite:28]]
       cites:
-        "1":
-          ref: https://en.wikipedia.org/wiki/Pinball
-          quote: "used for redirecting the ball up the playfield. They are the main control that the player has over the ball, usually by corresponding pushbuttons on the cabinet's sides."
-        "2":
-          ref: https://en.wikipedia.org/wiki/Pinball
-          quote: "Careful timing of this limited positional control allows the player to direct the ball in a range of directions with various levels of velocity and spin."
         "3":
           ref: https://en.wikipedia.org/wiki/Pinball
           quote: "Gottlieb's Humpty Dumpty, introduced in 1947, was the first game to add electromechanical player-controlled flippers to keep the ball in play longer."
@@ -123,12 +106,6 @@ claims:
         "23":
           ref: https://www.flippers.be/basics/101_flipper_evolution.html
           quote: "consisting of a symmetrical bottom with an outlane, inlane,"
-        "24":
-          ref: https://en.wikipedia.org/wiki/Pinball
-          quote: "As the flipper nears the end of its upward travel, a switch under the flipper disconnects the power-winding and leaves only the second sustain winding to hold the flipper up in place."
-        "25":
-          ref: https://en.wikipedia.org/wiki/Pinball
-          quote: "Players can hold a ball in place with the flipper, giving them more control over where they want to place the ball when they shoot it forward. This is known as trapping."
         "26":
           ref: https://www.pacificpinball.org/pinball-gambling
           quote: "A California Supreme Court decision in 1974 affirmed that flipper games did include an element of skill"
@@ -138,21 +115,3 @@ claims:
         "28":
           ref: https://www.kineticist.com/news/pinball-prohibition
           quote: "A pinball machine without flippers made for a very different game, one that made the movement of the ball completely random."
-        "29":
-          ref: https://www.ipdb.org/glossary.php
-          quote: "the gap between the flippers once certain game goals were accomplished, such as lighting up a series of targets, thereby preventing the ball in play from draining between these flippers."
-        "30":
-          ref: https://www.ipdb.org/glossary.php
-          quote: "Their first game to have it is Bally's 1966 'Bazaar'."
-        "31":
-          ref: https://www.ipdb.org/glossary.php
-          quote: "A design of flipper mechanism used on some woodrails where the flipper does not stay energized for the entire length of time that the flipper button is depressed."
-        "32":
-          ref: https://www.ipdb.org/glossary.php
-          quote: "this is a flipper that is controlled exclusively by the game, the player cannot activate this flipper"
-        "33":
-          ref: https://www.flippers.be/basics/101_flipper_evolution.html
-          quote: "Lightning flippers were introduced on select Bally/Williams WPC machines between 1992 and 1993. They are slightly shorter, about 1/8-inch, than standard 3-inch bats"
-        "34":
-          ref: https://en.wikipedia.org/wiki/Pinball
-          quote: "The flippers have loaned pinball its common name in many languages"
