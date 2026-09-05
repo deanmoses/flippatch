@@ -1,0 +1,15 @@
+attribution: flipcommons-ai-desc-title
+description: >
+  Baseball: Humpty Dumpty was the first machine with electric flippers.
+claims:
+  - title.baseball:
+      description: |
+        *Baseball* is a 1947 pin game from [[manufacturer:chicago-coin]], its backglass given over to the sport it is named for.
+
+        Chicago Coin, like other major manufacturers, stopped producing machines in 1942 to support the US's effort in World War II. Production resumed in 1945, making machines similar to those in the early 1940s. The central figure on the backglass likely references the then-popular All-American Girls Professional Baseball League, which started 1943, and whose story was told in A League of Their Own.
+
+        One month after this machine left the factory, [[manufacturer:gottlieb]] released the first machine with electrically operated [[gameplay-feature:flippers]], [[title:humpty-dumpty]].[[cite:1]] This machine's flippers were added later, likely by an operator updating his older machines to match the new craze.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Gottlieb's Humpty Dumpty, introduced in 1947, was the first game to add electromechanical player-controlled flippers to keep the ball in play longer."

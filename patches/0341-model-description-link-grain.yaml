@@ -1,0 +1,17 @@
+attribution: flipcommons-ai-desc-model
+description: Re-point model-grain wikilinks at their collapsed Titles
+claims:
+  - model.count-down-pasini:
+      note: >-
+        Each machine named here is the only one under its title, so the page for it is the
+        title's page. The links now point there directly instead of at a redirect. The
+        wording is unchanged.
+      description: |
+        *Count Down* is a single-player [[technology-generation:electromechanical]] table by [[manufacturer:pasini]] of [[location:italy/bo/bologna]]. The name was a common one in the Italian trade: Novamatic's *[[title:count-down]]* (1970) and [[manufacturer:lori]]'s *[[title:count-down-lori]]* were separate machines from other makers rather than versions of Pasini's game. Pasini's own output sits in the early 1970s, anchored by its dated sibling *[[title:old-gold]]* of 1970.[[cite:fwtnnxwg]] The firm belonged to the wave of Bologna makers that emerged after a 1965 Italian law banned pinball as a form of gambling,[[cite:pjdmyxxh]] a shop trade that stayed legal by building tables paying out only in [[reward-type:replay]] free games instead of cash.[[cite:hrvhvmzf]]
+  - model.fly-man:
+      note: >-
+        Each machine named here is the only one under its title, so the page for it is the
+        title's page. The links now point there directly instead of at a redirect. The
+        wording is unchanged.
+      description: |
+        *Fly Man* is a single-player solid-state table built in 1978 by [[manufacturer:cea]] — Costruzioni Elettroniche Automatiche, the small [[location:italy/bo/bologna]] firm headed by Dante Pavone.[[cite:qzfrdvhw]] C.E.A. built pinball machines for only a brief run at the close of the decade, on a wholly in-house [[technology-generation:solid-state]] boardset whose play stayed spartan next to the machines of Chicago or of nearby [[manufacturer:zaccaria]].[[cite:lgvrmzsr]] Like many small European makers of the era it borrowed from American designs — its stablemate *[[title:satellite]]* reworked [[manufacturer:gottlieb]]'s *[[model:jet-spin]]* into a pared-down solid-state machine — while *Fly Man* went out under a name of the firm's own.[[cite:lgvrmzsr]]

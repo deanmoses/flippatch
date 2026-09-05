@@ -1,0 +1,21 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: >
+  Gottlieb: Humpty Dumpty's flippers were the first electric ones.
+claims:
+  - manufacturer.gottlieb:
+      description: |
+        [[corporate-entity:d-gottlieb-company]] was a Chicago maker of pin games and pinball machines, founded by [[person:david-gottlieb]] in 1927 and in production until 1996 — a run that gives it a singular place in pinball history. The company struck gold in 1931 with [[title:baffle-ball]], a simple but addictive game that ran to 400 machines a day at its peak and established Gottlieb as the first major manufacturer of pinball machines.[[cite:3]] Baffle Ball didn't just launch Gottlieb — it launched the modern amusement business.
+
+        Gottlieb remained at the forefront of innovation for decades. The company introduced [[title:humpty-dumpty]] in 1947, the first pinball machine to carry electrically operated [[gameplay-feature:flippers]];[[cite:1]] earlier games had used bats worked through levers alone ([[gameplay-feature:mechanical-flippers]]).[[cite:2]] The breakthrough reframed the game from pure chance to skill, fundamentally altering its character and its relationship with anti-gambling legislation. In 1950, Gottlieb pioneered electronic scoring with [[title:knock-out]], replacing the clacking [[display-type:score-reels]] that had defined the [[technology-generation:electromechanical]] era. Under chief designers including [[person:ed-krynski]] and Gordon Hasse, Gottlieb built a reputation for clean, elegant gameplay and distinctive pastel-toned artwork.
+
+        The company was sold to Columbia Pictures Industries in 1977, beginning a series of ownership transitions that would ultimately prove fatal. Acquired by [[corporate-entity:premier-technology]] in 1984, then by Gottlieb's former workforce in a management buyout, the brand struggled through the 1990s as the market contracted. Production ceased in 1996, ending a run of nearly seven decades. The Gottlieb archive — spanning thousands of titles from Baffle Ball to [[title:barb-wire]] — represents the most historically complete record of pinball's entire arc.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Gottlieb's Humpty Dumpty, introduced in 1947, was the first game to add electromechanical player-controlled flippers to keep the ball in play longer."
+        "2":
+          ref: ipdb:1254
+          quote: "Flippers were already used on many games prior to 1947, but they were non-electrical, entirely mechanical. Some games had eight mechanical flippers, such as Ad-Lee Company's 1932 'Double-Shuffle'."
+        "3":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "At its peak, Gottlieb produced 400 Baffle Ball machines per day and establishing the company as the first major manufacturer of pinball machines."

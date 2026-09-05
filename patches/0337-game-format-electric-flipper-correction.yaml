@@ -1,0 +1,37 @@
+attribution: flipcommons-ai-desc-game-format
+description: >
+  Pinball and rolldown: 1947 brought the electric flipper, not the first.
+claims:
+  - game-format.pinball:
+      description: |
+        Pinball is a coin-operated game in which a player launches a steel ball onto a tilted playfield and attempts to score points by hitting targets, passing over switches, and landing in scoring features — then keeps the ball in play using one or more player-controlled [[gameplay-feature:flippers]] mounted near the bottom of the field. The electrically operated flipper, introduced on [[manufacturer:gottlieb]]'s *[[title:humpty-dumpty]]* in 1947,[[cite:1]] is the invention that separates pinball from its ancestors: earlier machines had carried bats worked through levers alone ([[gameplay-feature:mechanical-flippers]]),[[cite:2]] but a solenoid under a cabinet button gave the player real command of a ball already in play, turning a game of aim into a game of reflexes, timing, and strategy.
+
+        Before the flipper, the pinball machine was for the most part a plunger-and-gravity affair descended directly from [[game-format:bagatelle]] — the player's influence usually ended with the strength and angle of the initial shot. The flipper changed everything. Within a few years, playfield design evolved to exploit the new mechanic: [[gameplay-feature:slingshots]], [[gameplay-feature:pop-bumpers]], [[gameplay-feature:ramps]], loops, [[gameplay-feature:drop-targets]], and [[gameplay-feature:multiball]] locks created an increasingly complex landscape of risk and reward. By the 1950s, pinball had established itself as a distinct medium with its own design language, its own culture, and its own ongoing argument about whether it was a game of skill or a game of chance.
+
+        That argument mattered. Pinball was banned in [[location:usa/ny/new-york]] from 1942 to 1976, and in other jurisdictions for similar periods, on the theory that it constituted gambling. The flipper was the industry's strongest counterargument — proof that the outcome depended on the player's ability, not blind luck. When [[person:roger-sharpe]] demonstrated his skill before the city council in 1976, calling his shot and making it, the ban was lifted. The game that emerged from prohibition went on to become the most enduring and culturally significant coin-operated amusement ever built.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Gottlieb's Humpty Dumpty, introduced in 1947, was the first game to add electromechanical player-controlled flippers to keep the ball in play longer."
+        "2":
+          ref: ipdb:1254
+          quote: "Flippers were already used on many games prior to 1947, but they were non-electrical, entirely mechanical. Some games had eight mechanical flippers, such as Ad-Lee Company's 1932 'Double-Shuffle'."
+  - game-format.rolldown:
+      description: |
+        A rolldown is a pinball game with the plunger deleted: the machine dispenses each ball to a cup and the player rolls it onto the playfield by hand, over rollover buttons and into scoring pockets.[[cite:gsbphpyf]][[cite:drfrwmzn]] The form sat close enough to standard pinball that makers built some designs both ways at once — a standard cabinet with a ball shooter alongside a rolldown console of the same game[[cite:mbnpmqzn]] — and operators converted machines from one to the other, blocking the shooter lane and setting a ball cup where the spring-loaded shooter had been.[[cite:qmpzjrww]]
+
+        ## Genco and the postwar rush
+
+        The form belonged to [[manufacturer:genco]] before anyone else. Genco was well known for its rolldowns, a line running back to wartime baseball games like *[[title:play-ball-9]]* (1942),[[cite:hyvmthzc]] which distributors of the day advertised as roll down games.[[cite:rrtbtczb]][[cite:hrtgxzsx]] When production resumed after the war, Genco led with the format again: *[[title:total-roll]]* entered production in October 1945 and ran to 4,518 units,[[cite:hbyzmdgc]] ahead of the firm's first conventional postwar pinball.[[cite:qkpjzydr]] Within two years the trade had piled in — [[manufacturer:bally]]'s *[[title:hy-roll]]* banked a carry-over "Super-Score" from game to game,[[cite:llyhgvst]] [[manufacturer:chicago-coin]] named its entry simply *[[title:roll-down]]*[[cite:rwbdjfgl]] — and the fad reached past Chicago entirely: [[manufacturer:firestone-enterprises-inc]] of Brooklyn was advertising its *[[title:tally-roll]]* by the summer of 1946.[[cite:bmcfdxlq]][[cite:lfdnwbgj]]
+
+        ## Collision with the flipper
+
+        Then pinball changed underneath it. Electrically operated [[gameplay-feature:flippers]] arrived with [[manufacturer:gottlieb]]'s *[[title:humpty-dumpty]]* at the end of 1947,[[cite:3]] and by the close of that year every maker had a flipper game built or underway.[[cite:mptplmyg]] The two forms crossed inside the same cabinets: Bally's first flipper game, *[[title:melody]]*, arrived with a rolldown twin, *[[title:melody-roll]]*;[[cite:dvcbnrnh]] [[manufacturer:keeney]]'s first, *[[title:cover-girl-2]]*, was offered in rolldown and standard versions simultaneously;[[cite:mbnpmqzn]] [[manufacturer:united]]'s first, *[[title:wisconsin]]*, survives in examples operators converted between the two forms.[[cite:dvntzhkk]] The collapse is plain in the production numbers: Chicago Coin's *Roll Down* of November 1947 ran to 350 units,[[cite:rwbdjfgl]] and Genco's *[[title:bubbles-rolldown]]* of early 1948 to 245, built in three weeks.[[cite:dpywcdsc]]
+
+        ## Into the arcade
+
+        The format outlived the fad in the arcade. [[manufacturer:williams]]'s *[[title:jolly-joker-2]]* carried it into 1955, and Genco returned in 1957 with a pair of rolldowns built on gambling arithmetic — *[[title:number-roll]]* playing at blackjack,[[cite:dgxbsbfc]] and *[[title:lucky-7-genco]]* at dice, its nudge buttons letting a practiced player steer the ball into the chosen hole.[[cite:cbhktkvp]][[cite:mbwxcfdc]]
+      cites:
+        "3":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Gottlieb's Humpty Dumpty, introduced in 1947, was the first game to add electromechanical player-controlled flippers to keep the ball in play longer."

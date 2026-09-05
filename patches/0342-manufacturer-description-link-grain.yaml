@@ -1,0 +1,17 @@
+attribution: flipcommons-ai-desc-manufacturer
+description: Re-point model-grain wikilinks at their collapsed Titles
+claims:
+  - manufacturer.sankyo-seiki:
+      note: >-
+        Each machine named here is the only one under its title, so the page for it is the
+        title's page. The links now point there directly instead of at a redirect. The
+        wording is unchanged.
+      description: |
+        Sankyo (三共) was a [[location:japan/tokyo/tokyo]]-based Japanese manufacturer of [[technology-generation:electromechanical]] amusement games, active from the late 1960s through the 1970s.[[cite:jjjhsxbn]] It made a run of baseball-themed tables — [[title:japan-series]] (1969), [[title:the-world-series]] (1972) and [[title:new-world-series]] (1976) — alongside racing, sports and novelty games including [[title:big-race-sankyo]] (1969) and its sequel [[title:new-big-race]] (1972), [[title:apollo-moon]] (1972), [[title:fishing-tengu]] (1973), [[title:attack-ball]] and [[title:circus-14]] (both 1975), and [[title:advantage]] and [[title:american-football]] (both 1976).[[cite:gxvyjsjb]]
+  - manufacturer.manilamatic:
+      note: >-
+        Each machine named here is the only one under its title, so the page for it is the
+        title's page. The links now point there directly instead of at a redirect. The
+        wording is unchanged.
+      description: |
+        ManilaMatic was the [[location:italy/rm/rome]] pinball firm of [[person:antonio-manili]].[[cite:wchrkwxs]] Trading under the name [[corporate-entity:mm-computer-games]], it built [[technology-generation:solid-state]] tables in the second half of the 1980s.[[cite:jkwhlqcp]] Almost all were unlicensed rebuilds of [[manufacturer:gottlieb]] machines, reworked from scratch for the Italian market — the casino game *[[title:joker-manilamatic]]* after Gottlieb's *[[model:monte-carlo-gottlieb]]*, *[[title:defender-2]]* after *[[model:arena]]*, and *[[title:out-law]]* after Gottlieb's *[[model:tag-team-pinball]]*.[[cite:fhrnksyg]] The firm outlived its pinball years: as of 2026 it remains a registered Rome company, a dealer and renter of video games, pinball tables and table football.[[cite:rddbycxc]]

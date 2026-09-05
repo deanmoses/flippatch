@@ -1,0 +1,20 @@
+attribution: flipcommons-ai-desc-technology-generation
+description: >
+  Electromechanical: Humpty Dumpty brought the electric flipper.
+claims:
+  - technology-generation.electromechanical:
+      description: |
+        An electromechanical machine is one that scores and runs its playfield through relays, solenoids and stepping units rather than a computer. The electromechanical era transformed pinball from a passive amusement into an interactive spectacle. Beginning in the early 1930s and lasting through the late 1970s, EM machines wired their playfields with relays, solenoids, and stepping motors to keep score, advance bonus ladders, and fire bumpers. Rotating drum [[display-type:score-reels]] clicked and clattered as points accumulated. Bells rang. Pop bumpers snapped the ball in unexpected directions. The machines came alive.
+
+        In 1947, [[manufacturer:gottlieb]]'s *[[title:humpty-dumpty]]* introduced electrically operated [[gameplay-feature:flippers]],[[cite:1]] where the flippered games before it had worked their bats through levers alone ([[gameplay-feature:mechanical-flippers]])[[cite:2]] — the single most important innovation in pinball history. Solenoid power gave skill a fighting chance against chance, transforming pinball from a coin-eating lottery into a game worth mastering. Cities began repealing their bans. Pinball became respectable.
+
+        The great EM manufacturers — Gottlieb, [[manufacturer:bally]], [[manufacturer:williams]] — competed fiercely on playfield ingenuity, each mechanism a small marvel of cam-and-lever engineering. Rules were encoded not in software but in the physical geometry of relay ladders and stepping switches. Every machine was, in a sense, a miniature electromechanical computer.
+
+        When [[technology-generation:solid-state]] electronics rendered relays obsolete in the late 1970s, the EM era ended quietly — but its machines remain beloved for their warm analog character: the sound of real bells, the satisfying clunk of mechanical score reels, the sense of a cabinet that hums with something like a heartbeat.
+      cites:
+        "1":
+          ref: https://en.wikipedia.org/wiki/Pinball
+          quote: "Gottlieb's Humpty Dumpty, introduced in 1947, was the first game to add electromechanical player-controlled flippers to keep the ball in play longer."
+        "2":
+          ref: ipdb:1254
+          quote: "Flippers were already used on many games prior to 1947, but they were non-electrical, entirely mechanical. Some games had eight mechanical flippers, such as Ad-Lee Company's 1932 'Double-Shuffle'."
